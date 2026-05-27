@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Vocatopia — 單字烏托邦</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="manifest" href="/manifest.json">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<meta name="theme-color" content="#1A5C38">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+<canvas id="confettiCanvas"></canvas>
+<div class="fb-overlay"><div class="fb-txt" id="fbTxt"></div></div>
+
+<!-- JOIN ROOM MODAL -->
+<div class="modal-overlay" id="joinModal">
+  <div class="modal-box">
+    <div class="modal-title">⚔ 輸入房號加入對決</div>
+    <input class="modal-input" id="joinInput" maxlength="6" placeholder="______" type="number">
+    <button class="modal-confirm" onclick="confirmJoin()">加入戰場</button>
+    <button class="modal-cancel" onclick="closeModal('joinModal')">取消</button>
+  </div>
+</div>
+
+<!-- UPGRADE MODAL -->
+<div class="modal-overlay" id="upgradeModal">
+  <div class="modal-box upgrade-box">
+    <div class="modal-title">👑 解鎖完整備考力量</div>
+    <div class="upgrade-tiers">
+      <div class="tier"><div class="tier-name">🔓 免費版</div><div class="tier-price">$0 <span>/ 月</span></div><div class="tier-features">2000 單字卡・每日 5 篇閱讀・無限 PVP 對決・基礎角色養成</div></div>
+      <div class="tier highlight"><div class="tier-name">💳 國民衝刺包 ⭐ 最划算</div><div class="tier-price">$150 <span>/ 月</span></div><div class="tier-features">全歷屆會考題庫・家長分析後台・LINE 週報・錯題自動分類・傳奇裝備解鎖</div></div>
+      <div class="tier"><div class="tier-name">👑 AI 尊榮版</div><div class="tier-price">$300 <span>/ 月</span></div><div class="tier-features">包含以上全部・AI 錯題平行複製・AI 字本變文章・AI 口說糾錯（即將上線）</div></div>
+    </div>
+    <button class="modal-confirm" onclick="closeModal('upgradeModal');showToast('✓ 感謝！付費功能即將上線，敬請期待！')">立即解鎖</button>
+    <button class="modal-cancel" onclick="closeModal('upgradeModal')">稍後再說</button>
+  </div>
+</div>
+
+<!-- WORD POPUP -->
+<div class="word-popup" id="wordPopup">
+  <div class="wp-word" id="wpWord">—</div>
+  <div class="wp-phonetic" id="wpPhonetic">/—/</div>
+  <div class="wp-def" id="wpDef">—</div>
+  <button class="wp-capture" onclick="captureWord()">＋ 捕捉至不熟字卡</button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div class="phone" id="phone">
+
+  <!-- ══ HOME ══ -->
+  <div id="home" class="screen active">
+    <div class="home-header">
+      <div class="logo">Vocatopia</div>
+      <div id="userPill" class="user-pill-wrap" style="display:none">
+        <span id="userPillName" class="up-name"></span>
+        <div class="pill">🔥 <b id="hStreak">0</b></div>
+        <div class="pill">⚔️ <b id="hWins">0</b>勝</div>
+        <button class="up-logout" onclick="logoutUser()">登出</button>
+      </div>
+      <button id="loginBtn" class="up-logout" onclick="showAuthOverlay()">登入</button>
+    </div>
+    <div class="stage">
+      <div class="aura"></div>
+      <div class="char-wrap">
+        <canvas id="charCanvas" width="64" height="80"></canvas>
+        <div class="char-badge" id="charBadge">初來的備考者</div>
+        <div class="char-name" id="charName">LV.1 單字學徒</div>
+      </div>
+      <div class="attr-panel">
+        <div class="attr"><div class="attr-lbl">STR 力量</div><div class="attr-val av-str" id="aStr">12</div><div class="attr-bar"><div class="ab-fill af-str" id="fStr" style="width:6%"></div></div></div>
+        <div class="attr"><div class="attr-lbl">INT 智力</div><div class="attr-val av-int" id="aInt">8</div><div class="attr-bar"><div class="ab-fill af-int" id="fInt" style="width:4%"></div></div></div>
+        <div class="attr"><div class="attr-lbl">FAI 信仰</div><div class="attr-val av-fai" id="aFai">5</div><div class="attr-bar"><div class="ab-fill af-fai" id="fFai" style="width:2%"></div></div></div>
+      </div>
+    </div>
+    <button class="start-btn" onclick="goScreen('study')">⚔ 啟程衝刺</button>
+    <div class="bnav">
+      <button class="bn active" onclick="goScreen('home',this)"><div class="bn-dot"></div><div class="bn-ico">🏠</div><div class="bn-lbl">養成</div></button>
+      <button class="bn" onclick="goScreen('study',this)"><div class="bn-ico">📖</div><div class="bn-lbl">練習</div></button>
+      <button class="bn" onclick="goScreen('arena',this)"><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
+      <button class="bn" onclick="goScreen('reading',this)"><div class="bn-ico">📜</div><div class="bn-lbl">閱覽室</div></button>
+      <button class="bn" onclick="goScreen('library',this)"><div class="bn-ico">📚</div><div class="bn-lbl">字庫</div></button>
+    </div>
+  </div>
+
+  <!-- ══ STUDY ══ -->
+  <div id="study" class="screen">
+    <div class="study-top">
+      <button class="back-btn" onclick="goScreen('home')">◀ 返回</button>
+      <div class="sess-info" id="sessInfo">第 1 / 10 張</div>
+      <div class="combo-pill">🔥 <span id="comboNum">0</span></div>
+    </div>
+    <div class="xp-wrap">
+      <div class="xp-head"><span>經驗值 XP</span><span id="xpVal">230 / 1000</span></div>
+      <div class="xp-track"><div class="xp-bar" id="xpBar"></div></div>
+    </div>
+    <div class="card-area">
+      <div class="wcard" id="wcard" onclick="revealCard()">
+        <div class="wc-corner wc-left" id="wcNum">01</div>
+        <div class="wc-corner wc-right" id="wcTag">會考必考</div>
+        <div class="wc-word" id="wcWord">abandon</div>
+        <div class="wc-pos" id="wcPos">動詞</div>
+        <div class="wc-hint" id="wcHint">▼ 點擊翻牌</div>
+        <div class="wc-def" id="wcDef">放棄；遺棄</div>
+        <div class="wc-ex" id="wcEx"></div>
+      </div>
+    </div>
+    <div class="combo-area"><div class="combo-txt" id="comboTxt">COMBO ×3</div></div>
+    <div class="act-row" id="actRow" style="opacity:.3;pointer-events:none">
+      <button class="act-btn btn-miss" onclick="rate(false)"><div class="ai">✕</div>不熟悉</button>
+      <button class="act-btn btn-hit"  onclick="rate(true)"><div class="ai">✓</div>已熟悉</button>
+    </div>
+    <div class="bnav">
+      <button class="bn" onclick="goScreen('home',this)"><div class="bn-ico">🏠</div><div class="bn-lbl">養成</div></button>
+      <button class="bn active" onclick="goScreen('study',this)"><div class="bn-dot"></div><div class="bn-ico">📖</div><div class="bn-lbl">練習</div></button>
+      <button class="bn" onclick="goScreen('arena',this)"><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
+      <button class="bn" onclick="goScreen('reading',this)"><div class="bn-ico">📜</div><div class="bn-lbl">閱覽室</div></button>
+      <button class="bn" onclick="goScreen('library',this)"><div class="bn-ico">📚</div><div class="bn-lbl">字庫</div></button>
+    </div>
+  </div>
+
+  <!-- ══ ARENA ══ -->
+  <div id="arena" class="screen">
+    <div class="arena-head">
+      <div class="arena-title">⚔ 競技場</div>
+      <div class="arena-sub">下課隨時隨地，原地當場開尬</div>
+    </div>
+    <div id="arenaLobby">
+      <button class="arena-btn ab-create" onclick="createRoom()">➕ 建立對決房間</button>
+      <div class="ab-divider">— OR —</div>
+      <button class="arena-btn ab-join" onclick="openModal('joinModal')">🔑 輸入房號加入</button>
+    </div>
+    <div id="arenaWait">
+      <div style="font-size:12px;color:var(--gray);font-family:Nunito;font-weight:700;letter-spacing:2px;text-transform:uppercase">你的房號</div>
+      <div class="room-code-big" id="roomCodeBig">— — —</div>
+      <button class="copy-btn" onclick="copyRoom()">📋 複製房號</button>
+      <div class="vs-row">
+        <div class="player-slot slot-ready"><div class="slot-name">你</div><div class="slot-status ok">✓ 已就緒</div></div>
+        <div class="vs-label">VS</div>
+        <div class="player-slot"><div class="slot-name">等待中</div><div class="slot-status wait-dots">⏳ …</div></div>
+      </div>
+      <button class="arena-btn ab-create" style="margin-top:8px" onclick="startBattle()">模擬開始對決 ▶</button>
+    </div>
+    <div id="arenaBattle">
+      <div class="pvp-bars">
+        <div class="hp-row"><div class="hp-name you">你</div><div class="hp-track"><div class="hp-fill hp-you" id="hpYou" style="width:50%"></div></div><div class="hp-score" id="scYou" style="color:var(--green3)">0</div></div>
+        <div class="hp-row" style="flex-direction:row-reverse"><div class="hp-name foe">對手</div><div class="hp-track"><div class="hp-fill hp-foe" id="hpFoe" style="width:50%;margin-left:auto"></div></div><div class="hp-score" id="scFoe" style="color:#ff7070">0</div></div>
+      </div>
+      <div class="pvp-q">
+        <div class="pvp-timer" id="pvpTimer">10</div>
+        <div class="pvp-question" id="pvpQ">abandon 的中文意思是？</div>
+        <div class="pvp-opts" id="pvpOpts"></div>
+      </div>
+    </div>
+    <div class="bnav" id="arenaBnav">
+      <button class="bn" onclick="goScreen('home',this)"><div class="bn-ico">🏠</div><div class="bn-lbl">養成</div></button>
+      <button class="bn" onclick="goScreen('study',this)"><div class="bn-ico">📖</div><div class="bn-lbl">練習</div></button>
+      <button class="bn active" onclick="goScreen('arena',this)"><div class="bn-dot"></div><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
+      <button class="bn" onclick="goScreen('reading',this)"><div class="bn-ico">📜</div><div class="bn-lbl">閱覽室</div></button>
+      <button class="bn" onclick="goScreen('library',this)"><div class="bn-ico">📚</div><div class="bn-lbl">字庫</div></button>
+    </div>
+  </div>
+
+  <!-- ══ READING ══ -->
+  <div id="reading" class="screen">
+    <div class="read-head" id="readHead">
+      <div class="read-title">閱覽室</div>
+      <div class="read-tabs">
+        <button class="rtab active" id="rtabCurated" onclick="switchReadTab('curated')">精選文章</button>
+        <button class="rtab" id="rtabDaily" onclick="switchReadTab('daily')">今日五篇 <span class="rtab-badge" id="dailyBadge">NEW</span></button>
+      </div>
+    </div>
+    <div class="articles-scroll" id="artList"></div>
+    <div class="daily-list" id="dailyList"></div>
+    <div class="art-content" id="artContent">
+      <button class="art-back" id="artBackBtn" onclick="closeArticle()">◀ 返回文章列表</button>
+      <div class="art-h" id="artTitle"></div>
+      <div class="art-body-text" id="artBody"></div>
+      <button class="quiz-start-btn hidden" id="quizStartBtn" onclick="startQuiz()">📝 開始作答</button>
+    </div>
+    <!-- QUIZ PANEL -->
+    <div class="quiz-panel hidden" id="quizPanel">
+      <div class="quiz-head">
+        <button class="art-back" onclick="closeQuiz()">◀ 返回文章</button>
+        <div class="quiz-progress" id="quizProgress">第 1 / 3 題</div>
+      </div>
+      <div class="quiz-q" id="quizQ"></div>
+      <div class="quiz-opts" id="quizOpts"></div>
+      <div class="quiz-explain hidden" id="quizExplain"></div>
+      <button class="quiz-next hidden" id="quizNextBtn" onclick="nextQuestion()">下一題 →</button>
+    </div>
+    <!-- QUIZ RESULT -->
+    <div class="quiz-result hidden" id="quizResult">
+      <div class="qr-icon" id="qrIcon">🏆</div>
+      <div class="qr-score" id="qrScore">3 / 3</div>
+      <div class="qr-msg" id="qrMsg">全對！英文力量大增！</div>
+      <button class="quiz-start-btn" onclick="closeQuizResult()">返回文章列表</button>
+    </div>
+    <div class="bnav">
+      <button class="bn" onclick="goScreen('home',this)"><div class="bn-ico">🏠</div><div class="bn-lbl">養成</div></button>
+      <button class="bn" onclick="goScreen('study',this)"><div class="bn-ico">📖</div><div class="bn-lbl">練習</div></button>
+      <button class="bn" onclick="goScreen('arena',this)"><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
+      <button class="bn active" onclick="goScreen('reading',this)"><div class="bn-dot"></div><div class="bn-ico">📜</div><div class="bn-lbl">閱覽室</div></button>
+      <button class="bn" onclick="goScreen('library',this)"><div class="bn-ico">📚</div><div class="bn-lbl">字庫</div></button>
+    </div>
+  </div>
+
+  <!-- ══ LIBRARY ══ -->
+  <div id="library" class="screen">
+    <div class="lib-head">
+      <div class="lib-title">大書庫</div>
+      <div class="lib-sub">會考 2000 字 · 點擊 🔊 發音</div>
+    </div>
+    <div class="lib-tabs">
+      <button class="ltab active" onclick="libSwitch(this,'all')">官方 2000 字</button>
+      <button class="ltab" onclick="libSwitch(this,'weak')">不熟錯題本</button>
+    </div>
+    <div class="lib-list" id="libList"></div>
+    <div class="bnav">
+      <button class="bn" onclick="goScreen('home',this)"><div class="bn-ico">🏠</div><div class="bn-lbl">養成</div></button>
+      <button class="bn" onclick="goScreen('study',this)"><div class="bn-ico">📖</div><div class="bn-lbl">練習</div></button>
+      <button class="bn" onclick="goScreen('arena',this)"><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
+      <button class="bn" onclick="goScreen('reading',this)"><div class="bn-ico">📜</div><div class="bn-lbl">閱覽室</div></button>
+      <button class="bn active" onclick="goScreen('library',this)"><div class="bn-dot"></div><div class="bn-ico">📚</div><div class="bn-lbl">字庫</div></button>
+    </div>
+  </div>
+
+</div><!-- /phone -->
+
+<!-- AUTH OVERLAY -->
+<div class="auth-overlay" id="authOverlay">
+  <div id="authCard" class="auth-card">
+    <div class="auth-logo">VOCATOPIA</div>
+    <div class="auth-subtitle">單字烏托邦</div>
+    <div class="auth-tabs">
+      <button class="auth-tab active" onclick="switchAuthTab('login')">登入</button>
+      <button class="auth-tab" onclick="switchAuthTab('register')">建立角色</button>
+    </div>
+    <form id="loginForm" onsubmit="handleLogin(event)">
+      <input class="auth-input" id="loginEmail" type="email" placeholder="電子信箱" required autocomplete="email">
+      <input class="auth-input" id="loginPassword" type="password" placeholder="密碼" required autocomplete="current-password">
+      <button type="submit" class="auth-submit">登入戰場</button>
+    </form>
+    <form id="registerForm" class="hidden" onsubmit="handleRegister(event)">
+      <input class="auth-input" id="regUsername" type="text" placeholder="稱號（暱稱）" required maxlength="20">
+      <input class="auth-input" id="regEmail" type="email" placeholder="電子信箱" required autocomplete="email">
+      <input class="auth-input" id="regPassword" type="password" placeholder="密碼（至少 6 字元）" required autocomplete="new-password">
+      <button type="submit" class="auth-submit">建立角色</button>
+    </form>
+    <div class="auth-error" id="authError"></div>
+    <button class="auth-guest" onclick="continueAsGuest()">訪客體驗（進度不儲存）</button>
+  </div>
+</div>
+
+<script src="auth.js"></script>
+<script src="script.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  }
+</script>
+</body>
+</html>
