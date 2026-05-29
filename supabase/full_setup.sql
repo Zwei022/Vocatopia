@@ -221,7 +221,7 @@ There are three main types of exercise. Aerobic exercise uses large muscles and 
 
 Health experts recommend about 150 minutes of moderate exercise each week. This might seem like a lot, but you can spread it throughout the week. Young people should aim for 60 minutes daily. The most important thing is to find activities you like and do them regularly—consistency is the real secret to a healthy life.',
   '🏃', '精選', false, null
-),
+)
 (
   'Climate Change and Our Future',
   'Climate change means the ongoing increase in global average temperature and its effects on Earth. It happens mainly because humans burn fossil fuels like coal and oil, which release gases that trap heat in our atmosphere. These greenhouse gases act like a blanket around Earth, making our planet warmer each year. Scientists agree that this is one of the most serious challenges facing humanity today.

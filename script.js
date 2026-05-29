@@ -40,28 +40,45 @@ let DICT     = {};   // populated by loadWords()
 // 從 API 正規化單字格式（DB 欄位 → 前端欄位）
 function normalizeWord(w) {
   return {
-    id:       w.id,
-    word:     w.word,
-    pos:      w.pos,
-    def:      w.definition,
-    ex:       w.example_en && w.example_zh ? `${w.example_en}\n${w.example_zh}` : (w.example_en || ''),
-    tag:      (w.tags && w.tags[1]) || `Level ${w.level}`,
-    phonetic: w.phonetic || '',
-    st:       'new',
+    id:         w.id,
+    word:       w.word,
+    pos:        w.pos        || '',
+    def:        w.definition || '',
+    example_en: w.example_en || '',
+    example_zh: w.example_zh || '',
+    ex:         w.example_en && w.example_zh
+                  ? `${w.example_en}\n${w.example_zh}`
+                  : (w.example_en || ''),
+    tag:        (w.tags && w.tags[1]) || `Level ${w.level || 1}`,
+    phonetic:   w.phonetic   || '',
+    level:      w.level      || 1,
+    st:         'new',
   };
 }
 
 async function loadWords() {
   try {
-    const res  = await fetch('/api/words?limit=100');
-    const data = await res.json();
-    WORDS = data.map(normalizeWord);
+    const BATCH = 500;
+    let offset = 0;
+    let all = [];
+    while (true) {
+      const res  = await fetch(`/api/words?limit=${BATCH}&offset=${offset}`);
+      const data = await res.json();
+      if (!Array.isArray(data) || data.length === 0) break;
+      all = all.concat(data.map(normalizeWord));
+      if (data.length < BATCH) break;
+      offset += BATCH;
+    }
+    WORDS = all;
     DICT  = Object.fromEntries(WORDS.map(w => [w.word, { def: w.def, phonetic: w.phonetic }]));
   } catch {
     console.warn('API unavailable, using fallback data');
     WORDS = FALLBACK_WORDS;
     DICT  = Object.fromEntries(WORDS.map(w => [w.word, { def: w.def, phonetic: w.phonetic }]));
   }
+  // 若字庫畫面目前是開啟狀態，立刻重新渲染
+  const libEl = document.getElementById('library');
+  if (libEl && libEl.classList.contains('active')) renderLib();
 }
 
 async function loadArticles() {
@@ -99,6 +116,48 @@ let curIdx = 0, revealed = false, combo = 0, xp = 230, libMode = 'all';
 let pvpYou = 0, pvpFoe = 0, pvpTimer = null, pvpQ = 0, capturedWords = [];
 let PVP_QS = [];
 
+// ── 角色屬性 STATS ────────────────────────────────────────────────
+// STR 力量 = 單字練習量（每次翻牌 rate() +1）
+// INT 智力 = 文章練習量（每次完成閱讀測驗 showQuizResult() +1）
+// FAI 信仰 = 文法教學完成度（Grammar 功能上線後啟用）
+
+const STATS = { str: 0, int: 0, fai: 0 };
+
+function loadStats() {
+  try {
+    const s = JSON.parse(localStorage.getItem('voca_stats') || '{}');
+    STATS.str = s.str || 0;
+    STATS.int = s.int || 0;
+    STATS.fai = s.fai || 0;
+  } catch {}
+}
+
+function saveStats() {
+  localStorage.setItem('voca_stats', JSON.stringify(STATS));
+}
+
+// ── DECK & STUDY-MODE STATE ──────────────────────────────────────
+let STUDY_WORDS   = [];        // 當次練習的單字清單（來自 Deck 或全部）
+let studyReturnTo = 'home';    // 'home' | 'wordcard'
+let customDecks   = [];        // [{id,name,emoji,wordIds:[]}]
+let _pendingCaptureWord = '';  // 捕捉選 Deck 時暫存的單字
+
+const DECK_EMOJIS = ['⭐','🎯','🚀','💡','📝','🔑','💪','🌟','🎓','🏆','🔥','🌈'];
+let selectedDeckEmoji = DECK_EMOJIS[0];
+
+const BUILTIN_DECKS = [
+  {
+    id: 'cap2000', name: '會考2000單字', emoji: '📚',
+    cls: 'deck-cap2000',
+    getWords: () => WORDS,
+  },
+  {
+    id: 'weak', name: '不熟字卡', emoji: '🔥',
+    cls: 'deck-weak',
+    getWords: () => WORDS.filter(w => w.st === 'lrn' || capturedWords.includes(w.word)),
+  },
+];
+
 // ── DAILY ARTICLES STATE ──
 let DAILY_ARTICLES = [];
 let currentDailyArticle = null;
@@ -111,9 +170,14 @@ function goScreen(id, btn) {
   document.getElementById(id).classList.add('active');
   document.querySelectorAll('.bn').forEach(b => b.classList.remove('active'));
   if (btn) btn.classList.add('active');
-  if (id === 'study')   loadCard(curIdx);
-  if (id === 'library') renderLib();
-  if (id === 'reading') switchReadTab(readTab);
+  if (id === 'study') {
+    if (!STUDY_WORDS.length) STUDY_WORDS = WORDS; // fallback
+    loadCard(curIdx);
+  }
+  if (id === 'decks')      renderDecks();
+  if (id === 'flashcard')  loadFlashcard(fcCurrentIdx);
+  if (id === 'library')    renderLib();
+  if (id === 'reading') { switchReadTab(readTab); }
   if (id === 'arena') {
     document.getElementById('arenaLobby').style.display = 'flex';
     document.getElementById('arenaWait').style.display = 'none';
@@ -124,29 +188,47 @@ function goScreen(id, btn) {
 }
 
 // ── PIXEL CHAR ──
-function updateChar(masteredCount) {
+function updateChar() {
+  const { int, fai } = STATS;
+
+  // STR = 已熟悉的單字數（標記為 'ok'），目標 2000 字全滿
+  const str = WORDS.filter(w => w.st === 'ok').length;
+  const wordTotal = WORDS.length || 2000;
+
+  // ── 等級計算（加權分）
+  const score = str + int * 5 + fai * 10;
   const badge = document.getElementById('charBadge');
   const name  = document.getElementById('charName');
-  if      (masteredCount >= 500) { badge.textContent = '閱讀守護者'; name.textContent = 'LV.4 騎士守護者'; }
-  else if (masteredCount >= 100) { badge.textContent = '鐵劍備考者'; name.textContent = 'LV.3 戰士學徒';   }
-  else if (masteredCount >= 20)  { badge.textContent = '勇敢的備考者'; name.textContent = 'LV.2 單字勇者'; }
-  else                           { badge.textContent = '初來的備考者'; name.textContent = 'LV.1 單字學徒'; }
-  const str = Math.min(12 + masteredCount * 0.5, 200);
-  document.getElementById('aStr').textContent = Math.round(str);
-  document.getElementById('fStr').style.width = Math.min(str / 200 * 100, 100) + '%';
+  if      (score >= 500) { badge.textContent = '全能備考者';   name.textContent = 'LV.4 騎士守護者'; }
+  else if (score >= 150) { badge.textContent = '博學備考者';   name.textContent = 'LV.3 戰士學徒';   }
+  else if (score >= 30)  { badge.textContent = '勇敢的備考者'; name.textContent = 'LV.2 單字勇者';   }
+  else                   { badge.textContent = '初來的備考者'; name.textContent = 'LV.1 單字學徒';   }
+
+  // ── STR 力量：已熟悉單字數 / 全部單字數
+  document.getElementById('aStr').textContent = str;
+  document.getElementById('fStr').style.width = Math.min(str / wordTotal * 100, 100) + '%';
+
+  // ── INT 智力：文章練習量（上限 100 填滿）
+  document.getElementById('aInt').textContent = int;
+  document.getElementById('fInt').style.width = Math.min(int / 100 * 100, 100) + '%';
+
+  // ── FAI 信仰：文法完成度（上限 30 填滿，功能上線後啟用）
+  document.getElementById('aFai').textContent = fai;
+  document.getElementById('fFai').style.width = Math.min(fai / 30 * 100, 100) + '%';
 }
 
 // ── STUDY ──
 function loadCard(idx) {
+  if (!STUDY_WORDS.length) return;
   revealed = false;
-  const w = WORDS[idx];
+  const w = STUDY_WORDS[idx];
   document.getElementById('wcWord').textContent = w.word;
   document.getElementById('wcPos').textContent  = w.pos;
   document.getElementById('wcDef').textContent  = w.def;
   document.getElementById('wcEx').textContent   = w.ex;
   document.getElementById('wcTag').textContent  = w.tag;
   document.getElementById('wcNum').textContent  = String(idx + 1).padStart(2, '0');
-  document.getElementById('sessInfo').textContent = `第 ${idx + 1} / ${WORDS.length} 張`;
+  document.getElementById('sessInfo').textContent = `第 ${idx + 1} / ${STUDY_WORDS.length} 張`;
   document.getElementById('wcHint').style.display = 'block';
   document.getElementById('wcDef').style.display  = 'none';
   document.getElementById('wcEx').style.display   = 'none';
@@ -166,7 +248,7 @@ function revealCard() {
 
 function rate(hit) {
   if (!revealed) return;
-  const w = WORDS[curIdx];
+  const w = STUDY_WORDS[curIdx];
   if (hit) {
     combo++; xp += combo >= 3 ? 35 : 20;
     showFb('掌握！', true);
@@ -194,10 +276,8 @@ function rate(hit) {
   const pct = Math.min(xp / 1000 * 100, 100);
   document.getElementById('xpBar').style.width = pct + '%';
   document.getElementById('xpVal').textContent  = `${xp} / 1000`;
-  const mastered = WORDS.filter(w => w.st === 'ok').length;
-  updateChar(mastered);
-  document.getElementById('aStr').textContent = 12 + mastered;
-  curIdx = (curIdx + 1) % WORDS.length;
+  updateChar();
+  curIdx = (curIdx + 1) % STUDY_WORDS.length;
   setTimeout(() => loadCard(curIdx), 280);
 }
 
@@ -323,29 +403,38 @@ function backArena() {
 // ── READING TABS ──
 function switchReadTab(tab) {
   readTab = tab;
-  document.getElementById('rtabCurated').classList.toggle('active', tab === 'curated');
-  document.getElementById('rtabDaily').classList.toggle('active', tab === 'daily');
 
-  const artList    = document.getElementById('artList');
-  const dailyList  = document.getElementById('dailyList');
-  const artContent = document.getElementById('artContent');
-  const quizPanel  = document.getElementById('quizPanel');
-  const quizResult = document.getElementById('quizResult');
+  ['Grammar', 'Curated', 'Daily'].forEach(t =>
+    document.getElementById('rtab' + t).classList.toggle('active', tab === t.toLowerCase())
+  );
+
+  const artList       = document.getElementById('artList');
+  const dailyList     = document.getElementById('dailyList');
+  const wordcardPanel = document.getElementById('wordcardPanel');
+  const grammarPanel  = document.getElementById('grammarPanel');
+  const artContent    = document.getElementById('artContent');
+  const quizPanel     = document.getElementById('quizPanel');
+  const quizResult    = document.getElementById('quizResult');
 
   artContent.classList.remove('show');
   quizPanel.classList.remove('show');
   quizResult.classList.remove('show');
-  quizPanel.style.display = '';
+  quizPanel.style.display  = '';
   quizResult.style.display = '';
 
+  artList.style.display = 'none';
+  dailyList.classList.remove('show');
+  wordcardPanel.classList.remove('show');
+  grammarPanel.classList.remove('show');
+
   if (tab === 'curated') {
-    artList.style.display = 'flex';
-    dailyList.classList.remove('show');
+    artList.style.display = '';
     renderArticles();
-  } else {
-    artList.style.display = 'none';
+  } else if (tab === 'daily') {
     dailyList.classList.add('show');
     renderDailyArticles();
+  } else if (tab === 'grammar') {
+    grammarPanel.classList.add('show');
   }
 }
 
@@ -427,9 +516,10 @@ function renderQuestion() {
   const q = questions[idx];
   document.getElementById('quizProgress').textContent = `第 ${idx + 1} / ${questions.length} 題`;
   document.getElementById('quizQ').textContent = q.question;
-  document.getElementById('quizOpts').innerHTML = q.options.map((opt, i) =>
-    `<button class="quiz-opt" onclick="answerQuestion(${i})">${String.fromCharCode(65 + i)}. ${opt}</button>`
-  ).join('');
+  document.getElementById('quizOpts').innerHTML = q.options.map((opt, i) => {
+    const clean = opt.replace(/^[A-D][.、．]\s*/u, '');
+    return `<button class="quiz-opt" onclick="answerQuestion(${i})">${String.fromCharCode(65 + i)}. ${clean}</button>`;
+  }).join('');
   document.getElementById('quizExplain').classList.add('hidden');
   document.getElementById('quizNextBtn').classList.add('hidden');
 }
@@ -487,6 +577,11 @@ function showQuizResult() {
     pct === 1   ? '全對！英文力量大增！' :
     pct >= 0.6  ? '不錯！繼續加油！' : '再讀一次，你會更強！';
 
+  // INT 智力 +1（完成一篇文章測驗）
+  STATS.int++;
+  saveStats();
+  updateChar();
+
   // 標記已完成
   if (currentDailyArticle) {
     const a = DAILY_ARTICLES.find(x => x.id === currentDailyArticle.id);
@@ -519,7 +614,7 @@ function closeQuizResult() {
 
 // ── READING ──
 function renderArticles() {
-  document.getElementById('artList').style.display = 'flex';
+  document.getElementById('artList').style.display = '';
   document.getElementById('artContent').classList.remove('show');
   const list = document.getElementById('artList');
   list.innerHTML = ARTICLES.map(a => `
@@ -547,7 +642,7 @@ function openArticle(id) {
 
 function closeArticle() {
   document.getElementById('artContent').classList.remove('show');
-  document.getElementById('artList').style.display = 'flex';
+  document.getElementById('artList').style.display = '';
   closeWordPopup();
 }
 
@@ -564,21 +659,221 @@ function closeWordPopup() { document.getElementById('wordPopup').classList.remov
 
 function captureWord() {
   const w = document.getElementById('wordPopup')._word;
-  if (w && !capturedWords.includes(w)) { capturedWords.push(w); showToast(`✓ "${w}" 已加入不熟字卡！`); }
-  else showToast('已在不熟字卡中');
+  if (!w) return;
   closeWordPopup();
+
+  if (customDecks.length === 0) {
+    // 無自建卡 → 直接加入不熟字卡
+    addToCaptured(w);
+  } else {
+    // 有自建卡 → 顯示選擇器
+    _pendingCaptureWord = w;
+    renderDeckPicker(w);
+    openModal('deckPickModal');
+  }
+}
+
+function addToCaptured(w) {
+  if (!capturedWords.includes(w)) {
+    capturedWords.push(w);
+    showToast(`✓ "${w}" 已加入不熟字卡！`);
+  } else {
+    showToast('已在不熟字卡中');
+  }
+}
+
+function renderDeckPicker(word) {
+  const list = document.getElementById('dpickList');
+  // 不熟字卡 option
+  const weakItem = `
+    <div class="dpick-row" onclick="captureToBuiltin();closeModal('deckPickModal')">
+      <span class="dpick-emo">🔥</span>
+      <span class="dpick-name">不熟字卡</span>
+      <span class="dpick-cnt">${capturedWords.length + WORDS.filter(w=>w.st==='lrn').length} 字</span>
+    </div>`;
+  const customItems = customDecks.map(d => {
+    const cnt = d.wordIds.length;
+    return `
+      <div class="dpick-row" onclick="captureToCustom('${d.id}');closeModal('deckPickModal')">
+        <span class="dpick-emo">${d.emoji}</span>
+        <span class="dpick-name">${d.name}</span>
+        <span class="dpick-cnt">${cnt} 字</span>
+      </div>`;
+  }).join('');
+  list.innerHTML = weakItem + customItems;
+}
+
+function captureToBuiltin() {
+  addToCaptured(_pendingCaptureWord);
+  _pendingCaptureWord = '';
+}
+
+function captureToCustom(deckId) {
+  const deck = customDecks.find(d => d.id === deckId);
+  if (!deck) return;
+  const wordObj = WORDS.find(w => w.word === _pendingCaptureWord);
+  if (wordObj && !deck.wordIds.includes(wordObj.id)) {
+    deck.wordIds.push(wordObj.id);
+    saveCustomDecks();
+    showToast(`✓ "${_pendingCaptureWord}" 已加入「${deck.name}」`);
+  } else {
+    showToast('已在此單字卡中');
+  }
+  _pendingCaptureWord = '';
+}
+
+// ── DECK MANAGEMENT ─────────────────────────────────────────────
+
+function loadCustomDecks() {
+  try { customDecks = JSON.parse(localStorage.getItem('voca_custom_decks') || '[]'); }
+  catch { customDecks = []; }
+}
+
+function saveCustomDecks() {
+  localStorage.setItem('voca_custom_decks', JSON.stringify(customDecks));
+}
+
+function renderDecks() {
+  const el = document.getElementById('deckList');
+  if (!el) return;
+
+  const builtinHtml = BUILTIN_DECKS.map(deck => {
+    const words   = deck.getWords();
+    const total   = words.length;
+    const mastered= words.filter(w => w.st === 'ok').length;
+    const pct     = total > 0 ? Math.round(mastered / total * 100) : 0;
+    const canStart= total > 0;
+
+    let chips = `<span class="deck-chip">${total} 字</span>`;
+    if (deck.id === 'cap2000') {
+      chips += `<span class="deck-chip green">已掌握 ${mastered}</span>`;
+    } else {
+      chips += total > 0
+        ? `<span class="deck-chip orange">待複習</span>`
+        : `<span class="deck-chip">答錯後自動加入</span>`;
+    }
+
+    const pbarHtml = deck.id === 'cap2000' ? `
+      <div class="deck-pbar"><div class="deck-pbar-fill" style="width:${pct}%"></div></div>` : '';
+
+    return `
+    <div class="deck-card ${deck.cls}" onclick="${canStart ? `startDeckStudy('${deck.id}')` : ''}">
+      <div class="deck-card-top">
+        <div class="deck-emoji">${deck.emoji}</div>
+        <div class="deck-info">
+          <div class="deck-name">${deck.name}</div>
+          <div class="deck-meta-row">${chips}</div>
+        </div>
+      </div>
+      ${pbarHtml}
+      <div class="deck-foot">
+        <button class="deck-go-btn ${canStart ? '' : 'dim'}"
+          onclick="${canStart ? `event.stopPropagation();startDeckStudy('${deck.id}')` : 'event.stopPropagation()'}">
+          ${canStart ? '開始練習 ▶' : '尚無單字'}
+        </button>
+      </div>
+    </div>`;
+  }).join('');
+
+  const customHtml = customDecks.map(deck => {
+    const deckWords = WORDS.filter(w => deck.wordIds.includes(w.id));
+    const total     = deckWords.length;
+    const canStart  = total > 0;
+    return `
+    <div class="deck-card" onclick="${canStart ? `startDeckStudy('${deck.id}')` : ''}">
+      <div class="deck-card-top">
+        <div class="deck-emoji">${deck.emoji}</div>
+        <div class="deck-info">
+          <div class="deck-name">${deck.name}</div>
+          <div class="deck-meta-row">
+            <span class="deck-chip">${total > 0 ? total + ' 字' : '尚未加入單字'}</span>
+          </div>
+        </div>
+      </div>
+      <div class="deck-foot">
+        <button class="deck-del-btn" onclick="event.stopPropagation();deleteDeck('${deck.id}')">🗑</button>
+        <button class="deck-go-btn ${canStart ? '' : 'dim'}"
+          onclick="${canStart ? `event.stopPropagation();startDeckStudy('${deck.id}')` : 'event.stopPropagation()'}">
+          ${canStart ? '開始 ▶' : '讀文章後捕捉'}
+        </button>
+      </div>
+    </div>`;
+  }).join('');
+
+  const hintHtml = customDecks.length === 0 ? `
+    <div class="deck-hint">點選文章中的單字 →「＋ 加入單字卡」<br>即可捕捉到自建卡片中</div>` : '';
+
+  el.innerHTML = builtinHtml + customHtml + hintHtml;
+}
+
+function openNewDeckModal() {
+  selectedDeckEmoji = DECK_EMOJIS[0];
+  document.getElementById('newDeckNameInput').value = '';
+  document.getElementById('ndmEmojiRow').innerHTML = DECK_EMOJIS.map((e, i) =>
+    `<button class="ndm-emo ${i === 0 ? 'sel' : ''}" onclick="selectDeckEmoji('${e}',this)">${e}</button>`
+  ).join('');
+  openModal('newDeckModal');
+  setTimeout(() => document.getElementById('newDeckNameInput').focus(), 300);
+}
+
+function selectDeckEmoji(emoji, btn) {
+  selectedDeckEmoji = emoji;
+  document.querySelectorAll('.ndm-emo').forEach(b => b.classList.remove('sel'));
+  btn.classList.add('sel');
+}
+
+function confirmNewDeck() {
+  const name = document.getElementById('newDeckNameInput').value.trim();
+  if (!name) { showToast('請輸入單字卡名稱'); return; }
+  if (customDecks.some(d => d.name === name)) { showToast('已有相同名稱的單字卡'); return; }
+  const deck = { id: 'custom_' + Date.now(), name, emoji: selectedDeckEmoji, wordIds: [] };
+  customDecks.push(deck);
+  saveCustomDecks();
+  closeModal('newDeckModal');
+  renderDecks();
+  showToast(`✓ 「${name}」已建立！`);
+}
+
+function deleteDeck(id) {
+  const deck = customDecks.find(d => d.id === id);
+  if (!deck) return;
+  customDecks = customDecks.filter(d => d.id !== id);
+  saveCustomDecks();
+  renderDecks();
+  showToast(`已刪除「${deck.name}」`);
+}
+
+function startDeckStudy(deckId) {
+  // 改為使用新的 flashcard 介面
+  startFlashcard(deckId);
+}
+
+function studyGoBack() {
+  // 永遠返回單字卡頁面
+  goScreen('decks');
+  // 補上 decks nav active 狀態
+  document.querySelectorAll('.bn').forEach(b => b.classList.remove('active'));
+  const decksBns = document.querySelectorAll('#decks .bnav .bn');
+  if (decksBns[1]) decksBns[1].classList.add('active');
 }
 
 // ── LIBRARY ──
 function renderLib() {
   const arr = libMode === 'weak' ? WORDS.filter(w => w.st === 'lrn') : WORDS;
+  if (arr.length === 0) {
+    document.getElementById('libList').innerHTML =
+      libMode === 'weak'
+        ? `<div style="text-align:center;padding:40px;color:var(--gray);font-family:Nunito;font-weight:700">目前沒有不熟的單字 👏</div>`
+        : `<div style="text-align:center;padding:40px;color:var(--gray);font-family:Nunito;font-weight:700">載入中…</div>`;
+    return;
+  }
   document.getElementById('libList').innerHTML = arr.map((w, i) => `
-    <div class="wrow">
+    <div class="wrow" onclick="openWordDetail(${w.id})">
       <div class="wr-num">${String(i + 1).padStart(2, '0')}</div>
       <div class="wr-dot wd-${w.st}"></div>
       <div class="wr-en">${w.word}</div>
-      <div class="wr-zh">${w.def}</div>
-      <div class="wr-spk" onclick="speak('${w.word}')">🔊</div>
+      <div class="wr-zh">${w.def || '—'}</div>
+      <div class="wr-spk" onclick="event.stopPropagation();speak('${w.word}')">🔊</div>
     </div>`).join('');
 }
 
@@ -595,6 +890,84 @@ function speak(w) {
     u.lang = 'en-US'; u.rate = .85;
     speechSynthesis.speak(u);
   }
+}
+
+// ── WORD DETAIL POPUP ────────────────────────────────────────────
+
+let _wdWordId = null;
+
+function openWordDetail(wordId) {
+  const w = WORDS.find(x => x.id === wordId);
+  if (!w) return;
+  _wdWordId = wordId;
+
+  // 詞性顏色
+  const posColors = {
+    '名詞':'#4488ff','動詞':'#3db870','形容詞':'#ff8c33','副詞':'#cc88ff',
+    '連接詞':'#ffcc44','介系詞':'#88ccff','代名詞':'#ff7070',
+    '助動詞':'#66bbaa','感嘆詞':'#ffaa44','限定詞':'#aaaaff','數詞':'#cccccc',
+  };
+  const posColor = posColors[w.pos] || 'var(--gray)';
+
+  document.getElementById('wdWord').textContent    = w.word;
+  document.getElementById('wdPhon').textContent    = w.phonetic   || '—';
+  document.getElementById('wdPos').textContent     = w.pos        || '—';
+  document.getElementById('wdPos').style.background= `${posColor}22`;
+  document.getElementById('wdPos').style.color     = posColor;
+  document.getElementById('wdDef').textContent     = w.def        || '（中文解釋補充中）';
+  document.getElementById('wdLvl').textContent     = `Level ${w.level || 1}`;
+
+  // 例句
+  const hasEx = !!(w.example_en || w.example_zh);
+  const exWrap = document.getElementById('wdExWrap');
+  exWrap.style.display = hasEx ? 'block' : 'none';
+  document.getElementById('wdExEn').textContent = w.example_en || '';
+  document.getElementById('wdExZh').textContent = w.example_zh || '';
+
+  // 狀態點
+  document.getElementById('wdDot').className = `wr-dot wd-${w.st} wdot-lg`;
+
+  // 標記按鈕
+  _updateWdMarkBtn(w);
+
+  document.getElementById('wordDetailOverlay').classList.add('show');
+}
+
+function closeWordDetail(e) {
+  if (e && e.currentTarget !== e.target) return;
+  document.getElementById('wordDetailOverlay').classList.remove('show');
+}
+
+function _updateWdMarkBtn(w) {
+  const btn = document.getElementById('wdMarkBtn');
+  if (w.st === 'ok') {
+    btn.textContent = '🏆 已掌握';
+    btn.className   = 'wda-btn wda-ok';
+  } else if (w.st === 'lrn') {
+    btn.textContent = '✓ 在不熟字卡中';
+    btn.className   = 'wda-btn wda-done';
+  } else {
+    btn.textContent = '❌ 加入不熟字卡';
+    btn.className   = 'wda-btn wda-mark';
+  }
+}
+
+function toggleWordMark() {
+  const w = WORDS.find(x => x.id === _wdWordId);
+  if (!w) return;
+  if (w.st === 'lrn') {
+    w.st = 'new'; w._correctStreak = 0;
+    const idx = capturedWords.indexOf(w.word);
+    if (idx > -1) capturedWords.splice(idx, 1);
+  } else {
+    w.st = 'lrn'; w._correctStreak = 0;
+    if (!capturedWords.includes(w.word)) capturedWords.push(w.word);
+  }
+  _updateWdMarkBtn(w);
+  if (typeof syncWordStatus !== 'undefined') syncWordStatus(w.id, w.st, w._correctStreak || 0);
+  // 同步更新字庫列表的狀態點
+  const dot = document.querySelector(`.wrow[onclick*="openWordDetail(${_wdWordId})"] .wr-dot`);
+  if (dot) dot.className = `wr-dot wd-${w.st}`;
 }
 
 // ── TOAST ──
@@ -614,6 +987,9 @@ document.addEventListener('click', e => {
 
 // ── INIT ──
 (async function init() {
+  loadCustomDecks();
+  loadStats();
+
   const loggedIn = (typeof initAuth !== 'undefined') ? await initAuth() : false;
   if (!loggedIn && typeof showAuthOverlay !== 'undefined') showAuthOverlay();
 
@@ -621,12 +997,13 @@ document.addEventListener('click', e => {
 
   if (typeof loadUserWordStatus !== 'undefined') await loadUserWordStatus();
 
-  PVP_QS = buildPvpQuestions(WORDS, 5);
+  STUDY_WORDS = WORDS; // 預設全部單字
+  PVP_QS      = buildPvpQuestions(WORDS, 5);
 
   loadCard(0);
   renderLib();
   renderArticles();
-  updateChar(0);
+  updateChar();
 })();
 
 function buildPvpQuestions(words, count) {
@@ -641,4 +1018,141 @@ function buildPvpQuestions(words, count) {
     const opts = [...wrong, w.def].sort(() => Math.random() - 0.5);
     return { q: `${w.word} 的中文？`, opts, ans: opts.indexOf(w.def) };
   });
+}
+
+// ── FLASHCARD（卡片播放介面） ────────────────────────────────────
+let fcCurrentIdx = 0;
+let fcFlipped = false;
+let fcMarked = new Set();
+
+function startFlashcard(deckId) {
+  const builtin = BUILTIN_DECKS.find(d => d.id === deckId);
+  if (builtin) {
+    STUDY_WORDS = builtin.getWords();
+  } else {
+    const custom = customDecks.find(d => d.id === deckId);
+    if (!custom || !custom.wordIds.length) { showToast('⚠ 此卡片無單字'); return; }
+    STUDY_WORDS = WORDS.filter(w => custom.wordIds.includes(w.id));
+  }
+  if (!STUDY_WORDS.length) { showToast('⚠ 此卡片無單字'); return; }
+  fcCurrentIdx = 0;
+  fcFlipped = false;
+  fcMarked.clear();
+  loadFlashcard(0);
+  updateRecordsList();
+  goScreen('flashcard');
+}
+
+function loadFlashcard(idx) {
+  if (!STUDY_WORDS.length) return;
+  const w = STUDY_WORDS[idx];
+  document.getElementById('fcWord').textContent = w.word;
+  document.getElementById('fcPos').textContent = w.pos || 'n.';
+  document.getElementById('fcPhonetic').textContent = w.phonetic || '';
+  document.getElementById('fcDefinition').textContent = w.def || '未知';
+  document.getElementById('fcBackPhonetic').textContent = w.phonetic || '';
+  document.getElementById('fcExampleEn').textContent = w.example_en || 'No example.';
+  document.getElementById('fcExampleZh').textContent = w.example_zh || '';
+  document.getElementById('fcProgress').textContent = `${idx + 1} / ${STUDY_WORDS.length}`;
+  const pct = ((idx + 1) / STUDY_WORDS.length) * 100;
+  document.getElementById('fcProgressFill').style.width = pct + '%';
+  document.getElementById('fcCard').classList.remove('flipped');
+  fcFlipped = false;
+  updateFcMarkBtn();
+  updateRecordsList();
+}
+
+function flipCard() {
+  const card = document.getElementById('fcCard');
+  card.classList.toggle('flipped');
+  fcFlipped = !fcFlipped;
+}
+
+function fcNextCard() {
+  fcCurrentIdx = (fcCurrentIdx + 1) % STUDY_WORDS.length;
+  loadFlashcard(fcCurrentIdx);
+}
+
+function fcPrevCard() {
+  fcCurrentIdx = (fcCurrentIdx - 1 + STUDY_WORDS.length) % STUDY_WORDS.length;
+  loadFlashcard(fcCurrentIdx);
+}
+
+function fcToggleMark() {
+  const w = STUDY_WORDS[fcCurrentIdx];
+  if (fcMarked.has(w.id)) {
+    fcMarked.delete(w.id);
+  } else {
+    fcMarked.add(w.id);
+  }
+  updateFcMarkBtn();
+  updateRecordsList();
+}
+
+function updateFcMarkBtn() {
+  const w = STUDY_WORDS[fcCurrentIdx];
+  const btn = document.getElementById('fcMarkBtn');
+  const icon = document.getElementById('fcMarkIcon');
+  if (fcMarked.has(w.id)) {
+    btn.classList.add('marked');
+    icon.textContent = '✕';
+  } else {
+    btn.classList.remove('marked');
+    icon.textContent = '☆';
+  }
+}
+
+function fcPlayAudio() {
+  const w = STUDY_WORDS[fcCurrentIdx];
+  const utterance = new SpeechSynthesisUtterance(w.word);
+  utterance.rate = 0.9;
+  speechSynthesis.speak(utterance);
+}
+
+function switchFlashcardMode(mode) {
+  // 標示按鈕狀態
+  document.querySelectorAll('.fc-mode-btn').forEach(b => b.classList.remove('fc-mode-active'));
+  event.target.closest('.fc-mode-btn').classList.add('fc-mode-active');
+  // TODO：實作各模式邏輯（測驗、聽力、速度）
+  showToast(`🎯 ${['flip','quiz','listen','speed'][['flip','quiz','listen','speed'].indexOf(mode)]} 模式`);
+}
+
+function showFcSettings() {
+  showToast('⚙ 設置（即將上線）');
+}
+
+function showSettings() {
+  showToast('⚙ 應用設置（即將上線）');
+}
+
+function updateRecordsList() {
+  if (!STUDY_WORDS || STUDY_WORDS.length === 0) return;
+
+  const learnedList = STUDY_WORDS.filter(w => fcMarked.has(w.id));
+  const unlearnedList = STUDY_WORDS.filter(w => !fcMarked.has(w.id));
+
+  document.getElementById('countLearned').textContent = learnedList.length;
+  document.getElementById('countUnlearned').textContent = unlearnedList.length;
+
+  const currentTab = document.querySelector('.fc-record-tab.active')?.id || 'tabLearned';
+  const items = currentTab === 'tabLearned' ? learnedList : unlearnedList;
+
+  const listHtml = items.map(w => `
+    <div class="fc-record-item" onclick="fcCurrentIdx = ${STUDY_WORDS.indexOf(w)}; loadFlashcard(fcCurrentIdx)">
+      <span class="fc-record-word">${w.word}</span>
+      <span class="fc-record-status">${w.def?.substring(0, 20)}...</span>
+    </div>
+  `).join('');
+
+  document.getElementById('fcRecordsList').innerHTML = listHtml || '<div style="padding: 20px; text-align: center; color: #999;">沒有單字</div>';
+}
+
+function switchRecordTab(btn, tabName) {
+  document.querySelectorAll('.fc-record-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  updateRecordsList();
+}
+
+function openAddWordModal() {
+  showToast('➕ 新增單字（即將上線）');
 }

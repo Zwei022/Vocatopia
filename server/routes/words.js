@@ -4,7 +4,7 @@ const supabase = require('../db/supabase');
 
 // GET /api/words?limit=20&offset=0&tag=cap_2000
 router.get('/', async (req, res) => {
-  const limit  = Math.min(parseInt(req.query.limit)  || 20, 100);
+  const limit  = Math.min(parseInt(req.query.limit)  || 20, 2000);
   const offset = parseInt(req.query.offset) || 0;
   const tag    = req.query.tag;
 
