@@ -154,6 +154,299 @@
       <button class="bn" onclick="goScreen('arena',this)"><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
       <button class="bn" onclick="goScreen('decks',this)"><div class="bn-ico">🃏</div><div class="bn-lbl">單字卡</div></button>
       <button class="bn active" onclick="goScreen('home',this)"><div class="bn-dot"></div><div class="bn-ico">🏠</div><div class="bn-lbl">首頁</div></button>
+      <button class="bn" onclick="goScreen('reading',this)"><div class="bn-ico">📜</div><div class="bn-lbl">閱覽室</div></button>
+      <button class="bn" onclick="goScreen('library',this)"><div class="bn-ico">📚</div><div class="bn-lbl">字庫</div></button>
+    </div>
+  </div>
+
+  <!-- ══ STUDY ══ -->
+  <div id="study" class="screen">
+    <div class="study-top">
+      <button class="back-btn" id="studyBackBtn" onclick="studyGoBack()">◀ 返回</button>
+      <div class="sess-info" id="sessInfo">第 1 / 10 張</div>
+      <div class="combo-pill">🔥 <span id="comboNum">0</span></div>
+    </div>
+    <div class="xp-wrap">
+      <div class="xp-head"><span>經驗值 XP</span><span id="xpVal">230 / 1000</span></div>
+      <div class="xp-track"><div class="xp-bar" id="xpBar"></div></div>
+    </div>
+    <div class="card-area">
+      <div class="wcard" id="wcard" onclick="revealCard()">
+        <div class="wc-corner wc-left" id="wcNum">01</div>
+        <div class="wc-corner wc-right" id="wcTag">會考必考</div>
+        <div class="wc-word" id="wcWord">abandon</div>
+        <div class="wc-pos" id="wcPos">動詞</div>
+        <div class="wc-hint" id="wcHint">▼ 點擊翻牌</div>
+        <div class="wc-def" id="wcDef">放棄；遺棄</div>
+        <div class="wc-ex" id="wcEx"></div>
+      </div>
+    </div>
+    <div class="combo-area"><div class="combo-txt" id="comboTxt">COMBO ×3</div></div>
+    <div class="act-row" id="actRow" style="opacity:.3;pointer-events:none">
+      <button class="act-btn btn-miss" onclick="rate(false)"><div class="ai">✕</div>不熟悉</button>
+      <button class="act-btn btn-hit"  onclick="rate(true)"><div class="ai">✓</div>已熟悉</button>
+    </div>
+    <div class="bnav">
+      <button class="bn active" onclick="goScreen('arena',this)"><div class="bn-dot"></div><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
+      <button class="bn" onclick="goScreen('decks',this)"><div class="bn-ico">🃏</div><div class="bn-lbl">單字卡</div></button>
+      <button class="bn" onclick="goScreen('home',this)"><div class="bn-ico">🏠</div><div class="bn-lbl">首頁</div></button>
+      <button class="bn" onclick="goScreen('reading',this)"><div class="bn-ico">📜</div><div class="bn-lbl">閱覽室</div></button>
+      <button class="bn" onclick="goScreen('library',this)"><div class="bn-ico">📚</div><div class="bn-lbl">字庫</div></button>
+    </div>
+  </div>
+
+  <!-- ══ DECKS（單字卡）══ -->
+  <div id="decks" class="screen">
+    <div class="deck-screen-head">
+      <div class="deck-screen-title">單字卡</div>
+      <button class="deck-add-btn" onclick="openNewDeckModal()">＋ 新增</button>
+    </div>
+    <div class="deck-list" id="deckList" style="padding-top:4px"></div>
+    <div class="bnav">
+      <button class="bn" onclick="goScreen('arena',this)"><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
+      <button class="bn active" onclick="goScreen('decks',this)"><div class="bn-dot"></div><div class="bn-ico">🃏</div><div class="bn-lbl">單字卡</div></button>
+      <button class="bn" onclick="goScreen('home',this)"><div class="bn-ico">🏠</div><div class="bn-lbl">首頁</div></button>
+      <button class="bn" onclick="goScreen('reading',this)"><div class="bn-ico">📜</div><div class="bn-lbl">閱覽室</div></button>
+      <button class="bn" onclick="goScreen('library',this)"><div class="bn-ico">📚</div><div class="bn-lbl">字庫</div></button>
+    </div>
+  </div>
+
+  <!-- ══ FLASHCARD（卡片播放） ══ -->
+  <div id="flashcard" class="screen fc-screen">
+    <!-- 頂部進度 -->
+    <div class="fc-header">
+      <div class="fc-deck-info">
+        <span class="fc-deck-name" id="fcDeckName">會考2000單字</span>
+        <span class="fc-progress" id="fcProgress">1 / 2000</span>
+      </div>
+      <button class="fc-close-btn" onclick="goScreen('decks')">✕</button>
+    </div>
+
+    <!-- 側邊模式欄 -->
+    <div class="fc-modes">
+      <button class="fc-mode-btn fc-mode-active" onclick="switchFlashcardMode('flip')" title="翻牌模式">
+        <div class="fc-mode-icon">🃏</div>
+        <div class="fc-mode-label">翻牌</div>
+      </button>
+      <button class="fc-mode-btn" onclick="switchFlashcardMode('quiz')" title="測驗模式">
+        <div class="fc-mode-icon">✍</div>
+        <div class="fc-mode-label">測驗</div>
+      </button>
+      <button class="fc-mode-btn" onclick="switchFlashcardMode('listen')" title="聽力模式">
+        <div class="fc-mode-icon">🔊</div>
+        <div class="fc-mode-label">聽力</div>
+      </button>
+      <button class="fc-mode-btn" onclick="switchFlashcardMode('speed')" title="速度賽">
+        <div class="fc-mode-icon">⚡</div>
+        <div class="fc-mode-label">速度</div>
+      </button>
+    </div>
+
+    <!-- 主卡片區域 -->
+    <div class="fc-card-container">
+      <div class="fc-card" id="fcCard" onclick="flipCard()">
+        <!-- 正面：英文單字 -->
+        <div class="fc-card-front">
+          <div class="fc-top-info">
+            <span class="fc-pos" id="fcPos">n.</span>
+            <span class="fc-phonetic" id="fcPhonetic">/ɪˈɡzæmpəl/</span>
+          </div>
+          <div class="fc-word" id="fcWord">Example</div>
+          <div class="fc-hint">點擊翻轉</div>
+        </div>
+        <!-- 背面：中文解釋 -->
+        <div class="fc-card-back">
+          <div class="fc-back-phonetic" id="fcBackPhonetic">/ɪˈɡzæmpəl/</div>
+          <div class="fc-definition" id="fcDefinition">例子，例如</div>
+          <div class="fc-examples">
+            <div class="fc-example-label">例句</div>
+            <div class="fc-example-en" id="fcExampleEn">For example, cats are animals.</div>
+            <div class="fc-example-zh" id="fcExampleZh">例如，貓是動物。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部控制欄 -->
+    <div class="fc-controls">
+      <button class="fc-btn fc-btn-skip" onclick="fcPrevCard()" title="上一個">◀</button>
+      <button class="fc-btn fc-btn-mark" id="fcMarkBtn" onclick="fcToggleMark()" title="標記（✕不熟悉）">
+        <span id="fcMarkIcon">☆</span>
+      </button>
+      <button class="fc-btn fc-btn-play" onclick="fcPlayAudio()" title="播放發音">🔊</button>
+      <button class="fc-btn fc-btn-next" onclick="fcNextCard()" title="下一個">▶</button>
+      <button class="fc-btn fc-btn-settings" onclick="showFcSettings()" title="設置">⚙</button>
+    </div>
+
+    <!-- 進度條 -->
+    <div class="fc-progress-bar">
+      <div class="fc-progress-fill" id="fcProgressFill" style="width: 0%"></div>
+    </div>
+
+    <!-- 學習紀錄區 -->
+    <div class="fc-records-section">
+      <div class="fc-records-header">
+        <div class="fc-records-title">學習紀錄</div>
+        <button class="fc-records-add-btn" onclick="openAddWordModal()" title="新增單字">➕ 新增</button>
+      </div>
+
+      <div class="fc-records-tabs">
+        <button class="fc-record-tab active" onclick="switchRecordTab(this, 'learned')" id="tabLearned">
+          ✓ 已學習 <span class="fc-tab-count" id="countLearned">0</span>
+        </button>
+        <button class="fc-record-tab" onclick="switchRecordTab(this, 'unlearned')" id="tabUnlearned">
+          ✕ 未學習 <span class="fc-tab-count" id="countUnlearned">0</span>
+        </button>
+      </div>
+
+      <div class="fc-records-list" id="fcRecordsList">
+        <!-- 動態生成的單字列表 -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ ARENA ══ -->
+  <div id="arena" class="screen">
+    <div class="arena-head">
+      <div class="arena-title">⚔ 競技場</div>
+      <div class="arena-sub">下課隨時隨地，原地當場開尬</div>
+    </div>
+    <div id="arenaLobby">
+      <button class="arena-btn ab-create" onclick="createRoom()">➕ 建立對決房間</button>
+      <div class="ab-divider">— OR —</div>
+      <button class="arena-btn ab-join" onclick="openModal('joinModal')">🔑 輸入房號加入</button>
+    </div>
+    <div id="arenaWait">
+      <div style="font-size:12px;color:var(--gray);font-family:Nunito;font-weight:700;letter-spacing:2px;text-transform:uppercase">你的房號</div>
+      <div class="room-code-big" id="roomCodeBig">— — —</div>
+      <button class="copy-btn" onclick="copyRoom()">📋 複製房號</button>
+      <div class="vs-row">
+        <div class="player-slot slot-ready"><div class="slot-name">你</div><div class="slot-status ok">✓ 已就緒</div></div>
+        <div class="vs-label">VS</div>
+        <div class="player-slot"><div class="slot-name">等待中</div><div class="slot-status wait-dots">⏳ …</div></div>
+      </div>
+      <button class="arena-btn ab-create" style="margin-top:8px" onclick="startBattle()">模擬開始對決 ▶</button>
+    </div>
+    <div id="arenaBattle">
+      <div class="pvp-bars">
+        <div class="hp-row"><div class="hp-name you">你</div><div class="hp-track"><div class="hp-fill hp-you" id="hpYou" style="width:50%"></div></div><div class="hp-score" id="scYou" style="color:var(--green3)">0</div></div>
+        <div class="hp-row" style="flex-direction:row-reverse"><div class="hp-name foe">對手</div><div class="hp-track"><div class="hp-fill hp-foe" id="hpFoe" style="width:50%;margin-left:auto"></div></div><div class="hp-score" id="scFoe" style="color:#ff7070">0</div></div>
+      </div>
+      <div class="pvp-q">
+        <div class="pvp-timer" id="pvpTimer">10</div>
+        <div class="pvp-question" id="pvpQ">abandon 的中文意思是？</div>
+        <div class="pvp-opts" id="pvpOpts"></div>
+      </div>
+    </div>
+    <div class="bnav" id="arenaBnav">
+      <button class="bn active" onclick="goScreen('arena',this)"><div class="bn-dot"></div><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
+      <button class="bn" onclick="goScreen('decks',this)"><div class="bn-ico">🃏</div><div class="bn-lbl">單字卡</div></button>
+      <button class="bn" onclick="goScreen('home',this)"><div class="bn-ico">🏠</div><div class="bn-lbl">首頁</div></button>
+      <button class="bn" onclick="goScreen('reading',this)"><div class="bn-ico">📜</div><div class="bn-lbl">閱覽室</div></button>
+      <button class="bn" onclick="goScreen('library',this)"><div class="bn-ico">📚</div><div class="bn-lbl">字庫</div></button>
+    </div>
+  </div>
+
+  <!-- ══ READING ══ -->
+  <div id="reading" class="screen">
+    <div class="read-head" id="readHead">
+      <div class="read-title">閱覽室</div>
+      <div class="read-tabs">
+        <button class="rtab" id="rtabGrammar" onclick="switchReadTab('grammar')">文法教學</button>
+        <button class="rtab active" id="rtabCurated" onclick="switchReadTab('curated')">精選文章</button>
+        <button class="rtab" id="rtabDaily" onclick="switchReadTab('daily')">每日五篇 <span class="rtab-badge" id="dailyBadge">NEW</span></button>
+      </div>
+    </div>
+    <div class="articles-scroll" id="artList"></div>
+    <div class="daily-list" id="dailyList"></div>
+    <!-- 單字卡 tab 已移至獨立 #decks 頁面 -->
+    <div class="read-panel" id="wordcardPanel" style="display:none"></div>
+    <!-- 文法教學 tab -->
+    <div class="read-panel" id="grammarPanel">
+      <div class="rp-empty">
+        <div class="rp-icon">📐</div>
+        <div class="rp-title">文法教學</div>
+        <div class="rp-desc">會考核心文法逐一擊破<br>每週一個主題，深度解析</div>
+        <div class="rp-badge">即將上線</div>
+      </div>
+    </div>
+    <div class="art-content" id="artContent">
+      <button class="art-back" id="artBackBtn" onclick="closeArticle()">◀ 返回文章列表</button>
+      <div class="art-h" id="artTitle"></div>
+      <div class="art-body-text" id="artBody"></div>
+      <button class="quiz-start-btn hidden" id="quizStartBtn" onclick="startQuiz()">📝 開始作答</button>
+    </div>
+    <!-- QUIZ PANEL -->
+    <div class="quiz-panel hidden" id="quizPanel">
+      <div class="quiz-head">
+        <button class="art-back" onclick="closeQuiz()">◀ 返回文章</button>
+        <div class="quiz-progress" id="quizProgress">第 1 / 3 題</div>
+      </div>
+      <div class="quiz-q" id="quizQ"></div>
+      <div class="quiz-opts" id="quizOpts"></div>
+      <div class="quiz-explain hidden" id="quizExplain"></div>
+      <button class="quiz-next hidden" id="quizNextBtn" onclick="nextQuestion()">下一題 →</button>
+    </div>
+    <!-- QUIZ RESULT -->
+    <div class="quiz-result hidden" id="quizResult">
+      <div class="qr-icon" id="qrIcon">🏆</div>
+      <div class="qr-score" id="qrScore">3 / 3</div>
+      <div class="qr-msg" id="qrMsg">全對！英文力量大增！</div>
+      <button class="quiz-start-btn" onclick="closeQuizResult()">返回文章列表</button>
+    </div>
+    <div class="bnav">
+      <button class="bn" onclick="goScreen('arena',this)"><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
+      <button class="bn" onclick="goScreen('decks',this)"><div class="bn-ico">🃏</div><div class="bn-lbl">單字卡</div></button>
+      <button class="bn" onclick="goScreen('home',this)"><div class="bn-ico">🏠</div><div class="bn-lbl">首頁</div></button>
+      <button class="bn active" onclick="goScreen('reading',this)"><div class="bn-dot"></div><div class="bn-ico">📜</div><div class="bn-lbl">閱覽室</div></button>
+      <button class="bn" onclick="goScreen('library',this)"><div class="bn-ico">📚</div><div class="bn-lbl">字庫</div></button>
+    </div>
+  </div>
+
+  <!-- ══ LIBRARY ══ -->
+  <div id="library" class="screen">
+    <div class="lib-head">
+      <div class="lib-title">大書庫</div>
+      <div class="lib-sub">會考 2000 字 · 點擊 🔊 發音</div>
+    </div>
+    <div class="lib-tabs">
+      <button class="ltab active" onclick="libSwitch(this,'all')">官方 2000 字</button>
+      <button class="ltab" onclick="libSwitch(this,'weak')">不熟錯題本</button>
+    </div>
+    <div class="lib-list" id="libList"></div>
+    <div class="bnav">
+      <button class="bn" onclick="goScreen('arena',this)"><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
+      <button class="bn" onclick="goScreen('decks',this)"><div class="bn-ico">🃏</div><div class="bn-lbl">單字卡</div></button>
+      <button class="bn" onclick="goScreen('home',this)"><div class="bn-ico">🏠</div><div class="bn-lbl">首頁</div></button>
+      <button class="bn" onclick="goScreen('reading',this)"><div class="bn-ico">📜</div><div class="bn-lbl">閱覽室</div></button>
+      <button class="bn active" onclick="goScreen('library',this)"><div class="bn-dot"></div><div class="bn-ico">📚</div><div class="bn-lbl">字庫</div></button>
+    </div>
+  </div>
+
+</div><!-- /phone -->
+
+<!-- AUTH OVERLAY -->
+<div class="auth-overlay" id="authOverlay">
+  <div id="authCard" class="auth-card">
+    <div class="auth-logo">VOCATOPIA</div>
+    <div class="auth-subtitle">單字烏托邦</div>
+    <div class="auth-tabs">
+      <button class="auth-tab active" onclick="switchAuthTab('login')">登入</button>
+      <button class="auth-tab" onclick="switchAuthTab('register')">建立角色</button>
+    </div>
+    <form id="loginForm" onsubmit="handleLogin(event)">
+      <input class="auth-input" id="loginEmail" type="email" placeholder="電子信箱" required autocomplete="email">
+      <input class="auth-input" id="loginPassword" type="password" placeholder="密碼" required autocomplete="current-password">
+      <button type="submit" class="auth-submit">登入戰場</button>
+    </form>
+    <form id="registerForm" class="hidden" onsubmit="handleRegister(event)">
+      <input class="auth-input" id="regUsername" type="text" placeholder="稱號（暱稱）" required maxlength="20">
+      <input class="auth-input" id="regEmail" type="email" placeholder="電子信箱" required autocomplete="email">
+      <input class="auth-input" id="regPassword" type="password" placeholder="密碼（至少 6 字元）" required autocomplete="new-password">
+      <button type="submit" class="auth-submit">建立角色</button>
+    </form>
+    <div class="auth-error" id="authError"></div>
+    <button class="auth-guest" onclick="continueAsGuest()">訪客體驗（進度不儲存）</button>
   </div>
 </div>
 
