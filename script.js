@@ -788,7 +788,7 @@ function renderDecks() {
   const customHtml = customDecks.map(deck => {
     const deckWords = WORDS.filter(w => deck.wordIds.includes(w.id));
     const total     = deckWords.length;
-    const canStart  = total > 0;
+    const canStart  = true;
     return `
     <div class="deck-card" onclick="${canStart ? `startDeckStudy('${deck.id}')` : ''}">
       <div class="deck-card-top">
@@ -804,7 +804,7 @@ function renderDecks() {
         <button class="deck-del-btn" onclick="event.stopPropagation();deleteDeck('${deck.id}')">🗑</button>
         <button class="deck-go-btn ${canStart ? '' : 'dim'}"
           onclick="${canStart ? `event.stopPropagation();startDeckStudy('${deck.id}')` : 'event.stopPropagation()'}">
-          ${canStart ? '開始 ▶' : '讀文章後捕捉'}
+          開始練習 ▶
         </button>
       </div>
     </div>`;
@@ -1143,8 +1143,8 @@ function showSettings() {
 function updateRecordsList() {
   if (!STUDY_WORDS || STUDY_WORDS.length === 0) return;
 
-  const learnedList = STUDY_WORDS.filter(w => fcMarked.has(w.id));
-  const unlearnedList = STUDY_WORDS.filter(w => !fcMarked.has(w.id));
+  const learnedList = STUDY_WORDS.filter(w => fcMarked.has(w.id) && w.id !== 'empty_template');
+  const unlearnedList = STUDY_WORDS.filter(w => !fcMarked.has(w.id) && w.id !== 'empty_template');
 
   document.getElementById('countLearned').textContent = learnedList.length;
   document.getElementById('countUnlearned').textContent = unlearnedList.length;
