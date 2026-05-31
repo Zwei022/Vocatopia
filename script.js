@@ -1,3 +1,17 @@
+// 空白單字卡範本
+const EMPTY_WORD_TEMPLATE = {
+  id: 'empty_template',
+  word: '',
+  pos: '',
+  phonetic: '',
+  definition: '',
+  example_en: '',
+  example_zh: '',
+  frequency_rank: 0,
+  level: 0,
+  tags: ['custom']
+};
+
 // ── PIXEL CHARACTER ──
 (function drawChar() {
   const c = document.getElementById('charCanvas'), ctx = c.getContext('2d');
@@ -1027,7 +1041,7 @@ function startFlashcard(deckId) {
   } else {
     const custom = customDecks.find(d => d.id === deckId);
     if (!custom) { showToast('找不到卡片'); return; }
-    STUDY_WORDS = WORDS.filter(w => custom.wordIds.includes(w.id));
+    STUDY_WORDS = custom.wordIds.length > 0 ? WORDS.filter(w => custom.wordIds.includes(w.id)) : [EMPTY_WORD_TEMPLATE];
   }
   // 允許進入空卡組
   fcCurrentIdx = 0;
