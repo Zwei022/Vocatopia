@@ -170,10 +170,6 @@ function goScreen(id, btn) {
   document.getElementById(id).classList.add('active');
   document.querySelectorAll('.bn').forEach(b => b.classList.remove('active'));
   if (btn) btn.classList.add('active');
-  if (id === 'study') {
-    if (!STUDY_WORDS.length) STUDY_WORDS = WORDS; // fallback
-    loadCard(curIdx);
-  }
   if (id === 'decks')      renderDecks();
   if (id === 'flashcard')  loadFlashcard(fcCurrentIdx);
   if (id === 'library')    renderLib();
