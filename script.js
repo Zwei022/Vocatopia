@@ -826,8 +826,7 @@ function confirmNewDeck() {
   customDecks.push(deck);
   saveCustomDecks();
   closeModal('newDeckModal');
-  renderDecks();
-  showToast(`✓ 「${name}」已建立！`);
+  setTimeout(() => startFlashcard(deck.id), 300);
 }
 
 function deleteDeck(id) {
@@ -1027,10 +1026,10 @@ function startFlashcard(deckId) {
     STUDY_WORDS = builtin.getWords();
   } else {
     const custom = customDecks.find(d => d.id === deckId);
-    if (!custom || !custom.wordIds.length) { showToast('⚠ 此卡片無單字'); return; }
+    if (!custom) { showToast('找不到卡片'); return; }
     STUDY_WORDS = WORDS.filter(w => custom.wordIds.includes(w.id));
   }
-  if (!STUDY_WORDS.length) { showToast('⚠ 此卡片無單字'); return; }
+  // 允許進入空卡組
   fcCurrentIdx = 0;
   fcFlipped = false;
   fcMarked.clear();
