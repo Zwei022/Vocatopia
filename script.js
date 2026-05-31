@@ -1039,7 +1039,13 @@ function startFlashcard(deckId) {
 }
 
 function loadFlashcard(idx) {
-  if (!STUDY_WORDS.length) return;
+  if (!STUDY_WORDS.length) {
+    document.getElementById('fcWord').textContent = '尚無單字';
+    document.getElementById('fcProgress').textContent = '0 / 0';
+    document.getElementById('fcProgressFill').style.width = '0%';
+    document.getElementById('fcCard').classList.remove('flipped');
+    return;
+  }
   const w = STUDY_WORDS[idx];
   document.getElementById('fcWord').textContent = w.word;
   document.getElementById('fcPos').textContent = w.pos || 'n.';
