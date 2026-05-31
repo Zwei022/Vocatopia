@@ -496,7 +496,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 @media (min-width: 640px) {
   .wdetail-overlay { align-items: center; }
   .wdetail-card { border-radius: var(--r2); max-width: 460px; }
-  html, body { overflow: hidden; }
+  html, body { overflow: visible; }
   body { align-items: center; }
 
   .phone {
@@ -518,10 +518,10 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     overflow-x: visible;
-    overflow-y: auto;
+    
     padding: 4px 20px 12px;
     height: auto;
-    flex: 1;
+    
     min-height: 0;
     align-content: start;
   }
@@ -907,7 +907,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 .fc-screen {
   background: linear-gradient(135deg, #F5F7F5 0%, #FAFBF8 100%);
   flex-direction: column;
-  overflow-y: auto;
+  
   overflow-x: hidden;
   padding-bottom: 20px;
 }
@@ -1152,7 +1152,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
   transform: scale(.95);
 }
 .fc-btn-mark.marked { color: #E53935; }
-.fc-btn-next, .fc-btn-skip { flex: 1; }
+.fc-btn-next, .fc-btn-skip {  }
 
 /* 進度條 */
 .fc-progress-bar {
@@ -1208,10 +1208,10 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 .fc-records-section {
   display: flex;
   flex-direction: column;
-  max-height: 350px;
+  
   border-top: 1px solid rgba(0,0,0,.08);
   background: rgba(255,255,255,.3);
-  overflow: hidden;
+  overflow: visible;
   margin: 0 16px;
   border-radius: 12px;
 }
@@ -1254,7 +1254,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 }
 
 .fc-record-tab {
-  flex: 1;
+  
   background: none;
   border: none;
   border-bottom: 2px solid transparent;
@@ -1288,8 +1288,10 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 }
 
 .fc-records-list {
-  flex: 1;
-  overflow-y: auto;
+  max-height: none;
+
+  
+  
   padding: 8px;
   display: flex;
   flex-direction: column;
