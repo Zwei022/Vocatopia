@@ -908,6 +908,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
   background: linear-gradient(135deg, #F5F7F5 0%, #FAFBF8 100%);
   flex-direction: column;
   
+  overflow-y: auto;
   overflow-x: hidden;
   padding-bottom: 20px;
 }
