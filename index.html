@@ -151,26 +151,9 @@
     </div>
     <button class="start-btn" onclick="goScreen('decks')">🃏 選擇單字卡</button>
     <div class="bnav">
-      <button class="bn active" onclick="goScreen('home',this)"><div class="bn-dot"></div><div class="bn-ico">🏠</div><div class="bn-lbl">首頁</div></button>
+      <button class="bn" onclick="goScreen('arena',this)"><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
       <button class="bn" onclick="goScreen('decks',this)"><div class="bn-ico">🃏</div><div class="bn-lbl">單字卡</div></button>
-      <button class="bn" onclick="goScreen('arena',this)"><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
-      <button class="bn" onclick="goScreen('reading',this)"><div class="bn-ico">📜</div><div class="bn-lbl">閱覽室</div></button>
-      <button class="bn" onclick="goScreen('library',this)"><div class="bn-ico">📚</div><div class="bn-lbl">字庫</div></button>
-    </div>
-  </div>
-
-  <!-- ══ STUDY ══ -->
-  <!-- ══ DECKS（單字卡）══ -->
-  <div id="decks" class="screen">
-    <div class="deck-screen-head">
-      <div class="deck-screen-title">單字卡</div>
-      <button class="deck-add-btn" onclick="openNewDeckModal()">＋ 新增</button>
-    </div>
-    <div class="deck-list" id="deckList" style="padding-top:4px"></div>
-    <div class="bnav">
-      <button class="bn" onclick="goScreen('home',this)"><div class="bn-ico">🏠</div><div class="bn-lbl">首頁</div></button>
-      <button class="bn active" onclick="goScreen('decks',this)"><div class="bn-dot"></div><div class="bn-ico">🃏</div><div class="bn-lbl">單字卡</div></button>
-      <button class="bn" onclick="goScreen('arena',this)"><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
+      <button class="bn active" onclick="goScreen('home',this)"><div class="bn-dot"></div><div class="bn-ico">🏠</div><div class="bn-lbl">首頁</div></button>
   </div>
 </div>
 
