@@ -905,15 +905,12 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
    FLASHCARD — 明亮清爽卡牌介面
 ════════════════════════════════ */
 .fc-screen {
+  height: 100vh;
+  overflow: auto !important;
   background: linear-gradient(135deg, #F5F7F5 0%, #FAFBF8 100%);
   flex-direction: column;
-  
-  overflow-y: auto;
-  overflow-x: hidden;
   padding-bottom: 20px;
 }
-
-/* 頂部進度欄 */
 .fc-header {
   display: flex;
   justify-content: space-between;
