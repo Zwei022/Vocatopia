@@ -13,6 +13,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.100.1",
     "@google/generative-ai": "^0.24.1",
     "@supabase/supabase-js": "^2.106.2",
     "cheerio": "^1.2.0",
