@@ -15,6 +15,7 @@
 <body>
 <canvas id="confettiCanvas"></canvas>
 <div class="fb-overlay"><div class="fb-txt" id="fbTxt"></div></div>
+<div id="toastEl" class="toast"></div>
 
 <!-- JOIN ROOM MODAL -->
 <div class="modal-overlay" id="joinModal">
@@ -141,13 +142,13 @@
         </div>
       </div>
     </div>
-    <button class="start-btn" onclick="goScreen('decks')">🃏 選擇單字卡</button>
+    <button class="start-btn" onclick="goReadTab('deck')">❤️ 我的收藏</button>
     <div class="bnav">
       <button class="bn" onclick="goScreen('arena',this)"><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
-      <button class="bn" onclick="goScreen('decks',this)"><div class="bn-ico">🃏</div><div class="bn-lbl">單字卡</div></button>
+      <button class="bn" onclick="goReadTab('deck',this)"><div class="bn-ico">❤️</div><div class="bn-lbl">收藏</div></button>
       <button class="bn active" onclick="goScreen('home',this)"><div class="bn-dot"></div><div class="bn-ico">🏠</div><div class="bn-lbl">首頁</div></button>
       <button class="bn" onclick="goScreen('reading',this)"><div class="bn-ico">📜</div><div class="bn-lbl">閱覽室</div></button>
-      <button class="bn" onclick="goScreen('library',this)"><div class="bn-ico">📚</div><div class="bn-lbl">字庫</div></button>
+      <button class="bn" onclick="goReadTab('library',this)"><div class="bn-ico">🏪</div><div class="bn-lbl">商店</div></button>
     </div>
   </div>
 
@@ -180,28 +181,15 @@
     </div>
     <div class="bnav">
       <button class="bn active" onclick="goScreen('arena',this)"><div class="bn-dot"></div><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
-      <button class="bn" onclick="goScreen('decks',this)"><div class="bn-ico">🃏</div><div class="bn-lbl">單字卡</div></button>
+      <button class="bn" onclick="goReadTab('deck',this)"><div class="bn-ico">❤️</div><div class="bn-lbl">收藏</div></button>
       <button class="bn" onclick="goScreen('home',this)"><div class="bn-ico">🏠</div><div class="bn-lbl">首頁</div></button>
       <button class="bn" onclick="goScreen('reading',this)"><div class="bn-ico">📜</div><div class="bn-lbl">閱覽室</div></button>
-      <button class="bn" onclick="goScreen('library',this)"><div class="bn-ico">📚</div><div class="bn-lbl">字庫</div></button>
+      <button class="bn" onclick="goReadTab('library',this)"><div class="bn-ico">🏪</div><div class="bn-lbl">商店</div></button>
     </div>
   </div>
 
-  <!-- ══ DECKS（單字卡）══ -->
-  <div id="decks" class="screen">
-    <div class="deck-screen-head">
-      <div class="deck-screen-title">單字卡</div>
-      <button class="deck-add-btn" onclick="openNewDeckModal()">＋ 新增</button>
-    </div>
-    <div class="deck-list" id="deckList" style="padding-top:4px"></div>
-    <div class="bnav">
-      <button class="bn" onclick="goScreen('arena',this)"><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
-      <button class="bn active" onclick="goScreen('decks',this)"><div class="bn-dot"></div><div class="bn-ico">🃏</div><div class="bn-lbl">單字卡</div></button>
-      <button class="bn" onclick="goScreen('home',this)"><div class="bn-ico">🏠</div><div class="bn-lbl">首頁</div></button>
-      <button class="bn" onclick="goScreen('reading',this)"><div class="bn-ico">📜</div><div class="bn-lbl">閱覽室</div></button>
-      <button class="bn" onclick="goScreen('library',this)"><div class="bn-ico">📚</div><div class="bn-lbl">字庫</div></button>
-    </div>
-  </div>
+  <!-- ══ DECKS（已整合至閱覽室）══ -->
+  <div id="decks" class="screen"></div>
 
   <!-- ══ FLASHCARD（卡片播放） ══ -->
   <div id="flashcard" class="screen fc-screen">
@@ -211,7 +199,7 @@
         <span class="fc-deck-name" id="fcDeckName">會考2000單字</span>
         <span class="fc-progress" id="fcProgress">1 / 2000</span>
       </div>
-      <button class="fc-close-btn" onclick="goScreen('decks')">✕</button>
+      <button class="fc-close-btn" onclick="goReadTab('deck')">✕</button>
     </div>
 
     <!-- 側邊模式欄 -->
@@ -249,9 +237,10 @@
         <!-- 背面：中文解釋 -->
         <div class="fc-card-back">
           <div class="fc-back-phonetic" id="fcBackPhonetic">/ɪˈɡzæmpəl/</div>
-          <div class="fc-definition" id="fcDefinition">例子，例如</div>
+          <div class="fc-definition" id="fcDefinitionZh">例子，例如</div>
+          <div class="fc-definition-en" id="fcDefinitionEn" style="display:none"></div>
           <div class="fc-examples">
-            <div class="fc-example-label">例句</div>
+            <div class="fc-example-label" id="fcExampleLabel">例句</div>
             <div class="fc-example-en" id="fcExampleEn">For example, cats are animals.</div>
             <div class="fc-example-zh" id="fcExampleZh">例如，貓是動物。</div>
           </div>
@@ -332,10 +321,10 @@
     </div>
     <div class="bnav" id="arenaBnav">
       <button class="bn active" onclick="goScreen('arena',this)"><div class="bn-dot"></div><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
-      <button class="bn" onclick="goScreen('decks',this)"><div class="bn-ico">🃏</div><div class="bn-lbl">單字卡</div></button>
+      <button class="bn" onclick="goReadTab('deck',this)"><div class="bn-ico">❤️</div><div class="bn-lbl">收藏</div></button>
       <button class="bn" onclick="goScreen('home',this)"><div class="bn-ico">🏠</div><div class="bn-lbl">首頁</div></button>
       <button class="bn" onclick="goScreen('reading',this)"><div class="bn-ico">📜</div><div class="bn-lbl">閱覽室</div></button>
-      <button class="bn" onclick="goScreen('library',this)"><div class="bn-ico">📚</div><div class="bn-lbl">字庫</div></button>
+      <button class="bn" onclick="goReadTab('library',this)"><div class="bn-ico">🏪</div><div class="bn-lbl">商店</div></button>
     </div>
   </div>
 
@@ -344,34 +333,125 @@
     <div class="read-head" id="readHead">
       <div class="read-title">閱覽室</div>
       <div class="read-tabs">
-        <button class="rtab" id="rtabGrammar" onclick="switchReadTab('grammar')">文法教學</button>
-        <button class="rtab active" id="rtabCurated" onclick="switchReadTab('curated')">精選文章</button>
-        <button class="rtab" id="rtabDaily" onclick="switchReadTab('daily')">每日五篇 <span class="rtab-badge" id="dailyBadge">NEW</span></button>
+          <button class="rtab" id="rtabDeck" onclick="switchReadTab('deck')">收藏</button>
+        <button class="rtab" id="rtabGrammar" onclick="switchReadTab('grammar')">文法練習</button>
+        <button class="rtab active" id="rtabCurated" onclick="switchReadTab('curated')">精選題目</button>
+        <button class="rtab" id="rtabLibrary" onclick="switchReadTab('library')">商店</button>
       </div>
     </div>
-    <div class="articles-scroll" id="artList"></div>
-    <div class="daily-list" id="dailyList"></div>
-    <!-- 單字卡 tab 已移至獨立 #decks 頁面 -->
-    <div class="read-panel" id="wordcardPanel" style="display:none"></div>
-    <!-- 文法教學 tab -->
+
+    <!-- 收藏 panel -->
+    <div class="read-panel" id="deckPanel">
+      <div class="deck-screen-head">
+        <div class="deck-screen-title">收藏</div>
+        <button class="deck-add-btn" onclick="openNewDeckModal()">＋ 新增</button>
+      </div>
+      <div class="deck-list" id="deckList" style="padding-top:4px"></div>
+    </div>
+    <!-- 商店 panel -->
+    <div class="read-panel" id="libraryPanel">
+      <div class="lib-head">
+        <div class="lib-title">大書庫</div>
+        <div class="lib-sub">會考 2000 字 · 點擊 🔊 發音</div>
+      </div>
+      <div class="lib-tabs">
+        <button class="ltab active" onclick="libSwitch(this,'all')">官方 2000 字</button>
+        <button class="ltab" onclick="libSwitch(this,'weak')">不熟錯題本</button>
+      </div>
+      <div class="lib-list" id="libList"></div>
+    </div>
+
+    <!-- 文法練習 panel -->
     <div class="read-panel" id="grammarPanel">
       <div class="rp-empty">
         <div class="rp-icon">📐</div>
-        <div class="rp-title">文法教學</div>
+        <div class="rp-title">文法練習</div>
         <div class="rp-desc">會考核心文法逐一擊破<br>每週一個主題，深度解析</div>
         <div class="rp-badge">即將上線</div>
       </div>
     </div>
+
+    <!-- 精選題目 panel（含子分頁列） -->
+    <div class="read-panel show" id="curatedPanel">
+      <div class="csub-tabs">
+        <button class="csub active" id="csubExam"  onclick="switchCuratedSub('exam')">會考歷屆</button>
+        <button class="csub"        id="csubWrong" onclick="switchCuratedSub('wrong')">答錯題庫</button>
+        <button class="csub"        id="csubSaved" onclick="switchCuratedSub('saved')">收藏題庫</button>
+        <button class="csub"        id="csubDaily" onclick="switchCuratedSub('daily')">每日練習</button>
+      </div>
+    </div>
+
+    <!-- 會考歷屆 -->
+    <div class="sub-panel" id="gsatList"></div>
+    <div class="sub-panel" id="gsatExamView" style="display:none;flex-direction:column">
+      <div class="gsat-exam-head">
+        <button class="art-back" onclick="closeGsatExam()">◀ 返回歷屆題庫</button>
+        <div class="gsat-exam-title" id="gsatExamTitle"></div>
+      </div>
+      <div id="gsatExamBody"></div>
+    </div>
+
+    <!-- 答錯題庫 -->
+    <div class="daily-list" id="wrongList">
+      <div id="wrongCats" class="bank-cat-grid">
+        <div class="bank-cat" onclick="openBankCat('wrong','vocab')"><div class="bc-ico">📖</div><div class="bc-name">單字</div></div>
+        <div class="bank-cat" onclick="openBankCat('wrong','phrase')"><div class="bc-ico">🔗</div><div class="bc-name">片語</div></div>
+        <div class="bank-cat" onclick="openBankCat('wrong','grammar')"><div class="bc-ico">📐</div><div class="bc-name">文法</div></div>
+        <div class="bank-cat" onclick="openBankCat('wrong','reading')"><div class="bc-ico">📰</div><div class="bc-name">閱讀</div></div>
+        <div class="bank-cat" onclick="openBankCat('wrong','cloze')"><div class="bc-ico">✏️</div><div class="bc-name">克漏字</div></div>
+        <div class="bank-cat" onclick="openBankCat('wrong','listening')"><div class="bc-ico">🎧</div><div class="bc-name">聽力</div></div>
+      </div>
+      <div id="wrongBack" style="display:none"><button class="art-back" onclick="_resetBankPanel('wrong')">◀ 返回答錯題庫</button></div>
+      <div id="wrongContent" style="display:none"></div>
+    </div>
+
+    <!-- 收藏題庫 -->
+    <div class="daily-list" id="savedList">
+      <div id="savedCats" class="bank-cat-grid">
+        <div class="bank-cat" onclick="openBankCat('saved','vocab')"><div class="bc-ico">📖</div><div class="bc-name">單字</div></div>
+        <div class="bank-cat" onclick="openBankCat('saved','phrase')"><div class="bc-ico">🔗</div><div class="bc-name">片語</div></div>
+        <div class="bank-cat" onclick="openBankCat('saved','grammar')"><div class="bc-ico">📐</div><div class="bc-name">文法</div></div>
+        <div class="bank-cat" onclick="openBankCat('saved','reading')"><div class="bc-ico">📰</div><div class="bc-name">閱讀</div></div>
+        <div class="bank-cat" onclick="openBankCat('saved','cloze')"><div class="bc-ico">✏️</div><div class="bc-name">克漏字</div></div>
+        <div class="bank-cat" onclick="openBankCat('saved','listening')"><div class="bc-ico">🎧</div><div class="bc-name">聽力</div></div>
+      </div>
+      <div id="savedBack" style="display:none"><button class="art-back" onclick="_resetBankPanel('saved')">◀ 返回收藏題庫</button></div>
+      <div id="savedContent" style="display:none"></div>
+    </div>
+
+    <!-- 每日練習 -->
+    <div class="daily-list" id="dailyList">
+      <div id="dailyCats" class="daily-cat-grid">
+        <div class="dcat" onclick="openDailyCat('vocab')"><div class="dc-ico">📖</div><div class="dc-name">單字</div></div>
+        <div class="dcat" onclick="openDailyCat('phrase')"><div class="dc-ico">🔗</div><div class="dc-name">片語</div></div>
+        <div class="dcat" onclick="openDailyCat('grammar')"><div class="dc-ico">📐</div><div class="dc-name">文法</div></div>
+        <div class="dcat" onclick="openDailyCat('cloze')"><div class="dc-ico">✏️</div><div class="dc-name">克漏字</div></div>
+        <div class="dcat" onclick="openDailyCat('reading')">
+          <div class="dc-ico">📰</div>
+          <div class="dc-name">閱讀 <span id="dcatReadingCount" class="dcat-badge"></span></div>
+        </div>
+        <div class="dcat" onclick="openDailyCat('listening')"><div class="dc-ico">🎧</div><div class="dc-name">聽力</div></div>
+      </div>
+      <div id="dailyReadingBack" style="display:none">
+        <button class="art-back" onclick="closeDailyCat()">◀ 返回每日練習</button>
+      </div>
+    </div>
+
+    <!-- 文章列表（每日練習閱讀分類用） -->
+    <div class="articles-scroll" id="artList" style="display:none"></div>
+
+    <!-- 文章詳情 -->
     <div class="art-content" id="artContent">
       <button class="art-back" id="artBackBtn" onclick="closeArticle()">◀ 返回文章列表</button>
       <div class="art-h" id="artTitle"></div>
       <div class="art-body-text" id="artBody"></div>
       <button class="quiz-start-btn hidden" id="quizStartBtn" onclick="startQuiz()">📝 開始作答</button>
     </div>
+
     <!-- QUIZ PANEL -->
     <div class="quiz-panel hidden" id="quizPanel">
       <div class="quiz-head">
-        <button class="art-back" onclick="closeQuiz()">◀ 返回文章</button>
+        <button id="quizBackBtn" class="art-back" onclick="closeQuiz()">◀ 返回</button>
         <div class="quiz-progress" id="quizProgress">第 1 / 3 題</div>
       </div>
       <div class="quiz-q" id="quizQ"></div>
@@ -379,41 +459,26 @@
       <div class="quiz-explain hidden" id="quizExplain"></div>
       <button class="quiz-next hidden" id="quizNextBtn" onclick="nextQuestion()">下一題 →</button>
     </div>
+
     <!-- QUIZ RESULT -->
     <div class="quiz-result hidden" id="quizResult">
       <div class="qr-icon" id="qrIcon">🏆</div>
       <div class="qr-score" id="qrScore">3 / 3</div>
       <div class="qr-msg" id="qrMsg">全對！英文力量大增！</div>
-      <button class="quiz-start-btn" onclick="closeQuizResult()">返回文章列表</button>
+      <button id="quizResultBackBtn" class="quiz-start-btn" onclick="closeQuizResult()">返回每日練習</button>
     </div>
+
     <div class="bnav">
       <button class="bn" onclick="goScreen('arena',this)"><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
-      <button class="bn" onclick="goScreen('decks',this)"><div class="bn-ico">🃏</div><div class="bn-lbl">單字卡</div></button>
+      <button class="bn" onclick="goReadTab('deck',this)"><div class="bn-ico">❤️</div><div class="bn-lbl">收藏</div></button>
       <button class="bn" onclick="goScreen('home',this)"><div class="bn-ico">🏠</div><div class="bn-lbl">首頁</div></button>
       <button class="bn active" onclick="goScreen('reading',this)"><div class="bn-dot"></div><div class="bn-ico">📜</div><div class="bn-lbl">閱覽室</div></button>
-      <button class="bn" onclick="goScreen('library',this)"><div class="bn-ico">📚</div><div class="bn-lbl">字庫</div></button>
+      <button class="bn" onclick="goReadTab('library',this)"><div class="bn-ico">🏪</div><div class="bn-lbl">商店</div></button>
     </div>
   </div>
 
-  <!-- ══ LIBRARY ══ -->
-  <div id="library" class="screen">
-    <div class="lib-head">
-      <div class="lib-title">大書庫</div>
-      <div class="lib-sub">會考 2000 字 · 點擊 🔊 發音</div>
-    </div>
-    <div class="lib-tabs">
-      <button class="ltab active" onclick="libSwitch(this,'all')">官方 2000 字</button>
-      <button class="ltab" onclick="libSwitch(this,'weak')">不熟錯題本</button>
-    </div>
-    <div class="lib-list" id="libList"></div>
-    <div class="bnav">
-      <button class="bn" onclick="goScreen('arena',this)"><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
-      <button class="bn" onclick="goScreen('decks',this)"><div class="bn-ico">🃏</div><div class="bn-lbl">單字卡</div></button>
-      <button class="bn" onclick="goScreen('home',this)"><div class="bn-ico">🏠</div><div class="bn-lbl">首頁</div></button>
-      <button class="bn" onclick="goScreen('reading',this)"><div class="bn-ico">📜</div><div class="bn-lbl">閱覽室</div></button>
-      <button class="bn active" onclick="goScreen('library',this)"><div class="bn-dot"></div><div class="bn-ico">📚</div><div class="bn-lbl">字庫</div></button>
-    </div>
-  </div>
+  <!-- ══ LIBRARY（已整合至閱覽室）══ -->
+  <div id="library" class="screen"></div>
 
 </div><!-- /phone -->
 

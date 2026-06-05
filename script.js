@@ -230,10 +230,15 @@ const BUILTIN_DECKS = [
 // ── DAILY ARTICLES STATE ──
 let DAILY_ARTICLES = [];
 let currentDailyArticle = null;
-let readTab = 'deck';
+let readTab = 'curated';
 let quizState = null; // { questions, idx, score, answers }
 
 // ── NAV ──
+function goReadTab(tab, btn) {
+  readTab = tab;
+  goScreen('reading', btn);
+}
+
 function goScreen(id, btn) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
@@ -464,7 +469,7 @@ function backArena() {
 }
 
 // ── READING TABS ──
-let curatedSubTab = 'daily';
+let curatedSubTab = 'exam';
 
 // ── 會考歷屆資料（之後逐年填入） ──
 const GSAT_EXAMS = [
@@ -544,7 +549,7 @@ function switchCuratedSub(sub) {
   document.getElementById('savedList').classList.remove('show');
 
   if (sub === 'exam') {
-    document.getElementById('gsatList').style.display = '';
+    document.getElementById('gsatList').style.display = 'flex';
     renderGsatList();
   } else if (sub === 'daily') {
     document.getElementById('dailyList').classList.add('show');
@@ -591,6 +596,15 @@ function switchReadTab(tab) {
   dailyList.classList.remove('show');
   grammarPanel.classList.remove('show');
   if (curatedPanel) curatedPanel.classList.remove('show');
+  // 隱藏精選題目子面板
+  const gsatListEl = document.getElementById('gsatList');
+  const gsatExamEl = document.getElementById('gsatExamView');
+  const wrongListEl = document.getElementById('wrongList');
+  const savedListEl = document.getElementById('savedList');
+  if (gsatListEl)  gsatListEl.style.display  = 'none';
+  if (gsatExamEl)  gsatExamEl.style.display  = 'none';
+  if (wrongListEl) wrongListEl.classList.remove('show');
+  if (savedListEl) savedListEl.classList.remove('show');
 
   if (tab === 'deck') {
     deckPanel.classList.add('show');
@@ -1148,22 +1162,28 @@ function closeArticle() {
 }
 
 function lookupWord(word) {
+  // 優先用 WORDS 陣列開啟詳細 overlay
+  const w = WORDS.find(x => x.word === word);
+  if (w) { openWordDetail(w.id); return; }
+
+  // fallback：用 DICT 資料直接填入 overlay
   const d = DICT[word] || { def: '（查閱中...）', phonetic: '' };
-  document.getElementById('wpWord').textContent     = word;
-  // 格式化音標為 /phonetic/（清理多餘的 // 符號）
-  let phonetic = d.phonetic || '';
-  if (phonetic) {
-    phonetic = phonetic.replace(/^\/+/, '/').replace(/\/+$/, '/');
-    if (!phonetic.startsWith('/')) phonetic = `/${phonetic}`;
-    if (!phonetic.endsWith('/')) phonetic = `${phonetic}/`;
-  }
-  document.getElementById('wpPhonetic').textContent = phonetic;
-  document.getElementById('wpDef').textContent      = d.def;
-  document.getElementById('wordPopup').classList.add('show');
-  document.getElementById('wordPopup')._word = word;
+  const overlay = document.getElementById('wordDetailOverlay');
+  if (!overlay) return;
+  document.getElementById('wdWord').textContent = word;
+  document.getElementById('wdPhon').textContent = d.phonetic || '—';
+  document.getElementById('wdDef').textContent  = d.def || '—';
+  document.getElementById('wdPos').textContent  = '';
+  document.getElementById('wdLvl').textContent  = '';
+  const exWrap = document.getElementById('wdExWrap');
+  if (exWrap) exWrap.style.display = 'none';
+  overlay.classList.add('show');
 }
 
-function closeWordPopup() { document.getElementById('wordPopup').classList.remove('show'); }
+function closeWordPopup() {
+  const el = document.getElementById('wordPopup');
+  if (el) el.classList.remove('show');
+}
 
 function captureWord() {
   const w = document.getElementById('wordPopup')._word;
@@ -1440,7 +1460,7 @@ function buildSectionWords(words, deckId) {
 }
 
 function renderLib() {
-  const body = document.getElementById('libBody');
+  const body = document.getElementById('libList');
   if (!body) return;
 
   const sections = [
@@ -1683,7 +1703,7 @@ function showToast(msg) {
 // ── CLICK OUTSIDE POPUP ──
 document.addEventListener('click', e => {
   const pp = document.getElementById('wordPopup');
-  if (pp.classList.contains('show') && !pp.contains(e.target) && !e.target.classList.contains('w'))
+  if (pp && pp.classList.contains('show') && !pp.contains(e.target) && !e.target.classList.contains('w'))
     closeWordPopup();
 });
 
