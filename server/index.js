@@ -16,29 +16,49 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+
+// 預生成靜態音頻：no-cache 讓瀏覽器每次驗證 ETag，音檔更新後立即生效
+// /api/tts/ 動態生成的音頻在 tts.js 內個別設 no-store
+app.use('/public/audio/words', (req, res, next) => {
+  res.setHeader('Cache-Control', 'no-cache');
+  next();
+});
+
 app.use(express.static(path.join(__dirname, '..')));
 
 // ── API ROUTES ──
 app.use('/api/words',          require('./routes/words'));
 app.use('/api/articles',       require('./routes/articles'));
 app.use('/api/daily-articles', require('./routes/daily_articles'));
+app.use('/api/daily-quiz',      require('./routes/daily_quiz'));
+app.use('/api/listening-audio', require('./routes/listening_audio'));
+app.use('/api/tts',             require('./routes/tts'));
 
 // ── PVP ROOM SYSTEM ──
 const rooms = {};
+const ROOM_TTL = 60 * 60 * 1000; // 1 小時自動過期
 
 function genRoomCode() {
   return String(Math.floor(100000 + Math.random() * 900000));
 }
 
-io.on('connection', (socket) => {
-  console.log(`[socket] connected: ${socket.id}`);
+// 每 10 分鐘掃描並清除過期房間，防止記憶體洩漏
+setInterval(() => {
+  const now = Date.now();
+  for (const [code, room] of Object.entries(rooms)) {
+    if (now - room.createdAt > ROOM_TTL) {
+      io.to(code).emit('room_expired');
+      delete rooms[code];
+    }
+  }
+}, 10 * 60 * 1000);
 
+io.on('connection', (socket) => {
   socket.on('create_room', () => {
     const code = genRoomCode();
-    rooms[code] = { host: socket.id, guest: null, scores: {}, started: false };
+    rooms[code] = { host: socket.id, guest: null, scores: {}, started: false, createdAt: Date.now() };
     socket.join(code);
     socket.emit('room_created', { code });
-    console.log(`[room] created ${code} by ${socket.id}`);
   });
 
   socket.on('join_room', ({ code }) => {
@@ -48,7 +68,6 @@ io.on('connection', (socket) => {
     room.guest = socket.id;
     socket.join(code);
     io.to(code).emit('room_ready', { code, host: room.host, guest: room.guest });
-    console.log(`[room] ${socket.id} joined ${code}`);
   });
 
   socket.on('start_battle', ({ code }) => {
@@ -82,7 +101,6 @@ io.on('connection', (socket) => {
         delete rooms[code];
       }
     }
-    console.log(`[socket] disconnected: ${socket.id}`);
   });
 });
 

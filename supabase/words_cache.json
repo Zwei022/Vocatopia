@@ -15462,5 +15462,3236 @@
     "example_en": "Last weekend, we went to the zoo and watched the tigers eating their lunch.",
     "example_zh": "上週末，我們去動物園看老虎進食。",
     "done": true
+  },
+  "a lot of": {
+    "pos": "片語",
+    "phonetic": "",
+    "definition": "許多(片)",
+    "definition_zh": "許多；大量；極多",
+    "example_en": "We found a lot of shells on the beach during our vacation.",
+    "example_zh": "我們在度假時在海灘上發現了很多貝殼。",
+    "done": true
+  },
+  "ability": {
+    "pos": "名詞",
+    "phonetic": "/əˈ.bɪl.ɪ.ti/",
+    "definition": "Suitableness.",
+    "definition_zh": "能力；才能；勝任能力",
+    "example_en": "Her ability to speak five languages impressed everyone at the interview.",
+    "example_zh": "她說五種語言的能力讓面試官印象深刻。",
+    "done": true
+  },
+  "achieve": {
+    "pos": "動詞",
+    "phonetic": "/əˈtʃiːv/",
+    "definition": "To succeed in something, now especially in academic performance.",
+    "definition_zh": "（尤指經過努力）完成；達到；實現",
+    "example_en": "She studied hard all year and finally achieved her dream of entering a top university.",
+    "example_zh": "她全年用功讀書，終於實現了進入頂尖大學的夢想。",
+    "done": true
+  },
+  "addition": {
+    "pos": "名詞",
+    "phonetic": "/æˈdɪʃən/",
+    "definition": "The act of adding anything.",
+    "definition_zh": "加法；添加；增加；補充",
+    "example_en": "In math class, we learned how to do addition with numbers over one hundred.",
+    "example_zh": "在數學課上，我們學習如何進行百以上的加法計算。",
+    "done": true
+  },
+  "adjective": {
+    "pos": "名詞",
+    "phonetic": "/ˈæ.d͡ʒə(k).tɪv/",
+    "definition": "(grammar) A word that modifies a noun or describes a noun’s referent.",
+    "definition_zh": "（語法）修飾或描述名詞的詞；形容詞",
+    "example_en": "The word 'beautiful' is an adjective that describes the garden.",
+    "example_zh": "'美麗'這個詞是修飾花園的形容詞。",
+    "done": true
+  },
+  "admit": {
+    "pos": "動詞",
+    "phonetic": "/ədˈmɪt/",
+    "definition": "To allow to enter; to grant entrance (to), whether into a place, into the mind, or into consideration",
+    "definition_zh": "允許進入；接納；承認",
+    "example_en": "The school admitted two hundred new students to the first year this September.",
+    "example_zh": "這所學校今年九月錄取了二百名新一年級學生。",
+    "done": true
+  },
+  "adopt": {
+    "pos": "動詞",
+    "phonetic": "/əˈdɒpt/",
+    "definition": "To take by choice into relationship (a child, heir, friend, citizen, etc.)",
+    "definition_zh": "領養；採納；採取；接受",
+    "example_en": "The family decided to adopt a rescue dog from the animal shelter.",
+    "example_zh": "這個家庭決定從動物收容所領養一隻待救援的狗。",
+    "done": true
+  },
+  "advance": {
+    "pos": "名詞",
+    "phonetic": "/ədˈvaːns/",
+    "definition": "A forward move; improvement or progression.",
+    "definition_zh": "進步；進展；前進；發展",
+    "example_en": "Medical science has made great advances in treating serious diseases in recent years.",
+    "example_zh": "近年來，醫學科學在治療重症方面取得了巨大進展。",
+    "done": true
+  },
+  "advantage": {
+    "pos": "名詞",
+    "phonetic": "/ədˈvɑːn.tɪdʒ/",
+    "definition": "Any condition, circumstance, opportunity or means, particularly favorable to success, or to any desired end.",
+    "definition_zh": "優勢；優點；有利條件；好處",
+    "example_en": "Being tall gives basketball players a real advantage when playing the game.",
+    "example_zh": "身材高大對籃球運動員在比賽中有很大優勢。",
+    "done": true
+  },
+  "adverb": {
+    "pos": "名詞",
+    "phonetic": "/ˈæd.vɜːb/",
+    "definition": "(grammar) A word that modifies a verb, adjective, other adverbs, or various other types of words, phrases, or clauses.",
+    "definition_zh": "（語法）修飾動詞或形容詞的詞；副詞",
+    "example_en": "The word 'quickly' is an adverb that describes how the runner moved.",
+    "example_zh": "'迅速'這個詞是修飾跑步者動作方式的副詞。",
+    "done": true
+  },
+  "affair": {
+    "pos": "名詞",
+    "phonetic": "/əˈfɛə/",
+    "definition": "(often in the plural) Something which is done or is to be done; business of any kind, commercial, professional, or public.",
+    "definition_zh": "事務；事情；需要處理的事項",
+    "example_en": "The school had to deal with a serious affair involving student cheating.",
+    "example_zh": "學校必須處理一個涉及學生作弊的嚴肅事務。",
+    "done": true
+  },
+  "aid": {
+    "pos": "名詞",
+    "phonetic": "/eɪd/",
+    "definition": "Help; assistance; succor, relief.",
+    "definition_zh": "幫助；援助；協助",
+    "example_en": "The poor families received food aid from the government program.",
+    "example_zh": "貧困家庭從政府計畫中獲得食物援助。",
+    "done": true
+  },
+  "aids": {
+    "pos": "名詞",
+    "phonetic": "/eɪdz/",
+    "definition": "Help; assistance; succor, relief.",
+    "definition_zh": "援助；幫助；支持（複數或第三人稱）",
+    "example_en": "The government provides several aids to schools in rural villages.",
+    "example_zh": "政府向鄉村學校提供多項援助。",
+    "done": true
+  },
+  "air conditioner": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "空調機(n)",
+    "definition_zh": "空調；冷氣機",
+    "example_en": "We bought an air conditioner because the summer heat was unbearable.",
+    "example_zh": "因為夏天的熱度無法忍受，我們買了一台空調。",
+    "done": true
+  },
+  "aircraft": {
+    "pos": "名詞",
+    "phonetic": "/ɛə.kɹɑːft/",
+    "definition": "A vehicle capable of atmospheric flight due to interaction with the air, such as buoyancy or lift",
+    "definition_zh": "飛機；航空器",
+    "example_en": "The aircraft took off smoothly and headed toward the distant city.",
+    "example_zh": "飛機順利起飛，朝著遠方的城市飛去。",
+    "done": true
+  },
+  "airline": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A company that flies airplanes to transport people and goods.",
+    "definition_zh": "航空公司",
+    "example_en": "She booked her flight with the airline that offered the lowest fares.",
+    "example_zh": "她用票價最便宜的航空公司預訂了她的航班。",
+    "done": true
+  },
+  "airmail": {
+    "pos": "名詞",
+    "phonetic": "/ˈɛə.meɪl/",
+    "definition": "The system of conveying mail using aircraft.",
+    "definition_zh": "航空郵件；空運郵件",
+    "example_en": "He sent the important documents by airmail to arrive quickly.",
+    "example_zh": "他透過航空郵件寄送重要文件以便快速到達。",
+    "done": true
+  },
+  "alarm clock": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A clock with an alarm that can be set to sound at a determined time.",
+    "definition_zh": "鬧鐘；帶有警報的時鐘",
+    "example_en": "My alarm clock rings every morning at seven to wake me up.",
+    "example_zh": "我的鬧鐘每天早上七點響起把我叫醒。",
+    "done": true
+  },
+  "alley": {
+    "pos": "名詞",
+    "phonetic": "/ˈæ.li/",
+    "definition": "A narrow street or passageway, especially one through the middle of a block giving access to the rear of lots or buildings.",
+    "definition_zh": "小巷；狹窄的街道或通道",
+    "example_en": "The kids played basketball in the alley behind their apartment building.",
+    "example_zh": "孩子們在他們公寓後面的小巷裡打籃球。",
+    "done": true
+  },
+  "alphabet": {
+    "pos": "名詞",
+    "phonetic": "/ˈæl.fə.bɛt/",
+    "definition": "The set of letters used when writing in a language.",
+    "definition_zh": "字母表；字母系統",
+    "example_en": "Children learn the English alphabet before they start writing sentences.",
+    "example_zh": "孩子們在開始寫句子之前先學習英文字母。",
+    "done": true
+  },
+  "amount": {
+    "pos": "名詞",
+    "phonetic": "/əˈmaʊnt/",
+    "definition": "The total, aggregate or sum of material (not applicable to discrete numbers or units or items in standard English).",
+    "definition_zh": "（材料的）總量；總數",
+    "example_en": "Add the right amount of water to make the sauce smooth.",
+    "example_zh": "加入適量的水讓醬汁變得光滑。",
+    "done": true
+  },
+  "anyway": {
+    "pos": "副詞",
+    "phonetic": "/ˈɛniweɪ/",
+    "definition": "Regardless; anyhow.",
+    "definition_zh": "不管怎樣；反正；儘管如此",
+    "example_en": "It was late, but we went to the park anyway to play.",
+    "example_zh": "雖然很晚了，我們反正還是去公園玩。",
+    "done": true
+  },
+  "appearance": {
+    "pos": "名詞",
+    "phonetic": "/əˈpɪəɹəns/",
+    "definition": "The act of appearing or coming into sight; the act of becoming visible to the eye.",
+    "definition_zh": "（某人或某事物的）出現；顯現",
+    "example_en": "The dark clouds' sudden appearance made everyone worried about rain.",
+    "example_zh": "烏雲突然出現讓大家都擔心會下雨。",
+    "done": true
+  },
+  "apply": {
+    "pos": "動詞",
+    "phonetic": "/əˈplaɪ/",
+    "definition": "To lay or place; to put (one thing to another)",
+    "definition_zh": "（將某物）放置或塗抹於；應用",
+    "example_en": "She applied the cream to her sunburned skin very carefully.",
+    "example_zh": "她小心地將乳霜塗抹在曬傷的皮膚上。",
+    "done": true
+  },
+  "arrest": {
+    "pos": "名詞",
+    "phonetic": "/əˈɹɛst/",
+    "definition": "A check, stop, an act or instance of arresting something.",
+    "definition_zh": "（警察對某人的）逮捕；拘禁",
+    "example_en": "The police made several arrests after the robbery last week.",
+    "example_zh": "上週搶劫案後警察進行了好幾次逮捕。",
+    "done": true
+  },
+  "article": {
+    "pos": "名詞",
+    "phonetic": "/ˈɑːtɪkəl/",
+    "definition": "A piece of nonfictional writing such as a story, report, opinion piece, or entry in a newspaper, magazine, journal, dictionary, encyclopedia, etc.",
+    "definition_zh": "（報紙或雜誌等中的）文章；報導",
+    "example_en": "I read an interesting article about animals in an old magazine.",
+    "example_zh": "我在一本舊雜誌裡讀到一篇有趣的動物文章。",
+    "done": true
+  },
+  "as if": {
+    "pos": "連接詞",
+    "phonetic": "",
+    "definition": "As though; in a manner suggesting.",
+    "definition_zh": "彷彿；好像；仿佛",
+    "example_en": "He acted as if he had never seen the movie before.",
+    "example_zh": "他表現得好像從未看過這部電影一樣。",
+    "done": true
+  },
+  "as soon as": {
+    "pos": "片語",
+    "phonetic": "",
+    "definition": "儘快(片)",
+    "definition_zh": "在…之後立刻；儘快",
+    "example_en": "I will call you as soon as I arrive at home.",
+    "example_zh": "我一到家就會打電話給你。",
+    "done": true
+  },
+  "as well as": {
+    "pos": "介系詞",
+    "phonetic": "/əz ˈwɛl æz/",
+    "definition": "In addition to; further to.",
+    "definition_zh": "除了…之外；同時；以及",
+    "example_en": "She plays basketball as well as tennis after school.",
+    "example_zh": "她放學後既打籃球也打網球。",
+    "done": true
+  },
+  "asia": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "亞洲(n)",
+    "definition_zh": "亞洲；世界上最大的洲",
+    "example_en": "Many countries in Asia have rich cultural traditions.",
+    "example_zh": "亞洲許多國家都有豐富的文化傳統。",
+    "done": true
+  },
+  "asian": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "亞洲(人)的(adj)  亞洲人(n)",
+    "definition_zh": "亞洲的；亞洲人的",
+    "example_en": "Taiwan and Japan are both Asian countries located in East Asia.",
+    "example_zh": "台灣和日本都是位於東亞的亞洲國家。",
+    "done": true
+  },
+  "attend": {
+    "pos": "動詞",
+    "phonetic": "/əˈtɛnd/",
+    "definition": "To listen to (something or someone); to pay attention to; regard; heed.",
+    "definition_zh": "注意；聆聽；關注",
+    "example_en": "You should attend to the teacher's instructions during the lesson carefully.",
+    "example_zh": "上課時你應該仔細注意老師的指示。",
+    "done": true
+  },
+  "audience": {
+    "pos": "名詞",
+    "phonetic": "/ˈɔːdi.əns/",
+    "definition": "A group of people within hearing; specifically, a large gathering of people listening to or watching a performance, speech, etc.",
+    "definition_zh": "觀眾；聽眾；觀看或聆聽表演的人群",
+    "example_en": "The audience applauded loudly when the singer finished performing her beautiful song.",
+    "example_zh": "歌手演唱完美麗的歌曲時，觀眾們熱烈地鼓掌。",
+    "done": true
+  },
+  "australia": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "澳大利亞(n)",
+    "definition_zh": "澳大利亞",
+    "example_en": "My cousin moved to Australia to find new job opportunities in Sydney last year.",
+    "example_zh": "我的表哥去年搬到澳大利亞去尋找雪梨的新工作機會。",
+    "done": true
+  },
+  "australian": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "澳大利亞(人)的(adj)  澳大利亞人(n)",
+    "definition_zh": "澳大利亞的；澳大利亞人的",
+    "example_en": "My neighbor speaks with an Australian accent because he was born in Melbourne.",
+    "example_zh": "我的鄰居說話帶有澳大利亞口音，因為他在墨爾本出生。",
+    "done": true
+  },
+  "auxiliary": {
+    "pos": "名詞",
+    "phonetic": "/ɔːkˈsɪli.əɹi/",
+    "definition": "A person or group that acts in an auxiliary manner.",
+    "definition_zh": "輔助的；支援的；副的",
+    "example_en": "The auxiliary staff helped organize the school's sports day event successfully.",
+    "example_zh": "輔助人員幫助成功組織了學校的運動會。",
+    "done": true
+  },
+  "awake": {
+    "pos": "形容詞",
+    "phonetic": "/əˈweɪk/",
+    "definition": "Not asleep; conscious.",
+    "definition_zh": "醒著的；清醒的；未入睡的",
+    "example_en": "The baby is still awake even though it is already past midnight now.",
+    "example_zh": "雖然已經過了午夜，寶寶仍然醒著。",
+    "done": true
+  },
+  "aware": {
+    "pos": "形容詞",
+    "phonetic": "/əˈweːɹ/",
+    "definition": "Vigilant or on one's guard against danger or difficulty.",
+    "definition_zh": "意識到的；察覺的；警覺的",
+    "example_en": "Students should be aware of the new traffic rules when walking to school.",
+    "example_zh": "學生在走路上學時應該注意新的交通規則。",
+    "done": true
+  },
+  "baby sitter": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "褓母(n)",
+    "definition_zh": "照顧小孩的人；保母",
+    "example_en": "The babysitter played games with the children while their parents went out to dinner.",
+    "example_zh": "當父母出去用餐時，保母和孩子們一起玩遊戲。",
+    "done": true
+  },
+  "backward": {
+    "pos": "名詞",
+    "phonetic": "/ˈbæk.wə(ɹ)d/",
+    "definition": "The state behind or past.",
+    "definition_zh": "向後的；往後的；反向的",
+    "example_en": "The car moved backward slowly to fit into the parking space carefully.",
+    "example_zh": "車子緩慢地向後倒，小心地停入停車位。",
+    "done": true
+  },
+  "banker": {
+    "pos": "名詞",
+    "phonetic": "/ˈbæŋkə(ɹ)/",
+    "definition": "One who conducts the business of banking; one who, individually, or as a member of a company, keeps an establishment for the deposit or loan of money, or for traffic in money, bills of exchange, etc.",
+    "definition_zh": "（銀行工作者）銀行家；銀行職員",
+    "example_en": "My uncle is a banker who helps people save money at the bank.",
+    "example_zh": "我叔叔是銀行家，幫助人們在銀行存錢。",
+    "done": true
+  },
+  "bar": {
+    "pos": "名詞",
+    "phonetic": "/bɑː/",
+    "definition": "A solid, more or less rigid object of metal or wood with a uniform cross-section smaller than its length.",
+    "definition_zh": "（堅硬物體）金屬棒；木棒；條狀物",
+    "example_en": "He picked up an iron bar to fix the broken fence.",
+    "example_zh": "他拿起一根鐵棒來修理壞掉的柵欄。",
+    "done": true
+  },
+  "basis": {
+    "pos": "名詞",
+    "phonetic": "/ˈbeɪsɪs/",
+    "definition": "A physical base or foundation.",
+    "definition_zh": "（事物的基礎）基礎；基底；根據",
+    "example_en": "A good education is the basis for your future success.",
+    "example_zh": "良好的教育是你未來成功的基礎。",
+    "done": true
+  },
+  "beautifully": {
+    "pos": "副詞",
+    "phonetic": "/ˈbjuːtɪf(ə)li/",
+    "definition": "In a beautiful manner.",
+    "definition_zh": "漂亮地；優美地；迷人地",
+    "example_en": "The dancer moved beautifully across the stage last night.",
+    "example_zh": "舞者昨晚在舞台上優美地翩翩起舞。",
+    "done": true
+  },
+  "best": {
+    "pos": "名詞",
+    "phonetic": "/ˈbɛst/",
+    "definition": "The supreme effort one can make, or has made.",
+    "definition_zh": "（最高的努力或成就）最好的；最優的；盡力",
+    "example_en": "She always tries to do her best in every exam.",
+    "example_zh": "她在每次考試中都盡力做到最好。",
+    "done": true
+  },
+  "better": {
+    "pos": "名詞",
+    "phonetic": "[ˈbeɾə]",
+    "definition": "An entity, usually animate, deemed superior to another; one who has a claim to precedence; a superior.",
+    "definition_zh": "（較優越的人）更優秀的人；超越者",
+    "example_en": "He considered himself the better of the two fighters.",
+    "example_zh": "他認為自己是兩名格鬥士中較優秀的一個。",
+    "done": true
+  },
+  "bicycle riding": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "騎腳踏車(n)",
+    "definition_zh": "騎自行車；騎腳踏車",
+    "example_en": "I enjoy bicycle riding with my friends on the weekend.",
+    "example_zh": "我週末喜歡和朋友們騎自行車。",
+    "done": true
+  },
+  "bit": {
+    "pos": "名詞",
+    "phonetic": "/bɪt/",
+    "definition": "A piece of metal placed in a horse's mouth and connected to the reins to direct the animal.",
+    "definition_zh": "（馬的控制裝置）馬銜；嚼子；銜鐵",
+    "example_en": "The rider adjusted the bit before the horse race started.",
+    "example_zh": "騎手在馬賽開始前調整了馬銜。",
+    "done": true
+  },
+  "blouse": {
+    "pos": "名詞",
+    "phonetic": "/blaʊs/",
+    "definition": "A shirt, typically loose and reaching from the neck to the waist.",
+    "definition_zh": "女襯衫；寬鬆上衣；襯衣",
+    "example_en": "She wore a white blouse with a blue skirt to school.",
+    "example_zh": "她穿著白色女襯衫和藍色裙子去上學。",
+    "done": true
+  },
+  "board": {
+    "pos": "名詞",
+    "phonetic": "/bɔːd/",
+    "definition": "A relatively long, wide and thin piece of any material, usually wood or similar, often for use in construction or furniture-making.",
+    "definition_zh": "（長形）木板；板材",
+    "example_en": "We need a wooden board to cover the hole in the wall.",
+    "example_zh": "我們需要一塊木板來蓋住牆上的洞。",
+    "done": true
+  },
+  "both xxx and": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "兩個都…、既…又…打擾、麻煩(v)  麻煩、打擾(n)",
+    "definition_zh": "既...又...；兩者都...",
+    "example_en": "The party was both fun and exciting for all guests.",
+    "example_zh": "那個派對對所有客人來說既有趣又刺激。",
+    "done": true
+  },
+  "boyfriend": {
+    "pos": "名詞",
+    "phonetic": "/ˈbɔɪfɹənd/",
+    "definition": "A male partner in an unmarried romantic relationship.",
+    "definition_zh": "男朋友；（未婚戀愛關係中的）異性伴侶",
+    "example_en": "She introduced her boyfriend to her parents last weekend.",
+    "example_zh": "她上週末把男朋友介紹給父母認識。",
+    "done": true
+  },
+  "britain": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "不列顛(人)的、英國(人)的(adj)  英國人(n)",
+    "definition_zh": "不列顛；英國（地名）",
+    "example_en": "Many tourists visit Britain every summer to explore its history.",
+    "example_zh": "許多遊客每年夏天都來訪不列顛探索其歷史。",
+    "done": true
+  },
+  "british": {
+    "pos": "形容詞",
+    "phonetic": "",
+    "definition": "寬的、闊的、廣闊的、廣泛的(adj)",
+    "definition_zh": "英國的；英國人的；英國人",
+    "example_en": "She enjoys drinking British tea and eating British cheese.",
+    "example_zh": "她喜歡喝英國茶和吃英國起司。",
+    "done": true
+  },
+  "burger": {
+    "pos": "名詞",
+    "phonetic": "/ˈbɜː(ɹ)ɡə(ɹ)/",
+    "definition": "A hamburger.",
+    "definition_zh": "漢堡（漢堡包）；漢堡肉餅",
+    "example_en": "We grabbed burgers for lunch before heading to the mall.",
+    "example_zh": "我們買了漢堡當午餐，然後去商場。",
+    "done": true
+  },
+  "bus stop": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A place where public transport buses stop to allow passengers to board or leave.",
+    "definition_zh": "公車站；公車站牌",
+    "example_en": "The bus stop is just across the street from our school.",
+    "example_zh": "公車站就在我們學校對街。",
+    "done": true
+  },
+  "cabinet": {
+    "pos": "名詞",
+    "phonetic": "/ˈkæ.bɪ.nɪt/",
+    "definition": "A storage closet either separate from, or built into, a wall.",
+    "definition_zh": "（廚房或衣櫃的）櫃子；儲物櫃",
+    "example_en": "Mom stores her best dishes in the wooden cabinet above the sink.",
+    "example_zh": "媽媽把最好的碗盤放在水槽上方的木櫃裡。",
+    "done": true
+  },
+  "camping": {
+    "pos": "動詞",
+    "phonetic": "/ˈkæmpɪŋ/",
+    "definition": "To live in a tent or similar temporary accommodation.",
+    "definition_zh": "露營；野營；在帳篷中住宿",
+    "example_en": "We're camping in the mountains this summer with our close friends.",
+    "example_zh": "今年夏天我們要和親友在山裡露營。",
+    "done": true
+  },
+  "canada": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "加拿大(n)",
+    "definition_zh": "加拿大（地名）",
+    "example_en": "Canada is famous for its beautiful lakes and impressive Niagara Falls.",
+    "example_zh": "加拿大以其美麗的湖泊和壯觀的尼加拉瓜瀑布聞名。",
+    "done": true
+  },
+  "canadian": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "加拿大人(n)",
+    "definition_zh": "加拿大人；來自加拿大的人",
+    "example_en": "My friend Sarah is Canadian and loves to talk about maple syrup.",
+    "example_zh": "我的朋友莎拉是加拿大人，很喜歡談論楓糖漿。",
+    "done": true
+  },
+  "career": {
+    "pos": "名詞",
+    "phonetic": "/kəˈɹɪə/",
+    "definition": "One's calling in life; a person's occupation; one's profession.",
+    "definition_zh": "職業；終身事業；人生的工作",
+    "example_en": "She wants to have a successful career as a software engineer.",
+    "example_zh": "她想成為一名成功的軟體工程師。",
+    "done": true
+  },
+  "carefully": {
+    "pos": "副詞",
+    "phonetic": "/ˈkɛːfli/",
+    "definition": "Sorrowfully.",
+    "definition_zh": "小心地；謹慎地；注意細節地",
+    "example_en": "Please handle these glasses carefully because they break easily.",
+    "example_zh": "請小心對待這些玻璃杯，因為它們很容易破裂。",
+    "done": true
+  },
+  "cd": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "光碟(Compact Disk 縮寫)(n)  雷射唱片(n)",
+    "definition_zh": "光碟；雷射唱片（Compact Disk 的縮寫）",
+    "example_en": "My father still has many music CDs from the nineteen nineties.",
+    "example_zh": "我父親仍然有許多來自 1990 年代的音樂光碟。",
+    "done": true
+  },
+  "cd player": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "雷射唱片播放器(n)",
+    "definition_zh": "CD 播放器；光碟播放機",
+    "example_en": "Grandma's old CD player still works perfectly after thirty years.",
+    "example_zh": "奶奶的舊 CD 播放器經過 30 年仍然運作正常。",
+    "done": true
+  },
+  "certainly": {
+    "pos": "副詞",
+    "phonetic": "/ˈsɜːtn̩li/",
+    "definition": "In a way which is certain; with certainty.",
+    "definition_zh": "確實地；無疑地；肯定地",
+    "example_en": "This is certainly the best day I have had all year.",
+    "example_zh": "這無疑是我整年最美好的一天。",
+    "done": true
+  },
+  "chairman": {
+    "pos": "名詞",
+    "phonetic": "/ˈtʃɛːmən/",
+    "definition": "A person presiding over a meeting.",
+    "definition_zh": "主席；會議或組織的領導人",
+    "example_en": "The chairman welcomed everyone and started the important meeting.",
+    "example_zh": "主席歡迎大家並開始了重要的會議。",
+    "done": true
+  },
+  "chapter": {
+    "pos": "名詞",
+    "phonetic": "/ˈt͡ʃæptə/",
+    "definition": "(authorship) One of the main sections into which the text of a book is divided.",
+    "definition_zh": "章；章節；書籍的主要部分",
+    "example_en": "I finished reading chapter five of my English textbook yesterday.",
+    "example_zh": "我昨天讀完了英文教科書的第五章。",
+    "done": true
+  },
+  "cheerleader": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A person, usually a young, attractive female, who encourages applause and cheers at a sports event, and wearing a specially-designed uniform in the official colors of the team he/she cheers for.",
+    "definition_zh": "啦啦隊員；運動比賽中帶領歡呼的人",
+    "example_en": "The cheerleaders performed amazing dances at our school's basketball game.",
+    "example_zh": "啦啦隊員在我們學校籃球比賽中表演了精彩的舞蹈。",
+    "done": true
+  },
+  "childhood": {
+    "pos": "名詞",
+    "phonetic": "/ˈtʃaɪldhʊd/",
+    "definition": "The state of being a child.",
+    "definition_zh": "童年；兒童時期；幼年",
+    "example_en": "I have many happy memories of my childhood with my grandparents.",
+    "example_zh": "我與祖父母一起度過的童年有許多美好回憶。",
+    "done": true
+  },
+  "children": {
+    "pos": "名詞",
+    "phonetic": "[ˈt͡ʃʊld̠ɹ̠ ̝ʷən]",
+    "definition": "A person who has not yet reached adulthood, whether natural (puberty), cultural (initiation), or legal (majority)",
+    "definition_zh": "小孩；兒童；未達成年的人",
+    "example_en": "My sister is still a child, so she needs to go to school.",
+    "example_zh": "我妹妹還是個小孩，所以必須上學。",
+    "done": true
+  },
+  "chinese new year 農曆新年(n)": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "選擇、抉擇(n)",
+    "definition_zh": "選擇；決定；挑選",
+    "example_en": "Making a choice between two similar options was difficult.",
+    "example_zh": "在兩個相似的選項之間做選擇很困難。",
+    "done": true
+  },
+  "christmas eve": {
+    "pos": "形容詞",
+    "phonetic": "",
+    "definition": "胖嘟嘟的、圓胖的(adj)",
+    "definition_zh": "胖胖的；圓圓的；豐滿的",
+    "example_en": "The baby had plump cheeks and a big smile.",
+    "example_zh": "寶寶有著圓嘟嘟的臉頰和大大的笑容。",
+    "done": true
+  },
+  "citizen": {
+    "pos": "名詞",
+    "phonetic": "/ˈsɪtɪzən/",
+    "definition": "A resident of a city or town, especially one with legally-recognized rights or duties.",
+    "definition_zh": "城市或城鎮居民；公民；有法律權利的人",
+    "example_en": "As a citizen of our town, he has the right to vote.",
+    "example_zh": "作為鎮上的公民，他有投票權。",
+    "done": true
+  },
+  "class leader": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "傑作、名著(n)  第一流的(adj)",
+    "definition_zh": "傑作；名著；第一流的作品",
+    "example_en": "This painting is considered a masterpiece by many art experts.",
+    "example_zh": "這幅畫被許多藝術專家認為是傑作。",
+    "done": true
+  },
+  "classical": {
+    "pos": "名詞",
+    "phonetic": "/ˈklæsɪkl̩/",
+    "definition": "One that is classical in some way; for example, a classical economist.",
+    "definition_zh": "古典類型的；古典派的；遵循古典風格的",
+    "example_en": "He was a classical musician who played beautiful symphonies.",
+    "example_zh": "他是位古典音樂家，彈奏美妙的交響樂。",
+    "done": true
+  },
+  "climbing": {
+    "pos": "動詞",
+    "phonetic": "/ˈklaɪ̯mɪŋ/",
+    "definition": "To ascend; rise; to go up.",
+    "definition_zh": "攀登；往上爬；上升",
+    "example_en": "The team is climbing the mountain very carefully today.",
+    "example_zh": "這個隊伍今天正在小心翼翼地攀登山頂。",
+    "done": true
+  },
+  "cloth": {
+    "pos": "名詞",
+    "phonetic": "/klɑθ/",
+    "definition": "A woven fabric such as used in dressing, decorating, cleaning or other practical use.",
+    "definition_zh": "布料；織物；衣著或裝飾用材料",
+    "example_en": "She bought some soft cloth to make new curtains for her room.",
+    "example_zh": "她買了一些柔軟的布料來為房間製作新窗簾。",
+    "done": true
+  },
+  "clothing": {
+    "pos": "動詞",
+    "phonetic": "/ˈkləʊðɪŋ/",
+    "definition": "To adorn or cover with clothing; to dress; to supply clothes or clothing.",
+    "definition_zh": "穿衣；提供衣物；用衣物覆蓋",
+    "example_en": "Parents clothe their children with warm jackets in winter.",
+    "example_zh": "父母在冬天給孩子穿上溫暖的夾克。",
+    "done": true
+  },
+  "comfortably": {
+    "pos": "副詞",
+    "phonetic": "/ˈkʌmf(ə)təbli/",
+    "definition": "In a comfortable manner.",
+    "definition_zh": "舒適地；舒服地；自在地",
+    "example_en": "She sat comfortably on the soft sofa and watched TV.",
+    "example_zh": "她舒適地坐在柔軟的沙發上看電視。",
+    "done": true
+  },
+  "computer game": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "An electronic game, especially a game played using a general-purpose computer (as opposed to a game console).",
+    "definition_zh": "在電腦上玩的遊戲",
+    "example_en": "My cousin loves playing computer games in his spare time.",
+    "example_zh": "我表哥喜歡在閒暇時間玩電腦遊戲。",
+    "done": true
+  },
+  "confirm": {
+    "pos": "動詞",
+    "phonetic": "/kənˈfɜːm/",
+    "definition": "To strengthen; to make firm or resolute.",
+    "definition_zh": "使確定；加強",
+    "example_en": "She confirmed her decision to study medicine next year.",
+    "example_zh": "她確認了明年要學習醫學的決定。",
+    "done": true
+  },
+  "connective": {
+    "pos": "名詞",
+    "phonetic": "/kəˈnɛktɪv/",
+    "definition": "That which connects.",
+    "definition_zh": "連接的事物；連接詞",
+    "example_en": "The word 'and' is a connective that joins sentences together.",
+    "example_zh": "單詞'and'是一個連接詞，它把句子連在一起。",
+    "done": true
+  },
+  "contact lens": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A thin lens, made of flexible or rigid plastic, that is placed directly on to the eye to correct vision, used as an alternative to spectacles, or, if coloured, to change one's eye color cosmetically.",
+    "definition_zh": "戴在眼睛上矯正視力的薄透鏡",
+    "example_en": "Some people prefer wearing contact lenses instead of glasses for sports.",
+    "example_zh": "有些人在運動時喜歡戴隱形眼鏡而不是眼鏡。",
+    "done": true
+  },
+  "contain": {
+    "pos": "動詞",
+    "phonetic": "/kənˈteɪn/",
+    "definition": "To hold inside.",
+    "definition_zh": "包含；裡面有",
+    "example_en": "This box contains all the books I collected over five years.",
+    "example_zh": "這個箱子裡裝著我五年來收集的所有書籍。",
+    "done": true
+  },
+  "cookies": {
+    "pos": "名詞",
+    "phonetic": "/ˈkʊkiz/",
+    "definition": "A small, flat, baked good which is either crisp or soft but firm.",
+    "definition_zh": "小的扁平烤製甜點；餅乾",
+    "example_en": "The children enjoyed eating chocolate cookies after school yesterday.",
+    "example_zh": "孩子們昨天放學後很享受吃巧克力餅乾。",
+    "done": true
+  },
+  "cooking": {
+    "pos": "動詞",
+    "phonetic": "/ˈkʊ.kɪŋ/",
+    "definition": "To prepare (food) for eating by heating it, often by combining it with other ingredients.",
+    "definition_zh": "用熱加工食物；烹飪",
+    "example_en": "My mother is cooking dinner in the kitchen right now.",
+    "example_zh": "我媽媽現在正在廚房裡煮晚餐。",
+    "done": true
+  },
+  "countryside": {
+    "pos": "名詞",
+    "phonetic": "/ˈkʌn.tɹiˌsaɪd/",
+    "definition": "A rural area, or the rural part of a larger area.",
+    "definition_zh": "鄉村地區；農村",
+    "example_en": "Many people enjoy visiting the countryside to escape the busy city.",
+    "example_zh": "許多人喜歡去鄉村地區逃離繁忙的城市。",
+    "done": true
+  },
+  "county": {
+    "pos": "名詞",
+    "phonetic": "/ˈkaʊnti/",
+    "definition": "The land ruled by a count or a countess.",
+    "definition_zh": "伯爵或女伯爵統治的地區；郡",
+    "example_en": "The county of Devon is located in the southwest of England.",
+    "example_zh": "德文郡位於英格蘭西南部。",
+    "done": true
+  },
+  "credit card": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A plastic card, usually with a magnetic strip or an embedded microchip, connected to a credit account and used to buy goods or services.",
+    "definition_zh": "與信用帳戶連結、用來購買商品的塑膠卡；信用卡",
+    "example_en": "My mother uses her credit card to buy groceries at the supermarket.",
+    "example_zh": "我媽媽用信用卡在超市購買食品。",
+    "done": true
+  },
+  "crisis": {
+    "pos": "名詞",
+    "phonetic": "/ˈkɹaɪsɪs/",
+    "definition": "A crucial or decisive point or situation; a turning point.",
+    "definition_zh": "關鍵時刻；危急關頭；轉折點",
+    "example_en": "The company faced a serious crisis when sales dropped suddenly.",
+    "example_zh": "當銷售額突然下降時，公司面臨了嚴重危機。",
+    "done": true
+  },
+  "crowd": {
+    "pos": "名詞",
+    "phonetic": "/kɹaʊd/",
+    "definition": "A group of people congregated or collected into a close body without order.",
+    "definition_zh": "聚集在一起的許多人；人群",
+    "example_en": "A large crowd gathered outside the concert venue to buy tickets.",
+    "example_zh": "一大群人聚集在演唱會場地外面買票。",
+    "done": true
+  },
+  "crowded": {
+    "pos": "動詞",
+    "phonetic": "/ˈkɹaʊdɪd/",
+    "definition": "To press forward; to advance by pushing.",
+    "definition_zh": "人很多的；擁擠的；滿是人的",
+    "example_en": "The bus was so crowded that I couldn't find a seat.",
+    "example_zh": "公車太擁擠了，我找不到座位。",
+    "done": true
+  },
+  "culture center": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "文化中心(n)",
+    "definition_zh": "舉辦文化活動、課程和社區活動的地方；文化中心",
+    "example_en": "The new culture center offers art classes and concerts every week.",
+    "example_zh": "新的文化中心每週都提供藝術課程和音樂會。",
+    "done": true
+  },
+  "daily": {
+    "pos": "名詞",
+    "phonetic": "/ˈdeɪli/",
+    "definition": "Something that is produced, consumed, used, or done every day.",
+    "definition_zh": "每天發生或進行的；日常的",
+    "example_en": "I have a daily routine of exercising for thirty minutes every morning.",
+    "example_zh": "我每天早上有運動三十分鐘的日常習慣。",
+    "done": true
+  },
+  "dancing": {
+    "pos": "動詞",
+    "phonetic": "/ˈdæn.sɪŋ/",
+    "definition": "To move with rhythmic steps or movements, especially in time to music.",
+    "definition_zh": "隨著音樂節奏跳舞；舞蹈",
+    "example_en": "Many students enjoy dancing at the school party on Friday night.",
+    "example_zh": "許多學生喜歡在星期五晚上的學校派對跳舞。",
+    "done": true
+  },
+  "debt": {
+    "pos": "名詞",
+    "phonetic": "/dɛt/",
+    "definition": "An action, state of mind, or object one has an obligation to perform for another, adopt toward another, or give to another.",
+    "definition_zh": "欠別人的錢；債務；借款",
+    "example_en": "He worked hard for years to pay off all his debts.",
+    "example_zh": "他多年來努力工作以償還所有債務。",
+    "done": true
+  },
+  "delay": {
+    "pos": "名詞",
+    "phonetic": "/dɪˈleɪ/",
+    "definition": "A period of time before an event occurs; the act of delaying; procrastination; lingering inactivity.",
+    "definition_zh": "延遲；耽擱；推遲",
+    "example_en": "The flight had a delay of two hours due to bad weather.",
+    "example_zh": "由於天氣不好，班機延遲了兩小時。",
+    "done": true
+  },
+  "democracy": {
+    "pos": "名詞",
+    "phonetic": "/dɪˈmɒkɹəsi/",
+    "definition": "Rule by the people, especially as a form of government; either directly or through elected representatives (representative democracy).",
+    "definition_zh": "人民統治；民主制度；民主政治",
+    "example_en": "In a democracy, citizens have the right to vote for their leaders.",
+    "example_zh": "在民主制度中，人民有權投票選舉他們的領導人。",
+    "done": true
+  },
+  "democratic": {
+    "pos": "形容詞",
+    "phonetic": "/dɛməˈkɹætɪk/",
+    "definition": "Pertaining to democracy; favoring democracy, or constructed upon the principle of government by the people.",
+    "definition_zh": "民主的；以人民統治為基礎的；具民主精神的",
+    "example_en": "A democratic government listens to what the people want.",
+    "example_zh": "民主政府傾聽人民的想法。",
+    "done": true
+  },
+  "drawing": {
+    "pos": "動詞",
+    "phonetic": "/ˈdɹɔ.(w)ɪŋ(ɡ)/",
+    "definition": "To move or develop something.",
+    "definition_zh": "素描；繪畫；拉動；吸引",
+    "example_en": "She spent the afternoon drawing pictures of flowers in her notebook.",
+    "example_zh": "她花了一個下午在筆記本上畫花。",
+    "done": true
+  },
+  "dresser": {
+    "pos": "名詞",
+    "phonetic": "/ˈdɹɛsə/",
+    "definition": "An item of kitchen furniture, like a cabinet with shelves, for storing crockery or utensils.",
+    "definition_zh": "餐具櫥；廚房儲物傢俱；有層架的食器櫃",
+    "example_en": "My grandmother keeps her nice plates in the wooden dresser.",
+    "example_zh": "我奶奶把漂亮的盤子放在木製餐具櫥裡。",
+    "done": true
+  },
+  "drinks": {
+    "pos": "動詞",
+    "phonetic": "/dɹɪŋks/",
+    "definition": "To consume (a liquid) through the mouth.",
+    "definition_zh": "飲；喝；飲用（液體）",
+    "example_en": "He drinks a big glass of water after playing basketball.",
+    "example_zh": "他打完籃球後喝了一大杯水。",
+    "done": true
+  },
+  "drugstore": {
+    "pos": "名詞",
+    "phonetic": "/ˈdɹʌɡ.stɔɹ/",
+    "definition": "A pharmacy; a retail store, the main product of which is medications (usually both prescription and non-prescription), along with first aid and other similar products.",
+    "definition_zh": "藥房；藥店；銷售藥物和保健用品的店鋪",
+    "example_en": "I picked up my medicine at the drugstore near my school.",
+    "example_zh": "我在學校附近的藥房拿了我的藥。",
+    "done": true
+  },
+  "earrings": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A piece of jewelry worn on the ear.",
+    "definition_zh": "耳環；耳飾；戴在耳朵上的飾品",
+    "example_en": "Her silver earrings sparkled beautifully under the bright lights.",
+    "example_zh": "她的銀色耳環在亮光下閃閃發光。",
+    "done": true
+  },
+  "easter": {
+    "pos": "形容詞",
+    "phonetic": "/ˈiː.stə/",
+    "definition": "Eastern.",
+    "definition_zh": "東方的；東邊的；來自東方的",
+    "example_en": "The easter side of the mountain gets more sunshine and warmth.",
+    "example_zh": "山的東邊得到更多陽光和溫暖。",
+    "done": true
+  },
+  "effective": {
+    "pos": "名詞",
+    "phonetic": "/əˈfɛktɪv/",
+    "definition": "A soldier fit for duty",
+    "definition_zh": "適合執勤的；能夠履職的；可用的（士兵）",
+    "example_en": "The general counted how many effective soldiers were available for the battle.",
+    "example_zh": "將軍計算了有多少適合作戰的士兵。",
+    "done": true
+  },
+  "eighteenth": {
+    "pos": "名詞",
+    "phonetic": "/ˌeɪˈtiːnθ/",
+    "definition": "The person or thing in the eighteenth position.",
+    "definition_zh": "第十八個；第十八位的人或物",
+    "example_en": "She was the eighteenth student to finish the difficult math test.",
+    "example_zh": "她是第十八個完成這份困難數學考試的學生。",
+    "done": true
+  },
+  "either xxx or": {
+    "pos": "動詞",
+    "phonetic": "",
+    "definition": "選舉、選擇、決定(v)",
+    "definition_zh": "要麼...要麼；二選一的",
+    "example_en": "You can have either chocolate cake or vanilla cake for dessert.",
+    "example_zh": "你可以選擇巧克力蛋糕或香草蛋糕作為甜點。",
+    "done": true
+  },
+  "election": {
+    "pos": "名詞",
+    "phonetic": "/ɪˈlɛkʃ(ə)n/",
+    "definition": "A process of choosing a leader, members of parliament, councillors or other representatives by popular vote.",
+    "definition_zh": "選舉；投票選出領導人或代表的過程",
+    "example_en": "My school held an election to choose the new student council president.",
+    "example_zh": "我的學校舉辦選舉，投票選出新的學生會主席。",
+    "done": true
+  },
+  "electricity": {
+    "pos": "名詞",
+    "phonetic": "/ɪˌlɛkˈtɹɪsɪti/",
+    "definition": "Originally, a property of amber and certain other nonconducting substances to attract lightweight material when rubbed, or the cause of this property; now understood to be a phenomenon caused by the distribution and movement of charged subatomic particles and their interaction with the electromagnetic field.",
+    "definition_zh": "電；電能；驅動燈和機器的能源",
+    "example_en": "Without electricity, modern homes would not have lights or heating.",
+    "example_zh": "沒有電，現代家居就不會有照明和暖氣。",
+    "done": true
+  },
+  "element": {
+    "pos": "名詞",
+    "phonetic": "/ˈɛlɪmənt/",
+    "definition": "One of the simplest or essential parts or principles of which anything consists, or upon which the constitution or fundamental powers of anything are based.",
+    "definition_zh": "元素；基本組成部分；要素",
+    "example_en": "Teamwork is an important element of success in any sports team.",
+    "example_zh": "團隊合作是任何運動隊伍成功的重要因素。",
+    "done": true
+  },
+  "eleventh": {
+    "pos": "名詞",
+    "phonetic": "/ɪˈlɛv.ənθ/",
+    "definition": "The person or thing in the eleventh position.",
+    "definition_zh": "第十一；第11個；排在第11位的",
+    "example_en": "She was the eleventh student to arrive at school this morning.",
+    "example_zh": "今天早上她是第十一個到達學校的學生。",
+    "done": true
+  },
+  "encourage": {
+    "pos": "動詞",
+    "phonetic": "/ɪnˈkʌɹɪdʒ/",
+    "definition": "To mentally support; to motivate, give courage, hope or spirit.",
+    "definition_zh": "鼓勵；激勵；給予勇氣和信心",
+    "example_en": "My teachers always encourage me to ask questions during class.",
+    "example_zh": "我的老師總是鼓勵我在課堂上提出問題。",
+    "done": true
+  },
+  "england": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "英格蘭、英國(n)",
+    "definition_zh": "英格蘭；位於歐洲西北部的國家",
+    "example_en": "London, the capital of England, is a famous city with many museums.",
+    "example_zh": "作為英格蘭的首都，倫敦是一座擁有許多博物館的著名城市。",
+    "done": true
+  },
+  "englishman": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "英格蘭人、英國人(n)",
+    "definition_zh": "英格蘭人；來自英格蘭的男性",
+    "example_en": "My neighbor is an Englishman who moved here to teach English.",
+    "example_zh": "我的鄰居是一位移居這裡教英文的英格蘭人。",
+    "done": true
+  },
+  "entire": {
+    "pos": "名詞",
+    "phonetic": "/ənˈtaɪə/",
+    "definition": "The whole of something; the entirety.",
+    "definition_zh": "整個的；完整的；全部的",
+    "example_en": "She read the entire book in just two days without stopping.",
+    "example_zh": "她只花了兩天就讀完了整本書，沒有停過。",
+    "done": true
+  },
+  "europe": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "歐洲(n)",
+    "definition_zh": "歐洲；位於北半球的洲",
+    "example_en": "France and Germany are two important countries located in Europe.",
+    "example_zh": "法國和德國是位於歐洲的兩個重要國家。",
+    "done": true
+  },
+  "european": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "歐洲的(adj)  歐洲人(n)",
+    "definition_zh": "歐洲的；歐洲人",
+    "example_en": "My friend is from France, so she is European.",
+    "example_zh": "我的朋友來自法國，所以她是歐洲人。",
+    "done": true
+  },
+  "even if": {
+    "pos": "連接詞",
+    "phonetic": "",
+    "definition": "Regardless of whether; irrespective of (something happening or being the case).",
+    "definition_zh": "即使；縱然；不管",
+    "example_en": "Even if it rains tomorrow, we will still go hiking.",
+    "example_zh": "即使明天下雨，我們仍然會去登山。",
+    "done": true
+  },
+  "everywhere": {
+    "pos": "副詞",
+    "phonetic": "/ɛv.ɹi.(h)weə(ɹ)/",
+    "definition": "In or to all locations under discussion.",
+    "definition_zh": "到處；四面八方；各個地方",
+    "example_en": "I looked everywhere for my keys but could not find them.",
+    "example_zh": "我到處尋找鑰匙，但還是找不到。",
+    "done": true
+  },
+  "examine": {
+    "pos": "動詞",
+    "phonetic": "/ɪɡˈzæmɪn/",
+    "definition": "To observe or inspect carefully or critically",
+    "definition_zh": "仔細檢查；細心觀察；審視",
+    "example_en": "The doctor examined the patient to find the cause of the illness.",
+    "example_zh": "醫生仔細檢查病人以找出疾病的原因。",
+    "done": true
+  },
+  "exercising": {
+    "pos": "動詞",
+    "phonetic": "",
+    "definition": "To exert for the sake of training or improvement; to practice in order to develop.",
+    "definition_zh": "運動；鍛鍊；做體育活動",
+    "example_en": "She is exercising at the gym three times a week.",
+    "example_zh": "她每週在健身房運動三次。",
+    "done": true
+  },
+  "expensive fruit": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "高級水果、昂貴的水果(n)",
+    "definition_zh": "昂貴的水果；高級水果",
+    "example_en": "Dragon fruit is expensive fruit that is very popular in Taiwan.",
+    "example_zh": "火龍果是在台灣很受歡迎的昂貴水果。",
+    "done": true
+  },
+  "extra large": {
+    "pos": "形容詞",
+    "phonetic": "",
+    "definition": "Very large.",
+    "definition_zh": "特大號的；超大的；非常大的",
+    "example_en": "She ordered an extra large pizza to feed the whole family.",
+    "example_zh": "她點了一份超大披薩來餵養整個家族。",
+    "done": true
+  },
+  "failure": {
+    "pos": "名詞",
+    "phonetic": "/ˈfeɪl.jɚ/",
+    "definition": "State or condition of not meeting a desirable or intended objective, opposite of success.",
+    "definition_zh": "失敗；失利；未能成功",
+    "example_en": "Tom learned from his failure and tried again with a new plan.",
+    "example_zh": "湯姆從失敗中學習，並用新計畫重新嘗試。",
+    "done": true
+  },
+  "family name": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A surname.",
+    "definition_zh": "姓氏；家族的姓；代代相傳的姓",
+    "example_en": "My family name is Chen, which is very common in Taiwan.",
+    "example_zh": "我的姓是陳，這在台灣非常普遍。",
+    "done": true
+  },
+  "fashionable": {
+    "pos": "名詞",
+    "phonetic": "/ˈfæʃənəbl̩/",
+    "definition": "A fashionable person; a fop",
+    "definition_zh": "時尚的；流行的；入時的",
+    "example_en": "That fashionable dress was designed by a famous international designer.",
+    "example_zh": "那件時尚的洋裝是由國際著名設計師設計的。",
+    "done": true
+  },
+  "fast food": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "Food that is served quickly, often standardized and pre-prepared.",
+    "definition_zh": "快速提供的；預先準備好的食物",
+    "example_en": "My family sometimes eats fast food on weekends when we're busy.",
+    "example_zh": "我的家人在忙碌的週末有時會吃速食。",
+    "done": true
+  },
+  "favor": {
+    "pos": "名詞",
+    "phonetic": "/ˈfeɪvə/",
+    "definition": "A kind or helpful deed; an instance of voluntarily assisting (someone).",
+    "definition_zh": "幫助；幫忙的行為",
+    "example_en": "She asked me to do her a favor and help her with homework.",
+    "example_zh": "她請我幫個忙，協助她寫功課。",
+    "done": true
+  },
+  "feather": {
+    "pos": "名詞",
+    "phonetic": "/ˈfɛð.ə(ɹ)/",
+    "definition": "A branching, hair-like structure that grows on the bodies of birds, used for flight, swimming, protection and display.",
+    "definition_zh": "鳥類身上的羽毛；用於飛行和保溫",
+    "example_en": "The bird lost a colorful feather during its flight through the sky.",
+    "example_zh": "鳥兒在天空飛行時掉了一根彩色的羽毛。",
+    "done": true
+  },
+  "fellow": {
+    "pos": "名詞",
+    "phonetic": "/ˈfɛləʊ/",
+    "definition": "A colleague or partner.",
+    "definition_zh": "同事；夥伴；同學",
+    "example_en": "My fellow students and I worked together on the science project.",
+    "example_zh": "我和同學們一起合作完成科學項目。",
+    "done": true
+  },
+  "field": {
+    "pos": "名詞",
+    "phonetic": "/fiːld/",
+    "definition": "A land area free of woodland, cities, and towns; open country.",
+    "definition_zh": "田地；草地；開放的鄉村地區",
+    "example_en": "We played soccer in the green field near our school every afternoon.",
+    "example_zh": "我們每天下午在學校附近的綠色田地踢足球。",
+    "done": true
+  },
+  "fifteenth": {
+    "pos": "名詞",
+    "phonetic": "/ˌfɪfˈtiːnθ/",
+    "definition": "The person or thing in the fifteenth position.",
+    "definition_zh": "第十五個；位於第十五位的事物或人物",
+    "example_en": "Maria finished in the fifteenth place in the running competition last week.",
+    "example_zh": "瑪麗亞在上週的賽跑比賽中獲得第十五名。",
+    "done": true
+  },
+  "figure": {
+    "pos": "名詞",
+    "phonetic": "/ˈfɪɡjɚ/",
+    "definition": "A drawing or diagram conveying information.",
+    "definition_zh": "圖表；圖形；圖解",
+    "example_en": "The science textbook has many figures showing how plants grow.",
+    "example_zh": "科學教科書有許多圖表展示植物如何生長。",
+    "done": true
+  },
+  "fire station": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "The building where firefighters and fire trucks/fire engines are housed when not answering an alarm.",
+    "definition_zh": "消防局；消防人員和消防車停放的建築物",
+    "example_en": "The fire station near our neighborhood has new firefighters and equipment.",
+    "example_zh": "我們社區附近的消防局有新的消防隊員和設備。",
+    "done": true
+  },
+  "firm": {
+    "pos": "名詞",
+    "phonetic": "/fɜːm/",
+    "definition": "A business partnership; the name under which it trades.",
+    "definition_zh": "（商業）公司；商行；事務所",
+    "example_en": "My father works at a law firm in the downtown area.",
+    "example_zh": "我的父親在市中心的一家律師事務所工作。",
+    "done": true
+  },
+  "first grade": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "The first year of grade school, the period in school that comes after kindergarten and before second grade. Children usually begin first grade at age six.",
+    "definition_zh": "小學教育階段的第一年；幼兒園之後開始的正式學年",
+    "example_en": "My sister starts first grade next year and she is excited to make new friends.",
+    "example_zh": "我妹妹明年開始上一年級，她很興奮要認識新朋友。",
+    "done": true
+  },
+  "first name": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "The first element of a full name in cultures that place the given name first.",
+    "definition_zh": "人名中排在最前面的名字；(某些文化中的)名字而非姓氏",
+    "example_en": "My first name is Lisa, and my last name is Smith.",
+    "example_zh": "我的名字是 Lisa，我的姓氏是 Smith。",
+    "done": true
+  },
+  "fishing": {
+    "pos": "名詞",
+    "phonetic": "/ˈfɪʃɪŋ/",
+    "definition": "The act of catching fish.",
+    "definition_zh": "捕魚；用釣竿或漁網抓魚的活動",
+    "example_en": "My father enjoys fishing at the river every weekend with his friends.",
+    "example_zh": "我爸爸每個週末都喜歡和朋友在河邊釣魚。",
+    "done": true
+  },
+  "flat": {
+    "pos": "名詞",
+    "phonetic": "/flæt/",
+    "definition": "An area of level ground.",
+    "definition_zh": "平坦的；沒有高低起伏的地面或區域",
+    "example_en": "The soccer field is a flat area where we play sports every day.",
+    "example_zh": "足球場是一個平坦的地方，我們每天都在那裡運動。",
+    "done": true
+  },
+  "flat tire": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "自由(n)",
+    "definition_zh": "輪胎洩氣；輪胎失去空氣壓力無法正常運作",
+    "example_en": "We could not ride our bikes because mine had a flat tire on the road.",
+    "example_zh": "我們無法騎自行車，因為我的輪胎在路上洩氣了。",
+    "done": true
+  },
+  "flow": {
+    "pos": "名詞",
+    "phonetic": "/fləʊ/",
+    "definition": "A movement in people or things with a particular way in large numbers or amounts",
+    "definition_zh": "流動；(液體、人或物品的)連續移動",
+    "example_en": "The flow of water from the waterfall was powerful and beautiful.",
+    "example_zh": "瀑布的水流非常強勁而美麗。",
+    "done": true
+  },
+  "flower shop": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "炸薯條(n)",
+    "definition_zh": "花店；販售鮮花及花藝製品的零售商店",
+    "example_en": "I bought a bouquet of roses at the flower shop for my mother's birthday.",
+    "example_zh": "我在花店為媽媽的生日買了一束玫瑰花。",
+    "done": true
+  },
+  "foggy": {
+    "pos": "形容詞",
+    "phonetic": "",
+    "definition": "Obscured by mist or fog; unclear; hazy",
+    "definition_zh": "被霧或薄霧籠罩的；能見度低的；朦朧不清的",
+    "example_en": "The foggy morning made it difficult to see the mountain in the distance.",
+    "example_zh": "那個霧濛濛的早晨讓我很難看清遠處的山。",
+    "done": true
+  },
+  "food restaurant": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "青蛙(n)",
+    "definition_zh": "餐廳；提供已烹飪食物及飲料給顧客的商業場所",
+    "example_en": "We went to a food restaurant for dinner because we did not want to cook.",
+    "example_zh": "我們去餐廳吃晚餐，因為我們不想自己煮飯。",
+    "done": true
+  },
+  "forward": {
+    "pos": "名詞",
+    "phonetic": "/ˈfoːwəd/",
+    "definition": "One of the eight players (comprising two props, one hooker, two locks, two flankers and one number eight, collectively known as the pack) whose primary task is to gain and maintain possession of the ball (compare back).",
+    "definition_zh": "（橄欖球）前鋒球員；主要職責是爭奪並保持球權的球員",
+    "example_en": "The forwards in rugby work hard together to win the ball from opponents.",
+    "example_zh": "橄欖球比賽中的前鋒需要努力配合以從對方爭奪球權。",
+    "done": true
+  },
+  "fourteenth": {
+    "pos": "名詞",
+    "phonetic": "/ˌfɔːˈtiːnθ/",
+    "definition": "The person or thing in the fourteenth position.",
+    "definition_zh": "位於序列中第十四位的人或物",
+    "example_en": "The fourteenth student won first place in the school math competition.",
+    "example_zh": "第十四號學生在學校數學比賽中獲得第一名。",
+    "done": true
+  },
+  "france": {
+    "pos": "形容詞",
+    "phonetic": "",
+    "definition": "慷慨的、大方的、寬厚的(adj)",
+    "definition_zh": "慷慨大方；樂於幫助他人的",
+    "example_en": "Her france nature made her popular among all her classmates.",
+    "example_zh": "她慷慨的性格使她在所有同學中都很受歡迎。",
+    "done": true
+  },
+  "freezer": {
+    "pos": "名詞",
+    "phonetic": "/fɹiːzə/",
+    "definition": "An appliance or room used to store food or other perishable items at temperatures below 0° Celsius (32° Fahrenheit).",
+    "definition_zh": "保存食物於低溫的機器或空間",
+    "example_en": "I keep ice cream in the freezer so it stays hard and cold.",
+    "example_zh": "我把冰淇淋放在冷凍庫裡，這樣它就能保持堅硬和寒冷。",
+    "done": true
+  },
+  "freezing": {
+    "pos": "動詞",
+    "phonetic": "/ˈfɹiːz.ɪŋ/",
+    "definition": "Especially of a liquid, to become solid due to low temperature.",
+    "definition_zh": "因溫度很低而變成冰或固體",
+    "example_en": "The lake starts freezing in December when winter arrives.",
+    "example_zh": "湖水在冬天到來的十二月開始結冰。",
+    "done": true
+  },
+  "german": {
+    "pos": "名詞",
+    "phonetic": "/ˈd͡ʒɜː.mən/",
+    "definition": "A near relative.",
+    "definition_zh": "與自己有血緣關係的親屬",
+    "example_en": "My german called to invite me to the family dinner this Sunday.",
+    "example_zh": "我的親戚打電話邀請我參加本週日的家族晚餐。",
+    "done": true
+  },
+  "germany": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "德國(n)",
+    "definition_zh": "歐洲中部的一個國家",
+    "example_en": "Many people visit Germany to see the old castles and historic cities.",
+    "example_zh": "許多人訪問德國是為了看古老的城堡和歷史城市。",
+    "done": true
+  },
+  "get in": {
+    "pos": "動詞",
+    "phonetic": "",
+    "definition": "To get into or inside something, literally or figuratively.",
+    "definition_zh": "進入或移入某個地方",
+    "example_en": "She had to get in the taxi before the rain started falling hard.",
+    "example_zh": "她必須在大雨開始前進入計程車。",
+    "done": true
+  },
+  "get off": {
+    "pos": "動詞",
+    "phonetic": "",
+    "definition": "To move from being on top of (something) to not being on top of it.",
+    "definition_zh": "從某物上下來或離開",
+    "example_en": "Please get off the bicycle before you walk across the street safely.",
+    "example_zh": "在你安全地過馬路之前，請先從自行車上下來。",
+    "done": true
+  },
+  "get on": {
+    "pos": "動詞",
+    "phonetic": "",
+    "definition": "To board or mount (something), especially a vehicle.",
+    "definition_zh": "登上或進入交通工具",
+    "example_en": "We will get on the airplane early in the morning tomorrow.",
+    "example_zh": "我們明天一大早將登上飛機。",
+    "done": true
+  },
+  "girlfriend": {
+    "pos": "名詞",
+    "phonetic": "/ˈɡɜːlfɹɛnd/",
+    "definition": "A female partner in an unmarried romantic relationship.",
+    "definition_zh": "與某人有浪漫關係但未婚的女性",
+    "example_en": "He introduced his girlfriend to his parents at the family gathering last month.",
+    "example_zh": "他在上個月的家族聚會上把女朋友介紹給了父母。",
+    "done": true
+  },
+  "given name": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A first name, a name chosen for a child, usually by the child's parents; a forename.",
+    "definition_zh": "父母為新生兒選擇的名字；名字（不是姓氏）",
+    "example_en": "Her parents chose the given name Emma for their newborn daughter last month.",
+    "example_zh": "她的父母上個月為新生女兒選擇了名字艾瑪。",
+    "done": true
+  },
+  "gloves": {
+    "pos": "名詞",
+    "phonetic": "/ɡlʌvz/",
+    "definition": "An item of clothing other than a mitten, covering all or part of the hand and fingers, but usually allowing independent movement of the fingers.",
+    "definition_zh": "遮蓋手和手指的衣物；手套（每個手指有獨立的空間）",
+    "example_en": "In winter, I always wear warm gloves to protect my hands from the cold.",
+    "example_zh": "冬天時，我總是戴上溫暖的手套來保護我的雙手。",
+    "done": true
+  },
+  "good looking": {
+    "pos": "形容詞",
+    "phonetic": "",
+    "definition": "美貌的、漂亮的、英俊的(adj)",
+    "definition_zh": "外表漂亮的；英俊的；好看的",
+    "example_en": "The actor in that movie is really good looking, so many people admire him.",
+    "example_zh": "那部電影裡的演員真的很英俊，很多人都很欣賞他。",
+    "done": true
+  },
+  "grand": {
+    "pos": "名詞",
+    "phonetic": "/ɡɹænd/",
+    "definition": "(plural \"grand\") A thousand of some unit of currency, such as dollars or pounds. (Compare G.)",
+    "definition_zh": "一千元（指美元、英鎊等貨幣）",
+    "example_en": "The car costs about five grand, which is more than my monthly salary.",
+    "example_zh": "那輛車大約要五千元，這超過了我一個月的薪水。",
+    "done": true
+  },
+  "granddaughter": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "The daughter of someone's child.",
+    "definition_zh": "兒子或女兒的女兒；孫女",
+    "example_en": "My grandmother loves spending time with her granddaughter every weekend.",
+    "example_zh": "我奶奶每個週末都喜歡和她的孫女在一起。",
+    "done": true
+  },
+  "grapefruit": {
+    "pos": "名詞",
+    "phonetic": "/ˈɡɹeɪp.fɹuːt/",
+    "definition": "The tree of the species Citrus paradisi, a hybrid of pomelo (Citrus maxima) and sweet orange.",
+    "definition_zh": "黃色的柑橘類水果；葡萄柚；味道酸澀",
+    "example_en": "For breakfast, my mother cut a fresh grapefruit and shared it with me.",
+    "example_zh": "早餐時，媽媽切了一個新鮮的葡萄柚和我分享。",
+    "done": true
+  },
+  "grow up": {
+    "pos": "動詞",
+    "phonetic": "",
+    "definition": "To mature and become an adult.",
+    "definition_zh": "長大；成熟；變成大人",
+    "example_en": "I grew up in a small village, but moved to the city for university.",
+    "example_zh": "我在一個小村莊長大，後來為了上大學而搬到城市。",
+    "done": true
+  },
+  "haircut": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "The act of cutting of the hair, often done professionally by a barber, hair stylist, or beautician.",
+    "definition_zh": "剪頭髮；理髮；頭髮被剪後的樣子",
+    "example_en": "I got a new haircut last week and I really like how it looks.",
+    "example_zh": "我上週剪了新髮型，我真的很喜歡它的樣子。",
+    "done": true
+  },
+  "hairdresser": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A person who cuts or styles hair as an occupation or profession.",
+    "definition_zh": "以剪頭髮或設計髮型為職業的人；理髮師",
+    "example_en": "My hairdresser recommended a new style that would look great on me.",
+    "example_zh": "我的理髮師推薦了一個新髮型，他說很適合我。",
+    "done": true
+  },
+  "hey": {
+    "pos": "interjection",
+    "phonetic": "/heɪ/",
+    "definition": "An exclamation to get attention.",
+    "definition_zh": "用來吸引注意力的感嘆詞；嘿",
+    "example_en": "Hey, did you finish your homework yet or are you still working on it?",
+    "example_zh": "嘿，你做完功課了嗎？還是還在做？",
+    "done": true
+  },
+  "hiking": {
+    "pos": "動詞",
+    "phonetic": "/ˈhaɪkɪŋ/",
+    "definition": "To take a long walk for pleasure or exercise.",
+    "definition_zh": "為了休閒或運動的長途步行；登山健行",
+    "example_en": "Last weekend, my family decided to go hiking in the mountains near our home.",
+    "example_zh": "上週末，我的家人決定去我們家附近的山區登山。",
+    "done": true
+  },
+  "hippopotamus": {
+    "pos": "名詞",
+    "phonetic": "/ˌhɪp.əˈpɒt.ə.məs/",
+    "definition": "A large, semi-aquatic, herbivorous (plant-eating) African mammal (Hippopotamus amphibius)",
+    "definition_zh": "大型半水生食草動物，生活在非洲的河流和湖泊中；河馬",
+    "example_en": "The hippopotamus stays in the river during the day to keep its skin cool.",
+    "example_zh": "河馬白天待在河裡保持皮膚涼爽。",
+    "done": true
+  },
+  "homesick": {
+    "pos": "形容詞",
+    "phonetic": "",
+    "definition": "(with for) missing one's home and family very much when away; nostalgic",
+    "definition_zh": "遠離家鄉時思念家人和家園的；想家的",
+    "example_en": "After two weeks at summer camp, he felt homesick and missed his parents.",
+    "example_zh": "在夏令營待了兩週後，他開始思鄉，非常想念父母。",
+    "done": true
+  },
+  "hong kong": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "香港(n)",
+    "definition_zh": "中國南方的特別行政區，位於珠江口，是重要的國際貿易港口",
+    "example_en": "My aunt lives in Hong Kong and works in the finance industry there.",
+    "example_zh": "我的姑媽住在香港，在那裡從事金融工作。",
+    "done": true
+  },
+  "in back of": {
+    "pos": "片語",
+    "phonetic": "",
+    "definition": "在(某人)之後、背地裡、暗中(片)",
+    "definition_zh": "在某人或某物的後面；在...的背後",
+    "example_en": "I found my lost homework in back of the classroom door.",
+    "example_zh": "我在教室門後面找到了遺失的功課。",
+    "done": true
+  },
+  "in front of": {
+    "pos": "介系詞",
+    "phonetic": "",
+    "definition": "At or near the front part of (something).",
+    "definition_zh": "在某人或某物的前面；在...的正前方",
+    "example_en": "The bus stopped in front of our school at exactly eight o'clock.",
+    "example_zh": "公車在早上八點準時停在我們學校的前面。",
+    "done": true
+  },
+  "indefinite": {
+    "pos": "名詞",
+    "phonetic": "/ɪnˈdɛfɪnɪt/",
+    "definition": "(grammar) A word or phrase that designates an unspecified or unidentified person or thing or group of persons or things.",
+    "definition_zh": "（文法）指代不特定或未確定的人或事物；不明確的",
+    "example_en": "In English, the word \"a\" is an indefinite article used before nouns.",
+    "example_zh": "在英文中，\"a\" 是用在名詞前面的不定冠詞。",
+    "done": true
+  },
+  "industry": {
+    "pos": "名詞",
+    "phonetic": "/ˈɪndəstɹi/",
+    "definition": "The tendency to work persistently. Diligence.",
+    "definition_zh": "勤勞；勤奮；持續努力工作的品質",
+    "example_en": "Through hard work and industry, she gradually improved her English test scores.",
+    "example_zh": "通過勤奮和努力，她逐漸提高了英文考試成績。",
+    "done": true
+  },
+  "instant noodle": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "速食麵、泡麵、方便麵(n)",
+    "definition_zh": "可快速烹飪的麵條食品，通常用熱水沖泡；泡麵；速食麵",
+    "example_en": "When I am busy with homework, instant noodles become my quick dinner choice.",
+    "example_zh": "當我忙著做功課時，泡麵成了我快速的晚餐選擇。",
+    "done": true
+  },
+  "italy": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "義大利(n)",
+    "definition_zh": "位於南歐的國家，以其文化、藝術和美食聞名",
+    "example_en": "My parents visited Italy last summer and brought back many beautiful photos.",
+    "example_zh": "我的父母去年暑假去義大利旅遊，帶回很多美麗的照片。",
+    "done": true
+  },
+  "japan": {
+    "pos": "名詞",
+    "phonetic": "/dʒəˈpæn/",
+    "definition": "A hard black enamel varnish containing asphalt.",
+    "definition_zh": "光亮的黑色涂料；樹脂製的光澤漆",
+    "example_en": "The wooden box had a shiny japan coating to protect it.",
+    "example_zh": "木盒上有光滑的日本漆膜來保護它。",
+    "done": true
+  },
+  "japanese": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "日本(人)的、日語的(adj)  日本人、日語(n)",
+    "definition_zh": "日本的；日本人；日語",
+    "example_en": "She is learning Japanese because she enjoys anime very much.",
+    "example_zh": "她在學日語，因為她非常喜歡動畫。",
+    "done": true
+  },
+  "jar": {
+    "pos": "名詞",
+    "phonetic": "/dʒɐː/",
+    "definition": "An earthenware container, either with two or no handles, for holding oil, water, wine, etc., or used for burial.",
+    "definition_zh": "玻璃或陶土製的容器；罐子",
+    "example_en": "She kept homemade jam in glass jars on the kitchen shelf.",
+    "example_zh": "她在廚房架子上用玻璃罐裝自製果醬。",
+    "done": true
+  },
+  "jogging": {
+    "pos": "名詞",
+    "phonetic": "/ˈdʒɒ.ɡɪŋ/",
+    "definition": "The action of the verb to jog.",
+    "definition_zh": "慢跑；緩慢奔跑作為運動",
+    "example_en": "My father goes jogging every morning to stay healthy.",
+    "example_zh": "我父親每天早晨慢跑來保持身體健康。",
+    "done": true
+  },
+  "kangaroo": {
+    "pos": "名詞",
+    "phonetic": "/kaŋ.ɡə.ˈɹuː/",
+    "definition": "A member of the Macropodidae family of large marsupials with strong hind legs for hopping, native to Australia.",
+    "definition_zh": "澳洲有袋動物；後腿強壯能跳躍的大型動物",
+    "example_en": "The kangaroo jumped over the fence with its powerful back legs.",
+    "example_zh": "袋鼠用強壯的後腿跳過了高高的柵欄。",
+    "done": true
+  },
+  "kaohsiung": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "高雄(n)",
+    "definition_zh": "台灣南部的城市",
+    "example_en": "Kaohsiung is a large and busy city in southern Taiwan.",
+    "example_zh": "高雄是台灣南部的一座大城市。",
+    "done": true
+  },
+  "kitty": {
+    "pos": "名詞",
+    "phonetic": "/ˈkɪti/",
+    "definition": "A kitten or young cat.",
+    "definition_zh": "小貓；年幼的貓",
+    "example_en": "The little kitty played with a ball of yarn all afternoon.",
+    "example_zh": "小貓咪整個下午都在玩毛線球。",
+    "done": true
+  },
+  "koala": {
+    "pos": "名詞",
+    "phonetic": "/koʊ.ˈɑː.lə/",
+    "definition": "A tree-dwelling marsupial, Phascolarctos cinereus, that resembles a small bear with a broad head, large ears and sharp claws, mainly found in eastern Australia.",
+    "definition_zh": "澳洲樹棲動物；毛茸茸身體圓胖的有袋動物",
+    "example_en": "The koala climbed high into the tree to find fresh leaves.",
+    "example_zh": "樹熊爬上樹去尋找新鮮的尤加利葉子。",
+    "done": true
+  },
+  "korea": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "韓國、朝鮮(n)",
+    "definition_zh": "東亞的國家；韓國",
+    "example_en": "Many teenagers enjoy pop music and dramas from Korea.",
+    "example_zh": "許多青少年喜歡來自韓國的流行音樂和電視劇。",
+    "done": true
+  },
+  "korean": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "韓國(人、語)的、朝鮮(人、語)的(adj、 n)",
+    "definition_zh": "韓國的；韓國人；韓語",
+    "example_en": "She took Korean lessons before her trip to Seoul last summer.",
+    "example_zh": "她在去首爾旅行前報名了韓語課程。",
+    "done": true
+  },
+  "ktv": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "卡拉OK電視節目(n)",
+    "definition_zh": "卡拉OK；用錄製音樂唱歌的娛樂活動",
+    "example_en": "My friends and I sang popular songs at a KTV bar last weekend.",
+    "example_zh": "我和朋友上週末在卡拉OK唱了流行歌。",
+    "done": true
+  },
+  "lane": {
+    "pos": "名詞",
+    "phonetic": "/leɪn/",
+    "definition": "(used in street names) A road, street, or similar thoroughfare.",
+    "definition_zh": "狹窄的道路；小巷；街道",
+    "example_en": "The old wooden houses lined both sides of the quiet country lane.",
+    "example_zh": "古老的木屋排列在安靜鄉村小巷的兩側。",
+    "done": true
+  },
+  "lantern festival": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "元宵節(n)",
+    "definition_zh": "（傳統節慶）用燈籠裝飾的節日；元宵節",
+    "example_en": "During the lantern festival, colorful paper lanterns hung from every corner of the town.",
+    "example_zh": "在元宵節期間，五顏六色的紙燈籠掛在城鎮的每個角落。",
+    "done": true
+  },
+  "last name": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "One's family name; surname.",
+    "definition_zh": "姓氏；家族名字；姓",
+    "example_en": "My last name is Chen, which is very common in Taiwan.",
+    "example_zh": "我的姓氏是陳，這在台灣是很普遍的名字。",
+    "done": true
+  },
+  "ld": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "雷射光碟(n)",
+    "definition_zh": "雷射光碟；光學儲存媒體",
+    "example_en": "My grandfather still has several LD discs and a player from the 1990s.",
+    "example_zh": "我的祖父仍然有好幾張雷射光碟和一台1990年代的播放機。",
+    "done": true
+  },
+  "length": {
+    "pos": "名詞",
+    "phonetic": "/lɛn(t)θ/",
+    "definition": "The distance measured along the longest dimension of an object.",
+    "definition_zh": "長度；物體從一端到另一端的距離",
+    "example_en": "The length of this swimming pool is exactly fifty meters.",
+    "example_zh": "這個游泳池的長度正好是五十公尺。",
+    "done": true
+  },
+  "location": {
+    "pos": "名詞",
+    "phonetic": "/ləʊˈkeɪʃən/",
+    "definition": "A particular point or place in physical space.",
+    "definition_zh": "地點；位置；特定的地方",
+    "example_en": "The hospital's new location is much closer to our school now.",
+    "example_zh": "醫院的新位置現在離我們學校更近了。",
+    "done": true
+  },
+  "london": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "倫敦(n)",
+    "definition_zh": "（地名）英國首都；倫敦",
+    "example_en": "London is a city with many famous museums and historic buildings to visit.",
+    "example_zh": "倫敦是一個有許多著名博物館和歷史建築可以參觀的城市。",
+    "done": true
+  },
+  "los angeles": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "洛杉磯(n)",
+    "definition_zh": "（地名）美國加州城市；洛杉磯",
+    "example_en": "Los Angeles is famous for its movie industry and beautiful beaches.",
+    "example_zh": "洛杉磯因為它的電影產業和美麗的海灘而出名。",
+    "done": true
+  },
+  "loss": {
+    "pos": "名詞",
+    "phonetic": "/lɑs/",
+    "definition": "The result of no longer possessing an object, a function, or a characteristic due to external causes or misplacement.",
+    "definition_zh": "喪失；失去；不再擁有某物",
+    "example_en": "The loss of her old photo album made her very sad.",
+    "example_zh": "失去她的舊相簿讓她非常難過。",
+    "done": true
+  },
+  "lunch box": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A container for transporting meals, especially lunch.",
+    "definition_zh": "便當盒；盛裝飯菜以便攜帶的容器",
+    "example_en": "I packed a lunch box with rice, vegetables, and chicken for school.",
+    "example_zh": "我準備了一個便當盒，裡面裝著米飯、蔬菜和雞肉帶去上學。",
+    "done": true
+  },
+  "lychee": {
+    "pos": "名詞",
+    "phonetic": "/ˈlaɪ̯t͡ʃiː/",
+    "definition": "The Chinese tropical fruit tree Litchi chinensis, of the soapberry family.",
+    "definition_zh": "荔枝；甜蜜多汁的熱帶水果，有粗糙的殼",
+    "example_en": "We bought sweet lychees at the market and ate them immediately.",
+    "example_zh": "我們在市場買了甜甜的荔枝，立即吃掉了。",
+    "done": true
+  },
+  "ma'am": {
+    "pos": "動詞",
+    "phonetic": "/mæm/",
+    "definition": "To address (someone) using \"ma'am\".",
+    "definition_zh": "用「女士」稱呼某人；以敬語稱呼女性",
+    "example_en": "I learned to ma'am female customers when I started my restaurant job.",
+    "example_zh": "我開始在餐廳工作時學會了用「女士」稱呼女性顧客。",
+    "done": true
+  },
+  "mandarin": {
+    "pos": "名詞",
+    "phonetic": "/ˈmæn.də.ɹɪn/",
+    "definition": "A high government bureaucrat of the Chinese Empire",
+    "definition_zh": "中國帝制時期的高級官員；皇帝屬下的顯要人物",
+    "example_en": "The emperor appointed a skilled mandarin to govern the eastern province.",
+    "example_zh": "皇帝任命了一位能幹的官員來統治東方省份。",
+    "done": true
+  },
+  "marker": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "An object used to mark a location.",
+    "definition_zh": "標記物；用來標示位置或地點的物體",
+    "example_en": "We used a marker to show where we found the fossil.",
+    "example_zh": "我們用標記來標示我們發現化石的地方。",
+    "done": true
+  },
+  "measurement": {
+    "pos": "名詞",
+    "phonetic": "/ˈmeʒ.ə.mənt/",
+    "definition": "The act of measuring.",
+    "definition_zh": "測量；確定某物大小或數量的行為",
+    "example_en": "My father took measurement of the room before buying new furniture.",
+    "example_zh": "我父親在買新家具之前測量了房間的大小。",
+    "done": true
+  },
+  "melon": {
+    "pos": "名詞",
+    "phonetic": "/ˈmɛlən/",
+    "definition": "Any of various plants of the family Cucurbitaceae grown for food, generally not including the cucumber.",
+    "definition_zh": "甜瓜；葫蘆科多汁甜蜜的可食用果實",
+    "example_en": "On hot summer days, we enjoy eating slices of cold watermelon together.",
+    "example_zh": "在炎熱的夏日裡，我們喜歡一起吃冷西瓜片。",
+    "done": true
+  },
+  "men's room": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A lavatory intended for use by men, often including urinals in addition to toilets.",
+    "definition_zh": "男廁所；男性使用的洗手間或盥洗室",
+    "example_en": "I asked a staff member where the men's room was located.",
+    "example_zh": "我問員工男廁所在哪裡。",
+    "done": true
+  },
+  "michael jackson": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "音樂電視 Music TV(n)",
+    "definition_zh": "美國傳奇歌手、舞者，享譽全球的「流行樂之王」",
+    "example_en": "Michael Jackson's music videos changed how people see the music industry.",
+    "example_zh": "麥可傑克森的音樂影片改變了人們看待音樂業的方式。",
+    "done": true
+  },
+  "microwave oven": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "音樂家(n)",
+    "definition_zh": "微波爐；用微波加熱烹飪食物的廚房電器",
+    "example_en": "I can use the microwave oven to heat my dinner in minutes.",
+    "example_zh": "我可以用微波爐在幾分鐘內加熱我的晚餐。",
+    "done": true
+  },
+  "mid-autumn": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "釘子、指甲(n)  釘、釘牢(vt)",
+    "definition_zh": "秋季中間的時期；指中秋節",
+    "example_en": "During mid-autumn, families gather together to eat mooncakes and enjoy the full moon.",
+    "example_zh": "在中秋期間，家人團聚在一起吃月餅，欣賞滿月。",
+    "done": true
+  },
+  "milk shake": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A thick beverage consisting of milk and ice cream mixed together, often with fruit, chocolate, or other flavoring.",
+    "definition_zh": "牛奶和冰淇淋混合製成的冷飲；奶昔",
+    "example_en": "My sister ordered a chocolate milk shake for her birthday treat.",
+    "example_zh": "我妹妹在生日時點了一杯巧克力奶昔作為慶祝。",
+    "done": true
+  },
+  "necktie": {
+    "pos": "名詞",
+    "phonetic": "/ˈnɛk.taɪ/",
+    "definition": "A strip of cloth worn around the neck and tied in the front. See also bowtie.",
+    "definition_zh": "領帶；繞在脖子上並在前面打結的布料",
+    "example_en": "He wore a red necktie with his formal suit to the important meeting.",
+    "example_zh": "他穿著正式套裝，戴著紅色領帶參加這場重要會議。",
+    "done": true
+  },
+  "neither xxx nor": {
+    "pos": "片語",
+    "phonetic": "",
+    "definition": "既不…也不…(片)",
+    "definition_zh": "既不…也不…；表示兩者都不",
+    "example_en": "She likes neither coffee nor tea; she prefers drinking fresh milk.",
+    "example_zh": "她既不喜歡咖啡也不喜歡茶，她更喜歡喝鮮牛奶。",
+    "done": true
+  },
+  "new year's day": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "新年元旦(n)",
+    "definition_zh": "新年元旦；每年1月1日；新年的第一天",
+    "example_en": "Many people spend New Year's Day with their families and celebrate new beginnings.",
+    "example_zh": "很多人在元旦和家人一起度過，慶祝新的開始。",
+    "done": true
+  },
+  "new york": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "紐約(n)",
+    "definition_zh": "紐約；美國東部最大的城市",
+    "example_en": "New York is famous for its tall buildings, busy streets, and world-class attractions.",
+    "example_zh": "紐約以其高樓大廈、繁華街道和世界級景點而聞名。",
+    "done": true
+  },
+  "next to": {
+    "pos": "介系詞",
+    "phonetic": "",
+    "definition": "Beside, alongside, by, adjacent to, or near.",
+    "definition_zh": "在…的旁邊；靠近；相鄰",
+    "example_en": "My desk sits next to the window, so I can see the garden clearly.",
+    "example_zh": "我的書桌在窗邊，所以我可以清楚地看到花園。",
+    "done": true
+  },
+  "nice looking": {
+    "pos": "形容詞",
+    "phonetic": "",
+    "definition": "美貌的、漂亮的、英俊的(adj)",
+    "definition_zh": "好看的；漂亮的；英俊的；外表吸引人的",
+    "example_en": "The new student is nice looking and very friendly with everyone.",
+    "example_zh": "那位新學生長得漂亮，而且對大家都很友善。",
+    "done": true
+  },
+  "nineteenth": {
+    "pos": "名詞",
+    "phonetic": "/ˌnaɪnˈtiːnθ/",
+    "definition": "The person or thing in the nineteenth position.",
+    "definition_zh": "第19個；第十九位；序數第19",
+    "example_en": "Her birthday is on the nineteenth of June every single year.",
+    "example_zh": "她的生日每年都是六月十九號。",
+    "done": true
+  },
+  "ninetieth": {
+    "pos": "名詞",
+    "phonetic": "/ˈnaɪn.ti.əθ/",
+    "definition": "The person or thing in the ninetieth position.",
+    "definition_zh": "第90個；第九十位；序數第90",
+    "example_en": "Her grandmother celebrated her ninetieth birthday with a large family party.",
+    "example_zh": "她的祖母用盛大的家庭派對慶祝她的九十歲生日。",
+    "done": true
+  },
+  "noodles": {
+    "pos": "名詞",
+    "phonetic": "/ˈnuːd(ə)lz/",
+    "definition": "(usually in the plural) a string or strip of pasta",
+    "definition_zh": "（通常用複數）長條形的麵食；麵條",
+    "example_en": "She cooked some delicious noodles for dinner last night.",
+    "example_zh": "她昨晚為晚餐煮了好吃的麵條。",
+    "done": true
+  },
+  "northern": {
+    "pos": "名詞",
+    "phonetic": "/ˈnɔːðn̩/",
+    "definition": "An inhabitant of the northern regions.",
+    "definition_zh": "北方人；來自北方地區的人",
+    "example_en": "My grandfather was a northern who grew up in the cold mountains.",
+    "example_zh": "我的祖父是來自寒冷山區的北方人。",
+    "done": true
+  },
+  "occupation": {
+    "pos": "名詞",
+    "phonetic": "/ɒkjəˈpeɪʃən/",
+    "definition": "An activity or task with which one occupies oneself; usually specifically the productive activity, service, trade, or craft for which one is regularly paid; a job.",
+    "definition_zh": "職業；工作；職務；佔領",
+    "example_en": "My mother's occupation is teaching English at the local high school.",
+    "example_zh": "我媽媽的職業是在當地高中教英文。",
+    "done": true
+  },
+  "occur": {
+    "pos": "動詞",
+    "phonetic": "/əˈkɜː/",
+    "definition": "To happen or take place.",
+    "definition_zh": "發生；出現；想到；被發現",
+    "example_en": "The accident occurred on a rainy Friday evening last week.",
+    "example_zh": "那場事故發生在上週一個下雨的星期五晚上。",
+    "done": true
+  },
+  "official": {
+    "pos": "名詞",
+    "phonetic": "/əˈfɪʃəl/",
+    "definition": "An office holder invested with powers and authorities.",
+    "definition_zh": "官員；高級公務員；負責人；權威人士",
+    "example_en": "The school official announced the new classroom rules during assembly.",
+    "example_zh": "學校的官員在集會上宣布了新的課堂規則。",
+    "done": true
+  },
+  "oh": {
+    "pos": "名詞",
+    "phonetic": "/əʊ/",
+    "definition": "An utterance of oh; a spoken expression of surprise, acknowledgement, etc.",
+    "definition_zh": "哦；呀；啊（表示驚訝、明白、高興或疼痛）",
+    "example_en": "Oh, I didn't realize you were already here waiting for me.",
+    "example_zh": "哦，我沒有意識到你已經在這裡等我了。",
+    "done": true
+  },
+  "oh-oh": {
+    "pos": "interjection",
+    "phonetic": "/ˈɒ.əʊ/",
+    "definition": "An exclamation of error, concern, or awareness of a problem.",
+    "definition_zh": "呃呀；哎呀（表示出錯或發現問題）",
+    "example_en": "Oh-oh, I think I forgot to bring my homework to school today.",
+    "example_zh": "呃呀，我想我忘記今天帶功課去學校了。",
+    "done": true
+  },
+  "oops": {
+    "pos": "名詞",
+    "phonetic": "/uːps/",
+    "definition": "A minor mistake or unforseen difficulty.",
+    "definition_zh": "哎呀；糟糕（表示輕微錯誤或出了點問題）",
+    "example_en": "Oops, I accidentally spilled my coffee on your white shirt.",
+    "example_zh": "哎呀，我不小心把咖啡灑在你的白色襯衫上。",
+    "done": true
+  },
+  "operation": {
+    "pos": "名詞",
+    "phonetic": "/ˌɒpəˈɹeɪʃən/",
+    "definition": "The method by which a device performs its function.",
+    "definition_zh": "操作；運作；運行；手術；營運",
+    "example_en": "The operation of this digital camera is simple and very user-friendly.",
+    "example_zh": "這台數位相機的操作很簡單，非常容易使用。",
+    "done": true
+  },
+  "organize": {
+    "pos": "動詞",
+    "phonetic": "/ˈɔːɡənaɪz/",
+    "definition": "To arrange in working order.",
+    "definition_zh": "整理；安排；組織",
+    "example_en": "The teacher helped students organize their desks before starting class.",
+    "example_zh": "老師幫學生在上課前整理好了他們的書桌。",
+    "done": true
+  },
+  "out of": {
+    "pos": "介系詞",
+    "phonetic": "/ˈaʊt əv/",
+    "definition": "Expressing motion away, literal or figurative; opposed to into.",
+    "definition_zh": "（表示方向）從...出來；離開",
+    "example_en": "The cat jumped out of the window when it heard a loud noise.",
+    "example_zh": "貓聽到巨大的聲音時從窗戶跳了出去。",
+    "done": true
+  },
+  "outer space": {
+    "pos": "名詞",
+    "phonetic": "/ˌaʊtɚ ˈspeɪs/",
+    "definition": "Region outside explored space.",
+    "definition_zh": "地球大氣層外的宇宙；太空",
+    "example_en": "Astronauts travel into outer space to study distant planets and stars.",
+    "example_zh": "太空人進入外太空去研究遠方的行星和星星。",
+    "done": true
+  },
+  "over-weight": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "超重(n)",
+    "definition_zh": "體重超過正常值；過胖的",
+    "example_en": "The doctor told him he was overweight and needed to exercise more.",
+    "example_zh": "醫生告訴他他超重了，需要多運動。",
+    "done": true
+  },
+  "overpass": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A section of a road or path that crosses over an obstacle, especially another road, railway, etc.",
+    "definition_zh": "跨越的道路或橋樑；立交橋",
+    "example_en": "We drove under the overpass to reach the other side of the highway.",
+    "example_zh": "我們開車通過立交橋到達高速公路的另一邊。",
+    "done": true
+  },
+  "paris": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "巴黎(n)",
+    "definition_zh": "法國的首都和最大城市",
+    "example_en": "Many students dream of visiting Paris to see the famous Eiffel Tower.",
+    "example_zh": "許多學生夢想去巴黎看著名的艾菲爾鐵塔。",
+    "done": true
+  },
+  "parking lot": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "An open area, generally paved, where automobiles may be left when not in use.",
+    "definition_zh": "停放汽車的露天場地；停車場",
+    "example_en": "The shopping mall has a large parking lot for hundreds of cars.",
+    "example_zh": "這家購物商場有一個可停放數百輛車的大停車場。",
+    "done": true
+  },
+  "pencil box": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A container for stationery such as pencils, pens, rubber, correction fluid, etc.",
+    "definition_zh": "存放鉛筆和文具的盒子；文具盒",
+    "example_en": "She organized all her pencils and erasers inside her wooden pencil box.",
+    "example_zh": "她把所有的鉛筆和橡皮擦整理放入她的木質文具盒裡。",
+    "done": true
+  },
+  "pencil case": {
+    "pos": "名詞",
+    "phonetic": "/ˈpɛnsəl ˌkeɪs/",
+    "definition": "An object purposed to contain different stationery like pencil, rubber, correction fluid, etc.",
+    "definition_zh": "存放筆類和文具的軟布袋；筆袋",
+    "example_en": "My pencil case is made of strong fabric and easily fits in my backpack.",
+    "example_zh": "我的筆袋是用耐用的布料做的，很容易放進書包裡。",
+    "done": true
+  },
+  "philippines": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "菲律賓(n)",
+    "definition_zh": "東南亞由許多島嶼組成的國家",
+    "example_en": "The Philippines has beautiful beaches and tropical weather year round.",
+    "example_zh": "菲律賓有美麗的海灘和全年溫暖的熱帶天氣。",
+    "done": true
+  },
+  "photograph": {
+    "pos": "名詞",
+    "phonetic": "/ˈfəʊ.tə.ˌɡɹɑːf/",
+    "definition": "A picture created by projecting an image onto a photosensitive surface such as a chemically treated plate or film, CCD receptor, etc.",
+    "definition_zh": "照片；用相機或攝影設備拍攝的影像",
+    "example_en": "I took a photograph of the sunset at the beach.",
+    "example_zh": "我在海灘上拍了一張日落的照片。",
+    "done": true
+  },
+  "photographer": {
+    "pos": "名詞",
+    "phonetic": "/fəˈtɒɡɹəfə/",
+    "definition": "One who takes photographs, typically as an occupation.",
+    "definition_zh": "攝影師；以拍攝照片為職業的人",
+    "example_en": "The photographer captured beautiful moments at the wedding.",
+    "example_zh": "攝影師在婚禮上捕捉了美好的時刻。",
+    "done": true
+  },
+  "pingpong": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "乒乓球(n)",
+    "definition_zh": "乒乓球；桌面上進行的球類運動",
+    "example_en": "My friends and I play pingpong every weekend together.",
+    "example_zh": "我和朋友們每個週末都一起玩乒乓球。",
+    "done": true
+  },
+  "plastic": {
+    "pos": "名詞",
+    "phonetic": "/ˈplæstɪk/",
+    "definition": "A synthetic, solid, hydrocarbon-based polymer, whether thermoplastic or thermosetting.",
+    "definition_zh": "塑膠；人造的輕硬材料",
+    "example_en": "Most water bottles are made from plastic nowadays.",
+    "example_zh": "現在大多數水瓶都是用塑膠製成的。",
+    "done": true
+  },
+  "pleased": {
+    "pos": "動詞",
+    "phonetic": "/pliːzd/",
+    "definition": "To make happy or satisfy; to give pleasure to.",
+    "definition_zh": "高興的；滿意的；開心的",
+    "example_en": "My teacher was pleased with my exam results.",
+    "example_zh": "我的老師對我的考試成績感到滿意。",
+    "done": true
+  },
+  "pleasure": {
+    "pos": "名詞",
+    "phonetic": "/ˈplɛʒə/",
+    "definition": "A state of being pleased or contented; gratification.",
+    "definition_zh": "愉快；享受；滿足感",
+    "example_en": "Reading a good book brings me great pleasure.",
+    "example_zh": "閱讀一本好書給我帶來了很大的樂趣。",
+    "done": true
+  },
+  "police officer": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A peace officer and member of a police force, i.e. policeman or policewoman.",
+    "definition_zh": "警察；執法部門的成員，維持公共安全",
+    "example_en": "The police officer helped the lost child find her home.",
+    "example_zh": "警察幫助那個迷路的小女孩找到了她的家。",
+    "done": true
+  },
+  "police station": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A building serving as the headquarters of a branch of the police force, and sometimes as a temporary place of confinement for offenders.",
+    "definition_zh": "警察局；警察工作的總部或辦公地點",
+    "example_en": "I went to the police station to report a theft.",
+    "example_zh": "我去警察局報告了一起盜竊案。",
+    "done": true
+  },
+  "policeman": {
+    "pos": "名詞",
+    "phonetic": "/pəˈliːsmən/",
+    "definition": "One who enforces.",
+    "definition_zh": "男警察；執行警務維持秩序的男性",
+    "example_en": "The policeman directed traffic at the busy intersection.",
+    "example_zh": "警察在繁忙的十字路口指揮交通。",
+    "done": true
+  },
+  "pop music": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "Music intended for or accepted by a wide audience, usually with a commercial basis and distinguished from other genres such as classical music and folk music.",
+    "definition_zh": "流行音樂；廣受大眾歡迎的音樂類型",
+    "example_en": "She loves to listen to pop music while doing homework.",
+    "example_zh": "她喜歡在做功課時聽流行音樂。",
+    "done": true
+  },
+  "possessive": {
+    "pos": "名詞",
+    "phonetic": "/pəˈzɛsɪv/",
+    "definition": "(grammar) The possessive case.",
+    "definition_zh": "（文法）擁有格；所有格",
+    "example_en": "In the sentence 'That is my book', the word 'my' is a possessive.",
+    "example_zh": "在句子『那是我的書』中，'my'是擁有格。",
+    "done": true
+  },
+  "preposition": {
+    "pos": "名詞",
+    "phonetic": "/ˌpɹɛpəˈzɪʃən/",
+    "definition": "(grammar, strict sense) Any of a class of non-inflecting words typically employed to connect a following noun or a pronoun, in an adjectival or adverbial sense, with some other word: a particle used with a noun or pronoun (in English always in the objective case) to make a phrase limiting some other word.",
+    "definition_zh": "（文法）前置詞；介詞",
+    "example_en": "Words like 'in', 'on', and 'at' are prepositions that tell us where something is.",
+    "example_zh": "'in'、'on'和'at'是前置詞，說明事物在哪裡。",
+    "done": true
+  },
+  "press": {
+    "pos": "名詞",
+    "phonetic": "/pɹɛs/",
+    "definition": "A device used to apply pressure to an item.",
+    "definition_zh": "按壓機；壓力機",
+    "example_en": "She used the press to flatten the metal sheets into a thin plate.",
+    "example_zh": "她用壓力機把金屬片壓成薄片。",
+    "done": true
+  },
+  "primary school": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "The first formal, obligatory school. Usually begins with nursery school or first grade and ends at fifth or sixth grade.",
+    "definition_zh": "小學；初級學校",
+    "example_en": "Most children enter primary school at around six years old.",
+    "example_zh": "大多數孩子在六歲左右進入小學。",
+    "done": true
+  },
+  "printer": {
+    "pos": "名詞",
+    "phonetic": "/ˈpɹɪntə(ɹ)/",
+    "definition": "One who makes prints.",
+    "definition_zh": "印刷工人；排版工人",
+    "example_en": "The printer carefully checked the color quality before finishing the job.",
+    "example_zh": "印刷工人在完成工作前仔細檢查了顏色品質。",
+    "done": true
+  },
+  "prisoner": {
+    "pos": "名詞",
+    "phonetic": "/ˈpɹɪzənəɹ/",
+    "definition": "A person incarcerated in a prison, while on trial or serving a sentence.",
+    "definition_zh": "囚犯；獄中人",
+    "example_en": "The prisoner waited anxiously for the court hearing.",
+    "example_zh": "囚犯焦急地等待著法庭聽證會。",
+    "done": true
+  },
+  "product": {
+    "pos": "名詞",
+    "phonetic": "/ˈpɹɒd.əkt/",
+    "definition": "A commodity offered for sale.",
+    "definition_zh": "商品；產品",
+    "example_en": "The supermarket had new beauty products on the shelf.",
+    "example_zh": "超市的架子上擺著新的美容產品。",
+    "done": true
+  },
+  "pronoun": {
+    "pos": "名詞",
+    "phonetic": "/ˈpɹəʊnaʊn/",
+    "definition": "(grammar) A type of noun that refers anaphorically to another noun or noun phrase, but which cannot ordinarily be preceded by a determiner and rarely takes an attributive adjective. English examples include I, you, him, who, me, my, each other.",
+    "definition_zh": "（文法）代名詞；代詞",
+    "example_en": "In 'She is kind', 'she' is a pronoun that replaces the person's name.",
+    "example_zh": "在『她很親切』中，'she'是代名詞，用來代替那個人的名字。",
+    "done": true
+  },
+  "quickly": {
+    "pos": "副詞",
+    "phonetic": "/ˈkwɪkli/",
+    "definition": "Rapidly; with speed; fast.",
+    "definition_zh": "迅速地；快速地",
+    "example_en": "He quickly finished his breakfast and ran to catch the bus.",
+    "example_zh": "他迅速吃完早餐，跑著去趕公車。",
+    "done": true
+  },
+  "raincoat": {
+    "pos": "名詞",
+    "phonetic": "/ˈɹeɪnkəʊt/",
+    "definition": "A waterproof coat to be worn in the rain.",
+    "definition_zh": "雨衣；防水外套",
+    "example_en": "She wore her yellow raincoat during the heavy downpour.",
+    "example_zh": "她在大雨中穿著黃色雨衣。",
+    "done": true
+  },
+  "rapid": {
+    "pos": "名詞",
+    "phonetic": "/ˈɹæpɪd/",
+    "definition": "(often in the plural) a rough section of a river or stream which is difficult to navigate due to the swift and turbulent motion of the water.",
+    "definition_zh": "（河流中）激流；急流；湍急的河段",
+    "example_en": "The river has several dangerous rapids near the waterfall.",
+    "example_zh": "這條河靠近瀑布的地方有幾處危險的急流。",
+    "done": true
+  },
+  "reading": {
+    "pos": "動詞",
+    "phonetic": "/ˈɹidiŋ/",
+    "definition": "To look at and interpret letters or other information that is written.",
+    "definition_zh": "閱讀；讀；理解文字",
+    "example_en": "She enjoys reading books in the quiet library every afternoon.",
+    "example_zh": "她喜歡每天下午在安靜的圖書館閱讀書籍。",
+    "done": true
+  },
+  "reading test": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "閱讀測驗(n)",
+    "definition_zh": "閱讀測驗；閱讀理解考試",
+    "example_en": "The reading test included three different passages to understand.",
+    "example_zh": "這次閱讀測驗包含了三篇不同的文章。",
+    "done": true
+  },
+  "recent": {
+    "pos": "形容詞",
+    "phonetic": "/ˈɹiːsənt/",
+    "definition": "Having happened a short while ago.",
+    "definition_zh": "最近的；近期的；新近發生的",
+    "example_en": "Recent news about the sports event surprised many people.",
+    "example_zh": "最近關於運動會的新聞讓許多人感到驚訝。",
+    "done": true
+  },
+  "reflexive": {
+    "pos": "形容詞",
+    "phonetic": "/ɹəˈflɛksɪv/",
+    "definition": "That reflects, or redirects back to the source.",
+    "definition_zh": "反身的；自指的；回應性的",
+    "example_en": "In grammar, a reflexive verb shows action directed back to the subject.",
+    "example_zh": "在文法中，反身動詞表示動作指向主詞本身。",
+    "done": true
+  },
+  "roller skating": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "Skating on roller skates",
+    "definition_zh": "滑輪溜冰；穿著滑冰鞋活動",
+    "example_en": "Roller skating is a fun and popular sport at the skating rink.",
+    "example_zh": "滑輪溜冰是溜冰場裡有趣且受歡迎的運動。",
+    "done": true
+  },
+  "rome": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "屋頂(n)",
+    "definition_zh": "建築物頂部；屋頂",
+    "example_en": "Heavy rain last night damaged the roof of our house.",
+    "example_zh": "昨晚大雨損壞了我們房子的屋頂。",
+    "done": true
+  },
+  "rubber band": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "An elastic band made of rubber.",
+    "definition_zh": "橡皮筋；橡膠圈；彈性橡皮筋",
+    "example_en": "She used a rubber band to tie her long hair into a ponytail.",
+    "example_zh": "她用橡皮筋把長頭髮綁成馬尾。",
+    "done": true
+  },
+  "running": {
+    "pos": "動詞",
+    "phonetic": "/ˈɹʌnɪŋ/",
+    "definition": "To move swiftly.",
+    "definition_zh": "跑步；奔跑；快速移動",
+    "example_en": "The runners were running toward the finish line very fast.",
+    "example_zh": "選手們快速地跑向終點線。",
+    "done": true
+  },
+  "running nose": {
+    "pos": "動詞",
+    "phonetic": "",
+    "definition": "衝、奔、倉促行動(vi)  催促(vt)",
+    "definition_zh": "流鼻涕；鼻子流液體",
+    "example_en": "The child came home from school with a running nose and cough.",
+    "example_zh": "那個孩子從學校回家時流著鼻涕，還在咳嗽。",
+    "done": true
+  },
+  "russia": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "俄羅斯(人)的、俄語的(adj)  俄羅斯人、俄語(n)",
+    "definition_zh": "俄羅斯的；關於俄羅斯或俄語",
+    "example_en": "The Russia soccer team played very well in the international match.",
+    "example_zh": "俄羅斯足球隊在國際比賽中表現得很出色。",
+    "done": true
+  },
+  "russian": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "安全、平安(n)",
+    "definition_zh": "俄羅斯人；俄語；俄羅斯語言",
+    "example_en": "My new classmate is Russian and she teaches us interesting Russian words.",
+    "example_zh": "我的新同學是俄羅斯人，她教我們一些有趣的俄語單字。",
+    "done": true
+  },
+  "sailing": {
+    "pos": "動詞",
+    "phonetic": "/ˈseɪ.lɪŋ/",
+    "definition": "To be impelled or driven forward by the action of wind upon sails, as a ship on water; to be impelled on a body of water by steam or other power.",
+    "definition_zh": "航海；乘帆船行駛；駕船航行",
+    "example_en": "On weekends, we enjoy sailing across the beautiful blue ocean.",
+    "example_zh": "在週末，我們喜歡在美麗的藍色海洋上揚帆航行。",
+    "done": true
+  },
+  "salesman": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A man whose job it is to sell things, either in a shop/store or elsewhere.",
+    "definition_zh": "銷售員；推銷員；男性售貨員",
+    "example_en": "The salesman at the computer store helped me choose the right laptop.",
+    "example_zh": "電腦店的銷售員幫我選擇了合適的筆記型電腦。",
+    "done": true
+  },
+  "san francisco": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "沙(複)沙灘(n)",
+    "definition_zh": "舊金山（美國加州城市）",
+    "example_en": "My uncle lives in San Francisco and loves the cool weather there.",
+    "example_zh": "我的叔叔住在舊金山，他喜歡那裡涼爽的天氣。",
+    "done": true
+  },
+  "satisfied": {
+    "pos": "動詞",
+    "phonetic": "/ˈsætɪsfaɪd/",
+    "definition": "To do enough for; to meet the needs of; to fulfill the wishes or requirements of.",
+    "definition_zh": "感到滿意的；滿足的；心滿意足",
+    "example_en": "After eating the delicious food, she looked very satisfied and happy.",
+    "example_zh": "吃完美味的食物後，她看起來非常滿意和開心。",
+    "done": true
+  },
+  "scared": {
+    "pos": "動詞",
+    "phonetic": "/skɛəd/",
+    "definition": "To frighten, terrify, startle, especially in a minor way.",
+    "definition_zh": "害怕的；受驚的；感到恐懼",
+    "example_en": "The little boy was scared of the dark and needed a night light.",
+    "example_zh": "那個小男孩害怕黑暗，需要一盞夜燈。",
+    "done": true
+  },
+  "schoolmate": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A person who was a fellow attendee at one's school.",
+    "definition_zh": "同學；校友；同班同學",
+    "example_en": "I bumped into my old schoolmate at the mall after many years.",
+    "example_zh": "我在購物商場裡遇見了多年未見的舊同學。",
+    "done": true
+  },
+  "second grade": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "二年級(n)",
+    "definition_zh": "二年級；小學二年級",
+    "example_en": "In second grade, I had my favorite teacher who taught us to love reading.",
+    "example_zh": "在二年級時，我遇到了最喜歡的老師，她教我們愛上閱讀。",
+    "done": true
+  },
+  "secondary": {
+    "pos": "名詞",
+    "phonetic": "/ˈsɛkənd(ə)ɹɪ/",
+    "definition": "Any flight feather attached to the ulna (forearm) of a bird.",
+    "definition_zh": "鳥類翅膀上的飛羽（位於前臂骨附近）",
+    "example_en": "The secondary feathers on a bird's wing help it control its flight.",
+    "example_zh": "鳥類翅膀上的次生飛羽可以幫助牠控制飛行。",
+    "done": true
+  },
+  "separate": {
+    "pos": "名詞",
+    "phonetic": "/ˈsɛpəɹət/",
+    "definition": "(usually in the plural) Anything that is sold by itself, especially an article of clothing.",
+    "definition_zh": "單獨出售的物品；尤其指衣服",
+    "example_en": "She bought a white blouse as a separate to match her favorite skirt.",
+    "example_zh": "她買了一件白色上衣，當作單獨的衣服搭配她最喜歡的裙子。",
+    "done": true
+  },
+  "seventeenth": {
+    "pos": "名詞",
+    "phonetic": "/ˌsɛvənˈtiːnθ/",
+    "definition": "One of seventeen equal parts of a whole.",
+    "definition_zh": "整體分成十七等份中的一份",
+    "example_en": "He ate one seventeenth of the pizza his friends brought to the party.",
+    "example_zh": "他吃了朋友帶到派對的披薩的十七分之一。",
+    "done": true
+  },
+  "shoes": {
+    "pos": "名詞",
+    "phonetic": "/ʃuːz/",
+    "definition": "A protective covering for the foot, with a bottom part composed of thick leather or plastic sole and often a thicker heel, and a softer upper part made of leather or synthetic material. Shoes generally do not extend above the ankle, as opposed to boots, which do.",
+    "definition_zh": "覆蓋腳部的保護用鞋類；通常包括鞋底和柔軟鞋面，不超過腳踝",
+    "example_en": "I need to buy new shoes because my old ones are falling apart.",
+    "example_zh": "我需要買新鞋子，因為舊鞋子快要壞了。",
+    "done": true
+  },
+  "shopping": {
+    "pos": "動詞",
+    "phonetic": "/ˈʃɒpɪŋ/",
+    "definition": "To visit stores or shops to browse or explore merchandise, especially with the intention of buying such merchandise.",
+    "definition_zh": "去商店或賣場瀏覽或購買商品",
+    "example_en": "My mom is shopping for groceries at the supermarket right now.",
+    "example_zh": "我媽媽現在正在超市買食品雜貨。",
+    "done": true
+  },
+  "shot": {
+    "pos": "動詞",
+    "phonetic": "/ʃɒt/",
+    "definition": "To launch a projectile.",
+    "definition_zh": "用力發射或投擲物體",
+    "example_en": "The player shot the basketball toward the hoop and scored a point.",
+    "example_zh": "籃球運動員朝籃筐射出籃球並得到一分。",
+    "done": true
+  },
+  "singapore": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "新加坡(n)",
+    "definition_zh": "位於東南亞的城市國家",
+    "example_en": "Singapore is a small but very developed country in Southeast Asia.",
+    "example_zh": "新加坡是位於東南亞的一個小但發展很好的國家。",
+    "done": true
+  },
+  "singing": {
+    "pos": "動詞",
+    "phonetic": "/ˈsɪŋɪŋ/",
+    "definition": "To produce musical or harmonious sounds with one’s voice.",
+    "definition_zh": "用聲音發出音樂或悅耳的聲音；唱歌",
+    "example_en": "She was singing a beautiful song at the school concert yesterday.",
+    "example_zh": "她在昨天的學校音樂會上唱著美麗的歌曲。",
+    "done": true
+  },
+  "sixteenth": {
+    "pos": "名詞",
+    "phonetic": "/ˌsɪksˈtiːnθ/",
+    "definition": "One of sixteen equal parts of a whole.",
+    "definition_zh": "整體分成十六等份中的一份",
+    "example_en": "He divided the chocolate bar into sixteen pieces and ate one sixteenth.",
+    "example_zh": "他把巧克力棒分成十六份並吃了其中十六分之一。",
+    "done": true
+  },
+  "skating": {
+    "pos": "動詞",
+    "phonetic": "/ˈskeɪtɪŋ/",
+    "definition": "To move along a surface (ice or ground) using skates.",
+    "definition_zh": "穿著溜冰鞋在冰面或光滑地面上滑行",
+    "example_en": "My friends and I are skating on the ice rink every Sunday afternoon.",
+    "example_zh": "我和朋友們每個星期天下午都在溜冰場滑冰。",
+    "done": true
+  },
+  "skiing": {
+    "pos": "動詞",
+    "phonetic": "/ˈskiɪŋ/",
+    "definition": "To move on skis",
+    "definition_zh": "在雪地上以滑雪板滑行的運動",
+    "example_en": "My family goes skiing in the mountains every winter vacation.",
+    "example_zh": "我的家人每年寒假都會去山裡滑雪。",
+    "done": true
+  },
+  "sneaky": {
+    "pos": "名詞",
+    "phonetic": "/ˈsniːki/",
+    "definition": "Any device used for covert surveillance.",
+    "definition_zh": "暗地進行的；秘密進行的；隱瞞的",
+    "example_en": "He took a sneaky look at the test answers before the teacher returned.",
+    "example_zh": "他在老師回來前，偷偷瞄了一眼考卷答案。",
+    "done": true
+  },
+  "snowman": {
+    "pos": "名詞",
+    "phonetic": "/ˈsnəʊ.mæn/",
+    "definition": "A humanoid figure made with large snowballs stacked on each other. Human traits like a face and arms may be fashioned with sticks (arms), a carrot (nose), and stones or coal (eyes, mouth).",
+    "definition_zh": "用滾成球狀的雪堆疊而成的人形",
+    "example_en": "The children built a snowman with a carrot nose in the backyard.",
+    "example_zh": "孩子們在後院用胡蘿蔔做鼻子堆了一個雪人。",
+    "done": true
+  },
+  "social science": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A branch of science that studies the society and human behavior in it, including anthropology, communication studies, criminology, economics, geography, history, political science, psychology, social studies, and sociology.",
+    "definition_zh": "研究社會及人類行為的學科",
+    "example_en": "Social science classes include history, geography, and economics together.",
+    "example_zh": "社會科學課程包括歷史、地理和經濟學。",
+    "done": true
+  },
+  "soft drink": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "碳酸飲料、不含酒精飲料(n)",
+    "definition_zh": "不含酒精的冷飲；碳酸飲料",
+    "example_en": "I usually buy a soft drink with my lunch in the school cafeteria.",
+    "example_zh": "我通常在學校食堂午餐時買杯軟性飲料。",
+    "done": true
+  },
+  "softball": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A game similar to baseball but played with a larger and softer ball which can be thrown overhand or underhand.",
+    "definition_zh": "類似棒球但使用較大較軟球的運動",
+    "example_en": "Our school has a softball team that practices three times every week.",
+    "example_zh": "我們學校有一支每週練習三次的壘球隊。",
+    "done": true
+  },
+  "sore throat": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "Any inflammation of the pharynx that causes soreness.",
+    "definition_zh": "喉嚨發炎疼痛的症狀",
+    "example_en": "Yesterday I had a terrible sore throat and could not eat properly.",
+    "example_zh": "我昨天喉嚨非常疼痛，無法正常進食。",
+    "done": true
+  },
+  "sort": {
+    "pos": "名詞",
+    "phonetic": "/sɔːt/",
+    "definition": "A general type.",
+    "definition_zh": "類型；種類；品種",
+    "example_en": "What sort of movies do you enjoy watching in your free time?",
+    "example_zh": "你空閒時間喜歡看什麼類型的電影？",
+    "done": true
+  },
+  "southern": {
+    "pos": "名詞",
+    "phonetic": "/ˈsʌðɚn/",
+    "definition": "Someone from one of the states which seceded in 1861 and briefly formed the Confederate States of America, or, more broadly, from some neighboring states as well (but excluding geographically-southerly states like Arizona); compare the South.",
+    "definition_zh": "南部的；來自南方的；向南的",
+    "example_en": "Kaohsiung is Taiwan's southern city with warm tropical weather.",
+    "example_zh": "高雄是台灣的南部城市，氣候溫暖且熱帶。",
+    "done": true
+  },
+  "soy-sauce": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "醬油(n)",
+    "definition_zh": "用發酵黃豆製成的黑色鹹調味醬",
+    "example_en": "My mother uses soy sauce to add flavor to our vegetable dishes.",
+    "example_zh": "我媽媽用醬油給蔬菜菜餚增加風味。",
+    "done": true
+  },
+  "spread": {
+    "pos": "名詞",
+    "phonetic": "/spɹɛd/",
+    "definition": "The act of spreading.",
+    "definition_zh": "传播；蔓延；涂抹的动作或过程",
+    "example_en": "The quick spread of the news surprised everyone in our small town.",
+    "example_zh": "新闻快速的传播让我们小镇的每个人都感到惊讶。",
+    "done": true
+  },
+  "stairs": {
+    "pos": "名詞",
+    "phonetic": "/ˈstɛəz/",
+    "definition": "A single step in a staircase.",
+    "definition_zh": "楼梯；一组台阶",
+    "example_en": "I climbed the stairs carefully because my hands were full of books.",
+    "example_zh": "因为我手里装满了书，所以我小心翼翼地爬楼梯。",
+    "done": true
+  },
+  "stamp collecting": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "The hobby of collecting and displaying postage stamps and related items.",
+    "definition_zh": "集邮；收集和展示邮票的爱好",
+    "example_en": "My grandfather enjoyed stamp collecting since he was a young boy.",
+    "example_zh": "我的祖父从小就喜欢集邮这个爱好。",
+    "done": true
+  },
+  "standard": {
+    "pos": "名詞",
+    "phonetic": "/ˈstændəd/",
+    "definition": "A principle or example or measure used for comparison.",
+    "definition_zh": "标准；衡量或比较的准则",
+    "example_en": "The teacher used a high standard to measure all of our writing assignments.",
+    "example_zh": "老师用很高的标准来评估我们所有的写作作业。",
+    "done": true
+  },
+  "stationery store": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "文具店(n)",
+    "definition_zh": "文具店；销售笔、纸张等书写用品的零售店",
+    "example_en": "I bought new notebooks at the stationery store before school started.",
+    "example_zh": "在学校开学前，我在文具店买了新笔记本。",
+    "done": true
+  },
+  "stick": {
+    "pos": "名詞",
+    "phonetic": "/stɪk/",
+    "definition": "An elongated piece of wood or similar material, typically put to some use, for example as a wand or baton.",
+    "definition_zh": "木棍；树枝；细长的木制物品",
+    "example_en": "The dog ran excitedly after I threw a stick across the grassy field.",
+    "example_zh": "我把木棍扔过草地后，狗兴奋地跑了过去。",
+    "done": true
+  },
+  "stormy": {
+    "pos": "形容詞",
+    "phonetic": "/ˈstɔɹmi/",
+    "definition": "Of or pertaining to storms.",
+    "definition_zh": "暴风雨的；有大风和雨的",
+    "example_en": "We stayed inside during the stormy weather and played board games together.",
+    "example_zh": "在暴风雨的天气里，我们呆在室内一起玩棋类游戏。",
+    "done": true
+  },
+  "struggle": {
+    "pos": "名詞",
+    "phonetic": "/ˈstrʌɡəl/",
+    "definition": "A contortion of the body in an attempt to escape or to perform a difficult task.",
+    "definition_zh": "挣扎；奋力；克服困难的努力",
+    "example_en": "Learning English was a real struggle for me in my first year of school.",
+    "example_zh": "在我上学的第一年，学习英文对我来说是一场真正的挑战。",
+    "done": true
+  },
+  "submarine": {
+    "pos": "名詞",
+    "phonetic": "/sʌb.məˈɹiːn/",
+    "definition": "A boat that can go underwater.",
+    "definition_zh": "潜水艇；在水下航行的舰船",
+    "example_en": "In the science museum, I learned how a submarine stays underwater safely.",
+    "example_zh": "在科学博物馆里，我了解了潜水艇如何安全地在水下航行。",
+    "done": true
+  },
+  "successfully": {
+    "pos": "副詞",
+    "phonetic": "/səkˈsɛsfəli/",
+    "definition": "In a successful manner; with success; without failing.",
+    "definition_zh": "成功地；顺利地；圆满地",
+    "example_en": "She successfully completed her difficult project after working hard for weeks.",
+    "example_zh": "经过几周的努力工作后，她成功地完成了她困难的项目。",
+    "done": true
+  },
+  "such": {
+    "pos": "名詞",
+    "phonetic": "/sʌt͡ʃ/",
+    "definition": "Something being indicated that is similar to something else.",
+    "definition_zh": "這樣的人或物；類似的東西",
+    "example_en": "I have never seen such an interesting movie before in my life.",
+    "example_zh": "我從來沒看過這樣有趣的電影。",
+    "done": true
+  },
+  "suddenly": {
+    "pos": "副詞",
+    "phonetic": "/ˈsʌdn̩li/",
+    "definition": "Happening quickly and with little or no warning; in a sudden manner.",
+    "definition_zh": "突然地；毫無預警地；出人意料地",
+    "example_en": "The door suddenly opened and a tall man walked into the room.",
+    "example_zh": "門突然打開，一個高個子男人走進房間。",
+    "done": true
+  },
+  "suitcase": {
+    "pos": "名詞",
+    "phonetic": "/ˈsutkeɪs/",
+    "definition": "A large (usually rectangular) piece of luggage used for carrying clothes, and sometimes suits, when travelling.",
+    "definition_zh": "行李箱；手提箱",
+    "example_en": "She packed her clothes into the suitcase before leaving for her vacation.",
+    "example_zh": "她在去度假前把衣服打包到行李箱裡。",
+    "done": true
+  },
+  "surfing": {
+    "pos": "動詞",
+    "phonetic": "/ˈsɝfɪŋ/",
+    "definition": "To ride a wave, usually on a surfboard.",
+    "definition_zh": "衝浪；在浪上滑行",
+    "example_en": "My brother loves surfing and goes to the beach every weekend.",
+    "example_zh": "我哥哥喜歡衝浪，每個週末都去海邊。",
+    "done": true
+  },
+  "swimming": {
+    "pos": "名詞",
+    "phonetic": "/ˈswɪmɪŋ/",
+    "definition": "The act or art of sustaining and propelling the body in water.",
+    "definition_zh": "游泳；在水中游動的運動",
+    "example_en": "Swimming is an excellent exercise that keeps your body healthy and strong.",
+    "example_zh": "游泳是一項很好的運動，能保持身體健康。",
+    "done": true
+  },
+  "swimsuit": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A garment worn for swimming.",
+    "definition_zh": "游泳衣；泳裝",
+    "example_en": "She bought a new swimsuit for her beach trip next summer.",
+    "example_zh": "她為明年夏天的海邊之旅買了一件新泳裝。",
+    "done": true
+  },
+  "table cloth": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "桌布(n)",
+    "definition_zh": "桌布；鋪在桌面上的布料",
+    "example_en": "We put a white tablecloth on the table before the dinner party.",
+    "example_zh": "晚宴前我們在桌子上鋪了一條白色桌布。",
+    "done": true
+  },
+  "table tennis": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A game or sport (similar to tennis) that involves the hitting of a light plastic ball across a table (fashioned like a mini tennis court) by racquets (a.k.a. paddles, a.k.a bats in Britain)",
+    "definition_zh": "桌球；乒乓球",
+    "example_en": "My friends and I play table tennis together every Friday night.",
+    "example_zh": "我和朋友們每個週五晚上一起打桌球。",
+    "done": true
+  },
+  "tableware": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "The cutlery, crockery and glassware used in setting a table for a meal.",
+    "definition_zh": "餐具；用於進餐的盤子、杯子和刀叉",
+    "example_en": "The nice tableware was carefully arranged on the table for the special dinner.",
+    "example_zh": "精美的餐具被小心地排列在桌子上以準備特殊晚餐。",
+    "done": true
+  },
+  "taichung": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "台中(n)",
+    "definition_zh": "台中；台灣中部的主要城市",
+    "example_en": "My grandparents live in Taichung, which is in the center of Taiwan.",
+    "example_zh": "我的祖父母住在台中，那是台灣的中部。",
+    "done": true
+  },
+  "tainan": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "台南(n)",
+    "definition_zh": "台灣南部的城市，以歷史和文化聞名",
+    "example_en": "Many old temples can be found in Tainan, a historic city in Taiwan.",
+    "example_zh": "在台灣歷史悠久的城市台南，可以找到許多古老的廟宇。",
+    "done": true
+  },
+  "taipei": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "台北(n)",
+    "definition_zh": "台灣的首都，位於台灣北部",
+    "example_en": "My family plans to visit Taipei and climb the famous Taipei 101 tower.",
+    "example_zh": "我的家人計畫去台北訪問，爬上著名的台北 101 大樓。",
+    "done": true
+  },
+  "taiwanese": {
+    "pos": "副詞",
+    "phonetic": "",
+    "definition": "因此、所以(adv)",
+    "definition_zh": "與台灣或台灣人相關的；台灣的",
+    "example_en": "She speaks Taiwanese and English fluently in her daily life at school.",
+    "example_zh": "她在學校的日常生活中流利地說台語和英語。",
+    "done": true
+  },
+  "tape recorder": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "(sound engineering) An electromechanical device use to record and play back sound, etc.",
+    "definition_zh": "用磁帶記錄和播放聲音的裝置；錄音機",
+    "example_en": "My grandfather still uses an old tape recorder to listen to music.",
+    "example_zh": "我的祖父仍然用老式錄音機來聽音樂。",
+    "done": true
+  },
+  "teacher's day": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "咽喉、喉嚨(n)",
+    "definition_zh": "慶祝和尊敬教師的特殊日子；教師節",
+    "example_en": "On Teacher's Day, students give flowers and gifts to show appreciation.",
+    "example_zh": "在教師節，學生送花和禮物來表達感謝。",
+    "done": true
+  },
+  "throughout": {
+    "pos": "副詞",
+    "phonetic": "/θɹuˈʌʊt/",
+    "definition": "Completely through, right the way through.",
+    "definition_zh": "貫穿整個；在...的始終；到處",
+    "example_en": "The music played throughout the entire party and everyone danced happily.",
+    "example_zh": "整個派對都在播放音樂，每個人都開心地跳舞。",
+    "done": true
+  },
+  "thus": {
+    "pos": "副詞",
+    "phonetic": "/ˈðʌs/",
+    "definition": "(manner) In this way or manner.",
+    "definition_zh": "（以這種方式）因此；所以；這樣",
+    "example_en": "He studied hard for the exam and thus achieved a very high score.",
+    "example_zh": "他為考試努力學習，因此取得了很高的分數。",
+    "done": true
+  },
+  "tokyo": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "傳統、慣例(n)",
+    "definition_zh": "日本的首都，位於東岸",
+    "example_en": "Tokyo is one of the world's largest cities with millions of people.",
+    "example_zh": "東京是世界上最大的城市之一，有數百萬人口。",
+    "done": true
+  },
+  "tour": {
+    "pos": "名詞",
+    "phonetic": "/tɔː(ɹ)/",
+    "definition": "A journey through a particular building, estate, country, etc.",
+    "definition_zh": "參觀有趣地方的旅行；導覽；遊覽",
+    "example_en": "We took a guided tour of the museum and learned about ancient history.",
+    "example_zh": "我們進行了導覽遊覽博物館，並學到了古代歷史。",
+    "done": true
+  },
+  "traffic jam": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A situation in which road traffic accumulates until it is stationary or very slow.",
+    "definition_zh": "交通堵塞；車流停滯的情況",
+    "example_en": "We got stuck in a serious traffic jam on the highway.",
+    "example_zh": "我們在高速公路上遇到了嚴重的交通堵塞。",
+    "done": true
+  },
+  "traffic light": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A signalling device positioned at a road intersection or pedestrian crossing to indicate when it may be safe to drive, ride or walk, using a universal colour code.",
+    "definition_zh": "紅綠燈；交通控制信號",
+    "example_en": "The traffic light turned red, so all the cars stopped.",
+    "example_zh": "紅綠燈變紅了，所以所有的車都停下來了。",
+    "done": true
+  },
+  "traffic lights": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A signalling device positioned at a road intersection or pedestrian crossing to indicate when it may be safe to drive, ride or walk, using a universal colour code.",
+    "definition_zh": "紅綠燈；交通管制裝置",
+    "example_en": "The traffic lights at the intersection control the flow of cars.",
+    "example_zh": "路口的紅綠燈控制車流。",
+    "done": true
+  },
+  "traffic sign": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A sign for the control of traffic or the information of drivers.",
+    "definition_zh": "交通標誌；道路警告牌",
+    "example_en": "That traffic sign warns drivers about the school zone ahead.",
+    "example_zh": "那個交通標誌警告駕駛者前面有校園區。",
+    "done": true
+  },
+  "twelfth": {
+    "pos": "名詞",
+    "phonetic": "/twɛlfθ/",
+    "definition": "One of twelve equal parts of a whole.",
+    "definition_zh": "十二分之一；第十二部分",
+    "example_en": "She ate a twelfth of the birthday cake at the party.",
+    "example_zh": "她在派對上吃了生日蛋糕的十二分之一。",
+    "done": true
+  },
+  "twentieth": {
+    "pos": "名詞",
+    "phonetic": "/ˈtwɛni.əθ/",
+    "definition": "A person or thing in the twentieth position.",
+    "definition_zh": "第二十個；排在第二十位",
+    "example_en": "The twentieth student on the list was announced as a winner.",
+    "example_zh": "名單上第二十個學生被宣佈為獲勝者。",
+    "done": true
+  },
+  "typewriter": {
+    "pos": "名詞",
+    "phonetic": "[ˈtaɪpˌɹaɪtə(ɹ)]",
+    "definition": "A device, at least partially mechanical, used to print text by pressing keys that cause type to be impressed through an inked ribbon onto paper.",
+    "definition_zh": "打字機；機械式文字列印機",
+    "example_en": "My grandfather still uses his old typewriter to write letters.",
+    "example_zh": "我祖父仍然用他的舊打字機寫信。",
+    "done": true
+  },
+  "uh-uh": {
+    "pos": "interjection",
+    "phonetic": "[ˈ(ʔ)ʌ̃˧.ʔʌ̃˩]",
+    "definition": "No",
+    "definition_zh": "不；不是；否定回應",
+    "example_en": "Would you like to come to the movie with us? Uh-uh, I have homework.",
+    "example_zh": "你想和我們一起看電影嗎？不，我有功課。",
+    "done": true
+  },
+  "under-weight": {
+    "pos": "形容詞",
+    "phonetic": "",
+    "definition": "重量不足(adj)",
+    "definition_zh": "重量不足的；體重低於正常的",
+    "example_en": "The doctor said the baby was underweight and needed to gain weight quickly.",
+    "example_zh": "醫生說嬰兒體重不足，需要快速增加體重。",
+    "done": true
+  },
+  "underlie": {
+    "pos": "動詞",
+    "phonetic": "/ˌʌn.də(ɹ)ˈlaɪ/",
+    "definition": "To lie in a position directly beneath.",
+    "definition_zh": "位於...之下；構成...的基礎",
+    "example_en": "Historical disputes underlie many of the conflicts we see in the world today.",
+    "example_zh": "歷史爭端構成了我們今天看到的許多衝突的基礎。",
+    "done": true
+  },
+  "underpass": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A passage that crosses a road, railroad or similar obstacle in a tunnel underneath it.",
+    "definition_zh": "地下通道；位於道路或鐵路下方的隧道",
+    "example_en": "We drove through the underpass to avoid the heavy traffic above.",
+    "example_zh": "我們開車通過地下通道，以避免上方的交通堵塞。",
+    "done": true
+  },
+  "unfriendly": {
+    "pos": "名詞",
+    "phonetic": "/ʌnˈfɹɛn(d)li/",
+    "definition": "An enemy.",
+    "definition_zh": "不友善的；帶有敵意的；不親切的",
+    "example_en": "The unfriendly look on his face made me feel uncomfortable at the party.",
+    "example_zh": "他臉上不友善的表情讓我在派對上感到不舒服。",
+    "done": true
+  },
+  "unit": {
+    "pos": "名詞",
+    "phonetic": "/ˈjuː.nɪt/",
+    "definition": "A particular, minute unit of mass, defined differently for different substances, but so that varying substances of the same general type have the property that one international unit of the one has the same effect on the human body as one international unit of the other.",
+    "definition_zh": "單位；單個物體；構成整體的個別部分",
+    "example_en": "Each unit in the apartment building has its own kitchen and bedroom.",
+    "example_zh": "公寓樓的每個單位都有自己的廚房和臥室。",
+    "done": true
+  },
+  "upon": {
+    "pos": "副詞",
+    "phonetic": "/əˈpɒn/",
+    "definition": "Being the target of an action.",
+    "definition_zh": "在...之上；位於...的表面；一旦...時",
+    "example_en": "Once we arrive upon the island, we will start exploring all the beaches.",
+    "example_zh": "一旦我們抵達島上，我們就會開始探索所有海灘。",
+    "done": true
+  },
+  "used": {
+    "pos": "動詞",
+    "phonetic": "/juːzd/",
+    "definition": "To utilize or employ.",
+    "definition_zh": "使用；利用；運用",
+    "example_en": "I used my phone to capture a photo of the beautiful sunset yesterday.",
+    "example_zh": "我用手機拍了昨天美麗日落的照片。",
+    "done": true
+  },
+  "valentine's day": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "西洋情人節(n)",
+    "definition_zh": "西洋情人節；在二月十四日慶祝的節日",
+    "example_en": "Many couples exchange gifts and flowers on Valentine's Day to show their love.",
+    "example_zh": "許多情侶在情人節交換禮物和鮮花來表達愛意。",
+    "done": true
+  },
+  "vcr": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "錄影機(n)",
+    "definition_zh": "錄影機；用來錄製和播放錄像帶的機器",
+    "example_en": "Before streaming became popular, we used to record shows on the VCR.",
+    "example_zh": "在串流服務流行之前，我們常在錄影機上錄製電視節目。",
+    "done": true
+  },
+  "verb": {
+    "pos": "名詞",
+    "phonetic": "/vɜːb/",
+    "definition": "(grammar) A word that indicates an action, event, or state.",
+    "definition_zh": "動詞；表示動作、事件或狀態的詞",
+    "example_en": "In the sentence 'She runs quickly,' the word 'runs' is a verb.",
+    "example_zh": "在『她快速跑步』這個句子中，『跑』是一個動詞。",
+    "done": true
+  },
+  "voter": {
+    "pos": "名詞",
+    "phonetic": "/ˈvəʊtə(ɹ)/",
+    "definition": "Someone who votes.",
+    "definition_zh": "投票的人；選民",
+    "example_en": "Many voters waited in line for hours to cast their votes.",
+    "example_zh": "許多選民排隊等了好幾小時才投票。",
+    "done": true
+  },
+  "walkman": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A portable personal audio cassette player with headphones.",
+    "definition_zh": "便攜式音樂播放器；隨身聽",
+    "example_en": "He listened to music on his walkman while jogging in the park.",
+    "example_zh": "他在公園慢跑時用隨身聽聽音樂。",
+    "done": true
+  },
+  "washing machine": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "A machine, usually automatic, which washes clothes, etc.",
+    "definition_zh": "洗衣機；自動洗衣設備",
+    "example_en": "My mother uses the washing machine to clean our clothes twice a week.",
+    "example_zh": "我媽媽每週用洗衣機洗兩次衣服。",
+    "done": true
+  },
+  "western": {
+    "pos": "名詞",
+    "phonetic": "/ˈwɛstən/",
+    "definition": "A film, or some other dramatic work, set in, the historic (c. 1850-1910) American West (west of the Mississippi river) focusing on conflict between whites and Indians, lawmen and outlaws, ranchers and farmers, or industry (railroads, mining) and agriculture.",
+    "definition_zh": "西部片；以美國西部為背景的電影或故事",
+    "example_en": "My grandfather enjoys watching classic westerns about cowboys and outlaws.",
+    "example_zh": "我爺爺喜歡看關於牛仔和歹徒的經典西部片。",
+    "done": true
+  },
+  "whatever": {
+    "pos": "形容詞",
+    "phonetic": "/wɒtˈɛvə/",
+    "definition": "Unexceptional or unimportant; blah.",
+    "definition_zh": "無所謂的；不重要的；平凡的",
+    "example_en": "She showed a whatever attitude when asked about the exam results.",
+    "example_zh": "被問到考試成績時，她表現出無所謂的態度。",
+    "done": true
+  },
+  "whom": {
+    "pos": "代名詞",
+    "phonetic": "/huːm/",
+    "definition": "(interrogative) What person or people; which person or people.",
+    "definition_zh": "誰（用作賓語）；哪個人（疑問形式）",
+    "example_en": "Whom did you meet at the store yesterday?",
+    "example_zh": "你昨天在商店裡見到了誰？",
+    "done": true
+  },
+  "willing": {
+    "pos": "動詞",
+    "phonetic": "/ˈwɪlɪŋ/",
+    "definition": "To wish, desire.",
+    "definition_zh": "願意；期望；想要",
+    "example_en": "The students are willing to work hard for their future.",
+    "example_zh": "學生們願意為自己的未來而努力。",
+    "done": true
+  },
+  "within": {
+    "pos": "形容詞",
+    "phonetic": "/wɪˈθɪn/",
+    "definition": "In the context of which the present document or ruling is made.",
+    "definition_zh": "在...之內的；內部的",
+    "example_en": "Please stay within the school area during lunch break.",
+    "example_zh": "午餐時間請待在校園範圍內。",
+    "done": true
+  },
+  "women's room": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "女廁所(n)",
+    "definition_zh": "女廁所；女性洗手間",
+    "example_en": "The women's room is located next to the main office.",
+    "example_zh": "女廁所在主辦公室旁邊。",
+    "done": true
+  },
+  "wooden": {
+    "pos": "形容詞",
+    "phonetic": "/ˈwʊdən/",
+    "definition": "Made of wood.",
+    "definition_zh": "木製的；由木頭製成的",
+    "example_en": "The wooden door was old but still very strong.",
+    "example_zh": "那扇木製的門很舊，但仍然很牢固。",
+    "done": true
+  },
+  "woods": {
+    "pos": "名詞",
+    "phonetic": "/wʊdz/",
+    "definition": "The substance making up the central part of the trunk and branches of a tree. Used as a material for construction, to manufacture various items, etc. or as fuel.",
+    "definition_zh": "樹木的木質部分；建築及製造的原料；燃料",
+    "example_en": "The old house is made of strong woods that can last for many years.",
+    "example_zh": "這棟老房子用堅硬的木料建造，能使用好多年。",
+    "done": true
+  },
+  "worried": {
+    "pos": "形容詞",
+    "phonetic": "/ˈwʌɹid/",
+    "definition": "Thinking about unpleasant things that have happened or that might happen; feeling afraid and unhappy.",
+    "definition_zh": "因害怕或想起不好的事而感到不安；煩惱的",
+    "example_en": "She was worried about her test results until the teacher gave her the grade.",
+    "example_zh": "她一直為了考試成績感到擔心，直到老師發下成績單。",
+    "done": true
+  },
+  "wow": {
+    "pos": "名詞",
+    "phonetic": "/waʊ̯/",
+    "definition": "Anything exceptionally surprising, unbelievable, outstanding, etc.",
+    "definition_zh": "令人驚嘆的事物；令人印象深刻的事情",
+    "example_en": "That magician's final trick was a real wow that amazed all the audience members.",
+    "example_zh": "那個魔術師的最後一招真的令人驚嘆，讓全場觀眾都印象深刻。",
+    "done": true
+  },
+  "youth day": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "青年節(n)",
+    "definition_zh": "慶祝青年、表揚年輕人的節日",
+    "example_en": "Many countries celebrate youth day to recognize the contributions of young people.",
+    "example_zh": "許多國家都慶祝青年節，表揚年輕人對社會的貢獻。",
+    "done": true
+  },
+  "yucky": {
+    "pos": "形容詞",
+    "phonetic": "/ˈjʌkɪ/",
+    "definition": "Of something highly offensive; causing aversion or disgust.",
+    "definition_zh": "令人厭惡的；令人感到噁心的；很糟糕的",
+    "example_en": "The leftover food in the fridge smelled so yucky that nobody wanted to clean it.",
+    "example_zh": "冰箱裡的剩菜味道太噁心了，所以沒人想去整理。",
+    "done": true
+  },
+  "zebra": {
+    "pos": "名詞",
+    "phonetic": "/ˈziːbɹə/",
+    "definition": "Any of three species of genus Equus: E. grevyi, E. quagga, or E. zebra, all with black and white stripes and native to Africa.",
+    "definition_zh": "非洲產的野生動物，外形似馬，身上有黑白相間的條紋",
+    "example_en": "At the safari park, we saw a zebra running across the grassland with its young.",
+    "example_zh": "在野生動物園裡，我們看到一隻斑馬帶著小斑馬在草地上奔跑。",
+    "done": true
+  },
+  "convenience store": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "a small shop open long hours",
+    "definition_zh": "便利商店",
+    "example_en": "",
+    "example_zh": "",
+    "done": true
+  },
+  "t-shirt": {
+    "pos": "名詞",
+    "phonetic": "",
+    "definition": "a simple shirt with no collar",
+    "definition_zh": "T恤",
+    "example_en": "",
+    "example_zh": "",
+    "done": true
   }
 }
