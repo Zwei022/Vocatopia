@@ -145,7 +145,7 @@ async function loadWords() {
     WORDS = FALLBACK_WORDS;
     DICT  = Object.fromEntries(WORDS.map(w => [w.word, { def: w.def, phonetic: w.phonetic }]));
   }
-  if (readTab === 'library') renderLib();
+  if (readTab === 'grammar') renderLib();
 }
 
 async function loadArticles() {
@@ -236,6 +236,15 @@ let quizState = null; // { questions, idx, score, answers }
 // ── NAV ──
 function goReadTab(tab, btn) {
   readTab = tab;
+  if (!btn) {
+    const rtabBtn = document.getElementById('rtab' + tab.charAt(0).toUpperCase() + tab.slice(1));
+    if (rtabBtn) {
+      const parentNav = document.querySelector('#reading .bnav');
+      if (parentNav) {
+        btn = parentNav.querySelector('.bn:nth-child(4)');
+      }
+    }
+  }
   goScreen('reading', btn);
 }
 
@@ -507,6 +516,51 @@ function renderGsatList() {
   }).join('');
 }
 
+function renderGsatLib() {
+  const el = document.getElementById('libGsatList');
+  if (!el) return;
+  const years = [2025, 2024, 2023, 2022];
+  el.innerHTML = years.map(year => {
+    const exams = GSAT_EXAMS.filter(e => e.year === year);
+    return `
+      <div class="gsat-year-group">
+        <div class="gsat-year-label">${year} 年</div>
+        <div class="gsat-cards">
+          ${exams.map(e => {
+            const hasData = e.sections.length > 0;
+            return `
+              <div class="gsat-card${hasData ? '' : ' gsat-card-empty'}" onclick="${hasData ? `openLibGsatExam(${e.year},'${e.type}')` : ''}">
+                <div class="gsat-card-icon">${e.icon}</div>
+                <div class="gsat-card-name">${e.label}</div>
+                <div class="gsat-card-status">${hasData ? '開始作答' : '資料準備中'}</div>
+              </div>`;
+          }).join('')}
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function openLibGsatExam(year, type) {
+  const exam = GSAT_EXAMS.find(e => e.year === year && e.type === type);
+  if (!exam) return;
+  document.getElementById('libGsatList').style.display = 'none';
+  const view = document.getElementById('libGsatExamView');
+  view.style.display = 'flex';
+  document.getElementById('libGsatExamTitle').textContent = `${year} 國中會考 ${exam.label}`;
+  document.getElementById('libGsatExamBody').innerHTML = `
+    <div class="gsat-placeholder">
+      <div class="rp-icon">${exam.icon}</div>
+      <div class="rp-title">${year} ${exam.label}</div>
+      <div class="rp-desc">考題內容準備中<br>即將加入完整試題</div>
+      <div class="rp-badge">即將上線</div>
+    </div>`;
+}
+
+function closeLibGsatExam() {
+  document.getElementById('libGsatExamView').style.display = 'none';
+  document.getElementById('libGsatList').style.display = '';
+}
+
 function openGsatExam(year, type) {
   const exam = GSAT_EXAMS.find(e => e.year === year && e.type === type);
   if (!exam) return;
@@ -570,7 +624,7 @@ function switchCuratedSub(sub) {
 function switchReadTab(tab) {
   readTab = tab;
 
-  ['Deck', 'Library', 'Grammar', 'Curated'].forEach(t =>
+  ['Deck', 'Grammar', 'Curated'].forEach(t =>
     document.getElementById('rtab' + t).classList.toggle('active', tab === t.toLowerCase())
   );
 
@@ -609,14 +663,12 @@ function switchReadTab(tab) {
   if (tab === 'deck') {
     deckPanel.classList.add('show');
     renderDecks();
-  } else if (tab === 'library') {
-    libraryPanel.classList.add('show');
+  } else if (tab === 'grammar') {
+    grammarPanel.classList.add('show');
     renderLib();
   } else if (tab === 'curated') {
     curatedPanel.classList.add('show');
     switchCuratedSub(curatedSubTab);
-  } else if (tab === 'grammar') {
-    grammarPanel.classList.add('show');
   }
 }
 
@@ -627,7 +679,7 @@ function renderDailyArticles() {
   // 只更新閱讀分類的數量 badge，不再直接填充 dailyList
   const countEl = document.getElementById('dcatReadingCount');
   if (countEl) {
-    countEl.textContent = DAILY_ARTICLES.length ? `今日 ${DAILY_ARTICLES.length} 篇` : '載入中...';
+    countEl.textContent = DAILY_ARTICLES.length ? `${DAILY_ARTICLES.length}` : '—';
   }
 }
 
@@ -1411,7 +1463,8 @@ function confirmNewDeck() {
   console.log('[confirmNewDeck] ✓ 已創建新卡組:', deckId);
 
   invalidateLibCache();
-  if (readTab === 'library') renderLib();
+  if (readTab === 'grammar') renderLib();
+  renderDecks();
 
   closeModal('newDeckModal');
   setTimeout(() => startFlashcard(deck.id), 300);
@@ -1423,7 +1476,7 @@ function deleteDeck(id) {
   customDecks = customDecks.filter(d => d.id !== id);
   saveCustomDecks();
   invalidateLibCache();
-  if (readTab === 'library') renderLib();
+  if (readTab === 'grammar') renderLib();
   renderDecks();
   showToast(`已刪除「${deck.name}」`);
 }
@@ -1449,7 +1502,7 @@ function buildSectionWords(words, deckId) {
     const isQuickMode = !!(w.definition_zh || w.example_en || (w.tags && w.tags.includes('cap_2000')) || (w.source === 'cambridge'));
     const defDisplay = isQuickMode ? (w.definition_zh || w.def || '—') : (w.def || '—');
     return `
-    <div class="wrow" onclick="openWordDetail(${w.id})">
+    <div class="wrow" onclick="event.stopPropagation();openWordDetail(${w.id})">
       <div class="wr-num">${String(i+1).padStart(2,'0')}</div>
       <div class="wr-dot wd-${w.st||'new'}"></div>
       <div class="wr-en">${w.word}</div>
@@ -1493,28 +1546,12 @@ function renderLib() {
 }
 
 function libToggleSection(deckId) {
-  const secEl = document.querySelector(`.lib-section[data-deck-id="${deckId}"]`);
-  if (!secEl) return;
-  const isNowOpen = !secEl.classList.contains('open');
-  secEl.classList.toggle('open', isNowOpen);
-  if (isNowOpen) {
-    libOpenSections.add(deckId);
-    const bodyEl = secEl.querySelector('.lib-sec-body');
-    if (!bodyEl.dataset.loaded) {
-      const sec = [...BUILTIN_DECKS, ...customDecks.map(d => ({
-        id: d.id,
-        getWords: () => {
-          const m = new Map();
-          if (d.words) d.words.forEach(w => m.set(w.id, w));
-          return d.wordIds.map(id => m.get(id) || WORDS.find(w => w.id === id)).filter(Boolean);
-        }
-      }))].find(s => s.id === deckId);
-      bodyEl.innerHTML = sec ? buildSectionWords(sec.getWords(), deckId) : '';
-      bodyEl.dataset.loaded = '1';
-    }
-  } else {
+  if (libOpenSections.has(deckId)) {
     libOpenSections.delete(deckId);
+  } else {
+    libOpenSections.add(deckId);
   }
+  renderLib();
 }
 
 function invalidateLibCache() {
@@ -1529,7 +1566,7 @@ let _speakAudio = null;
 function speak(w) {
   if (!w) return;
 
-  // 取消上一個 fetch 請求（真正中斷網路傳輸，防止堆積）
+  // 取消上一個 fetch 請求 + 所有音頻
   if (_speakController) { _speakController.abort(); _speakController = null; }
   if (_speakAudio) { _speakAudio.pause(); _speakAudio.src = ''; _speakAudio = null; }
   if ('speechSynthesis' in window) speechSynthesis.cancel();
@@ -1542,12 +1579,13 @@ function speak(w) {
     return fetch(url, { signal: ctrl.signal })
       .then(res => { if (!res.ok) throw new Error('not_found'); return res.blob(); })
       .then(blob => {
-        if (ctrl.signal.aborted) return;
+        if (ctrl.signal.aborted) return true;
         const objUrl = URL.createObjectURL(blob);
         const audio  = new Audio(objUrl);
         _speakAudio  = audio;
         audio.onended = () => URL.revokeObjectURL(objUrl);
         audio.play().catch(() => {});
+        return true;
       });
   }
 
@@ -1556,11 +1594,11 @@ function speak(w) {
   // 層 3：Web Speech API（最終備援，tts_server 未啟動時）
   tryPlay(`/public/audio/words/${filename}.mp3?v=2`)
     .catch(err => {
-      if (err.name === 'AbortError') return;
-      return tryPlay(`/api/tts/${encodeURIComponent(w)}`);
+      if (ctrl.signal.aborted) return false;
+      return tryPlay(`/api/tts/${encodeURIComponent(w)}`).then(() => true).catch(() => false);
     })
-    .catch(err => {
-      if (err.name === 'AbortError') return;
+    .then(played => {
+      if (ctrl.signal.aborted || played) return;
       if ('speechSynthesis' in window) {
         const u = new SpeechSynthesisUtterance(w);
         u.lang = 'en-US'; u.rate = 0.95;
@@ -1609,20 +1647,16 @@ function openWordDetail(wordId) {
   document.getElementById('wdPos').style.background= `${posColor}22`;
   document.getElementById('wdPos').style.color     = posColor;
 
-  // 定義：顯示英文定義
-  let defText = w.definition || w.def || '—';
+  // 定義：顯示英文定義（移除末尾冒號）
+  let defText = (w.definition || w.def || '—').trim();
+  if (defText.endsWith(':')) defText = defText.slice(0, -1).trim();
   document.getElementById('wdDef').textContent = defText;
   document.getElementById('wdLvl').textContent = `Level ${w.level || 1}`;
 
-  // 中文定義區塊（新增）
+  // 中文定義
   const zhDefEl = document.getElementById('wdDefZh');
   if (zhDefEl) {
-    if (w.definition_zh) {
-      zhDefEl.style.display = 'block';
-      zhDefEl.textContent = w.definition_zh;
-    } else {
-      zhDefEl.style.display = 'none';
-    }
+    zhDefEl.textContent = w.definition_zh || '—';
   }
 
   // 例句：顯示英文例句和中文例句（避免重複顯示英文）
@@ -1811,7 +1845,8 @@ function startFlashcard(deckId) {
     const custom = customDecks.find(d => d.id === deckId);
     if (custom) deckName = custom.name;
   }
-  document.getElementById('fcDeckName').textContent = deckName;
+  const deckNameEl = document.getElementById('fcDeckName');
+  if (deckNameEl) deckNameEl.textContent = deckName;
 
   // 管理按鈕：只在自訂卡組和"不熟卡組"時顯示，內置的"會考2000"隱藏
   const manageBtn = document.querySelector('.fc-records-delete-btn:nth-of-type(2)');
