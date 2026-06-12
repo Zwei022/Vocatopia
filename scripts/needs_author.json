@@ -1,0 +1,1940 @@
+[
+ {
+  "id": 3435,
+  "word": "airlines",
+  "missing": "pos",
+  "definition_zh": "航空公司"
+ },
+ {
+  "id": 4118,
+  "word": "asylum",
+  "missing": "definition",
+  "definition_zh": "庇護"
+ },
+ {
+  "id": 4876,
+  "word": "attract",
+  "missing": "pos|definition",
+  "definition_zh": "吸引；招引"
+ },
+ {
+  "id": 4877,
+  "word": "auction",
+  "missing": "pos|definition",
+  "definition_zh": "拍賣；拍賣會"
+ },
+ {
+  "id": 4887,
+  "word": "bar",
+  "missing": "definition",
+  "definition_zh": "酒吧；阻止；條狀物"
+ },
+ {
+  "id": 3309,
+  "word": "barn",
+  "missing": "example",
+  "definition_zh": "穀倉，糧倉"
+ },
+ {
+  "id": 4890,
+  "word": "barrel",
+  "missing": "pos|definition",
+  "definition_zh": "桶；槍管"
+ },
+ {
+  "id": 4894,
+  "word": "becoming",
+  "missing": "pos",
+  "definition_zh": "得體的；相稱的；適合的"
+ },
+ {
+  "id": 4904,
+  "word": "beware",
+  "missing": "pos",
+  "definition_zh": "小心；注意；謹防"
+ },
+ {
+  "id": 4211,
+  "word": "bias",
+  "missing": "definition",
+  "definition_zh": "偏見，偏頗"
+ },
+ {
+  "id": 4906,
+  "word": "bid",
+  "missing": "pos|definition",
+  "definition_zh": "出價；競標；嘗試"
+ },
+ {
+  "id": 4914,
+  "word": "blast",
+  "missing": "pos|definition",
+  "definition_zh": "爆炸；強風；猛烈抨擊"
+ },
+ {
+  "id": 4917,
+  "word": "bleak",
+  "missing": "pos",
+  "definition_zh": "荒涼的；淒涼的；暗淡的"
+ },
+ {
+  "id": 4918,
+  "word": "bleat",
+  "missing": "pos",
+  "definition_zh": "（羊）咩咩叫；抱怨"
+ },
+ {
+  "id": 3436,
+  "word": "bless",
+  "missing": "pos|definition",
+  "definition_zh": "祝福；保佑；賜福"
+ },
+ {
+  "id": 4921,
+  "word": "blink",
+  "missing": "pos|definition",
+  "definition_zh": "眨眼；閃爍"
+ },
+ {
+  "id": 4923,
+  "word": "bliss",
+  "missing": "pos",
+  "definition_zh": "極樂；幸福；喜悅"
+ },
+ {
+  "id": 4924,
+  "word": "blister",
+  "missing": "pos|definition",
+  "definition_zh": "水泡；起水泡；使起泡"
+ },
+ {
+  "id": 4927,
+  "word": "bloom",
+  "missing": "pos",
+  "definition_zh": "開花；盛開；花朵"
+ },
+ {
+  "id": 4928,
+  "word": "bluff",
+  "missing": "pos|definition",
+  "definition_zh": "虛張聲勢；懸崖"
+ },
+ {
+  "id": 4934,
+  "word": "bog",
+  "missing": "pos",
+  "definition_zh": "沼澤；泥沼；使陷入"
+ },
+ {
+  "id": 4938,
+  "word": "bonus",
+  "missing": "pos|definition",
+  "definition_zh": "獎金；紅利；額外收穫"
+ },
+ {
+  "id": 4943,
+  "word": "botany",
+  "missing": "example",
+  "definition_zh": "植物學"
+ },
+ {
+  "id": 4945,
+  "word": "bound",
+  "missing": "pos",
+  "definition_zh": "跳躍；界限；必然的"
+ },
+ {
+  "id": 3608,
+  "word": "bowls",
+  "missing": "definition",
+  "definition_zh": "碗；缽"
+ },
+ {
+  "id": 4946,
+  "word": "brake",
+  "missing": "pos|definition",
+  "definition_zh": "煞車；剎車；制動器"
+ },
+ {
+  "id": 4951,
+  "word": "breast",
+  "missing": "pos",
+  "definition_zh": "胸部；乳房"
+ },
+ {
+  "id": 4960,
+  "word": "brisk",
+  "missing": "pos",
+  "definition_zh": "輕快的；活躍的；清爽的"
+ },
+ {
+  "id": 4963,
+  "word": "broke",
+  "missing": "pos",
+  "definition_zh": "破產的；沒有錢的"
+ },
+ {
+  "id": 4964,
+  "word": "broken",
+  "missing": "pos",
+  "definition_zh": "破碎的；損壞的；骨折的"
+ },
+ {
+  "id": 4967,
+  "word": "broom",
+  "missing": "pos|definition",
+  "definition_zh": "掃帚；金雀花"
+ },
+ {
+  "id": 4969,
+  "word": "brought",
+  "missing": "pos|example",
+  "definition_zh": "帶來（bring的過去式）"
+ },
+ {
+  "id": 4972,
+  "word": "browse",
+  "missing": "pos|definition",
+  "definition_zh": "瀏覽；隨便翻閱；吃草"
+ },
+ {
+  "id": 4973,
+  "word": "bruise",
+  "missing": "pos|definition",
+  "definition_zh": "瘀傷；瘀青；擦傷"
+ },
+ {
+  "id": 4976,
+  "word": "bubble",
+  "missing": "pos|definition",
+  "definition_zh": "泡泡；氣泡；冒泡"
+ },
+ {
+  "id": 4099,
+  "word": "budget",
+  "missing": "definition",
+  "definition_zh": "預算"
+ },
+ {
+  "id": 4989,
+  "word": "burger",
+  "missing": "definition",
+  "definition_zh": "漢堡包"
+ },
+ {
+  "id": 4991,
+  "word": "buried",
+  "missing": "pos",
+  "definition_zh": "被埋的；深藏的"
+ },
+ {
+  "id": 4992,
+  "word": "burning",
+  "missing": "pos",
+  "definition_zh": "燃燒的；強烈的"
+ },
+ {
+  "id": 4995,
+  "word": "bush",
+  "missing": "pos|definition",
+  "definition_zh": "灌木；矮樹叢"
+ },
+ {
+  "id": 3986,
+  "word": "business hours",
+  "missing": "example",
+  "definition_zh": "營業時間"
+ },
+ {
+  "id": 5004,
+  "word": "cactus",
+  "missing": "pos",
+  "definition_zh": "仙人掌"
+ },
+ {
+  "id": 5008,
+  "word": "calcium",
+  "missing": "example",
+  "definition_zh": "鈣"
+ },
+ {
+  "id": 5009,
+  "word": "calculate",
+  "missing": "pos",
+  "definition_zh": "計算；估計"
+ },
+ {
+  "id": 5011,
+  "word": "camel",
+  "missing": "pos|example|definition",
+  "definition_zh": "駱駝"
+ },
+ {
+  "id": 5015,
+  "word": "canal",
+  "missing": "pos|definition",
+  "definition_zh": "運河；管道"
+ },
+ {
+  "id": 5018,
+  "word": "candid",
+  "missing": "pos",
+  "definition_zh": "坦誠的；直率的"
+ },
+ {
+  "id": 5020,
+  "word": "cane",
+  "missing": "pos|definition",
+  "definition_zh": "手杖；甘蔗"
+ },
+ {
+  "id": 5021,
+  "word": "canine",
+  "missing": "pos",
+  "definition_zh": "犬的；犬牙"
+ },
+ {
+  "id": 5022,
+  "word": "cannon",
+  "missing": "pos|definition",
+  "definition_zh": "大砲"
+ },
+ {
+  "id": 5024,
+  "word": "canoe",
+  "missing": "pos|definition",
+  "definition_zh": "獨木舟"
+ },
+ {
+  "id": 5027,
+  "word": "canvas",
+  "missing": "pos",
+  "definition_zh": "帆布；畫布"
+ },
+ {
+  "id": 5028,
+  "word": "canyon",
+  "missing": "example",
+  "definition_zh": "峽谷"
+ },
+ {
+  "id": 5036,
+  "word": "caravan",
+  "missing": "pos|definition",
+  "definition_zh": "大篷車；旅行車"
+ },
+ {
+  "id": 5037,
+  "word": "carbohydrate",
+  "missing": "pos|definition",
+  "definition_zh": "碳水化合物"
+ },
+ {
+  "id": 5038,
+  "word": "carbon",
+  "missing": "pos",
+  "definition_zh": "碳；碳紙"
+ },
+ {
+  "id": 5040,
+  "word": "cardboard",
+  "missing": "pos",
+  "definition_zh": "紙板；硬紙板"
+ },
+ {
+  "id": 5042,
+  "word": "career",
+  "missing": "definition",
+  "definition_zh": "職業；事業；生涯"
+ },
+ {
+  "id": 5045,
+  "word": "caretaker",
+  "missing": "pos|definition",
+  "definition_zh": "看守人；管理員"
+ },
+ {
+  "id": 5047,
+  "word": "carnival",
+  "missing": "pos",
+  "definition_zh": "嘉年華；狂歡節"
+ },
+ {
+  "id": 5055,
+  "word": "carton",
+  "missing": "pos|definition",
+  "definition_zh": "紙箱；紙盒"
+ },
+ {
+  "id": 5057,
+  "word": "carve",
+  "missing": "pos|definition",
+  "definition_zh": "雕刻；切割"
+ },
+ {
+  "id": 5065,
+  "word": "casual",
+  "missing": "pos",
+  "definition_zh": "偶然的；隨便的；非正式的"
+ },
+ {
+  "id": 5072,
+  "word": "category",
+  "missing": "pos|definition",
+  "definition_zh": "類別；種類；範疇"
+ },
+ {
+  "id": 5073,
+  "word": "caterpillar",
+  "missing": "pos|example|definition",
+  "definition_zh": "毛毛蟲"
+ },
+ {
+  "id": 5076,
+  "word": "caucus",
+  "missing": "pos|definition",
+  "definition_zh": "黨團會議"
+ },
+ {
+  "id": 5078,
+  "word": "caution",
+  "missing": "pos",
+  "definition_zh": "謹慎；警告"
+ },
+ {
+  "id": 5080,
+  "word": "cavalry",
+  "missing": "example",
+  "definition_zh": "騎兵隊"
+ },
+ {
+  "id": 5090,
+  "word": "cellar",
+  "missing": "example",
+  "definition_zh": "地窖；酒窖"
+ },
+ {
+  "id": 5091,
+  "word": "cello",
+  "missing": "pos|definition",
+  "definition_zh": "大提琴"
+ },
+ {
+  "id": 5092,
+  "word": "cellular",
+  "missing": "pos",
+  "definition_zh": "蜂窩狀的；細胞的"
+ },
+ {
+  "id": 5093,
+  "word": "celluloid",
+  "missing": "pos",
+  "definition_zh": "賽璐珞；電影膠片"
+ },
+ {
+  "id": 5094,
+  "word": "celsius",
+  "missing": "pos|definition",
+  "definition_zh": "攝氏"
+ },
+ {
+  "id": 5095,
+  "word": "cement",
+  "missing": "pos|definition",
+  "definition_zh": "水泥；鞏固"
+ },
+ {
+  "id": 5096,
+  "word": "cemetery",
+  "missing": "example",
+  "definition_zh": "墓地；公墓"
+ },
+ {
+  "id": 5097,
+  "word": "cenotaph",
+  "missing": "pos|example|definition",
+  "definition_zh": "紀念碑；衣冠冢"
+ },
+ {
+  "id": 5098,
+  "word": "censer",
+  "missing": "pos|definition",
+  "definition_zh": "香爐"
+ },
+ {
+  "id": 5099,
+  "word": "censor",
+  "missing": "pos|definition",
+  "definition_zh": "審查員；審查"
+ },
+ {
+  "id": 5100,
+  "word": "censure",
+  "missing": "pos",
+  "definition_zh": "譴責；批評"
+ },
+ {
+  "id": 5101,
+  "word": "census",
+  "missing": "pos|definition",
+  "definition_zh": "人口普查"
+ },
+ {
+  "id": 5103,
+  "word": "centaur",
+  "missing": "pos|example|definition",
+  "definition_zh": "半人馬；馬人"
+ },
+ {
+  "id": 5104,
+  "word": "centennial",
+  "missing": "pos",
+  "definition_zh": "百年的；百年紀念"
+ },
+ {
+  "id": 5106,
+  "word": "centigrade",
+  "missing": "pos|example",
+  "definition_zh": "攝氏；百分度"
+ },
+ {
+  "id": 5108,
+  "word": "centipede",
+  "missing": "example",
+  "definition_zh": "蜈蚣"
+ },
+ {
+  "id": 5113,
+  "word": "ceremony",
+  "missing": "pos",
+  "definition_zh": "典禮；儀式"
+ },
+ {
+  "id": 3397,
+  "word": "certainly",
+  "missing": "definition",
+  "definition_zh": "當然；確實"
+ },
+ {
+  "id": 4179,
+  "word": "certification",
+  "missing": "definition",
+  "definition_zh": "認證"
+ },
+ {
+  "id": 5116,
+  "word": "certify",
+  "missing": "pos|definition",
+  "definition_zh": "證明；認證"
+ },
+ {
+  "id": 5118,
+  "word": "cessation",
+  "missing": "pos",
+  "definition_zh": "停止；中斷；終止"
+ },
+ {
+  "id": 5119,
+  "word": "cession",
+  "missing": "pos|definition",
+  "definition_zh": "讓步；讓與；割讓"
+ },
+ {
+  "id": 4261,
+  "word": "challenge",
+  "missing": "definition",
+  "definition_zh": "挑戰"
+ },
+ {
+  "id": 5124,
+  "word": "china",
+  "missing": "pos|definition",
+  "definition_zh": "瓷器；中國"
+ },
+ {
+  "id": 5125,
+  "word": "chord",
+  "missing": "pos",
+  "definition_zh": "和弦；弦"
+ },
+ {
+  "id": 5127,
+  "word": "chose",
+  "missing": "pos|example",
+  "definition_zh": "選擇（choose的過去式）"
+ },
+ {
+  "id": 5129,
+  "word": "chronic",
+  "missing": "pos",
+  "definition_zh": "慢性的；長期的"
+ },
+ {
+  "id": 5133,
+  "word": "cider",
+  "missing": "example",
+  "definition_zh": "蘋果酒"
+ },
+ {
+  "id": 5137,
+  "word": "cinnamon",
+  "missing": "pos|definition",
+  "definition_zh": "肉桂；桂皮"
+ },
+ {
+  "id": 5141,
+  "word": "circular",
+  "missing": "pos",
+  "definition_zh": "圓形的；循環的"
+ },
+ {
+  "id": 5145,
+  "word": "circus",
+  "missing": "pos|definition",
+  "definition_zh": "馬戲團"
+ },
+ {
+  "id": 5146,
+  "word": "cistern",
+  "missing": "example",
+  "definition_zh": "水箱；蓄水池"
+ },
+ {
+  "id": 5149,
+  "word": "citizen",
+  "missing": "definition",
+  "definition_zh": "公民；市民"
+ },
+ {
+  "id": 5150,
+  "word": "citric",
+  "missing": "pos|example",
+  "definition_zh": "柑橘的；檸檬酸的"
+ },
+ {
+  "id": 5151,
+  "word": "citrus",
+  "missing": "pos|example|definition",
+  "definition_zh": "柑橘類；柑橘屬"
+ },
+ {
+  "id": 5152,
+  "word": "civic",
+  "missing": "pos|example",
+  "definition_zh": "市民的；公民的"
+ },
+ {
+  "id": 5153,
+  "word": "civil",
+  "missing": "example",
+  "definition_zh": "民事的；文明的"
+ },
+ {
+  "id": 5154,
+  "word": "civilian",
+  "missing": "example",
+  "definition_zh": "平民"
+ },
+ {
+  "id": 5155,
+  "word": "civility",
+  "missing": "pos|example",
+  "definition_zh": "禮貌；文明；禮節"
+ },
+ {
+  "id": 5156,
+  "word": "civilization",
+  "missing": "pos|example|definition",
+  "definition_zh": "文明；文化"
+ },
+ {
+  "id": 5157,
+  "word": "civilize",
+  "missing": "example",
+  "definition_zh": "使文明；教化；開化"
+ },
+ {
+  "id": 5158,
+  "word": "clad",
+  "missing": "pos|example",
+  "definition_zh": "穿著的；覆蓋的"
+ },
+ {
+  "id": 5160,
+  "word": "clairvoyance",
+  "missing": "example",
+  "definition_zh": "透視能力；千里眼"
+ },
+ {
+  "id": 5161,
+  "word": "clam",
+  "missing": "pos|example|definition",
+  "definition_zh": "蛤蜊"
+ },
+ {
+  "id": 5162,
+  "word": "clamber",
+  "missing": "example",
+  "definition_zh": "攀爬；費力爬"
+ },
+ {
+  "id": 5163,
+  "word": "clammy",
+  "missing": "pos|example",
+  "definition_zh": "濕冷的；黏濕的"
+ },
+ {
+  "id": 5164,
+  "word": "clamor",
+  "missing": "example",
+  "definition_zh": "喧嘩；強烈要求"
+ },
+ {
+  "id": 5165,
+  "word": "clamp",
+  "missing": "example",
+  "definition_zh": "夾子；固定"
+ },
+ {
+  "id": 5166,
+  "word": "clan",
+  "missing": "example",
+  "definition_zh": "家族；氏族"
+ },
+ {
+  "id": 5167,
+  "word": "clandestine",
+  "missing": "pos|example",
+  "definition_zh": "秘密的"
+ },
+ {
+  "id": 5168,
+  "word": "clang",
+  "missing": "pos|example|definition",
+  "definition_zh": "叮噹聲；金屬撞擊聲"
+ },
+ {
+  "id": 5169,
+  "word": "clank",
+  "missing": "pos|example|definition",
+  "definition_zh": "金屬碰撞聲；當啷聲"
+ },
+ {
+  "id": 5171,
+  "word": "clarity",
+  "missing": "example",
+  "definition_zh": "清晰；明確"
+ },
+ {
+  "id": 5172,
+  "word": "clash",
+  "missing": "example",
+  "definition_zh": "衝突；碰撞"
+ },
+ {
+  "id": 5173,
+  "word": "clasp",
+  "missing": "example",
+  "definition_zh": "扣子；緊握"
+ },
+ {
+  "id": 5176,
+  "word": "classify",
+  "missing": "pos|example|definition",
+  "definition_zh": "分類；歸類"
+ },
+ {
+  "id": 5177,
+  "word": "claustrophobia",
+  "missing": "pos|example",
+  "definition_zh": "幽閉恐懼症"
+ },
+ {
+  "id": 5178,
+  "word": "clave",
+  "missing": "pos|phonetic|example|definition",
+  "definition_zh": "（音樂）擊打棒；巴掌聲"
+ },
+ {
+  "id": 5179,
+  "word": "claw",
+  "missing": "example",
+  "definition_zh": "爪子；抓"
+ },
+ {
+  "id": 5182,
+  "word": "cleat",
+  "missing": "pos|example|definition",
+  "definition_zh": "橫木；防滑鉤"
+ },
+ {
+  "id": 5183,
+  "word": "cleavage",
+  "missing": "pos|example|definition",
+  "definition_zh": "劈裂；裂縫；胸溝"
+ },
+ {
+  "id": 5184,
+  "word": "cleave",
+  "missing": "example",
+  "definition_zh": "劈開；切開；緊附"
+ },
+ {
+  "id": 5185,
+  "word": "cleaver",
+  "missing": "example",
+  "definition_zh": "砍刀；肉切刀"
+ },
+ {
+  "id": 5186,
+  "word": "clef",
+  "missing": "example",
+  "definition_zh": "音部符號；譜號"
+ },
+ {
+  "id": 5187,
+  "word": "cleft",
+  "missing": "example",
+  "definition_zh": "裂縫；分裂；裂口"
+ },
+ {
+  "id": 5188,
+  "word": "clemency",
+  "missing": "pos|example",
+  "definition_zh": "寬厚；仁慈"
+ },
+ {
+  "id": 5189,
+  "word": "clement",
+  "missing": "pos|example",
+  "definition_zh": "溫和的；寬仁的"
+ },
+ {
+  "id": 5190,
+  "word": "clench",
+  "missing": "example",
+  "definition_zh": "握緊；咬緊"
+ },
+ {
+  "id": 5191,
+  "word": "clerestory",
+  "missing": "phonetic|example",
+  "definition_zh": "高窗；天窗"
+ },
+ {
+  "id": 5192,
+  "word": "clergy",
+  "missing": "pos|example",
+  "definition_zh": "神職人員；牧師們"
+ },
+ {
+  "id": 5193,
+  "word": "cleric",
+  "missing": "example",
+  "definition_zh": "牧師；神職人員"
+ },
+ {
+  "id": 4580,
+  "word": "community",
+  "missing": "definition",
+  "definition_zh": "社群，社區"
+ },
+ {
+  "id": 4340,
+  "word": "conditioning",
+  "missing": "definition",
+  "definition_zh": "空調（通常指air conditioning）"
+ },
+ {
+  "id": 4538,
+  "word": "conservation",
+  "missing": "definition",
+  "definition_zh": "保育，保護"
+ },
+ {
+  "id": 4264,
+  "word": "container",
+  "missing": "definition",
+  "definition_zh": "容器，用於盛裝物品的器具"
+ },
+ {
+  "id": 4094,
+  "word": "contribution",
+  "missing": "definition",
+  "definition_zh": "貢獻"
+ },
+ {
+  "id": 4609,
+  "word": "defend",
+  "missing": "example",
+  "definition_zh": "保衛；防守；辯護"
+ },
+ {
+  "id": 4610,
+  "word": "destroy",
+  "missing": "example",
+  "definition_zh": "毀壞；破壞；消滅"
+ },
+ {
+  "id": 4445,
+  "word": "developing",
+  "missing": "definition",
+  "definition_zh": "發展，形成"
+ },
+ {
+  "id": 4429,
+  "word": "digital",
+  "missing": "definition",
+  "definition_zh": "數位的"
+ },
+ {
+  "id": 4335,
+  "word": "digitally",
+  "missing": "definition",
+  "definition_zh": "數位地"
+ },
+ {
+  "id": 4465,
+  "word": "disadvantages",
+  "missing": "definition",
+  "definition_zh": "缺點，不利因素"
+ },
+ {
+  "id": 4615,
+  "word": "disease",
+  "missing": "example",
+  "definition_zh": "疾病；病"
+ },
+ {
+  "id": 4158,
+  "word": "dislocated",
+  "missing": "definition",
+  "definition_zh": "脫臼的，錯位的"
+ },
+ {
+  "id": 4321,
+  "word": "districts",
+  "missing": "definition",
+  "definition_zh": "區域，地區"
+ },
+ {
+  "id": 4619,
+  "word": "document",
+  "missing": "example",
+  "definition_zh": "文件；文獻；記錄"
+ },
+ {
+  "id": 4620,
+  "word": "domestic",
+  "missing": "example",
+  "definition_zh": "國內的；家庭的"
+ },
+ {
+  "id": 4268,
+  "word": "draft",
+  "missing": "definition",
+  "definition_zh": "草稿，初稿"
+ },
+ {
+  "id": 3402,
+  "word": "dragon-boat",
+  "missing": "pos|phonetic|example",
+  "definition_zh": "龍舟"
+ },
+ {
+  "id": 4624,
+  "word": "dust",
+  "missing": "example|definition",
+  "definition_zh": "灰塵；撣掉"
+ },
+ {
+  "id": 4626,
+  "word": "dying",
+  "missing": "example",
+  "definition_zh": "垂死的；臨終的；消亡的"
+ },
+ {
+  "id": 4627,
+  "word": "eager",
+  "missing": "example",
+  "definition_zh": "渴望的；熱切的"
+ },
+ {
+  "id": 4632,
+  "word": "echo",
+  "missing": "example",
+  "definition_zh": "回聲；迴響"
+ },
+ {
+  "id": 4633,
+  "word": "economics",
+  "missing": "example",
+  "definition_zh": "經濟學"
+ },
+ {
+  "id": 4634,
+  "word": "economy",
+  "missing": "example",
+  "definition_zh": "經濟；節約"
+ },
+ {
+  "id": 4636,
+  "word": "educate",
+  "missing": "example",
+  "definition_zh": "教育；培養"
+ },
+ {
+  "id": 4639,
+  "word": "either",
+  "missing": "example",
+  "definition_zh": "也；或者；任一"
+ },
+ {
+  "id": 4643,
+  "word": "eliminate",
+  "missing": "example",
+  "definition_zh": "消除；淘汰"
+ },
+ {
+  "id": 4576,
+  "word": "empathy",
+  "missing": "definition",
+  "definition_zh": "同理心，同情心"
+ },
+ {
+  "id": 4646,
+  "word": "emphasis",
+  "missing": "example",
+  "definition_zh": "強調；重點"
+ },
+ {
+  "id": 4647,
+  "word": "empire",
+  "missing": "example",
+  "definition_zh": "帝國"
+ },
+ {
+  "id": 4649,
+  "word": "employee",
+  "missing": "example",
+  "definition_zh": "員工；僱員"
+ },
+ {
+  "id": 4650,
+  "word": "employer",
+  "missing": "example",
+  "definition_zh": "雇主；老闆"
+ },
+ {
+  "id": 4651,
+  "word": "employment",
+  "missing": "example",
+  "definition_zh": "就業；雇用"
+ },
+ {
+  "id": 4652,
+  "word": "enable",
+  "missing": "example",
+  "definition_zh": "使能夠；啟用"
+ },
+ {
+  "id": 4654,
+  "word": "endless",
+  "missing": "example",
+  "definition_zh": "無止境的；無盡的"
+ },
+ {
+  "id": 4657,
+  "word": "enforce",
+  "missing": "example",
+  "definition_zh": "執行；強制"
+ },
+ {
+  "id": 4660,
+  "word": "english",
+  "missing": "example",
+  "definition_zh": "英語；英文；英國的"
+ },
+ {
+  "id": 4661,
+  "word": "enormous",
+  "missing": "example",
+  "definition_zh": "巨大的；龐大的"
+ },
+ {
+  "id": 4663,
+  "word": "enterprise",
+  "missing": "example",
+  "definition_zh": "企業；事業；進取心"
+ },
+ {
+  "id": 4665,
+  "word": "enthusiasm",
+  "missing": "example",
+  "definition_zh": "熱情；熱忱"
+ },
+ {
+  "id": 4667,
+  "word": "entry",
+  "missing": "example",
+  "definition_zh": "入口；入場；登記"
+ },
+ {
+  "id": 4670,
+  "word": "equality",
+  "missing": "example",
+  "definition_zh": "平等；均等"
+ },
+ {
+  "id": 4671,
+  "word": "equipment",
+  "missing": "example",
+  "definition_zh": "設備；裝備"
+ },
+ {
+  "id": 4672,
+  "word": "era",
+  "missing": "example",
+  "definition_zh": "時代；紀元"
+ },
+ {
+  "id": 4674,
+  "word": "escape",
+  "missing": "example|definition",
+  "definition_zh": "逃跑；逃脫"
+ },
+ {
+  "id": 4675,
+  "word": "essay",
+  "missing": "example|definition",
+  "definition_zh": "文章；論文"
+ },
+ {
+  "id": 4676,
+  "word": "essence",
+  "missing": "example",
+  "definition_zh": "本質；精華"
+ },
+ {
+  "id": 4677,
+  "word": "establish",
+  "missing": "example",
+  "definition_zh": "建立；確立"
+ },
+ {
+  "id": 4678,
+  "word": "establishment",
+  "missing": "example",
+  "definition_zh": "建立；機構"
+ },
+ {
+  "id": 4679,
+  "word": "estimate",
+  "missing": "example",
+  "definition_zh": "估計；評估"
+ },
+ {
+  "id": 4680,
+  "word": "eternal",
+  "missing": "example",
+  "definition_zh": "永恆的；永遠的"
+ },
+ {
+  "id": 4682,
+  "word": "ethnic",
+  "missing": "example|definition",
+  "definition_zh": "民族的；族裔的"
+ },
+ {
+  "id": 3858,
+  "word": "europe",
+  "missing": "definition",
+  "definition_zh": "歐洲"
+ },
+ {
+  "id": 4683,
+  "word": "evaluate",
+  "missing": "example",
+  "definition_zh": "評估；評價"
+ },
+ {
+  "id": 4686,
+  "word": "eventually",
+  "missing": "example",
+  "definition_zh": "最終；終於"
+ },
+ {
+  "id": 4689,
+  "word": "everybody",
+  "missing": "example",
+  "definition_zh": "每個人；人人"
+ },
+ {
+  "id": 4690,
+  "word": "everyday",
+  "missing": "example",
+  "definition_zh": "日常的；平常的"
+ },
+ {
+  "id": 4691,
+  "word": "everyone",
+  "missing": "example",
+  "definition_zh": "每個人；所有人"
+ },
+ {
+  "id": 4692,
+  "word": "everything",
+  "missing": "example",
+  "definition_zh": "一切；所有事物"
+ },
+ {
+  "id": 4694,
+  "word": "evidence",
+  "missing": "example",
+  "definition_zh": "證據；跡象"
+ },
+ {
+  "id": 4698,
+  "word": "exactly",
+  "missing": "example",
+  "definition_zh": "精確地；確實地"
+ },
+ {
+  "id": 4699,
+  "word": "examination",
+  "missing": "example",
+  "definition_zh": "考試；檢查"
+ },
+ {
+  "id": 4701,
+  "word": "exceed",
+  "missing": "example",
+  "definition_zh": "超過；超出"
+ },
+ {
+  "id": 4702,
+  "word": "excellence",
+  "missing": "example",
+  "definition_zh": "優秀；卓越"
+ },
+ {
+  "id": 4704,
+  "word": "exception",
+  "missing": "example|definition",
+  "definition_zh": "例外；除外"
+ },
+ {
+  "id": 4705,
+  "word": "excess",
+  "missing": "example",
+  "definition_zh": "過剩；過多"
+ },
+ {
+  "id": 4706,
+  "word": "exchange",
+  "missing": "example",
+  "definition_zh": "交換；兌換"
+ },
+ {
+  "id": 4708,
+  "word": "exclude",
+  "missing": "example",
+  "definition_zh": "排除；拒絕"
+ },
+ {
+  "id": 4709,
+  "word": "exclusive",
+  "missing": "example",
+  "definition_zh": "獨特的；獨家的"
+ },
+ {
+  "id": 4710,
+  "word": "execute",
+  "missing": "example",
+  "definition_zh": "執行；處決"
+ },
+ {
+  "id": 4711,
+  "word": "executive",
+  "missing": "example",
+  "definition_zh": "行政的；主管"
+ },
+ {
+  "id": 4712,
+  "word": "exhaust",
+  "missing": "example",
+  "definition_zh": "用盡；排氣；精疲力竭"
+ },
+ {
+  "id": 4713,
+  "word": "exhibit",
+  "missing": "example",
+  "definition_zh": "展示；展覽"
+ },
+ {
+  "id": 4714,
+  "word": "exhibition",
+  "missing": "example",
+  "definition_zh": "展覽；展出"
+ },
+ {
+  "id": 4716,
+  "word": "existence",
+  "missing": "example",
+  "definition_zh": "存在；生存"
+ },
+ {
+  "id": 4718,
+  "word": "expand",
+  "missing": "example",
+  "definition_zh": "擴大；膨脹"
+ },
+ {
+  "id": 4719,
+  "word": "expansion",
+  "missing": "example",
+  "definition_zh": "擴張；擴大"
+ },
+ {
+  "id": 4720,
+  "word": "expectation",
+  "missing": "example",
+  "definition_zh": "期望；預期"
+ },
+ {
+  "id": 4721,
+  "word": "expense",
+  "missing": "example",
+  "definition_zh": "費用；支出"
+ },
+ {
+  "id": 4723,
+  "word": "experiment",
+  "missing": "example",
+  "definition_zh": "實驗；試驗"
+ },
+ {
+  "id": 4724,
+  "word": "expert",
+  "missing": "example",
+  "definition_zh": "專家；行家"
+ },
+ {
+  "id": 4725,
+  "word": "explanation",
+  "missing": "example",
+  "definition_zh": "解釋；說明"
+ },
+ {
+  "id": 4726,
+  "word": "explicit",
+  "missing": "example",
+  "definition_zh": "明確的；清楚的"
+ },
+ {
+  "id": 4727,
+  "word": "explore",
+  "missing": "example",
+  "definition_zh": "探索；探查"
+ },
+ {
+  "id": 4729,
+  "word": "export",
+  "missing": "example",
+  "definition_zh": "出口；輸出"
+ },
+ {
+  "id": 4732,
+  "word": "expression",
+  "missing": "example",
+  "definition_zh": "表達；表情"
+ },
+ {
+  "id": 4733,
+  "word": "extend",
+  "missing": "example",
+  "definition_zh": "延伸；擴展"
+ },
+ {
+  "id": 4734,
+  "word": "extension",
+  "missing": "example",
+  "definition_zh": "延伸；延長"
+ },
+ {
+  "id": 4735,
+  "word": "extensive",
+  "missing": "example",
+  "definition_zh": "廣泛的；大規模的"
+ },
+ {
+  "id": 4736,
+  "word": "extent",
+  "missing": "example",
+  "definition_zh": "程度；範圍"
+ },
+ {
+  "id": 4737,
+  "word": "external",
+  "missing": "example",
+  "definition_zh": "外部的；外表的"
+ },
+ {
+  "id": 4739,
+  "word": "extract",
+  "missing": "example",
+  "definition_zh": "提取；摘錄"
+ },
+ {
+  "id": 4740,
+  "word": "extreme",
+  "missing": "example",
+  "definition_zh": "極端的；極度的"
+ },
+ {
+  "id": 4741,
+  "word": "extremely",
+  "missing": "example",
+  "definition_zh": "極其；非常"
+ },
+ {
+  "id": 4745,
+  "word": "facility",
+  "missing": "example",
+  "definition_zh": "設施；設備"
+ },
+ {
+  "id": 4746,
+  "word": "facing",
+  "missing": "example",
+  "definition_zh": "面對；朝向；對面"
+ },
+ {
+  "id": 4747,
+  "word": "factor",
+  "missing": "example",
+  "definition_zh": "因素；要素"
+ },
+ {
+  "id": 4748,
+  "word": "faculty",
+  "missing": "example",
+  "definition_zh": "官能；才能；院系"
+ },
+ {
+  "id": 4749,
+  "word": "fade",
+  "missing": "example",
+  "definition_zh": "褪色；消退"
+ },
+ {
+  "id": 4752,
+  "word": "fairly",
+  "missing": "example",
+  "definition_zh": "公平地；相當地"
+ },
+ {
+  "id": 4753,
+  "word": "faith",
+  "missing": "example",
+  "definition_zh": "信仰；信任"
+ },
+ {
+  "id": 4757,
+  "word": "fantasy",
+  "missing": "example",
+  "definition_zh": "幻想；奇幻"
+ },
+ {
+  "id": 4759,
+  "word": "farming",
+  "missing": "example",
+  "definition_zh": "農業；農耕"
+ },
+ {
+  "id": 4760,
+  "word": "fascinating",
+  "missing": "example",
+  "definition_zh": "迷人的；有趣的"
+ },
+ {
+  "id": 4762,
+  "word": "fate",
+  "missing": "example",
+  "definition_zh": "命運；天命"
+ },
+ {
+  "id": 4766,
+  "word": "favorable",
+  "missing": "example",
+  "definition_zh": "有利的；贊成的"
+ },
+ {
+  "id": 4767,
+  "word": "favourite",
+  "missing": "example",
+  "definition_zh": "最喜歡的"
+ },
+ {
+  "id": 4768,
+  "word": "feature",
+  "missing": "example",
+  "definition_zh": "特徵；特色；特寫"
+ },
+ {
+  "id": 4769,
+  "word": "federal",
+  "missing": "example",
+  "definition_zh": "聯邦的"
+ },
+ {
+  "id": 4776,
+  "word": "fetch",
+  "missing": "example",
+  "definition_zh": "取來；拿來"
+ },
+ {
+  "id": 4780,
+  "word": "fierce",
+  "missing": "example",
+  "definition_zh": "凶猛的；激烈的"
+ },
+ {
+  "id": 4781,
+  "word": "fifth",
+  "missing": "example",
+  "definition_zh": "第五"
+ },
+ {
+  "id": 4783,
+  "word": "fighter",
+  "missing": "example",
+  "definition_zh": "戰士；格鬥者"
+ },
+ {
+  "id": 4784,
+  "word": "fighting",
+  "missing": "example",
+  "definition_zh": "戰鬥；打架"
+ },
+ {
+  "id": 3406,
+  "word": "figure",
+  "missing": "definition",
+  "definition_zh": "數字；人物"
+ },
+ {
+  "id": 4785,
+  "word": "file",
+  "missing": "example",
+  "definition_zh": "文件；文件夾"
+ },
+ {
+  "id": 4788,
+  "word": "filter",
+  "missing": "example",
+  "definition_zh": "過濾器；篩選"
+ },
+ {
+  "id": 4790,
+  "word": "finance",
+  "missing": "example",
+  "definition_zh": "財務；金融"
+ },
+ {
+  "id": 4791,
+  "word": "financial",
+  "missing": "example",
+  "definition_zh": "財務的；金融的"
+ },
+ {
+  "id": 4793,
+  "word": "finding",
+  "missing": "example",
+  "definition_zh": "發現；調查結果"
+ },
+ {
+  "id": 4798,
+  "word": "firmly",
+  "missing": "example",
+  "definition_zh": "堅定地；牢固地"
+ },
+ {
+  "id": 4800,
+  "word": "fiscal",
+  "missing": "example",
+  "definition_zh": "財政的；會計的"
+ },
+ {
+  "id": 4804,
+  "word": "fitness",
+  "missing": "example",
+  "definition_zh": "體能；健康"
+ },
+ {
+  "id": 4805,
+  "word": "fixed",
+  "missing": "example",
+  "definition_zh": "固定的；確定的"
+ },
+ {
+  "id": 4807,
+  "word": "flame",
+  "missing": "example",
+  "definition_zh": "火焰；激情"
+ },
+ {
+  "id": 4809,
+  "word": "flavor",
+  "missing": "example",
+  "definition_zh": "口味；風味"
+ },
+ {
+  "id": 4811,
+  "word": "flesh",
+  "missing": "example",
+  "definition_zh": "肉；肌肉；果肉"
+ },
+ {
+  "id": 4812,
+  "word": "flexibility",
+  "missing": "example",
+  "definition_zh": "靈活性；彈性"
+ },
+ {
+  "id": 4813,
+  "word": "flexible",
+  "missing": "example",
+  "definition_zh": "靈活的；有彈性的"
+ },
+ {
+  "id": 4815,
+  "word": "float",
+  "missing": "example",
+  "definition_zh": "漂浮；浮動"
+ },
+ {
+  "id": 4820,
+  "word": "flowing",
+  "missing": "example",
+  "definition_zh": "流暢的；飄逸的"
+ },
+ {
+  "id": 4821,
+  "word": "fluid",
+  "missing": "example",
+  "definition_zh": "液體；流動的"
+ },
+ {
+  "id": 3876,
+  "word": "fly away",
+  "missing": "definition",
+  "definition_zh": "飛走"
+ },
+ {
+  "id": 4823,
+  "word": "fold",
+  "missing": "example",
+  "definition_zh": "折疊"
+ },
+ {
+  "id": 4824,
+  "word": "following",
+  "missing": "example",
+  "definition_zh": "以下的；跟隨"
+ },
+ {
+  "id": 4829,
+  "word": "forced",
+  "missing": "example",
+  "definition_zh": "被迫的；強制的"
+ },
+ {
+  "id": 4832,
+  "word": "forever",
+  "missing": "example",
+  "definition_zh": "永遠；始終"
+ },
+ {
+  "id": 4836,
+  "word": "formally",
+  "missing": "example",
+  "definition_zh": "正式地"
+ },
+ {
+  "id": 4837,
+  "word": "formation",
+  "missing": "example",
+  "definition_zh": "形成；編隊"
+ },
+ {
+  "id": 4839,
+  "word": "formerly",
+  "missing": "example",
+  "definition_zh": "以前；從前"
+ },
+ {
+  "id": 4840,
+  "word": "formula",
+  "missing": "example",
+  "definition_zh": "公式；配方"
+ },
+ {
+  "id": 4841,
+  "word": "forth",
+  "missing": "example",
+  "definition_zh": "向前；出去"
+ },
+ {
+  "id": 4842,
+  "word": "fortune",
+  "missing": "example",
+  "definition_zh": "財富；命運"
+ },
+ {
+  "id": 4844,
+  "word": "fossil",
+  "missing": "example",
+  "definition_zh": "化石"
+ },
+ {
+  "id": 4845,
+  "word": "foster",
+  "missing": "example",
+  "definition_zh": "培養；撫育"
+ },
+ {
+  "id": 4846,
+  "word": "fought",
+  "missing": "example",
+  "definition_zh": "戰鬥（fight的過去式）"
+ },
+ {
+  "id": 4847,
+  "word": "foul",
+  "missing": "example",
+  "definition_zh": "犯規；污穢的"
+ },
+ {
+  "id": 4848,
+  "word": "foundation",
+  "missing": "example",
+  "definition_zh": "基礎；基金會"
+ },
+ {
+  "id": 4849,
+  "word": "founder",
+  "missing": "example",
+  "definition_zh": "創始人；創辦人"
+ },
+ {
+  "id": 4850,
+  "word": "fountain",
+  "missing": "example",
+  "definition_zh": "噴泉；水源"
+ },
+ {
+  "id": 4852,
+  "word": "fourth",
+  "missing": "example",
+  "definition_zh": "第四"
+ },
+ {
+  "id": 4854,
+  "word": "fraction",
+  "missing": "example",
+  "definition_zh": "分數；少量"
+ },
+ {
+  "id": 3454,
+  "word": "hairdresser",
+  "missing": "definition",
+  "definition_zh": "美髮師；理髮師"
+ },
+ {
+  "id": 3462,
+  "word": "lift",
+  "missing": "definition",
+  "definition_zh": "電梯；提起；搭便車"
+ },
+ {
+  "id": 3464,
+  "word": "liter",
+  "missing": "definition",
+  "definition_zh": "公升"
+ },
+ {
+  "id": 4196,
+  "word": "mashed",
+  "missing": "definition",
+  "definition_zh": "搗碎的"
+ },
+ {
+  "id": 3923,
+  "word": "mostly",
+  "missing": "definition",
+  "definition_zh": "主要地"
+ },
+ {
+  "id": 3465,
+  "word": "nation",
+  "missing": "definition",
+  "definition_zh": "國家；民族"
+ },
+ {
+  "id": 3466,
+  "word": "nest",
+  "missing": "definition",
+  "definition_zh": "巢；鳥巢；窩"
+ },
+ {
+  "id": 3418,
+  "word": "note",
+  "missing": "definition",
+  "definition_zh": "筆記；便條"
+ },
+ {
+  "id": 3819,
+  "word": "opening hours",
+  "missing": "example",
+  "definition_zh": "營業時間"
+ },
+ {
+  "id": 3467,
+  "word": "path",
+  "missing": "definition",
+  "definition_zh": "小路；路徑；途徑"
+ },
+ {
+  "id": 3468,
+  "word": "pile",
+  "missing": "definition",
+  "definition_zh": "一堆；大量；積累"
+ },
+ {
+  "id": 3421,
+  "word": "possessive",
+  "missing": "definition",
+  "definition_zh": "佔有欲強的；所有格的"
+ },
+ {
+  "id": 3394,
+  "word": "powered",
+  "missing": "pos|example",
+  "definition_zh": "由...驅動的"
+ },
+ {
+  "id": 3422,
+  "word": "puppy",
+  "missing": "definition",
+  "definition_zh": "小狗；幼犬"
+ },
+ {
+  "id": 3704,
+  "word": "purely",
+  "missing": "definition",
+  "definition_zh": "純粹地"
+ },
+ {
+  "id": 3472,
+  "word": "rare",
+  "missing": "definition",
+  "definition_zh": "稀有的；罕見的；半熟的"
+ },
+ {
+  "id": 3423,
+  "word": "republic",
+  "missing": "pos|example",
+  "definition_zh": "共和國；共和政體"
+ },
+ {
+  "id": 3473,
+  "word": "rob",
+  "missing": "definition",
+  "definition_zh": "搶劫；偷竊"
+ },
+ {
+  "id": 3424,
+  "word": "scared",
+  "missing": "definition",
+  "definition_zh": "害怕的；恐懼的"
+ },
+ {
+  "id": 3925,
+  "word": "schoolday",
+  "missing": "definition",
+  "definition_zh": "上學日；求學時期"
+ },
+ {
+  "id": 3475,
+  "word": "ski",
+  "missing": "definition",
+  "definition_zh": "滑雪板；滑雪"
+ },
+ {
+  "id": 3426,
+  "word": "social",
+  "missing": "definition",
+  "definition_zh": "社會的；社交的"
+ },
+ {
+  "id": 3479,
+  "word": "soul",
+  "missing": "definition",
+  "definition_zh": "靈魂；心靈"
+ },
+ {
+  "id": 3427,
+  "word": "stove",
+  "missing": "definition",
+  "definition_zh": "爐子；烤箱"
+ },
+ {
+  "id": 3481,
+  "word": "swan",
+  "missing": "definition",
+  "definition_zh": "天鵝"
+ },
+ {
+  "id": 3429,
+  "word": "throughout",
+  "missing": "definition",
+  "definition_zh": "到處；自始至終"
+ },
+ {
+  "id": 3484,
+  "word": "till",
+  "missing": "definition",
+  "definition_zh": "直到；現金收銀機"
+ },
+ {
+  "id": 3430,
+  "word": "title",
+  "missing": "definition",
+  "definition_zh": "標題；頭銜"
+ },
+ {
+  "id": 3432,
+  "word": "turkey",
+  "missing": "definition",
+  "definition_zh": "火雞"
+ },
+ {
+  "id": 3433,
+  "word": "wallet",
+  "missing": "definition",
+  "definition_zh": "錢包；皮夾"
+ },
+ {
+  "id": 3489,
+  "word": "war",
+  "missing": "definition",
+  "definition_zh": "戰爭；戰役"
+ },
+ {
+  "id": 3491,
+  "word": "yell",
+  "missing": "pos|example|definition",
+  "definition_zh": "大叫；叫喊"
+ }
+]

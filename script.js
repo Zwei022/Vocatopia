@@ -113,7 +113,7 @@ function normalizeWord(w) {
     ex:         w.example_en && w.example_zh
                   ? `${w.example_en}\n${w.example_zh}`
                   : (w.example_en || ''),
-    tag:        (w.tags && w.tags[1]) || `Level ${w.level || 1}`,
+    tag:        (w.tags && w.tags[1]) || '',
     phonetic:   w.phonetic   || '',
     level:      w.level      || 1,
     st:         'new',
@@ -303,7 +303,9 @@ function loadCard(idx) {
   document.getElementById('wcPos').textContent  = w.pos;
   document.getElementById('wcDef').textContent  = w.def;
   document.getElementById('wcEx').textContent   = w.ex;
-  document.getElementById('wcTag').textContent  = w.tag;
+  const wcTagEl = document.getElementById('wcTag');
+  wcTagEl.textContent = w.tag;
+  wcTagEl.style.display = w.tag ? '' : 'none';
   document.getElementById('wcNum').textContent  = String(idx + 1).padStart(2, '0');
   document.getElementById('sessInfo').textContent = `第 ${idx + 1} / ${STUDY_WORDS.length} 張`;
   document.getElementById('wcHint').style.display = 'block';
@@ -492,52 +494,40 @@ const GSAT_EXAMS = [
   { year: 2022, type: 'listening', label: '聽力測驗', icon: '🔊', sections: [] },
 ];
 
-function renderGsatList() {
-  const el = document.getElementById('gsatList');
-  if (!el) return;
+function _gsatYearRowsHTML(openFnName) {
   const years = [2025, 2024, 2023, 2022];
-  el.innerHTML = years.map(year => {
+  return years.map(year => {
     const exams = GSAT_EXAMS.filter(e => e.year === year);
     return `
-      <div class="gsat-year-group">
-        <div class="gsat-year-label">${year} 年</div>
-        <div class="gsat-cards">
+      <div class="gsat-year-row">
+        <div class="gyr-year">
+          <div class="gyr-num">${year}</div>
+          <div class="gyr-label">國中教育會考</div>
+        </div>
+        <div class="gyr-exams">
           ${exams.map(e => {
             const hasData = e.sections.length > 0;
             return `
-              <div class="gsat-card${hasData ? '' : ' gsat-card-empty'}" onclick="${hasData ? `openGsatExam(${e.year},'${e.type}')` : ''}">
-                <div class="gsat-card-icon">${e.icon}</div>
-                <div class="gsat-card-name">${e.label}</div>
-                <div class="gsat-card-status">${hasData ? '開始作答' : '資料準備中'}</div>
-              </div>`;
+              <button class="gyr-exam${hasData ? '' : ' empty'}" onclick="${hasData ? `${openFnName}(${e.year},'${e.type}')` : ''}">
+                <div class="gyr-exam-name">${e.icon} ${e.label}</div>
+                <div class="gyr-exam-status">${hasData ? '開始作答' : '準備中'}</div>
+              </button>`;
           }).join('')}
         </div>
       </div>`;
   }).join('');
 }
 
+function renderGsatList() {
+  const el = document.getElementById('gsatList');
+  if (!el) return;
+  el.innerHTML = _gsatYearRowsHTML('openGsatExam');
+}
+
 function renderGsatLib() {
   const el = document.getElementById('libGsatList');
   if (!el) return;
-  const years = [2025, 2024, 2023, 2022];
-  el.innerHTML = years.map(year => {
-    const exams = GSAT_EXAMS.filter(e => e.year === year);
-    return `
-      <div class="gsat-year-group">
-        <div class="gsat-year-label">${year} 年</div>
-        <div class="gsat-cards">
-          ${exams.map(e => {
-            const hasData = e.sections.length > 0;
-            return `
-              <div class="gsat-card${hasData ? '' : ' gsat-card-empty'}" onclick="${hasData ? `openLibGsatExam(${e.year},'${e.type}')` : ''}">
-                <div class="gsat-card-icon">${e.icon}</div>
-                <div class="gsat-card-name">${e.label}</div>
-                <div class="gsat-card-status">${hasData ? '開始作答' : '資料準備中'}</div>
-              </div>`;
-          }).join('')}
-        </div>
-      </div>`;
-  }).join('');
+  el.innerHTML = _gsatYearRowsHTML('openLibGsatExam');
 }
 
 function openLibGsatExam(year, type) {
@@ -1651,7 +1641,6 @@ function openWordDetail(wordId) {
   let defText = (w.definition || w.def || '—').trim();
   if (defText.endsWith(':')) defText = defText.slice(0, -1).trim();
   document.getElementById('wdDef').textContent = defText;
-  document.getElementById('wdLvl').textContent = `Level ${w.level || 1}`;
 
   // 中文定義
   const zhDefEl = document.getElementById('wdDefZh');
@@ -1788,7 +1777,37 @@ function buildPvpQuestions(words, count) {
 // ── FLASHCARD（卡片播放介面） ────────────────────────────────────
 let fcCurrentIdx = 0;
 let fcFlipped = false;
-let fcMarked = new Set();
+let fcMarked = new Set();       // 已學習（熟悉）的單字 id
+let fcFavorites = new Set();    // 收藏的單字 id（獨立於熟悉度）
+let fcRecordTab = 'unlearned';  // 學習紀錄當前分頁：learned / unlearned / fav
+
+// 上方單字卡只播放「當前分頁」的單字（已學習/未學習/收藏連動過濾）
+function fcViewList() {
+  // 空卡組只有空白範本時，照常顯示範本卡
+  if (STUDY_WORDS.length === 1 && STUDY_WORDS[0].id === 'empty_template') return STUDY_WORDS;
+  const real = STUDY_WORDS.filter(w => w.id !== 'empty_template');
+  if (fcRecordTab === 'learned') return real.filter(w => fcMarked.has(w.id));
+  if (fcRecordTab === 'fav')     return real.filter(w => fcFavorites.has(w.id));
+  return real.filter(w => !fcMarked.has(w.id));
+}
+
+// 熟悉度與收藏依卡組分開持久化（localStorage，沿用 voca_ 前綴慣例）
+function _fcMarksKey(kind) { return `voca_fc_${kind}_${fcCurrentDeckId}`; }
+
+function _fcLoadMarks() {
+  try {
+    fcMarked    = new Set(JSON.parse(localStorage.getItem(_fcMarksKey('learned')) || '[]'));
+    fcFavorites = new Set(JSON.parse(localStorage.getItem(_fcMarksKey('fav')) || '[]'));
+  } catch {
+    fcMarked = new Set();
+    fcFavorites = new Set();
+  }
+}
+
+function _fcSaveMarks() {
+  localStorage.setItem(_fcMarksKey('learned'), JSON.stringify([...fcMarked]));
+  localStorage.setItem(_fcMarksKey('fav'), JSON.stringify([...fcFavorites]));
+}
 
 function startFlashcard(deckId) {
   fcCurrentDeckId = deckId;  // 保存當前卡組 ID（用於新增單字）
@@ -1835,7 +1854,12 @@ function startFlashcard(deckId) {
   // 允許進入空卡組
   fcCurrentIdx = 0;
   fcFlipped = false;
-  fcMarked.clear();
+  _fcLoadMarks();  // 載入此卡組的熟悉度與收藏紀錄（預設全部未學習）
+
+  // 進入卡組時回到「未學習」分頁（預設所有單字都在這裡）
+  fcRecordTab = 'unlearned';
+  document.querySelectorAll('.fc-record-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tabUnlearned')?.classList.add('active');
 
   // 更新卡組名稱（重要：同時更新刪除管理器的卡組名稱）
   let deckName = '卡組';
@@ -1861,14 +1885,21 @@ function startFlashcard(deckId) {
 }
 
 function loadFlashcard(idx) {
-  if (!STUDY_WORDS.length) {
-    document.getElementById('fcWord').textContent = '尚無單字';
+  const viewList = fcViewList();
+  if (!viewList.length) {
+    document.getElementById('fcWord').textContent = STUDY_WORDS.length ? '此分類沒有單字' : '尚無單字';
+    document.getElementById('fcPos').textContent = '';
+    document.getElementById('fcPhonetic').textContent = '';
     document.getElementById('fcProgress').textContent = '0 / 0';
     document.getElementById('fcProgressFill').style.width = '0%';
     document.getElementById('fcCard').classList.remove('flipped');
+    fcFlipped = false;
+    updateRecordsList();
     return;
   }
-  const w = STUDY_WORDS[idx];
+  if (idx >= viewList.length) idx = viewList.length - 1;
+  fcCurrentIdx = idx;
+  const w = viewList[idx];
   document.getElementById('fcWord').textContent = w.word;
   document.getElementById('fcPos').textContent = w.pos || 'n.';
   // 格式化音標為 /phonetic/（清理多餘的 // 符號）
@@ -1941,8 +1972,8 @@ function loadFlashcard(idx) {
     }
   }
 
-  document.getElementById('fcProgress').textContent = `${idx + 1} / ${STUDY_WORDS.length}`;
-  const pct = ((idx + 1) / STUDY_WORDS.length) * 100;
+  document.getElementById('fcProgress').textContent = `${idx + 1} / ${viewList.length}`;
+  const pct = ((idx + 1) / viewList.length) * 100;
   document.getElementById('fcProgressFill').style.width = pct + '%';
   document.getElementById('fcCard').classList.remove('flipped');
   fcFlipped = false;
@@ -1957,33 +1988,67 @@ function flipCard() {
 }
 
 function fcNextCard() {
-  fcCurrentIdx = (fcCurrentIdx + 1) % STUDY_WORDS.length;
+  const len = fcViewList().length;
+  if (!len) return;
+  fcCurrentIdx = (fcCurrentIdx + 1) % len;
   loadFlashcard(fcCurrentIdx);
 }
 
 function fcPrevCard() {
-  fcCurrentIdx = (fcCurrentIdx - 1 + STUDY_WORDS.length) % STUDY_WORDS.length;
+  const len = fcViewList().length;
+  if (!len) return;
+  fcCurrentIdx = (fcCurrentIdx - 1 + len) % len;
   loadFlashcard(fcCurrentIdx);
 }
 
+// 星星按鈕＝收藏（獨立狀態，不影響已學習/未學習分類）
 function fcToggleMark() {
-  const w = STUDY_WORDS[fcCurrentIdx];
-  if (fcMarked.has(w.id)) {
-    fcMarked.delete(w.id);
+  const w = fcViewList()[fcCurrentIdx];
+  if (!w || w.id === 'empty_template') return;
+  if (fcFavorites.has(w.id)) {
+    fcFavorites.delete(w.id);
   } else {
-    fcMarked.add(w.id);
+    fcFavorites.add(w.id);
   }
-  updateFcMarkBtn();
-  updateRecordsList();
+  _fcSaveMarks();
+  if (fcRecordTab === 'fav') {
+    // 在收藏分頁取消收藏 → 單字移出當前清單，原位即是下一張
+    loadFlashcard(fcCurrentIdx);
+  } else {
+    updateFcMarkBtn();
+    updateRecordsList();
+  }
+}
+
+// 熟悉 / 不熟悉判定：熟悉 → 已學習，不熟悉 → 未學習
+function fcSetFamiliar(isFamiliar) {
+  const before = fcViewList();
+  const w = before[fcCurrentIdx];
+  if (!w || w.id === 'empty_template') return;
+  if (isFamiliar) {
+    fcMarked.add(w.id);
+  } else {
+    fcMarked.delete(w.id);
+  }
+  _fcSaveMarks();
+  const after = fcViewList();
+  if (after.length < before.length) {
+    // 單字移出當前分類（如在未學習按下熟悉），原位即是下一張
+    loadFlashcard(after.length ? fcCurrentIdx % after.length : 0);
+  } else {
+    // 分類未變動（如在收藏分頁判定），自動跳下一張
+    fcNextCard();
+  }
 }
 
 function updateFcMarkBtn() {
-  const w = STUDY_WORDS[fcCurrentIdx];
+  const w = fcViewList()[fcCurrentIdx];
+  if (!w) return;
   const btn = document.getElementById('fcMarkBtn');
   const icon = document.getElementById('fcMarkIcon');
-  if (fcMarked.has(w.id)) {
+  if (fcFavorites.has(w.id)) {
     btn.classList.add('marked');
-    icon.textContent = '✕';
+    icon.textContent = '★';
   } else {
     btn.classList.remove('marked');
     icon.textContent = '☆';
@@ -1991,7 +2056,7 @@ function updateFcMarkBtn() {
 }
 
 function fcPlayAudio() {
-  const w = STUDY_WORDS[fcCurrentIdx];
+  const w = fcViewList()[fcCurrentIdx];
   if (w?.word) speak(w.word);
 }
 
@@ -2149,18 +2214,24 @@ function openTerms() {
 function updateRecordsList() {
   if (!STUDY_WORDS || STUDY_WORDS.length === 0) return;
 
-  const learnedList = STUDY_WORDS.filter(w => fcMarked.has(w.id) && w.id !== 'empty_template');
-  const unlearnedList = STUDY_WORDS.filter(w => !fcMarked.has(w.id) && w.id !== 'empty_template');
+  const realWords = STUDY_WORDS.filter(w => w.id !== 'empty_template');
+  const learnedList   = realWords.filter(w => fcMarked.has(w.id));
+  const unlearnedList = realWords.filter(w => !fcMarked.has(w.id));
+  const favList       = realWords.filter(w => fcFavorites.has(w.id));
 
   document.getElementById('countLearned').textContent = learnedList.length;
   document.getElementById('countUnlearned').textContent = unlearnedList.length;
+  const favCountEl = document.getElementById('countFav');
+  if (favCountEl) favCountEl.textContent = favList.length;
 
-  const currentTab = document.querySelector('.fc-record-tab.active')?.id || 'tabLearned';
-  const items = currentTab === 'tabLearned' ? learnedList : unlearnedList;
+  const items = fcRecordTab === 'learned' ? learnedList
+              : fcRecordTab === 'fav'     ? favList
+              : unlearnedList;
 
-  const listHtml = items.map(w => `
-    <div class="fc-record-item" onclick="fcCurrentIdx = ${STUDY_WORDS.indexOf(w)}; loadFlashcard(fcCurrentIdx)">
-      <span class="fc-record-word">${w.word}</span>
+  // items 與 fcViewList() 在當前分頁下順序一致，索引可直接用於卡片跳轉
+  const listHtml = items.map((w, i) => `
+    <div class="fc-record-item" onclick="loadFlashcard(${i})">
+      <span class="fc-record-word">${fcFavorites.has(w.id) ? '<span class="fc-record-fav">★</span>' : ''}${w.word}</span>
       <span class="fc-record-status">${(w.def || w.definition || '—')?.substring(0, 20)}...</span>
     </div>
   `).join('');
@@ -2169,9 +2240,12 @@ function updateRecordsList() {
 }
 
 function switchRecordTab(btn, tabName) {
+  fcRecordTab = tabName;
   document.querySelectorAll('.fc-record-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
-  updateRecordsList();
+  // 上方單字卡連動切換到該分類的第一張
+  fcCurrentIdx = 0;
+  loadFlashcard(0);
 }
 
 // ===== DELETE WORD MANAGEMENT =====

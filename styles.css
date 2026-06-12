@@ -1150,8 +1150,38 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 .fc-btn:active {
   transform: scale(.95);
 }
-.fc-btn-mark.marked { color: #E53935; }
+.fc-btn-mark.marked { color: #F4C430; border-color: #F4C430; }
 .fc-btn-next, .fc-btn-skip {  }
+
+/* 熟悉度判定列 */
+.fc-judge-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 24px 10px;
+  flex-shrink: 0;
+}
+.fc-judge {
+  flex: 1;
+  max-width: 200px;
+  padding: 10px 0;
+  border-radius: 10px;
+  border: 2px solid;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all .15s;
+}
+.fc-judge:active { transform: scale(.97); }
+/* 兩顆按鈕平時外觀一致，僅 hover 時亮起給予反饋 */
+.fc-judge-no  { background: #FFFFFF; border-color: #E8EDE8; color: #C62828; }
+.fc-judge-no:hover  { background: #FDEAEA; border-color: #E53935; }
+.fc-judge-yes { background: #FFFFFF; border-color: #E8EDE8; color: #1AA854; }
+.fc-judge-yes:hover { background: #E3F7EC; border-color: #2ECC71; }
+
+/* 學習紀錄：收藏星號 */
+.fc-record-fav { color: #F4C430; font-size: 11px; margin-right: 4px; }
 
 /* 進度條 */
 .fc-progress-bar {
@@ -1325,38 +1355,39 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 }
 
 /* ── 閱覽室新版：精選題目子分頁 ── */
-.csub-tabs{display:flex;gap:0;border-bottom:1px solid rgba(255,255,255,.1);padding:8px 16px 0;flex-shrink:0}
-.csub{flex:1;padding:8px 4px;background:none;border:none;border-bottom:2px solid transparent;color:var(--gray);font-family:'Nunito',sans-serif;font-weight:700;font-size:11px;cursor:pointer;transition:all .15s;letter-spacing:0}
-.csub.active{color:var(--white);border-bottom-color:var(--green)}
+/* curatedPanel 只裝子分頁列，高度必須收緊，內容面板（兄弟元素）才吃得到剩餘空間 */
+#curatedPanel{flex:0 0 auto}
+.csub-tabs{display:flex;gap:8px;padding:12px 20px 4px;flex-shrink:0}
+.csub{flex:1;padding:8px 0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:999px;color:var(--gray);font-family:'Nunito',sans-serif;font-weight:700;font-size:11px;cursor:pointer;transition:all .15s;letter-spacing:0}
+.csub.active{background:rgba(46,204,113,.14);border-color:var(--green3);color:var(--green3)}
 
 /* 子面板（會考/答錯/收藏/每日共用容器） */
 .sub-panel{flex:1;overflow-y:auto;padding:10px 20px;display:none;flex-direction:column;gap:10px}
 .sub-panel.show{display:flex}
 
-/* 會考歷屆 */
-.gsat-year-group{margin-bottom:16px}
-.gsat-year-label{font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:var(--gray);letter-spacing:1px;margin-bottom:8px;text-transform:uppercase}
-.gsat-cards{display:flex;gap:8px;flex-wrap:wrap}
-.gsat-card{flex:1;min-width:120px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px;text-align:center;cursor:pointer;transition:all .15s}
-.gsat-card:hover{background:rgba(255,255,255,.12);border-color:var(--green)}
-.gsat-card-empty{opacity:.45;cursor:default}
-.gsat-card-icon{font-size:24px;margin-bottom:6px}
-.gsat-card-name{font-family:'Nunito',sans-serif;font-weight:700;font-size:12px;color:var(--white);margin-bottom:4px}
-.gsat-card-status{font-size:10px;color:var(--gray)}
+/* 會考歷屆：年份橫列卡 */
+.gsat-year-row{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r2);padding:14px 16px}
+.gyr-year{flex-shrink:0;display:flex;flex-direction:column;gap:2px;min-width:72px}
+.gyr-num{font-family:var(--font-display);font-weight:700;font-size:26px;color:var(--white);line-height:1}
+.gyr-label{font-size:10px;color:var(--gray)}
+.gyr-exams{flex:1;display:flex;gap:8px}
+.gyr-exam{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;background:rgba(46,204,113,.08);border:1px solid rgba(46,204,113,.22);border-radius:10px;padding:9px 4px;cursor:pointer;transition:all .15s;font-family:'Nunito',sans-serif}
+.gyr-exam:hover{background:rgba(46,204,113,.18);border-color:var(--green3)}
+.gyr-exam-name{font-weight:700;font-size:12px;color:var(--white)}
+.gyr-exam-status{font-size:9px;color:var(--green3);font-weight:700}
+.gyr-exam.empty{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08);cursor:default}
+.gyr-exam.empty:hover{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08)}
+.gyr-exam.empty .gyr-exam-name{color:var(--gray)}
+.gyr-exam.empty .gyr-exam-status{color:var(--gray2)}
 .gsat-exam-head{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.08);flex-shrink:0}
 .gsat-exam-title{font-family:'Nunito',sans-serif;font-weight:700;font-size:14px;color:var(--white)}
 
-/* 每日練習 6宮格 */
-.daily-cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:16px 0}
-.dcat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px 8px;text-align:center;cursor:pointer;transition:all .15s;display:flex;flex-direction:column;align-items:center;gap:6px}
-.dcat:hover{background:rgba(255,255,255,.12);border-color:var(--green)}
-.dc-ico{font-size:26px}
-.dc-name{font-family:'Nunito',sans-serif;font-weight:700;font-size:12px;color:var(--white)}
+/* 每日練習 / 答錯題庫 / 收藏題庫：題型卡（2 欄橫式） */
+.daily-cat-grid,.bank-cat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:12px 0}
+.dcat,.bank-cat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r2);padding:13px 14px;text-align:left;cursor:pointer;transition:all .15s;display:flex;flex-direction:row;align-items:center;gap:12px}
+.dcat:hover,.bank-cat:hover{background:rgba(255,255,255,.1);border-color:var(--green3);transform:translateY(-1px)}
+.dc-ico,.bc-ico{width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:rgba(46,204,113,.08);border:1px solid rgba(46,204,113,.18);border-radius:10px;font-size:21px;flex-shrink:0}
+.cat-txt{display:flex;flex-direction:column;gap:2px;min-width:0}
+.dc-name,.bc-name{font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;color:var(--white)}
+.dc-sub,.bc-sub{font-size:10px;color:var(--gray);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .dcat-badge{font-size:9px;background:var(--orange);color:var(--white);padding:1px 5px;border-radius:4px;font-weight:900;margin-left:3px;vertical-align:middle}
-
-/* 答錯/收藏題庫 6宮格 */
-.bank-cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:16px 0}
-.bank-cat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px 8px;text-align:center;cursor:pointer;transition:all .15s;display:flex;flex-direction:column;align-items:center;gap:6px}
-.bank-cat:hover{background:rgba(255,255,255,.12);border-color:var(--green)}
-.bc-ico{font-size:26px}
-.bc-name{font-family:'Nunito',sans-serif;font-weight:700;font-size:12px;color:var(--white)}
