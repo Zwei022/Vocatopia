@@ -48,6 +48,75 @@
   </div>
 </div>
 
+<!-- ADD WORD MODAL（單字卡新增單字：快速查詢 / 手動輸入） -->
+<div class="modal-overlay" id="addWordModal">
+  <div class="modal-box">
+    <div class="modal-title">➕ 新增單字</div>
+    <div class="awm-tabs">
+      <button class="awm-tab awm-tab-active" onclick="switchAddWordMode('quick')">⚡ 快速查詢</button>
+      <button class="awm-tab" onclick="switchAddWordMode('manual')">✏️ 手動輸入</button>
+    </div>
+
+    <!-- 快速查詢面板 -->
+    <div class="awm-panel awm-panel-active" id="awmQuickPanel">
+      <div class="awm-search-row">
+        <input class="ndm-input awm-input" id="awmQuickInput" placeholder="輸入英文單字（如：apple）" maxlength="40"
+               onkeydown="if(event.key==='Enter')searchWordFromCambridge()">
+        <button class="awm-search-btn" onclick="searchWordFromCambridge()">查詢</button>
+      </div>
+      <div class="awm-loading" id="awmQuickLoading" style="display:none">查詢中，新單字約需數秒⋯</div>
+      <div class="awm-error" id="awmQuickError" style="display:none"></div>
+      <div class="awm-preview" id="awmQuickPreview" style="display:none">
+        <div class="awp-head">
+          <span class="awp-word" id="awpWord"></span>
+          <span class="awp-phonetic" id="awpPhonetic"></span>
+          <span class="awp-pos" id="awpPos"></span>
+        </div>
+        <div class="awp-def" id="awpDef"></div>
+        <div class="awp-example" id="awpExample"></div>
+      </div>
+    </div>
+
+    <!-- 手動輸入面板 -->
+    <div class="awm-panel" id="awmManualPanel">
+      <input class="ndm-input awm-input" id="awmWord" placeholder="英文單字" maxlength="40">
+      <input class="ndm-input awm-input" id="awmDef" placeholder="中文解釋" maxlength="60">
+      <input class="ndm-input awm-input" id="awmNote" placeholder="備註（選填）" maxlength="100">
+    </div>
+
+    <button class="modal-confirm" onclick="submitAddWord()">加入卡組</button>
+    <button class="modal-cancel" onclick="closeModal('addWordModal')">取消</button>
+  </div>
+</div>
+
+<!-- FC SETTINGS MODAL（單字卡學習設定） -->
+<div class="modal-overlay" id="fcSettingsModal">
+  <div class="modal-box">
+    <div class="modal-title">⚙ 學習設定</div>
+    <div class="fcset-row">
+      <div class="fcset-label">只學習收藏（★）單字</div>
+      <button class="fcset-toggle" id="fcSetOnlyFav" onclick="toggleFcOnlyFav()"><span class="fcset-knob"></span></button>
+    </div>
+    <div class="fcset-row">
+      <div class="fcset-label">卡片正面</div>
+      <div class="fcset-seg">
+        <button class="fcset-seg-btn" id="fcSetFrontEn" onclick="setFcFront('en')">英文</button>
+        <button class="fcset-seg-btn" id="fcSetFrontZh" onclick="setFcFront('zh')">中文</button>
+      </div>
+    </div>
+    <button class="modal-confirm" onclick="closeModal('fcSettingsModal')">完成</button>
+  </div>
+</div>
+
+<!-- MOVE WORDS MODAL（管理模式：移轉到其他自訂卡組） -->
+<div class="modal-overlay" id="moveWordsModal">
+  <div class="modal-box">
+    <div class="modal-title">⇄ 移轉 <span id="moveWordsCount">0</span> 個單字到</div>
+    <div class="move-deck-list" id="moveWordsDeckList"></div>
+    <button class="modal-cancel" onclick="closeModal('moveWordsModal')">取消</button>
+  </div>
+</div>
+
 <!-- UPGRADE MODAL -->
 <div class="modal-overlay" id="upgradeModal">
   <div class="modal-box upgrade-box">
@@ -80,14 +149,14 @@
 
     <div class="wdetail-rule"></div>
 
-    <div class="wdetail-section-lbl">英文定義</div>
+    <div class="wdetail-section-lbl" id="wdDefLbl">英文定義</div>
     <div class="wdetail-def" id="wdDef">—</div>
 
     <div class="wdetail-section-lbl" style="margin-top:12px">中文定義</div>
     <div class="wdetail-def" id="wdDefZh">—</div>
 
     <div class="wdetail-ex-wrap" id="wdExWrap">
-      <div class="wdetail-section-lbl" style="margin-top:14px">例句</div>
+      <div class="wdetail-section-lbl" id="wdExLbl" style="margin-top:14px">例句</div>
       <div class="wdetail-ex-en" id="wdExEn"></div>
       <div class="wdetail-ex-zh" id="wdExZh"></div>
     </div>
@@ -242,13 +311,9 @@
         <div class="fc-mode-icon">✍</div>
         <div class="fc-mode-label">測驗</div>
       </button>
-      <button class="fc-mode-btn" onclick="switchFlashcardMode('listen')" title="聽力模式">
-        <div class="fc-mode-icon">🔊</div>
-        <div class="fc-mode-label">聽力</div>
-      </button>
-      <button class="fc-mode-btn" onclick="switchFlashcardMode('speed')" title="速度賽">
-        <div class="fc-mode-icon">⚡</div>
-        <div class="fc-mode-label">速度</div>
+      <button class="fc-mode-btn" onclick="switchFlashcardMode('match')" title="配對遊戲">
+        <div class="fc-mode-icon">🧩</div>
+        <div class="fc-mode-label">配對</div>
       </button>
     </div>
 
@@ -304,7 +369,25 @@
     <div class="fc-records-section">
       <div class="fc-records-header">
         <div class="fc-records-title">學習紀錄</div>
-        <button class="fc-records-add-btn" onclick="openAddWordModal(fcCurrentDeckId)" title="新增單字">➕ 新增</button>
+        <div class="fc-records-actions">
+          <button class="fc-records-manage-btn" id="fcManageBtn" onclick="toggleDeleteMode()" title="管理單字">⚙ 管理</button>
+          <button class="fc-records-add-btn" onclick="openAddWordModal(fcCurrentDeckId)" title="新增單字">➕ 新增</button>
+        </div>
+      </div>
+
+      <!-- 管理模式面板（選取移轉/刪除） -->
+      <div id="fcDeleteMode" style="display:none">
+        <div class="fcdm-head">
+          <div class="fcdm-title">管理「<span id="fcDeleteDeckName"></span>」</div>
+          <div class="fcdm-count">已選 <span id="fcDeleteCount">0</span> 個</div>
+        </div>
+        <div class="fcdm-toolbar">
+          <button class="fcdm-btn" onclick="selectAllWords()">全選</button>
+          <button class="fcdm-btn" onclick="deselectAllWords()">取消全選</button>
+          <button class="fcdm-btn fcdm-move" onclick="openMoveWordsModal()">⇄ 移轉</button>
+          <button class="fcdm-btn fcdm-del" onclick="deleteSelectedWords()">🗑 刪除</button>
+        </div>
+        <div class="fc-delete-list" id="fcDeleteList"></div>
       </div>
 
       <div class="fc-records-tabs">
@@ -517,6 +600,83 @@
   <div id="library" class="screen"></div>
 
 </div><!-- /phone -->
+
+<!-- MATCH GAME OVERLAY（配對遊戲） -->
+<div class="match-overlay" id="matchOverlay">
+  <div class="match-top">
+    <div class="match-title">🧩 配對</div>
+    <div class="match-timer" id="matchTimer">0.0</div>
+    <button class="match-close" onclick="closeMatchGame()">✕</button>
+  </div>
+
+  <!-- 準備畫面 -->
+  <div class="match-stage" id="matchReady">
+    <div class="match-ready-emoji">🧩</div>
+    <div class="match-ready-title">準備好了嗎？</div>
+    <div class="match-ready-desc">盡快將所有單字與其中文定義配對完成！<br>按下開始後立即計時。</div>
+    <button class="match-start-btn" onclick="startMatchCountdown()">開始遊戲</button>
+  </div>
+
+  <!-- 倒數 -->
+  <div class="match-stage" id="matchCountdown" style="display:none">
+    <div class="match-count-num" id="matchCountNum">3</div>
+  </div>
+
+  <!-- 遊戲盤面 -->
+  <div class="match-stage" id="matchGame" style="display:none">
+    <div class="match-grid" id="matchGrid"></div>
+  </div>
+
+  <!-- 結果 -->
+  <div class="match-stage" id="matchResult" style="display:none">
+    <div class="match-result-icon">🏆</div>
+    <div class="match-result-time" id="matchResultTime">0.0 秒</div>
+    <div class="match-result-best" id="matchResultBest"></div>
+    <button class="match-start-btn" onclick="openMatchReady()">再玩一次</button>
+    <button class="match-exit-btn" onclick="closeMatchGame()">返回單字卡</button>
+  </div>
+</div>
+
+<!-- FC QUIZ OVERLAY（單字卡測驗：10 題選擇題） -->
+<div class="match-overlay" id="fcQuizOverlay">
+  <div class="match-top">
+    <div class="match-title">✍ 測驗</div>
+    <div class="match-timer" id="fcQuizProgress" style="font-size:14px"></div>
+    <button class="match-close" onclick="closeFcQuiz()">✕</button>
+  </div>
+
+  <!-- 模式選擇 -->
+  <div class="match-stage" id="fcQuizMode">
+    <div class="match-ready-emoji">✍</div>
+    <div class="match-ready-title">選擇測驗模式</div>
+    <div class="match-ready-desc">共 10 題選擇題，從本卡組隨機出題</div>
+    <button class="match-start-btn fcq-alt" onclick="startFcQuiz('zh')">題目中文（選英文）</button>
+    <button class="match-start-btn fcq-alt" onclick="startFcQuiz('en')">題目英文（選中文）</button>
+  </div>
+
+  <!-- 題目 -->
+  <div class="match-stage" id="fcQuizQuestion" style="display:none">
+    <div class="fcq-question" id="fcqQuestion"></div>
+    <div class="fcq-opts" id="fcqOpts"></div>
+  </div>
+
+  <!-- 結算 -->
+  <div class="match-stage" id="fcQuizResult" style="display:none">
+    <div class="fcq-score" id="fcqScore"></div>
+    <div class="fcq-result-cols">
+      <div class="fcq-col">
+        <div class="fcq-col-title ok">✅ 答對</div>
+        <div id="fcqCorrectList"></div>
+      </div>
+      <div class="fcq-col">
+        <div class="fcq-col-title bad">❌ 答錯</div>
+        <div id="fcqWrongList"></div>
+      </div>
+    </div>
+    <button class="match-start-btn" onclick="openFcQuizMode()">再測一次</button>
+    <button class="match-exit-btn" onclick="closeFcQuiz()">返回單字卡</button>
+  </div>
+</div>
 
 <!-- AUTH OVERLAY -->
 <div class="auth-overlay" id="authOverlay">

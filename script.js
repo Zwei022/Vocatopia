@@ -1601,8 +1601,19 @@ function speak(w) {
 
 let _wdWordId = null;
 
+// 跨來源找字：主字庫找不到時，從自訂卡組本地快取找（快速查詢/手動輸入的字不在主字庫）
+function _findWordById(wordId) {
+  const inLib = WORDS.find(x => x.id === wordId);
+  if (inLib) return inLib;
+  for (const deck of customDecks) {
+    const hit = (deck.words || []).find(x => x.id === wordId);
+    if (hit) return hit;
+  }
+  return null;
+}
+
 function openWordDetail(wordId) {
-  const w = WORDS.find(x => x.id === wordId);
+  const w = _findWordById(wordId);
   if (!w) return;
   _wdWordId = wordId;
 
@@ -1637,38 +1648,60 @@ function openWordDetail(wordId) {
   document.getElementById('wdPos').style.background= `${posColor}22`;
   document.getElementById('wdPos').style.color     = posColor;
 
-  // 定義：顯示英文定義（移除末尾冒號）
-  let defText = (w.definition || w.def || '—').trim();
-  if (defText.endsWith(':')) defText = defText.slice(0, -1).trim();
-  document.getElementById('wdDef').textContent = defText;
-
-  // 中文定義
+  // 定義顯示：手動輸入的字只顯示使用者輸入的內容
+  const defLbl  = document.getElementById('wdDefLbl');
+  const defEl   = document.getElementById('wdDef');
   const zhDefEl = document.getElementById('wdDefZh');
-  if (zhDefEl) {
-    zhDefEl.textContent = w.definition_zh || '—';
+  if (isManualMode) {
+    // 手動模式：中文解釋存於 definition 欄位，英文定義區整段隱藏
+    if (defLbl) defLbl.style.display = 'none';
+    defEl.style.display = 'none';
+    if (zhDefEl) zhDefEl.textContent = w.definition || w.def || '—';
+  } else {
+    if (defLbl) defLbl.style.display = '';
+    defEl.style.display = '';
+    let defText = (w.definition || w.def || '—').trim();
+    if (defText.endsWith(':')) defText = defText.slice(0, -1).trim();
+    defEl.textContent = defText;
+    if (zhDefEl) zhDefEl.textContent = w.definition_zh || '—';
   }
 
-  // 例句：顯示英文例句和中文例句（避免重複顯示英文）
-  const exWrap = document.getElementById('wdExWrap');
-  const exEn = w.example_en || '';
-  const exZh = (w.example_zh && w.example_zh.trim() !== exEn.trim()) ? w.example_zh : '';
-  if (exEn || exZh) {
-    exWrap.style.display = 'block';
-    document.getElementById('wdExEn').textContent = exEn;
-    const exZhEl = document.getElementById('wdExZh');
-    if (exZh) {
-      exZhEl.textContent = exZh;
-      exZhEl.style.display = 'block';
-    } else {
+  // 例句區：手動模式顯示備註；快速模式顯示中英例句
+  const exWrap  = document.getElementById('wdExWrap');
+  const exLbl   = document.getElementById('wdExLbl');
+  const exEnEl  = document.getElementById('wdExEn');
+  const exZhEl  = document.getElementById('wdExZh');
+  if (isManualMode) {
+    if (w.manual_note) {
+      exWrap.style.display = 'block';
+      if (exLbl) exLbl.textContent = '備註';
+      exEnEl.textContent = w.manual_note;
       exZhEl.textContent = '';
       exZhEl.style.display = 'none';
+    } else {
+      exWrap.style.display = 'none';
     }
   } else {
-    exWrap.style.display = 'none';
+    if (exLbl) exLbl.textContent = '例句';
+    const exEn = w.example_en || '';
+    const exZh = (w.example_zh && w.example_zh.trim() !== exEn.trim()) ? w.example_zh : '';
+    if (exEn || exZh) {
+      exWrap.style.display = 'block';
+      exEnEl.textContent = exEn;
+      if (exZh) {
+        exZhEl.textContent = exZh;
+        exZhEl.style.display = 'block';
+      } else {
+        exZhEl.textContent = '';
+        exZhEl.style.display = 'none';
+      }
+    } else {
+      exWrap.style.display = 'none';
+    }
   }
 
   // 狀態點
-  document.getElementById('wdDot').className = `wr-dot wd-${w.st} wdot-lg`;
+  document.getElementById('wdDot').className = `wr-dot wd-${w.st || 'new'} wdot-lg`;
 
   // 標記按鈕
   _updateWdMarkBtn(w);
@@ -1696,7 +1729,7 @@ function _updateWdMarkBtn(w) {
 }
 
 function toggleWordMark() {
-  const w = WORDS.find(x => x.id === _wdWordId);
+  const w = _findWordById(_wdWordId);
   if (!w) return;
   if (w.st === 'lrn') {
     w.st = 'new'; w._correctStreak = 0;
@@ -1781,11 +1814,21 @@ let fcMarked = new Set();       // 已學習（熟悉）的單字 id
 let fcFavorites = new Set();    // 收藏的單字 id（獨立於熟悉度）
 let fcRecordTab = 'unlearned';  // 學習紀錄當前分頁：learned / unlearned / fav
 
+// 學習設定（全域持久化）：只學習收藏 + 卡片正面語言
+let fcSettings = { onlyFav: false, front: 'en' };
+try {
+  fcSettings = { onlyFav: false, front: 'en', ...JSON.parse(localStorage.getItem('voca_fc_prefs') || '{}') };
+} catch { /* 維持預設 */ }
+function _saveFcSettings() {
+  localStorage.setItem('voca_fc_prefs', JSON.stringify(fcSettings));
+}
+
 // 上方單字卡只播放「當前分頁」的單字（已學習/未學習/收藏連動過濾）
 function fcViewList() {
   // 空卡組只有空白範本時，照常顯示範本卡
   if (STUDY_WORDS.length === 1 && STUDY_WORDS[0].id === 'empty_template') return STUDY_WORDS;
-  const real = STUDY_WORDS.filter(w => w.id !== 'empty_template');
+  let real = STUDY_WORDS.filter(w => w.id !== 'empty_template');
+  if (fcSettings.onlyFav) real = real.filter(w => fcFavorites.has(w.id));  // 只學習收藏
   if (fcRecordTab === 'learned') return real.filter(w => fcMarked.has(w.id));
   if (fcRecordTab === 'fav')     return real.filter(w => fcFavorites.has(w.id));
   return real.filter(w => !fcMarked.has(w.id));
@@ -1872,12 +1915,22 @@ function startFlashcard(deckId) {
   const deckNameEl = document.getElementById('fcDeckName');
   if (deckNameEl) deckNameEl.textContent = deckName;
 
-  // 管理按鈕：只在自訂卡組和"不熟卡組"時顯示，內置的"會考2000"隱藏
-  const manageBtn = document.querySelector('.fc-records-delete-btn:nth-of-type(2)');
-  if (manageBtn) {
-    const isBuiltinCap2000 = BUILTIN_DECKS.find(d => d.id === deckId && d.id === 'cap2000');
-    manageBtn.style.display = isBuiltinCap2000 ? 'none' : 'inline-block';
+  // 新增/管理按鈕顯示規則：
+  // 會考2000 = 固定教材僅供瀏覽（兩者皆隱藏）；不熟卡組 = 自動收錄（隱藏管理）
+  const addBtn = document.querySelector('.fc-records-add-btn');
+  if (addBtn) {
+    addBtn.style.display = (deckId === 'cap2000') ? 'none' : '';
   }
+  const manageBtn = document.getElementById('fcManageBtn');
+  if (manageBtn) {
+    manageBtn.style.display = ['cap2000', 'weak'].includes(deckId) ? 'none' : '';
+  }
+
+  // 切換卡組時關閉殘留的管理面板，避免跨卡組誤操作
+  deleteWordState.isDeleteMode = false;
+  deleteWordState.selectedIds.clear();
+  const dmEl = document.getElementById('fcDeleteMode');
+  if (dmEl) dmEl.style.display = 'none';
 
   loadFlashcard(0);
   updateRecordsList();
@@ -1887,9 +1940,20 @@ function startFlashcard(deckId) {
 function loadFlashcard(idx) {
   const viewList = fcViewList();
   if (!viewList.length) {
-    document.getElementById('fcWord').textContent = STUDY_WORDS.length ? '此分類沒有單字' : '尚無單字';
+    const emptyWordEl = document.getElementById('fcWord');
+    emptyWordEl.textContent = STUDY_WORDS.length ? '此分類沒有單字' : '尚無單字';
+    emptyWordEl.classList.add('fc-word-empty');
+    emptyWordEl.style.fontSize = '';
     document.getElementById('fcPos').textContent = '';
     document.getElementById('fcPhonetic').textContent = '';
+    // 背面欄位一併清空，避免翻轉後殘留上一個單字的內容
+    document.getElementById('fcBackPhonetic').textContent = '';
+    document.getElementById('fcDefinitionZh').textContent = STUDY_WORDS.length ? '此分類沒有單字' : '尚無單字';
+    const emptyDefEn = document.getElementById('fcDefinitionEn');
+    if (emptyDefEn) emptyDefEn.style.display = 'none';
+    document.getElementById('fcExampleLabel').textContent = '';
+    document.getElementById('fcExampleEn').textContent = '';
+    document.getElementById('fcExampleZh').textContent = '';
     document.getElementById('fcProgress').textContent = '0 / 0';
     document.getElementById('fcProgressFill').style.width = '0%';
     document.getElementById('fcCard').classList.remove('flipped');
@@ -1900,7 +1964,17 @@ function loadFlashcard(idx) {
   if (idx >= viewList.length) idx = viewList.length - 1;
   fcCurrentIdx = idx;
   const w = viewList[idx];
-  document.getElementById('fcWord').textContent = w.word;
+  const isTemplate = w.id === 'empty_template';
+  // 正面語言設定：en = 正面英文（預設）；zh = 正面中文定義、背面英文
+  const frontIsZh = fcSettings.front === 'zh' && !isTemplate;
+  const zhDefText = w.definition_zh || w.def || w.definition || '—';
+  const wordEl = document.getElementById('fcWord');
+  wordEl.textContent = isTemplate ? '尚無單字' : (frontIsZh ? zhDefText : w.word);
+  wordEl.classList.toggle('fc-word-empty', isTemplate);
+  wordEl.classList.toggle('fc-word-zhfront', frontIsZh);
+  const fcHintEl = document.querySelector('#fcCard .fc-hint');
+  if (fcHintEl) fcHintEl.textContent = isTemplate ? '點下方「➕ 新增」加入第一個單字' : '點擊翻轉';
+  if (frontIsZh) { wordEl.style.fontSize = ''; } else { fitFcWord(); }
   document.getElementById('fcPos').textContent = w.pos || 'n.';
   // 格式化音標為 /phonetic/（清理多餘的 // 符號）
   let phonetic = w.phonetic || '';
@@ -1914,7 +1988,8 @@ function loadFlashcard(idx) {
     phonetic = `${phonetic}/`;
   }
   const formattedPhonetic = phonetic;
-  document.getElementById('fcPhonetic').textContent = formattedPhonetic;
+  // 正面為中文時音標移到背面（跟著英文單字走）
+  document.getElementById('fcPhonetic').textContent = frontIsZh ? '' : formattedPhonetic;
   document.getElementById('fcBackPhonetic').textContent = formattedPhonetic;
 
   // ===== 定義顯示邏輯 =====
@@ -1942,6 +2017,11 @@ function loadFlashcard(idx) {
     const chineseDef = w.definition || w.def || '未知';
     document.getElementById('fcDefinitionZh').textContent = chineseDef;
     englishDefEl.style.display = 'none';
+  }
+
+  // 正面為中文時，背面主文字改顯示英文單字
+  if (frontIsZh) {
+    document.getElementById('fcDefinitionZh').textContent = w.word;
   }
 
   // ===== 例句/備註顯示邏輯 =====
@@ -1979,6 +2059,20 @@ function loadFlashcard(idx) {
   fcFlipped = false;
   updateFcMarkBtn();
   updateRecordsList();
+}
+
+// 過長單字不換行，改為自動縮小字體至塞進卡片寬度
+function fitFcWord() {
+  const el = document.getElementById('fcWord');
+  if (!el || !el.parentElement) return;
+  el.style.fontSize = '';  // 還原 CSS 預設（56px）再重新量測
+  const avail = el.parentElement.clientWidth - 48;  // 扣除卡片左右 padding 24px
+  if (avail <= 0) return;  // 畫面尚未顯示時跳過
+  let size = parseFloat(getComputedStyle(el).fontSize);
+  while (size > 20 && el.scrollWidth > avail) {
+    size -= 2;
+    el.style.fontSize = size + 'px';
+  }
 }
 
 function flipCard() {
@@ -2063,13 +2157,301 @@ function fcPlayAudio() {
 function switchFlashcardMode(mode) {
   // 標示按鈕狀態
   document.querySelectorAll('.fc-mode-btn').forEach(b => b.classList.remove('fc-mode-active'));
-  event.target.closest('.fc-mode-btn').classList.add('fc-mode-active');
-  // TODO：實作各模式邏輯（測驗、聽力、速度）
-  showToast(`🎯 ${['flip','quiz','listen','speed'][['flip','quiz','listen','speed'].indexOf(mode)]} 模式`);
+  if (typeof event !== 'undefined' && event.target) {
+    event.target.closest('.fc-mode-btn')?.classList.add('fc-mode-active');
+  }
+  if (mode === 'match') { openMatchReady(); return; }
+  if (mode === 'quiz')  { openFcQuizMode(); return; }
+  // flip = 預設卡片模式，無需額外處理
+}
+
+// ── 單字卡測驗（10 題選擇題）────────────────────────────────────
+let fcQuizState = null;
+
+function _fcqZh(w) { return w.definition_zh || w.def || w.definition || '—'; }
+
+function _fcqShow(stageId) {
+  ['fcQuizMode', 'fcQuizQuestion', 'fcQuizResult'].forEach(id => {
+    document.getElementById(id).style.display = id === stageId ? 'flex' : 'none';
+  });
+}
+
+function openFcQuizMode() {
+  const pool = STUDY_WORDS.filter(w => w.id !== 'empty_template' && w.word && (w.definition_zh || w.def || w.definition));
+  if (pool.length < 4) {
+    showToast('❌ 測驗需要至少 4 個單字');
+    return;
+  }
+  fcQuizState = { pool, mode: null, questions: [], idx: 0, answers: [], locked: false };
+  document.getElementById('fcQuizProgress').textContent = '';
+  _fcqShow('fcQuizMode');
+  document.getElementById('fcQuizOverlay').classList.add('show');
+}
+
+function startFcQuiz(mode) {
+  const s = fcQuizState;
+  s.mode = mode;
+  // 隨機抽題（最多 10 題），每題 1 正確 + 3 隨機干擾，選項順序打亂（正確答案位置隨機）
+  const qWords = [...s.pool].sort(() => Math.random() - .5).slice(0, Math.min(10, s.pool.length));
+  s.questions = qWords.map(w => {
+    const wrongs = s.pool.filter(x => x.id !== w.id).sort(() => Math.random() - .5).slice(0, 3);
+    const opts = [w, ...wrongs].sort(() => Math.random() - .5);
+    return { w, opts };
+  });
+  s.idx = 0;
+  s.answers = [];
+  _fcqRenderQuestion();
+  _fcqShow('fcQuizQuestion');
+}
+
+function _fcqRenderQuestion() {
+  const s = fcQuizState;
+  const q = s.questions[s.idx];
+  document.getElementById('fcQuizProgress').textContent = `第 ${s.idx + 1} / ${s.questions.length} 題`;
+  document.getElementById('fcqQuestion').textContent = s.mode === 'zh' ? _fcqZh(q.w) : q.w.word;
+  document.getElementById('fcqOpts').innerHTML = q.opts.map((o, i) =>
+    `<button class="fcq-opt" id="fcqOpt${i}" onclick="fcqAnswer(${i})">${_matchEsc(s.mode === 'zh' ? o.word : _fcqZh(o))}</button>`
+  ).join('');
+  s.locked = false;
+}
+
+function fcqAnswer(i) {
+  const s = fcQuizState;
+  if (!s || s.locked) return;
+  s.locked = true;
+  const q = s.questions[s.idx];
+  const correct = q.opts[i].id === q.w.id;
+  s.answers.push({ w: q.w, correct });
+
+  document.getElementById('fcqOpt' + i).classList.add(correct ? 'ok' : 'bad');
+  if (!correct) {
+    // 答錯時同步亮出正確答案
+    const cIdx = q.opts.findIndex(o => o.id === q.w.id);
+    document.getElementById('fcqOpt' + cIdx).classList.add('ok');
+  }
+
+  setTimeout(() => {
+    s.idx++;
+    if (s.idx >= s.questions.length) {
+      _fcqFinish();
+    } else {
+      _fcqRenderQuestion();
+    }
+  }, correct ? 600 : 1100);
+}
+
+function _fcqFinish() {
+  const s = fcQuizState;
+  const correct = s.answers.filter(a => a.correct);
+  const wrong   = s.answers.filter(a => !a.correct);
+  document.getElementById('fcQuizProgress').textContent = '';
+  document.getElementById('fcqScore').textContent = `${correct.length} / ${s.answers.length} 分`;
+
+  const row = a => `
+    <div class="fcq-row">
+      <span class="fcq-row-word">${_matchEsc(a.w.word)}</span>
+      <span class="fcq-row-zh">${_matchEsc(_fcqZh(a.w))}</span>
+      <button class="fcq-row-fav ${fcFavorites.has(a.w.id) ? 'on' : ''}" data-id="${a.w.id}" onclick="fcqToggleFav(this)">${fcFavorites.has(a.w.id) ? '★' : '☆'}</button>
+    </div>`;
+  document.getElementById('fcqCorrectList').innerHTML = correct.map(row).join('') || '<div class="fcq-none">—</div>';
+  document.getElementById('fcqWrongList').innerHTML   = wrong.map(row).join('')   || '<div class="fcq-none">—</div>';
+  _fcqShow('fcQuizResult');
+}
+
+function fcqToggleFav(btn) {
+  const word = STUDY_WORDS.find(w => String(w.id) === String(btn.dataset.id));
+  if (!word) return;
+  if (fcFavorites.has(word.id)) {
+    fcFavorites.delete(word.id);
+  } else {
+    fcFavorites.add(word.id);
+  }
+  _fcSaveMarks();
+  const on = fcFavorites.has(word.id);
+  btn.classList.toggle('on', on);
+  btn.textContent = on ? '★' : '☆';
+  updateRecordsList();
+  updateFcMarkBtn();
+}
+
+function closeFcQuiz() {
+  fcQuizState = null;
+  document.getElementById('fcQuizOverlay').classList.remove('show');
+  // 模式按鈕回到翻牌
+  document.querySelectorAll('.fc-mode-btn').forEach(b => b.classList.remove('fc-mode-active'));
+  document.querySelector('.fc-mode-btn')?.classList.add('fc-mode-active');
+}
+
+// ── 配對遊戲（每個卡組獨立計時紀錄）────────────────────────────
+let matchState = null;
+
+function _matchEsc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function _matchShow(stageId) {
+  ['matchReady', 'matchCountdown', 'matchGame', 'matchResult'].forEach(id => {
+    document.getElementById(id).style.display = id === stageId ? 'flex' : 'none';
+  });
+}
+
+function openMatchReady() {
+  const pool = STUDY_WORDS.filter(w => w.id !== 'empty_template' && w.word);
+  if (pool.length < 6) {
+    showToast('❌ 配對遊戲需要至少 6 個單字');
+    return;
+  }
+  matchState = { deckId: fcCurrentDeckId, pool, firstPick: null, matched: 0, timerId: null, countdownId: null, startTs: 0, locked: false };
+  document.getElementById('matchTimer').textContent = '0.0';
+  _matchShow('matchReady');
+  document.getElementById('matchOverlay').classList.add('show');
+}
+
+function startMatchCountdown() {
+  _matchShow('matchCountdown');
+  let n = 3;
+  const numEl = document.getElementById('matchCountNum');
+  numEl.textContent = n;
+  matchState.countdownId = setInterval(() => {
+    n--;
+    if (n <= 0) {
+      clearInterval(matchState.countdownId);
+      _startMatchGame();
+    } else {
+      numEl.textContent = n;
+    }
+  }, 1000);
+}
+
+function _startMatchGame() {
+  const s = matchState;
+  // 隨機抽 6 個單字 → 6 英文 + 6 中文定義共 12 張牌，打亂排列
+  const words = [...s.pool].sort(() => Math.random() - .5).slice(0, 6);
+  const tiles = [];
+  words.forEach(w => {
+    const zh = w.definition_zh || w.def || w.definition || '—';
+    tiles.push({ key: w.id, type: 'en', text: w.word });
+    tiles.push({ key: w.id, type: 'zh', text: zh });
+  });
+  tiles.sort(() => Math.random() - .5);
+
+  document.getElementById('matchGrid').innerHTML = tiles.map(t =>
+    `<div class="match-tile match-tile-${t.type}" data-key="${t.key}" data-type="${t.type}" onclick="matchTileClick(this)">${_matchEsc(t.text)}</div>`
+  ).join('');
+
+  s.matched = 0;
+  s.firstPick = null;
+  s.locked = false;
+  _matchShow('matchGame');
+  s.startTs = performance.now();
+  s.timerId = setInterval(() => {
+    document.getElementById('matchTimer').textContent = ((performance.now() - s.startTs) / 1000).toFixed(1);
+  }, 100);
+}
+
+function matchTileClick(el) {
+  const s = matchState;
+  if (!s || s.locked || el.classList.contains('gone') || el.classList.contains('ok')) return;
+
+  // 再點同一張 = 取消選取
+  if (s.firstPick === el) {
+    el.classList.remove('sel');
+    s.firstPick = null;
+    return;
+  }
+
+  el.classList.add('sel');
+  if (!s.firstPick) {
+    s.firstPick = el;
+    return;
+  }
+
+  const a = s.firstPick, b = el;
+  s.firstPick = null;
+  const isMatch = a.dataset.key === b.dataset.key && a.dataset.type !== b.dataset.type;
+
+  if (isMatch) {
+    // 配對成功：轉綠後消失
+    a.classList.remove('sel'); b.classList.remove('sel');
+    a.classList.add('ok'); b.classList.add('ok');
+    setTimeout(() => { a.classList.add('gone'); b.classList.add('gone'); }, 350);
+    s.matched++;
+    if (s.matched >= 6) _finishMatchGame();
+  } else {
+    // 配對錯誤：轉紅抖動後復原，不消失
+    s.locked = true;
+    a.classList.remove('sel'); b.classList.remove('sel');
+    a.classList.add('bad'); b.classList.add('bad');
+    setTimeout(() => {
+      a.classList.remove('bad'); b.classList.remove('bad');
+      s.locked = false;
+    }, 450);
+  }
+}
+
+function _finishMatchGame() {
+  const s = matchState;
+  clearInterval(s.timerId);
+  const elapsed = (performance.now() - s.startTs) / 1000;
+
+  // 每個卡組獨立保存最佳紀錄
+  const key = `voca_match_best_${s.deckId}`;
+  const prevBest = parseFloat(localStorage.getItem(key));
+  let bestText;
+  if (isNaN(prevBest)) {
+    localStorage.setItem(key, elapsed.toFixed(1));
+    bestText = '🎉 首次完成，紀錄建立！';
+  } else if (elapsed < prevBest) {
+    localStorage.setItem(key, elapsed.toFixed(1));
+    bestText = `🎉 新紀錄！（原最佳 ${prevBest.toFixed(1)} 秒）`;
+  } else {
+    bestText = `此卡組最佳紀錄：${prevBest.toFixed(1)} 秒`;
+  }
+
+  setTimeout(() => {
+    document.getElementById('matchResultTime').textContent = elapsed.toFixed(1) + ' 秒';
+    document.getElementById('matchResultBest').textContent = bestText;
+    _matchShow('matchResult');
+  }, 500);
+}
+
+function closeMatchGame() {
+  if (matchState) {
+    clearInterval(matchState.timerId);
+    clearInterval(matchState.countdownId);
+  }
+  matchState = null;
+  document.getElementById('matchOverlay').classList.remove('show');
+  // 模式按鈕回到翻牌
+  document.querySelectorAll('.fc-mode-btn').forEach(b => b.classList.remove('fc-mode-active'));
+  document.querySelector('.fc-mode-btn')?.classList.add('fc-mode-active');
 }
 
 function showFcSettings() {
-  showToast('⚙ 設置（即將上線）');
+  _renderFcSettingsUI();
+  openModal('fcSettingsModal');
+}
+
+function _renderFcSettingsUI() {
+  document.getElementById('fcSetOnlyFav').classList.toggle('on', fcSettings.onlyFav);
+  document.getElementById('fcSetFrontEn').classList.toggle('active', fcSettings.front === 'en');
+  document.getElementById('fcSetFrontZh').classList.toggle('active', fcSettings.front === 'zh');
+}
+
+function toggleFcOnlyFav() {
+  fcSettings.onlyFav = !fcSettings.onlyFav;
+  _saveFcSettings();
+  _renderFcSettingsUI();
+  // 重新套用過濾：回到清單第一張
+  fcCurrentIdx = 0;
+  loadFlashcard(0);
+}
+
+function setFcFront(side) {
+  fcSettings.front = side;
+  _saveFcSettings();
+  _renderFcSettingsUI();
+  loadFlashcard(fcCurrentIdx);
 }
 
 // ── SETTINGS PANEL ──────────────────────────────────────────────
@@ -2214,7 +2596,8 @@ function openTerms() {
 function updateRecordsList() {
   if (!STUDY_WORDS || STUDY_WORDS.length === 0) return;
 
-  const realWords = STUDY_WORDS.filter(w => w.id !== 'empty_template');
+  let realWords = STUDY_WORDS.filter(w => w.id !== 'empty_template');
+  if (fcSettings.onlyFav) realWords = realWords.filter(w => fcFavorites.has(w.id));  // 只學習收藏
   const learnedList   = realWords.filter(w => fcMarked.has(w.id));
   const unlearnedList = realWords.filter(w => !fcMarked.has(w.id));
   const favList       = realWords.filter(w => fcFavorites.has(w.id));
@@ -2229,12 +2612,16 @@ function updateRecordsList() {
               : unlearnedList;
 
   // items 與 fcViewList() 在當前分頁下順序一致，索引可直接用於卡片跳轉
-  const listHtml = items.map((w, i) => `
+  const _trunc = (s, n) => (s.length > n ? s.substring(0, n) + '…' : s);
+  const listHtml = items.map((w, i) => {
+    const isManual = w.source === 'user_input' || w.manual_note;
+    const zhDef = (isManual ? (w.definition || w.def) : w.definition_zh) || '—';
+    return `
     <div class="fc-record-item" onclick="loadFlashcard(${i})">
       <span class="fc-record-word">${fcFavorites.has(w.id) ? '<span class="fc-record-fav">★</span>' : ''}${w.word}</span>
-      <span class="fc-record-status">${(w.def || w.definition || '—')?.substring(0, 20)}...</span>
-    </div>
-  `).join('');
+      <span class="fc-record-zh">${_trunc(zhDef, 24)}</span>
+    </div>`;
+  }).join('');
 
   document.getElementById('fcRecordsList').innerHTML = listHtml || '<div style="padding: 20px; text-align: center; color: #999;">沒有單字</div>';
 }
