@@ -485,7 +485,7 @@ let curatedSubTab = 'exam';
 // ── 會考歷屆資料（dataUrl 有值＝已上線可作答） ──
 const GSAT_EXAMS = [
   { year: 2026, type: 'reading',   label: '閱讀測驗', icon: '📖', dataUrl: '/server/data/gsat_exam_2026_reading.json' },
-  { year: 2026, type: 'listening', label: '聽力測驗', icon: '🔊' },
+  { year: 2026, type: 'listening', label: '聽力測驗', icon: '🔊', dataUrl: '/server/data/gsat_exam_2026_listening.json' },
   { year: 2025, type: 'reading',   label: '閱讀測驗', icon: '📖' },
   { year: 2025, type: 'listening', label: '聽力測驗', icon: '🔊' },
   { year: 2024, type: 'reading',   label: '閱讀測驗', icon: '📖' },
@@ -560,12 +560,16 @@ function _gxPlaceholder(year, exam) {
 }
 function _gxQCard(q) {
   const qn = q.n;
+  const audio = q.audio ? `<audio class="gx-audio" controls preload="none" src="${q.audio}"></audio>` : '';
   const img = q.image ? `<img class="gx-img" src="${q.image}" alt="">` : '';
+  const stemTxt = q.stem ? _gxEsc(q.stem)
+    : (q.audio ? '<span class="gx-listen-tag">🎧 聆聽後作答（內容唸兩次）</span>' : '');
   const opts = q.options.map((o, oi) =>
     `<button type="button" class="gx-opt" id="gxo_${qn}_${oi}" onclick="gsatSelect(${qn},${oi})">${_gxEsc(o)}</button>`
   ).join('');
   return `<div class="gx-q" id="gxq_${qn}">
-    <div class="gx-stem"><span class="gx-num">${qn}.</span> ${_gxEsc(q.stem)}</div>
+    <div class="gx-stem"><span class="gx-num">${qn}.</span> ${stemTxt}</div>
+    ${audio}
     ${img}
     <div class="gx-opts">${opts}</div>
     <div class="gx-explain" id="gxe_${qn}" style="display:none"></div>
@@ -612,13 +616,23 @@ function _renderGsatExam(data, bodyEl, idprefix) {
   let html = `
     <div class="gx-meta">${_gxEsc(data.source || '')}　共 ${data.totalQuestions} 題・${data.durationMin} 分鐘</div>`;
 
+  if (data.type === 'listening') {
+    html += `<div class="gx-listen-start" id="gxListenStart">
+      <div class="gls-info">🎧 共 ${data.totalQuestions} 題，按下後將倒數 3 秒，<b>連續播放</b>官方原聲（每題唸兩次、中途不暫停），模擬真實考試。<b>交卷後</b>才會出現各題播放鈕，可逐題重聽。</div>
+      <button type="button" class="gsat-submit big" id="gxListenBtn" onclick="gsatStartListening()">▶ 開始測驗（倒數 3 秒）</button>
+    </div>`;
+  }
+
   data.sections.forEach(sec => {
     html += `<div class="gx-sec-title">${_gxEsc(sec.title)}　<span>${_gxEsc(sec.range || '')}</span></div>`;
+    if (sec.desc) html += `<div class="gx-sec-desc">${_gxEsc(sec.desc)}</div>`;
     if (sec.kind === 'single') {
       sec.items.forEach(it => {
         qmap[it.n] = {
           options: it.options, answer: it.answer, explanation: it.explanation,
-          cat: GSAT_SINGLE_CAT[it.n] || 'grammar', bankStem: it.stem,
+          transcript: it.transcript,
+          cat: data.type === 'listening' ? 'listening' : (GSAT_SINGLE_CAT[it.n] || 'grammar'),
+          bankStem: it.transcript ? ('🎧 ' + it.transcript) : it.stem,
         };
         total++;
         html += _gxQCard(it);
@@ -658,11 +672,16 @@ function _renderGsatExam(data, bodyEl, idprefix) {
   }
   barWrap.innerHTML = barHTML;
   bodyEl.innerHTML = html;
+  bodyEl.classList.remove('gx-submitted');
 
-  if (gsatExam && gsatExam.timerId) clearInterval(gsatExam.timerId);
+  if (gsatExam) {
+    if (gsatExam.timerId) clearInterval(gsatExam.timerId);
+    if (gsatExam.countdownTimer) clearInterval(gsatExam.countdownTimer);
+  }
   gsatExam = {
     idprefix, qmap, total, answers: {}, submitted: false,
     remain: (data.durationMin || 60) * 60, timerId: null, bodyEl,
+    countdownTimer: null, seqPlaying: false, seqIndex: -1,
   };
   _gsatRenderTimer();
   _gsatUpdateProgress();
@@ -729,12 +748,15 @@ function gsatSubmit(auto) {
     if (ee) {
       const tag = sel == null ? '<span class="gx-skip">未作答</span>'
         : (isRight ? '<span class="gx-ok">答對</span>' : '<span class="gx-no">答錯</span>');
-      ee.innerHTML = `${tag}　正解：(${'ABCD'[q.answer]})　${_gxEsc(q.explanation || '')}`;
+      const tr = q.transcript ? `<div class="gx-transcript"><b>🎧 原文：</b>${_gxEsc(q.transcript)}</div>` : '';
+      ee.innerHTML = `${tag}　正解：(${'ABCD'[q.answer]})　${_gxEsc(q.explanation || '')}${tr}`;
       ee.style.display = '';
     }
   });
   gsatExam.correct = correct;
   _gsatShowScore();
+  // 交卷後才顯示各題獨立播放器（供逐題複習）
+  if (gsatExam.bodyEl) gsatExam.bodyEl.classList.add('gx-submitted');
 
   const bb = gsatExam.bodyEl && gsatExam.bodyEl.querySelector('.gx-bottom .gsat-submit');
   if (bb) { bb.textContent = `已交卷（答對 ${correct} / ${gsatExam.total}）`; bb.disabled = true; }
@@ -769,7 +791,73 @@ function gsatFileWrong() {
   if (btn) { btn.textContent = n ? `已加入 ${n} 題 ✓` : '答錯題已在題庫中 ✓'; btn.disabled = true; }
 }
 
+// ── 聽力：開始測驗 → 倒數 3 秒 → 連續播放全部音檔 ──────────────────────
+function gsatStartListening() {
+  if (!gsatExam || gsatExam.seqPlaying) return;
+  const view = document.getElementById('gsatExamView');
+  const ov = document.createElement('div');
+  ov.className = 'gx-countdown';
+  view.appendChild(ov);
+  let n = 3;
+  ov.textContent = n;
+  gsatExam.countdownTimer = setInterval(() => {
+    n--;
+    if (n > 0) { ov.textContent = n; return; }
+    clearInterval(gsatExam.countdownTimer);
+    gsatExam.countdownTimer = null;
+    ov.textContent = 'Go!';
+    setTimeout(() => {
+      ov.remove();
+      gsatExam.seqPlaying = true;
+      const btn = document.getElementById('gxListenBtn');
+      if (btn) { btn.disabled = true; btn.textContent = '▶ 播放中…'; }
+      _gsatPlaySeq(0);
+    }, 600);
+  }, 1000);
+}
+
+function _gsatPlaySeq(i) {
+  if (!gsatExam || !gsatExam.seqPlaying) return;
+  const audios = [...gsatExam.bodyEl.querySelectorAll('.gx-audio')];
+  audios.forEach(x => { const c = x.closest('.gx-q'); if (c) c.classList.remove('gx-playing'); });
+  if (i >= audios.length) { _gsatListenDone(); return; }
+  const a = audios[i];
+  const q = a.closest('.gx-q');
+  gsatExam.seqIndex = i;
+  if (q) { q.classList.add('gx-playing'); q.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+  try { a.currentTime = 0; } catch (e) {}
+  const pr = a.play();
+  if (pr && pr.catch) pr.catch(() => {});
+  a.onended = () => {
+    if (!gsatExam || !gsatExam.seqPlaying) return;
+    if (q) q.classList.remove('gx-playing');
+    setTimeout(() => _gsatPlaySeq(i + 1), 700);
+  };
+}
+
+function _gsatListenDone() {
+  if (!gsatExam) return;
+  gsatExam.seqPlaying = false;
+  const btn = document.getElementById('gxListenBtn');
+  if (btn) { btn.disabled = false; btn.textContent = '▶ 重新播放'; }
+}
+
+function _gsatStopAudio() {
+  if (!gsatExam) return;
+  gsatExam.seqPlaying = false;
+  if (gsatExam.countdownTimer) { clearInterval(gsatExam.countdownTimer); gsatExam.countdownTimer = null; }
+  if (gsatExam.bodyEl) {
+    gsatExam.bodyEl.querySelectorAll('.gx-audio').forEach(a => {
+      try { a.pause(); a.onended = null; } catch (e) {}
+    });
+    gsatExam.bodyEl.querySelectorAll('.gx-q.gx-playing').forEach(q => q.classList.remove('gx-playing'));
+  }
+  const ov = document.querySelector('.gx-countdown');
+  if (ov) ov.remove();
+}
+
 function _gsatCleanupTimer() {
+  _gsatStopAudio();
   if (gsatExam && gsatExam.timerId) clearInterval(gsatExam.timerId);
   gsatExam = null;
 }
