@@ -289,6 +289,41 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 .quiz-explain{margin-top:14px;padding:12px 14px;background:rgba(255,255,255,.04);border-left:3px solid var(--green3);border-radius:0 var(--r) var(--r) 0;font-size:13px;color:rgba(245,245,240,.85);line-height:1.8}
 .quiz-next{margin-top:14px;padding:13px;background:linear-gradient(135deg,var(--orange),#bb3e00);border:none;border-radius:var(--r2);font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--white);cursor:pointer}
 
+/* 題組式作答（克漏字 / 閱讀）：整篇一次作答 */
+.quiz-q-title{font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;color:var(--green3);margin-bottom:10px;letter-spacing:.5px}
+.cloze-group{margin-bottom:16px}
+.cloze-blank-label{font-family:'Nunito',sans-serif;font-weight:700;font-size:12px;color:var(--green3);letter-spacing:1px;margin-bottom:7px}
+.rq-heading{font-size:14px;font-weight:700;color:var(--white);line-height:1.7;margin-bottom:8px}
+.cloze-opts{display:flex;flex-direction:column;gap:7px}
+.cloze-opt.sel{border-color:var(--green3)!important;background:rgba(46,204,113,.12)!important;color:var(--green3)!important}
+.cloze-explain{margin-top:8px;padding:8px 11px;background:rgba(255,255,255,.04);border-left:3px solid var(--green3);border-radius:0 var(--r) var(--r) 0;font-size:12px;color:rgba(245,245,240,.82);line-height:1.7}
+
+/* 題目右上角收藏星號 */
+.quiz-star{background:none;border:none;font-size:22px;line-height:1;color:var(--gray);cursor:pointer;padding:0 2px;transition:color .15s,transform .1s}
+.quiz-star:hover{color:#FFC83D;transform:scale(1.12)}
+.quiz-star.on{color:#FFC83D}
+.quiz-star:active{transform:scale(.9)}
+
+/* 分類卡片數量徽章 */
+.bank-cat{position:relative}
+.bc-count{position:absolute;top:8px;right:10px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--orange);color:var(--white);font-family:'Nunito',sans-serif;font-weight:900;font-size:11px;line-height:18px;text-align:center}
+
+/* 題庫列表（答錯／收藏） */
+.qbank-head{font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:var(--white);padding:12px 2px 8px;letter-spacing:.5px}
+.qbank-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r2);padding:13px 14px;margin-bottom:10px;position:relative}
+.qbank-card-top{position:absolute;top:8px;right:10px;display:flex;gap:8px;align-items:center}
+.qbank-star{background:none;border:none;font-size:18px;line-height:1;color:var(--gray);cursor:pointer;padding:0;transition:color .15s,transform .1s}
+.qbank-star:hover{color:#FFC83D;transform:scale(1.12)}
+.qbank-star.on{color:#FFC83D}
+.qbank-del{background:none;border:none;font-size:14px;line-height:1;color:var(--gray);cursor:pointer;padding:0;transition:color .15s}
+.qbank-del:hover{color:#ff7070}
+.qbank-passage{font-size:12px;color:rgba(245,245,240,.8);line-height:1.7;background:rgba(255,255,255,.03);border-radius:var(--r);padding:8px 10px;margin:4px 0 10px;white-space:pre-line}
+.qbank-q{font-size:14px;font-weight:700;color:var(--white);line-height:1.7;margin:2px 30px 10px 0}
+.qbank-opts{display:flex;flex-direction:column;gap:6px}
+.qbank-opt{font-size:13px;color:rgba(245,245,240,.75);padding:7px 10px;border-radius:var(--r);background:rgba(255,255,255,.03);border:1px solid transparent}
+.qbank-opt.correct{color:var(--green3);border-color:rgba(46,204,113,.4);background:rgba(13,60,25,.35);font-weight:700}
+.qbank-explain{margin-top:10px;padding:9px 11px;background:rgba(255,255,255,.04);border-left:3px solid var(--green3);border-radius:0 var(--r) var(--r) 0;font-size:12px;color:rgba(245,245,240,.8);line-height:1.75}
+
 /* quiz result */
 .quiz-result{flex:1;display:none;flex-direction:column;align-items:center;justify-content:center;padding:24px 20px;text-align:center}
 .quiz-result.show{display:flex}
@@ -1620,4 +1655,5 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 .cat-txt{display:flex;flex-direction:column;gap:2px;min-width:0}
 .dc-name,.bc-name{font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;color:var(--white)}
 .dc-sub,.bc-sub{font-size:10px;color:var(--gray);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.dcat-badge{font-size:9px;background:var(--orange);color:var(--white);padding:1px 5px;border-radius:4px;font-weight:900;margin-left:3px;vertical-align:middle}
+.dcat-badge{margin-left:auto;flex-shrink:0;font-family:'Nunito',sans-serif;font-size:10px;background:var(--orange);color:var(--white);padding:3px 8px;border-radius:10px;font-weight:800;white-space:nowrap}
+.dcat-badge.done{background:rgba(46,204,113,.18);color:var(--green3)}

@@ -4,8 +4,18 @@ const path    = require('path');
 const fs      = require('fs');
 
 const DATA_DIR   = path.resolve(__dirname, '../data');
-const DAILY_SIZE = 10;
-const VALID_TYPES = new Set(['vocab', 'phrase', 'grammar', 'cloze', 'reading', 'listening']);
+
+// 每日題數（依題型）：閱讀／克漏字較花時間 → 3 題；其餘 → 5 題
+const DAILY_SIZE_BY_TYPE = {
+  reading: 3,
+  cloze:   3,
+  vocab:   5,
+  phrase:  5,
+  grammar: 5,
+  listening: 5,
+};
+const DEFAULT_DAILY_SIZE = 5;
+const VALID_TYPES = new Set(Object.keys(DAILY_SIZE_BY_TYPE));
 
 function seededShuffle(arr, seed) {
   let s = seed >>> 0;
@@ -36,7 +46,8 @@ router.get('/:type', (req, res) => {
 
   const today = new Date().toISOString().split('T')[0].replace(/-/g, '');
   const seed  = parseInt(today) + type.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
-  const daily = seededShuffle(questions, seed).slice(0, DAILY_SIZE);
+  const dailySize = DAILY_SIZE_BY_TYPE[type] || DEFAULT_DAILY_SIZE;
+  const daily = seededShuffle(questions, seed).slice(0, dailySize);
 
   res.json({ type, date: new Date().toISOString().split('T')[0], questions: daily });
 });

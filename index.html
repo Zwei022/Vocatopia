@@ -513,12 +513,12 @@
     <!-- 答錯題庫 -->
     <div class="daily-list" id="wrongList">
       <div id="wrongCats" class="bank-cat-grid">
-        <div class="bank-cat" onclick="openBankCat('wrong','vocab')"><div class="bc-ico">📖</div><div class="cat-txt"><div class="bc-name">單字</div><div class="bc-sub">字彙題錯題</div></div></div>
-        <div class="bank-cat" onclick="openBankCat('wrong','phrase')"><div class="bc-ico">🔗</div><div class="cat-txt"><div class="bc-name">片語</div><div class="bc-sub">常考片語錯題</div></div></div>
-        <div class="bank-cat" onclick="openBankCat('wrong','grammar')"><div class="bc-ico">📐</div><div class="cat-txt"><div class="bc-name">文法</div><div class="bc-sub">句型文法錯題</div></div></div>
-        <div class="bank-cat" onclick="openBankCat('wrong','reading')"><div class="bc-ico">📰</div><div class="cat-txt"><div class="bc-name">閱讀</div><div class="bc-sub">閱讀理解錯題</div></div></div>
-        <div class="bank-cat" onclick="openBankCat('wrong','cloze')"><div class="bc-ico">✏️</div><div class="cat-txt"><div class="bc-name">克漏字</div><div class="bc-sub">段落填空錯題</div></div></div>
-        <div class="bank-cat" onclick="openBankCat('wrong','listening')"><div class="bc-ico">🎧</div><div class="cat-txt"><div class="bc-name">聽力</div><div class="bc-sub">聽力理解錯題</div></div></div>
+        <div class="bank-cat" onclick="openBankCat('wrong','vocab')"><div class="bc-ico">📖</div><div class="cat-txt"><div class="bc-name">單字</div><div class="bc-sub">字彙題錯題</div></div><span class="bc-count" id="wrongCount_vocab" style="display:none"></span></div>
+        <div class="bank-cat" onclick="openBankCat('wrong','phrase')"><div class="bc-ico">🔗</div><div class="cat-txt"><div class="bc-name">片語</div><div class="bc-sub">常考片語錯題</div></div><span class="bc-count" id="wrongCount_phrase" style="display:none"></span></div>
+        <div class="bank-cat" onclick="openBankCat('wrong','grammar')"><div class="bc-ico">📐</div><div class="cat-txt"><div class="bc-name">文法</div><div class="bc-sub">句型文法錯題</div></div><span class="bc-count" id="wrongCount_grammar" style="display:none"></span></div>
+        <div class="bank-cat" onclick="openBankCat('wrong','reading')"><div class="bc-ico">📰</div><div class="cat-txt"><div class="bc-name">閱讀</div><div class="bc-sub">閱讀理解錯題</div></div><span class="bc-count" id="wrongCount_reading" style="display:none"></span></div>
+        <div class="bank-cat" onclick="openBankCat('wrong','cloze')"><div class="bc-ico">✏️</div><div class="cat-txt"><div class="bc-name">克漏字</div><div class="bc-sub">段落填空錯題</div></div><span class="bc-count" id="wrongCount_cloze" style="display:none"></span></div>
+        <div class="bank-cat" onclick="openBankCat('wrong','listening')"><div class="bc-ico">🎧</div><div class="cat-txt"><div class="bc-name">聽力</div><div class="bc-sub">聽力理解錯題</div></div><span class="bc-count" id="wrongCount_listening" style="display:none"></span></div>
       </div>
       <div id="wrongBack" style="display:none"><button class="art-back" onclick="_resetBankPanel('wrong')">◀ 返回答錯題庫</button></div>
       <div id="wrongContent" style="display:none"></div>
@@ -527,12 +527,12 @@
     <!-- 收藏題庫 -->
     <div class="daily-list" id="savedList">
       <div id="savedCats" class="bank-cat-grid">
-        <div class="bank-cat" onclick="openBankCat('saved','vocab')"><div class="bc-ico">📖</div><div class="cat-txt"><div class="bc-name">單字</div><div class="bc-sub">收藏的字彙題</div></div></div>
-        <div class="bank-cat" onclick="openBankCat('saved','phrase')"><div class="bc-ico">🔗</div><div class="cat-txt"><div class="bc-name">片語</div><div class="bc-sub">收藏的片語題</div></div></div>
-        <div class="bank-cat" onclick="openBankCat('saved','grammar')"><div class="bc-ico">📐</div><div class="cat-txt"><div class="bc-name">文法</div><div class="bc-sub">收藏的文法題</div></div></div>
-        <div class="bank-cat" onclick="openBankCat('saved','reading')"><div class="bc-ico">📰</div><div class="cat-txt"><div class="bc-name">閱讀</div><div class="bc-sub">收藏的閱讀題</div></div></div>
-        <div class="bank-cat" onclick="openBankCat('saved','cloze')"><div class="bc-ico">✏️</div><div class="cat-txt"><div class="bc-name">克漏字</div><div class="bc-sub">收藏的克漏字</div></div></div>
-        <div class="bank-cat" onclick="openBankCat('saved','listening')"><div class="bc-ico">🎧</div><div class="cat-txt"><div class="bc-name">聽力</div><div class="bc-sub">收藏的聽力題</div></div></div>
+        <div class="bank-cat" onclick="openBankCat('saved','vocab')"><div class="bc-ico">📖</div><div class="cat-txt"><div class="bc-name">單字</div><div class="bc-sub">收藏的字彙題</div></div><span class="bc-count" id="savedCount_vocab" style="display:none"></span></div>
+        <div class="bank-cat" onclick="openBankCat('saved','phrase')"><div class="bc-ico">🔗</div><div class="cat-txt"><div class="bc-name">片語</div><div class="bc-sub">收藏的片語題</div></div><span class="bc-count" id="savedCount_phrase" style="display:none"></span></div>
+        <div class="bank-cat" onclick="openBankCat('saved','grammar')"><div class="bc-ico">📐</div><div class="cat-txt"><div class="bc-name">文法</div><div class="bc-sub">收藏的文法題</div></div><span class="bc-count" id="savedCount_grammar" style="display:none"></span></div>
+        <div class="bank-cat" onclick="openBankCat('saved','reading')"><div class="bc-ico">📰</div><div class="cat-txt"><div class="bc-name">閱讀</div><div class="bc-sub">收藏的閱讀題</div></div><span class="bc-count" id="savedCount_reading" style="display:none"></span></div>
+        <div class="bank-cat" onclick="openBankCat('saved','cloze')"><div class="bc-ico">✏️</div><div class="cat-txt"><div class="bc-name">克漏字</div><div class="bc-sub">收藏的克漏字</div></div><span class="bc-count" id="savedCount_cloze" style="display:none"></span></div>
+        <div class="bank-cat" onclick="openBankCat('saved','listening')"><div class="bc-ico">🎧</div><div class="cat-txt"><div class="bc-name">聽力</div><div class="bc-sub">收藏的聽力題</div></div><span class="bc-count" id="savedCount_listening" style="display:none"></span></div>
       </div>
       <div id="savedBack" style="display:none"><button class="art-back" onclick="_resetBankPanel('saved')">◀ 返回收藏題庫</button></div>
       <div id="savedContent" style="display:none"></div>
@@ -541,15 +541,12 @@
     <!-- 每日練習 -->
     <div class="daily-list" id="dailyList">
       <div id="dailyCats" class="daily-cat-grid">
-        <div class="dcat" onclick="openDailyCat('vocab')"><div class="dc-ico">📖</div><div class="cat-txt"><div class="dc-name">單字</div><div class="dc-sub">每日字彙演練</div></div></div>
-        <div class="dcat" onclick="openDailyCat('phrase')"><div class="dc-ico">🔗</div><div class="cat-txt"><div class="dc-name">片語</div><div class="dc-sub">常考片語演練</div></div></div>
-        <div class="dcat" onclick="openDailyCat('grammar')"><div class="dc-ico">📐</div><div class="cat-txt"><div class="dc-name">文法</div><div class="dc-sub">句型文法演練</div></div></div>
-        <div class="dcat" onclick="openDailyCat('reading')">
-          <div class="dc-ico">📰</div>
-          <div class="cat-txt"><div class="dc-name">閱讀 <span id="dcatReadingCount" class="dcat-badge"></span></div><div class="dc-sub">每日閱讀文章</div></div>
-        </div>
-        <div class="dcat" onclick="openDailyCat('cloze')"><div class="dc-ico">✏️</div><div class="cat-txt"><div class="dc-name">克漏字</div><div class="dc-sub">段落填空演練</div></div></div>
-        <div class="dcat" onclick="openDailyCat('listening')"><div class="dc-ico">🎧</div><div class="cat-txt"><div class="dc-name">聽力</div><div class="dc-sub">聽力理解演練</div></div></div>
+        <div class="dcat" onclick="openDailyCat('vocab')"><div class="dc-ico">📖</div><div class="cat-txt"><div class="dc-name">單字</div><div class="dc-sub">每日字彙演練</div></div><span class="dcat-badge" id="dcatCount_vocab"></span></div>
+        <div class="dcat" onclick="openDailyCat('phrase')"><div class="dc-ico">🔗</div><div class="cat-txt"><div class="dc-name">片語</div><div class="dc-sub">常考片語演練</div></div><span class="dcat-badge" id="dcatCount_phrase"></span></div>
+        <div class="dcat" onclick="openDailyCat('grammar')"><div class="dc-ico">📐</div><div class="cat-txt"><div class="dc-name">文法</div><div class="dc-sub">句型文法演練</div></div><span class="dcat-badge" id="dcatCount_grammar"></span></div>
+        <div class="dcat" onclick="openDailyCat('reading')"><div class="dc-ico">📰</div><div class="cat-txt"><div class="dc-name">閱讀</div><div class="dc-sub">每日閱讀演練</div></div><span class="dcat-badge" id="dcatCount_reading"></span></div>
+        <div class="dcat" onclick="openDailyCat('cloze')"><div class="dc-ico">✏️</div><div class="cat-txt"><div class="dc-name">克漏字</div><div class="dc-sub">段落填空演練</div></div><span class="dcat-badge" id="dcatCount_cloze"></span></div>
+        <div class="dcat" onclick="openDailyCat('listening')"><div class="dc-ico">🎧</div><div class="cat-txt"><div class="dc-name">聽力</div><div class="dc-sub">聽力理解演練</div></div><span class="dcat-badge" id="dcatCount_listening"></span></div>
       </div>
       <div id="dailyReadingBack" style="display:none">
         <button class="art-back" onclick="closeDailyCat()">◀ 返回每日練習</button>
@@ -572,6 +569,7 @@
       <div class="quiz-head">
         <button id="quizBackBtn" class="art-back" onclick="closeQuiz()">◀ 返回</button>
         <div class="quiz-progress" id="quizProgress">第 1 / 3 題</div>
+        <button id="quizStarBtn" class="quiz-star" title="收藏此題" onclick="quizToggleStar()">☆</button>
       </div>
       <div class="quiz-q" id="quizQ"></div>
       <div class="quiz-opts" id="quizOpts"></div>

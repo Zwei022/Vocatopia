@@ -1,0 +1,98 @@
+[
+  {
+    "sentence": "The meeting was _____ because the manager suddenly got sick this morning.",
+    "options": ["(A) put on", "(B) looked up", "(C) called off", "(D) handed in"],
+    "answer": 2,
+    "explanation": "call off 指取消。經理臨時生病，會議被取消，故選 called off；put on 是穿上、looked up 是查閱，語意都不合。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_0"
+  },
+  {
+    "sentence": "I have been waiting _____ the bus stop for almost half an hour.",
+    "options": ["(A) in", "(B) at", "(C) on", "(D) of"],
+    "answer": 1,
+    "explanation": "表示在某個定點用介系詞 at。at the bus stop 指在公車站等車，故選 at。",
+    "phrase_type": "preposition",
+    "id": "phrase_1"
+  },
+  {
+    "sentence": "Don't be too hard on yourself; everyone makes mistakes _____ .",
+    "options": ["(A) once in a while", "(B) on time", "(C) by the way", "(D) at least"],
+    "answer": 0,
+    "explanation": "once in a while 指偶爾。人人偶爾都會犯錯，故選 A；on time 是準時、by the way 是順帶一提，語意不合。",
+    "phrase_type": "expression",
+    "id": "phrase_2"
+  },
+  {
+    "sentence": "She promised to _____ her little brother while their parents were out shopping.",
+    "options": ["(A) look for", "(B) look out", "(C) look up", "(D) look after"],
+    "answer": 3,
+    "explanation": "look after 指照顧。父母外出購物時她答應照顧弟弟，故選 look after；look for 是尋找、look out 是小心。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_3"
+  },
+  {
+    "sentence": "All the students are looking forward _____ the summer vacation next month.",
+    "options": ["(A) for", "(B) at", "(C) to", "(D) on"],
+    "answer": 2,
+    "explanation": "look forward to 是固定搭配，to 後接名詞或動名詞，表示期待。故選 to。",
+    "phrase_type": "preposition",
+    "id": "phrase_4"
+  },
+  {
+    "sentence": "The test had a few tricky parts, but _____ , I think I did pretty well.",
+    "options": ["(A) in a hurry", "(B) on the whole", "(C) for sale", "(D) out of order"],
+    "answer": 1,
+    "explanation": "on the whole 指整體而言。雖有難題，但整體表現不錯，故選 B；out of order 是故障，語意不合。",
+    "phrase_type": "expression",
+    "id": "phrase_5"
+  },
+  {
+    "sentence": "Please _____ your shoes before you come into the house.",
+    "options": ["(A) take after", "(B) take up", "(C) take over", "(D) take off"],
+    "answer": 3,
+    "explanation": "take off 指脫下。進屋前要脫鞋，故選 take off；take after 是長得像、take over 是接管。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_6"
+  },
+  {
+    "sentence": "My sister is really good _____ playing the violin; she practices every single day.",
+    "options": ["(A) at", "(B) in", "(C) for", "(D) with"],
+    "answer": 0,
+    "explanation": "be good at 指擅長，後接技能或活動。故選 at。",
+    "phrase_type": "preposition",
+    "id": "phrase_7"
+  },
+  {
+    "sentence": "I ran as fast as I could and reached the platform _____ to catch the last train.",
+    "options": ["(A) by the way", "(B) at first", "(C) just in time", "(D) once again"],
+    "answer": 2,
+    "explanation": "just in time 指及時、剛好趕上。拼命跑剛好趕上末班車，故選 C。",
+    "phrase_type": "expression",
+    "id": "phrase_8"
+  },
+  {
+    "sentence": "Our team will never _____ , even when we are losing by a lot.",
+    "options": ["(A) give out", "(B) give up", "(C) give back", "(D) give away"],
+    "answer": 1,
+    "explanation": "give up 指放棄。即使大幅落後也不放棄，故選 give up；give back 是歸還、give away 是贈送。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_9"
+  },
+  {
+    "sentence": "This nature book is divided _____ five parts, each about a different kind of animal.",
+    "options": ["(A) into", "(B) in", "(C) to", "(D) onto"],
+    "answer": 0,
+    "explanation": "be divided into 指被分成，搭配 into 表示分成幾個部分。故選 into。",
+    "phrase_type": "preposition",
+    "id": "phrase_10"
+  },
+  {
+    "sentence": "We didn't plan to meet, but we ran _____ each other at the busy night market.",
+    "options": ["(A) after", "(B) over", "(C) up", "(D) into"],
+    "answer": 3,
+    "explanation": "run into 指偶然遇見。沒約卻在夜市巧遇，故選 into；run after 是追趕、run over 是輾過。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_11"
+  }
+]

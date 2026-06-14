@@ -1,0 +1,64 @@
+[
+  {
+    "type": "reading",
+    "id": "reading_0",
+    "title": "Summer Reading Club (海報)",
+    "passage": "GREEN HILL LIBRARY — Summer Reading Club!\nLove stories? Join us this July and August!\n• Open to students aged 10–15\n• Read any 5 books and write a short note about each one\n• Finish all 5 and get a free movie ticket!\n• Sign up at the front desk before June 30\nReading is more fun with friends. Bring one, and you both get a special bookmark!",
+    "questions": [
+      { "question": "Who can join the Summer Reading Club?", "options": ["(A) People of any age", "(B) Students aged 10 to 15", "(C) Only librarians", "(D) Only teachers"], "answer": 1, "explanation": "海報寫明 Open to students aged 10–15，故選 B。" },
+      { "question": "How can a student get a free movie ticket?", "options": ["(A) By signing up before June 30", "(B) By bringing a friend to the library", "(C) By reading 5 books and writing a note about each", "(D) By buying a special bookmark"], "answer": 2, "explanation": "Finish all 5（讀 5 本並各寫短文）才能拿到免費電影票，故選 C；帶朋友是得到書籤。" }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_1",
+    "title": "An Email from Grandma (電子郵件)",
+    "passage": "Dear Anna,\nThank you so much for the lovely card you made for my birthday. It is now on my fridge, and I smile every time I see it. Your drawing of our cat, Lucky, is wonderful!\nI heard from your mom that you won first prize in the science fair. I am so proud of you! When you visit next month, you must tell me all about your project.\nThe weather here is getting cold, so remember to bring a warm coat. I can't wait to see you and bake cookies together.\nLove,\nGrandma",
+    "questions": [
+      { "question": "What is the main purpose of Grandma's email?", "options": ["(A) To invite Anna to come and live with her", "(B) To thank Anna for the card and say she looks forward to the visit", "(C) To complain about the cold weather", "(D) To teach Anna how to do a science project"], "answer": 1, "explanation": "信中先感謝生日卡，又說期待下個月相見、一起烤餅乾，故主要目的為 B。" },
+      { "question": "What can we learn from the email?", "options": ["(A) Anna won first prize in the science fair", "(B) Grandma does not like the cat", "(C) Anna is going to visit this week", "(D) Grandma lives in a warm place"], "answer": 0, "explanation": "信中提到 you won first prize in the science fair，故選 A；探訪是下個月、當地天氣轉冷，其餘選項與內文不符。" }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_2",
+    "title": "Swimming Pool Rules (公告)",
+    "passage": "CITY SPORTS CENTER — Swimming Pool\nTo keep everyone safe, please follow these rules:\n1. Take a shower before entering the pool.\n2. Children under 8 must swim with an adult.\n3. No running near the pool. The floor can be slippery.\n4. Do not bring food or drinks into the pool area.\n5. The pool closes at 9:00 p.m. Please leave on time.\nIf you feel tired or unwell, stop swimming and rest. A lifeguard is always on duty and is happy to help. Have a safe and happy swim!",
+    "questions": [
+      { "question": "What must a 6-year-old child do to swim in the pool?", "options": ["(A) Swim alone", "(B) Eat something before swimming", "(C) Swim together with an adult", "(D) Run around the pool"], "answer": 2, "explanation": "規則 2 說 8 歲以下兒童必須和大人一起游，6 歲屬於此範圍，故選 C。" },
+      { "question": "According to the notice, which of the following is allowed?", "options": ["(A) Bringing drinks into the pool area", "(B) Running near the pool", "(C) Staying in the pool after 10 p.m.", "(D) Taking a rest when you feel unwell"], "answer": 3, "explanation": "公告建議不舒服就停下休息，故 D 允許；帶飲料、奔跑、超過 9 點皆被禁止。" }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_3",
+    "title": "The Lost Wallet (故事)",
+    "passage": "On his way home from school, Kevin saw a brown wallet lying on the sidewalk. He picked it up and looked inside. There was some money, a student ID card, and a photo of a smiling family. The name on the card was \"Daniel Wu.\"\nKevin thought for a moment. He could keep the money and no one would know. But then he looked at the happy family in the photo and imagined how worried Daniel must be. He decided to do the right thing.\nUsing the ID card, Kevin found out which school Daniel went to. The next morning, he took the wallet to that school office. An hour later, Daniel came to thank him with tears in his eyes. \"My grandfather gave me that photo,\" he said. \"I thought I had lost it forever.\"\nKevin felt warm inside. He realized that helping others made him much happier than money ever could.",
+    "questions": [
+      { "question": "What was inside the wallet?", "options": ["(A) Money, a student ID card, and a family photo", "(B) A key and a pen", "(C) A cellphone", "(D) A letter and some stamps"], "answer": 0, "explanation": "第一段提到 money、a student ID card、a photo of a smiling family，故選 A。" },
+      { "question": "Why did Daniel cry when he got his wallet back?", "options": ["(A) He was scolded by his teacher", "(B) He got back the photo his grandfather gave him", "(C) He lost a lot of money", "(D) He was late for school"], "answer": 1, "explanation": "Daniel 說那張照片是爺爺給的、本以為永遠弄丟了，故感動落淚，選 B。" },
+      { "question": "What can we learn from this story?", "options": ["(A) You should spend money you find right away", "(B) You should never talk to strangers", "(C) Helping others brings more happiness than money", "(D) You should not bring a wallet to school"], "answer": 2, "explanation": "末段 Kevin 體會到幫助他人比金錢更讓他快樂，這是全文主旨，故選 C。" }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_4",
+    "title": "Why Do We Dream? (說明文)",
+    "passage": "Every night, while we sleep, our brains create stories called dreams. Some dreams are happy, some are strange, and some are scary. For thousands of years, people have wondered why we dream. Even today, scientists do not have a single perfect answer, but they have some interesting ideas.\nOne idea is that dreams help us deal with our feelings. During the day, we may feel worried, excited, or sad. When we dream, our brain sorts through these feelings, almost like cleaning a messy room. This may be why we often feel better after a good night's sleep.\nAnother idea is that dreams help us remember. While we sleep, the brain reviews what we learned during the day. It keeps the important information and throws away what we do not need. Students who sleep well often remember their lessons better than those who stay up late.\nSome scientists also believe that dreaming lets us practice. In dreams, we might solve problems or face our fears in a safe way. A child who dreams about giving a speech may feel braver when doing it in real life.\nWe may never fully understand our dreams. But one thing is clear: dreaming is an important part of being human, and a good night's sleep helps both our minds and our bodies.",
+    "questions": [
+      { "question": "What is this passage mainly about?", "options": ["(A) How to sleep for a longer time", "(B) Some ideas about why people dream", "(C) How to remember bad dreams", "(D) Why students should not stay up late"], "answer": 1, "explanation": "全文圍繞「我們為什麼做夢」介紹科學家的幾種推測，故主旨為 B。" },
+      { "question": "According to the passage, how might dreaming help us remember?", "options": ["(A) The brain reviews what we learned and keeps the important information", "(B) The brain completely stops working during sleep", "(C) It makes us forget everything we learned", "(D) It makes us need less sleep"], "answer": 0, "explanation": "第三段說睡覺時大腦會複習白天所學、保留重要資訊，故選 A。" },
+      { "question": "What does \"sorts through\" in the second paragraph most likely mean?", "options": ["(A) Throws all away", "(B) Organizes", "(C) Creates", "(D) Hides"], "answer": 1, "explanation": "後面用 like cleaning a messy room（像整理凌亂的房間）作比喻，可推知 sorts through 意為「整理」，選 B。" },
+      { "question": "Which of the following best matches the writer's idea?", "options": ["(A) Scientists already fully understand dreams", "(B) Dreaming is actually useless", "(C) A good night's sleep is good for both the mind and the body", "(D) Only children have dreams"], "answer": 2, "explanation": "末段明確指出好好睡一覺對心智與身體都有幫助，故選 C；文中說科學家尚無完美答案，A 錯。" }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_5",
+    "title": "Class Trip Schedule (行程表)",
+    "passage": "Grade 8 Class Trip — Ocean Park\n8:00 a.m. — Meet at the school gate\n8:30 a.m. — Bus leaves (do not be late!)\n10:00 a.m. — Arrive at Ocean Park\n12:00 p.m. — Lunch (bring your own or buy at the park)\n3:30 p.m. — Meet at the main gate of the park\n4:00 p.m. — Bus leaves for school\nRemember to wear your school T-shirt and bring a hat and water.",
+    "questions": [
+      { "question": "By what time should students arrive at the school gate?", "options": ["(A) 8:00 a.m.", "(B) 8:30 a.m.", "(C) 10:00 a.m.", "(D) 4:00 p.m."], "answer": 0, "explanation": "8:00 在校門口集合、8:30 巴士就開（別遲到），所以最晚 8:00 必須到，選 A。" }
+    ]
+  }
+]

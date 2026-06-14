@@ -605,9 +605,11 @@ function switchCuratedSub(sub) {
   } else if (sub === 'wrong') {
     document.getElementById('wrongList').classList.add('show');
     _resetBankPanel('wrong');
+    _updateBankCounts('wrong');
   } else if (sub === 'saved') {
     document.getElementById('savedList').classList.add('show');
     _resetBankPanel('saved');
+    _updateBankCounts('saved');
   }
 }
 
@@ -666,11 +668,8 @@ function switchReadTab(tab) {
 let dailyCatOpen = null;
 
 function renderDailyArticles() {
-  // 只更新閱讀分類的數量 badge，不再直接填充 dailyList
-  const countEl = document.getElementById('dcatReadingCount');
-  if (countEl) {
-    countEl.textContent = DAILY_ARTICLES.length ? `${DAILY_ARTICLES.length}` : '—';
-  }
+  // 更新六分類「剩餘題數」徽章
+  _updateDailyBadges();
 }
 
 
@@ -713,19 +712,141 @@ const CAT_META = {
 };
 const BANK_LABELS = { wrong: '答錯題庫', saved: '收藏題庫' };
 
+// ── 題目銀行（答錯／收藏）localStorage 儲存 ───────────────────────────────
+// 結構：voca_qbank_wrong / voca_qbank_saved = { [cat]: [ question物件… ] }
+// 每題依分類（vocab/phrase/grammar/reading/cloze/listening）歸檔。
+function _qbankRead(kind) {
+  try { return JSON.parse(localStorage.getItem('voca_qbank_' + kind)) || {}; }
+  catch { return {}; }
+}
+function _qbankWrite(kind, obj) {
+  localStorage.setItem('voca_qbank_' + kind, JSON.stringify(obj));
+}
+// 穩定題目 ID：優先用題庫 id，否則由題幹+選項雜湊
+function _qid(q) {
+  if (q._qid) return q._qid;
+  if (q.id != null) return 'id' + q.id;
+  const s = (q.question || q.sentence || '') + '|' + (q.options || []).join('|');
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0;
+  return 'q' + (h >>> 0).toString(36);
+}
+function _qbankHas(kind, cat, id) {
+  return (_qbankRead(kind)[cat] || []).some(q => _qid(q) === id);
+}
+function _qbankAdd(kind, cat, q) {
+  const o = _qbankRead(kind);
+  const arr = o[cat] || (o[cat] = []);
+  const id = _qid(q);
+  if (arr.some(x => _qid(x) === id)) return false;
+  arr.push({ ...q, _qid: id, _cat: cat, _ts: Date.now() });
+  _qbankWrite(kind, o);
+  return true;
+}
+function _qbankRemove(kind, cat, id) {
+  const o = _qbankRead(kind);
+  o[cat] = (o[cat] || []).filter(q => _qid(q) !== id);
+  _qbankWrite(kind, o);
+}
+// 更新分類卡片右上角的數量徽章
+function _updateBankCounts(kind) {
+  const o = _qbankRead(kind);
+  Object.keys(CAT_META).forEach(cat => {
+    const el = document.getElementById(kind + 'Count_' + cat);
+    if (!el) return;
+    const n = (o[cat] || []).length;
+    el.textContent = n ? String(n) : '';
+    el.style.display = n ? '' : 'none';
+  });
+}
+
 function openBankCat(tab, cat) {
   document.getElementById(tab + 'Cats').style.display = 'none';
   document.getElementById(tab + 'Back').style.display = '';
   const content = document.getElementById(tab + 'Content');
   content.style.display = '';
+
   const { icon, name } = CAT_META[cat];
-  content.innerHTML = `
-    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 0;gap:10px;text-align:center">
-      <div style="font-size:40px">${icon}</div>
-      <div style="font-family:Nunito;font-weight:700;font-size:16px;color:var(--white)">${name}・${BANK_LABELS[tab]}</div>
-      <div style="font-size:12px;color:var(--gray);line-height:1.7">${tab === 'wrong' ? '做錯的題目將自動收錄' : '收藏的題目將顯示於此'}<br>功能建置中，敬請期待</div>
-      <div style="font-size:10px;font-family:Nunito;font-weight:700;letter-spacing:1px;color:var(--orange);border:1px solid var(--orange);border-radius:4px;padding:3px 10px">即將上線</div>
+  const list = _qbankRead(tab)[cat] || [];
+
+  if (!list.length) {
+    content.innerHTML = `
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:44px 0;gap:10px;text-align:center">
+        <div style="font-size:40px">${icon}</div>
+        <div style="font-family:Nunito;font-weight:700;font-size:16px;color:var(--white)">${name}・${BANK_LABELS[tab]}</div>
+        <div style="font-size:12px;color:var(--gray);line-height:1.7">${tab === 'wrong' ? '做每日練習答錯的題目會自動收錄到這裡' : '在每日練習點題目右上角的星號即可收藏'}</div>
+      </div>`;
+    return;
+  }
+
+  content.innerHTML =
+    `<div class="qbank-head">${icon} ${name}・${BANK_LABELS[tab]}（${list.length}）</div>` +
+    list.map(q => _bankCardHtml(tab, cat, q)).join('');
+}
+
+function _bankCardHtml(kind, cat, q) {
+  const id      = _qid(q);
+  const passage = q.passage  ? `<div class="qbank-passage">${escHtml(q.passage).replace(/\n/g, '<br>')}</div>` : '';
+  const dialog  = q.dialogue ? `<div class="qbank-passage">${escHtml(q.dialogue).replace(/\n/g, '<br>')}</div>` : '';
+  const isSaved = _qbankHas('saved', cat, id);
+  const star = `<button class="qbank-star${isSaved ? ' on' : ''}" title="收藏" onclick="bankToggleStar('${kind}','${cat}','${id}',this)">${isSaved ? '★' : '☆'}</button>`;
+  const cardTop = `<div class="qbank-card-top">${star}<button class="qbank-del" title="移除" onclick="bankRemoveItem('${kind}','${cat}','${id}')">✕</button></div>`;
+
+  // 題組式（克漏字 / 閱讀）：整篇 + 各題正解與解析
+  if (q.blanks || q.questions) {
+    const items = _groupItems(q);
+    const title = q.title ? `<div class="qbank-q">${escHtml(q.title)}</div>` : `<div class="qbank-q">${q.blanks ? '克漏字' : '閱讀題組'}</div>`;
+    const itemsHtml = items.map(it => {
+      const correctOpt = escHtml((it.options[it.answer] || '').replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, ''));
+      const head = q.blanks ? `(${it.n})` : `${escHtml(it.heading)}<br>`;
+      return `<div class="qbank-opt correct">${head} ${correctOpt} ✓</div>` +
+             (it.explanation ? `<div class="qbank-explain">${escHtml(it.explanation)}</div>` : '');
+    }).join('');
+    return `<div class="qbank-card" data-id="${id}">${cardTop}${passage}
+      ${title}
+      <div class="qbank-opts">${itemsHtml}</div>
     </div>`;
+  }
+
+  const qtext = q.question || q.sentence || '';
+  const opts = (q.options || []).map((o, i) => {
+    const clean   = escHtml(o.replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, ''));
+    const correct = i === q.answer;
+    return `<div class="qbank-opt${correct ? ' correct' : ''}">${String.fromCharCode(65 + i)}. ${clean}${correct ? ' ✓' : ''}</div>`;
+  }).join('');
+  return `<div class="qbank-card" data-id="${id}">${cardTop}
+    ${passage}${dialog}
+    <div class="qbank-q">${escHtml(qtext)}</div>
+    <div class="qbank-opts">${opts}</div>
+    ${q.explanation ? `<div class="qbank-explain">${escHtml(q.explanation)}</div>` : ''}
+  </div>`;
+}
+
+// 卡片星號：在「答錯題庫」加入/移除收藏；在「收藏題庫」移除收藏（並消失）
+function bankToggleStar(kind, cat, id, btn) {
+  if (_qbankHas('saved', cat, id)) {
+    _qbankRemove('saved', cat, id);
+    _updateBankCounts('saved');
+    showToast('已移除收藏');
+    if (kind === 'saved') { bankRemoveItem('saved', cat, id); return; }
+    btn.classList.remove('on');
+    btn.textContent = '☆';
+  } else {
+    const src = _qbankRead(kind)[cat] || [];
+    const q   = src.find(x => _qid(x) === id);
+    if (!q) return;
+    _qbankAdd('saved', cat, q);
+    _updateBankCounts('saved');
+    btn.classList.add('on');
+    btn.textContent = '★';
+    showToast('⭐ 已加入收藏題庫');
+  }
+}
+
+function bankRemoveItem(kind, cat, id) {
+  _qbankRemove(kind, cat, id);
+  _updateBankCounts(kind);
+  openBankCat(kind, cat);
 }
 
 function closeBankCat(tab) {
@@ -793,38 +914,74 @@ const DAILY_CAT_CONFIG = {
   listening: { icon: '🎧', label: '聽力',  apiType: 'listening' },
 };
 
+// ── 每日練習進度（剩餘題數徽章）─────────────────────────────────────────────
+// 每日題數：閱讀/克漏字 3 題，其餘 5 題（對齊後端 daily_quiz）
+const DAILY_QUOTA = { vocab: 5, phrase: 5, grammar: 5, reading: 3, cloze: 3, listening: 5 };
+
+function _dailyDoneKey() {
+  return 'voca_daily_done_' + new Date().toISOString().slice(0, 10).replace(/-/g, '');
+}
+function _dailyDoneRead() {
+  try { return JSON.parse(localStorage.getItem(_dailyDoneKey())) || {}; }
+  catch { return {}; }
+}
+// 以「已完成題目 id 集合」計數，避免重作同一題被重複計算
+function _dailyMarkDone(cat, qid) {
+  const o = _dailyDoneRead();
+  const arr = o[cat] || (o[cat] = []);
+  if (!arr.includes(qid)) {
+    arr.push(qid);
+    localStorage.setItem(_dailyDoneKey(), JSON.stringify(o));
+  }
+}
+function dailyRemaining(cat) {
+  const done = (_dailyDoneRead()[cat] || []).length;
+  return Math.max(0, (DAILY_QUOTA[cat] || 5) - done);
+}
+// 清掉非今日的舊紀錄，避免 localStorage 累積
+function _dailyCleanup() {
+  const keep = _dailyDoneKey();
+  for (let i = localStorage.length - 1; i >= 0; i--) {
+    const k = localStorage.key(i);
+    if (k && k.startsWith('voca_daily_done_') && k !== keep) localStorage.removeItem(k);
+  }
+}
+// 更新每日練習六分類卡片的剩餘題數徽章
+function _updateDailyBadges() {
+  _dailyCleanup();
+  Object.keys(DAILY_QUOTA).forEach(cat => {
+    const el = document.getElementById('dcatCount_' + cat);
+    if (!el) return;
+    const rem = dailyRemaining(cat);
+    el.style.display = '';
+    if (rem > 0) {
+      el.textContent = `剩 ${rem} 題`;
+      el.classList.remove('done');
+    } else {
+      el.textContent = '✓ 完成';
+      el.classList.add('done');
+    }
+  });
+}
+
 async function openDailyCat(cat) {
   dailyCatOpen = cat;
   document.getElementById('dailyCats').style.display = 'none';
   document.getElementById('dailyReadingBack').style.display = '';
   const artList = document.getElementById('artList');
-  artList.style.display = '';
 
   const cfg = DAILY_CAT_CONFIG[cat];
   if (cfg) {
-    const showLoading = (msg, sub = '') => {
-      artList.innerHTML = `
-        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 0;gap:12px">
-          <div style="font-size:32px">${cfg.icon}</div>
-          <div style="font-family:Nunito;font-weight:700;font-size:15px;color:var(--white)">${escHtml(msg)}</div>
-          ${sub ? `<div style="font-size:12px;color:var(--gray)">${escHtml(sub)}</div>` : ''}
-        </div>`;
-    };
-    showLoading('題目載入中...');
+    // 直接抓題目並開始作答（不顯示載入畫面，避免殘留遮住題目）
+    artList.style.display = 'none';
     try {
       const res = await fetch(`/api/daily-quiz/${cfg.apiType}`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const { questions } = await res.json();
       if (!questions?.length) throw new Error('無題目資料');
-
-      // 聽力：預先生成第一題 Kokoro 音檔後再開始
-      if (cat === 'listening' && questions[0]?.dialogue) {
-        showLoading('🎙 準備語音音檔...', '首次約需 30–60 秒，之後快取免等');
-        await _generateListeningAudio(questions[0].dialogue).catch(() => {});
-      }
-
       _startDailyQuiz(questions, cat);
     } catch (err) {
+      artList.style.display = '';
       artList.innerHTML = `
         <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 0;gap:12px">
           <div style="font-size:32px">⚠</div>
@@ -835,6 +992,7 @@ async function openDailyCat(cat) {
     }
     return;
   }
+  artList.style.display = '';
 
   // 其他分類尚未上線
   const labels = { grammar: '文法', cloze: '克漏字', listening: '聽力' };
@@ -856,6 +1014,11 @@ function _startDailyQuiz(questions, context) {
   }));
 
   quizState = { questions: normalized, idx: 0, score: 0, context };
+
+  // 隱藏整個每日練習容器與文章列表，避免上方殘留空白與重複的返回按鈕
+  document.getElementById('artList').style.display = 'none';
+  document.getElementById('dailyList').classList.remove('show');
+  document.getElementById('dailyReadingBack').style.display = 'none';
 
   const panel = document.getElementById('quizPanel');
   panel.classList.remove('hidden');
@@ -1022,15 +1185,32 @@ function _listenStart() {
   _playListening(q.dialogue);
   // 換成正式選項
   document.getElementById('quizOpts').innerHTML = q.options.map((opt, i) => {
-    const clean = escHtml(opt.replace(/^[A-D][.、．]\s*/u, ''));
+    const clean = escHtml(opt.replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, ''));
     return `<button class="quiz-opt" onclick="answerQuestion(${i})">${String.fromCharCode(65 + i)}. ${clean}</button>`;
   }).join('');
+}
+
+// 題目右上角星號狀態（僅每日練習分類顯示）
+function _updateQuizStar(q, context) {
+  const starBtn = document.getElementById('quizStarBtn');
+  if (!starBtn) return;
+  const isCat = !!CAT_META[context];
+  starBtn.style.display = isCat ? '' : 'none';
+  if (isCat) {
+    const saved = _qbankHas('saved', context, _qid(q));
+    starBtn.classList.toggle('on', saved);
+    starBtn.textContent = saved ? '★' : '☆';
+  }
 }
 
 // ── 共用 QUIZ FLOW ──────────────────────────────────────────────────────────
 function renderQuestion() {
   const { questions, idx, context } = quizState;
   const q = questions[idx];
+
+  // 題組式：克漏字（整篇空格）/ 閱讀（文章＋1–4題）一次作答
+  if (q.blanks || q.questions) { _renderGroupQuestion(q); return; }
+
   document.getElementById('quizProgress').textContent = `第 ${idx + 1} / ${questions.length} 題`;
 
   // Badge
@@ -1056,7 +1236,7 @@ function renderQuestion() {
     } else {
       // 後續題：直接顯示選項並自動播放
       document.getElementById('quizOpts').innerHTML = q.options.map((opt, i) => {
-        const clean = escHtml(opt.replace(/^[A-D][.、．]\s*/u, ''));
+        const clean = escHtml(opt.replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, ''));
         return `<button class="quiz-opt" onclick="answerQuestion(${i})">${String.fromCharCode(65 + i)}. ${clean}</button>`;
       }).join('');
       _playListening(q.dialogue);
@@ -1071,13 +1251,150 @@ function renderQuestion() {
       passageHtml + `<div class="quiz-q-text">${escHtml(questionText)}</div>`;
 
     document.getElementById('quizOpts').innerHTML = q.options.map((opt, i) => {
-      const clean = escHtml(opt.replace(/^[A-D][.、．]\s*/u, ''));
+      const clean = escHtml(opt.replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, ''));
       return `<button class="quiz-opt" onclick="answerQuestion(${i})">${String.fromCharCode(65 + i)}. ${clean}</button>`;
     }).join('');
   }
 
   document.getElementById('quizExplain').classList.add('hidden');
-  document.getElementById('quizNextBtn').classList.add('hidden');
+  const nextBtn = document.getElementById('quizNextBtn');
+  nextBtn.onclick = nextQuestion;       // 非克漏字一律走 nextQuestion
+  nextBtn.classList.add('hidden');
+
+  _updateQuizStar(q, context);
+}
+
+// ── 題組式作答（克漏字 / 閱讀）：整篇一次作答、一起批改 ─────────────────────
+// 把克漏字的 blanks 與閱讀的 questions 統一成 items 結構
+function _groupItems(q) {
+  if (q.blanks) {
+    return q.blanks.map(bl => ({
+      heading: `第 (${bl.n}) 格`, headingClass: 'cloze-blank-label',
+      options: bl.options, answer: bl.answer, explanation: bl.explanation, n: bl.n,
+    }));
+  }
+  return (q.questions || []).map((sq, i) => ({
+    heading: `${i + 1}. ${sq.question}`, headingClass: 'rq-heading',
+    options: sq.options, answer: sq.answer, explanation: sq.explanation, n: i + 1,
+  }));
+}
+
+function _renderGroupQuestion(q) {
+  const { questions, idx, context } = quizState;
+  document.getElementById('quizProgress').textContent = `第 ${idx + 1} / ${questions.length} 題`;
+
+  const badge = document.getElementById('quizTypeBadge');
+  if (badge) badge.style.display = 'none';
+
+  quizState.grpSel  = {};        // itemIndex → optionIndex
+  quizState.grpDone = false;
+
+  const items     = _groupItems(q);
+  const titleHtml = q.title   ? `<div class="quiz-q-title">${escHtml(q.title)}</div>` : '';
+  const passageHtml = q.passage ? `<div class="quiz-passage">${escHtml(q.passage).replace(/\n/g, '<br>')}</div>` : '';
+  const intro = q.blanks ? `<div class="quiz-q-text">請依短文選出每一格最適合的答案</div>` : '';
+  document.getElementById('quizQ').innerHTML = titleHtml + passageHtml + intro;
+
+  document.getElementById('quizOpts').innerHTML = items.map((it, bi) => `
+    <div class="cloze-group" id="grp_${bi}">
+      <div class="${it.headingClass}">${escHtml(it.heading)}</div>
+      <div class="cloze-opts">
+        ${it.options.map((o, oi) => {
+          const clean = escHtml(o.replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, ''));
+          return `<button class="quiz-opt cloze-opt" id="g_${bi}_${oi}" onclick="groupSelect(${bi},${oi})">${String.fromCharCode(65 + oi)}. ${clean}</button>`;
+        }).join('')}
+      </div>
+    </div>`).join('');
+
+  document.getElementById('quizExplain').classList.add('hidden');
+  const nextBtn = document.getElementById('quizNextBtn');
+  nextBtn.textContent = '送出答案';
+  nextBtn.onclick = submitGroup;
+  nextBtn.classList.remove('hidden');
+
+  _updateQuizStar(q, context);
+}
+
+function groupSelect(bi, oi) {
+  if (quizState.grpDone) return;
+  quizState.grpSel[bi] = oi;
+  const items = _groupItems(quizState.questions[quizState.idx]);
+  items[bi].options.forEach((_, k) => {
+    const el = document.getElementById(`g_${bi}_${k}`);
+    if (el) el.classList.toggle('sel', k === oi);
+  });
+}
+
+function submitGroup() {
+  const { questions, idx, context } = quizState;
+  const q = questions[idx];
+  if (quizState.grpDone) return;
+  quizState.grpDone = true;
+
+  const items = _groupItems(q);
+  let correct = 0;
+  items.forEach((it, bi) => {
+    const chosen = quizState.grpSel[bi];
+    const ans    = it.answer;
+    it.options.forEach((_, k) => {
+      const el = document.getElementById(`g_${bi}_${k}`);
+      if (!el) return;
+      el.disabled = true;
+      el.classList.remove('sel');
+      if (k === ans) el.classList.add('correct');
+      else if (k === chosen) el.classList.add('wrong');
+    });
+    if (chosen === ans) correct++;
+    const grp = document.getElementById(`grp_${bi}`);
+    if (grp && it.explanation) {
+      const ex = document.createElement('div');
+      ex.className = 'cloze-explain';
+      ex.textContent = `(${it.n}) ${it.explanation}`;
+      grp.appendChild(ex);
+    }
+  });
+
+  const total    = items.length;
+  const allRight = correct === total;
+  const unit     = q.blanks ? '格' : '題';
+  showFb(`答對 ${correct}/${total} ${unit}`, allRight);
+  if (allRight) quizState.score++;
+
+  // 未全對 → 整篇/整組歸檔到答錯題庫
+  if (CAT_META[context] && !allRight) {
+    _qbankAdd('wrong', context, q);
+    _updateBankCounts('wrong');
+  }
+  // 記錄今日已完成（整篇/整組算一題）
+  if (CAT_META[context]) {
+    _dailyMarkDone(context, _qid(q));
+    _updateDailyBadges();
+  }
+
+  const nextBtn = document.getElementById('quizNextBtn');
+  nextBtn.textContent = idx >= questions.length - 1 ? '查看成績 →' : '下一題 →';
+  nextBtn.onclick = nextQuestion;
+}
+
+// 題目星號：加入/移除「收藏題庫」對應分類
+function quizToggleStar() {
+  const { questions, idx, context } = quizState;
+  if (!CAT_META[context]) return;
+  const q   = questions[idx];
+  const id  = _qid(q);
+  const btn = document.getElementById('quizStarBtn');
+  if (_qbankHas('saved', context, id)) {
+    _qbankRemove('saved', context, id);
+    btn.classList.remove('on');
+    btn.textContent = '☆';
+    showToast('已移除收藏');
+  } else {
+    _qbankAdd('saved', context, q);
+    btn.classList.add('on');
+    btn.textContent = '★';
+    showToast('⭐ 已加入收藏題庫');
+  }
+  _updateBankCounts('saved');
 }
 
 function answerQuestion(chosen) {
@@ -1097,6 +1414,17 @@ function answerQuestion(chosen) {
     navigator.vibrate && navigator.vibrate(30);
   } else {
     showFb('答錯了', false);
+    // 答錯自動歸檔到「答錯題庫」對應分類
+    if (CAT_META[context]) {
+      _qbankAdd('wrong', context, q);
+      _updateBankCounts('wrong');
+    }
+  }
+
+  // 記錄今日已完成題目（不論對錯），用於剩餘題數徽章
+  if (CAT_META[context]) {
+    _dailyMarkDone(context, _qid(q));
+    _updateDailyBadges();
   }
 
   const explainEl = document.getElementById('quizExplain');
@@ -1139,8 +1467,8 @@ function showQuizResult() {
   document.getElementById('qrIcon').textContent  = pct === 1 ? '🏆' : pct >= 0.6 ? '⚔️' : '📖';
   document.getElementById('qrScore').textContent = `${score} / ${total}`;
   document.getElementById('qrMsg').textContent   =
-    pct === 1   ? '全對！片語達人！' :
-    pct >= 0.6  ? '不錯！繼續加油！' : '多練習，片語一定拿下！';
+    pct === 1   ? '全對！表現太棒了！' :
+    pct >= 0.6  ? '不錯！繼續加油！' : '多練習，一定會進步！';
 
   STATS.int++;
   saveStats();
@@ -1153,6 +1481,7 @@ function _restoreFromQuiz() {
   document.getElementById('dailyReadingBack').style.display = 'none';
   document.getElementById('artList').style.display = 'none';
   document.getElementById('dailyList').classList.add('show');
+  _updateDailyBadges();
 }
 
 function closeQuiz() {

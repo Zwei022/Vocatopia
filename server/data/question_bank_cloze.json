@@ -1,0 +1,54 @@
+[
+  {
+    "type": "cloze",
+    "id": "cloze_0",
+    "passage": "Making new friends can feel hard, _____(1) it does not have to be. When I moved to a new town last year, I knew nobody at my new school. On the first day, I felt very _____(2) and sat alone at lunch. Then a girl named Mei came over and asked _____(3) she could sit with me. We started talking and soon found that we both loved drawing.\nMei introduced me to her friends, and they were all very _____(4) to me. They invited me to join their art club, and I happily agreed. _____(5) , I no longer felt like a stranger. I learned an important lesson that year: if you want to make friends, you should be brave and open your heart. A small smile or a kind word can _____(6) change someone's whole day.",
+    "blanks": [
+      { "n": 1, "options": ["(A) but", "(B) so", "(C) because", "(D) or"], "answer": 0, "explanation": "前後語意轉折（交朋友看似困難，但不必如此），用對等連接詞 but。" },
+      { "n": 2, "options": ["(A) lonely", "(B) excited", "(C) proud", "(D) brave"], "answer": 0, "explanation": "剛轉學、午餐獨自一人坐，最符合的心情是孤單 lonely。" },
+      { "n": 3, "options": ["(A) what", "(B) if", "(C) which", "(D) who"], "answer": 1, "explanation": "asked 後接間接問句，表示「是否」可以坐下，用 if。" },
+      { "n": 4, "options": ["(A) rude", "(B) friendly", "(C) boring", "(D) tired"], "answer": 1, "explanation": "他們邀我加入社團，可見對我很友善 friendly；rude 無禮語意相反。" },
+      { "n": 5, "options": ["(A) However", "(B) Soon", "(C) Instead", "(D) For example"], "answer": 1, "explanation": "加入社團後「很快地」就不再覺得自己是陌生人，用 Soon 表時間推進最連貫。" },
+      { "n": 6, "options": ["(A) hardly", "(B) never", "(C) really", "(D) seldom"], "answer": 2, "explanation": "強調一個微笑或善意「真的」能改變某人的一天，用 really；其餘三個都是否定語意，與正面結論矛盾。" }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_1",
+    "passage": "Many doctors say that exercise is one of the best _____(1) to stay healthy. Yet a lot of students spend most of their free time sitting in front of screens. They often feel tired _____(2) they do not move enough during the day. The good news is that getting active is _____(3) than most people think.\nYou do not need expensive equipment or a gym. _____(4) , you can simply take a walk after dinner or ride a bike to school. Doing sports with friends is even better, because it is more fun and you can encourage each other. Experts suggest that young people should exercise _____(5) thirty minutes a day. If you build this habit early, your body will stay strong and your mind will feel _____(6) .",
+    "blanks": [
+      { "n": 1, "options": ["(A) ways", "(B) places", "(C) reasons", "(D) times"], "answer": 0, "explanation": "one of the best ways to stay healthy 指保持健康的最佳方法之一，用 ways。" },
+      { "n": 2, "options": ["(A) although", "(B) because", "(C) but", "(D) unless"], "answer": 1, "explanation": "感到疲倦的原因是白天活動量不足，用表原因的連接詞 because。" },
+      { "n": 3, "options": ["(A) easier", "(B) harder", "(C) worse", "(D) slower"], "answer": 0, "explanation": "than 表比較，下文說明不需器材或健身房，可知運動比想像中「更容易」，用比較級 easier。" },
+      { "n": 4, "options": ["(A) However", "(B) Instead", "(C) Therefore", "(D) For example"], "answer": 1, "explanation": "前句說不需健身房，後句提出替代做法（散步、騎車），用表「取而代之」的 Instead。" },
+      { "n": 5, "options": ["(A) at least", "(B) at last", "(C) at once", "(D) at most"], "answer": 0, "explanation": "專家建議每天運動「至少」三十分鐘，用 at least；at last 是終於、at most 是至多，語意不合。" },
+      { "n": 6, "options": ["(A) sleepy", "(B) fresh", "(C) bored", "(D) sick"], "answer": 1, "explanation": "養成運動習慣後身體強壯、心靈也感到清爽舒暢，用 fresh；其餘都是負面語意，與正面結論矛盾。" }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_2",
+    "passage": "The internet is a wonderful tool, _____(1) it can also be dangerous if we are not careful. Many young people share photos and personal information online _____(2) thinking about who might see them. Once something is posted, it can be very _____(3) to remove it completely.\nTo stay safe, you should never give your password to anyone, _____(4) your close friends. It is also smart to check the privacy settings on your apps. _____(5) , if a stranger sends you a strange link, do not click on it. Being careful online does not mean you cannot have fun. _____(6) , it means you can enjoy the internet without worrying about your safety.",
+    "blanks": [
+      { "n": 1, "options": ["(A) but", "(B) so", "(C) because", "(D) and"], "answer": 0, "explanation": "前後語意轉折（網路很棒，但不小心也危險），用對等連接詞 but。" },
+      { "n": 2, "options": ["(A) with", "(B) before", "(C) without", "(D) after"], "answer": 2, "explanation": "「沒有先想清楚誰會看到」就分享，用 without thinking。" },
+      { "n": 3, "options": ["(A) easy", "(B) hard", "(C) quick", "(D) cheap"], "answer": 1, "explanation": "東西一旦張貼出去，要「完全」刪除會很困難，用 hard。" },
+      { "n": 4, "options": ["(A) except", "(B) besides", "(C) without", "(D) including"], "answer": 3, "explanation": "不要把密碼給任何人，「包括」最好的朋友也一樣，用 including 強調連他們也不行。" },
+      { "n": 5, "options": ["(A) Also", "(B) However", "(C) Instead", "(D) Therefore"], "answer": 0, "explanation": "再補充一個安全提醒，用表「此外」的 Also。" },
+      { "n": 6, "options": ["(A) However", "(B) Therefore", "(C) Instead", "(D) For example"], "answer": 2, "explanation": "小心上網不代表不能玩，「反而」能安心享受網路，用 Instead。" }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_3",
+    "passage": "Many children dream of having a pet, _____(1) taking care of one is a big responsibility. A pet is not a toy; it is a living thing that needs love and attention every day. Before you get a pet, you should think _____(2) about whether your family has enough time for it.\nDogs, for example, need to be walked _____(3) , sometimes twice a day. They also need fresh water and healthy food. If you are often busy, a fish or a turtle might be a _____(4) choice. _____(5) the kind of pet you choose, you must clean its home and take it to the animal doctor when it is sick. Caring for a pet teaches children to be kind and _____(6) .",
+    "blanks": [
+      { "n": 1, "options": ["(A) so", "(B) but", "(C) and", "(D) or"], "answer": 1, "explanation": "前後語意轉折（很多孩子想養寵物，但照顧是很大的責任），用 but。" },
+      { "n": 2, "options": ["(A) carefully", "(B) quickly", "(C) rarely", "(D) loudly"], "answer": 0, "explanation": "養寵物前應該「仔細地」想清楚時間夠不夠，用副詞 carefully。" },
+      { "n": 3, "options": ["(A) never", "(B) seldom", "(C) regularly", "(D) once"], "answer": 2, "explanation": "狗需要「規律地」散步，有時一天兩次，用 regularly；never、seldom 語意相反。" },
+      { "n": 4, "options": ["(A) better", "(B) worse", "(C) harder", "(D) sadder"], "answer": 0, "explanation": "若常常很忙，魚或烏龜會是「比較好」（較好照顧）的選擇，用 better。" },
+      { "n": 5, "options": ["(A) Because of", "(B) Instead of", "(C) Thanks to", "(D) No matter"], "answer": 3, "explanation": "「無論」你選哪種寵物，都得清理與就醫，用 No matter 表「不管…」。" },
+      { "n": 6, "options": ["(A) lazy", "(B) responsible", "(C) selfish", "(D) rude"], "answer": 1, "explanation": "照顧寵物教孩子變得善良又「負責任」，用 responsible；其餘為負面特質。" }
+    ]
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "dialogue": "Woman: Excuse me, does this bus go to the train station?\nMan: No, this one goes to the airport. You need bus number 12.\nWoman: Oh, thank you. Where can I catch it?\nMan: Just across the street, next to the bookstore.",
+    "question": "這位女士接下來最可能做什麼？",
+    "options": ["(A) 直接搭這班公車去機場", "(B) 到馬路對面搭 12 號公車", "(C) 進書店買一本書"],
+    "answer": 1,
+    "explanation": "男士說她要的車是對面、書店旁的 12 號公車，故選 B。",
+    "id": "listening_0_0"
+  },
+  {
+    "dialogue": "Boy: Mom, can I go to Jack's house to play video games?\nMom: Have you finished your homework yet?\nBoy: Not yet, but I only have a little left.\nMom: Finish it first, then you can go.",
+    "question": "男孩必須先做什麼才能去朋友家？",
+    "options": ["(A) 先吃晚餐", "(B) 先寫完功課", "(C) 先打掃房間"],
+    "answer": 1,
+    "explanation": "媽媽說先把功課寫完才能去，故選 B。",
+    "id": "listening_0_1"
+  },
+  {
+    "dialogue": "Man: What would you like for dinner tonight?\nWoman: I'm really tired of eating out. Let's just cook at home.\nMan: Good idea. Do we have everything we need?\nWoman: We need some eggs and tomatoes. Can you buy them?",
+    "question": "他們今晚決定怎麼解決晚餐？",
+    "options": ["(A) 去餐廳吃", "(B) 叫外送", "(C) 在家自己煮"],
+    "answer": 2,
+    "explanation": "女士說受夠了外食，要在家煮，故選 C。",
+    "id": "listening_0_2"
+  },
+  {
+    "dialogue": "Girl: I can't find my umbrella anywhere. Have you seen it?\nBoy: Did you check the car? You used it yesterday.\nGirl: Oh, you're right. I think I left it there.",
+    "question": "女孩的雨傘最可能在哪裡？",
+    "options": ["(A) 在車上", "(B) 在學校", "(C) 在她的房間"],
+    "answer": 0,
+    "explanation": "男孩提醒她昨天用過，女孩想起把傘留在車上，故選 A。",
+    "id": "listening_0_3"
+  },
+  {
+    "dialogue": "Woman: This sweater looks really nice. How much is it?\nClerk: It's eight hundred dollars, but today everything is twenty percent off.\nWoman: Great! Then I'll take two, one in blue and one in red.",
+    "question": "關於這件毛衣，下列何者正確？",
+    "options": ["(A) 今天打八折", "(B) 只剩藍色", "(C) 不能退換"],
+    "answer": 0,
+    "explanation": "店員說今天全部打八折（20% off），故選 A。其餘選項對話中未提及。",
+    "id": "listening_0_4"
+  },
+  {
+    "dialogue": "Man: You look worried. What's wrong?\nWoman: I have a big math test tomorrow, and I still don't understand chapter five.\nMan: Don't worry. I'm good at math. I can explain it to you tonight.",
+    "question": "男士打算怎麼幫助女士？",
+    "options": ["(A) 借她筆記", "(B) 今晚教她數學", "(C) 幫她寫考卷"],
+    "answer": 1,
+    "explanation": "男士說自己擅長數學，今晚可以教她，故選 B。",
+    "id": "listening_0_5"
+  },
+  {
+    "dialogue": "Girl: The movie starts at seven thirty. What time should we meet?\nBoy: Let's meet at seven so we can buy some popcorn first.\nGirl: Okay, see you at the theater entrance at seven.",
+    "question": "他們約幾點碰面？",
+    "options": ["(A) 七點", "(B) 七點半", "(C) 八點"],
+    "answer": 0,
+    "explanation": "男孩提議七點見面先買爆米花，女孩同意，故選 A；七點半是電影開演時間。",
+    "id": "listening_0_6"
+  },
+  {
+    "dialogue": "Man: Welcome to the city library. How can I help you?\nWoman: I'd like to borrow these three books. Here is my library card.\nMan: Sure. Please remember to return them within two weeks.",
+    "question": "這位女士必須在多久內還書？",
+    "options": ["(A) 一週內", "(B) 兩週內", "(C) 一個月內"],
+    "answer": 1,
+    "explanation": "館員提醒她兩週內歸還，故選 B。",
+    "id": "listening_0_7"
+  }
+]
