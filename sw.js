@@ -1,4 +1,4 @@
-const CACHE = 'vocatopia-v15';
+const CACHE = 'vocatopia-v16';
 const ASSETS = ['/', '/index.html', '/styles.css', '/script.js', '/manifest.json'];
 
 self.addEventListener('install', e => {
@@ -14,30 +14,46 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('fetch', e => {
-  if (e.request.url.includes('/socket.io/')) return;
+  const url = e.request.url;
+  if (url.includes('/socket.io/')) return;
 
-  // 音頻、API 全部直接走網路（依賴 HTTP Cache-Control 快取，不存入 SW）
-  // SW 存音頻會大量寫入 IndexedDB 導致記憶體爆炸
-  if (
-    e.request.url.includes('/audio/') ||
-    e.request.url.includes('.mp3') ||
-    e.request.url.includes('/api/')
-  ) {
+  // 音頻、API：直接走網路（不存入 SW，避免 IndexedDB 爆量）
+  if (url.includes('/audio/') || url.includes('.mp3') || url.includes('/api/')) {
     e.respondWith(fetch(e.request).catch(() => new Response('', { status: 503 })));
     return;
   }
 
-  // HTML、JS 永遠走網路確保最新版
+  // HTML、JS、CSS：network-first，永遠確保最新版（離線才退回快取）
+  // 註：先前 .css 漏列於此，導致樣式被 cache-first 卡在舊版，已修正。
   if (
-    e.request.url.endsWith('/') ||
-    e.request.url.endsWith('.html') ||
-    e.request.url.endsWith('.js')
+    url.endsWith('/') ||
+    url.endsWith('.html') ||
+    url.endsWith('.js') ||
+    url.endsWith('.css')
   ) {
-    e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
+    e.respondWith(
+      fetch(e.request)
+        .then(res => {
+          const copy = res.clone();
+          caches.open(CACHE).then(c => c.put(e.request, copy)).catch(() => {});
+          return res;
+        })
+        .catch(() => caches.match(e.request))
+    );
     return;
   }
 
+  // 其餘靜態資源（圖片等）：stale-while-revalidate
+  // 先回快取（速度快），同時背景抓最新存入快取，下次即為新版 → 不會永遠卡在舊圖
   e.respondWith(
-    caches.match(e.request).then(cached => cached || fetch(e.request))
+    caches.open(CACHE).then(cache =>
+      cache.match(e.request).then(cached => {
+        const network = fetch(e.request).then(res => {
+          if (res && res.status === 200) cache.put(e.request, res.clone());
+          return res;
+        }).catch(() => cached);
+        return cached || network;
+      })
+    )
   );
 });

@@ -1,0 +1,394 @@
+{
+  "year": 2026,
+  "rocYear": 115,
+  "type": "reading",
+  "label": "閱讀測驗",
+  "source": "115 年國中教育會考 英語科閱讀試題本",
+  "durationMin": 60,
+  "totalQuestions": 43,
+  "sections": [
+    {
+      "kind": "single",
+      "title": "第一部分：單題",
+      "range": "第 1–19 題，共 19 題",
+      "items": [
+        {
+          "n": 1,
+          "stem": "Look at the picture. All of the students who are exercising are wearing ＿＿＿.",
+          "image": "/public/images/gsat/2026/q1_picture.png",
+          "options": ["(A) caps", "(B) glasses", "(C) jackets", "(D) pants"],
+          "answer": 1,
+          "explanation": "圖中正在運動（打羽球、跳繩）的學生都戴眼鏡；右側戴帽子的學生是坐著休息、沒在運動，故選 (B)。"
+        },
+        {
+          "n": 2,
+          "stem": "Rita ＿＿＿ her dogs many times a day. That's why they're too fat.",
+          "options": ["(A) feeds", "(B) kisses", "(C) walks", "(D) washes"],
+          "answer": 0,
+          "explanation": "狗太胖是因為一天被「餵」很多次，故選 feeds。"
+        },
+        {
+          "n": 3,
+          "stem": "You can ask Sophia anything about butterflies and bees. She has great ＿＿＿ of insects.",
+          "options": ["(A) chances", "(B) knowledge", "(C) news", "(D) power"],
+          "answer": 1,
+          "explanation": "什麼都能問她，表示她對昆蟲有豐富的「知識」knowledge。"
+        },
+        {
+          "n": 4,
+          "stem": "Adam slept ＿＿＿ last night because he kept waking up from bad dreams.",
+          "options": ["(A) deeply", "(B) early", "(C) terribly", "(D) quickly"],
+          "answer": 2,
+          "explanation": "一直被惡夢驚醒，表示睡得很「糟」terribly；deeply（沉睡）語意相反。"
+        },
+        {
+          "n": 5,
+          "stem": "Tara enjoys being with all kinds of animals; she even ＿＿＿ a snake as a pet.",
+          "options": ["(A) drops", "(B) gives", "(C) keeps", "(D) makes"],
+          "answer": 2,
+          "explanation": "keep ... as a pet 是「養某動物當寵物」的固定用法，故選 keeps。"
+        },
+        {
+          "n": 6,
+          "stem": "Little Eric chose the doll ＿＿＿ big brown eyes because it was the cutest in the store.",
+          "options": ["(A) at", "(B) in", "(C) on", "(D) with"],
+          "answer": 3,
+          "explanation": "with big brown eyes 表「有著大棕色眼睛」，用介系詞 with 描述特徵。"
+        },
+        {
+          "n": 7,
+          "stem": "After four hours of mountain climbing, Rosa's legs got ＿＿＿, so she took a rest on the top of the mountain.",
+          "options": ["(A) dirty", "(B) sick", "(C) sore", "(D) strong"],
+          "answer": 2,
+          "explanation": "爬了四小時的山、需要休息，可知雙腿「痠痛」sore。"
+        },
+        {
+          "n": 8,
+          "stem": "Having three cups of coffee a day can't be bad for our health, ＿＿＿?",
+          "options": ["(A) can it", "(B) can they", "(C) is it", "(D) are they"],
+          "answer": 0,
+          "explanation": "附加問句：主詞為動名詞片語視為單數（it），前句否定 can't，附加問句用肯定 can it。"
+        },
+        {
+          "n": 9,
+          "stem": "You can't push that door open with only one hand. It's too heavy. You have to use ＿＿＿!",
+          "options": ["(A) all", "(B) another", "(C) both", "(D) one"],
+          "answer": 2,
+          "explanation": "一隻手推不開，太重了，必須用「雙手」both（兩隻手）。"
+        },
+        {
+          "n": 10,
+          "stem": "Alan works hard in his new job, and he wants to know ＿＿＿ his boss feels about him.",
+          "options": ["(A) how", "(B) that", "(C) whether", "(D) why"],
+          "answer": 0,
+          "explanation": "想知道老闆對他「感覺如何」，feel about 搭配疑問詞 how。"
+        },
+        {
+          "n": 11,
+          "stem": "I thought the girl ＿＿＿ was Kate, but it was her sister, Candy. They sounded almost the same.",
+          "options": ["(A) answered the phone", "(B) she answered the phone", "(C) who answered the phone", "(D) and answered the phone"],
+          "answer": 2,
+          "explanation": "需要關係子句修飾 the girl，關係代名詞 who 當主詞引導，故選 who answered the phone。"
+        },
+        {
+          "n": 12,
+          "stem": "Ken is going abroad with a woman he met online, though he doesn't know ＿＿＿ well.",
+          "options": ["(A) her", "(B) each other", "(C) any", "(D) another"],
+          "answer": 0,
+          "explanation": "主詞 he 不太了解「她」her（那位女子）；each other 需主詞為複數，不合。"
+        },
+        {
+          "n": 13,
+          "stem": "Joe is happy he is not at the ＿＿＿ of the class now. His grades are better than half of his classmates' this school year.",
+          "options": ["(A) side", "(B) front", "(C) center", "(D) bottom"],
+          "answer": 3,
+          "explanation": "成績勝過一半同學，表示不在班上「最後一名」the bottom，故選 bottom。"
+        },
+        {
+          "n": 14,
+          "stem": "Look! There is not a cloud in the sky. I think the chances of getting some rain today are really ＿＿＿.",
+          "options": ["(A) far", "(B) good", "(C) possible", "(D) small"],
+          "answer": 3,
+          "explanation": "天空一朵雲都沒有，下雨的機會「很小」small。"
+        },
+        {
+          "n": 15,
+          "stem": "On windy days, the flowers in my garden ＿＿＿ like shy children with their heads down.",
+          "options": ["(A) bow", "(B) fall", "(C) rise", "(D) smell"],
+          "answer": 0,
+          "explanation": "像低著頭的害羞孩子，可知花朵被風吹得「低頭／彎腰」bow。"
+        },
+        {
+          "n": 16,
+          "stem": "Mr. Olson went to the doctor when he found he ＿＿＿ his hair. He hoped he would be able to keep his thick hair.",
+          "options": ["(A) was losing", "(B) is losing", "(C) will lose", "(D) has lost"],
+          "answer": 0,
+          "explanation": "敘述過去發現「正在」掉髮的進行狀態，與主句過去式一致，用過去進行 was losing；他仍希望保住頭髮，故非 has lost（已掉光）。"
+        },
+        {
+          "n": 17,
+          "stem": "Do you know what Lindsey's first job was? Before becoming a movie star, she ＿＿＿ the floors at the supermarket.",
+          "options": ["(A) mops", "(B) is mopping", "(C) has mopped", "(D) mopped"],
+          "answer": 3,
+          "explanation": "敘述成名「之前」的第一份工作，為過去已結束的事，用過去簡單式 mopped。"
+        },
+        {
+          "n": 18,
+          "stem": "Our dog Lassie hides under the bed every time the moon comes out. She has been ＿＿＿ for years, but we don't know why.",
+          "options": ["(A) it", "(B) like this", "(C) like us", "(D) that"],
+          "answer": 1,
+          "explanation": "has been like this 表「一直是這個樣子」，承接前面描述的行為，故選 like this。"
+        },
+        {
+          "n": 19,
+          "stem": "Tom: Sam, could you help me in the kitchen now? Sam: No, I ＿＿＿ TV. It's the most important game of the season.",
+          "options": ["(A) watch", "(B) watched", "(C) have watched", "(D) am watching"],
+          "answer": 3,
+          "explanation": "now 表此刻正在做的事，用現在進行式 am watching。"
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "title": "第二部分：題組",
+      "range": "第 20–43 題，共 24 題",
+      "passages": [
+        {
+          "range": "20–21",
+          "passageType": "reading",
+          "title": "The Best Fruit Tea You Can Make at Home (食譜)",
+          "image": "/public/images/gsat/2026/p20_recipe.png",
+          "caption": "（stir 攪拌）請閱讀上方水果茶食譜後作答。",
+          "questions": [
+            {
+              "n": 20,
+              "stem": "Amanda wants to make fruit tea by following The Best Fruit Tea You Can Make at Home. She has several kinds of fruit in the kitchen: apples, bananas, oranges, papayas, pears, and strawberries. Which are some of the fruits she can use to make the fruit tea?",
+              "options": ["(A) Oranges, papayas and pears.", "(B) Apples, bananas and oranges.", "(C) Apples, oranges and strawberries.", "(D) Bananas, papayas and strawberries."],
+              "answer": 2,
+              "explanation": "食譜的 Note 指出大多數水果都可以，但「香蕉與木瓜不行」。只有 (C) 完全不含香蕉或木瓜。"
+            },
+            {
+              "n": 21,
+              "stem": "According to the reading, which is correct when we make the fruit tea?",
+              "options": ["(A) Boiling water with sugar in it.", "(B) Making sure to take out the fruit.", "(C) Putting in the fruit and the lemon juice at the same time.", "(D) Leaving the teabags in the pot of hot water for 2 to 3 minutes."],
+              "answer": 3,
+              "explanation": "步驟 2 寫茶包泡熱水 2 到 3 分鐘，故 (D) 正確；糖最後才加、水果要留著、檸檬汁與水果不同步驟放，其餘皆錯。"
+            }
+          ]
+        },
+        {
+          "range": "22–23",
+          "passageType": "reading",
+          "title": "Hawkins (四格漫畫)",
+          "image": "/public/images/gsat/2026/p22_comics.png",
+          "caption": "請閱讀上方四格漫畫後作答。",
+          "questions": [
+            {
+              "n": 22,
+              "stem": "According to the comics, what kind of person is Hawkins?",
+              "options": ["(A) He sees good things in people.", "(B) He never goes to work on time.", "(C) He blindly follows other people.", "(D) He talks about things he can't do."],
+              "answer": 3,
+              "explanation": "Hawkins 競選時誇口縮短上課、當業務又說要賣 149 台車，最後全都做不到，可知他「總是說自己辦不到的事」(D)。"
+            },
+            {
+              "n": 23,
+              "stem": "What does it mean when we say someone bombed something?",
+              "options": ["(A) They gave it up.", "(B) They failed at it.", "(C) They were fine with it.", "(D) They were careful about it."],
+              "answer": 1,
+              "explanation": "漫畫中 Hawkins 兩次 bombed it 都伴隨失敗收場，可推知 bomb 在此指「徹底失敗」(B)。"
+            }
+          ]
+        },
+        {
+          "range": "24–26",
+          "passageType": "reading",
+          "title": "The Marigolds' Home (宣傳手冊＋地圖)",
+          "image": "/public/images/gsat/2026/p24_brochure.png",
+          "caption": "（brochure 宣傳手冊）請閱讀上方宣傳手冊與地圖後作答。Q26 需參考地圖方位。",
+          "questions": [
+            {
+              "n": 24,
+              "stem": "Which question can the brochure answer?",
+              "options": ["(A) Can I order tickets online?", "(B) How much are the tickets?", "(C) How can I get to the Marigolds' Home?", "(D) When can I visit the Marigolds' Home?"],
+              "answer": 3,
+              "explanation": "手冊提供了開放時間（Opening times），故能回答「何時可以參觀」(D)；票價、交通、線上訂票皆未提及。"
+            },
+            {
+              "n": 25,
+              "stem": "What breaks the rules for visitors to the Marigolds' Home?",
+              "options": ["(A) Eating burgers in the Rose Garden.", "(B) Taking pictures in the Main House.", "(C) Entering the Rabbit's Temple without shoes.", "(D) Taking pet dogs for a walk on the playground."],
+              "answer": 3,
+              "explanation": "規則 1 寫明任何區域都不准帶寵物，故在遊樂場遛狗違規 (D)；玫瑰園在戶外可飲食、規則只禁在 Sir Archie's House 拍照、進兔子神殿本就要脫鞋，其餘皆未違規。"
+            },
+            {
+              "n": 26,
+              "stem": "After shopping at the gift shop of the Main House, Lizzy walks out and sees the Family Library in front of her. She wants to visit the Rose Garden. How can she get there?",
+              "options": ["(A) Turn left and walk past the Main House, then go straight and turn right at the corner.", "(B) Turn left and walk past Sir Archie's House, then turn right and walk past the Main House.", "(C) Turn right and go straight to the Farmyard, then turn right and go straight, then turn left at the corner.", "(D) Turn right and walk through the Butterfly Garden, then walk past the Rabbit's Temple and the café."],
+              "answer": 2,
+              "explanation": "Lizzy 面向北邊的家庭圖書館④，玫瑰園⑨在東側。只有 (C) 先右轉（往東）方向正確，且沿途地標方位相符；(A)(B) 左轉往西、(D) 蝴蝶園在西南，方向皆矛盾。"
+            }
+          ]
+        },
+        {
+          "range": "27–28",
+          "passageType": "reading",
+          "title": "The Nightingale Lady",
+          "passage": "One summer evening when English cello player Beatrice Harrison was practicing in her garden, she was joined by a visitor she did not expect.\n\nThe visitor was a nightingale. The small brown bird sang together with Harrison's cello music, and the birdsong sounded like the piece she was playing. For the next few evenings, her visitor kept coming back, sometimes with several of its friends. Harrison decided that more people should hear the little singers.\n\nSo, on May 19, 1924, Harrison worked with the BBC, the UK's national TV and radio station, and played in her garden. At first, the artist was playing alone. Fifteen minutes before the end of her playing, the nightingales began to sing with the cello.\n\nThe nightingale show was popular with radio listeners. It was repeated the next week, and for the next twelve years Harrison played on the radio with her garden friends. During this time, she got 50,000 fan letters. People called her \"the Nightingale Lady.\"",
+          "questions": [
+            {
+              "n": 27,
+              "stem": "Why was Beatrice Harrison called the Nightingale Lady?",
+              "options": ["(A) She wrote songs about nightingales.", "(B) She sang as beautifully as a nightingale did.", "(C) She taught nightingales to sing in a radio show.", "(D) She was famous for playing music with nightingales."],
+              "answer": 3,
+              "explanation": "她連續多年在廣播中與花園裡的夜鶯一同演奏而成名，故選 (D)。"
+            },
+            {
+              "n": 28,
+              "stem": "Which is NOT used in the reading to mean the nightingale(s)?",
+              "options": ["(A) Her visitor.", "(B) The little singers.", "(C) The artist.", "(D) Her garden friends."],
+              "answer": 2,
+              "explanation": "her visitor、the little singers、her garden friends 都指夜鶯；the artist 指演奏者 Harrison 本人，故 (C) 不是指夜鶯。"
+            }
+          ]
+        },
+        {
+          "range": "29–31",
+          "passageType": "reading",
+          "title": "Remembering Rose Lacey",
+          "passage": "With heavy hearts, we are here to say goodbye to Rose Lacey, a wonderful writer who will be sadly missed.\n\nRose and I first met in 2010. I was at a party to pick up my wife when I heard Rose explaining to her and her friends why Get Across was a great movie. Her ideas were so interesting that I invited her to write some articles about movies for Action! US. Rose was very excited and agreed right away.\n\nOver the next ten years, Rose wrote more than 150 articles. Rose could always bring out something new from movies that we thought we knew so well. People often told me that Rose never failed to surprise them. Her articles often made them think whether they actually saw the same movie, but if they went to see it again, they experienced the movie in a whole new way.\n\nIn her short life of 40 years, Rose has made her mark on the world of movies with her articles for Action! US. We are lucky to have had her in our lives. She was a very special person.\n\n— Alex Jackson, Head of Action! US",
+          "questions": [
+            {
+              "n": 29,
+              "stem": "Why does Alex Jackson write about Rose Lacey?",
+              "options": ["(A) Because she died.", "(B) Because she is very sick.", "(C) Because she is moving away.", "(D) Because she is leaving for another job."],
+              "answer": 0,
+              "explanation": "開頭 With heavy hearts... say goodbye、will be sadly missed、her short life of 40 years 等語皆為悼念逝者之詞，故 (A)。"
+            },
+            {
+              "n": 30,
+              "stem": "How did Rose Lacey and Alex Jackson get to know each other?",
+              "options": ["(A) They met at a party.", "(B) They were relatives.", "(C) They worked in the same office.", "(D) They took a course on movies together."],
+              "answer": 0,
+              "explanation": "文中說 I was at a party... when I heard Rose...，可知兩人在派對上認識，故 (A)。"
+            },
+            {
+              "n": 31,
+              "stem": "What is special about Rose Lacey's articles?",
+              "options": ["(A) They are important to movie makers.", "(B) They talk about movies from a fresh angle.", "(C) They give interesting information about actors.", "(D) They are good examples of how to write stories."],
+              "answer": 1,
+              "explanation": "她總能從熟悉的電影中挖出新意，讓人彷彿用全新角度重看一遍，故其文章特別之處是「以全新觀點談電影」(B)。"
+            }
+          ]
+        },
+        {
+          "range": "32–34",
+          "passageType": "reading",
+          "title": "Sea Glass: Glass Bottles' Second Life",
+          "passage": "Sea glass is made from the magic of the sea. It usually comes from glass bottles that are thrown into the water. Each piece of sea glass looks different, and sea glass is often seen on art pieces. The steps below explain how sea glass is born.\n\n1. Glass bottles are thrown as garbage into the sea.\n2. When these bottles ride the waves of the sea, they hit each other or other garbage in the sea and break into small pieces of glass.\n3. Pieces of glass are pushed by sea water and move along the sea floor. The sharp pieces slowly become rounder and rounder.\n4. After tens or hundreds of years in the sea, the pieces of glass grow an ice-like white color on the outside and become sea glass.\n5. Sea glass is finally pushed up to the beach.\n6. Artists collect pieces of sea glass and put them into their works.\n\nHowever, people now seldom use glass to make bottles and bowls—paper bowls and cups have become more popular these days. This means there are fewer glass items in the sea, so less and less sea glass will be found in the future.",
+          "questions": [
+            {
+              "n": 32,
+              "stem": "Why does the title say \"Glass Bottles' Second Life\"? (title 標題)",
+              "options": ["(A) People collect sea glass and use it to make new glass bottles.", "(B) People collect sea glass at the beach and use it to make wishes.", "(C) Glass bottles that are thrown into the sea become the homes of sea animals.", "(D) Glass bottles that are thrown into the sea become sea glass which is used in art pieces."],
+              "answer": 3,
+              "explanation": "被丟進海裡的玻璃瓶經年累月變成海玻璃、再被藝術家用於作品，等於有了「第二人生」，故 (D)。"
+            },
+            {
+              "n": 33,
+              "stem": "According to the reading, how is sea glass made?",
+              "options": ["(A) Sea glass becomes rounder after it is pushed up to the beach.", "(B) Colder sea water helps pieces of glass become sea glass faster.", "(C) Pieces of glass become white on the outside after many years in the sea.", "(D) Glass bottles break into pieces when they are dug out from the sea floor."],
+              "answer": 2,
+              "explanation": "步驟 4 說玻璃碎片在海中經數十到數百年後，表面長出冰一般的白色，故 (C)。"
+            },
+            {
+              "n": 34,
+              "stem": "According to the reading, why will less sea glass be found in the future?",
+              "options": ["(A) People do not make as many glass items as before.", "(B) People have learned not to throw garbage into the sea.", "(C) Artists are using too much sea glass in their art pieces.", "(D) Waves are not big enough to push sea glass up to the beach."],
+              "answer": 0,
+              "explanation": "末段指出現在很少用玻璃做瓶碗（改用紙杯紙碗），海中玻璃變少，故未來海玻璃也會變少 (A)。"
+            }
+          ]
+        },
+        {
+          "range": "35–39",
+          "passageType": "reading",
+          "title": "The Future of Icelandic — Two Views",
+          "passage": "■ The Future of Icelandic — Scandinavian News, by Anna Adams\n\nIcelandic is a language that is spoken only in Iceland. It has a long history. But many Icelanders are worried that they're losing Icelandic.\n\nThe reason for their worry is the prevalence of English in Iceland. \"I use English when I talk to my housework robot, use my phone, and watch movies,\" said Helgi Atlason, an engineer. There is a reason for that. Most of these products use English, and few companies care to change the language into Icelandic because there are only a small number of Icelandic speakers (314,000 people). Actually, you see English everywhere in Iceland.\n\nIcelanders also speak and hear more English than Icelandic these days because many foreigners who come to live and work in Iceland speak only English. \"We can't use Icelandic abroad, and we're not using it much in Iceland, either. How do you expect our kids will want to learn it?\" said Eirikur Wilson, a teacher.\n\nWill Iceland one day give up Icelandic for English? It may happen soon.\n\n■ Our Future with Icelandic — Scandinavian News, by Gunnar Eggertsson\n\nMany people think Icelandic is a language in its sickbed and that it needs to be saved. I understand their worries, but does the future of our language really look that bad?\n\nAccording to Dr. David Clingingsmith, a language needs at least 35,000 speakers to be \"safe\" from becoming a dying language. There are now 314,000 Icelandic speakers. Also, every year Iceland spends 51.3 million Icelandic crowns (3.7 million US dollars) teaching Icelandic to machines: phones, computers, and robots. Icelandic is appearing more often in products. Most importantly, schools still teach Icelandic to children. Clearly, we are not giving up our first language.\n\nHowever, I'm not saying that Iceland has done enough for Icelandic. Our country can do a better job at getting more people to speak this beautiful language. One way to do so is to give more language courses to foreigners. With much more work, I'm sure Icelandic can grow and even reach farther into the world.\n\n(Icelander 冰島人　product 商品)",
+          "questions": [
+            {
+              "n": 35,
+              "stem": "What does the prevalence of English mean?",
+              "options": ["(A) That English is very common.", "(B) That English is not welcomed.", "(C) That English is easy and simple.", "(D) That English is not a national language."],
+              "answer": 0,
+              "explanation": "下文舉例英語用在機器人、手機、電影，且 you see English everywhere，可推知 prevalence 指英語「很普遍／隨處可見」(A)。"
+            },
+            {
+              "n": 36,
+              "stem": "In the first reading, which is one of the ways that Anna Adams uses to make readers believe in her ideas?",
+              "options": ["(A) Sharing her own life stories.", "(B) Borrowing from people's experience.", "(C) Using examples from another language.", "(D) Showing information from news reports."],
+              "answer": 1,
+              "explanation": "Adams 引用工程師 Helgi、老師 Eirikur 等人的親身經驗與說法來支持論點，故 (B)。"
+            },
+            {
+              "n": 37,
+              "stem": "Which words in the second reading are NOT used to describe Icelandic? (describe 形容)",
+              "options": ["(A) A language in its sickbed.", "(B) A dying language.", "(C) Our first language.", "(D) This beautiful language."],
+              "answer": 1,
+              "explanation": "第二篇中 sickbed、our first language、this beautiful language 都用來形容冰島語；a dying language 只是說明「語言需 35,000 人才不會變成瀕死語言」的通則，作者反而主張冰島語並非如此，故 (B) 不是用來形容冰島語。"
+            },
+            {
+              "n": 38,
+              "stem": "Are Anna Adams and Gunnar Eggertsson worried about the future of Icelandic?",
+              "options": ["(A) No, they are not.", "(B) Yes, they both are.", "(C) Adams is, but Eggertsson is not.", "(D) Adams is not, but Eggertsson is."],
+              "answer": 2,
+              "explanation": "Adams 擔心冰島語可能很快被英語取代；Eggertsson 則反問「真有那麼糟嗎」並列舉理由認為不必擔心，故 (C)。"
+            },
+            {
+              "n": 39,
+              "stem": "Which idea do Anna Adams and Gunnar Eggertsson both talk about in the readings?",
+              "options": ["(A) Whether Icelanders speak better English than Icelandic.", "(B) Whether the number of Icelandic speakers is big enough.", "(C) Whether school subjects should be taught only in Icelandic.", "(D) Whether Iceland should allow more foreigners to work in Iceland."],
+              "answer": 1,
+              "explanation": "兩篇都圍繞冰島語使用人口（314,000 人）夠不夠多打轉，故共同談的是「使用人數是否足夠」(B)。"
+            }
+          ]
+        },
+        {
+          "range": "40–43",
+          "passageType": "cloze",
+          "title": "The King's Seeds (故事克漏字)",
+          "passage": "A long time ago, there was an old king who had no child of his own. The king was worried that his land would fall into the wrong hands after his death, so he decided to pick a child in his land to take the high seat. One day, he called all the children to his castle and gave each of them a seed. \"Come back on New Year's Day and show me what you have grown,\" he said to them, \"and I will ＿＿(40)＿＿.\"\n\nEvery child brought their seeds home carefully. One of the children, Wong, planted his seed in a pot. He gave it water every day and made sure there was sun to help it grow. ＿＿(41)＿＿.\n\nThen, Sung, the child of the richest family in the land, told people that a small plant was growing from his seed. He was ＿＿(42)＿＿. Everyone excitedly said that he would be king. Soon, one after another, more and more children were also saying that they had something in their pots. But Wong still didn't find anything in his.\n\nOn the big day, when Wong brought his pot to the castle, he saw all the other children carrying interesting plants. Some had flowers in the shape of a bird, and some had grasses of different colors. Everyone proudly showed their plants to the king, but the king looked unhappy until he saw Wong's pot. \"I boiled the seeds before I gave them out, so no plants could grow from them.\" The king looked seriously at the children. \"There is only one child who is ＿＿(43)＿＿ enough to be king.\"\n\nTen years later, the king died. On his deathbed, he was not worried because he knew Wong would be a good king.",
+          "questions": [
+            {
+              "n": 40,
+              "stem": "(40)",
+              "options": ["(A) give you a piece of good land", "(B) choose a person to be the next king", "(C) put the beautiful ones in my castle", "(D) decide who will work in my garden"],
+              "answer": 1,
+              "explanation": "國王要從孩子中挑出繼承人，故承諾「選一人當下一任國王」(B)，呼應全文選王主題。"
+            },
+            {
+              "n": 41,
+              "stem": "(41)",
+              "options": ["(A) But he lost his pot a few weeks later", "(B) Months passed but nothing grew from it", "(C) But soon the plant that grew from it died", "(D) The seed grew into a big tree in a short time"],
+              "answer": 1,
+              "explanation": "後文一再說 Wong 的盆裡始終長不出東西，故此處應為「幾個月過去仍毫無動靜」(B)。"
+            },
+            {
+              "n": 42,
+              "stem": "(42)",
+              "options": ["(A) the last one to give up", "(B) the first one to share good news", "(C) the first one to bring his pot to the king", "(D) the only one to take good care of his plant"],
+              "answer": 1,
+              "explanation": "Sung 率先宣布種子發芽、大家興奮地說他會當國王，可知他是「第一個分享好消息的人」(B)。"
+            },
+            {
+              "n": 43,
+              "stem": "(43)",
+              "options": ["(A) wise", "(B) strong", "(C) honest", "(D) popular"],
+              "answer": 2,
+              "explanation": "種子早被煮過根本長不出植物，只有 Wong 誠實端出空盆，故國王說唯一「誠實」honest 的孩子才配當王 (C)。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

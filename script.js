@@ -482,20 +482,27 @@ function backArena() {
 // ── READING TABS ──
 let curatedSubTab = 'exam';
 
-// ── 會考歷屆資料（之後逐年填入） ──
+// ── 會考歷屆資料（dataUrl 有值＝已上線可作答） ──
 const GSAT_EXAMS = [
-  { year: 2025, type: 'reading',   label: '閱讀測驗', icon: '📖', sections: [] },
-  { year: 2025, type: 'listening', label: '聽力測驗', icon: '🔊', sections: [] },
-  { year: 2024, type: 'reading',   label: '閱讀測驗', icon: '📖', sections: [] },
-  { year: 2024, type: 'listening', label: '聽力測驗', icon: '🔊', sections: [] },
-  { year: 2023, type: 'reading',   label: '閱讀測驗', icon: '📖', sections: [] },
-  { year: 2023, type: 'listening', label: '聽力測驗', icon: '🔊', sections: [] },
-  { year: 2022, type: 'reading',   label: '閱讀測驗', icon: '📖', sections: [] },
-  { year: 2022, type: 'listening', label: '聽力測驗', icon: '🔊', sections: [] },
+  { year: 2026, type: 'reading',   label: '閱讀測驗', icon: '📖', dataUrl: '/server/data/gsat_exam_2026_reading.json' },
+  { year: 2026, type: 'listening', label: '聽力測驗', icon: '🔊' },
+  { year: 2025, type: 'reading',   label: '閱讀測驗', icon: '📖' },
+  { year: 2025, type: 'listening', label: '聽力測驗', icon: '🔊' },
+  { year: 2024, type: 'reading',   label: '閱讀測驗', icon: '📖' },
+  { year: 2024, type: 'listening', label: '聽力測驗', icon: '🔊' },
+  { year: 2023, type: 'reading',   label: '閱讀測驗', icon: '📖' },
+  { year: 2023, type: 'listening', label: '聽力測驗', icon: '🔊' },
 ];
 
+// 單題（第1–19題）的題型分類，供「答錯題庫」歸檔使用
+const GSAT_SINGLE_CAT = {
+  1:'vocab', 2:'vocab', 3:'vocab', 4:'vocab', 5:'vocab', 6:'grammar', 7:'vocab',
+  8:'grammar', 9:'grammar', 10:'grammar', 11:'grammar', 12:'grammar', 13:'vocab',
+  14:'vocab', 15:'vocab', 16:'grammar', 17:'grammar', 18:'grammar', 19:'grammar',
+};
+
 function _gsatYearRowsHTML(openFnName) {
-  const years = [2025, 2024, 2023, 2022];
+  const years = [2026, 2025, 2024, 2023];
   return years.map(year => {
     const exams = GSAT_EXAMS.filter(e => e.year === year);
     return `
@@ -506,7 +513,7 @@ function _gsatYearRowsHTML(openFnName) {
         </div>
         <div class="gyr-exams">
           ${exams.map(e => {
-            const hasData = e.sections.length > 0;
+            const hasData = !!e.dataUrl;
             return `
               <button class="gyr-exam${hasData ? '' : ' empty'}" onclick="${hasData ? `${openFnName}(${e.year},'${e.type}')` : ''}">
                 <div class="gyr-exam-name">${e.icon} ${e.label}</div>
@@ -530,14 +537,20 @@ function renderGsatLib() {
   el.innerHTML = _gsatYearRowsHTML('openLibGsatExam');
 }
 
-function openLibGsatExam(year, type) {
-  const exam = GSAT_EXAMS.find(e => e.year === year && e.type === type);
-  if (!exam) return;
-  document.getElementById('libGsatList').style.display = 'none';
-  const view = document.getElementById('libGsatExamView');
-  view.style.display = 'flex';
-  document.getElementById('libGsatExamTitle').textContent = `${year} 國中會考 ${exam.label}`;
-  document.getElementById('libGsatExamBody').innerHTML = `
+// ── 全卷作答引擎（會考歷屆）─────────────────────────────────────────────
+// gsatExam 狀態：{ idprefix, qmap:{n:{options,answer,explanation,cat,bankStem}},
+//                 total, answers:{n:選項index}, submitted, remain(秒), timerId, bodyEl }
+let gsatExam = null;
+
+function _gxEsc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"]/g,
+    c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+}
+function _gxPassageHtml(t) {
+  return '<p>' + _gxEsc(t).replace(/\n\n+/g, '</p><p>').replace(/\n/g, '<br>') + '</p>';
+}
+function _gxPlaceholder(year, exam) {
+  return `
     <div class="gsat-placeholder">
       <div class="rp-icon">${exam.icon}</div>
       <div class="rp-title">${year} ${exam.label}</div>
@@ -545,31 +558,246 @@ function openLibGsatExam(year, type) {
       <div class="rp-badge">即將上線</div>
     </div>`;
 }
+function _gxQCard(q) {
+  const qn = q.n;
+  const img = q.image ? `<img class="gx-img" src="${q.image}" alt="">` : '';
+  const opts = q.options.map((o, oi) =>
+    `<button type="button" class="gx-opt" id="gxo_${qn}_${oi}" onclick="gsatSelect(${qn},${oi})">${_gxEsc(o)}</button>`
+  ).join('');
+  return `<div class="gx-q" id="gxq_${qn}">
+    <div class="gx-stem"><span class="gx-num">${qn}.</span> ${_gxEsc(q.stem)}</div>
+    ${img}
+    <div class="gx-opts">${opts}</div>
+    <div class="gx-explain" id="gxe_${qn}" style="display:none"></div>
+  </div>`;
+}
 
-function closeLibGsatExam() {
-  document.getElementById('libGsatExamView').style.display = 'none';
-  document.getElementById('libGsatList').style.display = '';
+// 共用：把指定 exam 渲染進指定容器（curated 與 library 兩個入口共用）
+function _openGsatExamInto(year, type, ids) {
+  const exam = GSAT_EXAMS.find(e => e.year === year && e.type === type);
+  if (!exam) return;
+  const viewEl = document.getElementById(ids.view);
+  document.getElementById(ids.list).style.display = 'none';
+  viewEl.style.display = 'flex';
+  document.getElementById(ids.title).textContent = `${year} 國中會考 ${exam.label}`;
+  const body = document.getElementById(ids.body);
+  const bw = viewEl.querySelector('.gx-barwrap');
+  if (bw) bw.innerHTML = '';
+  if (!exam.dataUrl) {
+    viewEl.classList.remove('gsat-fullscreen');
+    _gsatCleanupTimer();
+    body.innerHTML = _gxPlaceholder(year, exam);
+    return;
+  }
+
+  // 全螢幕作答模式：覆蓋上方分頁列與底部導航，只能透過「返回」退出
+  viewEl.classList.add('gsat-fullscreen');
+  body.innerHTML = `<div class="gx-loading">載入試卷中…</div>`;
+  fetch(exam.dataUrl)
+    .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
+    .then(data => _renderGsatExam(data, body, `gsat${year}${type}`))
+    .catch(err => { body.innerHTML = `<div class="gx-loading">試卷載入失敗：${_gxEsc(err.message)}</div>`; });
+}
+
+function _renderGsatExam(data, bodyEl, idprefix) {
+  const qmap = {};
+  let total = 0;
+  // 計分列：固定於捲動區「外」，避免蓋住題目圖片
+  const barHTML = `
+    <div class="gsat-scorebar" id="gxBar">
+      <div class="gx-timer" id="gxTimer">--:--</div>
+      <div class="gx-prog" id="gxProg"></div>
+      <button type="button" class="gsat-submit" onclick="gsatSubmit()">交卷</button>
+    </div>`;
+  let html = `
+    <div class="gx-meta">${_gxEsc(data.source || '')}　共 ${data.totalQuestions} 題・${data.durationMin} 分鐘</div>`;
+
+  data.sections.forEach(sec => {
+    html += `<div class="gx-sec-title">${_gxEsc(sec.title)}　<span>${_gxEsc(sec.range || '')}</span></div>`;
+    if (sec.kind === 'single') {
+      sec.items.forEach(it => {
+        qmap[it.n] = {
+          options: it.options, answer: it.answer, explanation: it.explanation,
+          cat: GSAT_SINGLE_CAT[it.n] || 'grammar', bankStem: it.stem,
+        };
+        total++;
+        html += _gxQCard(it);
+      });
+    } else {
+      sec.passages.forEach(p => {
+        const cat = p.passageType === 'cloze' ? 'cloze' : 'reading';
+        const pimg = p.image ? `<img class="gx-img gx-pimg" src="${p.image}" alt="">` : '';
+        const ptxt = p.passage ? `<div class="gx-passage">${_gxPassageHtml(p.passage)}</div>` : '';
+        const cap  = p.caption ? `<div class="gx-cap">${_gxEsc(p.caption)}</div>` : '';
+        let qhtml = '';
+        p.questions.forEach(q => {
+          qmap[q.n] = {
+            options: q.options, answer: q.answer, explanation: q.explanation,
+            cat, bankStem: `[${p.title}] ${q.stem}`,
+          };
+          total++;
+          qhtml += _gxQCard(q);
+        });
+        html += `<div class="gx-passage-block">
+          <div class="gx-ptitle">${_gxEsc(p.title)} <span class="gx-prange">(${_gxEsc(p.range)})</span></div>
+          ${pimg}${ptxt}${cap}
+          <div class="gx-pqs">${qhtml}</div>
+        </div>`;
+      });
+    }
+  });
+  html += `<div class="gx-bottom"><button type="button" class="gsat-submit big" onclick="gsatSubmit()">交卷看成績</button></div>`;
+
+  // 計分列放到捲動容器「外」（gsatExamView 內、body 之上），固定不捲動、不蓋題目
+  const view = bodyEl.parentElement;
+  let barWrap = view.querySelector('.gx-barwrap');
+  if (!barWrap) {
+    barWrap = document.createElement('div');
+    barWrap.className = 'gx-barwrap';
+    view.insertBefore(barWrap, bodyEl);
+  }
+  barWrap.innerHTML = barHTML;
+  bodyEl.innerHTML = html;
+
+  if (gsatExam && gsatExam.timerId) clearInterval(gsatExam.timerId);
+  gsatExam = {
+    idprefix, qmap, total, answers: {}, submitted: false,
+    remain: (data.durationMin || 60) * 60, timerId: null, bodyEl,
+  };
+  _gsatRenderTimer();
+  _gsatUpdateProgress();
+  gsatExam.timerId = setInterval(_gsatTick, 1000);
+  bodyEl.scrollTop = 0;
+}
+
+function gsatSelect(qn, oi) {
+  if (!gsatExam || gsatExam.submitted) return;
+  gsatExam.answers[qn] = oi;
+  const q = gsatExam.qmap[qn];
+  q.options.forEach((_, i) => {
+    const el = document.getElementById('gxo_' + qn + '_' + i);
+    if (el) el.classList.toggle('sel', i === oi);
+  });
+  _gsatUpdateProgress();
+}
+
+function _gsatUpdateProgress() {
+  const p = document.getElementById('gxProg');
+  if (p && gsatExam) p.textContent = `已作答 ${Object.keys(gsatExam.answers).length} / ${gsatExam.total}`;
+}
+
+function _gsatRenderTimer() {
+  const t = document.getElementById('gxTimer');
+  if (!t || !gsatExam) return;
+  const r = Math.max(0, gsatExam.remain);
+  const m = String(Math.floor(r / 60)).padStart(2, '0');
+  const s = String(r % 60).padStart(2, '0');
+  t.textContent = `${m}:${s}`;
+  t.classList.toggle('low', r <= 300);
+}
+function _gsatTick() {
+  if (!gsatExam) return;
+  gsatExam.remain--;
+  _gsatRenderTimer();
+  if (gsatExam.remain <= 0) gsatSubmit(true);
+}
+
+function gsatSubmit(auto) {
+  if (!gsatExam || gsatExam.submitted) return;
+  const unanswered = gsatExam.total - Object.keys(gsatExam.answers).length;
+  if (!auto && unanswered > 0 &&
+      !confirm(`還有 ${unanswered} 題未作答，確定要交卷嗎？`)) return;
+
+  gsatExam.submitted = true;
+  clearInterval(gsatExam.timerId);
+
+  let correct = 0;
+  Object.keys(gsatExam.qmap).forEach(qn => {
+    const q = gsatExam.qmap[qn];
+    const sel = gsatExam.answers[qn];
+    const isRight = sel === q.answer;
+    if (isRight) correct++;
+    q.options.forEach((_, i) => {
+      const el = document.getElementById('gxo_' + qn + '_' + i);
+      if (!el) return;
+      el.classList.remove('sel');
+      if (i === q.answer) el.classList.add('correct');
+      else if (i === sel) el.classList.add('wrong');
+      el.disabled = true;
+    });
+    const ee = document.getElementById('gxe_' + qn);
+    if (ee) {
+      const tag = sel == null ? '<span class="gx-skip">未作答</span>'
+        : (isRight ? '<span class="gx-ok">答對</span>' : '<span class="gx-no">答錯</span>');
+      ee.innerHTML = `${tag}　正解：(${'ABCD'[q.answer]})　${_gxEsc(q.explanation || '')}`;
+      ee.style.display = '';
+    }
+  });
+  gsatExam.correct = correct;
+  _gsatShowScore();
+
+  const bb = gsatExam.bodyEl && gsatExam.bodyEl.querySelector('.gx-bottom .gsat-submit');
+  if (bb) { bb.textContent = `已交卷（答對 ${correct} / ${gsatExam.total}）`; bb.disabled = true; }
+  if (gsatExam.bodyEl) gsatExam.bodyEl.scrollTop = 0;
+}
+
+function _gsatShowScore() {
+  const bar = document.getElementById('gxBar');
+  if (!bar || !gsatExam) return;
+  const pct = Math.round(gsatExam.correct / gsatExam.total * 100);
+  bar.classList.add('done');
+  bar.innerHTML = `
+    <div class="gx-score">答對 <b>${gsatExam.correct}</b> / ${gsatExam.total}　(${pct}%)</div>
+    <button type="button" class="gsat-submit ghost" id="gxFileWrong" onclick="gsatFileWrong()">把答錯題加入答錯題庫</button>`;
+}
+
+function gsatFileWrong() {
+  if (!gsatExam || !gsatExam.submitted) return;
+  let n = 0;
+  Object.keys(gsatExam.qmap).forEach(qn => {
+    const q = gsatExam.qmap[qn];
+    if (gsatExam.answers[qn] !== q.answer) {
+      const norm = {
+        id: gsatExam.idprefix + '_q' + qn,
+        question: q.bankStem, options: q.options,
+        answer: q.answer, explanation: q.explanation,
+      };
+      if (_qbankAdd('wrong', q.cat, norm)) n++;
+    }
+  });
+  const btn = document.getElementById('gxFileWrong');
+  if (btn) { btn.textContent = n ? `已加入 ${n} 題 ✓` : '答錯題已在題庫中 ✓'; btn.disabled = true; }
+}
+
+function _gsatCleanupTimer() {
+  if (gsatExam && gsatExam.timerId) clearInterval(gsatExam.timerId);
+  gsatExam = null;
 }
 
 function openGsatExam(year, type) {
-  const exam = GSAT_EXAMS.find(e => e.year === year && e.type === type);
-  if (!exam) return;
-  document.getElementById('gsatList').style.display = 'none';
-  const view = document.getElementById('gsatExamView');
-  view.style.display = 'flex';
-  document.getElementById('gsatExamTitle').textContent = `${year} 國中會考 ${exam.label}`;
-  document.getElementById('gsatExamBody').innerHTML = `
-    <div class="gsat-placeholder">
-      <div class="rp-icon">${exam.icon}</div>
-      <div class="rp-title">${year} ${exam.label}</div>
-      <div class="rp-desc">考題內容準備中<br>即將加入完整試題</div>
-      <div class="rp-badge">即將上線</div>
-    </div>`;
+  _openGsatExamInto(year, type,
+    { list: 'gsatList', view: 'gsatExamView', title: 'gsatExamTitle', body: 'gsatExamBody' });
 }
-
 function closeGsatExam() {
-  document.getElementById('gsatExamView').style.display = 'none';
-  document.getElementById('gsatList').style.display = '';
+  _gsatCleanupTimer();
+  const v = document.getElementById('gsatExamView');
+  v.classList.remove('gsat-fullscreen');
+  v.style.display = 'none';
+  // .sub-panel 預設 display:none，需明確設回 flex（不可用 ''，否則會回退成隱藏）
+  document.getElementById('gsatList').style.display = 'flex';
+  renderGsatList();
+}
+function openLibGsatExam(year, type) {
+  _openGsatExamInto(year, type,
+    { list: 'libGsatList', view: 'libGsatExamView', title: 'libGsatExamTitle', body: 'libGsatExamBody' });
+}
+function closeLibGsatExam() {
+  _gsatCleanupTimer();
+  const v = document.getElementById('libGsatExamView');
+  v.classList.remove('gsat-fullscreen');
+  v.style.display = 'none';
+  document.getElementById('libGsatList').style.display = 'flex';
+  renderGsatLib();
 }
 
 function _resetBankPanel(prefix) {
