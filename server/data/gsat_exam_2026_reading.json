@@ -16,135 +16,344 @@
           "n": 1,
           "stem": "Look at the picture. All of the students who are exercising are wearing ＿＿＿.",
           "image": "/public/images/gsat/2026/q1_picture.png",
-          "options": ["(A) caps", "(B) glasses", "(C) jackets", "(D) pants"],
+          "options": [
+            "(A) caps",
+            "(B) glasses",
+            "(C) jackets",
+            "(D) pants"
+          ],
           "answer": 1,
-          "explanation": "圖中正在運動（打羽球、跳繩）的學生都戴眼鏡；右側戴帽子的學生是坐著休息、沒在運動，故選 (B)。"
+          "explanation": "圖中正在運動（打羽球、跳繩）的學生都戴眼鏡；右側戴帽子的學生是坐著休息、沒在運動，故選 (B)。",
+          "optionsZh": [
+            "帽子",
+            "眼鏡",
+            "外套",
+            "長褲"
+          ]
         },
         {
           "n": 2,
           "stem": "Rita ＿＿＿ her dogs many times a day. That's why they're too fat.",
-          "options": ["(A) feeds", "(B) kisses", "(C) walks", "(D) washes"],
+          "options": [
+            "(A) feeds",
+            "(B) kisses",
+            "(C) walks",
+            "(D) washes"
+          ],
           "answer": 0,
-          "explanation": "狗太胖是因為一天被「餵」很多次，故選 feeds。"
+          "explanation": "狗太胖是因為一天被「餵」很多次，故選 feeds。",
+          "optionsZh": [
+            "餵食",
+            "親吻",
+            "帶去散步",
+            "清洗"
+          ]
         },
         {
           "n": 3,
           "stem": "You can ask Sophia anything about butterflies and bees. She has great ＿＿＿ of insects.",
-          "options": ["(A) chances", "(B) knowledge", "(C) news", "(D) power"],
+          "options": [
+            "(A) chances",
+            "(B) knowledge",
+            "(C) news",
+            "(D) power"
+          ],
           "answer": 1,
-          "explanation": "什麼都能問她，表示她對昆蟲有豐富的「知識」knowledge。"
+          "explanation": "什麼都能問她，表示她對昆蟲有豐富的「知識」knowledge。",
+          "optionsZh": [
+            "機會",
+            "知識",
+            "消息",
+            "力量"
+          ]
         },
         {
           "n": 4,
           "stem": "Adam slept ＿＿＿ last night because he kept waking up from bad dreams.",
-          "options": ["(A) deeply", "(B) early", "(C) terribly", "(D) quickly"],
+          "options": [
+            "(A) deeply",
+            "(B) early",
+            "(C) terribly",
+            "(D) quickly"
+          ],
           "answer": 2,
-          "explanation": "一直被惡夢驚醒，表示睡得很「糟」terribly；deeply（沉睡）語意相反。"
+          "explanation": "一直被惡夢驚醒，表示睡得很「糟」terribly；deeply（沉睡）語意相反。",
+          "optionsZh": [
+            "沉沉地（熟睡）",
+            "早地",
+            "很糟地",
+            "快速地"
+          ]
         },
         {
           "n": 5,
           "stem": "Tara enjoys being with all kinds of animals; she even ＿＿＿ a snake as a pet.",
-          "options": ["(A) drops", "(B) gives", "(C) keeps", "(D) makes"],
+          "options": [
+            "(A) drops",
+            "(B) gives",
+            "(C) keeps",
+            "(D) makes"
+          ],
           "answer": 2,
-          "explanation": "keep ... as a pet 是「養某動物當寵物」的固定用法，故選 keeps。"
+          "explanation": "keep ... as a pet 是「養某動物當寵物」的固定用法，故選 keeps。",
+          "optionsZh": [
+            "丟下",
+            "給予",
+            "飼養",
+            "製作"
+          ]
         },
         {
           "n": 6,
           "stem": "Little Eric chose the doll ＿＿＿ big brown eyes because it was the cutest in the store.",
-          "options": ["(A) at", "(B) in", "(C) on", "(D) with"],
+          "options": [
+            "(A) at",
+            "(B) in",
+            "(C) on",
+            "(D) with"
+          ],
           "answer": 3,
-          "explanation": "with big brown eyes 表「有著大棕色眼睛」，用介系詞 with 描述特徵。"
+          "explanation": "with big brown eyes 表「有著大棕色眼睛」，用介系詞 with 描述特徵。",
+          "optionsZh": [
+            "在（某一點）",
+            "在…之內",
+            "在…之上",
+            "有著（帶有）"
+          ]
         },
         {
           "n": 7,
           "stem": "After four hours of mountain climbing, Rosa's legs got ＿＿＿, so she took a rest on the top of the mountain.",
-          "options": ["(A) dirty", "(B) sick", "(C) sore", "(D) strong"],
+          "options": [
+            "(A) dirty",
+            "(B) sick",
+            "(C) sore",
+            "(D) strong"
+          ],
           "answer": 2,
-          "explanation": "爬了四小時的山、需要休息，可知雙腿「痠痛」sore。"
+          "explanation": "爬了四小時的山、需要休息，可知雙腿「痠痛」sore。",
+          "optionsZh": [
+            "髒的",
+            "生病的",
+            "痠痛的",
+            "強壯的"
+          ]
         },
         {
           "n": 8,
           "stem": "Having three cups of coffee a day can't be bad for our health, ＿＿＿?",
-          "options": ["(A) can it", "(B) can they", "(C) is it", "(D) are they"],
+          "options": [
+            "(A) can it",
+            "(B) can they",
+            "(C) is it",
+            "(D) are they"
+          ],
           "answer": 0,
-          "explanation": "附加問句：主詞為動名詞片語視為單數（it），前句否定 can't，附加問句用肯定 can it。"
+          "explanation": "附加問句：主詞為動名詞片語視為單數（it），前句否定 can't，附加問句用肯定 can it。",
+          "optionsZh": [
+            "（附加問句：助動詞 can、主詞 it）",
+            "（主詞 they）",
+            "（用 be 動詞 is）",
+            "（用 be 動詞 are、主詞 they）"
+          ]
         },
         {
           "n": 9,
           "stem": "You can't push that door open with only one hand. It's too heavy. You have to use ＿＿＿!",
-          "options": ["(A) all", "(B) another", "(C) both", "(D) one"],
+          "options": [
+            "(A) all",
+            "(B) another",
+            "(C) both",
+            "(D) one"
+          ],
           "answer": 2,
-          "explanation": "一隻手推不開，太重了，必須用「雙手」both（兩隻手）。"
+          "explanation": "一隻手推不開，太重了，必須用「雙手」both（兩隻手）。",
+          "optionsZh": [
+            "全部",
+            "另一個",
+            "兩者都",
+            "一個"
+          ]
         },
         {
           "n": 10,
           "stem": "Alan works hard in his new job, and he wants to know ＿＿＿ his boss feels about him.",
-          "options": ["(A) how", "(B) that", "(C) whether", "(D) why"],
+          "options": [
+            "(A) how",
+            "(B) that",
+            "(C) whether",
+            "(D) why"
+          ],
           "answer": 0,
-          "explanation": "想知道老闆對他「感覺如何」，feel about 搭配疑問詞 how。"
+          "explanation": "想知道老闆對他「感覺如何」，feel about 搭配疑問詞 how。",
+          "optionsZh": [
+            "如何",
+            "（that 引導，不填疑問詞）",
+            "是否",
+            "為什麼"
+          ]
         },
         {
           "n": 11,
           "stem": "I thought the girl ＿＿＿ was Kate, but it was her sister, Candy. They sounded almost the same.",
-          "options": ["(A) answered the phone", "(B) she answered the phone", "(C) who answered the phone", "(D) and answered the phone"],
+          "options": [
+            "(A) answered the phone",
+            "(B) she answered the phone",
+            "(C) who answered the phone",
+            "(D) and answered the phone"
+          ],
           "answer": 2,
-          "explanation": "需要關係子句修飾 the girl，關係代名詞 who 當主詞引導，故選 who answered the phone。"
+          "explanation": "需要關係子句修飾 the girl，關係代名詞 who 當主詞引導，故選 who answered the phone。",
+          "optionsZh": [
+            "接了電話",
+            "她接了電話",
+            "（那位）接電話的",
+            "並接了電話"
+          ]
         },
         {
           "n": 12,
           "stem": "Ken is going abroad with a woman he met online, though he doesn't know ＿＿＿ well.",
-          "options": ["(A) her", "(B) each other", "(C) any", "(D) another"],
+          "options": [
+            "(A) her",
+            "(B) each other",
+            "(C) any",
+            "(D) another"
+          ],
           "answer": 0,
-          "explanation": "主詞 he 不太了解「她」her（那位女子）；each other 需主詞為複數，不合。"
+          "explanation": "主詞 he 不太了解「她」her（那位女子）；each other 需主詞為複數，不合。",
+          "optionsZh": [
+            "她",
+            "彼此",
+            "任何一個",
+            "另一個"
+          ]
         },
         {
           "n": 13,
           "stem": "Joe is happy he is not at the ＿＿＿ of the class now. His grades are better than half of his classmates' this school year.",
-          "options": ["(A) side", "(B) front", "(C) center", "(D) bottom"],
+          "options": [
+            "(A) side",
+            "(B) front",
+            "(C) center",
+            "(D) bottom"
+          ],
           "answer": 3,
-          "explanation": "成績勝過一半同學，表示不在班上「最後一名」the bottom，故選 bottom。"
+          "explanation": "成績勝過一半同學，表示不在班上「最後一名」the bottom，故選 bottom。",
+          "optionsZh": [
+            "旁邊",
+            "前面",
+            "中間",
+            "最後一名（底部）"
+          ]
         },
         {
           "n": 14,
           "stem": "Look! There is not a cloud in the sky. I think the chances of getting some rain today are really ＿＿＿.",
-          "options": ["(A) far", "(B) good", "(C) possible", "(D) small"],
+          "options": [
+            "(A) far",
+            "(B) good",
+            "(C) possible",
+            "(D) small"
+          ],
           "answer": 3,
-          "explanation": "天空一朵雲都沒有，下雨的機會「很小」small。"
+          "explanation": "天空一朵雲都沒有，下雨的機會「很小」small。",
+          "optionsZh": [
+            "遙遠的",
+            "很大的（機會大）",
+            "可能的",
+            "很小的（機會小）"
+          ]
         },
         {
           "n": 15,
           "stem": "On windy days, the flowers in my garden ＿＿＿ like shy children with their heads down.",
-          "options": ["(A) bow", "(B) fall", "(C) rise", "(D) smell"],
+          "options": [
+            "(A) bow",
+            "(B) fall",
+            "(C) rise",
+            "(D) smell"
+          ],
           "answer": 0,
-          "explanation": "像低著頭的害羞孩子，可知花朵被風吹得「低頭／彎腰」bow。"
+          "explanation": "像低著頭的害羞孩子，可知花朵被風吹得「低頭／彎腰」bow。",
+          "optionsZh": [
+            "低頭、彎腰",
+            "掉落",
+            "升起",
+            "聞起來"
+          ]
         },
         {
           "n": 16,
           "stem": "Mr. Olson went to the doctor when he found he ＿＿＿ his hair. He hoped he would be able to keep his thick hair.",
-          "options": ["(A) was losing", "(B) is losing", "(C) will lose", "(D) has lost"],
+          "options": [
+            "(A) was losing",
+            "(B) is losing",
+            "(C) will lose",
+            "(D) has lost"
+          ],
           "answer": 0,
-          "explanation": "敘述過去發現「正在」掉髮的進行狀態，與主句過去式一致，用過去進行 was losing；他仍希望保住頭髮，故非 has lost（已掉光）。"
+          "explanation": "敘述過去發現「正在」掉髮的進行狀態，與主句過去式一致，用過去進行 was losing；他仍希望保住頭髮，故非 has lost（已掉光）。",
+          "optionsZh": [
+            "（當時）正在掉（過去進行）",
+            "（現在）正在掉",
+            "將會掉",
+            "已經掉光（現在完成）"
+          ]
         },
         {
           "n": 17,
           "stem": "Do you know what Lindsey's first job was? Before becoming a movie star, she ＿＿＿ the floors at the supermarket.",
-          "options": ["(A) mops", "(B) is mopping", "(C) has mopped", "(D) mopped"],
+          "options": [
+            "(A) mops",
+            "(B) is mopping",
+            "(C) has mopped",
+            "(D) mopped"
+          ],
           "answer": 3,
-          "explanation": "敘述成名「之前」的第一份工作，為過去已結束的事，用過去簡單式 mopped。"
+          "explanation": "敘述成名「之前」的第一份工作，為過去已結束的事，用過去簡單式 mopped。",
+          "optionsZh": [
+            "拖地（現在式）",
+            "正在拖地",
+            "已經拖過",
+            "拖了地（過去式）"
+          ]
         },
         {
           "n": 18,
           "stem": "Our dog Lassie hides under the bed every time the moon comes out. She has been ＿＿＿ for years, but we don't know why.",
-          "options": ["(A) it", "(B) like this", "(C) like us", "(D) that"],
+          "options": [
+            "(A) it",
+            "(B) like this",
+            "(C) like us",
+            "(D) that"
+          ],
           "answer": 1,
-          "explanation": "has been like this 表「一直是這個樣子」，承接前面描述的行為，故選 like this。"
+          "explanation": "has been like this 表「一直是這個樣子」，承接前面描述的行為，故選 like this。",
+          "optionsZh": [
+            "它",
+            "像這樣",
+            "像我們",
+            "那樣"
+          ]
         },
         {
           "n": 19,
           "stem": "Tom: Sam, could you help me in the kitchen now? Sam: No, I ＿＿＿ TV. It's the most important game of the season.",
-          "options": ["(A) watch", "(B) watched", "(C) have watched", "(D) am watching"],
+          "options": [
+            "(A) watch",
+            "(B) watched",
+            "(C) have watched",
+            "(D) am watching"
+          ],
           "answer": 3,
-          "explanation": "now 表此刻正在做的事，用現在進行式 am watching。"
+          "explanation": "now 表此刻正在做的事，用現在進行式 am watching。",
+          "optionsZh": [
+            "看（現在式）",
+            "看了（過去式）",
+            "看過（完成式）",
+            "正在看（現在進行）"
+          ]
         }
       ]
     },
@@ -163,16 +372,38 @@
             {
               "n": 20,
               "stem": "Amanda wants to make fruit tea by following The Best Fruit Tea You Can Make at Home. She has several kinds of fruit in the kitchen: apples, bananas, oranges, papayas, pears, and strawberries. Which are some of the fruits she can use to make the fruit tea?",
-              "options": ["(A) Oranges, papayas and pears.", "(B) Apples, bananas and oranges.", "(C) Apples, oranges and strawberries.", "(D) Bananas, papayas and strawberries."],
+              "options": [
+                "(A) Oranges, papayas and pears.",
+                "(B) Apples, bananas and oranges.",
+                "(C) Apples, oranges and strawberries.",
+                "(D) Bananas, papayas and strawberries."
+              ],
               "answer": 2,
-              "explanation": "食譜的 Note 指出大多數水果都可以，但「香蕉與木瓜不行」。只有 (C) 完全不含香蕉或木瓜。"
+              "explanation": "食譜的 Note 指出大多數水果都可以，但「香蕉與木瓜不行」。只有 (C) 完全不含香蕉或木瓜。",
+              "optionsZh": [
+                "柳橙、木瓜和梨子。",
+                "蘋果、香蕉和柳橙。",
+                "蘋果、柳橙和草莓。",
+                "香蕉、木瓜和草莓。"
+              ]
             },
             {
               "n": 21,
               "stem": "According to the reading, which is correct when we make the fruit tea?",
-              "options": ["(A) Boiling water with sugar in it.", "(B) Making sure to take out the fruit.", "(C) Putting in the fruit and the lemon juice at the same time.", "(D) Leaving the teabags in the pot of hot water for 2 to 3 minutes."],
+              "options": [
+                "(A) Boiling water with sugar in it.",
+                "(B) Making sure to take out the fruit.",
+                "(C) Putting in the fruit and the lemon juice at the same time.",
+                "(D) Leaving the teabags in the pot of hot water for 2 to 3 minutes."
+              ],
               "answer": 3,
-              "explanation": "步驟 2 寫茶包泡熱水 2 到 3 分鐘，故 (D) 正確；糖最後才加、水果要留著、檸檬汁與水果不同步驟放，其餘皆錯。"
+              "explanation": "步驟 2 寫茶包泡熱水 2 到 3 分鐘，故 (D) 正確；糖最後才加、水果要留著、檸檬汁與水果不同步驟放，其餘皆錯。",
+              "optionsZh": [
+                "煮加了糖的水。",
+                "確保把水果取出。",
+                "同時放入水果和檸檬汁。",
+                "把茶包放在熱水裡泡 2 到 3 分鐘。"
+              ]
             }
           ]
         },
@@ -186,16 +417,38 @@
             {
               "n": 22,
               "stem": "According to the comics, what kind of person is Hawkins?",
-              "options": ["(A) He sees good things in people.", "(B) He never goes to work on time.", "(C) He blindly follows other people.", "(D) He talks about things he can't do."],
+              "options": [
+                "(A) He sees good things in people.",
+                "(B) He never goes to work on time.",
+                "(C) He blindly follows other people.",
+                "(D) He talks about things he can't do."
+              ],
               "answer": 3,
-              "explanation": "Hawkins 競選時誇口縮短上課、當業務又說要賣 149 台車，最後全都做不到，可知他「總是說自己辦不到的事」(D)。"
+              "explanation": "Hawkins 競選時誇口縮短上課、當業務又說要賣 149 台車，最後全都做不到，可知他「總是說自己辦不到的事」(D)。",
+              "optionsZh": [
+                "他看見別人的優點。",
+                "他從不準時上班。",
+                "他盲目跟從別人。",
+                "他總說自己做不到的事。"
+              ]
             },
             {
               "n": 23,
               "stem": "What does it mean when we say someone bombed something?",
-              "options": ["(A) They gave it up.", "(B) They failed at it.", "(C) They were fine with it.", "(D) They were careful about it."],
+              "options": [
+                "(A) They gave it up.",
+                "(B) They failed at it.",
+                "(C) They were fine with it.",
+                "(D) They were careful about it."
+              ],
               "answer": 1,
-              "explanation": "漫畫中 Hawkins 兩次 bombed it 都伴隨失敗收場，可推知 bomb 在此指「徹底失敗」(B)。"
+              "explanation": "漫畫中 Hawkins 兩次 bombed it 都伴隨失敗收場，可推知 bomb 在此指「徹底失敗」(B)。",
+              "optionsZh": [
+                "他們放棄了。",
+                "他們失敗了。",
+                "他們覺得沒問題。",
+                "他們很小心。"
+              ]
             }
           ]
         },
@@ -209,23 +462,56 @@
             {
               "n": 24,
               "stem": "Which question can the brochure answer?",
-              "options": ["(A) Can I order tickets online?", "(B) How much are the tickets?", "(C) How can I get to the Marigolds' Home?", "(D) When can I visit the Marigolds' Home?"],
+              "options": [
+                "(A) Can I order tickets online?",
+                "(B) How much are the tickets?",
+                "(C) How can I get to the Marigolds' Home?",
+                "(D) When can I visit the Marigolds' Home?"
+              ],
               "answer": 3,
-              "explanation": "手冊提供了開放時間（Opening times），故能回答「何時可以參觀」(D)；票價、交通、線上訂票皆未提及。"
+              "explanation": "手冊提供了開放時間（Opening times），故能回答「何時可以參觀」(D)；票價、交通、線上訂票皆未提及。",
+              "optionsZh": [
+                "我可以線上訂票嗎？",
+                "票價多少？",
+                "我要怎麼到 Marigolds 之家？",
+                "我什麼時候可以參觀 Marigolds 之家？"
+              ]
             },
             {
               "n": 25,
               "stem": "What breaks the rules for visitors to the Marigolds' Home?",
-              "options": ["(A) Eating burgers in the Rose Garden.", "(B) Taking pictures in the Main House.", "(C) Entering the Rabbit's Temple without shoes.", "(D) Taking pet dogs for a walk on the playground."],
+              "options": [
+                "(A) Eating burgers in the Rose Garden.",
+                "(B) Taking pictures in the Main House.",
+                "(C) Entering the Rabbit's Temple without shoes.",
+                "(D) Taking pet dogs for a walk on the playground."
+              ],
               "answer": 3,
-              "explanation": "規則 1 寫明任何區域都不准帶寵物，故在遊樂場遛狗違規 (D)；玫瑰園在戶外可飲食、規則只禁在 Sir Archie's House 拍照、進兔子神殿本就要脫鞋，其餘皆未違規。"
+              "explanation": "規則 1 寫明任何區域都不准帶寵物，故在遊樂場遛狗違規 (D)；玫瑰園在戶外可飲食、規則只禁在 Sir Archie's House 拍照、進兔子神殿本就要脫鞋，其餘皆未違規。",
+              "optionsZh": [
+                "在玫瑰園吃漢堡。",
+                "在主屋拍照。",
+                "不穿鞋進入兔子神殿。",
+                "帶寵物狗在遊樂場散步。"
+              ]
             },
             {
               "n": 26,
               "stem": "After shopping at the gift shop of the Main House, Lizzy walks out and sees the Family Library in front of her. She wants to visit the Rose Garden. How can she get there?",
-              "options": ["(A) Turn left and walk past the Main House, then go straight and turn right at the corner.", "(B) Turn left and walk past Sir Archie's House, then turn right and walk past the Main House.", "(C) Turn right and go straight to the Farmyard, then turn right and go straight, then turn left at the corner.", "(D) Turn right and walk through the Butterfly Garden, then walk past the Rabbit's Temple and the café."],
+              "options": [
+                "(A) Turn left and walk past the Main House, then go straight and turn right at the corner.",
+                "(B) Turn left and walk past Sir Archie's House, then turn right and walk past the Main House.",
+                "(C) Turn right and go straight to the Farmyard, then turn right and go straight, then turn left at the corner.",
+                "(D) Turn right and walk through the Butterfly Garden, then walk past the Rabbit's Temple and the café."
+              ],
               "answer": 2,
-              "explanation": "Lizzy 面向北邊的家庭圖書館④，玫瑰園⑨在東側。只有 (C) 先右轉（往東）方向正確，且沿途地標方位相符；(A)(B) 左轉往西、(D) 蝴蝶園在西南，方向皆矛盾。"
+              "explanation": "Lizzy 面向北邊的家庭圖書館④，玫瑰園⑨在東側。只有 (C) 先右轉（往東）方向正確，且沿途地標方位相符；(A)(B) 左轉往西、(D) 蝴蝶園在西南，方向皆矛盾。",
+              "optionsZh": [
+                "左轉走過主屋，然後直走，在轉角右轉。",
+                "左轉走過 Sir Archie’s House，然後右轉走過主屋。",
+                "右轉直走到農場，再右轉直走，然後在轉角左轉。",
+                "右轉穿過蝴蝶園，然後走過兔子神殿和咖啡廳。"
+              ]
             }
           ]
         },
@@ -238,16 +524,38 @@
             {
               "n": 27,
               "stem": "Why was Beatrice Harrison called the Nightingale Lady?",
-              "options": ["(A) She wrote songs about nightingales.", "(B) She sang as beautifully as a nightingale did.", "(C) She taught nightingales to sing in a radio show.", "(D) She was famous for playing music with nightingales."],
+              "options": [
+                "(A) She wrote songs about nightingales.",
+                "(B) She sang as beautifully as a nightingale did.",
+                "(C) She taught nightingales to sing in a radio show.",
+                "(D) She was famous for playing music with nightingales."
+              ],
               "answer": 3,
-              "explanation": "她連續多年在廣播中與花園裡的夜鶯一同演奏而成名，故選 (D)。"
+              "explanation": "她連續多年在廣播中與花園裡的夜鶯一同演奏而成名，故選 (D)。",
+              "optionsZh": [
+                "她寫了關於夜鶯的歌。",
+                "她唱得像夜鶯一樣美。",
+                "她在廣播節目教夜鶯唱歌。",
+                "她因與夜鶯一起演奏音樂而聞名。"
+              ]
             },
             {
               "n": 28,
               "stem": "Which is NOT used in the reading to mean the nightingale(s)?",
-              "options": ["(A) Her visitor.", "(B) The little singers.", "(C) The artist.", "(D) Her garden friends."],
+              "options": [
+                "(A) Her visitor.",
+                "(B) The little singers.",
+                "(C) The artist.",
+                "(D) Her garden friends."
+              ],
               "answer": 2,
-              "explanation": "her visitor、the little singers、her garden friends 都指夜鶯；the artist 指演奏者 Harrison 本人，故 (C) 不是指夜鶯。"
+              "explanation": "her visitor、the little singers、her garden friends 都指夜鶯；the artist 指演奏者 Harrison 本人，故 (C) 不是指夜鶯。",
+              "optionsZh": [
+                "她的訪客。",
+                "小歌手們。",
+                "那位演奏家。",
+                "她的花園朋友們。"
+              ]
             }
           ]
         },
@@ -260,23 +568,56 @@
             {
               "n": 29,
               "stem": "Why does Alex Jackson write about Rose Lacey?",
-              "options": ["(A) Because she died.", "(B) Because she is very sick.", "(C) Because she is moving away.", "(D) Because she is leaving for another job."],
+              "options": [
+                "(A) Because she died.",
+                "(B) Because she is very sick.",
+                "(C) Because she is moving away.",
+                "(D) Because she is leaving for another job."
+              ],
               "answer": 0,
-              "explanation": "開頭 With heavy hearts... say goodbye、will be sadly missed、her short life of 40 years 等語皆為悼念逝者之詞，故 (A)。"
+              "explanation": "開頭 With heavy hearts... say goodbye、will be sadly missed、her short life of 40 years 等語皆為悼念逝者之詞，故 (A)。",
+              "optionsZh": [
+                "因為她過世了。",
+                "因為她病得很重。",
+                "因為她要搬走了。",
+                "因為她要去做另一份工作。"
+              ]
             },
             {
               "n": 30,
               "stem": "How did Rose Lacey and Alex Jackson get to know each other?",
-              "options": ["(A) They met at a party.", "(B) They were relatives.", "(C) They worked in the same office.", "(D) They took a course on movies together."],
+              "options": [
+                "(A) They met at a party.",
+                "(B) They were relatives.",
+                "(C) They worked in the same office.",
+                "(D) They took a course on movies together."
+              ],
               "answer": 0,
-              "explanation": "文中說 I was at a party... when I heard Rose...，可知兩人在派對上認識，故 (A)。"
+              "explanation": "文中說 I was at a party... when I heard Rose...，可知兩人在派對上認識，故 (A)。",
+              "optionsZh": [
+                "他們在派對上認識。",
+                "他們是親戚。",
+                "他們在同一間辦公室工作。",
+                "他們一起上過電影課。"
+              ]
             },
             {
               "n": 31,
               "stem": "What is special about Rose Lacey's articles?",
-              "options": ["(A) They are important to movie makers.", "(B) They talk about movies from a fresh angle.", "(C) They give interesting information about actors.", "(D) They are good examples of how to write stories."],
+              "options": [
+                "(A) They are important to movie makers.",
+                "(B) They talk about movies from a fresh angle.",
+                "(C) They give interesting information about actors.",
+                "(D) They are good examples of how to write stories."
+              ],
               "answer": 1,
-              "explanation": "她總能從熟悉的電影中挖出新意，讓人彷彿用全新角度重看一遍，故其文章特別之處是「以全新觀點談電影」(B)。"
+              "explanation": "她總能從熟悉的電影中挖出新意，讓人彷彿用全新角度重看一遍，故其文章特別之處是「以全新觀點談電影」(B)。",
+              "optionsZh": [
+                "它們對電影製作者很重要。",
+                "它們用全新的角度談電影。",
+                "它們提供關於演員的有趣資訊。",
+                "它們是如何寫故事的好範例。"
+              ]
             }
           ]
         },
@@ -289,23 +630,56 @@
             {
               "n": 32,
               "stem": "Why does the title say \"Glass Bottles' Second Life\"? (title 標題)",
-              "options": ["(A) People collect sea glass and use it to make new glass bottles.", "(B) People collect sea glass at the beach and use it to make wishes.", "(C) Glass bottles that are thrown into the sea become the homes of sea animals.", "(D) Glass bottles that are thrown into the sea become sea glass which is used in art pieces."],
+              "options": [
+                "(A) People collect sea glass and use it to make new glass bottles.",
+                "(B) People collect sea glass at the beach and use it to make wishes.",
+                "(C) Glass bottles that are thrown into the sea become the homes of sea animals.",
+                "(D) Glass bottles that are thrown into the sea become sea glass which is used in art pieces."
+              ],
               "answer": 3,
-              "explanation": "被丟進海裡的玻璃瓶經年累月變成海玻璃、再被藝術家用於作品，等於有了「第二人生」，故 (D)。"
+              "explanation": "被丟進海裡的玻璃瓶經年累月變成海玻璃、再被藝術家用於作品，等於有了「第二人生」，故 (D)。",
+              "optionsZh": [
+                "人們收集海玻璃來做新的玻璃瓶。",
+                "人們在海灘收集海玻璃來許願。",
+                "被丟進海裡的玻璃瓶變成海洋動物的家。",
+                "被丟進海裡的玻璃瓶變成海玻璃，被用於藝術作品。"
+              ]
             },
             {
               "n": 33,
               "stem": "According to the reading, how is sea glass made?",
-              "options": ["(A) Sea glass becomes rounder after it is pushed up to the beach.", "(B) Colder sea water helps pieces of glass become sea glass faster.", "(C) Pieces of glass become white on the outside after many years in the sea.", "(D) Glass bottles break into pieces when they are dug out from the sea floor."],
+              "options": [
+                "(A) Sea glass becomes rounder after it is pushed up to the beach.",
+                "(B) Colder sea water helps pieces of glass become sea glass faster.",
+                "(C) Pieces of glass become white on the outside after many years in the sea.",
+                "(D) Glass bottles break into pieces when they are dug out from the sea floor."
+              ],
               "answer": 2,
-              "explanation": "步驟 4 說玻璃碎片在海中經數十到數百年後，表面長出冰一般的白色，故 (C)。"
+              "explanation": "步驟 4 說玻璃碎片在海中經數十到數百年後，表面長出冰一般的白色，故 (C)。",
+              "optionsZh": [
+                "海玻璃被沖上海灘後變得更圓。",
+                "較冷的海水幫助玻璃碎片更快變成海玻璃。",
+                "玻璃碎片在海裡多年後表面變白。",
+                "玻璃瓶從海底被挖出時碎裂。"
+              ]
             },
             {
               "n": 34,
               "stem": "According to the reading, why will less sea glass be found in the future?",
-              "options": ["(A) People do not make as many glass items as before.", "(B) People have learned not to throw garbage into the sea.", "(C) Artists are using too much sea glass in their art pieces.", "(D) Waves are not big enough to push sea glass up to the beach."],
+              "options": [
+                "(A) People do not make as many glass items as before.",
+                "(B) People have learned not to throw garbage into the sea.",
+                "(C) Artists are using too much sea glass in their art pieces.",
+                "(D) Waves are not big enough to push sea glass up to the beach."
+              ],
               "answer": 0,
-              "explanation": "末段指出現在很少用玻璃做瓶碗（改用紙杯紙碗），海中玻璃變少，故未來海玻璃也會變少 (A)。"
+              "explanation": "末段指出現在很少用玻璃做瓶碗（改用紙杯紙碗），海中玻璃變少，故未來海玻璃也會變少 (A)。",
+              "optionsZh": [
+                "人們不再像以前製造那麼多玻璃製品。",
+                "人們已學會不把垃圾丟進海裡。",
+                "藝術家在作品中用了太多海玻璃。",
+                "海浪不夠大，無法把海玻璃沖上海灘。"
+              ]
             }
           ]
         },
@@ -318,37 +692,92 @@
             {
               "n": 35,
               "stem": "What does the prevalence of English mean?",
-              "options": ["(A) That English is very common.", "(B) That English is not welcomed.", "(C) That English is easy and simple.", "(D) That English is not a national language."],
+              "options": [
+                "(A) That English is very common.",
+                "(B) That English is not welcomed.",
+                "(C) That English is easy and simple.",
+                "(D) That English is not a national language."
+              ],
               "answer": 0,
-              "explanation": "下文舉例英語用在機器人、手機、電影，且 you see English everywhere，可推知 prevalence 指英語「很普遍／隨處可見」(A)。"
+              "explanation": "下文舉例英語用在機器人、手機、電影，且 you see English everywhere，可推知 prevalence 指英語「很普遍／隨處可見」(A)。",
+              "optionsZh": [
+                "英語非常普遍。",
+                "英語不受歡迎。",
+                "英語簡單容易。",
+                "英語不是官方語言。"
+              ]
             },
             {
               "n": 36,
               "stem": "In the first reading, which is one of the ways that Anna Adams uses to make readers believe in her ideas?",
-              "options": ["(A) Sharing her own life stories.", "(B) Borrowing from people's experience.", "(C) Using examples from another language.", "(D) Showing information from news reports."],
+              "options": [
+                "(A) Sharing her own life stories.",
+                "(B) Borrowing from people's experience.",
+                "(C) Using examples from another language.",
+                "(D) Showing information from news reports."
+              ],
               "answer": 1,
-              "explanation": "Adams 引用工程師 Helgi、老師 Eirikur 等人的親身經驗與說法來支持論點，故 (B)。"
+              "explanation": "Adams 引用工程師 Helgi、老師 Eirikur 等人的親身經驗與說法來支持論點，故 (B)。",
+              "optionsZh": [
+                "分享她自己的人生故事。",
+                "借用人們的親身經驗。",
+                "使用另一種語言的例子。",
+                "引用新聞報導的資訊。"
+              ]
             },
             {
               "n": 37,
               "stem": "Which words in the second reading are NOT used to describe Icelandic? (describe 形容)",
-              "options": ["(A) A language in its sickbed.", "(B) A dying language.", "(C) Our first language.", "(D) This beautiful language."],
+              "options": [
+                "(A) A language in its sickbed.",
+                "(B) A dying language.",
+                "(C) Our first language.",
+                "(D) This beautiful language."
+              ],
               "answer": 1,
-              "explanation": "第二篇中 sickbed、our first language、this beautiful language 都用來形容冰島語；a dying language 只是說明「語言需 35,000 人才不會變成瀕死語言」的通則，作者反而主張冰島語並非如此，故 (B) 不是用來形容冰島語。"
+              "explanation": "第二篇中 sickbed、our first language、this beautiful language 都用來形容冰島語；a dying language 只是說明「語言需 35,000 人才不會變成瀕死語言」的通則，作者反而主張冰島語並非如此，故 (B) 不是用來形容冰島語。",
+              "optionsZh": [
+                "病榻上的語言。",
+                "瀕死的語言。",
+                "我們的母語。",
+                "這美麗的語言。"
+              ]
             },
             {
               "n": 38,
               "stem": "Are Anna Adams and Gunnar Eggertsson worried about the future of Icelandic?",
-              "options": ["(A) No, they are not.", "(B) Yes, they both are.", "(C) Adams is, but Eggertsson is not.", "(D) Adams is not, but Eggertsson is."],
+              "options": [
+                "(A) No, they are not.",
+                "(B) Yes, they both are.",
+                "(C) Adams is, but Eggertsson is not.",
+                "(D) Adams is not, but Eggertsson is."
+              ],
               "answer": 2,
-              "explanation": "Adams 擔心冰島語可能很快被英語取代；Eggertsson 則反問「真有那麼糟嗎」並列舉理由認為不必擔心，故 (C)。"
+              "explanation": "Adams 擔心冰島語可能很快被英語取代；Eggertsson 則反問「真有那麼糟嗎」並列舉理由認為不必擔心，故 (C)。",
+              "optionsZh": [
+                "不，他們都不擔心。",
+                "是的，他們兩人都擔心。",
+                "Adams 擔心，但 Eggertsson 不擔心。",
+                "Adams 不擔心，但 Eggertsson 擔心。"
+              ]
             },
             {
               "n": 39,
               "stem": "Which idea do Anna Adams and Gunnar Eggertsson both talk about in the readings?",
-              "options": ["(A) Whether Icelanders speak better English than Icelandic.", "(B) Whether the number of Icelandic speakers is big enough.", "(C) Whether school subjects should be taught only in Icelandic.", "(D) Whether Iceland should allow more foreigners to work in Iceland."],
+              "options": [
+                "(A) Whether Icelanders speak better English than Icelandic.",
+                "(B) Whether the number of Icelandic speakers is big enough.",
+                "(C) Whether school subjects should be taught only in Icelandic.",
+                "(D) Whether Iceland should allow more foreigners to work in Iceland."
+              ],
               "answer": 1,
-              "explanation": "兩篇都圍繞冰島語使用人口（314,000 人）夠不夠多打轉，故共同談的是「使用人數是否足夠」(B)。"
+              "explanation": "兩篇都圍繞冰島語使用人口（314,000 人）夠不夠多打轉，故共同談的是「使用人數是否足夠」(B)。",
+              "optionsZh": [
+                "冰島人的英語是否說得比冰島語好。",
+                "冰島語使用人數是否足夠多。",
+                "學校科目是否該只用冰島語教。",
+                "冰島是否該允許更多外國人來工作。"
+              ]
             }
           ]
         },
@@ -361,30 +790,74 @@
             {
               "n": 40,
               "stem": "(40)",
-              "options": ["(A) give you a piece of good land", "(B) choose a person to be the next king", "(C) put the beautiful ones in my castle", "(D) decide who will work in my garden"],
+              "options": [
+                "(A) give you a piece of good land",
+                "(B) choose a person to be the next king",
+                "(C) put the beautiful ones in my castle",
+                "(D) decide who will work in my garden"
+              ],
               "answer": 1,
-              "explanation": "國王要從孩子中挑出繼承人，故承諾「選一人當下一任國王」(B)，呼應全文選王主題。"
+              "explanation": "國王要從孩子中挑出繼承人，故承諾「選一人當下一任國王」(B)，呼應全文選王主題。",
+              "optionsZh": [
+                "給你一塊好地。",
+                "選一個人當下一任國王。",
+                "把漂亮的植物放進我的城堡。",
+                "決定誰來我的花園工作。"
+              ]
             },
             {
               "n": 41,
               "stem": "(41)",
-              "options": ["(A) But he lost his pot a few weeks later", "(B) Months passed but nothing grew from it", "(C) But soon the plant that grew from it died", "(D) The seed grew into a big tree in a short time"],
+              "options": [
+                "(A) But he lost his pot a few weeks later",
+                "(B) Months passed but nothing grew from it",
+                "(C) But soon the plant that grew from it died",
+                "(D) The seed grew into a big tree in a short time"
+              ],
               "answer": 1,
-              "explanation": "後文一再說 Wong 的盆裡始終長不出東西，故此處應為「幾個月過去仍毫無動靜」(B)。"
+              "explanation": "後文一再說 Wong 的盆裡始終長不出東西，故此處應為「幾個月過去仍毫無動靜」(B)。",
+              "optionsZh": [
+                "但他幾週後弄丟了花盆。",
+                "幾個月過去卻什麼也沒長出來。",
+                "但不久長出的植物就枯死了。",
+                "種子很快長成一棵大樹。"
+              ]
             },
             {
               "n": 42,
               "stem": "(42)",
-              "options": ["(A) the last one to give up", "(B) the first one to share good news", "(C) the first one to bring his pot to the king", "(D) the only one to take good care of his plant"],
+              "options": [
+                "(A) the last one to give up",
+                "(B) the first one to share good news",
+                "(C) the first one to bring his pot to the king",
+                "(D) the only one to take good care of his plant"
+              ],
               "answer": 1,
-              "explanation": "Sung 率先宣布種子發芽、大家興奮地說他會當國王，可知他是「第一個分享好消息的人」(B)。"
+              "explanation": "Sung 率先宣布種子發芽、大家興奮地說他會當國王，可知他是「第一個分享好消息的人」(B)。",
+              "optionsZh": [
+                "最後一個放棄的人。",
+                "第一個分享好消息的人。",
+                "第一個把花盆帶給國王的人。",
+                "唯一細心照顧植物的人。"
+              ]
             },
             {
               "n": 43,
               "stem": "(43)",
-              "options": ["(A) wise", "(B) strong", "(C) honest", "(D) popular"],
+              "options": [
+                "(A) wise",
+                "(B) strong",
+                "(C) honest",
+                "(D) popular"
+              ],
               "answer": 2,
-              "explanation": "種子早被煮過根本長不出植物，只有 Wong 誠實端出空盆，故國王說唯一「誠實」honest 的孩子才配當王 (C)。"
+              "explanation": "種子早被煮過根本長不出植物，只有 Wong 誠實端出空盆，故國王說唯一「誠實」honest 的孩子才配當王 (C)。",
+              "optionsZh": [
+                "有智慧的。",
+                "強壯的。",
+                "誠實的。",
+                "受歡迎的。"
+              ]
             }
           ]
         }

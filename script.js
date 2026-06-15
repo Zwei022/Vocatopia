@@ -564,9 +564,11 @@ function _gxQCard(q) {
   const img = q.image ? `<img class="gx-img" src="${q.image}" alt="">` : '';
   const stemTxt = q.stem ? _gxEsc(q.stem)
     : (q.audio ? '<span class="gx-listen-tag">🎧 聆聽後作答（內容唸兩次）</span>' : '');
-  const opts = q.options.map((o, oi) =>
-    `<button type="button" class="gx-opt" id="gxo_${qn}_${oi}" onclick="gsatSelect(${qn},${oi})">${_gxEsc(o)}</button>`
-  ).join('');
+  const opts = q.options.map((o, oi) => {
+    const zh = (q.optionsZh && q.optionsZh[oi])
+      ? `<span class="gx-opt-zh">${_gxEsc(q.optionsZh[oi])}</span>` : '';
+    return `<button type="button" class="gx-opt" id="gxo_${qn}_${oi}" onclick="gsatSelect(${qn},${oi})">${_gxEsc(o)}${zh}</button>`;
+  }).join('');
   return `<div class="gx-q" id="gxq_${qn}">
     <div class="gx-stem"><span class="gx-num">${qn}.</span> ${stemTxt}</div>
     ${audio}
@@ -729,6 +731,7 @@ function gsatSubmit(auto) {
 
   gsatExam.submitted = true;
   clearInterval(gsatExam.timerId);
+  _gsatStopAudio();   // 交卷即停止連續播放與所有音檔
 
   let correct = 0;
   Object.keys(gsatExam.qmap).forEach(qn => {
@@ -757,6 +760,7 @@ function gsatSubmit(auto) {
   _gsatShowScore();
   // 交卷後才顯示各題獨立播放器（供逐題複習）
   if (gsatExam.bodyEl) gsatExam.bodyEl.classList.add('gx-submitted');
+  _gsatListenDone();   // 連播鈕重設為「▶ 重新播放」
 
   const bb = gsatExam.bodyEl && gsatExam.bodyEl.querySelector('.gx-bottom .gsat-submit');
   if (bb) { bb.textContent = `已交卷（答對 ${correct} / ${gsatExam.total}）`; bb.disabled = true; }
@@ -792,6 +796,28 @@ function gsatFileWrong() {
 }
 
 // ── 聽力：開始測驗 → 倒數 3 秒 → 連續播放全部音檔 ──────────────────────
+// 用 Web Audio API 合成倒數嗶聲（無需音檔、無版權疑慮）
+let _gxAudioCtx = null;
+function _gxBeep(freq, dur, vol) {
+  try {
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return;
+    if (!_gxAudioCtx) _gxAudioCtx = new AC();
+    const ctx = _gxAudioCtx;
+    if (ctx.state === 'suspended') ctx.resume();
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    o.type = 'sine';
+    o.frequency.value = freq;
+    o.connect(g); g.connect(ctx.destination);
+    const t = ctx.currentTime;
+    g.gain.setValueAtTime(vol || 0.16, t);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + (dur || 0.15));
+    o.start(t);
+    o.stop(t + (dur || 0.15) + 0.03);
+  } catch (e) {}
+}
+
 function gsatStartListening() {
   if (!gsatExam || gsatExam.seqPlaying) return;
   const view = document.getElementById('gsatExamView');
@@ -800,12 +826,14 @@ function gsatStartListening() {
   view.appendChild(ov);
   let n = 3;
   ov.textContent = n;
+  _gxBeep(800, 0.15);            // 倒數 3
   gsatExam.countdownTimer = setInterval(() => {
     n--;
-    if (n > 0) { ov.textContent = n; return; }
+    if (n > 0) { ov.textContent = n; _gxBeep(800, 0.15); return; }  // 倒數 2、1
     clearInterval(gsatExam.countdownTimer);
     gsatExam.countdownTimer = null;
     ov.textContent = 'Go!';
+    _gxBeep(1245, 0.38, 0.2);    // Go! 較高、較長的提示音
     setTimeout(() => {
       ov.remove();
       gsatExam.seqPlaying = true;
@@ -1114,8 +1142,9 @@ function _bankCardHtml(kind, cat, q) {
     const title = q.title ? `<div class="qbank-q">${escHtml(q.title)}</div>` : `<div class="qbank-q">${q.blanks ? '克漏字' : '閱讀題組'}</div>`;
     const itemsHtml = items.map(it => {
       const correctOpt = escHtml((it.options[it.answer] || '').replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, ''));
+      const cZh = (it.optionsZh && it.optionsZh[it.answer]) ? `<span class="qbank-opt-zh">${escHtml(it.optionsZh[it.answer])}</span>` : '';
       const head = q.blanks ? `(${it.n})` : `${escHtml(it.heading)}<br>`;
-      return `<div class="qbank-opt correct">${head} ${correctOpt} ✓</div>` +
+      return `<div class="qbank-opt correct">${head} ${correctOpt} ✓${cZh}</div>` +
              (it.explanation ? `<div class="qbank-explain">${escHtml(it.explanation)}</div>` : '');
     }).join('');
     return `<div class="qbank-card" data-id="${id}">${cardTop}${passage}
@@ -1128,7 +1157,8 @@ function _bankCardHtml(kind, cat, q) {
   const opts = (q.options || []).map((o, i) => {
     const clean   = escHtml(o.replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, ''));
     const correct = i === q.answer;
-    return `<div class="qbank-opt${correct ? ' correct' : ''}">${String.fromCharCode(65 + i)}. ${clean}${correct ? ' ✓' : ''}</div>`;
+    const zh = (q.optionsZh && q.optionsZh[i]) ? `<span class="qbank-opt-zh">${escHtml(q.optionsZh[i])}</span>` : '';
+    return `<div class="qbank-opt${correct ? ' correct' : ''}">${String.fromCharCode(65 + i)}. ${clean}${correct ? ' ✓' : ''}${zh}</div>`;
   }).join('');
   return `<div class="qbank-card" data-id="${id}">${cardTop}
     ${passage}${dialog}
@@ -1520,9 +1550,15 @@ function _updateQuizStar(q, context) {
 }
 
 // ── 共用 QUIZ FLOW ──────────────────────────────────────────────────────────
+// 選項中譯 span（作答/送出後才顯示，由容器 #quizOpts.revealed 控制）
+function _qZhSpan(arr, i) {
+  return (arr && arr[i]) ? `<span class="q-zh">${escHtml(arr[i])}</span>` : '';
+}
+
 function renderQuestion() {
   const { questions, idx, context } = quizState;
   const q = questions[idx];
+  document.getElementById('quizOpts').classList.remove('revealed');
 
   // 題組式：克漏字（整篇空格）/ 閱讀（文章＋1–4題）一次作答
   if (q.blanks || q.questions) { _renderGroupQuestion(q); return; }
@@ -1553,7 +1589,7 @@ function renderQuestion() {
       // 後續題：直接顯示選項並自動播放
       document.getElementById('quizOpts').innerHTML = q.options.map((opt, i) => {
         const clean = escHtml(opt.replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, ''));
-        return `<button class="quiz-opt" onclick="answerQuestion(${i})">${String.fromCharCode(65 + i)}. ${clean}</button>`;
+        return `<button class="quiz-opt" onclick="answerQuestion(${i})">${String.fromCharCode(65 + i)}. ${clean}${_qZhSpan(q.optionsZh, i)}</button>`;
       }).join('');
       _playListening(q.dialogue);
     }
@@ -1568,7 +1604,7 @@ function renderQuestion() {
 
     document.getElementById('quizOpts').innerHTML = q.options.map((opt, i) => {
       const clean = escHtml(opt.replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, ''));
-      return `<button class="quiz-opt" onclick="answerQuestion(${i})">${String.fromCharCode(65 + i)}. ${clean}</button>`;
+      return `<button class="quiz-opt" onclick="answerQuestion(${i})">${String.fromCharCode(65 + i)}. ${clean}${_qZhSpan(q.optionsZh, i)}</button>`;
     }).join('');
   }
 
@@ -1586,12 +1622,12 @@ function _groupItems(q) {
   if (q.blanks) {
     return q.blanks.map(bl => ({
       heading: `第 (${bl.n}) 格`, headingClass: 'cloze-blank-label',
-      options: bl.options, answer: bl.answer, explanation: bl.explanation, n: bl.n,
+      options: bl.options, optionsZh: bl.optionsZh, answer: bl.answer, explanation: bl.explanation, n: bl.n,
     }));
   }
   return (q.questions || []).map((sq, i) => ({
     heading: `${i + 1}. ${sq.question}`, headingClass: 'rq-heading',
-    options: sq.options, answer: sq.answer, explanation: sq.explanation, n: i + 1,
+    options: sq.options, optionsZh: sq.optionsZh, answer: sq.answer, explanation: sq.explanation, n: i + 1,
   }));
 }
 
@@ -1617,7 +1653,7 @@ function _renderGroupQuestion(q) {
       <div class="cloze-opts">
         ${it.options.map((o, oi) => {
           const clean = escHtml(o.replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, ''));
-          return `<button class="quiz-opt cloze-opt" id="g_${bi}_${oi}" onclick="groupSelect(${bi},${oi})">${String.fromCharCode(65 + oi)}. ${clean}</button>`;
+          return `<button class="quiz-opt cloze-opt" id="g_${bi}_${oi}" onclick="groupSelect(${bi},${oi})">${String.fromCharCode(65 + oi)}. ${clean}${_qZhSpan(it.optionsZh, oi)}</button>`;
         }).join('')}
       </div>
     </div>`).join('');
@@ -1669,6 +1705,8 @@ function submitGroup() {
       grp.appendChild(ex);
     }
   });
+
+  document.getElementById('quizOpts').classList.add('revealed');  // 送出後顯示選項中譯
 
   const total    = items.length;
   const allRight = correct === total;
@@ -1753,6 +1791,7 @@ function answerQuestion(chosen) {
     explainEl.textContent = q.explanation;
   }
   explainEl.classList.remove('hidden');
+  document.getElementById('quizOpts').classList.add('revealed');  // 作答後顯示選項中譯
 
   const nextBtn = document.getElementById('quizNextBtn');
   nextBtn.textContent = idx >= questions.length - 1 ? '查看成績 →' : '下一題 →';

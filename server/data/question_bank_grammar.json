@@ -1,98 +1,230 @@
 [
   {
     "sentence": "I _____ my homework yet, so I really can't go out to play right now.",
-    "options": ["(A) don't finish", "(B) didn't finish", "(C) am not finishing", "(D) haven't finished"],
+    "options": [
+      "(A) don't finish",
+      "(B) didn't finish",
+      "(C) am not finishing",
+      "(D) haven't finished"
+    ],
     "answer": 3,
     "explanation": "yet 常與現在完成式連用，表示「到目前為止尚未」完成，故用 haven't finished。",
     "target_grammar": "現在完成式",
-    "id": "grammar_0"
+    "id": "grammar_0",
+    "optionsZh": [
+      "（現在式否定）",
+      "（過去式否定）",
+      "（現在進行否定）",
+      "（現在完成否定）"
+    ]
   },
   {
     "sentence": "The window _____ by the strong wind during last night's heavy storm.",
-    "options": ["(A) was broken", "(B) broke", "(C) breaks", "(D) has broken"],
+    "options": [
+      "(A) was broken",
+      "(B) broke",
+      "(C) breaks",
+      "(D) has broken"
+    ],
     "answer": 0,
     "explanation": "窗戶是動作的承受者（被風吹破），且為過去事件，故用過去被動 was broken。",
     "target_grammar": "被動語態",
-    "id": "grammar_1"
+    "id": "grammar_1",
+    "optionsZh": [
+      "（被動・過去）",
+      "（過去式）",
+      "（現在式）",
+      "（現在完成）"
+    ]
   },
   {
     "sentence": "The girl _____ won the speech contest last week is my best friend.",
-    "options": ["(A) which", "(B) who", "(C) whom", "(D) where"],
+    "options": [
+      "(A) which",
+      "(B) who",
+      "(C) whom",
+      "(D) where"
+    ],
     "answer": 1,
     "explanation": "先行詞 girl 是人，且在關係子句中當主詞，故用主格關係代名詞 who。",
     "target_grammar": "關係代名詞",
-    "id": "grammar_2"
+    "id": "grammar_2",
+    "optionsZh": [
+      "（關代，指物）",
+      "（關代，人・主格）",
+      "（關代，人・受格）",
+      "（關係副詞，地點）"
+    ]
   },
   {
     "sentence": "This box is much _____ than that one, so I can't carry it by myself.",
-    "options": ["(A) heavier", "(B) heavy", "(C) heaviest", "(D) more heavy"],
+    "options": [
+      "(A) heavier",
+      "(B) heavy",
+      "(C) heaviest",
+      "(D) more heavy"
+    ],
     "answer": 0,
     "explanation": "than 表比較，heavy 為單音節形容詞，比較級加 -er 為 heavier；much 用來修飾比較級。",
     "target_grammar": "比較級",
-    "id": "grammar_3"
+    "id": "grammar_3",
+    "optionsZh": [
+      "比較級（較重）",
+      "原級（重）",
+      "最高級（最重）",
+      "（錯誤比較級）"
+    ]
   },
   {
     "sentence": "_____ it was raining very hard, the players kept practicing on the field.",
-    "options": ["(A) Because", "(B) Although", "(C) So", "(D) Unless"],
+    "options": [
+      "(A) Because",
+      "(B) Although",
+      "(C) So",
+      "(D) Unless"
+    ],
     "answer": 1,
     "explanation": "前後語意轉折（雖然下大雨，仍繼續練習），用表讓步的連接詞 Although。",
     "target_grammar": "連接詞",
-    "id": "grammar_4"
+    "id": "grammar_4",
+    "optionsZh": [
+      "因為",
+      "雖然",
+      "所以",
+      "除非"
+    ]
   },
   {
     "sentence": "My father enjoys _____ in the river near our house every summer morning.",
-    "options": ["(A) to swim", "(B) swim", "(C) swimming", "(D) swims"],
+    "options": [
+      "(A) to swim",
+      "(B) swim",
+      "(C) swimming",
+      "(D) swims"
+    ],
     "answer": 2,
     "explanation": "enjoy 後面接動名詞 V-ing 當受詞，故用 swimming。",
     "target_grammar": "動名詞",
-    "id": "grammar_5"
+    "id": "grammar_5",
+    "optionsZh": [
+      "不定詞 to V",
+      "原形動詞",
+      "動名詞／現在分詞",
+      "第三人稱單數"
+    ]
   },
   {
     "sentence": "While I _____ dinner in the kitchen, the telephone suddenly rang.",
-    "options": ["(A) cook", "(B) cooked", "(C) have cooked", "(D) was cooking"],
+    "options": [
+      "(A) cook",
+      "(B) cooked",
+      "(C) have cooked",
+      "(D) was cooking"
+    ],
     "answer": 3,
     "explanation": "while 引導一個正在進行的動作，期間發生另一件事，故用過去進行式 was cooking。",
     "target_grammar": "過去進行式",
-    "id": "grammar_6"
+    "id": "grammar_6",
+    "optionsZh": [
+      "原形",
+      "過去式",
+      "現在完成",
+      "過去進行"
+    ]
   },
   {
     "sentence": "The movie was so _____ that some young children started to cry in the theater.",
-    "options": ["(A) frightening", "(B) frighten", "(C) frightened", "(D) frightens"],
+    "options": [
+      "(A) frightening",
+      "(B) frighten",
+      "(C) frightened",
+      "(D) frightens"
+    ],
     "answer": 0,
     "explanation": "修飾事物且「使人害怕」用現在分詞 frightening；frightened 是人「感到害怕」，主詞是 movie 故用 frightening。",
     "target_grammar": "分詞形容詞",
-    "id": "grammar_7"
+    "id": "grammar_7",
+    "optionsZh": [
+      "令人害怕的",
+      "使害怕（原形）",
+      "感到害怕的",
+      "（第三人稱單數）"
+    ]
   },
   {
     "sentence": "I have a classmate _____ father is a well-known doctor in our city.",
-    "options": ["(A) who", "(B) whose", "(C) which", "(D) that"],
+    "options": [
+      "(A) who",
+      "(B) whose",
+      "(C) which",
+      "(D) that"
+    ],
     "answer": 1,
     "explanation": "表示「同學的父親」這種所有關係，用所有格關係代名詞 whose。",
     "target_grammar": "關係代名詞",
-    "id": "grammar_8"
+    "id": "grammar_8",
+    "optionsZh": [
+      "（關代，指人）",
+      "所有格關代",
+      "（關代，指物）",
+      "（關代，人或物）"
+    ]
   },
   {
     "sentence": "Mount Jade is the _____ mountain in Taiwan, and many people hope to climb it.",
-    "options": ["(A) high", "(B) higher", "(C) most high", "(D) highest"],
+    "options": [
+      "(A) high",
+      "(B) higher",
+      "(C) most high",
+      "(D) highest"
+    ],
     "answer": 3,
     "explanation": "in Taiwan 表示在某範圍內「最…」，用最高級 the highest。",
     "target_grammar": "最高級",
-    "id": "grammar_9"
+    "id": "grammar_9",
+    "optionsZh": [
+      "原級（高）",
+      "比較級（較高）",
+      "（錯誤最高級）",
+      "最高級（最高）"
+    ]
   },
   {
     "sentence": "She went to the library _____ some reference books for her science report.",
-    "options": ["(A) borrow", "(B) borrowed", "(C) to borrow", "(D) borrowing"],
+    "options": [
+      "(A) borrow",
+      "(B) borrowed",
+      "(C) to borrow",
+      "(D) borrowing"
+    ],
     "answer": 2,
     "explanation": "表示「為了…」的目的，用不定詞 to borrow。",
     "target_grammar": "不定詞表目的",
-    "id": "grammar_10"
+    "id": "grammar_10",
+    "optionsZh": [
+      "原形",
+      "過去式",
+      "不定詞 to V",
+      "動名詞"
+    ]
   },
   {
     "sentence": "A brand-new bridge _____ next year to connect the two small mountain villages.",
-    "options": ["(A) will be built", "(B) will build", "(C) builds", "(D) is building"],
+    "options": [
+      "(A) will be built",
+      "(B) will build",
+      "(C) builds",
+      "(D) is building"
+    ],
     "answer": 0,
     "explanation": "橋是被建造的（被動），且時間在未來，故用未來被動 will be built。",
     "target_grammar": "被動語態",
-    "id": "grammar_11"
+    "id": "grammar_11",
+    "optionsZh": [
+      "（未來・被動）",
+      "（未來・主動）",
+      "（現在式）",
+      "（現在進行）"
+    ]
   }
 ]

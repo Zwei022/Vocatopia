@@ -18,28 +18,55 @@
           "n": 1,
           "audio": "/public/audio/listening/2026/q1.mp3",
           "image": "/public/images/gsat/2026_listening/q1.png",
-          "options": ["(A)", "(B)", "(C)"],
+          "options": [
+            "(A)",
+            "(B)",
+            "(C)"
+          ],
           "answer": 2,
           "transcript": "The man is sailing his boat in terrible weather.",
-          "explanation": "句意為「男子在惡劣天氣中駕船」。(A) 為晴天平靜海面，(B) 為有人落水掙扎，(C) 為暴風雨中有人駕著帆船，故選 (C)。"
+          "explanation": "句意為「男子在惡劣天氣中駕船」。(A) 為晴天平靜海面，(B) 為有人落水掙扎，(C) 為暴風雨中有人駕著帆船，故選 (C)。",
+          "optionsZh": [
+            "",
+            "",
+            ""
+          ]
         },
         {
           "n": 2,
           "audio": "/public/audio/listening/2026/q2.mp3",
           "image": "/public/images/gsat/2026_listening/q2.png",
-          "options": ["(A)", "(B)", "(C)"],
+          "options": [
+            "(A)",
+            "(B)",
+            "(C)"
+          ],
           "answer": 2,
           "transcript": "There is a bell on the door of apartment number 77.",
-          "explanation": "句意為「77 號公寓的門上有一個門鈴」。(A) 門牌是 17 號，(B) 門上是信箱，(C) 為 77 號且門上有門鈴，故選 (C)。"
+          "explanation": "句意為「77 號公寓的門上有一個門鈴」。(A) 門牌是 17 號，(B) 門上是信箱，(C) 為 77 號且門上有門鈴，故選 (C)。",
+          "optionsZh": [
+            "",
+            "",
+            ""
+          ]
         },
         {
           "n": 3,
           "audio": "/public/audio/listening/2026/q3.mp3",
           "image": "/public/images/gsat/2026_listening/q3.png",
-          "options": ["(A)", "(B)", "(C)"],
+          "options": [
+            "(A)",
+            "(B)",
+            "(C)"
+          ],
           "answer": 2,
           "transcript": "The little girl and her dog are both enjoying their meal.",
-          "explanation": "句意為「小女孩和她的狗都在享用餐點」。(A) 只有女孩在吃、狗在旁邊看，(B) 女孩在想像食物並未進食，(C) 女孩與狗都在用餐，故選 (C)。"
+          "explanation": "句意為「小女孩和她的狗都在享用餐點」。(A) 只有女孩在吃、狗在旁邊看，(B) 女孩在想像食物並未進食，(C) 女孩與狗都在用餐，故選 (C)。",
+          "optionsZh": [
+            "",
+            "",
+            ""
+          ]
         }
       ]
     },
@@ -52,66 +79,138 @@
         {
           "n": 4,
           "audio": "/public/audio/listening/2026/q4.mp3",
-          "options": ["(A) Easter is coming.", "(B) Halloween is my favorite.", "(C) I'd like a watch for my birthday."],
+          "options": [
+            "(A) Easter is coming.",
+            "(B) Halloween is my favorite.",
+            "(C) I'd like a watch for my birthday."
+          ],
           "answer": 1,
           "transcript": "What holiday do you like the best?",
-          "explanation": "對方詢問「你最喜歡哪個節日？」，(B) 直接回答最愛萬聖節，最為切題。"
+          "explanation": "對方詢問「你最喜歡哪個節日？」，(B) 直接回答最愛萬聖節，最為切題。",
+          "optionsZh": [
+            "復活節快到了。",
+            "萬聖節是我的最愛。",
+            "我生日想要一支手錶。"
+          ]
         },
         {
           "n": 5,
           "audio": "/public/audio/listening/2026/q5.mp3",
-          "options": ["(A) I don't, either.", "(B) Sure, why not?", "(C) It is a great movie."],
+          "options": [
+            "(A) I don't, either.",
+            "(B) Sure, why not?",
+            "(C) It is a great movie."
+          ],
           "answer": 1,
           "transcript": "Do you want to see a movie together?",
-          "explanation": "對方邀約一起看電影，(B) Sure, why not? 為合適的答應。"
+          "explanation": "對方邀約一起看電影，(B) Sure, why not? 為合適的答應。",
+          "optionsZh": [
+            "我也不想。",
+            "當然好啊，有何不可？",
+            "那是部很棒的電影。"
+          ]
         },
         {
           "n": 6,
           "audio": "/public/audio/listening/2026/q6.mp3",
-          "options": ["(A) Thank you for the pie.", "(B) Who do you want to invite?", "(C) Some chocolate cake would be good."],
+          "options": [
+            "(A) Thank you for the pie.",
+            "(B) Who do you want to invite?",
+            "(C) Some chocolate cake would be good."
+          ],
           "answer": 2,
           "transcript": "What should we bring to the dinner party?",
-          "explanation": "對方問「我們該帶什麼去晚餐派對？」，(C) 建議帶巧克力蛋糕最切題。"
+          "explanation": "對方問「我們該帶什麼去晚餐派對？」，(C) 建議帶巧克力蛋糕最切題。",
+          "optionsZh": [
+            "謝謝你的派。",
+            "你想邀請誰？",
+            "帶些巧克力蛋糕會不錯。"
+          ]
         },
         {
           "n": 7,
           "audio": "/public/audio/listening/2026/q7.mp3",
-          "options": ["(A) All right. Good night.", "(B) Good morning to you, too.", "(C) OK, be careful on the road."],
+          "options": [
+            "(A) All right. Good night.",
+            "(B) Good morning to you, too.",
+            "(C) OK, be careful on the road."
+          ],
           "answer": 0,
           "transcript": "I'm going to bed now. I'll see you in the morning.",
-          "explanation": "對方說要去睡了、明早見，(A) 道晚安最合適。"
+          "explanation": "對方說要去睡了、明早見，(A) 道晚安最合適。",
+          "optionsZh": [
+            "好的，晚安。",
+            "也祝你早安。",
+            "好，路上小心。"
+          ]
         },
         {
           "n": 8,
           "audio": "/public/audio/listening/2026/q8.mp3",
-          "options": ["(A) No, it's not mine.", "(B) No, it's not raining.", "(C) No, it's not my table."],
+          "options": [
+            "(A) No, it's not mine.",
+            "(B) No, it's not raining.",
+            "(C) No, it's not my table."
+          ],
           "answer": 0,
           "transcript": "Excuse me, is this your umbrella? It was under the table you were at.",
-          "explanation": "對方問「這把傘是你的嗎？」，(A) 回答「不是我的」最切題。"
+          "explanation": "對方問「這把傘是你的嗎？」，(A) 回答「不是我的」最切題。",
+          "optionsZh": [
+            "不，那不是我的。",
+            "不，現在沒下雨。",
+            "不，那不是我的桌子。"
+          ]
         },
         {
           "n": 9,
           "audio": "/public/audio/listening/2026/q9.mp3",
-          "options": ["(A) I'm glad you like it.", "(B) How was your Christmas?", "(C) You look good in the photos."],
+          "options": [
+            "(A) I'm glad you like it.",
+            "(B) How was your Christmas?",
+            "(C) You look good in the photos."
+          ],
           "answer": 0,
           "transcript": "Thanks so much for the camera! It's the best Christmas gift ever!",
-          "explanation": "對方感謝你送的相機、說是最棒的聖誕禮物，(A)「很高興你喜歡」為合適回應。"
+          "explanation": "對方感謝你送的相機、說是最棒的聖誕禮物，(A)「很高興你喜歡」為合適回應。",
+          "optionsZh": [
+            "我很高興你喜歡。",
+            "你的聖誕節過得如何？",
+            "你在照片裡很好看。"
+          ]
         },
         {
           "n": 10,
           "audio": "/public/audio/listening/2026/q10.mp3",
-          "options": ["(A) How much time do you need?", "(B) You should be proud of yourself.", "(C) I'm surprised you haven't started."],
+          "options": [
+            "(A) How much time do you need?",
+            "(B) You should be proud of yourself.",
+            "(C) I'm surprised you haven't started."
+          ],
           "answer": 1,
           "transcript": "I finally finished my painting for the City Art Festival after so many months.",
-          "explanation": "對方歷經數月終於完成參展畫作，(B)「你該為自己感到驕傲」為合適的鼓勵。"
+          "explanation": "對方歷經數月終於完成參展畫作，(B)「你該為自己感到驕傲」為合適的鼓勵。",
+          "optionsZh": [
+            "你需要多少時間？",
+            "你應該為自己感到驕傲。",
+            "我很驚訝你還沒開始。"
+          ]
         },
         {
           "n": 11,
           "audio": "/public/audio/listening/2026/q11.mp3",
-          "options": ["(A) Yes. Did you like it?", "(B) Actually, you're the first one.", "(C) No, I don't want to be a doctor."],
+          "options": [
+            "(A) Yes. Did you like it?",
+            "(B) Actually, you're the first one.",
+            "(C) No, I don't want to be a doctor."
+          ],
           "answer": 1,
           "transcript": "Has anyone said you look like the handsome doctor in the movie The Big Hospital?",
-          "explanation": "對方問「有沒有人說過你像電影裡的帥醫生？」，(B)「其實你是第一個這麼說的」為合適回應。"
+          "explanation": "對方問「有沒有人說過你像電影裡的帥醫生？」，(B)「其實你是第一個這麼說的」為合適回應。",
+          "optionsZh": [
+            "是的，你喜歡嗎？",
+            "其實，你是第一個這麼說的人。",
+            "不，我不想當醫生。"
+          ]
         }
       ]
     },
@@ -124,82 +223,172 @@
         {
           "n": 12,
           "audio": "/public/audio/listening/2026/q12.mp3",
-          "options": ["(A) To go to the gym.", "(B) To clean their classroom.", "(C) To meet at the playground."],
+          "options": [
+            "(A) To go to the gym.",
+            "(B) To clean their classroom.",
+            "(C) To meet at the playground."
+          ],
           "answer": 0,
           "transcript": "Hey everyone, cleaning time is over. Don't forget to put your cleaning tools back. It's raining now, so Mr. Lee says we'll have PE class in the gym, not on the school playground. Hurry up! (Q) What is the boy telling his class to do?",
-          "explanation": "因為下雨，李老師說體育課改在體育館（gym）而非操場，男孩要全班去體育館，故選 (A)。"
+          "explanation": "因為下雨，李老師說體育課改在體育館（gym）而非操場，男孩要全班去體育館，故選 (A)。",
+          "optionsZh": [
+            "去體育館。",
+            "打掃他們的教室。",
+            "在操場集合。"
+          ]
         },
         {
           "n": 13,
           "audio": "/public/audio/listening/2026/q13.mp3",
-          "options": ["(A) Today.", "(B) Next week.", "(C) When it plays on TV."],
+          "options": [
+            "(A) Today.",
+            "(B) Next week.",
+            "(C) When it plays on TV."
+          ],
           "answer": 0,
           "transcript": "(A long line for movie tickets) — The woman says she'll be super busy next week and doesn't want to wait until it plays on TV; she'd rather see it on the big screen today. The man agrees to wait for the tickets. (Q) When do the man and woman decide to see the movie?",
-          "explanation": "女子說下週很忙、也不想等電視播出，堅持今天就要看大螢幕，男子最後同意，故選 (A) Today。"
+          "explanation": "女子說下週很忙、也不想等電視播出，堅持今天就要看大螢幕，男子最後同意，故選 (A) Today。",
+          "optionsZh": [
+            "今天。",
+            "下週。",
+            "等它在電視上播。"
+          ]
         },
         {
           "n": 14,
           "audio": "/public/audio/listening/2026/q14.mp3",
-          "options": ["(A) Use their time well.", "(B) Check their eye health.", "(C) Follow rules during a hospital visit."],
+          "options": [
+            "(A) Use their time well.",
+            "(B) Check their eye health.",
+            "(C) Follow rules during a hospital visit."
+          ],
           "answer": 1,
           "transcript": "Life can be very busy, but ask yourself: when was the last time you had the doctor check your eyes? Millions have common eye problems and don't even know it. Your eyes are the windows to your health. Plan a visit to the hospital. (Q) What does the woman want people to do?",
-          "explanation": "這是一則廣告，呼籲大家抽空去檢查眼睛健康，故選 (B) Check their eye health。"
+          "explanation": "這是一則廣告，呼籲大家抽空去檢查眼睛健康，故選 (B) Check their eye health。",
+          "optionsZh": [
+            "善用他們的時間。",
+            "檢查他們的眼睛健康。",
+            "在就醫時遵守規定。"
+          ]
         },
         {
           "n": 15,
           "audio": "/public/audio/listening/2026/q15.mp3",
-          "options": ["(A) They both did badly.", "(B) The boy did badly, but the girl did well.", "(C) The boy did well, but the girl did badly."],
+          "options": [
+            "(A) They both did badly.",
+            "(B) The boy did badly, but the girl did well.",
+            "(C) The boy did well, but the girl did badly."
+          ],
           "answer": 0,
           "transcript": "Neither of them wants to talk about the test. The boy says his dad would buy him a new cell phone for a good grade, but now he can 'kiss that cell phone goodbye' and may even lose his old one. The girl also doesn't want to feel worse about herself. (Q) How did the boy and the girl do on the test yesterday?",
-          "explanation": "兩人都不願談考試、都怕「感覺更糟」，男生更因考差而手機泡湯，可知兩人都考差，故選 (A) They both did badly。"
+          "explanation": "兩人都不願談考試、都怕「感覺更糟」，男生更因考差而手機泡湯，可知兩人都考差，故選 (A) They both did badly。",
+          "optionsZh": [
+            "他們兩人都考差了。",
+            "男孩考差了，但女孩考得好。",
+            "男孩考得好，但女孩考差了。"
+          ]
         },
         {
           "n": 16,
           "audio": "/public/audio/listening/2026/q16.mp3",
-          "options": ["(A) He misses it.", "(B) He feels excited about it.", "(C) He doesn't really enjoy it."],
+          "options": [
+            "(A) He misses it.",
+            "(B) He feels excited about it.",
+            "(C) He doesn't really enjoy it."
+          ],
           "answer": 2,
           "transcript": "The man moved to Lake City for work. People think big-city life is exciting, but he says Lake City is different — 'it's not home,' and he misses home. (Q) How does the man feel about his life in Lake City?",
-          "explanation": "男子說 Lake City 不一樣、「不是家」，還想念家鄉，可知他並不真的喜歡那裡的生活，故選 (C)。"
+          "explanation": "男子說 Lake City 不一樣、「不是家」，還想念家鄉，可知他並不真的喜歡那裡的生活，故選 (C)。",
+          "optionsZh": [
+            "他想念它（家鄉）。",
+            "他對它感到興奮。",
+            "他其實不太喜歡。"
+          ]
         },
         {
           "n": 17,
           "audio": "/public/audio/listening/2026/q17.mp3",
-          "options": ["(A) It gave very little food.", "(B) Its food and service were bad.", "(C) It allowed people to bring their pets."],
+          "options": [
+            "(A) It gave very little food.",
+            "(B) Its food and service were bad.",
+            "(C) It allowed people to bring their pets."
+          ],
           "answer": 1,
           "transcript": "The man says the new restaurant 'was for the birds.' His French fries were swimming in oil so he left most of them, and the owner did nothing after his dog jumped on the table and bit the man's bread. (Q) Why does the man say the new restaurant was for the birds?",
-          "explanation": "薯條浸在油裡吃不下、老闆的狗跳上桌咬麵包老闆也不處理，食物與服務都很差，故選 (B)。"
+          "explanation": "薯條浸在油裡吃不下、老闆的狗跳上桌咬麵包老闆也不處理，食物與服務都很差，故選 (B)。",
+          "optionsZh": [
+            "它給的食物很少。",
+            "它的食物和服務都很差。",
+            "它允許人們帶寵物。"
+          ]
         },
         {
           "n": 18,
           "audio": "/public/audio/listening/2026/q18.mp3",
-          "options": ["(A) Nothing.", "(B) Start a fight with her.", "(C) Talk to her and ask her to stop."],
+          "options": [
+            "(A) Nothing.",
+            "(B) Start a fight with her.",
+            "(C) Talk to her and ask her to stop."
+          ],
           "answer": 0,
           "transcript": "Rida wrote untrue things about the woman online. The woman says she has better things to do (cook, play with her cat). 'Words only hurt when they come from someone I care about. Rida is not my friend.' She declines to fight or to talk to Rida. (Q) What is the woman going to do to deal with Rida?",
-          "explanation": "女子認為 Rida 不是她在乎的人、有更值得做的事，既不想吵架也不打算去找她談，等於什麼都不做，故選 (A) Nothing。"
+          "explanation": "女子認為 Rida 不是她在乎的人、有更值得做的事，既不想吵架也不打算去找她談，等於什麼都不做，故選 (A) Nothing。",
+          "optionsZh": [
+            "什麼都不做。",
+            "跟她吵一架。",
+            "跟她談談，請她停止。"
+          ]
         },
         {
           "n": 19,
           "audio": "/public/audio/listening/2026/q19.mp3",
-          "options": ["(A) He will not read them.", "(B) He is studying too hard.", "(C) He knows how to enjoy his vacation."],
+          "options": [
+            "(A) He will not read them.",
+            "(B) He is studying too hard.",
+            "(C) He knows how to enjoy his vacation."
+          ],
           "answer": 0,
           "transcript": "The boy plans to bring books to read on the plane and at the hotel. The woman reminds him that last time he said the same thing but only watched movies and used his smartphone — the books sat in his bag the whole time. (Q) What does the woman think when the boy said he was bringing books on a vacation?",
-          "explanation": "女子提醒他上次也這麼說卻只看電影、玩手機，書根本沒翻，可知她認為他這次也不會讀，故選 (A)。"
+          "explanation": "女子提醒他上次也這麼說卻只看電影、玩手機，書根本沒翻，可知她認為他這次也不會讀，故選 (A)。",
+          "optionsZh": [
+            "他不會讀那些書。",
+            "他讀書太認真了。",
+            "他懂得享受假期。"
+          ]
         },
         {
           "n": 20,
           "audio": "/public/audio/listening/2026/q20.mp3",
-          "options": ["(A) They will each ride their own bikes.", "(B) The girl will give the boy a ride on her bike.", "(C) The girl will ride a bike and the boy will walk."],
+          "options": [
+            "(A) They will each ride their own bikes.",
+            "(B) The girl will give the boy a ride on her bike.",
+            "(C) The girl will ride a bike and the boy will walk."
+          ],
           "answer": 1,
           "transcript": "It's too hot to walk to the ice cream shop. The girl offers to ride her bike with the boy (her big brother) on the back. He can't ride a bike and worries he'll look silly, but finally agrees to keep his feet off the ground 'for once.' (Q) How will the boy and the girl go to the ice cream shop?",
-          "explanation": "哥哥不會騎車，最後同意坐妹妹的小腳踏車後座（把腳抬離地面），即由妹妹騎車載哥哥，故選 (B)。"
+          "explanation": "哥哥不會騎車，最後同意坐妹妹的小腳踏車後座（把腳抬離地面），即由妹妹騎車載哥哥，故選 (B)。",
+          "optionsZh": [
+            "他們各自騎自己的腳踏車。",
+            "女孩會用她的腳踏車載男孩。",
+            "女孩騎車，男孩走路。"
+          ]
         },
         {
           "n": 21,
           "audio": "/public/audio/listening/2026/q21.mp3",
-          "options": ["(A) They are happy about it.", "(B) They don't care about it.", "(C) They think differently about it."],
+          "options": [
+            "(A) They are happy about it.",
+            "(B) They don't care about it.",
+            "(C) They think differently about it."
+          ],
           "answer": 0,
           "transcript": "News: Sunshine City will move its trains underground. Three people react: traffic is terrible and finally someone's doing something; I've waited so long, I stop many times for trains on my way to work; everyone will love it, driving time will be cut in half. (Q) What do these three people think of Sunshine City's new plan?",
-          "explanation": "三位受訪者都對火車地下化表達正面態度（終於有人處理、等很久了、開車時間減半），可知大家都很開心，故選 (A)。"
+          "explanation": "三位受訪者都對火車地下化表達正面態度（終於有人處理、等很久了、開車時間減半），可知大家都很開心，故選 (A)。",
+          "optionsZh": [
+            "他們對此感到開心。",
+            "他們不在乎。",
+            "他們看法各不相同。"
+          ]
         }
       ]
     }

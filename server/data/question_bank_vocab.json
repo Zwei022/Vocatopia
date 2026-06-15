@@ -1,98 +1,230 @@
 [
   {
     "sentence": "The typhoon was coming, so the school decided to _____ the sports day to a safer date.",
-    "options": ["(A) cancel", "(B) enjoy", "(C) postpone", "(D) win"],
+    "options": [
+      "(A) cancel",
+      "(B) enjoy",
+      "(C) postpone",
+      "(D) win"
+    ],
     "answer": 2,
     "explanation": "postpone 指延期。颱風來襲、改到較安全的日期是把活動延後，故選 postpone；cancel 為取消，與「to a safer date」改期不符。",
     "pos": "動詞",
-    "id": "vocab_0"
+    "id": "vocab_0",
+    "optionsZh": [
+      "取消",
+      "享受",
+      "延期",
+      "贏得"
+    ]
   },
   {
     "sentence": "Mr. Lin is a _____ man who often donates money to help poor children in his town.",
-    "options": ["(A) greedy", "(B) generous", "(C) careless", "(D) curious"],
+    "options": [
+      "(A) greedy",
+      "(B) generous",
+      "(C) careless",
+      "(D) curious"
+    ],
     "answer": 1,
     "explanation": "generous 指慷慨大方。常捐錢幫助貧童正是慷慨，故選 generous；greedy 貪心語意相反。",
     "pos": "形容詞",
-    "id": "vocab_1"
+    "id": "vocab_1",
+    "optionsZh": [
+      "貪心的",
+      "慷慨的",
+      "粗心的",
+      "好奇的"
+    ]
   },
   {
     "sentence": "The instructions were so _____ that none of us knew how to set up the new machine.",
-    "options": ["(A) clear", "(B) simple", "(C) confusing", "(D) helpful"],
+    "options": [
+      "(A) clear",
+      "(B) simple",
+      "(C) confusing",
+      "(D) helpful"
+    ],
     "answer": 2,
     "explanation": "confusing 指令人困惑。正因說明令人困惑，大家才不會操作，clear、simple、helpful 都與「none of us knew」矛盾。",
     "pos": "形容詞",
-    "id": "vocab_2"
+    "id": "vocab_2",
+    "optionsZh": [
+      "清楚的",
+      "簡單的",
+      "令人困惑的",
+      "有幫助的"
+    ]
   },
   {
     "sentence": "She felt _____ after running for a whole hour, so she sat down to drink some water.",
-    "options": ["(A) excited", "(B) cheerful", "(C) curious", "(D) exhausted"],
+    "options": [
+      "(A) excited",
+      "(B) cheerful",
+      "(C) curious",
+      "(D) exhausted"
+    ],
     "answer": 3,
     "explanation": "exhausted 指筋疲力盡。跑了一整個小時後坐下喝水，符合疲累的情境，故選 exhausted。",
     "pos": "形容詞",
-    "id": "vocab_3"
+    "id": "vocab_3",
+    "optionsZh": [
+      "興奮的",
+      "愉快的",
+      "好奇的",
+      "精疲力盡的"
+    ]
   },
   {
     "sentence": "The little boy tried to _____ his broken toy by sticking the pieces together with glue.",
-    "options": ["(A) repair", "(B) reject", "(C) remove", "(D) review"],
+    "options": [
+      "(A) repair",
+      "(B) reject",
+      "(C) remove",
+      "(D) review"
+    ],
     "answer": 0,
     "explanation": "repair 指修理。用膠水把碎片黏在一起是修理玩具，故選 repair；其餘 r 開頭字語意都不合。",
     "pos": "動詞",
-    "id": "vocab_4"
+    "id": "vocab_4",
+    "optionsZh": [
+      "修理",
+      "拒絕",
+      "移除",
+      "複習、檢視"
+    ]
   },
   {
     "sentence": "Because the traffic was terrible, the bus _____ at the station twenty minutes later than usual.",
-    "options": ["(A) departed", "(B) arrived", "(C) escaped", "(D) returned"],
+    "options": [
+      "(A) departed",
+      "(B) arrived",
+      "(C) escaped",
+      "(D) returned"
+    ],
     "answer": 1,
     "explanation": "arrive 指抵達。公車比平常晚到站，故選 arrived；depart 是出發，語意相反。",
     "pos": "動詞",
-    "id": "vocab_5"
+    "id": "vocab_5",
+    "optionsZh": [
+      "出發、離開",
+      "抵達",
+      "逃跑",
+      "返回"
+    ]
   },
   {
     "sentence": "The hotel room was very _____ ; we could hear every word from the people next door.",
-    "options": ["(A) silent", "(B) clean", "(C) empty", "(D) noisy"],
+    "options": [
+      "(A) silent",
+      "(B) clean",
+      "(C) empty",
+      "(D) noisy"
+    ],
     "answer": 3,
     "explanation": "noisy 指吵雜。能聽到隔壁的每句話，表示房間很吵、隔音差，故選 noisy；silent 安靜語意相反。",
     "pos": "形容詞",
-    "id": "vocab_6"
+    "id": "vocab_6",
+    "optionsZh": [
+      "安靜的",
+      "乾淨的",
+      "空的",
+      "吵鬧的"
+    ]
   },
   {
     "sentence": "Remember to _____ the electricity bill before the end of this month, or the power will be cut.",
-    "options": ["(A) pay", "(B) buy", "(C) sell", "(D) spend"],
+    "options": [
+      "(A) pay",
+      "(B) buy",
+      "(C) sell",
+      "(D) spend"
+    ],
     "answer": 0,
     "explanation": "pay 指支付。月底前要繳電費，否則會被斷電，故選 pay。",
     "pos": "動詞",
-    "id": "vocab_7"
+    "id": "vocab_7",
+    "optionsZh": [
+      "付錢",
+      "購買",
+      "販賣",
+      "花費"
+    ]
   },
   {
     "sentence": "He spoke so _____ that the people sitting at the back could not hear him at all.",
-    "options": ["(A) loudly", "(B) clearly", "(C) quietly", "(D) quickly"],
+    "options": [
+      "(A) loudly",
+      "(B) clearly",
+      "(C) quietly",
+      "(D) quickly"
+    ],
     "answer": 2,
     "explanation": "quietly 指小聲地。後排完全聽不到，表示他講得太小聲，故選 quietly；loudly 大聲相反。",
     "pos": "副詞",
-    "id": "vocab_8"
+    "id": "vocab_8",
+    "optionsZh": [
+      "大聲地",
+      "清楚地",
+      "安靜地",
+      "快速地"
+    ]
   },
   {
     "sentence": "After the long holiday, the students felt _____ to go back to school and meet their friends.",
-    "options": ["(A) afraid", "(B) eager", "(C) bored", "(D) sorry"],
+    "options": [
+      "(A) afraid",
+      "(B) eager",
+      "(C) bored",
+      "(D) sorry"
+    ],
     "answer": 1,
     "explanation": "eager 指渴望的。長假後想回學校見朋友是滿心期待，故選 eager。",
     "pos": "形容詞",
-    "id": "vocab_9"
+    "id": "vocab_9",
+    "optionsZh": [
+      "害怕的",
+      "渴望的",
+      "無聊的",
+      "抱歉的"
+    ]
   },
   {
     "sentence": "The scientist will _____ the results of the experiment at the meeting next Friday.",
-    "options": ["(A) present", "(B) prevent", "(C) pretend", "(D) prefer"],
+    "options": [
+      "(A) present",
+      "(B) prevent",
+      "(C) pretend",
+      "(D) prefer"
+    ],
     "answer": 0,
     "explanation": "present 指發表、呈現。在會議上發表實驗結果，故選 present；其餘形近字語意都不同。",
     "pos": "動詞",
-    "id": "vocab_10"
+    "id": "vocab_10",
+    "optionsZh": [
+      "呈現、頒發",
+      "預防",
+      "假裝",
+      "比較喜歡"
+    ]
   },
   {
     "sentence": "The mountain road becomes very _____ after it rains, so drivers should slow down.",
-    "options": ["(A) sunny", "(B) crowded", "(C) narrow", "(D) slippery"],
+    "options": [
+      "(A) sunny",
+      "(B) crowded",
+      "(C) narrow",
+      "(D) slippery"
+    ],
     "answer": 3,
     "explanation": "slippery 指濕滑的。下雨後路面濕滑、駕駛要減速，故選 slippery。",
     "pos": "形容詞",
-    "id": "vocab_11"
+    "id": "vocab_11",
+    "optionsZh": [
+      "晴朗的",
+      "擁擠的",
+      "狹窄的",
+      "滑的"
+    ]
   }
 ]

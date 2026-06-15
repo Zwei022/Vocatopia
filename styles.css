@@ -1680,8 +1680,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 .gls-info b{color:var(--green3)}
 .gx-countdown{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.78);font-family:var(--font-display);font-size:110px;font-weight:800;color:var(--green3);animation:gxcd .9s ease-in-out infinite}
 @keyframes gxcd{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.15);opacity:1}}
-.gx-q.gx-playing{background:rgba(46,204,113,.1);border:1px solid rgba(46,204,113,.35);border-radius:10px;padding:10px;margin:0 -10px 18px}
-.gx-q.gx-playing .gx-num{color:var(--green3)}
+/* 連播的當前題僅用於自動捲動定位，不顯示高亮框 */
 .gx-q{margin-bottom:18px}
 .gx-stem{font-size:14px;color:var(--white);line-height:1.7;margin-bottom:8px}
 .gx-num{font-family:var(--font-display);font-weight:700;color:var(--green3);margin-right:4px}
@@ -1694,6 +1693,11 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 .gx-opt.correct{background:rgba(46,204,113,.24);border-color:var(--green3);color:#eafff4}
 .gx-opt.wrong{background:rgba(231,76,60,.18);border-color:#e74c3c;color:#ffe3e0}
 .gx-opt:disabled{cursor:default}
+.gx-opt-zh{display:none}
+.gx-submitted .gx-opt-zh{display:block;margin-top:4px;font-size:12px;opacity:.72;line-height:1.5}
+.q-zh{display:none}
+#quizOpts.revealed .q-zh{display:block;margin-top:4px;font-size:12px;opacity:.72;line-height:1.5}
+.qbank-opt-zh{display:block;margin-top:3px;font-size:11px;opacity:.7;line-height:1.4}
 .gx-explain{margin-top:8px;font-size:12px;color:var(--gray);line-height:1.65;background:rgba(255,255,255,.04);border-left:3px solid var(--green3);border-radius:0 6px 6px 0;padding:8px 12px}
 .gx-ok{color:var(--green3);font-weight:800}
 .gx-no{color:#ff6b6b;font-weight:800}
