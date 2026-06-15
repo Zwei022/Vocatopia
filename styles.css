@@ -279,6 +279,8 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 .quiz-panel.show{display:flex}
 .quiz-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-shrink:0}
 .quiz-progress{font-family:'Nunito',sans-serif;font-weight:700;font-size:12px;color:var(--gray);letter-spacing:1px}
+.quiz-type-badge{display:inline-block;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:700;letter-spacing:.5px;margin-bottom:10px;font-family:'Noto Sans TC',sans-serif}
+.badge-listen-section{background:rgba(100,160,255,.15);border:1px solid rgba(100,160,255,.35);color:#a0c4ff}
 .quiz-q{font-size:15px;font-weight:700;color:var(--white);line-height:1.7;margin-bottom:16px;flex-shrink:0}
 .quiz-opts{display:flex;flex-direction:column;gap:9px;flex-shrink:0}
 .quiz-opt{padding:13px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r2);font-size:14px;font-weight:600;color:var(--white);cursor:pointer;text-align:left;transition:all .1s;font-family:'Noto Sans TC',sans-serif}
@@ -287,6 +289,16 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 .quiz-opt.wrong{background:rgba(60,10,10,.5)!important;border-color:#ff5555!important;color:#ff7070!important}
 .quiz-opt:disabled{cursor:not-allowed}
 .quiz-explain{margin-top:14px;padding:12px 14px;background:rgba(255,255,255,.04);border-left:3px solid var(--green3);border-radius:0 var(--r) var(--r) 0;font-size:13px;color:rgba(245,245,240,.85);line-height:1.8}
+.quiz-dialogue{font-size:12.5px;line-height:1.75;margin-bottom:10px;padding:10px 12px;background:rgba(255,255,255,.04);border-radius:var(--r);border-left:3px solid rgba(100,160,255,.35)}
+.ql-line{margin-bottom:2px}
+.ql-speaker{color:#a0c4ff;font-weight:700}
+/* 聽力題倒數播放區 */
+.listen-start-wrap{display:flex;flex-direction:column;align-items:center;gap:14px;padding:24px 0 10px}
+.listen-hint{font-size:12px;color:var(--gray);text-align:center;margin:0}
+.quiz-listen-btn{padding:14px 32px;background:linear-gradient(135deg,var(--green3),#1a7a3a);border:none;border-radius:var(--r2);font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;letter-spacing:1px;color:#fff;cursor:pointer;transition:opacity .15s}
+.quiz-listen-btn:disabled{opacity:.5;cursor:not-allowed}
+.listen-countdown-num{font-family:'Nunito',sans-serif;font-weight:900;font-size:52px;color:var(--green3);line-height:1;animation:cd-pulse 1s ease-in-out infinite}
+@keyframes cd-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.92)}}
 .quiz-next{margin-top:14px;padding:13px;background:linear-gradient(135deg,var(--orange),#bb3e00);border:none;border-radius:var(--r2);font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--white);cursor:pointer}
 
 /* 題組式作答（克漏字 / 閱讀）：整篇一次作答 */
@@ -1687,9 +1699,10 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 .gx-img{display:block;max-width:100%;border-radius:8px;margin:8px 0;background:#fff}
 .gx-pimg{margin:0 auto 12px}
 .gx-opts{display:flex;flex-direction:column;gap:7px}
-.gx-opt{text-align:left;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:9px;padding:9px 12px;color:var(--white);font-size:13px;cursor:pointer;font-family:'Nunito',sans-serif;transition:all .12s}
-.gx-opt:hover:not(:disabled){background:rgba(255,255,255,.1);border-color:var(--green3)}
-.gx-opt.sel{background:rgba(46,204,113,.18);border-color:var(--green3)}
+.gx-opt{text-align:left;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.12);border-radius:9px;padding:9px 12px;color:var(--white);font-size:13px;cursor:pointer;font-family:'Nunito',sans-serif;transition:background .15s,border-color .15s,transform .1s,box-shadow .15s}
+.gx-opt:hover:not(:disabled){background:rgba(255,255,255,.1);border-color:rgba(46,204,113,.5)}
+.gx-opt:active:not(:disabled){transform:scale(.97)}
+.gx-opt.sel{background:rgba(46,204,113,.35);border-color:var(--green3);color:#d4ffea;font-weight:700;box-shadow:0 0 0 2px rgba(46,204,113,.22)}
 .gx-opt.correct{background:rgba(46,204,113,.24);border-color:var(--green3);color:#eafff4}
 .gx-opt.wrong{background:rgba(231,76,60,.18);border-color:#e74c3c;color:#ffe3e0}
 .gx-opt:disabled{cursor:default}

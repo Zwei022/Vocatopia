@@ -1,0 +1,19 @@
+{
+  "exam-generator": {
+    "name": "exam-generator",
+    "category": "learning",
+    "sub_category": "exam",
+    "platform": "claude",
+    "status": "WIP",
+    "author": "Claude Code",
+    "vocab_level": "會考",
+    "description": "根據指定的單字列表和難度級別，自動生成台灣國中會考級英文考題組合。\n支援 4 種題型：閱讀測驗、單字選擇題、文法選擇題、克漏字測驗。\n每份試卷包含 40 題，難度分佈符合真實會考比例。\n\n觸發詞：\n- 「生成考題」\n- 「生成試卷」\n- 「出題」\n- 「會考試題」\n- 「generate exam」\n- 「create test」\n- 「做一份考試」\n\n何時使用：\n- 教師準備測驗\n- 學生自我評估\n- 批量生成練習卷",
+    "triggers": [
+      "生成考題",
+      "生成試卷",
+      "出題",
+      "會考試題",
+      "做一份考試"
+    ]
+  }
+}
