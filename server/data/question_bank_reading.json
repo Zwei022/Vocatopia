@@ -2,286 +2,306 @@
   {
     "type": "reading",
     "id": "reading_0",
+    "passageType": "practical",
     "title": "Summer Reading Club (海報)",
     "passage": "GREEN HILL LIBRARY — Summer Reading Club!\nLove stories? Join us this July and August!\n• Open to students aged 10–15\n• Read any 5 books and write a short note about each one\n• Finish all 5 and get a free movie ticket!\n• Sign up at the front desk before June 30\nReading is more fun with friends. Bring one, and you both get a special bookmark!",
     "questions": [
       {
         "question": "Who can join the Summer Reading Club?",
-        "options": [
-          "(A) People of any age",
-          "(B) Students aged 10 to 15",
-          "(C) Only librarians",
-          "(D) Only teachers"
-        ],
+        "options": ["(A) People of any age", "(B) Students aged 10 to 15", "(C) Only librarians", "(D) Only teachers"],
         "answer": 1,
-        "explanation": "海報寫明 Open to students aged 10–15，故選 B。",
-        "optionsZh": [
-          "任何年齡的人",
-          "10 到 15 歲的學生",
-          "只有圖書館員",
-          "只有老師"
-        ]
+        "explanation": "海報明確寫 Open to students aged 10–15，故選 B。",
+        "optionsZh": ["任何年齡的人", "10 到 15 歲的學生", "只有圖書館員", "只有老師"],
+        "questionType": "detail"
       },
       {
         "question": "How can a student get a free movie ticket?",
-        "options": [
-          "(A) By signing up before June 30",
-          "(B) By bringing a friend to the library",
-          "(C) By reading 5 books and writing a note about each",
-          "(D) By buying a special bookmark"
-        ],
+        "options": ["(A) By signing up before June 30", "(B) By bringing a friend to the library", "(C) By reading 5 books and writing a note about each", "(D) By buying a special bookmark"],
         "answer": 2,
-        "explanation": "Finish all 5（讀 5 本並各寫短文）才能拿到免費電影票，故選 C；帶朋友是得到書籤。",
-        "optionsZh": [
-          "在 6 月 30 日前報名",
-          "帶朋友來圖書館",
-          "讀 5 本書並各寫一篇短文",
-          "買一個特別的書籤"
-        ]
+        "explanation": "Finish all 5（讀 5 本並各寫短文）才能拿到免費電影票，選 C；帶朋友是得到書籤，不是電影票。",
+        "optionsZh": ["在 6 月 30 日前報名", "帶朋友來圖書館", "讀 5 本書並各寫一篇短文", "買一個特別的書籤"],
+        "questionType": "detail"
       }
     ]
   },
   {
     "type": "reading",
     "id": "reading_1",
+    "passageType": "practical",
     "title": "An Email from Grandma (電子郵件)",
     "passage": "Dear Anna,\nThank you so much for the lovely card you made for my birthday. It is now on my fridge, and I smile every time I see it. Your drawing of our cat, Lucky, is wonderful!\nI heard from your mom that you won first prize in the science fair. I am so proud of you! When you visit next month, you must tell me all about your project.\nThe weather here is getting cold, so remember to bring a warm coat. I can't wait to see you and bake cookies together.\nLove,\nGrandma",
     "questions": [
       {
         "question": "What is the main purpose of Grandma's email?",
-        "options": [
-          "(A) To invite Anna to come and live with her",
-          "(B) To thank Anna for the card and say she looks forward to the visit",
-          "(C) To complain about the cold weather",
-          "(D) To teach Anna how to do a science project"
-        ],
+        "options": ["(A) To invite Anna to come and live with her", "(B) To thank Anna for the card and say she looks forward to the visit", "(C) To complain about the cold weather", "(D) To teach Anna how to do a science project"],
         "answer": 1,
-        "explanation": "信中先感謝生日卡，又說期待下個月相見、一起烤餅乾，故主要目的為 B。",
-        "optionsZh": [
-          "邀請 Anna 來和她同住",
-          "感謝 Anna 的卡片並說期待見面",
-          "抱怨寒冷的天氣",
-          "教 Anna 怎麼做科展"
-        ]
+        "explanation": "信中先感謝生日卡，又說期待下個月相見、一起烤餅乾，主要目的為感謝並表達期待，選 B。",
+        "optionsZh": ["邀請 Anna 搬來同住", "感謝 Anna 的卡片並說期待見面", "抱怨寒冷的天氣", "教 Anna 怎麼做科展"],
+        "questionType": "main_idea"
       },
       {
         "question": "What can we learn from the email?",
-        "options": [
-          "(A) Anna won first prize in the science fair",
-          "(B) Grandma does not like the cat",
-          "(C) Anna is going to visit this week",
-          "(D) Grandma lives in a warm place"
-        ],
+        "options": ["(A) Anna won first prize in the science fair", "(B) Grandma does not like the cat", "(C) Anna is going to visit this week", "(D) Grandma lives in a warm place"],
         "answer": 0,
         "explanation": "信中提到 you won first prize in the science fair，故選 A；探訪是下個月、當地天氣轉冷，其餘選項與內文不符。",
-        "optionsZh": [
-          "Anna 在科展得了第一名",
-          "奶奶不喜歡那隻貓",
-          "Anna 這週要去拜訪",
-          "奶奶住在溫暖的地方"
-        ]
+        "optionsZh": ["Anna 在科展得了第一名", "奶奶不喜歡那隻貓", "Anna 這週要去拜訪", "奶奶住在溫暖的地方"],
+        "questionType": "detail"
       }
     ]
   },
   {
     "type": "reading",
     "id": "reading_2",
+    "passageType": "practical",
     "title": "Swimming Pool Rules (公告)",
     "passage": "CITY SPORTS CENTER — Swimming Pool\nTo keep everyone safe, please follow these rules:\n1. Take a shower before entering the pool.\n2. Children under 8 must swim with an adult.\n3. No running near the pool. The floor can be slippery.\n4. Do not bring food or drinks into the pool area.\n5. The pool closes at 9:00 p.m. Please leave on time.\nIf you feel tired or unwell, stop swimming and rest. A lifeguard is always on duty and is happy to help. Have a safe and happy swim!",
     "questions": [
       {
         "question": "What must a 6-year-old child do to swim in the pool?",
-        "options": [
-          "(A) Swim alone",
-          "(B) Eat something before swimming",
-          "(C) Swim together with an adult",
-          "(D) Run around the pool"
-        ],
+        "options": ["(A) Swim alone", "(B) Eat something before swimming", "(C) Swim together with an adult", "(D) Run around the pool"],
         "answer": 2,
         "explanation": "規則 2 說 8 歲以下兒童必須和大人一起游，6 歲屬於此範圍，故選 C。",
-        "optionsZh": [
-          "獨自游泳",
-          "游泳前吃點東西",
-          "和大人一起游泳",
-          "在泳池邊奔跑"
-        ]
+        "optionsZh": ["獨自游泳", "游泳前吃點東西", "和大人一起游泳", "在泳池邊奔跑"],
+        "questionType": "detail"
       },
       {
         "question": "According to the notice, which of the following is allowed?",
-        "options": [
-          "(A) Bringing drinks into the pool area",
-          "(B) Running near the pool",
-          "(C) Staying in the pool after 10 p.m.",
-          "(D) Taking a rest when you feel unwell"
-        ],
+        "options": ["(A) Bringing drinks into the pool area", "(B) Running near the pool", "(C) Staying in the pool after 10 p.m.", "(D) Taking a rest when you feel unwell"],
         "answer": 3,
-        "explanation": "公告建議不舒服就停下休息，故 D 允許；帶飲料、奔跑、超過 9 點皆被禁止。",
-        "optionsZh": [
-          "把飲料帶進泳池區",
-          "在泳池附近奔跑",
-          "晚上 10 點後還待在泳池",
-          "不舒服時休息一下"
-        ]
+        "explanation": "公告建議不舒服就停下休息，故 D 被允許；帶飲料、奔跑、超過 9 點關閉皆被禁止。",
+        "optionsZh": ["把飲料帶進泳池區", "在泳池附近奔跑", "晚上 10 點後還待在泳池", "不舒服時休息一下"],
+        "questionType": "inference"
       }
     ]
   },
   {
     "type": "reading",
     "id": "reading_3",
+    "passageType": "narrative",
     "title": "The Lost Wallet (故事)",
     "passage": "On his way home from school, Kevin saw a brown wallet lying on the sidewalk. He picked it up and looked inside. There was some money, a student ID card, and a photo of a smiling family. The name on the card was \"Daniel Wu.\"\nKevin thought for a moment. He could keep the money and no one would know. But then he looked at the happy family in the photo and imagined how worried Daniel must be. He decided to do the right thing.\nUsing the ID card, Kevin found out which school Daniel went to. The next morning, he took the wallet to that school office. An hour later, Daniel came to thank him with tears in his eyes. \"My grandfather gave me that photo,\" he said. \"I thought I had lost it forever.\"\nKevin felt warm inside. He realized that helping others made him much happier than money ever could.",
     "questions": [
       {
         "question": "What was inside the wallet?",
-        "options": [
-          "(A) Money, a student ID card, and a family photo",
-          "(B) A key and a pen",
-          "(C) A cellphone",
-          "(D) A letter and some stamps"
-        ],
+        "options": ["(A) Money, a student ID card, and a family photo", "(B) A key and a pen", "(C) A cellphone", "(D) A letter and some stamps"],
         "answer": 0,
         "explanation": "第一段提到 money、a student ID card、a photo of a smiling family，故選 A。",
-        "optionsZh": [
-          "錢、學生證和一張全家福",
-          "一把鑰匙和一支筆",
-          "一支手機",
-          "一封信和一些郵票"
-        ]
+        "optionsZh": ["錢、學生證和一張全家福", "一把鑰匙和一支筆", "一支手機", "一封信和一些郵票"],
+        "questionType": "detail"
       },
       {
         "question": "Why did Daniel cry when he got his wallet back?",
-        "options": [
-          "(A) He was scolded by his teacher",
-          "(B) He got back the photo his grandfather gave him",
-          "(C) He lost a lot of money",
-          "(D) He was late for school"
-        ],
+        "options": ["(A) He was scolded by his teacher", "(B) He got back the photo his grandfather gave him", "(C) He lost a lot of money", "(D) He was late for school"],
         "answer": 1,
-        "explanation": "Daniel 說那張照片是爺爺給的、本以為永遠弄丟了，故感動落淚，選 B。",
-        "optionsZh": [
-          "他被老師罵",
-          "他拿回了爺爺給他的照片",
-          "他丟了很多錢",
-          "他上學遲到"
-        ]
+        "explanation": "Daniel 說那張照片是爺爺給的、本以為永遠弄丟了，感動落淚，故選 B。",
+        "optionsZh": ["他被老師罵", "他拿回了爺爺給他的照片", "他丟了很多錢", "他上學遲到"],
+        "questionType": "inference"
       },
       {
         "question": "What can we learn from this story?",
-        "options": [
-          "(A) You should spend money you find right away",
-          "(B) You should never talk to strangers",
-          "(C) Helping others brings more happiness than money",
-          "(D) You should not bring a wallet to school"
-        ],
+        "options": ["(A) You should spend money you find right away", "(B) You should never talk to strangers", "(C) Helping others brings more happiness than money", "(D) You should not bring a wallet to school"],
         "answer": 2,
         "explanation": "末段 Kevin 體會到幫助他人比金錢更讓他快樂，這是全文主旨，故選 C。",
-        "optionsZh": [
-          "撿到錢應該馬上花掉",
-          "絕不要和陌生人說話",
-          "幫助別人帶來的快樂勝過金錢",
-          "不該帶錢包去學校"
-        ]
+        "optionsZh": ["撿到錢應該馬上花掉", "絕不要和陌生人說話", "幫助別人帶來的快樂勝過金錢", "不該帶錢包去學校"],
+        "questionType": "main_idea"
       }
     ]
   },
   {
     "type": "reading",
     "id": "reading_4",
+    "passageType": "informational",
     "title": "Why Do We Dream? (說明文)",
     "passage": "Every night, while we sleep, our brains create stories called dreams. Some dreams are happy, some are strange, and some are scary. For thousands of years, people have wondered why we dream. Even today, scientists do not have a single perfect answer, but they have some interesting ideas.\nOne idea is that dreams help us deal with our feelings. During the day, we may feel worried, excited, or sad. When we dream, our brain sorts through these feelings, almost like cleaning a messy room. This may be why we often feel better after a good night's sleep.\nAnother idea is that dreams help us remember. While we sleep, the brain reviews what we learned during the day. It keeps the important information and throws away what we do not need. Students who sleep well often remember their lessons better than those who stay up late.\nSome scientists also believe that dreaming lets us practice. In dreams, we might solve problems or face our fears in a safe way. A child who dreams about giving a speech may feel braver when doing it in real life.\nWe may never fully understand our dreams. But one thing is clear: dreaming is an important part of being human, and a good night's sleep helps both our minds and our bodies.",
     "questions": [
       {
         "question": "What is this passage mainly about?",
-        "options": [
-          "(A) How to sleep for a longer time",
-          "(B) Some ideas about why people dream",
-          "(C) How to remember bad dreams",
-          "(D) Why students should not stay up late"
-        ],
+        "options": ["(A) How to sleep for a longer time", "(B) Some ideas about why people dream", "(C) How to remember bad dreams", "(D) Why students should not stay up late"],
         "answer": 1,
         "explanation": "全文圍繞「我們為什麼做夢」介紹科學家的幾種推測，故主旨為 B。",
-        "optionsZh": [
-          "如何睡得更久",
-          "關於人為何做夢的一些看法",
-          "如何記住惡夢",
-          "學生為何不該熬夜"
-        ]
+        "optionsZh": ["如何睡得更久", "關於人為何做夢的一些看法", "如何記住惡夢", "學生為何不該熬夜"],
+        "questionType": "main_idea"
       },
       {
         "question": "According to the passage, how might dreaming help us remember?",
-        "options": [
-          "(A) The brain reviews what we learned and keeps the important information",
-          "(B) The brain completely stops working during sleep",
-          "(C) It makes us forget everything we learned",
-          "(D) It makes us need less sleep"
-        ],
+        "options": ["(A) The brain reviews what we learned and keeps the important information", "(B) The brain completely stops working during sleep", "(C) It makes us forget everything we learned", "(D) It makes us need less sleep"],
         "answer": 0,
         "explanation": "第三段說睡覺時大腦會複習白天所學、保留重要資訊，故選 A。",
-        "optionsZh": [
-          "大腦複習所學並保留重要資訊",
-          "睡覺時大腦完全停止運作",
-          "它讓我們忘記所學的一切",
-          "它讓我們需要更少睡眠"
-        ]
+        "optionsZh": ["大腦複習所學並保留重要資訊", "睡覺時大腦完全停止運作", "它讓我們忘記所學的一切", "它讓我們需要更少睡眠"],
+        "questionType": "detail"
       },
       {
         "question": "What does \"sorts through\" in the second paragraph most likely mean?",
-        "options": [
-          "(A) Throws all away",
-          "(B) Organizes",
-          "(C) Creates",
-          "(D) Hides"
-        ],
+        "options": ["(A) Throws all away", "(B) Organizes", "(C) Creates", "(D) Hides"],
         "answer": 1,
         "explanation": "後面用 like cleaning a messy room（像整理凌亂的房間）作比喻，可推知 sorts through 意為「整理」，選 B。",
-        "optionsZh": [
-          "全部丟掉",
-          "整理",
-          "創造",
-          "隱藏"
-        ]
-      },
-      {
-        "question": "Which of the following best matches the writer's idea?",
-        "options": [
-          "(A) Scientists already fully understand dreams",
-          "(B) Dreaming is actually useless",
-          "(C) A good night's sleep is good for both the mind and the body",
-          "(D) Only children have dreams"
-        ],
-        "answer": 2,
-        "explanation": "末段明確指出好好睡一覺對心智與身體都有幫助，故選 C；文中說科學家尚無完美答案，A 錯。",
-        "optionsZh": [
-          "科學家已完全了解夢",
-          "做夢其實沒用",
-          "好好睡一覺對身心都有益",
-          "只有小孩會做夢"
-        ]
+        "optionsZh": ["全部丟掉", "整理", "創造", "隱藏"],
+        "questionType": "vocabulary"
       }
     ]
   },
   {
     "type": "reading",
     "id": "reading_5",
+    "passageType": "practical",
     "title": "Class Trip Schedule (行程表)",
     "passage": "Grade 8 Class Trip — Ocean Park\n8:00 a.m. — Meet at the school gate\n8:30 a.m. — Bus leaves (do not be late!)\n10:00 a.m. — Arrive at Ocean Park\n12:00 p.m. — Lunch (bring your own or buy at the park)\n3:30 p.m. — Meet at the main gate of the park\n4:00 p.m. — Bus leaves for school\nRemember to wear your school T-shirt and bring a hat and water.",
     "questions": [
       {
         "question": "By what time should students arrive at the school gate?",
-        "options": [
-          "(A) 8:00 a.m.",
-          "(B) 8:30 a.m.",
-          "(C) 10:00 a.m.",
-          "(D) 4:00 p.m."
-        ],
+        "options": ["(A) 8:00 a.m.", "(B) 8:30 a.m.", "(C) 10:00 a.m.", "(D) 4:00 p.m."],
         "answer": 0,
         "explanation": "8:00 在校門口集合、8:30 巴士就開（別遲到），所以最晚 8:00 必須到，選 A。",
-        "optionsZh": [
-          "上午 8:00",
-          "上午 8:30",
-          "上午 10:00",
-          "下午 4:00"
-        ]
+        "optionsZh": ["上午 8:00", "上午 8:30", "上午 10:00", "下午 4:00"],
+        "questionType": "detail"
+      },
+      {
+        "question": "What should students bring on the trip?",
+        "options": ["(A) A school T-shirt, a hat, and water", "(B) Their own lunch only", "(C) A tent and sleeping bag", "(D) Their own bus ticket"],
+        "answer": 0,
+        "explanation": "底部備註 Remember to wear your school T-shirt and bring a hat and water，三樣都需要，故選 A。",
+        "optionsZh": ["學校T恤、帽子和水", "只帶自己的午餐", "帳篷和睡袋", "自己的巴士票"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_6",
+    "passageType": "informational",
+    "title": "The Honeybee's Secret Language (說明文)",
+    "passage": "Bees are some of the hardest workers in nature. They visit hundreds of flowers every day to collect nectar, which they turn into honey. But what makes bees truly amazing is the way they talk to each other.\nWhen a honeybee finds a good source of food, it flies back to the hive and performs a special dance. Scientists call this the \"waggle dance.\" The direction of the dance tells other bees which way to fly. The length of the dance shows how far away the flowers are. The longer the dance, the farther the flowers.\nThis dance language was first discovered by Austrian scientist Karl von Frisch in the 1940s. He spent years watching bees and finally understood their secret. In 1973, he won the Nobel Prize for this discovery.\nWithout bees, many plants could not grow. Bees carry pollen from flower to flower, which helps plants make seeds. If bees disappeared, many fruits and vegetables we eat every day would also disappear. Protecting bees means protecting our food.",
+    "questions": [
+      {
+        "question": "What does the length of the waggle dance show?",
+        "options": ["(A) The type of flower the bee found", "(B) The amount of nectar in the flower", "(C) How far away the food source is", "(D) How many bees should fly together"],
+        "answer": 2,
+        "explanation": "第二段明確指出 The length of the dance shows how far away the flowers are，故選 C。",
+        "optionsZh": ["蜜蜂找到的花的種類", "花中花蜜的量", "食物來源有多遠", "應該幾隻蜜蜂一起飛"],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why did Karl von Frisch win the Nobel Prize?",
+        "options": ["(A) He invented a new type of honey", "(B) He discovered how bees communicate through dance", "(C) He found a way to save bees from danger", "(D) He grew a new kind of flower for bees"],
+        "answer": 1,
+        "explanation": "第三段說他花了多年觀察蜜蜂、弄懂牠們的舞蹈語言，因此在 1973 年獲諾貝爾獎，選 B。",
+        "optionsZh": ["他發明了一種新型蜂蜜", "他發現了蜜蜂用舞蹈溝通的方式", "他找到拯救蜜蜂的方法", "他為蜜蜂種了一種新花"],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does the writer suggest in the last paragraph?",
+        "options": ["(A) Bees should be kept as pets", "(B) We should eat less honey to protect bees", "(C) Bees play an important role in helping our food supply", "(D) Bees can survive without flowers"],
+        "answer": 2,
+        "explanation": "末段說蜜蜂幫助植物結種、若蜜蜂消失許多蔬果也會消失，暗示保護蜜蜂就是保護糧食，選 C。",
+        "optionsZh": ["蜜蜂應該被當成寵物飼養", "我們應少吃蜂蜜來保護蜜蜂", "蜜蜂在糧食供應中扮演重要角色", "蜜蜂可以在沒有花的情況下存活"],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_7",
+    "passageType": "practical",
+    "title": "Riverside Night Market (活動公告)",
+    "passage": "Riverside Community Center\nSummer Night Market — Every Friday in July\nTime: 6:00 p.m. – 10:00 p.m.\nLocation: Riverside Park, Main Square\n\nWhat to Expect:\n• Local food stalls — try dishes from 15 different countries!\n• Live music from 7:00 to 9:00 p.m.\n• Free craft activities for children under 12\n• Lucky draw at 9:30 p.m. — bring your receipt to enter!\n\nNote: No pets allowed. Parking is available behind the park (NT$50/hour).\nFor more information, call 02-1234-5678 or visit riversidefun.tw",
+    "questions": [
+      {
+        "question": "Which of the following is FREE at the Summer Night Market?",
+        "options": ["(A) Parking", "(B) Craft activities for children under 12", "(C) Entering the lucky draw", "(D) Food from all the stalls"],
+        "answer": 1,
+        "explanation": "公告寫 Free craft activities for children under 12，停車費 NT$50/小時，故選 B。",
+        "optionsZh": ["停車", "12 歲以下兒童的手工藝活動", "參加幸運抽獎", "所有攤位的食物"],
+        "questionType": "detail"
+      },
+      {
+        "question": "A family wants to join the lucky draw. What should they do?",
+        "options": ["(A) Arrive before 6:00 p.m.", "(B) Call 02-1234-5678 to register", "(C) Keep their receipt from a purchase", "(D) Bring their pet to the event"],
+        "answer": 2,
+        "explanation": "公告說 bring your receipt to enter（帶收據參加），故選 C；不允許帶寵物，故 D 錯。",
+        "optionsZh": ["在下午 6 點前抵達", "致電 02-1234-5678 報名", "保留消費收據", "帶寵物來參加活動"],
+        "questionType": "inference"
+      },
+      {
+        "question": "When can visitors enjoy live music at the market?",
+        "options": ["(A) From 6:00 to 10:00 p.m.", "(B) From 7:00 to 9:00 p.m.", "(C) From 9:00 to 9:30 p.m.", "(D) From 6:00 to 7:00 p.m."],
+        "answer": 1,
+        "explanation": "公告明確寫 Live music from 7:00 to 9:00 p.m.，故選 B。",
+        "optionsZh": ["下午 6:00 到 10:00", "下午 7:00 到 9:00", "下午 9:00 到 9:30", "下午 6:00 到 7:00"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_8",
+    "passageType": "dual",
+    "title": "Should Students Use Phones in Class? — Two Views (雙方觀點)",
+    "passage": "■ View A — By Cindy Chen, Grade 9 Student\n\nI think students should be allowed to use phones in class. Phones are powerful learning tools. With a phone, I can look up words I do not know, watch short videos to understand difficult ideas, and take photos of the board instead of copying everything by hand. Many schools around the world already allow phones, and their students do just fine. The problem is not the phone — it is how we use it. If teachers set clear rules, phones can help us learn more effectively.\n\n■ View B — By Mr. David Lin, English Teacher\n\nI disagree. In my experience, phones are one of the biggest distractions in the classroom. When students have their phones, they check social media, play games, and stop paying attention. Even when they plan to use the phone for learning, they easily get pulled into other apps. Young people's brains are still developing, and they find it hard to resist the temptation. Schools should be places of focused learning, and phones make that very difficult to achieve.",
+    "questions": [
+      {
+        "question": "What is Cindy's main argument for allowing phones in class?",
+        "options": ["(A) Phones are cheaper than textbooks", "(B) Phones can be useful learning tools if used correctly", "(C) All schools in the world allow phones", "(D) Phones help students make new friends"],
+        "answer": 1,
+        "explanation": "Cindy 認為手機是強大的學習工具，只要老師設定規則就能幫助學習，故選 B；「所有學校」過於絕對，A 不在文中。",
+        "optionsZh": ["手機比教科書便宜", "手機若使用得當可以是有用的學習工具", "全世界所有學校都允許帶手機", "手機幫助學生交到新朋友"],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does Mr. Lin say about young people's brains?",
+        "options": ["(A) They learn faster with phones", "(B) They are still developing and find it hard to resist temptation", "(C) They do not need phones to succeed", "(D) They are better at multitasking than adults"],
+        "answer": 1,
+        "explanation": "Mr. Lin 說年輕人的大腦還在發育，很難抵抗誘惑（find it hard to resist the temptation），故選 B。",
+        "optionsZh": ["有手機學得更快", "仍在發育中，很難抵抗誘惑", "不需要手機就能成功", "多工能力比大人更強"],
+        "questionType": "detail"
+      },
+      {
+        "question": "What do Cindy and Mr. Lin both agree on?",
+        "options": ["(A) Phones should be banned from all schools", "(B) Phones can be connected to the internet", "(C) How phones are used is an important issue", "(D) Students learn better without any technology"],
+        "answer": 2,
+        "explanation": "Cindy 強調「使用方式」（how we use it）是關鍵；Mr. Lin 也認為問題在於學生「如何使用」（easily get pulled into other apps）。兩人都關注使用方式的問題，故選 C。",
+        "optionsZh": ["手機應在所有學校禁用", "手機可以連接網路", "如何使用手機是重要議題", "學生在沒有科技的情況下學得更好"],
+        "questionType": "inference"
+      },
+      {
+        "question": "What is the best title for this reading?",
+        "options": ["(A) The History of Mobile Phones", "(B) Why Teachers Hate Technology", "(C) Phones in the Classroom: A Debate", "(D) How to Study with Your Phone"],
+        "answer": 2,
+        "explanation": "兩篇短文各代表一方對「課堂使用手機」的不同意見，最適合的標題是 C（辯論）。",
+        "optionsZh": ["手機的歷史", "為什麼老師討厭科技", "課堂上的手機：一場辯論", "如何用手機學習"],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_9",
+    "passageType": "narrative",
+    "title": "Grandpa's Radio (故事)",
+    "passage": "Every summer, Sam visited his grandfather in the countryside. Grandpa's house was old and quiet, without a TV or computer. The only thing that made noise was a small brown radio on the kitchen shelf.\nOne rainy afternoon, Sam was bored and picked up the radio. As he turned the dial, he heard music that sounded like it came from another time. \"That's jazz,\" said Grandpa, walking in from the garden. \"My father used to play it at dances when I was your age.\"\nFor the rest of the afternoon, Grandpa told Sam stories while the radio played softly in the background. Sam heard about family members he had never met and places he had never seen. He forgot all about his phone and the games waiting at home.\nWhen it was time to leave, Sam asked if he could have the radio. Grandpa smiled and shook his head. \"It belongs here,\" he said. \"But you can come back and listen anytime.\" And Sam did — every summer until the radio finally fell silent, years later.",
+    "questions": [
+      {
+        "question": "What did Sam and Grandpa do on the rainy afternoon?",
+        "options": ["(A) They watched TV together", "(B) They played games on Sam's phone", "(C) Grandpa told Sam family stories while the radio played", "(D) They went to a jazz concert in town"],
+        "answer": 2,
+        "explanation": "第三段說 Grandpa told Sam stories while the radio played softly，故選 C。",
+        "optionsZh": ["他們一起看電視", "他們玩 Sam 的手機遊戲", "爺爺一邊放著廣播一邊講家族故事", "他們去城鎮看爵士音樂會"],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why did Grandpa refuse to give Sam the radio?",
+        "options": ["(A) The radio was too expensive to give away", "(B) Grandpa did not want Sam to have it", "(C) Grandpa said the radio belonged where it was", "(D) Sam did not ask for it politely"],
+        "answer": 2,
+        "explanation": "爺爺說 It belongs here，表示廣播機屬於那個地方，選 C；他仍然歡迎 Sam 回來聽，並非不想給，選 B 不準確。",
+        "optionsZh": ["廣播機太貴了", "爺爺不想給 Sam", "爺爺說廣播機屬於那裡", "Sam 沒有禮貌地詢問"],
+        "questionType": "inference"
+      },
+      {
+        "question": "What does this story mainly show?",
+        "options": ["(A) Old radios sound better than modern music players", "(B) Simple things can bring people closer and create lasting memories", "(C) Children should spend more time in the countryside", "(D) Jazz music is more popular than other types of music"],
+        "answer": 1,
+        "explanation": "故事透過廣播機連接祖孫兩代、讓 Sam 每年回訪直到廣播沉默，主旨是簡單的事物可以拉近人心並留下深刻回憶，選 B。",
+        "optionsZh": ["老廣播機比現代音樂播放器音質更好", "簡單的事物能拉近人心並留下長久回憶", "孩子應該在鄉下待更多時間", "爵士樂比其他類型的音樂更受歡迎"],
+        "questionType": "main_idea"
       }
     ]
   }
