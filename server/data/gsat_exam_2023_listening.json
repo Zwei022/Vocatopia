@@ -1,0 +1,365 @@
+{
+  "year": 2023,
+  "rocYear": 112,
+  "type": "listening",
+  "label": "聽力測驗",
+  "source": "112 年國中教育會考 英語科聽力試題（官方原聲）",
+  "durationMin": 25,
+  "totalQuestions": 21,
+  "audioNote": "每題可點播放鈕聆聽官方原聲，內容唸兩次。交卷後可展開逐字稿對照。",
+  "sections": [
+    {
+      "kind": "single",
+      "title": "第一部分：辨識句意",
+      "range": "第 1–3 題",
+      "desc": "每題三張圖片，請依聽到的句子，選出符合句子描述的圖片。",
+      "items": [
+        {
+          "n": 1,
+          "audio": "/public/audio/listening/2023/q1.mp3",
+          "image": "/public/images/gsat/2023_listening/q1.png",
+          "options": ["(A)", "(B)", "(C)"],
+          "answer": 2,
+          "transcript": "Some ducks are swimming in the pond, and some turtles are sitting on the rocks.",
+          "explanation": "句意為「一些鴨子在池塘裡游泳，一些烏龜坐在岩石上」。(C) 圖中同時呈現池塘中的鴨子與岩石上的烏龜，符合描述，故選 (C)。",
+          "optionsZh": ["", "", ""]
+        },
+        {
+          "n": 2,
+          "audio": "/public/audio/listening/2023/q2.mp3",
+          "image": "/public/images/gsat/2023_listening/q2.png",
+          "options": ["(A)", "(B)", "(C)"],
+          "answer": 0,
+          "transcript": "The umbrella is lying under the window.",
+          "explanation": "句意為「雨傘躺在窗戶下方」。(A) 圖中雨傘平放在窗戶正下方的地板上，符合描述，故選 (A)。",
+          "optionsZh": ["", "", ""]
+        },
+        {
+          "n": 3,
+          "audio": "/public/audio/listening/2023/q3.mp3",
+          "image": "/public/images/gsat/2023_listening/q3.png",
+          "options": ["(A)", "(B)", "(C)"],
+          "answer": 1,
+          "transcript": "The girl looks very tired with all the shopping bags in her hands.",
+          "explanation": "句意為「女孩兩手提著很多購物袋，看起來非常疲憊」。(B) 圖中女孩面露疲態、雙手提著多個購物袋，符合描述，故選 (B)。",
+          "optionsZh": ["", "", ""]
+        }
+      ]
+    },
+    {
+      "kind": "single",
+      "title": "第二部分：基本問答",
+      "range": "第 4–11 題",
+      "desc": "每題三個選項，請依聽到的內容，選出一個最適合的回應。",
+      "items": [
+        {
+          "n": 4,
+          "audio": "/public/audio/listening/2023/q4.mp3",
+          "options": [
+            "(A) Tea eggs are my favorite.",
+            "(B) We have thirty-five dollars.",
+            "(C) There are five in the refrigerator."
+          ],
+          "answer": 2,
+          "transcript": "How many eggs do we have? I want to make fried rice.",
+          "explanation": "題目問「我們有幾顆雞蛋？我想做炒飯。」(A) 說最喜歡茶葉蛋（未回答數量）、(B) 說有三十五元（答非所問）；(C) 「冰箱裡有五顆」直接回答雞蛋數量，故選 (C)。",
+          "optionsZh": [
+            "我最喜歡茶葉蛋了。",
+            "我們有三十五元。",
+            "冰箱裡有五顆。"
+          ]
+        },
+        {
+          "n": 5,
+          "audio": "/public/audio/listening/2023/q5.mp3",
+          "options": [
+            "(A) Oh, you're hungry, too?",
+            "(B) Why not? That's my seat.",
+            "(C) Oh, sorry. I didn't know that."
+          ],
+          "answer": 2,
+          "transcript": "Excuse me, but you can't eat in the metro.",
+          "explanation": "題目說「不好意思，地鐵裡不能飲食。」(A) 問對方是否也餓了（語意不符）、(B) 說「那是我的座位」（與吃東西無關）；(C) 「哦，抱歉，我不知道」是得知規定後的正確反應，故選 (C)。",
+          "optionsZh": [
+            "哦，你也餓了嗎？",
+            "為什麼不行？那是我的座位。",
+            "哦，抱歉，我不知道這件事。"
+          ]
+        },
+        {
+          "n": 6,
+          "audio": "/public/audio/listening/2023/q6.mp3",
+          "options": [
+            "(A) I like dogs very much.",
+            "(B) I usually go swimming.",
+            "(C) I exercise three times a week."
+          ],
+          "answer": 1,
+          "transcript": "What do you like to do on the weekend?",
+          "explanation": "題目問「你週末喜歡做什麼？」(A) 說喜歡狗（非活動）、(C) 說每週運動三次（說明頻率而非活動種類，且未直接回答喜歡什麼）；(B) 「我通常去游泳」直接說明週末偏好的活動，故選 (B)。",
+          "optionsZh": [
+            "我非常喜歡狗。",
+            "我通常去游泳。",
+            "我每週運動三次。"
+          ]
+        },
+        {
+          "n": 7,
+          "audio": "/public/audio/listening/2023/q7.mp3",
+          "options": [
+            "(A) She said yes.",
+            "(B) She enjoyed it.",
+            "(C) She is very fast."
+          ],
+          "answer": 0,
+          "transcript": "I heard you invited Alisa to your party. What did she say?",
+          "explanation": "題目問「我聽說你邀請了 Alisa 來派對，她怎麼說？」(B) 說她很享受（活動已發生，但派對尚未到來）、(C) 說她很快（無關）；(A) 「她說好」直接回答 Alisa 的回應，故選 (A)。",
+          "optionsZh": [
+            "她說好。",
+            "她很享受。",
+            "她非常快。"
+          ]
+        },
+        {
+          "n": 8,
+          "audio": "/public/audio/listening/2023/q8.mp3",
+          "options": [
+            "(A) No, I haven't.",
+            "(B) Good, thanks.",
+            "(C) How are you?"
+          ],
+          "answer": 1,
+          "transcript": "It's been a long time since we last met. How have you been?",
+          "explanation": "題目說「好久不見，你最近怎麼樣？」(A) 「不，我沒有」語意不完整、(C) 「你好嗎？」是以問代答的轉移問句，不是正面回應；(B) 「很好，謝謝」是「How have you been?」的標準回應，故選 (B)。",
+          "optionsZh": [
+            "不，我沒有。",
+            "很好，謝謝。",
+            "你好嗎？"
+          ]
+        },
+        {
+          "n": 9,
+          "audio": "/public/audio/listening/2023/q9.mp3",
+          "options": [
+            "(A) Where did you find him?",
+            "(B) Oh yeah, I've already told him.",
+            "(C) Wait a minute, please. I'll get him for you."
+          ],
+          "answer": 2,
+          "transcript": "Excuse me, I'm looking for a John Smith. I was told that I could find him here.",
+          "explanation": "題目說「不好意思，我在找 John Smith，有人告訴我在這裡可以找到他。」(A) 問對方在哪裡找到他（語意奇怪）、(B) 說已經告訴他了（不確定誰告訴誰）；(C) 「請稍等，我去叫他來」是最合理的幫忙回應，故選 (C)。",
+          "optionsZh": [
+            "你在哪裡找到他的？",
+            "哦對，我已經告訴他了。",
+            "請稍等，我去幫你叫他。"
+          ]
+        },
+        {
+          "n": 10,
+          "audio": "/public/audio/listening/2023/q10.mp3",
+          "options": [
+            "(A) Well, it's good to know.",
+            "(B) Well, I don't remember.",
+            "(C) Well, he won't listen to me."
+          ],
+          "answer": 1,
+          "transcript": "Hey! Listen! What's the name of this song? Grandpa used to sing it to us.",
+          "explanation": "題目問「這首歌叫什麼名字？這是爺爺以前常唱給我們聽的。」(A) 「知道了很好」沒有回答歌名、(C) 「他不聽我的」語意不符；(B) 「我不記得了」表示不知道歌名，是合理的回應，故選 (B)。",
+          "optionsZh": [
+            "嗯，知道了很好。",
+            "嗯，我不記得了。",
+            "嗯，他不聽我的。"
+          ]
+        },
+        {
+          "n": 11,
+          "audio": "/public/audio/listening/2023/q11.mp3",
+          "options": [
+            "(A) Yes, I'll order now.",
+            "(B) Yes, I can have a drink.",
+            "(C) Yes, I'll have a coffee, please."
+          ],
+          "answer": 2,
+          "transcript": "Can I get you something to drink while you're looking at the menu?",
+          "explanation": "服務生問「您在看菜單的時候，需要先來點飲料嗎？」(A) 說「我現在要點餐」（不是點飲料）、(B) 說「我可以喝飲料」（只確認能喝，未點）；(C) 「我要一杯咖啡，謝謝」直接點了飲料，是最合適的回應，故選 (C)。",
+          "optionsZh": [
+            "好的，我現在要點餐。",
+            "好的，我可以喝飲料。",
+            "好的，我要一杯咖啡，謝謝。"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "single",
+      "title": "第三部分：言談理解",
+      "range": "第 12–21 題",
+      "desc": "每題三個選項，請依聽到的對話或短文內容，選出一個最適合的答案。",
+      "items": [
+        {
+          "n": 12,
+          "audio": "/public/audio/listening/2023/q12.mp3",
+          "options": [
+            "(A) The girl's brother.",
+            "(B) The girl's neighbor.",
+            "(C) The girl's classmate."
+          ],
+          "answer": 2,
+          "transcript": "Hey Ted, what did the teacher just say? Lesson one and four will be on the test tomorrow. Oh no, can I go to your house and study? Why? My neighbor's going to have a party tonight. I can't study with all that noise. Oh, okay. But I need to ask my mom and dad first. Thanks.",
+          "explanation": "女孩問 Ted 剛才老師說了什麼，顯示兩人在同一班上課，Ted 是女孩的同學。鄰居是製造噪音派對的人，並非 Ted。故選 (C)。",
+          "optionsZh": [
+            "女孩的哥哥/弟弟。",
+            "女孩的鄰居。",
+            "女孩的同學。"
+          ]
+        },
+        {
+          "n": 13,
+          "audio": "/public/audio/listening/2023/q13.mp3",
+          "options": [
+            "(A) She needs to study.",
+            "(B) She isn't wearing sports shoes.",
+            "(C) She doesn't like to play basketball."
+          ],
+          "answer": 1,
+          "transcript": "Hey, Ariana, let's play basketball together. Well, I would like to, but I can't. Why not? Do you need to study? No, I don't have the right shoes today. Maybe next time.",
+          "explanation": "男生問 Ariana 要不要一起打籃球，她說「我今天沒有帶對的鞋子」，即沒有穿運動鞋，而非不想打或需要讀書，故選 (B)。",
+          "optionsZh": [
+            "她需要讀書。",
+            "她沒有穿運動鞋。",
+            "她不喜歡打籃球。"
+          ]
+        },
+        {
+          "n": 14,
+          "audio": "/public/audio/listening/2023/q14.mp3",
+          "options": [
+            "(A) To keep themselves safe.",
+            "(B) To help move their desks.",
+            "(C) To do exercises with their teachers."
+          ],
+          "answer": 0,
+          "transcript": "Attention, please. There's an earthquake happening right now. Everyone hide under your desk. Stay on your knees and hold on to your head with your arms and hands. Be careful. Things may drop from above. Keep quiet and do not come out until your teachers tell you to.",
+          "explanation": "廣播要求學生躲到桌子下、保護頭部、注意上方可能掉落的物品、保持安靜。這些指示的目的都是為了「保護自身安全」，故選 (A)。",
+          "optionsZh": [
+            "保護自身安全。",
+            "幫忙移動桌子。",
+            "跟老師一起做運動。"
+          ]
+        },
+        {
+          "n": 15,
+          "audio": "/public/audio/listening/2023/q15.mp3",
+          "options": [
+            "(A) Because her show was not successful.",
+            "(B) Because she got a bad seat in the theater.",
+            "(C) Because he did not stay until the end of the show."
+          ],
+          "answer": 0,
+          "transcript": "I heard you had a theater show last night. Yeah, my first one. Did a lot of people come? Oh, it was a very small show in a very small theater with just a few seats. But I think they both liked it. Both? There were only two people there? By the end, yeah. Oh, sorry.",
+          "explanation": "男生說「oh, sorry」，是因為知道女生的劇場表演到最後只剩兩位觀眾，場次非常冷清，演出並不成功。故選 (A)。",
+          "optionsZh": [
+            "因為她的演出不成功。",
+            "因為她在劇場裡的座位不好。",
+            "因為他沒有待到演出結束。"
+          ]
+        },
+        {
+          "n": 16,
+          "audio": "/public/audio/listening/2023/q16.mp3",
+          "options": [
+            "(A) She was in Mr. Anderson's class.",
+            "(B) She asked a lot of questions in class.",
+            "(C) She started a study group for the class."
+          ],
+          "answer": 0,
+          "transcript": "What's wrong, Jason? You look worried. Yeah. I'm going to Mr. Anderson's class later. I feel like I'm dying. I know. I've been there. Oh, you were in his class too? Yeah. He always asked difficult questions that I couldn't answer.",
+          "explanation": "女生說「I've been there」，Jason 隨即問「你以前也上過他的課？」女生答「對」，確認「I've been there」意指「我也待過那個處境（上過 Anderson 老師的課）」。故選 (A)。",
+          "optionsZh": [
+            "她也曾是 Anderson 老師的學生。",
+            "她在課堂上問了很多問題。",
+            "她為這門課成立了讀書會。"
+          ]
+        },
+        {
+          "n": 17,
+          "audio": "/public/audio/listening/2023/q17.mp3",
+          "options": [
+            "(A) The woman likes pies from the bakery.",
+            "(B) The pie the man made last year tasted bad.",
+            "(C) The man will be too tired from making pies."
+          ],
+          "answer": 1,
+          "transcript": "So, for Thanksgiving dinner, I'll still make a pumpkin pie like last year. Uh, let's just buy one from the bakery. It's no problem. Besides, everyone liked it. Well... Everyone said they'd never had such a pie. They finished it all real quick! Um, did you actually see them eat it? Well, John said they wanted to enjoy it on the balcony. And Karen and Rose wanted to have it by the pond while watching the ducks. I can only tell you that our neighbors' dogs and the birds all enjoyed your pie.",
+          "explanation": "女生用幽默方式揭露真相：賓客們都把男生做的派偷偷帶到戶外，最後全被鄰居的狗和鳥吃掉了，暗示派根本難以入口。女生建議買現成的派，正是因為去年自製的派難吃，故選 (B)。",
+          "optionsZh": [
+            "女生喜歡烘焙坊的派。",
+            "男生去年做的派不好吃。",
+            "男生做派會太累了。"
+          ]
+        },
+        {
+          "n": 18,
+          "audio": "/public/audio/listening/2023/q18.mp3",
+          "image": "/public/images/gsat/2023_listening/q18.png",
+          "options": ["(A)", "(B)", "(C)"],
+          "answer": 0,
+          "transcript": "Please come in. Let me show you the apartment. This is the living room, the kitchen and dining room are on your left, the bedroom and bathroom on the other side. The bathroom is by the front door, and you can get to it from both the bedroom and the living room. This way, visitors can use the bathroom without walking through your bedroom. Right across from the bathroom is the dining room, and you can see in here the only door to the kitchen.",
+          "explanation": "格局描述：進門是客廳（中央），左側為廚房和餐廳，右側為臥室和浴室；浴室緊鄰大門，可從臥室或客廳進入；餐廳在浴室正對面；廚房只有一扇門。(A) 圖符合此格局，故選 (A)。",
+          "optionsZh": ["", "", ""]
+        },
+        {
+          "n": 19,
+          "audio": "/public/audio/listening/2023/q19.mp3",
+          "options": [
+            "(A) In a restroom.",
+            "(B) In a restaurant.",
+            "(C) In a movie theater."
+          ],
+          "answer": 2,
+          "transcript": "Oh no, we've got the middle seats. Isn't that good? Everyone wants middle seats. It usually is, but it'll be a lot of trouble when you need to go to the restroom. You know, I just had a large cup of coke at the restaurant. Oh, I really hate to keep saying, excuse me, excuse me, to people. Then go to the restroom now. There are still 10 minutes before the movie starts.",
+          "explanation": "兩人談到「中間排的座位」、「電影還有 10 分鐘才開始」，顯示他們正坐在電影院中等候電影開場。餐廳是他們之前去的地方，非現在所在地，故選 (C)。",
+          "optionsZh": [
+            "在洗手間。",
+            "在餐廳。",
+            "在電影院。"
+          ]
+        },
+        {
+          "n": 20,
+          "audio": "/public/audio/listening/2023/q20.mp3",
+          "options": [
+            "(A) Ideas for creating a painting.",
+            "(B) The stories behind a painting.",
+            "(C) Tips for understanding a painting."
+          ],
+          "answer": 2,
+          "transcript": "As an art lover, I visit museums a lot. Most of the time, I see people stand in front of a painting, take a picture of it, and then go on to the next painting. They spend less than ten seconds at each painting. You need to look at a painting and study it from different angles. What colors or shapes are used in the painting? How do they make you feel? If you don't feel a thing, that's okay. Go and find out stories behind the artwork online. It helps you have a better idea of how the painting was created.",
+          "explanation": "女生分享如何欣賞藝術畫作的建議：從不同角度觀察、思考色彩和形狀的感受、在網上查閱作品背後的故事。整段是「如何更好地理解和欣賞畫作的技巧」，故選 (C)。",
+          "optionsZh": [
+            "創作畫作的點子。",
+            "畫作背後的故事。",
+            "理解畫作的技巧。"
+          ]
+        },
+        {
+          "n": 21,
+          "audio": "/public/audio/listening/2023/q21.mp3",
+          "options": [
+            "(A) They have no idea at the moment.",
+            "(B) They'll ask them to stop the noise right away.",
+            "(C) They'll have a meeting with them the next day."
+          ],
+          "answer": 0,
+          "transcript": "Do you hear that? The Browns are making so much noise again. Oh no. It's two o'clock in the morning. I have to get up early for a meeting and now I can't sleep at all. Okay, okay, don't worry. I'll go tell them to stop. But last time you knocked on their door, they didn't even answer it. Yeah, you're right. We should think of some other way to deal with them.",
+          "explanation": "男生提議去敲門，但女生提醒「上次敲門他們根本不來開」，男生說「對，我們應該想個別的辦法」。兩人最後並未決定具體方案，目前還沒有頭緒，故選 (A)。",
+          "optionsZh": [
+            "他們目前還沒有任何想法。",
+            "他們要馬上去叫他們停止吵鬧。",
+            "他們明天會和 Browns 家開會。"
+          ]
+        }
+      ]
+    }
+  ]
+}

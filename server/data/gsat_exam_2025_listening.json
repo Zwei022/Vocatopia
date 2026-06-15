@@ -1,0 +1,372 @@
+{
+  "year": 2025,
+  "rocYear": 114,
+  "type": "listening",
+  "label": "聽力測驗",
+  "source": "114 年國中教育會考 英語科聽力試題（官方原聲）",
+  "durationMin": 25,
+  "totalQuestions": 21,
+  "audioNote": "每題可點播放鈕聆聽官方原聲，內容唸兩次。交卷後可展開逐字稿對照。",
+  "sections": [
+    {
+      "kind": "single",
+      "title": "第一部分：辨識句意",
+      "range": "第 1–3 題",
+      "desc": "每題三張圖片，請依聽到的句子，選出符合句子描述的圖片。",
+      "items": [
+        {
+          "n": 1,
+          "audio": "/public/audio/listening/2025/q1.mp3",
+          "image": "/public/images/gsat/2025_listening/q1.png",
+          "options": ["(A)", "(B)", "(C)"],
+          "answer": 0,
+          "transcript": "The girl is taking a picture of the foxes.",
+          "explanation": "句意為「女孩正在幫狐狸拍照」。(A) 圖中女孩舉著相機對準狐狸，符合描述，故選 (A)。",
+          "optionsZh": ["", "", ""]
+        },
+        {
+          "n": 2,
+          "audio": "/public/audio/listening/2025/q2.mp3",
+          "image": "/public/images/gsat/2025_listening/q2.png",
+          "options": ["(A)", "(B)", "(C)"],
+          "answer": 2,
+          "transcript": "The girl is eating popcorn and watching a movie on her computer.",
+          "explanation": "句意為「女孩一邊吃爆米花一邊在電腦上看電影」。(C) 圖中女孩手拿爆米花且面向筆電，符合描述，故選 (C)。",
+          "optionsZh": ["", "", ""]
+        },
+        {
+          "n": 3,
+          "audio": "/public/audio/listening/2025/q3.mp3",
+          "image": "/public/images/gsat/2025_listening/q3.png",
+          "options": ["(A)", "(B)", "(C)"],
+          "answer": 2,
+          "transcript": "The typhoon will move over the north of the island. It is going to hit the land at 6:30 and leave before noon.",
+          "explanation": "句意為「颱風將從島嶼北方通過，預計 6:30 登陸、中午前離開」。需選出颱風路徑經過北方且標示 6:30 登陸的天氣圖，故選 (C)。",
+          "optionsZh": ["", "", ""]
+        }
+      ]
+    },
+    {
+      "kind": "single",
+      "title": "第二部分：基本問答",
+      "range": "第 4–11 題",
+      "desc": "每題三個選項，請依聽到的內容，選出一個最適合的回應。",
+      "items": [
+        {
+          "n": 4,
+          "audio": "/public/audio/listening/2025/q4.mp3",
+          "options": [
+            "(A) I love my job.",
+            "(B) Usually by metro.",
+            "(C) Usually at six thirty."
+          ],
+          "answer": 1,
+          "transcript": "How do you usually go to work?",
+          "explanation": "題目問「你通常怎麼去上班？」，詢問的是交通方式。(A) 說喜歡工作、(C) 說六點半（時間而非方式），均答非所問；(B) 「通常搭捷運」直接回答交通工具，故選 (B)。",
+          "optionsZh": [
+            "我很熱愛我的工作。",
+            "通常搭捷運。",
+            "通常六點半。"
+          ]
+        },
+        {
+          "n": 5,
+          "audio": "/public/audio/listening/2025/q5.mp3",
+          "options": [
+            "(A) Just leave them on the table.",
+            "(B) They're in the wrong drawer.",
+            "(C) I need them for tomorrow's test."
+          ],
+          "answer": 0,
+          "transcript": "Excuse me, where should I put these pencils?",
+          "explanation": "題目問「不好意思，這些鉛筆要放哪裡？」，詢問放置地點。(B) 說放錯抽屜了、(C) 說明天考試要用，均無法告知放置地點；(A) 「就放在桌上」直接回答，故選 (A)。",
+          "optionsZh": [
+            "就放在桌上吧。",
+            "它們放錯抽屜了。",
+            "我明天考試要用它們。"
+          ]
+        },
+        {
+          "n": 6,
+          "audio": "/public/audio/listening/2025/q6.mp3",
+          "options": [
+            "(A) Yes, a dress.",
+            "(B) Your favorite apple pie.",
+            "(C) I bought some new plates."
+          ],
+          "answer": 1,
+          "transcript": "What's in the kitchen? It smells great.",
+          "explanation": "題目問「廚房裡有什麼？好香喔。」(A) 說有一件洋裝（非食物）、(C) 說買了新盤子（與香味無關），均不符；(B) 「你最喜歡的蘋果派」是香噴噴的食物，最符合情境，故選 (B)。",
+          "optionsZh": [
+            "有，一件洋裝。",
+            "你最喜歡的蘋果派。",
+            "我買了一些新盤子。"
+          ]
+        },
+        {
+          "n": 7,
+          "audio": "/public/audio/listening/2025/q7.mp3",
+          "options": [
+            "(A) Sure, what is it?",
+            "(B) Really? That's crazy.",
+            "(C) I haven't heard of it before."
+          ],
+          "answer": 0,
+          "transcript": "I've got a crazy idea. Do you want to hear it?",
+          "explanation": "題目說「我有個瘋狂的點子，你想聽嗎？」(B) 「那很瘋狂」未回應是否想聽、(C) 「我以前沒聽說過」語意不合；(A) 「當然，是什麼？」表示願意聆聽並追問，故選 (A)。",
+          "optionsZh": [
+            "當然，是什麼？",
+            "真的嗎？那真是瘋狂。",
+            "我以前沒聽說過。"
+          ]
+        },
+        {
+          "n": 8,
+          "audio": "/public/audio/listening/2025/q8.mp3",
+          "options": [
+            "(A) Hurry up! Let's run for it.",
+            "(B) Don't worry. I can give you a ride.",
+            "(C) Sorry. Please come again some other time."
+          ],
+          "answer": 1,
+          "transcript": "Oh no, I just missed the last bus. Now I have to walk home.",
+          "explanation": "題目說「糟糕，我剛錯過末班公車，現在得走路回家了。」(A) 「快去追車」但已是末班車無法追、(C) 「改天再來」語意不合；(B) 「別擔心，我可以載你」提供解決方案，故選 (B)。",
+          "optionsZh": [
+            "快點！我們去追車！",
+            "別擔心，我可以載你。",
+            "抱歉，請改天再來。"
+          ]
+        },
+        {
+          "n": 9,
+          "audio": "/public/audio/listening/2025/q9.mp3",
+          "options": [
+            "(A) Yes, it tastes delicious.",
+            "(B) OK. See you at seven.",
+            "(C) No, I'm not really hungry."
+          ],
+          "answer": 2,
+          "transcript": "Aren't you going to have some dinner? It's seven already.",
+          "explanation": "題目問「你不吃晚餐嗎？已經七點了。」(A) 說「很好吃」是評論食物，但晚餐尚未吃、(B) 「好，七點見」語意錯誤（已是七點）；(C) 「不了，我不太餓」直接解釋不吃晚餐的原因，故選 (C)。",
+          "optionsZh": [
+            "好啊，很好吃。",
+            "好，七點見。",
+            "不了，我不太餓。"
+          ]
+        },
+        {
+          "n": 10,
+          "audio": "/public/audio/listening/2025/q10.mp3",
+          "options": [
+            "(A) I taught myself.",
+            "(B) I won a prize once.",
+            "(C) I take lessons twice a week."
+          ],
+          "answer": 0,
+          "transcript": "I didn't know that you could play the piano so well. Who was your teacher?",
+          "explanation": "題目問「我不知道你鋼琴彈得這麼好，你的老師是誰？」(B) 說得過獎、(C) 說每週上兩次課，均未回答「老師是誰」；(A) 「我自學的」意即沒有老師，直接回答問題，故選 (A)。",
+          "optionsZh": [
+            "我自學的。",
+            "我得過一次獎。",
+            "我每週上兩次課。"
+          ]
+        },
+        {
+          "n": 11,
+          "audio": "/public/audio/listening/2025/q11.mp3",
+          "options": [
+            "(A) I'm not sure if he's with me.",
+            "(B) No, have you tried calling him?",
+            "(C) Yes, you can ask him by yourself."
+          ],
+          "answer": 1,
+          "transcript": "Do you know where I can find Dr. Holland? I need to talk to him.",
+          "explanation": "題目問「你知道哪裡可以找到 Holland 博士嗎？我需要跟他說話。」(A) 「不確定他是否和我在一起」語意奇怪、(C) 「你可以自己去問他」未提供位置；(B) 「不知道，你有試著打電話給他嗎？」表示不清楚位置並給予建議，故選 (B)。",
+          "optionsZh": [
+            "我不確定他是否跟我在一起。",
+            "不知道，你有試著打電話給他嗎？",
+            "知道，你可以自己去問他。"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "single",
+      "title": "第三部分：言談理解",
+      "range": "第 12–21 題",
+      "desc": "每題三個選項，請依聽到的對話或短文內容，選出一個最適合的答案。",
+      "items": [
+        {
+          "n": 12,
+          "audio": "/public/audio/listening/2025/q12.mp3",
+          "options": [
+            "(A) Make him a card.",
+            "(B) Cook him a nice dinner.",
+            "(C) Take him to a restaurant."
+          ],
+          "answer": 1,
+          "transcript": "Hey Lisa, are you ready for Father's Day? Well, I'm thinking to make Dad a card. What do you think? But he already has a lot of cards. We make him cards every year. Any other ideas? Why don't we take him to that new restaurant? I heard it's very good. Yeah, it is. But I'm afraid everyone wants to take their dad there. And Father's Day's tomorrow. It's too late to get a table now. Hmm. Maybe we could cook a nice dinner for him. It's more comfortable at home, isn't it? Yeah, that's a good idea.",
+          "explanation": "兩人討論父親節要做什麼：做卡片被否決（年年都做）、去新餐廳也被否決（訂不到位），最後決定「在家煮一頓豐盛晚餐」，故選 (B)。",
+          "optionsZh": [
+            "為他做一張卡片。",
+            "為他煮一頓豐盛的晚餐。",
+            "帶他去餐廳。"
+          ]
+        },
+        {
+          "n": 13,
+          "audio": "/public/audio/listening/2025/q13.mp3",
+          "options": [
+            "(A) Cookies, milk, and tomatoes.",
+            "(B) Cookies, milk, ice cream, and tomatoes.",
+            "(C) Cookies, milk, tomatoes, and sandwiches."
+          ],
+          "answer": 0,
+          "transcript": "Hey honey, could you help me do some shopping on your way home? I need cookies, milk, and ice cream. Hmm, maybe skip the ice cream this time. Oh, I also want some tomatoes. I'm going to make sandwiches. That's all for now. Thanks. See you later.",
+          "explanation": "一開始的清單是餅乾、牛奶、冰淇淋，但隨後說「這次不要冰淇淋」，又追加番茄。三明治是用番茄「做」的，並非需要買的品項。最終清單為餅乾、牛奶、番茄，故選 (A)。",
+          "optionsZh": [
+            "餅乾、牛奶和番茄。",
+            "餅乾、牛奶、冰淇淋和番茄。",
+            "餅乾、牛奶、番茄和三明治。"
+          ]
+        },
+        {
+          "n": 14,
+          "audio": "/public/audio/listening/2025/q14.mp3",
+          "options": [
+            "(A) In a gift shop.",
+            "(B) In a bookstore.",
+            "(C) In a clothes shop."
+          ],
+          "answer": 2,
+          "transcript": "It's $1,500. Here. Thanks. Remember to wash it in cold water and hang it to dry. Okay, thanks. Do you need a bag? Uh, can I have a box for the shirt? It's a gift. Sorry, I'm afraid we only have paper bags. That's okay. Do you know where I can get a box? There is a gift shop on the second floor, next to a candy shop. Great. Thank you.",
+          "explanation": "對話中提到付款、提醒「用冷水洗、掛起來晾乾」，以及提到「shirt（襯衫）」，顯示是在衣服店。禮品店在二樓，所以兩人並非在禮品店。故選 (C)。",
+          "optionsZh": [
+            "在禮品店。",
+            "在書店。",
+            "在服飾店。"
+          ]
+        },
+        {
+          "n": 15,
+          "audio": "/public/audio/listening/2025/q15.mp3",
+          "options": [
+            "(A) He almost hit someone.",
+            "(B) He drove around a corner.",
+            "(C) He was trying to answer a call."
+          ],
+          "answer": 0,
+          "transcript": "I had a close call today. Really? What happened? I was driving around a corner, and I didn't notice a man was crossing the street. He just suddenly appeared. Lucky for us, he jumped out of the way at just the right moment, so I missed him. Be more careful next time. I know. I was just trying to answer a phone call while I was driving.",
+          "explanation": "「a close call」意指「千鈞一髮的危險情況」。男生說他在轉彎時差點撞上一位過馬路的行人，幸好對方及時跳開。故 (A) 「他差點撞到人」是正確解釋。(B) 只是描述轉彎的動作，(C) 是造成危機的原因，均非 close call 的直接含意。",
+          "optionsZh": [
+            "他差點撞到人。",
+            "他開車轉了一個彎。",
+            "他在開車時試圖接電話。"
+          ]
+        },
+        {
+          "n": 16,
+          "audio": "/public/audio/listening/2025/q16.mp3",
+          "options": [
+            "(A) The man's class.",
+            "(B) The woman's class.",
+            "(C) Lily's class."
+          ],
+          "answer": 0,
+          "transcript": "Hey, Scott, is your class ready for tomorrow? Sure, we've baked some pies and bought some fruit for making juice. How about yours? We're not selling food. We'll invite people to paint cups and plates. Do you know what Lily's class is going to do? They're preparing some games.",
+          "explanation": "Scott（男生）的班做了派、買了水果準備賣；女生的班不賣食物，改辦彩繪活動；Lily 的班準備遊戲。三班中只有 Scott（男生）的班在販售食物，故選 (A)。",
+          "optionsZh": [
+            "男生的班級。",
+            "女生的班級。",
+            "Lily 的班級。"
+          ]
+        },
+        {
+          "n": 17,
+          "audio": "/public/audio/listening/2025/q17.mp3",
+          "options": [
+            "(A) She tries to make him feel bad.",
+            "(B) She wants him to enjoy his birthday.",
+            "(C) She can deal with dirty plates herself."
+          ],
+          "answer": 1,
+          "transcript": "We're all looking for you. What are you doing here in the kitchen? I'm washing plates. We need more for the cake later. Now I feel like I'm a bad friend. We're here to celebrate your birthday today and you're washing plates for us. No worries. I'll be out in a minute. I've only got a few more to wash. Let me. Are you sure? Hey. I know I'm not as good at housework as you, but I can deal with a few dirty plates, all right? Okay. Don't break them. I won't. Now go and have fun.",
+          "explanation": "今天是男生的生日，女生（朋友）發現他躲在廚房洗盤子，於是說「Let me（讓我來洗）」，原因是她希望男生（壽星）能去外面享受自己的生日派對。男生雖最後堅持自己洗，但女生不想讓男生洗的動機是「希望他享受生日」，故選 (B)。",
+          "optionsZh": [
+            "她想讓他感到內疚。",
+            "她希望他去享受生日派對。",
+            "她自己可以處理髒盤子。"
+          ]
+        },
+        {
+          "n": 18,
+          "audio": "/public/audio/listening/2025/q18.mp3",
+          "options": [
+            "(A) Because she wants a better job.",
+            "(B) Because she already found a job.",
+            "(C) Because she lied in the job interview."
+          ],
+          "answer": 2,
+          "transcript": "Remember the interview I had last week. They just called to tell me I got the job. I'm so happy for you, but why do you sound worried? Well, I think they gave me the job because I told them I speak Chinese. Why did you do that? You can only say Xiaolongbao and Xixi. I know, I know, but it is my dream job. But if they find out, you'll be in trouble. I'm sure you'll find a better job if you keep looking. I'm not sure if I can, but still, I'll call them and tell them that I'm not taking the job.",
+          "explanation": "女生面試時謊稱自己會說中文（實際上只會說「小籠包」和「嘻嘻」），雖然因此錄取，卻擔心謊言遲早被拆穿，最終決定拒絕這份工作。原因是她在面試中說謊，故選 (C)。",
+          "optionsZh": [
+            "因為她想要更好的工作。",
+            "因為她已經找到另一份工作了。",
+            "因為她在求職面試中說謊了。"
+          ]
+        },
+        {
+          "n": 19,
+          "audio": "/public/audio/listening/2025/q19.mp3",
+          "options": [
+            "(A) What days the garbage truck comes.",
+            "(B) How garbage is collected in Taiwan.",
+            "(C) Which music garbage trucks in Taiwan play."
+          ],
+          "answer": 1,
+          "transcript": "Did you hear the music? Is there a show on the street tonight? No, that's the garbage truck music in Taiwan. When people hear it, they know the garbage truck is coming, they take out their garbage and throw it into the truck. That's new to me. In my country, people just leave their garbage in front of their houses and someone will collect it in the middle of the night. Oh, I actually have some trash in my room. I should take it out now. Then you should hurry. The garbage truck stops for only five minutes.",
+          "explanation": "女生向外國男生說明台灣垃圾車音樂的用途，以及民眾需要自己把垃圾丟進車裡，並對比對方國家的收垃圾方式。整段的主軸是說明台灣如何收集垃圾，故選 (B)。",
+          "optionsZh": [
+            "垃圾車哪幾天來。",
+            "台灣如何收集垃圾。",
+            "台灣垃圾車播放哪首音樂。"
+          ]
+        },
+        {
+          "n": 20,
+          "audio": "/public/audio/listening/2025/q20.mp3",
+          "options": [
+            "(A) She thinks the man knows Alan well.",
+            "(B) She does not think Alan will move to America.",
+            "(C) She thinks Alan will move to America next year."
+          ],
+          "answer": 1,
+          "transcript": "You know what? Alan told me he plans to move to America this Christmas. And? This is big news. To you, yes, you only just met him. I don't know how many times I've heard him say the same thing over the past five years. But he sounded very serious. Well, you'll know what I mean next year.",
+          "explanation": "女生說五年來 Alan 說了無數次要移居美國卻從未實現，說「明年你就會知道我的意思」，暗示 Alan 到時候還是不會搬去美國。故選 (B)，女生認為 Alan 不會真的搬去美國。",
+          "optionsZh": [
+            "她認為男生很了解 Alan。",
+            "她認為 Alan 不會搬去美國。",
+            "她認為 Alan 明年會搬去美國。"
+          ]
+        },
+        {
+          "n": 21,
+          "audio": "/public/audio/listening/2025/q21.mp3",
+          "options": [
+            "(A) The game will begin soon.",
+            "(B) The snacks at the food stands are free.",
+            "(C) People have to wait until the rain stops."
+          ],
+          "answer": 2,
+          "transcript": "Good afternoon, ladies and gentlemen. We hope you are enjoying today's baseball game. Because of the rain, we will now take a long break. The rain is expected to get heavier the next 20 minutes, but it should stop in an hour. During this time, all snacks at our food stands come with a free drink. We'll let you know when the game will begin again. Thank you for understanding.",
+          "explanation": "廣播說因為下雨要暫停比賽，雨勢在接下來 20 分鐘會加強，約一小時後停止，比賽恢復時間再另行通知。(A) 說比賽即將開始（錯誤），(B) 說零食免費（錯誤，是零食「附贈」免費飲料），(C) 說大家需等雨停才能繼續（正確），故選 (C)。",
+          "optionsZh": [
+            "比賽即將開始。",
+            "餐飲攤的點心是免費的。",
+            "大家必須等到雨停。"
+          ]
+        }
+      ]
+    }
+  ]
+}

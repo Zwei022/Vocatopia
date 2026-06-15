@@ -1,0 +1,365 @@
+{
+  "year": 2024,
+  "rocYear": 113,
+  "type": "listening",
+  "label": "聽力測驗",
+  "source": "113 年國中教育會考 英語科聽力試題（官方原聲）",
+  "durationMin": 25,
+  "totalQuestions": 21,
+  "audioNote": "每題可點播放鈕聆聽官方原聲，內容唸兩次。交卷後可展開逐字稿對照。",
+  "sections": [
+    {
+      "kind": "single",
+      "title": "第一部分：辨識句意",
+      "range": "第 1–3 題",
+      "desc": "每題三張圖片，請依聽到的句子，選出符合句子描述的圖片。",
+      "items": [
+        {
+          "n": 1,
+          "audio": "/public/audio/listening/2024/q1.mp3",
+          "image": "/public/images/gsat/2024_listening/q1.png",
+          "options": ["(A)", "(B)", "(C)"],
+          "answer": 2,
+          "transcript": "The bird is sitting on the girl's head.",
+          "explanation": "句意為「一隻鳥坐在女孩的頭上」。(C) 圖中鳥停在女孩頭頂，符合描述，故選 (C)。",
+          "optionsZh": ["", "", ""]
+        },
+        {
+          "n": 2,
+          "audio": "/public/audio/listening/2024/q2.mp3",
+          "image": "/public/images/gsat/2024_listening/q2.png",
+          "options": ["(A)", "(B)", "(C)"],
+          "answer": 2,
+          "transcript": "The boy and the girl are sharing a glass of lemon tea.",
+          "explanation": "句意為「男孩和女孩正在共享一杯檸檬茶」。(C) 圖中男女各持一根吸管喝同一杯飲料，符合描述，故選 (C)。",
+          "optionsZh": ["", "", ""]
+        },
+        {
+          "n": 3,
+          "audio": "/public/audio/listening/2024/q3.mp3",
+          "image": "/public/images/gsat/2024_listening/q3.png",
+          "options": ["(A)", "(B)", "(C)"],
+          "answer": 1,
+          "transcript": "When you look at the painting, you see a few houses near the bottom. The sky fills a large part of the painting.",
+          "explanation": "句意為「這幅畫底部有幾棟房子，天空佔了大部分的畫面」。(B) 圖中房子集中在畫面下方，上方大面積為天空，符合描述，故選 (B)。",
+          "optionsZh": ["", "", ""]
+        }
+      ]
+    },
+    {
+      "kind": "single",
+      "title": "第二部分：基本問答",
+      "range": "第 4–11 題",
+      "desc": "每題三個選項，請依聽到的內容，選出一個最適合的回應。",
+      "items": [
+        {
+          "n": 4,
+          "audio": "/public/audio/listening/2024/q4.mp3",
+          "options": [
+            "(A) No, they moved out.",
+            "(B) Yes, I have a pet dog.",
+            "(C) No, I'm the only child."
+          ],
+          "answer": 2,
+          "transcript": "Do you have brothers or sisters?",
+          "explanation": "題目問「你有兄弟姊妹嗎？」(A) 說「他們搬走了」，但問的是有無兄弟姊妹、(B) 說有寵物狗，答非所問；(C) 「不，我是獨生子/女」直接回答沒有兄弟姊妹，故選 (C)。",
+          "optionsZh": [
+            "沒有，他們已經搬出去了。",
+            "有，我有一隻寵物狗。",
+            "沒有，我是獨生子（女）。"
+          ]
+        },
+        {
+          "n": 5,
+          "audio": "/public/audio/listening/2024/q5.mp3",
+          "options": [
+            "(A) Don't worry. We won't be late.",
+            "(B) The movie is about two hours long.",
+            "(C) Which movie are you interested in?"
+          ],
+          "answer": 0,
+          "transcript": "Hurry up, the movie starts in 10 minutes.",
+          "explanation": "題目說「快點，電影還有 10 分鐘就開始了。」(B) 說電影約兩小時長、(C) 詢問想看哪部電影，均與「趕快」的情境不符；(A) 「別擔心，我們不會遲到的」直接回應催促，故選 (A)。",
+          "optionsZh": [
+            "別擔心，我們不會遲到的。",
+            "這部電影大約兩小時長。",
+            "你對哪部電影感興趣？"
+          ]
+        },
+        {
+          "n": 6,
+          "audio": "/public/audio/listening/2024/q6.mp3",
+          "options": [
+            "(A) It's right there.",
+            "(B) I feel sorry for you.",
+            "(C) I was bitten by a dog."
+          ],
+          "answer": 2,
+          "transcript": "What happened to your right leg? It looks terrible.",
+          "explanation": "題目問「你的右腳怎麼了？看起來很嚴重。」(A) 「就在那裡」沒有解釋原因、(B) 「我替你感到難過」是表達同情而非說明原因；(C) 「我被狗咬了」直接解釋腳的狀況，故選 (C)。",
+          "optionsZh": [
+            "就在那裡啊。",
+            "我替你感到難過。",
+            "我被狗咬了。"
+          ]
+        },
+        {
+          "n": 7,
+          "audio": "/public/audio/listening/2024/q7.mp3",
+          "options": [
+            "(A) No, I can't eat any more.",
+            "(B) Sure, I never say no to meat.",
+            "(C) Sorry, but we don't have it today."
+          ],
+          "answer": 0,
+          "transcript": "I want to order another cheesecake, would you like one too?",
+          "explanation": "題目問「我想再點一個起司蛋糕，你要不要也來一個？」(B) 「我從不拒絕肉」與起司蛋糕無關、(C) 「今天沒有」是服務生的說法；(A) 「不了，我再也吃不下了」是合理的婉拒，故選 (A)。",
+          "optionsZh": [
+            "不了，我再也吃不下了。",
+            "當然，我從不拒絕肉。",
+            "抱歉，我們今天沒有。"
+          ]
+        },
+        {
+          "n": 8,
+          "audio": "/public/audio/listening/2024/q8.mp3",
+          "options": [
+            "(A) It's been with me for ten years.",
+            "(B) It's small, gray, and has a long tail.",
+            "(C) We call it Milky because it likes milk."
+          ],
+          "answer": 1,
+          "transcript": "Can you tell me what your dog looks like? I can help you look for it.",
+          "explanation": "題目問「你能告訴我你的狗長什麼樣子嗎？我可以幫你找。」(A) 說陪伴了十年（非外觀描述）、(C) 說明取名原因（非外觀描述）；(B) 「小小的、灰色、有長尾巴」直接描述外觀特徵，故選 (B)。",
+          "optionsZh": [
+            "牠陪了我十年了。",
+            "牠小小的、灰色、有條長尾巴。",
+            "我們叫牠 Milky，因為牠喜歡喝牛奶。"
+          ]
+        },
+        {
+          "n": 9,
+          "audio": "/public/audio/listening/2024/q9.mp3",
+          "options": [
+            "(A) It's been about a year.",
+            "(B) I'll see him next time.",
+            "(C) You can go to see him."
+          ],
+          "answer": 0,
+          "transcript": "When was the last time you saw Bill?",
+          "explanation": "題目問「你上次見到 Bill 是什麼時候？」(B) 「下次我再去見他」未回答上次時間、(C) 「你可以去見他」未回答問題；(A) 「大概一年前吧」直接回答上次見面的時間，故選 (A)。",
+          "optionsZh": [
+            "大概一年前了。",
+            "我下次會去見他。",
+            "你可以去見他。"
+          ]
+        },
+        {
+          "n": 10,
+          "audio": "/public/audio/listening/2024/q10.mp3",
+          "options": [
+            "(A) Sounds great. I can't wait.",
+            "(B) Yes, I have visited many interesting places.",
+            "(C) I just can't choose between Japan and France."
+          ],
+          "answer": 2,
+          "transcript": "Where have you decided to go for your vacation this year?",
+          "explanation": "題目問「你今年度假決定去哪裡了嗎？」(A) 說「聽起來很棒，迫不及待」是在回應別人的計畫、(B) 說去過很多地方（非回答本次計畫）；(C) 「我就是在日本和法國之間猶豫不決」表示還未決定，且回答了正考慮的地點，故選 (C)。",
+          "optionsZh": [
+            "聽起來很棒，我迫不及待了。",
+            "是的，我去過很多有趣的地方。",
+            "我就是在日本和法國之間拿不定主意。"
+          ]
+        },
+        {
+          "n": 11,
+          "audio": "/public/audio/listening/2024/q11.mp3",
+          "options": [
+            "(A) He feels proud of me.",
+            "(B) The video game I wanted.",
+            "(C) I practiced for a long time."
+          ],
+          "answer": 1,
+          "transcript": "What did Grandpa give you for winning the boat race?",
+          "explanation": "題目問「爺爺因為你贏了划船比賽，送了你什麼？」(A) 說爺爺以你為傲（感受而非禮物）、(C) 說練習了很久（是方法而非禮物）；(B) 「我想要的電動遊戲」直接回答爺爺送的東西，故選 (B)。",
+          "optionsZh": [
+            "他覺得以我為傲。",
+            "我一直想要的電玩遊戲。",
+            "我練習了很長一段時間。"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "single",
+      "title": "第三部分：言談理解",
+      "range": "第 12–21 題",
+      "desc": "每題三個選項，請依聽到的對話或短文內容，選出一個最適合的答案。",
+      "items": [
+        {
+          "n": 12,
+          "audio": "/public/audio/listening/2024/q12.mp3",
+          "options": [
+            "(A) It is not turned on.",
+            "(B) There is no water inside.",
+            "(C) The man forgot to put coffee beans in."
+          ],
+          "answer": 0,
+          "transcript": "Why isn't the coffee machine working? It was okay when I used it yesterday. I pushed the button several times, but it just doesn't give me any coffee. Did you check to see if there's still water inside? Yes. Did you put coffee beans in? I did. Well, next time before you ask for help, make sure you've already turned the machine on.",
+          "explanation": "男生反映咖啡機不出咖啡，確認有水、有咖啡豆，最後對方說「下次求助前先確認機器有沒有開」，顯示原因是機器根本沒有開，故選 (A)。",
+          "optionsZh": [
+            "機器沒有開電源。",
+            "裡面沒有水了。",
+            "男生忘記放咖啡豆了。"
+          ]
+        },
+        {
+          "n": 13,
+          "audio": "/public/audio/listening/2024/q13.mp3",
+          "options": [
+            "(A) Take Bus 703 and walk there.",
+            "(B) Take Bus 941.",
+            "(C) Take a taxi."
+          ],
+          "answer": 1,
+          "transcript": "Hello? Hey Grace, I'm now at Lungpu Train Station. How do I get to Rainbow Art Park? You can take bus 703 to Lungpu Elementary School. It takes about 15 minutes. Then you walk for about 10 minutes to the park. What? A 10-minute walk in this hot weather will kill me! Take bus 941 then. It stops right in front of the park, but it takes about 40 minutes. If you think that will take too long, just get a taxi. Well, 40 minutes sounds fine to me. Thanks.",
+          "explanation": "男生嫌 703 路公車要走 10 分鐘太熱，拒絕步行；最後選擇 941 路（雖然要 40 分鐘，但直接到公園門口），說「40 分鐘沒關係」，故選 (B)。",
+          "optionsZh": [
+            "搭 703 路公車，然後步行過去。",
+            "搭 941 路公車。",
+            "搭計程車。"
+          ]
+        },
+        {
+          "n": 14,
+          "audio": "/public/audio/listening/2024/q14.mp3",
+          "options": [
+            "(A) In front of the theater.",
+            "(B) On West Street.",
+            "(C) At a pet shop."
+          ],
+          "answer": 1,
+          "transcript": "Perry, where are you? I just arrived. I'm here already. But I don't see you. Aren't we meeting in front of Galaxy Theatre? Yes, on West Street, right? Don't tell me you're on West Street. The theatre is not there. Then, what is this place? It looks like a theatre, and there's a sign that says new opening Galaxy Theatre. They've been putting signs up everywhere. It's on South Street, next to the big pet shop. Just stay there. I'll come get you.",
+          "explanation": "Perry 在一個貼有 Galaxy Theatre 開幕告示的地方，但對方說「劇院不在那裡，它在 South Street」。Perry 現在在 West Street，故選 (B)。",
+          "optionsZh": [
+            "在劇院門口。",
+            "在 West Street 上。",
+            "在寵物店。"
+          ]
+        },
+        {
+          "n": 15,
+          "audio": "/public/audio/listening/2024/q15.mp3",
+          "options": [
+            "(A) The man's hobby.",
+            "(B) The man's travel experience.",
+            "(C) The pictures of the man's sister."
+          ],
+          "answer": 0,
+          "transcript": "Look at all these pencils. How many are there? Two hundred, I guess. I didn't know you collect pencils. Well, my sister used to like pencils with pretty pictures on them. So, when I was abroad, I'd visit shops and see if there were any special pencils I could get for her. Then, I started to like them too. Now, I just collect them for myself.",
+          "explanation": "女生看到男生有大量的鉛筆，男生說起初是為妹妹收集，後來自己也喜歡上了，現在是為自己收集。整段對話圍繞男生的鉛筆收集嗜好，故選 (A)。",
+          "optionsZh": [
+            "男生的嗜好。",
+            "男生的旅遊經歷。",
+            "男生妹妹的照片。"
+          ]
+        },
+        {
+          "n": 16,
+          "audio": "/public/audio/listening/2024/q16.mp3",
+          "options": [
+            "(A) It was free.",
+            "(B) It was delicious.",
+            "(C) It was sent to their house."
+          ],
+          "answer": 0,
+          "transcript": "How much did you pay for our dinner? No worries. I didn't pay a cent. Why? I just met my elementary school classmate Tina. She is the owner of this restaurant. She said our meal was on the house.",
+          "explanation": "「on the house」是英語慣用語，表示餐廳免費招待。女生說她一毛錢都沒付，因為老闆（她的小學同學 Tina）請客，故選 (A)「它是免費的」。",
+          "optionsZh": [
+            "是免費的。",
+            "很好吃。",
+            "被送到他們家了。"
+          ]
+        },
+        {
+          "n": 17,
+          "audio": "/public/audio/listening/2024/q17.mp3",
+          "options": [
+            "(A) Her Christmas plan.",
+            "(B) Tips on cooking Chinese dishes.",
+            "(C) Her Chinese New Year experience."
+          ],
+          "answer": 2,
+          "transcript": "Early this year, Ping Ping invited me to a Chinese New Year's dinner with her family. They had so many dishes, fish, chicken, pork, hot pot and rice cakes. While we were enjoying the big meal, I got red envelopes and cooking tips. We also played cards. It was so much fun. Maybe I should invite Ping Ping and her family to come over next month for Christmas.",
+          "explanation": "女生描述今年年初受 Ping Ping 邀請參加農曆新年晚餐的整段經歷，包括豐盛的菜餚、紅包、廚藝小訣竅和打牌。雖然末段提到聖誕節，但主軸是農曆新年的親身體驗，故選 (C)。",
+          "optionsZh": [
+            "她的聖誕節計畫。",
+            "烹飪中式料理的小技巧。",
+            "她的農曆新年體驗。"
+          ]
+        },
+        {
+          "n": 18,
+          "audio": "/public/audio/listening/2024/q18.mp3",
+          "image": "/public/images/gsat/2024_listening/q18.png",
+          "options": ["(A)", "(B)", "(C)"],
+          "answer": 1,
+          "transcript": "Hey, this is Charles from YYY Dancing. I like what you did on the T-shirt for my dance club. It's nice that you put 'I love YYY' on the shirt. I'm also happy that you used a heart shape for the word love and didn't spell it out, but there's one thing I would like to change. Just putting YYY is a little boring. I'm thinking of changing the Ys to two people dancing. Both of them are putting their hands on the ground and their legs are up in the air. So each person looks like a Y. Please call me back if you have any questions.",
+          "explanation": "Charles 喜歡「I ❤」的設計，並保留愛心符號，但想把「YYY」三個字母改成兩個做倒立的舞者（每人看起來像一個 Y）。因此新 T 恤是「I ❤」加上兩個舞者造型，對應 (B) 圖，故選 (B)。",
+          "optionsZh": ["", "", ""]
+        },
+        {
+          "n": 19,
+          "audio": "/public/audio/listening/2024/q19.mp3",
+          "options": [
+            "(A) Don't stop the train leaving.",
+            "(B) Move to the center of the train.",
+            "(C) Let other people get on the train."
+          ],
+          "answer": 0,
+          "transcript": "Good evening. Thank you for riding with City Metro. The train is full now. Please don't hold the doors open or the train cannot leave the station. There is another train in two minutes. Please stand back and wait behind the yellow line.",
+          "explanation": "廣播說「請不要撐住車門，否則列車無法出站」，意即要大家不要阻止列車離站。故選 (A) 「不要阻止列車離開」。(B) 向中間移動和 (C) 讓其他人上車均非廣播主旨。",
+          "optionsZh": [
+            "不要阻止列車離開。",
+            "向車廂中間移動。",
+            "讓其他人上車。"
+          ]
+        },
+        {
+          "n": 20,
+          "audio": "/public/audio/listening/2024/q20.mp3",
+          "options": [
+            "(A) He enjoyed it.",
+            "(B) He did not like it.",
+            "(C) He was sorry he didn't eat it."
+          ],
+          "answer": 1,
+          "transcript": "So how was Sarah's party? John said she baked a lot of cakes and pies and cookies. She did. Did John tell you what he thought about them? Well, he said he had never eaten anything like that before. Were they really that good? Well, I... There's really no word for Sarah's food. Really? Wow, now I feel sorry that I didn't go to the party. I'm sorry that I did.",
+          "explanation": "對話中，去過派對的那位說「I'm sorry that I did（去）」，顯示對食物感到後悔。「he had never eaten anything like that before」和「no word for Sarah's food」以幽默方式暗示食物難以下嚥。男生（去過派對者）不喜歡那些食物，故選 (B)。",
+          "optionsZh": [
+            "他很喜歡那些食物。",
+            "他不喜歡那些食物。",
+            "他很遺憾自己沒有吃到。"
+          ]
+        },
+        {
+          "n": 21,
+          "audio": "/public/audio/listening/2024/q21.mp3",
+          "options": [
+            "(A) Whether everyone at work will like him.",
+            "(B) Whether he will get a call for a job interview.",
+            "(C) Whether he will get the job he interviewed for."
+          ],
+          "answer": 2,
+          "transcript": "Why haven't they called? Who hasn't called? A&C Foods. I had a job interview there last week, and they said they'd call this week. It's only Tuesday. Maybe they'll call tomorrow. Maybe they interviewed many people, and they need time to decide. Am I not good enough? I did very well at the interview, and they liked me.",
+          "explanation": "男生已經完成面試，在等候 A&C Foods 打來通知結果，擔心「自己夠不夠好、能不能被錄取」。他不是在等面試機會（已經面試過了），而是在等錄取通知，故選 (C)。",
+          "optionsZh": [
+            "公司裡大家是否會喜歡他。",
+            "他是否會接到面試邀請電話。",
+            "他是否會得到那份他去面試的工作。"
+          ]
+        }
+      ]
+    }
+  ]
+}
