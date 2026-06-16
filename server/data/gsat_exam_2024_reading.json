@@ -15,169 +15,379 @@
           "n": 1,
           "image": "/public/images/gsat/2024/q1_picture.png",
           "question": "Look at the picture.  There is ___ under the door.",
-          "options": ["an envelope", "a plant", "a sign", "an umbrella"],
+          "options": [
+            "an envelope",
+            "a plant",
+            "a sign",
+            "an umbrella"
+          ],
           "answer": 0,
-          "optionsZh": ["一個信封", "一株植物", "一個告示牌", "一把雨傘"],
+          "optionsZh": [
+            "一個信封",
+            "一株植物",
+            "一個告示牌",
+            "一把雨傘"
+          ],
           "explanation": "圖片顯示門縫下有信封被塞入，故選 (A) an envelope。"
         },
         {
           "n": 2,
           "question": "My ___ hurts so much that I cannot even turn my head.",
-          "options": ["arm", "knee", "neck", "stomach"],
+          "options": [
+            "arm",
+            "knee",
+            "neck",
+            "stomach"
+          ],
           "answer": 2,
-          "optionsZh": ["手臂", "膝蓋", "脖子", "胃"],
+          "optionsZh": [
+            "手臂",
+            "膝蓋",
+            "脖子",
+            "胃"
+          ],
           "explanation": "無法轉動頭部，表示脖子（neck）受傷，故選 (C)。"
         },
         {
           "n": 3,
           "question": "Our school basketball team won the national game last night.  We are so ___ them.",
-          "options": ["popular with", "proud of", "sorry for", "worried about"],
+          "options": [
+            "popular with",
+            "proud of",
+            "sorry for",
+            "worried about"
+          ],
           "answer": 1,
-          "optionsZh": ["因⋯⋯而受歡迎", "以⋯⋯為榮", "為⋯⋯感到抱歉", "為⋯⋯擔心"],
+          "optionsZh": [
+            "因⋯⋯而受歡迎",
+            "以⋯⋯為榮",
+            "為⋯⋯感到抱歉",
+            "為⋯⋯擔心"
+          ],
           "explanation": "球隊獲勝，我們感到很驕傲（proud of），故選 (B)。"
         },
         {
           "n": 4,
           "question": "Tomorrow is Sam's last day in the office.  Nobody knows why he decided to ___.",
-          "options": ["hide", "leave", "pack", "walk"],
+          "options": [
+            "hide",
+            "leave",
+            "pack",
+            "walk"
+          ],
           "answer": 1,
-          "optionsZh": ["躲藏", "離開", "打包", "步行"],
+          "optionsZh": [
+            "躲藏",
+            "離開",
+            "打包",
+            "步行"
+          ],
           "explanation": "Sam 明天是最後一天在辦公室，表示他決定離開（leave）工作，故選 (B)。"
         },
         {
           "n": 5,
           "question": "It's not a good idea to go mountain climbing in this bad ___.  We should wait until the typhoon goes away.",
-          "options": ["chance", "dream", "habit", "weather"],
+          "options": [
+            "chance",
+            "dream",
+            "habit",
+            "weather"
+          ],
           "answer": 3,
-          "optionsZh": ["機會", "夢想", "習慣", "天氣"],
+          "optionsZh": [
+            "機會",
+            "夢想",
+            "習慣",
+            "天氣"
+          ],
           "explanation": "颱風來臨時天氣惡劣（bad weather），不適合爬山，故選 (D)。"
         },
         {
           "n": 6,
           "question": "Chris loves walking with Anna on snowy days, but Anna hates ___ very much.",
-          "options": ["them", "so", "one", "it"],
+          "options": [
+            "them",
+            "so",
+            "one",
+            "it"
+          ],
           "answer": 3,
-          "optionsZh": ["他們", "如此", "一個", "它"],
+          "optionsZh": [
+            "他們",
+            "如此",
+            "一個",
+            "它"
+          ],
           "explanation": "hate 後面用 it 代替前文提到的 walking with Chris on snowy days，故選 (D)。"
         },
         {
           "n": 7,
           "question": "Lora likes to eat bananas that are already a little brown on the outside, and so ___ I.",
-          "options": ["am", "do", "have", "will"],
+          "options": [
+            "am",
+            "do",
+            "have",
+            "will"
+          ],
           "answer": 1,
-          "optionsZh": ["是（be動詞）", "做/確實（助動詞）", "有", "將"],
+          "optionsZh": [
+            "是（be動詞）",
+            "做/確實（助動詞）",
+            "有",
+            "將"
+          ],
           "explanation": "likes 是一般動詞，so do I 表示「我也是（喜歡）」，故選 (B)。"
         },
         {
           "n": 8,
           "question": "Your refrigerator shouldn't be making loud noises now, but if it ___ does, just give me a call and I'll come check it again.",
-          "options": ["already", "even", "finally", "still"],
+          "options": [
+            "already",
+            "even",
+            "finally",
+            "still"
+          ],
           "answer": 3,
-          "optionsZh": ["已經", "甚至", "終於", "仍然"],
+          "optionsZh": [
+            "已經",
+            "甚至",
+            "終於",
+            "仍然"
+          ],
           "explanation": "「如果它仍然（still）有噪音的話」，表示可能持續出現的狀況，故選 (D)。"
         },
         {
           "n": 9,
           "question": "After winning money in the card game, Jay decided to try again.  He felt that he might also be ___ a second time.",
-          "options": ["famous", "interested", "lucky", "ready"],
+          "options": [
+            "famous",
+            "interested",
+            "lucky",
+            "ready"
+          ],
           "answer": 2,
-          "optionsZh": ["著名的", "感興趣的", "幸運的", "準備好的"],
+          "optionsZh": [
+            "著名的",
+            "感興趣的",
+            "幸運的",
+            "準備好的"
+          ],
           "explanation": "贏了一次後再試，希望再次幸運（lucky），故選 (C)。"
         },
         {
           "n": 10,
           "question": "The knife doesn't cut very well.  It's not as ___ as before.",
-          "options": ["bright", "heavy", "quick", "sharp"],
+          "options": [
+            "bright",
+            "heavy",
+            "quick",
+            "sharp"
+          ],
           "answer": 3,
-          "optionsZh": ["明亮的", "重的", "快速的", "鋒利的"],
+          "optionsZh": [
+            "明亮的",
+            "重的",
+            "快速的",
+            "鋒利的"
+          ],
           "explanation": "刀子切不好，表示不如以前鋒利（sharp），故選 (D)。"
         },
         {
           "n": 11,
           "question": "John will stay with his sister until he ___ an apartment.",
-          "options": ["will find", "would find", "finds", "found"],
+          "options": [
+            "will find",
+            "would find",
+            "finds",
+            "found"
+          ],
           "answer": 2,
-          "optionsZh": ["將找到（未來式）", "將找到（假設語氣）", "找到（現在式）", "找到了（過去式）"],
+          "optionsZh": [
+            "將找到（未來式）",
+            "將找到（假設語氣）",
+            "找到（現在式）",
+            "找到了（過去式）"
+          ],
           "explanation": "until 引導的時間副詞子句，用現在式表示未來，故選 (C) finds。"
         },
         {
           "n": 12,
           "question": "Students ___ to go on the school trip should ask their parents first.",
-          "options": ["who want", "want", "who they want", "what they want"],
+          "options": [
+            "who want",
+            "want",
+            "who they want",
+            "what they want"
+          ],
           "answer": 0,
-          "optionsZh": ["想要的（關係代名詞子句）", "想要（無連接詞）", "他們想要的", "他們想要的事"],
+          "optionsZh": [
+            "想要的（關係代名詞子句）",
+            "想要（無連接詞）",
+            "他們想要的",
+            "他們想要的事"
+          ],
           "explanation": "修飾 students 的關係子句，主格關係代名詞用 who，故選 (A) who want。"
         },
         {
           "n": 13,
           "question": "The temple sits alone in the mountains at a height of 3,000m ___ sea level.",
-          "options": ["above", "at", "below", "in"],
+          "options": [
+            "above",
+            "at",
+            "below",
+            "in"
+          ],
           "answer": 0,
-          "optionsZh": ["在⋯⋯之上", "在", "在⋯⋯之下", "在⋯⋯裡面"],
+          "optionsZh": [
+            "在⋯⋯之上",
+            "在",
+            "在⋯⋯之下",
+            "在⋯⋯裡面"
+          ],
           "explanation": "above sea level 表示海拔高度，固定搭配，故選 (A)。"
         },
         {
           "n": 14,
           "question": "Patty spent several days planning to invite Charlie to dinner, ___ she couldn't say a word when they met.",
-          "options": ["but", "if", "or", "so"],
+          "options": [
+            "but",
+            "if",
+            "or",
+            "so"
+          ],
           "answer": 0,
-          "optionsZh": ["但是", "如果", "或者", "所以"],
+          "optionsZh": [
+            "但是",
+            "如果",
+            "或者",
+            "所以"
+          ],
           "explanation": "前後形成對比（計畫許久卻一句話也說不出口），用轉折連接詞 but，故選 (A)。"
         },
         {
           "n": 15,
           "question": "I can't tell you what I think of the movie because I ___ it.  I'll probably watch it this Saturday.",
-          "options": ["am not seeing", "don't see", "haven't seen", "won't see"],
+          "options": [
+            "am not seeing",
+            "don't see",
+            "haven't seen",
+            "won't see"
+          ],
           "answer": 2,
-          "optionsZh": ["沒有在看", "不看（習慣）", "還沒看過", "將不會看"],
+          "optionsZh": [
+            "沒有在看",
+            "不看（習慣）",
+            "還沒看過",
+            "將不會看"
+          ],
           "explanation": "尚未看過用現在完成式（haven't seen），且週六才要去看，故選 (C)。"
         },
         {
           "n": 16,
           "question": "The new guy at the help desk answers calls like a ___.  There are no ups and downs in his voice and you can't tell if he is happy or sad.",
-          "options": ["father", "foreigner", "radio", "robot"],
+          "options": [
+            "father",
+            "foreigner",
+            "radio",
+            "robot"
+          ],
           "answer": 3,
-          "optionsZh": ["父親", "外國人", "收音機", "機器人"],
+          "optionsZh": [
+            "父親",
+            "外國人",
+            "收音機",
+            "機器人"
+          ],
           "explanation": "聲音毫無起伏、分辨不出情緒，像機器人（robot），故選 (D)。"
         },
         {
           "n": 17,
           "question": "Jasmine planned to spend her summer in the country, but right after she got there, she started to ___ the noise in the city.",
-          "options": ["enjoy", "mind", "miss", "notice"],
+          "options": [
+            "enjoy",
+            "mind",
+            "miss",
+            "notice"
+          ],
           "answer": 2,
-          "optionsZh": ["享受", "介意", "想念", "注意到"],
+          "optionsZh": [
+            "享受",
+            "介意",
+            "想念",
+            "注意到"
+          ],
           "explanation": "到了鄉下反而開始想念（miss）城市的喧囂，出乎意料的對比，故選 (C)。"
         },
         {
           "n": 18,
           "question": "\"Bad traffic\" is perhaps the ___ excuse for being late when your boss knows it only takes you five minutes to walk to work.",
-          "options": ["easiest", "oldest", "smartest", "worst"],
+          "options": [
+            "easiest",
+            "oldest",
+            "smartest",
+            "worst"
+          ],
           "answer": 3,
-          "optionsZh": ["最容易的", "最老的", "最聰明的", "最糟糕的"],
+          "optionsZh": [
+            "最容易的",
+            "最老的",
+            "最聰明的",
+            "最糟糕的"
+          ],
           "explanation": "上班步行只需五分鐘卻說塞車，這是最糟糕的（worst）藉口，故選 (D)。"
         },
         {
           "n": 19,
           "question": "The housework in Mr. and Mrs. Wang's family ___ between them and their kids.  Everyone's got their own job to do.",
-          "options": ["is shared", "are shared", "shares", "share"],
+          "options": [
+            "is shared",
+            "are shared",
+            "shares",
+            "share"
+          ],
           "answer": 0,
-          "optionsZh": ["被分攤（單數被動）", "被分攤（複數被動）", "分攤（主動）", "分攤（複數主動）"],
+          "optionsZh": [
+            "被分攤（單數被動）",
+            "被分攤（複數被動）",
+            "分攤（主動）",
+            "分攤（複數主動）"
+          ],
           "explanation": "housework 是不可數名詞，動詞用單數；家事被分配故用被動 is shared，故選 (A)。"
         },
         {
           "n": 20,
           "question": "I want to find another dentist because ___ pulled out a good tooth last time I went to him.",
-          "options": ["I", "me", "mine", "myself"],
+          "options": [
+            "I",
+            "me",
+            "mine",
+            "myself"
+          ],
           "answer": 2,
-          "optionsZh": ["我（主格）", "我（受格）", "我的牙醫（所有格代名詞）", "我自己（反身代名詞）"],
+          "optionsZh": [
+            "我（主格）",
+            "我（受格）",
+            "我的牙醫（所有格代名詞）",
+            "我自己（反身代名詞）"
+          ],
           "explanation": "mine 此處作主詞，代替 my dentist（我的牙醫），意思是「我的牙醫上次拔掉了一顆好牙」，故選 (C)。"
         },
         {
           "n": 21,
           "question": "Mom: Linda, you've been playing computer games all evening!  Have you finished your report?\nLinda: Well, ___ most of it this afternoon, and I'll finish it by Friday.",
-          "options": ["I would do", "I did", "I was doing", "I'll do"],
+          "options": [
+            "I would do",
+            "I did",
+            "I was doing",
+            "I'll do"
+          ],
           "answer": 1,
-          "optionsZh": ["我將會做（假設語氣）", "我做了（過去式）", "我正在做（過去進行式）", "我將會做（未來式）"],
+          "optionsZh": [
+            "我將會做（假設語氣）",
+            "我做了（過去式）",
+            "我正在做（過去進行式）",
+            "我將會做（未來式）"
+          ],
           "explanation": "this afternoon 表示今天下午已完成的動作，用過去式 I did，故選 (B)。"
         }
       ]
@@ -205,7 +415,12 @@
                 "To buy food for his brother."
               ],
               "answer": 3,
-              "optionsZh": ["去見一位女士", "去找他父親", "去向警察求助", "去為弟弟買食物"],
+              "optionsZh": [
+                "去見一位女士",
+                "去找他父親",
+                "去向警察求助",
+                "去為弟弟買食物"
+              ],
               "explanation": "Jason 餓了一直哭，Philip 沒辦法煮飯，所以決定帶弟弟出去買食物，故選 (D)。"
             },
             {
@@ -218,7 +433,12 @@
                 "Philip and his brother went out at night."
               ],
               "answer": 2,
-              "optionsZh": ["他忘記帶鑰匙", "那位女士躲避他", "警察不相信他說的話", "Philip 和弟弟晚上出去了"],
+              "optionsZh": [
+                "他忘記帶鑰匙",
+                "那位女士躲避他",
+                "警察不相信他說的話",
+                "Philip 和弟弟晚上出去了"
+              ],
               "explanation": "父親一直喊自己沒做錯，但警察不相信他是屋主，直到 Philip 回來解釋才解決，父親憤怒的原因是警察不信任他，故選 (C)。"
             }
           ]
@@ -228,17 +448,26 @@
           "passages": [
             {
               "passageType": "image",
-              "image": "/public/images/gsat/2024/p24_bakers_kitchen.png",
-              "passage": "Baker's Kitchen — Fresh Bread Every Day!\nOpen 7 days a week\n\nFresh Bread Schedule:\n  White bread ............... 10:30 am\n  Bagels ........................ 11:30 am\n  Farm bread ................. 3:30 pm\n  Challah ....................... 3:30 pm\n  Pretzels ...................... Fridays only\n  Croissants .................. Weekdays only\n\nClosing time:\n  Mon–Fri: 9:00 pm\n  Sat–Sun: 8:00 pm  ← All breads HALF PRICE 1 hour before closing!\n\nMember Card: $100/year → 10% off every purchase"
+              "image": "/public/images/gsat/2024/p24_bakers_kitchen.png"
             }
           ],
           "questions": [
             {
               "n": 24,
               "question": "Kevin is going to buy some fresh bread at Baker's Kitchen.  He loves white bread, his mom likes farm bread, his father enjoys bagels, and his sister eats only challah.  Which is the earliest possible time for him to get all these breads for his family?",
-              "options": ["11:00am.", "4:00pm.", "5:00pm.", "7:00pm."],
+              "options": [
+                "11:00am.",
+                "4:00pm.",
+                "5:00pm.",
+                "7:00pm."
+              ],
               "answer": 1,
-              "optionsZh": ["上午11點", "下午4點", "下午5點", "下午7點"],
+              "optionsZh": [
+                "上午11點",
+                "下午4點",
+                "下午5點",
+                "下午7點"
+              ],
               "explanation": "白麵包10:30出爐、貝果11:30出爐、農場麵包和哈拉麵包均為15:30出爐。四種都備齊的最早時間為15:30後，選項中最接近的是（B）下午4點，故選 (B)。"
             },
             {
@@ -251,7 +480,12 @@
                 "Its members can save $100 when they shop on Fridays."
               ],
               "answer": 1,
-              "optionsZh": ["每週開放五天", "關門前一小時麵包半價", "可頌和椒鹽卷餅週末販售", "會員週五購物可省100元"],
+              "optionsZh": [
+                "每週開放五天",
+                "關門前一小時麵包半價",
+                "可頌和椒鹽卷餅週末販售",
+                "會員週五購物可省100元"
+              ],
               "explanation": "週六日20:00關門，19:00後所有麵包半價（關門前一小時）；本店週一至日全年開放（非五天）；椒鹽卷餅僅週五販售；會員費100元享九折優惠，非省100元，故選 (B)。"
             }
           ]
@@ -261,8 +495,7 @@
           "passages": [
             {
               "passageType": "image",
-              "image": "/public/images/gsat/2024/p26_festival_map.png",
-              "passage": "2021 Green Festival @ Satyr's Park\n\nKey information from the map:\n• Free festival bus: departs from Goat Street Station → Satyr's Park entrance\n• Fox Street: CLOSED during festival (no entry from this side)\n• Garden Square: Farmers' Market — no parking available\n• Koala Street Station: nearest metro stop to the Farmers' Market\n• Bus No. 157: stops at Puppy Street (near the area)"
+              "image": "/public/images/gsat/2024/p26_festival_map.png"
             }
           ],
           "questions": [
@@ -276,7 +509,12 @@
                 "Parking in Garden Square and walking to the festival."
               ],
               "answer": 0,
-              "optionsZh": ["搭乘免費節慶巴士服務", "週末前往參加節慶", "從Fox街進入Satyr公園", "在Garden廣場停車後步行前往"],
+              "optionsZh": [
+                "搭乘免費節慶巴士服務",
+                "週末前往參加節慶",
+                "從Fox街進入Satyr公園",
+                "在Garden廣場停車後步行前往"
+              ],
               "explanation": "資訊明確歡迎民眾在Goat Street站搭乘免費節慶巴士；Fox Street封閉無法進入；Garden Square為農夫市集不開放停車，故選 (A)。"
             },
             {
@@ -289,7 +527,12 @@
                 "The nearest metro station to the farmers' market is the Koala Street Station."
               ],
               "answer": 3,
-              "optionsZh": ["農夫市集緊鄰花卉市場", "農夫市集和節慶在同一個街區", "搭157號公車到Puppy Street可到農夫市集", "距農夫市集最近的地鐵站是Koala Street站"],
+              "optionsZh": [
+                "農夫市集緊鄰花卉市場",
+                "農夫市集和節慶在同一個街區",
+                "搭157號公車到Puppy Street可到農夫市集",
+                "距農夫市集最近的地鐵站是Koala Street站"
+              ],
               "explanation": "地圖顯示Garden Square（農夫市集）距Koala Street地鐵站最近；Bus No. 157未出現在官方交通資訊中，故選 (D)。"
             }
           ]
@@ -299,8 +542,7 @@
           "passages": [
             {
               "passageType": "reading",
-              "image": "/public/images/gsat/2024/p28_two_stories.png",
-              "passage": "Yan lived a good life in a big house. One day he invited a friend to dinner at his house. However, on the dinner table there was only one small dish of one small fish. The friend looked quietly at the fish. It was no bigger than a finger.\nThen he asked Yan if he could borrow a lamp.\n\"What for?\" Yan asked.\n\"Well, it's so dark in here,\" the friend said with a dry smile, \"I can't see the other delicious dishes you've prepared for me.\"\n\nChang kept a lot of ducks and chickens on his farm. One day, his best friend came to visit him. At noon, Chang told his friend that he couldn't let him stay for lunch because there wasn't much food to eat. The friend looked out at Chang's farm animals for a moment. Then he asked Chang if he had a big knife.\n\"Yes, but what for?\" Chang asked.\n\"I'm thinking about killing the horse I rode here so we'll have something for lunch,\" the friend said.\n\"But how are you going to go home without it?\"\n\"Well, you wouldn't mind lending me one of your many ducks or chickens so I can ride it home, would you?\""
+              "image": "/public/images/gsat/2024/p28_two_stories.png"
             }
           ],
           "questions": [
@@ -314,7 +556,12 @@
                 "They don't like new things."
               ],
               "answer": 1,
-              "optionsZh": ["享受美食", "不喜歡分享", "喜歡交朋友", "不喜歡新事物"],
+              "optionsZh": [
+                "享受美食",
+                "不喜歡分享",
+                "喜歡交朋友",
+                "不喜歡新事物"
+              ],
               "explanation": "顏家身家富裕卻只上一道小魚；張家養了大量家禽卻說沒食物招待。兩位朋友都用諷刺方式點出對方不愛分享，故選 (B)。"
             },
             {
@@ -327,7 +574,12 @@
                 "One of Chang's ducks or chickens."
               ],
               "answer": 1,
-              "optionsZh": ["一把大刀", "那匹馬", "午餐", "張家的一隻鴨或雞"],
+              "optionsZh": [
+                "一把大刀",
+                "那匹馬",
+                "午餐",
+                "張家的一隻鴨或雞"
+              ],
               "explanation": "朋友說要殺掉他騎來的馬作午餐，張問「你沒有它要怎麼回去？」中的 it 就是指那匹馬，故選 (B)。"
             }
           ]
@@ -337,8 +589,7 @@
           "passages": [
             {
               "passageType": "reading",
-              "image": "/public/images/gsat/2024/p30_taiwan_corner.png",
-              "passage": "Usually, people visit bookstores to buy books. But those who walk into Cotoha come to see its owner, Chen Bing-Hong. They bring him books with different problems. Some have lost their covers, some are missing a few pages, and some have pages that are falling out. Chen can always fix the books and make them whole again.\n\nChen sees himself as a doctor. He says that books, like people, get sick and need help. In Taiwan, there are not many \"doctors\" like him, and most of them work for big libraries and museums. If big libraries and museums are hospitals, Chen's bookstore is a health center. Big libraries and museums fix important old books with serious problems, and Chen helps people with books that have smaller problems. However, the smaller size of the problems doesn't mean Chen's job is less important.\n\nChen gave an example of a science book he once worked on. It was very old and half of its cover was lost. Its owner still wanted to keep it because it was a gift from a teacher who helped him follow his dream of studying science. When he got his book back, he was very surprised at the new-old book. He felt he was brought back to the days with his teacher. Seeing the owner's smile made Chen happy, because smiles like that are what his magic is for."
+              "image": "/public/images/gsat/2024/p30_taiwan_corner.png"
             }
           ],
           "questions": [
@@ -352,7 +603,12 @@
                 "To show why bookstores are important."
               ],
               "answer": 0,
-              "optionsZh": ["解釋陳秉宏的服務內容", "談論陳的未來計畫", "解釋陳對書籍的熱愛", "說明書店的重要性"],
+              "optionsZh": [
+                "解釋陳秉宏的服務內容",
+                "談論陳的未來計畫",
+                "解釋陳對書籍的熱愛",
+                "說明書店的重要性"
+              ],
               "explanation": "文章用醫生和健康中心比喻陳秉宏修書的服務——他像醫生一樣幫「生病的書」治病，故選 (A)。"
             },
             {
@@ -365,7 +621,12 @@
                 "It helps people think of special moments in the past."
               ],
               "answer": 3,
-              "optionsZh": ["讓人們獲得書作為禮物", "幫人們節省買新書的錢", "給人們追夢的希望", "幫助人們回憶過去的特別時刻"],
+              "optionsZh": [
+                "讓人們獲得書作為禮物",
+                "幫人們節省買新書的錢",
+                "給人們追夢的希望",
+                "幫助人們回憶過去的特別時刻"
+              ],
               "explanation": "書的主人拿回修復後的舊書，「感覺被帶回了和老師相處的時光」，說明陳的工作喚起珍貴記憶，故選 (D)。"
             },
             {
@@ -378,7 +639,12 @@
                 "Changing his bookstore into a library."
               ],
               "answer": 1,
-              "optionsZh": ["修復書籍", "讓書的主人微笑", "找回失蹤許久的書", "將書店改造成圖書館"],
+              "optionsZh": [
+                "修復書籍",
+                "讓書的主人微笑",
+                "找回失蹤許久的書",
+                "將書店改造成圖書館"
+              ],
               "explanation": "文章末句：「看到書主人的微笑讓陳快樂，因為那樣的微笑正是他的魔法所為」，故選 (B)。"
             }
           ]
@@ -388,8 +654,7 @@
           "passages": [
             {
               "passageType": "reading",
-              "image": "/public/images/gsat/2024/p33_habibi_hawara.png",
-              "passage": "In Austria, there are not many restaurants like Habibi & Hawara. Here you can enjoy Austrian and Syrian food together. Two Austrians, Martin Rohla and David Kreytenberg, started this yummy plan from their experience of working with refugees.\n\nEvery year, thousands of people have to leave their homes and families because of war in their countries. So many of them go to Austria that some people in the country think they have become a problem. They are afraid refugees may take away their jobs and they don't feel safe around them, either. But Rohla and Kreytenberg would beg to differ: The refugees don't have to be a problem. They want to help them start a new life. They invited refugees to meetings and found that some of them were cooks back in Syria. So the idea of Habibi & Hawara was born—a restaurant that brings together Austrian and Syrian food. \"The two worlds far away from each other meet together,\" Kreytenberg said.\n\nBut Rohla and Kreytenberg want to do more than just give the refugees work. They want their best workers to buy the restaurant in the end. They hope that Habibi & Hawara is not just a one-time plan and that other Austrians will join them and help more refugees."
+              "image": "/public/images/gsat/2024/p33_habibi_hawara.png"
             }
           ],
           "questions": [
@@ -403,7 +668,12 @@
                 "To help refugees go back to their home countries."
               ],
               "answer": 0,
-              "optionsZh": ["幫助難民在奧地利過得更好", "籌款幫助敘利亞打仗", "幫助奧地利人了解敘利亞的戰爭", "幫助難民回到家鄉"],
+              "optionsZh": [
+                "幫助難民在奧地利過得更好",
+                "籌款幫助敘利亞打仗",
+                "幫助奧地利人了解敘利亞的戰爭",
+                "幫助難民回到家鄉"
+              ],
               "explanation": "兩位創辦人想幫難民展開新生活（help them start a new life），開設融合兩國料理的餐廳提供就業機會，故選 (A)。"
             },
             {
@@ -416,7 +686,12 @@
                 "It is an important meeting place for Syrians."
               ],
               "answer": 1,
-              "optionsZh": ["從敘利亞遷至奧地利", "最終可能轉賣給員工", "有敘利亞料理烹飪課程", "是敘利亞人重要的聚會場所"],
+              "optionsZh": [
+                "從敘利亞遷至奧地利",
+                "最終可能轉賣給員工",
+                "有敘利亞料理烹飪課程",
+                "是敘利亞人重要的聚會場所"
+              ],
               "explanation": "文中提到他們希望讓最優秀的員工最終買下餐廳（buy the restaurant in the end），故選 (B)。"
             },
             {
@@ -429,7 +704,12 @@
                 "They do not notice something."
               ],
               "answer": 0,
-              "optionsZh": ["他們不同意", "他們看起來不同", "他們無法代表他人發言", "他們沒有注意到某件事"],
+              "optionsZh": [
+                "他們不同意",
+                "他們看起來不同",
+                "他們無法代表他人發言",
+                "他們沒有注意到某件事"
+              ],
               "explanation": "beg to differ 是禮貌表達異議的慣用語，意思是「我不同意（你的看法）」，故選 (A)。"
             }
           ]
@@ -439,8 +719,7 @@
           "passages": [
             {
               "passageType": "reading",
-              "image": "/public/images/gsat/2024/p36_voices.png",
-              "passage": "If you want to learn about bringing back extinct animals, reading John Smith's Back from the Dead is a good start. But I have to say I can't agree with everything he says.\n\nFrom his book, I can see Smith is an advocate of bringing extinct animals back. He says we have lost many animals because we made their living spaces too dirty. He also thinks we must do everything we can to bring them back. However, I don't know how much time and money we would need to make the world a better place for them, and honestly no one knows if they could actually come back.\n\nSmith also says that bringing back extinct animals may be good for us. He talks about an extinct frog that grew tadpoles in its stomach. Some women's babies die before they are born, and Smith believes bringing back the frog may be an answer to the problem. According to him, by studying how the tadpoles grow inside the frog's stomach, we might be able to find new ways to help these women successfully keep their babies. But I don't think things are as easy as Smith thinks. We have spent ten years and millions of dollars on this kind of frog, but all we have got are only a few dead frog eggs. If we can't see a real frog, how can we be sure women will get the help they need?\n\nDr. Solomon Wang from the Animal Saving Office says the study of bringing back extinct animals is \"throwing good money after bad.\" And he's right. A lot of hard work has been put into this expensive dream, but we haven't seen anything come out of it. So should we still keep going down this road?\n\n—Ellen Zimmer"
+              "image": "/public/images/gsat/2024/p36_voices.png"
             }
           ],
           "questions": [
@@ -454,7 +733,12 @@
                 "They are one of the first people who have done it."
               ],
               "answer": 1,
-              "optionsZh": ["說很多但做很少", "相信某事是好的並應該去做", "曾對此有不好的經歷", "是最早去做這件事的人之一"],
+              "optionsZh": [
+                "說很多但做很少",
+                "相信某事是好的並應該去做",
+                "曾對此有不好的經歷",
+                "是最早去做這件事的人之一"
+              ],
               "explanation": "文中 Smith 是倡議者（advocate），他認為復育滅絕動物是好事且應積極推動，故選 (B)。"
             },
             {
@@ -467,7 +751,12 @@
                 "It is the first extinct animal that people studied."
               ],
               "answer": 1,
-              "optionsZh": ["能在髒亂環境中生存", "可能有助於解決健康問題", "找不到食物時會吃掉幼崽", "是人類研究的第一種滅絕動物"],
+              "optionsZh": [
+                "能在髒亂環境中生存",
+                "可能有助於解決健康問題",
+                "找不到食物時會吃掉幼崽",
+                "是人類研究的第一種滅絕動物"
+              ],
               "explanation": "書中提到研究這種在胃中孵化蝌蚪的滅絕青蛙，可能有助於解決女性流產問題，故選 (B)。"
             },
             {
@@ -480,7 +769,12 @@
                 "To invite people to take action."
               ],
               "answer": 2,
-              "optionsZh": ["展開新話題", "分享一個大夢想", "讓她的觀點更清晰有力", "邀請人們採取行動"],
+              "optionsZh": [
+                "展開新話題",
+                "分享一個大夢想",
+                "讓她的觀點更清晰有力",
+                "邀請人們採取行動"
+              ],
               "explanation": "Zimmer 引用 Dr. Wang「花錢如打水漂」的說法，強化自己對復育計畫持懷疑立場的論點，故選 (C)。"
             },
             {
@@ -493,7 +787,12 @@
                 "It is not dangerous."
               ],
               "answer": 2,
-              "optionsZh": ["有可能實現", "是危險的", "無法實現", "不危險"],
+              "optionsZh": [
+                "有可能實現",
+                "是危險的",
+                "無法實現",
+                "不危險"
+              ],
               "explanation": "Zimmer 花了大量金錢卻只得到幾顆死蛙卵，質疑計畫能否成功，整體持強烈懷疑態度，認為難以實現，故選 (C)。"
             }
           ]
@@ -503,12 +802,7 @@
           "passages": [
             {
               "passageType": "image",
-              "image": "/public/images/gsat/2024/p40_pandemic_graph.png",
-              "caption": "1918年流感疫情期間美國四城市每10萬人死亡人數比較圖（含社交距離實施期間）"
-            },
-            {
-              "passageType": "cloze",
-              "passage": "Since the Covid-19 pandemic started, people have begun \"social distancing\"—keeping a safe space between you and anyone you don't live with. Though it has been a very popular topic this year, social distancing __(40)__. In fact, it was widely used in the U.S. in the flu pandemic in 1918. But how well did it work? The Americans' experience can tell us whether it really saved lives.\n\nFrom the picture, we can see that __(41)__ started social distancing earlier than the other three cities. This helped the city keep the number of deaths down. Besides taking early action, keeping the action long enough was also important in fighting the pandemic. The picture shows that Portland and Denver did well in the first few weeks. However, both cities __(42)__, and the numbers of deaths climbed again.\n\nBut there was one thing Portland did right. The city used several ways of social distancing at the same time to deal with the pandemic. __(43)__, sick people were kept away from healthy ones; schools were closed; public activities were not allowed. All these were useful in keeping people safe.\n\nThe lessons of the 1918 pandemic bring us hope. While we are still learning to fight Covid-19, social distancing may be the best way to get us through the dark days, at least for now."
+              "image": "/public/images/gsat/2024/p40_pandemic_graph.png"
             }
           ],
           "questions": [
@@ -522,15 +816,30 @@
                 "is not welcomed by everyone"
               ],
               "answer": 0,
-              "optionsZh": ["並非新概念", "效果並不好", "可能帶來一些問題", "並非所有人都歡迎"],
+              "optionsZh": [
+                "並非新概念",
+                "效果並不好",
+                "可能帶來一些問題",
+                "並非所有人都歡迎"
+              ],
               "explanation": "後文提到社交距離早在1918年流感疫情中就廣泛使用，說明它並非新概念，故選 (A)。"
             },
             {
               "n": 41,
               "question": "From the picture, we can see that ___ started social distancing earlier than the other three cities.",
-              "options": ["Portland", "New York", "Denver", "Pittsburgh"],
+              "options": [
+                "Portland",
+                "New York",
+                "Denver",
+                "Pittsburgh"
+              ],
               "answer": 1,
-              "optionsZh": ["波特蘭", "紐約", "丹佛", "匹茲堡"],
+              "optionsZh": [
+                "波特蘭",
+                "紐約",
+                "丹佛",
+                "匹茲堡"
+              ],
               "explanation": "圖表顯示 New York 最早開始實施社交距離，且維持最久，24週後死亡人數最低（453人），故選 (B)。"
             },
             {
@@ -543,15 +852,30 @@
                 "had the most days of social distancing"
               ],
               "answer": 1,
-              "optionsZh": ["死亡人數較高", "太早停止社交距離措施", "第二次開始實施社交距離", "實施社交距離天數最多"],
+              "optionsZh": [
+                "死亡人數較高",
+                "太早停止社交距離措施",
+                "第二次開始實施社交距離",
+                "實施社交距離天數最多"
+              ],
               "explanation": "Portland 和 Denver 在最初幾週表現良好，但後來死亡人數又上升，表示他們太早停止了社交距離措施，故選 (B)。"
             },
             {
               "n": 43,
               "question": "___, sick people were kept away from healthy ones; schools were closed; public activities were not allowed.",
-              "options": ["Also", "At first", "However", "For example"],
+              "options": [
+                "Also",
+                "At first",
+                "However",
+                "For example"
+              ],
               "answer": 3,
-              "optionsZh": ["此外", "起初", "然而", "舉例來說"],
+              "optionsZh": [
+                "此外",
+                "起初",
+                "然而",
+                "舉例來說"
+              ],
               "explanation": "這句話列舉 Portland 同時採用多種社交距離方式的具體例子，用 For example 引導，故選 (D)。"
             }
           ]
