@@ -13,7 +13,7 @@
       "items": [
         {
           "n": 1,
-          "image": "/images/gsat/2023/q1_picture.png",
+          "image": "/public/images/gsat/2023/q1_picture.png",
           "question": "Look at the picture.  The man is holding a ___ of grapes in his hands.",
           "options": ["bag", "basket", "bowl", "box"],
           "answer": 1,
@@ -212,7 +212,7 @@
           "passages": [
             {
               "passageType": "image",
-              "image": "/images/gsat/2023/p24_four_seasons.png",
+              "image": "/public/images/gsat/2023/p24_four_seasons.png",
               "caption": "四季廚房菜單、星點集點方案與營業時間"
             }
           ],
@@ -245,7 +245,7 @@
           "passages": [
             {
               "passageType": "image",
-              "image": "/images/gsat/2023/p26_baby_bird.png",
+              "image": "/public/images/gsat/2023/p26_baby_bird.png",
               "caption": "發現離巢幼鳥時的處理指引"
             }
           ],
@@ -283,7 +283,7 @@
           "passages": [
             {
               "passageType": "image",
-              "image": "/images/gsat/2023/p28_food_waste.png",
+              "image": "/public/images/gsat/2023/p28_food_waste.png",
               "caption": "從農場到餐桌：五大食物浪費階段及2014年各地區各階段浪費比例圖"
             }
           ],

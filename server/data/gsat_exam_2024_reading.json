@@ -13,7 +13,7 @@
       "items": [
         {
           "n": 1,
-          "image": "/images/gsat/2024/q1_picture.png",
+          "image": "/public/images/gsat/2024/q1_picture.png",
           "question": "Look at the picture.  There is ___ under the door.",
           "options": ["an envelope", "a plant", "a sign", "an umbrella"],
           "answer": 0,
@@ -228,7 +228,7 @@
           "passages": [
             {
               "passageType": "image",
-              "image": "/images/gsat/2024/p24_bakers_kitchen.png",
+              "image": "/public/images/gsat/2024/p24_bakers_kitchen.png",
               "caption": "Baker's Kitchen 每日新鮮麵包出爐時刻表"
             }
           ],
@@ -261,7 +261,7 @@
           "passages": [
             {
               "passageType": "image",
-              "image": "/images/gsat/2024/p26_festival_map.png",
+              "image": "/public/images/gsat/2024/p26_festival_map.png",
               "caption": "2021年綠色節慶地圖與交通資訊"
             }
           ],
@@ -499,7 +499,7 @@
           "passages": [
             {
               "passageType": "image",
-              "image": "/images/gsat/2024/p40_pandemic_graph.png",
+              "image": "/public/images/gsat/2024/p40_pandemic_graph.png",
               "caption": "1918年流感疫情期間美國四城市每10萬人死亡人數比較圖（含社交距離實施期間）"
             },
             {
