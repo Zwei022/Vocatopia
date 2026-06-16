@@ -1,0 +1,569 @@
+{
+  "year": 2023,
+  "rocYear": 112,
+  "type": "reading",
+  "label": "112會考英語閱讀",
+  "source": "2023年國中教育會考",
+  "durationMin": 60,
+  "totalQuestions": 43,
+  "sections": [
+    {
+      "title": "第一部分：單題（第1-23題，共23題）",
+      "kind": "single",
+      "items": [
+        {
+          "n": 1,
+          "image": "/images/gsat/2023/q1_picture.png",
+          "question": "Look at the picture.  The man is holding a ___ of grapes in his hands.",
+          "options": ["bag", "basket", "bowl", "box"],
+          "answer": 1,
+          "optionsZh": ["袋子", "籃子", "碗", "箱子"],
+          "explanation": "圖片顯示攤販手持裝有葡萄的編織籃（basket），故選 (B)。"
+        },
+        {
+          "n": 2,
+          "question": "Dennis enjoys ___ in public.  He is proud of his beautiful voice.",
+          "options": ["dancing", "drawing", "shopping", "singing"],
+          "answer": 3,
+          "optionsZh": ["跳舞", "繪畫", "購物", "唱歌"],
+          "explanation": "擁有美麗聲音（beautiful voice）表示他愛唱歌（singing），故選 (D)。"
+        },
+        {
+          "n": 3,
+          "question": "Mrs. Johnson can't hear very well.  If you need to talk to her, you must ___.",
+          "options": ["explain", "hurry", "listen", "shout"],
+          "answer": 3,
+          "optionsZh": ["解釋", "趕快", "聆聽", "大聲喊叫"],
+          "explanation": "Mrs. Johnson 聽力不好，跟她說話必須大聲（shout），故選 (D)。"
+        },
+        {
+          "n": 4,
+          "question": "People got very excited when they watched Ms. Smith ___ at the party.",
+          "options": ["danced", "dancing", "has danced", "to dance"],
+          "answer": 1,
+          "optionsZh": ["跳舞（過去式）", "跳舞（現在分詞）", "已跳舞", "去跳舞（不定詞）"],
+          "explanation": "watch + 受詞 + Ving 表示親眼看見動作進行中，故選 (B) dancing。"
+        },
+        {
+          "n": 5,
+          "question": "I tried on these shoes in several different ___, and I thought the white pair looked best on me.",
+          "options": ["colors", "prices", "shapes", "sizes"],
+          "answer": 0,
+          "optionsZh": ["顏色", "價格", "形狀", "尺碼"],
+          "explanation": "「覺得白色那雙最好看」暗示她試穿了不同顏色（colors）的鞋子，故選 (A)。"
+        },
+        {
+          "n": 6,
+          "question": "Rex did not feel the earthquake this morning.  He ___ in the park at the time.",
+          "options": ["jogged", "was jogging", "has jogged", "would jog"],
+          "answer": 1,
+          "optionsZh": ["慢跑（過去式）", "正在慢跑（過去進行式）", "已慢跑", "將會慢跑"],
+          "explanation": "at the time 搭配過去進行式，表示地震時正在進行的動作，故選 (B) was jogging。"
+        },
+        {
+          "n": 7,
+          "question": "Mr. Lee has worked in the same store for ten years; he's never thought about ___ his job.",
+          "options": ["changing", "finding", "remembering", "starting"],
+          "answer": 0,
+          "optionsZh": ["換", "找", "記得", "開始"],
+          "explanation": "在同一家店工作十年，從未考慮過換工作（changing his job），故選 (A)。"
+        },
+        {
+          "n": 8,
+          "question": "I didn't take the bus today because it was ___.  All the seats were taken and a lot of students were standing.",
+          "options": ["dirty", "fast", "full", "wrong"],
+          "answer": 2,
+          "optionsZh": ["髒的", "快的", "滿的", "錯的"],
+          "explanation": "所有座位都有人坐、還有學生站著，表示公車客滿（full），故選 (C)。"
+        },
+        {
+          "n": 9,
+          "question": "Don't go away when you're cooking, ___ the food might burn.",
+          "options": ["but", "if", "or", "so"],
+          "answer": 2,
+          "optionsZh": ["但是", "如果", "否則", "所以"],
+          "explanation": "「別走開，否則（or）食物可能燒焦」，用 or 表示若不聽警告的後果，故選 (C)。"
+        },
+        {
+          "n": 10,
+          "question": "Jerry wanted to know ___ he was kicked off the soccer team, but no one gave him a good reason.",
+          "options": ["where", "when", "whether", "why"],
+          "answer": 3,
+          "optionsZh": ["在哪裡", "什麼時候", "是否", "為什麼"],
+          "explanation": "想知道被踢出球隊的原因，用 why（為什麼），故選 (D)。"
+        },
+        {
+          "n": 11,
+          "question": "Jenny is already forty, doesn't have a job and often makes trouble for her parents.  To them, she is really a(n) ___.",
+          "options": ["daughter", "example", "gift", "headache"],
+          "answer": 3,
+          "optionsZh": ["女兒", "榜樣", "禮物", "頭痛/麻煩"],
+          "explanation": "Jenny 常給父母製造麻煩，對他們來說是個頭痛（headache）的問題人物，故選 (D)。"
+        },
+        {
+          "n": 12,
+          "question": "Ed and Jill ___ camping this weekend, so they have to finish their homework by Friday.",
+          "options": ["went", "were going", "are going", "have gone"],
+          "answer": 2,
+          "optionsZh": ["去了（過去式）", "正要去（過去進行式）", "要去（現在進行式/計畫）", "已去（現在完成式）"],
+          "explanation": "this weekend 是未來時間，are going (to) 表示已計畫的未來，故選 (C)。"
+        },
+        {
+          "n": 13,
+          "question": "Doraemon, a blue Japanese robot cat, has hated mice since his ears ___ by a mouse.",
+          "options": ["bit", "bite", "were bitten", "have bitten"],
+          "answer": 2,
+          "optionsZh": ["咬（過去式）", "咬（原形）", "被咬（過去被動）", "已咬（主動現在完成）"],
+          "explanation": "耳朵被老鼠咬，受詞承受動作，用被動語態過去式 were bitten，故選 (C)。"
+        },
+        {
+          "n": 14,
+          "question": "If we play some interesting games in class, there ___ more fun in learning English.",
+          "options": ["are", "has", "will be", "will have"],
+          "answer": 2,
+          "optionsZh": ["是（複數）", "有（have 單數）", "將會有（there will be）", "將會有（will have）"],
+          "explanation": "If 條件句搭配未來式，且 there will be... 是正確句型，故選 (C) will be。"
+        },
+        {
+          "n": 15,
+          "question": "The ___ of this shop was so bad; I never got any answer after I emailed them my questions.",
+          "options": ["item", "business", "price", "service"],
+          "answer": 3,
+          "optionsZh": ["商品", "生意", "價格", "服務"],
+          "explanation": "寄出問題後都沒有收到回覆，表示這間店的服務（service）很差，故選 (D)。"
+        },
+        {
+          "n": 16,
+          "question": "It's not easy to see those islands clearly from here on sunny days, and it's even less ___ to see them on cloudy days.",
+          "options": ["difficult", "lucky", "possible", "special"],
+          "answer": 2,
+          "optionsZh": ["困難的", "幸運的", "可能的", "特別的"],
+          "explanation": "晴天就很難看清，陰天更不可能（even less possible）看到，故選 (C)。"
+        },
+        {
+          "n": 17,
+          "question": "Do you remember the CD I was looking for for months?  I ___ found it in a small shop.  Look, here it is!",
+          "options": ["almost", "even", "finally", "still"],
+          "answer": 2,
+          "optionsZh": ["幾乎", "甚至", "終於", "仍然"],
+          "explanation": "找了好幾個月後終於（finally）找到，故選 (C)。"
+        },
+        {
+          "n": 18,
+          "question": "Business at Jane's shop has not been good these days.  And the new supermarket across the street only makes things ___.",
+          "options": ["easier", "worse", "more boring", "more convenient"],
+          "answer": 1,
+          "optionsZh": ["更容易", "更糟", "更無聊", "更方便"],
+          "explanation": "生意已不好，新超市又來競爭，只會讓情況更糟（worse），故選 (B)。"
+        },
+        {
+          "n": 19,
+          "question": "Scott wasn't sure if the young woman before him was ___ pulled him out of a car on fire.",
+          "options": ["who", "the one", "the one she", "the one who"],
+          "answer": 3,
+          "optionsZh": ["誰", "那個人", "那個她", "那個曾經的人（關係子句）"],
+          "explanation": "\"the one who\" 引導關係子句修飾 the young woman，表示「就是那個把他從著火車中救出的人」，故選 (D)。"
+        },
+        {
+          "n": 20,
+          "question": "I ___ swimming for several years before I went to this high school.  I gave it up because of heavy schoolwork.",
+          "options": ["have practiced", "am practicing", "practiced", "would practice"],
+          "answer": 2,
+          "optionsZh": ["已練習（現在完成式）", "正在練習（現在進行式）", "練習了（過去式）", "會去練習（過去假設）"],
+          "explanation": "before I went to this high school 是過去的時間點，描述此前已進行數年的動作，用過去式 practiced，故選 (C)。"
+        },
+        {
+          "n": 21,
+          "question": "Frank Kane is so good in the movie that many people ___ he will win the best actor prize.",
+          "options": ["expect", "forget", "notice", "plan"],
+          "answer": 0,
+          "optionsZh": ["預期/期待", "忘記", "注意到", "計畫"],
+          "explanation": "許多人「預期」（expect）他將獲得最佳男主角獎，故選 (A)。"
+        },
+        {
+          "n": 22,
+          "question": "The new medicine that just came out on the market ___ thousands of lives.",
+          "options": ["and saved", "has saved", "saving", "to save"],
+          "answer": 1,
+          "optionsZh": ["並且拯救（不完整）", "已拯救（現在完成式）", "拯救中（分詞）", "去拯救（不定詞）"],
+          "explanation": "新藥已上市並已拯救了成千上萬的生命，用現在完成式 has saved，故選 (B)。"
+        },
+        {
+          "n": 23,
+          "question": "Now I often think of those days with Pip, my pet dog.  When I read in my room, he ___ quietly beside me.",
+          "options": [
+            "will come and sit",
+            "comes and sits",
+            "has come and sat",
+            "used to come and sit"
+          ],
+          "answer": 3,
+          "optionsZh": ["將會來坐（未來習慣）", "來坐（現在習慣）", "已來坐（現在完成）", "過去常常來坐（過去習慣）"],
+          "explanation": "Now I often think of those days 表示 Pip 已不在，描述已逝去的過去習慣，用 used to，故選 (D)。"
+        }
+      ]
+    },
+    {
+      "title": "第二部分：題組（第24-43題，共20題）",
+      "kind": "group",
+      "items": [
+        {
+          "title": "第24-25題",
+          "passages": [
+            {
+              "passageType": "image",
+              "image": "/images/gsat/2023/p24_four_seasons.png",
+              "caption": "四季廚房菜單、星點集點方案與營業時間"
+            }
+          ],
+          "questions": [
+            {
+              "n": 24,
+              "question": "Amy went to Four Seasons' Kitchen with her mother after she collected 15 stars.  They ordered two Garden Sandwiches, an Autumn Wind, and a Winter Snow.  After using the stars, how much did they pay for their meals?",
+              "options": ["$290.", "$230.", "$220.", "$160."],
+              "answer": 1,
+              "optionsZh": ["290元", "230元", "220元", "160元"],
+              "explanation": "兩份Garden Sandwich ($80×2=$160) + Autumn Wind ($60) + Winter Snow ($70) = $290。集滿15顆星可免費換一杯$60飲料，扣掉Autumn Wind後共付 $290-$60=$230，故選 (B)。"
+            },
+            {
+              "n": 25,
+              "question": "Amy wants to bring her friends to Four Seasons' Kitchen in August.  She looks at her calendar to pick a time to go there.  Which are the time and date she can choose?",
+              "options": [
+                "8:30 pm, August 1.",
+                "5:00 pm, August 11.",
+                "3:00 pm, August 13.",
+                "2:00 pm, August 28."
+              ],
+              "answer": 1,
+              "optionsZh": ["8月1日晚上8:30", "8月11日下午5:00", "8月13日下午3:00", "8月28日下午2:00"],
+              "explanation": "營業時間為週二至週日 14:00-20:00，逢週一及每月第二個週日公休。8/1=週二但20:30已超過打烊；8/11=週五17:00✓；8/13=8月第二個週日公休✗；8/28=週一公休✗，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "title": "第26-27題",
+          "passages": [
+            {
+              "passageType": "image",
+              "image": "/images/gsat/2023/p26_baby_bird.png",
+              "caption": "發現離巢幼鳥時的處理指引"
+            }
+          ],
+          "questions": [
+            {
+              "n": 26,
+              "question": "According to the notes, which is the WRONG way to help a baby bird that is out of its nest?",
+              "options": [
+                "Feed it before you take it to a hospital.",
+                "Leave it alone if it is not hurt and has feathers.",
+                "Call the animal center if you can't find its nest.",
+                "Put it back in its nest if it is not hurt and has few feathers."
+              ],
+              "answer": 0,
+              "optionsZh": ["送醫前先餵食", "若未受傷且有羽毛，讓牠待在原地", "找不到鳥巢時打電話給動物中心", "若未受傷且羽毛稀少，把牠放回鳥巢"],
+              "explanation": "指引明確說明：幼鳥受傷時「保持溫暖，不要給任何食物（don't give it any food）」後送動物醫院，故餵食是錯誤做法，選 (A)。"
+            },
+            {
+              "n": 27,
+              "question": "According to the notes, what do birds do if their babies have the smell of people on them?",
+              "options": [
+                "They keep taking care of them.",
+                "They push them out of the nest.",
+                "They clean them until the smell goes away.",
+                "They leave them behind and move to a new nest."
+              ],
+              "answer": 0,
+              "optionsZh": ["仍繼續照顧牠們", "把牠們推出鳥巢", "清理牠們直到氣味消失", "遺棄牠們並搬到新的鳥巢"],
+              "explanation": "指引特別指出這是錯誤迷思：「人們以為鳥兒若感覺到幼鳥有人類氣味就會放棄牠們——錯！鳥兒才不在乎呢！」牠們會繼續照顧，故選 (A)。"
+            }
+          ]
+        },
+        {
+          "title": "第28-29題",
+          "passages": [
+            {
+              "passageType": "image",
+              "image": "/images/gsat/2023/p28_food_waste.png",
+              "caption": "從農場到餐桌：五大食物浪費階段及2014年各地區各階段浪費比例圖"
+            }
+          ],
+          "questions": [
+            {
+              "n": 28,
+              "question": "According to the reading, which is one of the reasons for food waste?",
+              "options": [
+                "Stores do not know how to pack food well.",
+                "Farmers do not have enough machines to collect food.",
+                "There is no refrigerator on the truck to keep food fresh.",
+                "Factories do not have enough trucks to carry food to stores."
+              ],
+              "answer": 2,
+              "optionsZh": ["店家不知道如何妥善包裝食物", "農夫沒有足夠機器採收食物", "卡車上沒有冰箱保鮮食物", "工廠沒有足夠卡車將食物運到店家"],
+              "explanation": "第二階段（運送途中）的原因之一是「卡車上沒有冰箱保鮮食物（No refrigerator on the truck）」，故選 (C)。"
+            },
+            {
+              "n": 29,
+              "question": "Which is true about food waste at each stage in the three parts of the world?",
+              "options": [
+                "For each area, the highest percentage of food waste happens at Stage 5.",
+                "Europe has a lower percentage of food waste at Stage 3 than the other two areas.",
+                "North America & Oceania has a higher percentage of food waste at Stage 1 than Europe.",
+                "South & Southeast Asia has a higher percentage of food waste at Stage 4 than the other two areas."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "各地區食物浪費最高比例均出現在第五階段",
+                "歐洲在第三階段（工廠）的食物浪費比例低於其他兩個地區",
+                "北美暨大洋洲在第一階段（農場）的食物浪費比例高於歐洲",
+                "南亞暨東南亞在第四階段（店家）的食物浪費比例高於其他兩個地區"
+              ],
+              "explanation": "圖表顯示南亞暨東南亞在第四階段（店家）的浪費比例高於北美暨大洋洲和歐洲，故選 (D)。"
+            }
+          ]
+        },
+        {
+          "title": "第30-32題",
+          "passages": [
+            {
+              "passageType": "reading",
+              "passage": "Sometimes when the rain falls hard and fast on you, it might hurt a little. But what happens when it hits a mosquito? A 2012 study says when a raindrop falls on a mosquito, it's like when a bus hits a person. Besides, the little insect is hit by a raindrop about once every 20 seconds.\nSo why don't we see many dead mosquitoes after it rains?\n\nA mosquito is as big as a raindrop, but it is much lighter — 0.002 g only. This saves its life in raindrop attacks. Because the mosquito is so light, when it is hit by a raindrop, it won't experience a force that is strong enough to kill it.\n\nThe study also found that when a mosquito is hit by a raindrop, the insect is pushed by the raindrop and falls together with it. But the mosquito doesn't get wet easily because it is covered with hairs which keep off water. After dropping about 6 cm, it will roll off the raindrop and fly away.\n\nHowever, this trick isn't always successful. If the mosquito flies too low when it is hit by the raindrop, it won't have time to fly off. Then it will hit the ground and meet its death."
+            }
+          ],
+          "questions": [
+            {
+              "n": 30,
+              "question": "What is the trick that the mosquito uses in rain?",
+              "options": [
+                "It shakes its body fast enough to get water off.",
+                "It drops with the raindrop and then rolls off it.",
+                "It flies behind the raindrop and pushes it away.",
+                "It rides on the raindrop and lands on the ground."
+              ],
+              "answer": 1,
+              "optionsZh": ["快速抖動身體甩掉水", "隨雨滴下落後再滾離", "飛到雨滴後面把它推開", "騎在雨滴上隨之落地"],
+              "explanation": "蚊子被雨滴擊中後與其一起下落約6公分，接著滾離並飛走，故選 (B)。"
+            },
+            {
+              "n": 31,
+              "question": "What keeps a mosquito safe in the rain?",
+              "options": [
+                "It is very light.",
+                "It has no body hairs.",
+                "It is as big as a raindrop.",
+                "It is strong enough to fight the force of a raindrop."
+              ],
+              "answer": 0,
+              "optionsZh": ["體重極輕", "身上沒有毛", "和雨滴一樣大", "力量足以對抗雨滴衝擊"],
+              "explanation": "蚊子體重僅0.002g，因為極輕所以被雨滴擊中時受到的力量不足以致命，故選 (A)。"
+            },
+            {
+              "n": 32,
+              "question": "When would it be dangerous for a mosquito in the rain?",
+              "options": [
+                "When it flies too close to the ground.",
+                "When the rain falls too hard and too fast.",
+                "When it is hit by raindrops too many times.",
+                "When it drops for more than 6 cm in the rain."
+              ],
+              "answer": 0,
+              "optionsZh": ["飛得太靠近地面時", "雨下得太急太快時", "被雨滴擊中太多次時", "在雨中下落超過6公分時"],
+              "explanation": "蚊子飛得太低時被雨滴擊中，來不及飛離就會撞到地面而死，故選 (A)。"
+            }
+          ]
+        },
+        {
+          "title": "第33-35題",
+          "passages": [
+            {
+              "passageType": "reading",
+              "passage": "You probably have heard Beethoven's famous piano piece \"For Elise,\" but do you know who \"Elise\" was?\n\nOne story is that Elise was Elisabeth Röckel. She once sang in Beethoven's opera Fidelio, and the two became very good friends. Beethoven called her \"Elise.\" When Röckel was leaving the city of Vienna, Beethoven wrote \"For Elise\" to say goodbye to her. Another story is that Elise was Therese Malfatti. Beethoven was in love with her. He wrote a piece for her and put \"For Therese\" on the manuscript. Malfatti kept the manuscript and left it to her family when she died. Later, a man copied the manuscript and wrote \"For Elise\" by mistake. There is another possible Elise: Elise Barensfeld. She learned the piano from Malfatti, the same Malfatti in the second story. To help Malfatti, Beethoven wrote the piece for her to use to teach Barensfeld.\n\nThese are just some guesses about who Elise was. We may never know the right answer. No one knew about the piece until 1867, when the manuscript was found. This was 40 years after Beethoven's death, so he wasn't around to tell us who Elise was. Only one thing is for sure: \"For Elise\" will always be enjoyed."
+            }
+          ],
+          "questions": [
+            {
+              "n": 33,
+              "question": "What do the three stories in the reading all talk about?",
+              "options": [
+                "Who Beethoven's true love was.",
+                "Who played \"For Elise\" the best.",
+                "How \"For Elise\" became popular.",
+                "Why Beethoven wrote \"For Elise.\""
+              ],
+              "answer": 3,
+              "optionsZh": ["貝多芬的真愛是誰", "誰彈「給愛麗絲」彈得最好", "「給愛麗絲」如何廣為人知", "貝多芬為何寫「給愛麗絲」"],
+              "explanation": "三個故事各自提出不同說法，說明貝多芬為誰/為何寫這首曲子，主題都是「為什麼寫」，故選 (D)。"
+            },
+            {
+              "n": 34,
+              "question": "What do we know about \"For Elise\" from the reading?",
+              "options": [
+                "It first appeared in the opera Fidelio.",
+                "The true \"Elise\" was Elise Barensfeld.",
+                "The manuscript was found after Beethoven died.",
+                "The manuscript is now kept by the city of Vienna."
+              ],
+              "answer": 2,
+              "optionsZh": ["最早出現在歌劇《菲德里奧》中", "真正的「愛麗絲」是Elise Barensfeld", "手稿在貝多芬去世後才被發現", "手稿現由維也納市保管"],
+              "explanation": "文章說「直到1867年才有人知道這首曲子，當時手稿才被發現，距貝多芬去世已40年」，故選 (C)。"
+            },
+            {
+              "n": 35,
+              "question": "What can we learn about the three women from the stories?",
+              "options": [
+                "They were called \"Elise\" by their friends.",
+                "Elisabeth Röckel was a close friend of Beethoven's.",
+                "Therese Malfatti changed \"For Elise\" to \"For Therese.\"",
+                "Elise Barensfeld was Beethoven's student."
+              ],
+              "answer": 1,
+              "optionsZh": ["她們都被朋友稱為「愛麗絲」", "Elisabeth Röckel是貝多芬的摯友", "Therese Malfatti把「給愛麗絲」改成「給泰瑞絲」", "Elise Barensfeld是貝多芬的學生"],
+              "explanation": "文中說 Röckel 和貝多芬「兩人成為非常好的朋友（became very good friends）」；是一名男子後來把手稿誤寫成「For Elise」（非Malfatti改的）；Barensfeld 是向 Malfatti 學琴（非貝多芬的學生），故選 (B)。"
+            }
+          ]
+        },
+        {
+          "title": "第36-38題",
+          "passages": [
+            {
+              "passageType": "reading",
+              "passage": "Which would you give a boy for his birthday, a toy truck or a doll? If you choose the truck, well, you're not alone. Most people think that some toys are for boys and some are for girls. We might pick building toys for boys and kitchen toys for girls. But why do we do this? Are boys and girls really born with different interests in toys?\n\nNo, they are not. Children start to show different interests in toys at age three, but only because at this time, they begin to learn about gender and to follow what others of their gender do. If you give a girl kitchen toys, she will think they are girls' toys because she sees other girls playing with them. But if you give a girl a toy car and show her a group of girls who are playing with cars, she'll play with the toy car and think it is a girls' toy. This \"watch and follow\" habit often becomes a rule for both boys and girls in choosing the \"right\" toys.\n\nHowever, this rule can be bad for children. Different toys teach children different things. Dolls help with their early language use, and building toys are good for learning math and science. By playing with different toys, children can find out what they are interested in or what they are good at. If they only play one kind of toy, they may lose this important chance. They may also get a wrong idea about what boys or girls are able to do. Some doctors worry that children may use the same kind of thinking when they look for jobs in the future. If they do, they may miss something more important than just getting a chance to play with different toys. They may miss many, perhaps better, chances in life.\n—Jesse Cohen"
+            }
+          ],
+          "questions": [
+            {
+              "n": 36,
+              "question": "What idea does Jesse Cohen talk about in the reading?",
+              "options": [
+                "Not all kinds of toys are helpful for children's learning.",
+                "Parents should give their children the right toys for their age.",
+                "Children should learn about their gender from playing with toys.",
+                "We should not let gender decide which toys children can play with."
+              ],
+              "answer": 3,
+              "optionsZh": ["並非所有玩具都有助於孩子學習", "父母應給孩子適齡玩具", "孩子應透過玩具了解性別", "我們不應讓性別決定孩子玩哪種玩具"],
+              "explanation": "文章核心論點：性別不應該決定孩子玩什麼玩具，玩各種玩具有助於發現興趣和潛力，故選 (D)。"
+            },
+            {
+              "n": 37,
+              "question": "In the third paragraph, why does Jesse Cohen think \"this rule can be bad for children\"?",
+              "options": [
+                "Children may not want to share their toys with others.",
+                "Children may have the wrong idea about following rules.",
+                "Children may not be able to learn from playing with toys.",
+                "Children may miss the chance to find out what they really like."
+              ],
+              "answer": 3,
+              "optionsZh": ["孩子可能不想和別人分享玩具", "孩子可能對遵守規則有錯誤認知", "孩子可能無法從玩玩具中學習", "孩子可能錯失發現自己真正喜愛的機會"],
+              "explanation": "文中說「只玩一種玩具，可能失去探索自己興趣的重要機會（lose this important chance）」，故選 (D)。"
+            },
+            {
+              "n": 38,
+              "question": "In the reading, after Jesse Cohen talks about an idea, he often gives an example to make it clear.  Below are four of the sentences in the third paragraph.  Which is used as an example?",
+              "options": [
+                "\"However, this rule can be bad for children.\"",
+                "\"Dolls help with their early language use, and building toys are good for learning math and science.\"",
+                "\"Some doctors worry that children may use the same kind of thinking when they look for jobs in the future.\"",
+                "\"If they do, they may miss something more important than just getting a chance to play with different toys.\""
+              ],
+              "answer": 1,
+              "optionsZh": [
+                "「然而，這個規則對孩子有害。」（提出論點）",
+                "「玩偶有助於語言發展，積木有益於數學和科學學習。」（具體例子）",
+                "「一些醫生擔心孩子找工作時也會用同樣的思維。」（延伸影響）",
+                "「如果這樣，他們可能錯過比玩玩具更重要的事。」（結論）"
+              ],
+              "explanation": "作者說「不同玩具教不同東西」後，緊接著用「玩偶幫助語言、積木幫助數學科學」作為具體範例（example），故選 (B)。"
+            }
+          ]
+        },
+        {
+          "title": "第39-41題",
+          "passages": [
+            {
+              "passageType": "reading",
+              "passage": "Marie Colvin was a world-famous war reporter. She was born in New York, USA, in 1956 and died in Homs, Syria, in 2012.\n\nWhen she was a student at Yale University, Colvin decided that she wanted to be a reporter in the future. She joined the Sunday Times, a UK newspaper, in 1985 and soon became its Middle East reporter. Besides the Middle East, she also reported from other parts of the world: Chechnya, Kosovo and Sri Lanka, for example. When she was reporting on the war in Sri Lanka, she lost her left eye. But that never stopped her. She still went to dangerous places that few reporters wanted to visit and stayed when others left.\n\nColvin showed great empathy in her stories. For her, war reporting was not just some quick interviews and a few photos. She wrote about real people and their real lives. Her writing made you feel so strongly about these people's stories, just like they were your own. She hoped that through her work the world would understand what really happened in war, and would take action to stop the fighting.\n\nOn February 22, 2012, the day after she gave her report on the war in Homs, Colvin was killed when the house she was staying in was attacked. She always knew what price a war reporter might have to pay. She already lost an eye before. This time, she gave her life to the work she could not give up — telling the true stories to the world."
+            }
+          ],
+          "questions": [
+            {
+              "n": 39,
+              "question": "What is the reading mostly about?",
+              "options": [
+                "Marie Colvin's war reports.",
+                "Marie Colvin's working life.",
+                "Marie Colvin's schooldays at Yale.",
+                "Marie Colvin's experiences in Homs."
+              ],
+              "answer": 1,
+              "optionsZh": ["Marie Colvin的戰地報導", "Marie Colvin的職業生涯", "Marie Colvin在耶魯的求學時光", "Marie Colvin在霍姆斯的經歷"],
+              "explanation": "文章完整描述了 Colvin 從耶魯決定成為記者到在霍姆斯殉職的整段職業生涯，故選 (B)。"
+            },
+            {
+              "n": 40,
+              "question": "What does it mean when someone has empathy?",
+              "options": [
+                "They are good at taking war photos.",
+                "They like to read other people's life stories.",
+                "They are able to understand how other people feel.",
+                "They are good at helping people change their own lives."
+              ],
+              "answer": 2,
+              "optionsZh": ["擅長拍攝戰地照片", "喜歡閱讀他人的人生故事", "能夠理解他人的感受", "擅長幫助人們改變自己的生活"],
+              "explanation": "文章描述她的 empathy：她寫真實的人與生活，讓讀者「感受如同親身經歷」，即能理解他人感受，故選 (C)。"
+            },
+            {
+              "n": 41,
+              "question": "Which is true about Marie Colvin?",
+              "options": [
+                "The chance to study at Yale made her leave her job in the Middle East.",
+                "The experience in Sri Lanka did not change her way of reporting news.",
+                "She was killed in Homs when she was interviewing soldiers there for her report.",
+                "She was not sure what to do in the future until she worked for the Sunday Times."
+              ],
+              "answer": 1,
+              "optionsZh": ["到耶魯讀書的機會讓她辭去中東工作", "斯里蘭卡的經歷沒有改變她的報導方式", "她在霍姆斯採訪士兵時遭到殺害", "直到在星期日泰晤士報工作後才確定未來方向"],
+              "explanation": "她在斯里蘭卡失去左眼，但「從未停止，仍然前往危險之地」——說明她的報導方式沒有改變；其他選項均與文章內容不符，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "title": "第42-43題",
+          "passages": [
+            {
+              "passageType": "cloze",
+              "passage": "Speaking American is a great book!\nLucia Leisure  ★★★★★\n\nI just love Josh Katz's new book! It's about __(42)__ in different parts of the US. The information in the book was collected from the quiz that Katz built on the website in 2013. The quiz asked what words people use for something, and their answers showed interesting facts. For example, there are different names for sports shoes. In most parts of the US, people say \"tennis shoes.\" In the northeast of the country, people wear \"sneakers.\" In some towns, \"tennis shoes\" and \"sneakers\" become \"gym shoes.\"\n\nThe use of words tells us where people are from, like Katz's book says. But in my experience, it also shows __(43)__. My family has lived in New York since my grandparents. It's not surprising that I say \"sneakers.\" But my grandfather says \"plimsolls,\" and my daughter says \"kicks\" or \"vans.\" Maybe Katz can study this difference for his next book."
+            }
+          ],
+          "questions": [
+            {
+              "n": 42,
+              "question": "I just love Josh Katz's new book! It's about ___ in different parts of the US.",
+              "options": [
+                "what things are called",
+                "how sports are played",
+                "why different languages are spoken",
+                "what words are often spelled differently"
+              ],
+              "answer": 0,
+              "optionsZh": ["事物如何被稱呼", "運動如何進行", "為何使用不同語言", "哪些字的拼法常有差異"],
+              "explanation": "書中探討美國各地對同一事物的不同稱呼（如球鞋：tennis shoes/sneakers/gym shoes），故選 (A) what things are called。"
+            },
+            {
+              "n": 43,
+              "question": "The use of words tells us where people are from, like Katz's book says. But in my experience, it also shows ___.",
+              "options": [
+                "how old they are",
+                "who they speak to",
+                "where they grew up",
+                "whether they are men or women"
+              ],
+              "answer": 0,
+              "optionsZh": ["他們的年齡", "他們和誰說話", "他們在哪裡長大", "他們是男性還是女性"],
+              "explanation": "作者一家住在紐約，但祖父用舊英式說法 plimsolls，作者說 sneakers，女兒說現代潮語 kicks/vans——不同世代用不同說法，顯示年齡（how old they are），故選 (A)。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,612 @@
+{
+  "year": 2025,
+  "rocYear": 114,
+  "type": "reading",
+  "label": "閱讀測驗",
+  "source": "114 年國中教育會考 英語科閱讀試題本",
+  "durationMin": 60,
+  "totalQuestions": 43,
+  "sections": [
+    {
+      "kind": "single",
+      "title": "第一部分：單題",
+      "range": "第 1–19 題，共 19 題",
+      "items": [
+        {
+          "n": 1,
+          "stem": "Look at the picture. A ＿＿＿ is flying over the houses.",
+          "image": "/public/images/gsat/2025/q1_picture.png",
+          "options": ["(A) bird", "(B) butterfly", "(C) kite", "(D) plane"],
+          "answer": 3,
+          "explanation": "圖中飛機（plane）正飛越房屋上方的天空；風箏由左側地上的人牽著放、蝴蝶停在花叢、皆非「飛越房子上方」，故選 (D)。",
+          "optionsZh": ["鳥", "蝴蝶", "風箏", "飛機"]
+        },
+        {
+          "n": 2,
+          "stem": "When I was a teenager, I was very ＿＿＿. But now, it's easier for me to talk to people.",
+          "options": ["(A) happy", "(B) lazy", "(C) popular", "(D) shy"],
+          "answer": 3,
+          "explanation": "現在比較容易跟人說話，與過去「很害羞」shy 形成對比，故選 (D)。",
+          "optionsZh": ["快樂的", "懶惰的", "受歡迎的", "害羞的"]
+        },
+        {
+          "n": 3,
+          "stem": "Lena doesn't want to go ＿＿＿ with John because she is afraid of water.",
+          "options": ["(A) dancing", "(B) hiking", "(C) sailing", "(D) shopping"],
+          "answer": 2,
+          "explanation": "她怕水，所以不想去與水相關的「乘船航行」sailing，故選 (C)。",
+          "optionsZh": ["跳舞", "健行", "乘船航行", "購物"]
+        },
+        {
+          "n": 4,
+          "stem": "Cindy enjoys ＿＿＿ her dad read stories to her before bed.",
+          "options": ["(A) to listen to", "(B) listening to", "(C) listen to", "(D) listens to"],
+          "answer": 1,
+          "explanation": "enjoy 後面要接動名詞（V-ing），故選 listening to。",
+          "optionsZh": ["聽（不定詞）", "聽（動名詞）", "聽（原形）", "聽（第三人稱）"]
+        },
+        {
+          "n": 5,
+          "stem": "Dad is busy cooking in the kitchen. Dinner will be ＿＿＿ in ten minutes.",
+          "options": ["(A) free", "(B) full", "(C) medium", "(D) ready"],
+          "answer": 3,
+          "explanation": "爸爸正在煮飯，十分鐘後晚餐就會「準備好」ready，故選 (D)。",
+          "optionsZh": ["免費的", "滿的", "中等的", "準備好的"]
+        },
+        {
+          "n": 6,
+          "stem": "There are so many new ＿＿＿ in the office. It'll take me some time to remember who is who.",
+          "options": ["(A) faces", "(B) ideas", "(C) rules", "(D) tools"],
+          "answer": 0,
+          "explanation": "要花時間記住誰是誰，表示辦公室來了很多新「面孔」faces（新同事），故選 (A)。",
+          "optionsZh": ["面孔", "點子", "規則", "工具"]
+        },
+        {
+          "n": 7,
+          "stem": "I feel like a ＿＿＿. I was looking for my keys for hours but they have been in my pocket the whole time.",
+          "options": ["(A) fool", "(B) ghost", "(C) king", "(D) stranger"],
+          "answer": 0,
+          "explanation": "鑰匙一直在口袋裡卻找了好幾小時，覺得自己像個「傻瓜」fool，故選 (A)。",
+          "optionsZh": ["傻瓜", "鬼", "國王", "陌生人"]
+        },
+        {
+          "n": 8,
+          "stem": "Mr. and Mrs. Wu have three daughters. Two are in high school, and ＿＿＿ is in elementary school.",
+          "options": ["(A) each", "(B) the other", "(C) the one", "(D) the next"],
+          "answer": 1,
+          "explanation": "三個女兒中兩個在高中，剩下「另外那一個」用 the other（三者中最後剩下的一個），故選 (B)。",
+          "optionsZh": ["每一個", "（剩下的）另一個", "那一個", "下一個"]
+        },
+        {
+          "n": 9,
+          "stem": "It is hard for trees to ＿＿＿ along this beach because of the strong winds from the sea.",
+          "options": ["(A) blow", "(B) build", "(C) follow", "(D) grow"],
+          "answer": 3,
+          "explanation": "海上吹來的強風使樹木難以「生長」grow，故選 (D)。",
+          "optionsZh": ["吹", "建造", "跟隨", "生長"]
+        },
+        {
+          "n": 10,
+          "stem": "Christmas ＿＿＿ and I want to visit my aunt abroad. Do you have any plans yet?",
+          "options": ["(A) came", "(B) comes", "(C) is coming", "(D) was coming"],
+          "answer": 2,
+          "explanation": "聖誕節即將到來、正在計畫出國，用現在進行式表「不久的未來」is coming，故選 (C)。",
+          "optionsZh": ["來了（過去）", "來（現在）", "即將到來", "（過去進行）"]
+        },
+        {
+          "n": 11,
+          "stem": "Jo won't be happy if you're late for his party tonight, so ＿＿＿ sure that you arrive on time.",
+          "options": ["(A) make", "(B) makes", "(C) to make", "(D) is making"],
+          "answer": 0,
+          "explanation": "祈使句以原形動詞開頭，make sure「務必確認」，故選 (A)。",
+          "optionsZh": ["確保（原形）", "確保（第三人稱）", "確保（不定詞）", "確保（進行式）"]
+        },
+        {
+          "n": 12,
+          "stem": "You may have a long drive because of the terrible ＿＿＿. There are usually a lot of cars and buses during this time.",
+          "options": ["(A) experience", "(B) machine", "(C) service", "(D) traffic"],
+          "answer": 3,
+          "explanation": "路上很多車和公車，表示「交通（路況）」traffic 壅塞，故選 (D)。",
+          "optionsZh": ["經驗", "機器", "服務", "交通（路況）"]
+        },
+        {
+          "n": 13,
+          "stem": "In the future, there will ＿＿＿ be greater basketball players than Stephen Curry, but now we believe he is the best!",
+          "options": ["(A) again", "(B) already", "(C) never", "(D) perhaps"],
+          "answer": 3,
+          "explanation": "未來「也許 perhaps」會有更厲害的球員，語氣為推測；never 過於絕對且與「現在他最棒」矛盾，故選 (D)。",
+          "optionsZh": ["再次", "已經", "絕不", "也許"]
+        },
+        {
+          "n": 14,
+          "stem": "I guess the rainwater has come in from the kitchen. See? ＿＿＿ of the windows are closed except the one in the kitchen.",
+          "options": ["(A) All", "(B) Both", "(C) Most", "(D) Some"],
+          "answer": 0,
+          "explanation": "除了廚房那一扇之外其餘全關，表示「所有 All（除了一扇）」窗戶都關著，雨水才會從廚房進來，故選 (A)。",
+          "optionsZh": ["全部", "兩者都", "大多數", "一些"]
+        },
+        {
+          "n": 15,
+          "stem": "＿＿＿ machines have been used to pick fruits for a long time, they were not used on strawberry farms until several years ago.",
+          "options": ["(A) Although", "(B) Because", "(C) Before", "(D) If"],
+          "answer": 0,
+          "explanation": "「雖然 Although」機器早已用於採水果，但直到近年才用於草莓園，前後為讓步轉折關係，故選 (A)。",
+          "optionsZh": ["雖然", "因為", "在…之前", "如果"]
+        },
+        {
+          "n": 16,
+          "stem": "There are online videos that teach you exercises you can do at home. They'll ＿＿＿ you a trip to the gym, and some money too.",
+          "options": ["(A) cost", "(B) give", "(C) keep", "(D) save"],
+          "answer": 3,
+          "explanation": "在家運動可「省下 save」上健身房的舟車與金錢，save sb sth，故選 (D)。",
+          "optionsZh": ["花費", "給予", "保持", "節省"]
+        },
+        {
+          "n": 17,
+          "stem": "Jane's parents are always happy to see their grandchildren, but mine ＿＿＿ less so when I visit them with my kids.",
+          "options": ["(A) is", "(B) are", "(C) do", "(D) does"],
+          "answer": 1,
+          "explanation": "mine 指 my parents（複數），be 動詞用 are（are less so 後省略 happy），故選 (B)。",
+          "optionsZh": ["是（單數）", "是（複數）", "（助動詞複數）", "（助動詞單數）"]
+        },
+        {
+          "n": 18,
+          "stem": "Before she ＿＿＿ about it, you should tell Daphne you broke her favorite cup.",
+          "options": ["(A) asks", "(B) asked", "(C) was asking", "(D) will ask"],
+          "answer": 0,
+          "explanation": "before 引導的時間副詞子句中，用現在式代替未來式，故選 asks。",
+          "optionsZh": ["問（現在）", "問（過去）", "（過去進行）", "（未來）"]
+        },
+        {
+          "n": 19,
+          "stem": "It was very windy this morning. Some of the shirts on the balcony were blown away ＿＿＿ in the pond.",
+          "options": ["(A) fell", "(B) and fell", "(C) fallen", "(D) and fallen"],
+          "answer": 1,
+          "explanation": "were blown away（被動）和 fell（主動）是兩個並列的過去動作，用 and 連接，故選 and fell。",
+          "optionsZh": ["掉落", "並掉落", "（過去分詞）", "並（過去分詞）"]
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "title": "第二部分：題組",
+      "range": "第 20–43 題，共 24 題",
+      "passages": [
+        {
+          "range": "20–21",
+          "passageType": "reading",
+          "title": "Rex the Bakery Dog",
+          "passage": "Rex is a dog that lives at the bakery next to our school. He is cute and friendly. Every morning, he stands in front of the school to welcome everybody. We all see Rex as one of us. But one Monday morning, I was surprised that Rex was not there to say hello to us. \"Rex is in the hospital. He was hit by a car last night,\" my classmate told me. We went to see Rex in the hospital that day after school. Two weeks later, Rex was much better, and we decided to take him for a walk every evening. Because of the exercise, Rex became healthier and stronger. Soon he could happily run and jump again. He is now as handsome and strong as before!",
+          "questions": [
+            {
+              "n": 20,
+              "stem": "What happened to Rex?",
+              "options": ["(A) He got lost.", "(B) He got hurt.", "(C) He bit people.", "(D) He ate too much."],
+              "answer": 1,
+              "explanation": "文中提到 Rex 前一晚「被車撞 hit by a car」而住院，表示牠「受傷了」got hurt，故選 (B)。",
+              "optionsZh": ["他走失了。", "他受傷了。", "他咬人。", "他吃太多。"]
+            },
+            {
+              "n": 21,
+              "stem": "How did the writer help Rex?",
+              "options": ["(A) By calling the police.", "(B) By making him exercise.", "(C) By taking him to see a doctor.", "(D) By looking for a new home for him."],
+              "answer": 1,
+              "explanation": "作者與同學每晚帶 Rex 散步，靠運動讓牠恢復健康強壯，故選「讓牠運動」(B)。",
+              "optionsZh": ["報警。", "讓他運動。", "帶他去看醫生。", "幫他找新家。"]
+            }
+          ]
+        },
+        {
+          "range": "22–23",
+          "passageType": "reading",
+          "title": "Friends Forever Group（群組對話）",
+          "image": "/public/images/gsat/2025/p22_dialogue.png",
+          "caption": "（steal someone's thunder 搶某人的風頭；likely 可能）請閱讀上方群組對話後作答。",
+          "questions": [
+            {
+              "n": 22,
+              "stem": "What do we know about Mark from the dialogue?",
+              "options": ["(A) He made Linda unhappy.", "(B) He is looking for a new job.", "(C) He did not like Linda's cake.", "(D) He is getting married to Jenny."],
+              "answer": 0,
+              "explanation": "Jenny 宣布要結婚時，Mark 卻插話講自己的新工作搶風頭，Linda 多次制止、最後氣得大喊「MARK!!」，可知 Mark 惹 Linda 不高興，故選 (A)。",
+              "optionsZh": ["他惹 Linda 不高興。", "他在找新工作。", "他不喜歡 Linda 的蛋糕。", "他要和 Jenny 結婚。"]
+            },
+            {
+              "n": 23,
+              "stem": "Which is most likely an example of stealing someone's thunder?",
+              "options": [
+                "(A) Dennis never changes his mind except when his wife tells him to.",
+                "(B) Melisa tells Tom she'll go to the party but tells her mom she'll stay home.",
+                "(C) Jeff tells everyone he'll move abroad when Ivy is still telling them about her baby.",
+                "(D) Alisa says she doesn't care what we have for lunch but also doesn't like the restaurant we chose."
+              ],
+              "answer": 2,
+              "explanation": "steal someone's thunder（搶風頭）指在別人分享重要消息時插入自己的事搶走注意。(C) 中 Ivy 還在說她的寶寶，Jeff 就宣布要移居國外，最符合，故選 (C)。",
+              "optionsZh": [
+                "Dennis 除非太太叫他改，否則從不改變主意。",
+                "Melisa 跟 Tom 說她會去派對，卻跟媽媽說她會待在家。",
+                "Ivy 還在跟大家說她的寶寶時，Jeff 就跟大家說他要移居國外。",
+                "Alisa 說她不在乎午餐吃什麼，卻又不喜歡我們選的餐廳。"
+              ]
+            }
+          ]
+        },
+        {
+          "range": "24–25",
+          "passageType": "reading",
+          "title": "White Lake City Card（城市卡＋分區地圖）",
+          "image": "/public/images/gsat/2025/p24_card.png",
+          "caption": "（zone 區）請閱讀上方城市卡說明、票價表與分區地圖後作答。Q25 需對照地圖判斷各地點所屬區域並精算票價。",
+          "questions": [
+            {
+              "n": 24,
+              "stem": "What can you do with a White Lake City Card?",
+              "options": [
+                "(A) Save 20% on children's train tickets.",
+                "(B) Visit any public museum in the city for free.",
+                "(C) Take a train to places out of the three zones.",
+                "(D) Move around the city by metro as much as you want."
+              ],
+              "answer": 3,
+              "explanation": "卡片載明可搭地鐵、公車或火車「想搭幾次就搭幾次 as many times as you want」，故選 (D)；博物館是打 8 折非免費、12 歲以下兒童是免費同行非車票折扣、卡片僅限三區內使用，其餘皆錯。",
+              "optionsZh": [
+                "兒童火車票省 20%。",
+                "免費參觀市內任何公立博物館。",
+                "搭火車到三區以外的地方。",
+                "隨心所欲無限次搭地鐵在城市裡移動。"
+              ]
+            },
+            {
+              "n": 25,
+              "stem": "Stacy is going to White Lake City and is staying at a hotel near the White Lake Main Station. She wants to visit the Museum of White Lake City History on Friday and see White Lake on Saturday. If she plans to buy (a) White Lake City Card(s), which of the four choices will be best for her and cost her the least?",
+              "options": [
+                "(A) A 3-day Card for Zone 1.",
+                "(B) A Weekend Card for Zones 1-3.",
+                "(C) A 1-day Card for Zone 1 and a Weekend Card for Zones 1-2.",
+                "(D) A 1-day Card for Zones 1-2 and a Weekend Card for Zones 1-2."
+              ],
+              "answer": 2,
+              "explanation": "Stacy 週五（平日）去 Zone 1 的歷史博物館、週六（週末）去 Zone 2 的 White Lake。平日卡可用最便宜的 1-day Zone 1（$20）；週末須用 Weekend 卡且範圍要涵蓋 Zone 2＝Zones 1-2（$50），合計 $70。(C) 正是此最省組合；(A) 3-day Zone 1 平日卡週末不能用、也到不了 Zone 2，(B) Weekend 卡平日不能用，(D) 平日多買到 Zones 1-2（$40）較貴共 $90，皆非最省，故選 (C)。",
+              "optionsZh": [
+                "一張 Zone 1 的 3 日卡。",
+                "一張 Zones 1-3 的週末卡。",
+                "一張 Zone 1 的 1 日卡，加一張 Zones 1-2 的週末卡。",
+                "一張 Zones 1-2 的 1 日卡，加一張 Zones 1-2 的週末卡。"
+              ]
+            }
+          ]
+        },
+        {
+          "range": "26–28",
+          "passageType": "reading",
+          "title": "Rolling Acres",
+          "passage": "At 5 o'clock every morning, while most people are sleeping, 16-year-old Libby Larson is already up. She mops the floor, gets the mail and the newspapers, and gets ready for visitors to Rolling Acres. Libby's grandparents started Rolling Acres in 1970, and since then all of the Larson family have been working there. Rolling Acres used to be just a sheep farm, but now, with its fruit trees, vegetable gardens, and many other kinds of animals, it has become a popular place for families to go on vacation. Visitors can pick fruits, collect eggs, and feed the animals. It is one of Libby's jobs to show kids how to feed the baby sheep.\n\nFor her work, Libby is paid $10 an hour. This summer, she expects to make about $1,200 and plans to buy a cell phone. Her friends think it's great to make that much money in a summer. However, for Libby, working at a family business also means making sacrifices. \"I'd love to sleep until noon or go to summer camp like other kids. My friends stopped inviting me on trips because I'm always busy in the summer.\" However, Libby also said, \"But it's better to see both sides. Working with your family is great. You feel closer to each other.\"",
+          "caption": "（paragraph 段落）",
+          "questions": [
+            {
+              "n": 26,
+              "stem": "What is Rolling Acres?",
+              "options": ["(A) A zoo.", "(B) A campground.", "(C) A vacation farm.", "(D) A family restaurant."],
+              "answer": 2,
+              "explanation": "文中說 Rolling Acres 從牧羊場變成「家庭度假的熱門去處 a popular place for families to go on vacation」，遊客可採果、撿蛋、餵動物，故選「度假農場」(C)。",
+              "optionsZh": ["動物園。", "露營地。", "度假農場。", "家庭餐廳。"]
+            },
+            {
+              "n": 27,
+              "stem": "What do we learn from the first paragraph?",
+              "options": [
+                "(A) What Libby does at Rolling Acres.",
+                "(B) What visitors think of Rolling Acres.",
+                "(C) Why Libby's grandparents started Rolling Acres.",
+                "(D) What the Larson family's plans are for Rolling Acres."
+              ],
+              "answer": 0,
+              "explanation": "第一段描述 Libby 清晨拖地、收信件報紙、為遊客做準備、教小孩餵小羊，講的都是「Libby 在農場做的事」，故選 (A)。",
+              "optionsZh": [
+                "Libby 在 Rolling Acres 做些什麼。",
+                "遊客對 Rolling Acres 的看法。",
+                "Libby 的祖父母為何創立 Rolling Acres。",
+                "Larson 家族對 Rolling Acres 的計畫。"
+              ]
+            },
+            {
+              "n": 28,
+              "stem": "What does making sacrifices mean?",
+              "options": [
+                "(A) Learning to make money and use it wisely.",
+                "(B) Getting to know different sides of your family.",
+                "(C) Making excuses for failing to do something difficult.",
+                "(D) Giving up something important to do something else."
+              ],
+              "answer": 3,
+              "explanation": "文中 making sacrifices 指 Libby 為了家業放棄睡到中午、夏令營、朋友的邀約等，即「為了做某事而放棄重要的事」，故選 (D)。",
+              "optionsZh": [
+                "學會賺錢並聰明地運用。",
+                "認識家人不同的面向。",
+                "為做不到困難的事找藉口。",
+                "放棄重要的事去做另一件事。"
+              ]
+            }
+          ]
+        },
+        {
+          "range": "29–31",
+          "passageType": "reading",
+          "title": "The Trees of Easter Island（漫畫）",
+          "image": "/public/images/gsat/2025/p29_comics.png",
+          "caption": "請閱讀上方八格漫畫後作答（Picture 1–8 由上而下、跨兩頁）。",
+          "questions": [
+            {
+              "n": 29,
+              "stem": "What do the comics tell us?",
+              "options": [
+                "(A) Enjoy life while we can.",
+                "(B) Follow the old ways of life.",
+                "(C) Save our planet before it's too late.",
+                "(D) Treat others the way we want to be treated."
+              ],
+              "answer": 2,
+              "explanation": "漫畫以復活節島砍光樹木導致文明崩壞為例，並呼籲「別讓地球這個唯一的家變成另一個復活節島」，意在「趁還來得及拯救地球」，故選 (C)。",
+              "optionsZh": [
+                "把握當下享受生活。",
+                "遵循古老的生活方式。",
+                "趁還來得及拯救我們的星球。",
+                "以我們希望被對待的方式對待他人。"
+              ]
+            },
+            {
+              "n": 30,
+              "stem": "What can we learn about the people in the comics?",
+              "options": [
+                "(A) They made fire before starting a fight.",
+                "(B) They fought for land and plants all the time.",
+                "(C) They prayed to the statues beside a large fire.",
+                "(D) They used statues to show how strong they were."
+              ],
+              "answer": 3,
+              "explanation": "漫畫提到雕像被搬到戰鬥場「展示他們的力量 to show their power」，可知他們用雕像來展現自己的強大，故選 (D)。",
+              "optionsZh": [
+                "他們開戰前先生火。",
+                "他們一直為土地和植物而戰。",
+                "他們在大火旁向雕像祈禱。",
+                "他們用雕像來展示自己有多強大。"
+              ]
+            },
+            {
+              "n": 31,
+              "stem": "What does did it in Picture 7 mean?",
+              "options": [
+                "(A) Fall to the ground.",
+                "(B) Cut down the last trees.",
+                "(C) Move the statues to fighting grounds.",
+                "(D) Understand how important trees were."
+              ],
+              "answer": 1,
+              "explanation": "第 7 格說「砍下最後樹木的人雖然明白樹木有多重要，but still, they did it」，did it 指前面提到的動作「砍下最後的樹」，故選 (B)。",
+              "optionsZh": [
+                "倒在地上。",
+                "砍下最後的樹。",
+                "把雕像搬到戰鬥場。",
+                "明白樹木有多重要。"
+              ]
+            }
+          ]
+        },
+        {
+          "range": "32–34",
+          "passageType": "reading",
+          "title": "The IKEA Effect",
+          "passage": "Many years ago, Dan Ariely bought a cabinet from IKEA. IKEA is a famous furniture store that sells boxes of furniture parts. People who buy them have to put all the parts together themselves. It took Ariely hours to build his cabinet. Ariely didn't really enjoy himself when he was trying to put all the parts together. However, after he finished, he felt quite good about himself and his cabinet. Later, he found that he loved his cabinet more than any of his other furniture.\n\nAriely wanted to know if anyone shared his feelings, so he did a fun origami study. He invited two groups of people to join his study. He called one group \"builders\" and the other group \"buyers.\" Builders were told to make origami, like paper frogs or paper birds. When they finished, they were asked how much they would spend on their works. Ariely then showed the origami to buyers and asked them how much they would pay for them. The two groups gave very different answers. Though buyers would pay only five cents for builders' origami, builders would spend 25 cents! Interestingly, builders believed others would think their works were good enough to cost that much money!\n\nAriely's study showed that he was not alone in his IKEA experience — we just love things more, sometimes blindly, when we make them ourselves. Ariely called it \"the IKEA effect.\"",
+          "caption": "（effect 效應；furniture 家具）",
+          "questions": [
+            {
+              "n": 32,
+              "stem": "What did Ariely try to find out in the origami study?",
+              "options": [
+                "(A) If he could stop the IKEA effect.",
+                "(B) Why people love making origami.",
+                "(C) Why IKEA furniture is so famous.",
+                "(D) If anyone shared his IKEA experience."
+              ],
+              "answer": 3,
+              "explanation": "文中說 Ariely 想知道「是否有人和他有相同感受 shared his feelings」，才做了摺紙實驗，故選 (D)。",
+              "optionsZh": [
+                "他是否能阻止 IKEA 效應。",
+                "人們為何喜歡摺紙。",
+                "IKEA 家具為何如此有名。",
+                "是否有人和他有相同的 IKEA 經驗。"
+              ]
+            },
+            {
+              "n": 33,
+              "stem": "Which is true about the origami study?",
+              "options": [
+                "(A) Buyers would spend less on builders' origami than builders would.",
+                "(B) Builders and buyers needed to decide a price on the origami they made.",
+                "(C) Builders knew others would not pay as much for the origami as they would.",
+                "(D) Buyers would spend more on builders' origami after knowing how they were made."
+              ],
+              "answer": 0,
+              "explanation": "文中買家只願付 5 分、製作者卻願付 25 分，可知「買家對製作者摺紙願付的錢比製作者少」，故選 (A)；買家並未自己做摺紙、製作者其實以為別人也覺得值那麼多，其餘皆與文不符。",
+              "optionsZh": [
+                "買家對製作者的摺紙願付的錢比製作者少。",
+                "製作者和買家都得為自己做的摺紙定價。",
+                "製作者知道別人不會像他們一樣付那麼多錢。",
+                "買家得知摺紙怎麼做之後願意付更多錢。"
+              ]
+            },
+            {
+              "n": 34,
+              "stem": "Jerry just can't get his daughter Mia to eat more vegetables at dinner. Every time he tries to do so, there is always a lot of shouting and crying. If Jerry wants to have Mia eat more vegetables by using the IKEA effect, what should he do?",
+              "options": [
+                "(A) Tell Mia that he cooks the vegetables just for her.",
+                "(B) Ask Mia to help him cook vegetables for her meal.",
+                "(C) Give Mia her favorite candy after she eats vegetables.",
+                "(D) Ask Mia what vegetables she likes and cook them for her."
+              ],
+              "answer": 1,
+              "explanation": "IKEA 效應指「自己動手做就會更喜歡它」。要讓 Mia 多吃蔬菜，應「請她幫忙一起煮自己要吃的蔬菜」，讓她因為參與而更願意吃，故選 (B)。",
+              "optionsZh": [
+                "告訴 Mia 他是專為她煮這些蔬菜。",
+                "請 Mia 幫他一起煮她要吃的蔬菜。",
+                "Mia 吃完蔬菜後給她最愛的糖果。",
+                "問 Mia 喜歡什麼蔬菜再煮給她。"
+              ]
+            }
+          ]
+        },
+        {
+          "range": "35–37",
+          "passageType": "reading",
+          "title": "The UK Electricity Workers（諷刺漫畫）",
+          "image": "/public/images/gsat/2025/p35_worker.png",
+          "caption": "（electricity 電力；government 政府；likely 可能）請閱讀短文並參考上方 1970 年代英國電力工人的諷刺漫畫後作答。",
+          "passage": "In the picture is a UK electricity worker in the 1970s. Pictures like this appeared in many newspapers at the time. In 1972, electricity workers in the UK asked to be paid more, and they decided to stop working until their wish was answered. The government worried that there wouldn't be enough electricity for the country if these workers didn't go to work, so it agreed to give them the pay rise. However, the story didn't end there.\n\nA year later, the electricity workers asked for another pay rise. To get what they wanted, they worked shorter hours and acted like they would walk away from their job anytime. But this time, the government decided to fight. To save electricity, it made new rules for people to follow. For example, each family could turn on the heat in only one room; TV stations had to stop their shows at 10:30 p.m.; businesses could open only three days a week.\n\nPeople's lives were greatly changed. Without enough heat to keep the house warm, people covered themselves in blankets all the time. Hospitals had to use candles because they couldn't keep all the lights on. Factories couldn't keep their machines working. Many people lost their jobs. For months, people were paying the price while the electricity workers were fighting for their wish. In the end, the government agreed to the second pay rise. This picture shows what many people thought of the electricity workers during the \"dark\" time.",
+          "questions": [
+            {
+              "n": 35,
+              "stem": "What is the reading mainly about?",
+              "options": [
+                "(A) The tips on using a picture to tell a story.",
+                "(B) The change that electricity brought to people's lives.",
+                "(C) The history behind the picture of a UK electricity worker.",
+                "(D) The story of a famous UK electricity worker from the 1970s."
+              ],
+              "answer": 2,
+              "explanation": "全文圍繞這張 1970 年代英國電力工人的漫畫，說明其背後罷工要求加薪、政府對抗、人民受苦的歷史，故選 (C)；並非教看圖說故事、也非某位名人的故事。",
+              "optionsZh": [
+                "用圖片說故事的技巧。",
+                "電力為人們生活帶來的改變。",
+                "一張英國電力工人圖片背後的歷史。",
+                "1970 年代某位知名英國電力工人的故事。"
+              ]
+            },
+            {
+              "n": 36,
+              "stem": "In the UK in the 1970s, what did people most likely think of the UK electricity workers?",
+              "options": [
+                "(A) They were not brave enough to fix their problems.",
+                "(B) They worked like robots and never learned to change.",
+                "(C) They were asking too much and did not know when to stop.",
+                "(D) They did not care whether their job might hurt people's health."
+              ],
+              "answer": 2,
+              "explanation": "工人一再要求加薪、以怠工威脅，導致全國停電、人民受苦，漫畫諷刺他們「貪得無厭、不知節制」，故選 (C)。",
+              "optionsZh": [
+                "他們不夠勇敢去解決自己的問題。",
+                "他們像機器人般工作、從不知變通。",
+                "他們要求太多、不知道何時該停手。",
+                "他們不在乎工作是否危害人們的健康。"
+              ]
+            },
+            {
+              "n": 37,
+              "stem": "Why does the writer put the \" \" mark around the word dark in the last sentence?",
+              "options": [
+                "(A) To say that the \"dark\" time was actually not dark.",
+                "(B) To tell people that the word was said by the government.",
+                "(C) To mean both the days without lights and the difficult lives people lived.",
+                "(D) To show that the government and the electricity workers both lost their fights."
+              ],
+              "answer": 2,
+              "explanation": "dark 加引號是雙關：既指缺電造成的「黑暗」，也指人民當時「艱困黑暗」的生活，故選 (C)。",
+              "optionsZh": [
+                "表示那段「黑暗」時期其實並不黑暗。",
+                "告訴大家這個字是政府說的。",
+                "同時指沒有燈光的日子，以及人民艱困的生活。",
+                "顯示政府與電力工人都輸了這場較量。"
+              ]
+            }
+          ]
+        },
+        {
+          "range": "38–43",
+          "passageType": "cloze",
+          "title": "Cameron's Birthday Gift（克漏字）",
+          "passage": "Most kids want gifts from their parents on their birthdays, but Cameron doesn't. On his birthday, he gives his mom a gift. He ＿＿(38)＿＿ doing this in his first year of junior high school. That year, during one class, he watched a video about how a baby is pushed from its mother's body. After class, ＿＿(39)＿＿. How brave a woman is to have a baby! Thank God I'll never have to do that!\n\nWhen Cameron came home that day, he held his mom in his arms for a long time. He decided that his birthday ＿＿(40)＿＿. During those nine months inside his mom, he just ate and slept while his mom was doing all the hard work. So why should he get a birthday gift for doing nothing? If anyone should get a gift on his birthday, it should be his mom.\n\nThe ＿＿(41)＿＿ \"birthday gift\" Cameron prepared was a bag of cookies he baked. The cookies tasted so bad, but his mom said they were the best thing she ever got. Hearing that ＿＿(42)＿＿. It was so much better than getting a gift. Now, on his birthday every year, Cameron makes a gift for his mother to thank her for giving him life.\n\nThis year, Cameron ＿＿(43)＿＿ his mom a nice dress. A few months ago, he learned to make dresses at school and decided to make one for his mom. Now the dress is finished and hanging behind Cameron's bedroom door. He believes the gift will tell his mother how much he loves her.",
+          "caption": "請依文意，選出最適合填入各空格的答案。",
+          "questions": [
+            {
+              "n": 38,
+              "stem": "選出最適合空格 (38) 的答案。",
+              "options": ["(A) starts", "(B) started", "(C) has started", "(D) will start"],
+              "answer": 1,
+              "explanation": "後文 in his first year of junior high school、That year 等皆為過去時間，故用過去式 started。",
+              "optionsZh": ["開始（現在）", "開始（過去）", "（現在完成）", "（未來）"]
+            },
+            {
+              "n": 39,
+              "stem": "選出最適合空格 (39) 的答案。",
+              "options": [
+                "(A) he got quite scared of two things",
+                "(B) he still couldn't understand two things",
+                "(C) he couldn't stop thinking about two things",
+                "(D) he did two things that would change his life"
+              ],
+              "answer": 2,
+              "explanation": "空格後緊接著列出他不斷想的兩件事（女人生產多勇敢、慶幸自己永遠不必經歷），可知「他無法停止思考兩件事」，故選 (C)。",
+              "optionsZh": [
+                "他變得相當害怕兩件事。",
+                "他仍然無法理解兩件事。",
+                "他無法停止思考兩件事。",
+                "他做了兩件會改變他人生的事。"
+              ]
+            },
+            {
+              "n": 40,
+              "stem": "選出最適合空格 (40) 的答案。",
+              "options": [
+                "(A) should be spent helping his mom",
+                "(B) should be a time of welcoming a new start",
+                "(C) should not be about him, but about his mom",
+                "(D) should not be celebrated for just one day, but for nine months"
+              ],
+              "answer": 2,
+              "explanation": "後文說懷胎九月都是媽媽辛苦、他只是吃和睡，該收禮物的是媽媽，可知他認為生日「不該是關於他，而是關於他媽媽」，故選 (C)。",
+              "optionsZh": [
+                "應該花在幫助他媽媽上。",
+                "應該是迎接新開始的時刻。",
+                "不該是關於他，而是關於他媽媽。",
+                "不該只慶祝一天，而要慶祝九個月。"
+              ]
+            },
+            {
+              "n": 41,
+              "stem": "選出最適合空格 (41) 的答案。",
+              "options": ["(A) first", "(B) last", "(C) only", "(D) other"],
+              "answer": 0,
+              "explanation": "這是他「第一個」準備的生日禮物（一袋親手烤的餅乾），與下文每年送禮的開端相呼應，故選 first。",
+              "optionsZh": ["第一個", "最後一個", "唯一的", "其他的"]
+            },
+            {
+              "n": 42,
+              "stem": "選出最適合空格 (42) 的答案。",
+              "options": [
+                "(A) made his head hurt",
+                "(B) made his heart sing",
+                "(C) made him change his mind",
+                "(D) made him give up baking"
+              ],
+              "answer": 1,
+              "explanation": "媽媽說那難吃的餅乾是她收過最棒的禮物，聽到這句話讓他「心中歡唱（非常開心）」，比收到禮物還棒，故選 (B)。",
+              "optionsZh": [
+                "讓他頭痛。",
+                "讓他心中歡唱（非常開心）。",
+                "讓他改變心意。",
+                "讓他放棄烘焙。"
+              ]
+            },
+            {
+              "n": 43,
+              "stem": "選出最適合空格 (43) 的答案。",
+              "options": ["(A) is going to give", "(B) gives", "(C) has given", "(D) gave"],
+              "answer": 0,
+              "explanation": "今年的洋裝才剛做好、掛在門後尚未送出，且後文 the gift will tell his mother 用未來式，可知他「即將要送」，故選 is going to give。",
+              "optionsZh": ["即將要送", "送（現在習慣）", "已經送了", "送了（過去）"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
