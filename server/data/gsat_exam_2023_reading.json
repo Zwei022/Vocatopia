@@ -212,8 +212,7 @@
           "passages": [
             {
               "passageType": "image",
-              "image": "/public/images/gsat/2023/p24_four_seasons.png",
-              "passage": "Four Seasons' Kitchen\nOpening hours: 2:00~8:00 pm  Tuesday~Sunday\n(We're closed on Mondays and the second Sunday of every month.)\n\nSandwiches\nBeach Sandwich ............ $70  (Bread + Fish + Lettuce)\nGarden Sandwich .......... $80  (Bread + Chicken + Tomatoes + Cheese)\nSunday Sandwich .......... $90  (Bread + Egg + Steak + Ham + Lettuce)\n\nDrinks\nSpring Rain .................. $50  (Green Tea + Guava + Lemon)\nSummer Rainbow .......... $60  (Milk + Watermelon)\nAutumn Wind ................ $60  (Black Tea + Apple)\nWinter Snow ................. $70  (Chocolate Milk + Ice Cream)\n\nGood News: Star-Collecting Plan\n★ You get a star by ordering a sandwich or a drink.\n★ With 15 stars, you can get a $60 drink for free!"
+              "image": "/public/images/gsat/2023/p24_four_seasons.png"
             }
           ],
           "questions": [
@@ -327,7 +326,7 @@
           "passages": [
             {
               "passageType": "reading",
-              "passage": "Sometimes when the rain falls hard and fast on you, it might hurt a little. But what happens when it hits a mosquito? A 2012 study says when a raindrop falls on a mosquito, it's like when a bus hits a person. Besides, the little insect is hit by a raindrop about once every 20 seconds.\nSo why don't we see many dead mosquitoes after it rains?\n\nA mosquito is as big as a raindrop, but it is much lighter — 0.002 g only. This saves its life in raindrop attacks. Because the mosquito is so light, when it is hit by a raindrop, it won't experience a force that is strong enough to kill it.\n\nThe study also found that when a mosquito is hit by a raindrop, the insect is pushed by the raindrop and falls together with it. But the mosquito doesn't get wet easily because it is covered with hairs which keep off water. After dropping about 6 cm, it will roll off the raindrop and fly away.\n\nHowever, this trick isn't always successful. If the mosquito flies too low when it is hit by the raindrop, it won't have time to fly off. Then it will hit the ground and meet its death."
+              "image": "/public/images/gsat/2023/p30_mosquito.png"
             }
           ],
           "questions": [
@@ -377,7 +376,7 @@
           "passages": [
             {
               "passageType": "reading",
-              "passage": "You probably have heard Beethoven's famous piano piece \"For Elise,\" but do you know who \"Elise\" was?\n\nOne story is that Elise was Elisabeth Röckel. She once sang in Beethoven's opera Fidelio, and the two became very good friends. Beethoven called her \"Elise.\" When Röckel was leaving the city of Vienna, Beethoven wrote \"For Elise\" to say goodbye to her. Another story is that Elise was Therese Malfatti. Beethoven was in love with her. He wrote a piece for her and put \"For Therese\" on the manuscript. Malfatti kept the manuscript and left it to her family when she died. Later, a man copied the manuscript and wrote \"For Elise\" by mistake. There is another possible Elise: Elise Barensfeld. She learned the piano from Malfatti, the same Malfatti in the second story. To help Malfatti, Beethoven wrote the piece for her to use to teach Barensfeld.\n\nThese are just some guesses about who Elise was. We may never know the right answer. No one knew about the piece until 1867, when the manuscript was found. This was 40 years after Beethoven's death, so he wasn't around to tell us who Elise was. Only one thing is for sure: \"For Elise\" will always be enjoyed."
+              "image": "/public/images/gsat/2023/p33_for_elise.png"
             }
           ],
           "questions": [
@@ -427,7 +426,7 @@
           "passages": [
             {
               "passageType": "reading",
-              "passage": "Which would you give a boy for his birthday, a toy truck or a doll? If you choose the truck, well, you're not alone. Most people think that some toys are for boys and some are for girls. We might pick building toys for boys and kitchen toys for girls. But why do we do this? Are boys and girls really born with different interests in toys?\n\nNo, they are not. Children start to show different interests in toys at age three, but only because at this time, they begin to learn about gender and to follow what others of their gender do. If you give a girl kitchen toys, she will think they are girls' toys because she sees other girls playing with them. But if you give a girl a toy car and show her a group of girls who are playing with cars, she'll play with the toy car and think it is a girls' toy. This \"watch and follow\" habit often becomes a rule for both boys and girls in choosing the \"right\" toys.\n\nHowever, this rule can be bad for children. Different toys teach children different things. Dolls help with their early language use, and building toys are good for learning math and science. By playing with different toys, children can find out what they are interested in or what they are good at. If they only play one kind of toy, they may lose this important chance. They may also get a wrong idea about what boys or girls are able to do. Some doctors worry that children may use the same kind of thinking when they look for jobs in the future. If they do, they may miss something more important than just getting a chance to play with different toys. They may miss many, perhaps better, chances in life.\n—Jesse Cohen"
+              "image": "/public/images/gsat/2023/p36_jesse_cohen.png"
             }
           ],
           "questions": [
@@ -482,7 +481,7 @@
           "passages": [
             {
               "passageType": "reading",
-              "passage": "Marie Colvin was a world-famous war reporter. She was born in New York, USA, in 1956 and died in Homs, Syria, in 2012.\n\nWhen she was a student at Yale University, Colvin decided that she wanted to be a reporter in the future. She joined the Sunday Times, a UK newspaper, in 1985 and soon became its Middle East reporter. Besides the Middle East, she also reported from other parts of the world: Chechnya, Kosovo and Sri Lanka, for example. When she was reporting on the war in Sri Lanka, she lost her left eye. But that never stopped her. She still went to dangerous places that few reporters wanted to visit and stayed when others left.\n\nColvin showed great empathy in her stories. For her, war reporting was not just some quick interviews and a few photos. She wrote about real people and their real lives. Her writing made you feel so strongly about these people's stories, just like they were your own. She hoped that through her work the world would understand what really happened in war, and would take action to stop the fighting.\n\nOn February 22, 2012, the day after she gave her report on the war in Homs, Colvin was killed when the house she was staying in was attacked. She always knew what price a war reporter might have to pay. She already lost an eye before. This time, she gave her life to the work she could not give up — telling the true stories to the world."
+              "image": "/public/images/gsat/2023/p39_marie_colvin.png"
             }
           ],
           "questions": [
@@ -532,7 +531,7 @@
           "passages": [
             {
               "passageType": "cloze",
-              "passage": "Speaking American is a great book!\nLucia Leisure  ★★★★★\n\nI just love Josh Katz's new book! It's about __(42)__ in different parts of the US. The information in the book was collected from the quiz that Katz built on the website in 2013. The quiz asked what words people use for something, and their answers showed interesting facts. For example, there are different names for sports shoes. In most parts of the US, people say \"tennis shoes.\" In the northeast of the country, people wear \"sneakers.\" In some towns, \"tennis shoes\" and \"sneakers\" become \"gym shoes.\"\n\nThe use of words tells us where people are from, like Katz's book says. But in my experience, it also shows __(43)__. My family has lived in New York since my grandparents. It's not surprising that I say \"sneakers.\" But my grandfather says \"plimsolls,\" and my daughter says \"kicks\" or \"vans.\" Maybe Katz can study this difference for his next book."
+              "image": "/public/images/gsat/2023/p42_nicereads.png"
             }
           ],
           "questions": [
