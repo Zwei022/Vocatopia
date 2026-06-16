@@ -229,7 +229,7 @@
             {
               "passageType": "image",
               "image": "/public/images/gsat/2024/p24_bakers_kitchen.png",
-              "caption": "Baker's Kitchen 每日新鮮麵包出爐時刻表"
+              "passage": "Baker's Kitchen — Fresh Bread Every Day!\nOpen 7 days a week\n\nFresh Bread Schedule:\n  White bread ............... 10:30 am\n  Bagels ........................ 11:30 am\n  Farm bread ................. 3:30 pm\n  Challah ....................... 3:30 pm\n  Pretzels ...................... Fridays only\n  Croissants .................. Weekdays only\n\nClosing time:\n  Mon–Fri: 9:00 pm\n  Sat–Sun: 8:00 pm  ← All breads HALF PRICE 1 hour before closing!\n\nMember Card: $100/year → 10% off every purchase"
             }
           ],
           "questions": [
@@ -262,7 +262,7 @@
             {
               "passageType": "image",
               "image": "/public/images/gsat/2024/p26_festival_map.png",
-              "caption": "2021年綠色節慶地圖與交通資訊"
+              "passage": "2021 Green Festival @ Satyr's Park\n\nKey information from the map:\n• Free festival bus: departs from Goat Street Station → Satyr's Park entrance\n• Fox Street: CLOSED during festival (no entry from this side)\n• Garden Square: Farmers' Market — no parking available\n• Koala Street Station: nearest metro stop to the Farmers' Market\n• Bus No. 157: stops at Puppy Street (near the area)"
             }
           ],
           "questions": [

@@ -615,14 +615,17 @@ function _normalizeGsatData(data) {
     // group section：舊格式用 items[].{passages,questions}，新格式用 passages[]
     if (!sec.passages && sec.items) {
       const passages = sec.items.map(item => {
-        const p = (item.passages && item.passages[0]) || {};
+        const ps = item.passages || [];
+        // 合併多個 passage：圖片取第一個有 image 的，文字取第一個有 passage 的
+        const imgP  = ps.find(p => p.image) || {};
+        const txtP  = ps.find(p => p.passage) || {};
         return {
           title: item.title || '',
           range: item.title || '',
-          passageType: p.passageType || 'text',
-          image: p.image || null,
-          caption: p.caption || null,
-          passage: p.passage || null,
+          passageType: imgP.passageType || txtP.passageType || 'text',
+          image: imgP.image || null,
+          caption: imgP.caption || txtP.caption || null,
+          passage: txtP.passage || imgP.passage || null,
           questions: (item.questions || []).map(normalizeQ),
         };
       });
