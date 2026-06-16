@@ -1696,8 +1696,8 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 .gx-q{margin-bottom:18px}
 .gx-stem{font-size:14px;color:var(--white);line-height:1.7;margin-bottom:8px}
 .gx-num{font-family:var(--font-display);font-weight:700;color:var(--green3);margin-right:4px}
-.gx-img{display:block;width:auto;height:auto;max-width:100%;max-height:180px;border-radius:8px;margin:8px auto;background:#fff;box-sizing:border-box}
-.gx-pimg{width:auto;max-width:100%;margin:0 auto 12px}
+.gx-img{display:block;width:auto;height:auto;max-width:100%;max-height:240px;border-radius:8px;margin:8px auto;background:#fff;box-sizing:border-box}
+.gx-pimg{width:100%;height:auto;max-height:none;display:block;margin:0 auto 12px;border-radius:6px}
 .gx-opts{display:flex;flex-direction:column;gap:7px}
 .gx-opt{text-align:left;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.12);border-radius:9px;padding:9px 12px;color:var(--white);font-size:13px;cursor:pointer;font-family:'Nunito',sans-serif;transition:background .15s,border-color .15s,transform .1s,box-shadow .15s}
 .gx-opt:hover:not(:disabled){background:rgba(255,255,255,.1);border-color:rgba(46,204,113,.5)}
@@ -1735,3 +1735,95 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 .dc-sub,.bc-sub{font-size:10px;color:var(--gray);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .dcat-badge{margin-left:auto;flex-shrink:0;font-family:'Nunito',sans-serif;font-size:10px;background:var(--orange);color:var(--white);padding:3px 8px;border-radius:10px;font-weight:800;white-space:nowrap}
 .dcat-badge.done{background:rgba(46,204,113,.18);color:var(--green3)}
+
+/* ════════════════════════════════
+   HOME v2 — 遊戲化首頁
+   角色卡 + 今日任務 + 行動格
+════════════════════════════════ */
+
+/* ── Header ─────────────────────── */
+.hm-header-right{display:flex;align-items:center;gap:6px}
+.hm-gold-chip{background:rgba(244,196,48,.14);border:1px solid rgba(244,196,48,.35);border-radius:20px;padding:5px 12px;font-size:13px;font-weight:800;color:var(--gold);font-family:'Nunito',sans-serif;display:flex;align-items:center;gap:4px}
+.hm-user-row{display:flex;align-items:center;gap:6px}
+
+/* ── 角色卡區 ───────────────────── */
+.hm-hero{flex-shrink:0;padding:10px 20px 0;display:flex;justify-content:center}
+.hm-char-card{width:100%;background:linear-gradient(145deg,#0e2018,#0d0d16);border:1px solid rgba(46,204,113,.15);border-radius:var(--r2);padding:20px 16px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.45);min-height:120px}
+.hm-char-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(46,204,113,.1) 0%,transparent 65%);pointer-events:none}
+.aura{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:130px;height:130px;pointer-events:none}
+.hm-canvas-wrap{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;width:80px;height:96px}
+#charCanvas{image-rendering:pixelated;width:80px;height:96px}
+
+/* ── 今日任務卡 ─────────────────── */
+.hm-quest-card{margin:10px 20px 0;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--r2);padding:14px 16px;flex-shrink:0}
+.hm-quest-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.hm-quest-title{font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:var(--white);letter-spacing:.3px}
+.hm-quest-reward{font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:var(--gold);background:rgba(244,196,48,.1);border:1px solid rgba(244,196,48,.25);padding:3px 10px;border-radius:12px}
+.hm-subjects{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:12px}
+.hm-subj{display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 2px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;transition:all .2s;cursor:default}
+.hm-subj.done{background:rgba(46,204,113,.12);border-color:rgba(46,204,113,.35)}
+.hm-subj-ico{font-size:16px;line-height:1}
+.hm-subj-name{font-size:9px;font-weight:700;color:var(--gray);font-family:'Nunito',sans-serif;letter-spacing:.3px}
+.hm-subj.done .hm-subj-name{color:var(--green3)}
+.hm-quest-footer{display:flex;align-items:center;gap:10px}
+.hm-quest-bar-track{flex:1;height:6px;background:rgba(255,255,255,.07);border-radius:3px;overflow:hidden}
+.hm-quest-bar{height:100%;background:linear-gradient(90deg,var(--green),var(--green3));border-radius:3px;transition:width .6s cubic-bezier(.4,0,.2,1);box-shadow:0 0 8px rgba(46,204,113,.4)}
+.hm-quest-pct{font-size:11px;font-family:'Nunito',sans-serif;font-weight:700;color:var(--gray);white-space:nowrap;flex-shrink:0}
+
+/* ── 貼底群組 ───────────────────── */
+.hm-bottom-group{margin-top:auto;display:flex;flex-direction:column;gap:8px;padding:10px 20px 0;flex-shrink:0}
+.hm-quest-card{margin:0}
+
+/* ── 行動區 ─────────────────────── */
+.hm-actions{padding:10px 20px 0;display:flex;flex-direction:column;gap:8px;flex:1}
+.hm-main-btn{width:100%;display:flex;align-items:center;gap:14px;padding:16px 18px;background:linear-gradient(135deg,var(--orange) 0%,#cc4400 100%);border:none;border-radius:var(--r2);cursor:pointer;box-shadow:0 6px 24px rgba(255,85,0,.4),inset 0 1px 0 rgba(255,255,255,.15);transition:transform .12s,box-shadow .12s;text-align:left;position:relative;overflow:hidden}
+.hm-main-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.12),transparent);pointer-events:none}
+.hm-main-btn:active{transform:scale(.97);box-shadow:0 3px 12px rgba(255,85,0,.3)}
+.hm-main-ico{font-size:28px;flex-shrink:0}
+.hm-main-text{flex:1;min-width:0}
+.hm-main-label{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;color:#fff;letter-spacing:.3px;margin-bottom:2px}
+.hm-main-sub{font-family:'Nunito',sans-serif;font-weight:600;font-size:11px;color:rgba(255,255,255,.75)}
+.hm-main-arrow{font-size:22px;color:rgba(255,255,255,.7);font-weight:300;flex-shrink:0}
+.hm-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.hm-tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:14px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--r2);cursor:pointer;transition:background .15s,border-color .15s,transform .1s;position:relative}
+.hm-tile:active{transform:scale(.96)}
+.hm-tile:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.15)}
+.hm-tile-ico{font-size:26px;line-height:1}
+.hm-tile-lbl{font-family:'Nunito',sans-serif;font-weight:700;font-size:12px;color:var(--white)}
+.hm-tile-soon{opacity:.55;cursor:default}
+.hm-tile-soon:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.08);transform:none}
+.hm-soon-badge{position:absolute;top:7px;right:8px;font-size:8px;font-weight:800;color:var(--gray);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:2px 5px;border-radius:6px;font-family:'Nunito',sans-serif}
+
+/* ── #home 背景 ─────────────────── */
+#home{background:radial-gradient(ellipse at 50% -5%,#0E2A18 0%,#0D0D14 55%,var(--bg) 100%)}
+
+/* ── 文字段落放大 Lightbox */
+.txt-lightbox{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);display:flex;align-items:center;justify-content:center;cursor:pointer;animation:ilbFadeIn .18s ease;padding:20px}
+.tlb-wrap{position:relative;background:#1A1A24;border:1px solid rgba(255,255,255,.1);border-radius:14px;width:min(680px,94vw);max-height:88vh;display:flex;flex-direction:column;cursor:default;overflow:hidden}
+.tlb-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0;gap:12px}
+.tlb-title{font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;color:var(--white);flex:1;min-width:0}
+.tlb-close{background:rgba(255,255,255,.12);border:none;border-radius:50%;width:30px;height:30px;color:#fff;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .15s}
+.tlb-close:hover{background:rgba(255,255,255,.25)}
+.tlb-body{padding:16px;overflow-y:auto;font-size:14px;line-height:1.85;color:#d8e0e8;-webkit-overflow-scrolling:touch}
+.tlb-body p{margin:0 0 10px}
+.tlb-body p:last-child{margin-bottom:0}
+/* 段落可點擊提示 */
+.gx-passage-zoom{cursor:zoom-in;position:relative;border-radius:6px;transition:background .15s}
+.gx-passage-zoom:hover{background:rgba(255,255,255,.04)}
+.gx-passage-zoom::after{content:'🔍';position:absolute;bottom:6px;right:8px;font-size:13px;opacity:.4;pointer-events:none}
+
+/* ── 圖片放大 Lightbox */
+.img-lightbox{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);display:flex;align-items:center;justify-content:center;cursor:pointer;animation:ilbFadeIn .18s ease;padding:20px}
+@keyframes ilbFadeIn{from{opacity:0}to{opacity:1}}
+.ilb-wrap{position:relative;display:inline-flex;cursor:default;max-width:96vw;max-height:96vh}
+.ilb-close{position:absolute;top:-14px;right:-14px;background:rgba(40,40,40,.9);border:2px solid rgba(255,255,255,.25);border-radius:50%;width:32px;height:32px;color:#fff;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;line-height:1;z-index:1}
+.ilb-close:hover{background:rgba(80,80,80,.95)}
+.ilb-img{max-width:96vw;max-height:96vh;object-fit:contain;border-radius:6px;display:block;box-shadow:0 8px 40px rgba(0,0,0,.6)}
+/* 試題圖片可點擊提示 */
+.gx-img,.gx-pimg{cursor:zoom-in;transition:opacity .15s}
+.gx-img:hover,.gx-pimg:hover{opacity:.85}
+/* 長圖分割顯示 */
+.gx-split-wrap{display:flex;flex-direction:column;gap:4px;margin:0 auto 12px;width:100%}
+.gx-split-half{width:100%;border-radius:6px;transition:opacity .15s}
+.gx-split-half:hover{opacity:.85}
+

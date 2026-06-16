@@ -261,6 +261,7 @@ function goScreen(id, btn) {
     document.getElementById('arenaBattle').style.display = 'none';
     if (pvpTimer) clearInterval(pvpTimer);
   }
+  if (id === 'home') { updateHomeScreen(); }
   closeWordPopup();
 }
 
@@ -678,8 +679,8 @@ function _renderGsatExam(data, bodyEl, idprefix) {
     } else {
       sec.passages.forEach(p => {
         const cat = p.passageType === 'cloze' ? 'cloze' : 'reading';
-        const pimg = p.image ? `<img class="gx-img gx-pimg" src="${p.image}" alt="">` : '';
-        const ptxt = p.passage ? `<div class="gx-passage">${_gxPassageHtml(p.passage)}</div>` : '';
+        const pimg = p.image ? `<img class="gx-img gx-pimg" src="${p.image}" alt="" onload="splitIfTall(this)">` : '';
+        const ptxt = p.passage ? `<div class="gx-passage gx-passage-zoom" onclick="openTxtLightbox(this,'${_gxEsc(p.title)}')">${_gxPassageHtml(p.passage)}</div>` : '';
         const cap  = p.caption ? `<div class="gx-cap">${_gxEsc(p.caption)}</div>` : '';
         let qhtml = '';
         p.questions.forEach(q => {
@@ -1315,9 +1316,14 @@ function _dailyDoneRead() {
 function _dailyMarkDone(cat, qid) {
   const o = _dailyDoneRead();
   const arr = o[cat] || (o[cat] = []);
+  const wasComplete = arr.length >= (DAILY_QUOTA[cat] || 5);
   if (!arr.includes(qid)) {
     arr.push(qid);
     localStorage.setItem(_dailyDoneKey(), JSON.stringify(o));
+    // 首次完成該科 → 發放金幣
+    if (!wasComplete && arr.length >= (DAILY_QUOTA[cat] || 5)) {
+      _awardSubjectGold(cat);
+    }
   }
 }
 function dailyRemaining(cat) {
@@ -4151,3 +4157,139 @@ async function submitAddWord() {
     showToast('❌ 網路錯誤：' + error.message);
   }
 }
+
+// ════════════════════════════════
+// 金幣系統（遊戲化首頁 v2）
+// ════════════════════════════════
+
+const GOLD_PER_CAT = { vocab:70, phrase:70, grammar:70, listening:120, reading:160, cloze:160 };
+const GOLD_BONUS_ALL = 100;
+const _goldKey = () => 'voca_gold';
+
+function getGold() {
+  return parseInt(localStorage.getItem(_goldKey()) || '0');
+}
+function addGold(amount) {
+  const next = getGold() + amount;
+  localStorage.setItem(_goldKey(), next);
+  // 即時更新 header 顯示
+  const el = document.getElementById('hGold');
+  if (el) el.textContent = next.toLocaleString();
+  return next;
+}
+
+function _awardSubjectGold(cat) {
+  const reward = GOLD_PER_CAT[cat] || 0;
+  if (!reward) return;
+  addGold(reward);
+  const catName = (CAT_META[cat] || {}).name || cat;
+  showToast(`🪙 +${reward} 金幣！${catName}完成`);
+
+  // 全科完成加碼
+  const done = _dailyDoneRead();
+  const allDone = Object.keys(DAILY_QUOTA).every(c =>
+    (done[c] || []).length >= DAILY_QUOTA[c]
+  );
+  if (allDone) {
+    setTimeout(() => {
+      addGold(GOLD_BONUS_ALL);
+      showToast('🎉 全科完成！+100 金幣獎勵！');
+    }, 1600);
+  }
+}
+
+// ── 首頁狀態更新 ──────────────────
+function updateHomeScreen() {
+  const done = _dailyDoneRead();
+  const cats = Object.keys(DAILY_QUOTA);
+
+  // 哪些科完成了
+  const completedCats = cats.filter(c =>
+    (done[c] || []).length >= DAILY_QUOTA[c]
+  );
+  const count = completedCats.length;
+
+  // 金幣顯示
+  const hGoldEl = document.getElementById('hGold');
+  if (hGoldEl) hGoldEl.textContent = getGold().toLocaleString();
+
+  // 六科 dot
+  const subEl = document.getElementById('hmSubjects');
+  if (subEl) {
+    subEl.innerHTML = cats.map(cat => {
+      const m = CAT_META[cat] || { icon: '📝', name: cat };
+      const isDone = completedCats.includes(cat);
+      return `<div class="hm-subj${isDone ? ' done' : ''}">
+        <div class="hm-subj-ico">${m.icon}</div>
+        <div class="hm-subj-name">${m.name}</div>
+      </div>`;
+    }).join('');
+  }
+
+  // 進度條
+  const pct = count / cats.length * 100;
+  const barEl = document.getElementById('hmQuestBar');
+  if (barEl) barEl.style.width = pct + '%';
+  const pctEl = document.getElementById('hmQuestPct');
+  if (pctEl) pctEl.textContent = `${count}/${cats.length} 完成`;
+}
+
+// 頁面載入時初始化首頁
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(updateHomeScreen, 200);
+});
+
+// ── 長圖自動分割（ratio > 1.4 則拆成上下兩半顯示）
+function splitIfTall(img) {
+  const ratio = img.naturalHeight / img.naturalWidth;
+  if (ratio <= 1.4) return;
+  const url = img.src;
+  const halfPct = (ratio * 50).toFixed(2) + '%';
+  const wrap = document.createElement('div');
+  wrap.className = 'gx-split-wrap';
+  ['0%', '100%'].forEach(pos => {
+    const half = document.createElement('div');
+    half.className = 'gx-split-half';
+    half.style.cssText = `background-image:url("${url}");background-size:100% auto;background-position:center ${pos};background-repeat:no-repeat;padding-top:${halfPct};width:100%;border-radius:6px;cursor:zoom-in`;
+    half.addEventListener('click', () => openLightbox(url));
+    wrap.appendChild(half);
+  });
+  if (img.parentNode) img.parentNode.replaceChild(wrap, img);
+}
+
+// ── 文字段落放大 Lightbox ──
+function openTxtLightbox(el, title) {
+  document.getElementById('tlbTitle').textContent = title || '';
+  document.getElementById('tlbBody').innerHTML = el.innerHTML;
+  const lb = document.getElementById('txtLightbox');
+  lb.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeTxtLightbox() {
+  document.getElementById('txtLightbox').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// ── 圖片放大 Lightbox ──
+function openLightbox(src) {
+  const lb = document.getElementById('imgLightbox');
+  const img = document.getElementById('ilbImg');
+  if (!lb || !img) return;
+  img.src = src;
+  lb.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  const lb = document.getElementById('imgLightbox');
+  if (!lb) return;
+  lb.style.display = 'none';
+  document.getElementById('ilbImg').src = '';
+  document.body.style.overflow = '';
+}
+// ESC 鍵也可關閉（圖片 + 文字 lightbox）
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLightbox(); closeTxtLightbox(); } });
+// 事件委派：點擊任何試題圖片開啟 lightbox
+document.addEventListener('click', e => {
+  const img = e.target.closest('.gx-img, .gx-pimg');
+  if (img && img.src) openLightbox(img.src);
+});

@@ -172,48 +172,66 @@
 
   <!-- ══ HOME ══ -->
   <div id="home" class="screen active">
+
+    <!-- Header -->
     <div class="home-header">
       <div class="logo">Vocatopia</div>
-      <div id="userPill" class="user-pill-wrap" style="display:none">
-        <span id="userPillName" class="up-name"></span>
-        <div class="pill">🔥 <b id="hStreak">0</b></div>
-        <div class="pill">⚔️ <b id="hWins">0</b>勝</div>
-        <button class="up-logout" onclick="logoutUser()">登出</button>
-      </div>
-      <div style="display: flex; gap: 8px;">
+      <div class="hm-header-right">
+        <div class="hm-gold-chip">🪙 <span id="hGold">0</span></div>
+        <!-- userPill: auth.js 控制顯示/隱藏 -->
+        <div id="userPill" class="hm-user-row" style="display:none">
+          <span id="userPillName" class="up-name" style="display:none"></span>
+          <div class="pill">🔥 <b id="hStreak">0</b></div>
+          <div class="pill" style="display:none">⚔️ <b id="hWins">0</b>勝</div>
+          <button class="up-logout" onclick="logoutUser()">登出</button>
+        </div>
         <button id="settingsBtn" class="up-logout" onclick="showSettings()" title="設定">⚙️</button>
         <button id="loginBtn" class="up-logout" onclick="showAuthOverlay()">登入</button>
       </div>
     </div>
-    <div class="stage">
-      <div class="aura"></div>
-      <div class="char-wrap">
-        <canvas id="charCanvas" width="64" height="80"></canvas>
-        <div class="char-badge" id="charBadge">初來的備考者</div>
-        <div class="char-name" id="charName">LV.1 單字學徒</div>
-      </div>
-      <div class="attr-panel">
-        <div class="attr">
-          <div class="attr-lbl">STR 力量</div>
-          <div class="attr-sub">已熟悉單字</div>
-          <div class="attr-val av-str" id="aStr">0</div>
-          <div class="attr-bar"><div class="ab-fill af-str" id="fStr" style="width:0%"></div></div>
-        </div>
-        <div class="attr">
-          <div class="attr-lbl">INT 智力</div>
-          <div class="attr-sub">文章練習</div>
-          <div class="attr-val av-int" id="aInt">0</div>
-          <div class="attr-bar"><div class="ab-fill af-int" id="fInt" style="width:0%"></div></div>
-        </div>
-        <div class="attr">
-          <div class="attr-lbl">FAI 信仰</div>
-          <div class="attr-sub">文法課程</div>
-          <div class="attr-val av-fai" id="aFai">0</div>
-          <div class="attr-bar"><div class="ab-fill af-fai" id="fFai" style="width:0%"></div></div>
-        </div>
-      </div>
+
+    <!-- JS 相容：updateChar() 需要這些 ID，但不顯示 -->
+    <div style="display:none">
+      <canvas id="charCanvas" width="64" height="80"></canvas>
+      <div id="charName"></div><div id="charBadge"></div>
+      <div id="aStr"></div><div id="fStr"></div>
+      <div id="aInt"></div><div id="fInt"></div>
+      <div id="aFai"></div><div id="fFai"></div>
     </div>
-    <button class="start-btn" onclick="goReadTab('deck', document.querySelector('.bn:nth-child(4)'))">❤️ 我的收藏</button>
+
+    <!-- Flex spacer：撐開剩餘空間，讓底部群組貼底 -->
+    <div style="flex:1;min-height:0"></div>
+
+    <!-- 貼底區：今日任務 + CTA -->
+    <div class="hm-bottom-group">
+      <!-- 今日任務卡 -->
+      <div class="hm-quest-card">
+        <div class="hm-quest-head">
+          <span class="hm-quest-title">📋 今日任務</span>
+          <span class="hm-quest-reward">最多 +750 🪙</span>
+        </div>
+        <div class="hm-subjects" id="hmSubjects">
+          <!-- JS updateHomeScreen() 填入 -->
+        </div>
+        <div class="hm-quest-footer">
+          <div class="hm-quest-bar-track">
+            <div class="hm-quest-bar" id="hmQuestBar" style="width:0%"></div>
+          </div>
+          <span class="hm-quest-pct" id="hmQuestPct">0/6 完成</span>
+        </div>
+      </div>
+      <!-- 主要 CTA -->
+      <button class="hm-main-btn" onclick="goScreen('reading', document.querySelector('.bn:nth-child(4)'))">
+        <span class="hm-main-ico">📚</span>
+        <div class="hm-main-text">
+          <div class="hm-main-label">開始今日練習</div>
+          <div class="hm-main-sub">完成六科最高賺 750 🪙</div>
+        </div>
+        <span class="hm-main-arrow">›</span>
+      </button>
+    </div>
+
+    <!-- 底部導覽 -->
     <div class="bnav">
       <button class="bn" onclick="goScreen('arena',this)"><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
       <button class="bn" onclick="goScreen('decks',this)"><div class="bn-ico">❤️</div><div class="bn-lbl">收藏</div></button>
@@ -221,6 +239,7 @@
       <button class="bn" onclick="goScreen('reading',this)"><div class="bn-ico">📜</div><div class="bn-lbl">閱覽室</div></button>
       <button class="bn" onclick="goScreen('shop',this)"><div class="bn-ico">🏪</div><div class="bn-lbl">商店</div></button>
     </div>
+
   </div>
 
   <!-- ══ STUDY ══ -->
@@ -709,5 +728,25 @@
     navigator.serviceWorker.register('/sw.js').catch(() => {});
   }
 </script>
+
+  <!-- 文字段落放大 Lightbox -->
+  <div id="txtLightbox" class="txt-lightbox" style="display:none" onclick="closeTxtLightbox()">
+    <div class="tlb-wrap" onclick="event.stopPropagation()">
+      <div class="tlb-header">
+        <span class="tlb-title" id="tlbTitle"></span>
+        <button class="tlb-close" onclick="closeTxtLightbox()" aria-label="關閉">✕</button>
+      </div>
+      <div class="tlb-body" id="tlbBody"></div>
+    </div>
+  </div>
+
+  <!-- 圖片放大 Lightbox -->
+  <div id="imgLightbox" class="img-lightbox" style="display:none" onclick="closeLightbox()">
+    <div class="ilb-wrap" onclick="event.stopPropagation()">
+      <button class="ilb-close" onclick="closeLightbox()" aria-label="關閉">✕</button>
+      <img id="ilbImg" class="ilb-img" src="" alt="">
+    </div>
+  </div>
+
 </body>
 </html>
