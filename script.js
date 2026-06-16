@@ -601,8 +601,41 @@ function _openGsatExamInto(year, type, ids) {
   body.innerHTML = `<div class="gx-loading">載入試卷中…</div>`;
   fetch(exam.dataUrl)
     .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
-    .then(data => _renderGsatExam(data, body, `gsat${year}${type}`))
+    .then(data => _renderGsatExam(_normalizeGsatData(data), body, `gsat${year}${type}`))
     .catch(err => { body.innerHTML = `<div class="gx-loading">試卷載入失敗：${_gxEsc(err.message)}</div>`; });
+}
+
+// 將舊版 JSON 格式（2023/2024）正規化為 2026 格式供 renderer 使用
+function _normalizeGsatData(data) {
+  const normalizeQ = q => q.stem ? q : Object.assign({}, q, { stem: q.question || '' });
+  data.sections = data.sections.map(sec => {
+    if (sec.kind === 'single') {
+      return Object.assign({}, sec, { items: sec.items.map(normalizeQ) });
+    }
+    // group section：舊格式用 items[].{passages,questions}，新格式用 passages[]
+    if (!sec.passages && sec.items) {
+      const passages = sec.items.map(item => {
+        const p = (item.passages && item.passages[0]) || {};
+        return {
+          title: item.title || '',
+          range: item.title || '',
+          passageType: p.passageType || 'text',
+          image: p.image || null,
+          caption: p.caption || null,
+          passage: p.passage || null,
+          questions: (item.questions || []).map(normalizeQ),
+        };
+      });
+      return Object.assign({}, sec, { passages, items: undefined });
+    }
+    // 新格式 group：只需正規化 questions 的 stem
+    return Object.assign({}, sec, {
+      passages: sec.passages.map(p =>
+        Object.assign({}, p, { questions: (p.questions || []).map(normalizeQ) })
+      ),
+    });
+  });
+  return data;
 }
 
 function _renderGsatExam(data, bodyEl, idprefix) {
