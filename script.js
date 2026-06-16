@@ -1284,6 +1284,10 @@ const QUIZ_BADGE_LABELS = {
   T1: '基礎',
   T2: '標準',
   T3: '進階',
+  // 聽力題型（GSAT 三部分）
+  '辨識句意': '辨識句意',
+  '基本問答': '基本問答',
+  '言談理解': '言談理解',
 };
 
 // 每日練習分類設定
@@ -1432,8 +1436,9 @@ async function _preGenerateListeningAudio(questions) {
 
 // ── 聽力音檔系統（Kokoro TTS 預生成 → HTMLAudioElement 播放）─────────────────
 
-const _listenCache = {};   // { dialogueText → audioUrl }
-let   _listenAudio = null; // 當前 Audio 實例
+const _listenCache = {};    // { dialogueText → audioUrl }
+let   _listenAudio = null;  // 當前 Audio 實例
+let   _listenPlayId = 0;    // 每次新播放遞增，用來取消舊的 async 播放
 
 async function _generateListeningAudio(dialogue) {
   if (_listenCache[dialogue]) return _listenCache[dialogue];
@@ -1460,6 +1465,7 @@ function _playAudioUrl(url) {
 }
 
 function _stopListening() {
+  _listenPlayId++;  // 讓所有 async _listenStart 的檢查點中止
   if (_listenAudio) { _listenAudio.pause(); _listenAudio = null; }
   if (window.speechSynthesis) window.speechSynthesis.cancel();
 }
@@ -1554,22 +1560,68 @@ function _dialogueHtml(dialogue) {
   const lines = dialogue.split('\n').map(l => {
     const m = l.match(/^([^:]+):\s*(.*)$/);
     return m
-      ? `<div class="ql-line"><span class="ql-speaker">${escHtml(m[1])}</span><span class="ql-text">${escHtml(m[2])}</span></div>`
+      ? `<div class="ql-line"><span class="ql-speaker">${escHtml(m[1])}</span>: ${escHtml(m[2])}</div>`
       : `<div class="ql-line">${escHtml(l)}</div>`;
   }).join('');
-  return `<div class="quiz-dialogue" style="margin-bottom:10px">${lines}</div>`;
+  return `<div class="quiz-dialogue">${lines}</div>`;
 }
 
-// 第一題「開始測驗」按下後：播放音檔 + 顯示選項
-function _listenStart() {
+// 倒數 3 秒後播放音檔（每題均適用）
+let _listenCdTimer = null;
+function _listenCountdown() {
+  const btn = document.getElementById('listenPlayBtn');
+  const cd  = document.getElementById('listenCountdown');
+  if (!btn || !cd) return;
+  btn.disabled = true;
+  btn.textContent = '準備中...';
+  cd.style.display = '';
+  let n = 3;
+  cd.textContent = n;
+  // 倒數開始就預先產生音檔，3 秒內快取好後播放幾乎無延遲
+  const q = quizState.questions?.[quizState.idx];
+  if (q?.dialogue) _generateListeningAudio(q.dialogue).catch(() => {});
+  _listenCdTimer = setInterval(() => {
+    n--;
+    if (n > 0) {
+      cd.textContent = n;
+    } else {
+      clearInterval(_listenCdTimer);
+      cd.style.display = 'none';
+      _listenStart();
+    }
+  }, 1000);
+}
+
+// 播放音檔兩次 + 顯示選項（倒數結束後呼叫，模擬 GSAT 每題唸兩遍）
+async function _listenStart() {
+  const playId = ++_listenPlayId;  // 取得本次播放的唯一 ID
   const { questions, idx } = quizState;
   const q = questions[idx];
-  _playListening(q.dialogue);
-  // 換成正式選項
-  document.getElementById('quizOpts').innerHTML = q.options.map((opt, i) => {
+
+  // 先顯示選項，讓使用者邊聽邊看
+  const optsEl = document.getElementById('quizOpts');
+  optsEl.classList.remove('revealed');
+  optsEl.innerHTML = q.options.map((opt, i) => {
     const clean = escHtml(opt.replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, ''));
-    return `<button class="quiz-opt" onclick="answerQuestion(${i})">${String.fromCharCode(65 + i)}. ${clean}</button>`;
+    return `<button class="quiz-opt" onclick="answerQuestion(${i})">${String.fromCharCode(65 + i)}. ${clean}${_qZhSpan(q.optionsZh, i)}</button>`;
   }).join('');
+
+  // 播放兩遍，每個 await 後都檢查是否已被取消（答題/下一題/關閉）
+  try {
+    const url = await _generateListeningAudio(q.dialogue);
+    if (playId !== _listenPlayId) return;
+    if (_listenAudio) { _listenAudio.pause(); _listenAudio = null; }
+    await _playAudioUrl(url);
+    if (playId !== _listenPlayId) return;  // 第一遍結束後：已答題？直接停
+    await new Promise(r => setTimeout(r, 700));
+    if (playId !== _listenPlayId) return;  // 停頓中：已切題？直接停
+    await _playAudioUrl(url);
+  } catch (err) {
+    if (playId === _listenPlayId) {
+      console.warn('[listening] TTS 失敗，fallback:', err.message);
+      _playFallback(q.dialogue);
+    }
+  }
 }
 
 // 題目右上角星號狀態（僅每日練習分類顯示）
@@ -1604,31 +1656,26 @@ function renderQuestion() {
   // Badge
   const badge = document.getElementById('quizTypeBadge');
   if (badge) {
-    const badgeKey = q.phrase_type || q.vocab_tier || q.target_grammar || q.pos || '';
+    const badgeKey = q.section || q.phrase_type || q.vocab_tier || q.target_grammar || q.pos || '';
     const label    = QUIZ_BADGE_LABELS[badgeKey] || '';
     badge.textContent = label;
     badge.style.display = label ? '' : 'none';
+    badge.className = 'quiz-type-badge' + (q.section ? ' badge-listen-section' : '');
   }
 
   const questionText = q.question || q.sentence || '';
 
   if (context === 'listening') {
-    // 聽力：題目區只顯示問題，不顯示對話
+    // 聽力：每題顯示問題文字 + 倒數播放按鈕，選項在倒數後才出現
     document.getElementById('quizQ').innerHTML =
       `<div class="quiz-q-text">${escHtml(questionText)}</div>`;
 
-    if (idx === 0) {
-      // 第一題：顯示「開始測驗」按鈕，選項等播放後才出現
-      document.getElementById('quizOpts').innerHTML =
-        `<button class="quiz-opt quiz-listen-btn" onclick="_listenStart()">🎧 開始測驗 — 播放音檔</button>`;
-    } else {
-      // 後續題：直接顯示選項並自動播放
-      document.getElementById('quizOpts').innerHTML = q.options.map((opt, i) => {
-        const clean = escHtml(opt.replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, ''));
-        return `<button class="quiz-opt" onclick="answerQuestion(${i})">${String.fromCharCode(65 + i)}. ${clean}${_qZhSpan(q.optionsZh, i)}</button>`;
-      }).join('');
-      _playListening(q.dialogue);
-    }
+    document.getElementById('quizOpts').innerHTML = `
+      <div class="listen-start-wrap">
+        <p class="listen-hint">按下後倒數 3 秒，音檔自動播放，選項同步出現</p>
+        <button class="quiz-listen-btn" id="listenPlayBtn" onclick="_listenCountdown()">▶ 播放題目</button>
+        <div class="listen-countdown-num" id="listenCountdown" style="display:none">3</div>
+      </div>`;
   } else {
     // 非聽力：顯示 passage（閱讀/克漏字）
     let passageHtml = '';
@@ -1835,12 +1882,13 @@ function answerQuestion(chosen) {
 }
 
 function nextQuestion() {
+  _stopListening();  // 確保前一題音檔（含第二遍）完全停止
   const { questions, idx } = quizState;
   if (idx >= questions.length - 1) {
     showQuizResult();
   } else {
     quizState.idx++;
-    renderQuestion(); // 聽力模式會在 renderQuestion 內自動播放
+    renderQuestion();
   }
 }
 

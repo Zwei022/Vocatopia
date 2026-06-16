@@ -1,0 +1,29 @@
+{
+  "name": "vocatopia-skills-manager",
+  "version": "0.1.0",
+  "description": "Vocatopia 智能 Skill 管理系統",
+  "main": "scripts/skill-router.ts",
+  "scripts": {
+    "validate": "tsx scripts/validate-skill.ts",
+    "validate:all": "find skills -name 'SKILL.md' | xargs -I {} npm run validate -- {}",
+    "ingest": "tsx scripts/ingest.ts",
+    "build": "tsc",
+    "dev": "tsc -w",
+    "test": "echo 'Tests to be implemented'",
+    "list": "node -e \"const { VocatopiaSkillRouter } = require('./scripts/skill-router'); const r = new VocatopiaSkillRouter('./skills'); console.log(JSON.stringify(r.listSkills(), null, 2))\""
+  },
+  "keywords": [
+    "vocatopia",
+    "skills",
+    "ai-agents",
+    "english-learning"
+  ],
+  "author": "Vocatopia Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "tsx": "^4.0.0"
+  },
+  "dependencies": {}
+}

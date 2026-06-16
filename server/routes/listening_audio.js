@@ -10,11 +10,17 @@ const TTS_SCRIPT = path.resolve(__dirname, '../../scripts/tts_generate.py');
 const python     = process.platform === 'win32' ? 'python' : 'python3';
 
 const VOICE_MAP = {
+  // 少年男（am_puck）
   kevin: 'male_12', tom: 'male_12', boy: 'male_12',
+  // 少女（af_nicole）
   sarah: 'female_12', lily: 'female_12', jessica: 'female_12', lisa: 'female_12', girl: 'female_12',
-  ben: 'male_25', mike: 'male_25', mark: 'male_25', james: 'male_25', david: 'male_25', waiter: 'male_25',
-  amy: 'female_25', anna: 'female_25', woman: 'female_25',
-  teacher: 'female_40', nurse: 'female_40', mom: 'female_40', mother: 'female_40',
+  // 青年男（am_michael）
+  ben: 'male_25', mike: 'male_25', mark: 'male_25', james: 'male_25', david: 'male_25', waiter: 'male_25', narrator: 'male_25',
+  // 青年女（af_sarah）
+  amy: 'female_25', anna: 'female_25', woman: 'female_25', clerk: 'female_25',
+  // 成熟女（af_heart）
+  teacher: 'female_40', nurse: 'female_40', mom: 'female_40', mother: 'female_40', receptionist: 'female_40',
+  // 成熟男（am_echo）：低沉清晰，與女聲差異最大
   man: 'male_40', dad: 'male_40', father: 'male_40', doctor: 'male_40',
 };
 

@@ -2,436 +2,372 @@
   {
     "type": "cloze",
     "id": "cloze_0",
-    "passage": "Making new friends can feel hard, _____(1) it does not have to be. When I moved to a new town last year, I knew nobody at my new school. On the first day, I felt very _____(2) and sat alone at lunch. Then a girl named Mei came over and asked _____(3) she could sit with me. We started talking and soon found that we both loved drawing.\nMei introduced me to her friends, and they were all very _____(4) to me. They invited me to join their art club, and I happily agreed. _____(5) , I no longer felt like a stranger. I learned an important lesson that year: if you want to make friends, you should be brave and open your heart. A small smile or a kind word can _____(6) change someone's whole day.",
+    "title": "A New Friend",
+    "passage": "Making new friends can feel hard, __(1)__ it does not have to be. When I moved to a new town last year, I knew nobody at my new school. On the first day, I felt very __(2)__ and sat alone at lunch. Then a girl named Mei came over and asked __(3)__ she could sit with me. We started talking and soon found that we both loved drawing.\nMei introduced me to her friends, and they were all very __(4)__ to me. They invited me to join their art club, and I happily agreed. __(5)__ , I no longer felt like a stranger. I learned an important lesson that year: if you want to make friends, you should be brave and open your heart. A small smile or a kind word can __(6)__ change someone's whole day.",
     "blanks": [
       {
         "n": 1,
-        "options": [
-          "(A) but",
-          "(B) so",
-          "(C) because",
-          "(D) or"
-        ],
+        "stem": "Making new friends can feel hard, __(1)__ it does not have to be.",
+        "options": ["(A) but", "(B) so", "(C) because", "(D) or"],
         "answer": 0,
         "explanation": "前後語意轉折（交朋友看似困難，但不必如此），用對等連接詞 but。",
-        "optionsZh": [
-          "但是",
-          "所以",
-          "因為",
-          "或者"
-        ]
+        "optionsZh": ["但是", "所以", "因為", "或者"],
+        "testPoint": "connective"
       },
       {
         "n": 2,
-        "options": [
-          "(A) lonely",
-          "(B) excited",
-          "(C) proud",
-          "(D) brave"
-        ],
+        "stem": "On the first day, I felt very __(2)__ and sat alone at lunch.",
+        "options": ["(A) lonely", "(B) excited", "(C) proud", "(D) brave"],
         "answer": 0,
         "explanation": "剛轉學、午餐獨自一人坐，最符合的心情是孤單 lonely。",
-        "optionsZh": [
-          "孤單的",
-          "興奮的",
-          "驕傲的",
-          "勇敢的"
-        ]
+        "optionsZh": ["孤單的", "興奮的", "驕傲的", "勇敢的"],
+        "testPoint": "vocabulary"
       },
       {
         "n": 3,
-        "options": [
-          "(A) what",
-          "(B) if",
-          "(C) which",
-          "(D) who"
-        ],
+        "stem": "Then a girl named Mei came over and asked __(3)__ she could sit with me.",
+        "options": ["(A) what", "(B) if", "(C) which", "(D) who"],
         "answer": 1,
         "explanation": "asked 後接間接問句，表示「是否」可以坐下，用 if。",
-        "optionsZh": [
-          "什麼",
-          "是否",
-          "哪一個",
-          "誰"
-        ]
+        "optionsZh": ["什麼", "是否", "哪一個", "誰"],
+        "testPoint": "pronoun"
       },
       {
         "n": 4,
-        "options": [
-          "(A) rude",
-          "(B) friendly",
-          "(C) boring",
-          "(D) tired"
-        ],
+        "stem": "They were all very __(4)__ to me.",
+        "options": ["(A) rude", "(B) friendly", "(C) boring", "(D) tired"],
         "answer": 1,
         "explanation": "他們邀我加入社團，可見對我很友善 friendly；rude 無禮語意相反。",
-        "optionsZh": [
-          "無禮的",
-          "友善的",
-          "無聊的",
-          "疲倦的"
-        ]
+        "optionsZh": ["無禮的", "友善的", "無聊的", "疲倦的"],
+        "testPoint": "vocabulary"
       },
       {
         "n": 5,
-        "options": [
-          "(A) However",
-          "(B) Soon",
-          "(C) Instead",
-          "(D) For example"
-        ],
+        "stem": "__(5)__ , I no longer felt like a stranger.",
+        "options": ["(A) However", "(B) Soon", "(C) Instead", "(D) For example"],
         "answer": 1,
         "explanation": "加入社團後「很快地」就不再覺得自己是陌生人，用 Soon 表時間推進最連貫。",
-        "optionsZh": [
-          "然而",
-          "很快地",
-          "反而",
-          "舉例來說"
-        ]
+        "optionsZh": ["然而", "很快地", "反而", "舉例來說"],
+        "testPoint": "adverb"
       },
       {
         "n": 6,
-        "options": [
-          "(A) hardly",
-          "(B) never",
-          "(C) really",
-          "(D) seldom"
-        ],
+        "stem": "A small smile or a kind word can __(6)__ change someone's whole day.",
+        "options": ["(A) hardly", "(B) never", "(C) really", "(D) seldom"],
         "answer": 2,
         "explanation": "強調一個微笑或善意「真的」能改變某人的一天，用 really；其餘三個都是否定語意，與正面結論矛盾。",
-        "optionsZh": [
-          "幾乎不",
-          "從不",
-          "真的",
-          "很少"
-        ]
+        "optionsZh": ["幾乎不", "從不", "真的", "很少"],
+        "testPoint": "adverb"
       }
     ]
   },
   {
     "type": "cloze",
     "id": "cloze_1",
-    "passage": "Many doctors say that exercise is one of the best _____(1) to stay healthy. Yet a lot of students spend most of their free time sitting in front of screens. They often feel tired _____(2) they do not move enough during the day. The good news is that getting active is _____(3) than most people think.\nYou do not need expensive equipment or a gym. _____(4) , you can simply take a walk after dinner or ride a bike to school. Doing sports with friends is even better, because it is more fun and you can encourage each other. Experts suggest that young people should exercise _____(5) thirty minutes a day. If you build this habit early, your body will stay strong and your mind will feel _____(6) .",
+    "title": "Get Moving!",
+    "passage": "Many doctors say that exercise is one of the best __(1)__ to stay healthy. Yet a lot of students spend most of their free time sitting in front of screens. They often feel tired __(2)__ they do not move enough during the day. The good news is that getting active is __(3)__ than most people think.\nYou do not need expensive equipment or a gym. __(4)__ , you can simply take a walk after dinner or ride a bike to school. Doing sports with friends is even better, because it is more fun and you can encourage each other. Experts suggest that young people should exercise __(5)__ thirty minutes a day. If you build this habit early, your body will stay strong and your mind will feel __(6)__ .",
     "blanks": [
       {
         "n": 1,
-        "options": [
-          "(A) ways",
-          "(B) places",
-          "(C) reasons",
-          "(D) times"
-        ],
+        "stem": "Many doctors say that exercise is one of the best __(1)__ to stay healthy.",
+        "options": ["(A) ways", "(B) places", "(C) reasons", "(D) times"],
         "answer": 0,
         "explanation": "one of the best ways to stay healthy 指保持健康的最佳方法之一，用 ways。",
-        "optionsZh": [
-          "方法",
-          "地方",
-          "原因",
-          "次數"
-        ]
+        "optionsZh": ["方法", "地方", "原因", "次數"],
+        "testPoint": "vocabulary"
       },
       {
         "n": 2,
-        "options": [
-          "(A) although",
-          "(B) because",
-          "(C) but",
-          "(D) unless"
-        ],
+        "stem": "They often feel tired __(2)__ they do not move enough during the day.",
+        "options": ["(A) although", "(B) because", "(C) but", "(D) unless"],
         "answer": 1,
         "explanation": "感到疲倦的原因是白天活動量不足，用表原因的連接詞 because。",
-        "optionsZh": [
-          "雖然",
-          "因為",
-          "但是",
-          "除非"
-        ]
+        "optionsZh": ["雖然", "因為", "但是", "除非"],
+        "testPoint": "connective"
       },
       {
         "n": 3,
-        "options": [
-          "(A) easier",
-          "(B) harder",
-          "(C) worse",
-          "(D) slower"
-        ],
+        "stem": "Getting active is __(3)__ than most people think.",
+        "options": ["(A) easier", "(B) harder", "(C) worse", "(D) slower"],
         "answer": 0,
         "explanation": "than 表比較，下文說明不需器材或健身房，可知運動比想像中「更容易」，用比較級 easier。",
-        "optionsZh": [
-          "更容易",
-          "更難",
-          "更糟",
-          "更慢"
-        ]
+        "optionsZh": ["更容易", "更難", "更糟", "更慢"],
+        "testPoint": "vocabulary"
       },
       {
         "n": 4,
-        "options": [
-          "(A) However",
-          "(B) Instead",
-          "(C) Therefore",
-          "(D) For example"
-        ],
+        "stem": "__(4)__ , you can simply take a walk after dinner or ride a bike to school.",
+        "options": ["(A) However", "(B) Instead", "(C) Therefore", "(D) For example"],
         "answer": 1,
         "explanation": "前句說不需健身房，後句提出替代做法（散步、騎車），用表「取而代之」的 Instead。",
-        "optionsZh": [
-          "然而",
-          "反而",
-          "因此",
-          "舉例來說"
-        ]
+        "optionsZh": ["然而", "反而", "因此", "舉例來說"],
+        "testPoint": "adverb"
       },
       {
         "n": 5,
-        "options": [
-          "(A) at least",
-          "(B) at last",
-          "(C) at once",
-          "(D) at most"
-        ],
+        "stem": "Experts suggest that young people should exercise __(5)__ thirty minutes a day.",
+        "options": ["(A) at least", "(B) at last", "(C) at once", "(D) at most"],
         "answer": 0,
         "explanation": "專家建議每天運動「至少」三十分鐘，用 at least；at last 是終於、at most 是至多，語意不合。",
-        "optionsZh": [
-          "至少",
-          "終於",
-          "立刻",
-          "至多"
-        ]
+        "optionsZh": ["至少", "終於", "立刻", "至多"],
+        "testPoint": "preposition"
       },
       {
         "n": 6,
-        "options": [
-          "(A) sleepy",
-          "(B) fresh",
-          "(C) bored",
-          "(D) sick"
-        ],
+        "stem": "Your body will stay strong and your mind will feel __(6)__ .",
+        "options": ["(A) sleepy", "(B) fresh", "(C) bored", "(D) sick"],
         "answer": 1,
         "explanation": "養成運動習慣後身體強壯、心靈也感到清爽舒暢，用 fresh；其餘都是負面語意，與正面結論矛盾。",
-        "optionsZh": [
-          "想睡的",
-          "清爽的",
-          "無聊的",
-          "生病的"
-        ]
+        "optionsZh": ["想睡的", "清爽的", "無聊的", "生病的"],
+        "testPoint": "vocabulary"
       }
     ]
   },
   {
     "type": "cloze",
     "id": "cloze_2",
-    "passage": "The internet is a wonderful tool, _____(1) it can also be dangerous if we are not careful. Many young people share photos and personal information online _____(2) thinking about who might see them. Once something is posted, it can be very _____(3) to remove it completely.\nTo stay safe, you should never give your password to anyone, _____(4) your close friends. It is also smart to check the privacy settings on your apps. _____(5) , if a stranger sends you a strange link, do not click on it. Being careful online does not mean you cannot have fun. _____(6) , it means you can enjoy the internet without worrying about your safety.",
+    "title": "Staying Safe Online",
+    "passage": "The internet is a wonderful tool, __(1)__ it can also be dangerous if we are not careful. Many young people share photos and personal information online __(2)__ thinking about who might see them. Once something is posted, it can be very __(3)__ to remove it completely.\nTo stay safe, you should never give your password to anyone, __(4)__ your close friends. It is also smart to check the privacy settings on your apps. __(5)__ , if a stranger sends you a strange link, do not click on it. Being careful online does not mean you cannot have fun. __(6)__ , it means you can enjoy the internet without worrying about your safety.",
     "blanks": [
       {
         "n": 1,
-        "options": [
-          "(A) but",
-          "(B) so",
-          "(C) because",
-          "(D) and"
-        ],
+        "stem": "The internet is a wonderful tool, __(1)__ it can also be dangerous if we are not careful.",
+        "options": ["(A) but", "(B) so", "(C) because", "(D) and"],
         "answer": 0,
         "explanation": "前後語意轉折（網路很棒，但不小心也危險），用對等連接詞 but。",
-        "optionsZh": [
-          "但是",
-          "所以",
-          "因為",
-          "而且"
-        ]
+        "optionsZh": ["但是", "所以", "因為", "而且"],
+        "testPoint": "connective"
       },
       {
         "n": 2,
-        "options": [
-          "(A) with",
-          "(B) before",
-          "(C) without",
-          "(D) after"
-        ],
+        "stem": "Many young people share photos and personal information online __(2)__ thinking about who might see them.",
+        "options": ["(A) with", "(B) before", "(C) without", "(D) after"],
         "answer": 2,
         "explanation": "「沒有先想清楚誰會看到」就分享，用 without thinking。",
-        "optionsZh": [
-          "帶著",
-          "在…之前",
-          "沒有",
-          "在…之後"
-        ]
+        "optionsZh": ["帶著", "在…之前", "沒有", "在…之後"],
+        "testPoint": "preposition"
       },
       {
         "n": 3,
-        "options": [
-          "(A) easy",
-          "(B) hard",
-          "(C) quick",
-          "(D) cheap"
-        ],
+        "stem": "Once something is posted, it can be very __(3)__ to remove it completely.",
+        "options": ["(A) easy", "(B) hard", "(C) quick", "(D) cheap"],
         "answer": 1,
         "explanation": "東西一旦張貼出去，要「完全」刪除會很困難，用 hard。",
-        "optionsZh": [
-          "容易的",
-          "困難的",
-          "快的",
-          "便宜的"
-        ]
+        "optionsZh": ["容易的", "困難的", "快的", "便宜的"],
+        "testPoint": "vocabulary"
       },
       {
         "n": 4,
-        "options": [
-          "(A) except",
-          "(B) besides",
-          "(C) without",
-          "(D) including"
-        ],
+        "stem": "You should never give your password to anyone, __(4)__ your close friends.",
+        "options": ["(A) except", "(B) besides", "(C) without", "(D) including"],
         "answer": 3,
         "explanation": "不要把密碼給任何人，「包括」最好的朋友也一樣，用 including 強調連他們也不行。",
-        "optionsZh": [
-          "除了…之外",
-          "除了…還有",
-          "沒有",
-          "包括"
-        ]
+        "optionsZh": ["除了…之外", "除了…還有", "沒有", "包括"],
+        "testPoint": "preposition"
       },
       {
         "n": 5,
-        "options": [
-          "(A) Also",
-          "(B) However",
-          "(C) Instead",
-          "(D) Therefore"
-        ],
+        "stem": "__(5)__ , if a stranger sends you a strange link, do not click on it.",
+        "options": ["(A) Also", "(B) However", "(C) Instead", "(D) Therefore"],
         "answer": 0,
         "explanation": "再補充一個安全提醒，用表「此外」的 Also。",
-        "optionsZh": [
-          "此外",
-          "然而",
-          "反而",
-          "因此"
-        ]
+        "optionsZh": ["此外", "然而", "反而", "因此"],
+        "testPoint": "adverb"
       },
       {
         "n": 6,
-        "options": [
-          "(A) However",
-          "(B) Therefore",
-          "(C) Instead",
-          "(D) For example"
-        ],
+        "stem": "__(6)__ , it means you can enjoy the internet without worrying about your safety.",
+        "options": ["(A) However", "(B) Therefore", "(C) Instead", "(D) For example"],
         "answer": 2,
         "explanation": "小心上網不代表不能玩，「反而」能安心享受網路，用 Instead。",
-        "optionsZh": [
-          "然而",
-          "因此",
-          "反而",
-          "舉例來說"
-        ]
+        "optionsZh": ["然而", "因此", "反而", "舉例來說"],
+        "testPoint": "adverb"
       }
     ]
   },
   {
     "type": "cloze",
     "id": "cloze_3",
-    "passage": "Many children dream of having a pet, _____(1) taking care of one is a big responsibility. A pet is not a toy; it is a living thing that needs love and attention every day. Before you get a pet, you should think _____(2) about whether your family has enough time for it.\nDogs, for example, need to be walked _____(3) , sometimes twice a day. They also need fresh water and healthy food. If you are often busy, a fish or a turtle might be a _____(4) choice. _____(5) the kind of pet you choose, you must clean its home and take it to the animal doctor when it is sick. Caring for a pet teaches children to be kind and _____(6) .",
+    "title": "Life with a Pet",
+    "passage": "Many children dream of having a pet, __(1)__ taking care of one is a big responsibility. A pet is not a toy; it is a living thing that needs love and attention every day. Before you get a pet, you should think __(2)__ about whether your family has enough time for it.\nDogs, for example, need to be walked __(3)__ , sometimes twice a day. They also need fresh water and healthy food. If you are often busy, a fish or a turtle might be a __(4)__ choice. __(5)__ the kind of pet you choose, you must clean its home and take it to the animal doctor when it is sick. Caring for a pet teaches children to be kind and __(6)__ .",
     "blanks": [
       {
         "n": 1,
-        "options": [
-          "(A) so",
-          "(B) but",
-          "(C) and",
-          "(D) or"
-        ],
+        "stem": "Many children dream of having a pet, __(1)__ taking care of one is a big responsibility.",
+        "options": ["(A) so", "(B) but", "(C) and", "(D) or"],
         "answer": 1,
         "explanation": "前後語意轉折（很多孩子想養寵物，但照顧是很大的責任），用 but。",
-        "optionsZh": [
-          "所以",
-          "但是",
-          "而且",
-          "或者"
-        ]
+        "optionsZh": ["所以", "但是", "而且", "或者"],
+        "testPoint": "connective"
       },
       {
         "n": 2,
-        "options": [
-          "(A) carefully",
-          "(B) quickly",
-          "(C) rarely",
-          "(D) loudly"
-        ],
+        "stem": "Before you get a pet, you should think __(2)__ about whether your family has enough time for it.",
+        "options": ["(A) carefully", "(B) quickly", "(C) rarely", "(D) loudly"],
         "answer": 0,
         "explanation": "養寵物前應該「仔細地」想清楚時間夠不夠，用副詞 carefully。",
-        "optionsZh": [
-          "仔細地",
-          "快速地",
-          "很少",
-          "大聲地"
-        ]
+        "optionsZh": ["仔細地", "快速地", "很少", "大聲地"],
+        "testPoint": "adverb"
       },
       {
         "n": 3,
-        "options": [
-          "(A) never",
-          "(B) seldom",
-          "(C) regularly",
-          "(D) once"
-        ],
+        "stem": "Dogs, for example, need to be walked __(3)__ , sometimes twice a day.",
+        "options": ["(A) never", "(B) seldom", "(C) regularly", "(D) once"],
         "answer": 2,
         "explanation": "狗需要「規律地」散步，有時一天兩次，用 regularly；never、seldom 語意相反。",
-        "optionsZh": [
-          "從不",
-          "很少",
-          "規律地",
-          "一次"
-        ]
+        "optionsZh": ["從不", "很少", "規律地", "一次"],
+        "testPoint": "adverb"
       },
       {
         "n": 4,
-        "options": [
-          "(A) better",
-          "(B) worse",
-          "(C) harder",
-          "(D) sadder"
-        ],
+        "stem": "If you are often busy, a fish or a turtle might be a __(4)__ choice.",
+        "options": ["(A) better", "(B) worse", "(C) harder", "(D) sadder"],
         "answer": 0,
         "explanation": "若常常很忙，魚或烏龜會是「比較好」（較好照顧）的選擇，用 better。",
-        "optionsZh": [
-          "更好",
-          "更糟",
-          "更難",
-          "更難過"
-        ]
+        "optionsZh": ["更好", "更糟", "更難", "更難過"],
+        "testPoint": "vocabulary"
       },
       {
         "n": 5,
-        "options": [
-          "(A) Because of",
-          "(B) Instead of",
-          "(C) Thanks to",
-          "(D) No matter"
-        ],
+        "stem": "__(5)__ the kind of pet you choose, you must clean its home and take it to the animal doctor when it is sick.",
+        "options": ["(A) Because of", "(B) Instead of", "(C) Thanks to", "(D) No matter"],
         "answer": 3,
         "explanation": "「無論」你選哪種寵物，都得清理與就醫，用 No matter 表「不管…」。",
-        "optionsZh": [
-          "因為",
-          "而不是",
-          "多虧",
-          "無論"
-        ]
+        "optionsZh": ["因為", "而不是", "多虧", "無論"],
+        "testPoint": "preposition"
       },
       {
         "n": 6,
-        "options": [
-          "(A) lazy",
-          "(B) responsible",
-          "(C) selfish",
-          "(D) rude"
-        ],
+        "stem": "Caring for a pet teaches children to be kind and __(6)__ .",
+        "options": ["(A) lazy", "(B) responsible", "(C) selfish", "(D) rude"],
         "answer": 1,
         "explanation": "照顧寵物教孩子變得善良又「負責任」，用 responsible；其餘為負面特質。",
-        "optionsZh": [
-          "懶惰的",
-          "負責任的",
-          "自私的",
-          "無禮的"
-        ]
+        "optionsZh": ["懶惰的", "負責任的", "自私的", "無禮的"],
+        "testPoint": "vocabulary"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_4",
+    "title": "A Summer to Remember",
+    "passage": "Last summer, I went on a camping trip with my school. It was my first time sleeping in a tent, so I felt both excited and a little __(1)__. When the bus arrived at the forest campsite, the cool air hit my face, and I knew it would be a great trip.\nThe first activity was hiking. The trail went up a steep hill, and my legs hurt after just twenty minutes. __(2)__ , the view from the top was worth every step. We could see a sparkling lake below us, and some students started taking photos right away.\nFor dinner, our teacher taught us __(3)__ to cook rice in a pot over an open fire. I burned mine a little at first, but my second try turned out perfectly. I felt proud __(4)__ I ate every grain by myself.\nThat night, we lay outside and counted stars. In the city, you can __(5)__ see stars because of the bright lights. But out there in the forest, the sky was filled with them. My friend whispered that there might be a million stars above us. I did not know __(6)__ to believe her, but I smiled anyway — it was a perfect night.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "I felt both excited and a little __(1)__.",
+        "options": ["(A) excited", "(B) nervous", "(C) bored", "(D) proud"],
+        "answer": 1,
+        "explanation": "第一次睡帳篷、對未知有所擔憂，最貼近「緊張」nervous；excited 已出現在前面，不重複，C/D 語意不合。",
+        "optionsZh": ["興奮的", "緊張的", "無聊的", "驕傲的"],
+        "testPoint": "vocabulary"
+      },
+      {
+        "n": 2,
+        "stem": "__(2)__ , the view from the top was worth every step.",
+        "options": ["(A) Soon", "(B) For example", "(C) However", "(D) Also"],
+        "answer": 2,
+        "explanation": "前句說腿很痛，後句說景色值回票價，前後語意轉折，用 However（然而）。",
+        "optionsZh": ["很快地", "舉例來說", "然而", "此外"],
+        "testPoint": "adverb"
+      },
+      {
+        "n": 3,
+        "stem": "Our teacher taught us __(3)__ to cook rice in a pot over an open fire.",
+        "options": ["(A) what", "(B) when", "(C) where", "(D) how"],
+        "answer": 3,
+        "explanation": "taught us how to do something 固定用法，表示「怎麼做」；what/when/where 在此語意均不合。",
+        "optionsZh": ["什麼", "何時", "哪裡", "如何"],
+        "testPoint": "pronoun"
+      },
+      {
+        "n": 4,
+        "stem": "I felt proud __(4)__ I ate every grain by myself.",
+        "options": ["(A) when", "(B) unless", "(C) although", "(D) until"],
+        "answer": 0,
+        "explanation": "「當我把飯一粒不剩地吃完時」感到驕傲，用表時間的從屬連接詞 when；unless/although/until 語意均不合。",
+        "optionsZh": ["當…時", "除非", "雖然", "直到"],
+        "testPoint": "connective"
+      },
+      {
+        "n": 5,
+        "stem": "In the city, you can __(5)__ see stars because of the bright lights.",
+        "options": ["(A) always", "(B) hardly", "(C) often", "(D) easily"],
+        "answer": 1,
+        "explanation": "城市燈光強烈，「幾乎看不到」星星，用 hardly；always/often/easily 均與燈光遮蔽的語境矛盾。",
+        "optionsZh": ["總是", "幾乎不", "常常", "輕易地"],
+        "testPoint": "adverb"
+      },
+      {
+        "n": 6,
+        "stem": "I did not know __(6)__ to believe her, but I smiled anyway.",
+        "options": ["(A) what", "(B) when", "(C) whether", "(D) where"],
+        "answer": 2,
+        "explanation": "did not know whether to believe 表「不確定是否該相信」，用 whether；what/when/where 無法放入此句型。",
+        "optionsZh": ["什麼", "何時", "是否", "哪裡"],
+        "testPoint": "pronoun"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_5",
+    "title": "Learning to Bake",
+    "passage": "Two years ago, my grandmother taught me __(1)__ to bake bread. It was harder than I thought. On my first try, I mixed all the ingredients too fast __(2)__ forgot to add enough water. The bread came out hard as a rock, and my whole family laughed.\nI did not give up, __(3)__ . I went back to my grandmother's house every weekend and tried again. She always watched __(4)__ and told me what I did wrong. After about a month, I finally made a perfect loaf. When I pulled it out of the oven, the whole kitchen smelled __(5)__ and warm.\nNow I bake bread every month. Sometimes I bring a loaf to school and share it with my friends. They always say it tastes amazing. I think the secret is not just the recipe — it is the time and love I put into each loaf. __(6)__ , I believe that with enough practice, anyone can learn something new.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "My grandmother taught me __(1)__ to bake bread.",
+        "options": ["(A) what", "(B) how", "(C) when", "(D) where"],
+        "answer": 1,
+        "explanation": "taught me how to bake 固定用法，表示「如何」烤麵包；what/when/where 均不能搭配此句型表達「學做某事」。",
+        "optionsZh": ["什麼", "如何", "何時", "哪裡"],
+        "testPoint": "pronoun"
+      },
+      {
+        "n": 2,
+        "stem": "I mixed all the ingredients too fast __(2)__ forgot to add enough water.",
+        "options": ["(A) but", "(B) or", "(C) so", "(D) and"],
+        "answer": 3,
+        "explanation": "攪拌太快「而且」忘了加足夠的水，兩件事並列（都是失誤），用 and；but/or/so 語意不合。",
+        "optionsZh": ["但是", "或者", "所以", "而且"],
+        "testPoint": "connective"
+      },
+      {
+        "n": 3,
+        "stem": "I did not give up, __(3)__ .",
+        "options": ["(A) Therefore", "(B) Instead", "(C) However", "(D) For example"],
+        "answer": 2,
+        "explanation": "雖然失敗，「然而」我沒有放棄，用 however 表轉折（放在句尾作插入語）；therefore/instead/for example 與此語境不符。",
+        "optionsZh": ["因此", "反而", "然而", "舉例來說"],
+        "testPoint": "adverb"
+      },
+      {
+        "n": 4,
+        "stem": "She always watched __(4)__ and told me what I did wrong.",
+        "options": ["(A) quickly", "(B) carefully", "(C) rarely", "(D) loudly"],
+        "answer": 1,
+        "explanation": "奶奶「仔細地」觀察並指出錯誤，用副詞 carefully；quickly 與「告訴錯在哪」需要細心矛盾，rarely 否定頻率、loudly 描述聲音均不合。",
+        "optionsZh": ["快速地", "仔細地", "很少", "大聲地"],
+        "testPoint": "adverb"
+      },
+      {
+        "n": 5,
+        "stem": "When I pulled it out of the oven, the whole kitchen smelled __(5)__ and warm.",
+        "options": ["(A) sour", "(B) bitter", "(C) cold", "(D) sweet"],
+        "answer": 3,
+        "explanation": "新鮮出爐的麵包讓廚房充滿「甜香」warm and sweet；sour/bitter 為負面氣味、cold 與 warm 矛盾。",
+        "optionsZh": ["酸的", "苦的", "冷的", "甜的"],
+        "testPoint": "vocabulary"
+      },
+      {
+        "n": 6,
+        "stem": "__(6)__ , I believe that with enough practice, anyone can learn something new.",
+        "options": ["(A) However", "(B) Therefore", "(C) Instead", "(D) For example"],
+        "answer": 1,
+        "explanation": "前文描述練習讓我成功的過程，「因此」得出結論「只要練習任何人都能學會新事物」，用 Therefore；however 表轉折、instead 表替代、for example 表舉例，皆不合此總結語氣。",
+        "optionsZh": ["然而", "因此", "反而", "舉例來說"],
+        "testPoint": "adverb"
       }
     ]
   }
