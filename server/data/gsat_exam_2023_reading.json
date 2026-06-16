@@ -213,7 +213,7 @@
             {
               "passageType": "image",
               "image": "/public/images/gsat/2023/p24_four_seasons.png",
-              "caption": "四季廚房菜單、星點集點方案與營業時間"
+              "passage": "Four Seasons' Kitchen\nOpening hours: 2:00~8:00 pm  Tuesday~Sunday\n(We're closed on Mondays and the second Sunday of every month.)\n\nSandwiches\nBeach Sandwich ............ $70  (Bread + Fish + Lettuce)\nGarden Sandwich .......... $80  (Bread + Chicken + Tomatoes + Cheese)\nSunday Sandwich .......... $90  (Bread + Egg + Steak + Ham + Lettuce)\n\nDrinks\nSpring Rain .................. $50  (Green Tea + Guava + Lemon)\nSummer Rainbow .......... $60  (Milk + Watermelon)\nAutumn Wind ................ $60  (Black Tea + Apple)\nWinter Snow ................. $70  (Chocolate Milk + Ice Cream)\n\nGood News: Star-Collecting Plan\n★ You get a star by ordering a sandwich or a drink.\n★ With 15 stars, you can get a $60 drink for free!"
             }
           ],
           "questions": [
@@ -227,6 +227,7 @@
             },
             {
               "n": 25,
+              "image": "/public/images/gsat/2023/p25_august_calendar.png",
               "question": "Amy wants to bring her friends to Four Seasons' Kitchen in August.  She looks at her calendar to pick a time to go there.  Which are the time and date she can choose?",
               "options": [
                 "8:30 pm, August 1.",
