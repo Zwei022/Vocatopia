@@ -3257,6 +3257,48 @@ function _saveSettingsData(patch) {
   localStorage.setItem(SETTINGS_KEY, JSON.stringify({ ...cur, ...patch }));
 }
 
+function showProfile() {
+  if (!currentProfile) return;
+  const masteredCount = (typeof WORDS !== 'undefined') ? WORDS.filter(w => w.st === 'ok').length : 0;
+  const totalWords    = (typeof WORDS !== 'undefined') ? WORDS.length : 2000;
+
+  const overlay = document.createElement('div');
+  overlay.id = 'profileOverlay';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9000;display:flex;align-items:center;justify-content:center;padding:20px';
+  overlay.onclick = (e) => { if (e.target === overlay) overlay.remove(); };
+
+  overlay.innerHTML = `
+    <div style="background:var(--card);border-radius:16px;padding:28px 24px;width:100%;max-width:340px;font-family:'Nunito',sans-serif;position:relative">
+      <button onclick="document.getElementById('profileOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
+      <div style="text-align:center;margin-bottom:20px">
+        <div style="font-size:48px;margin-bottom:8px">👤</div>
+        <div style="font-weight:900;font-size:18px;color:var(--white)">${currentProfile.username}</div>
+        <div style="font-size:12px;color:var(--gray);margin-top:2px">${currentUser?.email || ''}</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px">
+        <div style="background:rgba(255,255,255,.05);border-radius:10px;padding:12px;text-align:center">
+          <div style="font-size:20px;font-weight:900;color:var(--green3)">${currentProfile.xp || 0}</div>
+          <div style="font-size:11px;color:var(--gray);margin-top:2px">經驗值 XP</div>
+        </div>
+        <div style="background:rgba(255,255,255,.05);border-radius:10px;padding:12px;text-align:center">
+          <div style="font-size:20px;font-weight:900;color:#f4a62a">${currentProfile.gold || 0}</div>
+          <div style="font-size:11px;color:var(--gray);margin-top:2px">🪙 金幣</div>
+        </div>
+        <div style="background:rgba(255,255,255,.05);border-radius:10px;padding:12px;text-align:center">
+          <div style="font-size:20px;font-weight:900;color:#ff7043">${currentProfile.streak || 0}</div>
+          <div style="font-size:11px;color:var(--gray);margin-top:2px">🔥 連續天數</div>
+        </div>
+        <div style="background:rgba(255,255,255,.05);border-radius:10px;padding:12px;text-align:center">
+          <div style="font-size:20px;font-weight:900;color:var(--white)">${masteredCount} / ${totalWords}</div>
+          <div style="font-size:11px;color:var(--gray);margin-top:2px">✅ 已掌握單字</div>
+        </div>
+      </div>
+      <button onclick="document.getElementById('profileOverlay').remove(); logoutUser()" style="width:100%;padding:12px;background:rgba(255,70,70,.15);border:1px solid rgba(255,70,70,.3);border-radius:10px;color:#ff7070;font-family:'Nunito',sans-serif;font-weight:700;font-size:14px;cursor:pointer">登出</button>
+    </div>`;
+
+  document.body.appendChild(overlay);
+}
+
 function showSettings() {
   const s = _loadSettingsData();
 

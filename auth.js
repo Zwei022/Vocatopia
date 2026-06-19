@@ -116,9 +116,13 @@ function _updateHeaderUI() {
     if (goldEl) goldEl.textContent = (currentProfile.gold || 0).toLocaleString();
     pill.style.display = 'flex';
     if (loginBtn) loginBtn.style.display = 'none';
+    const profileBtn = document.getElementById('profileBtn');
+    if (profileBtn) profileBtn.style.display = '';
   } else {
     pill.style.display = 'none';
     if (loginBtn) loginBtn.style.display = '';
+    const profileBtn = document.getElementById('profileBtn');
+    if (profileBtn) profileBtn.style.display = 'none';
   }
 }
 
