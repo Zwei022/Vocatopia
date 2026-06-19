@@ -18,8 +18,12 @@ async function initAuth() {
     await _loadProfile();
     return true;
   }
-  // Listen for future auth changes (e.g. email confirm)
+  // Listen for future auth changes (email confirm / password recovery)
   authClient.auth.onAuthStateChange(async (_event, session) => {
+    if (_event === 'PASSWORD_RECOVERY') {
+      showSetNewPassword();
+      return;
+    }
     if (session?.user && !currentUser) {
       currentUser = session.user;
       await _loadProfile();
@@ -302,6 +306,100 @@ async function syncStats(str, int_, fai) {
   await authClient.from('profiles')
     .update({ str_stat: str, int_stat: int_, fai_stat: fai })
     .eq('id', currentUser.id);
+}
+
+// ── FORGOT PASSWORD ──────────────────────────────────────────
+function showForgotPassword() {
+  const card = document.getElementById('authCard');
+  _authCardOriginal = card.innerHTML;
+  card.innerHTML = `
+    <div class="auth-logo">VOCATOPIA</div>
+    <div class="auth-subtitle">重設密碼</div>
+    <form onsubmit="handleForgotPassword(event)" style="margin-top:16px">
+      <input class="auth-input" id="forgotEmail" type="email" placeholder="請輸入註冊信箱" required autocomplete="email">
+      <div class="auth-error" id="forgotError"></div>
+      <button type="submit" class="auth-submit" id="forgotBtn">發送重設連結</button>
+    </form>
+    <button class="auth-guest" onclick="document.getElementById('authCard').innerHTML=_authCardOriginal">返回登入</button>
+  `;
+}
+
+async function handleForgotPassword(e) {
+  e.preventDefault();
+  const email = document.getElementById('forgotEmail').value.trim();
+  const btn   = document.getElementById('forgotBtn');
+  const errEl = document.getElementById('forgotError');
+
+  btn.disabled = true;
+  btn.textContent = '發送中...';
+  errEl.textContent = '';
+
+  const redirectTo = window.location.origin;
+  const { error } = await authClient.auth.resetPasswordForEmail(email, { redirectTo });
+
+  if (error) {
+    errEl.textContent = error.message;
+    btn.disabled = false;
+    btn.textContent = '發送重設連結';
+    return;
+  }
+
+  const card = document.getElementById('authCard');
+  card.innerHTML = `
+    <div class="auth-logo">VOCATOPIA</div>
+    <div style="text-align:center;padding:20px 0">
+      <div style="font-size:40px;margin-bottom:16px">📬</div>
+      <div style="font-family:Nunito;font-weight:700;color:var(--white);font-size:15px;margin-bottom:8px">重設連結已寄出！</div>
+      <div style="font-size:12px;color:var(--gray);line-height:1.8">
+        請前往 <b style="color:var(--green3)">${email}</b><br>點擊信中連結來設定新密碼
+      </div>
+    </div>
+    <button class="auth-guest" onclick="document.getElementById('authCard').innerHTML=_authCardOriginal">返回登入</button>
+  `;
+}
+
+function showSetNewPassword() {
+  showAuthOverlay();
+  const card = document.getElementById('authCard');
+  card.innerHTML = `
+    <div class="auth-logo">VOCATOPIA</div>
+    <div class="auth-subtitle">設定新密碼</div>
+    <form onsubmit="handleSetNewPassword(event)" style="margin-top:16px">
+      <input class="auth-input" id="newPassword" type="password" placeholder="新密碼（至少 6 字元）" required minlength="6" autocomplete="new-password">
+      <input class="auth-input" id="newPasswordConfirm" type="password" placeholder="再次輸入新密碼" required minlength="6" autocomplete="new-password">
+      <div class="auth-error" id="newPwError"></div>
+      <button type="submit" class="auth-submit" id="newPwBtn">確認更新密碼</button>
+    </form>
+  `;
+}
+
+async function handleSetNewPassword(e) {
+  e.preventDefault();
+  const pw1   = document.getElementById('newPassword').value;
+  const pw2   = document.getElementById('newPasswordConfirm').value;
+  const btn   = document.getElementById('newPwBtn');
+  const errEl = document.getElementById('newPwError');
+
+  if (pw1 !== pw2) { errEl.textContent = '兩次密碼不一致'; return; }
+
+  btn.disabled = true;
+  btn.textContent = '更新中...';
+  errEl.textContent = '';
+
+  const { error } = await authClient.auth.updateUser({ password: pw1 });
+
+  if (error) {
+    errEl.textContent = error.message;
+    btn.disabled = false;
+    btn.textContent = '確認更新密碼';
+    return;
+  }
+
+  window.showToast && showToast('✓ 密碼已更新！請重新登入');
+  await authClient.auth.signOut();
+  currentUser = null;
+  currentProfile = null;
+  location.reload();
 }
 
 // ── HELPERS ──────────────────────────────────────────────────

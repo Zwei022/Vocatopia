@@ -708,6 +708,9 @@
     <form id="loginForm" onsubmit="handleLogin(event)">
       <input class="auth-input" id="loginEmail" type="email" placeholder="電子信箱" required autocomplete="email">
       <input class="auth-input" id="loginPassword" type="password" placeholder="密碼" required autocomplete="current-password">
+      <div style="text-align:right;margin:-4px 0 8px">
+        <a class="auth-forgot-link" onclick="showForgotPassword()">忘記密碼？</a>
+      </div>
       <button type="submit" class="auth-submit">登入戰場</button>
     </form>
     <form id="registerForm" class="hidden" onsubmit="handleRegister(event)">

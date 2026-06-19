@@ -418,6 +418,8 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 .auth-error{min-height:20px;font-size:12px;color:#ff7070;text-align:center;margin:8px 0 0;font-family:'Nunito',sans-serif;line-height:1.5}
 .auth-guest{width:100%;padding:12px;background:none;border:1px solid rgba(255,255,255,.08);border-radius:var(--r);font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;color:var(--gray);cursor:pointer;margin-top:12px;transition:border-color .15s;display:block}
 .auth-guest:hover{border-color:rgba(255,255,255,.2)}
+.auth-forgot-link{font-size:12px;color:var(--gray);cursor:pointer;font-family:'Nunito',sans-serif;text-decoration:underline;text-underline-offset:2px}
+.auth-forgot-link:hover{color:var(--white)}
 .auth-hidden{display:none!important}
 .hidden{display:none!important}
 
