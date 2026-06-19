@@ -192,6 +192,14 @@ let libOpenSections = new Set();
 const STATS = { str: 0, int: 0, fai: 0 };
 
 function loadStats() {
+  // 已登入：從 currentProfile 讀（在 _loadProfile 後由 auth.js 覆蓋）
+  if (typeof currentProfile !== 'undefined' && currentProfile) {
+    STATS.str = currentProfile.str_stat ?? 5;
+    STATS.int = currentProfile.int_stat ?? 5;
+    STATS.fai = currentProfile.fai_stat ?? 5;
+    return;
+  }
+  // 訪客/尚未登入：從 localStorage 讀
   try {
     const s = JSON.parse(localStorage.getItem('voca_stats') || '{}');
     STATS.str = s.str || 0;
@@ -201,6 +209,13 @@ function loadStats() {
 }
 
 function saveStats() {
+  if (typeof currentProfile !== 'undefined' && currentProfile) {
+    currentProfile.str_stat = STATS.str;
+    currentProfile.int_stat = STATS.int;
+    currentProfile.fai_stat = STATS.fai;
+    if (typeof syncStats !== 'undefined') syncStats(STATS.str, STATS.int, STATS.fai);
+    return;
+  }
   localStorage.setItem('voca_stats', JSON.stringify(STATS));
 }
 
@@ -4164,15 +4179,23 @@ async function submitAddWord() {
 
 const GOLD_PER_CAT = { vocab:70, phrase:70, grammar:70, listening:120, reading:160, cloze:160 };
 const GOLD_BONUS_ALL = 100;
-const _goldKey = () => 'voca_gold';
-
 function getGold() {
-  return parseInt(localStorage.getItem(_goldKey()) || '0');
+  if (typeof currentProfile !== 'undefined' && currentProfile) {
+    return currentProfile.gold ?? 0;
+  }
+  return parseInt(localStorage.getItem('voca_gold') || '0');
 }
+
 function addGold(amount) {
-  const next = getGold() + amount;
-  localStorage.setItem(_goldKey(), next);
-  // 即時更新 header 顯示
+  let next;
+  if (typeof currentProfile !== 'undefined' && currentProfile) {
+    next = (currentProfile.gold || 0) + amount;
+    currentProfile.gold = next;
+    if (typeof syncGold !== 'undefined') syncGold(next);
+  } else {
+    next = parseInt(localStorage.getItem('voca_gold') || '0') + amount;
+    localStorage.setItem('voca_gold', next);
+  }
   const el = document.getElementById('hGold');
   if (el) el.textContent = next.toLocaleString();
   return next;

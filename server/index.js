@@ -27,6 +27,7 @@ app.use('/public/audio/words', (req, res, next) => {
 app.use(express.static(path.join(__dirname, '..')));
 
 // ── API ROUTES ──
+app.use('/api/user',            require('./routes/user'));
 app.use('/api/words',          require('./routes/words'));
 app.use('/api/articles',       require('./routes/articles'));
 app.use('/api/daily-articles', require('./routes/daily_articles'));

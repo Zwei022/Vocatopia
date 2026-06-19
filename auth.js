@@ -37,7 +37,58 @@ async function _loadProfile() {
     .eq('id', currentUser.id)
     .single();
   currentProfile = data;
+
+  // 首次登入：呼叫 server 設定初始值，並遷移 localStorage 卡組
+  if (currentProfile && !currentProfile.initialized) {
+    await _initUserAccount();
+  }
+
+  // 將 profile 的角色屬性覆蓋 localStorage 的早期讀取值
+  if (currentProfile && typeof STATS !== 'undefined') {
+    STATS.str = currentProfile.str_stat ?? STATS.str;
+    STATS.int = currentProfile.int_stat ?? STATS.int;
+    STATS.fai = currentProfile.fai_stat ?? STATS.fai;
+  }
+
   _updateHeaderUI();
+}
+
+async function _initUserAccount() {
+  try {
+    const { data: { session } } = await authClient.auth.getSession();
+    const token = session?.access_token;
+    if (!token) return;
+
+    const res = await fetch('/api/user/init', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+    });
+    if (!res.ok) return;
+    const { profile } = await res.json();
+    currentProfile = profile;
+
+    // 遷移 localStorage 舊卡組到 Supabase（一次性）
+    try {
+      const localDecks = JSON.parse(localStorage.getItem('voca_custom_decks') || '[]');
+      if (localDecks.length > 0 && currentUser) {
+        await authClient.from('custom_decks').insert(
+          localDecks.map(d => ({
+            id:         d.id,
+            user_id:    currentUser.id,
+            name:       d.name,
+            emoji:      d.emoji || '📚',
+            word_ids:   d.wordIds || [],
+            updated_at: new Date().toISOString(),
+          }))
+        );
+        localStorage.removeItem('voca_custom_decks');
+      }
+    } catch (e) {
+      console.warn('[auth] localStorage deck migration failed:', e);
+    }
+  } catch (e) {
+    console.warn('[auth] _initUserAccount failed:', e);
+  }
 }
 
 function _updateHeaderUI() {
@@ -48,6 +99,8 @@ function _updateHeaderUI() {
     document.getElementById('userPillName').textContent = currentProfile.username;
     document.getElementById('hStreak').textContent = currentProfile.streak || 0;
     document.getElementById('hWins').textContent   = currentProfile.wins   || 0;
+    const goldEl = document.getElementById('hGold');
+    if (goldEl) goldEl.textContent = (currentProfile.gold || 0).toLocaleString();
     pill.style.display = 'flex';
     if (loginBtn) loginBtn.style.display = 'none';
   } else {
@@ -231,6 +284,21 @@ async function syncXP(newXp) {
   if (!currentUser) return;
   await authClient.from('profiles')
     .update({ xp: newXp })
+    .eq('id', currentUser.id);
+}
+
+async function syncGold(newGold) {
+  if (!currentUser) return;
+  if (currentProfile) currentProfile.gold = newGold;
+  await authClient.from('profiles')
+    .update({ gold: newGold })
+    .eq('id', currentUser.id);
+}
+
+async function syncStats(str, int_, fai) {
+  if (!currentUser) return;
+  await authClient.from('profiles')
+    .update({ str_stat: str, int_stat: int_, fai_stat: fai })
     .eq('id', currentUser.id);
 }
 
