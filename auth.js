@@ -3,7 +3,7 @@
 
 const authClient = supabase.createClient(
   'https://teivfkwjhrkzrdebutkz.supabase.co',
-  'sb_publishable_-x37K3XWnk6WQZI8Tc0qKQ_xjqetre'
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRlaXZma3dqaHJrenJkZWJ1dGt6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg4MDgxMTEsImV4cCI6MjA5NDM4NDExMX0.OZZyTyZvJQT6wx4HUnR__8N18WHEr6tg515If0C0zTg'
 );
 
 let currentUser    = null;
