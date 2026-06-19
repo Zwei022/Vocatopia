@@ -1827,6 +1827,7 @@ function submitGroup() {
   if (CAT_META[context]) {
     _dailyMarkDone(context, _qid(q));
     _updateDailyBadges();
+    _trackSubjectStats(context, correct, total);
   }
 
   const nextBtn = document.getElementById('quizNextBtn');
@@ -1883,6 +1884,7 @@ function answerQuestion(chosen) {
   if (CAT_META[context]) {
     _dailyMarkDone(context, _qid(q));
     _updateDailyBadges();
+    _trackSubjectStats(context, chosen === q.answer ? 1 : 0, 1);
   }
 
   const explainEl = document.getElementById('quizExplain');
@@ -3257,46 +3259,142 @@ function _saveSettingsData(patch) {
   localStorage.setItem(SETTINGS_KEY, JSON.stringify({ ...cur, ...patch }));
 }
 
+// ── SUBJECT STATS ────────────────────────────────────────────
+const _SSTATS_KEY  = 'voca_subject_stats';
+const _SCAT_ORDER  = ['vocab','phrase','grammar','cloze','reading','listening'];
+const _SCAT_NAMES  = { vocab:'單字', phrase:'片語', grammar:'文法', cloze:'克漏字', reading:'閱讀', listening:'聽力' };
+
+function _loadSubjectStats() {
+  try { return JSON.parse(localStorage.getItem(_SSTATS_KEY)) || {}; }
+  catch { return {}; }
+}
+function _saveSubjectStats(obj) { localStorage.setItem(_SSTATS_KEY, JSON.stringify(obj)); }
+
+function _trackSubjectStats(cat, correct, total) {
+  if (!cat || total <= 0) return;
+  const s = _loadSubjectStats();
+  if (!s[cat]) s[cat] = { total: 0, correct: 0 };
+  s[cat].total   += total;
+  s[cat].correct += Math.min(correct, total);
+  _saveSubjectStats(s);
+}
+
+function _buildRadarSVG(statsObj) {
+  const N = _SCAT_ORDER.length;
+  const cx = 120, cy = 120, R = 76, LR = 108;
+
+  const vals = _SCAT_ORDER.map(c => {
+    const s = statsObj[c];
+    return (s && s.total > 0) ? Math.min(s.correct / s.total, 1) : 0;
+  });
+
+  const pt = (r, i) => {
+    const a = (2 * Math.PI * i / N) - Math.PI / 2;
+    return [cx + r * Math.cos(a), cy + r * Math.sin(a)];
+  };
+
+  const grids = [0.25, 0.5, 0.75, 1].map(g => {
+    const pts = _SCAT_ORDER.map((_, i) => pt(g * R, i).join(',')).join(' ');
+    const op  = g === 1 ? '.22' : '.09';
+    return `<polygon points="${pts}" fill="none" stroke="rgba(255,255,255,${op})" stroke-width="${g===1?1.5:1}"/>`;
+  }).join('');
+
+  const axes = _SCAT_ORDER.map((_, i) => {
+    const [x, y] = pt(R, i);
+    return `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="rgba(255,255,255,.12)" stroke-width="1"/>`;
+  }).join('');
+
+  const dataPts = _SCAT_ORDER.map((_, i) => pt(vals[i] * R, i).join(',')).join(' ');
+
+  const dots = _SCAT_ORDER.map((_, i) => {
+    const [x, y] = pt(vals[i] * R, i);
+    return vals[i] > 0
+      ? `<circle cx="${x}" cy="${y}" r="3.5" fill="var(--green3)"/>`
+      : '';
+  }).join('');
+
+  const labels = _SCAT_ORDER.map((c, i) => {
+    const [lx, ly] = pt(LR, i);
+    const s   = statsObj[c];
+    const pct = (s && s.total > 0) ? Math.round(s.correct / s.total * 100) : -1;
+    const col = vals[i] > 0 ? 'var(--white)' : 'rgba(255,255,255,.35)';
+    const sub = pct >= 0 ? `${pct}%（${s.total}題）` : '未練習';
+    const subCol = pct >= 0 ? 'var(--green3)' : 'rgba(255,255,255,.25)';
+    return `
+      <text x="${lx}" y="${ly - 5}" text-anchor="middle" fill="${col}" font-size="10" font-weight="700" font-family="Nunito,sans-serif">${_SCAT_NAMES[c]}</text>
+      <text x="${lx}" y="${ly + 8}" text-anchor="middle" fill="${subCol}" font-size="9" font-family="Nunito,sans-serif">${sub}</text>`;
+  }).join('');
+
+  const ringNums = [0.5, 1].map(g =>
+    `<text x="${cx+4}" y="${cy - g*R + 4}" fill="rgba(255,255,255,.2)" font-size="8" font-family="Nunito,sans-serif">${g*100|0}%</text>`
+  ).join('');
+
+  return `<svg width="240" height="240" viewBox="0 0 240 240" style="display:block;margin:0 auto">
+    ${grids}${axes}
+    <polygon points="${dataPts}" fill="rgba(61,184,112,.22)" stroke="var(--green3)" stroke-width="2" stroke-linejoin="round"/>
+    ${dots}${labels}${ringNums}
+  </svg>`;
+}
+
+function _refreshProfileRadar() {
+  const c = document.getElementById('profileRadarContainer');
+  if (c) c.innerHTML = _buildRadarSVG(_loadSubjectStats());
+}
+
+// ── PROFILE MODAL ────────────────────────────────────────────
 function showProfile() {
   if (!currentProfile) return;
-  const masteredCount = (typeof WORDS !== 'undefined') ? WORDS.filter(w => w.st === 'ok').length : 0;
-  const totalWords    = (typeof WORDS !== 'undefined') ? WORDS.length : 2000;
+  const mastered = (typeof WORDS !== 'undefined') ? WORDS.filter(w => w.st === 'ok').length : 0;
+  const total    = (typeof WORDS !== 'undefined') ? WORDS.length : 2000;
 
   const overlay = document.createElement('div');
   overlay.id = 'profileOverlay';
-  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9000;display:flex;align-items:center;justify-content:center;padding:20px';
-  overlay.onclick = (e) => { if (e.target === overlay) overlay.remove(); };
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto';
+  overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
 
   overlay.innerHTML = `
-    <div style="background:var(--card);border-radius:16px;padding:28px 24px;width:100%;max-width:340px;font-family:'Nunito',sans-serif;position:relative">
+    <div style="background:var(--card);border-radius:16px;padding:24px 20px;width:100%;max-width:340px;font-family:'Nunito',sans-serif;position:relative">
       <button onclick="document.getElementById('profileOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
-      <div style="text-align:center;margin-bottom:20px">
-        <div style="font-size:48px;margin-bottom:8px">👤</div>
+
+      <div style="text-align:center;margin-bottom:16px">
+        <div style="font-size:40px;margin-bottom:6px">👤</div>
         <div style="font-weight:900;font-size:18px;color:var(--white)">${currentProfile.username}</div>
-        <div style="font-size:12px;color:var(--gray);margin-top:2px">${currentUser?.email || ''}</div>
+        <div style="font-size:11px;color:var(--gray);margin-top:2px">${currentUser?.email || ''}</div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px">
-        <div style="background:rgba(255,255,255,.05);border-radius:10px;padding:12px;text-align:center">
-          <div style="font-size:20px;font-weight:900;color:var(--green3)">${currentProfile.xp || 0}</div>
-          <div style="font-size:11px;color:var(--gray);margin-top:2px">經驗值 XP</div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px">
+        <div style="background:rgba(255,255,255,.05);border-radius:10px;padding:10px;text-align:center">
+          <div style="font-size:18px;font-weight:900;color:var(--green3)">${currentProfile.xp||0}</div>
+          <div style="font-size:11px;color:var(--gray)">經驗值 XP</div>
         </div>
-        <div style="background:rgba(255,255,255,.05);border-radius:10px;padding:12px;text-align:center">
-          <div style="font-size:20px;font-weight:900;color:#f4a62a">${currentProfile.gold || 0}</div>
-          <div style="font-size:11px;color:var(--gray);margin-top:2px">🪙 金幣</div>
+        <div style="background:rgba(255,255,255,.05);border-radius:10px;padding:10px;text-align:center">
+          <div style="font-size:18px;font-weight:900;color:#f4a62a">${currentProfile.gold||0}</div>
+          <div style="font-size:11px;color:var(--gray)">🪙 金幣</div>
         </div>
-        <div style="background:rgba(255,255,255,.05);border-radius:10px;padding:12px;text-align:center">
-          <div style="font-size:20px;font-weight:900;color:#ff7043">${currentProfile.streak || 0}</div>
-          <div style="font-size:11px;color:var(--gray);margin-top:2px">🔥 連續天數</div>
+        <div style="background:rgba(255,255,255,.05);border-radius:10px;padding:10px;text-align:center">
+          <div style="font-size:18px;font-weight:900;color:#ff7043">${currentProfile.streak||0}</div>
+          <div style="font-size:11px;color:var(--gray)">🔥 連續天數</div>
         </div>
-        <div style="background:rgba(255,255,255,.05);border-radius:10px;padding:12px;text-align:center">
-          <div style="font-size:20px;font-weight:900;color:var(--white)">${masteredCount} / ${totalWords}</div>
-          <div style="font-size:11px;color:var(--gray);margin-top:2px">✅ 已掌握單字</div>
+        <div style="background:rgba(255,255,255,.05);border-radius:10px;padding:10px;text-align:center">
+          <div style="font-size:18px;font-weight:900;color:var(--white)">${mastered}<span style="font-size:11px;font-weight:400;color:var(--gray)">/${total}</span></div>
+          <div style="font-size:11px;color:var(--gray)">✅ 已掌握單字</div>
         </div>
       </div>
-      <button onclick="document.getElementById('profileOverlay').remove(); logoutUser()" style="width:100%;padding:12px;background:rgba(255,70,70,.15);border:1px solid rgba(255,70,70,.3);border-radius:10px;color:#ff7070;font-family:'Nunito',sans-serif;font-weight:700;font-size:14px;cursor:pointer">登出</button>
+
+      <div style="margin-bottom:16px">
+        <div style="font-size:13px;font-weight:700;color:var(--white);margin-bottom:10px">
+          📊 能力分析
+          <span style="font-size:11px;color:var(--gray);font-weight:400;margin-left:4px">正確率 / 作答數</span>
+        </div>
+        <div id="profileRadarContainer" style="background:rgba(255,255,255,.03);border-radius:12px;padding:8px"></div>
+        <button onclick="_refreshProfileRadar()" style="width:100%;margin-top:10px;padding:9px;background:rgba(61,184,112,.13);border:1px solid rgba(61,184,112,.28);border-radius:8px;color:var(--green3);font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;cursor:pointer">🔄 更新分析</button>
+      </div>
+
+      <button onclick="document.getElementById('profileOverlay').remove();logoutUser()" style="width:100%;padding:11px;background:rgba(255,70,70,.12);border:1px solid rgba(255,70,70,.25);border-radius:10px;color:#ff7070;font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;cursor:pointer">登出</button>
     </div>`;
 
   document.body.appendChild(overlay);
+  _refreshProfileRadar();
 }
 
 function showSettings() {
