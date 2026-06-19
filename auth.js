@@ -133,6 +133,7 @@ async function handleLogin(e) {
 
   currentUser = data.user;
   await _loadProfile();
+  _setAuthLoading(btn, false, '登入戰場');
   closeAuthOverlay();
   window.showToast && showToast(`✓ 歡迎回來，${currentProfile?.username || '勇者'}！`);
 }
@@ -188,6 +189,7 @@ async function handleRegister(e) {
     return;
   }
 
+  _setAuthLoading(btn, false, '建立角色');
   closeAuthOverlay();
   window.showToast && showToast(`🎉 角色「${username}」已建立！開始你的冒險吧！`);
 }
