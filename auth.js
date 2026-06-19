@@ -109,7 +109,8 @@ function _updateHeaderUI() {
   const loginBtn = document.getElementById('loginBtn');
   if (!pill) return;
   if (currentProfile) {
-    document.getElementById('userPillName').textContent = currentProfile.username;
+    const nameEl = document.getElementById('userPillName');
+    if (nameEl) { nameEl.textContent = currentProfile.username; nameEl.style.display = ''; }
     document.getElementById('hStreak').textContent = currentProfile.streak || 0;
     document.getElementById('hWins').textContent   = currentProfile.wins   || 0;
     const goldEl = document.getElementById('hGold');
@@ -117,7 +118,7 @@ function _updateHeaderUI() {
     pill.style.display = 'flex';
     if (loginBtn) loginBtn.style.display = 'none';
     const profileBtn = document.getElementById('profileBtn');
-    if (profileBtn) profileBtn.style.display = '';
+    if (profileBtn) profileBtn.style.display = 'block';
   } else {
     pill.style.display = 'none';
     if (loginBtn) loginBtn.style.display = '';
@@ -216,8 +217,7 @@ async function logoutUser() {
   await authClient.auth.signOut();
   currentUser    = null;
   currentProfile = null;
-  const pill = document.getElementById('userPill');
-  if (pill) pill.style.display = 'none';
+  _updateHeaderUI();
   showAuthOverlay();
 }
 
