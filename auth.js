@@ -12,24 +12,33 @@ let _authCardOriginal = '';
 
 // ── SESSION INIT ──────────────────────────────────────────────
 async function initAuth() {
+  // 先設監聽器，確保能攔截 PASSWORD_RECOVERY（發生在 getSession 處理 URL hash 時）
+  authClient.auth.onAuthStateChange(async (_event, session) => {
+    if (_event === 'PASSWORD_RECOVERY') {
+      showAuthOverlay();
+      showSetNewPassword();
+      return;
+    }
+    if ((_event === 'SIGNED_IN') && session?.user && !currentUser) {
+      currentUser = session.user;
+      await _loadProfile();
+      closeAuthOverlay();
+    }
+  });
+
+  // 備援：直接從 URL hash 偵測 recovery token（避免監聽器時序問題）
+  if (window.location.hash.includes('type=recovery')) {
+    showAuthOverlay();
+    await authClient.auth.getSession(); // 讓 Supabase 處理 token，會觸發上方監聽器
+    return false;
+  }
+
   const { data: { session } } = await authClient.auth.getSession();
   if (session?.user) {
     currentUser = session.user;
     await _loadProfile();
     return true;
   }
-  // Listen for future auth changes (email confirm / password recovery)
-  authClient.auth.onAuthStateChange(async (_event, session) => {
-    if (_event === 'PASSWORD_RECOVERY') {
-      showSetNewPassword();
-      return;
-    }
-    if (session?.user && !currentUser) {
-      currentUser = session.user;
-      await _loadProfile();
-      closeAuthOverlay();
-    }
-  });
   return false;
 }
 
