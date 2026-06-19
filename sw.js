@@ -1,5 +1,5 @@
-const CACHE = 'vocatopia-v41';
-const ASSETS = ['/', '/index.html', '/styles.css', '/script.js', '/manifest.json'];
+const CACHE = 'vocatopia-v42';
+const ASSETS = ['/', '/index.html', '/styles.css', '/script.js', '/auth.js', '/manifest.json'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)));
