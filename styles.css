@@ -100,8 +100,9 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
    BOTTOM NAV
 ════════════════════════════════ */
 .bnav{display:flex;background:var(--bg2);border-top:1px solid rgba(255,255,255,.06);padding:8px 0 max(12px,env(safe-area-inset-bottom));flex-shrink:0;margin-top:auto}
-.bn{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;cursor:pointer;padding:6px 0;position:relative;border-radius:10px;transition:background .15s}
+.bn{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;cursor:pointer;padding:6px 0;position:relative;border-radius:10px;transition:background .18s,transform .25s cubic-bezier(.34,1.56,.64,1)}
 .bn-ico{font-size:21px}
+.bn-ico-img img{width:21px;height:21px;object-fit:contain;display:block}
 .bn-lbl{font-size:10px;color:var(--gray);font-family:'Nunito',sans-serif;font-weight:700;letter-spacing:.5px;transition:color .15s}
 /* 滑入反饋：淡底亮起、圖示上浮、文字變亮 */
 .bn:hover{background:rgba(255,255,255,.05)}
@@ -233,8 +234,17 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 .art-back{background:none;border:none;color:var(--gray);font-size:12px;font-family:'Nunito',sans-serif;font-weight:700;cursor:pointer;margin-bottom:12px;display:flex;align-items:center;gap:5px;padding:0}
 .art-h{font-family:'Nunito',sans-serif;font-weight:900;font-size:18px;color:var(--white);margin-bottom:12px;line-height:1.4}
 .art-body-text{font-size:14px;line-height:2;color:rgba(245,245,240,.85)}
-.art-body-text .w{cursor:pointer;border-radius:3px;transition:background .1s;padding:1px 2px}
-.art-body-text .w:hover,.art-body-text .w:active{background:rgba(61,184,112,.25);color:var(--green3)}
+
+/* 點字通用樣式：文章／題目／選項／詳解共用（.w 只用於這個點字功能） */
+.w{
+  cursor:pointer;border-radius:3px;padding:0 1px;
+  border-bottom:1px dashed rgba(61,184,112,.5);
+  transition:background .12s,color .12s,border-color .12s;
+}
+.w:hover,.w:active{background:rgba(61,184,112,.22);color:var(--green3)}
+.w.w-loading{opacity:.5;pointer-events:none;animation:wLoadingPulse 1s ease-in-out infinite}
+@keyframes wLoadingPulse{0%,100%{opacity:.35}50%{opacity:.7}}
+.w.w-added{color:var(--green3);border-bottom-style:solid;font-weight:700}
 
 /* word popup */
 .word-popup{position:absolute;bottom:0;left:0;right:0;background:var(--bg3);border-top:1px solid rgba(255,255,255,.1);border-radius:var(--r2) var(--r2) 0 0;padding:16px 20px 28px;transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);z-index:50}
@@ -255,6 +265,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 .read-panel.show{display:flex}
 .rp-empty{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:40px 20px;text-align:center}
 .rp-icon{font-size:52px}
+.rp-icon-img img{width:52px;height:52px;object-fit:contain;display:block;margin:0 auto}
 .rp-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:18px;color:var(--white)}
 .rp-desc{font-size:13px;color:var(--gray);line-height:1.7}
 .rp-badge{background:rgba(255,107,0,.12);border:1px solid rgba(255,107,0,.35);color:var(--orange);font-family:'Nunito',sans-serif;font-weight:700;font-size:11px;letter-spacing:1px;padding:4px 14px;border-radius:20px;margin-top:6px}
@@ -634,6 +645,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 
   /* 底部導覽列加大 */
   .bn-ico { font-size: 23px; }
+  .bn-ico-img img { width: 23px; height: 23px; }
   .bn-lbl { font-size: 11px; }
   .bnav   { padding: 10px 0 20px; }
 
@@ -768,13 +780,17 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--white);display:flex;justi
 }
 
 /* ── 底部導覽升級 ────────────── */
+.bn.active {
+  transform: translateY(-7px) scale(1.1);
+  background: rgba(61, 184, 112, .14);
+}
 .bn.active .bn-lbl {
   color: var(--green3);
   text-shadow: 0 0 8px var(--glow-g);
 }
 .bn.active .bn-ico {
   filter: drop-shadow(0 0 6px var(--glow-g));
-  transform: scale(1.1);
+  transform: scale(1.12);
 }
 .bn-ico { transition: transform .15s, filter .15s; }
 .bn-dot {
