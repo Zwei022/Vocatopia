@@ -1,6 +1,6 @@
 // PVP 單字對決整合測試：模擬兩個玩家走完整流程
 const { io } = require('socket.io-client');
-const URL = 'http://localhost:3001';
+const URL = process.env.TEST_URL || 'http://localhost:3001';
 
 const log = (who, ...a) => console.log(`[${who}]`, ...a);
 let code = '';

@@ -19,3 +19,6 @@ Thumbs.db
 .idea/
 scripts/cmudict.dict
 .claude/settings.local.json
+
+# 本機稽核紀錄（hook 產生，非專案內容）
+.planning/.pending-auth-captures.jsonl
