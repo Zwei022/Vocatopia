@@ -35,12 +35,93 @@ app.use('/api/daily-quiz',      require('./routes/daily_quiz'));
 app.use('/api/listening-audio', require('./routes/listening_audio'));
 app.use('/api/tts',             require('./routes/tts'));
 
-// ── PVP ROOM SYSTEM ──
+// ── PVP ROOM SYSTEM（單字對決）──
+// 流程：房主建房 → 對手憑房號加入 → 房主選模式並開始 → 伺服器統一出 5 題
+//      → 雙方作答（限時 2 分鐘）→ 雙方完成或時間到即結算 → 依答對數判定勝/敗/平手
 const rooms = {};
-const ROOM_TTL = 60 * 60 * 1000; // 1 小時自動過期
+const ROOM_TTL     = 60 * 60 * 1000; // 房間 1 小時自動過期
+const PVP_DURATION = 120;            // 對決限時（秒）
+const PVP_QCOUNT   = 5;              // 題數
+const vocabFallback = require('./data/question_bank_vocab.json');
 
 function genRoomCode() {
   return String(Math.floor(100000 + Math.random() * 900000));
+}
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = 0 | Math.random() * (i + 1);
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// 單字對決出題：從字庫隨機抽字，每題「英文單字選中文意思」四選一
+let _wordCount = null;
+async function buildVocabQuestions() {
+  try {
+    if (_wordCount === null) {
+      const { count } = await supabase.from('words')
+        .select('id', { count: 'exact', head: true })
+        .not('tags', 'cs', '{user_lookup}')
+        .not('tags', 'cs', '{user_custom}');
+      _wordCount = count || 0;
+    }
+    if (_wordCount < 40) throw new Error('字庫字數不足');
+    const offset = Math.floor(Math.random() * (_wordCount - 40));
+    const { data, error } = await supabase.from('words')
+      .select('word, pos, definition_zh')
+      .not('tags', 'cs', '{user_lookup}')
+      .not('tags', 'cs', '{user_custom}')
+      .order('word', { ascending: true })
+      .range(offset, offset + 39);
+    if (error || !data) throw new Error(error ? error.message : '查無資料');
+    const pool = shuffle(data.filter(w => w.word && w.definition_zh));
+    if (pool.length < PVP_QCOUNT + 9) throw new Error('可出題字數不足');
+    const targets = pool.slice(0, PVP_QCOUNT);
+    const rest    = pool.slice(PVP_QCOUNT);
+    return targets.map(t => {
+      const distractors = shuffle(rest.filter(r => r.definition_zh !== t.definition_zh))
+        .slice(0, 3).map(r => r.definition_zh);
+      const opts = shuffle([t.definition_zh, ...distractors]);
+      return { q: t.word, pos: t.pos || '', opts, answer: opts.indexOf(t.definition_zh) };
+    });
+  } catch (e) {
+    // 字庫不可用時退回靜態題庫（Fail loud：記錄原因）
+    console.error('[PVP] 動態出題失敗，改用備援題庫：', e.message);
+    return shuffle([...vocabFallback]).slice(0, PVP_QCOUNT).map(q => ({
+      q: q.sentence,
+      pos: q.pos || '',
+      opts: q.options.map((o, i) => `${o}${q.optionsZh?.[i] ? `（${q.optionsZh[i]}）` : ''}`),
+      answer: q.answer,
+    }));
+  }
+}
+
+// 結算：答對數高者勝，相同平手
+function settleBattle(code) {
+  const room = rooms[code];
+  if (!room || room.state !== 'playing') return;
+  room.state = 'done';
+  clearTimeout(room.timer);
+  const scores = {};
+  for (const id of [room.host, room.guest]) {
+    scores[id] = (room.answers[id] || []).filter(a => a && a.correct).length;
+  }
+  let winner = null;
+  if (scores[room.host] > scores[room.guest])      winner = room.host;
+  else if (scores[room.guest] > scores[room.host]) winner = room.guest;
+  io.to(code).emit('battle_result', { scores, winner, total: room.questions.length });
+  delete rooms[code];
+}
+
+// 玩家離開/斷線：通知對手並解散房間
+function dropFromRoom(socket, code) {
+  const room = rooms[code];
+  if (!room || (room.host !== socket.id && room.guest !== socket.id)) return;
+  socket.leave(code);
+  if (room.timer) clearTimeout(room.timer);
+  socket.to(code).emit('opponent_left');
+  delete rooms[code];
 }
 
 // 每 10 分鐘掃描並清除過期房間，防止記憶體洩漏
@@ -48,6 +129,7 @@ setInterval(() => {
   const now = Date.now();
   for (const [code, room] of Object.entries(rooms)) {
     if (now - room.createdAt > ROOM_TTL) {
+      if (room.timer) clearTimeout(room.timer);
       io.to(code).emit('room_expired');
       delete rooms[code];
     }
@@ -57,51 +139,71 @@ setInterval(() => {
 io.on('connection', (socket) => {
   socket.on('create_room', () => {
     const code = genRoomCode();
-    rooms[code] = { host: socket.id, guest: null, scores: {}, started: false, createdAt: Date.now() };
+    rooms[code] = {
+      host: socket.id, guest: null,
+      mode: 'vocab', state: 'lobby',
+      questions: [], answers: {}, timer: null,
+      createdAt: Date.now(),
+    };
     socket.join(code);
     socket.emit('room_created', { code });
   });
 
   socket.on('join_room', ({ code }) => {
     const room = rooms[code];
-    if (!room) return socket.emit('room_error', { msg: '找不到房間' });
-    if (room.guest)  return socket.emit('room_error', { msg: '房間已滿' });
+    if (!room)                   return socket.emit('room_error', { msg: '找不到房間，請確認房號' });
+    if (room.state !== 'lobby')  return socket.emit('room_error', { msg: '對決已開始，無法加入' });
+    if (room.guest)              return socket.emit('room_error', { msg: '房間已滿' });
+    if (room.host === socket.id) return socket.emit('room_error', { msg: '不能加入自己的房間' });
     room.guest = socket.id;
     socket.join(code);
-    io.to(code).emit('room_ready', { code, host: room.host, guest: room.guest });
+    io.to(code).emit('room_ready', { code, mode: room.mode });
   });
 
-  socket.on('start_battle', ({ code }) => {
+  // 房主選擇切磋模式（目前僅 vocab：單字對決）
+  socket.on('select_mode', ({ code, mode }) => {
     const room = rooms[code];
-    if (!room) return;
-    room.started = true;
-    room.scores[room.host]  = 0;
-    room.scores[room.guest] = 0;
-    io.to(code).emit('battle_start', { code });
+    if (!room || room.host !== socket.id || room.state !== 'lobby') return;
+    room.mode = mode;
+    socket.to(code).emit('mode_selected', { mode });
   });
 
-  socket.on('submit_answer', ({ code, correct, timeBonus }) => {
+  socket.on('start_battle', async ({ code }) => {
     const room = rooms[code];
-    if (!room) return;
-    const gain = correct ? (timeBonus ? 150 : 100) : 0;
-    room.scores[socket.id] = (room.scores[socket.id] || 0) + gain;
-    io.to(code).emit('score_update', { scores: room.scores });
+    if (!room || room.host !== socket.id || room.state !== 'lobby' || !room.guest) return;
+    room.state = 'building';                    // 鎖住，避免重複開始
+    const questions = await buildVocabQuestions();
+    if (!rooms[code]) return;                   // 出題期間房間可能已解散
+    room.questions = questions;
+    room.answers   = { [room.host]: [], [room.guest]: [] };
+    room.state     = 'playing';
+    io.to(code).emit('battle_start', { mode: room.mode, questions, duration: PVP_DURATION });
+    room.timer = setTimeout(() => settleBattle(code), PVP_DURATION * 1000 + 800);
   });
 
-  socket.on('battle_end', ({ code }) => {
+  // 收答案：每題只收第一次作答；雙方都答完 5 題立即結算
+  socket.on('pvp_answer', ({ code, qIdx, choice }) => {
     const room = rooms[code];
-    if (!room) return;
-    io.to(code).emit('battle_result', { scores: room.scores });
-    delete rooms[code];
+    if (!room || room.state !== 'playing') return;
+    const arr = room.answers[socket.id];
+    if (!arr || !Number.isInteger(qIdx) || qIdx < 0 || qIdx >= room.questions.length) return;
+    if (arr[qIdx] !== undefined) return;
+    arr[qIdx] = { choice, correct: choice === room.questions[qIdx].answer };
+    const progress = {};
+    for (const id of [room.host, room.guest]) {
+      progress[id] = (room.answers[id] || []).filter(a => a !== undefined).length;
+    }
+    io.to(code).emit('pvp_progress', { progress });
+    if (progress[room.host] >= room.questions.length &&
+        progress[room.guest] >= room.questions.length) {
+      settleBattle(code);
+    }
   });
+
+  socket.on('leave_room', ({ code }) => dropFromRoom(socket, code));
 
   socket.on('disconnect', () => {
-    for (const [code, room] of Object.entries(rooms)) {
-      if (room.host === socket.id || room.guest === socket.id) {
-        io.to(code).emit('opponent_disconnected');
-        delete rooms[code];
-      }
-    }
+    for (const code of Object.keys(rooms)) dropFromRoom(socket, code);
   });
 });
 

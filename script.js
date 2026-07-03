@@ -194,8 +194,7 @@ const FALLBACK_ARTICLES = [
 ];
 
 let curIdx = 0, revealed = false, combo = 0, xp = 230;
-let pvpYou = 0, pvpFoe = 0, pvpTimer = null, pvpQ = 0, capturedWords = [];
-let PVP_QS = [];
+let capturedWords = [];
 let libOpenSections = new Set();
 
 // ── 角色屬性 STATS ────────────────────────────────────────────────
@@ -290,10 +289,9 @@ function goScreen(id, btn) {
   if (id === 'flashcard')  loadFlashcard(fcCurrentIdx);
   if (id === 'reading') { switchReadTab(readTab); }
   if (id === 'arena') {
-    document.getElementById('arenaLobby').style.display = 'flex';
-    document.getElementById('arenaWait').style.display = 'none';
-    document.getElementById('arenaBattle').style.display = 'none';
-    if (pvpTimer) clearInterval(pvpTimer);
+    // 進入競技場一律回到大廳；若先前有未結束的房間則先退出
+    pvpAbandonIfActive();
+    pvpResetViews();
   }
   if (id === 'home') { updateHomeScreen(); }
   closeWordPopup();
@@ -428,14 +426,150 @@ function confetti() {
   })();
 }
 
-// ── ARENA ──
-let roomCode = '';
+// ════════════════════════════════
+// ARENA — 即時 PVP 單字對決（socket.io）
+// 房主建房選模式 → 對手憑房號加入 → 伺服器統一出 5 題限時 2 分鐘
+// 雙方完成或時間到由伺服器結算：答對數高者勝，相同平手
+// ════════════════════════════════
+let roomCode  = '';
+let pvpSocket = null;
+let pvpState  = null;   // { isHost, questions, qIdx, done, timerInt }
+
+function openModal(id)  { document.getElementById(id).classList.add('show'); }
+function closeModal(id) { document.getElementById(id).classList.remove('show'); }
+
+function pvpResetViews() {
+  document.getElementById('arenaLobby').style.display  = 'flex';
+  document.getElementById('arenaWait').style.display   = 'none';
+  document.getElementById('arenaBattle').style.display = 'none';
+  document.getElementById('arenaResult').style.display = 'none';
+  document.getElementById('arenaBnav').style.display   = 'flex';
+  if (pvpState && pvpState.timerInt) clearInterval(pvpState.timerInt);
+  pvpState = null;
+  roomCode = '';
+}
+
+function pvpAbandonIfActive() {
+  if (roomCode && pvpSocket && pvpSocket.connected) {
+    pvpSocket.emit('leave_room', { code: roomCode });
+  }
+}
+
+function getPvpSocket() {
+  if (typeof io === 'undefined') {
+    showToast('⚠ 連線元件載入失敗，請重新整理頁面');
+    return null;
+  }
+  if (pvpSocket) {
+    if (!pvpSocket.connected) pvpSocket.connect();
+    return pvpSocket;
+  }
+  pvpSocket = io();
+
+  pvpSocket.on('room_created', ({ code }) => {
+    roomCode = code;
+    pvpState = { isHost: true, questions: [], qIdx: 0, done: false, timerInt: null };
+    document.getElementById('roomCodeBig').textContent = code.slice(0, 3) + ' ' + code.slice(3);
+    document.getElementById('arenaLobby').style.display = 'none';
+    document.getElementById('arenaWait').style.display  = 'flex';
+    _pvpSetFoeSlot(false);
+    document.getElementById('hostModePanel').style.display = 'flex';
+    document.getElementById('guestWaitHint').style.display = 'none';
+    const btn = document.getElementById('pvpStartBtn');
+    btn.disabled = true;
+    btn.textContent = '等待對手加入⋯';
+  });
+
+  pvpSocket.on('room_ready', ({ code }) => {
+    roomCode = code;
+    if (!pvpState) {   // 加入方第一次收到
+      pvpState = { isHost: false, questions: [], qIdx: 0, done: false, timerInt: null };
+      document.getElementById('roomCodeBig').textContent = code.slice(0, 3) + ' ' + code.slice(3);
+      document.getElementById('arenaLobby').style.display = 'none';
+      document.getElementById('arenaWait').style.display  = 'flex';
+      document.getElementById('hostModePanel').style.display = 'none';
+      document.getElementById('guestWaitHint').style.display = 'block';
+    } else if (pvpState.isHost) {
+      const btn = document.getElementById('pvpStartBtn');
+      btn.disabled = false;
+      btn.textContent = '開始對決 ▶';
+      showToast('⚔ 對手已加入，可以開始對決！');
+    }
+    _pvpSetFoeSlot(true);
+  });
+
+  pvpSocket.on('room_error', ({ msg }) => showToast(`⚠ ${msg}`));
+
+  pvpSocket.on('battle_start', ({ questions, duration }) => {
+    if (!pvpState) return;
+    pvpState.questions = questions;
+    pvpState.qIdx = 0;
+    pvpState.done = false;
+    document.getElementById('arenaWait').style.display   = 'none';
+    document.getElementById('arenaBattle').style.display = 'flex';
+    document.getElementById('arenaBnav').style.display   = 'none';
+    document.getElementById('pvpDoneWait').style.display = 'none';
+    _pvpSetBars(0, 0, questions.length);
+    // 倒數計時（顯示用；實際結算以伺服器為準）
+    const endAt = Date.now() + duration * 1000;
+    const timerEl = document.getElementById('pvpTimer');
+    const tick = () => {
+      const left = Math.max(0, Math.ceil((endAt - Date.now()) / 1000));
+      timerEl.textContent = `${Math.floor(left / 60)}:${String(left % 60).padStart(2, '0')}`;
+      timerEl.classList.toggle('low', left <= 15);
+      if (left <= 0) clearInterval(pvpState.timerInt);
+    };
+    tick();
+    pvpState.timerInt = setInterval(tick, 250);
+    loadPvpQ();
+  });
+
+  pvpSocket.on('pvp_progress', ({ progress }) => {
+    if (!pvpState) return;
+    const myId  = pvpSocket.id;
+    const foeId = Object.keys(progress).find(id => id !== myId);
+    _pvpSetBars(progress[myId] || 0, progress[foeId] || 0, pvpState.questions.length || 5);
+  });
+
+  pvpSocket.on('battle_result', ({ scores, winner, total }) => {
+    if (!pvpState) return;
+    if (pvpState.timerInt) clearInterval(pvpState.timerInt);
+    const myId  = pvpSocket.id;
+    const foeId = Object.keys(scores).find(id => id !== myId);
+    const mine = scores[myId] || 0, foe = scores[foeId] || 0;
+    const iconEl  = document.getElementById('pvpResultIcon');
+    const titleEl = document.getElementById('pvpResultTitle');
+    if (winner === null)      { iconEl.textContent = '🤝'; titleEl.textContent = '平手！';  titleEl.style.color = 'var(--orange2)'; }
+    else if (winner === myId) { iconEl.textContent = '🏆'; titleEl.textContent = '勝利！';  titleEl.style.color = 'var(--green2)';  confetti(); }
+    else                      { iconEl.textContent = '💀'; titleEl.textContent = '敗北⋯'; titleEl.style.color = 'var(--wrong)'; }
+    document.getElementById('pvpResultScore').textContent = `你 ${mine}/${total} ・ 對手 ${foe}/${total}`;
+    document.getElementById('arenaBattle').style.display = 'none';
+    document.getElementById('arenaResult').style.display = 'flex';
+    roomCode = '';   // 房間已由伺服器解散
+  });
+
+  pvpSocket.on('opponent_left', () => {
+    showToast('👋 對手已離開房間');
+    pvpResetViews();
+  });
+  pvpSocket.on('room_expired', () => {
+    showToast('⏰ 房間已過期');
+    pvpResetViews();
+  });
+  pvpSocket.on('disconnect', () => {
+    if (roomCode) {
+      showToast('⚠ 連線中斷');
+      pvpResetViews();
+    }
+  });
+
+  return pvpSocket;
+}
 
 function createRoom() {
-  roomCode = String(Math.floor(100000 + Math.random() * 900000));
-  document.getElementById('roomCodeBig').textContent = roomCode.slice(0, 3) + ' ' + roomCode.slice(3);
-  document.getElementById('arenaLobby').style.display = 'none';
-  document.getElementById('arenaWait').style.display  = 'flex';
+  const s = getPvpSocket();
+  if (!s) return;
+  s.emit('create_room');
 }
 
 function copyRoom() {
@@ -443,75 +577,78 @@ function copyRoom() {
   showToast('✓ 房號已複製！傳給同學開尬吧');
 }
 
-function openModal(id)  { document.getElementById(id).classList.add('show'); }
-function closeModal(id) { document.getElementById(id).classList.remove('show'); }
-
 function confirmJoin() {
   const v = document.getElementById('joinInput').value;
-  if (v.length === 6) { closeModal('joinModal'); startBattle(); }
-  else showToast('⚠ 請輸入 6 位數房號');
+  if (v.length !== 6) return showToast('⚠ 請輸入 6 位數房號');
+  const s = getPvpSocket();
+  if (!s) return;
+  closeModal('joinModal');
+  document.getElementById('joinInput').value = '';
+  s.emit('join_room', { code: v });
 }
 
-function startBattle() {
-  document.getElementById('arenaWait').style.display   = 'none';
-  document.getElementById('arenaBattle').style.display = 'flex';
-  document.getElementById('arenaBnav').style.display   = 'none';
-  pvpYou = 0; pvpFoe = 0; pvpQ = 0;
-  loadPvpQ();
+function hostStartBattle() {
+  if (!pvpState || !pvpState.isHost || !roomCode) return;
+  const btn = document.getElementById('pvpStartBtn');
+  btn.disabled = true;
+  btn.textContent = '出題中⋯';
+  pvpSocket.emit('select_mode', { code: roomCode, mode: 'vocab' });
+  pvpSocket.emit('start_battle', { code: roomCode });
+}
+
+function leaveRoom() {
+  pvpAbandonIfActive();
+  pvpResetViews();
+}
+
+function _pvpSetFoeSlot(joined) {
+  document.getElementById('foeName').textContent = joined ? '對手' : '等待中';
+  const st = document.getElementById('foeStatus');
+  st.textContent = joined ? '✓ 已就緒' : '⏳ …';
+  st.className = joined ? 'slot-status ok' : 'slot-status wait-dots';
+  document.getElementById('foeSlot').classList.toggle('slot-ready', joined);
+}
+
+function _pvpSetBars(mine, foe, total) {
+  document.getElementById('hpYou').style.width = Math.max(mine / total * 100, 4) + '%';
+  document.getElementById('hpFoe').style.width = Math.max(foe  / total * 100, 4) + '%';
+  document.getElementById('scYou').textContent = `${mine}/${total}`;
+  document.getElementById('scFoe').textContent = `${foe}/${total}`;
 }
 
 function loadPvpQ() {
-  if (pvpQ >= PVP_QS.length) { endBattle(); return; }
-  const q = PVP_QS[pvpQ];
+  const st = pvpState;
+  if (!st) return;
+  if (st.qIdx >= st.questions.length) {
+    st.done = true;
+    document.getElementById('pvpQNum').textContent = '';
+    document.getElementById('pvpQ').textContent = '';
+    document.getElementById('pvpOpts').innerHTML = '';
+    document.getElementById('pvpDoneWait').style.display = 'block';
+    return;
+  }
+  const q = st.questions[st.qIdx];
+  document.getElementById('pvpQNum').textContent = `第 ${st.qIdx + 1} / ${st.questions.length} 題${q.pos ? `・${q.pos}` : ''}`;
   document.getElementById('pvpQ').textContent = q.q;
-  const opts = document.getElementById('pvpOpts');
-  opts.innerHTML = q.opts.map((o, i) => `<button class="pvp-opt" onclick="answerPvp(${i})">${o}</button>`).join('');
-  let t = 10;
-  document.getElementById('pvpTimer').textContent = t;
-  if (pvpTimer) clearInterval(pvpTimer);
-  pvpTimer = setInterval(() => {
-    t--;
-    document.getElementById('pvpTimer').textContent = t;
-    if (Math.random() < .3 && t < 8) { pvpFoe += 100; updatePvpBars(); }
-    if (t <= 0) { clearInterval(pvpTimer); pvpQ++; setTimeout(loadPvpQ, 500); }
-  }, 1000);
+  document.getElementById('pvpOpts').innerHTML = q.opts.map((o, i) =>
+    `<button class="pvp-opt" onclick="answerPvp(${i})">${o}</button>`).join('');
 }
 
 function answerPvp(idx) {
-  clearInterval(pvpTimer);
-  const q    = PVP_QS[pvpQ];
+  const st = pvpState;
+  if (!st || st.done) return;
+  const q = st.questions[st.qIdx];
   const btns = document.querySelectorAll('.pvp-opt');
-  btns[idx].classList.add(idx === q.ans ? 'correct' : 'wrong');
-  btns[q.ans].classList.add('correct');
-  if (idx === q.ans) pvpYou += 150;
-  else pvpFoe += 80;
-  updatePvpBars();
-  pvpQ++;
-  setTimeout(loadPvpQ, 900);
-}
-
-function updatePvpBars() {
-  const yPct = Math.max(pvpYou / Math.max(pvpYou, pvpFoe) * 100, 5);
-  const fPct = Math.max(pvpFoe / Math.max(pvpYou, pvpFoe) * 100, 5);
-  document.getElementById('hpYou').style.width = yPct + '%';
-  document.getElementById('hpFoe').style.width = fPct + '%';
-  document.getElementById('scYou').textContent = pvpYou;
-  document.getElementById('scFoe').textContent = pvpFoe;
-}
-
-function endBattle() {
-  clearInterval(pvpTimer);
-  const win = pvpYou >= pvpFoe;
-  document.getElementById('pvpQ').textContent = win ? '⚔ 你贏了！單字力量大放送！' : '💀 敗北…再練習後捲土重來！';
-  document.getElementById('pvpOpts').innerHTML = `<button class="pvp-opt" style="grid-column:1/-1;padding:18px;background:rgba(255,107,0,.15);border-color:var(--orange);color:var(--orange)" onclick="backArena()">返回競技場</button>`;
-  document.getElementById('pvpTimer').textContent = win ? 'WIN' : '...';
-  if (win) confetti();
+  btns.forEach(b => b.disabled = true);
+  btns[idx].classList.add(idx === q.answer ? 'correct' : 'wrong');
+  btns[q.answer].classList.add('correct');
+  pvpSocket.emit('pvp_answer', { code: roomCode, qIdx: st.qIdx, choice: idx });
+  st.qIdx++;
+  setTimeout(loadPvpQ, 700);
 }
 
 function backArena() {
-  document.getElementById('arenaBattle').style.display = 'none';
-  document.getElementById('arenaLobby').style.display  = 'flex';
-  document.getElementById('arenaBnav').style.display   = 'flex';
+  pvpResetViews();
 }
 
 // ── READING TABS ──
@@ -2454,11 +2591,12 @@ function openWordDetail(wordId) {
   const isManualMode = w.source === 'user_input' || w.manual_note;
 
   // 詞性顏色
+  // 深色系配色：淺色底（奶油卡片）上需足夠對比
   const posColors = {
-    '名詞':'#4488ff','動詞':'#3db870','形容詞':'#ff8c33','副詞':'#cc88ff',
-    '連接詞':'#ffcc44','介系詞':'#88ccff','代名詞':'#ff7070',
-    '助動詞':'#66bbaa','感嘆詞':'#ffaa44','限定詞':'#aaaaff','數詞':'#cccccc',
-    '片語':'#ff9966','名詞片語':'#66aaff','動詞片語':'#55cc88',
+    '名詞':'#3A6FD8','動詞':'#2F8A4C','形容詞':'#D9750E','副詞':'#8E4EC6',
+    '連接詞':'#B08508','介系詞':'#2E86AB','代名詞':'#C94848',
+    '助動詞':'#2E8B7A','感嘆詞':'#D9640E','限定詞':'#6A5ACD','數詞':'#8A7768',
+    '片語':'#C05A2E','名詞片語':'#4A6FD1','動詞片語':'#2E9E63',
   };
   const posColor = posColors[w.pos] || 'var(--gray)';
 
@@ -2649,7 +2787,6 @@ document.addEventListener('click', e => {
     if (typeof loadUserWordStatus !== 'undefined') await loadUserWordStatus();
 
     STUDY_WORDS = WORDS;
-    PVP_QS      = buildPvpQuestions(WORDS, 5);
 
     loadCard(0);
     renderLib();
@@ -2660,20 +2797,6 @@ document.addEventListener('click', e => {
     showToast('⚠ 載入失敗，請重新整理頁面');
   }
 })();
-
-function buildPvpQuestions(words, count) {
-  if (words.length < 4) return [];
-  const shuffled = [...words].sort(() => Math.random() - 0.5).slice(0, count);
-  return shuffled.map(w => {
-    const wrong = words
-      .filter(x => x.word !== w.word)
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 3)
-      .map(x => x.def);
-    const opts = [...wrong, w.def].sort(() => Math.random() - 0.5);
-    return { q: `${w.word} 的中文？`, opts, ans: opts.indexOf(w.def) };
-  });
-}
 
 // ── FLASHCARD（卡片播放介面） ────────────────────────────────────
 let fcCurrentIdx = 0;
@@ -3372,13 +3495,13 @@ function _buildRadarSVG(statsObj) {
 
   const grids = [0.25, 0.5, 0.75, 1].map(g => {
     const pts = _SCAT_ORDER.map((_, i) => pt(g * R, i).join(',')).join(' ');
-    const op  = g === 1 ? '.22' : '.09';
-    return `<polygon points="${pts}" fill="none" stroke="rgba(255,255,255,${op})" stroke-width="${g===1?1.5:1}"/>`;
+    const op  = g === 1 ? '.45' : '.18';
+    return `<polygon points="${pts}" fill="none" stroke="rgba(122,92,67,${op})" stroke-width="${g===1?1.5:1}"/>`;
   }).join('');
 
   const axes = _SCAT_ORDER.map((_, i) => {
     const [x, y] = pt(R, i);
-    return `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="rgba(255,255,255,.12)" stroke-width="1"/>`;
+    return `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="rgba(122,92,67,.2)" stroke-width="1"/>`;
   }).join('');
 
   const dataPts = _SCAT_ORDER.map((_, i) => pt(vals[i] * R, i).join(',')).join(' ');
@@ -3394,16 +3517,16 @@ function _buildRadarSVG(statsObj) {
     const [lx, ly] = pt(LR, i);
     const s   = statsObj[c];
     const pct = (s && s.total > 0) ? Math.round(s.correct / s.total * 100) : -1;
-    const col = vals[i] > 0 ? 'var(--white)' : 'rgba(255,255,255,.35)';
+    const col = vals[i] > 0 ? 'var(--white)' : 'rgba(75,56,42,.4)';
     const sub = pct >= 0 ? `${pct}%（${s.total}題）` : '未練習';
-    const subCol = pct >= 0 ? 'var(--green3)' : 'rgba(255,255,255,.25)';
+    const subCol = pct >= 0 ? 'var(--green3)' : 'rgba(75,56,42,.35)';
     return `
       <text x="${lx}" y="${ly - 5}" text-anchor="middle" fill="${col}" font-size="10" font-weight="700" font-family="Nunito,sans-serif">${_SCAT_NAMES[c]}</text>
       <text x="${lx}" y="${ly + 8}" text-anchor="middle" fill="${subCol}" font-size="9" font-family="Nunito,sans-serif">${sub}</text>`;
   }).join('');
 
   const ringNums = [0.5, 1].map(g =>
-    `<text x="${cx+4}" y="${cy - g*R + 4}" fill="rgba(255,255,255,.2)" font-size="8" font-family="Nunito,sans-serif">${g*100|0}%</text>`
+    `<text x="${cx+4}" y="${cy - g*R + 4}" fill="rgba(75,56,42,.35)" font-size="8" font-family="Nunito,sans-serif">${g*100|0}%</text>`
   ).join('');
 
   return `<svg width="240" height="240" viewBox="0 0 240 240" style="display:block;margin:0 auto">
@@ -3426,11 +3549,11 @@ function showProfile() {
 
   const overlay = document.createElement('div');
   overlay.id = 'profileOverlay';
-  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto';
   overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
 
   overlay.innerHTML = `
-    <div style="background:#1A1A24;border-radius:16px;padding:24px 20px;width:100%;max-width:340px;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(0,0,0,.6)"
+    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:24px 20px;width:100%;max-width:340px;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)"
       <button onclick="document.getElementById('profileOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
 
       <div style="text-align:center;margin-bottom:16px">
@@ -3440,19 +3563,19 @@ function showProfile() {
       </div>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px">
-        <div style="background:rgba(255,255,255,.05);border-radius:10px;padding:10px;text-align:center">
+        <div style="background:rgba(122,92,67,.08);border-radius:10px;padding:10px;text-align:center">
           <div style="font-size:18px;font-weight:900;color:var(--green3)">${currentProfile.xp||0}</div>
           <div style="font-size:11px;color:var(--gray)">經驗值 XP</div>
         </div>
-        <div style="background:rgba(255,255,255,.05);border-radius:10px;padding:10px;text-align:center">
+        <div style="background:rgba(122,92,67,.08);border-radius:10px;padding:10px;text-align:center">
           <div style="font-size:18px;font-weight:900;color:#f4a62a">${currentProfile.gold||0}</div>
           <div style="font-size:11px;color:var(--gray)">🪙 金幣</div>
         </div>
-        <div style="background:rgba(255,255,255,.05);border-radius:10px;padding:10px;text-align:center">
+        <div style="background:rgba(122,92,67,.08);border-radius:10px;padding:10px;text-align:center">
           <div style="font-size:18px;font-weight:900;color:#ff7043">${currentProfile.streak||0}</div>
           <div style="font-size:11px;color:var(--gray)">🔥 連續天數</div>
         </div>
-        <div style="background:rgba(255,255,255,.05);border-radius:10px;padding:10px;text-align:center">
+        <div style="background:rgba(122,92,67,.08);border-radius:10px;padding:10px;text-align:center">
           <div style="font-size:18px;font-weight:900;color:var(--white)">${mastered}<span style="font-size:11px;font-weight:400;color:var(--gray)">/${total}</span></div>
           <div style="font-size:11px;color:var(--gray)">✅ 已掌握單字</div>
         </div>
@@ -3463,11 +3586,11 @@ function showProfile() {
           📊 能力分析
           <span style="font-size:11px;color:var(--gray);font-weight:400;margin-left:4px">正確率 / 作答數</span>
         </div>
-        <div id="profileRadarContainer" style="background:rgba(255,255,255,.03);border-radius:12px;padding:8px"></div>
+        <div id="profileRadarContainer" style="background:rgba(122,92,67,.06);border-radius:12px;padding:8px"></div>
         <button onclick="_refreshProfileRadar()" style="width:100%;margin-top:10px;padding:9px;background:rgba(61,184,112,.13);border:1px solid rgba(61,184,112,.28);border-radius:8px;color:var(--green3);font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;cursor:pointer">🔄 更新分析</button>
       </div>
 
-      <button onclick="document.getElementById('profileOverlay').remove();logoutUser()" style="width:100%;padding:11px;background:rgba(255,70,70,.12);border:1px solid rgba(255,70,70,.25);border-radius:10px;color:#ff7070;font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;cursor:pointer">登出</button>
+      <button onclick="document.getElementById('profileOverlay').remove();logoutUser()" style="width:100%;padding:11px;background:rgba(224,71,46,.1);border:1px solid rgba(224,71,46,.35);border-radius:10px;color:#E0472E;font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;cursor:pointer">登出</button>
     </div>`;
 
   document.body.appendChild(overlay);
@@ -4472,7 +4595,154 @@ function updateHomeScreen() {
   if (barEl) barEl.style.width = pct + '%';
   const pctEl = document.getElementById('hmQuestPct');
   if (pctEl) pctEl.textContent = `${count}/${cats.length} 完成`;
+
+  // 關卡樹
+  renderLevelMap();
 }
+
+// ════════════════════════════════
+// 首頁關卡樹：關卡 1-10 由下往上，手繪樹枝連接 + 果實按鈕
+// ════════════════════════════════
+const LEVEL_COUNT  = 10;
+const LEVEL_STEP_H = 112;                                       // 每關垂直間距 px
+const LEVEL_XS_PCT = [30, 70, 26, 72, 30, 68, 26, 72, 32, 50];  // 關1(最下)→關9 掛樹幹兩側；關10 在樹頂（值不使用）
+
+function onLevelClick(n) {
+  showToast(`🍎 關卡 ${n}：玩法即將推出，敬請期待！`);
+}
+
+// 手繪小葉子（x, y 為葉柄位置，rot 為葉尖方向角度，s 為大小倍率）
+function _leafSvg(x, y, rot, s = 1) {
+  return `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rot}) scale(${s})">`
+       + `<path d="M0 0 Q 8 -9 17 0 Q 8 8 0 0 Z" fill="#7BC98B" stroke="#3BA55D" stroke-width="1.2"/>`
+       + `<line x1="3" y1="0" x2="14" y2="0" stroke="#3BA55D" stroke-width="1" opacity=".6"/>`
+       + `</g>`;
+}
+// 一小叢雙葉（V 字形），讓樹更茂密
+function _leafTuft(x, y, baseRot, s = 1) {
+  return _leafSvg(x, y, baseRot - 22, s) + _leafSvg(x, y, baseRot + 22, s * .85);
+}
+
+function renderLevelMap() {
+  const map = document.getElementById('hmLevelMap');
+  if (!map) return;
+  const W = map.clientWidth;
+  if (!W) return;                                   // 尚未排版完成，等下次呼叫
+  if (map.dataset.w === String(W)) return;          // 同寬度已畫過，避免切頁時重畫跳動
+  const firstRender = !map.dataset.w;
+
+  const pad = 74;
+  const H = pad * 2 + LEVEL_STEP_H * (LEVEL_COUNT - 1);
+
+  // 樹幹中心線：略帶左右搖擺的自然曲線，由下往上
+  const trunkX = y => W / 2 + W * 0.035 * Math.sin((H - y) / 130);
+
+  // 關卡座標：關1最下、左右交錯掛在樹幹兩側；關10 長在樹頂
+  const pts = LEVEL_XS_PCT.map((xp, i) => {
+    const y = H - pad - i * LEVEL_STEP_H;
+    const x = (i === LEVEL_COUNT - 1) ? trunkX(y) : xp / 100 * W;
+    return { x, y, n: i + 1 };
+  });
+
+  // ── 樹幹：下粗上細的手繪粗幹（漸細填色多邊形 + 深色描邊 + 淺色木紋）
+  const yBottom = H - 26;
+  const yTop    = pts[pts.length - 1].y + 20;
+  const steps = 26, edgeL = [], edgeR = [];
+  for (let s = 0; s <= steps; s++) {
+    const y = yBottom + (yTop - yBottom) * (s / steps);
+    const t = s / steps;                                            // 0=底部 1=頂端
+    const half = 15 - 9 * t + (t < .08 ? (1 - t / .08) * 7 : 0);    // 底部根部外擴
+    const cx = trunkX(y);
+    edgeL.push(`${(cx - half).toFixed(1)} ${y.toFixed(1)}`);
+    edgeR.unshift(`${(cx + half).toFixed(1)} ${y.toFixed(1)}`);
+  }
+  const trunk =
+    `<path d="M ${edgeL.join(' L ')} L ${edgeR.join(' L ')} Z" fill="#8A5A34" stroke="#6E4527" stroke-width="2" stroke-linejoin="round"/>`;
+
+  // 三次貝茲曲線取點：讓葉柄精準貼在枝條曲線上，不會浮空
+  const bez3 = (a, c1, c2, b, t) => {
+    const u = 1 - t;
+    return {
+      x: u*u*u*a.x + 3*u*u*t*c1.x + 3*u*t*t*c2.x + t*t*t*b.x,
+      y: u*u*u*a.y + 3*u*u*t*c1.y + 3*u*t*t*c2.y + t*t*t*b.y,
+    };
+  };
+
+  // ── 側枝：由樹幹彎出去接每顆果實（關10 直接坐在樹頂，不需側枝）
+  let branches = '', leaves = '';
+  for (let i = 0; i < pts.length - 1; i++) {
+    const p = pts[i];
+    const sy = p.y + 30;                 // 從果實下方一點的樹幹位置出發
+    const sx = trunkX(sy);
+    const dir = p.x < sx ? -1 : 1;       // 往左或往右長
+    const a  = { x: sx,               y: sy };
+    const c1 = { x: sx + dir * 18,    y: sy - 4 };
+    const c2 = { x: p.x - dir * 26,   y: p.y + 22 };
+    const b  = { x: p.x,              y: p.y + 6 };
+    branches += `<path d="M ${a.x.toFixed(1)} ${a.y} C ${c1.x.toFixed(1)} ${c1.y}, ${c2.x.toFixed(1)} ${c2.y}, ${b.x.toFixed(1)} ${b.y}" fill="none" stroke="#8A5A34" stroke-width="6.5" stroke-linecap="round"/>`;
+    // 葉子沿枝條曲線生長：上側一叢、下側一片、近果實處一片
+    const outRot = dir < 0 ? -138 : -42;
+    const m1 = bez3(a, c1, c2, b, .35);
+    const m2 = bez3(a, c1, c2, b, .62);
+    const m3 = bez3(a, c1, c2, b, .85);
+    leaves += _leafTuft(m1.x, m1.y, outRot, .9)
+            + _leafSvg(m2.x, m2.y, dir < 0 ? 155 : 25, .8)
+            + _leafSvg(m3.x, m3.y, outRot, .85);
+  }
+
+  // ── 裝飾小枝：從樹幹左右交錯伸出、只長葉子的小樹枝
+  for (let y = yBottom - 66, k = 0; y > yTop + 24; y -= 78, k++) {
+    const side = k % 2 ? 1 : -1;
+    const t2 = (yBottom - y) / (yBottom - yTop);
+    const half = 15 - 9 * t2;
+    const bx  = trunkX(y) + side * (half - 2);       // 從樹幹邊緣長出
+    const cX  = bx + side * 20, cY = y - 4;          // 控制點：先平出再上翹
+    const tipX = bx + side * 36, tipY = y - 20;
+    branches += `<path d="M ${bx.toFixed(1)} ${y.toFixed(1)} Q ${cX.toFixed(1)} ${cY.toFixed(1)} ${tipX.toFixed(1)} ${tipY.toFixed(1)}" fill="none" stroke="#8A5A34" stroke-width="3.5" stroke-linecap="round"/>`;
+    // 小枝中段下側一片、末端一叢（二次貝茲取點，葉柄貼枝）
+    const mt = .55, mu = 1 - mt;
+    const mx2 = mu*mu*bx + 2*mu*mt*cX + mt*mt*tipX;
+    const my2 = mu*mu*y  + 2*mu*mt*cY + mt*mt*tipY;
+    leaves += _leafSvg(mx2, my2, side < 0 ? 170 : 10, .75)
+            + _leafTuft(tipX, tipY, side < 0 ? -150 : -30, .95);
+  }
+  // 樹頂樹冠：一圈茂密的葉子圍著最高關卡
+  const top = pts[pts.length - 1];
+  leaves += _leafTuft(top.x - 36, top.y + 10, -170, 1.05)
+          + _leafTuft(top.x + 36, top.y + 10, -10, 1.05)
+          + _leafTuft(top.x - 30, top.y - 30, -135, 1)
+          + _leafTuft(top.x + 30, top.y - 30, -45, 1)
+          + _leafTuft(top.x, top.y - 44, -90, 1.1)
+          + _leafSvg(top.x - 46, top.y - 8, -155, .85)
+          + _leafSvg(top.x + 46, top.y - 8, -25, .85);
+
+  map.innerHTML = `
+    <div class="hm-lm-inner" style="height:${H}px">
+      <svg class="hm-lm-svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${trunk}${branches}${leaves}</svg>
+      ${pts.map(p => `
+        <button class="hm-fruit${p.n === 1 ? ' hm-fruit-cur' : ''}" style="left:${p.x}px;top:${p.y}px"
+          onclick="onLevelClick(${p.n})" aria-label="關卡 ${p.n}">
+          <span class="hm-fruit-num">${p.n}</span>
+        </button>`).join('')}
+    </div>`;
+
+  map.dataset.w = String(W);
+  if (firstRender) map.scrollTop = map.scrollHeight;  // 初始定位在最下方（關卡 1）
+}
+
+// 視窗改變大小時重畫（保留滾動位置）
+let _lmResizeTimer = null;
+window.addEventListener('resize', () => {
+  clearTimeout(_lmResizeTimer);
+  _lmResizeTimer = setTimeout(() => {
+    const map = document.getElementById('hmLevelMap');
+    if (!map || !map.dataset.w) return;
+    const st = map.scrollTop;
+    map.dataset.w = '';
+    renderLevelMap();
+    map.scrollTop = st;
+  }, 150);
+});
 
 // 頁面載入時初始化首頁
 document.addEventListener('DOMContentLoaded', () => {

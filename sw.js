@@ -1,4 +1,4 @@
-const CACHE = 'vocatopia-v45';
+const CACHE = 'vocatopia-v51';
 const ASSETS = ['/', '/index.html', '/styles.css', '/script.js', '/auth.js', '/manifest.json'];
 
 self.addEventListener('install', e => {

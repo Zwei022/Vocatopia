@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Vocatopia — 單字烏托邦</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="manifest" href="/manifest.json">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<meta name="theme-color" content="#1A5C38">
+<meta name="theme-color" content="#F0EDE6">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
@@ -202,8 +202,8 @@
       <div id="aFai"></div><div id="fFai"></div>
     </div>
 
-    <!-- Flex spacer：撐開剩餘空間，讓底部群組貼底 -->
-    <div style="flex:1;min-height:0"></div>
+    <!-- 關卡樹：由下往上 1→10，可上下滾動（renderLevelMap() 動態生成） -->
+    <div class="hm-levelmap" id="hmLevelMap"></div>
 
     <!-- 貼底區：今日任務 + CTA -->
     <div class="hm-bottom-group">
@@ -448,20 +448,40 @@
       <div class="vs-row">
         <div class="player-slot slot-ready"><div class="slot-name">你</div><div class="slot-status ok">✓ 已就緒</div></div>
         <div class="vs-label">VS</div>
-        <div class="player-slot"><div class="slot-name">等待中</div><div class="slot-status wait-dots">⏳ …</div></div>
+        <div class="player-slot" id="foeSlot"><div class="slot-name" id="foeName">等待中</div><div class="slot-status wait-dots" id="foeStatus">⏳ …</div></div>
       </div>
-      <button class="arena-btn ab-create" style="margin-top:8px" onclick="startBattle()">模擬開始對決 ▶</button>
+      <!-- 房主：選擇切磋模式 + 開始 -->
+      <div id="hostModePanel" style="display:none;width:100%;flex-direction:column;gap:10px">
+        <div class="pvp-mode-label">選擇切磋模式</div>
+        <div class="pvp-mode-row">
+          <button class="pvp-mode-chip sel">📖 單字對決<span>5 題選擇・限時 2 分鐘</span></button>
+          <button class="pvp-mode-chip dim">🚧 更多模式<span>敬請期待</span></button>
+        </div>
+        <button class="arena-btn ab-create" id="pvpStartBtn" disabled onclick="hostStartBattle()">等待對手加入⋯</button>
+      </div>
+      <!-- 加入方：等待房主 -->
+      <div id="guestWaitHint" class="pvp-guest-hint" style="display:none">🕐 已就緒，等待房主開始對決⋯</div>
+      <button class="arena-btn ab-leave" onclick="leaveRoom()">離開房間</button>
     </div>
     <div id="arenaBattle">
       <div class="pvp-bars">
-        <div class="hp-row"><div class="hp-name you">你</div><div class="hp-track"><div class="hp-fill hp-you" id="hpYou" style="width:50%"></div></div><div class="hp-score" id="scYou" style="color:var(--green3)">0</div></div>
-        <div class="hp-row" style="flex-direction:row-reverse"><div class="hp-name foe">對手</div><div class="hp-track"><div class="hp-fill hp-foe" id="hpFoe" style="width:50%;margin-left:auto"></div></div><div class="hp-score" id="scFoe" style="color:#ff7070">0</div></div>
+        <div class="hp-row"><div class="hp-name you">你</div><div class="hp-track"><div class="hp-fill hp-you" id="hpYou" style="width:4%"></div></div><div class="hp-score" id="scYou" style="color:var(--green3)">0/5</div></div>
+        <div class="hp-row" style="flex-direction:row-reverse"><div class="hp-name foe">對手</div><div class="hp-track"><div class="hp-fill hp-foe" id="hpFoe" style="width:4%;margin-left:auto"></div></div><div class="hp-score" id="scFoe" style="color:var(--wrong)">0/5</div></div>
       </div>
       <div class="pvp-q">
-        <div class="pvp-timer" id="pvpTimer">10</div>
-        <div class="pvp-question" id="pvpQ">abandon 的中文意思是？</div>
+        <div class="pvp-timer" id="pvpTimer">2:00</div>
+        <div class="pvp-qnum" id="pvpQNum"></div>
+        <div class="pvp-question" id="pvpQ"></div>
         <div class="pvp-opts" id="pvpOpts"></div>
+        <div class="pvp-done-wait" id="pvpDoneWait" style="display:none">✅ 已完成全部題目！<br>等待對手作答或時間結束⋯</div>
       </div>
+    </div>
+    <!-- 對決結算 -->
+    <div id="arenaResult" style="display:none">
+      <div class="pvp-result-icon" id="pvpResultIcon">🏆</div>
+      <div class="pvp-result-title" id="pvpResultTitle">勝利！</div>
+      <div class="pvp-result-score" id="pvpResultScore"></div>
+      <button class="arena-btn ab-create" style="max-width:280px" onclick="backArena()">返回競技場</button>
     </div>
     <div class="bnav" id="arenaBnav">
       <button class="bn active" onclick="goScreen('arena',this)"><div class="bn-dot"></div><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
@@ -727,6 +747,7 @@
   </div>
 </div>
 
+<script src="/socket.io/socket.io.js"></script>
 <script src="auth.js"></script>
 <script src="script.js"></script>
 <script>
