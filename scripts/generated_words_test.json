@@ -1,0 +1,590 @@
+[
+  {
+    "word": "acted",
+    "valid": true,
+    "pos": "動詞",
+    "phonetic": "/ˈæktɪd/",
+    "definition": "done something by pretending; performed a role in a story.",
+    "definition_zh": "表演；演出；裝出；扮演角色。",
+    "example_en": "She acted like she did not know him during the surprise party.",
+    "example_zh": "驚喜派對上，她像是不認識他般表現出來。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "activities",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/əˈktɪvɪtiz/",
+    "definition": "things you do in free time; actions or events happening together.",
+    "definition_zh": "課餘活動；共同行動事件。",
+    "example_en": "The teacher asks us to join school activities this week only.",
+    "example_zh": "老師要求我們這週只參加校內活動。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "actors",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/ˈæk.tərz/",
+    "definition": "Performers who act in plays or movies; people doing jobs like selling things.",
+    "definition_zh": "演藝人員；推銷商；表演者。",
+    "example_en": "Many young actors practice drama every day after school hours at their club center nearby now.",
+    "example_zh": "許多青少年演員課後在附近的劇團練習戲劇。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "adults",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/ˈædʌlts/",
+    "definition": "People who have reached full maturity; grown-ups.",
+    "definition_zh": "成年人；長大的人。;",
+    "example_en": "The party was fun because all the adults brought their own snacks and drinks to share with us kids at home last night, making everyone feel comfortable gathering in our small backyard together without worrying about parents arriving early tomorrow morning for school pickup.",
+    "example_zh": "昨晚爸媽帶零食來，我們在自家後院玩得很開心。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "advocate",
+    "valid": true,
+    "pos": "動詞",
+    "phonetic": "/ˈæd.və.kət/",
+    "definition": "to support an idea or action by speaking about it; to recommend strongly.",
+    "definition_zh": "支持某想法或行動；大力推薦。",
+    "example_en": "My teacher advocates using less plastic for our school activities every week.",
+    "example_zh": "老師提倡每週減少塑膠的使用來做校內活動。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "aged",
+    "valid": true,
+    "pos": "形容詞",
+    "phonetic": "/ædʒɪd/",
+    "definition": "having lived the amount of years mentioned; old but in good condition.",
+    "definition_zh": "年長的；年齡為...的；舊但好用的",
+    "example_en": "My grandpa is still strong even though he has been aged ninety years this year.",
+    "example_zh": "我爺爺雖已九十歲，身體仍很健康。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "agreed",
+    "valid": true,
+    "pos": "動詞",
+    "phonetic": "/əˈɡriːd/",
+    "definition": "Said yes to what someone else proposed; reached a common decision.",
+    "definition_zh": "同意別人提議；達成共識。;",
+    "example_en": "My best friend and I agreed that we would study together tomorrow afternoon at the library.",
+    "example_zh": "我和好友決定明天下午在圖書館一起讀書。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "agrees",
+    "valid": true,
+    "pos": "動詞",
+    "phonetic": "/əɡriːz/",
+    "definition": "to say yes to an idea or plan; to feel the same way as someone else.",
+    "definition_zh": "同意；表示贊同或看法一致。",
+    "example_en": "If she agrees, we can go buy pizza tonight and watch a movie together.",
+    "example_zh": "若她同意了，我們今晚就能去吃披薩、一起看电影了。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "allowed",
+    "valid": true,
+    "pos": "動詞",
+    "phonetic": "/əˈlaʊdɪd/",
+    "definition": "permitted to do something; did not stop someone.",
+    "definition_zh": "被允許；沒阻止某人。",
+    "example_en": "My mom allowed me to stay up late because I studied hard for my test.",
+    "example_zh": "因努力讀書，媽媽讓我熬夜考試複習。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "allows",
+    "valid": true,
+    "pos": "動詞",
+    "phonetic": "/əˈlaʊz/",
+    "definition": "permits; lets happen without stopping it.",
+    "definition_zh": "許可；讓某事發生而不攔阻。;",
+    "example_en": "The school rules allow us to bring our own laptops instead of computers from the library today.",
+    "example_zh": "校規允許我們今天帶自己的筆電，不用借圖書館的電腦。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "although",
+    "valid": true,
+    "pos": "連接詞",
+    "phonetic": "/əˈlòθ/ or /ɔːˈlaʊð/",
+    "definition": "Used to show contrast between a fact and something unexpected.",
+    "definition_zh": "雖然；儘管 (表對比)",
+    "example_en": "Although it rained heavily, we still went hiking in the mountains.",
+    "example_zh": "雖然大雨，我們還是去山上健行了。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "amazing",
+    "valid": true,
+    "pos": "形容詞",
+    "phonetic": "/əˈmeɪzɪŋ/",
+    "definition": "causing great surprise or delight; very good.",
+    "definition_zh": "極度令人驚奇；太棒了。",
+    "example_en": "She told us an amazing story about her trip to Taipei this weekend.",
+    "example_zh": "她分享了關於上週末台北之旅的驚人故事。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "amy",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/ˈæmi/",
+    "definition": "A girl named Amy.",
+    "definition_zh": "艾美，一名女孩。;",
+    "example_en": "My friend Amy likes to eat ice cream every afternoon.",
+    "example_zh": "我的朋友艾美喜歡每天下午吃冰激凌。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "angle",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/ˈæŋɡl/",
+    "definition": "A corner made by two lines meeting; a view from the side.",
+    "definition_zh": "兩線交角的角；側面視角。",
+    "example_en": "He adjusted his glasses to get an angle that showed her smiling face clearly.",
+    "example_zh": "他調整眼鏡，以露出她笑臉的特定角度觀看。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "animals",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/ˈænɪməlz/",
+    "definition": "Creatures living and moving on earth or in water.",
+    "definition_zh": "動；非人類生物，昆蟲等。",
+    "example_en": "The teacher said many different animals live inside the rainforest habitat near our home town.",
+    "example_zh": "老師說許多不同動物住在家鄉附近的雨林裡。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "announcement",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/əˈnaʊnsmənt/",
+    "definition": "a public statement; a message shared with everyone about something important.",
+    "definition_zh": "公告；正式宣告的消息。;",
+    "example_en": "The principal made an announcement over the loudspeaker before class started today.",
+    "example_zh": "課鐘響前，校長透過廣播對全校同學發表重要通知。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "answered",
+    "valid": true,
+    "pos": "動詞",
+    "phonetic": "/ˈɑːn.sərd/",
+    "definition": "Spoken back to a question or request for help.",
+    "definition_zh": "回答問題；回應請求協助。",
+    "example_en": "She answered my text message about the party plans right away. ",
+    "example_zh": "她立刻回覆我關於派對計畫的訊息。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "answers",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/ˈɑːnzərz/",
+    "definition": "The solutions given to questions or problems; replies to inquiries.",
+    "definition_zh": "問題的答案；回應的答覆。",
+    "example_en": "My friends and I wrote down our best answers for the quiz on math today.",
+    "example_zh": "我和朋友寫下數學測驗中最好的答案",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "anytime",
+    "valid": true,
+    "pos": "副詞",
+    "phonetic": "/ˈen.i.taɪm/",
+    "definition": "whenever you choose; at whatever moment suits you most.",
+    "definition_zh": "隨時；無論何時都合宜。",
+    "example_en": "You may drop by my house anytime to pick up your homework folder before class starts tomorrow morning soon.",
+    "example_zh": "上學前隨時來我家拿作業夾吧。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "apples",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/ˈæp.lz/",
+    "definition": "Round fruits eaten raw or cooked; the fruit of an apple tree.",
+    "definition_zh": "蘋果；樹上的果實。;",
+    "example_en": "Mom bought fresh apples from Taiwan so we can make a nice smoothie today.",
+    "example_zh": "媽媽買來自產新鮮蘋果，我們可以製成冰沙了。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "apps",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/æps/",
+    "definition": "Short programs on phones or computers for specific tasks like games or learning.",
+    "definition_zh": "手機或電腦用的特定功能小程序；遊戲學習工具。",
+    "example_en": "My friends and I download fun apps to practice English together every day after class at school.",
+    "example_zh": "我們每天課後一起下載好玩的小程式來練英文",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "areas",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/ˈɛriəz/",
+    "definition": "parts of a larger place; topics or subjects you are studying.",
+    "definition_zh": "地區；專門領域或學習主題。",
+    "example_en": "Many students like to study their favorite areas in class every day after lunch break time just now.",
+    "example_zh": "許多學生喜歡在午休後每天上課研究他們喜愛的範圍。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "argument",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/ˈɑːrɡjəmənt/",
+    "definition": "A reason or proof to support an opinion.",
+    "definition_zh": "支持意見的理據；爭論。",
+    "example_en": "My brother and I had a short argument about who cleans the room today.",
+    "example_zh": "我和弟弟為了今天誰要整理房間而吵了一架。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "arms",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/ɑːrmz/",
+    "definition": "body parts for fighting or hugging; weapons held by soldiers.",
+    "definition_zh": "身體四肢；武器。",
+    "example_en": "My friends helped me fix my broken bike with their strong arms today.",
+    "example_zh": "今天朋友們用強壯的手臂幫我修好壞掉的腳踏車。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "arrived",
+    "valid": true,
+    "pos": "動詞",
+    "phonetic": "/əˈraɪvd/",
+    "definition": "reached a place; finished an action.",
+    "definition_zh": "到達某地；完成動作。",
+    "example_en": "My best friend arrived at school yesterday without his homework.",
+    "example_zh": "我最好的朋友昨天沒帶作業就到學校了。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "articles",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/ˈɑrtɪkəlz/",
+    "definition": "written pieces about news or ideas; small objects like a/an/the.",
+    "definition_zh": "新聞文章；小物件（冠語）；聲明書",
+    "example_en": "The newspaper has many interesting articles on travel and food today!",
+    "example_zh": "今天的報刊載有許多關於旅遊和美食的有趣文章！",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "artwork",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/ˈɑrtwɜrk/",
+    "definition": "pictures made by students or artists for display on walls.",
+    "definition_zh": "(學生) 藝術創作；壁畫；繪圖。",
+    "example_en": "The art teacher hung all our colorful artwork from the last class on the big wall in front of everyone today because she said we worked very hard and deserve to have it seen by so many people right now as proof.",
+    "example_zh": "美術老師把我們上回畫的彩色作品全貼在教室前牆，讓大家看見我們的努力證明。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "asked",
+    "valid": true,
+    "pos": "動詞",
+    "phonetic": "/æskt/",
+    "definition": "to make a request for information or help; invited someone to do something by questioning them.",
+    "definition_zh": "請求資訊或幫助；詢問問題。;",
+    "example_en": "My mom asked me to clean my room before dinner tonight.",
+    "example_zh": "我媽媽問我在晚餐前整理房間",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "asking",
+    "valid": true,
+    "pos": "動詞",
+    "phonetic": "/ˈæskɪŋ/",
+    "definition": "Requesting information or a favor from someone.",
+    "definition_zh": "向他人請求資訊或恩惠。；詢問某人問題。",
+    "example_en": "He was asking about the price of that new phone for his birthday, which is very popular with teenagers today in Taiwan schools.",
+    "example_zh": "他在問那款適合台灣中學生當生日禮物的新手機價格。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "asks",
+    "valid": true,
+    "pos": "動詞",
+    "phonetic": "/ˈæskz/",
+    "definition": "Request someone to do something; inquires about information.",
+    "definition_zh": "請求他人；詢問資訊。",
+    "example_en": "He asks my friend if we can go play basketball after class today.",
+    "example_zh": "他問朋友我們能否今天課後去打籃球。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "babies",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/ˈbeɪ.biz/",
+    "definition": "plural form of baby; used to address a group or refer multiple small children at once.",
+    "definition_zh": "(小) 寶寶們，一群嬰兒；用於複數稱呼幼兒。;",
+    "example_en": "The hospital staff took special care when feeding the premature babies yesterday morning before sunrise.",
+    "example_zh": "醫院人員在昨天清晨日出前特別照顧那些早產的寶寶們餵食。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "backpack",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/ˈbæk.pæɡ/",
+    "definition": "a bag worn on the back with two shoulder straps.",
+    "definition_zh": "背在肩上，帶雙肩带的包；書包。",
+    "example_en": "Please bring your homework in a colorful backpack to school today.",
+    "example_zh": "請今天用彩色背包把作業帶到學校來。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "bagels",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/ˈbæɡəlz/",
+    "definition": "A soft bread ring with a hole in the middle, often baked hard inside and topped with cream cheese.",
+    "definition_zh": "有洞的軟麵包環，內硬常配奶油芝士。",
+    "example_en": "I bought box of bagels to put into my lunch for school today morning.",
+    "example_zh": "我買了一盒貝果當作今日學校午餐。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "bags",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/bægz/",
+    "definition": "containers for holding things; bundles of money or items given as gifts.",
+    "definition_zh": "裝東西的容器；金錢或物品的束；禮物。",
+    "example_en": "She carried her textbooks and lunch in a big blue bags to school today.",
+    "example_zh": "她今天用大藍色袋子帶書和午餐去學校。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "baking",
+    "valid": true,
+    "pos": "動詞",
+    "phonetic": "/ˈbeɪkɪŋ/",
+    "definition": "The action of cooking food inside a hot oven using dry heat; the state or process of being cooked in this way.",
+    "definition_zh": "在烤箱裡用乾熱加熱烹煮食物；正在被烘烤的狀態。",
+    "example_en": "My mom is baking cookies while I help her mix the dough on the big table by the window.",
+    "example_zh": "我媽正烤餅乾，我在窗邊大桌幫她揉麵團。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "bananas",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/bəˈnænəz/",
+    "definition": "a fruit; to act silly or excitedly.",
+    "definition_zh": "香蕉；變得荒謬或情緒激動。",
+    "example_en": "My friends were eating bananas when the power went out suddenly last night.",
+    "example_zh": "昨晚突然停電時，朋友們正吃著香蕉。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "beans",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/biːnz/",
+    "definition": "Seeds from legume plants eaten as food or for fun.",
+    "definition_zh": "豆類種子；作食物或玩具的豆。;",
+    "example_en": "I put chocolate covered beans in my bag after school class today.",
+    "example_zh": "下課後我在校園裡分裝巧克力豆給同學們吃。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "beautifully",
+    "valid": true,
+    "pos": "副詞",
+    "phonetic": "/ˈbjuːtɪfəli/",
+    "definition": "in a nice or attractive way; with good artistic skill.",
+    "definition_zh": "美麗地；出色地。",
+    "example_en": "She decorated her bedroom so beautifully that even the teacher was impressed by her work today.",
+    "example_zh": "她裝潢臥室太漂亮，連老師都被她的作品打動了今天",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "became",
+    "valid": true,
+    "pos": "動詞",
+    "phonetic": "/bɪˈkeɪm/",
+    "definition": "change to something new; grow into a different state or person.",
+    "definition_zh": "變成；轉變為新狀態或身分。",
+    "example_en": "He became very happy after receiving the unexpected gift from his grandma yesterday.",
+    "example_zh": "昨天奶奶送禮後，他變得開心得不得了。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "becomes",
+    "valid": true,
+    "pos": "動詞",
+    "phonetic": "/bɪkʌmz/",
+    "definition": "Change to a new state or form; turn into something.",
+    "definition_zh": "(狀態改變) 變成...；(逐漸發展) 成為...",
+    "example_en": "My quiet hobby became my biggest talent in school today.",
+    "example_zh": "我安靜的嗜好今天變成了學校裡最大的才藝。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "bees",
+    "valid": true,
+    "pos": "名詞",
+    "phonetic": "/biːz/",
+    "definition": "small flying insects; workers in a hive",
+    "definition_zh": "昆蟲；群體內的工作者；",
+    "example_en": "Our garden is full of bees making honey for the whole winter.",
+    "example_zh": "我們花園裡充滿了蜜蜂，整個冬天都能收蜂蜜。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  },
+  {
+    "word": "beg",
+    "valid": true,
+    "pos": "動詞",
+    "phonetic": "/bɛɡ/",
+    "definition": "to ask for something politely but humbly; to plead.",
+    "definition_zh": "苦苦哀求；謙卑地請求某事。",
+    "example_en": "He had no choice but to beg his mom for another chance after failing the test again. He felt really embarrassed by having to do that in front of all his classmates who were laughing at him loudly.",
+    "example_zh": "他考砸後無可奈何向媽媽哀求再給一次機會，在同學面前讓人感到十分丟臉。",
+    "tags": [
+      "user_lookup"
+    ],
+    "level": 1
+  }
+]

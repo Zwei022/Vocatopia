@@ -17,6 +17,12 @@ const DAILY_SIZE_BY_TYPE = {
 const DEFAULT_DAILY_SIZE = 5;
 const VALID_TYPES = new Set(Object.keys(DAILY_SIZE_BY_TYPE));
 
+// vocab 每日練習題庫與競技場 PVP 備援題庫分開維護：
+// question_bank_vocab.json 保留給 PVP 對戰備援使用，練習室改讀較大量、含進階難度的 practice 版本
+const FILE_BY_TYPE = {
+  vocab: 'question_bank_vocab_practice.json',
+};
+
 function seededShuffle(arr, seed) {
   let s = seed >>> 0;
   const copy = [...arr];
@@ -34,7 +40,7 @@ router.get('/:type', (req, res) => {
   const { type } = req.params;
   if (!VALID_TYPES.has(type)) return res.status(400).json({ error: `Unknown type: ${type}` });
 
-  const filePath = path.join(DATA_DIR, `question_bank_${type}.json`);
+  const filePath = path.join(DATA_DIR, FILE_BY_TYPE[type] || `question_bank_${type}.json`);
   if (!fs.existsSync(filePath)) return res.status(503).json({ error: `Question bank not ready: ${type}` });
 
   let bank;

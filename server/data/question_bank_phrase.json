@@ -226,5 +226,1010 @@
       "向上（up）",
       "進入（into）"
     ]
+  },
+  {
+    "sentence": "My birthday is _____ March.",
+    "options": ["(A) in", "(B) on", "(C) at", "(D) to"],
+    "answer": 0,
+    "explanation": "「in + 月份」表示某月份，故用 in March。",
+    "phrase_type": "preposition",
+    "id": "phrase_12",
+    "optionsZh": ["在…裡面（in）", "在…上（on）", "在某時刻（at）", "到…（to）"],
+    "difficulty": 1
+  },
+  {
+    "sentence": "We don't have school _____ Saturday and Sunday.",
+    "options": ["(A) in", "(B) on", "(C) at", "(D) to"],
+    "answer": 1,
+    "explanation": "「on + 星期」表示星期幾，故用 on Saturday and Sunday。",
+    "phrase_type": "preposition",
+    "id": "phrase_13",
+    "optionsZh": ["在…裡面（in）", "在星期幾（on）", "在某時刻（at）", "到…（to）"],
+    "difficulty": 1
+  },
+  {
+    "sentence": "The train leaves _____ six o'clock sharp.",
+    "options": ["(A) in", "(B) on", "(C) at", "(D) to"],
+    "answer": 2,
+    "explanation": "「at + 精確時刻」表示明確時間點，故用 at six o'clock。",
+    "phrase_type": "preposition",
+    "id": "phrase_14",
+    "optionsZh": ["在…裡面（in）", "在…上（on）", "在某時刻（at）", "到…（to）"],
+    "difficulty": 1
+  },
+  {
+    "sentence": "There are twenty students _____ my classroom.",
+    "options": ["(A) on", "(B) at", "(C) to", "(D) in"],
+    "answer": 3,
+    "explanation": "「in + 封閉空間」表示教室裡面，故用 in my classroom。",
+    "phrase_type": "preposition",
+    "id": "phrase_15",
+    "optionsZh": ["在…上（on）", "在某時刻（at）", "到…（to）", "在…裡面（in）"],
+    "difficulty": 1
+  },
+  {
+    "sentence": "Please put your bag _____ the table.",
+    "options": ["(A) on", "(B) in", "(C) at", "(D) into"],
+    "answer": 0,
+    "explanation": "「on + 表面」表示放在桌面上，故用 on the table。",
+    "phrase_type": "preposition",
+    "id": "phrase_16",
+    "optionsZh": ["在…上（on）", "在…裡面（in）", "在某時刻（at）", "進入…（into）"],
+    "difficulty": 1
+  },
+  {
+    "sentence": "It's dark in here; please _____ the light.",
+    "options": ["(A) turn off", "(B) turn on", "(C) turn up", "(D) turn down"],
+    "answer": 1,
+    "explanation": "房間很暗，要「打開」燈，故選 turn on。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_17",
+    "optionsZh": ["關掉", "打開", "調高", "調低"],
+    "difficulty": 1
+  },
+  {
+    "sentence": "Remember to _____ the TV before you go to bed.",
+    "options": ["(A) turn on", "(B) turn up", "(C) turn off", "(D) turn down"],
+    "answer": 2,
+    "explanation": "睡覺前要「關掉」電視，故選 turn off。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_18",
+    "optionsZh": ["打開", "調高", "關掉", "調低"],
+    "difficulty": 1
+  },
+  {
+    "sentence": "I usually _____ at six thirty every morning.",
+    "options": ["(A) get down", "(B) get off", "(C) get in", "(D) get up"],
+    "answer": 3,
+    "explanation": "描述每天早上「起床」的習慣，故選 get up。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_19",
+    "optionsZh": ["下來", "下車", "上車", "起床"],
+    "difficulty": 1
+  },
+  {
+    "sentence": "Please _____ and make yourself comfortable.",
+    "options": ["(A) sit down", "(B) stand up", "(C) sit up", "(D) lie down"],
+    "answer": 0,
+    "explanation": "請對方「坐下」放輕鬆，故選 sit down。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_20",
+    "optionsZh": ["坐下", "站起來", "坐直", "躺下"],
+    "difficulty": 1
+  },
+  {
+    "sentence": "When the teacher entered, all the students _____ to say hello.",
+    "options": ["(A) sat down", "(B) stood up", "(C) stood by", "(D) stood off"],
+    "answer": 1,
+    "explanation": "老師進來時全班「站起來」打招呼，故選 stood up。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_21",
+    "optionsZh": ["坐下", "站起來", "待命、袖手旁觀", "（無此用法）"],
+    "difficulty": 1
+  },
+  {
+    "sentence": "I usually _____ at seven without an alarm clock.",
+    "options": ["(A) get up", "(B) sit up", "(C) wake up", "(D) turn up"],
+    "answer": 2,
+    "explanation": "沒有鬧鐘也能自然「醒來」，故選 wake up。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_22",
+    "optionsZh": ["起床", "坐直", "醒來", "出現、調高"],
+    "difficulty": 1
+  },
+  {
+    "sentence": "Let's meet _____ the bus stop after school.",
+    "options": ["(A) in", "(B) on", "(C) to", "(D) at"],
+    "answer": 3,
+    "explanation": "「at + 定點」表示在公車站這個點，故用 at the bus stop。",
+    "phrase_type": "preposition",
+    "id": "phrase_23",
+    "optionsZh": ["在…裡面（in）", "在…上（on）", "到…（to）", "在某點（at）"],
+    "difficulty": 1
+  },
+  {
+    "sentence": "My cousin lives _____ Taipei.",
+    "options": ["(A) in", "(B) at", "(C) on", "(D) to"],
+    "answer": 0,
+    "explanation": "「in + 城市」表示在台北市內，故用 in Taipei。",
+    "phrase_type": "preposition",
+    "id": "phrase_24",
+    "optionsZh": ["在城市裡（in）", "在某點（at）", "在…上（on）", "到…（to）"],
+    "difficulty": 1
+  },
+  {
+    "sentence": "It's cold outside, so _____ your coat before you leave.",
+    "options": ["(A) take off", "(B) put on", "(C) put in", "(D) put up"],
+    "answer": 1,
+    "explanation": "天冷出門前要「穿上」外套，故選 put on。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_25",
+    "optionsZh": ["脫下", "穿上", "放入", "張貼、忍受"],
+    "difficulty": 1
+  },
+  {
+    "sentence": "Please _____ your room before dinner.",
+    "options": ["(A) clean out", "(B) put away", "(C) clean up", "(D) pick up"],
+    "answer": 2,
+    "explanation": "晚餐前要把房間「整理乾淨」，故選 clean up。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_26",
+    "optionsZh": ["清空", "收好", "整理乾淨", "撿起、順便買"],
+    "difficulty": 1
+  },
+  {
+    "sentence": "\"Can I borrow your pen?\" \"_____! Here you are.\"",
+    "options": ["(A) Of fact", "(B) In course", "(C) By course", "(D) Of course"],
+    "answer": 3,
+    "explanation": "回應請求時表示「當然可以」，故選 Of course。",
+    "phrase_type": "expression",
+    "id": "phrase_27",
+    "optionsZh": ["（無此用法）", "（無此用法）", "（無此用法）", "當然"],
+    "difficulty": 1
+  },
+  {
+    "sentence": "Some fruits, _____ apples and bananas, are good for your health.",
+    "options": ["(A) for example", "(B) in example", "(C) by example", "(D) as example"],
+    "answer": 0,
+    "explanation": "舉出蘋果、香蕉作為例子，故用 for example。",
+    "phrase_type": "expression",
+    "id": "phrase_28",
+    "optionsZh": ["舉例來說", "（無此用法）", "（無此用法）", "（無此用法）"],
+    "difficulty": 1
+  },
+  {
+    "sentence": "I'm _____ my glasses; have you seen them?",
+    "options": ["(A) looking at", "(B) looking for", "(C) looking after", "(D) looking up"],
+    "answer": 1,
+    "explanation": "正在「尋找」不見的眼鏡，故選 looking for。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_29",
+    "optionsZh": ["看著", "尋找", "照顧", "查詢"],
+    "difficulty": 2,
+    "vocab_tier": "T1-T2"
+  },
+  {
+    "sentence": "Please _____ the blackboard while I explain this problem.",
+    "options": ["(A) look for", "(B) look after", "(C) look at", "(D) look up"],
+    "answer": 2,
+    "explanation": "上課時請大家「看」黑板，故選 look at。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_30",
+    "optionsZh": ["尋找", "照顧", "看著", "查詢"],
+    "difficulty": 2
+  },
+  {
+    "sentence": "We had to _____ the bus for almost thirty minutes.",
+    "options": ["(A) wait on", "(B) wait up", "(C) wait out", "(D) wait for"],
+    "answer": 3,
+    "explanation": "公車遲到，只好「等待」公車，故選 wait for。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_31",
+    "optionsZh": ["伺候", "熬夜等待", "等到結束", "等待"],
+    "difficulty": 2
+  },
+  {
+    "sentence": "Do you often _____ music while doing your homework?",
+    "options": ["(A) listen to", "(B) listen for", "(C) listen on", "(D) listen at"],
+    "answer": 0,
+    "explanation": "詢問是否常邊寫作業邊「聽」音樂，故選 listen to。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_32",
+    "optionsZh": ["聆聽", "仔細聽（等待某聲音）", "（無此用法）", "（無此用法）"],
+    "difficulty": 2
+  },
+  {
+    "sentence": "Whether we go hiking tomorrow will _____ the weather.",
+    "options": ["(A) depend to", "(B) depend on", "(C) depend at", "(D) depend for"],
+    "answer": 1,
+    "explanation": "是否去健行「取決於」天氣，故選 depend on。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_33",
+    "optionsZh": ["（無此用法）", "取決於、依賴", "（無此用法）", "（無此用法）"],
+    "difficulty": 2
+  },
+  {
+    "sentence": "This old bicycle used to _____ my grandfather.",
+    "options": ["(A) belong with", "(B) belong for", "(C) belong to", "(D) belong at"],
+    "answer": 2,
+    "explanation": "這台舊腳踏車以前「屬於」爺爺，故選 belong to。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_34",
+    "optionsZh": ["（無此用法）", "（無此用法）", "屬於", "（無此用法）"],
+    "difficulty": 2
+  },
+  {
+    "sentence": "I don't _____ your opinion about the new rule.",
+    "options": ["(A) agree to", "(B) agree on", "(C) agree at", "(D) agree with"],
+    "answer": 3,
+    "explanation": "表達不「同意」對方的意見，故選 agree with。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_35",
+    "optionsZh": ["同意（計畫）", "對…達成共識", "（無此用法）", "同意（某人看法）"],
+    "difficulty": 2
+  },
+  {
+    "sentence": "She has lived in this city _____ 2015.",
+    "options": ["(A) since", "(B) for", "(C) from", "(D) by"],
+    "answer": 0,
+    "explanation": "「since + 明確年份」表示從那時開始至今，故用 since 2015。",
+    "phrase_type": "preposition",
+    "id": "phrase_36",
+    "optionsZh": ["自從（某時間點）", "持續（一段時間）", "從（起點）", "（期限by）"],
+    "difficulty": 2
+  },
+  {
+    "sentence": "They have been married _____ ten years.",
+    "options": ["(A) since", "(B) for", "(C) from", "(D) during"],
+    "answer": 1,
+    "explanation": "「for + 一段時間」表示持續的時間長度，故用 for ten years。",
+    "phrase_type": "preposition",
+    "id": "phrase_37",
+    "optionsZh": ["自從（某時間點）", "持續（一段時間）", "從（起點）", "在…期間"],
+    "difficulty": 2
+  },
+  {
+    "sentence": "Please turn off your phone _____ the movie.",
+    "options": ["(A) while", "(B) for", "(C) during", "(D) since"],
+    "answer": 2,
+    "explanation": "「during + 特定期間」表示在電影播放的那段期間，故用 during the movie。",
+    "phrase_type": "preposition",
+    "id": "phrase_38",
+    "optionsZh": ["當…的時候（連接詞）", "持續（一段時間）", "在…期間（介系詞）", "自從"],
+    "difficulty": 2
+  },
+  {
+    "sentence": "After months of hard work, she _____ finished her novel.",
+    "options": ["(A) at first", "(B) at once", "(C) at times", "(D) at last"],
+    "answer": 3,
+    "explanation": "經過數月努力「終於」完成小說，故用 at last。",
+    "phrase_type": "expression",
+    "id": "phrase_39",
+    "optionsZh": ["起初", "立刻", "有時", "終於"],
+    "difficulty": 2
+  },
+  {
+    "sentence": "He looks calm, but _____, he is very nervous inside.",
+    "options": ["(A) in fact", "(B) in case", "(C) in time", "(D) in short"],
+    "answer": 0,
+    "explanation": "外表看起來平靜，但「事實上」內心緊張，故用 in fact。",
+    "phrase_type": "expression",
+    "id": "phrase_40",
+    "optionsZh": ["事實上", "以防萬一", "及時", "簡言之"],
+    "difficulty": 2
+  },
+  {
+    "sentence": "I didn't break the vase _____; it was an accident.",
+    "options": ["(A) by accident", "(B) on purpose", "(C) in time", "(D) on time"],
+    "answer": 1,
+    "explanation": "句中的 didn't...on purpose 表示不是故意打破花瓶，是意外，故用 on purpose。",
+    "phrase_type": "expression",
+    "id": "phrase_41",
+    "optionsZh": ["意外地", "故意地", "及時", "準時"],
+    "difficulty": 2
+  },
+  {
+    "sentence": "Don't forget to _____ your homework before Friday.",
+    "options": ["(A) hand out", "(B) hand over", "(C) hand in", "(D) hand down"],
+    "answer": 2,
+    "explanation": "提醒星期五前要「繳交」作業，故選 hand in。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_42",
+    "optionsZh": ["分發", "交出", "繳交", "傳承"],
+    "difficulty": 2
+  },
+  {
+    "sentence": "The detective worked hard to _____ who had stolen the jewelry.",
+    "options": ["(A) find for", "(B) find over", "(C) find off", "(D) find out"],
+    "answer": 3,
+    "explanation": "偵探努力「查明」是誰偷走珠寶，故選 find out。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_43",
+    "optionsZh": ["（無此用法）", "（無此用法）", "（無此用法）", "查明、發現"],
+    "difficulty": 2
+  },
+  {
+    "sentence": "My new roommate and I _____ very well with each other.",
+    "options": ["(A) get along", "(B) get off", "(C) get over", "(D) get through"],
+    "answer": 0,
+    "explanation": "形容和新室友「相處」融洽，故選 get along。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_44",
+    "optionsZh": ["相處", "下車", "克服", "通過、完成"],
+    "difficulty": 2
+  },
+  {
+    "sentence": "She always solves problems calmly and _____ patience.",
+    "options": ["(A) by", "(B) with", "(C) in", "(D) on"],
+    "answer": 1,
+    "explanation": "「with + 特質」表示帶著耐心解決問題，故用 with patience。",
+    "phrase_type": "preposition",
+    "id": "phrase_45",
+    "optionsZh": ["藉由（by）", "帶著（with）", "在…裡（in）", "在…上（on）"],
+    "difficulty": 2
+  },
+  {
+    "sentence": "Could you _____ some milk on your way home?",
+    "options": ["(A) pick out", "(B) pick on", "(C) pick up", "(D) pick over"],
+    "answer": 2,
+    "explanation": "回家路上「順便買」一些牛奶，故選 pick up。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_46",
+    "optionsZh": ["挑出", "找碴", "撿起、順便買", "仔細挑選"],
+    "difficulty": 3,
+    "vocab_tier": "T2"
+  },
+  {
+    "sentence": "Please _____ your toys before your friends come over.",
+    "options": ["(A) put on", "(B) put off", "(C) put up", "(D) put away"],
+    "answer": 3,
+    "explanation": "朋友來之前要把玩具「收好」，故選 put away。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_47",
+    "optionsZh": ["穿上", "延後", "張貼、忍受", "收好"],
+    "difficulty": 3
+  },
+  {
+    "sentence": "It took her a while, but she finally managed to _____ the math problem.",
+    "options": ["(A) work out", "(B) work on", "(C) work up", "(D) work off"],
+    "answer": 0,
+    "explanation": "花了一些時間終於「解出」數學題，故選 work out。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_48",
+    "optionsZh": ["解決、算出", "致力於", "激起", "消耗掉"],
+    "difficulty": 3
+  },
+  {
+    "sentence": "The volunteers helped _____ the tents before the festival began.",
+    "options": ["(A) set off", "(B) set up", "(C) set out", "(D) set down"],
+    "answer": 1,
+    "explanation": "志工協助在慶典前「搭建」帳篷，故選 set up。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_49",
+    "optionsZh": ["出發", "搭建、設立", "出發、著手", "放下、記下"],
+    "difficulty": 3
+  },
+  {
+    "sentence": "The teacher kindly _____ the mistakes in my essay.",
+    "options": ["(A) pointed at", "(B) pointed to", "(C) pointed out", "(D) pointed up"],
+    "answer": 2,
+    "explanation": "老師好心「指出」作文中的錯誤，故選 pointed out。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_50",
+    "optionsZh": ["指著", "指向", "指出", "突顯"],
+    "difficulty": 3
+  },
+  {
+    "sentence": "She woke up early _____ catch the first train.",
+    "options": ["(A) in case to", "(B) so as", "(C) in time to", "(D) in order to"],
+    "answer": 3,
+    "explanation": "早起是「為了」趕搭第一班火車，故用 in order to。",
+    "phrase_type": "expression",
+    "id": "phrase_51",
+    "optionsZh": ["（無此用法）", "（無此用法，需加to）", "及時做…", "為了"],
+    "difficulty": 3
+  },
+  {
+    "sentence": "He didn't study at all; _____, he failed the test.",
+    "options": ["(A) as a result", "(B) as a rule", "(C) in a result", "(D) at a result"],
+    "answer": 0,
+    "explanation": "完全沒讀書，「結果」考試不及格，故用 as a result。",
+    "phrase_type": "expression",
+    "id": "phrase_52",
+    "optionsZh": ["結果", "通常、按規定", "（無此用法）", "（無此用法）"],
+    "difficulty": 3
+  },
+  {
+    "sentence": "The flight arrived exactly _____ , which surprised everyone.",
+    "options": ["(A) in time", "(B) on time", "(C) at time", "(D) by time"],
+    "answer": 1,
+    "explanation": "班機準時抵達讓大家驚訝，故用 on time（準時，強調不早不晚）。",
+    "phrase_type": "expression",
+    "id": "phrase_53",
+    "optionsZh": ["及時（趕上某事）", "準時（不早不晚）", "（無此用法）", "（無此用法）"],
+    "difficulty": 3
+  },
+  {
+    "sentence": "I didn't mean to delete the file; it happened _____.",
+    "options": ["(A) on accident", "(B) in accident", "(C) by accident", "(D) with accident"],
+    "answer": 2,
+    "explanation": "不是故意刪除檔案，是「意外」發生的，故用 by accident。",
+    "phrase_type": "expression",
+    "id": "phrase_54",
+    "optionsZh": ["（無此用法）", "（無此用法）", "意外地", "（無此用法）"],
+    "difficulty": 3
+  },
+  {
+    "sentence": "The manager asked the workers to stop the machine _____ .",
+    "options": ["(A) at a time", "(B) at times", "(C) in once", "(D) at once"],
+    "answer": 3,
+    "explanation": "經理要求工人「立刻」停下機器，故用 at once。",
+    "phrase_type": "expression",
+    "id": "phrase_55",
+    "optionsZh": ["一次", "有時", "（無此用法）", "立刻"],
+    "difficulty": 3
+  },
+  {
+    "sentence": "She didn't tell us she was coming, but she suddenly _____ at the party.",
+    "options": ["(A) turned up", "(B) turned down", "(C) turned in", "(D) turned into"],
+    "answer": 0,
+    "explanation": "turn up 指出現、意外到來。沒說會來卻突然出現在派對，故選 turned up。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_56",
+    "optionsZh": ["出現、意外到來", "拒絕、調低", "繳交", "變成"],
+    "difficulty": 3
+  },
+  {
+    "sentence": "The thief was forced to _____ all the stolen money to the police.",
+    "options": ["(A) hand in", "(B) hand over", "(C) hand out", "(D) hand down"],
+    "answer": 1,
+    "explanation": "小偷被迫把偷來的錢「交出」給警察，故選 hand over。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_57",
+    "optionsZh": ["繳交", "交出", "分發", "傳承"],
+    "difficulty": 3
+  },
+  {
+    "sentence": "Everyone says that Lily _____ her mother in both looks and personality.",
+    "options": ["(A) takes over", "(B) takes off", "(C) takes after", "(D) takes up"],
+    "answer": 2,
+    "explanation": "大家都說 Lily 長相和個性都「像」她媽媽，故選 takes after。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_58",
+    "optionsZh": ["接管", "起飛、脫下", "像（某人）", "開始從事"],
+    "difficulty": 3
+  },
+  {
+    "sentence": "It's never easy to _____ such a difficult time alone.",
+    "options": ["(A) go over", "(B) go along", "(C) go off", "(D) go through"],
+    "answer": 3,
+    "explanation": "獨自「經歷」困難的時期並不容易，故選 go through。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_59",
+    "optionsZh": ["複習、檢查", "一起去、進展", "爆炸、離開", "經歷"],
+    "difficulty": 3
+  },
+  {
+    "sentence": "_____ the heavy rain, the game continued as scheduled.",
+    "options": ["(A) Despite", "(B) Although", "(C) Because", "(D) Unless"],
+    "answer": 0,
+    "explanation": "「Despite + 名詞」表示儘管下大雨比賽仍照常進行，故用 Despite。",
+    "phrase_type": "preposition",
+    "id": "phrase_60",
+    "optionsZh": ["儘管（後接名詞）", "雖然（後接子句）", "因為", "除非"],
+    "difficulty": 3
+  },
+  {
+    "sentence": "You should never drive _____ wearing a seatbelt.",
+    "options": ["(A) with", "(B) without", "(C) despite", "(D) unless"],
+    "answer": 1,
+    "explanation": "開車時不應該「沒有」繫安全帶，故用 without。",
+    "phrase_type": "preposition",
+    "id": "phrase_61",
+    "optionsZh": ["帶著", "沒有", "儘管", "除非"],
+    "difficulty": 3
+  },
+  {
+    "sentence": "You need to book your train ticket at least a week _____ .",
+    "options": ["(A) in ahead", "(B) in front", "(C) in advance", "(D) ahead of"],
+    "answer": 2,
+    "explanation": "訂火車票至少要「提前」一週，故用 in advance。",
+    "phrase_type": "expression",
+    "id": "phrase_62",
+    "optionsZh": ["（無此用法）", "在前面（需接of）", "提前", "領先於（需接受詞）"],
+    "difficulty": 3
+  },
+  {
+    "sentence": "We are all _____ the summer vacation next month.",
+    "options": ["(A) looking up to", "(B) looking after", "(C) looking into", "(D) looking forward to"],
+    "answer": 3,
+    "explanation": "大家都很「期待」下個月的暑假，故選 looking forward to。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_63",
+    "optionsZh": ["景仰", "照顧", "調查", "期待"],
+    "difficulty": 4,
+    "vocab_tier": "T2-T3"
+  },
+  {
+    "sentence": "It took him months to _____ the loss of his beloved dog.",
+    "options": ["(A) get over", "(B) get off", "(C) get along", "(D) get across"],
+    "answer": 0,
+    "explanation": "花了好幾個月才「走出」失去愛犬的悲傷，故選 get over。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_64",
+    "optionsZh": ["克服、走出", "下車", "相處", "傳達清楚"],
+    "difficulty": 4
+  },
+  {
+    "sentence": "The new manager soon _____ strong resistance from the staff.",
+    "options": ["(A) came up with", "(B) came up against", "(C) came across", "(D) came along"],
+    "answer": 1,
+    "explanation": "新經理很快就「遭遇」員工強烈的抵制，故選 came up against。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_65",
+    "optionsZh": ["想出", "遭遇（阻力）", "偶然發現", "一起去、進展"],
+    "difficulty": 4
+  },
+  {
+    "sentence": "Many young players _____ this legendary basketball star.",
+    "options": ["(A) look down on", "(B) look after", "(C) look up to", "(D) look into"],
+    "answer": 2,
+    "explanation": "許多年輕球員都「景仰」這位傳奇球星，故選 look up to。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_66",
+    "optionsZh": ["看不起", "照顧", "景仰", "調查"],
+    "difficulty": 4
+  },
+  {
+    "sentence": "It's not polite to _____ people just because they are poor.",
+    "options": ["(A) look up to", "(B) look after", "(C) look out for", "(D) look down on"],
+    "answer": 3,
+    "explanation": "不應該因為貧窮就「看不起」別人，故選 look down on。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_67",
+    "optionsZh": ["景仰", "照顧", "留意", "看不起"],
+    "difficulty": 4
+  },
+  {
+    "sentence": "_____ , students in this school perform very well in English.",
+    "options": ["(A) In general", "(B) In detail", "(C) In particular", "(D) In common"],
+    "answer": 0,
+    "explanation": "「整體來說」這所學校的學生英文表現很好，故用 In general。",
+    "phrase_type": "expression",
+    "id": "phrase_68",
+    "optionsZh": ["整體來說", "詳細地", "尤其", "共同地"],
+    "difficulty": 4
+  },
+  {
+    "sentence": "Some countries, _____ Japan and Korea, have very strict recycling rules.",
+    "options": ["(A) for once", "(B) for instance", "(C) for good", "(D) for sure"],
+    "answer": 1,
+    "explanation": "舉日本和韓國作為例子，故用 for instance。",
+    "phrase_type": "expression",
+    "id": "phrase_69",
+    "optionsZh": ["就這一次", "舉例來說", "永久地", "確實地"],
+    "difficulty": 4
+  },
+  {
+    "sentence": "She is, _____, the best singer in our school.",
+    "options": ["(A) without fail", "(B) without notice", "(C) without doubt", "(D) without cause"],
+    "answer": 2,
+    "explanation": "「毫無疑問」她是學校裡最棒的歌手，故用 without doubt。",
+    "phrase_type": "expression",
+    "id": "phrase_70",
+    "optionsZh": ["必定", "毫無預警地", "毫無疑問", "無緣無故地"],
+    "difficulty": 4
+  },
+  {
+    "sentence": "He isn't lazy at all; _____ , he works harder than anyone else.",
+    "options": ["(A) on the whole", "(B) on purpose", "(C) on and on", "(D) on the contrary"],
+    "answer": 3,
+    "explanation": "他一點都不懶惰，「相反地」比任何人都努力，故用 on the contrary。",
+    "phrase_type": "expression",
+    "id": "phrase_71",
+    "optionsZh": ["整體而言", "故意地", "不斷地", "相反地"],
+    "difficulty": 4
+  },
+  {
+    "sentence": "_____ his young age, he speaks three languages fluently.",
+    "options": ["(A) In spite of", "(B) Because of", "(C) Instead of", "(D) As for"],
+    "answer": 0,
+    "explanation": "「儘管」年紀小卻能流利說三種語言，故用 In spite of。",
+    "phrase_type": "preposition",
+    "id": "phrase_72",
+    "optionsZh": ["儘管", "因為", "而不是", "至於"],
+    "difficulty": 4
+  },
+  {
+    "sentence": "She decided to walk to work _____ taking the bus.",
+    "options": ["(A) in spite of", "(B) instead of", "(C) because of", "(D) as for"],
+    "answer": 1,
+    "explanation": "決定走路上班「而不是」搭公車，故用 instead of。",
+    "phrase_type": "preposition",
+    "id": "phrase_73",
+    "optionsZh": ["儘管", "而不是", "因為", "至於"],
+    "difficulty": 4
+  },
+  {
+    "sentence": "You can always _____ your best friend in times of trouble.",
+    "options": ["(A) count out", "(B) count up", "(C) count on", "(D) count down"],
+    "answer": 2,
+    "explanation": "遇到困難時總能「依靠」最好的朋友，故選 count on。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_74",
+    "optionsZh": ["不把…算入", "加總", "依靠", "倒數"],
+    "difficulty": 4
+  },
+  {
+    "sentence": "It's not easy to _____ such a difficult customer.",
+    "options": ["(A) deal in", "(B) deal on", "(C) deal for", "(D) deal with"],
+    "answer": 3,
+    "explanation": "「應付」難搞的顧客並不容易，故選 deal with。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_75",
+    "optionsZh": ["經營、買賣", "（無此用法）", "（無此用法）", "應付、處理"],
+    "difficulty": 4
+  },
+  {
+    "sentence": "He worked overtime all week to _____ the days he had missed.",
+    "options": ["(A) make up for", "(B) make up to", "(C) make out of", "(D) make for"],
+    "answer": 0,
+    "explanation": "加班一整週來「彌補」錯過的天數，故選 make up for。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_76",
+    "optionsZh": ["彌補", "討好、補償某人", "從…製成", "朝向、促成"],
+    "difficulty": 4
+  },
+  {
+    "sentence": "During the holiday, I finally had time to _____ some sleep.",
+    "options": ["(A) catch up with", "(B) catch up on", "(C) catch up to", "(D) catch on with"],
+    "answer": 1,
+    "explanation": "假期終於有時間「補足」睡眠，故選 catch up on。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_77",
+    "optionsZh": ["趕上（某人）", "補做（落後的事）", "追上", "受到…歡迎"],
+    "difficulty": 4
+  },
+  {
+    "sentence": "_____ the weather report, it will snow this weekend.",
+    "options": ["(A) Owing to", "(B) Due to", "(C) According to", "(D) As to"],
+    "answer": 2,
+    "explanation": "「根據」氣象報告這週末會下雪，故用 According to。",
+    "phrase_type": "preposition",
+    "id": "phrase_78",
+    "optionsZh": ["由於", "由於", "根據", "至於"],
+    "difficulty": 4
+  },
+  {
+    "sentence": "The flight was delayed _____ the heavy fog.",
+    "options": ["(A) according to", "(B) as for", "(C) in favor of", "(D) owing to"],
+    "answer": 3,
+    "explanation": "班機「由於」濃霧而延誤，故用 owing to。",
+    "phrase_type": "preposition",
+    "id": "phrase_79",
+    "optionsZh": ["根據", "至於", "贊成", "由於"],
+    "difficulty": 4
+  },
+  {
+    "sentence": "The heavy traffic can partly _____ why he arrived so late.",
+    "options": ["(A) account for", "(B) account to", "(C) account on", "(D) account with"],
+    "answer": 0,
+    "explanation": "塞車可以部分「解釋」他為何遲到，故選 account for。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_80",
+    "optionsZh": ["解釋、說明", "（無此用法）", "（無此用法）", "（無此用法）"],
+    "difficulty": 5,
+    "vocab_tier": "T3-T4"
+  },
+  {
+    "sentence": "Jenny stayed home today because she _____ a bad cold.",
+    "options": ["(A) came up with", "(B) came down with", "(C) came along with", "(D) came out with"],
+    "answer": 1,
+    "explanation": "Jenny 今天請假在家是因為她「染上」重感冒，故選 came down with。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_81",
+    "optionsZh": ["想出", "染上（疾病）", "一起帶來", "說出、推出"],
+    "difficulty": 5
+  },
+  {
+    "sentence": "The new manager decided to _____ the old, inefficient system completely.",
+    "options": ["(A) do up with", "(B) do out with", "(C) do away with", "(D) do over with"],
+    "answer": 2,
+    "explanation": "新經理決定完全「廢除」舊有沒效率的制度，故選 do away with。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_82",
+    "optionsZh": ["（無此用法）", "（無此用法）", "廢除、擺脫", "（無此用法）"],
+    "difficulty": 5
+  },
+  {
+    "sentence": "If you skip too many classes, you will soon _____ in your studies.",
+    "options": ["(A) fall through", "(B) fall apart", "(C) fall off", "(D) fall behind"],
+    "answer": 3,
+    "explanation": "翹太多課很快就會「落後」課業，故選 fall behind。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_83",
+    "optionsZh": ["落空、失敗", "崩潰、破裂", "掉落", "落後"],
+    "difficulty": 5
+  },
+  {
+    "sentence": "The new movie failed to _____ the audience's high expectations.",
+    "options": ["(A) live up to", "(B) live on to", "(C) live through to", "(D) live off to"],
+    "answer": 0,
+    "explanation": "新電影未能「達到」觀眾很高的期待，故選 live up to。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_84",
+    "optionsZh": ["達到（期望）", "（無此用法）", "（無此用法）", "（無此用法）"],
+    "difficulty": 5
+  },
+  {
+    "sentence": "A true friend will always _____ you when others speak badly of you.",
+    "options": ["(A) stand up to", "(B) stand up for", "(C) stand by for", "(D) stand out for"],
+    "answer": 1,
+    "explanation": "真正的朋友總會在別人說壞話時「挺身支持」你，故選 stand up for。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_85",
+    "optionsZh": ["勇敢對抗", "挺身支持", "（無此用法）", "（無此用法）"],
+    "difficulty": 5
+  },
+  {
+    "sentence": "The doctors could not completely _____ the possibility of a serious illness.",
+    "options": ["(A) rule over", "(B) rule off", "(C) rule out", "(D) rule down"],
+    "answer": 2,
+    "explanation": "醫生無法完全「排除」罹患重病的可能性，故選 rule out。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_86",
+    "optionsZh": ["統治", "劃線去除", "排除", "（無此用法）"],
+    "difficulty": 5
+  },
+  {
+    "sentence": "I'm sorry, but I'm _____ with a meeting until three o'clock.",
+    "options": ["(A) tied down", "(B) tied over", "(C) tied in", "(D) tied up"],
+    "answer": 3,
+    "explanation": "因為開會到三點都「抽不開身」，故選 tied up。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_87",
+    "optionsZh": ["受束縛", "（無此用法）", "與…有關", "抽不開身、忙碌"],
+    "difficulty": 5
+  },
+  {
+    "sentence": "Eating healthy food may seem boring now, but it pays off _____ .",
+    "options": ["(A) in the long run", "(B) in the meantime", "(C) in due time", "(D) in no time"],
+    "answer": 0,
+    "explanation": "健康飲食現在看似無聊，但「長遠來看」值得，故用 in the long run。",
+    "phrase_type": "expression",
+    "id": "phrase_88",
+    "optionsZh": ["長遠來看", "與此同時", "到時候", "很快、立刻"],
+    "difficulty": 5
+  },
+  {
+    "sentence": "I'm not sure if he will come, but _____ , we should prepare enough food.",
+    "options": ["(A) at any cost", "(B) at any rate", "(C) at any time", "(D) at any moment"],
+    "answer": 1,
+    "explanation": "不確定他是否會來，但「無論如何」該準備足夠食物，故用 at any rate。",
+    "phrase_type": "expression",
+    "id": "phrase_89",
+    "optionsZh": ["不惜代價", "無論如何", "隨時", "隨時、任何時刻"],
+    "difficulty": 5
+  },
+  {
+    "sentence": "We don't have a permanent office yet, so we are working from home _____ .",
+    "options": ["(A) for good", "(B) for once", "(C) for the time being", "(D) for sure"],
+    "answer": 2,
+    "explanation": "還沒有固定辦公室，「暫時」在家工作，故用 for the time being。",
+    "phrase_type": "expression",
+    "id": "phrase_90",
+    "optionsZh": ["永久地", "就這一次", "暫時", "確實地"],
+    "difficulty": 5
+  },
+  {
+    "sentence": "_____ , I should have listened to my parents' advice about the investment.",
+    "options": ["(A) In advance", "(B) In progress", "(C) In addition", "(D) In retrospect"],
+    "answer": 3,
+    "explanation": "「回想起來」早該聽父母對投資的建議，故用 In retrospect。",
+    "phrase_type": "expression",
+    "id": "phrase_91",
+    "optionsZh": ["事先", "進行中", "此外", "回想起來"],
+    "difficulty": 5
+  },
+  {
+    "sentence": "She tried hard to _____ her tears during the sad movie.",
+    "options": ["(A) hold back", "(B) hold on", "(C) hold out", "(D) hold off"],
+    "answer": 0,
+    "explanation": "她努力「忍住」在悲傷電影中的淚水，故選 hold back。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_92",
+    "optionsZh": ["忍住、抑制", "稍等、抓住不放", "撐住、堅持", "延後"],
+    "difficulty": 5
+  },
+  {
+    "sentence": "The effect of the painkiller will _____ after a few hours.",
+    "options": ["(A) wear out", "(B) wear off", "(C) wear down", "(D) wear away"],
+    "answer": 1,
+    "explanation": "止痛藥的效果幾小時後會「逐漸消退」，故選 wear off。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_93",
+    "optionsZh": ["穿舊、耗損", "（藥效等）逐漸消退", "逐漸磨損", "逐漸磨蝕"],
+    "difficulty": 5
+  },
+  {
+    "sentence": "You should always _____ your important files in case your computer crashes.",
+    "options": ["(A) back off", "(B) back down", "(C) back up", "(D) back out"],
+    "answer": 2,
+    "explanation": "應該隨時「備份」重要檔案以防電腦當機，故選 back up。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_94",
+    "optionsZh": ["退開", "讓步、放棄", "備份、支持", "退出"],
+    "difficulty": 5
+  },
+  {
+    "sentence": "Before the trip to France, I want to _____ my French.",
+    "options": ["(A) brush off on", "(B) brush aside on", "(C) brush over on", "(D) brush up on"],
+    "answer": 3,
+    "explanation": "去法國前想「複習」法文，故選 brush up on。",
+    "phrase_type": "phrasal_verb",
+    "id": "phrase_95",
+    "optionsZh": ["（無此用法）", "（無此用法）", "（無此用法）", "複習、加強"],
+    "difficulty": 5
+  },
+  {
+    "sentence": "The firefighters arrived _____ to save the family trapped inside.",
+    "options": ["(A) in the nick of time", "(B) in due course", "(C) in the long run", "(D) in no time"],
+    "answer": 0,
+    "explanation": "消防隊「在最後一刻」趕到救出受困家庭，故用 in the nick of time。",
+    "phrase_type": "expression",
+    "id": "phrase_96",
+    "optionsZh": ["在最後關頭", "日後、到時候", "長遠來看", "很快"],
+    "difficulty": 6,
+    "vocab_tier": "T4-T5"
+  },
+  {
+    "sentence": "_____ , the small team managed to win the national championship.",
+    "options": ["(A) By all means", "(B) Against all odds", "(C) In all likelihood", "(D) At all costs"],
+    "answer": 1,
+    "explanation": "「儘管困難重重」小隊仍贏得全國冠軍，故用 Against all odds。",
+    "phrase_type": "expression",
+    "id": "phrase_97",
+    "optionsZh": ["當然可以", "儘管困難重重", "很可能", "不惜代價"],
+    "difficulty": 6
+  },
+  {
+    "sentence": "_____ , the new policy has been well received by the public.",
+    "options": ["(A) By the way", "(B) Now and then", "(C) By and large", "(D) Off and on"],
+    "answer": 2,
+    "explanation": "「整體而言」新政策獲得大眾好評，故用 By and large。",
+    "phrase_type": "expression",
+    "id": "phrase_98",
+    "optionsZh": ["順帶一提", "偶爾", "整體而言", "斷斷續續地"],
+    "difficulty": 6
+  },
+  {
+    "sentence": "Parents often make sacrifices _____ their children's future.",
+    "options": ["(A) for the case of", "(B) by the name of", "(C) at the rate of", "(D) for the sake of"],
+    "answer": 3,
+    "explanation": "父母常「為了」孩子的未來做出犧牲，故用 for the sake of。",
+    "phrase_type": "expression",
+    "id": "phrase_99",
+    "optionsZh": ["（無此用法）", "以…之名", "以…速率", "為了…的緣故"],
+    "difficulty": 6
+  },
+  {
+    "sentence": "_____ , the students were thrilled when the exam was canceled.",
+    "options": ["(A) Needless to say", "(B) Not to say", "(C) Rather than say", "(D) Instead of saying"],
+    "answer": 0,
+    "explanation": "「不用說」也知道考試取消時學生們超興奮，故用 Needless to say。",
+    "phrase_type": "expression",
+    "id": "phrase_100",
+    "optionsZh": ["不用說", "（無此用法）", "（無此用法）", "（無此用法）"],
+    "difficulty": 6
+  },
+  {
+    "sentence": "He goes jogging every morning _____ .",
+    "options": ["(A) through thick and thin", "(B) come rain or shine", "(C) once in a blue moon", "(D) by hook or by crook"],
+    "answer": 1,
+    "explanation": "他每天早上「不論晴雨」都去慢跑，故用 come rain or shine。",
+    "phrase_type": "expression",
+    "id": "phrase_101",
+    "optionsZh": ["不論好壞、患難與共", "不論晴雨、風雨無阻", "千載難逢地", "不擇手段"],
+    "difficulty": 6
+  },
+  {
+    "sentence": "Your application has been received, and you will hear from us _____ .",
+    "options": ["(A) in the nick of time", "(B) in the long run", "(C) in due course", "(D) in no time"],
+    "answer": 2,
+    "explanation": "申請已收到，「日後」會通知結果，故用 in due course。",
+    "phrase_type": "expression",
+    "id": "phrase_102",
+    "optionsZh": ["在最後關頭", "長遠來看", "日後、到時候", "很快"],
+    "difficulty": 6
+  },
+  {
+    "sentence": "My little brother cries _____ ; the smallest thing can upset him.",
+    "options": ["(A) in the blink of an eye", "(B) once in a blue moon", "(C) out of the blue", "(D) at the drop of a hat"],
+    "answer": 3,
+    "explanation": "弟弟「動不動」就哭，一點小事就能讓他難過，故用 at the drop of a hat。",
+    "phrase_type": "expression",
+    "id": "phrase_103",
+    "optionsZh": ["一眨眼間", "千載難逢地", "毫無預警地", "動不動就"],
+    "difficulty": 6
+  },
+  {
+    "sentence": "After years of silence, she called me _____ last night.",
+    "options": ["(A) out of the blue", "(B) in the nick of time", "(C) by and large", "(D) at the drop of a hat"],
+    "answer": 0,
+    "explanation": "多年沉默後她昨晚「毫無預警地」打電話給我，故用 out of the blue。",
+    "phrase_type": "expression",
+    "id": "phrase_104",
+    "optionsZh": ["毫無預警地", "在最後關頭", "整體而言", "動不動就"],
+    "difficulty": 6
+  },
+  {
+    "sentence": "The accident happened _____ ; no one had time to react.",
+    "options": ["(A) at the drop of a hat", "(B) in the blink of an eye", "(C) in due course", "(D) by and large"],
+    "answer": 1,
+    "explanation": "意外發生「在一瞬間」，沒人來得及反應，故用 in the blink of an eye。",
+    "phrase_type": "expression",
+    "id": "phrase_105",
+    "optionsZh": ["動不動就", "一眨眼間", "日後、到時候", "整體而言"],
+    "difficulty": 6
+  },
+  {
+    "sentence": "A loyal friend will stand by you _____ .",
+    "options": ["(A) come rain or shine", "(B) by and large", "(C) through thick and thin", "(D) for the sake of"],
+    "answer": 2,
+    "explanation": "忠實的朋友會「不論好壞」都陪伴你，故用 through thick and thin。",
+    "phrase_type": "expression",
+    "id": "phrase_106",
+    "optionsZh": ["不論晴雨", "整體而言", "患難與共", "為了…的緣故"],
+    "difficulty": 6
+  },
+  {
+    "sentence": "After being cheated once, he never trusted strangers again; _____ , as they say.",
+    "options": ["(A) once in a blue moon", "(B) once and for all", "(C) once upon a time", "(D) once bitten, twice shy"],
+    "answer": 3,
+    "explanation": "被騙過一次後他再也不信任陌生人，正所謂「一朝被蛇咬十年怕草繩」，故用 once bitten, twice shy。",
+    "phrase_type": "expression",
+    "id": "phrase_107",
+    "optionsZh": ["千載難逢地", "一勞永逸地", "從前", "一朝被蛇咬十年怕草繩"],
+    "difficulty": 6
+  },
+  {
+    "sentence": "_____ math, my sister is much better than I am.",
+    "options": ["(A) When it comes to", "(B) As soon as", "(C) In case of", "(D) As opposed to"],
+    "answer": 0,
+    "explanation": "「說到」數學，我妹妹比我厲害得多，故用 When it comes to。",
+    "phrase_type": "expression",
+    "id": "phrase_108",
+    "optionsZh": ["說到、談及", "一…就", "萬一", "相對於"],
+    "difficulty": 6
+  },
+  {
+    "sentence": "She didn't tell anyone about the accident _____ getting into trouble.",
+    "options": ["(A) in spite of", "(B) for fear of", "(C) in favor of", "(D) by means of"],
+    "answer": 1,
+    "explanation": "她沒告訴任何人意外的事，是「因為害怕」惹上麻煩，故用 for fear of。",
+    "phrase_type": "expression",
+    "id": "phrase_109",
+    "optionsZh": ["儘管", "因為害怕", "贊成", "藉由"],
+    "difficulty": 6
+  },
+  {
+    "sentence": "All the students passed the test _____ one who was absent that day.",
+    "options": ["(A) in addition to", "(B) on account of", "(C) with the exception of", "(D) by virtue of"],
+    "answer": 2,
+    "explanation": "全班都通過測驗，「除了」當天缺席的那位同學，故用 with the exception of。",
+    "phrase_type": "expression",
+    "id": "phrase_110",
+    "optionsZh": ["除了…之外還有", "由於", "除了…之外（不包括）", "憑藉"],
+    "difficulty": 6
+  },
+  {
+    "sentence": "_____ , the project is complete; only a final review remains.",
+    "options": ["(A) In the event that", "(B) By virtue of", "(C) On the grounds that", "(D) For all intents and purposes"],
+    "answer": 3,
+    "explanation": "「基本上／實際上」專案已經完成，只剩最後審查，故用 For all intents and purposes。",
+    "phrase_type": "expression",
+    "id": "phrase_111",
+    "optionsZh": ["萬一、如果", "憑藉", "以…為理由", "基本上、實際上"],
+    "difficulty": 6
   }
 ]

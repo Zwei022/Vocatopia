@@ -50,6 +50,11 @@ router.get('/search', async (req, res) => {
     return res.json({ success: true, source: 'cache', data: hit[0] });
   }
 
+  // 1.5) 字尾還原：查詢字若是動詞變化/複數/比較級（如 accepted/activities），
+  // 先試著比對字庫裡可能已有的原形，命中就直接回傳，不需要多耗一次 Gemini 額度
+  const lemmaHit = await _findByLemma(raw);
+  if (lemmaHit) return res.json({ success: true, source: 'cache-lemma', data: lemmaHit });
+
   // 2) Gemini 生成（字典查詢 + 版權改寫，一次完成）
   if (!process.env.GEMINI_API_KEY) {
     return res.status(503).json({ success: false, error: '查詢服務未設定' });
@@ -58,7 +63,11 @@ router.get('/search', async (req, res) => {
   try {
     entry = await generateDictEntry(raw);
   } catch (err) {
+    const isRateLimit = /429|quota|rate limit|resource_exhausted/i.test(err.message || '');
     console.error('[words/search] 生成失敗:', err.message);
+    if (isRateLimit) {
+      return res.status(429).json({ success: false, error: '查詢的人太多了，請稍後再試一次', rateLimited: true });
+    }
     return res.status(502).json({ success: false, error: '字典查詢失敗，請確認拼字後重試' });
   }
   if (!entry) {
@@ -85,6 +94,31 @@ router.get('/search', async (req, res) => {
   }
   res.json({ success: true, source: 'generated', data: saved[0] });
 });
+
+// 簡易字尾還原候選（跟前端 script.js 的 _lemmaCandidates 邏輯一致），
+// 用於在呼叫 Gemini 前先確認字庫裡是否已有這個詞的原形
+function _lemmaCandidates(w) {
+  const c = [];
+  if (w.endsWith('ies') && w.length > 4) c.push(w.slice(0, -3) + 'y');
+  if (w.endsWith('ied') && w.length > 4) c.push(w.slice(0, -3) + 'y');
+  if (w.endsWith('ier') && w.length > 4) c.push(w.slice(0, -3) + 'y');
+  if (w.endsWith('iest') && w.length > 5) c.push(w.slice(0, -4) + 'y');
+  if (w.endsWith('ing') && w.length > 5) { c.push(w.slice(0, -3)); c.push(w.slice(0, -3) + 'e'); c.push(w.slice(0, -4)); }
+  if (w.endsWith('ed') && w.length > 4) { c.push(w.slice(0, -2)); c.push(w.slice(0, -1)); c.push(w.slice(0, -3)); }
+  if (w.endsWith('es') && w.length > 4) { c.push(w.slice(0, -2)); c.push(w.slice(0, -1)); }
+  if (w.endsWith('s') && w.length > 3 && !w.endsWith('ss')) c.push(w.slice(0, -1));
+  if (w.endsWith('er') && w.length > 4) c.push(w.slice(0, -2));
+  if (w.endsWith('est') && w.length > 5) c.push(w.slice(0, -3));
+  if (w.endsWith('ly') && w.length > 4) c.push(w.slice(0, -2));
+  return c;
+}
+async function _findByLemma(raw) {
+  const candidates = _lemmaCandidates(raw);
+  if (!candidates.length) return null;
+  const { data } = await supabase
+    .from('words').select(WORD_COLUMNS).in('word', candidates).limit(1);
+  return (data && data[0]) || null;
+}
 
 // Gemini 字典生成：回傳 null 表示不是有效英文單字
 async function generateDictEntry(word) {

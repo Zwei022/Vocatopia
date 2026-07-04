@@ -8,18 +8,38 @@
     "questions": [
       {
         "question": "Who can join the Summer Reading Club?",
-        "options": ["(A) People of any age", "(B) Students aged 10 to 15", "(C) Only librarians", "(D) Only teachers"],
+        "options": [
+          "(A) People of any age",
+          "(B) Students aged 10 to 15",
+          "(C) Only librarians",
+          "(D) Only teachers"
+        ],
         "answer": 1,
         "explanation": "海報明確寫 Open to students aged 10–15，故選 B。",
-        "optionsZh": ["任何年齡的人", "10 到 15 歲的學生", "只有圖書館員", "只有老師"],
+        "optionsZh": [
+          "任何年齡的人",
+          "10 到 15 歲的學生",
+          "只有圖書館員",
+          "只有老師"
+        ],
         "questionType": "detail"
       },
       {
         "question": "How can a student get a free movie ticket?",
-        "options": ["(A) By signing up before June 30", "(B) By bringing a friend to the library", "(C) By reading 5 books and writing a note about each", "(D) By buying a special bookmark"],
+        "options": [
+          "(A) By signing up before June 30",
+          "(B) By bringing a friend to the library",
+          "(C) By reading 5 books and writing a note about each",
+          "(D) By buying a special bookmark"
+        ],
         "answer": 2,
         "explanation": "Finish all 5（讀 5 本並各寫短文）才能拿到免費電影票，選 C；帶朋友是得到書籤，不是電影票。",
-        "optionsZh": ["在 6 月 30 日前報名", "帶朋友來圖書館", "讀 5 本書並各寫一篇短文", "買一個特別的書籤"],
+        "optionsZh": [
+          "在 6 月 30 日前報名",
+          "帶朋友來圖書館",
+          "讀 5 本書並各寫一篇短文",
+          "買一個特別的書籤"
+        ],
         "questionType": "detail"
       }
     ]
@@ -33,18 +53,38 @@
     "questions": [
       {
         "question": "What is the main purpose of Grandma's email?",
-        "options": ["(A) To invite Anna to come and live with her", "(B) To thank Anna for the card and say she looks forward to the visit", "(C) To complain about the cold weather", "(D) To teach Anna how to do a science project"],
+        "options": [
+          "(A) To invite Anna to come and live with her",
+          "(B) To thank Anna for the card and say she looks forward to the visit",
+          "(C) To complain about the cold weather",
+          "(D) To teach Anna how to do a science project"
+        ],
         "answer": 1,
         "explanation": "信中先感謝生日卡，又說期待下個月相見、一起烤餅乾，主要目的為感謝並表達期待，選 B。",
-        "optionsZh": ["邀請 Anna 搬來同住", "感謝 Anna 的卡片並說期待見面", "抱怨寒冷的天氣", "教 Anna 怎麼做科展"],
+        "optionsZh": [
+          "邀請 Anna 搬來同住",
+          "感謝 Anna 的卡片並說期待見面",
+          "抱怨寒冷的天氣",
+          "教 Anna 怎麼做科展"
+        ],
         "questionType": "main_idea"
       },
       {
         "question": "What can we learn from the email?",
-        "options": ["(A) Anna won first prize in the science fair", "(B) Grandma does not like the cat", "(C) Anna is going to visit this week", "(D) Grandma lives in a warm place"],
+        "options": [
+          "(A) Anna won first prize in the science fair",
+          "(B) Grandma does not like the cat",
+          "(C) Anna is going to visit this week",
+          "(D) Grandma lives in a warm place"
+        ],
         "answer": 0,
         "explanation": "信中提到 you won first prize in the science fair，故選 A；探訪是下個月、當地天氣轉冷，其餘選項與內文不符。",
-        "optionsZh": ["Anna 在科展得了第一名", "奶奶不喜歡那隻貓", "Anna 這週要去拜訪", "奶奶住在溫暖的地方"],
+        "optionsZh": [
+          "Anna 在科展得了第一名",
+          "奶奶不喜歡那隻貓",
+          "Anna 這週要去拜訪",
+          "奶奶住在溫暖的地方"
+        ],
         "questionType": "detail"
       }
     ]
@@ -58,18 +98,38 @@
     "questions": [
       {
         "question": "What must a 6-year-old child do to swim in the pool?",
-        "options": ["(A) Swim alone", "(B) Eat something before swimming", "(C) Swim together with an adult", "(D) Run around the pool"],
+        "options": [
+          "(A) Swim alone",
+          "(B) Eat something before swimming",
+          "(C) Swim together with an adult",
+          "(D) Run around the pool"
+        ],
         "answer": 2,
         "explanation": "規則 2 說 8 歲以下兒童必須和大人一起游，6 歲屬於此範圍，故選 C。",
-        "optionsZh": ["獨自游泳", "游泳前吃點東西", "和大人一起游泳", "在泳池邊奔跑"],
+        "optionsZh": [
+          "獨自游泳",
+          "游泳前吃點東西",
+          "和大人一起游泳",
+          "在泳池邊奔跑"
+        ],
         "questionType": "detail"
       },
       {
         "question": "According to the notice, which of the following is allowed?",
-        "options": ["(A) Bringing drinks into the pool area", "(B) Running near the pool", "(C) Staying in the pool after 10 p.m.", "(D) Taking a rest when you feel unwell"],
+        "options": [
+          "(A) Bringing drinks into the pool area",
+          "(B) Running near the pool",
+          "(C) Staying in the pool after 10 p.m.",
+          "(D) Taking a rest when you feel unwell"
+        ],
         "answer": 3,
         "explanation": "公告建議不舒服就停下休息，故 D 被允許；帶飲料、奔跑、超過 9 點關閉皆被禁止。",
-        "optionsZh": ["把飲料帶進泳池區", "在泳池附近奔跑", "晚上 10 點後還待在泳池", "不舒服時休息一下"],
+        "optionsZh": [
+          "把飲料帶進泳池區",
+          "在泳池附近奔跑",
+          "晚上 10 點後還待在泳池",
+          "不舒服時休息一下"
+        ],
         "questionType": "inference"
       }
     ]
@@ -83,26 +143,56 @@
     "questions": [
       {
         "question": "What was inside the wallet?",
-        "options": ["(A) Money, a student ID card, and a family photo", "(B) A key and a pen", "(C) A cellphone", "(D) A letter and some stamps"],
+        "options": [
+          "(A) Money, a student ID card, and a family photo",
+          "(B) A key and a pen",
+          "(C) A cellphone",
+          "(D) A letter and some stamps"
+        ],
         "answer": 0,
         "explanation": "第一段提到 money、a student ID card、a photo of a smiling family，故選 A。",
-        "optionsZh": ["錢、學生證和一張全家福", "一把鑰匙和一支筆", "一支手機", "一封信和一些郵票"],
+        "optionsZh": [
+          "錢、學生證和一張全家福",
+          "一把鑰匙和一支筆",
+          "一支手機",
+          "一封信和一些郵票"
+        ],
         "questionType": "detail"
       },
       {
         "question": "Why did Daniel cry when he got his wallet back?",
-        "options": ["(A) He was scolded by his teacher", "(B) He got back the photo his grandfather gave him", "(C) He lost a lot of money", "(D) He was late for school"],
+        "options": [
+          "(A) He was scolded by his teacher",
+          "(B) He got back the photo his grandfather gave him",
+          "(C) He lost a lot of money",
+          "(D) He was late for school"
+        ],
         "answer": 1,
         "explanation": "Daniel 說那張照片是爺爺給的、本以為永遠弄丟了，感動落淚，故選 B。",
-        "optionsZh": ["他被老師罵", "他拿回了爺爺給他的照片", "他丟了很多錢", "他上學遲到"],
+        "optionsZh": [
+          "他被老師罵",
+          "他拿回了爺爺給他的照片",
+          "他丟了很多錢",
+          "他上學遲到"
+        ],
         "questionType": "inference"
       },
       {
         "question": "What can we learn from this story?",
-        "options": ["(A) You should spend money you find right away", "(B) You should never talk to strangers", "(C) Helping others brings more happiness than money", "(D) You should not bring a wallet to school"],
+        "options": [
+          "(A) You should spend money you find right away",
+          "(B) You should never talk to strangers",
+          "(C) Helping others brings more happiness than money",
+          "(D) You should not bring a wallet to school"
+        ],
         "answer": 2,
         "explanation": "末段 Kevin 體會到幫助他人比金錢更讓他快樂，這是全文主旨，故選 C。",
-        "optionsZh": ["撿到錢應該馬上花掉", "絕不要和陌生人說話", "幫助別人帶來的快樂勝過金錢", "不該帶錢包去學校"],
+        "optionsZh": [
+          "撿到錢應該馬上花掉",
+          "絕不要和陌生人說話",
+          "幫助別人帶來的快樂勝過金錢",
+          "不該帶錢包去學校"
+        ],
         "questionType": "main_idea"
       }
     ]
@@ -116,26 +206,56 @@
     "questions": [
       {
         "question": "What is this passage mainly about?",
-        "options": ["(A) How to sleep for a longer time", "(B) Some ideas about why people dream", "(C) How to remember bad dreams", "(D) Why students should not stay up late"],
+        "options": [
+          "(A) How to sleep for a longer time",
+          "(B) Some ideas about why people dream",
+          "(C) How to remember bad dreams",
+          "(D) Why students should not stay up late"
+        ],
         "answer": 1,
         "explanation": "全文圍繞「我們為什麼做夢」介紹科學家的幾種推測，故主旨為 B。",
-        "optionsZh": ["如何睡得更久", "關於人為何做夢的一些看法", "如何記住惡夢", "學生為何不該熬夜"],
+        "optionsZh": [
+          "如何睡得更久",
+          "關於人為何做夢的一些看法",
+          "如何記住惡夢",
+          "學生為何不該熬夜"
+        ],
         "questionType": "main_idea"
       },
       {
         "question": "According to the passage, how might dreaming help us remember?",
-        "options": ["(A) The brain reviews what we learned and keeps the important information", "(B) The brain completely stops working during sleep", "(C) It makes us forget everything we learned", "(D) It makes us need less sleep"],
+        "options": [
+          "(A) The brain reviews what we learned and keeps the important information",
+          "(B) The brain completely stops working during sleep",
+          "(C) It makes us forget everything we learned",
+          "(D) It makes us need less sleep"
+        ],
         "answer": 0,
         "explanation": "第三段說睡覺時大腦會複習白天所學、保留重要資訊，故選 A。",
-        "optionsZh": ["大腦複習所學並保留重要資訊", "睡覺時大腦完全停止運作", "它讓我們忘記所學的一切", "它讓我們需要更少睡眠"],
+        "optionsZh": [
+          "大腦複習所學並保留重要資訊",
+          "睡覺時大腦完全停止運作",
+          "它讓我們忘記所學的一切",
+          "它讓我們需要更少睡眠"
+        ],
         "questionType": "detail"
       },
       {
         "question": "What does \"sorts through\" in the second paragraph most likely mean?",
-        "options": ["(A) Throws all away", "(B) Organizes", "(C) Creates", "(D) Hides"],
+        "options": [
+          "(A) Throws all away",
+          "(B) Organizes",
+          "(C) Creates",
+          "(D) Hides"
+        ],
         "answer": 1,
         "explanation": "後面用 like cleaning a messy room（像整理凌亂的房間）作比喻，可推知 sorts through 意為「整理」，選 B。",
-        "optionsZh": ["全部丟掉", "整理", "創造", "隱藏"],
+        "optionsZh": [
+          "全部丟掉",
+          "整理",
+          "創造",
+          "隱藏"
+        ],
         "questionType": "vocabulary"
       }
     ]
@@ -149,18 +269,38 @@
     "questions": [
       {
         "question": "By what time should students arrive at the school gate?",
-        "options": ["(A) 8:00 a.m.", "(B) 8:30 a.m.", "(C) 10:00 a.m.", "(D) 4:00 p.m."],
+        "options": [
+          "(A) 8:00 a.m.",
+          "(B) 8:30 a.m.",
+          "(C) 10:00 a.m.",
+          "(D) 4:00 p.m."
+        ],
         "answer": 0,
         "explanation": "8:00 在校門口集合、8:30 巴士就開（別遲到），所以最晚 8:00 必須到，選 A。",
-        "optionsZh": ["上午 8:00", "上午 8:30", "上午 10:00", "下午 4:00"],
+        "optionsZh": [
+          "上午 8:00",
+          "上午 8:30",
+          "上午 10:00",
+          "下午 4:00"
+        ],
         "questionType": "detail"
       },
       {
         "question": "What should students bring on the trip?",
-        "options": ["(A) A school T-shirt, a hat, and water", "(B) Their own lunch only", "(C) A tent and sleeping bag", "(D) Their own bus ticket"],
+        "options": [
+          "(A) A school T-shirt, a hat, and water",
+          "(B) Their own lunch only",
+          "(C) A tent and sleeping bag",
+          "(D) Their own bus ticket"
+        ],
         "answer": 0,
         "explanation": "底部備註 Remember to wear your school T-shirt and bring a hat and water，三樣都需要，故選 A。",
-        "optionsZh": ["學校T恤、帽子和水", "只帶自己的午餐", "帳篷和睡袋", "自己的巴士票"],
+        "optionsZh": [
+          "學校T恤、帽子和水",
+          "只帶自己的午餐",
+          "帳篷和睡袋",
+          "自己的巴士票"
+        ],
         "questionType": "detail"
       }
     ]
@@ -174,26 +314,56 @@
     "questions": [
       {
         "question": "What does the length of the waggle dance show?",
-        "options": ["(A) The type of flower the bee found", "(B) The amount of nectar in the flower", "(C) How far away the food source is", "(D) How many bees should fly together"],
+        "options": [
+          "(A) The type of flower the bee found",
+          "(B) The amount of nectar in the flower",
+          "(C) How far away the food source is",
+          "(D) How many bees should fly together"
+        ],
         "answer": 2,
         "explanation": "第二段明確指出 The length of the dance shows how far away the flowers are，故選 C。",
-        "optionsZh": ["蜜蜂找到的花的種類", "花中花蜜的量", "食物來源有多遠", "應該幾隻蜜蜂一起飛"],
+        "optionsZh": [
+          "蜜蜂找到的花的種類",
+          "花中花蜜的量",
+          "食物來源有多遠",
+          "應該幾隻蜜蜂一起飛"
+        ],
         "questionType": "detail"
       },
       {
         "question": "Why did Karl von Frisch win the Nobel Prize?",
-        "options": ["(A) He invented a new type of honey", "(B) He discovered how bees communicate through dance", "(C) He found a way to save bees from danger", "(D) He grew a new kind of flower for bees"],
+        "options": [
+          "(A) He invented a new type of honey",
+          "(B) He discovered how bees communicate through dance",
+          "(C) He found a way to save bees from danger",
+          "(D) He grew a new kind of flower for bees"
+        ],
         "answer": 1,
         "explanation": "第三段說他花了多年觀察蜜蜂、弄懂牠們的舞蹈語言，因此在 1973 年獲諾貝爾獎，選 B。",
-        "optionsZh": ["他發明了一種新型蜂蜜", "他發現了蜜蜂用舞蹈溝通的方式", "他找到拯救蜜蜂的方法", "他為蜜蜂種了一種新花"],
+        "optionsZh": [
+          "他發明了一種新型蜂蜜",
+          "他發現了蜜蜂用舞蹈溝通的方式",
+          "他找到拯救蜜蜂的方法",
+          "他為蜜蜂種了一種新花"
+        ],
         "questionType": "detail"
       },
       {
         "question": "What does the writer suggest in the last paragraph?",
-        "options": ["(A) Bees should be kept as pets", "(B) We should eat less honey to protect bees", "(C) Bees play an important role in helping our food supply", "(D) Bees can survive without flowers"],
+        "options": [
+          "(A) Bees should be kept as pets",
+          "(B) We should eat less honey to protect bees",
+          "(C) Bees play an important role in helping our food supply",
+          "(D) Bees can survive without flowers"
+        ],
         "answer": 2,
         "explanation": "末段說蜜蜂幫助植物結種、若蜜蜂消失許多蔬果也會消失，暗示保護蜜蜂就是保護糧食，選 C。",
-        "optionsZh": ["蜜蜂應該被當成寵物飼養", "我們應少吃蜂蜜來保護蜜蜂", "蜜蜂在糧食供應中扮演重要角色", "蜜蜂可以在沒有花的情況下存活"],
+        "optionsZh": [
+          "蜜蜂應該被當成寵物飼養",
+          "我們應少吃蜂蜜來保護蜜蜂",
+          "蜜蜂在糧食供應中扮演重要角色",
+          "蜜蜂可以在沒有花的情況下存活"
+        ],
         "questionType": "inference"
       }
     ]
@@ -207,26 +377,56 @@
     "questions": [
       {
         "question": "Which of the following is FREE at the Summer Night Market?",
-        "options": ["(A) Parking", "(B) Craft activities for children under 12", "(C) Entering the lucky draw", "(D) Food from all the stalls"],
+        "options": [
+          "(A) Parking",
+          "(B) Craft activities for children under 12",
+          "(C) Entering the lucky draw",
+          "(D) Food from all the stalls"
+        ],
         "answer": 1,
         "explanation": "公告寫 Free craft activities for children under 12，停車費 NT$50/小時，故選 B。",
-        "optionsZh": ["停車", "12 歲以下兒童的手工藝活動", "參加幸運抽獎", "所有攤位的食物"],
+        "optionsZh": [
+          "停車",
+          "12 歲以下兒童的手工藝活動",
+          "參加幸運抽獎",
+          "所有攤位的食物"
+        ],
         "questionType": "detail"
       },
       {
         "question": "A family wants to join the lucky draw. What should they do?",
-        "options": ["(A) Arrive before 6:00 p.m.", "(B) Call 02-1234-5678 to register", "(C) Keep their receipt from a purchase", "(D) Bring their pet to the event"],
+        "options": [
+          "(A) Arrive before 6:00 p.m.",
+          "(B) Call 02-1234-5678 to register",
+          "(C) Keep their receipt from a purchase",
+          "(D) Bring their pet to the event"
+        ],
         "answer": 2,
         "explanation": "公告說 bring your receipt to enter（帶收據參加），故選 C；不允許帶寵物，故 D 錯。",
-        "optionsZh": ["在下午 6 點前抵達", "致電 02-1234-5678 報名", "保留消費收據", "帶寵物來參加活動"],
+        "optionsZh": [
+          "在下午 6 點前抵達",
+          "致電 02-1234-5678 報名",
+          "保留消費收據",
+          "帶寵物來參加活動"
+        ],
         "questionType": "inference"
       },
       {
         "question": "When can visitors enjoy live music at the market?",
-        "options": ["(A) From 6:00 to 10:00 p.m.", "(B) From 7:00 to 9:00 p.m.", "(C) From 9:00 to 9:30 p.m.", "(D) From 6:00 to 7:00 p.m."],
+        "options": [
+          "(A) From 6:00 to 10:00 p.m.",
+          "(B) From 7:00 to 9:00 p.m.",
+          "(C) From 9:00 to 9:30 p.m.",
+          "(D) From 6:00 to 7:00 p.m."
+        ],
         "answer": 1,
         "explanation": "公告明確寫 Live music from 7:00 to 9:00 p.m.，故選 B。",
-        "optionsZh": ["下午 6:00 到 10:00", "下午 7:00 到 9:00", "下午 9:00 到 9:30", "下午 6:00 到 7:00"],
+        "optionsZh": [
+          "下午 6:00 到 10:00",
+          "下午 7:00 到 9:00",
+          "下午 9:00 到 9:30",
+          "下午 6:00 到 7:00"
+        ],
         "questionType": "detail"
       }
     ]
@@ -240,34 +440,74 @@
     "questions": [
       {
         "question": "What is Cindy's main argument for allowing phones in class?",
-        "options": ["(A) Phones are cheaper than textbooks", "(B) Phones can be useful learning tools if used correctly", "(C) All schools in the world allow phones", "(D) Phones help students make new friends"],
+        "options": [
+          "(A) Phones are cheaper than textbooks",
+          "(B) Phones can be useful learning tools if used correctly",
+          "(C) All schools in the world allow phones",
+          "(D) Phones help students make new friends"
+        ],
         "answer": 1,
         "explanation": "Cindy 認為手機是強大的學習工具，只要老師設定規則就能幫助學習，故選 B；「所有學校」過於絕對，A 不在文中。",
-        "optionsZh": ["手機比教科書便宜", "手機若使用得當可以是有用的學習工具", "全世界所有學校都允許帶手機", "手機幫助學生交到新朋友"],
+        "optionsZh": [
+          "手機比教科書便宜",
+          "手機若使用得當可以是有用的學習工具",
+          "全世界所有學校都允許帶手機",
+          "手機幫助學生交到新朋友"
+        ],
         "questionType": "detail"
       },
       {
         "question": "What does Mr. Lin say about young people's brains?",
-        "options": ["(A) They learn faster with phones", "(B) They are still developing and find it hard to resist temptation", "(C) They do not need phones to succeed", "(D) They are better at multitasking than adults"],
+        "options": [
+          "(A) They learn faster with phones",
+          "(B) They are still developing and find it hard to resist temptation",
+          "(C) They do not need phones to succeed",
+          "(D) They are better at multitasking than adults"
+        ],
         "answer": 1,
         "explanation": "Mr. Lin 說年輕人的大腦還在發育，很難抵抗誘惑（find it hard to resist the temptation），故選 B。",
-        "optionsZh": ["有手機學得更快", "仍在發育中，很難抵抗誘惑", "不需要手機就能成功", "多工能力比大人更強"],
+        "optionsZh": [
+          "有手機學得更快",
+          "仍在發育中，很難抵抗誘惑",
+          "不需要手機就能成功",
+          "多工能力比大人更強"
+        ],
         "questionType": "detail"
       },
       {
         "question": "What do Cindy and Mr. Lin both agree on?",
-        "options": ["(A) Phones should be banned from all schools", "(B) Phones can be connected to the internet", "(C) How phones are used is an important issue", "(D) Students learn better without any technology"],
+        "options": [
+          "(A) Phones should be banned from all schools",
+          "(B) Phones can be connected to the internet",
+          "(C) How phones are used is an important issue",
+          "(D) Students learn better without any technology"
+        ],
         "answer": 2,
         "explanation": "Cindy 強調「使用方式」（how we use it）是關鍵；Mr. Lin 也認為問題在於學生「如何使用」（easily get pulled into other apps）。兩人都關注使用方式的問題，故選 C。",
-        "optionsZh": ["手機應在所有學校禁用", "手機可以連接網路", "如何使用手機是重要議題", "學生在沒有科技的情況下學得更好"],
+        "optionsZh": [
+          "手機應在所有學校禁用",
+          "手機可以連接網路",
+          "如何使用手機是重要議題",
+          "學生在沒有科技的情況下學得更好"
+        ],
         "questionType": "inference"
       },
       {
         "question": "What is the best title for this reading?",
-        "options": ["(A) The History of Mobile Phones", "(B) Why Teachers Hate Technology", "(C) Phones in the Classroom: A Debate", "(D) How to Study with Your Phone"],
+        "options": [
+          "(A) The History of Mobile Phones",
+          "(B) Why Teachers Hate Technology",
+          "(C) Phones in the Classroom: A Debate",
+          "(D) How to Study with Your Phone"
+        ],
         "answer": 2,
         "explanation": "兩篇短文各代表一方對「課堂使用手機」的不同意見，最適合的標題是 C（辯論）。",
-        "optionsZh": ["手機的歷史", "為什麼老師討厭科技", "課堂上的手機：一場辯論", "如何用手機學習"],
+        "optionsZh": [
+          "手機的歷史",
+          "為什麼老師討厭科技",
+          "課堂上的手機：一場辯論",
+          "如何用手機學習"
+        ],
         "questionType": "main_idea"
       }
     ]
@@ -281,26 +521,2180 @@
     "questions": [
       {
         "question": "What did Sam and Grandpa do on the rainy afternoon?",
-        "options": ["(A) They watched TV together", "(B) They played games on Sam's phone", "(C) Grandpa told Sam family stories while the radio played", "(D) They went to a jazz concert in town"],
+        "options": [
+          "(A) They watched TV together",
+          "(B) They played games on Sam's phone",
+          "(C) Grandpa told Sam family stories while the radio played",
+          "(D) They went to a jazz concert in town"
+        ],
         "answer": 2,
         "explanation": "第三段說 Grandpa told Sam stories while the radio played softly，故選 C。",
-        "optionsZh": ["他們一起看電視", "他們玩 Sam 的手機遊戲", "爺爺一邊放著廣播一邊講家族故事", "他們去城鎮看爵士音樂會"],
+        "optionsZh": [
+          "他們一起看電視",
+          "他們玩 Sam 的手機遊戲",
+          "爺爺一邊放著廣播一邊講家族故事",
+          "他們去城鎮看爵士音樂會"
+        ],
         "questionType": "detail"
       },
       {
         "question": "Why did Grandpa refuse to give Sam the radio?",
-        "options": ["(A) The radio was too expensive to give away", "(B) Grandpa did not want Sam to have it", "(C) Grandpa said the radio belonged where it was", "(D) Sam did not ask for it politely"],
+        "options": [
+          "(A) The radio was too expensive to give away",
+          "(B) Grandpa did not want Sam to have it",
+          "(C) Grandpa said the radio belonged where it was",
+          "(D) Sam did not ask for it politely"
+        ],
         "answer": 2,
         "explanation": "爺爺說 It belongs here，表示廣播機屬於那個地方，選 C；他仍然歡迎 Sam 回來聽，並非不想給，選 B 不準確。",
-        "optionsZh": ["廣播機太貴了", "爺爺不想給 Sam", "爺爺說廣播機屬於那裡", "Sam 沒有禮貌地詢問"],
+        "optionsZh": [
+          "廣播機太貴了",
+          "爺爺不想給 Sam",
+          "爺爺說廣播機屬於那裡",
+          "Sam 沒有禮貌地詢問"
+        ],
         "questionType": "inference"
       },
       {
         "question": "What does this story mainly show?",
-        "options": ["(A) Old radios sound better than modern music players", "(B) Simple things can bring people closer and create lasting memories", "(C) Children should spend more time in the countryside", "(D) Jazz music is more popular than other types of music"],
+        "options": [
+          "(A) Old radios sound better than modern music players",
+          "(B) Simple things can bring people closer and create lasting memories",
+          "(C) Children should spend more time in the countryside",
+          "(D) Jazz music is more popular than other types of music"
+        ],
         "answer": 1,
         "explanation": "故事透過廣播機連接祖孫兩代、讓 Sam 每年回訪直到廣播沉默，主旨是簡單的事物可以拉近人心並留下深刻回憶，選 B。",
-        "optionsZh": ["老廣播機比現代音樂播放器音質更好", "簡單的事物能拉近人心並留下長久回憶", "孩子應該在鄉下待更多時間", "爵士樂比其他類型的音樂更受歡迎"],
+        "optionsZh": [
+          "老廣播機比現代音樂播放器音質更好",
+          "簡單的事物能拉近人心並留下長久回憶",
+          "孩子應該在鄉下待更多時間",
+          "爵士樂比其他類型的音樂更受歡迎"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_10",
+    "passageType": "practical",
+    "title": "Lost and Found Notice (公告)",
+    "passage": "LOST AND FOUND — Riverside Elementary School\nDid you lose something? Check here first!\n• A blue backpack was found near the gym on Monday.\n• A pair of glasses was found in the library on Tuesday.\n• A gray umbrella was found by the front gate on Wednesday.\n• A silver watch was found in the cafeteria on Thursday.\nCome to the office during lunchtime to check if any item is yours. Please tell the staff the color and where you lost it. Unclaimed items will be given to charity after two weeks.",
+    "difficulty": 1,
+    "questions": [
+      {
+        "question": "Where was the gray umbrella found?",
+        "options": [
+          "(A) Near the gym",
+          "(B) In the library",
+          "(C) By the front gate",
+          "(D) In the cafeteria"
+        ],
+        "answer": 2,
+        "explanation": "公告寫著 A gray umbrella was found by the front gate on Wednesday，明確指出灰色雨傘是在校門口被拾獲，故選 C。",
+        "optionsZh": [
+          "在體育館附近",
+          "在圖書館",
+          "在校門口",
+          "在餐廳"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What will happen to items that no one claims after two weeks?",
+        "options": [
+          "(A) They will be thrown away",
+          "(B) They will be sold at school",
+          "(C) They will be given to charity",
+          "(D) They will be kept in the office forever"
+        ],
+        "answer": 2,
+        "explanation": "公告最後提到 Unclaimed items will be given to charity after two weeks，兩週後無人認領的物品會捐給慈善機構，故選 C。",
+        "optionsZh": [
+          "會被丟棄",
+          "會在學校被販售",
+          "會捐給慈善機構",
+          "會永遠留在辦公室"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_11",
+    "passageType": "practical",
+    "title": "Bike Rental Price List (價目表)",
+    "passage": "GREENWAY BIKE RENTAL\nPrices (per hour):\n• City Bike — NT$50\n• Mountain Bike — NT$80\n• Electric Bike — NT$120\nFamily Special: Rent 3 city bikes together and pay for only 2!\nRental Hours: 9:00 a.m. to 6:00 p.m., every day\nHelmets are free, but you must wear one at all times.\nBikes must be returned to the same shop. A late fee of NT$30 per hour will be charged.",
+    "difficulty": 1,
+    "questions": [
+      {
+        "question": "How much does it cost to rent a mountain bike for one hour?",
+        "options": [
+          "(A) NT$50",
+          "(B) NT$80",
+          "(C) NT$100",
+          "(D) NT$120"
+        ],
+        "answer": 1,
+        "explanation": "價目表寫 Mountain Bike — NT$80，山地車每小時租金為新台幣80元，故選 B。",
+        "optionsZh": [
+          "新台幣50元",
+          "新台幣80元",
+          "新台幣100元",
+          "新台幣120元"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does the Family Special offer to families who rent 3 city bikes together?",
+        "options": [
+          "(A) They only need to pay for two of the three bikes",
+          "(B) Each bike becomes 30 dollars cheaper",
+          "(C) They must return the bikes within one hour",
+          "(D) They receive an extra helmet for free"
+        ],
+        "answer": 0,
+        "explanation": "公告寫 Rent 3 city bikes together and pay for only 2，三台一起租只需付兩台的錢，故選 A。",
+        "optionsZh": [
+          "三台中只需付兩台的費用",
+          "每台便宜30元",
+          "必須在一小時內歸還",
+          "可獲得額外的免費安全帽"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_12",
+    "passageType": "practical",
+    "title": "Recycling Day Notice (校園公告)",
+    "passage": "GREENFIELD JUNIOR HIGH — Recycling Day Notice\nThis Friday is Recycling Day! Please bring these items to school:\n• Plastic bottles (rinsed and dried)\n• Old newspapers and magazines\n• Used batteries (put them in a bag)\nDo NOT bring broken glass or food waste.\nEach class will get points for every kilogram collected. The class with the most points wins a pizza party!\nBring your items to the gym before 8:00 a.m.",
+    "difficulty": 1,
+    "questions": [
+      {
+        "question": "What should students do with the batteries before bringing them?",
+        "options": [
+          "(A) Rinse them with water",
+          "(B) Put them in a bag",
+          "(C) Break them into pieces",
+          "(D) Leave them at home"
+        ],
+        "answer": 1,
+        "explanation": "公告提到 Used batteries (put them in a bag)，指示學生應把用過的電池裝進袋子再帶來，故選 B。",
+        "optionsZh": [
+          "用水沖洗",
+          "裝進袋子裡",
+          "把它們弄破",
+          "留在家裡"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What will the winning class receive?",
+        "options": [
+          "(A) A pizza party",
+          "(B) A day off from school",
+          "(C) New books for the library",
+          "(D) Extra recycling bins"
+        ],
+        "answer": 0,
+        "explanation": "公告寫 The class with the most points wins a pizza party，得分最高的班級可獲得披薩派對，故選 A。",
+        "optionsZh": [
+          "披薩派對",
+          "放假一天",
+          "圖書館的新書",
+          "額外的回收桶"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_13",
+    "passageType": "informational",
+    "title": "Why Do Cats Sleep So Much? (說明文)",
+    "passage": "Cats are famous for sleeping a lot. Most cats sleep for twelve to sixteen hours every day. Some cats even sleep for twenty hours! This might seem strange to us, but there is a good reason.\nLong ago, wild cats hunted small animals for food. Hunting takes a lot of energy. To save energy for hunting, cats' bodies learned to rest often. Even pet cats today still have this habit.\nCats also sleep more when they feel safe. A cat that trusts its home will sleep deeply. If a cat feels nervous, it may sleep less and stay alert instead.\nSo the next time you see a cat sleeping, remember: it is not lazy. It is simply following an old habit from its wild past.",
+    "difficulty": 1,
+    "questions": [
+      {
+        "question": "How many hours do most cats sleep every day?",
+        "options": [
+          "(A) 2 to 4 hours",
+          "(B) 6 to 8 hours",
+          "(C) 12 to 16 hours",
+          "(D) 20 to 24 hours"
+        ],
+        "answer": 2,
+        "explanation": "文中提到 Most cats sleep for twelve to sixteen hours every day，多數貓咪每天睡12到16小時，故選 C。",
+        "optionsZh": [
+          "2到4小時",
+          "6到8小時",
+          "12到16小時",
+          "20到24小時"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why do cats' bodies rest so often, according to the passage?",
+        "options": [
+          "(A) To grow bigger and stronger",
+          "(B) To save energy for hunting",
+          "(C) To avoid getting sick",
+          "(D) To stay away from other cats"
+        ],
+        "answer": 1,
+        "explanation": "文中說 To save energy for hunting, cats' bodies learned to rest often，貓咪常休息是為了保留獵食能量，故選 B。",
+        "optionsZh": [
+          "為了長得更高更壯",
+          "為了保留獵食所需的能量",
+          "為了避免生病",
+          "為了遠離其他貓咪"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_14",
+    "passageType": "informational",
+    "title": "The Story of Bubble Tea (說明文)",
+    "passage": "Bubble tea is one of Taiwan's most famous drinks. It was created in Taichung in the 1980s. A tea shop owner had an idea: add small, chewy balls made from tapioca to sweet milk tea.\nThe little balls are called \"pearls.\" People drink bubble tea with a big straw so the pearls can pass through easily. Today, bubble tea shops can be found all over the world, from Japan to the United States.\nMany people enjoy choosing their own sugar level and ice level. This makes each cup a little different. Bubble tea shows how a simple idea from Taiwan can become popular everywhere.",
+    "difficulty": 1,
+    "questions": [
+      {
+        "question": "Where was bubble tea created?",
+        "options": [
+          "(A) Taipei",
+          "(B) Taichung",
+          "(C) Tokyo",
+          "(D) New York"
+        ],
+        "answer": 1,
+        "explanation": "文中提到 It was created in Taichung in the 1980s，珍珠奶茶誕生於台中，故選 B。",
+        "optionsZh": [
+          "台北",
+          "台中",
+          "東京",
+          "紐約"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why do people use a big straw to drink bubble tea?",
+        "options": [
+          "(A) So the tea stays hot longer",
+          "(B) So the pearls can pass through easily",
+          "(C) So the drink looks more colorful",
+          "(D) So less sugar is needed"
+        ],
+        "answer": 1,
+        "explanation": "文中說 People drink bubble tea with a big straw so the pearls can pass through easily，粗吸管是為了讓珍珠順利通過，故選 B。",
+        "optionsZh": [
+          "讓茶保持較久的溫熱",
+          "讓珍珠能順利通過",
+          "讓飲料看起來更繽紛",
+          "讓所需的糖更少"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_15",
+    "passageType": "narrative",
+    "title": "A New Student's First Day (故事)",
+    "passage": "Today was Mia's first day at a new school. She did not know anyone, and she felt nervous walking into the classroom. She sat alone at the back and looked at her desk.\nDuring lunch, a girl named Ellie came over and smiled. \"Do you want to sit with us?\" Ellie asked. Mia felt happy and said yes right away.\nThey talked about their favorite shows and games. Mia learned that Ellie also liked drawing, just like her. By the end of the day, Mia had made her first new friend.\nWalking home, Mia smiled to herself. She was no longer worried about tomorrow.",
+    "difficulty": 1,
+    "questions": [
+      {
+        "question": "What did Ellie do at lunch?",
+        "options": [
+          "(A) She ignored Mia",
+          "(B) She asked Mia to sit with her",
+          "(C) She left the classroom early",
+          "(D) She gave Mia her lunch"
+        ],
+        "answer": 1,
+        "explanation": "文中寫 Ellie asked, \"Do you want to sit with us?\"，Ellie 主動邀請 Mia 一起坐，故選 B。",
+        "optionsZh": [
+          "她忽視了Mia",
+          "她邀請Mia一起坐",
+          "她提早離開教室",
+          "她把午餐給了Mia"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "How did Mia feel by the end of the day?",
+        "options": [
+          "(A) Nervous about tomorrow",
+          "(B) Angry at Ellie",
+          "(C) Less worried and happy",
+          "(D) Tired and bored"
+        ],
+        "answer": 2,
+        "explanation": "文末寫 Mia smiled...she was no longer worried about tomorrow，顯示她變得開心、不再擔心，故選 C。",
+        "optionsZh": [
+          "對明天感到緊張",
+          "對Ellie生氣",
+          "比較不擔心且開心",
+          "疲倦又無聊"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_16",
+    "passageType": "narrative",
+    "title": "The Kind Bus Driver (故事)",
+    "passage": "Every morning, Tony took the same bus to school. The driver, Mr. Wang, always smiled and said hello to every student. One cold morning, Tony forgot his bus card at home.\nTony felt worried. He did not have any money either. Mr. Wang saw his face and said, \"Don't worry. You can pay me tomorrow.\" Tony was surprised and thanked him many times.\nThe next day, Tony paid Mr. Wang double the fare to say thank you. Mr. Wang laughed and gave the extra money back. \"Just be kind to someone else someday,\" he said.\nTony never forgot those words.",
+    "difficulty": 1,
+    "questions": [
+      {
+        "question": "What problem did Tony have one cold morning?",
+        "options": [
+          "(A) He missed the bus",
+          "(B) He forgot his bus card and had no money",
+          "(C) He was late for school",
+          "(D) He lost his backpack"
+        ],
+        "answer": 1,
+        "explanation": "文中提到 Tony forgot his bus card at home... He did not have any money either，說明他忘帶卡又沒錢，故選 B。",
+        "optionsZh": [
+          "他錯過了公車",
+          "他忘記帶公車卡且沒有錢",
+          "他上學遲到",
+          "他弄丟了背包"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What lesson does Mr. Wang want Tony to learn?",
+        "options": [
+          "(A) Always carry extra money",
+          "(B) Wake up earlier every day",
+          "(C) Pass kindness on to others",
+          "(D) Never trust strangers"
+        ],
+        "answer": 2,
+        "explanation": "王先生說 Just be kind to someone else someday，希望 Tony 也能把善意傳給別人，故選 C。",
+        "optionsZh": [
+          "隨時多帶點錢",
+          "每天早點起床",
+          "把善意傳遞給別人",
+          "絕不信任陌生人"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_17",
+    "passageType": "chat",
+    "title": "Planning a Weekend Hike (對話)",
+    "passage": "",
+    "caption": "Amy: Hey! Want to go hiking this Saturday?\nBen: Sure! Which trail should we go to?\nAmy: How about Elephant Mountain? The view of the city is amazing.\nBen: Sounds great. What time should we meet?\nAmy: Let's meet at the MRT station at 8 a.m. Don't forget water and sunscreen!\nBen: Got it. Should I bring snacks too?\nAmy: Yes, please! I'll bring some fruit.",
+    "difficulty": 1,
+    "questions": [
+      {
+        "question": "Where do Amy and Ben plan to meet?",
+        "options": [
+          "(A) At Elephant Mountain",
+          "(B) At the MRT station",
+          "(C) At Ben's house",
+          "(D) At a restaurant"
+        ],
+        "answer": 1,
+        "explanation": "Amy 說 Let's meet at the MRT station at 8 a.m.，兩人約在捷運站見面，故選 B。",
+        "optionsZh": [
+          "在象山",
+          "在捷運站",
+          "在Ben家",
+          "在餐廳"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What did Ben offer to bring on the hike?",
+        "options": [
+          "(A) Water",
+          "(B) Sunscreen",
+          "(C) Snacks",
+          "(D) A tent"
+        ],
+        "answer": 2,
+        "explanation": "Ben 問 Should I bring snacks too? Amy 回答 Yes, please!，表示 Ben 主動提議帶點心，故選 C。",
+        "optionsZh": [
+          "水",
+          "防曬乳",
+          "點心",
+          "帳篷"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_18",
+    "passageType": "practical",
+    "title": "Community Garden Volunteers Needed (公告)",
+    "passage": "Sunshine Community Garden — Volunteers Needed!\nWe are looking for volunteers to help take care of our garden every weekend.\nTasks include:\n• Watering plants (Saturday mornings, 8:00–9:00 a.m.)\n• Pulling weeds (Saturday mornings, 9:00–10:00 a.m.)\n• Picking vegetables (Sunday mornings, 8:00–9:00 a.m.)\n• Cleaning tools (Sunday afternoons, 2:00–3:00 p.m.)\nNo experience is needed — we will teach you everything! Volunteers must be at least 10 years old. Please wear old clothes and bring your own gloves if you have them.\nSign up at the garden office or send an email to garden@sunshinecity.tw. Each volunteer who works for 10 hours will receive a free bag of fresh vegetables!",
+    "difficulty": 2,
+    "questions": [
+      {
+        "question": "When should a volunteer come to pick vegetables?",
+        "options": [
+          "(A) Saturday morning",
+          "(B) Saturday afternoon",
+          "(C) Sunday morning",
+          "(D) Sunday afternoon"
+        ],
+        "answer": 2,
+        "explanation": "公告寫 Picking vegetables (Sunday mornings, 8:00–9:00 a.m.)，採收蔬菜安排在週日早上，故選 C。",
+        "optionsZh": [
+          "週六早上",
+          "週六下午",
+          "週日早上",
+          "週日下午"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What is the minimum age for volunteers?",
+        "options": [
+          "(A) 8 years old",
+          "(B) 10 years old",
+          "(C) 12 years old",
+          "(D) 15 years old"
+        ],
+        "answer": 1,
+        "explanation": "公告寫 Volunteers must be at least 10 years old，志工最低年齡為10歲，故選 B。",
+        "optionsZh": [
+          "8歲",
+          "10歲",
+          "12歲",
+          "15歲"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "How can a volunteer get a free bag of vegetables?",
+        "options": [
+          "(A) By signing up online",
+          "(B) By bringing their own gloves",
+          "(C) By working for 10 hours",
+          "(D) By cleaning tools every day"
+        ],
+        "answer": 2,
+        "explanation": "公告寫 Each volunteer who works for 10 hours will receive a free bag of fresh vegetables，累積10小時服務即可獲得蔬菜，故選 C。",
+        "optionsZh": [
+          "透過線上報名",
+          "自備手套",
+          "累積志工時數10小時",
+          "每天清潔工具"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_19",
+    "passageType": "practical",
+    "title": "City History Museum — Visitor Information (公告)",
+    "passage": "City History Museum — Visitor Information\nOpening Hours: Tuesday to Sunday, 9:00 a.m. – 5:00 p.m. (Closed on Mondays)\nTicket Prices:\n• Adults: NT$150\n• Students (with ID): NT$80\n• Children under 6: Free\n• Family Pack (2 adults + 2 children): NT$350\nSpecial Exhibit: \"Ancient Taiwan\" — extra NT$50, runs until the end of this month.\nFree guided tours are held at 10:00 a.m. and 2:00 p.m. every day the museum is open. Groups of more than 15 people should book in advance by calling 02-2222-3333.\nPhotography is allowed, but flash is not permitted inside the exhibit halls.",
+    "difficulty": 2,
+    "questions": [
+      {
+        "question": "On which day is the museum closed?",
+        "options": [
+          "(A) Sunday",
+          "(B) Monday",
+          "(C) Tuesday",
+          "(D) Saturday"
+        ],
+        "answer": 1,
+        "explanation": "資訊寫 Closed on Mondays，博物館週一公休，故選 B。",
+        "optionsZh": [
+          "星期日",
+          "星期一",
+          "星期二",
+          "星期六"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "How much does a student need to pay to see the special exhibit?",
+        "options": [
+          "(A) NT$80",
+          "(B) NT$100",
+          "(C) NT$130",
+          "(D) NT$150"
+        ],
+        "answer": 2,
+        "explanation": "學生票NT$80，特展需另加NT$50，合計NT$130，故選 C。",
+        "optionsZh": [
+          "新台幣80元",
+          "新台幣100元",
+          "新台幣130元",
+          "新台幣150元"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What must a group of 20 people do before visiting?",
+        "options": [
+          "(A) Buy tickets online only",
+          "(B) Call ahead to book",
+          "(C) Bring their own guide",
+          "(D) Visit only on weekends"
+        ],
+        "answer": 1,
+        "explanation": "公告寫 Groups of more than 15 people should book in advance by calling，20人團體超過15人門檻須先致電預約，故選 B。",
+        "optionsZh": [
+          "只能在線上購票",
+          "事先致電預約",
+          "自備導覽員",
+          "只能在週末參觀"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_20",
+    "passageType": "informational",
+    "title": "How Octopuses Change Color (說明文)",
+    "passage": "Octopuses are famous for their amazing ability to change color. Within a second, an octopus can shift from bright red to pale gray, or even match the pattern of the rocks around it.\nThis skill comes from special cells in the octopus's skin called chromatophores. Each of these tiny cells holds colored pigment. When an octopus wants to change color, its brain sends a signal, and the cells stretch or shrink to show more or less color.\nOctopuses use this ability for two main reasons. First, it helps them hide from hungry predators like sharks. Second, it allows them to sneak up on small fish and crabs without being noticed.\nScientists are still studying how octopuses control this process so quickly, hoping the knowledge might one day help create new kinds of color-changing materials.",
+    "difficulty": 2,
+    "questions": [
+      {
+        "question": "What are the special skin cells that let octopuses change color called?",
+        "options": [
+          "(A) Neurons",
+          "(B) Chromatophores",
+          "(C) Tentacles",
+          "(D) Pigments only"
+        ],
+        "answer": 1,
+        "explanation": "文中提到 special cells in the octopus's skin called chromatophores，這些皮膚細胞稱為色素細胞，故選 B。",
+        "optionsZh": [
+          "神經元",
+          "色素細胞",
+          "觸手",
+          "純色素"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why do octopuses change color, according to the passage?",
+        "options": [
+          "(A) To attract other octopuses only",
+          "(B) To hide from predators and catch prey",
+          "(C) To stay warm in cold water",
+          "(D) To communicate with humans"
+        ],
+        "answer": 1,
+        "explanation": "文中說變色能幫助 hide from hungry predators 及 sneak up on small fish and crabs，故選 B。",
+        "optionsZh": [
+          "只為了吸引其他章魚",
+          "為了躲避掠食者並捕捉獵物",
+          "為了在冷水中保暖",
+          "為了與人類溝通"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does \"predators\" most likely mean in the second paragraph?",
+        "options": [
+          "(A) Animals that hunt other animals for food",
+          "(B) Animals that live in groups",
+          "(C) Animals that cannot swim",
+          "(D) Animals that are afraid of light"
+        ],
+        "answer": 0,
+        "explanation": "段落提到 hide from hungry predators like sharks，鯊魚是掠食者，可推知 predators 指獵食其他動物的動物，故選 A。",
+        "optionsZh": [
+          "會獵捕其他動物作為食物的動物",
+          "群居的動物",
+          "不會游泳的動物",
+          "害怕光線的動物"
+        ],
+        "questionType": "vocabulary"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_21",
+    "passageType": "informational",
+    "title": "The Invention of the Umbrella (說明文)",
+    "passage": "Umbrellas seem like a simple invention, but their history is thousands of years old. The earliest umbrellas were not used for rain at all — they were used to block the hot sun.\nIn ancient Egypt and China, umbrellas were often carried by servants to protect kings and nobles from sunlight. Owning an umbrella was actually a sign of high status, not something for everyday people.\nIt took a long time before umbrellas became waterproof and common for rainy weather. In the 1700s, a British man named Jonas Hanway carried an umbrella in the rain in London. At first, people laughed at him because only women used umbrellas at that time. But slowly, more men started copying him.\nToday, umbrellas are used by almost everyone, and no one thinks twice about carrying one on a rainy day.",
+    "difficulty": 2,
+    "questions": [
+      {
+        "question": "What were the earliest umbrellas mainly used for?",
+        "options": [
+          "(A) Blocking rain",
+          "(B) Blocking sunlight",
+          "(C) Decorating houses",
+          "(D) Carrying food"
+        ],
+        "answer": 1,
+        "explanation": "文中說 they were used to block the hot sun，最早的雨傘其實是用來遮陽，故選 B。",
+        "optionsZh": [
+          "遮雨",
+          "遮陽光",
+          "裝飾房屋",
+          "裝食物"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why did people laugh at Jonas Hanway?",
+        "options": [
+          "(A) He dropped his umbrella in public",
+          "(B) He used an umbrella, which only women did then",
+          "(C) He sold umbrellas for too much money",
+          "(D) He refused to go outside in the rain"
+        ],
+        "answer": 1,
+        "explanation": "文中說 people laughed at him because only women used umbrellas at that time，因為當時只有女性撐傘，故選 B。",
+        "optionsZh": [
+          "他在公開場合弄丟雨傘",
+          "他撐傘，而當時只有女性撐傘",
+          "他賣傘賣太貴",
+          "他拒絕在雨天外出"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does this passage mainly describe?",
+        "options": [
+          "(A) How umbrellas are made today",
+          "(B) The history and changing use of umbrellas",
+          "(C) Why umbrellas break easily",
+          "(D) The most expensive umbrellas in the world"
+        ],
+        "answer": 1,
+        "explanation": "全文從遮陽用途講到防雨、從地位象徵到普及，主要描述雨傘的歷史演變，故選 B。",
+        "optionsZh": [
+          "現今雨傘如何製造",
+          "雨傘的歷史與用途演變",
+          "雨傘為何容易損壞",
+          "世界上最貴的雨傘"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_22",
+    "passageType": "narrative",
+    "title": "The Music Box (故事)",
+    "passage": "When Lily was young, her grandmother gave her a small wooden music box. Every time Lily opened it, a gentle tune played, and a tiny ballerina spun slowly inside.\nYears passed, and Lily grew up. She moved to a new city for work and packed the music box carefully in a box of old things. One evening, feeling homesick, she found the music box again.\nAs the familiar tune played, Lily suddenly remembered her grandmother's kitchen, the smell of fresh bread, and the sound of her laughter. She realized the music box was not just a toy — it carried memories she thought she had forgotten.\nThat night, Lily called her grandmother just to say she loved her.",
+    "difficulty": 2,
+    "questions": [
+      {
+        "question": "Who gave Lily the music box?",
+        "options": [
+          "(A) Her mother",
+          "(B) Her teacher",
+          "(C) Her grandmother",
+          "(D) Her best friend"
+        ],
+        "answer": 2,
+        "explanation": "文中寫 her grandmother gave her a small wooden music box，音樂盒是祖母給的，故選 C。",
+        "optionsZh": [
+          "她的媽媽",
+          "她的老師",
+          "她的祖母",
+          "她最好的朋友"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why did Lily call her grandmother that night?",
+        "options": [
+          "(A) She wanted to borrow money",
+          "(B) The music box brought back warm memories",
+          "(C) Her grandmother was sick",
+          "(D) She wanted to return the music box"
+        ],
+        "answer": 1,
+        "explanation": "音樂盒的旋律讓 Lily 想起祖母廚房的溫馨回憶，因而打電話表達思念，故選 B。",
+        "optionsZh": [
+          "她想借錢",
+          "音樂盒喚起了溫暖的回憶",
+          "她的祖母生病了",
+          "她想歸還音樂盒"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What does the music box represent in the story?",
+        "options": [
+          "(A) A valuable antique worth a lot of money",
+          "(B) A reminder of Lily's childhood memories",
+          "(C) A gift Lily never liked",
+          "(D) A toy that no longer works"
+        ],
+        "answer": 1,
+        "explanation": "音樂盒承載著 Lily 童年與祖母相處的回憶，象徵意義大於物品本身價值，故選 B。",
+        "optionsZh": [
+          "一件值錢的古董",
+          "喚起Lily童年回憶的物品",
+          "Lily從不喜歡的禮物",
+          "一個已經壞掉的玩具"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_23",
+    "passageType": "narrative",
+    "title": "A Rainy Day Adventure (故事)",
+    "passage": "It was raining hard, and Jack and his little sister Emma were stuck inside all afternoon. \"I'm so bored,\" Emma complained, staring out the window.\nJack had an idea. He grabbed some old blankets and chairs and built a fort in the living room. Emma's eyes lit up. Together, they made a \"cave\" with flashlights and pillows, pretending to be explorers searching for hidden treasure.\nThey found an old box of family photos under the sofa and used it as their \"treasure.\" Emma laughed as Jack made up funny stories about each photo.\nBy the time their parents came home, the rain had stopped, but Jack and Emma didn't even notice. They had turned a boring rainy day into one of their favorite memories.",
+    "difficulty": 2,
+    "questions": [
+      {
+        "question": "What did Jack build to fix Emma's boredom?",
+        "options": [
+          "(A) A sandcastle",
+          "(B) A fort in the living room",
+          "(C) A puzzle table",
+          "(D) A paper airplane"
+        ],
+        "answer": 1,
+        "explanation": "文中寫 Jack...built a fort in the living room，他在客廳搭建了堡壘，故選 B。",
+        "optionsZh": [
+          "沙堡",
+          "客廳裡的堡壘",
+          "拼圖桌",
+          "紙飛機"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What did they use as their \"treasure\"?",
+        "options": [
+          "(A) A box of family photos",
+          "(B) Some old coins",
+          "(C) A box of toys",
+          "(D) A book of maps"
+        ],
+        "answer": 0,
+        "explanation": "文中提到 They found an old box of family photos...and used it as their \"treasure\"，他們把家庭照片當作寶藏，故選 A。",
+        "optionsZh": [
+          "一箱家庭照片",
+          "一些舊硬幣",
+          "一箱玩具",
+          "一本地圖書"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What is this story mainly about?",
+        "options": [
+          "(A) How to organize old photos",
+          "(B) Two children turning a boring day into a fun memory",
+          "(C) Why it rains so much in summer",
+          "(D) How to build a real tent outdoors"
+        ],
+        "answer": 1,
+        "explanation": "故事描述 Jack 和 Emma 靠想像力把無聊的雨天變成快樂回憶，故選 B。",
+        "optionsZh": [
+          "如何整理舊照片",
+          "兩個孩子把無聊的一天變成有趣回憶",
+          "為何夏天常下雨",
+          "如何在戶外搭建真正的帳篷"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_24",
+    "passageType": "practical",
+    "title": "Sunrise National Park — Camping Guidelines (公告)",
+    "passage": "Sunrise National Park — Camping Guidelines\nThank you for choosing Sunrise National Park for your camping trip. To keep the park safe and clean for everyone, please follow these rules carefully.\nBefore You Arrive:\n• Reserve your campsite online at least three days before your trip.\n• Check the weather forecast, since some trails close during heavy rain.\nWhile Camping:\n• Campfires are only allowed in the marked fire pits, and must be fully put out before you sleep or leave.\n• Keep all food in sealed containers. Wild animals, especially bears, are attracted to food left outside.\n• Quiet hours are from 10:00 p.m. to 6:00 a.m. Please keep noise low for other campers.\nBefore You Leave:\n• Take all your trash with you. There are no trash cans in the camping area.\n• Make sure your fire is completely cold before leaving your site.\nCampers who break these rules may be asked to leave the park immediately and may not be allowed to return. Enjoy your time in nature, and please help us protect it for future visitors.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "Where are campers allowed to make a campfire?",
+        "options": [
+          "(A) Anywhere inside their own campsite",
+          "(B) Only in the marked fire pits",
+          "(C) Only near the entrance gate",
+          "(D) Only during the day"
+        ],
+        "answer": 1,
+        "explanation": "規範寫 Campfires are only allowed in the marked fire pits，只能在標示的生火區升火，故選 B。",
+        "optionsZh": [
+          "自己營地內任何地方",
+          "僅限標示的生火區",
+          "僅限入口附近",
+          "僅限白天"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why should food be kept in sealed containers?",
+        "options": [
+          "(A) To keep it warm",
+          "(B) To stop wild animals from being attracted to it",
+          "(C) To save space in the tent",
+          "(D) To follow the quiet hours rule"
+        ],
+        "answer": 1,
+        "explanation": "規範說 Wild animals, especially bears, are attracted to food left outside，密封食物是為防止野生動物靠近，故選 B。",
+        "optionsZh": [
+          "為了保溫",
+          "避免吸引野生動物",
+          "為了節省帳篷空間",
+          "為了遵守安靜時段規定"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What should campers do with their trash before leaving?",
+        "options": [
+          "(A) Burn it in the fire pit",
+          "(B) Bury it in the ground",
+          "(C) Take it with them",
+          "(D) Leave it in a sealed container"
+        ],
+        "answer": 2,
+        "explanation": "規範寫 Take all your trash with you. There are no trash cans in the camping area，露營區沒有垃圾桶，須自行帶走垃圾，故選 C。",
+        "optionsZh": [
+          "在生火區燒掉",
+          "埋進土裡",
+          "隨身帶走",
+          "留在密封容器中"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_25",
+    "passageType": "practical",
+    "title": "Hillside Farmers' Market — Weekly Schedule (時刻表)",
+    "passage": "Hillside Farmers' Market — Weekly Schedule\nThe market moves to a different location each day. Please check the table below before visiting.\n\nMonday & Wednesday: Central Square, 3:00 p.m. – 7:00 p.m. — Fruits and vegetables only\nTuesday & Thursday: Riverside Park, 8:00 a.m. – 12:00 p.m. — Fruits, vegetables, and handmade bread\nFriday & Saturday: North Plaza, 9:00 a.m. – 6:00 p.m. — All products, including flowers and honey\nSunday: Closed for market staff's day off\n\nPayment: Cash and mobile payment are both accepted at every location. Card payment is only available at North Plaza.\nDiscount: Show a student ID for a 10% discount on fruits and vegetables at any location.\nNew this season: A cooking demonstration is held every Saturday at 10:00 a.m. near the main entrance at North Plaza.\nVisitors are welcome to bring their own bags to reduce plastic waste, and reusable bags are also sold at the market office for NT$20 each.\nFor questions, contact the market office at 03-456-7890.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "Where can a customer buy handmade bread?",
+        "options": [
+          "(A) Central Square",
+          "(B) Riverside Park",
+          "(C) North Plaza only",
+          "(D) Only at the market office"
+        ],
+        "answer": 1,
+        "explanation": "行程表寫 Riverside Park...Fruits, vegetables, and handmade bread，手工麵包只在河濱公園販售，故選 B。",
+        "optionsZh": [
+          "中央廣場",
+          "河濱公園",
+          "僅限北廣場",
+          "僅限市場辦公室"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "If a customer wants to pay by credit card, where should they go?",
+        "options": [
+          "(A) Central Square",
+          "(B) Riverside Park",
+          "(C) North Plaza",
+          "(D) Any location on Sunday"
+        ],
+        "answer": 2,
+        "explanation": "說明寫 Card payment is only available at North Plaza，信用卡付款僅限北廣場，故選 C。",
+        "optionsZh": [
+          "中央廣場",
+          "河濱公園",
+          "北廣場",
+          "週日任何地點"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What can we infer about the cooking demonstration?",
+        "options": [
+          "(A) It happens every day of the week",
+          "(B) It is held only during the Saturday market at North Plaza",
+          "(C) It replaces the Sunday market",
+          "(D) It requires a special ticket to attend"
+        ],
+        "answer": 1,
+        "explanation": "說明寫 A cooking demonstration is held every Saturday...near the main entrance at North Plaza，可知烹飪示範僅限週六北廣場市集，故選 B。",
+        "optionsZh": [
+          "每天都有舉行",
+          "只在北廣場的週六市集舉行",
+          "取代了週日市集",
+          "需要特別的門票才能參加"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_26",
+    "passageType": "informational",
+    "title": "Why Do Leaves Change Color in Fall? (說明文)",
+    "passage": "Every autumn, forests around the world transform into a beautiful mix of red, orange, and yellow. Many people enjoy traveling just to see this colorful show, but few know the science behind it.\nDuring spring and summer, leaves are green because they are full of a substance called chlorophyll. Chlorophyll absorbs sunlight and helps trees make food through a process called photosynthesis. Because chlorophyll reflects green light, that is the color our eyes see.\nAs autumn arrives, days become shorter and temperatures drop. Trees sense these changes and begin to prepare for winter. They slow down photosynthesis and stop producing new chlorophyll. As the green chlorophyll breaks down, other colors that were hidden underneath, like yellow and orange, finally become visible.\nRed colors are a little different. Some trees actually produce a brand-new red pigment in autumn, possibly to protect their leaves from strong sunlight while nutrients move back into the branches.\nEventually, the leaves dry out completely and fall to the ground, leaving the trees bare until spring returns the green once again.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What does chlorophyll help trees do?",
+        "options": [
+          "(A) Absorb sunlight and make food",
+          "(B) Grow taller in winter",
+          "(C) Change color in spring",
+          "(D) Attract more sunlight in autumn only"
+        ],
+        "answer": 0,
+        "explanation": "文中說 Chlorophyll absorbs sunlight and helps trees make food through...photosynthesis，葉綠素幫助樹木行光合作用製造養分，故選 A。",
+        "optionsZh": [
+          "吸收陽光並製造養分",
+          "在冬天長得更高",
+          "在春天變色",
+          "只在秋天吸收更多陽光"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why do yellow and orange colors appear in autumn leaves?",
+        "options": [
+          "(A) Trees start producing new yellow pigment",
+          "(B) The green chlorophyll breaks down and reveals hidden colors",
+          "(C) Cold weather turns green pigment into yellow",
+          "(D) Sunlight bleaches the leaves white"
+        ],
+        "answer": 1,
+        "explanation": "文中說 As the green chlorophyll breaks down, other colors...become visible，黃橙色是葉綠素分解後顯現的原有色素，故選 B。",
+        "optionsZh": [
+          "樹木開始製造新的黃色色素",
+          "綠色葉綠素分解後顯現出原本隱藏的顏色",
+          "寒冷天氣把綠色素變成黃色",
+          "陽光把葉子漂白成白色"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "According to the passage, why might trees produce red pigment in autumn?",
+        "options": [
+          "(A) To attract more insects",
+          "(B) To protect leaves from strong sunlight",
+          "(C) To help photosynthesis work faster",
+          "(D) To keep leaves from falling"
+        ],
+        "answer": 1,
+        "explanation": "文中提到紅色素 possibly to protect their leaves from strong sunlight，可能是為了保護葉片免受強光傷害，故選 B。",
+        "optionsZh": [
+          "為了吸引更多昆蟲",
+          "為了保護葉片不受強烈陽光傷害",
+          "為了讓光合作用更快進行",
+          "為了防止葉子掉落"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_27",
+    "passageType": "informational",
+    "title": "The Rise of Robot Waiters (說明文)",
+    "passage": "Walk into some restaurants today, and you might be served not by a person, but by a robot rolling smoothly between the tables. Robot waiters are becoming more and more common, especially in busy cities.\nThese robots usually follow a fixed path marked on the floor, carrying trays of food from the kitchen to the customer's table. Sensors help them avoid bumping into chairs, people, or other robots. Some advanced models can even say simple greetings like \"Here is your order!\"\nRestaurant owners like robot waiters because they can work all day without getting tired, and they never forget an order. This is especially helpful when there are not enough workers to hire. However, robots cannot yet do everything a human server can do, such as chatting warmly with customers or handling unexpected problems.\nFor now, most restaurants use robots only for simple tasks, like carrying food, while human staff still take orders and solve problems. Some experts believe that in the future, robots and humans will work together even more closely, each doing what they are best at.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "How do robot waiters avoid bumping into people or chairs?",
+        "options": [
+          "(A) By using sensors",
+          "(B) By following a worker's voice",
+          "(C) By moving very slowly at all times",
+          "(D) By stopping every few seconds"
+        ],
+        "answer": 0,
+        "explanation": "文中說 Sensors help them avoid bumping into chairs, people, or other robots，機器人靠感應器避免碰撞，故選 A。",
+        "optionsZh": [
+          "透過感應器",
+          "跟隨員工的聲音",
+          "一直移動得非常緩慢",
+          "每隔幾秒就停下來"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What is the purpose of the sentence \"such as chatting warmly with customers or handling unexpected problems\"?",
+        "options": [
+          "(A) To list tasks robots can already do perfectly",
+          "(B) To give examples of things robots still cannot do well",
+          "(C) To explain how robots are programmed",
+          "(D) To describe a new robot model being tested"
+        ],
+        "answer": 1,
+        "explanation": "此句接在 robots cannot yet do everything a human server can do 之後，是舉例說明機器人尚無法勝任的工作，故選 B。",
+        "optionsZh": [
+          "列出機器人已經能完美完成的任務",
+          "舉例說明機器人目前還做不好的事",
+          "解釋機器人如何被程式設計",
+          "描述一款正在測試的新機型"
+        ],
+        "questionType": "rhetorical_structure"
+      },
+      {
+        "question": "Why do some restaurant owners like using robot waiters?",
+        "options": [
+          "(A) Robots can work all day without getting tired",
+          "(B) Robots are cheaper to buy than plates",
+          "(C) Customers only want to be served by robots",
+          "(D) Robots can cook better than human chefs"
+        ],
+        "answer": 0,
+        "explanation": "文中說 they can work all day without getting tired, and they never forget an order，餐廳老闆喜歡機器人不會疲累的特點，故選 A。",
+        "optionsZh": [
+          "機器人可以整天工作而不會累",
+          "機器人比餐盤還便宜",
+          "顧客只想要機器人服務",
+          "機器人比人類廚師更會做菜"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_28",
+    "passageType": "narrative",
+    "title": "The Photography Contest (故事)",
+    "passage": "Nathan had always loved taking photos, but he never thought his pictures were good enough to show anyone. When his teacher announced a school photography contest, his friends encouraged him to enter, but he still hesitated.\nThe night before the deadline, Nathan looked through hundreds of photos on his phone. Most were of ordinary things: his cat sleeping in the sun, raindrops on a window, his grandmother cooking dinner. He almost gave up, thinking none of them were special.\nFinally, he chose a photo of his grandmother's hands kneading dough, flour dusting the kitchen table like snow. It felt personal and honest, even if it was not fancy.\nTwo weeks later, Nathan's photo won second place. The judges said it captured a quiet, real moment that most other entries lacked. Standing in front of the school, holding his small trophy, Nathan realized that a photo did not need to be perfect to be meaningful. It only needed to be true.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What was Nathan's winning photo about?",
+        "options": [
+          "(A) A sunset over the ocean",
+          "(B) His grandmother's hands kneading dough",
+          "(C) His cat sleeping in the sun",
+          "(D) Raindrops on a window"
+        ],
+        "answer": 1,
+        "explanation": "文中說他選了 a photo of his grandmother's hands kneading dough，得獎照片是祖母揉麵團的雙手，故選 B。",
+        "optionsZh": [
+          "海上的日落",
+          "祖母揉麵團的雙手",
+          "他的貓在陽光下睡覺",
+          "窗上的雨滴"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why did the judges like Nathan's photo?",
+        "options": [
+          "(A) It used the most expensive camera equipment",
+          "(B) It showed a quiet, real, and honest moment",
+          "(C) It was the largest photo submitted",
+          "(D) It included the most people in one picture"
+        ],
+        "answer": 1,
+        "explanation": "評審說這張照片 captured a quiet, real moment that most other entries lacked，欣賞其真實安靜的氛圍，故選 B。",
+        "optionsZh": [
+          "使用了最昂貴的攝影器材",
+          "呈現了安靜、真實而誠懇的瞬間",
+          "是投稿中尺寸最大的照片",
+          "照片裡出現最多人"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What does Nathan learn by the end of the story?",
+        "options": [
+          "(A) Only professional cameras can take good photos",
+          "(B) A photo does not need to be perfect to be meaningful",
+          "(C) Contests are not worth entering",
+          "(D) Family photos should never be shared publicly"
+        ],
+        "answer": 1,
+        "explanation": "文末寫 a photo did not need to be perfect to be meaningful. It only needed to be true，這是 Nathan 的體悟，故選 B。",
+        "optionsZh": [
+          "只有專業相機才能拍出好照片",
+          "照片不需要完美也能有意義",
+          "比賽不值得參加",
+          "家庭照片不該公開分享"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_29",
+    "passageType": "comics",
+    "title": "A Promise Kept (四格漫畫)",
+    "passage": "",
+    "caption": "Panel 1: Leo lies on the sofa playing video games while his dog Max brings him a leash and stares at him hopefully.\nPanel 2: Leo waves the dog away, saying, \"Maybe later, Max,\" and keeps playing.\nPanel 3: Max sadly walks away, and Leo suddenly notices the clock — it is already dark outside. He looks a little guilty.\nPanel 4: Leo puts down the controller, grabs the leash himself, and they both run out the door together, both looking happy.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What does the comic suggest happened between Panel 2 and Panel 3?",
+        "options": [
+          "(A) Leo finished all his homework",
+          "(B) A long time passed while Leo kept playing games",
+          "(C) Max ran away from home",
+          "(D) Leo's parents came home and scolded him"
+        ],
+        "answer": 1,
+        "explanation": "從第二格 Leo 繼續玩遊戲，到第三格天色已暗、他面露愧疚，可推知期間過了很長時間，故選 B。",
+        "optionsZh": [
+          "Leo做完了所有功課",
+          "Leo一直玩遊戲，時間過了很久",
+          "Max離家出走了",
+          "Leo的父母回家並責罵他"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What is the main message of this comic?",
+        "options": [
+          "(A) Dogs should never be kept indoors",
+          "(B) It is important to keep promises and make time for those who depend on us",
+          "(C) Video games are bad for children",
+          "(D) Walking a dog is more tiring than playing games"
+        ],
+        "answer": 1,
+        "explanation": "漫畫從 Leo 忽視 Max 到最後主動帶牠散步，傳達信守承諾、關心依賴自己的對象的重要性，故選 B。",
+        "optionsZh": [
+          "狗不該養在室內",
+          "信守承諾、為依賴我們的人騰出時間很重要",
+          "電動玩具對孩子有害",
+          "遛狗比玩遊戲更累人"
+        ],
+        "questionType": "main_idea"
+      },
+      {
+        "question": "What does Leo do in the last panel?",
+        "options": [
+          "(A) He ignores Max and keeps playing",
+          "(B) He takes Max out for a walk",
+          "(C) He falls asleep on the sofa",
+          "(D) He gives Max some food instead"
+        ],
+        "answer": 1,
+        "explanation": "第四格描述 Leo 拿起牽繩，兩人一起開心地跑出門，故選 B。",
+        "optionsZh": [
+          "繼續無視Max並玩遊戲",
+          "帶Max出去散步",
+          "在沙發上睡著",
+          "給Max一些食物代替"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_30",
+    "passageType": "practical",
+    "title": "Sunview International Airport — Departure Information (時刻表)",
+    "passage": "Sunview International Airport — Departure Information\nPassengers are reminded to check their gate numbers carefully, as gates may change due to weather or aircraft schedules. Please arrive at the gate at least 30 minutes before boarding time.\n\nFLIGHT   DESTINATION      BOARDING TIME   GATE     STATUS\nSV204    Tokyo             13:20           A12      On Time\nSV118    Bangkok           13:45           B05      Delayed (new time: 14:30)\nSV330    Hong Kong        14:00           A08      Boarding\nSV477    Los Angeles       15:10           C21      On Time\nSV092    Seoul              15:35           B05      On Time\n\nImportant Notes:\n• Passengers flying to Bangkok should check the screen again for further updates, as the flight has already been delayed once.\n• Gate B05 is being used for two different flights today. Passengers should look at both the flight number and the boarding time to avoid confusion.\n• All passengers must complete security checks at least 45 minutes before their original boarding time.\n• Lost boarding passes can be reprinted at any information counter free of charge.\n\nFor further assistance, please visit the information desk located near Gate A05, or call our hotline at 0800-123-456. Thank you for flying with Sunview Airlines, and we wish you a pleasant journey.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "What is the status of flight SV118 to Bangkok?",
+        "options": [
+          "(A) On time",
+          "(B) Delayed",
+          "(C) Cancelled",
+          "(D) Boarding"
+        ],
+        "answer": 1,
+        "explanation": "表格中 SV118 的 Status 為 Delayed (new time: 14:30)，班機狀態為延誤，故選 B。",
+        "optionsZh": [
+          "準時",
+          "延誤",
+          "取消",
+          "登機中"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "A passenger is waiting at Gate B05 at 13:40. Which flight should this passenger make sure NOT to board by mistake?",
+        "options": [
+          "(A) SV204 to Tokyo",
+          "(B) SV092 to Seoul",
+          "(C) SV118 to Bangkok, since two flights share this gate",
+          "(D) SV477 to Los Angeles"
+        ],
+        "answer": 2,
+        "explanation": "注意事項提到 Gate B05 is being used for two different flights today，須留意班機號碼與時間避免搭錯延誤的曼谷班機，故選 C。",
+        "optionsZh": [
+          "飛往東京的SV204",
+          "飛往首爾的SV092",
+          "飛往曼谷的SV118，因兩班機共用此登機門",
+          "飛往洛杉磯的SV477"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "How can a passenger get a lost boarding pass reprinted?",
+        "options": [
+          "(A) By calling the airline's hotline only",
+          "(B) By visiting any information counter for free",
+          "(C) By paying an extra fee at the gate",
+          "(D) By waiting until the next flight"
+        ],
+        "answer": 1,
+        "explanation": "注意事項寫 Lost boarding passes can be reprinted at any information counter free of charge，可在任一服務台免費補印，故選 B。",
+        "optionsZh": [
+          "只能致電航空公司熱線",
+          "前往任何服務台免費補印",
+          "在登機門額外付費",
+          "等到下一班機"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What should passengers flying to destinations other than Bangkok do, based on the notice?",
+        "options": [
+          "(A) Ignore the screen and go straight to the gate",
+          "(B) Still arrive early and check gate numbers, since gates may change",
+          "(C) Skip the security check if they arrive late",
+          "(D) Wait for a phone call from the airline"
+        ],
+        "answer": 1,
+        "explanation": "開頭提醒 gates may change due to weather or aircraft schedules，所有乘客都應提早到並再次確認登機門，故選 B。",
+        "optionsZh": [
+          "無視螢幕直接前往登機門",
+          "仍應提早抵達並確認登機門，因閘門可能變動",
+          "遲到就可以跳過安檢",
+          "等航空公司來電通知"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_31",
+    "passageType": "informational",
+    "title": "Plastic Pollution in the Ocean (說明文)",
+    "passage": "Every year, millions of tons of plastic waste enter the world's oceans. Much of it comes from land — bottles, bags, and packaging that are thrown away carelessly and eventually washed into rivers and seas.\nUnlike paper or food waste, plastic does not disappear quickly. Instead, sunlight and waves slowly break it into smaller and smaller pieces called microplastics. These tiny pieces are so small that fish, and even the plankton at the bottom of the ocean food chain, can accidentally swallow them.\nConsider one example: a study found microplastics inside the stomachs of seabirds thousands of kilometers from the nearest city. This shows just how far ocean plastic can travel and how deeply it has entered the natural world, far beyond where people actually throw it away.\nBecause humans eat fish and seafood, some of this plastic may eventually end up on our own dinner tables. Scientists are still studying exactly how this affects human health, but many agree that reducing plastic waste is an urgent task.\nSome countries have begun banning single-use plastic bags and straws. Individuals can also help by carrying reusable bottles and bags, and by properly recycling plastic instead of throwing it away.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "What are microplastics, according to the passage?",
+        "options": [
+          "(A) A new kind of ocean fish",
+          "(B) Tiny pieces of plastic broken down by sunlight and waves",
+          "(C) Chemicals added to make plastic stronger",
+          "(D) A type of seaweed found in polluted water"
+        ],
+        "answer": 1,
+        "explanation": "文中說 sunlight and waves slowly break it into smaller...pieces called microplastics，微塑膠是陽光海浪分解塑膠而成的碎片，故選 B。",
+        "optionsZh": [
+          "一種新的海洋魚類",
+          "被陽光和海浪分解成的微小塑膠碎片",
+          "用來讓塑膠更堅固的化學物質",
+          "污染水域中的一種海藻"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why does the author mention the seabirds found thousands of kilometers from the nearest city?",
+        "options": [
+          "(A) To introduce a new type of seabird",
+          "(B) To give an example of how far ocean plastic can spread",
+          "(C) To explain how seabirds migrate",
+          "(D) To argue that seabirds are dangerous to fish"
+        ],
+        "answer": 1,
+        "explanation": "此例子緊接在 how far ocean plastic can travel 之後，用來具體說明塑膠污染擴散範圍之廣，故選 B。",
+        "optionsZh": [
+          "介紹一種新的海鳥",
+          "舉例說明海洋塑膠能擴散多遠",
+          "解釋海鳥如何遷徙",
+          "主張海鳥對魚類有危險性"
+        ],
+        "questionType": "rhetorical_structure"
+      },
+      {
+        "question": "Why might scientists worry about plastic ending up on human dinner tables?",
+        "options": [
+          "(A) Because plastic makes food taste different",
+          "(B) Because humans eat fish that may contain microplastics",
+          "(C) Because plastic is expensive to clean from dishes",
+          "(D) Because plastic makes fish grow larger"
+        ],
+        "answer": 1,
+        "explanation": "文中說 Because humans eat fish and seafood, some of this plastic may eventually end up on our own dinner tables，故選 B。",
+        "optionsZh": [
+          "因為塑膠會改變食物味道",
+          "因為人類吃的魚可能含有微塑膠",
+          "因為清洗餐具上的塑膠很昂貴",
+          "因為塑膠會讓魚長得更大"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What is the main idea of this passage?",
+        "options": [
+          "(A) Ocean plastic pollution is a serious and far-reaching problem",
+          "(B) Fish are the main cause of ocean pollution",
+          "(C) Plastic bags are already banned in every country",
+          "(D) Scientists have found a full solution to ocean pollution"
+        ],
+        "answer": 0,
+        "explanation": "全文說明塑膠污染的擴散、對生態與人類的影響，以及應對方式，主旨為海洋塑膠污染是嚴重問題，故選 A。",
+        "optionsZh": [
+          "海洋塑膠污染是嚴重且影響深遠的問題",
+          "魚類是海洋污染的主因",
+          "塑膠袋已在所有國家被禁用",
+          "科學家已找到解決海洋污染的完整方法"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_32",
+    "passageType": "narrative",
+    "title": "The Old Fisherman and the Typhoon (故事)",
+    "passage": "Old Ah-Gong had fished along the same stretch of Taiwan's coast for over forty years. He knew the sea the way other people know their own homes — its moods, its warnings, its quiet moments before danger.\nOne August afternoon, the sky turned a strange shade of yellow-gray. Ah-Gong noticed the birds flying inland earlier than usual and the waves rolling in with an odd, heavy rhythm. Younger fishermen laughed and said the weather report showed clear skies for two more days.\nAh-Gong did not argue. He simply pulled his boat further up the beach, tied it with extra rope, and told his grandson to help the neighbors secure their boats too. By evening, the wind had already picked up.\nThe typhoon arrived early the next morning, far ahead of what the official forecast had predicted. Several boats that were left in the water were damaged, but Ah-Gong's boat, along with the ones his grandson had helped secure, remained safe.\nAfterward, the younger fishermen visited Ah-Gong, no longer laughing. They asked him to teach them how to read the sky and the sea the way he did, so they could learn to trust more than just a forecast.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "What did Ah-Gong notice before the typhoon arrived?",
+        "options": [
+          "(A) The sea became unusually calm",
+          "(B) Birds flew inland earlier than usual and the waves felt heavy",
+          "(C) The younger fishermen warned him first",
+          "(D) The government sent an emergency alert"
+        ],
+        "answer": 1,
+        "explanation": "文中說 the birds flying inland earlier than usual and the waves rolling in with an odd, heavy rhythm，故選 B。",
+        "optionsZh": [
+          "海面異常平靜",
+          "鳥比平常更早飛向內陸，海浪也顯得沉重",
+          "年輕漁夫先警告了他",
+          "政府發布了緊急警報"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What did Ah-Gong do after noticing the signs?",
+        "options": [
+          "(A) He ignored the signs and went fishing",
+          "(B) He secured his boat and helped his neighbors do the same",
+          "(C) He called the weather station to complain",
+          "(D) He left the village immediately"
+        ],
+        "answer": 1,
+        "explanation": "文中寫他 pulled his boat further up the beach, tied it with extra rope, and told his grandson to help the neighbors，故選 B。",
+        "optionsZh": [
+          "他無視徵兆照常出海",
+          "他固定好自己的船並幫助鄰居固定船隻",
+          "他打電話向氣象站抱怨",
+          "他立刻離開村莊"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why did the younger fishermen visit Ah-Gong after the storm?",
+        "options": [
+          "(A) To ask him to buy them new boats",
+          "(B) To learn how to read nature's warning signs",
+          "(C) To complain that he damaged their boats",
+          "(D) To invite him to a fishing contest"
+        ],
+        "answer": 1,
+        "explanation": "文末寫 They asked him to teach them how to read the sky and the sea，年輕漁夫想學習解讀自然徵兆的能力，故選 B。",
+        "optionsZh": [
+          "請他買新船給他們",
+          "想學習如何解讀自然的警訊",
+          "抱怨他弄壞了他們的船",
+          "邀請他參加釣魚比賽"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What does this story mainly suggest?",
+        "options": [
+          "(A) Official weather forecasts are always wrong",
+          "(B) Experience and careful observation can be as valuable as modern forecasts",
+          "(C) Older fishermen should stop fishing for safety",
+          "(D) Typhoons never affect experienced fishermen"
+        ],
+        "answer": 1,
+        "explanation": "故事透過 Ah-Gong 憑經驗提早防颱、比官方預報更準確，暗示經驗觀察的價值不亞於現代科技，故選 B。",
+        "optionsZh": [
+          "官方氣象預報總是錯誤的",
+          "經驗與細心觀察和現代預報一樣有價值",
+          "年長漁夫為了安全應停止捕魚",
+          "經驗豐富的漁夫不受颱風影響"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_33",
+    "passageType": "chat",
+    "title": "Planning a Surprise Party (對話)",
+    "passage": "",
+    "caption": "Zoe: Guys, Mia's birthday is next Saturday. Should we do something special?\nRyan: Definitely! How about a surprise party at my house?\nZoe: Perfect! But we need to make sure she doesn't find out.\nTina: I'll tell her we're just having a normal study group that day 😉\nRyan: Good idea. I'll order the cake and hide it in the garage fridge.\nZoe: I'll handle the decorations. Can someone bring music speakers?\nTina: I've got a speaker! Also, my cousin knows Mia's favorite songs, so I'll ask him for a playlist.\nRyan: One more thing — Mia's mom said she'll bring Mia over at exactly 3 p.m., so everyone needs to arrive by 2:30 to hide.\nZoe: Got it! Let's keep this a secret until Saturday!",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "What excuse does Tina plan to use so Mia doesn't suspect anything?",
+        "options": [
+          "(A) A dentist appointment",
+          "(B) A normal study group",
+          "(C) A family dinner",
+          "(D) A school assignment"
+        ],
+        "answer": 1,
+        "explanation": "Tina 說 I'll tell her we're just having a normal study group that day，她打算用讀書會當藉口，故選 B。",
+        "optionsZh": [
+          "看牙醫的約診",
+          "普通的讀書會",
+          "家庭聚餐",
+          "學校作業"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does Tina's message with the winking emoji suggest?",
+        "options": [
+          "(A) She is nervous about lying to Mia",
+          "(B) She finds it funny that they are tricking Mia in a harmless way",
+          "(C) She does not want to help plan the party",
+          "(D) She thinks the plan will fail"
+        ],
+        "answer": 1,
+        "explanation": "眨眼表情符號通常表示調皮、玩笑的語氣，顯示 Tina 覺得這個善意的騙局很有趣，故選 B。",
+        "optionsZh": [
+          "她對欺騙Mia感到緊張",
+          "她覺得這樣善意瞞騙Mia挺有趣的",
+          "她不想幫忙籌劃派對",
+          "她認為計畫會失敗"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "By what time should everyone arrive to hide before Mia comes?",
+        "options": [
+          "(A) 2:00 p.m.",
+          "(B) 2:30 p.m.",
+          "(C) 3:00 p.m.",
+          "(D) 3:30 p.m."
+        ],
+        "answer": 1,
+        "explanation": "Ryan 說 everyone needs to arrive by 2:30 to hide，大家須在2:30前到場躲藏，故選 B。",
+        "optionsZh": [
+          "下午2:00",
+          "下午2:30",
+          "下午3:00",
+          "下午3:30"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Who is in charge of bringing music for the party?",
+        "options": [
+          "(A) Zoe",
+          "(B) Ryan",
+          "(C) Tina",
+          "(D) Mia's mom"
+        ],
+        "answer": 2,
+        "explanation": "Tina 說 I've got a speaker!，並會準備歌單，負責音樂的是 Tina，故選 C。",
+        "optionsZh": [
+          "Zoe",
+          "Ryan",
+          "Tina",
+          "Mia的媽媽"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_34",
+    "passageType": "informational",
+    "title": "The Science of Laughter (說明文)",
+    "passage": "Laughter seems like such a simple, everyday thing that we rarely stop to ask why humans do it at all. Yet scientists who study laughter have discovered that it is far more complex than most people assume, and it may have played a surprising role in human survival.\nUnlike we might expect, most laughter has little to do with jokes. Researchers who recorded thousands of hours of everyday conversations found that people usually laugh at ordinary comments, not clever punchlines. A simple remark like \"I'll see you later\" can trigger genuine laughter if it is said between close friends in a relaxed moment. This suggests that laughter is mainly a social signal, one that says, \"I feel safe and comfortable with you,\" rather than a direct response to something objectively funny.\nConsider, for instance, how rarely people laugh when they are completely alone. Studies show that people are up to thirty times more likely to laugh in the company of others than by themselves, even when watching the exact same funny video. This striking difference reveals that laughter functions largely as a tool for building and strengthening social bonds between people, rather than a private reaction to humor alone.\nLaughter can also be surprisingly contagious. Hearing someone else laugh often triggers a similar response in our own brains, even before we know what is funny. Some scientists believe this ability evolved because groups who could bond quickly through shared laughter cooperated better and survived more easily.\nSo the next time you laugh with friends, remember that you are doing something deeply human — building connection, one laugh at a time.",
+    "difficulty": 5,
+    "questions": [
+      {
+        "question": "According to the passage, what usually causes people to laugh?",
+        "options": [
+          "(A) Clever jokes and punchlines only",
+          "(B) Ordinary, everyday comments shared with friends",
+          "(C) Watching funny videos alone",
+          "(D) Formal speeches given in public"
+        ],
+        "answer": 1,
+        "explanation": "文中說 people usually laugh at ordinary comments, not clever punchlines，日常話語才是大笑的主因，故選 B。",
+        "optionsZh": [
+          "只有巧妙的笑話和笑點",
+          "與朋友之間分享的日常話語",
+          "獨自觀看搞笑影片",
+          "公開場合的正式演講"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why does the author mention the comparison between laughing alone and laughing with others?",
+        "options": [
+          "(A) To prove that funny videos are not actually funny",
+          "(B) To support the idea that laughter is mainly a social behavior",
+          "(C) To show that people should watch more videos together",
+          "(D) To explain how the brain processes humor scientifically"
+        ],
+        "answer": 1,
+        "explanation": "此比較數據（獨自笑 vs. 與人同笑機率相差三十倍）用來支持笑聲主要是社交訊號的論點，故選 B。",
+        "optionsZh": [
+          "證明搞笑影片其實並不好笑",
+          "支持笑是一種社交行為的論點",
+          "顯示人們應該多一起看影片",
+          "解釋大腦如何處理幽默的科學機制"
+        ],
+        "questionType": "rhetorical_structure"
+      },
+      {
+        "question": "What can we infer about laughter's role in human evolution, according to the passage?",
+        "options": [
+          "(A) It made ancient humans stronger physically",
+          "(B) It may have helped groups bond and cooperate better",
+          "(C) It replaced spoken language among early humans",
+          "(D) It only appeared after written jokes were invented"
+        ],
+        "answer": 1,
+        "explanation": "文末提到能透過笑聲快速建立連結的群體 cooperated better and survived more easily，故選 B。",
+        "optionsZh": [
+          "讓遠古人類體格更強壯",
+          "可能幫助群體更緊密連結、合作更好",
+          "取代了早期人類的口語",
+          "是在文字笑話發明後才出現的"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What is the main idea of this passage?",
+        "options": [
+          "(A) Laughter is mostly a response to humor and jokes",
+          "(B) Laughter is a complex social behavior that helps connect people",
+          "(C) People should try to laugh alone more often",
+          "(D) Scientists have fully solved the mystery of laughter"
+        ],
+        "answer": 1,
+        "explanation": "全文說明笑聲並非源自笑話本身，而是建立社交連結的複雜行為，故選 B。",
+        "optionsZh": [
+          "笑主要是對幽默和笑話的反應",
+          "笑是一種能幫助人與人連結的複雜社交行為",
+          "人們應該多嘗試獨自發笑",
+          "科學家已完全解開笑聲之謎"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_35",
+    "passageType": "narrative",
+    "title": "Learning to Surf in Yilan (故事)",
+    "passage": "Growing up far from the coast, Ting-Wei had never even touched the ocean until his family moved to Yilan the summer before ninth grade. His new classmates spent their weekends surfing, and although the idea both excited and terrified him, he finally agreed to try it after weeks of gentle encouragement.\nHis first attempt was, in his own words, \"a complete disaster.\" He swallowed what felt like half the ocean, lost his balance instantly, and watched his board float away twice within the first ten minutes. Some of the more experienced kids laughed, though not unkindly, and one of them, a girl named Amy, paddled over to help him climb back on.\n\"Everyone falls at first,\" Amy told him, steadying his board. \"The trick is not to fight the wave — you're supposed to move with it, not against it.\" Ting-Wei tried to remember her words as wave after wave knocked him down that afternoon.\nBy his fifth weekend of practice, something finally clicked. As a modest wave rose behind him, he pushed himself up, wobbled for a heart-stopping second, and then, impossibly, found his balance. He rode the wave all the way to the shallow water, grinning so widely that his cheeks hurt.\nThat night, writing in his journal, Ting-Wei realized surfing had taught him something beyond balance. Whenever life knocked him down afterward, he found himself thinking of Amy's advice: stop struggling against the wave, and instead, learn to move with it.",
+    "difficulty": 5,
+    "questions": [
+      {
+        "question": "What happened during Ting-Wei's first attempt at surfing?",
+        "options": [
+          "(A) He immediately learned to balance perfectly",
+          "(B) He fell repeatedly and lost his board twice",
+          "(C) He refused to go into the water",
+          "(D) He hurt his leg badly"
+        ],
+        "answer": 1,
+        "explanation": "文中說他 lost his balance instantly...watched his board float away twice，第一次嘗試多次跌倒並弄丟衝浪板，故選 B。",
+        "optionsZh": [
+          "他立刻就完美掌握平衡",
+          "他不斷跌倒且弄丟衝浪板兩次",
+          "他拒絕下水",
+          "他的腿受了重傷"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What advice did Amy give Ting-Wei?",
+        "options": [
+          "(A) To fight against the wave with more strength",
+          "(B) To move with the wave instead of fighting it",
+          "(C) To practice only on land first",
+          "(D) To wait until he was older to try surfing"
+        ],
+        "answer": 1,
+        "explanation": "Amy 說 you're supposed to move with it, not against it，建議順著浪走而非對抗，故選 B。",
+        "optionsZh": [
+          "用更多力氣對抗海浪",
+          "順著海浪前進而非對抗它",
+          "先只在陸地上練習",
+          "等年紀更大再嘗試衝浪"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does the ending of the story suggest about Ting-Wei?",
+        "options": [
+          "(A) He gave up surfing after his fifth weekend",
+          "(B) He applies Amy's advice to challenges beyond surfing",
+          "(C) He no longer talks to Amy after learning to surf",
+          "(D) He decided surfing was too dangerous to continue"
+        ],
+        "answer": 1,
+        "explanation": "文末寫 Whenever life knocked him down afterward, he found himself thinking of Amy's advice，顯示他將此道理應用到人生其他挑戰，故選 B。",
+        "optionsZh": [
+          "他在第五個週末後放棄了衝浪",
+          "他把Amy的建議應用到衝浪以外的挑戰上",
+          "學會衝浪後他不再和Amy說話",
+          "他認為衝浪太危險而決定放棄"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What is the main lesson of this story?",
+        "options": [
+          "(A) Surfing is too difficult for beginners to learn",
+          "(B) Working with difficulties, rather than fighting them, can help us grow",
+          "(C) Moving to a new place always causes problems",
+          "(D) Only experienced surfers should go into the ocean"
+        ],
+        "answer": 1,
+        "explanation": "故事透過衝浪的比喻，傳達順應困難、與之合作而非對抗更能助人成長的道理，故選 B。",
+        "optionsZh": [
+          "衝浪對初學者來說太困難了",
+          "順應困難而非對抗困難有助於成長",
+          "搬到新地方總是會帶來問題",
+          "只有經驗豐富的衝浪者才能下海"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_36",
+    "passageType": "narrative",
+    "title": "A Letter to My Future Self (故事)",
+    "passage": "Our English teacher gave us an unusual assignment: write a letter to yourself, to be opened five years later. Most of my classmates groaned, complaining that they had no idea what to say to a version of themselves that didn't exist yet. I felt the same way, staring at a blank page for nearly twenty minutes before writing a single word.\nEventually, I decided to write about my fears rather than my hopes. I admitted, in ink, that I was terrified of failing my high school entrance exam, that I doubted whether I was smart enough for the school I wanted, and that I often compared myself unfavorably to my older brother, who had always been the confident, capable one in our family.\nI sealed the letter and mostly forgot about it, buried under years of homework, friendships, and the ordinary chaos of growing up.\nFive years later, our teacher, now retired, mailed the letters back to us exactly as promised. Reading my own handwriting again felt strange, almost like eavesdropping on a stranger. The exam I had feared so deeply had happened, and passed, years ago, its outcome barely memorable now. My old worries about my brother had quietly faded as I found my own path, separate from his.\nWhat struck me most wasn't how much had changed, but how much unnecessary worry I had carried at fourteen, over things that would eventually resolve themselves. I wished I could reach back through the years and tell that anxious version of myself to relax, just a little.",
+    "difficulty": 5,
+    "questions": [
+      {
+        "question": "What did the writer choose to write about in the letter?",
+        "options": [
+          "(A) Future travel plans",
+          "(B) Fears and worries at the time",
+          "(C) A list of favorite books",
+          "(D) Advice for younger students"
+        ],
+        "answer": 1,
+        "explanation": "文中寫 I decided to write about my fears rather than my hopes，作者選擇寫下當時的恐懼與擔憂，故選 B。",
+        "optionsZh": [
+          "未來的旅遊計畫",
+          "當時的恐懼與擔憂",
+          "喜愛書籍的清單",
+          "給學弟妹的建議"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "How did the writer feel about the exam by the time the letter was reopened?",
+        "options": [
+          "(A) Still deeply afraid of it",
+          "(B) Barely remembering it as something significant",
+          "(C) Angry that they had failed it",
+          "(D) Proud of getting the highest score in school"
+        ],
+        "answer": 1,
+        "explanation": "文中寫 its outcome barely memorable now，多年後考試結果已幾乎不值一提，故選 B。",
+        "optionsZh": [
+          "依然對考試深感恐懼",
+          "幾乎不記得考試曾是件大事",
+          "對考試落榜感到憤怒",
+          "以拿到全校最高分為傲"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does the comparison to \"eavesdropping on a stranger\" suggest?",
+        "options": [
+          "(A) The writer no longer remembers writing the letter at all",
+          "(B) The writer feels distant from their fourteen-year-old self",
+          "(C) The writer suspects someone else wrote the letter",
+          "(D) The writer thinks the letter was lost in the mail"
+        ],
+        "answer": 1,
+        "explanation": "作者形容讀信如同 eavesdropping on a stranger，顯示與當年那個十四歲的自己產生距離感，故選 B。",
+        "optionsZh": [
+          "作者完全不記得自己寫過這封信",
+          "作者對十四歲時的自己感到疏離陌生",
+          "作者懷疑是別人代寫了這封信",
+          "作者認為信件在郵寄途中遺失了"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What is the main message of this passage?",
+        "options": [
+          "(A) Teachers should not give unusual writing assignments",
+          "(B) Many worries from our youth turn out to be less important than we expect",
+          "(C) Comparing yourself to siblings is always harmful",
+          "(D) Entrance exams are not important for the future"
+        ],
+        "answer": 1,
+        "explanation": "全文透過重讀舊信，體悟到當年許多煩惱最終都自然化解，主旨為年少憂慮往往不如想像中重要，故選 B。",
+        "optionsZh": [
+          "老師不該出不尋常的寫作作業",
+          "許多年少時的煩惱後來證實沒有想像中重要",
+          "和手足比較永遠都是有害的",
+          "升學考試對未來並不重要"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_37",
+    "passageType": "dual",
+    "title": "Should School Uniforms Be Required? — Two Views (雙方觀點)",
+    "passage": "■ Article 1 — By Jason Huang, Grade 9 Student\n\nI believe school uniforms should not be required. When students can choose their own clothes, they can express their personalities and feel more like individuals rather than identical copies of each other. Getting dressed for school can even be a small daily joy, a chance to feel confident before facing a busy day. Some people argue that uniforms prevent unfair comparisons between rich and poor students, but I think this problem exists with or without uniforms — students still notice differences in shoes, bags, or phones. Removing uniforms wouldn't remove those comparisons; it would simply remove one more form of self-expression that students actually enjoy.\n\n■ Article 2 — By Ms. Wendy Chen, School Counselor\n\nAs a school counselor, I have seen how uniforms can actually reduce daily stress for many students. Without uniforms, some students spend considerable time and energy each morning worrying about what to wear, and worse, comparing their clothing brands to their classmates'. This can create real pressure, especially for students from families with limited money. Uniforms allow students to focus their morning energy on schoolwork instead of appearance. They also create a sense of belonging to the same community. While I understand students want to express individuality, I believe there are many other ways to do so — through hobbies, artwork, or friendships — that do not require expensive clothing.",
+    "difficulty": 5,
+    "questions": [
+      {
+        "question": "What is Jason's main argument for allowing students to skip uniforms?",
+        "options": [
+          "(A) Uniforms are too expensive to buy",
+          "(B) Uniforms limit students' ability to express their individuality",
+          "(C) Uniforms make it hard to move during sports",
+          "(D) Uniforms are against school rules"
+        ],
+        "answer": 1,
+        "explanation": "Jason 認為自由穿搭能 express their personalities，反對制服的主因是它限制個性表達，故選 B。",
+        "optionsZh": [
+          "制服太貴買不起",
+          "制服限制學生表達個性的能力",
+          "制服讓運動時難以活動",
+          "制服違反校規"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "According to Ms. Chen, what problem can uniforms help reduce?",
+        "options": [
+          "(A) Traffic jams near the school gate",
+          "(B) Stress and comparison caused by clothing brands",
+          "(C) Low grades among students",
+          "(D) Arguments between teachers and students"
+        ],
+        "answer": 1,
+        "explanation": "Ms. Chen 提到學生會 comparing their clothing brands to their classmates'，制服能減少此類比較帶來的壓力，故選 B。",
+        "optionsZh": [
+          "校門口的交通壅塞",
+          "因服裝品牌比較而生的壓力",
+          "學生成績低落",
+          "師生之間的爭執"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What do Jason and Ms. Chen both agree could be a downside of not having uniforms?",
+        "options": [
+          "(A) Students may compare themselves to each other based on clothing",
+          "(B) Students will refuse to attend school",
+          "(C) Teachers will have less control over the classroom",
+          "(D) Parents will need to buy more books"
+        ],
+        "answer": 0,
+        "explanation": "Jason 承認 students still notice differences in shoes, bags, or phones；Ms. Chen 也提到品牌比較的壓力，兩人皆認同此問題存在，故選 A。",
+        "optionsZh": [
+          "學生可能會以服裝互相比較",
+          "學生會拒絕上學",
+          "老師對班級的掌控力會下降",
+          "家長需要買更多書籍"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What is the best title that captures both articles?",
+        "options": [
+          "(A) The History of School Clothing",
+          "(B) School Uniforms: Freedom of Expression vs. Reducing Pressure",
+          "(C) Why Uniforms Should Be Banned Everywhere",
+          "(D) How to Choose the Best School Bag"
+        ],
+        "answer": 1,
+        "explanation": "兩篇分別從「個性表達自由」與「減輕比較壓力」兩角度討論制服議題，最貼切標題為 B。",
+        "optionsZh": [
+          "校園服裝的歷史",
+          "校服：表達自由 vs. 減輕壓力",
+          "為何制服應在各地被禁止",
+          "如何挑選最好的書包"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_38",
+    "passageType": "informational",
+    "title": "How Coral Reefs Protect Coastlines (說明文)",
+    "passage": "Coral reefs are often celebrated for their dazzling colors and the astonishing variety of marine life they support, but many people overlook one of their most practical functions: protecting coastal communities from the raw power of the ocean.\nWhen large waves generated by storms or typhoons approach a shoreline, a healthy reef acts much like a natural breakwater, absorbing and dispersing much of the wave's energy before it ever reaches the beach. Research conducted across several tropical regions has estimated that reefs can reduce wave energy by as much as ninety percent, a figure that becomes especially significant when a powerful storm bears down on a low-lying coastal village with no other form of natural defense.\nConsider the contrast between two neighboring coastlines: one still protected by a largely intact reef, and another where the reef has been damaged by pollution, overfishing, or careless boat anchors. During the same storm, the community behind the healthy reef often experiences comparatively minor flooding, whereas the community behind the damaged reef may suffer severe erosion and structural damage to homes built close to the shore. This side-by-side comparison illustrates, more persuasively than statistics alone, exactly how much protection a healthy reef quietly provides.\nUnfortunately, reefs worldwide are under serious threat from rising ocean temperatures, which can cause a damaging process known as coral bleaching, as well as from pollution and destructive fishing practices. When a reef dies, coastal communities do not just lose a beautiful underwater landscape; they lose a natural barrier that has protected them, often for generations, without anyone fully realizing it.\nProtecting coral reefs, therefore, is not merely an environmental concern reserved for scientists and conservationists. It is also a matter of practical safety for millions of people who happen to live near the coast.",
+    "difficulty": 6,
+    "questions": [
+      {
+        "question": "According to the passage, how much can healthy reefs reduce wave energy by?",
+        "options": [
+          "(A) About ten percent",
+          "(B) About thirty percent",
+          "(C) About fifty percent",
+          "(D) As much as ninety percent"
+        ],
+        "answer": 3,
+        "explanation": "文中提到 reefs can reduce wave energy by as much as ninety percent，健康珊瑚礁最多可減少90%的海浪能量，故選 D。",
+        "optionsZh": [
+          "約百分之十",
+          "約百分之三十",
+          "約百分之五十",
+          "高達百分之九十"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why does the author compare a coastline with a healthy reef to one with a damaged reef?",
+        "options": [
+          "(A) To argue that all coastlines look the same during storms",
+          "(B) To demonstrate reefs' protective effect more vividly than numbers alone",
+          "(C) To explain how coral reefs are formed underwater",
+          "(D) To criticize fishing communities for overfishing"
+        ],
+        "answer": 1,
+        "explanation": "文中明說 This side-by-side comparison illustrates, more persuasively than statistics alone，此對比是為了更生動說明珊瑚礁的保護作用，故選 B。",
+        "optionsZh": [
+          "主張所有海岸線在暴風雨中看起來都一樣",
+          "比單純數字更生動地呈現珊瑚礁的保護效果",
+          "解釋珊瑚礁在水下如何形成",
+          "批評漁業社群過度捕撈"
+        ],
+        "questionType": "rhetorical_structure"
+      },
+      {
+        "question": "What can we infer about communities living near damaged reefs?",
+        "options": [
+          "(A) They are safer than communities near healthy reefs",
+          "(B) They may face greater flooding and structural damage during storms",
+          "(C) They no longer need to worry about storms at all",
+          "(D) They receive more government funding automatically"
+        ],
+        "answer": 1,
+        "explanation": "文中說受損珊瑚礁旁的社群 may suffer severe erosion and structural damage，暴風雨時受災更嚴重，故選 B。",
+        "optionsZh": [
+          "他們比健康珊瑚礁附近的社群更安全",
+          "暴風雨時可能面臨更嚴重的淹水與建築損害",
+          "完全不必再擔心暴風雨",
+          "會自動獲得更多政府補助"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What is the main idea of this passage?",
+        "options": [
+          "(A) Coral reefs are only valuable for tourism and diving",
+          "(B) Healthy coral reefs provide crucial, often overlooked protection for coastal communities",
+          "(C) Coral bleaching is caused mainly by overfishing",
+          "(D) Coastal communities should be relocated away from all reefs"
+        ],
+        "answer": 1,
+        "explanation": "全文說明珊瑚礁在防護海岸、減少暴風損害方面的重要卻常被忽視的作用，故選 B。",
+        "optionsZh": [
+          "珊瑚礁只在觀光潛水方面有價值",
+          "健康珊瑚礁為沿海社群提供關鍵卻常被忽視的保護",
+          "珊瑚白化主要是過度捕撈造成的",
+          "沿海社群應該遷離所有珊瑚礁"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_39",
+    "passageType": "narrative",
+    "title": "The Night the Power Went Out (故事)",
+    "passage": "The typhoon warning had been broadcast all day, but nobody in the Lin family expected the power to actually go out — not in a modern apartment building in the middle of the city. Yet at exactly 9:47 p.m., the lights flickered twice and then died completely, plunging the entire building into an unfamiliar, thick darkness.\nAt first, twelve-year-old Wei-Chen was thrilled. School the next day would surely be cancelled, and the sudden darkness felt like an adventure rather than an inconvenience. His mother, however, moved calmly and quickly, retrieving candles, a flashlight, and a battery-powered radio from a cabinet that Wei-Chen hadn't even known existed until that moment.\nAs the family gathered around a single candle in the living room, something unexpected happened: they began talking, really talking, in a way that rarely occurred when the television and their phones competed for attention. Wei-Chen's father told stories about his own childhood, describing typhoons from decades earlier when power outages were far more common and families routinely gathered exactly like this.\nA knock came at the door around 10:30. It was their elderly neighbor, Mrs. Chen, who lived alone and had run out of candles. Wei-Chen's mother invited her in immediately, and soon the neighbor was sharing tea and stories with them as though she had always been part of the family.\nBy the time the power returned near midnight, nobody rushed to turn on the television or check their phones right away. Instead, they sat together a while longer, reluctant to let the strange, quiet magic of the evening end so quickly. Wei-Chen later admitted that the night without power had somehow felt more connected than countless ordinary evenings with electricity.",
+    "difficulty": 6,
+    "questions": [
+      {
+        "question": "What did Wei-Chen's mother do right after the power went out?",
+        "options": [
+          "(A) She called the electric company to complain",
+          "(B) She retrieved candles, a flashlight, and a radio",
+          "(C) She went outside to check on neighbors first",
+          "(D) She went straight to bed"
+        ],
+        "answer": 1,
+        "explanation": "文中寫 his mother...moved calmly and quickly, retrieving candles, a flashlight, and a battery-powered radio，故選 B。",
+        "optionsZh": [
+          "打電話向電力公司抱怨",
+          "拿出蠟燭、手電筒和收音機",
+          "先出門查看鄰居狀況",
+          "直接去睡覺"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why did Mrs. Chen come to the Lin family's door?",
+        "options": [
+          "(A) She wanted to borrow their radio",
+          "(B) She had run out of candles",
+          "(C) She was worried about the typhoon",
+          "(D) She wanted to complain about the noise"
+        ],
+        "answer": 1,
+        "explanation": "文中寫鄰居 Mrs. Chen...had run out of candles，她因蠟燭用完而前來敲門，故選 B。",
+        "optionsZh": [
+          "她想借收音機",
+          "她的蠟燭用完了",
+          "她擔心颱風",
+          "她想抱怨噪音"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does the story suggest happened during the power outage?",
+        "options": [
+          "(A) The family argued more than usual",
+          "(B) The family connected with each other more than on ordinary evenings",
+          "(C) The family was too scared to talk at all",
+          "(D) The family left the apartment immediately"
+        ],
+        "answer": 1,
+        "explanation": "文中描述停電時全家圍坐蠟燭旁真誠交談，比平常晚上更有連結，故選 B。",
+        "optionsZh": [
+          "這家人比平常更常爭吵",
+          "這家人比平常晚上更緊密地交流",
+          "這家人嚇得完全不敢說話",
+          "這家人立刻離開了公寓"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What is the main idea of this story?",
+        "options": [
+          "(A) Typhoons always cause serious damage to apartment buildings",
+          "(B) Losing modern conveniences can sometimes bring people closer together",
+          "(C) Elderly neighbors should always live with younger families",
+          "(D) Power outages are more dangerous than typhoons themselves"
+        ],
+        "answer": 1,
+        "explanation": "故事透過停電夜晚全家與鄰居真誠交流的經驗，傳達失去便利設施有時反能拉近人心，故選 B。",
+        "optionsZh": [
+          "颱風總是對公寓大樓造成嚴重損害",
+          "失去現代便利設施有時反而能讓人們更親近",
+          "年長鄰居應該永遠與年輕家庭同住",
+          "停電比颱風本身更危險"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_40",
+    "passageType": "dual",
+    "title": "Is Social Media Good for Teenagers? — Two Views (雙方觀點)",
+    "passage": "■ Article 1 — By Dr. Karen Wu, Child Psychologist\n\nBased on years of clinical research, I am increasingly convinced that unrestricted social media use poses serious risks for teenage mental health. Adolescence is already a period of intense self-comparison, and social media platforms, by design, amplify this tendency by presenting an endless stream of curated, idealized images of other people's lives. Numerous studies have linked heavy social media use among teenagers to increased rates of anxiety, poor sleep, and lower self-esteem. Furthermore, algorithms are specifically engineered to maximize the time users spend scrolling, not to protect their psychological wellbeing. While I do not advocate banning social media entirely, I strongly believe parents and schools must actively guide teenagers toward healthier, more limited usage patterns.\n\n■ Article 2 — By Marcus Lin, High School Student and Blogger\n\nAs someone who grew up entirely within the social media era, I find these warnings somewhat exaggerated and disconnected from how my generation actually experiences these platforms. For many of us, social media is not primarily a source of anxiety but rather an essential tool for maintaining friendships, discovering communities of people who share our specific interests, and even learning new skills through educational content. Teenagers dealing with isolation, particularly those in rural areas or those who feel different from their immediate peers, often find genuine, supportive communities online that they simply cannot access locally. Rather than treating all social media use as inherently harmful, adults should focus on teaching digital literacy skills so that we can navigate these platforms wisely and safely on our own.",
+    "difficulty": 6,
+    "questions": [
+      {
+        "question": "What does Dr. Wu say social media algorithms are designed to do?",
+        "options": [
+          "(A) Protect users' mental health above all else",
+          "(B) Maximize the time users spend scrolling",
+          "(C) Teach teenagers new skills automatically",
+          "(D) Reduce anxiety among frequent users"
+        ],
+        "answer": 1,
+        "explanation": "Dr. Wu 說 algorithms are specifically engineered to maximize the time users spend scrolling，演算法設計目的是延長使用時間，故選 B。",
+        "optionsZh": [
+          "把使用者的心理健康放在首位",
+          "讓使用者盡量花更多時間滑手機",
+          "自動教導青少年新技能",
+          "降低常用者的焦慮"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "According to Marcus, what benefit can social media offer isolated teenagers?",
+        "options": [
+          "(A) It guarantees higher grades in school",
+          "(B) It helps them find supportive communities they cannot access locally",
+          "(C) It replaces the need for real-life friendships completely",
+          "(D) It automatically improves their sleep habits"
+        ],
+        "answer": 1,
+        "explanation": "Marcus 說孤立的青少年 often find genuine, supportive communities online that they simply cannot access locally，故選 B。",
+        "optionsZh": [
+          "保證在校成績更好",
+          "幫助他們找到當地無法接觸到的支持性社群",
+          "完全取代現實生活中的友誼需求",
+          "自動改善睡眠習慣"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What do Dr. Wu and Marcus both seem to agree on, despite their different views?",
+        "options": [
+          "(A) Social media should be completely banned for teenagers",
+          "(B) Teenagers need some form of guidance in how they use social media",
+          "(C) Social media has no effect on teenagers at all",
+          "(D) Only adults should be allowed to use social media"
+        ],
+        "answer": 1,
+        "explanation": "Dr. Wu 主張 guide teenagers toward healthier...usage；Marcus 也主張 teaching digital literacy skills，兩人皆認同需要引導，故選 B。",
+        "optionsZh": [
+          "青少年應完全禁用社群媒體",
+          "青少年在使用社群媒體上需要某種形式的引導",
+          "社群媒體對青少年完全沒有影響",
+          "只有成人才能使用社群媒體"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What is the best title for these two articles together?",
+        "options": [
+          "(A) The History of Social Media Platforms",
+          "(B) Social Media and Teenagers: Risk or Resource?",
+          "(C) Why Teenagers Should Avoid All Technology",
+          "(D) How Algorithms Are Programmed"
+        ],
+        "answer": 1,
+        "explanation": "兩篇分別從心理風險與正面資源角度探討青少年使用社群媒體，最貼切標題為 B。",
+        "optionsZh": [
+          "社群媒體平台的歷史",
+          "社群媒體與青少年：風險或資源？",
+          "為何青少年應避免所有科技",
+          "演算法如何被設計"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_41",
+    "passageType": "comics",
+    "title": "The Old Clock (四格漫畫)",
+    "passage": "",
+    "caption": "Panel 1: Two students, Amy and Ben, accidentally activate an old, mysterious clock in their school's storage room and suddenly find themselves standing in a bustling Taiwanese street market from decades earlier, surrounded by unfamiliar sounds and smells, uncertain of what has just happened to them.\nPanel 2: An elderly street vendor notices their confused, modern clothing and, rather than being alarmed, kindly offers them a traditional snack, patiently explaining a local custom that neither Amy nor Ben has ever heard of before, despite having lived in Taiwan their whole lives.\nPanel 3: As they wander further through the unfamiliar streets, Amy and Ben begin noticing small details that connect this older, unfamiliar world to their own present-day lives — a temple they recognize despite its different surroundings, a familiar street name spelled slightly differently, and a shopkeeper's descendant they realize they actually know today.\nPanel 4: Just as suddenly as they arrived, the old clock's mysterious ticking pulls them back to the storage room. Sitting quietly among the dusty boxes, Amy and Ben stare at each other, both silently and profoundly grateful for having glimpsed, however briefly, the living history hidden beneath their everyday surroundings.",
+    "difficulty": 6,
+    "questions": [
+      {
+        "question": "How did Amy and Ben end up in the old street market?",
+        "options": [
+          "(A) They took a bus to a historical village",
+          "(B) They accidentally activated a mysterious old clock",
+          "(C) They read about it in a history book",
+          "(D) Their teacher brought them there on a field trip"
+        ],
+        "answer": 1,
+        "explanation": "第一格描述兩人 accidentally activate an old, mysterious clock 後穿越到過去，故選 B。",
+        "optionsZh": [
+          "他們搭公車到歷史村落",
+          "他們不小心啟動了一座神秘的老時鐘",
+          "他們從歷史書上讀到的",
+          "老師帶他們去校外教學"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does the elderly vendor's reaction in Panel 2 suggest?",
+        "options": [
+          "(A) He immediately recognized them as time travelers and panicked",
+          "(B) He was kind and simply treated their strange appearance with patience",
+          "(C) He refused to speak to them at all",
+          "(D) He called the local police right away"
+        ],
+        "answer": 1,
+        "explanation": "第二格描述老攤販並未驚慌，反而 kindly offers them a traditional snack，耐心以待，故選 B。",
+        "optionsZh": [
+          "他立刻認出他們是時空旅人並驚慌失措",
+          "他很親切，耐心對待他們奇怪的裝扮",
+          "他完全拒絕跟他們說話",
+          "他馬上報警"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What is the significance of Amy and Ben recognizing the temple and shopkeeper's descendant in Panel 3?",
+        "options": [
+          "(A) It shows they were dreaming the entire time",
+          "(B) It connects the past they are visiting to their present, familiar world",
+          "(C) It proves the old clock is broken",
+          "(D) It suggests they should stay in the past forever"
+        ],
+        "answer": 1,
+        "explanation": "第三格他們認出熟悉的廟宇與後代店主，將過去與現在的世界連結起來，故選 B。",
+        "optionsZh": [
+          "顯示他們自始至終都在做夢",
+          "將他們造訪的過去與熟悉的當下世界連結起來",
+          "證明老時鐘壞掉了",
+          "暗示他們應該永遠留在過去"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What is the main message of this comic?",
+        "options": [
+          "(A) Time travel is scientifically impossible",
+          "(B) Old objects should always be thrown away",
+          "(C) Understanding history helps us appreciate the present more deeply",
+          "(D) Street markets are dangerous places to visit"
+        ],
+        "answer": 2,
+        "explanation": "漫畫透過兩人穿越後發現過去與現在緊密相連，體會歷史就藏在日常之中，傳達了解歷史能加深對當下的珍惜，故選 C。",
+        "optionsZh": [
+          "時空旅行在科學上是不可能的",
+          "舊物品應該一律丟棄",
+          "了解歷史能幫助我們更深刻珍惜現在",
+          "街市是危險的地方"
+        ],
         "questionType": "main_idea"
       }
     ]

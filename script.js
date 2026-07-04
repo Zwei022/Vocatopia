@@ -55,18 +55,83 @@ function escHtml(s) {
     .replace(/"/g, '&quot;');
 }
 
-// 將文字中的英文單字包成可點擊 <span>，共用於文章／每日文章／詳解等所有需要「點字」的地方。
-// handler：點擊時呼叫的全域函式名稱，預設 lookupWord（開單字詳情），詳解場景會傳 tapExplainWord（直接加入不熟字卡）。
-function wrapWordsHtml(text, opts) {
-  const handler = (opts && opts.handler) || 'lookupWord';
+// 片語清單（一次性從 question_bank_phrase.json 的 phrasal_verb／expression 選項抽取，共 293 個），
+// 用於 wrapWordsHtml() 的最長匹配，讓「put on」「give up」這種片語被合併成一個可點擊單位，
+// 而不是拆成「put」「on」兩個各自獨立的單字。若之後片語題庫擴充，需重新抽取這份清單才會同步。
+const PHRASE_LIST = ["account for","account on","account to","account with","against all odds","agree at","agree on","agree to","agree with","ahead of","as a result","as a rule","as example","as opposed to","as soon as","at a result","at a time","at all costs","at any cost","at any moment","at any rate","at any time","at first","at last","at least","at once","at the drop of a hat","at the rate of","at time","at times","back down","back off","back out","back up","belong at","belong for","belong to","belong with","brush aside on","brush off on","brush over on","brush up on","by accident","by all means","by and large","by course","by example","by hook or by crook","by means of","by the name of","by the way","by time","by virtue of","called off","came across","came along","came along with","came down with","came out with","came up against","came up with","catch on with","catch up on","catch up to","catch up with","clean out","clean up","come rain or shine","count down","count on","count out","count up","deal for","deal in","deal on","deal with","depend at","depend for","depend on","depend to","do away with","do out with","do over with","do up with","fall apart","fall behind","fall off","fall through","find for","find off","find out","find over","for all intents and purposes","for example","for fear of","for good","for instance","for once","for sale","for sure","for the case of","for the sake of","for the time being","get across","get along","get down","get in","get off","get over","get through","get up","give away","give back","give out","give up","go along","go off","go over","go through","hand down","hand in","hand out","hand over","handed in","hold back","hold off","hold on","hold out","in a hurry","in a result","in accident","in addition","in addition to","in advance","in ahead","in all likelihood","in case","in case of","in case to","in common","in course","in detail","in due course","in due time","in example","in fact","in favor of","in front","in general","in no time","in once","in order to","in particular","in progress","in retrospect","in short","in spite of","in the blink of an eye","in the event that","in the long run","in the meantime","in the nick of time","in time","in time to","instead of saying","just in time","lie down","listen at","listen for","listen on","listen to","live off to","live on to","live through to","live up to","look after","look at","look down on","look for","look into","look out","look out for","look up","look up to","looked up","looking after","looking at","looking for","looking forward to","looking into","looking up","looking up to","make for","make out of","make up for","make up to","needless to say","not to say","now and then","of course","of fact","off and on","on accident","on account of","on and on","on purpose","on the contrary","on the grounds that","on the whole","on time","once again","once and for all","once bitten, twice shy","once in a blue moon","once in a while","once upon a time","out of order","out of the blue","pick on","pick out","pick over","pick up","pointed at","pointed out","pointed to","pointed up","put away","put in","put off","put on","put up","rather than say","rule down","rule off","rule out","rule over","sat down","set down","set off","set out","set up","sit down","sit up","so as","stand by for","stand out for","stand up","stand up for","stand up to","stood by","stood off","stood up","take after","take off","take over","take up","takes after","takes off","takes over","takes up","through thick and thin","tied down","tied in","tied over","tied up","turn down","turn off","turn on","turn up","turned down","turned in","turned into","turned up","wait for","wait on","wait out","wait up","wake up","wear away","wear down","wear off","wear out","when it comes to","with accident","with the exception of","without cause","without doubt","without fail","without notice","work off","work on","work out","work up"];
+
+// 依「片語第一個字」分組，組內依詞數由多到少排序，供最長匹配優先比對（例如優先比對「at the drop of a hat」而非「at last」）
+const PHRASE_BY_FIRST_WORD = {};
+PHRASE_LIST.forEach(p => {
+  const words = p.replace(/[^a-zA-Z\s]/g, '').trim().toLowerCase().split(/\s+/);
+  if (words.length < 2) return;
+  (PHRASE_BY_FIRST_WORD[words[0]] = PHRASE_BY_FIRST_WORD[words[0]] || []).push(words);
+});
+Object.values(PHRASE_BY_FIRST_WORD).forEach(arr => arr.sort((a, b) => b.length - a.length));
+
+// 將文字中的英文單字（或已知片語）包成可點擊 <span>，共用於題幹／選項／詳解／文章等所有地方，
+// 不分答題前後，一律點下去先開 lookupWord 的單字詳情彈窗，使用者再自行用彈窗裡的按鈕決定是否加入不熟字卡。
+// 片語比對：先看目前字是否為某個片語的開頭字，往後掃描（可跨越任意標點/空白分隔符）比對片語其餘的字，
+// 比對成功就把整個片語（含中間的原始分隔符）包成同一個 span，比對不到才照舊逐字包。
+// 純語法虛詞（冠詞/be動詞/人稱代名詞/所有格代名詞/基礎連接詞/基礎助動詞）：
+// 這些幾乎不會是學生需要查字典的「詞彙」，standalone 出現時不套用點字（減少贅字查詢與不必要的 Gemini 呼叫）。
+// 注意：不放介系詞（up/on/off/in/with...），因為它們常是片語動詞的一部分，也是值得學習的獨立詞彙。
+const STOPWORDS = new Set(['a', 'an', 'the', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being',
+  'i', 'you', 'he', 'she', 'it', 'we', 'they', 'me', 'him', 'her', 'us', 'them',
+  'my', 'your', 'his', 'its', 'our', 'their', 'mine', 'yours', 'ours', 'theirs',
+  'and', 'or', 'but', 'do', 'does', 'did', 'has', 'have', 'had',
+  'will', 'would', 'can', 'could', 'shall', 'should', 'may', 'might', 'must']);
+
+function wrapWordsHtml(text) {
+  const handler = 'lookupWord';
   const tokens = String(text == null ? '' : text).split(/([\s\n]+|[.,!?;:'"()]+)/);
-  return tokens.map(t => {
-    const clean = t.replace(/[^a-zA-Z]/g, '').toLowerCase();
-    if (/^[a-zA-Z]{2,}$/.test(clean)) {
-      return `<span class="w" onclick="event.stopPropagation();${handler}('${clean}',this)">${escHtml(t)}</span>`;
+  // 判斷一個 token 是否值得點字查詢：
+  // 1) 整個 token 必須是純英文字母（可含連字號/撇號），排除「NT$50」「9am」這種數字/符號混雜、查了也查不到的詞
+  // 2) 排除全大寫且長度≥2 的詞（GREENWAY、NT 這類專有名詞/縮寫代碼，查字典通常沒有意義）
+  const isWordTok = (t) => {
+    if (!t || t.length < 2) return false;
+    if (!/^[a-zA-Z]+(?:['-][a-zA-Z]+)*$/.test(t)) return false;
+    if (/^[A-Z]+$/.test(t)) return false;
+    return true;
+  };
+  const cleanTok  = (t) => (t || '').replace(/[^a-zA-Z]/g, '').toLowerCase();
+
+  const out = [];
+  let i = 0;
+  while (i < tokens.length) {
+    const t = tokens[i];
+    if (!isWordTok(t)) { out.push(escHtml(t).replace(/\n/g, '<br>')); i++; continue; }
+
+    const w0 = cleanTok(t);
+    const candidates = PHRASE_BY_FIRST_WORD[w0];
+    let matchedEnd = -1, matchedWords = null;
+    if (candidates) {
+      for (const words of candidates) {
+        let ti = i, wi = 1, ok = true;
+        while (wi < words.length) {
+          ti++;
+          while (ti < tokens.length && !isWordTok(tokens[ti])) ti++;
+          if (ti >= tokens.length || cleanTok(tokens[ti]) !== words[wi]) { ok = false; break; }
+          wi++;
+        }
+        if (ok) { matchedEnd = ti; matchedWords = words; break; }
+      }
     }
-    return escHtml(t).replace(/\n/g, '<br>');
-  }).join('');
+
+    if (matchedEnd > -1) {
+      const span = tokens.slice(i, matchedEnd + 1).join('');
+      const key  = matchedWords.join(' ');
+      out.push(`<span class="w" onclick="event.stopPropagation();${handler}('${key}',this)">${escHtml(span).replace(/\n/g, '<br>')}</span>`);
+      i = matchedEnd + 1;
+      continue;
+    }
+
+    if (STOPWORDS.has(w0)) { out.push(escHtml(t)); i++; continue; }
+
+    out.push(`<span class="w" onclick="event.stopPropagation();${handler}('${w0}',this)">${escHtml(t)}</span>`);
+    i++;
+  }
+  return out.join('');
 }
 
 // ── DATA (loaded from API) ──
@@ -719,7 +784,7 @@ function _gxEsc(s) {
     c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 }
 function _gxPassageHtml(t) {
-  return '<p>' + _gxEsc(t).replace(/\n\n+/g, '</p><p>').replace(/\n/g, '<br>') + '</p>';
+  return String(t == null ? '' : t).split(/\n\n+/).map(p => '<p>' + wrapWordsHtml(p) + '</p>').join('');
 }
 function _gxPlaceholder(year, exam) {
   return `
@@ -734,15 +799,15 @@ function _gxQCard(q) {
   const qn = q.n;
   const audio = q.audio ? `<audio class="gx-audio" controls preload="none" src="${q.audio}"></audio>` : '';
   const img = q.image ? `<img class="gx-img" src="${q.image}" alt="">` : '';
-  const stemTxt = q.stem ? wrapWordsHtml(q.stem)
+  const stemTxt = q.stem ? _gxEsc(q.stem)
     : (q.audio ? '<span class="gx-listen-tag">🎧 聆聽後作答（內容唸兩次）</span>' : '');
   const opts = q.options.map((o, oi) => {
     const zh = (q.optionsZh && q.optionsZh[oi])
       ? `<span class="gx-opt-zh">${_gxEsc(q.optionsZh[oi])}</span>` : '';
-    return `<button type="button" class="gx-opt" id="gxo_${qn}_${oi}" onclick="gsatSelect(${qn},${oi})">${wrapWordsHtml(o)}${zh}</button>`;
+    return `<button type="button" class="gx-opt" id="gxo_${qn}_${oi}" onclick="gsatSelect(${qn},${oi})">${_gxEsc(o)}${zh}</button>`;
   }).join('');
   return `<div class="gx-q" id="gxq_${qn}">
-    <div class="gx-stem"><span class="gx-num">${qn}.</span> ${stemTxt}</div>
+    <div class="gx-stem" id="gxs_${qn}"><span class="gx-num">${qn}.</span> ${stemTxt}</div>
     ${audio}
     ${img}
     <div class="gx-opts">${opts}</div>
@@ -947,10 +1012,14 @@ function gsatSubmit(auto) {
     const sel = gsatExam.answers[qn];
     const isRight = sel === q.answer;
     if (isRight) correct++;
-    q.options.forEach((_, i) => {
+    // 交卷後：選項文字從純文字升級為可點字查詢（跟詳解一致）
+    q.options.forEach((o, i) => {
       const el = document.getElementById('gxo_' + qn + '_' + i);
       if (!el) return;
       el.classList.remove('sel');
+      const zh = (q.optionsZh && q.optionsZh[i])
+        ? `<span class="gx-opt-zh">${_gxEsc(q.optionsZh[i])}</span>` : '';
+      el.innerHTML = `${wrapWordsHtml(o)}${zh}`;
       if (i === q.answer) el.classList.add('correct');
       else if (i === sel) el.classList.add('wrong');
       el.disabled = true;
@@ -960,7 +1029,7 @@ function gsatSubmit(auto) {
       const tag = sel == null ? '<span class="gx-skip">未作答</span>'
         : (isRight ? '<span class="gx-ok">答對</span>' : '<span class="gx-no">答錯</span>');
       const tr = q.transcript ? `<div class="gx-transcript"><b>🎧 原文：</b>${_gxEsc(q.transcript)}</div>` : '';
-      ee.innerHTML = `${tag}　正解：(${'ABCD'[q.answer]})　${wrapWordsHtml(q.explanation || '', { handler: 'tapExplainWord' })}${tr}`;
+      ee.innerHTML = `${tag}　正解：(${'ABCD'[q.answer]})　${wrapWordsHtml(q.explanation || '')}${tr}`;
       ee.style.display = '';
     }
   });
@@ -1338,8 +1407,8 @@ function openBankCat(tab, cat) {
 
 function _bankCardHtml(kind, cat, q) {
   const id      = _qid(q);
-  const passage = q.passage  ? `<div class="qbank-passage">${escHtml(q.passage).replace(/\n/g, '<br>')}</div>` : '';
-  const dialog  = q.dialogue ? `<div class="qbank-passage">${escHtml(q.dialogue).replace(/\n/g, '<br>')}</div>` : '';
+  const passage = q.passage  ? `<div class="qbank-passage">${wrapWordsHtml(q.passage)}</div>` : '';
+  const dialog  = q.dialogue ? `<div class="qbank-passage">${wrapWordsHtml(q.dialogue)}</div>` : '';
   const isSaved = _qbankHas('saved', cat, id);
   const star = `<button class="qbank-star${isSaved ? ' on' : ''}" title="收藏" onclick="bankToggleStar('${kind}','${cat}','${id}',this)">${isSaved ? '★' : '☆'}</button>`;
   const cardTop = `<div class="qbank-card-top">${star}<button class="qbank-del" title="移除" onclick="bankRemoveItem('${kind}','${cat}','${id}')">✕</button></div>`;
@@ -1353,7 +1422,7 @@ function _bankCardHtml(kind, cat, q) {
       const cZh = (it.optionsZh && it.optionsZh[it.answer]) ? `<span class="qbank-opt-zh">${escHtml(it.optionsZh[it.answer])}</span>` : '';
       const head = q.blanks ? `(${it.n})` : `${wrapWordsHtml(it.heading)}<br>`;
       return `<div class="qbank-opt correct">${head} ${correctOpt} ✓${cZh}</div>` +
-             (it.explanation ? `<div class="qbank-explain">${wrapWordsHtml(it.explanation, { handler: 'tapExplainWord' })}</div>` : '');
+             (it.explanation ? `<div class="qbank-explain">${wrapWordsHtml(it.explanation)}</div>` : '');
     }).join('');
     return `<div class="qbank-card" data-id="${id}">${cardTop}${passage}
       ${title}
@@ -1372,7 +1441,7 @@ function _bankCardHtml(kind, cat, q) {
     ${passage}${dialog}
     <div class="qbank-q">${wrapWordsHtml(qtext)}</div>
     <div class="qbank-opts">${opts}</div>
-    ${q.explanation ? `<div class="qbank-explain">${wrapWordsHtml(q.explanation, { handler: 'tapExplainWord' })}</div>` : ''}
+    ${q.explanation ? `<div class="qbank-explain">${wrapWordsHtml(q.explanation)}</div>` : ''}
   </div>`;
 }
 
@@ -1773,7 +1842,7 @@ async function _listenStart() {
   optsEl.classList.remove('revealed');
   optsEl.innerHTML = q.options.map((opt, i) => {
     const clean = opt.replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, '');
-    return `<button class="quiz-opt" onclick="answerQuestion(${i})">${String.fromCharCode(65 + i)}. ${wrapWordsHtml(clean)}${_qZhSpan(q.optionsZh, i)}</button>`;
+    return `<button class="quiz-opt" onclick="answerQuestion(${i})">${String.fromCharCode(65 + i)}. ${escHtml(clean)}${_qZhSpan(q.optionsZh, i)}</button>`;
   }).join('');
 
   // 播放兩遍，每個 await 後都檢查是否已被取消（答題/下一題/關閉）
@@ -1838,7 +1907,7 @@ function renderQuestion() {
   if (context === 'listening') {
     // 聽力：每題顯示問題文字 + 倒數播放按鈕，選項在倒數後才出現
     document.getElementById('quizQ').innerHTML =
-      `<div class="quiz-q-text">${wrapWordsHtml(questionText)}</div>`;
+      `<div class="quiz-q-text">${escHtml(questionText)}</div>`;
 
     document.getElementById('quizOpts').innerHTML = `
       <div class="listen-start-wrap">
@@ -1850,14 +1919,14 @@ function renderQuestion() {
     // 非聽力：顯示 passage（閱讀/克漏字）
     let passageHtml = '';
     if (q.passage) {
-      passageHtml = `<div class="quiz-passage">${escHtml(q.passage).replace(/\n/g,'<br>')}</div>`;
+      passageHtml = `<div class="quiz-passage">${wrapWordsHtml(q.passage)}</div>`;
     }
     document.getElementById('quizQ').innerHTML =
-      passageHtml + `<div class="quiz-q-text">${wrapWordsHtml(questionText)}</div>`;
+      passageHtml + `<div class="quiz-q-text">${escHtml(questionText)}</div>`;
 
     document.getElementById('quizOpts').innerHTML = q.options.map((opt, i) => {
       const clean = opt.replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, '');
-      return `<button class="quiz-opt" onclick="answerQuestion(${i})">${String.fromCharCode(65 + i)}. ${wrapWordsHtml(clean)}${_qZhSpan(q.optionsZh, i)}</button>`;
+      return `<button class="quiz-opt" onclick="answerQuestion(${i})">${String.fromCharCode(65 + i)}. ${escHtml(clean)}${_qZhSpan(q.optionsZh, i)}</button>`;
     }).join('');
   }
 
@@ -1896,17 +1965,17 @@ function _renderGroupQuestion(q) {
 
   const items     = _groupItems(q);
   const titleHtml = q.title   ? `<div class="quiz-q-title">${escHtml(q.title)}</div>` : '';
-  const passageHtml = q.passage ? `<div class="quiz-passage">${escHtml(q.passage).replace(/\n/g, '<br>')}</div>` : '';
+  const passageHtml = q.passage ? `<div class="quiz-passage">${wrapWordsHtml(q.passage)}</div>` : '';
   const intro = q.blanks ? `<div class="quiz-q-text">請依短文選出每一格最適合的答案</div>` : '';
   document.getElementById('quizQ').innerHTML = titleHtml + passageHtml + intro;
 
   document.getElementById('quizOpts').innerHTML = items.map((it, bi) => `
     <div class="cloze-group" id="grp_${bi}">
-      <div class="${it.headingClass}">${wrapWordsHtml(it.heading)}</div>
+      <div class="${it.headingClass}" id="gh_${bi}">${escHtml(it.heading)}</div>
       <div class="cloze-opts">
         ${it.options.map((o, oi) => {
           const clean = o.replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, '');
-          return `<button class="quiz-opt cloze-opt" id="g_${bi}_${oi}" onclick="groupSelect(${bi},${oi})">${String.fromCharCode(65 + oi)}. ${wrapWordsHtml(clean)}${_qZhSpan(it.optionsZh, oi)}</button>`;
+          return `<button class="quiz-opt cloze-opt" id="g_${bi}_${oi}" onclick="groupSelect(${bi},${oi})">${String.fromCharCode(65 + oi)}. ${escHtml(clean)}${_qZhSpan(it.optionsZh, oi)}</button>`;
         }).join('')}
       </div>
     </div>`).join('');
@@ -1941,20 +2010,25 @@ function submitGroup() {
   items.forEach((it, bi) => {
     const chosen = quizState.grpSel[bi];
     const ans    = it.answer;
-    it.options.forEach((_, k) => {
+    // 送出後：選項文字從純文字升級為可點字查詢（跟詳解一致）
+    it.options.forEach((o, k) => {
       const el = document.getElementById(`g_${bi}_${k}`);
       if (!el) return;
       el.disabled = true;
       el.classList.remove('sel');
+      const clean = o.replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, '');
+      el.innerHTML = `${String.fromCharCode(65 + k)}. ${wrapWordsHtml(clean)}${_qZhSpan(it.optionsZh, k)}`;
       if (k === ans) el.classList.add('correct');
       else if (k === chosen) el.classList.add('wrong');
     });
     if (chosen === ans) correct++;
+    const headEl = document.getElementById(`gh_${bi}`);
+    if (headEl && !q.blanks) headEl.innerHTML = wrapWordsHtml(it.heading); // 克漏字格號標籤是純中文，不需升級
     const grp = document.getElementById(`grp_${bi}`);
     if (grp && it.explanation) {
       const ex = document.createElement('div');
       ex.className = 'cloze-explain';
-      ex.innerHTML = `(${it.n}) ` + wrapWordsHtml(it.explanation, { handler: 'tapExplainWord' });
+      ex.innerHTML = `(${it.n}) ` + wrapWordsHtml(it.explanation);
       grp.appendChild(ex);
     }
   });
@@ -2012,7 +2086,16 @@ function answerQuestion(chosen) {
 
   _stopListening(); // 答題後停止播放
 
-  btns.forEach(b => b.disabled = true);
+  // 答題揭曉：題幹句子（單字/片語/文法題的 "The meeting was _____ ..." 這類句子）也要升級為可點字查詢
+  const qTextEl = document.querySelector('#quizQ .quiz-q-text');
+  if (qTextEl) qTextEl.innerHTML = wrapWordsHtml(q.question || q.sentence || '');
+
+  // 答題揭曉：選項文字從純文字升級為可點字查詢（跟詳解一致），並標記正解/錯選樣式
+  btns.forEach((b, i) => {
+    b.disabled = true;
+    const clean = q.options[i].replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, '');
+    b.innerHTML = `${String.fromCharCode(65 + i)}. ${wrapWordsHtml(clean)}${_qZhSpan(q.optionsZh, i)}`;
+  });
   btns[chosen].classList.add(chosen === q.answer ? 'correct' : 'wrong');
   btns[q.answer].classList.add('correct');
 
@@ -2041,9 +2124,9 @@ function answerQuestion(chosen) {
   if (context === 'listening' && q.dialogue) {
     explainEl.innerHTML =
       _dialogueHtml(q.dialogue) +
-      `<div>${wrapWordsHtml(q.explanation, { handler: 'tapExplainWord' })}</div>`;
+      `<div>${wrapWordsHtml(q.explanation)}</div>`;
   } else {
-    explainEl.innerHTML = wrapWordsHtml(q.explanation, { handler: 'tapExplainWord' });
+    explainEl.innerHTML = wrapWordsHtml(q.explanation);
   }
   explainEl.classList.remove('hidden');
   document.getElementById('quizOpts').classList.add('revealed');  // 作答後顯示選項中譯
@@ -2138,9 +2221,33 @@ function closeArticle() {
   closeWordPopup();
 }
 
+// 簡易字尾還原：把動詞變化/複數/比較級猜回可能的原形，用於在本地 WORDS 裡找到既有條目，
+// 避免「accepted」「activities」這種變化形明明字庫裡已有原形「accept」「activity」卻還要另外呼叫 Gemini 生成一次。
+function _lemmaCandidates(w) {
+  const c = [];
+  if (w.endsWith('ies') && w.length > 4) c.push(w.slice(0, -3) + 'y');
+  if (w.endsWith('ied') && w.length > 4) c.push(w.slice(0, -3) + 'y');
+  if (w.endsWith('ier') && w.length > 4) c.push(w.slice(0, -3) + 'y');
+  if (w.endsWith('iest') && w.length > 5) c.push(w.slice(0, -4) + 'y');
+  if (w.endsWith('ing') && w.length > 5) { c.push(w.slice(0, -3)); c.push(w.slice(0, -3) + 'e'); c.push(w.slice(0, -4)); }
+  if (w.endsWith('ed') && w.length > 4) { c.push(w.slice(0, -2)); c.push(w.slice(0, -1)); c.push(w.slice(0, -3)); }
+  if (w.endsWith('es') && w.length > 4) { c.push(w.slice(0, -2)); c.push(w.slice(0, -1)); }
+  if (w.endsWith('s') && w.length > 3 && !w.endsWith('ss')) c.push(w.slice(0, -1));
+  if (w.endsWith('er') && w.length > 4) c.push(w.slice(0, -2));
+  if (w.endsWith('est') && w.length > 5) c.push(w.slice(0, -3));
+  if (w.endsWith('ly') && w.length > 4) c.push(w.slice(0, -2));
+  return c;
+}
+
 async function lookupWord(word, el) {
-  // 優先用 WORDS 陣列開啟詳細 overlay
+  // 優先用 WORDS 陣列開啟詳細 overlay（含字尾還原比對）
   let w = WORDS.find(x => x.word === word);
+  if (!w) {
+    for (const cand of _lemmaCandidates(word)) {
+      w = WORDS.find(x => x.word === cand);
+      if (w) break;
+    }
+  }
   if (w) { openWordDetail(w.id); return; }
 
   // 字庫沒有（例如題目/選項/詳解裡出現的變化形）→ 呼叫共用查詢快取
@@ -2152,7 +2259,7 @@ async function lookupWord(word, el) {
     const res  = await fetch(`/api/words/search?query=${encodeURIComponent(word)}`);
     const data = await res.json();
     if (el) el.classList.remove('w-loading');
-    if (!data.success) { closeWordDetail(); showToast(`⚠ 找不到「${word}」`); return; }
+    if (!data.success) { closeWordDetail(); showToast(`⚠ ${data.error || `找不到「${word}」`}`); return; }
     w = normalizeWord(data.data);
     WORDS.push(w);
     DICT[w.word] = { def: w.def, phonetic: w.phonetic };
@@ -2715,41 +2822,6 @@ function toggleWordMark() {
   // 同步更新字庫列表的狀態點
   const dot = document.querySelector(`.wrow[onclick*="openWordDetail(${_wdWordId})"] .wr-dot`);
   if (dot) dot.className = `wr-dot wd-${w.st}`;
-}
-
-// ── 詳解點字：直接加入不熟字卡 ──
-// 字庫已有該字 → 直接標記；沒有（例如詳解裡出現的變化形）→ 呼叫既有的
-// /api/words/search（共用快取，未命中才用 Gemini 生成字典資料並寫回 words 表），
-// 確保詳解裡任何看起來像英文單字的 token 點下去都查得到、加得進不熟字卡。
-async function tapExplainWord(word, el) {
-  if (el && el.classList.contains('w-loading')) return; // 查詢中，避免重複觸發
-  if (el && el.classList.contains('w-added')) { showToast('已在不熟字卡中'); return; }
-
-  let w = WORDS.find(x => x.word === word);
-  if (!w) {
-    if (el) el.classList.add('w-loading');
-    showToast(`🔍 查詢「${word}」中…`);
-    try {
-      const res  = await fetch(`/api/words/search?query=${encodeURIComponent(word)}`);
-      const data = await res.json();
-      if (el) el.classList.remove('w-loading');
-      if (!data.success) { showToast(`⚠ 找不到「${word}」`); return; }
-      w = normalizeWord(data.data);
-      WORDS.push(w);
-      DICT[w.word] = { def: w.def, phonetic: w.phonetic };
-    } catch (err) {
-      if (el) el.classList.remove('w-loading');
-      showToast('⚠ 網路錯誤，請重試');
-      return;
-    }
-  }
-
-  w.st = 'lrn';
-  w._correctStreak = 0;
-  if (!capturedWords.includes(w.word)) capturedWords.push(w.word);
-  if (typeof syncWordStatus !== 'undefined') syncWordStatus(w.id, w.st, 0);
-  if (el) el.classList.add('w-added');
-  showToast(`✓ "${w.word}" 已加入不熟字卡`);
 }
 
 // ── TOAST ──
