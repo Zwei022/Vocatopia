@@ -1,0 +1,182 @@
+/* ════════════════════════════════════════════
+   Vocatopia 塔防 — 廚房大戰介面（沿用 :root 設計 token）
+   結構：HUD（上）→ 戰場 Canvas（中）→ Dock：金幣升級鈕｜召喚卡列｜冰箱技能鈕
+   ════════════════════════════════════════════ */
+
+body.td-lock { overflow: hidden; }
+
+.td-overlay {
+  position: fixed; inset: 0; z-index: 9000;
+  display: flex; flex-direction: column;
+  background: #F3E7D0;
+  font-family: 'Yozai', 'Nunito', sans-serif;
+  user-select: none;
+}
+
+/* ── HUD ── */
+.td-hud {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 10px; padding: 8px 12px;
+  background: var(--header, #E4D5BE);
+  border-bottom: 2.5px solid var(--line, #7A5C43);
+}
+.td-hud-left { display: flex; flex-direction: column; gap: 6px; }
+.td-timer-box {
+  display: flex; align-items: center; gap: 8px;
+  padding: 4px 10px;
+  background: var(--nav, #FFFDF8);
+  border: 2px solid var(--line, #7A5C43); border-radius: 999px;
+}
+.td-timer { font-size: 15px; font-weight: 900; color: var(--ink, #4B382A); }
+.td-timer.warn { color: var(--wrong, #E04B3E); }
+.td-fridge-hp { font-size: 13px; font-weight: 800; color: #4A8FFF; }
+.td-fridge-hp.low { color: var(--wrong, #E04B3E); }
+.td-speed-btn {
+  align-self: flex-start;
+  padding: 4px 12px;
+  background: var(--nav, #FFFDF8);
+  border: 2px solid var(--line, #7A5C43); border-radius: 999px;
+  font-family: inherit; font-size: 13px; font-weight: 800;
+  color: var(--ink, #4B382A); cursor: pointer;
+}
+.td-speed-btn.on { background: var(--orange, #F5921E); color: #fff; border-color: #C4740F; }
+
+.td-hud-right { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+.td-topline { display: flex; align-items: center; gap: 8px; }
+.td-level-name { font-size: 14px; font-weight: 800; color: var(--ink, #4B382A); }
+.td-pause-btn {
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 2px solid var(--line, #7A5C43); background: var(--nav, #FFFDF8);
+  font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+/* 金幣：關卡名底下，放大顯眼 */
+.td-gold-big {
+  font-size: 24px; font-weight: 900; line-height: 1.1;
+  color: var(--gold, #F0AD1D); text-shadow: 0 2px 0 rgba(120,80,0,.25);
+}
+.td-gold-big b { font-size: 15px; }
+.td-gold-sub { font-size: 12px; font-weight: 700; color: var(--ink2, #7A6a58); }
+
+/* ── 戰場 ── */
+.td-field-wrap { position: relative; flex: 1; min-height: 0; }
+#tdCanvas { display: block; width: 100%; height: 100%; }
+
+/* 非阻斷式答題橫幅 */
+.td-quiz {
+  position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+  width: min(92%, 420px);
+  background: var(--card, #FBF6EA);
+  border: 2.5px solid var(--line, #7A5C43); border-radius: var(--r2, 16px);
+  padding: 10px 12px; box-shadow: 0 4px 0 rgba(122,92,67,.35);
+}
+.td-quiz-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.td-quiz-word { font-family: 'Nunito', sans-serif; font-size: 20px; font-weight: 900; color: var(--ink, #4B382A); }
+.td-quiz-timebar { flex: 1; height: 8px; border-radius: 4px; background: rgba(122,92,67,.2); overflow: hidden; }
+#tdQuizTimeFill { height: 100%; width: 100%; background: var(--orange, #F5921E); transition: width .15s linear; }
+.td-quiz-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.td-quiz-opt {
+  padding: 8px 6px; border: 2px solid var(--line, #7A5C43); border-radius: var(--r, 10px);
+  background: var(--nav, #FFFDF8); font-family: inherit; font-size: 14px; font-weight: 700;
+  color: var(--ink, #4B382A); cursor: pointer;
+}
+.td-quiz-opt:active { transform: translateY(1px); }
+.td-qopt-right { background: var(--greensoft, #E4F4E8); border-color: var(--green, #3BA55D); }
+.td-qopt-wrong { background: var(--wrongsoft, #FBE9E7); border-color: var(--wrong, #E04B3E); }
+
+/* 狂暴徽章 */
+.td-rage-badge {
+  position: absolute; top: 10px; right: 10px;
+  padding: 5px 12px; background: var(--red, #E0472E); color: #fff;
+  border: 2px solid #fff; border-radius: 999px; font-size: 13px; font-weight: 900;
+  animation: tdRagePulse .5s infinite alternate; pointer-events: none;
+}
+@keyframes tdRagePulse { from { transform: scale(1); } to { transform: scale(1.08); } }
+
+/* 負面效果／事件提示條（戰場中央下方） */
+.td-notice {
+  position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+  padding: 6px 16px; background: rgba(255,255,255,.94);
+  border: 2px solid currentColor; border-radius: 999px;
+  font-size: 14px; font-weight: 900; white-space: nowrap; pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+
+/* ── Dock：金幣升級鈕 ｜ 卡列 ｜ 冰箱技能鈕 ── */
+.td-dock {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+  background: #A9703F; border-top: 3px solid #6E4527;
+}
+.td-round-btn {
+  flex: 0 0 auto; width: 62px; height: 62px; border-radius: 50%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0;
+  border: 3px solid #6E4527; background: var(--card, #FBF6EA);
+  font-family: inherit; cursor: pointer; padding: 0; line-height: 1.05;
+}
+.td-round-btn:active { transform: translateY(1px); }
+.td-round-btn .tr-ico { font-size: 20px; }
+.td-round-btn .tr-t   { font-size: 11px; font-weight: 900; color: var(--ink, #4B382A); }
+.td-round-btn .tr-s   { font-size: 10px; font-weight: 800; color: var(--ink2, #7A6a58); }
+.td-round-btn.afford { animation: tdGlow 1s infinite alternate; }
+.td-gold-up.afford   { border-color: var(--gold, #F0AD1D); background: var(--goldsoft, #FBF0D2); }
+.td-fridge-skill.afford { border-color: #4A8FFF; background: #E7F0FE; }
+.td-round-btn.cooling { filter: grayscale(.5); opacity: .8; }
+.td-round-btn.maxed   { filter: grayscale(.3); }
+@keyframes tdGlow { from { box-shadow: 0 0 0 rgba(240,173,29,0); } to { box-shadow: 0 0 10px rgba(240,173,29,.7); } }
+
+.td-deck { display: flex; gap: 8px; flex: 1; justify-content: center; }
+.td-card {
+  position: relative; flex: 0 1 66px; max-width: 66px; aspect-ratio: 3 / 3.4;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
+  border: 2.5px solid #6E4527; border-radius: var(--r, 10px);
+  background: var(--card, #FBF6EA); font-family: inherit; cursor: pointer; overflow: hidden; padding: 0;
+}
+.td-card:active { transform: translateY(1px); }
+.td-card-emoji { font-size: 24px; line-height: 1; }
+.td-card-name  { font-size: 11px; font-weight: 800; color: var(--ink, #4B382A); }
+.td-card-cost  { font-size: 11px; font-weight: 900; color: var(--gold, #F0AD1D); text-shadow: 0 1px 0 rgba(0,0,0,.2); }
+.td-card-poor .td-card-cost { color: var(--wrong, #E04B3E); }
+.td-card-poor  { filter: grayscale(.55); }
+.td-card-cd { position: absolute; left: 0; right: 0; top: 0; height: 0; background: rgba(0,0,0,.42); pointer-events: none; }
+.td-card-locked { background: #8f9099; filter: none; cursor: default; font-size: 20px; color: rgba(255,255,255,.7); }
+
+/* ── 暫停 / 結算選單 ── */
+.td-menu {
+  position: absolute; inset: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(75,56,42,.55);
+}
+.td-menu-box {
+  width: min(84%, 330px);
+  background: var(--card, #FBF6EA); border: 3px solid var(--line, #7A5C43);
+  border-radius: var(--r3, 22px); padding: 22px 18px;
+  display: flex; flex-direction: column; gap: 8px; text-align: center;
+  box-shadow: 0 6px 0 rgba(0,0,0,.25);
+}
+.td-menu-title { font-size: 20px; font-weight: 900; color: var(--ink, #4B382A); }
+.td-menu-sub   { font-size: 13.5px; font-weight: 700; color: var(--ink2, #7A6a58); margin: 4px 0; }
+.td-menu-btn {
+  padding: 11px; border: 2.5px solid var(--line, #7A5C43); border-radius: var(--r2, 16px);
+  background: var(--nav, #FFFDF8); font-family: inherit; font-size: 15px; font-weight: 800;
+  color: var(--ink, #4B382A); cursor: pointer;
+}
+.td-menu-btn:active { transform: translateY(1px); }
+.td-menu-main { background: var(--orange, #F5921E); color: #fff; border-color: #C4740F; }
+
+/* 三星 */
+.td-stars { display: flex; justify-content: center; gap: 6px; margin: 2px 0 4px; }
+.td-star { font-size: 34px; color: #D8CBB4; line-height: 1; }
+.td-star.on { color: var(--gold, #F0AD1D); text-shadow: 0 2px 0 rgba(120,80,0,.25); animation: tdStarPop .4s backwards; }
+.td-star.on:nth-child(2) { animation-delay: .15s; }
+.td-star.on:nth-child(3) { animation-delay: .3s; }
+@keyframes tdStarPop { from { transform: scale(0) rotate(-40deg); } to { transform: scale(1) rotate(0); } }
+.td-star-cond { font-size: 12.5px; font-weight: 700; color: var(--ink2, #7A6a58); text-align: left; opacity: .5; }
+.td-star-cond.ok { opacity: 1; color: var(--green, #3BA55D); }
+
+/* ── 首頁關卡樹：果實下方星數 ── */
+.hm-fruit-stars {
+  position: absolute; left: 50%; bottom: -13px; transform: translateX(-50%);
+  font-size: 11px; letter-spacing: -1px; white-space: nowrap; color: var(--gold, #F0AD1D);
+  text-shadow: 0 1px 0 rgba(120,80,0,.3);
+}
+.hm-fruit-stars .off { color: rgba(255,255,255,.55); }

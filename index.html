@@ -6,6 +6,7 @@
 <title>Vocatopia — 單字烏托邦</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="game/td.css">
 <link rel="manifest" href="/manifest.json">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <meta name="theme-color" content="#F0EDE6">
@@ -779,6 +780,47 @@
       <img id="ilbImg" class="ilb-img" src="" alt="">
     </div>
   </div>
+
+  <!-- 塔防遊戲（首頁關卡樹入口，game/td.js 控制）-->
+  <div id="tdOverlay" class="td-overlay" style="display:none">
+    <div class="td-hud">
+      <div class="td-hud-left">
+        <div class="td-timer-box">
+          <span class="td-timer" id="tdTimer">3:00</span>
+          <span class="td-fridge-hp" id="tdFridgeHp">🧊 100%</span>
+        </div>
+        <button class="td-speed-btn" id="tdSpeedBtn" onclick="tdToggleSpeed()">⏩ x1</button>
+      </div>
+      <div class="td-hud-right">
+        <div class="td-topline">
+          <span class="td-level-name" id="tdLevelName"></span>
+          <button class="td-pause-btn" onclick="tdTogglePause()" aria-label="暫停">⏸</button>
+        </div>
+        <div class="td-gold-big"><span id="tdMoneyNow">0</span>/<span id="tdMoneyCap">120</span> <b>元</b></div>
+        <div class="td-gold-sub" id="tdGoldSub">生產 Lv.1 · +6/秒</div>
+      </div>
+    </div>
+    <div class="td-field-wrap">
+      <canvas id="tdCanvas"></canvas>
+      <!-- 非阻斷式答題橫幅：戰鬥同時進行 -->
+      <div class="td-quiz" id="tdQuiz" style="display:none">
+        <div class="td-quiz-head">
+          <span class="td-quiz-word" id="tdQuizWord"></span>
+          <div class="td-quiz-timebar"><div id="tdQuizTimeFill"></div></div>
+        </div>
+        <div class="td-quiz-opts" id="tdQuizOpts"></div>
+      </div>
+      <div class="td-rage-badge" id="tdRageBadge" style="display:none">🔥 狂暴中！</div>
+      <div class="td-notice" id="tdNotice" style="display:none"></div>
+    </div>
+    <div class="td-dock">
+      <button class="td-round-btn td-gold-up" id="tdGoldUpBtn" onclick="tdUpgradeGold()" aria-label="升級金幣生產"></button>
+      <div class="td-deck" id="tdDeck"></div>
+      <button class="td-round-btn td-fridge-skill" id="tdFridgeBtn" onclick="tdFridgeSkill()" aria-label="冰箱寒氣技能"></button>
+    </div>
+    <div class="td-menu" id="tdMenu" style="display:none"><div class="td-menu-box"></div></div>
+  </div>
+  <script src="game/td.js"></script>
 
 </body>
 </html>
