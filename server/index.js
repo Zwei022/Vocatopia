@@ -97,7 +97,8 @@ async function buildVocabQuestions() {
   }
 }
 
-// 結算：答對數高者勝，相同平手
+// 結算：答對數高者勝，相同平手。結算後房間不解散（保留給「再來一場」用），
+// 只有離開/斷線/逾時才會真正銷毀（見 dropFromRoom 與逾時清除）。
 function settleBattle(code) {
   const room = rooms[code];
   if (!room || room.state !== 'playing') return;
@@ -111,7 +112,20 @@ function settleBattle(code) {
   if (scores[room.host] > scores[room.guest])      winner = room.host;
   else if (scores[room.guest] > scores[room.host]) winner = room.guest;
   io.to(code).emit('battle_result', { scores, winner, total: room.questions.length });
-  delete rooms[code];
+}
+
+// 出題並開始一輪對局（start_battle 與 rematch 共用）
+async function beginRound(code) {
+  const room = rooms[code];
+  if (!room) return;
+  room.state = 'building';                    // 鎖住，避免重複開始
+  const questions = await buildVocabQuestions();
+  if (!rooms[code]) return;                   // 出題期間房間可能已解散
+  room.questions = questions;
+  room.answers   = { [room.host]: [], [room.guest]: [] };
+  room.state     = 'playing';
+  io.to(code).emit('battle_start', { mode: room.mode, questions, duration: PVP_DURATION });
+  room.timer = setTimeout(() => settleBattle(code), PVP_DURATION * 1000 + 800);
 }
 
 // 玩家離開/斷線：通知對手並解散房間
@@ -168,17 +182,20 @@ io.on('connection', (socket) => {
     socket.to(code).emit('mode_selected', { mode });
   });
 
-  socket.on('start_battle', async ({ code }) => {
+  socket.on('start_battle', ({ code }) => {
     const room = rooms[code];
     if (!room || room.host !== socket.id || room.state !== 'lobby' || !room.guest) return;
-    room.state = 'building';                    // 鎖住，避免重複開始
-    const questions = await buildVocabQuestions();
-    if (!rooms[code]) return;                   // 出題期間房間可能已解散
-    room.questions = questions;
-    room.answers   = { [room.host]: [], [room.guest]: [] };
-    room.state     = 'playing';
-    io.to(code).emit('battle_start', { mode: room.mode, questions, duration: PVP_DURATION });
-    room.timer = setTimeout(() => settleBattle(code), PVP_DURATION * 1000 + 800);
+    beginRound(code);
+  });
+
+  // 再來一場：僅房主可觸發，需雙方都還在房內、且上一場已結算完畢
+  socket.on('rematch', ({ code }) => {
+    const room = rooms[code];
+    if (!room)                   return socket.emit('rematch_error', { msg: '房間已不存在' });
+    if (room.host !== socket.id) return; // 非房主的請求靜默忽略
+    if (!room.guest)             return socket.emit('rematch_error', { msg: '對手已離開，無法再來一場' });
+    if (room.state !== 'done')   return;
+    beginRound(code);
   });
 
   // 收答案：每題只收第一次作答；雙方都答完 5 題立即結算

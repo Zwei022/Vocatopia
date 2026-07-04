@@ -10,6 +10,7 @@
   --card:  #FBF6EA;   /* 奶油卡片 */
   --card2: #F4EDDD;   /* 次卡片 / 嵌入區塊 */
   --nav:   #FFFDF8;   /* 底部導覽 / 純白面 */
+  --header: #E4D5BE;  /* 頁首深底，與內容區區隔 */
 
   /* ── Lines（描邊系統） */
   --line:  #7A5C43;   /* 深咖啡主描邊 */
@@ -79,7 +80,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 ════════════════════════════════ */
 #home{background:var(--bg)}
 
-.home-header{padding:16px 20px 0;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.home-header{padding:16px 20px 14px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;background:var(--header);border-bottom:1.5px solid var(--line2)}
 .hm-header-left{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
 .hm-profile-btn{background:var(--nav);border:1.5px solid var(--line2);border-radius:20px;color:var(--ink2);font-family:'Nunito',sans-serif;font-size:12px;font-weight:800;padding:4px 11px;cursor:pointer;transition:border-color .15s,color .15s}
 .hm-profile-btn:hover{border-color:var(--orange);color:var(--ink)}
@@ -122,7 +123,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .bn{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;cursor:pointer;padding:6px 0;position:relative;border-radius:10px;transition:background .18s,transform .25s cubic-bezier(.34,1.56,.64,1)}
 .bn-ico{font-size:21px;transition:transform .15s,filter .15s;filter:grayscale(1) opacity(.55)}
 .bn-ico-img img{width:21px;height:21px;object-fit:contain;display:block;filter:grayscale(1) opacity(.55);transition:filter .15s}
-.bn-lbl{font-size:10px;color:var(--ink2);font-family:'Nunito',sans-serif;font-weight:800;letter-spacing:.5px;transition:color .15s}
+.bn-lbl{font-size:12px;color:var(--ink2);font-family:'Nunito',sans-serif;font-weight:800;letter-spacing:.5px;transition:color .15s}
 /* 滑入反饋 */
 .bn:hover{background:var(--card2)}
 .bn:hover .bn-ico{transform:translateY(-2px) scale(1.08)}
@@ -276,9 +277,9 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .art-content.show{display:block}
 .art-content::-webkit-scrollbar{width:3px}
 .art-content::-webkit-scrollbar-thumb{background:var(--line3);border-radius:2px}
-.art-back{background:none;border:none;color:var(--ink2);font-size:12px;font-family:'Nunito',sans-serif;font-weight:800;cursor:pointer;margin-bottom:12px;display:flex;align-items:center;gap:5px;padding:0}
+.art-back{background:none;border:none;color:var(--ink2);font-size:13px;font-family:'Nunito',sans-serif;font-weight:800;cursor:pointer;margin-bottom:12px;display:flex;align-items:center;gap:5px;padding:0}
 .art-h{font-family:var(--font-display);font-weight:900;font-size:18px;color:var(--ink);margin-bottom:12px;line-height:1.4}
-.art-body-text{font-size:14px;line-height:2;color:var(--ink)}
+.art-body-text{font-size:15px;line-height:2;color:var(--ink)}
 
 /* 點字通用樣式：文章／題目／選項／詳解共用（.w 只用於這個點字功能） */
 .w{
@@ -301,7 +302,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 
 /* reading tabs（分頁籤：選中紅底白字） */
 .read-tabs{display:flex;gap:6px;margin-top:8px}
-.rtab{flex:1;padding:8px 4px;background:var(--nav);border:1.5px solid var(--line2);border-radius:999px;color:var(--ink2);font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;cursor:pointer;transition:all .15s;letter-spacing:0;position:relative;white-space:nowrap}
+.rtab{flex:1;padding:8px 4px;background:var(--nav);border:1.5px solid var(--line2);border-radius:999px;color:var(--ink2);font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;cursor:pointer;transition:all .15s;letter-spacing:0;position:relative;white-space:nowrap}
 .rtab.active{background:var(--red);border-color:var(--red);color:#fff}
 .rtab-badge{font-size:9px;background:var(--orange);color:#fff;padding:1px 5px;border-radius:4px;font-family:'Nunito',sans-serif;font-weight:900;letter-spacing:1px;vertical-align:middle;margin-left:4px}
 
@@ -338,12 +339,12 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .quiz-panel{flex:1;display:none;flex-direction:column;padding:14px 20px;overflow-y:auto}
 .quiz-panel.show{display:flex}
 .quiz-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-shrink:0}
-.quiz-progress{font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:var(--ink2);letter-spacing:1px}
-.quiz-type-badge{display:inline-block;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:700;letter-spacing:.5px;margin-bottom:10px;font-family:'Noto Sans TC',sans-serif}
+.quiz-progress{font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:var(--ink2);letter-spacing:1px}
+.quiz-type-badge{display:inline-block;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:.5px;margin-bottom:10px;font-family:'Noto Sans TC',sans-serif}
 .badge-listen-section{background:var(--bluesoft);border:1.5px solid var(--blue);color:var(--blue)}
 .quiz-q{font-size:15px;font-weight:700;color:var(--ink);line-height:1.7;margin-bottom:16px;flex-shrink:0}
 .quiz-opts{display:flex;flex-direction:column;gap:9px;flex-shrink:0}
-.quiz-opt{padding:13px 16px;background:var(--nav);border:2px solid var(--line2);border-radius:var(--r2);font-size:14px;font-weight:600;color:var(--ink);cursor:pointer;text-align:left;transition:all .1s;font-family:'Noto Sans TC',sans-serif}
+.quiz-opt{padding:13px 16px;background:var(--nav);border:2px solid var(--line2);border-radius:var(--r2);font-size:15px;font-weight:600;color:var(--ink);cursor:pointer;text-align:left;transition:all .1s;font-family:'Noto Sans TC',sans-serif}
 .quiz-opt:active{transform:scale(.98)}
 .quiz-opt.correct{background:var(--greensoft)!important;border-color:var(--green)!important;color:var(--green2)!important}
 .quiz-opt.wrong{background:var(--wrongsoft)!important;border-color:var(--wrong)!important;color:var(--wrong)!important}
@@ -379,7 +380,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 
 /* 分類卡片數量徽章 */
 .bank-cat{position:relative}
-.bc-count{position:absolute;top:8px;right:10px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--orange);color:#fff;font-family:'Nunito',sans-serif;font-weight:900;font-size:11px;line-height:18px;text-align:center}
+.bc-count{position:absolute;top:8px;right:10px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--orange);color:#fff;font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;line-height:18px;text-align:center}
 
 /* 題庫列表（答錯／收藏） */
 .qbank-head{font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:var(--ink);padding:12px 2px 8px;letter-spacing:.5px}
@@ -413,22 +414,32 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 #library{background:var(--bg)}
 .lib-head{padding:16px 20px 10px;flex-shrink:0}
 .lib-title{font-family:var(--font-display);font-weight:900;font-size:20px;color:var(--ink);letter-spacing:1px}
-.lib-sub{font-size:12px;color:var(--ink2);margin-top:3px;font-family:var(--font-ui)}
+.lib-sub{font-size:13px;color:var(--ink2);margin-top:3px;font-family:var(--font-ui)}
 .lib-tabs{display:flex;padding:0 20px 12px;gap:6px;flex-shrink:0}
 .ltab{flex:1;padding:9px;background:var(--nav);border:1.5px solid var(--line2);color:var(--ink2);font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;letter-spacing:1px;cursor:pointer;transition:all .15s;border-radius:999px}
 .ltab:first-child{border-radius:999px}
 .ltab:last-child{border-radius:999px}
 .ltab.active{background:var(--red);border-color:var(--red);color:#fff}
+.lib-search-box{padding:0 20px 12px;flex-shrink:0}
+.lib-search-input{width:100%;background:var(--nav);border:2px solid var(--line2);border-radius:var(--r);padding:11px 14px;color:var(--ink);font-family:'Nunito',sans-serif;font-size:14px;outline:none;transition:border-color .15s}
+.lib-search-input:focus{border-color:var(--orange)}
+.lib-search-result{margin-top:8px}
+.lib-search-hit{display:flex;gap:12px;align-items:flex-start;background:var(--card2);border:1.5px solid var(--line2);border-radius:var(--r);padding:12px 14px;cursor:pointer;transition:border-color .15s}
+.lib-search-hit:hover{border-color:var(--orange)}
+.lib-search-hit-word{font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--ink)}
+.lib-search-hit-def{font-size:13px;color:var(--ink2);margin-top:2px}
+.lib-search-hit-decks{font-size:12px;color:var(--green2);margin-top:4px;font-weight:700}
+.lib-search-miss{background:var(--redsoft);border:1.5px solid var(--wrong);border-radius:var(--r);padding:12px 14px;color:var(--ink2);font-size:13px;font-weight:600;text-align:center}
 .lib-list{flex:1;overflow-y:auto;padding:0 20px}
 .lib-list::-webkit-scrollbar{width:3px}
 .lib-list::-webkit-scrollbar-thumb{background:var(--line3);border-radius:2px}
 .lib-sec-hd{cursor:pointer;user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none}
 .wrow{display:flex;align-items:center;padding:11px 0;border-bottom:1.5px solid var(--line2);gap:11px;cursor:pointer}
-.wr-num{font-family:'Nunito',sans-serif;font-weight:700;font-size:11px;color:var(--ink3);width:24px;flex-shrink:0}
+.wr-num{font-family:'Nunito',sans-serif;font-weight:700;font-size:12px;color:var(--ink3);width:24px;flex-shrink:0}
 .wr-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .wd-new{background:var(--line3)}.wd-lrn{background:var(--orange)}.wd-ok{background:var(--green)}
 .wr-en{font-family:var(--font-display);font-weight:800;font-size:15px;color:var(--ink);flex:1}
-.wr-zh{font-size:12px;color:var(--ink2)}
+.wr-zh{font-size:13px;color:var(--ink2)}
 .wr-spk{font-size:17px;color:var(--ink3);padding:4px;cursor:pointer;flex-shrink:0}
 .wr-spk:hover{color:var(--orange)}
 
@@ -454,7 +465,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .modal-cancel{width:100%;padding:12px;background:none;border:1.5px solid var(--line2);border-radius:var(--r2);font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:var(--ink2);cursor:pointer}
 
 /* toast */
-.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);border:none;color:#FFF9EE;padding:10px 20px;border-radius:20px;font-size:13px;font-family:'Nunito',sans-serif;font-weight:700;opacity:0;transition:all .3s;pointer-events:none;z-index:500;white-space:nowrap}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);border:2px solid var(--orange);color:#FFF9EE;padding:12px 22px;border-radius:20px;font-size:15px;font-family:'Nunito',sans-serif;font-weight:800;opacity:0;transition:all .3s;pointer-events:none;z-index:10000;max-width:88vw;width:max-content;white-space:normal;text-align:center;line-height:1.4;box-shadow:0 6px 20px rgba(75,56,42,.35)}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
 /* shake */
@@ -529,7 +540,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .deck-info{flex:1;min-width:0}
 .deck-name{font-family:'Nunito',sans-serif;font-weight:900;font-size:16px;color:var(--ink);margin-bottom:5px}
 .deck-meta-row{display:flex;gap:6px;flex-wrap:wrap}
-.deck-chip{font-size:10px;font-family:'Nunito',sans-serif;font-weight:800;padding:2px 9px;border-radius:10px;background:var(--card2);color:var(--ink2)}
+.deck-chip{font-size:12px;font-family:'Nunito',sans-serif;font-weight:800;padding:2px 9px;border-radius:10px;background:var(--card2);color:var(--ink2)}
 .deck-chip.green{color:var(--green2);background:var(--greensoft)}
 .deck-chip.orange{color:var(--orange2);background:var(--orasoft)}
 
@@ -537,13 +548,13 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .deck-pbar-fill{height:100%;background:linear-gradient(90deg,var(--orange),var(--gold));border-radius:2px;transition:width .5s ease}
 
 .deck-foot{display:flex;align-items:center;justify-content:flex-end;gap:8px}
-.deck-go-btn{background:var(--red);border:none;border-radius:var(--r);padding:8px 18px;color:#fff;font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;letter-spacing:1px;cursor:pointer;box-shadow:0 3px 0 var(--red2);transition:transform .12s,box-shadow .12s}
+.deck-go-btn{background:var(--red);border:none;border-radius:var(--r);padding:8px 18px;color:#fff;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;letter-spacing:1px;cursor:pointer;box-shadow:0 3px 0 var(--red2);transition:transform .12s,box-shadow .12s}
 .deck-go-btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--red2)}
 .deck-go-btn.dim{background:var(--card2);color:var(--ink3);box-shadow:none;cursor:default}
 .deck-del-btn{background:var(--wrongsoft);border:1.5px solid var(--wrong);border-radius:var(--r);padding:7px 11px;color:var(--wrong);font-size:14px;cursor:pointer}
 .deck-del-btn:active{background:var(--wrong);color:#fff}
 
-.deck-hint{text-align:center;padding:10px 0 4px;font-size:11px;color:var(--ink3);font-family:'Nunito',sans-serif;line-height:1.7}
+.deck-hint{text-align:center;padding:10px 0 4px;font-size:12px;color:var(--ink3);font-family:'Nunito',sans-serif;line-height:1.7}
 
 /* New Deck Modal */
 .ndm-input{width:100%;background:var(--nav);border:2px solid var(--line2);border-radius:var(--r);padding:13px 15px;color:var(--ink);font-family:'Nunito',sans-serif;font-weight:700;font-size:16px;outline:none;margin-bottom:14px;display:block}
@@ -1341,7 +1352,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 /* curatedPanel 只裝子分頁列，高度必須收緊，內容面板（兄弟元素）才吃得到剩餘空間 */
 #curatedPanel{flex:0 0 auto}
 .csub-tabs{display:flex;gap:8px;padding:12px 20px 4px;flex-shrink:0}
-.csub{flex:1;padding:8px 0;background:var(--nav);border:1.5px solid var(--line2);border-radius:999px;color:var(--ink2);font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;cursor:pointer;transition:all .15s;letter-spacing:0}
+.csub{flex:1;padding:8px 0;background:var(--nav);border:1.5px solid var(--line2);border-radius:999px;color:var(--ink2);font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;cursor:pointer;transition:all .15s;letter-spacing:0}
 .csub.active{background:var(--red);border-color:var(--red);color:#fff}
 
 /* 子面板（會考/答錯/收藏/每日共用容器） */
@@ -1363,7 +1374,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .gyr-exam.empty .gyr-exam-name{color:var(--ink3)}
 .gyr-exam.empty .gyr-exam-status{color:var(--ink3)}
 .gsat-exam-head{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1.5px solid var(--line2);flex-shrink:0}
-.gsat-exam-title{font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:var(--ink)}
+.gsat-exam-title{font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;color:var(--ink)}
 
 /* 會考全卷作答引擎 */
 /* 全螢幕作答：覆蓋上方分頁列與底部導航，只能透過「返回」退出 */
@@ -1401,12 +1412,12 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 @keyframes gxcd{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.15);opacity:1}}
 /* 連播的當前題僅用於自動捲動定位，不顯示高亮框 */
 .gx-q{margin-bottom:18px}
-.gx-stem{font-size:14px;color:var(--ink);line-height:1.7;margin-bottom:8px}
+.gx-stem{font-size:15px;color:var(--ink);line-height:1.7;margin-bottom:8px}
 .gx-num{font-family:var(--font-display);font-weight:900;color:var(--red);margin-right:4px}
 .gx-img{display:block;width:auto;height:auto;max-width:100%;max-height:240px;border-radius:8px;margin:8px auto;background:#fff;box-sizing:border-box;border:1.5px solid var(--line2)}
 .gx-pimg{width:100%;height:auto;max-height:none;display:block;margin:0 auto 12px;border-radius:6px;border:1.5px solid var(--line2)}
 .gx-opts{display:flex;flex-direction:column;gap:7px}
-.gx-opt{text-align:left;background:var(--nav);border:2px solid var(--line2);border-radius:10px;padding:9px 12px;color:var(--ink);font-size:13px;cursor:pointer;font-family:'Nunito',sans-serif;transition:background .15s,border-color .15s,transform .1s,box-shadow .15s}
+.gx-opt{text-align:left;background:var(--nav);border:2px solid var(--line2);border-radius:10px;padding:9px 12px;color:var(--ink);font-size:14px;cursor:pointer;font-family:'Nunito',sans-serif;transition:background .15s,border-color .15s,transform .1s,box-shadow .15s}
 .gx-opt:hover:not(:disabled){background:var(--orasoft);border-color:var(--orange)}
 .gx-opt:active:not(:disabled){transform:scale(.97)}
 .gx-opt.sel{background:var(--redsoft);border-color:var(--red);color:var(--red);font-weight:700}
@@ -1438,9 +1449,9 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .dcat:hover,.bank-cat:hover{background:var(--nav);border-color:var(--orange);transform:translateY(-1px)}
 .dc-ico,.bc-ico{width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:var(--orasoft);border:1.5px solid var(--orange);border-radius:10px;font-size:21px;flex-shrink:0}
 .cat-txt{display:flex;flex-direction:column;gap:2px;min-width:0}
-.dc-name,.bc-name{font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:var(--ink)}
-.dc-sub,.bc-sub{font-size:10px;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.dcat-badge{margin-left:auto;flex-shrink:0;font-family:'Nunito',sans-serif;font-size:10px;background:var(--orange);color:#fff;padding:3px 8px;border-radius:10px;font-weight:800;white-space:nowrap}
+.dc-name,.bc-name{font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:var(--ink)}
+.dc-sub,.bc-sub{font-size:12px;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dcat-badge{margin-left:auto;flex-shrink:0;font-family:'Nunito',sans-serif;font-size:12px;background:var(--orange);color:#fff;padding:3px 8px;border-radius:10px;font-weight:800;white-space:nowrap}
 .dcat-badge.done{background:var(--greensoft);color:var(--green2)}
 
 /* ════════════════════════════════
@@ -1467,7 +1478,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .hm-subj{display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 2px;background:var(--nav);border:1.5px solid var(--line2);border-radius:10px;transition:all .2s;cursor:default}
 .hm-subj.done{background:var(--greensoft);border-color:var(--green)}
 .hm-subj-ico{font-size:16px;line-height:1}
-.hm-subj-name{font-size:9px;font-weight:700;color:var(--ink2);font-family:'Nunito',sans-serif;letter-spacing:.3px}
+.hm-subj-name{font-size:12px;font-weight:700;color:var(--ink2);font-family:'Nunito',sans-serif;letter-spacing:.3px;text-align:center}
 .hm-subj.done .hm-subj-name{color:var(--green2)}
 .hm-quest-footer{display:flex;align-items:center;gap:10px}
 .hm-quest-bar-track{flex:1;height:6px;background:var(--line2);border-radius:3px;overflow:hidden}
@@ -1551,3 +1562,30 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .gx-split-wrap{display:flex;flex-direction:column;gap:4px;margin:0 auto 12px;width:100%}
 .gx-split-half{width:100%;border-radius:6px;transition:opacity .15s}
 .gx-split-half:hover{opacity:.85}
+
+/* Yozai 字體（lxgw/yozai-font，SIL Open Font License 1.1，見 fonts/OFL.txt）
+   已用 fonttools 子集化，只保留專案裡實際用到的中文字＋ASCII，減少檔案大小。
+   套用範圍：底下分類列（.bnav）、首頁（#home）、競技場（#arena）、登入頁面（#authOverlay）、
+   閱覽室（#reading，但不含題目詳解與單字詳情彈窗）的所有文字。 */
+@font-face{
+  font-family:'Yozai';
+  src:url('fonts/Yozai-Regular-subset.woff2') format('woff2');
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+.bnav,.bnav *,
+#home,#home *,
+#arena,#arena *,
+#authOverlay,#authOverlay *,
+#reading,#reading *{
+  font-family:'Yozai','Nunito',sans-serif!important;
+}
+/* 例外：題目詳解（每日練習/克漏字題組/答錯收藏題庫/會考歷屆）與單字詳情彈窗，維持原字體不套 Yozai */
+#quizExplain,#quizExplain *,
+.cloze-explain,.cloze-explain *,
+.qbank-explain,.qbank-explain *,
+.gx-explain,.gx-explain *,
+#wordDetailOverlay,#wordDetailOverlay *{
+  font-family:'Nunito',sans-serif!important;
+}

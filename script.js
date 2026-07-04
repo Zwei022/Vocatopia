@@ -510,6 +510,7 @@ function pvpResetViews() {
   document.getElementById('arenaResult').style.display = 'none';
   document.getElementById('arenaBnav').style.display   = 'flex';
   if (pvpState && pvpState.timerInt) clearInterval(pvpState.timerInt);
+  if (pvpState && pvpState.rematchCountdownInt) clearInterval(pvpState.rematchCountdownInt);
   pvpState = null;
   roomCode = '';
 }
@@ -570,10 +571,15 @@ function getPvpSocket() {
     pvpState.questions = questions;
     pvpState.qIdx = 0;
     pvpState.done = false;
+    if (pvpState.rematchCountdownInt) { clearInterval(pvpState.rematchCountdownInt); pvpState.rematchCountdownInt = null; }
     document.getElementById('arenaWait').style.display   = 'none';
     document.getElementById('arenaBattle').style.display = 'flex';
     document.getElementById('arenaBnav').style.display   = 'none';
     document.getElementById('pvpDoneWait').style.display = 'none';
+    // 若是「再來一場」進來的，重置結算畫面上的按鈕狀態，供下一輪結束後使用
+    const rematchBtn = document.getElementById('pvpRematchBtn');
+    rematchBtn.disabled = false;
+    rematchBtn.textContent = '🔁 再來一場';
     _pvpSetBars(0, 0, questions.length);
     // 倒數計時（顯示用；實際結算以伺服器為準）
     const endAt = Date.now() + duration * 1000;
@@ -610,8 +616,13 @@ function getPvpSocket() {
     document.getElementById('pvpResultScore').textContent = `你 ${mine}/${total} ・ 對手 ${foe}/${total}`;
     document.getElementById('arenaBattle').style.display = 'none';
     document.getElementById('arenaResult').style.display = 'flex';
-    roomCode = '';   // 房間已由伺服器解散
+    // 房間仍保留在伺服器（供「再來一場」用），只有離開/斷線才會真正解散
+    document.getElementById('pvpRematchBtn').style.display      = pvpState.isHost ? 'block' : 'none';
+    document.getElementById('pvpRematchWaitHint').style.display = pvpState.isHost ? 'none'  : 'block';
+    _pvpStartRematchCountdown();
   });
+
+  pvpSocket.on('rematch_error', ({ msg }) => showToast(`⚠ ${msg}`));
 
   pvpSocket.on('opponent_left', () => {
     showToast('👋 對手已離開房間');
@@ -661,6 +672,14 @@ function hostStartBattle() {
   pvpSocket.emit('start_battle', { code: roomCode });
 }
 
+function hostRematch() {
+  if (!pvpState || !pvpState.isHost || !roomCode) return;
+  const btn = document.getElementById('pvpRematchBtn');
+  btn.disabled = true;
+  btn.textContent = '出題中⋯';
+  pvpSocket.emit('rematch', { code: roomCode });
+}
+
 function leaveRoom() {
   pvpAbandonIfActive();
   pvpResetViews();
@@ -679,6 +698,28 @@ function _pvpSetBars(mine, foe, total) {
   document.getElementById('hpFoe').style.width = Math.max(foe  / total * 100, 4) + '%';
   document.getElementById('scYou').textContent = `${mine}/${total}`;
   document.getElementById('scFoe').textContent = `${foe}/${total}`;
+}
+
+// 結算畫面「再來一場」倒數 10 秒，時間到就把按鈕（房主）／等待提示（對手）都藏起來，只留「返回競技場」
+function _pvpStartRematchCountdown() {
+  if (!pvpState) return;
+  if (pvpState.rematchCountdownInt) clearInterval(pvpState.rematchCountdownInt);
+  const btn  = document.getElementById('pvpRematchBtn');
+  const hint = document.getElementById('pvpRematchWaitHint');
+  let left = 10;
+  const tick = () => {
+    if (pvpState.isHost) btn.textContent = `🔁 再來一場（${left}）`;
+    else hint.textContent = `🕐 等待房主決定是否再來一場⋯（${left}）`;
+    if (left <= 0) {
+      clearInterval(pvpState.rematchCountdownInt);
+      btn.style.display  = 'none';
+      hint.style.display = 'none';
+      return;
+    }
+    left--;
+  };
+  tick();
+  pvpState.rematchCountdownInt = setInterval(tick, 1000);
 }
 
 function loadPvpQ() {
@@ -713,6 +754,7 @@ function answerPvp(idx) {
 }
 
 function backArena() {
+  pvpAbandonIfActive();   // 結算後房間會保留供「再來一場」用，選擇返回時要主動通知伺服器解散
   pvpResetViews();
 }
 
@@ -2578,6 +2620,52 @@ function buildSectionWords(words, deckId) {
   }).join('');
 }
 
+// 搜尋單字是否曾收錄在任何卡組（內建2個 + 使用者自訂卡組）裡；
+// 有找到 → 顯示簡要資料+收錄卡組，點擊可開完整單字詳情彈窗；沒找到 → 顯示提示文字
+function searchWordAcrossDecks(query) {
+  const resultEl = document.getElementById('libSearchResult');
+  if (!resultEl) return;
+  const q = query.trim().toLowerCase();
+  if (!q) { resultEl.innerHTML = ''; return; }
+
+  const sections = [
+    ...BUILTIN_DECKS,
+    ...customDecks.map(d => ({
+      id: d.id, name: d.name, emoji: d.emoji,
+      getWords: () => {
+        const wordsMap = new Map();
+        if (d.words) d.words.forEach(w => wordsMap.set(w.id, w));
+        return d.wordIds.map(id => wordsMap.get(id) || WORDS.find(w => w.id === id)).filter(Boolean);
+      }
+    }))
+  ];
+
+  let hitWord = null;
+  const hitDeckNames = [];
+  sections.forEach(sec => {
+    const found = sec.getWords().find(w => w && w.word && w.word.toLowerCase() === q);
+    if (found) {
+      hitWord = hitWord || found;
+      hitDeckNames.push(`${sec.emoji} ${sec.name}`);
+    }
+  });
+
+  if (!hitWord) {
+    resultEl.innerHTML = `<div class="lib-search-miss">「${escHtml(query.trim())}」目前不在任何一個單字卡組裡</div>`;
+    return;
+  }
+
+  const posTag = hitWord.pos ? `<span style="font-size:11px;color:var(--ink3);font-weight:600;margin-left:6px">${escHtml(hitWord.pos)}</span>` : '';
+  resultEl.innerHTML = `
+    <div class="lib-search-hit" onclick="openWordDetail(${hitWord.id})">
+      <div style="flex:1">
+        <div class="lib-search-hit-word">${escHtml(hitWord.word)}${posTag}</div>
+        <div class="lib-search-hit-def">${escHtml(hitWord.definition_zh || hitWord.def || '')}</div>
+        <div class="lib-search-hit-decks">曾收錄於：${hitDeckNames.map(n => escHtml(n)).join('、')}</div>
+      </div>
+    </div>`;
+}
+
 function renderLib() {
   const body = document.getElementById('libList');
   if (!body) return;
@@ -2825,13 +2913,13 @@ function toggleWordMark() {
 }
 
 // ── TOAST ──
-function showToast(msg) {
+function showToast(msg, duration) {
   const t = document.getElementById('toastEl');
   if (!t) return;
   t.textContent = msg;
   t.classList.add('show');
   clearTimeout(t._timer);
-  t._timer = setTimeout(() => t.classList.remove('show'), 2500);
+  t._timer = setTimeout(() => t.classList.remove('show'), duration || 2500);
 }
 
 // ── CLICK OUTSIDE POPUP ──
@@ -3613,6 +3701,12 @@ function _refreshProfileRadar() {
   if (c) c.innerHTML = _buildRadarSVG(_loadSubjectStats());
 }
 
+// 訪客模式點「個人資料」：說明能力分析需要帳號，並直接開啟登入/註冊視窗
+function showGuestProfileNotice() {
+  showToast('目前是訪客模式，無法開啟個人優劣分析圖，請先登入或註冊帳號', 4000);
+  showAuthOverlay();
+}
+
 // ── PROFILE MODAL ────────────────────────────────────────────
 function showProfile() {
   if (!currentProfile) return;
@@ -3625,7 +3719,7 @@ function showProfile() {
   overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
 
   overlay.innerHTML = `
-    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:24px 20px;width:100%;max-width:340px;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)"
+    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:24px 20px;width:100%;max-width:340px;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
       <button onclick="document.getElementById('profileOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
 
       <div style="text-align:center;margin-bottom:16px">
@@ -4655,7 +4749,6 @@ function updateHomeScreen() {
       const m = CAT_META[cat] || { icon: '📝', name: cat };
       const isDone = completedCats.includes(cat);
       return `<div class="hm-subj${isDone ? ' done' : ''}">
-        <div class="hm-subj-ico">${m.icon}</div>
         <div class="hm-subj-name">${m.name}</div>
       </div>`;
     }).join('');

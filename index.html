@@ -177,7 +177,7 @@
     <div class="home-header">
       <div class="hm-header-left">
         <div class="logo">Vocatopia</div>
-        <button id="profileBtn" class="hm-profile-btn" onclick="currentProfile ? showProfile() : showAuthOverlay()">👤 個人資料</button>
+        <button id="profileBtn" class="hm-profile-btn" onclick="currentProfile ? showProfile() : showGuestProfileNotice()">👤 個人資料</button>
       </div>
       <div class="hm-header-right">
         <div class="hm-gold-chip">🪙 <span id="hGold">0</span></div>
@@ -210,7 +210,7 @@
       <!-- 今日任務卡 -->
       <div class="hm-quest-card">
         <div class="hm-quest-head">
-          <span class="hm-quest-title">📋 今日任務</span>
+          <span class="hm-quest-title">今日任務</span>
           <span class="hm-quest-reward">最多 +750 🪙</span>
         </div>
         <div class="hm-subjects" id="hmSubjects">
@@ -225,7 +225,6 @@
       </div>
       <!-- 主要 CTA -->
       <button class="hm-main-btn" onclick="goScreen('reading', document.querySelector('.bn:nth-child(4)'))">
-        <span class="hm-main-ico">📚</span>
         <div class="hm-main-text">
           <div class="hm-main-label">開始今日練習</div>
           <div class="hm-main-sub">完成六科最高賺 750 🪙</div>
@@ -481,7 +480,9 @@
       <div class="pvp-result-icon" id="pvpResultIcon">🏆</div>
       <div class="pvp-result-title" id="pvpResultTitle">勝利！</div>
       <div class="pvp-result-score" id="pvpResultScore"></div>
-      <button class="arena-btn ab-create" style="max-width:280px" onclick="backArena()">返回競技場</button>
+      <button class="arena-btn ab-create" id="pvpRematchBtn" style="max-width:280px;display:none" onclick="hostRematch()">🔁 再來一場</button>
+      <div class="pvp-guest-hint" id="pvpRematchWaitHint" style="display:none">🕐 等待房主決定是否再來一場⋯</div>
+      <button class="arena-btn ab-join" style="max-width:280px" onclick="backArena()">返回競技場</button>
     </div>
     <div class="bnav" id="arenaBnav">
       <button class="bn active" onclick="goScreen('arena',this)"><div class="bn-dot"></div><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
@@ -516,6 +517,10 @@
       <div class="lib-head">
         <div class="lib-title">字庫</div>
         <div class="lib-sub">點擊 🔊 發音</div>
+      </div>
+      <div class="lib-search-box">
+        <input type="text" id="libSearchInput" class="lib-search-input" placeholder="🔍 搜尋單字是否曾收錄在卡組裡…" oninput="searchWordAcrossDecks(this.value)">
+        <div id="libSearchResult" class="lib-search-result"></div>
       </div>
       <div class="lib-list" id="libList"></div>
     </div>
