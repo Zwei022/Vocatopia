@@ -493,7 +493,7 @@ function confetti() {
 
 // ════════════════════════════════
 // ARENA — 即時 PVP 單字對決（socket.io）
-// 房主建房選模式 → 對手憑房號加入 → 伺服器統一出 5 題限時 2 分鐘
+// 房主建房選模式 → 對手憑房號加入 → 伺服器統一出 5 題限時 30 秒
 // 雙方完成或時間到由伺服器結算：答對數高者勝，相同平手
 // ════════════════════════════════
 let roomCode  = '';
@@ -587,7 +587,7 @@ function getPvpSocket() {
     const tick = () => {
       const left = Math.max(0, Math.ceil((endAt - Date.now()) / 1000));
       timerEl.textContent = `${Math.floor(left / 60)}:${String(left % 60).padStart(2, '0')}`;
-      timerEl.classList.toggle('low', left <= 15);
+      timerEl.classList.toggle('low', left <= 10);
       if (left <= 0) clearInterval(pvpState.timerInt);
     };
     tick();

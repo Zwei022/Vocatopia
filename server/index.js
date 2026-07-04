@@ -37,10 +37,10 @@ app.use('/api/tts',             require('./routes/tts'));
 
 // ── PVP ROOM SYSTEM（單字對決）──
 // 流程：房主建房 → 對手憑房號加入 → 房主選模式並開始 → 伺服器統一出 5 題
-//      → 雙方作答（限時 2 分鐘）→ 雙方完成或時間到即結算 → 依答對數判定勝/敗/平手
+//      → 雙方作答（限時 30 秒）→ 雙方完成或時間到即結算 → 依答對數判定勝/敗/平手
 const rooms = {};
 const ROOM_TTL     = 60 * 60 * 1000; // 房間 1 小時自動過期
-const PVP_DURATION = 120;            // 對決限時（秒）
+const PVP_DURATION = 30;             // 對決限時（秒）
 const PVP_QCOUNT   = 5;              // 題數
 const vocabFallback = require('./data/question_bank_vocab.json');
 
