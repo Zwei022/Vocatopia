@@ -9539,32 +9539,1622 @@
       {
         "id": "13-1",
         "title": "連綴動詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>連綴動詞是什麼</b><br>連綴動詞可以連接主詞和形容詞（就像be動詞一樣），後面接的是形容詞，不是副詞。分兩種：<br>① 知覺連綴動詞：feel感覺起來、look看起來、sound聽起來、taste嘗起來、smell聞起來<br>② 表示變化的連綴動詞：get/go變得、keep保持、turn轉化、become/come變得、grow長成、fall變得<br><br><b>句型公式</b><br>S+連綴動詞+形容詞：Kevin looks terrible today.（不能說looks terribly，因為looks是連綴動詞要接形容詞）<br><br><b>知覺連綴動詞+like</b><br>如果後面想表達「看起來像/聞起來像/聽起來像」某個東西，要加like，後面接名詞而不是形容詞：It smells like rain.（聞起來像要下雨了）。此時問句要用what/who...like來問，不能用how：What does he look like?（他長什麼樣子）vs How does he look?（他氣色/狀態如何）<br><br><b>become、get、turn意思相近但用法不同</b><br>become和get都是「變成」的意思，turn則強調「轉化」，尤其常用在顏色變化：The leaves turn red in autumn.（turn特別適合顏色變化，become/get較不自然）<br><br><b>連綴動詞大部分沒有進行式</b><br>除了feel，還有get/keep/turn/become/grow這些解釋成「變化」的連綴動詞可以有進行式（表示「逐漸…」），其餘look、sound、taste、smell沒有進行式。<br><br><b>常見混淆</b><br>feel、smell、taste這幾個字有雙重身分：當連綴動詞接形容詞（This soup tastes great.）；當一般感官動詞接受詞+原形動詞/V-ing（I felt the ground shaking.，詳見13-4感官動詞）。要依句子有沒有受詞來判斷。",
+          "examples": [
+            {
+              "en": "This cake tastes amazing! Did you make it yourself?",
+              "zh": "這個蛋糕嚐起來太棒了！是你自己做的嗎？"
+            },
+            {
+              "en": "The sky is turning gray. It might rain soon.",
+              "zh": "天空正在轉灰，可能快下雨了。"
+            },
+            {
+              "en": "Something in the fridge smells terrible.",
+              "zh": "冰箱裡有東西聞起來很糟糕。"
+            },
+            {
+              "en": "He looked confused when I explained the rule.",
+              "zh": "我解釋規則的時候他看起來很困惑。"
+            },
+            {
+              "en": "Her voice sounds different on the phone.",
+              "zh": "她的聲音在電話裡聽起來不一樣。"
+            },
+            {
+              "en": "The weather is getting colder day by day.",
+              "zh": "天氣一天比一天冷。"
+            },
+            {
+              "en": "This plan sounds like a great idea to me.",
+              "zh": "這個計畫對我來說聽起來是個好主意。"
+            },
+            {
+              "en": "The milk in this cup smells like it's gone bad.",
+              "zh": "杯子裡的牛奶聞起來好像壞掉了。"
+            },
+            {
+              "en": "My grandmother's soup always tastes like home.",
+              "zh": "我奶奶煮的湯總是嚐起來有家的味道。"
+            },
+            {
+              "en": "The leaves on that tree are turning yellow.",
+              "zh": "那棵樹上的葉子正在轉黃。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "This soup tastes ___. Did you add too much salt?",
+              "options": [
+                "salty",
+                "saltily",
+                "salt",
+                "salting"
+              ],
+              "answer": 0,
+              "explanation": "連綴動詞taste後面要接形容詞salty，不能用副詞saltily。",
+              "target_grammar": "連綴動詞",
+              "optionsZh": [
+                "（正確，連綴動詞+形容詞）",
+                "（副詞不可接在連綴動詞後）",
+                "（名詞不可直接當形容詞使用）",
+                "（動名詞不符連綴動詞句構）"
+              ]
+            },
+            {
+              "sentence": "It ___ like something is burning in the kitchen.",
+              "options": [
+                "smell",
+                "smells",
+                "smelling",
+                "smelled to"
+              ],
+              "answer": 1,
+              "explanation": "連綴動詞smell+like+名詞子句，第三人稱單數it要用smells。",
+              "target_grammar": "連綴動詞",
+              "optionsZh": [
+                "（缺少第三人稱單數s）",
+                "（正確，smell+like表示聞起來像）",
+                "（動名詞形式不符此句構）",
+                "（smell不需搭配to使用）"
+              ]
+            },
+            {
+              "sentence": "What does your new puppy look ___?",
+              "options": [
+                "like",
+                "as",
+                "alike",
+                "same"
+              ],
+              "answer": 0,
+              "explanation": "詢問「長什麼樣子」用what...look like句型。",
+              "target_grammar": "連綴動詞",
+              "optionsZh": [
+                "（正確，look like詢問外觀）",
+                "（as不用於此連綴動詞片語）",
+                "（alike為形容詞，不接在look後面表此語意）",
+                "（same不用於此連綴動詞片語）"
+              ]
+            },
+            {
+              "sentence": "The leaves on the tree are ___ yellow now.",
+              "options": [
+                "turn",
+                "turning",
+                "turned",
+                "turns"
+              ],
+              "answer": 1,
+              "explanation": "turn是表示變化的連綴動詞，可以有進行式，are turning表示「正在轉變」。",
+              "target_grammar": "連綴動詞",
+              "optionsZh": [
+                "（缺少be動詞搭配的現在分詞形式）",
+                "（正確，turn可用進行式表逐漸變化）",
+                "（過去式不符are的現在進行語境）",
+                "（動詞第三人稱單數不符進行式句構）"
+              ]
+            },
+            {
+              "sentence": "Her explanation ___ very confusing to me.",
+              "options": [
+                "sound",
+                "sounds",
+                "sounding",
+                "is sound"
+              ],
+              "answer": 1,
+              "explanation": "連綴動詞sound，主詞explanation是第三人稱單數，用sounds。",
+              "target_grammar": "連綴動詞",
+              "optionsZh": [
+                "（缺少第三人稱單數s）",
+                "（正確，連綴動詞sounds+形容詞）",
+                "（動名詞形式不符此句構）",
+                "（sound本身即為連綴動詞，不需再加be動詞is）"
+              ]
+            },
+            {
+              "sentence": "This shirt doesn't fit me anymore. I'm ___ taller.",
+              "options": [
+                "get",
+                "getting",
+                "gotten",
+                "gets"
+              ],
+              "answer": 1,
+              "explanation": "get是表示變化的連綴動詞，可用進行式am getting表示「逐漸變高」。",
+              "target_grammar": "連綴動詞",
+              "optionsZh": [
+                "（缺少be動詞搭配的現在分詞形式）",
+                "（正確，get可用進行式表逐漸變化）",
+                "（過去分詞不符am的現在進行語境）",
+                "（動詞第三人稱單數不符進行式句構）"
+              ]
+            },
+            {
+              "sentence": "He ___ nervous before every big test.",
+              "options": [
+                "look",
+                "looks",
+                "looking",
+                "is looks"
+              ],
+              "answer": 1,
+              "explanation": "連綴動詞look，主詞he是第三人稱單數，用looks。",
+              "target_grammar": "連綴動詞",
+              "optionsZh": [
+                "（缺少第三人稱單數s）",
+                "（正確，連綴動詞looks+形容詞）",
+                "（動名詞形式不符此句構）",
+                "（look本身即為連綴動詞，不需再加be動詞is）"
+              ]
+            },
+            {
+              "sentence": "This cheese ___ awful. I don't think we should eat it.",
+              "options": [
+                "smell",
+                "smells",
+                "smelling",
+                "is smell"
+              ],
+              "answer": 1,
+              "explanation": "連綴動詞smell，主詞this cheese是第三人稱單數，用smells。",
+              "target_grammar": "連綴動詞",
+              "optionsZh": [
+                "（缺少第三人稱單數s）",
+                "（正確，連綴動詞smells+形容詞）",
+                "（動名詞形式不符此句構）",
+                "（smell本身即為連綴動詞，不需再加be動詞is）"
+              ]
+            },
+            {
+              "sentence": "The milk in the bottle tastes ___ ; someone must have left it out.",
+              "options": [
+                "strange",
+                "strangely",
+                "stranger than",
+                "strangest"
+              ],
+              "answer": 0,
+              "explanation": "連綴動詞taste後面接原級形容詞strange，此處無比較對象。",
+              "target_grammar": "連綴動詞",
+              "optionsZh": [
+                "（正確，連綴動詞+原級形容詞）",
+                "（副詞不可接在連綴動詞後）",
+                "（此處無明確比較對象，不需比較級）",
+                "（此處無三者以上比較，不需最高級）"
+              ]
+            },
+            {
+              "sentence": "Why do you always ___ so tired after school?",
+              "options": [
+                "get",
+                "getting",
+                "gotten",
+                "to get"
+              ],
+              "answer": 0,
+              "explanation": "連綴動詞get搭配助動詞do造句，用原形get。",
+              "target_grammar": "連綴動詞",
+              "optionsZh": [
+                "（正確，助動詞do後接原形動詞get）",
+                "（進行式不符助動詞do的句構）",
+                "（過去分詞不符助動詞do的句構）",
+                "（不定詞不符助動詞do的句構）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A Strange Smell in the Classroom",
+            "passage": "This morning, our classroom __(1)__ really strange when we walked in. At first, we thought something __(2)__ like burnt toast, but no one could find where it came from. Our teacher's face __(3)__ worried, and she asked everyone to open the windows. After a few minutes, the smell __(4)__ weaker, and everyone started to relax. By lunchtime, the classroom __(5)__ normal again, and we all laughed about the strange morning.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "smell",
+                  "smelled",
+                  "smelling",
+                  "is smell"
+                ],
+                "answer": 1,
+                "explanation": "描述早上發生的事，連綴動詞smell用過去式smelled。",
+                "optionsZh": [
+                  "（時態不符this morning過去語境）",
+                  "（正確，連綴動詞過去式smelled）",
+                  "（動名詞形式不符此句構）",
+                  "（smell本身即為連綴動詞，不需再加be動詞is）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "smell",
+                  "smelled",
+                  "smells",
+                  "smelling"
+                ],
+                "answer": 1,
+                "explanation": "承接過去語境，連綴動詞smell+like，用過去式smelled。",
+                "optionsZh": [
+                  "（時態不符過去語境）",
+                  "（正確，連綴動詞過去式smelled+like）",
+                  "（第三人稱單數但時態不符過去語境）",
+                  "（動名詞形式不符此句構）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "look",
+                  "looked",
+                  "looks",
+                  "looking"
+                ],
+                "answer": 1,
+                "explanation": "承接過去語境，連綴動詞look用過去式looked。",
+                "optionsZh": [
+                  "（時態不符過去語境）",
+                  "（正確，連綴動詞過去式looked）",
+                  "（第三人稱單數但時態不符過去語境）",
+                  "（動名詞形式不符此句構）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "get",
+                  "got",
+                  "getting",
+                  "gets"
+                ],
+                "answer": 1,
+                "explanation": "get是表示變化的連綴動詞，過去式got，表示「變得」。",
+                "optionsZh": [
+                  "（時態不符過去語境）",
+                  "（正確，get的過去式為got）",
+                  "（缺少be動詞搭配的現在分詞形式）",
+                  "（第三人稱單數但時態不符過去語境）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "become",
+                  "became",
+                  "becomes",
+                  "becoming"
+                ],
+                "answer": 1,
+                "explanation": "become是表示變化的連綴動詞，過去式became，表示「變回」。",
+                "optionsZh": [
+                  "（時態不符過去語境）",
+                  "（正確，become的過去式為became）",
+                  "（第三人稱單數但時態不符過去語境）",
+                  "（缺少be動詞搭配的現在分詞形式）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "13-2",
         "title": "授與動詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>授與動詞有兩個受詞</b><br>授與動詞（雙賓動詞）後面可以直接接兩個受詞：<br>① 授與動詞+人+事物（沒有介系詞）：Please give me the book.<br>② 授與動詞+事物+介系詞+人：Please give the book to me.<br>兩種句型意思一樣，但語序不同。<br><br><b>搭配to的授與動詞</b><br>give給、bring帶來、hand交出、lend借出、pay支付、pass傳遞、read唸、send寄送、show顯示、take帶走、tell告訴、throw扔擲、write書寫<br><br><b>搭配for的授與動詞</b><br>buy購買、cook烹煮、choose選擇、find找到、get拿取、leave遺留、make製造、order訂購、save保留（bring、read也可以用for，語意稍有不同）<br><br><b>其他特殊搭配</b><br>ask+of（詢問）：May I ask a question of you? = May I ask you a question.<br>borrow+from（借入）<br><br><b>to跟for意思差在哪</b><br>用to：單純表示「給」的動作方向。用for：表示「為了某人」而做，語氣上更強調「代勞」的意味。例如：I sent the letter to Dad.（單純寄給爸爸）vs I sent the letter for Dad.（代替爸爸去寄信）<br><br><b>最容易忽略的規則</b><br>沒有介系詞的句型（授與動詞+人+事物）中，如果第二個受詞（事物）是代名詞，就不能用這種句型，一定要改用「授與動詞+事物+介系詞+人」：不能說Can you show me it.，要說Can you show it to me.",
+          "examples": [
+            {
+              "en": "My aunt bought me a new backpack for my birthday.",
+              "zh": "我阿姨買了一個新背包給我當生日禮物。"
+            },
+            {
+              "en": "Could you pass the salt to me, please?",
+              "zh": "可以請你把鹽遞給我嗎？"
+            },
+            {
+              "en": "He wrote a long letter to his grandmother.",
+              "zh": "他寫了一封長信給他的奶奶。"
+            },
+            {
+              "en": "Please lend me your umbrella; I forgot mine.",
+              "zh": "請借我你的傘，我忘了帶自己的。"
+            },
+            {
+              "en": "I made a card for my teacher last week.",
+              "zh": "我上週幫老師做了一張卡片。"
+            },
+            {
+              "en": "Can you show it to me? I can't see it clearly.",
+              "zh": "你可以拿給我看嗎？我看不清楚。"
+            },
+            {
+              "en": "She asked a favor of her older brother.",
+              "zh": "她請她哥哥幫了一個忙。"
+            },
+            {
+              "en": "Dad ordered a pizza for the whole family.",
+              "zh": "爸爸為全家點了一份披薩。"
+            },
+            {
+              "en": "The clerk handed the receipt to my mom.",
+              "zh": "店員把收據交給了我媽媽。"
+            },
+            {
+              "en": "I borrowed some money from my best friend.",
+              "zh": "我向我最好的朋友借了一些錢。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "Could you please give the pencil ___ me?",
+              "options": [
+                "to",
+                "for",
+                "of",
+                "from"
+              ],
+              "answer": 0,
+              "explanation": "give搭配介系詞to，表示「給某人」。",
+              "target_grammar": "授與動詞",
+              "optionsZh": [
+                "（正確，give+事物+to+人）",
+                "（for用於buy、make等動詞，give不用for）",
+                "（of用於ask，give不用of）",
+                "（from用於borrow，give不用from）"
+              ]
+            },
+            {
+              "sentence": "My mom cooked a big dinner ___ us last night.",
+              "options": [
+                "to",
+                "for",
+                "of",
+                "with"
+              ],
+              "answer": 1,
+              "explanation": "cook搭配介系詞for，表示「為某人做」。",
+              "target_grammar": "授與動詞",
+              "optionsZh": [
+                "（to用於give、send等動詞，cook不用to）",
+                "（正確，cook+事物+for+人）",
+                "（of用於ask，cook不用of）",
+                "（with不用於授與動詞句構）"
+              ]
+            },
+            {
+              "sentence": "Can you show ___? I want to see it too.",
+              "options": [
+                "it to me",
+                "me it",
+                "to me it",
+                "it me"
+              ],
+              "answer": 0,
+              "explanation": "第二個受詞若是代名詞（it），不能用沒有介系詞的句型，必須改用「事物+to+人」。",
+              "target_grammar": "授與動詞",
+              "optionsZh": [
+                "（正確，代名詞受詞需用to連接）",
+                "（代名詞it不可直接放在人的後面，此句構不合法）",
+                "（語序錯誤）",
+                "（語序錯誤，缺少介系詞to）"
+              ]
+            },
+            {
+              "sentence": "May I ask a favor ___ you?",
+              "options": [
+                "to",
+                "for",
+                "of",
+                "from"
+              ],
+              "answer": 2,
+              "explanation": "ask搭配介系詞of，是固定用法。",
+              "target_grammar": "授與動詞",
+              "optionsZh": [
+                "（to用於give等動詞，ask不用to）",
+                "（for用於buy等動詞，ask不用for）",
+                "（正確，ask+事物+of+人）",
+                "（from用於borrow，ask不用from）"
+              ]
+            },
+            {
+              "sentence": "I borrowed a book ___ the library.",
+              "options": [
+                "to",
+                "for",
+                "of",
+                "from"
+              ],
+              "answer": 3,
+              "explanation": "borrow搭配介系詞from，表示「向…借」。",
+              "target_grammar": "授與動詞",
+              "optionsZh": [
+                "（to用於give等動詞）",
+                "（for用於buy等動詞）",
+                "（of用於ask）",
+                "（正確，borrow+事物+from+來源）"
+              ]
+            },
+            {
+              "sentence": "He sent a text message ___ his sister to say he'd be late.",
+              "options": [
+                "to",
+                "for",
+                "of",
+                "with"
+              ],
+              "answer": 0,
+              "explanation": "send搭配介系詞to，表示「傳送給某人」。",
+              "target_grammar": "授與動詞",
+              "optionsZh": [
+                "（正確，send+事物+to+人）",
+                "（for較常用於代勞語意，此處單純表示傳送方向用to更合適）",
+                "（of用於ask，send不用of）",
+                "（with不用於授與動詞句構）"
+              ]
+            },
+            {
+              "sentence": "Could you buy some milk ___ me on your way home?",
+              "options": [
+                "to",
+                "for",
+                "of",
+                "at"
+              ],
+              "answer": 1,
+              "explanation": "buy搭配介系詞for，表示「為某人購買」。",
+              "target_grammar": "授與動詞",
+              "optionsZh": [
+                "（to用於give等動詞，buy不用to）",
+                "（正確，buy+事物+for+人）",
+                "（of用於ask，buy不用of）",
+                "（at不用於授與動詞句構）"
+              ]
+            },
+            {
+              "sentence": "The waiter handed the menu ___ us as soon as we sat down.",
+              "options": [
+                "to",
+                "for",
+                "of",
+                "with"
+              ],
+              "answer": 0,
+              "explanation": "hand搭配介系詞to，表示「交給某人」。",
+              "target_grammar": "授與動詞",
+              "optionsZh": [
+                "（正確，hand+事物+to+人）",
+                "（for用於buy等動詞，hand不用for）",
+                "（of用於ask，hand不用of）",
+                "（with不用於授與動詞句構）"
+              ]
+            },
+            {
+              "sentence": "She made a birthday cake ___ her little brother.",
+              "options": [
+                "to",
+                "for",
+                "of",
+                "from"
+              ],
+              "answer": 1,
+              "explanation": "make搭配介系詞for，表示「為某人製作」。",
+              "target_grammar": "授與動詞",
+              "optionsZh": [
+                "（to用於give等動詞，make不用to）",
+                "（正確，make+事物+for+人）",
+                "（of用於ask，make不用of）",
+                "（from用於borrow，make不用from）"
+              ]
+            },
+            {
+              "sentence": "Please pass ___. I need to write something down.",
+              "options": [
+                "me the pen",
+                "the pen me",
+                "to me the pen",
+                "the pen for me"
+              ],
+              "answer": 0,
+              "explanation": "pass搭配to，此處用沒有介系詞的句型：pass+人+事物，正確語序為pass me the pen。",
+              "target_grammar": "授與動詞",
+              "optionsZh": [
+                "（正確，授與動詞+人+事物的語序）",
+                "（語序錯誤，事物與人的順序顛倒）",
+                "（語序錯誤，介系詞片語應放最後或改用另一種句型）",
+                "（for不符pass搭配的介系詞，pass應搭配to）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A Thoughtful Friend",
+            "passage": "Last weekend, Amy baked some cookies __(1)__ her neighbor because he had helped her move some furniture. She also wrote a thank-you card __(2)__ him to show her appreciation. When she saw him, she handed the box of cookies __(3)__ him with a big smile. He was so touched that he offered __(4)__ Amy a ride to school the next morning. Amy said she would ask a favor __(5)__ him again if she ever needed help moving something heavy.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "to",
+                  "for",
+                  "of",
+                  "with"
+                ],
+                "answer": 1,
+                "explanation": "bake搭配介系詞for，表示「為某人烘烤」。",
+                "optionsZh": [
+                  "（to用於give等動詞，bake不用to）",
+                  "（正確，bake+事物+for+人）",
+                  "（of用於ask，bake不用of）",
+                  "（with不用於授與動詞句構）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "to",
+                  "for",
+                  "of",
+                  "from"
+                ],
+                "answer": 0,
+                "explanation": "write搭配介系詞to，表示「寫給某人」。",
+                "optionsZh": [
+                  "（正確，write+事物+to+人）",
+                  "（for較常用於代勞語意，此處單純表示對象用to更合適）",
+                  "（of用於ask，write不用of）",
+                  "（from用於borrow，write不用from）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "to",
+                  "for",
+                  "of",
+                  "at"
+                ],
+                "answer": 0,
+                "explanation": "hand搭配介系詞to，表示「交給某人」。",
+                "optionsZh": [
+                  "（正確，hand+事物+to+人）",
+                  "（for用於buy等動詞，hand不用for）",
+                  "（of用於ask，hand不用of）",
+                  "（at不用於授與動詞句構）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "to give",
+                  "give",
+                  "giving",
+                  "gave"
+                ],
+                "answer": 1,
+                "explanation": "offer+to V+原形動詞give，此處考不定詞後接原形動詞的固定用法。",
+                "optionsZh": [
+                  "（offer to後應直接接原形動詞give，不需重複to）",
+                  "（正確，offer to give為固定不定詞用法）",
+                  "（動名詞形式不符offer to+原形動詞的句構）",
+                  "（過去式不符不定詞句構）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "to",
+                  "for",
+                  "of",
+                  "from"
+                ],
+                "answer": 2,
+                "explanation": "ask搭配介系詞of，是固定用法。",
+                "optionsZh": [
+                  "（to用於give等動詞，ask不用to）",
+                  "（for用於buy等動詞，ask不用for）",
+                  "（正確，ask+事物+of+人）",
+                  "（from用於borrow，ask不用from）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "13-3",
         "title": "使役動詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>使役動詞是「讓、使喚、命令」的意思</b><br>let讓（不具強制性）、have/has使喚（具強制性）、make迫使（具強制性）：這三個後面的受詞補語都用原形動詞。get讓（較委婉）：後面的受詞補語要用to+原形動詞，跟其他三個不一樣。<br><br><b>基本句構</b><br>使役動詞（let/have/make）+受詞+原形動詞：Mom always makes me do my homework first.<br>使役動詞get+受詞+to+原形動詞：I got him to help me with the project.<br><br><b>受詞補語什麼時候要改用過去分詞</b><br>如果受詞不是「主動做這件事的人」，而是「被動接受這件事的對象」，受詞補語就要改用過去分詞（不加be動詞）：I had the computer fixed.（電腦是被修的，不是電腦自己去修）；Mom had me get up early.（我是主動起床的人，用原形動詞get up）<br><br><b>make的受詞補語也可以是形容詞或名詞</b><br>Larry always makes me a brave man when I'm sad.（讓我成為一個勇敢的人）／The news made everyone happy.<br><br><b>使役動詞have vs have to 別搞混</b><br>使役動詞have：S+have+O+原形動詞（讓某人做…）：Mom had me wash the dishes.<br>have to：S+have to+原形動詞（自己必須做…）：I have to wash the dishes.<br>這兩個意思完全不同，一個是「叫別人做」，一個是「自己必須做」。<br><br><b>help是半使役動詞</b><br>help後面可以接原形動詞，也可以接to+原形動詞，兩種都對：She helped me (to) carry the boxes.",
+          "examples": [
+            {
+              "en": "The coach made the players run five laps.",
+              "zh": "教練要球員們跑五圈。"
+            },
+            {
+              "en": "Let me think about it for a minute.",
+              "zh": "讓我想一下。"
+            },
+            {
+              "en": "I had my hair cut yesterday afternoon.",
+              "zh": "我昨天下午剪了頭髮。"
+            },
+            {
+              "en": "My parents don't let me stay up late on school nights.",
+              "zh": "我爸媽不讓我在上學日晚睡。"
+            },
+            {
+              "en": "He got his sister to help him with the project.",
+              "zh": "他讓他妹妹幫他做這個專題。"
+            },
+            {
+              "en": "This song always makes me feel relaxed.",
+              "zh": "這首歌總是讓我感到放鬆。"
+            },
+            {
+              "en": "I have to clean my room before I go out.",
+              "zh": "我出門前必須打掃我的房間。"
+            },
+            {
+              "en": "The manager had the broken machine repaired.",
+              "zh": "經理讓故障的機器被修理好了。"
+            },
+            {
+              "en": "Could you help me carry these bags upstairs?",
+              "zh": "你可以幫我把這些袋子搬上樓嗎？"
+            },
+            {
+              "en": "Her kind words made him smile again.",
+              "zh": "她溫暖的話讓他再度露出微笑。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "My teacher made us ___ the whole poem by heart.",
+              "options": [
+                "memorize",
+                "to memorize",
+                "memorizing",
+                "memorized"
+              ],
+              "answer": 0,
+              "explanation": "使役動詞make後面接原形動詞。",
+              "target_grammar": "使役動詞",
+              "optionsZh": [
+                "（正確，make+受詞+原形動詞）",
+                "（make不接to+原形動詞，此為get的句構）",
+                "（動名詞不符使役動詞make的句構）",
+                "（過去分詞用於受詞是被動接受的情況，此處us是主動背誦的人）"
+              ]
+            },
+            {
+              "sentence": "I got my brother ___ me with my math homework.",
+              "options": [
+                "help",
+                "to help",
+                "helping",
+                "helped"
+              ],
+              "answer": 1,
+              "explanation": "使役動詞get後面要接to+原形動詞，跟let/have/make不一樣。",
+              "target_grammar": "使役動詞",
+              "optionsZh": [
+                "（get需搭配to+原形動詞，不可直接用原形動詞）",
+                "（正確，get+受詞+to+原形動詞）",
+                "（動名詞不符使役動詞get的句構）",
+                "（過去分詞不符此處主動幫忙的語意）"
+              ]
+            },
+            {
+              "sentence": "She had her bike ___ because it was broken.",
+              "options": [
+                "fix",
+                "to fix",
+                "fixing",
+                "fixed"
+              ],
+              "answer": 3,
+              "explanation": "bike是被動被修理的對象，受詞補語要用過去分詞fixed。",
+              "target_grammar": "使役動詞",
+              "optionsZh": [
+                "（原形動詞用於受詞主動做動作的情況，此處bike是被修理的對象不符）",
+                "（have不接to+原形動詞）",
+                "（動名詞不符此被動語境）",
+                "（正確，受詞是被動接受動作，用過去分詞）"
+              ]
+            },
+            {
+              "sentence": "Please let me ___ you with those heavy bags.",
+              "options": [
+                "help",
+                "to help",
+                "helping",
+                "helped"
+              ],
+              "answer": 0,
+              "explanation": "使役動詞let後面接原形動詞。",
+              "target_grammar": "使役動詞",
+              "optionsZh": [
+                "（正確，let+受詞+原形動詞）",
+                "（let不接to+原形動詞）",
+                "（動名詞不符使役動詞let的句構）",
+                "（過去分詞不符此處主動幫忙的語意）"
+              ]
+            },
+            {
+              "sentence": "I ___ to finish all my homework before dinner.",
+              "options": [
+                "have",
+                "have to",
+                "made",
+                "let"
+              ],
+              "answer": 1,
+              "explanation": "have to表示「自己必須做」，跟使役動詞have（讓別人做）意思不同。",
+              "target_grammar": "使役動詞",
+              "optionsZh": [
+                "（單獨have為使役動詞，需搭配受詞及原形動詞，此處句構不符）",
+                "（正確，have to表示自己必須做）",
+                "（made為使役動詞過去式，需搭配受詞，此處句構不符）",
+                "（let為使役動詞，需搭配受詞，此處句構不符）"
+              ]
+            },
+            {
+              "sentence": "This movie always makes me ___ .",
+              "options": [
+                "cry",
+                "to cry",
+                "crying",
+                "cried"
+              ],
+              "answer": 0,
+              "explanation": "使役動詞make後面接原形動詞。",
+              "target_grammar": "使役動詞",
+              "optionsZh": [
+                "（正確，make+受詞+原形動詞）",
+                "（make不接to+原形動詞）",
+                "（動名詞不符使役動詞make的句構）",
+                "（過去分詞不符此處主動反應的語意）"
+              ]
+            },
+            {
+              "sentence": "Can you help me ___ this heavy box upstairs?",
+              "options": [
+                "carry",
+                "carries",
+                "carrying",
+                "carried"
+              ],
+              "answer": 0,
+              "explanation": "help是半使役動詞，後面可接原形動詞或to+原形動詞，此處以原形carry為選項正解。",
+              "target_grammar": "使役動詞",
+              "optionsZh": [
+                "（正確，help+受詞+原形動詞）",
+                "（動詞第三人稱單數不符受詞補語的句構）",
+                "（動名詞較不符help的標準句構，原形動詞更常見）",
+                "（過去分詞不符此處主動幫忙的語意）"
+              ]
+            },
+            {
+              "sentence": "Mr. Wang has his car ___ once a week.",
+              "options": [
+                "wash",
+                "to wash",
+                "washed",
+                "washing"
+              ],
+              "answer": 2,
+              "explanation": "car是被動被清洗的對象，受詞補語要用過去分詞washed。",
+              "target_grammar": "使役動詞",
+              "optionsZh": [
+                "（原形動詞用於受詞主動做動作的情況，此處car是被清洗的對象不符）",
+                "（have不接to+原形動詞）",
+                "（正確，受詞是被動接受動作，用過去分詞）",
+                "（動名詞不符此被動語境）"
+              ]
+            },
+            {
+              "sentence": "The strict coach ___ the team practice every single day.",
+              "options": [
+                "makes",
+                "make",
+                "made to",
+                "gets to"
+              ],
+              "answer": 0,
+              "explanation": "主詞the coach是第三人稱單數，使役動詞make要加s，後面接原形動詞practice。",
+              "target_grammar": "使役動詞",
+              "optionsZh": [
+                "（正確，makes+受詞+原形動詞）",
+                "（缺少第三人稱單數s）",
+                "（make不接to，此為get的句構且動詞形式錯誤）",
+                "（get需搭配受詞+to+原形動詞，此處句構不完整）"
+              ]
+            },
+            {
+              "sentence": "I ___ my little sister do the dishes yesterday.",
+              "options": [
+                "had",
+                "have to",
+                "make",
+                "makes"
+              ],
+              "answer": 0,
+              "explanation": "使役動詞have的過去式had，表示「叫某人做」，符合yesterday的過去語境。",
+              "target_grammar": "使役動詞",
+              "optionsZh": [
+                "（正確，had+受詞+原形動詞，過去式）",
+                "（have to表示自己必須做，此處語意應為叫妹妹做）",
+                "（時態不符yesterday過去語境）",
+                "（時態不符過去語境，且缺少過去式標記）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A Busy Saturday",
+            "passage": "Last Saturday, my mom made me __(1)__ my whole room before I could go out and play. It took forever, so I asked my brother to help me __(2)__ some of the boxes to the storage room. After that, I had my bike __(3)__ because the chain was loose. My dad let me __(4)__ his tools to fix it myself, which made me feel very proud. By the evening, I was so tired that my mom had to __(5)__ me stay in bed early.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "clean",
+                  "to clean",
+                  "cleaning",
+                  "cleaned"
+                ],
+                "answer": 0,
+                "explanation": "使役動詞make後面接原形動詞clean。",
+                "optionsZh": [
+                  "（正確，make+受詞+原形動詞）",
+                  "（make不接to+原形動詞）",
+                  "（動名詞不符使役動詞make的句構）",
+                  "（過去分詞不符此處主動打掃的語意）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "carry",
+                  "to carry",
+                  "carrying",
+                  "carried"
+                ],
+                "answer": 1,
+                "explanation": "ask是只接不定詞的動詞（詳見第10章），ask+人+to V。",
+                "optionsZh": [
+                  "（此處為ask+人+to V句構，需要不定詞而非原形動詞）",
+                  "（正確，ask+人+to V）",
+                  "（動名詞不符ask+人+to V的句構）",
+                  "（過去式不符不定詞句構）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "fix",
+                  "to fix",
+                  "fixing",
+                  "fixed"
+                ],
+                "answer": 3,
+                "explanation": "bike是被動被修理的對象，受詞補語要用過去分詞fixed。",
+                "optionsZh": [
+                  "（原形動詞用於受詞主動做動作的情況，此處bike是被修理的對象不符）",
+                  "（have不接to+原形動詞）",
+                  "（動名詞不符此被動語境）",
+                  "（正確，受詞是被動接受動作，用過去分詞）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "use",
+                  "to use",
+                  "using",
+                  "used"
+                ],
+                "answer": 0,
+                "explanation": "使役動詞let後面接原形動詞use。",
+                "optionsZh": [
+                  "（正確，let+受詞+原形動詞）",
+                  "（let不接to+原形動詞）",
+                  "（動名詞不符使役動詞let的句構）",
+                  "（過去分詞不符此處主動使用的語意）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "make",
+                  "made",
+                  "makes",
+                  "making"
+                ],
+                "answer": 0,
+                "explanation": "have to+原形動詞，此處have to後面接原形動詞make（have to make me...）。",
+                "optionsZh": [
+                  "（正確，have to後接原形動詞make）",
+                  "（過去式不符have to+原形動詞的句構）",
+                  "（第三人稱單數不符have to+原形動詞的句構）",
+                  "（動名詞不符have to+原形動詞的句構）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "13-4",
         "title": "感官動詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>感官動詞清單</b><br>look at注視、see看、watch觀賞、hear聽、listen to傾聽、smell聞到、feel感覺、notice注意到<br><br><b>受詞補語可以用原形動詞，也可以用現在分詞</b><br>用原形動詞：強調「整個動作從頭到尾都看到/聽到了」：I heard my neighbor cry sadly.（聽到整個過程）<br>用現在分詞（V-ing）：強調「只看到/聽到動作正在進行的片段」：I saw John eating dinner when I passed by.（經過的當下，只看到片段畫面）<br><br><b>受詞補語如果是被動關係，要用過去分詞</b><br>如果受詞是後面動作的「接受者」而不是「執行者」，受詞補語要用過去分詞：I saw the car stolen by a young man.（車子是被偷的，不是自己在偷）<br><br><b>感官動詞 vs 連綴動詞（feel、smell很容易搞混）</b><br>當感官動詞：後面有受詞+V-ing/原形動詞：David felt the whole house shaking.（感覺到房子在搖）<br>當連綴動詞：後面直接接形容詞，沒有額外的受詞：David felt weak yesterday.（大衛覺得虛弱）<br>判斷技巧：句子裡有沒有「受詞+另一個動作」，如果有，就是感官動詞的句構。",
+          "examples": [
+            {
+              "en": "I saw two birds fighting over a piece of bread.",
+              "zh": "我看到兩隻鳥在爭奪一塊麵包。"
+            },
+            {
+              "en": "We watched the sun rise slowly over the mountains.",
+              "zh": "我們看著太陽緩緩從山後升起。"
+            },
+            {
+              "en": "She heard someone knock on the door twice.",
+              "zh": "她聽到有人敲了兩次門。"
+            },
+            {
+              "en": "I felt my phone buzzing in my pocket.",
+              "zh": "我感覺到我的手機在口袋裡震動。"
+            },
+            {
+              "en": "Did you notice him leave early today?",
+              "zh": "你有注意到他今天早退嗎？"
+            },
+            {
+              "en": "I smelled something burning in the kitchen.",
+              "zh": "我聞到廚房裡有東西燒焦的味道。"
+            },
+            {
+              "en": "We saw the window broken by the strong wind.",
+              "zh": "我們看到窗戶被強風吹破了。"
+            },
+            {
+              "en": "I like to listen to the rain falling at night.",
+              "zh": "我喜歡在晚上聽雨落下的聲音。"
+            },
+            {
+              "en": "He watched his kite flying higher and higher.",
+              "zh": "他看著他的風箏越飛越高。"
+            },
+            {
+              "en": "She felt someone tap her on the shoulder.",
+              "zh": "她感覺到有人拍了拍她的肩膀。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "I saw him ___ across the street this morning.",
+              "options": [
+                "walk",
+                "to walk",
+                "walked",
+                "walks"
+              ],
+              "answer": 0,
+              "explanation": "感官動詞see後面可接原形動詞，強調看到整個過程。",
+              "target_grammar": "感官動詞",
+              "optionsZh": [
+                "（正確，感官動詞+受詞+原形動詞）",
+                "（感官動詞see不接to+原形動詞）",
+                "（過去分詞用於受詞是被動接受的情況，此處him是主動走路的人）",
+                "（動詞第三人稱單數不符受詞補語的句構）"
+              ]
+            },
+            {
+              "sentence": "We heard the birds ___ outside the window all morning.",
+              "options": [
+                "sing",
+                "singing",
+                "to sing",
+                "sang"
+              ],
+              "answer": 1,
+              "explanation": "感官動詞hear後面接現在分詞，強調聽到部分持續的過程（all morning）。",
+              "target_grammar": "感官動詞",
+              "optionsZh": [
+                "（原形動詞較強調完整過程，此處all morning更適合用現在分詞強調持續）",
+                "（正確，感官動詞+受詞+現在分詞強調持續過程）",
+                "（感官動詞hear不接to+原形動詞）",
+                "（過去式不符受詞補語的句構）"
+              ]
+            },
+            {
+              "sentence": "I felt my heart ___ fast before the interview.",
+              "options": [
+                "beat",
+                "to beat",
+                "beaten",
+                "beats"
+              ],
+              "answer": 0,
+              "explanation": "感官動詞feel後面可接原形動詞，heart是主動跳動的一方。",
+              "target_grammar": "感官動詞",
+              "optionsZh": [
+                "（正確，感官動詞+受詞+原形動詞）",
+                "（感官動詞feel不接to+原形動詞）",
+                "（過去分詞用於被動接受的情況，此處heart是主動跳動不符）",
+                "（動詞第三人稱單數不符受詞補語的句構）"
+              ]
+            },
+            {
+              "sentence": "She noticed the door ___ open by the wind.",
+              "options": [
+                "blow",
+                "blowing",
+                "blown",
+                "to blow"
+              ],
+              "answer": 2,
+              "explanation": "door是被動被吹開的對象，受詞補語要用過去分詞blown。",
+              "target_grammar": "感官動詞",
+              "optionsZh": [
+                "（原形動詞用於受詞主動做動作的情況，door是被吹開的對象不符）",
+                "（現在分詞較常用於主動進行的動作，此處door是被動接受者不符）",
+                "（正確，受詞是被動接受動作，用過去分詞）",
+                "（感官動詞notice不接to+原形動詞）"
+              ]
+            },
+            {
+              "sentence": "I feel very ___ today. I think I need some rest.",
+              "options": [
+                "tired",
+                "tiring",
+                "tire",
+                "tires"
+              ],
+              "answer": 0,
+              "explanation": "此處feel是連綴動詞，後面直接接形容詞tired（沒有額外受詞）。",
+              "target_grammar": "感官動詞",
+              "optionsZh": [
+                "（正確，連綴動詞feel+形容詞）",
+                "（現在分詞修飾事物，此處主詞I是人感到疲累不符）",
+                "（原形動詞不可直接當形容詞使用）",
+                "（動詞第三人稱單數不可當形容詞使用）"
+              ]
+            },
+            {
+              "sentence": "Did you watch the kids ___ soccer in the park just now?",
+              "options": [
+                "play",
+                "to play",
+                "played",
+                "plays"
+              ],
+              "answer": 0,
+              "explanation": "感官動詞watch後面接原形動詞，強調看到整個過程。",
+              "target_grammar": "感官動詞",
+              "optionsZh": [
+                "（正確，感官動詞+受詞+原形動詞）",
+                "（感官動詞watch不接to+原形動詞）",
+                "（過去式不符受詞補語的句構）",
+                "（動詞第三人稱單數不符受詞補語的句構）"
+              ]
+            },
+            {
+              "sentence": "I smelled something ___ in the oven.",
+              "options": [
+                "burn",
+                "burning",
+                "to burn",
+                "burns"
+              ],
+              "answer": 1,
+              "explanation": "感官動詞smell後面接現在分詞，強調正在燃燒的持續狀態。",
+              "target_grammar": "感官動詞",
+              "optionsZh": [
+                "（原形動詞也可用，但此處強調持續燃燒的過程更適合用現在分詞）",
+                "（正確，感官動詞+受詞+現在分詞強調持續狀態）",
+                "（感官動詞smell不接to+原形動詞）",
+                "（動詞第三人稱單數不符受詞補語的句構）"
+              ]
+            },
+            {
+              "sentence": "We watched the movie ___ in silence.",
+              "options": [
+                "make",
+                "made",
+                "making",
+                "to make"
+              ],
+              "answer": 1,
+              "explanation": "the movie是被動被製作的對象，此處指看幕後花絮，受詞補語要用過去分詞made。",
+              "target_grammar": "感官動詞",
+              "optionsZh": [
+                "（原形動詞用於受詞主動做動作的情況，movie是被製作的對象不符）",
+                "（正確，受詞是被動接受動作，用過去分詞）",
+                "（現在分詞較常用於主動進行的動作，此處movie是被動接受者不符）",
+                "（感官動詞watch不接to+原形動詞）"
+              ]
+            },
+            {
+              "sentence": "This milk ___ sour. Don't drink it.",
+              "options": [
+                "smell",
+                "smells",
+                "smelling",
+                "is smell"
+              ],
+              "answer": 1,
+              "explanation": "此處smell是連綴動詞，接形容詞sour（沒有額外受詞），第三人稱單數要加s。",
+              "target_grammar": "感官動詞",
+              "optionsZh": [
+                "（缺少第三人稱單數s）",
+                "（正確，連綴動詞smells+形容詞）",
+                "（動名詞形式不符此句構）",
+                "（smell本身即為連綴動詞，不需再加be動詞is）"
+              ]
+            },
+            {
+              "sentence": "I noticed him ___ nervous during the whole presentation.",
+              "options": [
+                "look",
+                "looking",
+                "to look",
+                "looked"
+              ],
+              "answer": 1,
+              "explanation": "notice是感官動詞，後面接受詞+現在分詞，強調在整場報告中持續看到的狀態。",
+              "target_grammar": "感官動詞",
+              "optionsZh": [
+                "（原形動詞可用但此處強調持續狀態，用現在分詞更貼切）",
+                "（正確，感官動詞+受詞+現在分詞強調持續狀態）",
+                "（感官動詞notice不接to+原形動詞）",
+                "（過去式不符受詞補語的句構）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A Noise in the Night",
+            "passage": "Last night, I heard something __(1)__ outside my window around midnight. At first, I felt too scared __(2)__ get up and look. After a few minutes, I noticed the sound __(3)__ closer to the house. I finally saw a small cat __(4)__ near the fence, looking for food. My mom said she smelled something __(5)__ in the kitchen earlier too, so maybe the cat was just hungry and curious.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "move",
+                  "moving",
+                  "to move",
+                  "moved"
+                ],
+                "answer": 1,
+                "explanation": "感官動詞hear後面接現在分詞，強調聽到持續的移動聲音。",
+                "optionsZh": [
+                  "（原形動詞也可用，但此處強調持續聲音更適合現在分詞）",
+                  "（正確，感官動詞+受詞+現在分詞）",
+                  "（感官動詞hear不接to+原形動詞）",
+                  "（過去式不符受詞補語的句構）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "to",
+                  "too",
+                  "so",
+                  "very"
+                ],
+                "answer": 0,
+                "explanation": "too...to句型「太…而不能」，符合「太害怕而不敢起來看」的語境。",
+                "optionsZh": [
+                  "（正確，too scared to的too...to句型）",
+                  "（too已經出現在前文，此處應為不定詞標記to）",
+                  "（so需搭配that子句，此處為to V不符）",
+                  "（very不構成to V的結果句型）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "get",
+                  "getting",
+                  "to get",
+                  "got"
+                ],
+                "answer": 1,
+                "explanation": "感官動詞notice後面接現在分詞，強調聲音逐漸靠近的持續過程。",
+                "optionsZh": [
+                  "（原形動詞也可用，但此處強調持續過程更適合現在分詞）",
+                  "（正確，感官動詞+受詞+現在分詞）",
+                  "（感官動詞notice不接to+原形動詞）",
+                  "（過去式不符受詞補語的句構）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "sit",
+                  "sitting",
+                  "to sit",
+                  "sat"
+                ],
+                "answer": 1,
+                "explanation": "感官動詞see後面接現在分詞，強調看到貓正坐在那裡的持續畫面。",
+                "optionsZh": [
+                  "（原形動詞也可用，但此處強調持續畫面更適合現在分詞）",
+                  "（正確，感官動詞+受詞+現在分詞）",
+                  "（感官動詞see不接to+原形動詞）",
+                  "（過去式不符受詞補語的句構）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "cook",
+                  "cooking",
+                  "to cook",
+                  "cooked"
+                ],
+                "answer": 1,
+                "explanation": "感官動詞smell後面接現在分詞，強調聞到食物正在烹煮的味道。",
+                "optionsZh": [
+                  "（原形動詞也可用，但此處強調持續狀態更適合現在分詞）",
+                  "（正確，感官動詞+受詞+現在分詞）",
+                  "（感官動詞smell不接to+原形動詞）",
+                  "（過去式不符受詞補語的句構）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "13-5",
         "title": "可拆式（介副詞動詞）與不可拆式動詞片語（介詞動詞）",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>可拆式動詞片語（介副詞動詞）</b><br>介系詞在這裡當「副詞」用，跟動詞合起來會改變原本的意思，例如turn on（打開）、pick up（撿起）、look up（查閱）。<br><br><b>受詞的位置規則</b><br>① 受詞是名詞：可以放在介副詞前面或後面都可以：Turn off the light. = Turn the light off.<br>② 受詞是代名詞：一定要放在介副詞前面（拆開），不能放後面：Turn it off.（不能說Turn off it）<br><br><b>常見可拆式動詞片語</b><br>turn on/off打開/關掉、put on穿上、take off脫掉、try on試穿、give up放棄、pick up撿起/接送、look up查閱、hang up掛斷電話、wake up醒來、clean up整理乾淨、call off取消、put off延遲、write down寫下、throw away丟棄、find out發現、figure out了解、point out指出<br><br><b>不可拆式動詞片語（介詞動詞）</b><br>介系詞只是單純用來連接受詞，不會改變動詞本來的意思，受詞不論是名詞還是代名詞，都只能放在介系詞後面，不能拆開：look after照顧、look for尋找、take care of照顧、wait for等待、listen to傾聽、laugh at嘲笑、run into偶遇、come from來自、succeed in成功、agree with同意（人）<br>例：Please look after him.（不能說look him after，因為after不是可拆式的副詞而是固定介系詞）<br><br><b>怎麼分辨是可拆式還是不可拆式</b><br>沒有絕對規則，最好的方法是把常見片語背起來；但如果遇到代名詞受詞放在中間會覺得很奇怪、唸起來卡卡的，通常就是不可拆式，因為那個介系詞後面本來就該直接接受詞。",
+          "examples": [
+            {
+              "en": "Don't forget to turn off the fan before you leave.",
+              "zh": "離開前別忘了把風扇關掉。"
+            },
+            {
+              "en": "I can't find my keys. Can you help me look for them?",
+              "zh": "我找不到我的鑰匙，你可以幫我找嗎？"
+            },
+            {
+              "en": "She picked up the phone as soon as it rang.",
+              "zh": "電話一響，她就馬上接了起來。"
+            },
+            {
+              "en": "We need to look after the plants while Mom is away.",
+              "zh": "媽媽不在的時候，我們需要照顧這些植物。"
+            },
+            {
+              "en": "Please write down your answer before the timer runs out.",
+              "zh": "請在時間到之前寫下你的答案。"
+            },
+            {
+              "en": "He gave up his seat for the elderly woman.",
+              "zh": "他把座位讓給了那位老太太。"
+            },
+            {
+              "en": "I ran into my old classmate at the mall yesterday.",
+              "zh": "我昨天在購物中心巧遇我的老同學。"
+            },
+            {
+              "en": "Could you turn the music down a little?",
+              "zh": "你可以把音樂關小聲一點嗎？"
+            },
+            {
+              "en": "We finally figured out how to solve the puzzle.",
+              "zh": "我們終於想出怎麼解開這個謎題了。"
+            },
+            {
+              "en": "She is waiting for the bus at the corner.",
+              "zh": "她正在轉角等公車。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "It's cold in here. Could you please turn ___ the heater?",
+              "options": [
+                "on",
+                "on it",
+                "it on",
+                "either A or C"
+              ],
+              "answer": 3,
+              "explanation": "受詞是名詞the heater，可以放在介副詞on前面或後面，都對。",
+              "target_grammar": "動詞片語",
+              "optionsZh": [
+                "（缺少受詞the heater，句意不完整，但turn on the heater本身合法）",
+                "（代名詞受詞位置錯誤，且此處受詞應為the heater非it）",
+                "（此為代名詞用法，但問句給的是名詞the heater的情境）",
+                "（正確，此處指出受詞為名詞the heater時，turn on the heater和turn the heater on皆可，故答案需視原句finalize，此選項代表兩者皆可成立的概念）"
+              ]
+            },
+            {
+              "sentence": "My shoes are muddy. Let me take ___ before I come in.",
+              "options": [
+                "off them",
+                "them off",
+                "off it",
+                "it off"
+              ],
+              "answer": 1,
+              "explanation": "受詞是代名詞them（代替shoes），一定要放在介副詞off前面。",
+              "target_grammar": "動詞片語",
+              "optionsZh": [
+                "（代名詞受詞必須放在介副詞前面，不可放後面）",
+                "（正確，代名詞放在介副詞off前面）",
+                "（shoes是複數，代名詞應為them而非it）",
+                "（shoes是複數，代名詞應為them而非it）"
+              ]
+            },
+            {
+              "sentence": "Can you please ___ this word in the dictionary?",
+              "options": [
+                "look up",
+                "look it up",
+                "look up it",
+                "look after"
+              ],
+              "answer": 0,
+              "explanation": "受詞是名詞this word，look up this word或look this word up都可以，此處選look up（因為原句其實還沒接受詞，look up為片語本身）。",
+              "target_grammar": "動詞片語",
+              "optionsZh": [
+                "（正確，look up為可拆式動詞片語，可接名詞受詞this word）",
+                "（此處受詞應為this word名詞形式，而非重複使用it）",
+                "（代名詞受詞必須放在介副詞前面，不可放後面）",
+                "（look after意思是照顧，與查字典的語意不符）"
+              ]
+            },
+            {
+              "sentence": "I don't know this word. Please ___ .",
+              "options": [
+                "look it up",
+                "look up it",
+                "look after it",
+                "look for it up"
+              ],
+              "answer": 0,
+              "explanation": "受詞是代名詞it，look up是可拆式片語，代名詞受詞必須放在介副詞up前面。",
+              "target_grammar": "動詞片語",
+              "optionsZh": [
+                "（正確，代名詞it放在介副詞up前面）",
+                "（代名詞受詞必須放在介副詞前面，不可放後面）",
+                "（look after意思是照顧，與查字典的語意不符）",
+                "（非正確英文片語組合）"
+              ]
+            },
+            {
+              "sentence": "She has to ___ her younger brothers every afternoon.",
+              "options": [
+                "look after",
+                "look them after",
+                "take care",
+                "look up"
+              ],
+              "answer": 0,
+              "explanation": "look after是不可拆式動詞片語，直接接受詞her younger brothers。",
+              "target_grammar": "動詞片語",
+              "optionsZh": [
+                "（正確，look after為不可拆式片語，直接接受詞）",
+                "（look after是不可拆式片語，受詞不可插入中間）",
+                "（缺少介系詞of，應為take care of）",
+                "（look up意思是查閱，與照顧弟弟的語意不符）"
+              ]
+            },
+            {
+              "sentence": "We ___ my cousin at the airport by accident.",
+              "options": [
+                "ran into",
+                "ran it into",
+                "ran into it",
+                "ran up"
+              ],
+              "answer": 0,
+              "explanation": "run into是不可拆式動詞片語，意思是「偶遇」，直接接受詞my cousin。",
+              "target_grammar": "動詞片語",
+              "optionsZh": [
+                "（正確，run into為不可拆式片語，直接接受詞）",
+                "（run into是不可拆式片語，受詞不可插入中間）",
+                "（此處受詞應為my cousin，非代名詞it）",
+                "（run up非此語境的正確片語）"
+              ]
+            },
+            {
+              "sentence": "Don't ___ your dreams, no matter how hard it gets.",
+              "options": [
+                "give up",
+                "give it up on",
+                "up give",
+                "give on"
+              ],
+              "answer": 0,
+              "explanation": "give up是可拆式動詞片語，意思是「放棄」，此處受詞your dreams為名詞，可直接接在後面。",
+              "target_grammar": "動詞片語",
+              "optionsZh": [
+                "（正確，give up your dreams，名詞受詞可放在後面）",
+                "（語序及片語組合錯誤）",
+                "（語序錯誤，介副詞不可放在動詞前）",
+                "（非正確英文片語）"
+              ]
+            },
+            {
+              "sentence": "I'm waiting ___ my friend at the bus stop.",
+              "options": [
+                "for",
+                "on",
+                "at",
+                "to"
+              ],
+              "answer": 0,
+              "explanation": "wait for是不可拆式動詞片語，固定搭配介系詞for。",
+              "target_grammar": "動詞片語",
+              "optionsZh": [
+                "（正確，wait for固定搭配）",
+                "（on不是wait的固定搭配介系詞）",
+                "（at不是wait的固定搭配介系詞）",
+                "（to不是wait的固定搭配介系詞）"
+              ]
+            },
+            {
+              "sentence": "The kids ___ their toys before their friends came over.",
+              "options": [
+                "cleaned up",
+                "cleaned up them",
+                "clean up they",
+                "up cleaned"
+              ],
+              "answer": 0,
+              "explanation": "clean up是可拆式動詞片語，受詞their toys是名詞，clean up their toys正確。",
+              "target_grammar": "動詞片語",
+              "optionsZh": [
+                "（正確，名詞受詞可放在介副詞後面）",
+                "（此處受詞應為代名詞形式且應放在介副詞前，此選項語序矛盾）",
+                "（they為主格，且語序錯誤）",
+                "（語序錯誤，介副詞不可放在動詞前）"
+              ]
+            },
+            {
+              "sentence": "He finally ___ how the machine worked after hours of trying.",
+              "options": [
+                "figured out",
+                "figured it out",
+                "figured out it",
+                "figured for"
+              ],
+              "answer": 0,
+              "explanation": "figure out是可拆式動詞片語，此處受詞是how引導的名詞子句，直接接在後面。",
+              "target_grammar": "動詞片語",
+              "optionsZh": [
+                "（正確，figure out+名詞子句）",
+                "（此處受詞是名詞子句how the machine worked，非代名詞it）",
+                "（代名詞受詞必須放在介副詞前面，不可放後面）",
+                "（figure for非正確英文片語）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "Cleaning Out the Garage",
+            "passage": "This weekend, my dad decided to __(1)__ the old garage because it was full of things we never used. He asked me to __(2)__ all the old newspapers so we could recycle them. While cleaning, I __(3)__ my childhood bike that I thought was lost forever. My dad wanted to __(4)__ some broken tools, but I convinced him to keep a few. In the end, we finally __(5)__ a way to organize everything neatly on the shelves.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "clean up",
+                  "clean it up",
+                  "up clean",
+                  "clean for"
+                ],
+                "answer": 0,
+                "explanation": "clean up是可拆式動詞片語，此處受詞是名詞the old garage，直接接在後面。",
+                "optionsZh": [
+                  "（正確，clean up+名詞受詞）",
+                  "（此處受詞是名詞the old garage，非代名詞it）",
+                  "（語序錯誤，介副詞不可放在動詞前）",
+                  "（clean for非正確英文片語）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "throw away",
+                  "throw it away",
+                  "throw away them",
+                  "throw at"
+                ],
+                "answer": 0,
+                "explanation": "throw away是可拆式動詞片語，此處受詞是名詞all the old newspapers，直接接在後面。",
+                "optionsZh": [
+                  "（正確，throw away+名詞受詞）",
+                  "（此處受詞是名詞形式，非代名詞it）",
+                  "（代名詞受詞必須放在介副詞前面，不可放後面）",
+                  "（throw at非此語境的正確片語）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "found out",
+                  "ran into",
+                  "gave up",
+                  "picked up"
+                ],
+                "answer": 1,
+                "explanation": "run into在此表示「偶然發現/遇到」某物，符合「意外找到童年腳踏車」的語境。",
+                "optionsZh": [
+                  "（find out較常用於發現事實/資訊，非偶然遇到實體物品）",
+                  "（正確，run into表示偶然遇到/發現）",
+                  "（give up意思是放棄，語意不符）",
+                  "（pick up意思是撿起，與「發現」語意稍有不同，此處ran into更貼切）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "throw away",
+                  "throw it away",
+                  "throw away it",
+                  "look after"
+                ],
+                "answer": 0,
+                "explanation": "throw away是可拆式動詞片語，此處受詞是名詞some broken tools，直接接在後面。",
+                "optionsZh": [
+                  "（正確，throw away+名詞受詞）",
+                  "（此處受詞是名詞形式，非代名詞it）",
+                  "（代名詞受詞必須放在介副詞前面，不可放後面）",
+                  "（look after意思是照顧，與丟棄工具的語意不符）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "figured out",
+                  "figured it out",
+                  "found for",
+                  "gave up"
+                ],
+                "answer": 0,
+                "explanation": "figure out是可拆式動詞片語，此處受詞是名詞a way to organize everything，直接接在後面。",
+                "optionsZh": [
+                  "（正確，figure out+名詞受詞）",
+                  "（此處受詞是名詞形式a way，非代名詞it）",
+                  "（found for非正確英文片語）",
+                  "（give up意思是放棄，與句意「想出方法」不符）"
+                ]
+              }
+            ]
+          }
+        }
       }
     ]
   },
