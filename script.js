@@ -4876,31 +4876,22 @@ function updateHomeScreen() {
 
 // ════════════════════════════════
 // 首頁關卡樹：關卡 1-20（對應文法 20 章）由下往上，手繪水彩樹幹圖 + 果實按鈕
-// 樹幹樹枝改用固定手繪圖片素材（public/images/icons/tree-segment.png），
-// 每段圖片有 8 個枝點槽位，向上重複拼接蓋滿 20 關（不用擔心接縫，樹皮紋理本來就很適合重複）
+// 樹是「單一張」預先合成好的完整長圖（Python 交叉淡化縫合，樹冠只在最頂端），
+// 天生無接縫；果實依離線計算好的枝點百分比座標絕對定位
 // ════════════════════════════════
 const LEVEL_COUNT = 20;
-const TREE_SEG_IMG = 'public/images/icons/tree-segment.png';
-const TREE_SEG_ASPECT = 1152 / 1966;   // 素材寬高比（寬/高），用來依容器寬度換算每段顯示高度
-// 每段圖片內 8 個枝點槽位座標（目測估算，由下往上）
-const TREE_SEG_SLOTS = [
-  { x: 75, y: 58 },
-  { x: 25, y: 48 },
-  { x: 78, y: 44 },
-  { x: 25, y: 33 },
-  { x: 80, y: 28 },
-  { x: 28, y: 20 },
-  { x: 68, y: 18 },
-  { x: 52, y: 10 },
+const TREE_FULL_IMG = 'public/images/icons/tree-full.jpg';
+const TREE_FULL_ASPECT = 1152 / 4076;   // 合成圖寬高比（寬/高）
+// 20 個關卡枝點座標（x%, y%，由合成腳本輸出，關卡 1 在最下方）
+const TREE_SLOTS = [
+  { x: 75, y: 82.64 }, { x: 25, y: 77.81 }, { x: 78, y: 75.88 },
+  { x: 75, y: 68.97 }, { x: 25, y: 64.15 }, { x: 78, y: 62.22 },
+  { x: 75, y: 55.31 }, { x: 25, y: 50.48 }, { x: 78, y: 48.55 },
+  { x: 75, y: 41.64 }, { x: 25, y: 36.82 }, { x: 78, y: 34.89 },
+  { x: 75, y: 27.98 }, { x: 25, y: 23.15 }, { x: 78, y: 21.22 },
+  { x: 25, y: 15.92 }, { x: 80, y: 13.51 }, { x: 28, y: 9.65 },
+  { x: 68, y: 8.68 },  { x: 52, y: 4.82 },
 ];
-const SLOTS_PER_SEG = TREE_SEG_SLOTS.length;
-
-// 最底下那一段：最低枝點(y:58%)以下其實整段都是空樹幹，裁掉那段留白，
-// 圖片素材裁到只剩原本 75% 高（tree-segment-base.png），槽位 y% 要跟著等比例放大
-const TREE_SEG_BASE_IMG = 'public/images/icons/tree-segment-base.png';
-const TREE_SEG_BASE_CROP = 0.70;
-const TREE_SEG_BASE_ASPECT = TREE_SEG_ASPECT / TREE_SEG_BASE_CROP;
-const TREE_SEG_BASE_SLOTS = TREE_SEG_SLOTS.map(c => ({ x: c.x, y: c.y / TREE_SEG_BASE_CROP }));
 
 function onLevelClick(n) {
   grammarStartChapter(n);
@@ -4914,40 +4905,29 @@ function renderLevelMap() {
   if (map.dataset.w === String(W)) return;          // 同寬度已畫過，避免切頁時重畫跳動
   const firstRender = !map.dataset.w;
 
-  const segCount   = Math.ceil(LEVEL_COUNT / SLOTS_PER_SEG);   // 需要幾段圖片才蓋滿 20 關
-  const baseSegH   = W / TREE_SEG_BASE_ASPECT;                  // 最底段（裁短版）高度
-  const normalSegH = W / TREE_SEG_ASPECT;                       // 其餘段（完整版）高度
-  const H = baseSegH + normalSegH * (segCount - 1);
+  const H = W / TREE_FULL_ASPECT;   // 整張樹圖依容器寬度等比縮放後的高度
 
-  let segmentsHtml = '';
-  let fruitsHtml = '';
-  for (let s = 0; s < segCount; s++) {
-    const isBase = s === 0;
-    const segH   = isBase ? baseSegH : normalSegH;
-    const belowH = isBase ? 0 : baseSegH + normalSegH * (s - 1);   // 這段下面所有段落疊起來的高度
-    const top = H - belowH - segH;
-    segmentsHtml += `<img class="hm-tree-seg" src="${isBase ? TREE_SEG_BASE_IMG : TREE_SEG_IMG}" style="top:${top}px;height:${segH}px" alt="">`;
-    const slots = isBase ? TREE_SEG_BASE_SLOTS : TREE_SEG_SLOTS;
-    for (let slot = 0; slot < SLOTS_PER_SEG; slot++) {
-      const n = s * SLOTS_PER_SEG + slot + 1;
-      if (n > LEVEL_COUNT) break;
-      const coord = slots[slot];
-      const x = coord.x / 100 * W;
-      const y = top + coord.y / 100 * segH;
-      const stars = (typeof grammarStarsFor === 'function' && typeof GRAMMAR_CHAPTERS !== 'undefined' && GRAMMAR_CHAPTERS[n]) ? grammarStarsFor(n) : 0;
-      const starsHtml = (typeof GRAMMAR_CHAPTERS !== 'undefined' && GRAMMAR_CHAPTERS[n])
-        ? `<span class="hm-fruit-stars">${[0,1,2].map(i => i < stars ? '★' : '<span class="off">★</span>').join('')}</span>`
-        : '';
-      fruitsHtml += `
-        <button class="hm-fruit${n === 1 ? ' hm-fruit-cur' : ''}" style="left:${x}px;top:${y}px"
-          onclick="onLevelClick(${n})" aria-label="關卡 ${n}">
-          <span class="hm-fruit-num">${n}</span>
-          ${starsHtml}
-        </button>`;
-    }
-  }
+  const fruitsHtml = TREE_SLOTS.map((coord, i) => {
+    const n = i + 1;
+    const x = coord.x / 100 * W;
+    const y = coord.y / 100 * H;
+    const stars = (typeof grammarStarsFor === 'function' && typeof GRAMMAR_CHAPTERS !== 'undefined' && GRAMMAR_CHAPTERS[n]) ? grammarStarsFor(n) : 0;
+    const starsHtml = (typeof GRAMMAR_CHAPTERS !== 'undefined' && GRAMMAR_CHAPTERS[n])
+      ? `<span class="hm-fruit-stars">${[0,1,2].map(k => k < stars ? '★' : '<span class="off">★</span>').join('')}</span>`
+      : '';
+    return `
+      <button class="hm-fruit${n === 1 ? ' hm-fruit-cur' : ''}" style="left:${x}px;top:${y}px"
+        onclick="onLevelClick(${n})" aria-label="關卡 ${n}">
+        <span class="hm-fruit-num">${n}</span>
+        ${starsHtml}
+      </button>`;
+  }).join('');
 
-  map.innerHTML = `<div class="hm-lm-inner" style="height:${H}px">${segmentsHtml}${fruitsHtml}</div>`;
+  map.innerHTML = `
+    <div class="hm-lm-inner" style="height:${H}px">
+      <img class="hm-tree-full" src="${TREE_FULL_IMG}" style="height:${H}px" alt="">
+      ${fruitsHtml}
+    </div>`;
 
   map.dataset.w = String(W);
   if (firstRender) map.scrollTop = map.scrollHeight;  // 初始定位在最下方（關卡 1）
