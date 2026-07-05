@@ -454,8 +454,8 @@
       <div id="hostModePanel" style="display:none;width:100%;flex-direction:column;gap:10px">
         <div class="pvp-mode-label">選擇切磋模式</div>
         <div class="pvp-mode-row">
-          <button class="pvp-mode-chip sel">📖 單字對決<span>5 題選擇・限時 30 秒</span></button>
-          <button class="pvp-mode-chip dim">🚧 更多模式<span>敬請期待</span></button>
+          <button class="pvp-mode-chip sel" id="modeChipVocab" onclick="selectPvpMode('vocab')">📖 單字對決<span>5 題選擇・限時 30 秒</span></button>
+          <button class="pvp-mode-chip" id="modeChipBuzzer" onclick="selectPvpMode('buzzer')">⚡ 單字搶答<span>7 題搶快・限時 10 秒</span></button>
         </div>
         <button class="arena-btn ab-create" id="pvpStartBtn" disabled onclick="hostStartBattle()">等待對手加入⋯</button>
       </div>
@@ -474,6 +474,32 @@
         <div class="pvp-question" id="pvpQ"></div>
         <div class="pvp-opts" id="pvpOpts"></div>
         <div class="pvp-done-wait" id="pvpDoneWait" style="display:none">✅ 已完成全部題目！<br>等待對手作答或時間結束⋯</div>
+      </div>
+    </div>
+    <!-- 單字搶答戰鬥畫面 -->
+    <div id="arenaBuzzerBattle" style="display:none">
+      <div class="bz-topbar">
+        <div class="bz-avatar">
+          <div class="bz-avatar-circle">🙂</div>
+          <div class="bz-avatar-name">你</div>
+          <div class="bz-avatar-badge" id="bzYouBadge"></div>
+        </div>
+        <div class="bz-timer-ring" id="bzRing" style="--pct:100">
+          <div class="bz-timer-num" id="bzTimerNum">10</div>
+        </div>
+        <div class="bz-avatar">
+          <div class="bz-avatar-circle">🙂</div>
+          <div class="bz-avatar-name">對手</div>
+          <div class="bz-avatar-badge" id="bzFoeBadge"></div>
+        </div>
+      </div>
+      <div class="bz-qnum" id="bzQNum"></div>
+      <div class="bz-question" id="bzQuestion"></div>
+      <div class="bz-opts" id="bzOpts"></div>
+      <div class="bz-scores">
+        <div class="bz-score" id="bzScoreYou">0</div>
+        <div class="bz-score-label">目前分數</div>
+        <div class="bz-score" id="bzScoreFoe">0</div>
       </div>
     </div>
     <!-- 對決結算 -->

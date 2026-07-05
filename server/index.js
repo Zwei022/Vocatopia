@@ -44,6 +44,11 @@ const PVP_DURATION = 30;             // 對決限時（秒）
 const PVP_QCOUNT   = 5;              // 題數
 const vocabFallback = require('./data/question_bank_vocab.json');
 
+// ── 單字搶答（buzzer）：雙方同題同步、伺服器時間計分、逐題進行 ──
+const BUZZER_QCOUNT   = 7;   // 題數
+const BUZZER_DURATION = 10;  // 每題限時（秒）
+const buzzerBank = require('./data/question_bank_vocab_practice.json');
+
 function genRoomCode() {
   return String(Math.floor(100000 + Math.random() * 900000));
 }
@@ -97,6 +102,82 @@ async function buildVocabQuestions() {
   }
 }
 
+// 單字搶答出題：沿用每日練習同源的英文句子選字題庫（英文題幹+英文選項）
+function buildBuzzerQuestions() {
+  const pool = shuffle([...buzzerBank]);
+  return pool.slice(0, BUZZER_QCOUNT).map(q => ({
+    q: q.sentence,
+    pos: q.pos || '',
+    opts: q.options.map(o => String(o).replace(/^\([A-D]\)\s*/, '')),
+    answer: q.answer,
+  }));
+}
+
+// 答對得分依「伺服器收到作答時的經過時間」分級，不信任前端回報的時間（防作弊）
+function scoreForElapsed(ms) {
+  if (ms <= 2000)  return 100;
+  if (ms <= 5000)  return 60;
+  if (ms <= 10000) return 30;
+  return 0;
+}
+
+// 出題並開始單字搶答對局（start_battle 與 rematch 共用）
+function beginBuzzerRound(code) {
+  const room = rooms[code];
+  if (!room) return;
+  room.state = 'building';
+  room.questions    = buildBuzzerQuestions();
+  room.answers      = { [room.host]: [], [room.guest]: [] };
+  room.buzzerScores = { [room.host]: 0, [room.guest]: 0 };
+  room.qIdx  = 0;
+  room.state = 'playing';
+  sendBuzzerQuestion(code);
+}
+
+// 逐題發送：雙方同時收到同一題，伺服器記錄出題時間點作為計分基準
+function sendBuzzerQuestion(code) {
+  const room = rooms[code];
+  if (!room || room.state !== 'playing') return;
+  const qIdx = room.qIdx;
+  const q = room.questions[qIdx];
+  room.qStartAt   = Date.now();
+  room.qAnswered  = {};
+  io.to(code).emit('buzzer_question', {
+    qIdx, total: room.questions.length,
+    sentence: q.q, pos: q.pos, options: q.opts,
+    duration: BUZZER_DURATION,
+  });
+  room.qTimer = setTimeout(() => finishBuzzerQuestion(code, qIdx), BUZZER_DURATION * 1000 + 500);
+}
+
+// 該題結束（雙方都已作答，或時間到）：雙方一起看到正解與最新總分，接著進下一題或結算
+function finishBuzzerQuestion(code, qIdx) {
+  const room = rooms[code];
+  if (!room || room.state !== 'playing' || room.qIdx !== qIdx) return;
+  clearTimeout(room.qTimer);
+  const correctIndex = room.questions[qIdx].answer;
+  const scores = { [room.host]: room.buzzerScores[room.host], [room.guest]: room.buzzerScores[room.guest] };
+  io.to(code).emit('buzzer_reveal', { qIdx, correctIndex, scores });
+  room.qIdx++;
+  if (room.qIdx >= room.questions.length) {
+    setTimeout(() => settleBuzzerBattle(code), 1200);
+  } else {
+    setTimeout(() => sendBuzzerQuestion(code), 1400);
+  }
+}
+
+// 結算：總分高者勝，相同平手（跟現有單字對決模式一致）
+function settleBuzzerBattle(code) {
+  const room = rooms[code];
+  if (!room || room.state !== 'playing') return;
+  room.state = 'done';
+  const scores = { ...room.buzzerScores };
+  let winner = null;
+  if (scores[room.host] > scores[room.guest])      winner = room.host;
+  else if (scores[room.guest] > scores[room.host]) winner = room.guest;
+  io.to(code).emit('battle_result', { scores, winner, total: room.questions.length });
+}
+
 // 結算：答對數高者勝，相同平手。結算後房間不解散（保留給「再來一場」用），
 // 只有離開/斷線/逾時才會真正銷毀（見 dropFromRoom 與逾時清除）。
 function settleBattle(code) {
@@ -133,7 +214,8 @@ function dropFromRoom(socket, code) {
   const room = rooms[code];
   if (!room || (room.host !== socket.id && room.guest !== socket.id)) return;
   socket.leave(code);
-  if (room.timer) clearTimeout(room.timer);
+  if (room.timer)  clearTimeout(room.timer);
+  if (room.qTimer) clearTimeout(room.qTimer);
   socket.to(code).emit('opponent_left');
   delete rooms[code];
 }
@@ -143,7 +225,8 @@ setInterval(() => {
   const now = Date.now();
   for (const [code, room] of Object.entries(rooms)) {
     if (now - room.createdAt > ROOM_TTL) {
-      if (room.timer) clearTimeout(room.timer);
+      if (room.timer)  clearTimeout(room.timer);
+      if (room.qTimer) clearTimeout(room.qTimer);
       io.to(code).emit('room_expired');
       delete rooms[code];
     }
@@ -185,7 +268,8 @@ io.on('connection', (socket) => {
   socket.on('start_battle', ({ code }) => {
     const room = rooms[code];
     if (!room || room.host !== socket.id || room.state !== 'lobby' || !room.guest) return;
-    beginRound(code);
+    if (room.mode === 'buzzer') beginBuzzerRound(code);
+    else beginRound(code);
   });
 
   // 再來一場：僅房主可觸發，需雙方都還在房內、且上一場已結算完畢
@@ -195,7 +279,39 @@ io.on('connection', (socket) => {
     if (room.host !== socket.id) return; // 非房主的請求靜默忽略
     if (!room.guest)             return socket.emit('rematch_error', { msg: '對手已離開，無法再來一場' });
     if (room.state !== 'done')   return;
-    beginRound(code);
+    if (room.mode === 'buzzer') beginBuzzerRound(code);
+    else beginRound(code);
+  });
+
+  // 單字搶答收答案：每題只收第一次作答，本人立即知道正解，對手只看到分數變動
+  socket.on('buzzer_answer', ({ code, qIdx, choice }) => {
+    const room = rooms[code];
+    if (!room || room.state !== 'playing' || room.mode !== 'buzzer') return;
+    if (qIdx !== room.qIdx) return;               // 該題已經結束，回應太慢
+    if (room.qAnswered[socket.id]) return;        // 這題已經答過
+    const q = room.questions[qIdx];
+    const elapsed = Date.now() - room.qStartAt;
+    const correct = choice === q.answer;
+    let points = correct ? scoreForElapsed(elapsed) : 0;
+    if (qIdx === room.questions.length - 1) points *= 2;   // 最後一題雙倍
+    room.qAnswered[socket.id] = true;
+    room.buzzerScores[socket.id] = (room.buzzerScores[socket.id] || 0) + points;
+    room.answers[socket.id][qIdx] = { choice, correct, points };
+
+    socket.emit('buzzer_result_self', {
+      qIdx, correct, points, correctIndex: q.answer,
+      myTotal: room.buzzerScores[socket.id],
+    });
+    const foeId = socket.id === room.host ? room.guest : room.host;
+    if (foeId) {
+      io.to(foeId).emit('buzzer_opponent_answered', {
+        qIdx, opponentTotal: room.buzzerScores[socket.id],
+      });
+    }
+
+    if (room.qAnswered[room.host] && room.qAnswered[room.guest]) {
+      finishBuzzerQuestion(code, qIdx);
+    }
   });
 
   // 收答案：每題只收第一次作答；雙方都答完 5 題立即結算

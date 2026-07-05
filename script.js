@@ -499,19 +499,31 @@ function confetti() {
 let roomCode  = '';
 let pvpSocket = null;
 let pvpState  = null;   // { isHost, questions, qIdx, done, timerInt }
+let hostSelectedMode = 'vocab';
+let buzzerState = null; // { qIdx, total, myAnswered, foeAnswered, myTotal, foeTotal, countdownInt }
 
 function openModal(id)  { document.getElementById(id).classList.add('show'); }
 function closeModal(id) { document.getElementById(id).classList.remove('show'); }
+
+function selectPvpMode(mode) {
+  hostSelectedMode = mode;
+  document.getElementById('modeChipVocab').classList.toggle('sel', mode === 'vocab');
+  document.getElementById('modeChipBuzzer').classList.toggle('sel', mode === 'buzzer');
+}
 
 function pvpResetViews() {
   document.getElementById('arenaLobby').style.display  = 'flex';
   document.getElementById('arenaWait').style.display   = 'none';
   document.getElementById('arenaBattle').style.display = 'none';
+  document.getElementById('arenaBuzzerBattle').style.display = 'none';
   document.getElementById('arenaResult').style.display = 'none';
   document.getElementById('arenaBnav').style.display   = 'flex';
   if (pvpState && pvpState.timerInt) clearInterval(pvpState.timerInt);
   if (pvpState && pvpState.rematchCountdownInt) clearInterval(pvpState.rematchCountdownInt);
+  if (buzzerState && buzzerState.countdownInt) clearInterval(buzzerState.countdownInt);
   pvpState = null;
+  buzzerState = null;
+  selectPvpMode('vocab');
   roomCode = '';
 }
 
@@ -568,12 +580,14 @@ function getPvpSocket() {
 
   pvpSocket.on('battle_start', ({ questions, duration }) => {
     if (!pvpState) return;
+    pvpState.mode = 'vocab';
     pvpState.questions = questions;
     pvpState.qIdx = 0;
     pvpState.done = false;
     if (pvpState.rematchCountdownInt) { clearInterval(pvpState.rematchCountdownInt); pvpState.rematchCountdownInt = null; }
     document.getElementById('arenaWait').style.display   = 'none';
     document.getElementById('arenaBattle').style.display = 'flex';
+    document.getElementById('arenaBuzzerBattle').style.display = 'none';
     document.getElementById('arenaBnav').style.display   = 'none';
     document.getElementById('pvpDoneWait').style.display = 'none';
     // 若是「再來一場」進來的，重置結算畫面上的按鈕狀態，供下一輪結束後使用
@@ -605,6 +619,8 @@ function getPvpSocket() {
   pvpSocket.on('battle_result', ({ scores, winner, total }) => {
     if (!pvpState) return;
     if (pvpState.timerInt) clearInterval(pvpState.timerInt);
+    if (buzzerState && buzzerState.countdownInt) clearInterval(buzzerState.countdownInt);
+    const isBuzzer = pvpState.mode === 'buzzer';
     const myId  = pvpSocket.id;
     const foeId = Object.keys(scores).find(id => id !== myId);
     const mine = scores[myId] || 0, foe = scores[foeId] || 0;
@@ -613,13 +629,64 @@ function getPvpSocket() {
     if (winner === null)      { iconEl.textContent = '🤝'; titleEl.textContent = '平手！';  titleEl.style.color = 'var(--orange2)'; }
     else if (winner === myId) { iconEl.textContent = '🏆'; titleEl.textContent = '勝利！';  titleEl.style.color = 'var(--green2)';  confetti(); }
     else                      { iconEl.textContent = '💀'; titleEl.textContent = '敗北⋯'; titleEl.style.color = 'var(--wrong)'; }
-    document.getElementById('pvpResultScore').textContent = `你 ${mine}/${total} ・ 對手 ${foe}/${total}`;
+    document.getElementById('pvpResultScore').textContent = isBuzzer
+      ? `你 ${mine} 分 ・ 對手 ${foe} 分`
+      : `你 ${mine}/${total} ・ 對手 ${foe}/${total}`;
     document.getElementById('arenaBattle').style.display = 'none';
+    document.getElementById('arenaBuzzerBattle').style.display = 'none';
     document.getElementById('arenaResult').style.display = 'flex';
     // 房間仍保留在伺服器（供「再來一場」用），只有離開/斷線才會真正解散
     document.getElementById('pvpRematchBtn').style.display      = pvpState.isHost ? 'block' : 'none';
     document.getElementById('pvpRematchWaitHint').style.display = pvpState.isHost ? 'none'  : 'block';
     _pvpStartRematchCountdown();
+  });
+
+  // ── 單字搶答（buzzer）──
+  pvpSocket.on('buzzer_question', (data) => {
+    if (!pvpState) return;
+    pvpState.mode = 'buzzer';
+    document.getElementById('arenaWait').style.display = 'none';
+    document.getElementById('arenaBattle').style.display = 'none';
+    document.getElementById('arenaBuzzerBattle').style.display = 'flex';
+    document.getElementById('arenaBnav').style.display = 'none';
+    _renderBuzzerQuestion(data);
+  });
+
+  pvpSocket.on('buzzer_result_self', ({ qIdx, correct, points, correctIndex, myTotal }) => {
+    if (!buzzerState || buzzerState.qIdx !== qIdx) return;
+    buzzerState.myAnswered = true;
+    buzzerState.myTotal = myTotal;
+    document.getElementById('bzScoreYou').textContent = myTotal;
+    document.getElementById('bzYouBadge').textContent = correct ? '✅' : '❌';
+    const btns = document.querySelectorAll('.bz-opt');
+    btns.forEach(b => b.disabled = true);
+    if (btns[correctIndex]) btns[correctIndex].classList.add('correct');
+    if (!correct && buzzerState.myChoice != null && btns[buzzerState.myChoice]) {
+      btns[buzzerState.myChoice].classList.add('wrong');
+    }
+  });
+
+  pvpSocket.on('buzzer_opponent_answered', ({ qIdx, opponentTotal }) => {
+    if (!buzzerState || buzzerState.qIdx !== qIdx) return;
+    buzzerState.foeAnswered = true;
+    buzzerState.foeTotal = opponentTotal;
+    document.getElementById('bzScoreFoe').textContent = opponentTotal;
+    document.getElementById('bzFoeBadge').textContent = '✓';
+  });
+
+  pvpSocket.on('buzzer_reveal', ({ qIdx, correctIndex, scores }) => {
+    if (!buzzerState || buzzerState.qIdx !== qIdx) return;
+    if (buzzerState.countdownInt) clearInterval(buzzerState.countdownInt);
+    const myId  = pvpSocket.id;
+    const foeId = Object.keys(scores).find(id => id !== myId);
+    document.getElementById('bzScoreYou').textContent = scores[myId] || 0;
+    document.getElementById('bzScoreFoe').textContent = scores[foeId] || 0;
+    const btns = document.querySelectorAll('.bz-opt');
+    btns.forEach(b => b.disabled = true);
+    if (btns[correctIndex]) btns[correctIndex].classList.add('correct');
+    if (!buzzerState.myAnswered && buzzerState.myChoice != null && buzzerState.myChoice !== correctIndex && btns[buzzerState.myChoice]) {
+      btns[buzzerState.myChoice].classList.add('wrong');
+    }
   });
 
   pvpSocket.on('rematch_error', ({ msg }) => showToast(`⚠ ${msg}`));
@@ -668,7 +735,7 @@ function hostStartBattle() {
   const btn = document.getElementById('pvpStartBtn');
   btn.disabled = true;
   btn.textContent = '出題中⋯';
-  pvpSocket.emit('select_mode', { code: roomCode, mode: 'vocab' });
+  pvpSocket.emit('select_mode', { code: roomCode, mode: hostSelectedMode });
   pvpSocket.emit('start_battle', { code: roomCode });
 }
 
@@ -751,6 +818,48 @@ function answerPvp(idx) {
   pvpSocket.emit('pvp_answer', { code: roomCode, qIdx: st.qIdx, choice: idx });
   st.qIdx++;
   setTimeout(loadPvpQ, 700);
+}
+
+// ── 單字搶答（buzzer）畫面渲染 ──
+function _renderBuzzerQuestion(data) {
+  if (buzzerState && buzzerState.countdownInt) clearInterval(buzzerState.countdownInt);
+  buzzerState = {
+    qIdx: data.qIdx, total: data.total,
+    myAnswered: false, foeAnswered: false, myChoice: null,
+    myTotal: buzzerState ? buzzerState.myTotal : 0,
+    foeTotal: buzzerState ? buzzerState.foeTotal : 0,
+    countdownInt: null,
+  };
+  document.getElementById('bzYouBadge').textContent = '';
+  document.getElementById('bzFoeBadge').textContent = '';
+  const isLast = data.qIdx === data.total - 1;
+  document.getElementById('bzQNum').textContent = `第 ${data.qIdx + 1} / ${data.total} 題${isLast ? '・雙倍分數！' : ''}`;
+  document.getElementById('bzQuestion').textContent = data.sentence;
+  document.getElementById('bzOpts').innerHTML = data.options.map((o, i) =>
+    `<button class="bz-opt" onclick="answerBuzzer(${i})">${escHtml(o)}</button>`).join('');
+
+  const duration = data.duration || 10;
+  const endAt = Date.now() + duration * 1000;
+  const ring  = document.getElementById('bzRing');
+  const numEl = document.getElementById('bzTimerNum');
+  const tick = () => {
+    const leftMs  = Math.max(0, endAt - Date.now());
+    const leftSec = Math.ceil(leftMs / 1000);
+    numEl.textContent = leftSec;
+    ring.style.setProperty('--pct', Math.max(0, (leftMs / (duration * 1000)) * 100).toFixed(1));
+    ring.classList.toggle('low', leftSec <= 3);
+    if (leftMs <= 0) clearInterval(buzzerState.countdownInt);
+  };
+  tick();
+  buzzerState.countdownInt = setInterval(tick, 100);
+}
+
+function answerBuzzer(idx) {
+  if (!buzzerState || buzzerState.myAnswered) return;
+  buzzerState.myAnswered = true;
+  buzzerState.myChoice = idx;
+  document.querySelectorAll('.bz-opt').forEach(b => b.disabled = true);
+  pvpSocket.emit('buzzer_answer', { code: roomCode, qIdx: buzzerState.qIdx, choice: idx });
 }
 
 function backArena() {
