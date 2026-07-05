@@ -4895,6 +4895,13 @@ const TREE_SEG_SLOTS = [
 ];
 const SLOTS_PER_SEG = TREE_SEG_SLOTS.length;
 
+// 最底下那一段：最低枝點(y:58%)以下其實整段都是空樹幹，裁掉那段留白，
+// 圖片素材裁到只剩原本 75% 高（tree-segment-base.png），槽位 y% 要跟著等比例放大
+const TREE_SEG_BASE_IMG = 'public/images/icons/tree-segment-base.png';
+const TREE_SEG_BASE_CROP = 0.75;
+const TREE_SEG_BASE_ASPECT = TREE_SEG_ASPECT / TREE_SEG_BASE_CROP;
+const TREE_SEG_BASE_SLOTS = TREE_SEG_SLOTS.map(c => ({ x: c.x, y: c.y / TREE_SEG_BASE_CROP }));
+
 function onLevelClick(n) {
   grammarStartChapter(n);
 }
@@ -4907,21 +4914,26 @@ function renderLevelMap() {
   if (map.dataset.w === String(W)) return;          // 同寬度已畫過，避免切頁時重畫跳動
   const firstRender = !map.dataset.w;
 
-  const segH = W / TREE_SEG_ASPECT;                              // 每段圖片依容器寬度等比例縮放後的高度
-  const segCount = Math.ceil(LEVEL_COUNT / SLOTS_PER_SEG);       // 需要幾段圖片才蓋滿 20 關
-  const H = segH * segCount;
+  const segCount   = Math.ceil(LEVEL_COUNT / SLOTS_PER_SEG);   // 需要幾段圖片才蓋滿 20 關
+  const baseSegH   = W / TREE_SEG_BASE_ASPECT;                  // 最底段（裁短版）高度
+  const normalSegH = W / TREE_SEG_ASPECT;                       // 其餘段（完整版）高度
+  const H = baseSegH + normalSegH * (segCount - 1);
 
   let segmentsHtml = '';
   let fruitsHtml = '';
   for (let s = 0; s < segCount; s++) {
-    const segTop = H - (s + 1) * segH;    // 這段在整體容器裡的 top 位移
-    segmentsHtml += `<img class="hm-tree-seg" src="${TREE_SEG_IMG}" style="top:${segTop}px;height:${segH}px" alt="">`;
+    const isBase = s === 0;
+    const segH   = isBase ? baseSegH : normalSegH;
+    const belowH = isBase ? 0 : baseSegH + normalSegH * (s - 1);   // 這段下面所有段落疊起來的高度
+    const top = H - belowH - segH;
+    segmentsHtml += `<img class="hm-tree-seg" src="${isBase ? TREE_SEG_BASE_IMG : TREE_SEG_IMG}" style="top:${top}px;height:${segH}px" alt="">`;
+    const slots = isBase ? TREE_SEG_BASE_SLOTS : TREE_SEG_SLOTS;
     for (let slot = 0; slot < SLOTS_PER_SEG; slot++) {
       const n = s * SLOTS_PER_SEG + slot + 1;
       if (n > LEVEL_COUNT) break;
-      const coord = TREE_SEG_SLOTS[slot];
+      const coord = slots[slot];
       const x = coord.x / 100 * W;
-      const y = segTop + coord.y / 100 * segH;
+      const y = top + coord.y / 100 * segH;
       const stars = (typeof grammarStarsFor === 'function' && typeof GRAMMAR_CHAPTERS !== 'undefined' && GRAMMAR_CHAPTERS[n]) ? grammarStarsFor(n) : 0;
       const starsHtml = (typeof GRAMMAR_CHAPTERS !== 'undefined' && GRAMMAR_CHAPTERS[n])
         ? `<span class="hm-fruit-stars">${[0,1,2].map(i => i < stars ? '★' : '<span class="off">★</span>').join('')}</span>`
