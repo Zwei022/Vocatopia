@@ -5844,20 +5844,974 @@
       {
         "id": "8-1",
         "title": "頻率副詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>頻率副詞代表多常發生</b><br>always（100%）、usually（75%）、often（65%）、sometimes（50%）、seldom/rarely（10%）、never（0%），另外ever（曾經，用於疑問句）、hardly（幾乎不）。<br><br><b>放在句子的哪個位置</b><br>① be動詞之後：She is always happy at school.<br>② 一般動詞之前：Mr. Wang always likes to eat out.<br>③ 助動詞與一般動詞之間：He can never play baseball.<br>④ sometimes可放句首或句尾：Sometimes Ted rides a bike to school. = Ted rides a bike to school sometimes.<br>⑤ often也可放句尾：David eats hamburgers for lunch often.<br>⑥ 程度副詞（so/too/very/quite）+often，一定放句尾：Mom cooks dinner at home very often.<br><br><b>ever跟祈使句的特殊規則</b><br>① ever只能用於疑問句、否定句，或現在完成式的形容詞子句，不能用在一般肯定句：Do you ever go to the beach?　This is the best place I have ever seen.<br>② 祈使句中，always/never放句首表示「永遠」「絕不」：Always be a good student. / Never talk in class.<br><br><b>否定意味的頻率副詞怎麼連接</b><br>seldom、hardly、never本身已經是否定，句中不必再加not。同一主詞若要連接兩個都帶否定意味的頻率副詞，要用and，不能用but：He never eats beef and seldom eats pork.（不能用but，因為兩者語氣一致，都是否定）<br><br><b>How often的答法</b><br>可以用頻率副詞回答，也可以用「次數+固定時間」回答：once a week（一週一次）、twice a day（一天兩次）、every other day（每隔一天）、twice every five weeks（每五週兩次）。<br><br><b>正確觀念存取區</b><br>① not always「並非總是」是部分否定，意思接近sometimes，跟always not「總是不」意思完全不同。<br>② 頻率副詞總和不可超過100%：He sometimes goes there, but usually comes here.（sometimes+usually超過100%，必須用but轉折）；但He sometimes goes there and sometimes comes here.（兩個sometimes加起來不超過100%，可以用and）。",
+          "examples": [
+            {
+              "en": "My grandfather always takes a walk after dinner.",
+              "zh": "我爺爺晚餐後總是會去散步。"
+            },
+            {
+              "en": "We rarely eat out during the week.",
+              "zh": "我們平日很少外食。"
+            },
+            {
+              "en": "Have you ever tried Thai food before?",
+              "zh": "你曾經試過泰式料理嗎？"
+            },
+            {
+              "en": "Never give up on your dreams.",
+              "zh": "絕對不要放棄你的夢想。"
+            },
+            {
+              "en": "He hardly speaks in front of strangers.",
+              "zh": "他在陌生人面前幾乎不說話。"
+            },
+            {
+              "en": "She never complains and seldom gets angry.",
+              "zh": "她從不抱怨，也很少生氣。"
+            },
+            {
+              "en": "Not always does he arrive on time.",
+              "zh": "他並非總是準時到。"
+            },
+            {
+              "en": "I visit my grandparents once a month.",
+              "zh": "我一個月拜訪我的祖父母一次。"
+            },
+            {
+              "en": "The bus comes every ten minutes on weekdays.",
+              "zh": "平日公車每十分鐘來一班。"
+            },
+            {
+              "en": "She sometimes cooks at home, but usually orders food online.",
+              "zh": "她有時候在家煮飯，但通常是叫外送。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "My brother ___ helps me with my homework.",
+              "options": [
+                "always",
+                "he always",
+                "always he",
+                "is always"
+              ],
+              "answer": 0,
+              "explanation": "頻率副詞置於一般動詞helps之前即可。",
+              "target_grammar": "頻率副詞",
+              "optionsZh": [
+                "（正確，頻率副詞置於一般動詞前）",
+                "（重複主詞，句構錯誤）",
+                "（頻率副詞不可放在主詞前）",
+                "（此句沒有be動詞可搭配）"
+              ]
+            },
+            {
+              "sentence": "___ have you been to Japan?",
+              "options": [
+                "Ever",
+                "Never",
+                "Have you ever",
+                "How often"
+              ],
+              "answer": 3,
+              "explanation": "詢問頻率要用How often開頭，其餘選項無法組成合理疑問句。",
+              "target_grammar": "頻率副詞",
+              "optionsZh": [
+                "（ever不可放句首單獨使用）",
+                "（never為否定副詞，不可用於此問句開頭）",
+                "（重複助動詞have，句構錯誤）",
+                "（正確，How often詢問頻率）"
+              ]
+            },
+            {
+              "sentence": "He ___ eats meat and ___ eats fish.",
+              "options": [
+                "never / seldom",
+                "always / usually",
+                "never / always",
+                "sometimes / usually"
+              ],
+              "answer": 0,
+              "explanation": "兩個都帶否定意味的頻率副詞（never、seldom）要用and連接，語氣一致。",
+              "target_grammar": "頻率副詞",
+              "optionsZh": [
+                "（正確，兩者都是否定意味，用and銜接）",
+                "（both皆為正面頻率，雖可用and但與句意不符，此處考否定用法）",
+                "（never為0%，always為100%，總和矛盾）",
+                "（此組合雖可用and但非本題強調的否定副詞規則）"
+              ]
+            },
+            {
+              "sentence": "This is the most exciting movie I have ___ seen.",
+              "options": [
+                "ever",
+                "never",
+                "always",
+                "usually"
+              ],
+              "answer": 0,
+              "explanation": "ever可用於現在完成式的形容詞子句中，表示「曾經」。",
+              "target_grammar": "頻率副詞",
+              "optionsZh": [
+                "（正確，ever用於現在完成式形容詞子句）",
+                "（never表示從未，與最高級句意矛盾）",
+                "（always不用於此句型）",
+                "（usually不用於此句型）"
+              ]
+            },
+            {
+              "sentence": "Mom cooks dinner at home ___.",
+              "options": [
+                "very often",
+                "often very",
+                "very usually",
+                "usually very"
+              ],
+              "answer": 0,
+              "explanation": "程度副詞+often一定要放在句尾：very often。",
+              "target_grammar": "頻率副詞",
+              "optionsZh": [
+                "（正確，程度副詞+often置於句尾）",
+                "（語序錯誤）",
+                "（usually不與very often連用形式）",
+                "（語序錯誤）"
+              ]
+            },
+            {
+              "sentence": "___ talk to strangers on the street.",
+              "options": [
+                "Never",
+                "Not never",
+                "Ever",
+                "Not ever"
+              ],
+              "answer": 0,
+              "explanation": "祈使句中，never放句首表示「絕對不要」。",
+              "target_grammar": "頻率副詞",
+              "optionsZh": [
+                "（正確，祈使句用never開頭表示絕對不要）",
+                "（never已含否定，不可再加not）",
+                "（ever不可單獨用於祈使句開頭）",
+                "（ever不可單獨用於祈使句開頭）"
+              ]
+            },
+            {
+              "sentence": "___, he doesn't come to class late.",
+              "options": [
+                "Not always",
+                "Always not",
+                "Never always",
+                "Not ever"
+              ],
+              "answer": 0,
+              "explanation": "not always是部分否定，表示「並非總是」，意思接近sometimes。",
+              "target_grammar": "頻率副詞",
+              "optionsZh": [
+                "（正確，not always為部分否定）",
+                "（語序錯誤，並非固定用法）",
+                "（兩個頻率副詞矛盾連用）",
+                "（not ever意思是「從未」，與句意不符）"
+              ]
+            },
+            {
+              "sentence": "The train arrives ___ every day.",
+              "options": [
+                "on time usually",
+                "usually on time",
+                "usual on time",
+                "on usually time"
+              ],
+              "answer": 1,
+              "explanation": "頻率副詞usually置於一般動詞arrives之前，其餘為片語修飾語序錯誤。",
+              "target_grammar": "頻率副詞",
+              "optionsZh": [
+                "（語序錯誤，頻率副詞應在動詞前）",
+                "（正確，usually置於動詞前）",
+                "（usual為形容詞，此處需要副詞usually）",
+                "（語序錯誤）"
+              ]
+            },
+            {
+              "sentence": "We meet for coffee ___ two weeks.",
+              "options": [
+                "once every",
+                "one every",
+                "once a",
+                "every once"
+              ],
+              "answer": 0,
+              "explanation": "「每隔兩週一次」的固定講法是once every+複數時間單位。",
+              "target_grammar": "頻率副詞",
+              "optionsZh": [
+                "（正確，once every+複數時間表示「每隔多久一次」）",
+                "（one不可直接修飾every）",
+                "（once a+單數時間表示「一週幾次」，此處為兩週不符）",
+                "（語序錯誤）"
+              ]
+            },
+            {
+              "sentence": "I can ___ hear you. Please speak louder.",
+              "options": [
+                "hardly",
+                "always",
+                "usually",
+                "often"
+              ],
+              "answer": 0,
+              "explanation": "hardly表示「幾乎不」，符合「幾乎聽不到，請大聲一點」的語境。",
+              "target_grammar": "頻率副詞",
+              "optionsZh": [
+                "（正確，hardly表示幾乎不）",
+                "（always與句意矛盾）",
+                "（usually與句意不符）",
+                "（often與句意不符）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "My Morning Routine",
+            "passage": "I __(1)__ get up at six thirty every morning. I __(2)__ eat breakfast at home because I like to save time, but on weekends, I sometimes go to a café instead. My little brother __(3)__ wakes up before eight, so I have to wake him up myself. __(4)__ have you tried waking up before an alarm rings? For me, it __(5)__ happens, maybe once a month at most.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "always",
+                  "he always",
+                  "is always",
+                  "always is"
+                ],
+                "answer": 0,
+                "explanation": "頻率副詞always直接放在一般動詞get之前。",
+                "optionsZh": [
+                  "（正確，頻率副詞置於一般動詞前）",
+                  "（重複主詞，句構錯誤）",
+                  "（此句無be動詞可搭配）",
+                  "（語序錯誤）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "usually",
+                  "usually I",
+                  "I usually",
+                  "am usually"
+                ],
+                "answer": 0,
+                "explanation": "承接前句主詞I，頻率副詞usually直接放在一般動詞eat之前即可。",
+                "optionsZh": [
+                  "（正確，頻率副詞置於動詞前）",
+                  "（重複主詞語序錯誤）",
+                  "（重複主詞，句構重複）",
+                  "（此句無be動詞可搭配）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "hardly",
+                  "always",
+                  "usually",
+                  "often"
+                ],
+                "answer": 0,
+                "explanation": "由後文「所以我必須自己叫醒他」可推斷弟弟很少自己醒來，用hardly（幾乎不）。",
+                "optionsZh": [
+                  "（正確，幾乎不會自己醒來，符合後文語境）",
+                  "（與後文「必須叫醒他」矛盾）",
+                  "（與後文語境不太吻合，暗示他很少自己醒）",
+                  "（與後文語境不太吻合）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "Ever",
+                  "Never",
+                  "How often",
+                  "Always"
+                ],
+                "answer": 2,
+                "explanation": "詢問頻率要用How often開頭，符合後面「你曾經試過在鬧鐘響之前醒來嗎」的問句語境。",
+                "optionsZh": [
+                  "（ever不可單獨放句首問頻率）",
+                  "（never為否定副詞，不可用於問句開頭）",
+                  "（正確，How often詢問頻率）",
+                  "（always不用於疑問句開頭問頻率）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "seldom",
+                  "always",
+                  "usually",
+                  "often"
+                ],
+                "answer": 0,
+                "explanation": "由後文「一個月頂多一次」可知這件事很少發生，用seldom（很少）。",
+                "optionsZh": [
+                  "（正確，很少發生，符合「一個月頂多一次」）",
+                  "（與句意矛盾）",
+                  "（與句意不符）",
+                  "（與句意不符，一個月一次不算often）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "8-2",
         "title": "情狀副詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>情狀副詞怎麼改</b><br>由形容詞字尾加ly變成：一般直接加ly（quick→quickly）；字尾y去y加ily（happy→happily）；字尾le去e加y（terrible→terribly）；字尾ue去e加ly（true→truly）；字尾ll直接加y（full→fully）。有些形容詞和副詞同形：early、late、fast、hard、high、far、near。<br><br><b>特殊變化最容易搞混</b><br>① good的副詞是well（不是goodly），friendly則是形容詞（不是副詞）。<br>② 同形字加ly後意思完全改變：late（遲的）→lately（最近）；hard（努力的）→hardly（幾乎不）；near（近的）→nearly（幾乎，=almost）；short（矮的）→shortly（很快、不久）；high（高的）→highly（崇高地）。<br>③ 名詞加ly不是副詞而是形容詞：day→daily（每天的）、friend→friendly（友善的）、love→lovely（可愛的）。<br><br><b>情狀副詞放在句子的哪裡</b><br>① 一般放句尾：Tom usually goes to school early.<br>② 只能放在不及物動詞後：She walks carefully in the park.（不能說She carefully walks）<br>③ 進行式/被動式中可放V-ing或p.p.前後：They are happily playing basketball. = They are playing basketball happily.<br>④ 不可插在及物動詞跟受詞中間：只能說He opened the window quietly.或He quietly opened the window，不能說He opened quietly the window。<br>⑤ 可拆式動詞片語（turn on、take off）中間不可插入情狀副詞：只能Mandy turned on the music slowly.或Mandy slowly turned on the music，不能turned on slowly the music。但不可拆式片語（listen to、look at）中間可以插入：Susan listened to the music happily. = Susan listened happily to the music.<br>⑥ 修飾形容詞或副詞時放在被修飾的字前面：He is dangerously ill.<br>⑦ 修飾整句話時放在句子最前面：Luckily, he came back safely.<br><br><b>與形容詞同形的副詞只能放動詞後</b><br>hard、early、late、fast、high、far這些字當副詞用時，只能放在動詞後面：He works hard.（不能說He hardly works表示「他很努力工作」，hardly意思完全不同）",
+          "examples": [
+            {
+              "en": "She answered the question calmly and clearly.",
+              "zh": "她冷靜又清楚地回答了那個問題。"
+            },
+            {
+              "en": "The dog ran quickly toward its owner.",
+              "zh": "那隻狗很快地朝牠的主人跑去。"
+            },
+            {
+              "en": "He speaks English quite well for his age.",
+              "zh": "以他的年紀來說，他英文說得相當好。"
+            },
+            {
+              "en": "Please turn down the music slowly.",
+              "zh": "請慢慢把音樂關小聲。"
+            },
+            {
+              "en": "Suddenly, the lights went out during the show.",
+              "zh": "表演途中，燈突然熄滅了。"
+            },
+            {
+              "en": "The kids were happily building a sandcastle.",
+              "zh": "孩子們正開心地堆著沙堡。"
+            },
+            {
+              "en": "He arrived late again this morning.",
+              "zh": "他今天早上又遲到了。"
+            },
+            {
+              "en": "I haven't seen my cousin lately.",
+              "zh": "我最近沒見過我表哥。"
+            },
+            {
+              "en": "The bird can fly surprisingly high.",
+              "zh": "那隻鳥能飛得出奇地高。"
+            },
+            {
+              "en": "Luckily, no one was hurt in the accident.",
+              "zh": "幸運的是，這場意外中沒有人受傷。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "My father drives very ___, so I always feel safe in his car.",
+              "options": [
+                "careful",
+                "carefully",
+                "care",
+                "careless"
+              ],
+              "answer": 1,
+              "explanation": "情狀副詞修飾動詞drives，要用carefully。",
+              "target_grammar": "情狀副詞",
+              "optionsZh": [
+                "（形容詞不可修飾動詞）",
+                "（正確，副詞修飾動詞drives）",
+                "（名詞不可修飾動詞）",
+                "（意思相反，且詞性錯誤）"
+              ]
+            },
+            {
+              "sentence": "She sings ___ than her sister.",
+              "options": [
+                "good",
+                "well",
+                "goodly",
+                "best"
+              ],
+              "answer": 1,
+              "explanation": "good的副詞是well，不是goodly。",
+              "target_grammar": "情狀副詞",
+              "optionsZh": [
+                "（形容詞不可修飾動詞sings）",
+                "（正確，good的副詞為well）",
+                "（goodly非正確英文字）",
+                "（最高級形式，此處為比較級語境）"
+              ]
+            },
+            {
+              "sentence": "He didn't go out because he was ___ ill to walk.",
+              "options": [
+                "too",
+                "so",
+                "very",
+                "quite"
+              ],
+              "answer": 0,
+              "explanation": "此處考的是too...to句型（詳見程度副詞一節），並非本課重點，但too最能連接後面文意。",
+              "target_grammar": "情狀副詞",
+              "optionsZh": [
+                "（正確，too...to句型）",
+                "（so需搭配that子句，此處不符）",
+                "（very不與to連用表結果）",
+                "（quite不與to連用表結果）"
+              ]
+            },
+            {
+              "sentence": "Mandy slowly ___ the TV before going to bed.",
+              "options": [
+                "turned off",
+                "turned it off",
+                "turned off it",
+                "turn off"
+              ],
+              "answer": 0,
+              "explanation": "可拆式動詞片語turn off，受詞為名詞the TV時可放介副詞前後皆可，此處turned off the TV正確。",
+              "target_grammar": "情狀副詞",
+              "optionsZh": [
+                "（正確，受詞為名詞可放在介副詞後）",
+                "（此處受詞已明確寫出the TV，不需重複代名詞it）",
+                "（受詞為代名詞時才須放在介系詞前，此處受詞為名詞）",
+                "（時態錯誤，應為過去式）"
+              ]
+            },
+            {
+              "sentence": "___, the game was canceled because of rain.",
+              "options": [
+                "Unfortunate",
+                "Unfortunately",
+                "Unfortunateness",
+                "Unfortunate very"
+              ],
+              "answer": 1,
+              "explanation": "修飾整句話要用副詞放句首，加逗點。",
+              "target_grammar": "情狀副詞",
+              "optionsZh": [
+                "（形容詞不可修飾整句話）",
+                "（正確，副詞修飾整句放句首）",
+                "（非正確英文字）",
+                "（語序及詞性錯誤）"
+              ]
+            },
+            {
+              "sentence": "The plane is flying ___ above the clouds.",
+              "options": [
+                "high",
+                "highly",
+                "height",
+                "higher than"
+              ],
+              "answer": 0,
+              "explanation": "high當副詞表示「高地」時和形容詞同形，直接放動詞後；highly意思是「崇高地」，不適用於此句。",
+              "target_grammar": "情狀副詞",
+              "optionsZh": [
+                "（正確，high作副詞表示高度，與形容詞同形）",
+                "（highly意思是崇高地，不符句意）",
+                "（名詞不可修飾動詞）",
+                "（此處無比較對象，不需比較級）"
+              ]
+            },
+            {
+              "sentence": "They are ___ practicing for the concert.",
+              "options": [
+                "hard",
+                "hardly",
+                "harder",
+                "hardness"
+              ],
+              "answer": 0,
+              "explanation": "hard當副詞表示「努力地」時和形容詞同形，放在動詞後（此處為V-ing前）；hardly意思是「幾乎不」，語意相反。",
+              "target_grammar": "情狀副詞",
+              "optionsZh": [
+                "（正確，hard作副詞表示努力地）",
+                "（hardly意思是幾乎不，與句意矛盾）",
+                "（此處無比較對象）",
+                "（名詞不可修飾動詞）"
+              ]
+            },
+            {
+              "sentence": "Susan listened ___ to the sad story.",
+              "options": [
+                "quiet",
+                "quietly",
+                "quietness",
+                "quieting"
+              ],
+              "answer": 1,
+              "explanation": "不可拆式片語listen to中間可插入情狀副詞，用quietly修飾動詞listened。",
+              "target_grammar": "情狀副詞",
+              "optionsZh": [
+                "（形容詞不可修飾動詞）",
+                "（正確，副詞修飾動詞listened）",
+                "（名詞不可修飾動詞）",
+                "（動名詞形式不符句構）"
+              ]
+            },
+            {
+              "sentence": "I haven't checked my email ___.",
+              "options": [
+                "late",
+                "lately",
+                "later",
+                "latest"
+              ],
+              "answer": 1,
+              "explanation": "lately意思是「最近」，符合現在完成式的語境；late意思是「遲的」，意思不同。",
+              "target_grammar": "情狀副詞",
+              "optionsZh": [
+                "（late意思是遲的，與句意不符）",
+                "（正確，lately表示最近）",
+                "（later表示之後，時態語境不符）",
+                "（latest為形容詞最高級，此處需要副詞）"
+              ]
+            },
+            {
+              "sentence": "He is such a ___ boy that everyone likes him.",
+              "options": [
+                "friend",
+                "friendly",
+                "friendliness",
+                "friendlily"
+              ],
+              "answer": 1,
+              "explanation": "friendly雖然字尾是ly，但詞性是形容詞（友善的），修飾名詞boy。",
+              "target_grammar": "情狀副詞",
+              "optionsZh": [
+                "（名詞不可直接修飾名詞boy）",
+                "（正確，friendly為形容詞，修飾名詞boy）",
+                "（名詞不可修飾名詞boy）",
+                "（friendly本身已是形容詞，不可再加ly變副詞）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A Rainy Afternoon",
+            "passage": "Yesterday afternoon, the sky suddenly turned dark, and it began to rain __(1)__. I was walking home when I heard a loud sound behind me. I turned around __(2)__ and saw a cat hiding under a car. It looked scared, so I __(3)__ picked it up and carried it home. My mom helped me dry its fur __(4)__ with a towel. __(5)__, the cat calmed down after a few minutes and even started to purr.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "heavy",
+                  "heavily",
+                  "heaviness",
+                  "more heavy"
+                ],
+                "answer": 1,
+                "explanation": "情狀副詞修飾動詞rain，要用heavily。",
+                "optionsZh": [
+                  "（形容詞不可修飾動詞rain）",
+                  "（正確，副詞修飾動詞rain）",
+                  "（名詞不可修飾動詞）",
+                  "（比較級用法此處不需要）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "quick",
+                  "quickly",
+                  "quickness",
+                  "quickest"
+                ],
+                "answer": 1,
+                "explanation": "情狀副詞修飾動詞turned，要用quickly。",
+                "optionsZh": [
+                  "（形容詞不可修飾動詞turned）",
+                  "（正確，副詞修飾動詞turned）",
+                  "（名詞不可修飾動詞）",
+                  "（最高級此處不適用）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "careful",
+                  "carefully",
+                  "care",
+                  "careless"
+                ],
+                "answer": 1,
+                "explanation": "情狀副詞修飾動詞picked up，要用carefully。",
+                "optionsZh": [
+                  "（形容詞不可修飾動詞）",
+                  "（正確，副詞修飾動詞picked up）",
+                  "（名詞不可修飾動詞）",
+                  "（意思相反且詞性錯誤）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "gentle",
+                  "gently",
+                  "gentleness",
+                  "most gentle"
+                ],
+                "answer": 1,
+                "explanation": "情狀副詞修飾動詞dry，要用gently。",
+                "optionsZh": [
+                  "（形容詞不可修飾動詞dry）",
+                  "（正確，副詞修飾動詞dry）",
+                  "（名詞不可修飾動詞）",
+                  "（最高級此處不適用）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "Luck",
+                  "Luckily",
+                  "Lucky",
+                  "Luckiness"
+                ],
+                "answer": 1,
+                "explanation": "修飾整句話要用副詞放句首，加逗點。",
+                "optionsZh": [
+                  "（名詞不可修飾整句話）",
+                  "（正確，副詞修飾整句放句首）",
+                  "（形容詞不可修飾整句話）",
+                  "（名詞不可修飾整句話）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "8-3",
         "title": "程度副詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>修飾形容詞或副詞：放在前面</b><br>very、too、so、quite、really、pretty、still、enough（例外）都放在被修飾的形容詞或副詞前面：The news is really exciting. / Linda walked home so lazily.<br><br><b>such vs so 最容易搞混</b><br>such是形容詞，修飾後面的名詞；so是程度副詞，修飾後面的形容詞或副詞。兩者可以互相改寫：It is so tall a tree. = It is such a tall tree.（這棵樹真高。）<br><br><b>修飾動詞的程度副詞</b><br>放動詞前：really、almost、only、also、still：I also have to go to school on holidays.<br>放句尾：so much、very much、a lot、a little：This book helps me a lot.<br><br><b>enough比較特別</b><br>當形容詞修飾名詞時放名詞前（前位修飾）：If you don't have enough money...<br>當副詞修飾形容詞或副詞時，反而要放在後面：Jean is tall enough to be on the team. / You don't study hard enough.<br><br><b>so...that / enough to / too...to 三兄弟比較</b><br>① so+形容詞/副詞+that+完整子句「如此…以致於…」：The coffee is so strong that we can't drink it.（子句主詞、受詞都不可省略）<br>② 形容詞/副詞+enough+to V「夠…而能…」：Oscar is tall enough to join the team.<br>③ too+形容詞/副詞+to V「太…而不能…」：Tom is too lazy to get good grades.<br>④ so that（不同於so...that）表示「目的」，等於in order to：He gets up early so that he can catch the bus. = He gets up early to catch the bus.<br><br><b>enough to／too...to 受詞什麼時候該省略</b><br>當不定詞後面的受詞其實就是句子主詞本身時，這個受詞必須省略：The soup is too hot to drink.（不能說to drink it，因為it其實就是the soup，重複了）；但如果不定詞的受詞跟主詞是不同對象，就要留著：He is old enough to do it.（it跟he是不同對象，要保留）",
+          "examples": [
+            {
+              "en": "This math problem is quite difficult for me.",
+              "zh": "這道數學題對我來說相當困難。"
+            },
+            {
+              "en": "It was such an exciting game that everyone cheered loudly.",
+              "zh": "那場比賽如此刺激，以致於大家都大聲歡呼。"
+            },
+            {
+              "en": "I also enjoy painting in my free time.",
+              "zh": "我空閒時也喜歡畫畫。"
+            },
+            {
+              "en": "This backpack helped me a lot during the trip.",
+              "zh": "這個背包在旅途中幫了我很大的忙。"
+            },
+            {
+              "en": "Do you have enough time to finish the report?",
+              "zh": "你有足夠的時間完成這份報告嗎？"
+            },
+            {
+              "en": "The soup was too salty to drink.",
+              "zh": "這碗湯太鹹了，沒辦法喝。"
+            },
+            {
+              "en": "She is smart enough to solve the puzzle by herself.",
+              "zh": "她夠聰明可以自己解開這個謎題。"
+            },
+            {
+              "en": "He studies hard so that he can pass the exam.",
+              "zh": "他很用功讀書，好讓他可以通過考試。"
+            },
+            {
+              "en": "The bag is so heavy that I can't carry it alone.",
+              "zh": "這個袋子這麼重，我沒辦法自己搬。"
+            },
+            {
+              "en": "I'm still waiting for her reply.",
+              "zh": "我還在等她的回覆。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "It is ___ a difficult question that nobody can answer it.",
+              "options": [
+                "so",
+                "such",
+                "too",
+                "very"
+              ],
+              "answer": 1,
+              "explanation": "such+a+形容詞+名詞的固定結構，such是形容詞修飾後面的名詞question。",
+              "target_grammar": "程度副詞",
+              "optionsZh": [
+                "（so應接形容詞而非直接接a+名詞，需改寫成so difficult a question）",
+                "（正確，such+a+形容詞+名詞）",
+                "（too不與such...that句型混用）",
+                "（very不構成such...that的結構）"
+              ]
+            },
+            {
+              "sentence": "This shirt is not big ___ for me.",
+              "options": [
+                "so",
+                "too",
+                "enough",
+                "such"
+              ],
+              "answer": 2,
+              "explanation": "enough當副詞修飾形容詞big時，要放在形容詞後面。",
+              "target_grammar": "程度副詞",
+              "optionsZh": [
+                "（so需搭配that子句，此處不符）",
+                "（too需放在形容詞前，此處位置不符）",
+                "（正確，enough修飾形容詞時放在後面）",
+                "（such為形容詞，不修飾形容詞）"
+              ]
+            },
+            {
+              "sentence": "The music was ___ loud that I couldn't sleep.",
+              "options": [
+                "too",
+                "so",
+                "such",
+                "enough"
+              ],
+              "answer": 1,
+              "explanation": "so+形容詞+that+完整子句「如此…以致於…」。",
+              "target_grammar": "程度副詞",
+              "optionsZh": [
+                "（too不與that子句連用表結果）",
+                "（正確，so...that句型）",
+                "（such需搭配a+名詞，此處後面接形容詞loud不符）",
+                "（enough應放在形容詞後面，此處位置不符）"
+              ]
+            },
+            {
+              "sentence": "He runs ___ fast that no one can catch up with him.",
+              "options": [
+                "so",
+                "such",
+                "too",
+                "very"
+              ],
+              "answer": 0,
+              "explanation": "so+副詞fast+that+完整子句。",
+              "target_grammar": "程度副詞",
+              "optionsZh": [
+                "（正確，so+副詞+that子句）",
+                "（such需搭配名詞，此處接副詞fast不符）",
+                "（too不與that子句連用表結果）",
+                "（very不與that連用表結果）"
+              ]
+            },
+            {
+              "sentence": "This coffee is too hot ___.",
+              "options": [
+                "to drink",
+                "to drink it",
+                "drinking",
+                "for drinking"
+              ],
+              "answer": 0,
+              "explanation": "too...to句型中，若不定詞受詞就是主詞本身，要省略，不能說to drink it。",
+              "target_grammar": "程度副詞",
+              "optionsZh": [
+                "（正確，受詞與主詞相同須省略）",
+                "（重複主詞this coffee，應省略it）",
+                "（詞性錯誤，too...to需接不定詞）",
+                "（介系詞片語不符too...to句型）"
+              ]
+            },
+            {
+              "sentence": "She got up early ___ she could catch the first train.",
+              "options": [
+                "so that",
+                "so",
+                "such that",
+                "too"
+              ],
+              "answer": 0,
+              "explanation": "so that表示「目的」，等於in order to，後面接完整子句。",
+              "target_grammar": "程度副詞",
+              "optionsZh": [
+                "（正確，so that表示目的）",
+                "（so需搭配形容詞/副詞+that表結果，此處無形容詞副詞不符）",
+                "（非正確英文片語）",
+                "（too不構成表目的的句型）"
+              ]
+            },
+            {
+              "sentence": "I ___ have to finish my homework before dinner.",
+              "options": [
+                "also",
+                "too much",
+                "a lot",
+                "very much"
+              ],
+              "answer": 0,
+              "explanation": "also放在一般動詞前修飾動詞，表示「也」。",
+              "target_grammar": "程度副詞",
+              "optionsZh": [
+                "（正確，also放動詞前）",
+                "（too much通常放句尾，且此處語意不符）",
+                "（a lot通常放句尾修飾動詞，此處位置不符）",
+                "（very much通常放句尾，此處位置不符）"
+              ]
+            },
+            {
+              "sentence": "This gift means ___ to me.",
+              "options": [
+                "very much",
+                "much very",
+                "very",
+                "so"
+              ],
+              "answer": 0,
+              "explanation": "程度副詞very much修飾動詞means，放在句尾。",
+              "target_grammar": "程度副詞",
+              "optionsZh": [
+                "（正確，very much放句尾修飾動詞）",
+                "（語序錯誤）",
+                "（very不可單獨修飾動詞，需與much連用）",
+                "（so需搭配that子句，此處不完整）"
+              ]
+            },
+            {
+              "sentence": "He is ___ young to drive a car.",
+              "options": [
+                "so",
+                "too",
+                "such",
+                "enough"
+              ],
+              "answer": 1,
+              "explanation": "too+形容詞+to V「太…而不能」，符合「太年輕而不能開車」的句意。",
+              "target_grammar": "程度副詞",
+              "optionsZh": [
+                "（so需搭配that子句，此處為to V不符）",
+                "（正確，too...to表示太…而不能）",
+                "（such需搭配a+名詞）",
+                "（enough應放在形容詞後面，此處位置不符）"
+              ]
+            },
+            {
+              "sentence": "Is this book ___ for a five-year-old to read?",
+              "options": [
+                "so easy",
+                "such easy",
+                "easy enough",
+                "too easy"
+              ],
+              "answer": 2,
+              "explanation": "enough修飾形容詞easy時放在後面，easy enough to read符合句構。",
+              "target_grammar": "程度副詞",
+              "optionsZh": [
+                "（so需搭配that子句，此處不完整）",
+                "（such需搭配名詞，此處接形容詞不符）",
+                "（正確，形容詞+enough+to V）",
+                "（too...to表示「太…而不能」，與句意「是否夠簡單」相反）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A Rainy Weekend Plan",
+            "passage": "This weekend, the weather is going to be __(1)__ rainy that we probably can't go hiking as planned. My sister said the trail would be __(2)__ slippery to walk on safely. I was disappointed at first, but my mom __(3)__ suggested we visit the science museum instead. She got up early __(4)__ she could book tickets before they sold out. In the end, I was __(5)__ excited about the new plan that I almost forgot about the hiking trip.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "so",
+                  "such",
+                  "too",
+                  "enough"
+                ],
+                "answer": 0,
+                "explanation": "so+形容詞rainy+that+完整子句，表示「如此…以致於…」。",
+                "optionsZh": [
+                  "（正確，so+形容詞+that子句）",
+                  "（such需搭配a+名詞，此處接形容詞不符）",
+                  "（too不與that子句連用表結果）",
+                  "（enough應放在形容詞後面，此處位置不符）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "so",
+                  "such",
+                  "too",
+                  "very"
+                ],
+                "answer": 2,
+                "explanation": "too+形容詞+to V「太…而不能」，符合「太滑而不能安全行走」的語境。",
+                "optionsZh": [
+                  "（so需搭配that子句，此處為to V不符）",
+                  "（such需搭配名詞）",
+                  "（正確，too...to表示太…而不能）",
+                  "（very不構成to V的結果句型）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "also",
+                  "very much",
+                  "a lot",
+                  "too much"
+                ],
+                "answer": 0,
+                "explanation": "also放在一般動詞前修飾動詞suggested，表示「也」。",
+                "optionsZh": [
+                  "（正確，also放動詞前）",
+                  "（very much通常放句尾）",
+                  "（a lot通常放句尾）",
+                  "（too much通常放句尾，且語意不符）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "so that",
+                  "so",
+                  "such that",
+                  "enough"
+                ],
+                "answer": 0,
+                "explanation": "so that表示「目的」，後面接完整子句she could book tickets。",
+                "optionsZh": [
+                  "（正確，so that表示目的）",
+                  "（so需搭配形容詞/副詞+that，此處無形容詞副詞）",
+                  "（非正確英文片語）",
+                  "（enough不構成表目的的句型）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "so",
+                  "such",
+                  "too",
+                  "enough"
+                ],
+                "answer": 0,
+                "explanation": "so+形容詞excited+that+完整子句，表示「如此興奮以致於…」。",
+                "optionsZh": [
+                  "（正確，so+形容詞+that子句）",
+                  "（such需搭配a+名詞，此處接形容詞不符）",
+                  "（too不與that子句連用表結果）",
+                  "（enough應放在形容詞後面，此處位置不符）"
+                ]
+              }
+            ]
+          }
+        }
       }
     ]
   },
