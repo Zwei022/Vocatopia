@@ -4766,16 +4766,16 @@ function updateHomeScreen() {
 }
 
 // ════════════════════════════════
-// 首頁關卡樹：關卡 1-10 由下往上，手繪樹枝連接 + 果實按鈕
+// 首頁關卡樹：關卡 1-20（對應文法 20 章）由下往上，手繪樹枝連接 + 果實按鈕
 // ════════════════════════════════
-const LEVEL_COUNT  = 10;
+const LEVEL_COUNT  = 20;
 const LEVEL_STEP_H = 112;                                       // 每關垂直間距 px
-const LEVEL_XS_PCT = [30, 70, 26, 72, 30, 68, 26, 72, 32, 50];  // 關1(最下)→關9 掛樹幹兩側；關10 在樹頂（值不使用）
+// 關1(最下)→關19 掛樹幹兩側交錯；關20 在樹頂（值不使用）
+const LEVEL_XS_PCT = [30, 70, 26, 72, 30, 68, 26, 72, 32, 68,
+                      28, 72, 30, 68, 26, 74, 30, 68, 26, 50];
 
 function onLevelClick(n) {
-  // 已實裝的關卡走塔防遊戲（game/td.js），其餘顯示即將推出
-  if (typeof TD_LEVELS !== 'undefined' && TD_LEVELS[n]) return tdStartLevel(n);
-  showToast(`🍎 關卡 ${n}：玩法即將推出，敬請期待！`);
+  grammarStartChapter(n);
 }
 
 // 手繪小葉子（x, y 為葉柄位置，rot 為葉尖方向角度，s 為大小倍率）
@@ -4887,8 +4887,8 @@ function renderLevelMap() {
     <div class="hm-lm-inner" style="height:${H}px">
       <svg class="hm-lm-svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${trunk}${branches}${leaves}</svg>
       ${pts.map(p => {
-        const stars = (typeof tdStarsFor === 'function' && TD_LEVELS[p.n]) ? tdStarsFor(p.n) : 0;
-        const starsHtml = (typeof TD_LEVELS !== 'undefined' && TD_LEVELS[p.n])
+        const stars = (typeof grammarStarsFor === 'function' && typeof GRAMMAR_CHAPTERS !== 'undefined' && GRAMMAR_CHAPTERS[p.n]) ? grammarStarsFor(p.n) : 0;
+        const starsHtml = (typeof GRAMMAR_CHAPTERS !== 'undefined' && GRAMMAR_CHAPTERS[p.n])
           ? `<span class="hm-fruit-stars">${[0,1,2].map(i => i < stars ? '★' : '<span class="off">★</span>').join('')}</span>`
           : '';
         return `

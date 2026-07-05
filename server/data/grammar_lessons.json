@@ -1,0 +1,234 @@
+{
+  "1": {
+    "chapterId": 1,
+    "title": "時態：現在簡單式與過去簡單式",
+    "page": 6,
+    "subLessons": [
+      { "id": "1-1", "title": "現在簡單式", "teaching": null, "quiz": [] },
+      { "id": "1-2", "title": "過去簡單式", "teaching": null, "quiz": [] }
+    ]
+  },
+  "2": {
+    "chapterId": 2,
+    "title": "時態：現在進行式與過去進行式",
+    "page": 19,
+    "subLessons": [
+      { "id": "2-1", "title": "現在進行式", "teaching": null, "quiz": [] },
+      { "id": "2-2", "title": "過去進行式", "teaching": null, "quiz": [] }
+    ]
+  },
+  "3": {
+    "chapterId": 3,
+    "title": "時態：未來簡單式與現在／過去完成式",
+    "page": 30,
+    "subLessons": [
+      { "id": "3-1", "title": "未來簡單式", "teaching": null, "quiz": [] },
+      { "id": "3-2", "title": "現在完成式", "teaching": null, "quiz": [] },
+      { "id": "3-3", "title": "過去完成式", "teaching": null, "quiz": [] }
+    ]
+  },
+  "4": {
+    "chapterId": 4,
+    "title": "助動詞",
+    "page": 47,
+    "subLessons": [
+      { "id": "4-1", "title": "情狀助動詞 can/could、may/might、will/would", "teaching": null, "quiz": [] },
+      { "id": "4-2", "title": "情狀助動詞 shall/should、need、must", "teaching": null, "quiz": [] },
+      { "id": "4-3", "title": "情狀助動詞 had better、used to", "teaching": null, "quiz": [] }
+    ]
+  },
+  "5": {
+    "chapterId": 5,
+    "title": "介系詞",
+    "page": 58,
+    "subLessons": [
+      { "id": "5-1", "title": "時間介系詞", "teaching": null, "quiz": [] },
+      { "id": "5-2", "title": "地方介系詞", "teaching": null, "quiz": [] },
+      { "id": "5-3", "title": "其他介系詞", "teaching": null, "quiz": [] },
+      { "id": "5-4", "title": "介系詞片語", "teaching": null, "quiz": [] },
+      { "id": "5-5", "title": "含有介系詞的動詞片語（非授與動詞的用法）", "teaching": null, "quiz": [] },
+      { "id": "5-6", "title": "不及物動詞＋介系詞＋受詞", "teaching": null, "quiz": [] }
+    ]
+  },
+  "6": {
+    "chapterId": 6,
+    "title": "名詞與代名詞",
+    "page": 76,
+    "subLessons": [
+      { "id": "6-1", "title": "名詞", "teaching": null, "quiz": [] },
+      { "id": "6-2", "title": "代名詞", "teaching": null, "quiz": [] }
+    ]
+  },
+  "7": {
+    "chapterId": 7,
+    "title": "形容詞",
+    "page": 99,
+    "subLessons": [
+      { "id": "7-1", "title": "形容詞的用法", "teaching": null, "quiz": [] },
+      { "id": "7-2", "title": "數字（基數、序數）", "teaching": null, "quiz": [] },
+      { "id": "7-3", "title": "數量形容詞", "teaching": null, "quiz": [] },
+      { "id": "7-4", "title": "指示形容詞", "teaching": null, "quiz": [] },
+      { "id": "7-5", "title": "現在分詞與過去分詞", "teaching": null, "quiz": [] },
+      { "id": "7-6", "title": "名詞變成的形容詞", "teaching": null, "quiz": [] },
+      { "id": "7-7", "title": "多個形容詞共同修飾同一名詞", "teaching": null, "quiz": [] },
+      { "id": "7-8", "title": "形容詞字詞的後位修飾", "teaching": null, "quiz": [] },
+      { "id": "7-9", "title": "非修飾人的形容詞", "teaching": null, "quiz": [] },
+      { "id": "7-10", "title": "常用的「形容詞＋介系詞」的連用片語", "teaching": null, "quiz": [] }
+    ]
+  },
+  "8": {
+    "chapterId": 8,
+    "title": "副詞",
+    "page": 115,
+    "subLessons": [
+      { "id": "8-1", "title": "頻率副詞", "teaching": null, "quiz": [] },
+      { "id": "8-2", "title": "情狀副詞", "teaching": null, "quiz": [] },
+      { "id": "8-3", "title": "程度副詞", "teaching": null, "quiz": [] }
+    ]
+  },
+  "9": {
+    "chapterId": 9,
+    "title": "形容詞與副詞的級",
+    "page": 129,
+    "subLessons": [
+      { "id": "9-1", "title": "形容詞的比較級", "teaching": null, "quiz": [] },
+      { "id": "9-2", "title": "形容詞的最高級", "teaching": null, "quiz": [] },
+      { "id": "9-3", "title": "情狀副詞的級", "teaching": null, "quiz": [] }
+    ]
+  },
+  "10": {
+    "chapterId": 10,
+    "title": "動名詞與不定詞",
+    "page": 148,
+    "subLessons": [
+      { "id": "10-1", "title": "動名詞", "teaching": null, "quiz": [] },
+      { "id": "10-2", "title": "不定詞", "teaching": null, "quiz": [] }
+    ]
+  },
+  "11": {
+    "chapterId": 11,
+    "title": "情緒動詞與情緒形容詞",
+    "page": 166,
+    "subLessons": [
+      { "id": "11-1", "title": "情緒動詞", "teaching": null, "quiz": [] },
+      { "id": "11-2", "title": "分詞當情緒形容詞", "teaching": null, "quiz": [] },
+      { "id": "11-3", "title": "分詞當其他用法的形容詞", "teaching": null, "quiz": [] }
+    ]
+  },
+  "12": {
+    "chapterId": 12,
+    "title": "被動語態",
+    "page": 173,
+    "subLessons": [
+      { "id": "12-1", "title": "各種時態的被動語態句", "teaching": null, "quiz": [] },
+      { "id": "12-2", "title": "有情狀助動詞的被動語態句", "teaching": null, "quiz": [] },
+      { "id": "12-3", "title": "有感官動詞的被動語態句", "teaching": null, "quiz": [] },
+      { "id": "12-4", "title": "有使役動詞的被動語態句", "teaching": null, "quiz": [] },
+      { "id": "12-5", "title": "有授與動詞的被動語態句", "teaching": null, "quiz": [] },
+      { "id": "12-6", "title": "有介系詞的被動語態句", "teaching": null, "quiz": [] },
+      { "id": "12-7", "title": "否定的被動語態句", "teaching": null, "quiz": [] },
+      { "id": "12-8", "title": "疑問句的被動語態", "teaching": null, "quiz": [] },
+      { "id": "12-9", "title": "問句的被動語態", "teaching": null, "quiz": [] },
+      { "id": "12-10", "title": "祈使句的被動語態", "teaching": null, "quiz": [] },
+      { "id": "12-11", "title": "主詞非特定", "teaching": null, "quiz": [] },
+      { "id": "12-12", "title": "瞬間被動 get + p.p.", "teaching": null, "quiz": [] },
+      { "id": "12-13", "title": "使役動詞、感官動詞的受詞補語為被動", "teaching": null, "quiz": [] },
+      { "id": "12-14", "title": "及物動詞的受詞為被動", "teaching": null, "quiz": [] },
+      { "id": "12-15", "title": "情緒形容詞", "teaching": null, "quiz": [] },
+      { "id": "12-16", "title": "使用被動句構的動詞", "teaching": null, "quiz": [] }
+    ]
+  },
+  "13": {
+    "chapterId": 13,
+    "title": "特殊動詞（一）",
+    "page": 192,
+    "subLessons": [
+      { "id": "13-1", "title": "連綴動詞", "teaching": null, "quiz": [] },
+      { "id": "13-2", "title": "授與動詞", "teaching": null, "quiz": [] },
+      { "id": "13-3", "title": "使役動詞", "teaching": null, "quiz": [] },
+      { "id": "13-4", "title": "感官動詞", "teaching": null, "quiz": [] },
+      { "id": "13-5", "title": "可拆式（介副詞動詞）與不可拆式動詞片語（介詞動詞）", "teaching": null, "quiz": [] }
+    ]
+  },
+  "14": {
+    "chapterId": 14,
+    "title": "特殊動詞（二）",
+    "page": 208,
+    "subLessons": [
+      { "id": "14-1", "title": "說：say、speak、tell、talk、chat", "teaching": null, "quiz": [] },
+      { "id": "14-2", "title": "看：see、look、look at、watch、read", "teaching": null, "quiz": [] },
+      { "id": "14-3", "title": "聽：hear、listen、listen to", "teaching": null, "quiz": [] },
+      { "id": "14-4", "title": "hurt 的多種用法", "teaching": null, "quiz": [] },
+      { "id": "14-5", "title": "lose 的多種用法", "teaching": null, "quiz": [] },
+      { "id": "14-6", "title": "花費：spend、cost、take、pay、buy", "teaching": null, "quiz": [] }
+    ]
+  },
+  "15": {
+    "chapterId": 15,
+    "title": "倒裝句型",
+    "page": 221,
+    "subLessons": [
+      { "id": "15-1", "title": "Here / There 開頭句型", "teaching": null, "quiz": [] },
+      { "id": "15-2", "title": "附加問句", "teaching": null, "quiz": [] },
+      { "id": "15-3", "title": "附和句", "teaching": null, "quiz": [] },
+      { "id": "15-4", "title": "間接問句", "teaching": null, "quiz": [] },
+      { "id": "15-5", "title": "地方副詞導引的 there is / there are 倒裝句", "teaching": null, "quiz": [] }
+    ]
+  },
+  "16": {
+    "chapterId": 16,
+    "title": "疑問詞",
+    "page": 235,
+    "subLessons": [
+      { "id": "16-1", "title": "疑問代名詞", "teaching": null, "quiz": [] },
+      { "id": "16-2", "title": "疑問形容詞", "teaching": null, "quiz": [] },
+      { "id": "16-3", "title": "疑問副詞", "teaching": null, "quiz": [] },
+      { "id": "16-4", "title": "由 how 延伸出的疑問副詞片語", "teaching": null, "quiz": [] }
+    ]
+  },
+  "17": {
+    "chapterId": 17,
+    "title": "連接詞",
+    "page": 251,
+    "subLessons": [
+      { "id": "17-1", "title": "對等連接詞", "teaching": null, "quiz": [] },
+      { "id": "17-2", "title": "附屬連接詞", "teaching": null, "quiz": [] },
+      { "id": "17-3", "title": "其他附屬連接詞", "teaching": null, "quiz": [] }
+    ]
+  },
+  "18": {
+    "chapterId": 18,
+    "title": "關係代名詞",
+    "page": 270,
+    "subLessons": [
+      { "id": "18-1", "title": "關代主格與受格", "teaching": null, "quiz": [] },
+      { "id": "18-2", "title": "關代所有格、複合關代 what", "teaching": null, "quiz": [] },
+      { "id": "18-3", "title": "關係副詞", "teaching": null, "quiz": [] },
+      { "id": "18-4", "title": "關代限用 that 的情形", "teaching": null, "quiz": [] },
+      { "id": "18-5", "title": "關代不可用 that 的情形", "teaching": null, "quiz": [] },
+      { "id": "18-6", "title": "關代的特殊用法", "teaching": null, "quiz": [] }
+    ]
+  },
+  "19": {
+    "chapterId": 19,
+    "title": "其他重要句型文法",
+    "page": 285,
+    "subLessons": [
+      { "id": "19-1", "title": "祈使句", "teaching": null, "quiz": [] },
+      { "id": "19-2", "title": "there be 句型", "teaching": null, "quiz": [] },
+      { "id": "19-3", "title": "感嘆句", "teaching": null, "quiz": [] },
+      { "id": "19-4", "title": "that 子句", "teaching": null, "quiz": [] },
+      { "id": "19-5", "title": "及物動詞＋whether...(or not) / if...", "teaching": null, "quiz": [] }
+    ]
+  },
+  "20": {
+    "chapterId": 20,
+    "title": "假設語氣",
+    "page": 297,
+    "subLessons": [
+      { "id": "20-1", "title": "if 的假設語氣", "teaching": null, "quiz": [] },
+      { "id": "20-2", "title": "wish 的假設語氣", "teaching": null, "quiz": [] },
+      { "id": "20-3", "title": "其他假設語氣的使用", "teaching": null, "quiz": [] }
+    ]
+  }
+}

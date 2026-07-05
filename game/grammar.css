@@ -1,0 +1,111 @@
+/* ════════════════════════════════
+   文法教學系統樣式（取代原塔防遊戲 td.css）
+   沿用全站暖色可愛風 Design Tokens
+════════════════════════════════ */
+
+.gm-overlay {
+  position: fixed; inset: 0; z-index: 900;
+  background: var(--bg);
+  display: flex; flex-direction: column;
+  font-family: var(--font-zh);
+}
+
+.gm-topbar {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 16px; background: var(--header);
+  border-bottom: 2px solid var(--line);
+  flex-shrink: 0;
+}
+.gm-back {
+  border: 2px solid var(--line); background: var(--card);
+  color: var(--ink); font-weight: 700; font-size: 14px;
+  padding: 6px 12px; border-radius: var(--r); cursor: pointer;
+}
+.gm-topbar-title {
+  font-weight: 900; font-size: 16px; color: var(--ink);
+}
+
+.gm-empty {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  color: var(--ink2); font-size: 15px; padding: 32px;
+}
+
+/* ── 小節清單 */
+.gm-sub-list {
+  flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px;
+}
+.gm-sub-row {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--card); border: 2px solid var(--line);
+  border-radius: var(--r2); padding: 14px 16px;
+  cursor: pointer; text-align: left; font-family: inherit;
+}
+.gm-sub-row.gm-sub-locked { opacity: .55; cursor: default; }
+.gm-sub-id {
+  font-weight: 900; color: var(--orange); font-size: 14px; min-width: 32px;
+}
+.gm-sub-title { flex: 1; font-weight: 700; color: var(--ink); font-size: 15px; }
+.gm-sub-stars { font-size: 15px; letter-spacing: 1px; }
+.gm-sub-stars .on  { color: var(--gold); }
+.gm-sub-stars .off { color: var(--ink3); }
+
+/* ── 教學卡片 */
+.gm-teach-scroll { flex: 1; overflow-y: auto; padding: 20px 16px 32px; }
+.gm-teach-card {
+  background: var(--card); border: 2px solid var(--line);
+  border-radius: var(--r3); padding: 20px; margin-bottom: 20px;
+}
+.gm-teach-explain {
+  font-size: 15px; line-height: 1.8; color: var(--ink); white-space: pre-wrap;
+}
+.gm-example {
+  margin-top: 14px; padding: 12px 14px;
+  background: var(--card2); border-radius: var(--r); border: 1px solid var(--line2);
+}
+.gm-example-en { font-family: var(--font-ui); font-weight: 700; color: var(--ink); font-size: 15px; }
+.gm-example-zh { font-size: 13px; color: var(--ink2); margin-top: 4px; }
+
+.gm-cta {
+  display: block; width: 100%; border: none; border-radius: var(--r2);
+  background: var(--red); color: #fff; font-weight: 900; font-size: 16px;
+  padding: 14px; cursor: pointer; box-shadow: 0 3px 0 var(--red2);
+}
+.gm-cta.gm-cta-ghost {
+  background: var(--card); color: var(--ink); box-shadow: none; border: 2px solid var(--line);
+  margin-top: 10px;
+}
+
+/* ── 測驗畫面 */
+.gm-quiz-wrap { flex: 1; overflow-y: auto; padding: 20px 16px 32px; }
+.gm-quiz-sentence {
+  font-family: var(--font-ui); font-size: 17px; font-weight: 700; color: var(--ink);
+  line-height: 1.6; margin-bottom: 18px;
+}
+.gm-quiz-opts { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.gm-quiz-opt {
+  text-align: left; padding: 12px 14px; border-radius: var(--r);
+  border: 2px solid var(--line2); background: var(--card);
+  font-size: 15px; color: var(--ink); cursor: pointer; font-family: inherit;
+}
+.gm-quiz-opt:disabled { cursor: default; }
+.gm-quiz-opt.gm-correct { border-color: var(--green); background: var(--greensoft); font-weight: 700; }
+.gm-quiz-opt.gm-wrong   { border-color: var(--wrong); background: var(--wrongsoft); }
+.gm-quiz-explain {
+  padding: 14px; border-radius: var(--r); background: var(--card2);
+  font-size: 14px; line-height: 1.7; color: var(--ink); margin-bottom: 16px;
+}
+
+/* ── 結算畫面 */
+.gm-result {
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 32px; gap: 14px;
+}
+.gm-result-stars { font-size: 40px; letter-spacing: 6px; }
+.gm-result-stars .on  { color: var(--gold); }
+.gm-result-stars .off { color: var(--ink3); }
+.gm-result-acc { font-size: 15px; color: var(--ink2); margin-bottom: 10px; }
+.gm-result .gm-cta { width: 240px; }
+
+/* ── 首頁關卡樹果實星等（沿用 hm-fruit-stars class，補齊顏色 token） */
+.hm-fruit-stars { color: var(--gold); font-size: 11px; letter-spacing: 1px; }
+.hm-fruit-stars .off { color: var(--ink3); }
