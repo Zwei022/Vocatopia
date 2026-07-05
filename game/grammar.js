@@ -124,67 +124,144 @@ function gmOpenSubLesson(chapterId, subId) {
     </div>`;
 }
 
-// ── 測驗畫面
-let _gmQuizState = null; // { list, idx, correctCount, answered }
+// ── 測驗畫面：10題文法選擇（mc）→ 5題克漏字題組（cloze）兩階段
+let _gmQuizState = null;
+// { mcList, mcIdx, mcCorrect, mcAnswered, cloze, clozeAnswered:{n:i}, clozeCorrect }
 
 function gmStartQuiz() {
   const { chapterId, subId } = _gmCurrentCtx;
   const ch = GRAMMAR_CHAPTERS[chapterId];
   const sub = ch.subLessons.find(s => s.id === subId);
-  _gmQuizState = { list: sub.quiz, idx: 0, correctCount: 0, answered: false };
-  _gmRenderQuizQuestion();
+  const quiz = sub.quiz || {};
+  _gmQuizState = {
+    mcList: quiz.mc || [],
+    mcIdx: 0,
+    mcCorrect: 0,
+    mcAnswered: false,
+    cloze: quiz.cloze || null,
+    clozeAnswered: {},
+    clozeCorrect: 0,
+  };
+  if (_gmQuizState.mcList.length) _gmRenderMcQuestion();
+  else if (_gmQuizState.cloze) _gmRenderCloze();
+  else _gmFinishQuiz();
 }
 
-function _gmRenderQuizQuestion() {
+function _gmQuizTopbar(titleText) {
+  return `
+    <div class="gm-topbar gm-topbar-quiz">
+      <span class="gm-topbar-title">${titleText}</span>
+      <button class="gm-quiz-close" onclick="gmClose()" aria-label="退出測驗">✕</button>
+    </div>`;
+}
+
+function _gmRenderMcQuestion() {
   const st = _gmQuizState;
-  const q = st.list[st.idx];
+  const q = st.mcList[st.mcIdx];
   const optsHtml = q.options.map((opt, i) =>
     `<button class="gm-quiz-opt" id="gmOpt${i}" onclick="gmAnswer(${i})">${String.fromCharCode(65 + i)}. ${_gmEsc(opt)}</button>`
   ).join('');
   const ov = _gmOverlay();
   ov.innerHTML = `
-    <div class="gm-topbar">
-      <span class="gm-topbar-title">隨堂測驗 ${st.idx + 1}/${st.list.length}</span>
-    </div>
+    ${_gmQuizTopbar(`文法測驗 ${st.mcIdx + 1}/${st.mcList.length}`)}
     <div class="gm-quiz-wrap">
       <div class="gm-quiz-sentence">${_gmEsc(q.sentence)}</div>
       <div class="gm-quiz-opts">${optsHtml}</div>
       <div class="gm-quiz-explain" id="gmExplain" style="display:none"></div>
-      <button class="gm-cta" id="gmNextBtn" style="display:none" onclick="_gmNextQuestion()">下一題 →</button>
+      <button class="gm-cta" id="gmNextBtn" style="display:none" onclick="_gmNextMc()">下一題 →</button>
     </div>`;
 }
 
 function gmAnswer(i) {
   const st = _gmQuizState;
-  if (st.answered) return;
-  st.answered = true;
-  const q = st.list[st.idx];
+  if (st.mcAnswered) return;
+  st.mcAnswered = true;
+  const q = st.mcList[st.mcIdx];
   const correct = i === q.answer;
-  if (correct) st.correctCount++;
+  if (correct) st.mcCorrect++;
   q.options.forEach((_, oi) => {
     const btn = document.getElementById('gmOpt' + oi);
     btn.disabled = true;
     if (oi === q.answer) btn.classList.add('gm-correct');
     else if (oi === i) btn.classList.add('gm-wrong');
   });
-  const zh = (q.optionsZh && q.optionsZh[q.answer]) ? `（${_gmEsc(q.optionsZh[q.answer])}）` : '';
+  const zh = (q.optionsZh && q.optionsZh[q.answer]) ? _gmEsc(q.optionsZh[q.answer]) : '';
   const explainEl = document.getElementById('gmExplain');
   explainEl.style.display = 'block';
   explainEl.innerHTML = `${correct ? '✅ 答對了！' : '❌ 答錯了'} 正解 ${String.fromCharCode(65 + q.answer)} ${zh}<br>${_gmEsc(q.explanation)}`;
   document.getElementById('gmNextBtn').style.display = 'block';
 }
 
-function _gmNextQuestion() {
+function _gmNextMc() {
   const st = _gmQuizState;
-  st.idx++;
-  st.answered = false;
-  if (st.idx >= st.list.length) return _gmFinishQuiz();
-  _gmRenderQuizQuestion();
+  st.mcIdx++;
+  st.mcAnswered = false;
+  if (st.mcIdx >= st.mcList.length) {
+    if (st.cloze) return _gmRenderCloze();
+    return _gmFinishQuiz();
+  }
+  _gmRenderMcQuestion();
+}
+
+// ── 克漏字題組（沿用 question_bank_cloze.json 的 passage + blanks 結構）
+function _gmRenderCloze() {
+  const st = _gmQuizState;
+  const c = st.cloze;
+  const passageHtml = _gmEsc(c.passage).replace(/__\((\d)\)__/g, (m, n) =>
+    `<span class="gm-cloze-blank" id="gmBlankMark${n}">(${n})</span>`);
+  const blocksHtml = c.blanks.map(b => {
+    const optsHtml = b.options.map((opt, i) =>
+      `<button class="gm-quiz-opt gm-cloze-opt" id="gmClozeOpt${b.n}_${i}" onclick="gmClozeAnswer(${b.n},${i})">${String.fromCharCode(65 + i)}. ${_gmEsc(opt)}</button>`
+    ).join('');
+    return `
+      <div class="gm-cloze-block">
+        <div class="gm-cloze-num">第 (${b.n}) 格</div>
+        <div class="gm-quiz-opts">${optsHtml}</div>
+        <div class="gm-quiz-explain" id="gmClozeExplain${b.n}" style="display:none"></div>
+      </div>`;
+  }).join('');
+  const ov = _gmOverlay();
+  ov.innerHTML = `
+    ${_gmQuizTopbar('克漏字題組')}
+    <div class="gm-quiz-wrap">
+      ${c.title ? `<div class="gm-cloze-title">${_gmEsc(c.title)}</div>` : ''}
+      <div class="gm-cloze-passage">${passageHtml}</div>
+      ${blocksHtml}
+      <button class="gm-cta" id="gmClozeFinishBtn" style="display:none" onclick="_gmFinishQuiz()">完成測驗 →</button>
+    </div>`;
+}
+
+function gmClozeAnswer(n, i) {
+  const st = _gmQuizState;
+  if (st.clozeAnswered[n] !== undefined) return;
+  const blank = st.cloze.blanks.find(b => b.n === n);
+  st.clozeAnswered[n] = i;
+  const correct = i === blank.answer;
+  if (correct) st.clozeCorrect++;
+  blank.options.forEach((_, oi) => {
+    const btn = document.getElementById(`gmClozeOpt${n}_${oi}`);
+    btn.disabled = true;
+    if (oi === blank.answer) btn.classList.add('gm-correct');
+    else if (oi === i) btn.classList.add('gm-wrong');
+  });
+  const zh = (blank.optionsZh && blank.optionsZh[blank.answer]) ? _gmEsc(blank.optionsZh[blank.answer]) : '';
+  const explainEl = document.getElementById(`gmClozeExplain${n}`);
+  explainEl.style.display = 'block';
+  explainEl.innerHTML = `${correct ? '✅ 答對了！' : '❌ 答錯了'} 正解 ${String.fromCharCode(65 + blank.answer)} ${zh}<br>${_gmEsc(blank.explanation)}`;
+  const markEl = document.getElementById(`gmBlankMark${n}`);
+  if (markEl) markEl.classList.add(correct ? 'gm-blank-correct' : 'gm-blank-wrong');
+
+  if (Object.keys(st.clozeAnswered).length >= st.cloze.blanks.length) {
+    const btn = document.getElementById('gmClozeFinishBtn');
+    if (btn) btn.style.display = 'block';
+  }
 }
 
 function _gmFinishQuiz() {
   const st = _gmQuizState;
-  const acc = st.correctCount / st.list.length;
+  const totalQ = st.mcList.length + (st.cloze ? st.cloze.blanks.length : 0);
+  const totalCorrect = st.mcCorrect + st.clozeCorrect;
+  const acc = totalQ ? totalCorrect / totalQ : 0;
   let stars = 1;
   if (acc >= 1) stars = 3;
   else if (acc >= 0.5) stars = 2;
@@ -199,7 +276,7 @@ function _gmFinishQuiz() {
   ov.innerHTML = `
     <div class="gm-result">
       <div class="gm-result-stars">${starsHtml}</div>
-      <div class="gm-result-acc">正確率 ${Math.round(acc * 100)}%（${st.correctCount}/${st.list.length}）</div>
+      <div class="gm-result-acc">正確率 ${Math.round(acc * 100)}%（${totalCorrect}/${totalQ}）</div>
       <button class="gm-cta" onclick="grammarStartChapter(${chapterId})">回小節清單</button>
       <button class="gm-cta gm-cta-ghost" onclick="gmClose()">返回首頁</button>
     </div>`;

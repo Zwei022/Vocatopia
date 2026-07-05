@@ -3,8 +3,10 @@
    沿用全站暖色可愛風 Design Tokens
 ════════════════════════════════ */
 
+/* 用 absolute 而非 fixed：只填滿 .phone（手機外框）而不蓋滿整個瀏覽器視窗，
+   平板/桌面上 .phone 本身有 max-width 限制，這裡才能跟著維持在框內 */
 .gm-overlay {
-  position: fixed; inset: 0; z-index: 900;
+  position: absolute; inset: 0; z-index: 900;
   background: var(--bg);
   display: flex; flex-direction: column;
   font-family: var(--font-zh);
@@ -94,6 +96,35 @@
   padding: 14px; border-radius: var(--r); background: var(--card2);
   font-size: 14px; line-height: 1.7; color: var(--ink); margin-bottom: 16px;
 }
+
+/* 測驗畫面頂欄：標題靠左、X退出鈕靠右 */
+.gm-topbar-quiz { justify-content: space-between; }
+.gm-quiz-close {
+  border: 2px solid var(--line); background: var(--card); color: var(--ink);
+  font-weight: 900; font-size: 15px; width: 32px; height: 32px;
+  border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  line-height: 1; padding: 0;
+}
+
+/* ── 克漏字題組 */
+.gm-cloze-title {
+  font-weight: 900; font-size: 16px; color: var(--ink); margin-bottom: 10px;
+}
+.gm-cloze-passage {
+  font-family: var(--font-ui); font-size: 15px; line-height: 2; color: var(--ink);
+  background: var(--card); border: 2px solid var(--line); border-radius: var(--r2);
+  padding: 16px; margin-bottom: 20px; white-space: pre-wrap;
+}
+.gm-cloze-blank {
+  display: inline-block; min-width: 22px; text-align: center;
+  font-weight: 900; color: var(--orange); border-bottom: 2px solid var(--orange);
+}
+.gm-cloze-blank.gm-blank-correct { color: var(--green); border-color: var(--green); }
+.gm-cloze-blank.gm-blank-wrong   { color: var(--wrong); border-color: var(--wrong); }
+.gm-cloze-block {
+  margin-bottom: 22px; padding-top: 14px; border-top: 1px solid var(--line2);
+}
+.gm-cloze-num { font-weight: 900; color: var(--orange); font-size: 14px; margin-bottom: 8px; }
 
 /* ── 結算畫面 */
 .gm-result {

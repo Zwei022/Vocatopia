@@ -4,8 +4,290 @@
     "title": "時態：現在簡單式與過去簡單式",
     "page": 6,
     "subLessons": [
-      { "id": "1-1", "title": "現在簡單式", "teaching": null, "quiz": [] },
-      { "id": "1-2", "title": "過去簡單式", "teaching": null, "quiz": [] }
+      {
+        "id": "1-1",
+        "title": "現在簡單式",
+        "teaching": {
+          "explanation": "<b>十二時態總覽</b><br>英文動詞總共有12個時態，都是「過去／現在／未來」三個時間點，各自搭配「簡單式／進行式／完成式／完成進行式」四種樣貌組合而成：<br>• 簡單式：現在簡單式、過去簡單式、未來簡單式<br>• 進行式：現在進行式、過去進行式、未來進行式<br>• 完成式：現在完成式、過去完成式、未來完成式<br>• 完成進行式：現在完成進行式、過去完成進行式、未來完成進行式<br>國中會考主要考前八種（簡單式和進行式全部，加上現在完成式和過去完成式），這個章節從最基礎的「現在簡單式」和「過去簡單式」開始學起。<br><br><b>核心概念</b><br>英文的「時態」是用動詞形式表達「這件事跟現在的關係」。現在簡單式關心的不是「這一秒正在做什麼」，而是「這件事在時間軸上是不是恆常成立、反覆發生」——事實、定律、習慣、真理都符合這個條件，所以共用同一種動詞形式。<br><br><b>四種使用情境</b><br>① 事實：Mary is my sister.（Mary是我妹妹。）／Tom works at a bank.（Tom在銀行上班。）<br>② 定律：The moon goes around the earth.（月球繞著地球轉。）／Water boils at 100°C.（水在攝氏100度沸騰。）<br>③ 習慣：I get up at six every day.（我每天六點起床。）／She drinks coffee every morning.（她每天早上喝咖啡。）<br>④ 不變的道理：Honesty is the best policy.（誠實為上策。）／Practice makes perfect.（熟能生巧。）<br><br><b>完整信號詞表</b><br>• always（總是）、usually（通常）、often（常常）、sometimes（有時候）<br>• every day/night/week/year（每天/每晚/每週/每年）<br>• on Sundays（每逢星期天，＝every Sunday）、on weekends（每逢週末）<br>• 特殊規則：when、if 等附屬連接詞子句要表達「未來」時，子句裡要用現在簡單式，不能用未來式！<br>　例：When Tom arrives, he will know the truth.（當Tom抵達時，他就會知道真相。）<br>　例：If it rains tomorrow, we won't go.（如果明天下雨，我們就不去。）<br><br><b>動詞怎麼變化？（含發音規則）</b><br>第三人稱單數（he/she/it/人名/不可數名詞）動詞要加 -s 或 -es：<br>• 一般情況：加 s → play → plays<br>• 字尾 s/x/o/ch/sh：加 es → watch → watches、go → goes<br>• 子音＋y：去y加ies → study → studies<br>• 母音＋y：直接加s → play → plays<br>發音規則（考試常考）：<br>• 字尾是無聲子音 [p][k][f][t]：唸 [s] → hopes, works<br>• 字尾是有聲子音或母音：唸 [z] → runs, sees<br>• 字尾是 [s][z][ʃ][tʃ][dʒ]：唸 [ɪz] → misses, watches<br><br><b>完整句型：be動詞 vs 一般動詞</b><br>【be動詞】（am/is/are，意思是「是／存在」）<br>肯定：She is a doctor.　否定：She isn't a doctor.　疑問：Is she a doctor? — Yes, she is. / No, she isn't.<br>【一般動詞】<br>肯定：He plays basketball.　否定：He doesn't play basketball.（doesn't/don't＋原形動詞）<br>疑問：Does he play basketball? — Yes, he does. / No, he doesn't.<br>問句：What do you usually do on weekends?（Wh-＋do/does＋主詞＋原形動詞）<br><br><b>常見易混淆地雷</b><br>① anyone、everyone、no one 都當「單數」看待，動詞要用單數形式：Everyone loves music.<br>② have/has 表示「擁有」時沒有進行式：不說 I am having a car，要說 I have a car.<br>③ 頻率副詞（always/usually/often）通常不跟進行式連用，因為它們本來就代表「常態」。<br>④ busy、sure、afraid 是形容詞，必須用 be 動詞帶出：She is busy.（不是 She busies.）<br>⑤ 附屬連接詞（because/when/if）前後兩子句的時態要一致：如果主要子句是現在式，附屬子句通常也用現在式。<br>⑥ every time 是連接詞，後面接的子句即使講「以後會怎樣」，也要用現在簡單式：Every time he calls, I feel happy.<br>⑦ why not 後面直接接原形動詞：Why not stay home and relax?（不是 to stay）<br>⑧ be動詞問句的回答，Yes/No後面要接逗點＋簡答，或句點＋完整句，不能句點接簡答：<br>　✅ Yes, I do.／✅ Yes. I like it.／❌ Yes. I do.",
+          "examples": [
+            { "en": "My father usually reads the newspaper after dinner.", "zh": "我爸爸通常晚餐後看報紙。" },
+            { "en": "The Earth moves around the Sun.", "zh": "地球繞著太陽轉。" },
+            { "en": "Does Amy walk to school every day?", "zh": "Amy每天都走路上學嗎？" },
+            { "en": "My little brother doesn't like vegetables.", "zh": "我弟弟不喜歡蔬菜。" },
+            { "en": "We have class on Mondays and Wednesdays.", "zh": "我們星期一和星期三有課。" },
+            { "en": "If you study hard, you will pass the test.", "zh": "如果你認真讀書，你就會通過考試。" },
+            { "en": "Everyone knows the answer already.", "zh": "每個人都已經知道答案了。" },
+            { "en": "Are you afraid of the dark?", "zh": "你怕黑嗎？" }
+          ]
+        },
+        "quiz": {
+        "mc": [
+          {
+            "sentence": "My grandfather ___ television every evening.",
+            "options": ["watch", "watches", "watched", "is watching"],
+            "answer": 1,
+            "explanation": "主詞 my grandfather 是第三人稱單數，現在簡單式的動詞要加 -s/-es，watch → watches。",
+            "target_grammar": "現在簡單式",
+            "optionsZh": ["（原形動詞，主詞不符）", "（第三人稱單數現在式，正確）", "（過去式，時態不符）", "（現在進行式，用法不符）"]
+          },
+          {
+            "sentence": "___ she speak Japanese?",
+            "options": ["Do", "Does", "Is", "Did"],
+            "answer": 1,
+            "explanation": "主詞 she 為第三人稱單數，一般動詞的疑問句要用 Does + 原形動詞。",
+            "target_grammar": "現在簡單式",
+            "optionsZh": ["（主詞不符，應搭配複數主詞）", "（第三人稱單數疑問句，正確）", "（be動詞用法，不適用於一般動詞）", "（過去式，時態不符）"]
+          },
+          {
+            "sentence": "I ___ my homework every night before dinner.",
+            "options": ["does", "doing", "do", "did"],
+            "answer": 2,
+            "explanation": "主詞是 I，一般動詞現在式維持原形，不加 s。",
+            "target_grammar": "現在簡單式",
+            "optionsZh": ["（第三人稱單數才加es，主詞不符）", "（現在分詞，用法不符）", "（原形動詞，正確）", "（過去式，時態不符）"]
+          },
+          {
+            "sentence": "Everyone ___ the news already.",
+            "options": ["know", "knows", "knowing", "knew"],
+            "answer": 1,
+            "explanation": "everyone 當「單數」看待，動詞要用單數形式 knows。",
+            "target_grammar": "現在簡單式",
+            "optionsZh": ["（原形動詞，主詞不符）", "（everyone視為單數，正確）", "（現在分詞，用法不符）", "（過去式，時態不符）"]
+          },
+          {
+            "sentence": "When Tom ___ home, he will call us.",
+            "options": ["arrive", "arrives", "will arrive", "arrived"],
+            "answer": 1,
+            "explanation": "when 引導的附屬子句要表達未來時，子句裡要用現在簡單式代替未來式，不能用 will。",
+            "target_grammar": "現在簡單式",
+            "optionsZh": ["（原形動詞，主詞不符）", "（子句用現在式表未來，正確）", "（附屬子句不可用未來式，錯誤）", "（過去式，時態不符）"]
+          },
+          {
+            "sentence": "My parents ___ believe in ghosts.",
+            "options": ["doesn't", "don't", "isn't", "not"],
+            "answer": 1,
+            "explanation": "主詞 my parents 是複數，一般動詞的否定句要用 don't + 原形動詞。",
+            "target_grammar": "現在簡單式",
+            "optionsZh": ["（單數主詞才用doesn't，主詞不符）", "（複數主詞否定句，正確）", "（be動詞用法，不適用於一般動詞）", "（缺少助動詞，句構不完整）"]
+          },
+          {
+            "sentence": "She ___ always tired after work, but she never complains.",
+            "options": ["is", "are", "does", "be"],
+            "answer": 0,
+            "explanation": "tired 是形容詞，必須由 be 動詞帶出，主詞 she 是單數要用 is。",
+            "target_grammar": "現在簡單式",
+            "optionsZh": ["（單數be動詞，正確）", "（複數be動詞，主詞不符）", "（一般動詞助動詞，不適用於形容詞）", "（原形be動詞，句構不符）"]
+          },
+          {
+            "sentence": "Why not ___ home and relax since you have a day off?",
+            "options": ["stay", "to stay", "staying", "stayed"],
+            "answer": 0,
+            "explanation": "why not 後面直接接原形動詞，不加 to。",
+            "target_grammar": "現在簡單式",
+            "optionsZh": ["（原形動詞，正確）", "（不定詞，用法不符）", "（動名詞，用法不符）", "（過去式，時態不符）"]
+          },
+          {
+            "sentence": "My uncle ___ a taxi driver.",
+            "options": ["is", "are", "do", "does"],
+            "answer": 0,
+            "explanation": "be動詞用來表達身分，主詞 my uncle 是單數，用 is，不能用一般動詞 do/does。",
+            "target_grammar": "現在簡單式",
+            "optionsZh": ["（單數be動詞，正確）", "（複數be動詞，主詞不符）", "（一般動詞助動詞，不適用於be動詞句）", "（一般動詞助動詞，不適用於be動詞句）"]
+          },
+          {
+            "sentence": "They ___ dinner together at seven every night.",
+            "options": ["has", "have", "having", "had"],
+            "answer": 1,
+            "explanation": "have 表示「有／吃」，主詞 they 是複數，維持原形 have，不加 s。",
+            "target_grammar": "現在簡單式",
+            "optionsZh": ["（第三人稱單數才用has，主詞不符）", "（複數主詞原形動詞，正確）", "（現在分詞，用法不符）", "（過去式，時態不符）"]
+          }
+        ],
+        "cloze": {
+          "title": "Amy's Daily Routine",
+          "passage": "Amy is a hard-working student. She __(1)__ up at six every morning, and she __(2)__ have time to watch TV before school. After school, she always __(3)__ her homework first. On weekends, she usually __(4)__ to the park with her family. Everyone in her family __(5)__ that Amy is very responsible.",
+          "blanks": [
+            {
+              "n": 1,
+              "options": ["get", "gets", "getting", "got"],
+              "answer": 1,
+              "explanation": "主詞 she 是第三人稱單數，get 要改成 gets。",
+              "optionsZh": ["（原形動詞，主詞不符）", "（第三人稱單數現在式，正確）", "（現在分詞，用法不符）", "（過去式，時態不符）"]
+            },
+            {
+              "n": 2,
+              "options": ["don't", "doesn't", "isn't", "not"],
+              "answer": 1,
+              "explanation": "主詞 she 是第三人稱單數，一般動詞否定要用 doesn't。",
+              "optionsZh": ["（複數主詞用don't，主詞不符）", "（單數主詞現在式否定，正確）", "（be動詞用法，不適用於一般動詞）", "（缺少助動詞，句構不完整）"]
+            },
+            {
+              "n": 3,
+              "options": ["do", "does", "did", "doing"],
+              "answer": 1,
+              "explanation": "主詞 she 是第三人稱單數，do 要改成 does。",
+              "optionsZh": ["（原形動詞，主詞不符）", "（第三人稱單數現在式，正確）", "（過去式，時態不符）", "（現在分詞，用法不符）"]
+            },
+            {
+              "n": 4,
+              "options": ["go", "goes", "went", "going"],
+              "answer": 1,
+              "explanation": "主詞 she 是第三人稱單數，go 要改成 goes。",
+              "optionsZh": ["（原形動詞，主詞不符）", "（第三人稱單數現在式，正確）", "（過去式，時態不符）", "（現在分詞，用法不符）"]
+            },
+            {
+              "n": 5,
+              "options": ["know", "knows", "knew", "knowing"],
+              "answer": 1,
+              "explanation": "everyone 視為單數，動詞要用 knows。",
+              "optionsZh": ["（原形動詞，主詞不符）", "（everyone視為單數，正確）", "（過去式，時態不符）", "（現在分詞，用法不符）"]
+            }
+          ]
+        }
+      }
+      },
+      {
+        "id": "1-2",
+        "title": "過去簡單式",
+        "teaching": {
+          "explanation": "<b>核心概念</b><br>過去簡單式用來說「已經發生、已經結束的事」——不管是昨天、上星期，還是很久以前，動作都做完了，跟現在沒有直接關係（這點跟現在完成式不一樣，之後第3章會比較）。<br><br><b>兩種使用情境</b><br>① 過去發生的動作：I watched a movie last night.（我昨晚看了一部電影。）／She called me an hour ago.（她一小時前打給我。）<br>② 過去的習慣（現在已經不做了）：She played the piano when she was young.（她小時候彈鋼琴。）／He smoked before, but he quit.（他以前抽菸，但戒了。）<br><br><b>完整信號詞表</b><br>• yesterday（昨天）、the day before yesterday（前天）<br>• last night/week/month/year（上個…）<br>• 時間＋ago（…之前）：two hours ago、three weeks ago<br>• in＋過去年份：in 1997、in the summer of 2011<br>• before（以前）、the other day（不久前的某一天）<br>• the next morning（隔天早上，指過去某事之後的隔天）<br><br><b>動詞怎麼變化？（含發音規則）</b><br>規則動詞字尾加 -ed：<br>• 一般情況：play → played<br>• 字尾是 e：加 d → like → liked<br>• 子音＋y：去y加ied → study → studied<br>• 短母音+子音結尾（重複字尾）：stop → stopped<br>發音規則（考試常考）：<br>• 字尾是母音或有聲子音：唸 [d] → loved, played<br>• 字尾是無聲子音：唸 [t] → helped, watched<br>• 字尾是 [t]/[d]：唸 [ɪd] → wanted, needed<br>不規則動詞沒有規律，要個別背：go→went、eat→ate、have→had、lose→lost。<br><br><b>完整句型：be動詞 vs 一般動詞</b><br>【be動詞】is/am→was，are→were<br>肯定：She was tired.　否定：She wasn't tired.　疑問：Was she tired? — Yes, she was. / No, she wasn't.<br>【一般動詞】<br>肯定：I played basketball yesterday.　否定：I didn't play basketball.（didn't後面動詞要還原成原形，不能再加ed！）<br>疑問：Did you play basketball? — Yes, I did. / No, I didn't.<br>問句：Why did Helen go out so late?（Wh-＋did＋主詞＋原形動詞）<br><br><b>常見易混淆地雷</b><br>① have/has表示「擁有」沒有進行式，過去式是had，不是haved。<br>② lose、belong、decide這類「狀態動詞」沒有進行式：I lost my key.（不是 I was losing）<br>③ busy、afraid、sure是形容詞，要用was/were帶出：He was afraid.（不是 He afraided.）<br>④ 附屬連接詞（after/when/because）前後兩子句時態要一致：After she finished dinner, she went to bed.<br>⑤ 過去簡單式 vs 現在完成式：過去式講「單純過去發生的事」，現在完成式強調「對現在的影響」，例如 He has told us the story many times.（強調到現在還記得）跟 He told us the story yesterday.（單純描述過去的動作）意思不同。<br>⑥ what 當主詞時，後面直接加動詞：What happened to him?（不需要助動詞did）<br>⑦ who 當主詞時視為單數：Who broke the window?（不是 Who did break）<br>⑧ every 修飾的名詞視為單數：Every student passed the test.",
+          "examples": [
+            { "en": "We went to the beach last summer.", "zh": "我們去年夏天去了海邊。" },
+            { "en": "He didn't finish his homework yesterday.", "zh": "他昨天沒有寫完作業。" },
+            { "en": "Were you at home last night?", "zh": "你昨晚在家嗎？" },
+            { "en": "I bought this bag three days ago.", "zh": "我三天前買了這個包包。" },
+            { "en": "My grandpa was a teacher when he was young.", "zh": "我爺爺年輕時是老師。" },
+            { "en": "What happened to your arm?", "zh": "你的手臂發生什麼事了？" },
+            { "en": "She didn't call me back last night.", "zh": "她昨晚沒有回電給我。" },
+            { "en": "Every student passed the exam last week.", "zh": "上星期每個學生都通過了考試。" }
+          ]
+        },
+        "quiz": {
+        "mc": [
+          {
+            "sentence": "She ___ to Japan last year.",
+            "options": ["go", "goes", "went", "gone"],
+            "answer": 2,
+            "explanation": "go 是不規則動詞，過去式是 went。",
+            "target_grammar": "過去簡單式",
+            "optionsZh": ["（原形動詞，時態不符）", "（現在式，時態不符）", "（不規則動詞過去式，正確）", "（過去分詞，用法不符）"]
+          },
+          {
+            "sentence": "___ you finish your report last night?",
+            "options": ["Do", "Did", "Does", "Were"],
+            "answer": 1,
+            "explanation": "過去簡單式的疑問句要用 Did + 原形動詞。",
+            "target_grammar": "過去簡單式",
+            "optionsZh": ["（現在式疑問句，時態不符）", "（過去式疑問句，正確）", "（現在式疑問句，時態不符）", "（be動詞用法，不適用於一般動詞）"]
+          },
+          {
+            "sentence": "I ___ see you at the party yesterday.",
+            "options": ["don't", "didn't", "doesn't", "not"],
+            "answer": 1,
+            "explanation": "過去式的否定句要用 didn't + 原形動詞。",
+            "target_grammar": "過去簡單式",
+            "optionsZh": ["（現在式否定，時態不符）", "（過去式否定，正確）", "（現在式否定，時態不符）", "（缺少助動詞，句構不完整）"]
+          },
+          {
+            "sentence": "They ___ very tired after the long trip.",
+            "options": ["was", "is", "were", "are"],
+            "answer": 2,
+            "explanation": "主詞 they 是複數，be動詞的過去式要用 were。",
+            "target_grammar": "過去簡單式",
+            "optionsZh": ["（單數過去式，主詞不符）", "（單數現在式，時態不符）", "（複數過去式，正確）", "（複數現在式，時態不符）"]
+          },
+          {
+            "sentence": "My sister ___ her keys somewhere yesterday.",
+            "options": ["lose", "loses", "lost", "losing"],
+            "answer": 2,
+            "explanation": "lose 是不規則動詞，過去式是 lost。",
+            "target_grammar": "過去簡單式",
+            "optionsZh": ["（原形動詞，時態不符）", "（現在式，時態不符）", "（不規則動詞過去式，正確）", "（現在分詞，用法不符）"]
+          },
+          {
+            "sentence": "___ happened to your bike? It looks broken.",
+            "options": ["What", "What did", "What does", "How"],
+            "answer": 0,
+            "explanation": "what 當主詞時，後面直接加動詞，不需要 did。",
+            "target_grammar": "過去簡單式",
+            "optionsZh": ["（what當主詞直接接動詞，正確）", "（多加助動詞did，句構錯誤）", "（時態不符，且多加助動詞）", "（疑問詞不符，應問事件而非方式）"]
+          },
+          {
+            "sentence": "He ___ afraid of the dark when he was a little boy.",
+            "options": ["is", "was", "did", "afraid"],
+            "answer": 1,
+            "explanation": "afraid 是形容詞，須由 be 動詞帶出，此句為過去式情境（when he was a little boy），所以用 was。",
+            "target_grammar": "過去簡單式",
+            "optionsZh": ["（現在式be動詞，時態不符）", "（過去式be動詞，正確）", "（一般動詞助動詞，不適用於形容詞）", "（缺少be動詞，句構不完整）"]
+          },
+          {
+            "sentence": "After she ___ dinner, she went straight to bed.",
+            "options": ["finishes", "finish", "finished", "will finish"],
+            "answer": 2,
+            "explanation": "after 連接的兩個子句時態要一致，主要子句 went 是過去式，所以 after 子句也要用過去式 finished。",
+            "target_grammar": "過去簡單式",
+            "optionsZh": ["（現在式，時態不一致）", "（原形動詞，時態不符）", "（過去式，前後一致，正確）", "（未來式，時態不一致）"]
+          },
+          {
+            "sentence": "My grandmother ___ born in 1950.",
+            "options": ["is", "was", "were", "be"],
+            "answer": 1,
+            "explanation": "主詞 my grandmother 是單數，be動詞的過去式要用 was。",
+            "target_grammar": "過去簡單式",
+            "optionsZh": ["（現在式單數，時態不符）", "（過去式單數，正確）", "（過去式複數，主詞不符）", "（原形be動詞，句構不符）"]
+          },
+          {
+            "sentence": "___ they arrive on time yesterday?",
+            "options": ["Do", "Does", "Did", "Were"],
+            "answer": 2,
+            "explanation": "arrive 是一般動詞，過去簡單式疑問句要用 Did + 原形動詞，不能用 be動詞 Were。",
+            "target_grammar": "過去簡單式",
+            "optionsZh": ["（現在式疑問句，時態不符）", "（現在式疑問句，時態不符）", "（過去式疑問句，一般動詞用Did，正確）", "（be動詞疑問句，不適用於一般動詞）"]
+          }
+        ],
+        "cloze": {
+          "title": "A Trip to the Beach",
+          "passage": "Last summer, my family __(1)__ to the beach. We __(2)__ up early and __(3)__ a big breakfast before we left. When we arrived, the weather __(4)__ perfect for swimming. Everyone __(5)__ happy about the trip, and we didn't want to go home.",
+          "blanks": [
+            {
+              "n": 1,
+              "options": ["go", "goes", "went", "gone"],
+              "answer": 2,
+              "explanation": "go 是不規則動詞，過去式是 went。",
+              "optionsZh": ["（原形動詞，時態不符）", "（現在式，時態不符）", "（不規則動詞過去式，正確）", "（過去分詞，用法不符）"]
+            },
+            {
+              "n": 2,
+              "options": ["wake", "wakes", "woke", "waking"],
+              "answer": 2,
+              "explanation": "wake 是不規則動詞，過去式是 woke。",
+              "optionsZh": ["（原形動詞，時態不符）", "（現在式，時態不符）", "（不規則動詞過去式，正確）", "（現在分詞，用法不符）"]
+            },
+            {
+              "n": 3,
+              "options": ["have", "has", "had", "having"],
+              "answer": 2,
+              "explanation": "have 是不規則動詞，過去式是 had。",
+              "optionsZh": ["（原形動詞，時態不符）", "（現在式，時態不符）", "（不規則動詞過去式，正確）", "（現在分詞，用法不符）"]
+            },
+            {
+              "n": 4,
+              "options": ["is", "was", "were", "be"],
+              "answer": 1,
+              "explanation": "weather 是不可數名詞，視為單數，be動詞過去式用 was。",
+              "optionsZh": ["（現在式單數，時態不符）", "（過去式單數，正確）", "（過去式複數，主詞不符）", "（原形be動詞，句構不符）"]
+            },
+            {
+              "n": 5,
+              "options": ["is", "are", "was", "were"],
+              "answer": 2,
+              "explanation": "everyone 視為單數，be動詞過去式用 was。",
+              "optionsZh": ["（現在式單數，時態不符）", "（現在式複數，時態不符）", "（過去式單數，正確）", "（過去式複數，主詞不符）"]
+            }
+          ]
+        }
+      }
+      }
     ]
   },
   "2": {
