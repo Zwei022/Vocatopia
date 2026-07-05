@@ -7817,14 +7817,650 @@
       {
         "id": "7-7",
         "title": "多個形容詞共同修飾同一名詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>形容詞排列的固定順序</b><br>冠詞/指示形容詞/所有格 → 數量形容詞 → 主觀評價 → 大小 → 長短 → 客觀衡量（新舊/軟硬/快慢） → 顏色 → 材質 → 名詞。例如：my two beautiful small long new white silk scarves（我的兩條漂亮的、小小的、長長的、新的、白色的絲質圍巾——雖然實際上不會塞這麼多形容詞，但這是完整的排列邏輯）。<br><br><b>性狀形容詞之間可以不加逗點</b><br>大小、長短、屬性這類形容詞放在一起，通常可以不加逗點直接排列：a tall and cute daughter（也可以說a tall, cute daughter，但用逗點時最後兩個形容詞要用and連接）。<br><br><b>短的形容詞放前面，讀起來比較順</b><br>如果同一種類的形容詞一起出現，把音節較短的放在較長的前面：a good young man（不說a young good man，雖然文法上都對，但good young man讀起來更順）。<br><br><b>易混淆重點</b><br>① 排列順序不是死板規則，而是「讀起來自然」的慣例，考試常考的是「評價形容詞永遠在大小/新舊形容詞前面」這條規則，比如beautiful必須在small前面。<br>② 顏色形容詞幾乎都緊貼在名詞或材質形容詞前面，很少放在句子的最前面。",
+          "examples": [
+            {
+              "en": "She bought a beautiful small wooden jewelry box.",
+              "zh": "她買了一個漂亮的小木製珠寶盒。"
+            },
+            {
+              "en": "He has two lovely old dogs that follow him everywhere.",
+              "zh": "他有兩隻可愛的老狗，到哪都跟著他。"
+            },
+            {
+              "en": "I want to buy a comfortable long black winter coat.",
+              "zh": "我想買一件舒服的長版黑色冬季大衣。"
+            },
+            {
+              "en": "That is a big and tall building near the station.",
+              "zh": "那是車站附近一棟又大又高的建築物。"
+            },
+            {
+              "en": "My grandmother has a beautiful antique silver necklace.",
+              "zh": "我奶奶有一條漂亮的古董銀項鍊。"
+            },
+            {
+              "en": "We saw a strange small round object in the sky.",
+              "zh": "我們看到天空中有個奇怪的小圓形物體。"
+            },
+            {
+              "en": "She wore a simple white cotton dress to the party.",
+              "zh": "她穿了一件簡單的白色棉質洋裝去派對。"
+            },
+            {
+              "en": "This is a fascinating new science book for kids.",
+              "zh": "這是一本給孩子看的有趣的新科學書。"
+            },
+            {
+              "en": "He drives an expensive fast red sports car.",
+              "zh": "他開一輛昂貴的紅色跑車。"
+            },
+            {
+              "en": "They live in a cozy small brick house downtown.",
+              "zh": "他們住在市中心一間舒適的小磚房裡。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "She is wearing a ___ dress today.",
+              "options": [
+                "red beautiful",
+                "beautiful red",
+                "red new beautiful",
+                "beautiful new red"
+              ],
+              "answer": 3,
+              "explanation": "排列順序：主觀評價（beautiful）→客觀衡量（new）→顏色（red），依此順序排列。",
+              "target_grammar": "形容詞排列順序",
+              "optionsZh": [
+                "（順序錯誤，評價形容詞應放在顏色前面）",
+                "（缺少new，且順序部分正確但不完整）",
+                "（順序錯誤，評價形容詞beautiful應放在最前面）",
+                "（正確，評價→新舊→顏色的排列順序）"
+              ]
+            },
+            {
+              "sentence": "He bought a ___ table for his new apartment.",
+              "options": [
+                "wooden small round",
+                "small round wooden",
+                "round small wooden",
+                "wooden round small"
+              ],
+              "answer": 1,
+              "explanation": "排列順序：大小（small）→長短/形狀（round）→材質（wooden），依此順序排列。",
+              "target_grammar": "形容詞排列順序",
+              "optionsZh": [
+                "（順序錯誤，材質應放在最後）",
+                "（正確，大小→形狀→材質的排列順序）",
+                "（順序錯誤，大小應放在形狀前面）",
+                "（順序錯誤，材質應放在最後）"
+              ]
+            },
+            {
+              "sentence": "My aunt has ___ hair that everyone admires.",
+              "options": [
+                "long beautiful",
+                "beautiful long",
+                "long black beautiful",
+                "beautiful long black"
+              ],
+              "answer": 3,
+              "explanation": "排列順序：主觀評價（beautiful）→長短（long）→顏色（black），依此順序排列。",
+              "target_grammar": "形容詞排列順序",
+              "optionsZh": [
+                "（缺少顏色，且順序不完整）",
+                "（順序錯誤，評價形容詞應放在長短前面）",
+                "（順序錯誤，評價形容詞beautiful應放在最前面）",
+                "（正確，評價→長短→顏色的排列順序）"
+              ]
+            },
+            {
+              "sentence": "This is a ___ car that I saw at the show.",
+              "options": [
+                "fast expensive",
+                "expensive fast",
+                "fast red expensive",
+                "expensive fast red"
+              ],
+              "answer": 3,
+              "explanation": "排列順序：主觀評價（expensive）→客觀衡量（fast）→顏色（red），依此順序排列。",
+              "target_grammar": "形容詞排列順序",
+              "optionsZh": [
+                "（缺少顏色，且順序不完整）",
+                "（缺少顏色，順序正確但不完整）",
+                "（順序錯誤，評價形容詞expensive應放在最前面）",
+                "（正確，評價→速度→顏色的排列順序）"
+              ]
+            },
+            {
+              "sentence": "We stayed in a ___ hotel during our trip.",
+              "options": [
+                "cozy old small",
+                "small old cozy",
+                "cozy small old",
+                "small cozy old"
+              ],
+              "answer": 2,
+              "explanation": "排列順序：主觀評價（cozy）→大小（small）→客觀衡量新舊（old），依此順序排列。",
+              "target_grammar": "形容詞排列順序",
+              "optionsZh": [
+                "（順序錯誤，大小應放在評價和新舊之間）",
+                "（順序錯誤，評價形容詞cozy應放在最前面）",
+                "（正確，評價→大小→新舊的排列順序）",
+                "（順序錯誤，評價形容詞cozy應放在最前面）"
+              ]
+            },
+            {
+              "sentence": "They live in a ___ house at the end of the street.",
+              "options": [
+                "brick lovely small",
+                "small lovely brick",
+                "lovely small brick",
+                "brick small lovely"
+              ],
+              "answer": 2,
+              "explanation": "排列順序：主觀評價（lovely）→大小（small）→材質（brick），依此順序排列。",
+              "target_grammar": "形容詞排列順序",
+              "optionsZh": [
+                "（順序錯誤，材質應放在最後）",
+                "（順序錯誤，評價形容詞lovely應放在最前面）",
+                "（正確，評價→大小→材質的排列順序）",
+                "（順序錯誤，材質應放在最後）"
+              ]
+            },
+            {
+              "sentence": "I found a ___ toy under the bed.",
+              "options": [
+                "broken old small",
+                "small old broken",
+                "old broken small",
+                "broken small old"
+              ],
+              "answer": 1,
+              "explanation": "排列順序：大小（small）→客觀衡量新舊（old）→狀態（broken，性狀形容詞放接近名詞處），此處以small old broken為標準排列。",
+              "target_grammar": "形容詞排列順序",
+              "optionsZh": [
+                "（順序錯誤，狀態形容詞broken通常較貼近名詞放在最後）",
+                "（正確，大小→新舊→狀態的排列順序）",
+                "（順序錯誤，大小應放在最前面）",
+                "（順序錯誤，大小應放在最前面）"
+              ]
+            },
+            {
+              "sentence": "She gave me a ___ scarf for my birthday.",
+              "options": [
+                "silk beautiful long",
+                "long beautiful silk",
+                "beautiful long silk",
+                "beautiful silk long"
+              ],
+              "answer": 2,
+              "explanation": "排列順序：主觀評價（beautiful）→長短（long）→材質（silk），依此順序排列。",
+              "target_grammar": "形容詞排列順序",
+              "optionsZh": [
+                "（順序錯誤，材質應放在最後）",
+                "（順序錯誤，評價形容詞beautiful應放在最前面）",
+                "（正確，評價→長短→材質的排列順序）",
+                "（順序錯誤，材質應放在最後）"
+              ]
+            },
+            {
+              "sentence": "He wore a ___ coat to the winter party.",
+              "options": [
+                "warm black long",
+                "long black warm",
+                "long warm black",
+                "warm long black"
+              ],
+              "answer": 3,
+              "explanation": "排列順序：主觀評價（warm）→長短（long）→顏色（black），依此順序排列。",
+              "target_grammar": "形容詞排列順序",
+              "optionsZh": [
+                "（順序錯誤，長短應在評價和顏色之間）",
+                "（順序錯誤，評價形容詞warm應放在最前面）",
+                "（順序錯誤，評價形容詞warm應放在最前面）",
+                "（正確，評價→長短→顏色的排列順序）"
+              ]
+            },
+            {
+              "sentence": "This museum has a collection of ___ pottery.",
+              "options": [
+                "ancient beautiful Chinese",
+                "beautiful ancient Chinese",
+                "Chinese beautiful ancient",
+                "beautiful Chinese ancient"
+              ],
+              "answer": 1,
+              "explanation": "排列順序：主觀評價（beautiful）→客觀衡量新舊（ancient）→出處/材質（Chinese），依此順序排列。",
+              "target_grammar": "形容詞排列順序",
+              "optionsZh": [
+                "（順序錯誤，評價形容詞beautiful應放在最前面）",
+                "（正確，評價→新舊→出處的排列順序）",
+                "（順序錯誤，出處形容詞Chinese應放在最後）",
+                "（順序錯誤，新舊形容詞ancient應在評價和出處之間）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "My Grandmother's Treasure Box",
+            "passage": "My grandmother keeps a __(1)__ box in her bedroom that holds her most precious memories. Inside, there is a __(2)__ necklace that her mother gave her many years ago. She also has a __(3)__ photo of her wedding day, carefully placed in a frame. My favorite item is a __(4)__ letter written by my grandfather when they were young. Every time I visit, she shows me these treasures and tells me __(5)__ stories about her life.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "wooden beautiful small",
+                  "small beautiful wooden",
+                  "beautiful small wooden",
+                  "wooden small beautiful"
+                ],
+                "answer": 2,
+                "explanation": "排列順序：主觀評價（beautiful）→大小（small）→材質（wooden），依此順序排列。",
+                "optionsZh": [
+                  "（順序錯誤，材質應放在最後）",
+                  "（順序錯誤，評價形容詞beautiful應放在最前面）",
+                  "（正確，評價→大小→材質的排列順序）",
+                  "（順序錯誤，材質應放在最後）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "silver beautiful old",
+                  "beautiful old silver",
+                  "old beautiful silver",
+                  "silver old beautiful"
+                ],
+                "answer": 1,
+                "explanation": "排列順序：主觀評價（beautiful）→客觀衡量新舊（old）→材質（silver），依此順序排列。",
+                "optionsZh": [
+                  "（順序錯誤，材質應放在最後）",
+                  "（正確，評價→新舊→材質的排列順序）",
+                  "（順序錯誤，評價形容詞beautiful應放在最前面）",
+                  "（順序錯誤，材質應放在最後）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "old beautiful small",
+                  "beautiful small old",
+                  "small beautiful old",
+                  "beautiful old small"
+                ],
+                "answer": 2,
+                "explanation": "排列順序：大小（small）→主觀評價（beautiful）在此語境中可視為並列，但依標準排列大小應在評價之前，此處以small beautiful old為準（大小→評價→新舊）。",
+                "optionsZh": [
+                  "（順序錯誤，評價形容詞應在新舊前面，且大小應放最前）",
+                  "（順序錯誤，大小形容詞small應放在最前面）",
+                  "（正確，大小→評價→新舊的排列順序）",
+                  "（順序錯誤，大小形容詞small應放在最前面）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "old touching short",
+                  "short touching old",
+                  "touching short old",
+                  "touching old short"
+                ],
+                "answer": 2,
+                "explanation": "排列順序：主觀評價（touching）→長短（short）→客觀衡量新舊（old），依此順序排列。",
+                "optionsZh": [
+                  "（順序錯誤，評價形容詞touching應放在最前面）",
+                  "（順序錯誤，評價形容詞touching應放在最前面）",
+                  "（正確，評價→長短→新舊的排列順序）",
+                  "（順序錯誤，長短形容詞short應在新舊之前）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "interesting many old",
+                  "many interesting old",
+                  "old many interesting",
+                  "many old interesting"
+                ],
+                "answer": 1,
+                "explanation": "排列順序：數量形容詞（many）→主觀評價（interesting）→客觀衡量新舊（old），依此順序排列。",
+                "optionsZh": [
+                  "（順序錯誤，數量形容詞many應放在最前面）",
+                  "（正確，數量→評價→新舊的排列順序）",
+                  "（順序錯誤，數量形容詞many應放在最前面）",
+                  "（順序錯誤，評價形容詞interesting應在新舊之前）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "7-8",
         "title": "形容詞字詞的後位修飾",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>複合不定代名詞一定要用後位修飾</b><br>no-、some-、any-、every-加上one、body、thing、where所組成的字（anyone、something、nowhere等）都是單數，修飾這些字的形容詞一定要放在後面：Anyone smart won't do that. / Mary likes everything beautiful.<br><br><b>else也放在名詞後面</b><br>else「其他的」放在這些複合詞或疑問詞後面：anyone else（任何其他人）、what else（還有什麼）、somewhere else（其他地方）。<br><br><b>易混淆重點</b><br>① 這種後位修飾只限「複合不定代名詞」（something、anyone等），一般名詞（如boy、book）還是用一般的前位修飾規則（詳見7-7）。<br>② else前面常接疑問詞或不定代名詞，不會單獨使用：不能只說I saw else，要說I didn't see anyone else。",
+          "examples": [
+            {
+              "en": "Is there anything interesting happening this weekend?",
+              "zh": "這個週末有什麼有趣的事情發生嗎？"
+            },
+            {
+              "en": "I don't know anyone else who can help us.",
+              "zh": "我不認識任何其他能幫我們的人。"
+            },
+            {
+              "en": "She wants nothing expensive for her birthday.",
+              "zh": "她生日不想要任何昂貴的東西。"
+            },
+            {
+              "en": "Is there somewhere quiet we can talk?",
+              "zh": "有沒有什麼安靜的地方我們可以聊聊？"
+            },
+            {
+              "en": "Everyone smart knows how to manage their time.",
+              "zh": "每個聰明的人都知道怎麼管理時間。"
+            },
+            {
+              "en": "What else do you need before we leave?",
+              "zh": "我們出發前你還需要什麼？"
+            },
+            {
+              "en": "I want to try something different this time.",
+              "zh": "這次我想試試不一樣的東西。"
+            },
+            {
+              "en": "Nobody else understood the joke except me.",
+              "zh": "除了我以外沒有其他人聽懂那個笑話。"
+            },
+            {
+              "en": "Is anyone here familiar with this software?",
+              "zh": "這裡有沒有人熟悉這套軟體？"
+            },
+            {
+              "en": "Let's go somewhere new for dinner tonight.",
+              "zh": "我們今晚去個新地方吃晚餐吧。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "Did ___ happen at the meeting yesterday?",
+              "options": [
+                "interesting anything",
+                "anything interesting",
+                "anything's interesting",
+                "interesting's anything"
+              ],
+              "answer": 1,
+              "explanation": "anything是複合不定代名詞，修飾它的形容詞interesting要放在後面。",
+              "target_grammar": "形容詞後位修飾",
+              "optionsZh": [
+                "（順序錯誤，形容詞應放在anything後面）",
+                "（正確，anything+形容詞的後位修飾）",
+                "（非正確英文形式）",
+                "（非正確英文形式）"
+              ]
+            },
+            {
+              "sentence": "I don't think ___ can solve this problem as fast as she can.",
+              "options": [
+                "smart anyone",
+                "anyone smart",
+                "anyone's smart",
+                "smart's anyone"
+              ],
+              "answer": 1,
+              "explanation": "anyone是複合不定代名詞，修飾它的形容詞smart要放在後面。",
+              "target_grammar": "形容詞後位修飾",
+              "optionsZh": [
+                "（順序錯誤，形容詞應放在anyone後面）",
+                "（正確，anyone+形容詞的後位修飾）",
+                "（非正確英文形式）",
+                "（非正確英文形式）"
+              ]
+            },
+            {
+              "sentence": "Is there ___ we can talk without being interrupted?",
+              "options": [
+                "quiet somewhere",
+                "somewhere quiet",
+                "somewhere's quiet",
+                "quiet's somewhere"
+              ],
+              "answer": 1,
+              "explanation": "somewhere是複合不定代名詞，修飾它的形容詞quiet要放在後面。",
+              "target_grammar": "形容詞後位修飾",
+              "optionsZh": [
+                "（順序錯誤，形容詞應放在somewhere後面）",
+                "（正確，somewhere+形容詞的後位修飾）",
+                "（非正確英文形式）",
+                "（非正確英文形式）"
+              ]
+            },
+            {
+              "sentence": "___ do you need before we head out?",
+              "options": [
+                "What else",
+                "Else what",
+                "What's else",
+                "Else's what"
+              ],
+              "answer": 0,
+              "explanation": "else放在疑問詞what後面，what else是固定用法。",
+              "target_grammar": "形容詞後位修飾",
+              "optionsZh": [
+                "（正確，what else為固定用法）",
+                "（順序錯誤，else應放在what後面）",
+                "（非正確英文形式）",
+                "（非正確英文形式）"
+              ]
+            },
+            {
+              "sentence": "Nobody ___ knew about the surprise party except my sister.",
+              "options": [
+                "else",
+                "other",
+                "another",
+                "others"
+              ],
+              "answer": 0,
+              "explanation": "nobody else「沒有其他人」，else放在複合不定代名詞nobody後面。",
+              "target_grammar": "形容詞後位修飾",
+              "optionsZh": [
+                "（正確，nobody else為固定用法）",
+                "（other為形容詞，需接複數名詞，不符此處nobody的結構）",
+                "（another表示另一個，此處不符「其他人」的語境）",
+                "（others為代名詞，不與nobody連用）"
+              ]
+            },
+            {
+              "sentence": "She always wants ___ for her birthday.",
+              "options": [
+                "expensive something",
+                "something expensive",
+                "something's expensive",
+                "expensive's something"
+              ],
+              "answer": 1,
+              "explanation": "something是複合不定代名詞，修飾它的形容詞expensive要放在後面。",
+              "target_grammar": "形容詞後位修飾",
+              "optionsZh": [
+                "（順序錯誤，形容詞應放在something後面）",
+                "（正確，something+形容詞的後位修飾）",
+                "（非正確英文形式）",
+                "（非正確英文形式）"
+              ]
+            },
+            {
+              "sentence": "I looked everywhere but couldn't find ___ to sit.",
+              "options": [
+                "comfortable anywhere",
+                "anywhere comfortable",
+                "anywhere's comfortable",
+                "comfortable's anywhere"
+              ],
+              "answer": 1,
+              "explanation": "anywhere是複合不定代名詞，修飾它的形容詞comfortable要放在後面。",
+              "target_grammar": "形容詞後位修飾",
+              "optionsZh": [
+                "（順序錯誤，形容詞應放在anywhere後面）",
+                "（正確，anywhere+形容詞的後位修飾）",
+                "（非正確英文形式）",
+                "（非正確英文形式）"
+              ]
+            },
+            {
+              "sentence": "Is there ___ who can translate this document for us?",
+              "options": [
+                "anyone else",
+                "else anyone",
+                "anyone's else",
+                "else's anyone"
+              ],
+              "answer": 0,
+              "explanation": "anyone else「任何其他人」，else放在複合不定代名詞anyone後面。",
+              "target_grammar": "形容詞後位修飾",
+              "optionsZh": [
+                "（正確，anyone else為固定用法）",
+                "（順序錯誤，else應放在anyone後面）",
+                "（非正確英文形式）",
+                "（非正確英文形式）"
+              ]
+            },
+            {
+              "sentence": "The Chens couldn't afford ___ this month.",
+              "options": [
+                "anything expensive",
+                "expensive anything",
+                "anything's expensive",
+                "expensive's anything"
+              ],
+              "answer": 0,
+              "explanation": "anything是複合不定代名詞，修飾它的形容詞expensive要放在後面。",
+              "target_grammar": "形容詞後位修飾",
+              "optionsZh": [
+                "（正確，anything+形容詞的後位修飾）",
+                "（順序錯誤，形容詞應放在anything後面）",
+                "（非正確英文形式）",
+                "（非正確英文形式）"
+              ]
+            },
+            {
+              "sentence": "We should try ___ for a change this weekend.",
+              "options": [
+                "new something",
+                "something new",
+                "something's new",
+                "new's something"
+              ],
+              "answer": 1,
+              "explanation": "something是複合不定代名詞，修飾它的形容詞new要放在後面。",
+              "target_grammar": "形容詞後位修飾",
+              "optionsZh": [
+                "（順序錯誤，形容詞應放在something後面）",
+                "（正確，something+形容詞的後位修飾）",
+                "（非正確英文形式）",
+                "（非正確英文形式）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "Looking for Something New",
+            "passage": "Last weekend, my friends and I wanted to try __(1)__ for lunch instead of our usual fast food. We asked around, but nobody __(2)__ knew a good restaurant nearby. Finally, we found __(3)__ quiet just a few blocks away that served amazing noodles. While eating, we talked about doing __(4)__ interesting next weekend, maybe a hiking trip. Before we left, I asked the waiter if there was __(5)__ we should try from the dessert menu.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "different something",
+                  "something different",
+                  "something's different",
+                  "different's something"
+                ],
+                "answer": 1,
+                "explanation": "something是複合不定代名詞，修飾它的形容詞different要放在後面。",
+                "optionsZh": [
+                  "（順序錯誤，形容詞應放在something後面）",
+                  "（正確，something+形容詞的後位修飾）",
+                  "（非正確英文形式）",
+                  "（非正確英文形式）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "other",
+                  "else",
+                  "another",
+                  "others"
+                ],
+                "answer": 1,
+                "explanation": "nobody else「沒有其他人」，else放在複合不定代名詞nobody後面。",
+                "optionsZh": [
+                  "（other為形容詞，需接複數名詞，不符此處nobody的結構）",
+                  "（正確，nobody else為固定用法）",
+                  "（another表示另一個，此處不符「其他人」的語境）",
+                  "（others為代名詞，不與nobody連用）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "quiet somewhere",
+                  "somewhere quiet",
+                  "somewhere's quiet",
+                  "quiet's somewhere"
+                ],
+                "answer": 1,
+                "explanation": "somewhere是複合不定代名詞，修飾它的形容詞quiet要放在後面。",
+                "optionsZh": [
+                  "（順序錯誤，形容詞應放在somewhere後面）",
+                  "（正確，somewhere+形容詞的後位修飾）",
+                  "（非正確英文形式）",
+                  "（非正確英文形式）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "interesting something",
+                  "something interesting",
+                  "something's interesting",
+                  "interesting's something"
+                ],
+                "answer": 1,
+                "explanation": "something是複合不定代名詞，修飾它的形容詞interesting要放在後面。",
+                "optionsZh": [
+                  "（順序錯誤，形容詞應放在something後面）",
+                  "（正確，something+形容詞的後位修飾）",
+                  "（非正確英文形式）",
+                  "（非正確英文形式）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "special anything",
+                  "anything special",
+                  "anything's special",
+                  "special's anything"
+                ],
+                "answer": 1,
+                "explanation": "anything是複合不定代名詞，修飾它的形容詞special要放在後面。",
+                "optionsZh": [
+                  "（順序錯誤，形容詞應放在anything後面）",
+                  "（正確，anything+形容詞的後位修飾）",
+                  "（非正確英文形式）",
+                  "（非正確英文形式）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "7-9",
