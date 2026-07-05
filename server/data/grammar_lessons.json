@@ -6823,20 +6823,974 @@
       {
         "id": "9-1",
         "title": "形容詞的比較級",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>什麼時候用比較級</b><br>兩者做比較時使用，句中通常會出現than。只要句中有than，一定是比較級（不管句子裡有多少人事物）。<br><br><b>規則變化</b><br>單音節字尾加er：fast→faster；字尾e加r：nice→nicer；短母音+子音重複字尾：big→bigger；子音+y去y加ier：happy→happier；兩音節以上前面加more/less：comfortable→more comfortable。<br><br><b>不規則變化</b><br>good/well→better；bad/ill→worse；many/much→more；little→less（注意：few→fewer，few本身已是「少」的意思，比較級用fewer不是lesser）。<br><br><b>基本句構</b><br>A+be+比較級+than+B(+be)：He is taller than his father (is).<br><br><b>「其他」的概念要注意</b><br>如果主詞跟「同一個範圍」的人事物做比較，而主詞本身也屬於這個範圍，就要用「其他」的概念，把主詞排除在外，不然會自己跟自己比。錯誤：I am smarter than the students in my class.（我也是班上學生之一，等於拿自己跟包含自己的一群人比）。正確：I am smarter than all the other students in my class.／than any other student in my class.／than everyone else.<br><br><b>劣等比較（比較不…）</b><br>用less+原級+than，表示比較差：John is less smart than Kim. = Kim is smarter than John.<br><br><b>強調比較的差距</b><br>much、far、a lot、even（多了很多）；a little、a bit（一點點）；也可以寫出具體數字：John is five years older than I. / Tom is three times heavier than you.（是你的三倍重）。注意：程度副詞too、so、very、quite不能修飾比較級，只能修飾原級。<br><br><b>同類比較</b><br>than前後比較的對象詞性、邏輯範圍要一致：My hair is longer than your hair.（不能說longer than your car，頭髮不能跟車子比長度）。<br><br><b>特殊比較級要記住</b><br>old→older（年紀較老）/elder（較年長，通常指家人排行）；far→farther（距離更遠）/further（程度上更進一步）；late→later（時間較晚）/latter（次序較後）。",
+          "examples": [
+            {
+              "en": "This backpack is heavier than that one.",
+              "zh": "這個背包比那個重。"
+            },
+            {
+              "en": "My brother is taller than all the other boys in his class.",
+              "zh": "我哥哥比他班上所有其他男生都高。"
+            },
+            {
+              "en": "This exam was much easier than the last one.",
+              "zh": "這次考試比上次簡單多了。"
+            },
+            {
+              "en": "She is three years younger than her sister.",
+              "zh": "她比她姐姐小三歲。"
+            },
+            {
+              "en": "The blue shirt is less expensive than the red one.",
+              "zh": "藍色的襯衫比紅色的便宜。"
+            },
+            {
+              "en": "No other player on the team runs faster than Kevin.",
+              "zh": "隊上沒有其他球員跑得比Kevin快。"
+            },
+            {
+              "en": "This coffee tastes better than the one I made yesterday.",
+              "zh": "這杯咖啡比我昨天泡的還好喝。"
+            },
+            {
+              "en": "His new phone is twice as expensive as mine.",
+              "zh": "他的新手機是我的兩倍貴。"
+            },
+            {
+              "en": "The weather today is far colder than yesterday.",
+              "zh": "今天的天氣比昨天冷多了。"
+            },
+            {
+              "en": "Reading is more relaxing to me than watching TV.",
+              "zh": "對我來說，閱讀比看電視更放鬆。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "This lake is ___ than that one.",
+              "options": [
+                "deep",
+                "deeper",
+                "the deepest",
+                "more deep"
+              ],
+              "answer": 1,
+              "explanation": "單音節形容詞deep的比較級加er，變成deeper。",
+              "target_grammar": "形容詞比較級",
+              "optionsZh": [
+                "（原級，句中有than需用比較級）",
+                "（正確，單音節加er）",
+                "（最高級用法，此處只比較兩者）",
+                "（單音節不用more，直接加er）"
+              ]
+            },
+            {
+              "sentence": "Lucy is smarter than ___ in her class.",
+              "options": [
+                "everyone",
+                "everyone else",
+                "the students",
+                "all students"
+              ],
+              "answer": 1,
+              "explanation": "Lucy本身也是班上學生之一，要用「其他」的概念everyone else排除自己。",
+              "target_grammar": "形容詞比較級",
+              "optionsZh": [
+                "（沒有排除Lucy自己，會產生矛盾）",
+                "（正確，everyone else排除主詞自己）",
+                "（沒有排除Lucy自己，會自相矛盾）",
+                "（沒有排除Lucy自己，會自相矛盾）"
+              ]
+            },
+            {
+              "sentence": "This shirt is ___ than that one, so I'll buy the other one instead.",
+              "options": [
+                "less nice",
+                "more less nice",
+                "less nicer",
+                "nicer less"
+              ],
+              "answer": 0,
+              "explanation": "劣等比較用less+原級，不可用less再加比較級nicer（重複比較）。",
+              "target_grammar": "形容詞比較級",
+              "optionsZh": [
+                "（正確，less+原級表示劣等比較）",
+                "（重複使用比較概念，錯誤）",
+                "（less不可與比較級nicer連用）",
+                "（語序錯誤）"
+              ]
+            },
+            {
+              "sentence": "My grandfather is ten years ___ than my grandmother.",
+              "options": [
+                "old",
+                "older",
+                "oldest",
+                "more old"
+              ],
+              "answer": 1,
+              "explanation": "具體數字+比較級，表示差距：ten years older。",
+              "target_grammar": "形容詞比較級",
+              "optionsZh": [
+                "（原級不符than句構）",
+                "（正確，具體數字+比較級表示差距）",
+                "（最高級用法不符兩者比較）",
+                "（單音節不用more）"
+              ]
+            },
+            {
+              "sentence": "This car is ___ expensive than I expected.",
+              "options": [
+                "very",
+                "so",
+                "much",
+                "quite"
+              ],
+              "answer": 2,
+              "explanation": "程度副詞much可以修飾比較級，表示「…多了」；very、so、quite只能修飾原級，不能修飾比較級。",
+              "target_grammar": "形容詞比較級",
+              "optionsZh": [
+                "（very不可修飾比較級）",
+                "（so不可修飾比較級）",
+                "（正確，much可修飾比較級）",
+                "（quite不可修飾比較級）"
+              ]
+            },
+            {
+              "sentence": "Her apartment is much ___ than mine.",
+              "options": [
+                "big",
+                "bigger",
+                "biggest",
+                "more big"
+              ],
+              "answer": 1,
+              "explanation": "句中有than，要用比較級bigger。",
+              "target_grammar": "形容詞比較級",
+              "optionsZh": [
+                "（原級不符than句構）",
+                "（正確，短母音+子音重複字尾）",
+                "（最高級不符兩者比較）",
+                "（單音節不用more，直接加er）"
+              ]
+            },
+            {
+              "sentence": "This problem is ___ than the one we solved yesterday.",
+              "options": [
+                "more difficult",
+                "difficulter",
+                "most difficult",
+                "difficult more"
+              ],
+              "answer": 0,
+              "explanation": "兩音節以上的形容詞difficult比較級要用more，不能字尾加er。",
+              "target_grammar": "形容詞比較級",
+              "optionsZh": [
+                "（正確，兩音節以上用more）",
+                "（不可直接加er，非正確用法）",
+                "（最高級不符兩者比較）",
+                "（語序錯誤）"
+              ]
+            },
+            {
+              "sentence": "This book is not as interesting ___ the last one.",
+              "options": [
+                "as",
+                "than",
+                "that",
+                "so"
+              ],
+              "answer": 0,
+              "explanation": "not as+原級+as是原級比較的否定形式，意思接近比較級的劣等比較。",
+              "target_grammar": "形容詞比較級",
+              "optionsZh": [
+                "（正確，not as...as的固定句構）",
+                "（than需搭配比較級形式，此處為原級interesting不符）",
+                "（that不構成此比較句型）",
+                "（so需搭配as，可用not so...as，但選項本身單獨so不完整，故排除；此處以標準not as...as為準）"
+              ]
+            },
+            {
+              "sentence": "Tom is ___ times taller than his little brother.",
+              "options": [
+                "two",
+                "second",
+                "twice",
+                "double"
+              ],
+              "answer": 0,
+              "explanation": "倍數表達可用「數字+times+比較級」，two times taller也是常見講法（twice通常用於原級比較as...as）。",
+              "target_grammar": "形容詞比較級",
+              "optionsZh": [
+                "（正確，two times+比較級表示倍數）",
+                "（second為序數，不用於倍數表達）",
+                "（twice通常搭配原級as...as，不直接接比較級taller）",
+                "（double較常作動詞或形容詞，不直接接比較級taller）"
+              ]
+            },
+            {
+              "sentence": "This is a ___ matter than we thought.",
+              "options": [
+                "far serious",
+                "far more serious",
+                "much serious",
+                "very more serious"
+              ],
+              "answer": 1,
+              "explanation": "程度副詞far可以修飾比較級，且serious是兩音節以上形容詞要搭配more。",
+              "target_grammar": "形容詞比較級",
+              "optionsZh": [
+                "（缺少more，兩音節以上形容詞需要）",
+                "（正確，far修飾比較級，more serious為正確比較級形式）",
+                "（缺少more，serious需搭配more構成比較級）",
+                "（very不可修飾比較級）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "Choosing Between Two Bikes",
+            "passage": "Ian wanted to buy a new bike, so he compared two models at the shop. The red one was __(1)__ than the blue one, but it was also __(2)__ expensive. The shopkeeper said the blue bike was lighter than __(3)__ in the store. Ian thought the blue one felt __(4)__ more comfortable to ride than the red one. In the end, he decided the blue bike was a __(5)__ choice for daily use than the red one.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "fast",
+                  "faster",
+                  "fastest",
+                  "more fast"
+                ],
+                "answer": 1,
+                "explanation": "句中有than，要用比較級faster。",
+                "optionsZh": [
+                  "（原級不符than句構）",
+                  "（正確，單音節加er）",
+                  "（最高級不符兩者比較）",
+                  "（單音節不用more）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "much",
+                  "very",
+                  "so",
+                  "quite"
+                ],
+                "answer": 0,
+                "explanation": "much可修飾比較級expensive，加強比較程度。",
+                "optionsZh": [
+                  "（正確，much修飾比較級）",
+                  "（very不可修飾比較級）",
+                  "（so不可修飾比較級）",
+                  "（quite不可修飾比較級）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "all the other bikes",
+                  "all bikes",
+                  "the bikes",
+                  "other bike"
+                ],
+                "answer": 0,
+                "explanation": "藍色腳踏車本身也是店裡的腳踏車之一，要用「其他」的概念all the other bikes排除自己。",
+                "optionsZh": [
+                  "（正確，all the other排除主詞自己）",
+                  "（沒有排除自己，會自相矛盾）",
+                  "（沒有排除自己，會自相矛盾）",
+                  "（other需搭配複數名詞bikes，此處為單數bike不符）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "much",
+                  "more",
+                  "very",
+                  "so"
+                ],
+                "answer": 0,
+                "explanation": "much可以修飾比較級more comfortable，加強語氣。",
+                "optionsZh": [
+                  "（正確，much修飾比較級more comfortable）",
+                  "（more已經是比較級的一部分，不需重複）",
+                  "（very不可修飾比較級）",
+                  "（so不可修飾比較級）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "good",
+                  "better",
+                  "best",
+                  "more good"
+                ],
+                "answer": 1,
+                "explanation": "句中有than the red one，要用比較級better。",
+                "optionsZh": [
+                  "（原級不符than句構）",
+                  "（正確，good的比較級是better）",
+                  "（最高級不符兩者比較）",
+                  "（good的比較級是better，不可加more）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "9-2",
         "title": "形容詞的最高級",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>什麼時候用最高級</b><br>三者以上做比較時使用，最高級前面一定要加the。<br><br><b>規則變化</b><br>單音節字尾加est：small→the smallest；字尾e加st：large→the largest；短母音+子音重複字尾：big→the biggest；子音+y去y加iest：pretty→the prettiest；兩音節以上前面加(the) most/least：beautiful→the most beautiful。<br><br><b>不規則變化</b><br>good/well→best；many/much→most；bad/ill→worst；little→least（注意：few→fewest）。<br><br><b>基本句構</b><br>A+be+the+最高級+of the three/在一群人事物中：Mary is the youngest of the three.<br><br><b>最高級可以怎麼加強語氣</b><br>much、by far、the very（只修飾-est結尾的最高級）：Jeff is by far the smartest boy.<br><br><b>最高級不用「其他」的概念</b><br>因為最高級本來就是跟全部人事物比，不需要再排除自己：Taipei is the biggest city in Taiwan.（不用說the biggest of all the other cities）<br><br><b>比較級跟最高級可以互相改寫</b><br>Tokyo is the biggest city in the world. = Tokyo is bigger than any other city in the world. = Tokyo is bigger than all the other cities in the world. = No other city in the world is as big as Tokyo. = No other city in the world is bigger than Tokyo.<br><br><b>常考片語</b><br>do/try one's best「盡力而為」；at best「充其量」；at least「至少」；at last「終於」；best of all「最好的是」；worst of all「最糟的是」。",
+          "examples": [
+            {
+              "en": "This is the most delicious cake I have ever eaten.",
+              "zh": "這是我吃過最好吃的蛋糕。"
+            },
+            {
+              "en": "Peter is the tallest student in our class.",
+              "zh": "Peter是我們班上最高的學生。"
+            },
+            {
+              "en": "Of all the seasons, I like summer the best.",
+              "zh": "在所有季節中，我最喜歡夏天。"
+            },
+            {
+              "en": "This is by far the hardest question on the test.",
+              "zh": "這是這次考試中最難的題目，遠遠超過其他題目。"
+            },
+            {
+              "en": "No other student in the school studies as hard as her.",
+              "zh": "學校裡沒有其他學生像她一樣用功讀書。"
+            },
+            {
+              "en": "At least we tried our best to win the game.",
+              "zh": "至少我們盡力想贏得這場比賽了。"
+            },
+            {
+              "en": "The worst of all, we missed the last train home.",
+              "zh": "最糟糕的是，我們錯過了回家的末班車。"
+            },
+            {
+              "en": "This mountain is the highest in the whole country.",
+              "zh": "這座山是全國最高的。"
+            },
+            {
+              "en": "She is the most careful driver among us.",
+              "zh": "在我們之中，她是開車最小心的人。"
+            },
+            {
+              "en": "At last, the rain stopped and the sun came out.",
+              "zh": "最後，雨停了，太陽出來了。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "This is ___ movie I have ever watched.",
+              "options": [
+                "a boring",
+                "more boring",
+                "the most boring",
+                "boring"
+              ],
+              "answer": 2,
+              "explanation": "have ever watched是現在完成式形容詞子句，先行詞通常用最高級修飾。",
+              "target_grammar": "形容詞最高級",
+              "optionsZh": [
+                "（原級不符「我看過最無聊的電影」語境）",
+                "（比較級不符現在完成式形容詞子句的最高級慣例）",
+                "（正確，現在完成式子句常搭配最高級）",
+                "（缺少最高級標記，且沒有the）"
+              ]
+            },
+            {
+              "sentence": "Of the three bags, this one is ___.",
+              "options": [
+                "cheap",
+                "cheaper",
+                "the cheapest",
+                "more cheap"
+              ],
+              "answer": 2,
+              "explanation": "三者以上做比較用最高級，且前面要加the。",
+              "target_grammar": "形容詞最高級",
+              "optionsZh": [
+                "（原級不符三者比較）",
+                "（比較級只用於兩者比較）",
+                "（正確，三者以上用最高級）",
+                "（單音節不用more，且缺少the）"
+              ]
+            },
+            {
+              "sentence": "Emma is ___ student in the whole school.",
+              "options": [
+                "smart",
+                "smarter",
+                "the smartest",
+                "more smart"
+              ],
+              "answer": 2,
+              "explanation": "in the whole school表示跟全校比較（三者以上），要用最高級並加the。",
+              "target_grammar": "形容詞最高級",
+              "optionsZh": [
+                "（原級不符全校範圍比較）",
+                "（比較級只用於兩者比較）",
+                "（正確，全校範圍比較用最高級）",
+                "（單音節不用more，且缺少the）"
+              ]
+            },
+            {
+              "sentence": "Tokyo is bigger than ___ city in Japan.",
+              "options": [
+                "any other",
+                "the other",
+                "another",
+                "all other"
+              ],
+              "answer": 0,
+              "explanation": "比較級要搭配any other+單數名詞，表示「比任何其他城市都大」。",
+              "target_grammar": "形容詞最高級",
+              "optionsZh": [
+                "（正確，any other+單數名詞）",
+                "（the other用於兩者中剩下的那個，此處不符）",
+                "（another需搭配單數名詞但語意為「另一個」不符此句）",
+                "（all other需搭配複數名詞cities，此處為單數city不符）"
+              ]
+            },
+            {
+              "sentence": "This is ___ the best restaurant in town.",
+              "options": [
+                "much",
+                "by far",
+                "very",
+                "so"
+              ],
+              "answer": 1,
+              "explanation": "by far可以加強最高級的語氣，表示「遠遠是最…」。",
+              "target_grammar": "形容詞最高級",
+              "optionsZh": [
+                "（much較常修飾比較級，不修飾最高級此結構）",
+                "（正確，by far加強最高級語氣）",
+                "（very不修飾最高級的this結構）",
+                "（so不修飾最高級）"
+              ]
+            },
+            {
+              "sentence": "No other player on the team scores ___ than Jack.",
+              "options": [
+                "more points",
+                "the most points",
+                "most points",
+                "point more"
+              ],
+              "answer": 0,
+              "explanation": "no other+比較級是最高級的另一種表達方式，等於Jack scores the most points。",
+              "target_grammar": "形容詞最高級",
+              "optionsZh": [
+                "（正確，no other+比較級表示最高級意義）",
+                "（最高級不與than連用）",
+                "（缺少the，且不與than連用）",
+                "（語序錯誤）"
+              ]
+            },
+            {
+              "sentence": "I will do my ___ to help you.",
+              "options": [
+                "best",
+                "better",
+                "good",
+                "goodest"
+              ],
+              "answer": 0,
+              "explanation": "do one's best「盡力而為」是固定片語。",
+              "target_grammar": "形容詞最高級",
+              "optionsZh": [
+                "（正確，do one's best固定片語）",
+                "（better為比較級，此片語固定用best）",
+                "（good為原級，此片語固定用best）",
+                "（goodest非正確英文字）"
+              ]
+            },
+            {
+              "sentence": "___, we still managed to catch the bus.",
+              "options": [
+                "At best",
+                "At least",
+                "At last",
+                "Best of all"
+              ],
+              "answer": 1,
+              "explanation": "at least「至少」，符合「至少我們還是趕上了公車」的語境。",
+              "target_grammar": "形容詞最高級",
+              "optionsZh": [
+                "（at best意思是充其量，語意不符）",
+                "（正確，at least表示至少）",
+                "（at last意思是終於，通常用於敘述結果而非讓步語氣）",
+                "（best of all意思是最好的是，語意不符）"
+              ]
+            },
+            {
+              "sentence": "This is one of ___ books in the library.",
+              "options": [
+                "the most popular",
+                "most popular",
+                "more popular",
+                "popular"
+              ],
+              "answer": 0,
+              "explanation": "one of the+最高級+複數名詞是固定句型，表示「最…的其中一個」。",
+              "target_grammar": "形容詞最高級",
+              "optionsZh": [
+                "（正確，one of the+最高級+複數名詞）",
+                "（缺少the，不符固定句型）",
+                "（比較級不符one of the...最高級句型）",
+                "（原級不符one of the...最高級句型）"
+              ]
+            },
+            {
+              "sentence": "Mount Jade is ___ mountain in Taiwan.",
+              "options": [
+                "high",
+                "higher",
+                "the highest",
+                "more high"
+              ],
+              "answer": 2,
+              "explanation": "台灣最高峰要用最高級表達，且必須加the。",
+              "target_grammar": "形容詞最高級",
+              "optionsZh": [
+                "（原級不符全國範圍比較）",
+                "（比較級只用於兩者比較）",
+                "（正確，全國範圍比較用最高級）",
+                "（單音節不用more，且缺少the）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "The Talent Show Results",
+            "passage": "Our school held a talent show last week, and it turned out to be __(1)__ event of the year. Judy's dance performance was __(2)__ than everyone else's, so she won first place. The judges said it was __(3)__ the most impressive show they had seen in years. My best friend didn't win, but he still tried his __(4)__ and felt proud of himself. __(5)__ of all, everyone in the audience had a great time watching the show.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "exciting",
+                  "more exciting",
+                  "the most exciting",
+                  "excited"
+                ],
+                "answer": 2,
+                "explanation": "of the year表示跟全年度的活動比較（三者以上），要用最高級。",
+                "optionsZh": [
+                  "（原級不符全年度範圍比較）",
+                  "（比較級只用於兩者比較）",
+                  "（正確，全年度範圍比較用最高級）",
+                  "（詞性錯誤，此處需形容詞exciting而非excited描述活動本身）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "good",
+                  "better",
+                  "the best",
+                  "well"
+                ],
+                "answer": 1,
+                "explanation": "than everyone else's表示兩相比較，用比較級better。",
+                "optionsZh": [
+                  "（原級不符than句構）",
+                  "（正確，than句構用比較級）",
+                  "（最高級不與than連用）",
+                  "（well為副詞，此處需要形容詞比較級修飾表演本身）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "much",
+                  "by far",
+                  "very",
+                  "so"
+                ],
+                "answer": 1,
+                "explanation": "by far加強最高級the most impressive的語氣。",
+                "optionsZh": [
+                  "（much較常修飾比較級）",
+                  "（正確，by far加強最高級語氣）",
+                  "（very不修飾最高級此結構）",
+                  "（so不修飾最高級）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "best",
+                  "better",
+                  "good",
+                  "goodest"
+                ],
+                "answer": 0,
+                "explanation": "try one's best「盡力而為」是固定片語。",
+                "optionsZh": [
+                  "（正確，try one's best固定片語）",
+                  "（better為比較級，此片語固定用best）",
+                  "（good為原級，此片語固定用best）",
+                  "（goodest非正確英文字）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "Best",
+                  "Better",
+                  "Good",
+                  "Well"
+                ],
+                "answer": 0,
+                "explanation": "best of all「最好的是」是固定片語，放句首。",
+                "optionsZh": [
+                  "（正確，best of all固定片語）",
+                  "（better of all非固定用法）",
+                  "（good of all非固定用法）",
+                  "（well of all非固定用法）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "9-3",
         "title": "情狀副詞的級",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>情狀副詞也有比較級跟最高級</b><br>跟形容詞不同的是，情狀副詞比較級只能在前面加more（不能字尾加ier），最高級只能在前面加(the) most（不能字尾加iest）：quickly→more quickly→(the) most quickly。<br><br><b>跟形容詞同形的副詞例外</b><br>fast、hard、late、early、high、far這些字當副詞用時，比較級最高級跟形容詞一樣直接變化：faster/the fastest、harder/the hardest、earlier/the earliest、higher/the highest、farther/the farthest（距離）、further/the furthest（程度）。<br><br><b>good/well 和 bad/badly共用同一組變化</b><br>形容詞good、副詞well都共用better/best；形容詞bad、副詞badly都共用worse/worst。<br><br><b>放的位置</b><br>情狀副詞的比較級、最高級都只能放在動詞後面：I walk much faster than anyone else in my family. / David studies (the) hardest.（副詞最高級前面的the有時可以省略，跟形容詞最高級不同）<br><br><b>原級比較怎麼用</b><br>跟形容詞的句構一樣，用as+副詞原級+as，一樣放在動詞後面：I like fishing as much as my father (does). / Jeremy did as well as the others on the test.<br><br><b>常用慣用語</b><br>as...as possible / as...as one can「盡可能地…」：I'll do it as soon as possible.；數字+times+as...as「是…的幾倍」：Mandy's house is three times as big as mine.",
+          "examples": [
+            {
+              "en": "She speaks English more fluently than I do.",
+              "zh": "她說英文比我流利。"
+            },
+            {
+              "en": "Of all the runners, he finished the race most quickly.",
+              "zh": "在所有跑者中，他最快完成比賽。"
+            },
+            {
+              "en": "My brother arrived earlier than everyone else.",
+              "zh": "我弟弟比其他所有人都早到。"
+            },
+            {
+              "en": "Please explain this more clearly, if you can.",
+              "zh": "如果可以的話，請把這個解釋得更清楚一點。"
+            },
+            {
+              "en": "Of the three singers, she sang the most beautifully.",
+              "zh": "在這三位歌手中，她唱得最美。"
+            },
+            {
+              "en": "He did well on the test, but she did even better.",
+              "zh": "他考得不錯，但她考得更好。"
+            },
+            {
+              "en": "Please reply as soon as possible.",
+              "zh": "請盡快回覆。"
+            },
+            {
+              "en": "This car runs twice as fast as that old one.",
+              "zh": "這輛車跑得比那輛舊車快兩倍。"
+            },
+            {
+              "en": "I try to exercise as often as I can.",
+              "zh": "我盡量常常運動。"
+            },
+            {
+              "en": "He worked the hardest among all the workers.",
+              "zh": "在所有工人中，他工作最努力。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "She sings ___ than her sister.",
+              "options": [
+                "beautiful",
+                "more beautifully",
+                "beautifully more",
+                "the most beautifully"
+              ],
+              "answer": 1,
+              "explanation": "情狀副詞的比較級只能在前面加more，且句中有than要用比較級。",
+              "target_grammar": "情狀副詞的級",
+              "optionsZh": [
+                "（形容詞不可修飾動詞sings）",
+                "（正確，情狀副詞比較級用more+副詞）",
+                "（語序錯誤）",
+                "（最高級不符than兩者比較）"
+              ]
+            },
+            {
+              "sentence": "Of all the students, Tom studies ___.",
+              "options": [
+                "hard",
+                "harder",
+                "(the) hardest",
+                "more hard"
+              ],
+              "answer": 2,
+              "explanation": "hard是與形容詞同形的副詞，最高級直接變化為hardest，三者以上比較用最高級。",
+              "target_grammar": "情狀副詞的級",
+              "optionsZh": [
+                "（原級不符三者以上比較）",
+                "（比較級只用於兩者比較）",
+                "（正確，hard的最高級為hardest）",
+                "（hard為同形副詞，不加more，直接字尾變化）"
+              ]
+            },
+            {
+              "sentence": "He arrived ___ than I expected.",
+              "options": [
+                "early",
+                "earlier",
+                "earliest",
+                "more early"
+              ],
+              "answer": 1,
+              "explanation": "early是與形容詞同形的副詞，比較級直接變化為earlier。",
+              "target_grammar": "情狀副詞的級",
+              "optionsZh": [
+                "（原級不符than句構）",
+                "（正確，early的比較級為earlier）",
+                "（最高級不符兩者比較）",
+                "（early為同形副詞，不加more，直接字尾變化）"
+              ]
+            },
+            {
+              "sentence": "I like hiking as ___ as swimming.",
+              "options": [
+                "much",
+                "more",
+                "most",
+                "very"
+              ],
+              "answer": 0,
+              "explanation": "原級比較句構as+much+as，表示「跟…一樣多」。",
+              "target_grammar": "情狀副詞的級",
+              "optionsZh": [
+                "（正確，as+原級+as的固定句構）",
+                "（比較級不用於as...as句構）",
+                "（最高級不用於as...as句構）",
+                "（very不構成as...as句構）"
+              ]
+            },
+            {
+              "sentence": "Please finish the report as soon as ___.",
+              "options": [
+                "possible",
+                "can",
+                "able",
+                "capable"
+              ],
+              "answer": 0,
+              "explanation": "as soon as possible「盡快」是固定片語。",
+              "target_grammar": "情狀副詞的級",
+              "optionsZh": [
+                "（正確，as soon as possible固定片語）",
+                "（can需搭配主詞使用，如as soon as you can）",
+                "（able不構成此固定片語）",
+                "（capable不構成此固定片語）"
+              ]
+            },
+            {
+              "sentence": "David did ___ on the test than his classmates.",
+              "options": [
+                "good",
+                "well",
+                "better",
+                "best"
+              ],
+              "answer": 2,
+              "explanation": "well的比較級是better，句中有than要用比較級。",
+              "target_grammar": "情狀副詞的級",
+              "optionsZh": [
+                "（good為形容詞，不可修飾動詞did）",
+                "（原級不符than句構）",
+                "（正確，well的比較級是better）",
+                "（最高級不符兩者比較）"
+              ]
+            },
+            {
+              "sentence": "This bus runs ___ than the old one.",
+              "options": [
+                "fast",
+                "faster",
+                "fastest",
+                "more fast"
+              ],
+              "answer": 1,
+              "explanation": "fast是與形容詞同形的副詞，比較級直接變化為faster。",
+              "target_grammar": "情狀副詞的級",
+              "optionsZh": [
+                "（原級不符than句構）",
+                "（正確，fast的比較級為faster）",
+                "（最高級不符兩者比較）",
+                "（fast為同形副詞，不加more）"
+              ]
+            },
+            {
+              "sentence": "My father drives ___ car in our family.",
+              "options": [
+                "careful",
+                "more careful",
+                "the most carefully",
+                "carefully"
+              ],
+              "answer": 2,
+              "explanation": "「全家中最…」表示三者以上比較，情狀副詞最高級用(the) most+副詞。",
+              "target_grammar": "情狀副詞的級",
+              "optionsZh": [
+                "（形容詞不可修飾動詞drives）",
+                "（比較級不符三者以上的全家比較）",
+                "（正確，情狀副詞最高級用the most+副詞）",
+                "（原級不符全家範圍最高級比較）"
+              ]
+            },
+            {
+              "sentence": "This bag is twice as heavy ___ that one.",
+              "options": [
+                "as",
+                "than",
+                "that",
+                "so"
+              ],
+              "answer": 0,
+              "explanation": "倍數+as+原級+as是固定句構，表示「是…的幾倍」。",
+              "target_grammar": "情狀副詞的級",
+              "optionsZh": [
+                "（正確，as...as固定句構）",
+                "（than需搭配比較級，此處為原級heavy不符）",
+                "（that不構成此比較句型）",
+                "（so需搭配that子句，此處不符固定倍數句構）"
+              ]
+            },
+            {
+              "sentence": "I try to visit my grandparents as ___ as I can.",
+              "options": [
+                "often",
+                "more often",
+                "the most often",
+                "oftener"
+              ],
+              "answer": 0,
+              "explanation": "as+原級+as I can「盡可能地」，用原級often即可。",
+              "target_grammar": "情狀副詞的級",
+              "optionsZh": [
+                "（正確，as+原級+as的固定句構）",
+                "（比較級不用於as...as句構）",
+                "（最高級不用於as...as句構）",
+                "（oftener非正確英文比較級形式，且不用於as...as句構）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "Sports Day Highlights",
+            "passage": "During sports day, every class tried __(1)__ hard as they could to win. In the 100-meter race, Jason ran __(2)__ than anyone else in his class, so he won first place easily. Of all the events, the relay race went __(3)__ smoothly, without any mistakes. Our teacher said we should always try to finish our tasks as __(4)__ as possible. In the end, our class worked __(5)__ than any other class and won the overall championship.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "as",
+                  "so",
+                  "than",
+                  "very"
+                ],
+                "answer": 0,
+                "explanation": "as+原級+as they could「盡可能地」，用as的固定句構。",
+                "optionsZh": [
+                  "（正確，as+原級+as的固定句構）",
+                  "（so不構成此固定片語）",
+                  "（than需搭配比較級，此處不符）",
+                  "（very不構成as...as句構）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "fast",
+                  "faster",
+                  "fastest",
+                  "more fast"
+                ],
+                "answer": 1,
+                "explanation": "than anyone else表示兩相比較，fast的比較級為faster。",
+                "optionsZh": [
+                  "（原級不符than句構）",
+                  "（正確，fast的比較級為faster）",
+                  "（最高級不符兩者比較）",
+                  "（fast為同形副詞，不加more）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "smooth",
+                  "more smoothly",
+                  "the most smoothly",
+                  "smoothly"
+                ],
+                "answer": 2,
+                "explanation": "of all the events表示三者以上比較，情狀副詞最高級用the most+副詞。",
+                "optionsZh": [
+                  "（形容詞不可修飾動詞went）",
+                  "（比較級不符三者以上比較）",
+                  "（正確，情狀副詞最高級用the most+副詞）",
+                  "（原級不符三者以上最高級比較）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "quick",
+                  "quickly",
+                  "quicker",
+                  "quickest"
+                ],
+                "answer": 1,
+                "explanation": "as+原級+as possible「盡快」，用原級副詞quickly。",
+                "optionsZh": [
+                  "（形容詞不可修飾動詞finish）",
+                  "（正確，as+原級+as possible固定句構）",
+                  "（比較級不用於as...as句構）",
+                  "（最高級不用於as...as句構）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "hard",
+                  "harder",
+                  "hardest",
+                  "more hard"
+                ],
+                "answer": 1,
+                "explanation": "than any other class表示兩相比較，hard的比較級為harder。",
+                "optionsZh": [
+                  "（原級不符than句構）",
+                  "（正確，hard的比較級為harder）",
+                  "（最高級不符兩者比較）",
+                  "（hard為同形副詞，不加more）"
+                ]
+              }
+            ]
+          }
+        }
       }
     ]
   },
