@@ -4875,28 +4875,28 @@ function updateHomeScreen() {
 }
 
 // ════════════════════════════════
-// 首頁關卡樹：關卡 1-20（對應文法 20 章）由下往上，手繪樹枝連接 + 果實按鈕
+// 首頁關卡樹：關卡 1-20（對應文法 20 章）由下往上，手繪水彩樹幹圖 + 果實按鈕
+// 樹幹樹枝改用固定手繪圖片素材（public/images/icons/tree-segment.png），
+// 每段圖片有 8 個枝點槽位，向上重複拼接蓋滿 20 關（不用擔心接縫，樹皮紋理本來就很適合重複）
 // ════════════════════════════════
-const LEVEL_COUNT  = 20;
-const LEVEL_STEP_H = 112;                                       // 每關垂直間距 px
-// 關1(最下)→關19 掛樹幹兩側交錯；關20 在樹頂（值不使用）
-const LEVEL_XS_PCT = [30, 70, 26, 72, 30, 68, 26, 72, 32, 68,
-                      28, 72, 30, 68, 26, 74, 30, 68, 26, 50];
+const LEVEL_COUNT = 20;
+const TREE_SEG_IMG = 'public/images/icons/tree-segment.png';
+const TREE_SEG_ASPECT = 1152 / 1966;   // 素材寬高比（寬/高），用來依容器寬度換算每段顯示高度
+// 每段圖片內 8 個枝點槽位座標（目測估算，由下往上）
+const TREE_SEG_SLOTS = [
+  { x: 75, y: 58 },
+  { x: 25, y: 48 },
+  { x: 78, y: 44 },
+  { x: 25, y: 33 },
+  { x: 80, y: 28 },
+  { x: 28, y: 20 },
+  { x: 68, y: 18 },
+  { x: 52, y: 10 },
+];
+const SLOTS_PER_SEG = TREE_SEG_SLOTS.length;
 
 function onLevelClick(n) {
   grammarStartChapter(n);
-}
-
-// 手繪小葉子（x, y 為葉柄位置，rot 為葉尖方向角度，s 為大小倍率）
-function _leafSvg(x, y, rot, s = 1) {
-  return `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rot}) scale(${s})">`
-       + `<path d="M0 0 Q 8 -9 17 0 Q 8 8 0 0 Z" fill="#7BC98B" stroke="#3BA55D" stroke-width="1.2"/>`
-       + `<line x1="3" y1="0" x2="14" y2="0" stroke="#3BA55D" stroke-width="1" opacity=".6"/>`
-       + `</g>`;
-}
-// 一小叢雙葉（V 字形），讓樹更茂密
-function _leafTuft(x, y, baseRot, s = 1) {
-  return _leafSvg(x, y, baseRot - 22, s) + _leafSvg(x, y, baseRot + 22, s * .85);
 }
 
 function renderLevelMap() {
@@ -4907,107 +4907,35 @@ function renderLevelMap() {
   if (map.dataset.w === String(W)) return;          // 同寬度已畫過，避免切頁時重畫跳動
   const firstRender = !map.dataset.w;
 
-  const pad = 74;
-  const H = pad * 2 + LEVEL_STEP_H * (LEVEL_COUNT - 1);
+  const segH = W / TREE_SEG_ASPECT;                              // 每段圖片依容器寬度等比例縮放後的高度
+  const segCount = Math.ceil(LEVEL_COUNT / SLOTS_PER_SEG);       // 需要幾段圖片才蓋滿 20 關
+  const H = segH * segCount;
 
-  // 樹幹中心線：略帶左右搖擺的自然曲線，由下往上
-  const trunkX = y => W / 2 + W * 0.035 * Math.sin((H - y) / 130);
-
-  // 關卡座標：關1最下、左右交錯掛在樹幹兩側；關10 長在樹頂
-  const pts = LEVEL_XS_PCT.map((xp, i) => {
-    const y = H - pad - i * LEVEL_STEP_H;
-    const x = (i === LEVEL_COUNT - 1) ? trunkX(y) : xp / 100 * W;
-    return { x, y, n: i + 1 };
-  });
-
-  // ── 樹幹：下粗上細的手繪粗幹（漸細填色多邊形 + 深色描邊 + 淺色木紋）
-  const yBottom = H - 26;
-  const yTop    = pts[pts.length - 1].y + 20;
-  const steps = 26, edgeL = [], edgeR = [];
-  for (let s = 0; s <= steps; s++) {
-    const y = yBottom + (yTop - yBottom) * (s / steps);
-    const t = s / steps;                                            // 0=底部 1=頂端
-    const half = 15 - 9 * t + (t < .08 ? (1 - t / .08) * 7 : 0);    // 底部根部外擴
-    const cx = trunkX(y);
-    edgeL.push(`${(cx - half).toFixed(1)} ${y.toFixed(1)}`);
-    edgeR.unshift(`${(cx + half).toFixed(1)} ${y.toFixed(1)}`);
-  }
-  const trunk =
-    `<path d="M ${edgeL.join(' L ')} L ${edgeR.join(' L ')} Z" fill="#8A5A34" stroke="#6E4527" stroke-width="2" stroke-linejoin="round"/>`;
-
-  // 三次貝茲曲線取點：讓葉柄精準貼在枝條曲線上，不會浮空
-  const bez3 = (a, c1, c2, b, t) => {
-    const u = 1 - t;
-    return {
-      x: u*u*u*a.x + 3*u*u*t*c1.x + 3*u*t*t*c2.x + t*t*t*b.x,
-      y: u*u*u*a.y + 3*u*u*t*c1.y + 3*u*t*t*c2.y + t*t*t*b.y,
-    };
-  };
-
-  // ── 側枝：由樹幹彎出去接每顆果實（關10 直接坐在樹頂，不需側枝）
-  let branches = '', leaves = '';
-  for (let i = 0; i < pts.length - 1; i++) {
-    const p = pts[i];
-    const sy = p.y + 30;                 // 從果實下方一點的樹幹位置出發
-    const sx = trunkX(sy);
-    const dir = p.x < sx ? -1 : 1;       // 往左或往右長
-    const a  = { x: sx,               y: sy };
-    const c1 = { x: sx + dir * 18,    y: sy - 4 };
-    const c2 = { x: p.x - dir * 26,   y: p.y + 22 };
-    const b  = { x: p.x,              y: p.y + 6 };
-    branches += `<path d="M ${a.x.toFixed(1)} ${a.y} C ${c1.x.toFixed(1)} ${c1.y}, ${c2.x.toFixed(1)} ${c2.y}, ${b.x.toFixed(1)} ${b.y}" fill="none" stroke="#8A5A34" stroke-width="6.5" stroke-linecap="round"/>`;
-    // 葉子沿枝條曲線生長：上側一叢、下側一片、近果實處一片
-    const outRot = dir < 0 ? -138 : -42;
-    const m1 = bez3(a, c1, c2, b, .35);
-    const m2 = bez3(a, c1, c2, b, .62);
-    const m3 = bez3(a, c1, c2, b, .85);
-    leaves += _leafTuft(m1.x, m1.y, outRot, .9)
-            + _leafSvg(m2.x, m2.y, dir < 0 ? 155 : 25, .8)
-            + _leafSvg(m3.x, m3.y, outRot, .85);
-  }
-
-  // ── 裝飾小枝：從樹幹左右交錯伸出、只長葉子的小樹枝
-  for (let y = yBottom - 66, k = 0; y > yTop + 24; y -= 78, k++) {
-    const side = k % 2 ? 1 : -1;
-    const t2 = (yBottom - y) / (yBottom - yTop);
-    const half = 15 - 9 * t2;
-    const bx  = trunkX(y) + side * (half - 2);       // 從樹幹邊緣長出
-    const cX  = bx + side * 20, cY = y - 4;          // 控制點：先平出再上翹
-    const tipX = bx + side * 36, tipY = y - 20;
-    branches += `<path d="M ${bx.toFixed(1)} ${y.toFixed(1)} Q ${cX.toFixed(1)} ${cY.toFixed(1)} ${tipX.toFixed(1)} ${tipY.toFixed(1)}" fill="none" stroke="#8A5A34" stroke-width="3.5" stroke-linecap="round"/>`;
-    // 小枝中段下側一片、末端一叢（二次貝茲取點，葉柄貼枝）
-    const mt = .55, mu = 1 - mt;
-    const mx2 = mu*mu*bx + 2*mu*mt*cX + mt*mt*tipX;
-    const my2 = mu*mu*y  + 2*mu*mt*cY + mt*mt*tipY;
-    leaves += _leafSvg(mx2, my2, side < 0 ? 170 : 10, .75)
-            + _leafTuft(tipX, tipY, side < 0 ? -150 : -30, .95);
-  }
-  // 樹頂樹冠：一圈茂密的葉子圍著最高關卡
-  const top = pts[pts.length - 1];
-  leaves += _leafTuft(top.x - 36, top.y + 10, -170, 1.05)
-          + _leafTuft(top.x + 36, top.y + 10, -10, 1.05)
-          + _leafTuft(top.x - 30, top.y - 30, -135, 1)
-          + _leafTuft(top.x + 30, top.y - 30, -45, 1)
-          + _leafTuft(top.x, top.y - 44, -90, 1.1)
-          + _leafSvg(top.x - 46, top.y - 8, -155, .85)
-          + _leafSvg(top.x + 46, top.y - 8, -25, .85);
-
-  map.innerHTML = `
-    <div class="hm-lm-inner" style="height:${H}px">
-      <svg class="hm-lm-svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${trunk}${branches}${leaves}</svg>
-      ${pts.map(p => {
-        const stars = (typeof grammarStarsFor === 'function' && typeof GRAMMAR_CHAPTERS !== 'undefined' && GRAMMAR_CHAPTERS[p.n]) ? grammarStarsFor(p.n) : 0;
-        const starsHtml = (typeof GRAMMAR_CHAPTERS !== 'undefined' && GRAMMAR_CHAPTERS[p.n])
-          ? `<span class="hm-fruit-stars">${[0,1,2].map(i => i < stars ? '★' : '<span class="off">★</span>').join('')}</span>`
-          : '';
-        return `
-        <button class="hm-fruit${p.n === 1 ? ' hm-fruit-cur' : ''}" style="left:${p.x}px;top:${p.y}px"
-          onclick="onLevelClick(${p.n})" aria-label="關卡 ${p.n}">
-          <span class="hm-fruit-num">${p.n}</span>
+  let segmentsHtml = '';
+  let fruitsHtml = '';
+  for (let s = 0; s < segCount; s++) {
+    const segTop = H - (s + 1) * segH;    // 這段在整體容器裡的 top 位移
+    segmentsHtml += `<img class="hm-tree-seg" src="${TREE_SEG_IMG}" style="top:${segTop}px;height:${segH}px" alt="">`;
+    for (let slot = 0; slot < SLOTS_PER_SEG; slot++) {
+      const n = s * SLOTS_PER_SEG + slot + 1;
+      if (n > LEVEL_COUNT) break;
+      const coord = TREE_SEG_SLOTS[slot];
+      const x = coord.x / 100 * W;
+      const y = segTop + coord.y / 100 * segH;
+      const stars = (typeof grammarStarsFor === 'function' && typeof GRAMMAR_CHAPTERS !== 'undefined' && GRAMMAR_CHAPTERS[n]) ? grammarStarsFor(n) : 0;
+      const starsHtml = (typeof GRAMMAR_CHAPTERS !== 'undefined' && GRAMMAR_CHAPTERS[n])
+        ? `<span class="hm-fruit-stars">${[0,1,2].map(i => i < stars ? '★' : '<span class="off">★</span>').join('')}</span>`
+        : '';
+      fruitsHtml += `
+        <button class="hm-fruit${n === 1 ? ' hm-fruit-cur' : ''}" style="left:${x}px;top:${y}px"
+          onclick="onLevelClick(${n})" aria-label="關卡 ${n}">
+          <span class="hm-fruit-num">${n}</span>
           ${starsHtml}
         </button>`;
-      }).join('')}
-    </div>`;
+    }
+  }
+
+  map.innerHTML = `<div class="hm-lm-inner" style="height:${H}px">${segmentsHtml}${fruitsHtml}</div>`;
 
   map.dataset.w = String(W);
   if (firstRender) map.scrollTop = map.scrollHeight;  // 初始定位在最下方（關卡 1）
