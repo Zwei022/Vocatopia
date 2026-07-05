@@ -15304,14 +15304,650 @@
       {
         "id": "12-9",
         "title": "問句的被動語態",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>疑問詞當「副詞」（問時間/地點/方式）</b><br>Wh-+be+S+p.p.+by+O？或Wh-+助動詞+S+be+p.p.+by+O？疑問詞放最前面，後面照樣是be動詞或助動詞+主詞+p.p.：When did you sell the house? → When was the house sold by you?<br><br><b>疑問詞當「主詞」（問誰做了這件事，用what/who/which代替）</b><br>Wh-+be+p.p.+by+O？（沒有另外的新主詞，因為疑問詞本身就是主詞）：What can Joe eat? → What can be eaten by Joe?<br><br><b>疑問詞當「受詞」，問「誰是執行者」（用by whom）</b><br>By whom+be+S+p.p.？或By whom+助動詞+S+be+p.p.？：Who made the cookies? → By whom were the cookies made?<br><br><b>易混淆重點</b><br>① 判斷疑問詞原本在主動句中扮演的角色（主詞/受詞/副詞），決定被動句的結構怎麼排列。<br>② By whom是比較正式、書面的問法，口語中更常直接用Who...by?這種較不正式的結構，但考試中常考By whom開頭的標準形式。<br>③ 主動句中的do/does/did，一樣在被動句中消失，用be動詞代替。",
+          "examples": [
+            {
+              "en": "When was this bridge built by the government?",
+              "zh": "這座橋是政府什麼時候建造的？"
+            },
+            {
+              "en": "Where can this medicine be bought safely?",
+              "zh": "這種藥可以在哪裡安全地買到？"
+            },
+            {
+              "en": "What was stolen from the store last night?",
+              "zh": "昨晚商店裡什麼東西被偷了？"
+            },
+            {
+              "en": "Who was chosen to lead the new project?",
+              "zh": "誰被選為新專案的負責人？"
+            },
+            {
+              "en": "By whom was this letter written?",
+              "zh": "這封信是誰寫的？"
+            },
+            {
+              "en": "Why was the flight delayed this morning?",
+              "zh": "今天早上的班機為什麼被延誤了？"
+            },
+            {
+              "en": "What can be done to solve this problem?",
+              "zh": "有什麼辦法可以解決這個問題？"
+            },
+            {
+              "en": "How was this cake decorated so beautifully?",
+              "zh": "這個蛋糕是怎麼裝飾得這麼漂亮的？"
+            },
+            {
+              "en": "By whom was the window broken this time?",
+              "zh": "這次窗戶是被誰打破的？"
+            },
+            {
+              "en": "Which book was recommended by the teacher?",
+              "zh": "哪一本書是老師推薦的？"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "___ was this song written?",
+              "options": [
+                "When",
+                "By whom",
+                "What",
+                "Who"
+              ],
+              "answer": 0,
+              "explanation": "when是副詞，問「什麼時候」，被動句結構：When+be+S+p.p.。",
+              "target_grammar": "被動語態（疑問詞）",
+              "optionsZh": [
+                "（正確，when作副詞問時間點）",
+                "（by whom問「誰是執行者」，需搭配完整主詞S，此處song已是主詞不需重複）",
+                "（what此處不符問時間的語境）",
+                "（who此處不符問時間的語境）"
+              ]
+            },
+            {
+              "sentence": "___ can be eaten safely by people with allergies?",
+              "options": [
+                "What",
+                "When",
+                "Where",
+                "Why"
+              ],
+              "answer": 0,
+              "explanation": "what當主詞使用，問「什麼東西可以被安全食用」。",
+              "target_grammar": "被動語態（疑問詞）",
+              "optionsZh": [
+                "（正確，what當主詞問「什麼東西」）",
+                "（when問時間，此處問的是東西不符）",
+                "（where問地點，此處問的是東西不符）",
+                "（why問原因，此處問的是東西不符）"
+              ]
+            },
+            {
+              "sentence": "___ was the window broken this morning?",
+              "options": [
+                "By whom",
+                "What",
+                "When",
+                "How"
+              ],
+              "answer": 0,
+              "explanation": "by whom問「誰是執行者」（受詞角色），符合此處要問「誰打破窗戶」。",
+              "target_grammar": "被動語態（疑問詞）",
+              "optionsZh": [
+                "（正確，by whom問誰打破了窗戶）",
+                "（what此處已知是window，不需再問是什麼）",
+                "（when問時間，題目已給this morning）",
+                "（how問方式，此處問的是執行者不符）"
+              ]
+            },
+            {
+              "sentence": "___ was this bridge built?",
+              "options": [
+                "When",
+                "By whom",
+                "What",
+                "Who"
+              ],
+              "answer": 0,
+              "explanation": "when是副詞，問「什麼時候」建造，此處由題目最合理判斷為問時間。",
+              "target_grammar": "被動語態（疑問詞）",
+              "optionsZh": [
+                "（正確，when作副詞問時間點）",
+                "（by whom也可以問，但此處以when問時間為標準答案）",
+                "（what此處不符問時間的語境）",
+                "（who不用於此完整主詞結構，應用by whom）"
+              ]
+            },
+            {
+              "sentence": "___ can be done to help the flood victims?",
+              "options": [
+                "What",
+                "Who",
+                "When",
+                "Where"
+              ],
+              "answer": 0,
+              "explanation": "what當主詞使用，問「什麼事可以被做」。",
+              "target_grammar": "被動語態（疑問詞）",
+              "optionsZh": [
+                "（正確，what當主詞問「什麼事」）",
+                "（who問人，此處問的是事情不符）",
+                "（when問時間，此處不符）",
+                "（where問地點，此處不符）"
+              ]
+            },
+            {
+              "sentence": "___ was this delicious cake made?",
+              "options": [
+                "By whom",
+                "What",
+                "When",
+                "How"
+              ],
+              "answer": 0,
+              "explanation": "by whom問「誰是執行者」，符合此處要問「誰做了這個蛋糕」。",
+              "target_grammar": "被動語態（疑問詞）",
+              "optionsZh": [
+                "（正確，by whom問誰做了蛋糕）",
+                "（what此處已知是cake，不需再問是什麼）",
+                "（when問時間，此處問的是執行者不符）",
+                "（how問方式，此處問的是執行者不符）"
+              ]
+            },
+            {
+              "sentence": "___ was chosen to represent our school in the contest?",
+              "options": [
+                "Who",
+                "What",
+                "When",
+                "Where"
+              ],
+              "answer": 0,
+              "explanation": "who當主詞使用，問「誰被選中」，符合問人的語境。",
+              "target_grammar": "被動語態（疑問詞）",
+              "optionsZh": [
+                "（正確，who當主詞問「誰」）",
+                "（what問事物，此處問人不符）",
+                "（when問時間，此處不符）",
+                "（where問地點，此處不符）"
+              ]
+            },
+            {
+              "sentence": "___ can this old computer be fixed?",
+              "options": [
+                "Where",
+                "What",
+                "Who",
+                "By whom"
+              ],
+              "answer": 0,
+              "explanation": "where是副詞，問「在哪裡」可以被修好。",
+              "target_grammar": "被動語態（疑問詞）",
+              "optionsZh": [
+                "（正確，where作副詞問地點）",
+                "（what此處已知是computer，不需再問是什麼）",
+                "（who不用於此完整主詞結構，應用by whom）",
+                "（by whom問執行者，此處問的是地點不符）"
+              ]
+            },
+            {
+              "sentence": "___ was this important document signed?",
+              "options": [
+                "By whom",
+                "What",
+                "Where",
+                "How"
+              ],
+              "answer": 0,
+              "explanation": "by whom問「誰是執行者」，符合此處要問「誰簽署了這份文件」。",
+              "target_grammar": "被動語態（疑問詞）",
+              "optionsZh": [
+                "（正確，by whom問誰簽署了文件）",
+                "（what此處已知是document，不需再問是什麼）",
+                "（where問地點，此處問的是執行者不符）",
+                "（how問方式，此處問的是執行者不符）"
+              ]
+            },
+            {
+              "sentence": "___ was stolen from the museum last night?",
+              "options": [
+                "What",
+                "When",
+                "Where",
+                "Why"
+              ],
+              "answer": 0,
+              "explanation": "what當主詞使用，問「什麼東西被偷了」。",
+              "target_grammar": "被動語態（疑問詞）",
+              "optionsZh": [
+                "（正確，what當主詞問「什麼東西」）",
+                "（when問時間，題目已給last night）",
+                "（where問地點，題目已給museum）",
+                "（why問原因，此處問的是物品不符）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A Mystery at the Museum",
+            "passage": "Last night, something strange happened at the city museum. __(1)__ was stolen from the main exhibit hall? According to the guard, a rare painting was missing when he checked the room. __(2)__ was the painting taken from the museum, before or after midnight? The security cameras showed a shadow near the window around 11 p.m. __(3)__ was seen entering through the back door that night? Detectives are now trying to find out __(4)__ can be done to recover the painting quickly. __(5)__ was this crime committed remains the biggest question of all.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "What",
+                  "When",
+                  "Where",
+                  "Who"
+                ],
+                "answer": 0,
+                "explanation": "what當主詞使用，問「什麼東西被偷了」。",
+                "optionsZh": [
+                  "（正確，what當主詞問「什麼東西」）",
+                  "（when問時間，此處問的是物品不符）",
+                  "（where問地點，此處問的是物品不符）",
+                  "（who問人，此處問的是物品不符）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "When",
+                  "What",
+                  "Where",
+                  "Who"
+                ],
+                "answer": 0,
+                "explanation": "when是副詞，問「什麼時候」被偷走的。",
+                "optionsZh": [
+                  "（正確，when作副詞問時間點）",
+                  "（what此處已知是painting，不需再問是什麼）",
+                  "（where問地點，此處問的是時間不符）",
+                  "（who問人，此處問的是時間不符）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "Who",
+                  "What",
+                  "When",
+                  "Where"
+                ],
+                "answer": 0,
+                "explanation": "who當主詞使用，問「誰被看到進入後門」。",
+                "optionsZh": [
+                  "（正確，who當主詞問「誰」）",
+                  "（what問事物，此處問人不符）",
+                  "（when問時間，題目已給around 11 p.m.）",
+                  "（where問地點，題目已給back door）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "what",
+                  "who",
+                  "when",
+                  "where"
+                ],
+                "answer": 0,
+                "explanation": "what當主詞使用，問「什麼事可以被做」以找回畫作。",
+                "optionsZh": [
+                  "（正確，what當主詞問「什麼事」）",
+                  "（who問人，此處問的是事情不符）",
+                  "（when問時間，此處不符）",
+                  "（where問地點，此處不符）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "Why",
+                  "What",
+                  "When",
+                  "Where"
+                ],
+                "answer": 0,
+                "explanation": "why問「為什麼」，符合詢問犯罪動機的語境。",
+                "optionsZh": [
+                  "（正確，why問原因/動機）",
+                  "（what此處已知是crime，不需再問是什麼）",
+                  "（when問時間，此處問的是原因不符）",
+                  "（where問地點，此處問的是原因不符）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "12-10",
         "title": "祈使句的被動語態",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>命令句：Let+受詞+be+p.p.</b><br>祈使句改成被動時，句首加上Let，後面接原本主動句的受詞，再加be+p.p.：Do your homework now. → Let your homework be done.<br><br><b>禁止句：Don't let+受詞+be+p.p.</b><br>Don't open the window. → Don't let the window be opened.<br><br><b>易混淆重點</b><br>① 這種被動句型比較正式、書面，口語中不常見，但考試會考轉換。<br>② let在這裡是使役動詞的固定用法，不是一般的「讓」，整個句構要背起來，不能自己隨意更動。<br>③ 原本祈使句的受詞會變成let後面的受詞，而不是句子的主詞（因為Let本身才是句子的動詞）。",
+          "examples": [
+            {
+              "en": "Let the trash be taken out before the guests arrive.",
+              "zh": "在客人到達前，請把垃圾拿出去。"
+            },
+            {
+              "en": "Don't let the door be left open at night.",
+              "zh": "晚上請不要讓門開著。"
+            },
+            {
+              "en": "Let the truth be known to everyone.",
+              "zh": "讓真相被所有人知道。"
+            },
+            {
+              "en": "Let the matter be discussed at the next meeting.",
+              "zh": "讓這件事在下次會議中討論。"
+            },
+            {
+              "en": "Don't let the fire be left unattended.",
+              "zh": "不要讓火無人看管。"
+            },
+            {
+              "en": "Let the report be submitted by Friday.",
+              "zh": "讓報告在星期五前繳交。"
+            },
+            {
+              "en": "Let the plants be watered every morning.",
+              "zh": "讓這些植物每天早上被澆水。"
+            },
+            {
+              "en": "Don't let the secret be told to anyone else.",
+              "zh": "不要讓這個祕密被告訴其他任何人。"
+            },
+            {
+              "en": "Let the windows be closed before the storm arrives.",
+              "zh": "在暴風雨來臨前把窗戶關上。"
+            },
+            {
+              "en": "Let the message be sent as soon as possible.",
+              "zh": "讓這則訊息盡快被寄出。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "Clean your room now. → ___ your room be cleaned now.",
+              "options": [
+                "Let",
+                "Do",
+                "Make",
+                "Have"
+              ],
+              "answer": 0,
+              "explanation": "祈使句被動化：句首加Let，後面接受詞+be+p.p.。",
+              "target_grammar": "被動語態（祈使句）",
+              "optionsZh": [
+                "（正確，祈使句被動化固定用Let）",
+                "（do不符祈使句被動的固定句構）",
+                "（make不符祈使句被動的固定句構）",
+                "（have不符祈使句被動的固定句構）"
+              ]
+            },
+            {
+              "sentence": "Don't open the window. → Don't ___ the window be opened.",
+              "options": [
+                "let",
+                "make",
+                "have",
+                "do"
+              ],
+              "answer": 0,
+              "explanation": "禁止句被動化：Don't let+受詞+be+p.p.。",
+              "target_grammar": "被動語態（祈使句）",
+              "optionsZh": [
+                "（正確，禁止句被動化固定用Don't let）",
+                "（make不符禁止句被動的固定句構）",
+                "（have不符禁止句被動的固定句構）",
+                "（do不符禁止句被動的固定句構）"
+              ]
+            },
+            {
+              "sentence": "Submit the report by Friday. → Let the report ___ by Friday.",
+              "options": [
+                "be submitted",
+                "submitted",
+                "submit",
+                "be submit"
+              ],
+              "answer": 0,
+              "explanation": "祈使句被動化後，Let後面接受詞+be+p.p.：be submitted。",
+              "target_grammar": "被動語態（祈使句）",
+              "optionsZh": [
+                "（正確，Let+受詞+be+p.p.）",
+                "（缺少be，不完整的被動結構）",
+                "（原形動詞不符被動語態結構）",
+                "（p.p.形式錯誤，應為submitted而非submit）"
+              ]
+            },
+            {
+              "sentence": "Water the plants every day. → Let the plants ___ every day.",
+              "options": [
+                "be watered",
+                "watered",
+                "water",
+                "be water"
+              ],
+              "answer": 0,
+              "explanation": "祈使句被動化：Let+受詞+be+p.p.：be watered。",
+              "target_grammar": "被動語態（祈使句）",
+              "optionsZh": [
+                "（正確，Let+受詞+be+p.p.）",
+                "（缺少be，不完整的被動結構）",
+                "（原形動詞不符被動語態結構）",
+                "（p.p.形式錯誤，應為watered而非water）"
+              ]
+            },
+            {
+              "sentence": "Don't leave the door open. → Don't let the door ___ open.",
+              "options": [
+                "be left",
+                "leave",
+                "left",
+                "be leave"
+              ],
+              "answer": 0,
+              "explanation": "禁止句被動化：Don't let+受詞+be+p.p.：be left。",
+              "target_grammar": "被動語態（祈使句）",
+              "optionsZh": [
+                "（正確，Don't let+受詞+be+p.p.）",
+                "（原形動詞不符被動語態結構）",
+                "（缺少be，不完整的被動結構）",
+                "（p.p.形式錯誤，應為left而非leave）"
+              ]
+            },
+            {
+              "sentence": "Discuss this matter at the meeting. → Let this matter ___ at the meeting.",
+              "options": [
+                "be discussed",
+                "discussed",
+                "discuss",
+                "be discuss"
+              ],
+              "answer": 0,
+              "explanation": "祈使句被動化：Let+受詞+be+p.p.：be discussed。",
+              "target_grammar": "被動語態（祈使句）",
+              "optionsZh": [
+                "（正確，Let+受詞+be+p.p.）",
+                "（缺少be，不完整的被動結構）",
+                "（原形動詞不符被動語態結構）",
+                "（p.p.形式錯誤，應為discussed而非discuss）"
+              ]
+            },
+            {
+              "sentence": "Tell everyone the good news. → Let the good news ___ to everyone.",
+              "options": [
+                "be told",
+                "told",
+                "tell",
+                "be tell"
+              ],
+              "answer": 0,
+              "explanation": "祈使句被動化：Let+受詞+be+p.p.：be told。",
+              "target_grammar": "被動語態（祈使句）",
+              "optionsZh": [
+                "（正確，Let+受詞+be+p.p.）",
+                "（缺少be，不完整的被動結構）",
+                "（原形動詞不符被動語態結構）",
+                "（p.p.形式錯誤，應為told而非tell）"
+              ]
+            },
+            {
+              "sentence": "Don't tell anyone the secret. → Don't let the secret ___ to anyone.",
+              "options": [
+                "be told",
+                "tell",
+                "told",
+                "be tell"
+              ],
+              "answer": 0,
+              "explanation": "禁止句被動化：Don't let+受詞+be+p.p.：be told。",
+              "target_grammar": "被動語態（祈使句）",
+              "optionsZh": [
+                "（正確，Don't let+受詞+be+p.p.）",
+                "（原形動詞不符被動語態結構）",
+                "（缺少be，不完整的被動結構）",
+                "（p.p.形式錯誤，應為told而非tell）"
+              ]
+            },
+            {
+              "sentence": "Close the windows before the storm. → Let the windows ___ before the storm.",
+              "options": [
+                "be closed",
+                "closed",
+                "close",
+                "be close"
+              ],
+              "answer": 0,
+              "explanation": "祈使句被動化：Let+受詞+be+p.p.：be closed。",
+              "target_grammar": "被動語態（祈使句）",
+              "optionsZh": [
+                "（正確，Let+受詞+be+p.p.）",
+                "（缺少be，不完整的被動結構）",
+                "（原形動詞不符被動語態結構）",
+                "（p.p.形式錯誤，應為closed而非close）"
+              ]
+            },
+            {
+              "sentence": "Send the message immediately. → Let the message ___ immediately.",
+              "options": [
+                "be sent",
+                "sent",
+                "send",
+                "be send"
+              ],
+              "answer": 0,
+              "explanation": "祈使句被動化：Let+受詞+be+p.p.：be sent。",
+              "target_grammar": "被動語態（祈使句）",
+              "optionsZh": [
+                "（正確，Let+受詞+be+p.p.）",
+                "（缺少be，不完整的被動結構）",
+                "（原形動詞不符被動語態結構）",
+                "（p.p.形式錯誤，應為sent而非send）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "Instructions Before the Trip",
+            "passage": "Before we leave for our camping trip, there are a few things to remember. Let all the bags __(1)__ packed the night before so we won't be rushed in the morning. Don't let the tent __(2)__ forgotten at home this time, since it happened last year. Let the map and flashlight __(3)__ placed in the front pocket of the backpack for easy access. Don't let the campfire __(4)__ left burning when we go to sleep. Finally, let everyone's phone __(5)__ fully charged before we head out.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "be",
+                  "being",
+                  "been",
+                  "to be"
+                ],
+                "answer": 0,
+                "explanation": "祈使句被動化：Let+受詞+be+p.p.，此處be是原形，因為Let後面接原形動詞be。",
+                "optionsZh": [
+                  "（正確，Let+受詞+be+p.p.，be為原形）",
+                  "（現在分詞不符Let+受詞+原形動詞的句構）",
+                  "（過去分詞形式不符，應先接原形be）",
+                  "（不定詞不符Let+受詞+原形動詞的句構）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "be",
+                  "being",
+                  "been",
+                  "to be"
+                ],
+                "answer": 0,
+                "explanation": "Don't let+受詞+be+p.p.，此處be是原形。",
+                "optionsZh": [
+                  "（正確，Don't let+受詞+be+p.p.，be為原形）",
+                  "（現在分詞不符let+受詞+原形動詞的句構）",
+                  "（過去分詞形式不符，應先接原形be）",
+                  "（不定詞不符let+受詞+原形動詞的句構）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "be",
+                  "being",
+                  "been",
+                  "to be"
+                ],
+                "answer": 0,
+                "explanation": "祈使句被動化：Let+受詞+be+p.p.，此處be是原形。",
+                "optionsZh": [
+                  "（正確，Let+受詞+be+p.p.，be為原形）",
+                  "（現在分詞不符Let+受詞+原形動詞的句構）",
+                  "（過去分詞形式不符，應先接原形be）",
+                  "（不定詞不符Let+受詞+原形動詞的句構）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "be",
+                  "being",
+                  "been",
+                  "to be"
+                ],
+                "answer": 0,
+                "explanation": "Don't let+受詞+be+p.p.，此處be是原形。",
+                "optionsZh": [
+                  "（正確，Don't let+受詞+be+p.p.，be為原形）",
+                  "（現在分詞不符let+受詞+原形動詞的句構）",
+                  "（過去分詞形式不符，應先接原形be）",
+                  "（不定詞不符let+受詞+原形動詞的句構）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "be",
+                  "being",
+                  "been",
+                  "to be"
+                ],
+                "answer": 0,
+                "explanation": "祈使句被動化：Let+受詞+be+p.p.，此處be是原形。",
+                "optionsZh": [
+                  "（正確，Let+受詞+be+p.p.，be為原形）",
+                  "（現在分詞不符Let+受詞+原形動詞的句構）",
+                  "（過去分詞形式不符，應先接原形be）",
+                  "（不定詞不符Let+受詞+原形動詞的句構）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "12-11",
