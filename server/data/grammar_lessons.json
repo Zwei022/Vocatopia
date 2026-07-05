@@ -7169,14 +7169,650 @@
       {
         "id": "7-5",
         "title": "現在分詞與過去分詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>現在分詞表示主動、正在進行</b><br>The crying girl over there is my sister.（正在哭的女孩，強調動作正在發生）／Did you see the moving box?（正在動的箱子，強調主動進行的狀態）<br><br><b>過去分詞表示被動、已完成</b><br>The broken computer cost a lot.（壞掉的電腦，強調「被弄壞」的被動狀態）／Does anyone see the opened letter?（被拆開的信，強調已完成的動作）<br><br><b>判斷技巧：問「誰對誰做了什麼」</b><br>如果名詞是動作的「執行者」，用現在分詞；如果名詞是動作的「接受者」，用過去分詞。a used car（二手車）：car是被使用的對象，用過去分詞；a working machine（正在運轉的機器）：machine是正在動作的主體，用現在分詞。<br><br><b>不及物動詞的分詞也能當形容詞</b><br>fallen leaves（落葉）：fall是不及物動詞，沒有真正的被動語態，但fallen當形容詞可以表示「已經完成掉落」的狀態。<br><br><b>兩者放在名詞前後都可以，但意思要看語境</b><br>大部分情況分詞形容詞放在名詞前面（前位修飾）：a sleeping baby；如果分詞後面還帶有自己的受詞或介系詞片語，通常會整組移到名詞後面（後位修飾）：the girl sitting next to me（坐在我旁邊的那個女孩）。",
+          "examples": [
+            {
+              "en": "The excited children ran toward the roller coaster.",
+              "zh": "興奮的孩子們朝著雲霄飛車跑去。"
+            },
+            {
+              "en": "I found a broken umbrella in the trash can.",
+              "zh": "我在垃圾桶裡發現了一把壞掉的傘。"
+            },
+            {
+              "en": "The man sitting by the window is my uncle.",
+              "zh": "坐在窗邊的那個男人是我叔叔。"
+            },
+            {
+              "en": "We collected the fallen leaves in the backyard.",
+              "zh": "我們收集了後院裡的落葉。"
+            },
+            {
+              "en": "Look at that flying kite; it's shaped like a dragon.",
+              "zh": "看那個正在飛的風箏，它形狀像一條龍。"
+            },
+            {
+              "en": "This is a used bookstore near my school.",
+              "zh": "這是我學校附近的一間二手書店。"
+            },
+            {
+              "en": "The barking dog woke up the whole neighborhood.",
+              "zh": "那隻吠叫的狗把整個社區都吵醒了。"
+            },
+            {
+              "en": "The stolen bicycle was returned to its owner.",
+              "zh": "被偷的腳踏車被歸還給了它的主人。"
+            },
+            {
+              "en": "I like to watch the rising sun from my balcony.",
+              "zh": "我喜歡從我的陽台看著升起的太陽。"
+            },
+            {
+              "en": "The letter written by my grandmother made me cry.",
+              "zh": "我奶奶寫的那封信讓我哭了。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "Look at the ___ bird trying to fly with a hurt wing.",
+              "options": [
+                "struggle",
+                "struggling",
+                "struggled",
+                "struggles"
+              ],
+              "answer": 1,
+              "explanation": "bird是主動掙扎的一方，用現在分詞struggling修飾。",
+              "target_grammar": "現在分詞與過去分詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞bird）",
+                "（正確，現在分詞表示主動進行的動作）",
+                "（過去分詞表示被動，此處bird是主動掙扎不符）",
+                "（動詞第三人稱單數不可修飾名詞）"
+              ]
+            },
+            {
+              "sentence": "I can't fix this ___ chair; it needs a new leg.",
+              "options": [
+                "break",
+                "breaking",
+                "broken",
+                "breaks"
+              ],
+              "answer": 2,
+              "explanation": "chair是被弄壞的對象，用過去分詞broken表示被動、已完成的狀態。",
+              "target_grammar": "現在分詞與過去分詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞chair）",
+                "（現在分詞表示主動進行，此處chair是被弄壞的對象不符）",
+                "（正確，過去分詞表示被動、已完成的狀態）",
+                "（動詞第三人稱單數不可修飾名詞）"
+              ]
+            },
+            {
+              "sentence": "The girl ___ next to the door is waiting for her mom.",
+              "options": [
+                "stand",
+                "standing",
+                "stood",
+                "stands"
+              ],
+              "answer": 1,
+              "explanation": "girl是主動站著的一方，且分詞後面帶有介系詞片語next to the door，用現在分詞後位修飾。",
+              "target_grammar": "現在分詞與過去分詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞girl）",
+                "（正確，現在分詞後位修飾，表示正在站立的動作）",
+                "（過去式不可直接修飾名詞）",
+                "（動詞第三人稱單數不可修飾名詞）"
+              ]
+            },
+            {
+              "sentence": "We picked up all the ___ toys before the guests arrived.",
+              "options": [
+                "scatter",
+                "scattering",
+                "scattered",
+                "scatters"
+              ],
+              "answer": 2,
+              "explanation": "toys是被散落的對象，用過去分詞scattered表示被動、已完成的狀態。",
+              "target_grammar": "現在分詞與過去分詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞toys）",
+                "（現在分詞表示主動進行，此處toys是被散落的對象不符）",
+                "（正確，過去分詞表示被動、已完成的狀態）",
+                "（動詞第三人稱單數不可修飾名詞）"
+              ]
+            },
+            {
+              "sentence": "Did you see the ___ leaves all over the yard?",
+              "options": [
+                "fall",
+                "falling",
+                "fallen",
+                "falls"
+              ],
+              "answer": 2,
+              "explanation": "fallen leaves「落葉」，過去分詞表示已經完成掉落的狀態（不及物動詞的過去分詞當形容詞）。",
+              "target_grammar": "現在分詞與過去分詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞leaves）",
+                "（現在分詞表示正在掉落中，較不符「落葉」的完成狀態）",
+                "（正確，過去分詞表示已完成的狀態）",
+                "（動詞第三人稱單數不可修飾名詞）"
+              ]
+            },
+            {
+              "sentence": "This is a ___ car; the previous owner took good care of it.",
+              "options": [
+                "use",
+                "using",
+                "used",
+                "uses"
+              ],
+              "answer": 2,
+              "explanation": "used car「二手車」是固定用法，過去分詞表示被使用過的狀態。",
+              "target_grammar": "現在分詞與過去分詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞car）",
+                "（現在分詞不符「二手車」被動語意）",
+                "（正確，used car為固定用法，表示被使用過）",
+                "（動詞第三人稱單數不可修飾名詞）"
+              ]
+            },
+            {
+              "sentence": "The ___ dog ran around the yard, chasing its own tail.",
+              "options": [
+                "excite",
+                "exciting",
+                "excited",
+                "excites"
+              ],
+              "answer": 2,
+              "explanation": "dog是感受到興奮情緒的一方，用過去分詞excited修飾（詳見第11章情緒動詞相關規則）。",
+              "target_grammar": "現在分詞與過去分詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞dog）",
+                "（現在分詞表示造成興奮的來源，此處dog是感受興奮的一方不符）",
+                "（正確，過去分詞表示感到興奮的狀態）",
+                "（動詞第三人稱單數不可修飾名詞）"
+              ]
+            },
+            {
+              "sentence": "The man ___ the piano on the stage is my music teacher.",
+              "options": [
+                "play",
+                "playing",
+                "played",
+                "plays"
+              ],
+              "answer": 1,
+              "explanation": "man是主動彈琴的一方，且分詞後面帶有受詞the piano，用現在分詞後位修飾。",
+              "target_grammar": "現在分詞與過去分詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞man）",
+                "（正確，現在分詞後位修飾，表示正在彈奏的動作）",
+                "（過去式不可直接修飾名詞）",
+                "（動詞第三人稱單數不可修飾名詞）"
+              ]
+            },
+            {
+              "sentence": "We found a ___ wallet on the street and gave it to the police.",
+              "options": [
+                "lose",
+                "losing",
+                "lost",
+                "loses"
+              ],
+              "answer": 2,
+              "explanation": "lost wallet「遺失的皮夾」，過去分詞表示已經遺失的狀態（不及物動詞的過去分詞當形容詞）。",
+              "target_grammar": "現在分詞與過去分詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞wallet）",
+                "（現在分詞不符「遺失」的完成狀態）",
+                "（正確，過去分詞表示已遺失的狀態）",
+                "（動詞第三人稱單數不可修飾名詞）"
+              ]
+            },
+            {
+              "sentence": "The book ___ by my favorite author just came out last week.",
+              "options": [
+                "write",
+                "writing",
+                "written",
+                "writes"
+              ],
+              "answer": 2,
+              "explanation": "book是被寫出來的對象，用過去分詞written，且後面帶有by+執行者，屬後位修飾。",
+              "target_grammar": "現在分詞與過去分詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞book）",
+                "（現在分詞表示主動進行，此處book是被寫的對象不符）",
+                "（正確，過去分詞表示被動，後位修飾book）",
+                "（動詞第三人稱單數不可修飾名詞）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A Walk in the Park",
+            "passage": "Yesterday, I took a walk in the park and saw many interesting things. There was a __(1)__ dog running happily around the pond, chasing some ducks. Near the bench, I noticed a __(2)__ newspaper that someone must have left behind. An old man __(3)__ a hat was feeding the pigeons with bread crumbs. I also saw some __(4)__ leaves covering the path, making a soft crunching sound under my feet. Before I left, I picked up a __(5)__ coin near the fountain and gave it to a nearby vendor.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "excite",
+                  "exciting",
+                  "excited",
+                  "excites"
+                ],
+                "answer": 2,
+                "explanation": "dog是感受到興奮情緒的一方，用過去分詞excited修飾。",
+                "optionsZh": [
+                  "（原形動詞不可直接修飾名詞dog）",
+                  "（現在分詞表示造成興奮的來源，此處dog是感受興奮的一方不符）",
+                  "（正確，過去分詞表示感到興奮的狀態）",
+                  "（動詞第三人稱單數不可修飾名詞）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "forget",
+                  "forgetting",
+                  "forgotten",
+                  "forgets"
+                ],
+                "answer": 2,
+                "explanation": "newspaper是被遺忘的對象，用過去分詞forgotten表示被動、已完成的狀態。",
+                "optionsZh": [
+                  "（原形動詞不可直接修飾名詞newspaper）",
+                  "（現在分詞表示主動進行，此處newspaper是被遺忘的對象不符）",
+                  "（正確，過去分詞表示被遺忘的狀態）",
+                  "（動詞第三人稱單數不可修飾名詞）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "wear",
+                  "wearing",
+                  "worn",
+                  "wears"
+                ],
+                "answer": 1,
+                "explanation": "man是主動戴著帽子的一方，且分詞後面帶有受詞a hat，用現在分詞後位修飾。",
+                "optionsZh": [
+                  "（原形動詞不可直接修飾名詞man）",
+                  "（正確，現在分詞後位修飾，表示正在戴著的動作）",
+                  "（過去分詞較常用於「被穿戴」的物品本身，此處指人主動戴著）",
+                  "（動詞第三人稱單數不可修飾名詞）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "fall",
+                  "falling",
+                  "fallen",
+                  "falls"
+                ],
+                "answer": 2,
+                "explanation": "fallen leaves「落葉」，過去分詞表示已經完成掉落的狀態。",
+                "optionsZh": [
+                  "（原形動詞不可直接修飾名詞leaves）",
+                  "（現在分詞表示正在掉落中，較不符「落葉」的完成狀態）",
+                  "（正確，過去分詞表示已完成的狀態）",
+                  "（動詞第三人稱單數不可修飾名詞）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "lose",
+                  "losing",
+                  "lost",
+                  "loses"
+                ],
+                "answer": 2,
+                "explanation": "lost coin「遺失的硬幣」，過去分詞表示已經遺失的狀態。",
+                "optionsZh": [
+                  "（原形動詞不可直接修飾名詞coin）",
+                  "（現在分詞不符「遺失」的完成狀態）",
+                  "（正確，過去分詞表示已遺失的狀態）",
+                  "（動詞第三人稱單數不可修飾名詞）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "7-6",
         "title": "名詞變成的形容詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>動名詞當形容詞：表示名詞的「功能」</b><br>放在名詞前面，說明這個名詞是用來做什麼的：a waiting room（等候室，功能是讓人等候）、a smoking room（吸菸室）、drinking water（飲用水，功能是拿來喝的）。<br><br><b>不定詞當形容詞：表示「目的」，放在名詞後面</b><br>不定詞（to V）放在名詞後面，表示「用來做…」：Mom needs a fish to cook.（媽媽需要一條魚來煮）、We have a lot of homework to do tonight.（今晚有很多功課要做）。如果不定詞的受詞就是前面的名詞本身，就不用再重複：homework to do（不用說homework to do it）。<br><br><b>一般名詞當形容詞：表示「特性」</b><br>兩個名詞放在一起，前面的名詞說明後面名詞的特性/類別：shoe store（鞋店）、family name（姓氏）、summer vacation（暑假）、book cover（書封面）。<br><br><b>複合形容詞：數字+單位當一個形容詞</b><br>結構：a/an+數字-單數名詞+所修飾的名詞：a three-year-old boy（三歲大的男孩）、a ten-story apartment（十層樓高的公寓）。注意中間的名詞一定要用單數，即使數字大於1：不能說a three-years-old boy。<br><br><b>易混淆重點</b><br>① 動名詞當形容詞（表功能，放名詞前）跟不定詞當形容詞（表目的，放名詞後）看起來意思很像，但位置不同：a room for waiting（口語，較少見）≈ a waiting room（動名詞前位）；something to eat（不定詞後位，「用來吃的東西」）。<br>② 複合形容詞中間用連字號連接，且名詞一律用單數形式。",
+          "examples": [
+            {
+              "en": "There's a swimming pool behind our apartment building.",
+              "zh": "我們公寓大樓後面有一座游泳池。"
+            },
+            {
+              "en": "I need something to write with; do you have a pen?",
+              "zh": "我需要一個可以拿來寫字的東西，你有筆嗎？"
+            },
+            {
+              "en": "My favorite subject is math, but I also like science class.",
+              "zh": "我最喜歡的科目是數學，但我也喜歡自然課。"
+            },
+            {
+              "en": "She just adopted a five-year-old cat from the shelter.",
+              "zh": "她剛從收容所領養了一隻五歲大的貓。"
+            },
+            {
+              "en": "This is a reading room where students can study quietly.",
+              "zh": "這是一間學生可以安靜讀書的閱覽室。"
+            },
+            {
+              "en": "We don't have anything to drink except water.",
+              "zh": "我們除了水以外沒有什麼可以喝的。"
+            },
+            {
+              "en": "He works at a car repair shop downtown.",
+              "zh": "他在市中心的一間汽車修理廠工作。"
+            },
+            {
+              "en": "This is a two-hour flight to Tokyo.",
+              "zh": "這是一趟到東京的兩小時航班。"
+            },
+            {
+              "en": "Don't drink from the sink; that's not drinking water.",
+              "zh": "不要從水槽喝水，那不是飲用水。"
+            },
+            {
+              "en": "My brother just finished building a ten-page report.",
+              "zh": "我哥哥剛完成一份十頁的報告。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "Please wait for me in the ___ room.",
+              "options": [
+                "wait",
+                "waiting",
+                "waited",
+                "waits"
+              ],
+              "answer": 1,
+              "explanation": "waiting room「等候室」，動名詞表示這個房間的功能。",
+              "target_grammar": "名詞變成的形容詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞room）",
+                "（正確，動名詞表示房間的功能）",
+                "（過去分詞表示被動或完成，不符「功能」語意）",
+                "（動詞第三人稱單數不可修飾名詞）"
+              ]
+            },
+            {
+              "sentence": "I don't have anything ___ tonight; can you recommend a restaurant?",
+              "options": [
+                "eat",
+                "eating",
+                "to eat",
+                "eaten"
+              ],
+              "answer": 2,
+              "explanation": "不定詞當形容詞放在名詞anything後面，表示「用來吃的」。",
+              "target_grammar": "名詞變成的形容詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞anything）",
+                "（動名詞通常放名詞前表功能，此處放後面需要不定詞）",
+                "（正確，不定詞放名詞後表示目的）",
+                "（過去分詞不符此處主動尋找食物的語意）"
+              ]
+            },
+            {
+              "sentence": "My little sister is only a ___ girl, but she's very smart.",
+              "options": [
+                "four-year",
+                "four-years-old",
+                "four-year-old",
+                "four year old"
+              ],
+              "answer": 2,
+              "explanation": "複合形容詞結構：數字+單數名詞-單數名詞，用連字號連接，中間的year要單數。",
+              "target_grammar": "名詞變成的形容詞",
+              "optionsZh": [
+                "（缺少old，複合形容詞需要完整結構）",
+                "（years應為單數year，不可加s）",
+                "（正確，複合形容詞用連字號連接且名詞單數）",
+                "（缺少連字號連接）"
+              ]
+            },
+            {
+              "sentence": "This bottle contains clean ___ water for the whole family.",
+              "options": [
+                "drink",
+                "drinking",
+                "to drink",
+                "drunk"
+              ],
+              "answer": 1,
+              "explanation": "drinking water「飲用水」，動名詞表示這種水的功能是拿來喝的。",
+              "target_grammar": "名詞變成的形容詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞water）",
+                "（正確，動名詞表示水的功能）",
+                "（不定詞通常放名詞後，此處放在名詞前不符）",
+                "（過去分詞不符「功能」語意）"
+              ]
+            },
+            {
+              "sentence": "We need a boat ___ the river before the storm comes.",
+              "options": [
+                "cross",
+                "crossing",
+                "to cross",
+                "crossed"
+              ],
+              "answer": 2,
+              "explanation": "不定詞當形容詞放在名詞boat後面，表示「用來橫渡的」目的。",
+              "target_grammar": "名詞變成的形容詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞boat）",
+                "（動名詞通常表功能放名詞前，此處放後面需要不定詞表目的）",
+                "（正確，不定詞放名詞後表示目的）",
+                "（過去分詞不符此處主動橫渡的語意）"
+              ]
+            },
+            {
+              "sentence": "This is a ___ apartment building near the train station.",
+              "options": [
+                "ten-story",
+                "ten-stories",
+                "ten story",
+                "tens-story"
+              ],
+              "answer": 0,
+              "explanation": "複合形容詞結構：數字+單數名詞story，用連字號連接。",
+              "target_grammar": "名詞變成的形容詞",
+              "optionsZh": [
+                "（正確，複合形容詞用連字號連接且名詞單數story）",
+                "（stories應為單數story，不可加s）",
+                "（缺少連字號連接）",
+                "（tens應為ten，數字不加s）"
+              ]
+            },
+            {
+              "sentence": "He works in a ___ store downtown.",
+              "options": [
+                "shoe",
+                "shoes",
+                "shoeing",
+                "shoed"
+              ],
+              "answer": 0,
+              "explanation": "shoe store「鞋店」，一般名詞當形容詞使用，表示店的特性/類別，用單數形shoe。",
+              "target_grammar": "名詞變成的形容詞",
+              "optionsZh": [
+                "（正確，一般名詞當形容詞用單數形）",
+                "（複合名詞修飾用法中，前面的名詞通常用單數形，不加s）",
+                "（非正確英文形式）",
+                "（非正確英文形式）"
+              ]
+            },
+            {
+              "sentence": "Do you have a pen ___ ? I forgot to bring mine.",
+              "options": [
+                "borrow",
+                "borrowing",
+                "to borrow",
+                "borrowed"
+              ],
+              "answer": 2,
+              "explanation": "不定詞當形容詞放在名詞pen後面，表示「可以借的」目的。",
+              "target_grammar": "名詞變成的形容詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞pen）",
+                "（動名詞通常表功能放名詞前，此處放後面需要不定詞）",
+                "（正確，不定詞放名詞後表示目的）",
+                "（過去分詞不符此處主動借用的語意）"
+              ]
+            },
+            {
+              "sentence": "This is a ___ car that my dad bought last month.",
+              "options": [
+                "two-door",
+                "two-doors",
+                "two door",
+                "twos-door"
+              ],
+              "answer": 0,
+              "explanation": "複合形容詞結構：數字+單數名詞door，用連字號連接。",
+              "target_grammar": "名詞變成的形容詞",
+              "optionsZh": [
+                "（正確，複合形容詞用連字號連接且名詞單數door）",
+                "（doors應為單數door，不可加s）",
+                "（缺少連字號連接）",
+                "（twos應為two，數字不加s）"
+              ]
+            },
+            {
+              "sentence": "I bought some ___ paper for wrapping presents.",
+              "options": [
+                "wrap",
+                "wrapping",
+                "to wrap",
+                "wrapped"
+              ],
+              "answer": 1,
+              "explanation": "wrapping paper「包裝紙」，動名詞表示這種紙的功能。",
+              "target_grammar": "名詞變成的形容詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞paper）",
+                "（正確，動名詞表示紙的功能）",
+                "（不定詞通常放名詞後，此處放在名詞前不符）",
+                "（過去分詞不符「功能」語意）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A New Café Downtown",
+            "passage": "Last weekend, my friends and I visited a new café near the __(1)__ station downtown. It had a cozy __(2)__ room with soft chairs where people could enjoy coffee and books together. My friend, who is a __(3)__-year-old college student, ordered a cup of hot chocolate. I didn't have anything __(4)__ with me, so I borrowed a notebook from the café's shelf. Before leaving, we bought some fresh __(5)__ water bottles to take home.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "train",
+                  "trains",
+                  "training",
+                  "trained"
+                ],
+                "answer": 0,
+                "explanation": "train station「火車站」，一般名詞當形容詞使用，用單數形train。",
+                "optionsZh": [
+                  "（正確，一般名詞當形容詞用單數形）",
+                  "（複合名詞修飾用法中，前面的名詞通常用單數形，不加s）",
+                  "（動名詞不符此處表示種類的語意）",
+                  "（過去分詞不符此處語意）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "read",
+                  "reading",
+                  "to read",
+                  "read to"
+                ],
+                "answer": 1,
+                "explanation": "reading room「閱覽室」，動名詞表示這個房間的功能。",
+                "optionsZh": [
+                  "（原形動詞不可直接修飾名詞room）",
+                  "（正確，動名詞表示房間的功能）",
+                  "（不定詞通常放名詞後，此處放在名詞前不符）",
+                  "（非正確英文形式）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "twenty",
+                  "twenty-one",
+                  "twenty-year",
+                  "twenties"
+                ],
+                "answer": 2,
+                "explanation": "複合形容詞結構：數字+單數名詞year，用連字號連接。",
+                "optionsZh": [
+                  "（缺少year，複合形容詞需要完整結構）",
+                  "（缺少year，複合形容詞需要完整結構）",
+                  "（正確，twenty-year-old的組成部分，數字+單數名詞year）",
+                  "（twenties不符複合形容詞的固定結構）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "write",
+                  "writing",
+                  "to write",
+                  "written"
+                ],
+                "answer": 2,
+                "explanation": "不定詞當形容詞放在名詞anything後面，表示「用來寫的」目的。",
+                "optionsZh": [
+                  "（原形動詞不可直接修飾名詞anything）",
+                  "（動名詞通常表功能放名詞前，此處放後面需要不定詞）",
+                  "（正確，不定詞放名詞後表示目的）",
+                  "（過去分詞不符此處主動書寫的語意）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "drink",
+                  "drinking",
+                  "to drink",
+                  "drunk"
+                ],
+                "answer": 1,
+                "explanation": "drinking water「飲用水」，動名詞表示這種水的功能。",
+                "optionsZh": [
+                  "（原形動詞不可直接修飾名詞water）",
+                  "（正確，動名詞表示水的功能）",
+                  "（不定詞通常放名詞後，此處放在名詞前不符）",
+                  "（過去分詞不符「功能」語意）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "7-7",
