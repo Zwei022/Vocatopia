@@ -1,4 +1,4 @@
-const CACHE = 'vocatopia-v85';
+const CACHE = 'vocatopia-v86';
 const ASSETS = ['/', '/index.html', '/styles.css', '/script.js', '/auth.js', '/manifest.json', '/fonts/Yozai-Regular-subset.woff2', '/game/grammar.js', '/game/grammar.css'];
 
 self.addEventListener('install', e => {
