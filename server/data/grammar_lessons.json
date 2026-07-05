@@ -1019,9 +1019,432 @@
     "title": "助動詞",
     "page": 47,
     "subLessons": [
-      { "id": "4-1", "title": "情狀助動詞 can/could、may/might、will/would", "teaching": null, "quiz": [] },
-      { "id": "4-2", "title": "情狀助動詞 shall/should、need、must", "teaching": null, "quiz": [] },
-      { "id": "4-3", "title": "情狀助動詞 had better、used to", "teaching": null, "quiz": [] }
+      {
+        "id": "4-1",
+        "title": "情狀助動詞 can/could、may/might、will/would",
+        "teaching": {
+          "explanation": "<b>核心概念</b><br>情狀助動詞（can/could、may/might、will/would）不是用來表達時態，而是用來表達「能力、允許、推測、意願」等語氣，後面固定接原形動詞。<br><br><b>can/could——能力、允許</b><br>can 表示現在的能力或許可；could 是 can 的過去式，使用時不一定跟時態有關，可以表示客氣的請求（常跟please連用），也可以是「詢問對方是否有能力做到」：Could you please pass me the salt?（客氣請求）／Could you swim across the river?（詢問能力）<br>can not＝can't＝cannot，但 cannot 不可放在疑問句句首、問句或簡答句中。<br>can't be「不可能是」／could be「可能是」都是推測用法：He can't be at home; his car is gone.（他不可能在家。）／It could be your phone ringing.（可能是你的手機在響。）<br><br><b>may/might——推測、客氣的許可</b><br>may/might 表示推測，may 的可能性比 might 高一些。may 也可用於疑問句表達第一人稱的客氣請求，等同 can：May I ask you something? = Can I ask you something?（限第一人稱使用；若表示「許可」則不限人稱）<br>may not 和 can not 都可以表示婉轉的拒絕：You may not go out tonight.<br>注意拼字：maybe（副詞，置於句首）≠ may be（助動詞＋be動詞）：Maybe he is right. = He may be right.<br><br><b>will/would——未來意願、客氣請求</b><br>will 表示對未來的描述或意願；would 是 will 的過去式，使用時不一定跟時態有關，常用來表達客氣的請求（常搭配please）：Would you please open the window?<br>would like to / would love to ＝ 客氣版的 want to：I would like to try that restaurant.<br><br><b>常見易混淆地雷</b><br>① 單一字的情狀助動詞不可以連續使用兩個：（×）He can will go.<br>② 但若助動詞是片語型（be able to、be going to），可以再搭配任一助動詞：Jean will be able to go camping with us.<br>③ can't be「不可能是」vs could be「可能是」，語氣強弱不同。<br>④ maybe（副詞）和 may be（助動詞+be動詞）拼法意義都不同，別搞混。<br>⑤ may 表達第一人稱客氣請求時限定用法，表示「許可」時則不限人稱。<br>⑥ cannot 不可置於疑問句句首。<br>⑦ could 用於疑問句時，同時含有「客氣請求」與「詢問對方能力」兩種可能語意，要看上下文判斷。<br>⑧ would like to / would love to 語氣比 want to 更客氣、更委婉。",
+          "examples": [
+            { "en": "Can you swim across the river?", "zh": "你能游泳過河嗎？" },
+            { "en": "Could you please pass me the salt?", "zh": "可以請你把鹽遞給我嗎？" },
+            { "en": "It may rain later this afternoon.", "zh": "今天下午稍晚可能會下雨。" },
+            { "en": "Something is beeping in the bag. It could be your phone.", "zh": "袋子裡有東西在嗶嗶叫，可能是你的手機。" },
+            { "en": "I will help you move next weekend.", "zh": "我下週末會幫你搬家。" },
+            { "en": "Would you mind opening the window?", "zh": "你介意開一下窗嗎？" },
+            { "en": "I would like to try that new restaurant.", "zh": "我想試試那間新餐廳。" },
+            { "en": "She might not come to the party tonight.", "zh": "她今晚可能不會來派對。" }
+          ]
+        },
+        "quiz": {
+        "mc": [
+          {
+            "sentence": "___ you help me carry these boxes?",
+            "options": ["Could", "Cannot", "Mayn't", "Won't"],
+            "answer": 0,
+            "explanation": "could 用於疑問句表達委婉客氣的請求。",
+            "target_grammar": "情狀助動詞can/could/may/might/will/would",
+            "optionsZh": ["（客氣請求，正確）", "（cannot不可置於疑問句句首，錯誤）", "（非標準縮寫用法，錯誤）", "（語意不符請求情境）"]
+          },
+          {
+            "sentence": "He ___ be at home; his car isn't in the driveway.",
+            "options": ["can't", "couldn't", "mayn't", "mightn't"],
+            "answer": 0,
+            "explanation": "can't be 表示「不可能是」的推測。",
+            "target_grammar": "情狀助動詞can/could/may/might/will/would",
+            "optionsZh": ["（不可能是，正確）", "（couldn't be非此固定推測用法）", "（非標準縮寫用法，罕用）", "（非標準縮寫用法，罕用）"]
+          },
+          {
+            "sentence": "Something is ringing. It ___ be my phone.",
+            "options": ["could", "cannot", "mayn't", "shan't"],
+            "answer": 0,
+            "explanation": "could be 表示「可能是」的推測。",
+            "target_grammar": "情狀助動詞can/could/may/might/will/would",
+            "optionsZh": ["（可能是，正確）", "（不可能是，語意不符）", "（非標準縮寫用法，罕用）", "（非本節重點助動詞，用法不符）"]
+          },
+          {
+            "sentence": "___ I ask you a personal question?",
+            "options": ["May", "Must", "Shall", "Need"],
+            "answer": 0,
+            "explanation": "may 用於第一人稱徵詢客氣的許可，等同 Can I...?",
+            "target_grammar": "情狀助動詞can/could/may/might/will/would",
+            "optionsZh": ["（第一人稱客氣請求，正確）", "（表義務，語意不符）", "（表將要/應該，語意不符）", "（表必要性，語意不符）"]
+          },
+          {
+            "sentence": "You ___ go out at night with people I don't know.",
+            "options": ["may not", "must not", "need not", "will not"],
+            "answer": 0,
+            "explanation": "may not 表示婉轉的拒絕/不允許。",
+            "target_grammar": "情狀助動詞can/could/may/might/will/would",
+            "optionsZh": ["（婉轉拒絕，正確）", "（表禁止，語氣過強不符婉轉語感）", "（表不需要，語意不符）", "（表意願，語意不符）"]
+          },
+          {
+            "sentence": "I think it ___ snow tonight; the sky looks heavy.",
+            "options": ["will", "would", "can", "could"],
+            "answer": 0,
+            "explanation": "will 表達對未來的推測。",
+            "target_grammar": "情狀助動詞can/could/may/might/will/would",
+            "optionsZh": ["（未來推測，正確）", "（will的過去式，時態不符）", "（表能力，語意不符）", "（表較弱推測，will更直接對應此語境）"]
+          },
+          {
+            "sentence": "___ you tell him what I told you?",
+            "options": ["Could", "Should", "Might", "Must"],
+            "answer": 0,
+            "explanation": "could 用於疑問句時可表達「詢問對方是否有能力做到」。",
+            "target_grammar": "情狀助動詞can/could/may/might/will/would",
+            "optionsZh": ["（詢問能力，正確）", "（表建議，語意不符）", "（表推測，語意不符）", "（表義務，語意不符）"]
+          },
+          {
+            "sentence": "___, he is a doctor.",
+            "options": ["Maybe", "May be", "Might be", "Can be"],
+            "answer": 0,
+            "explanation": "maybe 是副詞，可以置於句首；may be 是「助動詞+be動詞」，兩者拼法與詞性不同。",
+            "target_grammar": "情狀助動詞can/could/may/might/will/would",
+            "optionsZh": ["（副詞，可置句首，正確）", "（助動詞+be動詞，需接在主詞後，句構不符）", "（助動詞+be動詞，句構不符）", "（助動詞+be動詞，句構不符）"]
+          },
+          {
+            "sentence": "He can ___ the piano very well.",
+            "options": ["play", "plays", "playing", "played"],
+            "answer": 0,
+            "explanation": "情狀助動詞 can 後面固定接原形動詞。",
+            "target_grammar": "情狀助動詞can/could/may/might/will/would",
+            "optionsZh": ["（原形動詞，正確）", "（第三人稱單數變化，用法不符助動詞後接原形）", "（現在分詞，用法不符）", "（過去式，用法不符）"]
+          },
+          {
+            "sentence": "Jean ___ be able to go camping with us next month.",
+            "options": ["will", "cans", "coulds", "mays"],
+            "answer": 0,
+            "explanation": "片語型助動詞（be able to）可以再搭配 will 等單字助動詞使用，will be able to＝將能夠。",
+            "target_grammar": "情狀助動詞can/could/may/might/will/would",
+            "optionsZh": ["（片語型助動詞可搭配will，正確）", "（助動詞不可加s，錯誤）", "（助動詞不可加s，錯誤）", "（助動詞不可加s，錯誤）"]
+          }
+        ],
+        "cloze": {
+          "title": "A Rainy Day Plan",
+          "passage": "Look at those clouds — it __(1)__ rain later today. We __(2)__ need our umbrellas today. Actually, something __(3)__ be wrong with the weather forecast app; it said sunny all week! __(4)__ I borrow your umbrella, just to be safe? Thanks — I __(5)__ definitely return it tomorrow.",
+          "blanks": [
+            {
+              "n": 1,
+              "options": ["will", "would", "can", "could"],
+              "answer": 0,
+              "explanation": "will 表達對未來天氣的推測。",
+              "optionsZh": ["（未來推測，正確）", "（will的過去式，時態不符）", "（表能力，語意不符）", "（表較弱推測，此處will更直接）"]
+            },
+            {
+              "n": 2,
+              "options": ["may", "can", "will", "could"],
+              "answer": 0,
+              "explanation": "may 表示推測的可能性——可能會需要雨傘。",
+              "optionsZh": ["（推測可能性，正確）", "（表能力，語意不符）", "（表未來意願，語意較不符推測）", "（表較弱推測，may更貼切此語境）"]
+            },
+            {
+              "n": 3,
+              "options": ["could", "can", "will", "would"],
+              "answer": 0,
+              "explanation": "could be 表示「可能是」的推測。",
+              "optionsZh": ["（可能是，正確）", "（表能力，語意不符）", "（表未來，語意不符）", "（表過去意願，語意不符）"]
+            },
+            {
+              "n": 4,
+              "options": ["May", "Must", "Shall", "Need"],
+              "answer": 0,
+              "explanation": "may 用於第一人稱表達客氣的請求。",
+              "optionsZh": ["（第一人稱客氣請求，正確）", "（表義務，語意不符）", "（表將要/應該，語意不符）", "（表必要性，語意不符）"]
+            },
+            {
+              "n": 5,
+              "options": ["will", "would", "can", "could"],
+              "answer": 0,
+              "explanation": "will 表達強烈的意願/承諾。",
+              "optionsZh": ["（意願/承諾，正確）", "（will的過去式，時態不符）", "（表能力，語意不符）", "（表較弱推測，語意不符承諾）"]
+            }
+          ]
+        }
+      }
+      },
+      {
+        "id": "4-2",
+        "title": "情狀助動詞 shall/should、need、must",
+        "teaching": {
+          "explanation": "<b>核心概念</b><br>shall/should 表示「建議」（＝ought to/be supposed to），need 當助動詞等於 have to（限用於否定句、疑問句），must 表示強制的義務，也可以表示很有把握的推測。<br><br><b>shall/should——建議</b><br>should 是 shall 的過去式，使用時不一定跟時態有關：You should study harder.（你應該更用功。）<br>shall 可以當 will 使用，但限第一人稱（I、we）主詞；當「應該」使用時則不限人稱：We shall (will) leave earlier.／You shall (should) leave earlier.<br><br><b>need——當助動詞用</b><br>need 當助動詞時等於 have to/need to，但限用於否定句和疑問句：Need he go home now? = Does he need to go home now?<br>needn't ＝ don't need to ＝ don't have to：She needn't do that again.<br><br><b>must——強制義務與推測</b><br>must 有強制性，帶有「一定要」的意味；mustn't 解釋為「禁止」：You mustn't smoke here.<br>must 的過去式借用 had to（must本身沒有過去式）：You had to go home last night.<br>以 must 為首的疑問句，肯定回答用 must，但否定回答很少用 mustn't，通常用 needn't：Must he wear a tie? — Yes, he must. / No, he needn't.<br>must 也可以表示「一定是」的強烈推測：He must be tired after the trip.<br><br><b>★ 猜測機率大小排序</b><br>must be「一定是」＞ could be「可能是」＞ should be「應該是」＞ may be「或許是」＞ might be「或許是」（語氣最弱）<br><br><b>常見易混淆地雷</b><br>① mustn't「禁止」和 needn't「不需要」意思完全不同，別搞混。<br>② need 當助動詞只用於否定句/疑問句，肯定句要用一般動詞 needs to/have to。<br>③ must 沒有過去式，過去式要借用 had to。<br>④ Must...?疑問句的否定回答通常用 needn't，很少用 mustn't。<br>⑤ 猜測機率排序：must be > could be > should be > may be > might be。<br>⑥ shall 表「將要」限第一人稱；表「應該」不限人稱。<br>⑦ should 雖是 shall 的過去式，但實際使用上更常表達「建議」而非單純時態。<br>⑧ must be 表達最強烈的推測，語氣接近「一定是」。",
+          "examples": [
+            { "en": "You should apologize to her.", "zh": "你應該跟她道歉。" },
+            { "en": "We shall overcome this challenge together.", "zh": "我們將一起克服這個挑戰。" },
+            { "en": "Need she finish the report tonight?", "zh": "她今晚需要完成報告嗎？" },
+            { "en": "She needn't worry about the exam; she's well prepared.", "zh": "她不需要擔心考試，她準備得很充分。" },
+            { "en": "You must wear a helmet when riding a motorcycle.", "zh": "騎機車時你必須戴安全帽。" },
+            { "en": "You mustn't smoke in this building.", "zh": "你不可以在這棟大樓裡抽菸。" },
+            { "en": "He must be exhausted after working all night.", "zh": "他熬夜工作一整晚，一定累壞了。" },
+            { "en": "It could be true, but I'm not completely sure.", "zh": "這可能是真的，但我不完全確定。" }
+          ]
+        },
+        "quiz": {
+        "mc": [
+          {
+            "sentence": "You ___ see a doctor if the pain continues.",
+            "options": ["should", "need", "must not", "needn't"],
+            "answer": 0,
+            "explanation": "should 表達建議。",
+            "target_grammar": "情狀助動詞shall/should/need/must",
+            "optionsZh": ["（表建議，正確）", "（助動詞need需搭配疑問/否定句，句構不符）", "（表禁止，語意不符建議）", "（表不需要，語意不符）"]
+          },
+          {
+            "sentence": "___ we leave earlier since the typhoon is coming?",
+            "options": ["Shall", "Must", "Need", "Might"],
+            "answer": 0,
+            "explanation": "shall解釋為「將要」時可代替will，限第一人稱（we）主詞使用。",
+            "target_grammar": "情狀助動詞shall/should/need/must",
+            "optionsZh": ["（第一人稱代替will，正確）", "（表義務，語氣過強不符徵詢語感）", "（表必要性，語意不符）", "（表推測，語意不符）"]
+          },
+          {
+            "sentence": "___ he go home now, or can he stay a bit longer?",
+            "options": ["Need", "Must", "Shall", "Should"],
+            "answer": 0,
+            "explanation": "need作為助動詞用於疑問句，等於 Does he need to...?",
+            "target_grammar": "情狀助動詞shall/should/need/must",
+            "optionsZh": ["（助動詞need疑問句，正確）", "（表義務，語意較強不符徵詢語感）", "（限第一人稱使用，主詞不符）", "（表建議，語意不符詢問必要性）"]
+          },
+          {
+            "sentence": "She has studied so hard, so she ___ worry about the test.",
+            "options": ["needn't", "mustn't", "isn't", "doesn't"],
+            "answer": 0,
+            "explanation": "needn't＝don't need to，表示「不需要」。",
+            "target_grammar": "情狀助動詞shall/should/need/must",
+            "optionsZh": ["（不需要，正確）", "（禁止，語意不符）", "（be動詞，句構不符）", "（一般動詞助動詞，句構不符情狀助動詞worry）"]
+          },
+          {
+            "sentence": "You ___ tell anyone about this secret.",
+            "options": ["mustn't", "needn't", "may", "should"],
+            "answer": 0,
+            "explanation": "mustn't表示「禁止」。",
+            "target_grammar": "情狀助動詞shall/should/need/must",
+            "optionsZh": ["（禁止，正確）", "（不需要，語氣不符禁止語感）", "（許可，語意相反）", "（建議，語氣不符禁止強度）"]
+          },
+          {
+            "sentence": "A: Must I finish this today? B: No, you ___.",
+            "options": ["needn't", "mustn't", "shouldn't", "can't"],
+            "answer": 0,
+            "explanation": "以must為首的疑問句，否定回答通常用needn't，很少用mustn't。",
+            "target_grammar": "情狀助動詞shall/should/need/must",
+            "optionsZh": ["（must疑問句的否定回答，正確）", "（雖文法可通但實際少用於此回答）", "（表建議，語意不符回答邏輯）", "（表不可能，語意不符）"]
+          },
+          {
+            "sentence": "He ___ have forgotten our appointment; he's usually so reliable.",
+            "options": ["must", "could", "should", "may"],
+            "answer": 0,
+            "explanation": "must be(have)表示猜測機率排序中最強的「一定」。",
+            "target_grammar": "情狀助動詞shall/should/need/must",
+            "optionsZh": ["（猜測機率最高，正確）", "（猜測機率次高，語氣較不強烈）", "（猜測機率中等，語氣不符最強推測）", "（猜測機率較低，語氣不符）"]
+          },
+          {
+            "sentence": "It ___ be true, but I haven't confirmed it yet.",
+            "options": ["might", "must", "should", "need"],
+            "answer": 0,
+            "explanation": "根據猜測機率排序，might be表示可能性最低的「或許」，符合「還沒確認」的語感。",
+            "target_grammar": "情狀助動詞shall/should/need/must",
+            "optionsZh": ["（猜測機率最低，符合尚未確認的語感，正確）", "（猜測機率最高，語氣過於肯定）", "（猜測機率中等，語氣不符）", "（表必要性，語意不符推測）"]
+          },
+          {
+            "sentence": "Yesterday, I ___ to finish my report before midnight.",
+            "options": ["must", "had to", "needed", "should"],
+            "answer": 1,
+            "explanation": "must沒有過去式，過去式要借用had to。",
+            "target_grammar": "情狀助動詞shall/should/need/must",
+            "optionsZh": ["（must沒有過去式，錯誤）", "（must的過去式，正確）", "（need作一般動詞需接to，此處句構可但語感較弱，had to更貼切must的過去語境）", "（should本身已是過去式形態，時態邏輯不符must past）"]
+          },
+          {
+            "sentence": "You ___ wear a seatbelt; it's the law.",
+            "options": ["must", "might", "could", "may"],
+            "answer": 0,
+            "explanation": "must表達強制性的義務。",
+            "target_grammar": "情狀助動詞shall/should/need/must",
+            "optionsZh": ["（強制義務，正確）", "（表推測，語意不符）", "（表推測，語意不符）", "（表推測，語意不符）"]
+          }
+        ],
+        "cloze": {
+          "title": "Class Rules",
+          "passage": "In this class, everyone __(1)__ arrive on time; being late is not acceptable. If you're sick, you __(2)__ come to school — just email me instead. You __(3)__ already be great at English to join this class — beginners are welcome too. But you __(4)__ try your best every day. I think you __(5)__ do well if you keep practicing.",
+          "blanks": [
+            {
+              "n": 1,
+              "options": ["must", "might", "could", "would"],
+              "answer": 0,
+              "explanation": "must表達強制性的規定。",
+              "optionsZh": ["（強制規定，正確）", "（表推測，語意不符）", "（表推測，語意不符）", "（表意願，語意不符）"]
+            },
+            {
+              "n": 2,
+              "options": ["needn't", "mustn't", "shouldn't", "can't"],
+              "answer": 0,
+              "explanation": "needn't表示「不需要」，生病時不需要來上課（不是禁止，是不需要）。",
+              "optionsZh": ["（不需要，正確）", "（禁止，語氣過強不符情境）", "（建議不要，語意不符）", "（不可能，語意不符）"]
+            },
+            {
+              "n": 3,
+              "options": ["needn't", "mustn't", "must", "might"],
+              "answer": 0,
+              "explanation": "needn't表示「不需要」，暗示不用具備某條件就能加入。",
+              "optionsZh": ["（不需要，正確）", "（禁止，語意不符）", "（必須，語意相反）", "（推測，語意不符）"]
+            },
+            {
+              "n": 4,
+              "options": ["should", "mustn't", "needn't", "might"],
+              "answer": 0,
+              "explanation": "should表示建議。",
+              "optionsZh": ["（建議，正確）", "（禁止，語意不符）", "（不需要，語意不符）", "（推測，語意不符）"]
+            },
+            {
+              "n": 5,
+              "options": ["should", "must", "needn't", "mightn't"],
+              "answer": 0,
+              "explanation": "should在此表達「應該會」的推測語氣。",
+              "optionsZh": ["（推測，正確）", "（語氣過於肯定，不符鼓勵語感）", "（不需要，語意不符）", "（非標準用法）"]
+            }
+          ]
+        }
+      }
+      },
+      {
+        "id": "4-3",
+        "title": "情狀助動詞 had better、used to",
+        "teaching": {
+          "explanation": "<b>核心概念</b><br>had better表達比should更強烈的建議，常帶有「否則會有壞後果」的警告語氣；used to表達過去的習慣，現在已經不做了。<br><br><b>had better——強烈建議</b><br>had better＋原形動詞，否定是 had better not＋原形動詞（不是hadn't better）：You'd better hurry, or you'll miss the bus.（你最好快一點，不然會錯過公車。）／You'd better not touch that.（你最好不要碰那個。）<br>had better/had better not後面固定接原形動詞，不接to V。<br><br><b>used to——過去的習慣</b><br>used to＋原形動詞，表示過去常做、但現在已經不做的習慣：I used to play the violin.（我以前常拉小提琴，現在不拉了。）<br>否定：used not to 或 didn't use to（use不加ed）：She didn't use to like vegetables.<br>疑問：Did＋主詞＋use to＋原形動詞：Did you use to live in the countryside?<br><br><b>be used to+V-ing——現在的習慣（容易混淆）</b><br>跟used to完全不同的結構：be(am/is/are) used to+V-ing，表示「現在習慣於」某件事：He is used to working late at night.（他現在習慣熬夜工作。）used在這裡是形容詞，不隨時態變化。<br><br><b>常見易混淆地雷</b><br>① had better的否定是had better not，不是hadn't better。<br>② had better/had better not後面接原形動詞，不接to。<br>③ used to的否定是used not to或didn't use to（use不加ed）。<br>④ used to的疑問句用Did+主詞+use to。<br>⑤ used to vs be used to：used to描述「過去的習慣」（現在不做了），be used to+Ving描述「現在習慣、適應」（現在正在做）。<br>⑥ had better語氣比should更強烈、更急迫，口語中常用。<br>⑦ used to後面一定接原形動詞。<br>⑧ had better固定用had，不因人稱單複數而改變型態。",
+          "examples": [
+            { "en": "You'd better finish your homework before dinner.", "zh": "你最好在晚餐前把作業寫完。" },
+            { "en": "We had better not be late for the meeting.", "zh": "我們最好不要開會遲到。" },
+            { "en": "I used to live in Taichung when I was young.", "zh": "我小時候曾經住在台中。" },
+            { "en": "Did you use to play basketball in high school?", "zh": "你高中時以前有打籃球嗎？" },
+            { "en": "She didn't use to like vegetables, but now she loves them.", "zh": "她以前不喜歡吃蔬菜，但現在很愛吃。" },
+            { "en": "He is used to working late at night.", "zh": "他已經習慣熬夜工作了。" },
+            { "en": "You'd better bring an umbrella; it might rain.", "zh": "你最好帶把傘，可能會下雨。" },
+            { "en": "My grandfather used to tell us amazing stories.", "zh": "我爺爺以前常常說很棒的故事給我們聽。" }
+          ]
+        },
+        "quiz": {
+        "mc": [
+          {
+            "sentence": "You ___ take an umbrella; it looks like rain.",
+            "options": ["had better", "had better to", "better had", "had better not"],
+            "answer": 0,
+            "explanation": "had better表達強烈建議，後面直接接原形動詞。",
+            "target_grammar": "情狀助動詞had better/used to",
+            "optionsZh": ["（強烈建議，正確）", "（had better後不加to，錯誤）", "（語序錯誤）", "（否定形式，語意相反）"]
+          },
+          {
+            "sentence": "We ___ leave now, or we'll be late.",
+            "options": ["had better", "had better to", "'d better not", "hadn't better"],
+            "answer": 0,
+            "explanation": "had better+原形動詞，表達強烈建議。",
+            "target_grammar": "情狀助動詞had better/used to",
+            "optionsZh": ["（強烈建議，正確）", "（had better後不加to，錯誤）", "（否定形式，語意相反）", "（否定形式錯誤拼法）"]
+          },
+          {
+            "sentence": "You ___ touch that hot stove!",
+            "options": ["had better not", "hadn't better", "don't had better", "had not better"],
+            "answer": 0,
+            "explanation": "had better的否定是had better not。",
+            "target_grammar": "情狀助動詞had better/used to",
+            "optionsZh": ["（正確否定形式）", "（錯誤拼法）", "（錯誤拼法）", "（錯誤拼法）"]
+          },
+          {
+            "sentence": "I ___ collect stamps when I was a kid.",
+            "options": ["used to", "use to", "am used to", "was used to"],
+            "answer": 0,
+            "explanation": "used to表達過去的習慣。",
+            "target_grammar": "情狀助動詞had better/used to",
+            "optionsZh": ["（過去習慣，正確）", "（缺少過去式標記，時態不符）", "（表現在習慣，語意不符過去情境）", "（be used to無此過去式組合，用法不符）"]
+          },
+          {
+            "sentence": "___ you use to live in the countryside?",
+            "options": ["Did", "Do", "Were", "Have"],
+            "answer": 0,
+            "explanation": "used to的疑問句用Did+主詞+use to。",
+            "target_grammar": "情狀助動詞had better/used to",
+            "optionsZh": ["（正確疑問句形式）", "（現在式，時態不符）", "（be動詞，句構不符used to）", "（現在完成式，時態不符）"]
+          },
+          {
+            "sentence": "She ___ eat meat, but now she's vegetarian.",
+            "options": ["didn't use to", "doesn't use to", "isn't used to", "didn't used to"],
+            "answer": 0,
+            "explanation": "used to的否定是didn't use to（use不加ed）。",
+            "target_grammar": "情狀助動詞had better/used to",
+            "optionsZh": ["（正確否定形式）", "（現在式，時態不符過去習慣）", "（be used to用法不符此語境）", "（use不應加ed，拼法錯誤）"]
+          },
+          {
+            "sentence": "He is ___ to getting up early for work now.",
+            "options": ["used", "use", "using", "uses"],
+            "answer": 0,
+            "explanation": "be used to+Ving表達「現在習慣於」，used在此是形容詞用法。",
+            "target_grammar": "情狀助動詞had better/used to",
+            "optionsZh": ["（be used to固定用法，正確）", "（原形，不符固定片語）", "（現在分詞，不符固定片語）", "（第三人稱單數變化，不符固定片語）"]
+          },
+          {
+            "sentence": "My grandmother ___ to bake bread every weekend.",
+            "options": ["used", "use", "uses", "using"],
+            "answer": 0,
+            "explanation": "used to+原形動詞，used固定不變，不隨人稱變化。",
+            "target_grammar": "情狀助動詞had better/used to",
+            "optionsZh": ["（過去習慣固定用法，正確）", "（現在式，時態不符）", "（第三人稱單數變化，不符used to固定拼法）", "（現在分詞，用法不符）"]
+          },
+          {
+            "sentence": "You'd better ___ your homework before you watch TV.",
+            "options": ["finish", "to finish", "finishing", "finished"],
+            "answer": 0,
+            "explanation": "had better後面接原形動詞，不加to。",
+            "target_grammar": "情狀助動詞had better/used to",
+            "optionsZh": ["（原形動詞，正確）", "（had better後不加to，錯誤）", "（現在分詞，用法不符）", "（過去式，用法不符）"]
+          },
+          {
+            "sentence": "After living in Japan for years, she is completely ___ to using chopsticks.",
+            "options": ["used", "use", "uses", "using"],
+            "answer": 0,
+            "explanation": "be used to的固定用法，used為形容詞不隨時態變化。",
+            "target_grammar": "情狀助動詞had better/used to",
+            "optionsZh": ["（be used to固定用法，正確）", "（原形，不符固定片語）", "（第三人稱單數變化，不符固定片語）", "（現在分詞，不符固定片語）"]
+          }
+        ],
+        "cloze": {
+          "title": "Breaking an Old Habit",
+          "passage": "When I was younger, I __(1)__ eat candy every single day. My parents always told me I __(2)__ better cut back, or I'd get cavities. At first, it was hard to stop, but now I'm completely __(3)__ to eating healthy snacks instead. __(4)__ you use to have any habits like that? I think everyone __(5)__ better try to break at least one bad habit each year.",
+          "blanks": [
+            {
+              "n": 1,
+              "options": ["used to", "use to", "am used to", "was used to"],
+              "answer": 0,
+              "explanation": "used to表達過去的習慣。",
+              "optionsZh": ["（過去習慣，正確）", "（缺少過去式標記，時態不符）", "（表現在習慣，語意不符過去情境）", "（用法不符）"]
+            },
+            {
+              "n": 2,
+              "options": ["had", "have", "has", "having"],
+              "answer": 0,
+              "explanation": "had better表達強烈建議/警告，固定用had。",
+              "optionsZh": ["（had better固定用法，正確）", "（現在式，用法不符固定片語）", "（第三人稱單數變化，不符固定片語）", "（現在分詞，用法不符）"]
+            },
+            {
+              "n": 3,
+              "options": ["used", "use", "uses", "using"],
+              "answer": 0,
+              "explanation": "be used to的used是形容詞用法，固定不變。",
+              "optionsZh": ["（be used to固定用法，正確）", "（原形，不符固定片語）", "（第三人稱單數變化，不符固定片語）", "（現在分詞，不符固定片語）"]
+            },
+            {
+              "n": 4,
+              "options": ["Did", "Do", "Were", "Have"],
+              "answer": 0,
+              "explanation": "used to的疑問句用Did+主詞+use to。",
+              "optionsZh": ["（正確疑問句形式）", "（現在式，時態不符）", "（be動詞，句構不符used to）", "（現在完成式，時態不符）"]
+            },
+            {
+              "n": 5,
+              "options": ["had", "have", "has", "having"],
+              "answer": 0,
+              "explanation": "had better固定用had，不隨人稱變化。",
+              "optionsZh": ["（had better固定用法，正確）", "（現在式，用法不符固定片語）", "（第三人稱單數變化，不符固定片語）", "（現在分詞，用法不符）"]
+            }
+          ]
+        }
+      }
+      }
     ]
   },
   "5": {
