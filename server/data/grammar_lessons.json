@@ -16600,14 +16600,650 @@
       {
         "id": "12-13",
         "title": "使役動詞、感官動詞的受詞補語為被動",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>這一課討論的不是整句話被動化，而是「受詞補語本身」是被動</b><br>使役動詞或感官動詞後面的受詞補語，原本可以用原形動詞（表示受詞主動做這件事）。但如果受詞其實是「被動接受」這個動作，受詞補語就要改用過去分詞（不加be動詞）：<br>① 受詞主動執行：Mom had me mop the floor.（我自己主動拖地，用原形動詞mop）<br>② 受詞被動接受：I had the computer fixed because it didn't work.（電腦是被修的，不是自己修，用過去分詞fixed）<br><br><b>判斷技巧</b><br>問自己：「受詞會不會自己去做後面這個動作？」電腦不會自己修自己，所以用過去分詞；我自己可以拖地，所以用原形動詞。<br><br><b>易混淆重點</b><br>① 這不是「整句被動化」，注意句子本身還是主動句（I had...仍是主詞I在說話），只是受詞補語的形式反映了「受詞和動作之間的主被動關係」。<br>② 這個概念常跟「使役動詞的一般用法」（第13章）搞混，差別在受詞是不是動作的執行者。<br>③ 感官動詞也適用同樣邏輯：I saw the bike fixed by the man.（bike是被修的，用p.p.）",
+          "examples": [
+            {
+              "en": "I had my hair cut short for the summer.",
+              "zh": "我把頭髮剪短了準備過夏天。"
+            },
+            {
+              "en": "She had her car washed before the road trip.",
+              "zh": "她在自駕旅行前把車洗好了。"
+            },
+            {
+              "en": "We had the house painted a bright yellow color.",
+              "zh": "我們把房子漆成了明亮的黃色。"
+            },
+            {
+              "en": "I saw the fence repaired by two workers this morning.",
+              "zh": "我今天早上看到兩個工人在修理籬笆。"
+            },
+            {
+              "en": "He had his phone screen replaced after he dropped it.",
+              "zh": "他手機摔到後把螢幕換掉了。"
+            },
+            {
+              "en": "They had the old furniture removed from the office.",
+              "zh": "他們把辦公室裡的舊家具移走了。"
+            },
+            {
+              "en": "I heard my name called during the ceremony.",
+              "zh": "我聽到典禮中有人喊了我的名字。"
+            },
+            {
+              "en": "She had her wedding dress made by a local designer.",
+              "zh": "她請當地的設計師幫她做了婚紗。"
+            },
+            {
+              "en": "We had the roof checked before the rainy season started.",
+              "zh": "我們在雨季開始前檢查了屋頂。"
+            },
+            {
+              "en": "He had his essay corrected by his English teacher.",
+              "zh": "他請英文老師幫他的作文改錯。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "I need to have my shoes ___ before the trip.",
+              "options": [
+                "repair",
+                "repaired",
+                "repairing",
+                "to repair"
+              ],
+              "answer": 1,
+              "explanation": "shoes是被修理的對象（不會自己修理自己），受詞補語用過去分詞repaired。",
+              "target_grammar": "被動語態（受詞補語為被動）",
+              "optionsZh": [
+                "（原形動詞用於受詞主動做動作的情況，此處shoes是被修理的對象不符）",
+                "（正確，受詞是被動接受動作，用過去分詞）",
+                "（動名詞不符此使役動詞句構）",
+                "（不定詞不符使役動詞have的句構）"
+              ]
+            },
+            {
+              "sentence": "Mom had me ___ the dishes after dinner.",
+              "options": [
+                "wash",
+                "washed",
+                "washing",
+                "to wash"
+              ],
+              "answer": 0,
+              "explanation": "me是主動洗碗的人（我自己主動執行動作），受詞補語用原形動詞wash。",
+              "target_grammar": "被動語態（受詞補語為被動）",
+              "optionsZh": [
+                "（正確，受詞主動執行動作，用原形動詞）",
+                "（過去分詞用於受詞被動接受動作的情況，此處me是主動洗碗的人不符）",
+                "（動名詞不符使役動詞have的句構）",
+                "（不定詞不符使役動詞have的句構）"
+              ]
+            },
+            {
+              "sentence": "I had my computer ___ because it stopped working.",
+              "options": [
+                "fix",
+                "fixed",
+                "fixing",
+                "to fix"
+              ],
+              "answer": 1,
+              "explanation": "computer是被修理的對象，受詞補語用過去分詞fixed。",
+              "target_grammar": "被動語態（受詞補語為被動）",
+              "optionsZh": [
+                "（原形動詞用於受詞主動做動作的情況，此處computer是被修理的對象不符）",
+                "（正確，受詞是被動接受動作，用過去分詞）",
+                "（動名詞不符此使役動詞句構）",
+                "（不定詞不符使役動詞have的句構）"
+              ]
+            },
+            {
+              "sentence": "She had her son ___ his room before the guests arrived.",
+              "options": [
+                "clean",
+                "cleaned",
+                "cleaning",
+                "to clean"
+              ],
+              "answer": 0,
+              "explanation": "her son是主動打掃房間的人，受詞補語用原形動詞clean。",
+              "target_grammar": "被動語態（受詞補語為被動）",
+              "optionsZh": [
+                "（正確，受詞主動執行動作，用原形動詞）",
+                "（過去分詞用於受詞被動接受動作的情況，此處son是主動打掃的人不符）",
+                "（動名詞不符使役動詞have的句構）",
+                "（不定詞不符使役動詞have的句構）"
+              ]
+            },
+            {
+              "sentence": "We had the old wallpaper ___ from the walls.",
+              "options": [
+                "remove",
+                "removed",
+                "removing",
+                "to remove"
+              ],
+              "answer": 1,
+              "explanation": "wallpaper是被移除的對象，受詞補語用過去分詞removed。",
+              "target_grammar": "被動語態（受詞補語為被動）",
+              "optionsZh": [
+                "（原形動詞用於受詞主動做動作的情況，此處wallpaper是被移除的對象不符）",
+                "（正確，受詞是被動接受動作，用過去分詞）",
+                "（動名詞不符此使役動詞句構）",
+                "（不定詞不符使役動詞have的句構）"
+              ]
+            },
+            {
+              "sentence": "I saw the window ___ by the strong wind.",
+              "options": [
+                "break",
+                "broken",
+                "breaking",
+                "to break"
+              ],
+              "answer": 1,
+              "explanation": "window是被風吹破的對象（被動接受），受詞補語用過去分詞broken。",
+              "target_grammar": "被動語態（受詞補語為被動）",
+              "optionsZh": [
+                "（原形動詞用於受詞主動做動作的情況，此處window是被吹破的對象不符）",
+                "（正確，受詞是被動接受動作，用過去分詞）",
+                "（現在分詞較常用於主動進行的動作，此處window是被動接受者不符）",
+                "（不定詞不符感官動詞see的句構）"
+              ]
+            },
+            {
+              "sentence": "He had his suit ___ for the wedding.",
+              "options": [
+                "make",
+                "made",
+                "making",
+                "to make"
+              ],
+              "answer": 1,
+              "explanation": "suit是被製作的對象，受詞補語用過去分詞made。",
+              "target_grammar": "被動語態（受詞補語為被動）",
+              "optionsZh": [
+                "（原形動詞用於受詞主動做動作的情況，此處suit是被製作的對象不符）",
+                "（正確，受詞是被動接受動作，用過去分詞）",
+                "（動名詞不符此使役動詞句構）",
+                "（不定詞不符使役動詞have的句構）"
+              ]
+            },
+            {
+              "sentence": "The teacher had the students ___ their essays before class.",
+              "options": [
+                "submit",
+                "submitted",
+                "submitting",
+                "to submit"
+              ],
+              "answer": 0,
+              "explanation": "students是主動繳交作文的人，受詞補語用原形動詞submit。",
+              "target_grammar": "被動語態（受詞補語為被動）",
+              "optionsZh": [
+                "（正確，受詞主動執行動作，用原形動詞）",
+                "（過去分詞用於受詞被動接受動作的情況，此處students是主動繳交的人不符）",
+                "（動名詞不符使役動詞have的句構）",
+                "（不定詞不符使役動詞have的句構）"
+              ]
+            },
+            {
+              "sentence": "I heard my name ___ over the loudspeaker.",
+              "options": [
+                "call",
+                "called",
+                "calling",
+                "to call"
+              ],
+              "answer": 1,
+              "explanation": "name是被喊出來的對象（被動接受），受詞補語用過去分詞called。",
+              "target_grammar": "被動語態（受詞補語為被動）",
+              "optionsZh": [
+                "（原形動詞用於受詞主動做動作的情況，此處name是被喊出的對象不符）",
+                "（正確，受詞是被動接受動作，用過去分詞）",
+                "（現在分詞較常用於主動進行的動作，此處name是被動接受者不符）",
+                "（不定詞不符感官動詞hear的句構）"
+              ]
+            },
+            {
+              "sentence": "She had her essay ___ by a native speaker.",
+              "options": [
+                "check",
+                "checked",
+                "checking",
+                "to check"
+              ],
+              "answer": 1,
+              "explanation": "essay是被檢查的對象，受詞補語用過去分詞checked。",
+              "target_grammar": "被動語態（受詞補語為被動）",
+              "optionsZh": [
+                "（原形動詞用於受詞主動做動作的情況，此處essay是被檢查的對象不符）",
+                "（正確，受詞是被動接受動作，用過去分詞）",
+                "（動名詞不符此使役動詞句構）",
+                "（不定詞不符使役動詞have的句構）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "Getting Ready for a Job Interview",
+            "passage": "Before my big job interview, I had a lot to prepare. First, I had my suit __(1)__ at the dry cleaner's so it would look perfect. I also had my resume __(2)__ by a career counselor to make sure there were no mistakes. My mom had me __(3)__ my shoes the night before, since she said first impressions matter a lot. On the morning of the interview, I had my hair __(4)__ neatly at the salon. Finally, before I left, I had my dad __(5)__ me some quick advice about answering tricky questions.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "clean",
+                  "cleaned",
+                  "cleaning",
+                  "to clean"
+                ],
+                "answer": 1,
+                "explanation": "suit是被清洗的對象，受詞補語用過去分詞cleaned。",
+                "optionsZh": [
+                  "（原形動詞用於受詞主動做動作的情況，此處suit是被清洗的對象不符）",
+                  "（正確，受詞是被動接受動作，用過去分詞）",
+                  "（動名詞不符此使役動詞句構）",
+                  "（不定詞不符使役動詞have的句構）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "check",
+                  "checked",
+                  "checking",
+                  "to check"
+                ],
+                "answer": 1,
+                "explanation": "resume是被檢查的對象，受詞補語用過去分詞checked。",
+                "optionsZh": [
+                  "（原形動詞用於受詞主動做動作的情況，此處resume是被檢查的對象不符）",
+                  "（正確，受詞是被動接受動作，用過去分詞）",
+                  "（動名詞不符此使役動詞句構）",
+                  "（不定詞不符使役動詞have的句構）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "polish",
+                  "polished",
+                  "polishing",
+                  "to polish"
+                ],
+                "answer": 0,
+                "explanation": "me是主動擦鞋的人（我自己主動執行動作），受詞補語用原形動詞polish。",
+                "optionsZh": [
+                  "（正確，受詞主動執行動作，用原形動詞）",
+                  "（過去分詞用於受詞被動接受動作的情況，此處me是主動擦鞋的人不符）",
+                  "（動名詞不符使役動詞have的句構）",
+                  "（不定詞不符使役動詞have的句構）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "cut",
+                  "cutting",
+                  "cuts",
+                  "to cut"
+                ],
+                "answer": 0,
+                "explanation": "hair是被剪的對象，受詞補語用過去分詞cut（cut的過去分詞與原形同形）。",
+                "optionsZh": [
+                  "（正確，cut的過去分詞與原形同形，此處表示被剪的狀態）",
+                  "（現在分詞較常用於主動進行的動作，此處hair是被動接受者不符）",
+                  "（第三人稱單數形式不符受詞補語的句構）",
+                  "（不定詞不符使役動詞have的句構）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "give",
+                  "given",
+                  "giving",
+                  "to give"
+                ],
+                "answer": 0,
+                "explanation": "dad是主動給予建議的人，受詞補語用原形動詞give。",
+                "optionsZh": [
+                  "（正確，受詞主動執行動作，用原形動詞）",
+                  "（過去分詞用於受詞被動接受動作的情況，此處dad是主動給建議的人不符）",
+                  "（動名詞不符使役動詞have的句構）",
+                  "（不定詞不符使役動詞have的句構）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "12-14",
         "title": "及物動詞的受詞為被動",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>及物動詞的受詞（不定詞或動名詞）本身可以是被動的</b><br>如果一個及物動詞後面接不定詞（to V）或動名詞（V-ing）當受詞，而這個受詞本身要表達「被動」的意思，就要把to V改成to be+p.p.，或把V-ing改成being+p.p.：<br>The house needs to be rebuilt.（房子需要「被」改建，不是房子自己改建自己，所以用to be rebuilt）<br>The letter kept being sent.（信件不斷地「被」寄送，用being sent）<br><br><b>易混淆重點</b><br>① 這種句子的重點是「受詞本身的動作是被動的」，不是整句話被動化——句子本身仍然是主動句（The house needs...是主動語態，只是needs後面的受詞to be rebuilt帶有被動意味）。<br>② need後面接V-ing也可以表示被動：The house needs rebuilding.（跟to be rebuilt意思一樣，這是英文中的特殊用法）",
+          "examples": [
+            {
+              "en": "This old bridge needs to be repaired soon.",
+              "zh": "這座老橋需要盡快被修理。"
+            },
+            {
+              "en": "The window still needs cleaning after the storm.",
+              "zh": "暴風雨過後，這扇窗戶還需要被清洗。"
+            },
+            {
+              "en": "My computer requires to be updated regularly.",
+              "zh": "我的電腦需要定期被更新。"
+            },
+            {
+              "en": "The plan continued being discussed at every meeting.",
+              "zh": "這個計畫在每次會議中持續被討論。"
+            },
+            {
+              "en": "This report deserves to be reviewed carefully.",
+              "zh": "這份報告值得被仔細審閱。"
+            },
+            {
+              "en": "The old fence needs painting before winter comes.",
+              "zh": "冬天來臨前，這道舊籬笆需要被上漆。"
+            },
+            {
+              "en": "The problem kept being ignored by the committee.",
+              "zh": "這個問題一直被委員會忽略。"
+            },
+            {
+              "en": "This song deserves to be remembered for years.",
+              "zh": "這首歌值得被記住很多年。"
+            },
+            {
+              "en": "The road still needs to be fixed after the flood.",
+              "zh": "洪水過後，這條路還需要被修復。"
+            },
+            {
+              "en": "Her hard work needs to be recognized by the company.",
+              "zh": "她的努力需要被公司認可。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "This bridge needs ___ before it becomes dangerous.",
+              "options": [
+                "to repair",
+                "to be repaired",
+                "repairing it",
+                "repair"
+              ],
+              "answer": 1,
+              "explanation": "bridge是被修理的對象，需要用to be+p.p.表示受詞本身的被動意味。",
+              "target_grammar": "被動語態（及物動詞受詞為被動）",
+              "optionsZh": [
+                "（原形不定詞表示主動意味，此處bridge是被修理的對象不符）",
+                "（正確，to be+p.p.表示受詞本身是被動）",
+                "（此處不需要重複受詞it，且repairing應為單獨的動名詞被動形式being repaired）",
+                "（缺少不定詞標記to，句構不完整）"
+              ]
+            },
+            {
+              "sentence": "The old machine needs ___ regularly to keep working.",
+              "options": [
+                "oiling",
+                "to oil",
+                "oil",
+                "oiled"
+              ],
+              "answer": 0,
+              "explanation": "need+V-ing可以表示被動意味，oiling此處等同於being oiled，表示「被上油」。",
+              "target_grammar": "被動語態（及物動詞受詞為被動）",
+              "optionsZh": [
+                "（正確，need+V-ing表示被動意味，等同being oiled）",
+                "（原形不定詞表示主動意味，此處machine是被上油的對象不符）",
+                "（原形動詞不符need後面的句構）",
+                "（過去分詞不可直接接在need後面，應搭配be或用V-ing形式）"
+              ]
+            },
+            {
+              "sentence": "This report deserves ___ carefully by the manager.",
+              "options": [
+                "to review",
+                "to be reviewed",
+                "review",
+                "reviewing it"
+              ],
+              "answer": 1,
+              "explanation": "report是被審閱的對象，需要用to be+p.p.表示被動意味。",
+              "target_grammar": "被動語態（及物動詞受詞為被動）",
+              "optionsZh": [
+                "（原形不定詞表示主動意味，此處report是被審閱的對象不符）",
+                "（正確，to be+p.p.表示受詞本身是被動）",
+                "（原形動詞不符deserve後面的句構）",
+                "（此處不需要重複受詞it）"
+              ]
+            },
+            {
+              "sentence": "The topic kept ___ at every single meeting.",
+              "options": [
+                "discuss",
+                "being discussed",
+                "to discuss",
+                "discussed"
+              ],
+              "answer": 1,
+              "explanation": "topic是被討論的對象，keep後面接being+p.p.表示持續的被動動作。",
+              "target_grammar": "被動語態（及物動詞受詞為被動）",
+              "optionsZh": [
+                "（原形動詞不符keep+V-ing的句構）",
+                "（正確，keep+being+p.p.表示持續被討論）",
+                "（不定詞不符keep後面接動名詞的句構）",
+                "（單獨過去分詞不符keep後面需要being的完整結構）"
+              ]
+            },
+            {
+              "sentence": "This old car needs ___ before we drive it again.",
+              "options": [
+                "to fix",
+                "to be fixed",
+                "fix",
+                "fixing it"
+              ],
+              "answer": 1,
+              "explanation": "car是被修理的對象，需要用to be+p.p.表示受詞本身的被動意味。",
+              "target_grammar": "被動語態（及物動詞受詞為被動）",
+              "optionsZh": [
+                "（原形不定詞表示主動意味，此處car是被修理的對象不符）",
+                "（正確，to be+p.p.表示受詞本身是被動）",
+                "（原形動詞不符need後面的句構）",
+                "（此處不需要重複受詞it）"
+              ]
+            },
+            {
+              "sentence": "The garden needs ___ before the guests arrive.",
+              "options": [
+                "watering",
+                "to water",
+                "water",
+                "watered"
+              ],
+              "answer": 0,
+              "explanation": "need+V-ing可以表示被動意味，watering此處等同於being watered，表示「被澆水」。",
+              "target_grammar": "被動語態（及物動詞受詞為被動）",
+              "optionsZh": [
+                "（正確，need+V-ing表示被動意味，等同being watered）",
+                "（原形不定詞表示主動意味，此處garden是被澆水的對象不符）",
+                "（原形動詞不符need後面的句構）",
+                "（過去分詞不可直接接在need後面，應搭配be或用V-ing形式）"
+              ]
+            },
+            {
+              "sentence": "Her contribution deserves ___ by everyone in the company.",
+              "options": [
+                "to recognize",
+                "to be recognized",
+                "recognize",
+                "recognizing it"
+              ],
+              "answer": 1,
+              "explanation": "contribution是被認可的對象，需要用to be+p.p.表示被動意味。",
+              "target_grammar": "被動語態（及物動詞受詞為被動）",
+              "optionsZh": [
+                "（原形不定詞表示主動意味，此處contribution是被認可的對象不符）",
+                "（正確，to be+p.p.表示受詞本身是被動）",
+                "（原形動詞不符deserve後面的句構）",
+                "（此處不需要重複受詞it）"
+              ]
+            },
+            {
+              "sentence": "The mistake continued ___ even after several warnings.",
+              "options": [
+                "making",
+                "being made",
+                "to make",
+                "made"
+              ],
+              "answer": 1,
+              "explanation": "mistake是被犯下的對象，continue後面接being+p.p.表示持續的被動動作。",
+              "target_grammar": "被動語態（及物動詞受詞為被動）",
+              "optionsZh": [
+                "（原形動詞不符此處表示被動意味的句構）",
+                "（正確，continue+being+p.p.表示持續被犯下）",
+                "（不定詞不符此處強調持續被動的句構）",
+                "（單獨過去分詞不符continue後面需要being的完整結構）"
+              ]
+            },
+            {
+              "sentence": "This road still needs ___ after the heavy rain.",
+              "options": [
+                "fixing",
+                "to fix",
+                "fix",
+                "fixed"
+              ],
+              "answer": 0,
+              "explanation": "need+V-ing可以表示被動意味，fixing此處等同於being fixed，表示「被修復」。",
+              "target_grammar": "被動語態（及物動詞受詞為被動）",
+              "optionsZh": [
+                "（正確，need+V-ing表示被動意味，等同being fixed）",
+                "（原形不定詞表示主動意味，此處road是被修復的對象不符）",
+                "（原形動詞不符need後面的句構）",
+                "（過去分詞不可直接接在need後面，應搭配be或用V-ing形式）"
+              ]
+            },
+            {
+              "sentence": "This song deserves ___ for a very long time.",
+              "options": [
+                "to remember",
+                "to be remembered",
+                "remember",
+                "remembering it"
+              ],
+              "answer": 1,
+              "explanation": "song是被記住的對象，需要用to be+p.p.表示被動意味。",
+              "target_grammar": "被動語態（及物動詞受詞為被動）",
+              "optionsZh": [
+                "（原形不定詞表示主動意味，此處song是被記住的對象不符）",
+                "（正確，to be+p.p.表示受詞本身是被動）",
+                "（原形動詞不符deserve後面的句構）",
+                "（此處不需要重複受詞it）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "Renovating an Old House",
+            "passage": "My family recently bought an old house, and it clearly needs a lot of work. The roof needs __(1)__ soon because it leaks whenever it rains. All the windows need __(2)__ before winter comes, or the house will be too cold. My dad said the kitchen deserves __(3)__ completely, since the design is very outdated. The old wooden floor kept __(4)__ by termites, so we had to replace most of it. In the end, everyone agreed that all the hard work would eventually make the house look wonderful again, and our efforts would finally __(5)__ once the renovation was complete.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "fixing",
+                  "to fix",
+                  "fix",
+                  "fixed"
+                ],
+                "answer": 0,
+                "explanation": "need+V-ing表示被動意味，fixing此處等同於being fixed。",
+                "optionsZh": [
+                  "（正確，need+V-ing表示被動意味，等同being fixed）",
+                  "（原形不定詞表示主動意味，此處roof是被修復的對象不符）",
+                  "（原形動詞不符need後面的句構）",
+                  "（過去分詞不可直接接在need後面）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "replacing",
+                  "to replace",
+                  "replace",
+                  "replaced"
+                ],
+                "answer": 0,
+                "explanation": "need+V-ing表示被動意味，replacing此處等同於being replaced。",
+                "optionsZh": [
+                  "（正確，need+V-ing表示被動意味，等同being replaced）",
+                  "（原形不定詞表示主動意味，此處windows是被更換的對象不符）",
+                  "（原形動詞不符need後面的句構）",
+                  "（過去分詞不可直接接在need後面）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "to renovate",
+                  "to be renovated",
+                  "renovate",
+                  "renovating it"
+                ],
+                "answer": 1,
+                "explanation": "kitchen是被翻新的對象，需要用to be+p.p.表示被動意味。",
+                "optionsZh": [
+                  "（原形不定詞表示主動意味，此處kitchen是被翻新的對象不符）",
+                  "（正確，to be+p.p.表示受詞本身是被動）",
+                  "（原形動詞不符deserve後面的句構）",
+                  "（此處不需要重複受詞it）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "eating",
+                  "being eaten",
+                  "to eat",
+                  "eaten"
+                ],
+                "answer": 1,
+                "explanation": "floor是被白蟻啃食的對象，keep後面接being+p.p.表示持續的被動動作。",
+                "optionsZh": [
+                  "（原形動詞不符此處表示被動意味的句構）",
+                  "（正確，keep+being+p.p.表示持續被啃食）",
+                  "（不定詞不符此處強調持續被動的句構）",
+                  "（單獨過去分詞不符keep後面需要being的完整結構）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "pay off",
+                  "be paid off",
+                  "paying off",
+                  "paid off"
+                ],
+                "answer": 1,
+                "explanation": "efforts是被回報的對象，需要用be+p.p.表示被動意味（此處與will搭配的未來式被動）。",
+                "optionsZh": [
+                  "（原形動詞為主動意味，此處efforts是被回報的對象不符）",
+                  "（正確，will+be+p.p.表示未來被回報的被動意味）",
+                  "（動名詞形式不符will後面需要原形動詞的句構）",
+                  "（過去分詞不可直接接在will後面，需搭配be）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "12-15",
