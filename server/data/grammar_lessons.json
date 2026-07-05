@@ -15952,14 +15952,650 @@
       {
         "id": "12-11",
         "title": "主詞非特定",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>不清楚是誰做的，就把by+受詞省略</b><br>如果主動句的主詞是we、you、they、someone、anyone、everyone、people這種「不特定、不知道是誰」的對象，被動化之後常常直接省略by+受詞，因為講出來也沒有額外的資訊：People grow rice in Taiwan. → Rice is grown in Taiwan.（不用寫by people，因為誰種的不重要）<br><br><b>什麼時候才需要保留by+受詞</b><br>如果執行者是「特定的人」或「這個資訊很重要」，就要保留：This song was written by Jay Chou.（因為知道是誰寫的很重要，不能省略）<br><br><b>易混淆重點</b><br>① 判斷要不要保留by+受詞，看這個資訊「有沒有意義」：如果只是泛指「有人」，通常省略；如果是特定人物、有名有姓，通常保留。<br>② 新聞報導、說明文常常用這種「省略by」的被動句，因為重點在「發生了什麼事」，不是「誰做的」。",
+          "examples": [
+            {
+              "en": "English is spoken in many countries around the world.",
+              "zh": "世界上很多國家都說英語。"
+            },
+            {
+              "en": "This kind of tea is grown mostly in the mountains.",
+              "zh": "這種茶大多是在山區種植的。"
+            },
+            {
+              "en": "My wallet was stolen on the bus yesterday.",
+              "zh": "我的皮夾昨天在公車上被偷了。"
+            },
+            {
+              "en": "Rice is planted in the spring in this region.",
+              "zh": "這個地區的稻米是在春天種植的。"
+            },
+            {
+              "en": "The window was broken sometime last night.",
+              "zh": "這扇窗戶昨晚不知何時被打破了。"
+            },
+            {
+              "en": "A new law was passed last month.",
+              "zh": "上個月通過了一項新法律。"
+            },
+            {
+              "en": "This bridge was built over a hundred years ago.",
+              "zh": "這座橋是一百多年前建造的。"
+            },
+            {
+              "en": "Fresh bread is baked here every morning.",
+              "zh": "這裡每天早上都會烤新鮮的麵包。"
+            },
+            {
+              "en": "The old temple was repaired last year.",
+              "zh": "這座古廟去年被修復了。"
+            },
+            {
+              "en": "A strange noise was heard near the garage.",
+              "zh": "有人在車庫附近聽到一個奇怪的聲音。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "Coffee ___ in Brazil and many other countries.",
+              "options": [
+                "is grown",
+                "is grown by people",
+                "grows",
+                "grew"
+              ],
+              "answer": 0,
+              "explanation": "主詞不特定（people種植），可以直接省略by people，寫成is grown即可。",
+              "target_grammar": "被動語態（主詞非特定）",
+              "optionsZh": [
+                "（正確，省略不重要的by people）",
+                "（雖然文法正確，但by people通常省略，因為資訊不重要）",
+                "（主動語態，coffee不是動作執行者）",
+                "（過去式不符現在常態的種植事實）"
+              ]
+            },
+            {
+              "sentence": "This letter ___ by my grandmother herself.",
+              "options": [
+                "was written",
+                "was written by someone",
+                "wrote",
+                "writes"
+              ],
+              "answer": 0,
+              "explanation": "此處執行者是特定的人（grandmother），資訊重要，要保留by+受詞。",
+              "target_grammar": "被動語態（主詞非特定）",
+              "optionsZh": [
+                "（正確，由於執行者特定重要，保留by grandmother）",
+                "（someone是不特定的說法，此處已知是grandmother應具體保留）",
+                "（主動語態，letter不是動作執行者）",
+                "（現在式不符過去書寫的語境）"
+              ]
+            },
+            {
+              "sentence": "Mandarin ___ in Taiwan, China, and Singapore.",
+              "options": [
+                "is spoken",
+                "is spoken by people",
+                "speaks",
+                "spoke"
+              ],
+              "answer": 0,
+              "explanation": "主詞不特定（people說），可以直接省略by people。",
+              "target_grammar": "被動語態（主詞非特定）",
+              "optionsZh": [
+                "（正確，省略不重要的by people）",
+                "（雖然文法正確，但通常省略不重要的執行者資訊）",
+                "（主動語態，Mandarin不是動作執行者）",
+                "（過去式不符現在常態的事實）"
+              ]
+            },
+            {
+              "sentence": "My bike ___ from outside my house last week.",
+              "options": [
+                "was stolen",
+                "was stolen by someone",
+                "stole",
+                "steals"
+              ],
+              "answer": 0,
+              "explanation": "小偷是誰不清楚，通常省略by someone，直接寫was stolen。",
+              "target_grammar": "被動語態（主詞非特定）",
+              "optionsZh": [
+                "（正確，執行者不明確，省略by someone）",
+                "（雖然文法正確，但通常省略不確定的執行者資訊）",
+                "（主動語態，bike不是動作執行者）",
+                "（現在式不符last week過去語境）"
+              ]
+            },
+            {
+              "sentence": "This novel ___ by a very famous writer.",
+              "options": [
+                "was written",
+                "was written by nobody",
+                "wrote",
+                "writes"
+              ],
+              "answer": 0,
+              "explanation": "此處執行者是特定重要的人（famous writer），要保留by+受詞。",
+              "target_grammar": "被動語態（主詞非特定）",
+              "optionsZh": [
+                "（正確，特定重要的執行者需保留by a famous writer）",
+                "（by nobody意思矛盾，此處明確有作者）",
+                "（主動語態，novel不是動作執行者）",
+                "（現在式不符過去出版的語境）"
+              ]
+            },
+            {
+              "sentence": "A new shopping mall ___ in our city last year.",
+              "options": [
+                "was built",
+                "was built by workers",
+                "built",
+                "builds"
+              ],
+              "answer": 0,
+              "explanation": "建造者是不特定的一般工人，通常省略by workers。",
+              "target_grammar": "被動語態（主詞非特定）",
+              "optionsZh": [
+                "（正確，省略不重要的by workers）",
+                "（雖然文法正確，但通常省略不重要的執行者資訊）",
+                "（主動語態，mall不是動作執行者）",
+                "（現在式不符last year過去語境）"
+              ]
+            },
+            {
+              "sentence": "This traditional dance ___ during important festivals.",
+              "options": [
+                "is performed",
+                "is performed by someone",
+                "performs",
+                "performed"
+              ],
+              "answer": 0,
+              "explanation": "表演者是不特定的一般人，通常省略by someone。",
+              "target_grammar": "被動語態（主詞非特定）",
+              "optionsZh": [
+                "（正確，省略不重要的by someone）",
+                "（雖然文法正確，但通常省略不重要的執行者資訊）",
+                "（主動語態，dance不是動作執行者）",
+                "（過去式不符現在常態的事實）"
+              ]
+            },
+            {
+              "sentence": "The Mona Lisa ___ by Leonardo da Vinci.",
+              "options": [
+                "was painted",
+                "was painted by someone",
+                "painted",
+                "paints"
+              ],
+              "answer": 0,
+              "explanation": "此處執行者是特定重要的歷史人物，要保留by+受詞。",
+              "target_grammar": "被動語態（主詞非特定）",
+              "optionsZh": [
+                "（正確，特定重要的執行者需保留by Leonardo da Vinci）",
+                "（by someone意思模糊，此處明確有作者姓名）",
+                "（主動語態，the Mona Lisa不是動作執行者）",
+                "（現在式不符過去繪製的語境）"
+              ]
+            },
+            {
+              "sentence": "This kind of fruit ___ mostly in tropical areas.",
+              "options": [
+                "is grown",
+                "is grown by farmers",
+                "grows",
+                "grew"
+              ],
+              "answer": 0,
+              "explanation": "種植者是不特定的一般農民，通常省略by farmers。",
+              "target_grammar": "被動語態（主詞非特定）",
+              "optionsZh": [
+                "（正確，省略不重要的by farmers）",
+                "（雖然文法正確，但通常省略不重要的執行者資訊）",
+                "（主動語態，fruit不是動作執行者）",
+                "（過去式不符現在常態的種植事實）"
+              ]
+            },
+            {
+              "sentence": "This award ___ to her by the mayor himself.",
+              "options": [
+                "was given",
+                "was given by someone",
+                "gave",
+                "gives"
+              ],
+              "answer": 0,
+              "explanation": "此處執行者是特定重要的人物（市長本人），要保留by+受詞。",
+              "target_grammar": "被動語態（主詞非特定）",
+              "optionsZh": [
+                "（正確，特定重要的執行者需保留by the mayor）",
+                "（by someone意思模糊，此處明確指出是市長）",
+                "（主動語態，award不是動作執行者）",
+                "（現在式不符過去頒獎的語境）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "How Tea Is Made",
+            "passage": "Tea __(1)__ in many parts of the world, especially in mountainous regions with the right climate. The tea leaves __(2)__ carefully by hand during the harvest season to avoid damaging them. After picking, the leaves __(3)__ dried under the sun or in special machines. Some special types of tea __(4)__ using traditional methods passed down for generations. This particular tea recipe __(5)__ by a master tea maker named Mr. Chen, who has spent over forty years perfecting his craft.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "is grown",
+                  "is grown by people",
+                  "grows",
+                  "grew"
+                ],
+                "answer": 0,
+                "explanation": "種植者是不特定的一般人，通常省略by people。",
+                "optionsZh": [
+                  "（正確，省略不重要的by people）",
+                  "（雖然文法正確，但通常省略不重要的執行者資訊）",
+                  "（主動語態，tea不是動作執行者）",
+                  "（過去式不符現在常態的種植事實）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "are picked",
+                  "are picked by someone",
+                  "pick",
+                  "picked"
+                ],
+                "answer": 0,
+                "explanation": "採摘者是不特定的一般工人，通常省略by someone。",
+                "optionsZh": [
+                  "（正確，省略不重要的by someone）",
+                  "（雖然文法正確，但通常省略不重要的執行者資訊）",
+                  "（主動語態，leaves不是動作執行者）",
+                  "（過去式時態不符描述一般過程的現在式語境）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "are",
+                  "are by workers",
+                  "dry",
+                  "dried"
+                ],
+                "answer": 0,
+                "explanation": "此處以are dried結構（省略部分已在前面表達），乾燥者不特定，省略by受詞。",
+                "optionsZh": [
+                  "（正確，省略不重要的執行者資訊，are dried）",
+                  "（不需明確指出by workers，此資訊不重要）",
+                  "（主動語態，leaves不是動作執行者）",
+                  "（過去式時態不符描述一般過程的現在式語境）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "are made",
+                  "are made by someone",
+                  "make",
+                  "made"
+                ],
+                "answer": 0,
+                "explanation": "製作者是不特定的一般人，通常省略by someone。",
+                "optionsZh": [
+                  "（正確，省略不重要的by someone）",
+                  "（雖然文法正確，但通常省略不重要的執行者資訊）",
+                  "（主動語態，tea不是動作執行者）",
+                  "（過去式時態不符描述一般過程的現在式語境）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "was created",
+                  "was created by someone",
+                  "created",
+                  "creates"
+                ],
+                "answer": 0,
+                "explanation": "此處執行者是特定重要的人物（Mr. Chen），要保留by+受詞。",
+                "optionsZh": [
+                  "（正確，特定重要的執行者需保留by Mr. Chen）",
+                  "（by someone意思模糊，此處明確指出是Mr. Chen）",
+                  "（主動語態，recipe不是動作執行者）",
+                  "（現在式不符過去創造配方的語境）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "12-12",
         "title": "瞬間被動 get + p.p.",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>get+p.p.是be+p.p.的口語版本</b><br>意思一樣，但get+p.p.更口語、更常在日常對話中出現：The TV set got broken several months ago.（跟was broken意思一樣，但更口語）<br><br><b>什麼叫「瞬間被動」</b><br>有些get+p.p.特別強調「短時間內突然發生」的被動動作，這種用法通常不加by+受詞，因為重點是「發生了這件事」，不是「誰造成的」：get lost迷路、get married結婚、get divorced離婚、get hurt受傷、get stolen被偷、get fired被開除、get invited受邀。<br><br><b>get+情緒形容詞可以用become代替</b><br>如果get後面接的是情緒形容詞（worried、excited、bored），可以換成become，表示「突然變成…的狀態」：Sandy got worried about her mom. = Sandy became worried about her mom.<br><br><b>易混淆重點</b><br>① get+p.p.通常不接by+受詞，因為這種用法強調「動作發生」，而非「誰做的」。<br>② 常見瞬間被動片語要整組記起來：get married、get lost、get hurt、get fired、get stolen等，這些片語意思固定，不隨意更換動詞。",
+          "examples": [
+            {
+              "en": "My phone got stolen while I was on the subway.",
+              "zh": "我在搭地鐵的時候手機被偷了。"
+            },
+            {
+              "en": "They got married last spring in a small ceremony.",
+              "zh": "他們去年春天在一場小型儀式中結婚了。"
+            },
+            {
+              "en": "He got fired for being late too many times.",
+              "zh": "他因為太常遲到而被開除了。"
+            },
+            {
+              "en": "We got lost trying to find the new restaurant.",
+              "zh": "我們在找那間新餐廳時迷路了。"
+            },
+            {
+              "en": "The vase got broken when the cat jumped on the table.",
+              "zh": "貓跳上桌子時花瓶破掉了。"
+            },
+            {
+              "en": "She got invited to speak at the conference.",
+              "zh": "她受邀在研討會上發表演講。"
+            },
+            {
+              "en": "I got hurt while playing basketball yesterday.",
+              "zh": "我昨天打籃球的時候受傷了。"
+            },
+            {
+              "en": "My grandparents got divorced when my mom was young.",
+              "zh": "我媽媽小時候我外公外婆離婚了。"
+            },
+            {
+              "en": "He got worried when he couldn't reach his son.",
+              "zh": "他聯絡不上兒子時感到很擔心。"
+            },
+            {
+              "en": "The kids got excited when they heard about the trip.",
+              "zh": "孩子們聽到旅行的消息時感到很興奮。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "My umbrella ___ on the bus this morning.",
+              "options": [
+                "got stolen",
+                "got steal",
+                "stole",
+                "steals"
+              ],
+              "answer": 0,
+              "explanation": "get+p.p.表示瞬間被動，got stolen「被偷了」。",
+              "target_grammar": "被動語態（瞬間被動）",
+              "optionsZh": [
+                "（正確，get+p.p.瞬間被動got stolen）",
+                "（get後面應接過去分詞而非原形動詞）",
+                "（主動語態，umbrella不是動作執行者）",
+                "（現在式且為主動語態，不符過去語境）"
+              ]
+            },
+            {
+              "sentence": "They ___ married in a beautiful garden last June.",
+              "options": [
+                "got",
+                "get",
+                "getting",
+                "gets"
+              ],
+              "answer": 0,
+              "explanation": "get married「結婚」是固定瞬間被動片語，過去式用got。",
+              "target_grammar": "被動語態（瞬間被動）",
+              "optionsZh": [
+                "（正確，got married符合last June的過去語境）",
+                "（現在式不符last June過去語境）",
+                "（動名詞形式不符此句構）",
+                "（第三人稱單數不符複數主詞they）"
+              ]
+            },
+            {
+              "sentence": "He ___ excited when he heard about his promotion.",
+              "options": [
+                "got",
+                "get",
+                "getting",
+                "to get"
+              ],
+              "answer": 0,
+              "explanation": "get+情緒形容詞表示「突然變成…的狀態」，過去式用got。",
+              "target_grammar": "被動語態（瞬間被動）",
+              "optionsZh": [
+                "（正確，got excited符合過去時態）",
+                "（現在式不符過去語境）",
+                "（動名詞形式不符此句構）",
+                "（不定詞不符此句構）"
+              ]
+            },
+            {
+              "sentence": "The window ___ during last night's storm.",
+              "options": [
+                "got broken",
+                "got break",
+                "breaks",
+                "broke"
+              ],
+              "answer": 0,
+              "explanation": "get+p.p.表示瞬間被動，got broken「被打破了」。",
+              "target_grammar": "被動語態（瞬間被動）",
+              "optionsZh": [
+                "（正確，get+p.p.瞬間被動got broken）",
+                "（get後面應接過去分詞而非原形動詞）",
+                "（主動語態，window不是動作執行者）",
+                "（主動語態過去式，window是被打破的對象不符）"
+              ]
+            },
+            {
+              "sentence": "We ___ lost while hiking in the mountains yesterday.",
+              "options": [
+                "got",
+                "get",
+                "getting",
+                "to get"
+              ],
+              "answer": 0,
+              "explanation": "get lost「迷路」是固定瞬間被動片語，過去式用got。",
+              "target_grammar": "被動語態（瞬間被動）",
+              "optionsZh": [
+                "（正確，got lost符合yesterday過去語境）",
+                "（現在式不符yesterday過去語境）",
+                "（動名詞形式不符此句構）",
+                "（不定詞不符此句構）"
+              ]
+            },
+            {
+              "sentence": "My brother ___ fired from his job last month.",
+              "options": [
+                "got",
+                "get",
+                "getting",
+                "to get"
+              ],
+              "answer": 0,
+              "explanation": "get fired「被開除」是固定瞬間被動片語，過去式用got。",
+              "target_grammar": "被動語態（瞬間被動）",
+              "optionsZh": [
+                "（正確，got fired符合last month過去語境）",
+                "（現在式不符last month過去語境）",
+                "（動名詞形式不符此句構）",
+                "（不定詞不符此句構）"
+              ]
+            },
+            {
+              "sentence": "She ___ worried about her exam results.",
+              "options": [
+                "became",
+                "become",
+                "becoming",
+                "to become"
+              ],
+              "answer": 0,
+              "explanation": "become也可以表示「突然變成…的狀態」，等同get+情緒形容詞，過去式用became。",
+              "target_grammar": "被動語態（瞬間被動）",
+              "optionsZh": [
+                "（正確，became worried等同got worried）",
+                "（現在式不符過去語境）",
+                "（動名詞形式不符此句構）",
+                "（不定詞不符此句構）"
+              ]
+            },
+            {
+              "sentence": "I ___ hurt while playing soccer with my friends.",
+              "options": [
+                "got",
+                "get",
+                "getting",
+                "to get"
+              ],
+              "answer": 0,
+              "explanation": "get hurt「受傷」是固定瞬間被動片語，過去式用got。",
+              "target_grammar": "被動語態（瞬間被動）",
+              "optionsZh": [
+                "（正確，got hurt符合過去語境）",
+                "（現在式不符過去語境）",
+                "（動名詞形式不符此句構）",
+                "（不定詞不符此句構）"
+              ]
+            },
+            {
+              "sentence": "The famous author ___ invited to speak at our school.",
+              "options": [
+                "got",
+                "get",
+                "getting",
+                "to get"
+              ],
+              "answer": 0,
+              "explanation": "get invited「受邀」是固定瞬間被動片語，過去式用got。",
+              "target_grammar": "被動語態（瞬間被動）",
+              "optionsZh": [
+                "（正確，got invited符合過去語境）",
+                "（現在式不符過去語境）",
+                "（動名詞形式不符此句構）",
+                "（不定詞不符此句構）"
+              ]
+            },
+            {
+              "sentence": "My parents ___ divorced when I was only five years old.",
+              "options": [
+                "got",
+                "get",
+                "getting",
+                "to get"
+              ],
+              "answer": 0,
+              "explanation": "get divorced「離婚」是固定瞬間被動片語，過去式用got。",
+              "target_grammar": "被動語態（瞬間被動）",
+              "optionsZh": [
+                "（正確，got divorced符合過去語境）",
+                "（現在式不符過去語境）",
+                "（動名詞形式不符此句構）",
+                "（不定詞不符此句構）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A Rough Week",
+            "passage": "Last week was really difficult for my family. First, my dad's car __(1)__ stolen from the parking lot near his office. Then, my little brother __(2)__ hurt while riding his bike and had to go to the hospital. My mom __(3)__ worried about everything happening at once, so she took a few days off work. Luckily, things started to improve when my sister __(4)__ invited to a special art program at her school. By the weekend, everyone finally __(5)__ excited again, especially after we heard the good news about the art program.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "got",
+                  "get",
+                  "getting",
+                  "to get"
+                ],
+                "answer": 0,
+                "explanation": "get stolen「被偷」是固定瞬間被動片語，過去式用got。",
+                "optionsZh": [
+                  "（正確，got stolen符合過去語境）",
+                  "（現在式不符last week過去語境）",
+                  "（動名詞形式不符此句構）",
+                  "（不定詞不符此句構）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "got",
+                  "get",
+                  "getting",
+                  "to get"
+                ],
+                "answer": 0,
+                "explanation": "get hurt「受傷」是固定瞬間被動片語，過去式用got。",
+                "optionsZh": [
+                  "（正確，got hurt符合過去語境）",
+                  "（現在式不符過去語境）",
+                  "（動名詞形式不符此句構）",
+                  "（不定詞不符此句構）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "got",
+                  "get",
+                  "getting",
+                  "to get"
+                ],
+                "answer": 0,
+                "explanation": "get worried表示「變得擔心」，過去式用got。",
+                "optionsZh": [
+                  "（正確，got worried符合過去語境）",
+                  "（現在式不符過去語境）",
+                  "（動名詞形式不符此句構）",
+                  "（不定詞不符此句構）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "got",
+                  "get",
+                  "getting",
+                  "to get"
+                ],
+                "answer": 0,
+                "explanation": "get invited「受邀」是固定瞬間被動片語，過去式用got。",
+                "optionsZh": [
+                  "（正確，got invited符合過去語境）",
+                  "（現在式不符過去語境）",
+                  "（動名詞形式不符此句構）",
+                  "（不定詞不符此句構）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "got",
+                  "get",
+                  "getting",
+                  "to get"
+                ],
+                "answer": 0,
+                "explanation": "get excited表示「變得興奮」，過去式用got。",
+                "optionsZh": [
+                  "（正確，got excited符合過去語境）",
+                  "（現在式不符過去語境）",
+                  "（動名詞形式不符此句構）",
+                  "（不定詞不符此句構）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "12-13",
