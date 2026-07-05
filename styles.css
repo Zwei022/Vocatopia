@@ -1536,24 +1536,20 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .hm-levelmap::-webkit-scrollbar{display:none}
 .hm-lm-inner{position:relative;width:100%}
 .hm-lm-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-/* 果實關卡按鈕：圓潤飽滿 + 果蒂葉片 */
-.hm-fruit{position:absolute;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;border:none;cursor:pointer;z-index:2;
-  background:radial-gradient(circle at 32% 28%,#FF9D6B 0%,var(--red) 58%,var(--red2) 100%);
-  box-shadow:0 4px 0 rgba(122,92,67,.28),inset 0 -8px 12px rgba(0,0,0,.14),inset 5px 7px 10px rgba(255,255,255,.4);
-  color:#fff;font-family:var(--font-display);font-weight:900;font-size:23px;
+/* 果實關卡按鈕：手繪水彩蘋果圖 */
+.hm-fruit{position:absolute;transform:translate(-50%,-50%);width:72px;height:75px;border:none;cursor:pointer;z-index:2;
+  background:url('public/images/icons/level-apple.png') center/contain no-repeat;
+  filter:drop-shadow(0 4px 3px rgba(75,56,42,.35));
+  color:#fff;font-family:var(--font-display);font-weight:900;font-size:21px;
   transition:transform .12s}
 .hm-fruit:hover{transform:translate(-50%,-50%) scale(1.06)}
 .hm-fruit:active{transform:translate(-50%,-50%) scale(.92)}
-/* 果蒂 */
-.hm-fruit::before{content:'';position:absolute;top:-8px;left:50%;width:5px;height:12px;background:#8A5A34;border-radius:3px;transform:translateX(-50%) rotate(-8deg)}
-/* 小葉子 */
-.hm-fruit::after{content:'';position:absolute;top:-11px;left:56%;width:17px;height:11px;background:#7BC98B;border:1.5px solid #3BA55D;border-radius:2% 100% 2% 100%;transform:rotate(-24deg)}
-.hm-fruit-num{position:relative;text-shadow:0 2px 3px rgba(0,0,0,.28)}
+.hm-fruit-num{position:relative;top:6px;text-shadow:0 1px 2px rgba(0,0,0,.5),0 0 5px rgba(75,56,42,.4)}
 /* 目前關卡：紅色光圈呼吸提示 */
 .hm-fruit-cur{animation:fruitRing 1.8s ease-in-out infinite}
 @keyframes fruitRing{
-  0%,100%{box-shadow:0 4px 0 rgba(122,92,67,.28),inset 0 -8px 12px rgba(0,0,0,.14),inset 5px 7px 10px rgba(255,255,255,.4),0 0 0 0 rgba(224,71,46,.38)}
-  50%{box-shadow:0 4px 0 rgba(122,92,67,.28),inset 0 -8px 12px rgba(0,0,0,.14),inset 5px 7px 10px rgba(255,255,255,.4),0 0 0 12px rgba(224,71,46,0)}
+  0%,100%{filter:drop-shadow(0 4px 3px rgba(75,56,42,.35)) drop-shadow(0 0 0 rgba(224,71,46,.38))}
+  50%{filter:drop-shadow(0 4px 3px rgba(75,56,42,.35)) drop-shadow(0 0 10px rgba(224,71,46,.55))}
 }
 
 /* ── 文字段落放大 Lightbox */
