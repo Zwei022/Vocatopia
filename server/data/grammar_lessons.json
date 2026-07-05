@@ -1452,12 +1452,258 @@
     "title": "介系詞",
     "page": 58,
     "subLessons": [
-      { "id": "5-1", "title": "時間介系詞", "teaching": null, "quiz": [] },
-      { "id": "5-2", "title": "地方介系詞", "teaching": null, "quiz": [] },
-      { "id": "5-3", "title": "其他介系詞", "teaching": null, "quiz": [] },
-      { "id": "5-4", "title": "介系詞片語", "teaching": null, "quiz": [] },
-      { "id": "5-5", "title": "含有介系詞的動詞片語（非授與動詞的用法）", "teaching": null, "quiz": [] },
-      { "id": "5-6", "title": "不及物動詞＋介系詞＋受詞", "teaching": null, "quiz": [] }
+      {
+        "id": "5-1",
+        "title": "時間介系詞",
+        "teaching": {
+          "explanation": "<b>核心概念</b><br>at、on、in 是三個最基本的時間介系詞，依「時間長短」分工：at 用在最短的時間點，on 用在天/日期，in 用在較長的時間（月、季、年）。<br><br><b>完整規則表</b><br>【at】較短的時間點：at 8:30、at noon、at night（＝in the night）、at midnight、at Christmas<br>【on】日子：on Monday、on July 9、on my birthday、on Christmas Day、on the weekend、on Tuesday afternoon（＝on the afternoon of Tuesday）<br>【in】較長的時間：in a week、in July、in spring/summer/fall/winter、in 2012、in the morning/afternoon/evening<br>【in+數字+時間單位】「在…之後」：in ten minutes、in three seconds<br>【during】「在…期間」，強調過程：during this week、during the movie<br>【by】「最遲在…之前」，有期限性：by tomorrow、by next year<br>【through】「自始至終」，從頭到尾：through the whole year<br>【from...to...】「從…到…」：from eight to eleven o'clock<br>【after/past ＝ 分鐘＜30】at a quarter after/past three（三點十五分）<br>【to/of ＝ 分鐘＞30】at a quarter to/of nine（八點四十五分）<br>【between】兩個時間之間：between one and two o'clock<br>【about/around】大約：about five o'clock<br><br><b>常見易混淆地雷</b><br>① every、last、next、this/that/these/those 前面的時間副詞不加 at/on/in：last week、next year（不加介系詞）。<br>② 主詞若是「時間」本身則不加介系詞；主詞若是「事件/活動」則要加介系詞：It is 8:30.（無介系詞）vs. The game is at 8:30.（加at）。<br>③ 日期完整順序：on＋星期, 月日, 年（on Saturday, December 20th, 2011）。<br>④ 屬於大時間裡的小時間：the+小時間+of+大時間（in the spring of 2009）。<br>⑤ tomorrow 前不加 in/on/at，若要表達「之前」用 by（by tomorrow）。<br>⑥ during 強調某事發生的「期間」，through 強調「從頭到尾都持續」。<br>⑦ around 和 about 意思相同，都表示「大約」。<br>⑧ 特殊節日或假日一律搭配 on（on Thanksgiving、on Chinese New Year）。",
+          "examples": [
+            { "en": "The movie starts at 7:30 tonight.", "zh": "電影今晚七點半開始。" },
+            { "en": "We are meeting on Saturday morning.", "zh": "我們星期六早上要碰面。" },
+            { "en": "School begins in September.", "zh": "開學是九月。" },
+            { "en": "I'll finish this in twenty minutes.", "zh": "我再二十分鐘就會完成這件事。" },
+            { "en": "She stayed up during the whole storm.", "zh": "她整個暴風雨期間都沒睡。" },
+            { "en": "Please submit the form by Friday.", "zh": "請最晚在星期五前繳交表格。" },
+            { "en": "He worked through the entire night to finish the project.", "zh": "他整晚沒睡把這個專案做完。" },
+            { "en": "We chatted for hours between classes.", "zh": "我們下課時間聊了好幾個小時。" }
+          ]
+        },
+        "quiz": {
+        "mc": [
+          { "sentence": "The store closes ___ 9 p.m.", "options": ["at", "on", "in", "during"], "answer": 0, "explanation": "表示具體時刻用 at。", "target_grammar": "時間介系詞", "optionsZh": ["（具體時刻，正確）", "（用於日期，用法不符）", "（用於較長時間，用法不符）", "（表期間，用法不符）"] },
+          { "sentence": "My birthday is ___ March 15th.", "options": ["on", "at", "in", "during"], "answer": 0, "explanation": "特定日期用 on。", "target_grammar": "時間介系詞", "optionsZh": ["（特定日期，正確）", "（用於時刻，用法不符）", "（用於較長時間，用法不符）", "（表期間，用法不符）"] },
+          { "sentence": "Flowers bloom ___ spring.", "options": ["in", "on", "at", "during"], "answer": 0, "explanation": "季節用 in。", "target_grammar": "時間介系詞", "optionsZh": ["（季節，正確）", "（用於日期，用法不符）", "（用於時刻，用法不符）", "（表期間，較不自然）"] },
+          { "sentence": "I'll call you back ___ five minutes.", "options": ["in", "at", "on", "by"], "answer": 0, "explanation": "in+一段時間表示「在…之後」。", "target_grammar": "時間介系詞", "optionsZh": ["（在…之後，正確）", "（用於時刻，用法不符）", "（用於日期，用法不符）", "（表期限，用法不符）"] },
+          { "sentence": "Please stay quiet ___ the performance.", "options": ["during", "at", "in", "through"], "answer": 0, "explanation": "during 強調某事發生的期間。", "target_grammar": "時間介系詞", "optionsZh": ["（期間，正確）", "（用於時刻，用法不符）", "（用於較長時間，用法不符）", "（強調從頭到尾，語感較不符單純期間）"] },
+          { "sentence": "You must return the book ___ next Monday.", "options": ["by", "until", "in", "on"], "answer": 0, "explanation": "by 表示最遲不超過的期限。", "target_grammar": "時間介系詞", "optionsZh": ["（期限，正確）", "（持續到某時間，語意不符）", "（一段時間之後，語意不符）", "（特定日期，語意不符期限）"] },
+          { "sentence": "He trained hard ___ the whole summer, never missing a single day.", "options": ["through", "during", "by", "in"], "answer": 0, "explanation": "through 強調「自始至終」貫穿整個時間。", "target_grammar": "時間介系詞", "optionsZh": ["（自始至終，正確）", "（表期間，語感較不強調貫穿）", "（表期限，語意不符）", "（用於較長時間，用法不符此語感）"] },
+          { "sentence": "We talked ___ classes about the homework.", "options": ["between", "among", "during", "through"], "answer": 0, "explanation": "between 用於「兩者之間」，指下課的休息時間。", "target_grammar": "時間介系詞", "optionsZh": ["（兩者之間，正確）", "（三者以上之間，用法不符）", "（表期間，語意較不精確）", "（自始至終，語意不符）"] },
+          { "sentence": "A: What time is it? B: It ___ 3 o'clock.", "options": ["is", "is at", "is on", "is in"], "answer": 0, "explanation": "主詞 it 代表「時間」本身，不加介系詞。", "target_grammar": "時間介系詞", "optionsZh": ["（時間本身不加介系詞，正確）", "（多加介系詞，錯誤）", "（多加介系詞，錯誤）", "（多加介系詞，錯誤）"] },
+          { "sentence": "A: What time is the concert? B: It's ___ 8 o'clock.", "options": ["at", "-", "on", "in"], "answer": 0, "explanation": "主詞 it 代表「活動/事件」，需要加時間介系詞 at。", "target_grammar": "時間介系詞", "optionsZh": ["（事件需加介系詞，正確）", "（活動需要介系詞，不可省略）", "（用於日期，用法不符）", "（用於較長時間，用法不符）"] }
+        ],
+        "cloze": {
+          "title": "My Weekly Schedule",
+          "passage": "__(1)__ Mondays, I have piano lessons right after school. __(2)__ the evening, I usually do my homework before dinner. __(3)__ the weekend, I like to relax and watch movies. Last week, I finished a whole TV series __(4)__ just three days! This weekend, I need to clean my room __(5)__ Sunday night, or my mom will be upset.",
+          "blanks": [
+            { "n": 1, "options": ["On", "At", "In", "During"], "answer": 0, "explanation": "星期幾用 on。", "optionsZh": ["（星期幾，正確）", "（用於時刻，用法不符）", "（用於較長時間，用法不符）", "（表期間，用法不符）"] },
+            { "n": 2, "options": ["In", "At", "On", "During"], "answer": 0, "explanation": "一天中的時段（早中晚）用 in。", "optionsZh": ["（一天中時段，正確）", "（用於時刻，用法不符）", "（用於日期，用法不符）", "（表期間，用法不符）"] },
+            { "n": 3, "options": ["On", "At", "In", "During"], "answer": 0, "explanation": "on the weekend 是固定用法。", "optionsZh": ["（週末固定用法，正確）", "（用於時刻，用法不符）", "（用於較長時間，用法不符）", "（表期間，用法不符）"] },
+            { "n": 4, "options": ["in", "at", "on", "by"], "answer": 0, "explanation": "in+一段時間表示「只花了…時間」就完成。", "optionsZh": ["（一段時間內完成，正確）", "（用於時刻，用法不符）", "（用於日期，用法不符）", "（表期限，語意不符）"] },
+            { "n": 5, "options": ["by", "until", "in", "on"], "answer": 0, "explanation": "by 表示最遲不超過的期限。", "optionsZh": ["（期限，正確）", "（持續到某時間，語意不符）", "（一段時間之後，語意不符）", "（特定日期，用法不符）"] }
+          ]
+        }
+      }
+      },
+      {
+        "id": "5-2",
+        "title": "地方介系詞",
+        "teaching": {
+          "explanation": "<b>核心概念</b><br>地方介系詞的核心概念是描述「東西/人在哪裡」，種類雖然多，但大致分成：容器空間（in）、表面接觸（on）、定點位置（at）、上下方位（under/above/below）、前後左右（in front of/behind/beside）等幾大類。<br><br><b>完整規則表</b><br>【in】較大的空間內部：in class、in bed、in the tree（樹林裡）<br>【on】表面/上：on the wall、on the street、on TV、on the phone、on your right（方位）<br>【at】較小的定點：at the door、at school、at home、at work<br>【under vs over】under（在…之下，不接觸）／over（在…之上，不接觸）：under the chair／over your head<br>【above vs below】above（在…上面的整個空間）／below（在…下面的整個空間）：above the ground／below the water line<br>【in front of vs behind】in front of（在…前面）／behind（在…後面）<br>【beside＝next to】在…旁邊；【by＝next to】在…旁邊，強調「前後左右」<br>【near】在…附近；【around】在…周圍（有圍繞之意）<br>【between vs among】between 用於兩者之間，among 用於三者以上之間<br>【into vs out of】進入／出來；【inside vs outside】在…裡面／在…外面<br>【up vs down】向上／向下；【along】沿著；【across】直線橫跨；【through】穿透/貫穿<br>【from...to...】從…到…；【toward】朝向…<br><br><b>交通工具介系詞</b><br>(ride) in a/the car/taxi（不可站立的小型交通工具）／(ride) on a/the bus/train/plane/boat（可站立的大型交通工具）／(ride) on a/the bike/motorcycle/horse（跨騎的交通工具）／on foot（走路）<br><br><b>常見易混淆地雷</b><br>① home、here、there 前面不加地方介系詞（除了 at home 之外）：go home（不是 go to home）；stay here；get there。<br>② arrive in＋大地方（arrive in Tokyo）／arrive at＋小地方（arrive at the station）。<br>③ in the tree（樹林裡/樹叢間）vs on the tree（在樹梢上）。<br>④ in bed（在床上休息睡覺）vs on the bed（在床的表面上）。<br>⑤ at table（用餐中）是固定用法。<br>⑥ in the north/south/east/west of（在…的境內北/南/東/西邊）vs to the north of（在…以外的北邊）。<br>⑦ between 兩者，among 三者以上，別混用。<br>⑧ 交通工具介系詞依「可否站立/跨騎」分成 in/on 兩組，不是隨便選。",
+          "examples": [
+            { "en": "The cat is sleeping under the table.", "zh": "貓正在桌子底下睡覺。" },
+            { "en": "There's a coffee shop in front of the station.", "zh": "車站前面有一間咖啡店。" },
+            { "en": "She sat beside me during the movie.", "zh": "電影播放時她坐在我旁邊。" },
+            { "en": "We walked across the bridge to get to the other side.", "zh": "我們走過那座橋到對岸。" },
+            { "en": "The kids ran around the playground.", "zh": "孩子們在遊樂場周圍跑來跑去。" },
+            { "en": "He arrived at the airport an hour early.", "zh": "他提早一小時抵達機場。" },
+            { "en": "They arrived in Tokyo yesterday.", "zh": "他們昨天抵達東京。" },
+            { "en": "I go to school on the bus every morning.", "zh": "我每天早上搭公車上學。" }
+          ]
+        },
+        "quiz": {
+        "mc": [
+          { "sentence": "The keys are ___ the top drawer.", "options": ["in", "on", "at", "to"], "answer": 0, "explanation": "in 用於較大的容器空間內部。", "target_grammar": "地方介系詞", "optionsZh": ["（容器內部，正確）", "（表面，用法不符）", "（定點，用法不符）", "（方向，用法不符）"] },
+          { "sentence": "There's a picture ___ the wall.", "options": ["on", "in", "at", "over"], "answer": 0, "explanation": "on 表示附著在表面上。", "target_grammar": "地方介系詞", "optionsZh": ["（表面附著，正確）", "（容器內部，用法不符）", "（定點，用法不符）", "（不接觸的上方，用法不符）"] },
+          { "sentence": "Let's meet ___ the entrance.", "options": ["at", "in", "on", "to"], "answer": 0, "explanation": "at 用於較小的定點位置。", "target_grammar": "地方介系詞", "optionsZh": ["（定點，正確）", "（容器內部，用法不符）", "（表面，用法不符）", "（方向，用法不符）"] },
+          { "sentence": "The ball rolled ___ the bed.", "options": ["under", "above", "on", "into"], "answer": 0, "explanation": "under 表示在下方，不接觸。", "target_grammar": "地方介系詞", "optionsZh": ["（下方不接觸，正確）", "（上方整個空間，用法不符）", "（表面，用法不符）", "（進入，用法不符）"] },
+          { "sentence": "We walked ___ the tunnel to get to the station.", "options": ["through", "across", "along", "toward"], "answer": 0, "explanation": "through 表示「穿透/貫穿」整個空間。", "target_grammar": "地方介系詞", "optionsZh": ["（貫穿，正確）", "（直線橫跨，用法較不符隧道情境）", "（沿著，用法不符）", "（朝向，用法不符）"] },
+          { "sentence": "I saw a boat sailing ___ the river.", "options": ["along", "across", "through", "into"], "answer": 0, "explanation": "along 表示「沿著」某個方向前進。", "target_grammar": "地方介系詞", "optionsZh": ["（沿著，正確）", "（橫跨兩岸，用法不符沿岸行進）", "（貫穿，用法不符）", "（進入，用法不符）"] },
+          { "sentence": "She finally arrived ___ the bus station.", "options": ["at", "in", "on", "to"], "answer": 0, "explanation": "arrive at 用於較小的地方（車站）。", "target_grammar": "地方介系詞", "optionsZh": ["（小地方，正確）", "（大地方，用法不符）", "（表面，用法不符）", "（方向，用法不符）"] },
+          { "sentence": "They arrived ___ Paris last night.", "options": ["in", "at", "on", "to"], "answer": 0, "explanation": "arrive in 用於較大的地方（城市）。", "target_grammar": "地方介系詞", "optionsZh": ["（大地方，正確）", "（小地方，用法不符）", "（表面，用法不符）", "（方向，用法不符）"] },
+          { "sentence": "I ride ___ my bike to school every day.", "options": ["on", "in", "at", "by"], "answer": 0, "explanation": "跨騎的交通工具用 (ride) on a/the bike。", "target_grammar": "地方介系詞", "optionsZh": ["（跨騎交通工具，正確）", "（不可站立的小型交通工具，用法不符）", "（定點，用法不符）", "（by+交通工具是另一固定用法，此處句構已有ride不需再加by）"] },
+          { "sentence": "Please wait for me ___ home; I'll be there in ten minutes.", "options": ["at", "in", "on", "to"], "answer": 0, "explanation": "home 前面不加地方介系詞，除了 at 之外（at home）。", "target_grammar": "地方介系詞", "optionsZh": ["（at home固定用法，正確）", "（home不加in，錯誤）", "（home不加on，錯誤）", "（home不加to，錯誤）"] }
+        ],
+        "cloze": {
+          "title": "A Walk in the Park",
+          "passage": "Yesterday, I took a walk __(1)__ the park near my house. There's a small pond __(2)__ the center, and I saw some ducks swimming __(3)__ it. I sat down __(4)__ a bench __(5)__ a big oak tree and read my book for an hour.",
+          "blanks": [
+            { "n": 1, "options": ["in", "on", "at", "to"], "answer": 0, "explanation": "in 用於較大的空間內部。", "optionsZh": ["（大空間內部，正確）", "（表面，用法不符）", "（定點，用法不符）", "（方向，用法不符）"] },
+            { "n": 2, "options": ["in", "at", "on", "to"], "answer": 0, "explanation": "the center 屬於空間內部的位置，用 in。", "optionsZh": ["（空間內部位置，正確）", "（定點，用法不符）", "（表面，用法不符）", "（方向，用法不符）"] },
+            { "n": 3, "options": ["in", "on", "at", "into"], "answer": 0, "explanation": "在水裡游泳用 in the pond。", "optionsZh": ["（水裡，正確）", "（表面，用法不符）", "（定點，用法不符）", "（進入的動作，非靜態位置）"] },
+            { "n": 4, "options": ["on", "in", "at", "to"], "answer": 0, "explanation": "坐在長椅表面用 on。", "optionsZh": ["（表面，正確）", "（空間內部，用法不符）", "（定點，較不精確）", "（方向，用法不符）"] },
+            { "n": 5, "options": ["under", "on", "in", "at"], "answer": 0, "explanation": "在樹下（不接觸樹本身）用 under。", "optionsZh": ["（下方不接觸，正確）", "（表面，用法不符）", "（空間內部，用法不符）", "（定點，用法不符）"] }
+          ]
+        }
+      }
+      },
+      {
+        "id": "5-3",
+        "title": "其他介系詞",
+        "teaching": {
+          "explanation": "<b>核心概念</b><br>除了時間、地方介系詞外，還有一群「依句意決定用法」的介系詞，同一個字在不同情境下意思完全不同，要靠上下文判斷。<br><br><b>完整規則表</b><br>【with】用／有／和／做／隨著／附帶：go with Dave（和）、a boy with a dog（有）、help with housework（做）、change with time（隨著）<br>【without】沒有，with的反義字<br>【by】藉由／搭乘，後面常接動名詞：by working hard（藉由）<br>【in】穿戴／使用語言材質顏色：a lady in a white shirt、speak in English、pay in cash<br>【of vs from】表達「因為」死亡原因：die of＋疾病/飢餓等自發性原因；die from＋意外/外傷等外力因素<br>【of】…的（非人稱事物的所有格）：the leaves of the tree＝the tree's leaves<br>【for】因為／為了，意同because：I do it for you.<br>【like】像；unlike「不像」；dislike「不喜歡」（動詞+Ving）；alike「相似的」；likely「有可能的」——四個字拼法相近但詞性、意思都不同，要分清楚。<br>【to】給：give a flower to my girlfriend<br>【about】有關：a book about cooking<br>【as】如同／作為／當成：treat you as my son<br>【besides vs except】besides「除此之外」（包含後面受詞在內）；except「除外」（不包含後面受詞在內）：Besides me, everyone is going.（我也要去）vs. Except me, everyone is going.（我不去）<br><br><b>常見易混淆地雷</b><br>① die of（自然/疾病原因）vs die from（外力/意外原因），意思相近但原因類型不同。<br>② like（介系詞，像）、alike（形容詞/副詞，相似的）、unlike（介系詞，不像）、likely（形容詞/副詞，有可能的）四個字型態相近但用法完全不同。<br>③ besides 包含受詞在內，except 不包含受詞在內，意思恰恰相反。<br>④ with 是全章節裡意思最多元的介系詞之一，要依句意判斷是「和/有/做/隨著/附帶」中的哪一種。<br>⑤ of 用於非人稱事物的所有格，現今口語中也常見人稱所有格的說法（非正式）。<br>⑥ for 意同 because，前面常加逗號。<br>⑦ by＋Ving 表示達成某件事的手段/方法。<br>⑧ in 可以表示「穿戴」或「使用某種語言/材質/顏色」，需依上下文判斷。",
+          "examples": [
+            { "en": "She always travels with her best friend.", "zh": "她總是跟她最好的朋友一起旅行。" },
+            { "en": "I can't imagine life without music.", "zh": "我無法想像沒有音樂的生活。" },
+            { "en": "He succeeded by working hard every day.", "zh": "他靠著每天努力工作而成功。" },
+            { "en": "The woman in a blue dress is my aunt.", "zh": "那位穿藍色洋裝的女士是我阿姨。" },
+            { "en": "My grandfather died of an illness last year.", "zh": "我爺爺去年因病過世了。" },
+            { "en": "The accident happened because of the heavy rain.", "zh": "這場意外是因為大雨而發生的。" },
+            { "en": "Besides English, she also speaks French.", "zh": "除了英文，她也會說法文。" },
+            { "en": "Except John, everyone finished the race.", "zh": "除了John之外，大家都完成了比賽。" }
+          ]
+        },
+        "quiz": {
+        "mc": [
+          { "sentence": "He came to the party ___ his sister.", "options": ["with", "without", "by", "of"], "answer": 0, "explanation": "with 表示「和」。", "target_grammar": "其他介系詞", "optionsZh": ["（和，正確）", "（沒有，語意相反）", "（藉由，用法不符）", "（的，用法不符）"] },
+          { "sentence": "I can't live ___ my phone; I use it for everything.", "options": ["without", "with", "by", "of"], "answer": 0, "explanation": "without 是 with 的反義字，表示「沒有」。", "target_grammar": "其他介系詞", "optionsZh": ["（沒有，正確）", "（有，語意相反）", "（藉由，用法不符）", "（的，用法不符）"] },
+          { "sentence": "He solved the problem ___ using a different method.", "options": ["by", "with", "of", "for"], "answer": 0, "explanation": "by+Ving 表示「藉由」某個手段。", "target_grammar": "其他介系詞", "optionsZh": ["（藉由，正確）", "（有/和，用法不符）", "（的，用法不符）", "（因為，用法不符此句構）"] },
+          { "sentence": "The woman ___ red is my teacher.", "options": ["in", "on", "with", "of"], "answer": 0, "explanation": "in 表示「穿戴」的顏色/衣物。", "target_grammar": "其他介系詞", "optionsZh": ["（穿戴，正確）", "（表面，用法不符）", "（有/和，用法不符）", "（的，用法不符）"] },
+          { "sentence": "My uncle died ___ cancer last spring.", "options": ["of", "from", "by", "for"], "answer": 0, "explanation": "die of 用於「疾病」等自發性原因。", "target_grammar": "其他介系詞", "optionsZh": ["（自發性原因，正確）", "（外力因素，用法不符疾病）", "（藉由，用法不符）", "（因為，用法不符此固定搭配）"] },
+          { "sentence": "Many people died ___ the terrible earthquake.", "options": ["from", "of", "by", "for"], "answer": 0, "explanation": "die from 用於「外力因素」（如災害、意外）。", "target_grammar": "其他介系詞", "optionsZh": ["（外力因素，正確）", "（自發性原因，用法不符地震）", "（藉由，用法不符）", "（因為，用法不符此固定搭配）"] },
+          { "sentence": "The color ___ the sky changed as the sun set.", "options": ["of", "from", "with", "for"], "answer": 0, "explanation": "of 用於非人稱事物的所有格。", "target_grammar": "其他介系詞", "optionsZh": ["（所有格，正確）", "（來自，用法不符）", "（有/和，用法不符）", "（因為，用法不符）"] },
+          { "sentence": "I stayed home ___ I was sick.", "options": ["for", "of", "with", "about"], "answer": 0, "explanation": "for 意同 because，前面常加逗號。", "target_grammar": "其他介系詞", "optionsZh": ["（因為，正確）", "（的，用法不符）", "（有/和，用法不符）", "（有關，用法不符）"] },
+          { "sentence": "He looks a lot ___ his father.", "options": ["like", "alike", "unlike", "likely"], "answer": 0, "explanation": "like 作介系詞表示「像」。", "target_grammar": "其他介系詞", "optionsZh": ["（介系詞，像，正確）", "（形容詞，相似的，詞性不符）", "（介系詞，不像，語意相反）", "（形容詞，有可能的，詞性不符）"] },
+          { "sentence": "___ math, she also loves science and art.", "options": ["Besides", "Except", "Without", "Beside"], "answer": 0, "explanation": "besides「除此之外」，包含後面的受詞在內（她也愛數學）。", "target_grammar": "其他介系詞", "optionsZh": ["（包含在內，正確）", "（不包含在內，語意相反）", "（沒有，用法不符）", "（在…旁邊，用法不符）"] }
+        ],
+        "cloze": {
+          "title": "A Family Trait",
+          "passage": "My sister looks a lot __(1)__ our mother — they have the same smile. My dad always says he fell in love __(2)__ our mom because of her kindness. Sadly, our grandfather died __(3)__ a heart problem when I was young, so I never really knew him. __(4)__ our immediate family, we also have many cousins living nearby. My mom often says our lives change __(5)__ time as our family grows bigger every year.",
+          "blanks": [
+            { "n": 1, "options": ["like", "alike", "unlike", "likely"], "answer": 0, "explanation": "like 作介系詞表示「像」。", "optionsZh": ["（像，正確）", "（相似的，詞性不符）", "（不像，語意相反）", "（有可能的，詞性不符）"] },
+            { "n": 2, "options": ["with", "of", "by", "for"], "answer": 0, "explanation": "fall in love with 是固定片語，with表示「和」。", "optionsZh": ["（固定片語，正確）", "（的，用法不符）", "（藉由，用法不符）", "（因為，用法不符）"] },
+            { "n": 3, "options": ["of", "from", "by", "for"], "answer": 0, "explanation": "die of 用於「疾病」等自發性原因。", "optionsZh": ["（自發性原因，正確）", "（外力因素，用法不符疾病）", "（藉由，用法不符）", "（因為，用法不符固定搭配）"] },
+            { "n": 4, "options": ["Besides", "Except", "Without", "Beside"], "answer": 0, "explanation": "besides「除此之外」，包含後面的受詞在內。", "optionsZh": ["（包含在內，正確）", "（不包含在內，語意不符）", "（沒有，用法不符）", "（在…旁邊，用法不符）"] },
+            { "n": 5, "options": ["with", "of", "by", "for"], "answer": 0, "explanation": "with 表示「隨著」時間。", "optionsZh": ["（隨著，正確）", "（的，用法不符）", "（藉由，用法不符）", "（因為，用法不符）"] }
+          ]
+        }
+      }
+      },
+      {
+        "id": "5-4",
+        "title": "介系詞片語",
+        "teaching": {
+          "explanation": "<b>核心概念</b><br>「介系詞片語」是由介系詞引導出的一串詞，功能是當「形容詞」用，放在被修飾的名詞「後面」（稱為後位修飾），不是當地方或時間副詞用。<br><br><b>結構與例句</b><br>The man in the house has a lot of money.（房子裡的那個人——in the house修飾man）<br>Look at the birds on the roof.（屋頂上的那些鳥——on the roof修飾birds）<br>I don't know anything of the boy.（那個男孩的事——of the boy修飾anything）<br><br><b>常見介系詞片語類型</b><br>【in】穿／戴：The girl in a red dress is not my type.（那個穿紅洋裝的女生）<br>【with】有：I want to marry a man with lots of money.（有錢的男人）<br>【without】沒有：We can't live without air.（沒有空氣的世界）<br>【about】有關：I like to read books about stars.（有關星星的書）<br>【from】來自於：The student from Japan speaks poor Chinese.（來自日本的學生）<br><br><b>常見易混淆地雷</b><br>① 衣物 look good on 人：那件衣服穿在某人身上很好看——The coat looks good on you.<br>② 人 look good in 衣物：某人穿某件衣服很好看——You look good in the coat.（① ②意思相近但主詞和介系詞不同，別搞混）<br>③ 介系詞片語是「後位修飾」，一定放在被修飾的名詞後面，不能放前面。<br>④ 介系詞片語當形容詞用，不要跟同樣介系詞開頭、當副詞用的地方/時間片語搞混（副詞片語通常放句首或句尾，形容詞片語緊跟在名詞後）。<br>⑤ with 在介系詞片語中常表示「擁有某個特徵」（a girl with long hair）。<br>⑥ without 是 with 的反義字，一樣可以組成介系詞片語當形容詞。<br>⑦ from 表示「來自於」的介系詞片語，常用來描述人的出身/來源。<br>⑧ about 組成的介系詞片語表示「有關…主題」的形容詞片語，常修飾book、movie、story等名詞。",
+          "examples": [
+            { "en": "The girl with long hair is my classmate.", "zh": "那個長頭髮的女生是我同學。" },
+            { "en": "I enjoy books about space and stars.", "zh": "我喜歡看有關太空和星星的書。" },
+            { "en": "The boy in the blue jacket is my brother.", "zh": "那個穿藍色外套的男孩是我弟弟。" },
+            { "en": "The student from Canada speaks great Chinese.", "zh": "那個來自加拿大的學生中文說得很好。" },
+            { "en": "Life without electricity would be very difficult.", "zh": "沒有電的生活會很困難。" },
+            { "en": "The house on the hill has an amazing view.", "zh": "山丘上那間房子的景色很棒。" },
+            { "en": "That dress looks great on you.", "zh": "那件洋裝穿在你身上很好看。" },
+            { "en": "You look great in that dress.", "zh": "你穿那件洋裝很好看。" }
+          ]
+        },
+        "quiz": {
+        "mc": [
+          { "sentence": "The man ___ the red car is my neighbor.", "options": ["with", "of", "for", "at"], "answer": 0, "explanation": "with表示「有/擁有」，介系詞片語當形容詞修飾man。", "target_grammar": "介系詞片語", "optionsZh": ["（有/擁有，正確）", "（的，用法不符）", "（因為，用法不符）", "（定點，用法不符）"] },
+          { "sentence": "I enjoy reading books ___ history.", "options": ["about", "of", "for", "with"], "answer": 0, "explanation": "about表示「有關」，修飾books。", "target_grammar": "介系詞片語", "optionsZh": ["（有關，正確）", "（的，用法不符）", "（因為，用法不符）", "（有/和，用法不符）"] },
+          { "sentence": "The girl ___ a ponytail is my cousin.", "options": ["with", "of", "in", "for"], "answer": 0, "explanation": "with表示「有」某個特徵，修飾girl。", "target_grammar": "介系詞片語", "optionsZh": ["（有，正確）", "（的，用法不符）", "（穿戴，用法不符馬尾非衣物）", "（因為，用法不符）"] },
+          { "sentence": "The student ___ Korea just joined our class.", "options": ["from", "of", "with", "in"], "answer": 0, "explanation": "from表示「來自於」，修飾student。", "target_grammar": "介系詞片語", "optionsZh": ["（來自，正確）", "（的，用法不符）", "（有/和，用法不符）", "（穿戴/內部，用法不符）"] },
+          { "sentence": "That red coat looks really good ___ you.", "options": ["on", "in", "with", "for"], "answer": 0, "explanation": "衣物look good on人，表示衣服穿在某人身上好看。", "target_grammar": "介系詞片語", "optionsZh": ["（衣物look good on人，正確）", "（人look good in衣物，主詞不符）", "（有/和，用法不符）", "（因為，用法不符）"] },
+          { "sentence": "You look amazing ___ that dress tonight.", "options": ["in", "on", "with", "of"], "answer": 0, "explanation": "人look good in衣物，表示某人穿某件衣服好看。", "target_grammar": "介系詞片語", "optionsZh": ["（人look good in衣物，正確）", "（衣物look good on人，主詞不符）", "（有/和，用法不符）", "（的，用法不符）"] },
+          { "sentence": "The people ___ the front row can see best.", "options": ["in", "of", "with", "for"], "answer": 0, "explanation": "in表示「在…裡面/範圍內」，修飾people。", "target_grammar": "介系詞片語", "optionsZh": ["（範圍內，正確）", "（的，用法不符）", "（有/和，用法不符）", "（因為，用法不符）"] },
+          { "sentence": "We can't survive ___ clean water.", "options": ["without", "with", "of", "for"], "answer": 0, "explanation": "without表示「沒有」。", "target_grammar": "介系詞片語", "optionsZh": ["（沒有，正確）", "（有，語意相反）", "（的，用法不符）", "（因為，用法不符）"] },
+          { "sentence": "The book ___ the blue cover is mine.", "options": ["with", "of", "in", "for"], "answer": 0, "explanation": "with表示擁有某特徵（藍色封面），修飾book。", "target_grammar": "介系詞片語", "optionsZh": ["（擁有特徵，正確）", "（的，用法不符）", "（穿戴/內部，用法不符）", "（因為，用法不符）"] },
+          { "sentence": "I don't know much ___ that topic.", "options": ["about", "of", "with", "for"], "answer": 0, "explanation": "about表示「有關」。", "target_grammar": "介系詞片語", "optionsZh": ["（有關，正確）", "（的，用法不符）", "（有/和，用法不符）", "（因為，用法不符）"] }
+        ],
+        "cloze": {
+          "title": "New Neighbors",
+          "passage": "A family __(1)__ three kids just moved in next door. The mom, a woman __(2)__ short black hair, waved to me this morning. Their oldest son, a boy __(3)__ glasses, is in my class at school. I heard they're __(4)__ California and just moved here for work. I hope our lives will change __(5)__ time as we become good friends.",
+          "blanks": [
+            { "n": 1, "options": ["with", "of", "for", "in"], "answer": 0, "explanation": "with表示「有」，修飾family。", "optionsZh": ["（有，正確）", "（的，用法不符）", "（因為，用法不符）", "（範圍內，用法不符）"] },
+            { "n": 2, "options": ["with", "of", "in", "for"], "answer": 0, "explanation": "with表示擁有某特徵（黑色短髮）。", "optionsZh": ["（擁有特徵，正確）", "（的，用法不符）", "（穿戴，用法不符髮型非衣物）", "（因為，用法不符）"] },
+            { "n": 3, "options": ["with", "of", "in", "for"], "answer": 0, "explanation": "with表示擁有某物品（眼鏡）。", "optionsZh": ["（擁有物品，正確）", "（的，用法不符）", "（穿戴，用法較不精確眼鏡通常用with）", "（因為，用法不符）"] },
+            { "n": 4, "options": ["from", "of", "with", "for"], "answer": 0, "explanation": "from表示「來自於」。", "optionsZh": ["（來自，正確）", "（的，用法不符）", "（有/和，用法不符）", "（因為，用法不符）"] },
+            { "n": 5, "options": ["with", "of", "by", "for"], "answer": 0, "explanation": "with表示「隨著」時間。", "optionsZh": ["（隨著，正確）", "（的，用法不符）", "（藉由，用法不符）", "（因為，用法不符）"] }
+          ]
+        }
+      }
+      },
+      {
+        "id": "5-5",
+        "title": "含有介系詞的動詞片語（非授與動詞的用法）",
+        "teaching": {
+          "explanation": "<b>核心概念</b><br>有些動詞會固定搭配特定的介系詞，組成有特殊意義的動詞片語，這跟後面第13章要學的「授與動詞」用法不同（授與動詞的受詞順序不一樣，這裡先簡單比較一下）。<br><br><b>常見動詞片語與例句</b><br>tell＋人＋to＋V「告訴某人去做…」：Please tell me what to do.<br>tell＋人＋about...「告訴某人有關…」：Can you tell me about what's happening?<br>ask＋人＋to＋V「要求某人去做…」：Mom asks Tom to do homework now.<br>ask＋人＋about...「詢問某人有關…的事」：Why do you ask me about Karen?<br>ask＋人＋for...「向某人要…」：You can ask the police for help.<br>invite＋人＋to...「邀請某人…」：I'll invite everyone to dinner.<br>bring＋人＋to+地點「帶某人來某地」：Could you bring Jean to the party?<br>take＋人＋to+地點「帶某人去某地」：Could you take Jimmy to the dentist?<br>bring＋物＋with+人「隨身攜帶某物」：Bring an umbrella with you.<br><br><b>易混淆重點：跟授與動詞的差別</b><br>含介系詞的動詞片語句構：及物動詞＋受詞（人）＋介系詞＋受詞（事物）<br>授與動詞句構：及物動詞＋受詞（事物）＋介系詞＋受詞（人）＝及物動詞＋受詞（人）＋受詞（事物）<br>（授與動詞的完整規則詳見第13章特殊動詞(一)）<br><br><b>常見易混淆地雷</b><br>① tell/ask 後面接「to+V」表示「要求做什麼」，接「about」表示「有關什麼事」，意思完全不同。<br>② ask+人+for+物：強調「跟某人要東西」，for後面接的是想要的東西/幫助。<br>③ invite+人+to+地點/事件：邀請的對象放在動詞後面，地點/事件用to引導。<br>④ bring和take的方向不同：bring是「帶來」（朝說話者），take是「帶去」（離開說話者）。<br>⑤ bring+物+with+人：表示「隨身攜帶」，強調物品跟著人移動。<br>⑥ 這些動詞片語的介系詞是固定的，不能隨意替換（不能說tell me for...）。<br>⑦ ask的三種介系詞搭配（to/about/for）意思都不同，要依語境選擇。<br>⑧ 這類動詞片語跟授與動詞的受詞順序恰好相反，別混淆。",
+          "examples": [
+            { "en": "Please tell me what happened.", "zh": "請告訴我發生什麼事了。" },
+            { "en": "Can you tell me about your trip?", "zh": "你可以告訴我你這趟旅行的事嗎？" },
+            { "en": "She asked me to help her with the project.", "zh": "她要求我幫她做這個專案。" },
+            { "en": "He asked his teacher about the assignment.", "zh": "他問老師有關作業的事。" },
+            { "en": "I asked my friend for advice.", "zh": "我向朋友尋求建議。" },
+            { "en": "We invited our neighbors to the barbecue.", "zh": "我們邀請鄰居來烤肉。" },
+            { "en": "Could you bring your sister to the party?", "zh": "你可以帶你妹妹來派對嗎？" },
+            { "en": "Please take these documents to the office.", "zh": "請把這些文件拿去辦公室。" }
+          ]
+        },
+        "quiz": {
+        "mc": [
+          { "sentence": "Please tell me ___ do next.", "options": ["what to", "about what", "for what", "with what"], "answer": 0, "explanation": "tell+人+to+V的疑問詞版本，what to do表示「該做什麼」。", "target_grammar": "含介系詞的動詞片語", "optionsZh": ["（要求做什麼，正確）", "（有關什麼，句構不符）", "（用法不存在）", "（用法不存在）"] },
+          { "sentence": "Can you tell me ___ your weekend?", "options": ["about", "to", "for", "of"], "answer": 0, "explanation": "tell+人+about...表示「告訴某人有關…」。", "target_grammar": "含介系詞的動詞片語", "optionsZh": ["（有關，正確）", "（要求做什麼，用法不符）", "（要…，用法不符）", "（的，用法不符）"] },
+          { "sentence": "She asked me ___ her with the boxes.", "options": ["to help", "about helping", "for helping", "with help"], "answer": 0, "explanation": "ask+人+to+V表示「要求某人做…」。", "target_grammar": "含介系詞的動詞片語", "optionsZh": ["（要求做什麼，正確）", "（詢問有關，用法不符）", "（用法不存在）", "（用法不存在）"] },
+          { "sentence": "He asked his boss ___ a day off.", "options": ["for", "about", "to", "with"], "answer": 0, "explanation": "ask+人+for...表示「向某人要求某物」。", "target_grammar": "含介系詞的動詞片語", "optionsZh": ["（要求某物，正確）", "（詢問有關，用法不符）", "（要求做什麼，用法不符）", "（用法不存在）"] },
+          { "sentence": "I asked my sister ___ the new restaurant downtown.", "options": ["about", "for", "to", "with"], "answer": 0, "explanation": "ask+人+about...表示「詢問某人有關…的事」。", "target_grammar": "含介系詞的動詞片語", "optionsZh": ["（詢問有關，正確）", "（要求某物，用法不符）", "（要求做什麼，用法不符）", "（用法不存在）"] },
+          { "sentence": "We invited all our friends ___ the wedding.", "options": ["to", "for", "with", "of"], "answer": 0, "explanation": "invite+人+to...表示「邀請某人到…」。", "target_grammar": "含介系詞的動詞片語", "optionsZh": ["（邀請到，正確）", "（因為，用法不符）", "（有/和，用法不符）", "（的，用法不符）"] },
+          { "sentence": "Could you bring your little brother ___ the party?", "options": ["to", "for", "with", "of"], "answer": 0, "explanation": "bring+人+to+地點表示「帶某人來某地」。", "target_grammar": "含介系詞的動詞片語", "optionsZh": ["（帶來某地，正確）", "（因為，用法不符）", "（有/和，用法不符）", "（的，用法不符）"] },
+          { "sentence": "Please take this letter ___ the post office.", "options": ["to", "for", "with", "of"], "answer": 0, "explanation": "take+物+to+地點表示「帶去某地」。", "target_grammar": "含介系詞的動詞片語", "optionsZh": ["（帶去某地，正確）", "（因為，用法不符）", "（有/和，用法不符）", "（的，用法不符）"] },
+          { "sentence": "Don't forget to bring an umbrella ___ you; it might rain.", "options": ["with", "to", "for", "of"], "answer": 0, "explanation": "bring+物+with+人表示「隨身攜帶」。", "target_grammar": "含介系詞的動詞片語", "optionsZh": ["（隨身攜帶，正確）", "（帶去某地，用法不符）", "（因為，用法不符）", "（的，用法不符）"] },
+          { "sentence": "She always asks a lot of questions ___ her homework.", "options": ["about", "for", "to", "of"], "answer": 0, "explanation": "ask+人+about...延伸用法，about表示「有關」。", "target_grammar": "含介系詞的動詞片語", "optionsZh": ["（有關，正確）", "（要求某物，用法不符）", "（要求做什麼，用法不符）", "（的，用法不符）"] }
+        ],
+        "cloze": {
+          "title": "Asking for Help",
+          "passage": "Yesterday, I asked my classmate __(1)__ some advice on my science project. He kindly told me __(2)__ what mistakes I had made and how to fix them. Later, I asked my teacher __(3)__ extra time to finish it, and she said yes. My mom also invited my classmate __(4)__ dinner to thank him for his help. He said he would bring his notes __(5)__ him next time, so we could study together.",
+          "blanks": [
+            { "n": 1, "options": ["for", "about", "to", "with"], "answer": 0, "explanation": "ask+人+for...表示「向某人要求某物」。", "optionsZh": ["（要求某物，正確）", "（詢問有關，用法不符）", "（要求做什麼，用法不符）", "（用法不存在）"] },
+            { "n": 2, "options": ["about", "for", "to", "with"], "answer": 0, "explanation": "tell+人+about...表示「告訴某人有關…」。", "optionsZh": ["（有關，正確）", "（要求某物，用法不符）", "（要求做什麼，用法不符）", "（用法不存在）"] },
+            { "n": 3, "options": ["for", "about", "to", "with"], "answer": 0, "explanation": "ask+人+for...表示「向某人要求某物」（額外時間）。", "optionsZh": ["（要求某物，正確）", "（詢問有關，用法不符）", "（要求做什麼，用法不符）", "（用法不存在）"] },
+            { "n": 4, "options": ["to", "for", "with", "of"], "answer": 0, "explanation": "invite+人+to...表示「邀請某人到…」。", "optionsZh": ["（邀請到，正確）", "（因為，用法不符）", "（有/和，用法不符）", "（的，用法不符）"] },
+            { "n": 5, "options": ["with", "to", "for", "of"], "answer": 0, "explanation": "bring+物+with+人表示「隨身攜帶」。", "optionsZh": ["（隨身攜帶，正確）", "（帶去某地，用法不符）", "（因為，用法不符）", "（的，用法不符）"] }
+          ]
+        }
+      }
+      },
+      {
+        "id": "5-6",
+        "title": "不及物動詞＋介系詞＋受詞",
+        "teaching": {
+          "explanation": "<b>核心概念</b><br>有些動詞天生是「不及物動詞」，後面不能直接加受詞，必須先加上一個固定的介系詞，才能接受詞。這些「不及物動詞＋介系詞」的組合，功能上就像一個及物動詞使用。<br><br><b>常見動詞片語清單</b><br>concentrate on「專注於…」：Please concentrate on your homework.<br>talk about「討論…」：We talked about the movie.<br>talk to／talk with「對…說話／跟…說話」：I need to talk to you.<br>listen to「專心聽…」：She listened to the music.<br>look at「專注看…」：Look at that sunset!<br>think of「想到/想起…」：I often think of my childhood friends.<br>think about「思考/考慮…」：He's thinking about changing his job.<br>worry about「擔心…」：Don't worry about the test.<br>（更完整的清單詳見第14章特殊動詞(二)）<br><br><b>常見易混淆地雷</b><br>① 這些動詞後面若不加介系詞，就不能直接接受詞：（×）listen the music　（✅）listen to the music。<br>② talk to 強調「對某人說話」（單向或一般對話），talk with 強調「跟某人說話」（比較強調雙向互動）。<br>③ think of 通常表示「想到/想起」某個具體人事物，think about 通常表示「思考/考慮」某件事情或計畫。<br>④ look at 強調「注視/專注地看」，跟單純的「看見」(see)不同。<br>⑤ concentrate on 是固定片語，介系詞固定用 on，不能換成其他介系詞。<br>⑥ worry about 的 about 不能省略或替換成其他介系詞。<br>⑦ 這些動詞片語中的介系詞是固定的，必須整組記憶，不能只記動詞本身。<br>⑧ 不及物動詞+介系詞的組合，整體被視為一個有及物動詞功能的片語動詞。",
+          "examples": [
+            { "en": "Please concentrate on your homework.", "zh": "請專心在你的作業上。" },
+            { "en": "We talked about the movie for hours.", "zh": "我們討論了這部電影好幾個小時。" },
+            { "en": "I need to talk to you about something important.", "zh": "我需要跟你談一件重要的事。" },
+            { "en": "She listened to the music quietly.", "zh": "她靜靜地聽著音樂。" },
+            { "en": "Look at that beautiful sunset!", "zh": "看看那美麗的夕陽！" },
+            { "en": "I often think of my childhood friends.", "zh": "我常常想起我小時候的朋友。" },
+            { "en": "He's thinking about changing his job.", "zh": "他正在考慮換工作。" },
+            { "en": "Don't worry about the test; you'll do fine.", "zh": "別擔心考試，你會考好的。" }
+          ]
+        },
+        "quiz": {
+        "mc": [
+          { "sentence": "Please concentrate ___ your work.", "options": ["on", "at", "to", "for"], "answer": 0, "explanation": "concentrate on為固定片語，表示「專注於」。", "target_grammar": "不及物動詞+介系詞+受詞", "optionsZh": ["（固定片語，正確）", "（用法不符）", "（用法不符）", "（用法不符）"] },
+          { "sentence": "Let's talk ___ the plan for tomorrow.", "options": ["about", "to", "with", "of"], "answer": 0, "explanation": "talk about表示「討論」。", "target_grammar": "不及物動詞+介系詞+受詞", "optionsZh": ["（討論，正確）", "（對某人說話，用法不符）", "（跟某人說話，用法不符）", "（想到，用法不符）"] },
+          { "sentence": "I need to talk ___ you about something.", "options": ["to", "about", "with", "for"], "answer": 0, "explanation": "talk to表示「對某人說話」。", "target_grammar": "不及物動詞+介系詞+受詞", "optionsZh": ["（對某人說話，正確）", "（討論某事，用法不符受詞為人）", "（跟某人說話，語意也通但to更常見於此句構）", "（用法不符）"] },
+          { "sentence": "She listened ___ the teacher carefully.", "options": ["to", "at", "for", "of"], "answer": 0, "explanation": "listen to表示「專心聽」。", "target_grammar": "不及物動詞+介系詞+受詞", "optionsZh": ["（固定片語，正確）", "（用法不符）", "（用法不符）", "（用法不符）"] },
+          { "sentence": "Look ___ that rainbow!", "options": ["at", "to", "for", "of"], "answer": 0, "explanation": "look at表示「看」。", "target_grammar": "不及物動詞+介系詞+受詞", "optionsZh": ["（固定片語，正確）", "（用法不符）", "（用法不符）", "（用法不符）"] },
+          { "sentence": "I often think ___ my grandmother; I miss her.", "options": ["of", "about", "to", "for"], "answer": 0, "explanation": "think of表示「想到/想起」，帶有懷念的語感。", "target_grammar": "不及物動詞+介系詞+受詞", "optionsZh": ["（想起，符合懷念語感，正確）", "（思考/考慮，語感較不符想念）", "（用法不符）", "（用法不符）"] },
+          { "sentence": "He's thinking ___ moving to a new city.", "options": ["about", "of", "to", "for"], "answer": 0, "explanation": "think about表示「思考/考慮」某件具體計畫。", "target_grammar": "不及物動詞+介系詞+受詞", "optionsZh": ["（考慮計畫，正確）", "（想起，語感較不符正在規劃的情境）", "（用法不符）", "（用法不符）"] },
+          { "sentence": "Don't worry ___ me; I'll be fine.", "options": ["about", "for", "of", "to"], "answer": 0, "explanation": "worry about表示「擔心」。", "target_grammar": "不及物動詞+介系詞+受詞", "optionsZh": ["（固定片語，正確）", "（用法不符）", "（用法不符）", "（用法不符）"] },
+          { "sentence": "They are talking ___ each other about the game.", "options": ["with", "to", "about", "of"], "answer": 0, "explanation": "talk with表示「跟…說話」，強調雙向對話（each other）。", "target_grammar": "不及物動詞+介系詞+受詞", "optionsZh": ["（雙向對話，正確）", "（單向說話，語感較不符each other）", "（討論，介系詞後應接話題而非人，用法不符）", "（想到，用法不符）"] },
+          { "sentence": "You should concentrate ___ one task at a time.", "options": ["on", "at", "to", "of"], "answer": 0, "explanation": "concentrate on為固定片語。", "target_grammar": "不及物動詞+介系詞+受詞", "optionsZh": ["（固定片語，正確）", "（用法不符）", "（用法不符）", "（用法不符）"] }
+        ],
+        "cloze": {
+          "title": "Staying Focused",
+          "passage": "My teacher always tells us to concentrate __(1)__ one task at a time. Yesterday, we talked __(2)__ how to manage our time better. She said we should listen __(3)__ our own instincts and not worry __(4)__ what others think. Whenever I feel distracted, I think __(5)__ my goals, and it helps me focus again.",
+          "blanks": [
+            { "n": 1, "options": ["on", "at", "to", "for"], "answer": 0, "explanation": "concentrate on為固定片語。", "optionsZh": ["（固定片語，正確）", "（用法不符）", "（用法不符）", "（用法不符）"] },
+            { "n": 2, "options": ["about", "to", "with", "of"], "answer": 0, "explanation": "talk about表示「討論」某件事。", "optionsZh": ["（討論，正確）", "（對某人說話，用法不符受詞為事）", "（跟某人說話，用法不符）", "（想到，用法不符）"] },
+            { "n": 3, "options": ["to", "at", "for", "of"], "answer": 0, "explanation": "listen to表示「專心聽」。", "optionsZh": ["（固定片語，正確）", "（用法不符）", "（用法不符）", "（用法不符）"] },
+            { "n": 4, "options": ["about", "for", "of", "to"], "answer": 0, "explanation": "worry about表示「擔心」。", "optionsZh": ["（固定片語，正確）", "（用法不符）", "（用法不符）", "（用法不符）"] },
+            { "n": 5, "options": ["of", "about", "to", "for"], "answer": 0, "explanation": "think of表示「想到」，帶有聚焦提醒自己目標的語感。", "optionsZh": ["（想到，正確）", "（思考/考慮，語感較不符瞬間想到）", "（用法不符）", "（用法不符）"] }
+          ]
+        }
+      }
+      }
     ]
   },
   "6": {
