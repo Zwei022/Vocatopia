@@ -295,8 +295,290 @@
     "title": "時態：現在進行式與過去進行式",
     "page": 19,
     "subLessons": [
-      { "id": "2-1", "title": "現在進行式", "teaching": null, "quiz": [] },
-      { "id": "2-2", "title": "過去進行式", "teaching": null, "quiz": [] }
+      {
+        "id": "2-1",
+        "title": "現在進行式",
+        "teaching": {
+          "explanation": "<b>核心概念</b><br>現在進行式描述「說話當下正在發生的動作」，是一個時間切片，跟現在簡單式的「恆常、習慣」完全不同——現在簡單式講的是「一直都是這樣」，現在進行式講的是「就是現在這一刻」。<br><br><b>三種使用情境</b><br>① 現在正在做的動作：I am reading a book now.（我現在正在看書。）<br>② Look!／Listen! 開頭的句子，後面接現在進行式：Look! The kids are playing in the yard.（看！孩子們正在院子裡玩。）<br>③ 表達已經確定、即將發生的未來計畫（強烈意圖），常搭配來去動詞 come/go/leave/arrive：We are going to the concert tonight.（我們今晚要去演唱會。）<br><br><b>完整信號詞表</b><br>• now、right now（現在）、at the moment、at this moment（此時此刻）<br>• (at+)幾點幾分：It's 9:45. Jean is still sleeping.<br>• while：附屬連接詞while連接兩子句時，有while的子句一定要用進行式<br><br><b>動詞怎麼變化？（V-ing拼字規則）</b><br>be動詞(am/is/are)＋現在分詞(V-ing)：<br>• 一般：直接加ing → play → playing<br>• 字尾是e：去e加ing → write → writing<br>• 短母音+子音結尾（重複字尾）：run → running<br>• 多音節重音在最後：begin → beginning<br>• 字尾ie：去ie加ying → lie → lying<br><br><b>完整句型</b><br>肯定：She is cooking dinner.　否定：She isn't cooking dinner.　疑問：Is she cooking dinner? — Yes, she is. / No, she isn't.<br>問句：What are you listening to right now?（Wh-＋be＋主詞＋V-ing）<br><br><b>常見易混淆地雷</b><br>① 瞬間動作動詞沒有進行式：buy、close、open、arrive、finish等，動作發生太快無法「持續進行」。<br>② 擁有類動詞沒有進行式：have/has（擁有）、own、belong to。<br>③ 感官與認知動詞沒有進行式：see（看到）、hear、know、believe、understand、want、like、love。<br>④ 連綴動詞沒有進行式：look（看起來）、sound、taste、seem——但feel/get/become/turn例外，可用進行式表示「逐漸…」。<br>⑤ 一字多義動詞要看意思判斷：look「看起來」無進行式，但look at/look for有；have「擁有」無進行式，但「吃、度過」有（I was having dinner.）；think「認為」無進行式，但think of/about有；see「不經意看到」無進行式，但see a doctor（看醫生）有。<br>⑥ 頻率副詞通常搭配現在簡單式表常態，但always/usually/often搭配現在進行式時，表達「不斷令人不悅的重複動作」：Why are you always losing your keys?<br>⑦ 現在分詞(V-ing)無進行式的動詞，不代表不能當動名詞使用（動名詞與現在分詞是不同概念，詳見第10章）。<br>⑧ Look!/Listen!開頭的句子，後面主要子句一定用現在進行式。",
+          "examples": [
+            { "en": "My mom is cooking dinner in the kitchen right now.", "zh": "我媽媽現在正在廚房煮晚餐。" },
+            { "en": "Look! The cat is sleeping on the sofa.", "zh": "看！那隻貓正在沙發上睡覺。" },
+            { "en": "I am not watching TV at the moment; I'm doing homework.", "zh": "我現在沒有在看電視，我正在做作業。" },
+            { "en": "Why is he always losing his keys?", "zh": "他為什麼老是弄丟鑰匙？" },
+            { "en": "She is thinking about her weekend plans.", "zh": "她正在想她週末的計畫。" },
+            { "en": "Are you listening to music now?", "zh": "你現在正在聽音樂嗎？" },
+            { "en": "We are having a picnic this Saturday.", "zh": "我們這星期六要去野餐。" },
+            { "en": "The children are playing outside while it's still bright.", "zh": "趁天還亮著，孩子們正在外面玩。" }
+          ]
+        },
+        "quiz": {
+        "mc": [
+          {
+            "sentence": "___ Sam doing his homework right now?",
+            "options": ["Do", "Does", "Is", "Are"],
+            "answer": 2,
+            "explanation": "主詞 Sam 是單數，現在進行式的疑問句 be動詞要用 Is。",
+            "target_grammar": "現在進行式",
+            "optionsZh": ["（一般動詞助動詞，不適用於進行式）", "（一般動詞助動詞，不適用於進行式）", "（單數be動詞，正確）", "（複數be動詞，主詞不符）"]
+          },
+          {
+            "sentence": "Look! The dog ___ across the street.",
+            "options": ["run", "runs", "is running", "was running"],
+            "answer": 2,
+            "explanation": "Look! 開頭的句子，後面要用現在進行式表達正在發生的動作。",
+            "target_grammar": "現在進行式",
+            "optionsZh": ["（原形動詞，時態不符）", "（現在簡單式，時態不符）", "（現在進行式，正確）", "（過去進行式，時態不符）"]
+          },
+          {
+            "sentence": "I ___ that this plan will work.",
+            "options": ["think", "am thinking", "thinks", "thought"],
+            "answer": 0,
+            "explanation": "think 表示「認為」時沒有進行式，用現在簡單式 think。",
+            "target_grammar": "現在進行式",
+            "optionsZh": ["（現在簡單式，正確）", "（認知動詞無進行式，錯誤）", "（第三人稱單數，主詞不符）", "（過去式，時態不符）"]
+          },
+          {
+            "sentence": "My brother ___ a new bike.",
+            "options": ["has", "is having", "have", "having"],
+            "answer": 0,
+            "explanation": "have 表示「擁有」時沒有進行式，主詞是第三人稱單數用 has。",
+            "target_grammar": "現在進行式",
+            "optionsZh": ["（擁有無進行式，正確）", "（擁有動詞無進行式，錯誤）", "（原形動詞，主詞不符）", "（現在分詞，句構不完整）"]
+          },
+          {
+            "sentence": "This cake ___ delicious.",
+            "options": ["tastes", "is tasting", "taste", "tasted"],
+            "answer": 0,
+            "explanation": "taste 作連綴動詞「嚐起來」時沒有進行式，主詞是單數用 tastes。",
+            "target_grammar": "現在進行式",
+            "optionsZh": ["（連綴動詞無進行式，正確）", "（連綴動詞無進行式，錯誤）", "（原形動詞，主詞不符）", "（過去式，時態不符）"]
+          },
+          {
+            "sentence": "Why ___ you always interrupting me?",
+            "options": ["do", "are", "is", "does"],
+            "answer": 1,
+            "explanation": "always 搭配現在進行式時，表達「不斷令人不悅的重複動作」的語氣，主詞 you 用 are。",
+            "target_grammar": "現在進行式",
+            "optionsZh": ["（一般動詞助動詞，不適用於進行式）", "（現在進行式，正確）", "（單數be動詞，主詞不符）", "（一般動詞助動詞，不適用於進行式）"]
+          },
+          {
+            "sentence": "We ___ a party this Saturday.",
+            "options": ["have", "are having", "has", "had"],
+            "answer": 1,
+            "explanation": "現在進行式可以表達已經確定的未來計畫，have 在此表示「舉辦」，用 are having。",
+            "target_grammar": "現在進行式",
+            "optionsZh": ["（現在簡單式，較不符合已確定的未來語感）", "（現在進行式表未來計畫，正確）", "（第三人稱單數，主詞不符）", "（過去式，時態不符）"]
+          },
+          {
+            "sentence": "___ you seeing a doctor about your headache?",
+            "options": ["Do", "Does", "Are", "Is"],
+            "answer": 2,
+            "explanation": "see a doctor（看醫生）是固定片語，可以用進行式，主詞 you 用 Are。",
+            "target_grammar": "現在進行式",
+            "optionsZh": ["（一般動詞助動詞，不適用於進行式）", "（一般動詞助動詞，不適用於進行式）", "（複數/you用be動詞Are，正確）", "（單數be動詞，主詞不符）"]
+          },
+          {
+            "sentence": "My sister ___ her hair at the moment.",
+            "options": ["is brushing", "brush", "brushes", "brushed"],
+            "answer": 0,
+            "explanation": "at the moment 是現在進行式的信號詞，表達此時此刻正在做的動作。",
+            "target_grammar": "現在進行式",
+            "optionsZh": ["（現在進行式，正確）", "（原形動詞，主詞不符）", "（現在簡單式，時態不符信號詞）", "（過去式，時態不符）"]
+          },
+          {
+            "sentence": "___ your parents watching the news now?",
+            "options": ["Do", "Does", "Are", "Is"],
+            "answer": 2,
+            "explanation": "主詞 your parents 是複數，現在進行式疑問句 be動詞要用 Are。",
+            "target_grammar": "現在進行式",
+            "optionsZh": ["（一般動詞助動詞，不適用於進行式）", "（一般動詞助動詞，不適用於進行式）", "（複數be動詞，正確）", "（單數be動詞，主詞不符）"]
+          }
+        ],
+        "cloze": {
+          "title": "A Busy Saturday Morning",
+          "passage": "It's Saturday morning, and everyone in my house __(1)__ busy. My mom __(2)__ breakfast in the kitchen, and the smell __(3)__ really good. My dad __(4)__ the newspaper in the living room while my little sister __(5)__ cartoons on TV. It's going to be a nice, relaxing day.",
+          "blanks": [
+            {
+              "n": 1,
+              "options": ["is", "are", "am", "be"],
+              "answer": 0,
+              "explanation": "everyone 視為單數，be動詞用 is。",
+              "optionsZh": ["（單數be動詞，正確）", "（複數be動詞，主詞不符）", "（第一人稱be動詞，主詞不符）", "（原形be動詞，句構不符）"]
+            },
+            {
+              "n": 2,
+              "options": ["cook", "cooks", "is cooking", "was cooking"],
+              "answer": 2,
+              "explanation": "描述媽媽現在正在做的動作，用現在進行式 is cooking。",
+              "optionsZh": ["（原形動詞，時態不符）", "（現在簡單式，時態不符）", "（現在進行式，正確）", "（過去進行式，時態不符）"]
+            },
+            {
+              "n": 3,
+              "options": ["smell", "smells", "is smelling", "smelling"],
+              "answer": 1,
+              "explanation": "smell 作連綴動詞解釋「聞起來」時沒有進行式，主詞是單數用 smells。",
+              "optionsZh": ["（原形動詞，主詞不符）", "（連綴動詞現在式單數，正確）", "（連綴動詞無進行式，錯誤）", "（缺少be動詞，句構不完整）"]
+            },
+            {
+              "n": 4,
+              "options": ["read", "reads", "is reading", "was reading"],
+              "answer": 2,
+              "explanation": "描述爸爸現在正在做的動作，用現在進行式 is reading。",
+              "optionsZh": ["（原形動詞，時態不符）", "（現在簡單式，時態不符）", "（現在進行式，正確）", "（過去進行式，時態不符）"]
+            },
+            {
+              "n": 5,
+              "options": ["watch", "watches", "is watching", "was watching"],
+              "answer": 2,
+              "explanation": "描述妹妹現在正在做的動作，用現在進行式 is watching。",
+              "optionsZh": ["（原形動詞，時態不符）", "（現在簡單式，時態不符）", "（現在進行式，正確）", "（過去進行式，時態不符）"]
+            }
+          ]
+        }
+      }
+      },
+      {
+        "id": "2-2",
+        "title": "過去進行式",
+        "teaching": {
+          "explanation": "<b>核心概念</b><br>過去進行式描述「過去某個時間點正在進行的動作」，常搭配過去簡單式表達「正在做A的時候，B發生了」——A是背景，B是打斷背景的瞬間事件。<br><br><b>三種使用情境</b><br>① 過去某時間點正在做的動作：I was sleeping at midnight.（我半夜正在睡覺。）<br>② when＋過去簡單式(瞬間動作)，過去進行式(背景動作)：When the phone rang, I was taking a shower.（電話響的時候，我正在洗澡。）<br>③ while＋過去進行式，過去進行式(兩件事同時發生)：While I was cooking, my brother was cleaning the house.（我在煮飯的時候，我哥哥正在打掃房子。）<br><br><b>完整信號詞表</b><br>• at+過去時間點：I was taking a shower at three thirty yesterday afternoon.<br>• then、at that time（那個時候）<br>• at this time of+過去時間（在過去時間的這個時候）<br>• when＋簡單式..., 過去進行式...（一瞬間動作發生時，某事正在進行中）<br>• while＋過去進行式..., 過去進行式...（兩件事同時進行）<br><br><b>動詞怎麼變化？</b><br>was/were＋現在分詞(V-ing)，V-ing拼字規則跟現在進行式一樣（去e加ing、重複字尾子音等）。<br><br><b>完整句型</b><br>肯定：She was cooking dinner.　否定：She wasn't cooking dinner.　疑問：Was she cooking dinner? — Yes, she was. / No, she wasn't.<br>問句：What were you doing at nine last night?（Wh-＋was/were＋主詞＋V-ing）<br><br><b>常見易混淆地雷</b><br>① when子句用簡單式(瞬間動作)，主要子句用過去進行式(正在進行的背景被打斷)：When the teacher walked in, the students were talking loudly.<br>② while子句前後都要用過去進行式，因為表達兩件事同時發生：While I was cooking, my sister was setting the table.<br>③ 跟現在進行式一樣，狀態動詞（have擁有、know、like、see不經意看到）沒有過去進行式：I knew the answer.（不是 I was knowing）<br>④ 瞬間動作動詞（arrive、leave、come）通常用過去簡單式，不用過去進行式，除非特別強調「正在…的過程中」。<br>⑤ Here/There開頭的倒裝句型不用進行式表達「來了」的當下狀態。<br>⑥ 對等連接詞and連接的兩個動詞，時態要一致。<br>⑦ 附屬連接詞because前後子句時態要一致。<br>⑧ 過去進行式 vs 過去簡單式：過去進行式強調「動作進行中的過程／背景」，過去簡單式強調「動作發生並結束」。",
+          "examples": [
+            { "en": "I was watching a movie when you called me.", "zh": "你打給我的時候，我正在看電影。" },
+            { "en": "While my mom was gardening, my dad was washing the car.", "zh": "我媽媽在整理花園的時候，我爸爸正在洗車。" },
+            { "en": "What were you doing at nine last night?", "zh": "你昨晚九點在做什麼？" },
+            { "en": "She wasn't listening when the teacher explained the rule.", "zh": "老師解釋規則的時候，她沒有在聽。" },
+            { "en": "We were waiting for the bus when it started to rain.", "zh": "我們在等公車的時候開始下雨了。" },
+            { "en": "At that time, I was still living with my parents.", "zh": "那個時候，我還跟父母住在一起。" },
+            { "en": "The children were playing hide and seek while their parents were talking.", "zh": "大人在聊天的時候，孩子們正在玩捉迷藏。" },
+            { "en": "Was he sleeping when the fire alarm went off?", "zh": "火災警報響的時候他在睡覺嗎？" }
+          ]
+        },
+        "quiz": {
+        "mc": [
+          {
+            "sentence": "When the teacher walked in, the students ___ loudly.",
+            "options": ["talk", "talked", "were talking", "are talking"],
+            "answer": 2,
+            "explanation": "when子句用過去簡單式(walked)表瞬間動作，主要子句用過去進行式表達正在進行的背景動作。",
+            "target_grammar": "過去進行式",
+            "optionsZh": ["（原形動詞，時態不符）", "（過去簡單式，用法不符情境）", "（過去進行式，正確）", "（現在進行式，時態不符）"]
+          },
+          {
+            "sentence": "While I ___ dinner, my sister was setting the table.",
+            "options": ["cook", "cooked", "was cooking", "am cooking"],
+            "answer": 2,
+            "explanation": "while子句前後都要用過去進行式，表達兩件事同時發生。",
+            "target_grammar": "過去進行式",
+            "optionsZh": ["（原形動詞，時態不符）", "（過去簡單式，前後時態不一致）", "（過去進行式，正確）", "（現在進行式，時態不符）"]
+          },
+          {
+            "sentence": "___ you sleeping when I called last night?",
+            "options": ["Do", "Did", "Was", "Were"],
+            "answer": 3,
+            "explanation": "過去進行式疑問句用 Were + 主詞 + V-ing，主詞 you 用 Were。",
+            "target_grammar": "過去進行式",
+            "optionsZh": ["（一般動詞助動詞，不適用於進行式）", "（一般動詞助動詞，不適用於進行式）", "（單數be動詞，主詞不符）", "（複數/you用Were，正確）"]
+          },
+          {
+            "sentence": "He ___ his keys at that time; he had no idea where they were.",
+            "options": ["was losing", "lost", "has lost", "loses"],
+            "answer": 1,
+            "explanation": "lose在此表達過去已經發生的動作，是過去簡單式，狀態動詞沒有進行式。",
+            "target_grammar": "過去進行式",
+            "optionsZh": ["（狀態動詞無進行式，錯誤）", "（過去簡單式，正確）", "（現在完成式，時態不符）", "（現在簡單式，時態不符）"]
+          },
+          {
+            "sentence": "I ___ that you were still at work.",
+            "options": ["didn't know", "wasn't knowing", "don't know", "isn't knowing"],
+            "answer": 0,
+            "explanation": "know 是認知動詞沒有進行式，過去否定用 didn't know。",
+            "target_grammar": "過去進行式",
+            "optionsZh": ["（過去簡單式否定，正確）", "（認知動詞無進行式，錯誤）", "（現在簡單式，時態不符）", "（認知動詞無進行式，錯誤）"]
+          },
+          {
+            "sentence": "The train ___ when we arrived at the station.",
+            "options": ["was leaving", "left", "leaves", "has left"],
+            "answer": 0,
+            "explanation": "過去進行式表達「正在離開的過程」，強調動作進行中，跟後面when子句的瞬間到達動作對比。",
+            "target_grammar": "過去進行式",
+            "optionsZh": ["（過去進行式，正確）", "（過去簡單式，語感較不符合進行中過程）", "（現在簡單式，時態不符）", "（現在完成式，時態不符）"]
+          },
+          {
+            "sentence": "___ your parents watching TV when the power went out?",
+            "options": ["Do", "Did", "Was", "Were"],
+            "answer": 3,
+            "explanation": "主詞 your parents 是複數，過去進行式疑問句用 Were。",
+            "target_grammar": "過去進行式",
+            "optionsZh": ["（一般動詞助動詞，不適用於進行式）", "（一般動詞助動詞，不適用於進行式）", "（單數be動詞，主詞不符）", "（複數過去be動詞，正確）"]
+          },
+          {
+            "sentence": "She ___ a headache all afternoon yesterday.",
+            "options": ["was having", "had", "has", "is having"],
+            "answer": 1,
+            "explanation": "have 表示「有（症狀）」時沒有進行式，過去式用 had。",
+            "target_grammar": "過去進行式",
+            "optionsZh": ["（擁有無進行式，錯誤）", "（過去簡單式，正確）", "（現在簡單式，時態不符）", "（擁有無進行式，錯誤）"]
+          },
+          {
+            "sentence": "At six o'clock last evening, my brother ___ his homework.",
+            "options": ["does", "did", "was doing", "is doing"],
+            "answer": 2,
+            "explanation": "at+過去時間點的信號詞，搭配過去進行式表達那個時間點正在做的事。",
+            "target_grammar": "過去進行式",
+            "optionsZh": ["（現在簡單式，時態不符）", "（過去簡單式，較不強調進行中過程）", "（過去進行式，正確）", "（現在進行式，時態不符）"]
+          },
+          {
+            "sentence": "The kids ___ in the yard when it suddenly started to rain.",
+            "options": ["play", "played", "were playing", "are playing"],
+            "answer": 2,
+            "explanation": "when子句(started)為瞬間動作用過去簡單式，主要子句用過去進行式表達被打斷的背景動作。",
+            "target_grammar": "過去進行式",
+            "optionsZh": ["（原形動詞，時態不符）", "（過去簡單式，用法不符情境）", "（過去進行式，正確）", "（現在進行式，時態不符）"]
+          }
+        ],
+        "cloze": {
+          "title": "An Unexpected Visitor",
+          "passage": "Last Saturday afternoon, I __(1)__ a book in my room when I heard a knock on the door. My little brother __(2)__ upstairs at the time, so I went to answer it myself. While I __(3)__ toward the door, the knocking got louder. When I opened the door, my cousin __(4)__ there with a big smile, holding a birthday cake for me! I completely forgot that everyone __(5)__ my birthday all along.",
+          "blanks": [
+            {
+              "n": 1,
+              "options": ["read", "reads", "was reading", "am reading"],
+              "answer": 2,
+              "explanation": "描述過去某時間點正在做的動作（看書）被打斷，用過去進行式 was reading。",
+              "optionsZh": ["（原形動詞，時態不符）", "（現在簡單式，時態不符）", "（過去進行式，正確）", "（現在進行式，時態不符）"]
+            },
+            {
+              "n": 2,
+              "options": ["sleep", "sleeps", "was sleeping", "is sleeping"],
+              "answer": 2,
+              "explanation": "描述那個時間點弟弟正在做的背景動作，用過去進行式 was sleeping。",
+              "optionsZh": ["（原形動詞，時態不符）", "（現在簡單式，時態不符）", "（過去進行式，正確）", "（現在進行式，時態不符）"]
+            },
+            {
+              "n": 3,
+              "options": ["walk", "walked", "was walking", "am walking"],
+              "answer": 2,
+              "explanation": "描述走向門口的過程動作，用過去進行式 was walking。",
+              "optionsZh": ["（原形動詞，時態不符）", "（過去簡單式，較不強調過程）", "（過去進行式，正確）", "（現在進行式，時態不符）"]
+            },
+            {
+              "n": 4,
+              "options": ["stand", "stood", "was standing", "is standing"],
+              "answer": 2,
+              "explanation": "描述開門當下表哥正站在那裡的畫面，用過去進行式 was standing。",
+              "optionsZh": ["（原形動詞，時態不符）", "（過去簡單式，較不強調畫面感）", "（過去進行式，正確）", "（現在進行式，時態不符）"]
+            },
+            {
+              "n": 5,
+              "options": ["remember", "remembers", "remembered", "was remembering"],
+              "answer": 2,
+              "explanation": "remember 是認知動詞，沒有進行式，過去式用 remembered。",
+              "optionsZh": ["（原形動詞，時態不符）", "（現在簡單式，時態不符）", "（過去簡單式，正確）", "（認知動詞無進行式，錯誤）"]
+            }
+          ]
+        }
+      }
+      }
     ]
   },
   "3": {
@@ -304,9 +586,432 @@
     "title": "時態：未來簡單式與現在／過去完成式",
     "page": 30,
     "subLessons": [
-      { "id": "3-1", "title": "未來簡單式", "teaching": null, "quiz": [] },
-      { "id": "3-2", "title": "現在完成式", "teaching": null, "quiz": [] },
-      { "id": "3-3", "title": "過去完成式", "teaching": null, "quiz": [] }
+      {
+        "id": "3-1",
+        "title": "未來簡單式",
+        "teaching": {
+          "explanation": "<b>核心概念</b><br>未來簡單式有三種表達方式：will、be going to、現在進行式，單純描述未來時 will 和 be going to 可以互換，但語感上還是有些微差異。<br><br><b>三種形式的語感差異</b><br>① will：對未來「不確定」的預測（如天氣預報），或當下臨時決定的意願：The phone is ringing. I'll get it.（電話在響，我來接。）<br>② be going to：事先已經規劃好、比較確定的計畫：We are going to visit Kyoto next month.（我們下個月要去京都玩，機票都訂好了。）<br>③ 現在進行式（表未來）：語氣最強烈確定，常搭配來去動詞 come/go/leave/arrive/start/move：She is leaving for Canada next week.（她下星期要出發去加拿大了。）<br><br><b>完整信號詞表</b><br>• tomorrow（明天）、tomorrow morning/afternoon/night、the day after tomorrow（後天）<br>• tonight（今晚）、in the future（在未來）、next+時間（next week/next year）<br>• this+時間（this afternoon/this weekend，要依上下文判斷是否為未來）<br>• in+一段時間「在…之後」：in ten minutes、in two weeks<br>• by+特定時間「最遲在…之前」：by tomorrow、by next week<br>• some other day（改天）<br><br><b>句型</b><br>肯定：I will call you. / I am going to call you.<br>否定：I won't call you. / I am not going to call you.<br>疑問：Will you call me? — Yes, I will. / No, I won't.　Are you going to call me? — Yes, I am. / No, I'm not.<br><br><b>常見易混淆地雷</b><br>① 附屬連接詞（when、if、after、before）連接未來式子句時，子句要改用現在簡單式，不能用will/be going to：If it rains tomorrow, we will stay home.（不是 If it will rain）<br>② shall 可解釋為「將要」，但限第一人稱（I、we）主詞；解釋為「應該」時則不限人稱。<br>③ this+時間需視上下文判斷是否表示未來，不一定都是。<br>④ by+時間表示「有期限性」，強調最晚不超過該時間點。<br>⑤ won't 是 will not 的縮寫。<br>⑥ 現在進行式表未來，通常搭配有明確目的地/行動的來去動詞，而不是隨便哪個動詞都能用。<br>⑦ be going to 的疑問句要用 be 動詞開頭：Are you going to...?<br>⑧ will 除了表未來，也可以表達「意願、當下決定」，跟 be going to 的「事先規劃」語感不同。",
+          "examples": [
+            { "en": "I will call you when I get home.", "zh": "我到家後會打給你。" },
+            { "en": "We are going to visit our grandparents next weekend.", "zh": "我們下週末要去拜訪祖父母。" },
+            { "en": "She is leaving for London tomorrow morning.", "zh": "她明天早上要出發去倫敦了。" },
+            { "en": "If it rains tomorrow, we won't go hiking.", "zh": "如果明天下雨，我們就不去健行了。" },
+            { "en": "I think it will snow tonight.", "zh": "我覺得今晚會下雪。" },
+            { "en": "Are you going to join the club next semester?", "zh": "你下學期要加入社團嗎？" },
+            { "en": "I'll finish this report by five o'clock.", "zh": "我最晚五點前會完成這份報告。" },
+            { "en": "What are you going to do this weekend?", "zh": "你這個週末打算做什麼？" }
+          ]
+        },
+        "quiz": {
+        "mc": [
+          {
+            "sentence": "If it ___ tomorrow, we will cancel the picnic.",
+            "options": ["rains", "will rain", "is going to rain", "rained"],
+            "answer": 0,
+            "explanation": "if 引導的附屬子句要表達未來時，要用現在簡單式代替未來式。",
+            "target_grammar": "未來簡單式",
+            "optionsZh": ["（子句用現在式表未來，正確）", "（附屬子句不可用未來式，錯誤）", "（附屬子句不可用未來式，錯誤）", "（過去式，時態不符）"]
+          },
+          {
+            "sentence": "When she ___ home, please tell her to call me.",
+            "options": ["will get", "gets", "got", "is getting"],
+            "answer": 1,
+            "explanation": "when 引導的附屬子句表達未來時，要用現在簡單式，不能用 will。",
+            "target_grammar": "未來簡單式",
+            "optionsZh": ["（附屬子句不可用未來式，錯誤）", "（子句用現在式表未來，正確）", "（過去式，時態不符）", "（現在進行式，用法不符）"]
+          },
+          {
+            "sentence": "We ___ leave earlier if the typhoon gets closer.",
+            "options": ["shall", "might", "could", "would"],
+            "answer": 0,
+            "explanation": "shall 解釋為「將要」時，可以代替 will 使用，但限第一人稱（we）主詞。",
+            "target_grammar": "未來簡單式",
+            "optionsZh": ["（第一人稱可用shall表將要，正確）", "（表推測可能性，語意不符）", "（表推測可能性，語意不符）", "（表委婉語氣，語意不符）"]
+          },
+          {
+            "sentence": "We must hand in the report ___ Friday.",
+            "options": ["by", "until", "in", "on"],
+            "answer": 0,
+            "explanation": "by+時間表示「最遲不超過…」的期限性。",
+            "target_grammar": "未來簡單式",
+            "optionsZh": ["（表期限，正確）", "（表持續到某時間，語意不符）", "（表一段時間之後，語意不符）", "（表特定日期，語意不符）"]
+          },
+          {
+            "sentence": "___ you going to the concert this weekend?",
+            "options": ["Do", "Are", "Will", "Does"],
+            "answer": 1,
+            "explanation": "be going to 的疑問句要用 be 動詞開頭，主詞 you 用 Are。",
+            "target_grammar": "未來簡單式",
+            "optionsZh": ["（一般動詞助動詞，不適用於be going to）", "（be動詞疑問句，正確）", "（will疑問句，句構不符be going to）", "（一般動詞助動詞，不適用於be going to）"]
+          },
+          {
+            "sentence": "The train leaves ___ nine minutes.",
+            "options": ["in", "at", "on", "by"],
+            "answer": 0,
+            "explanation": "in+一段時間表示「在…之後」。",
+            "target_grammar": "未來簡單式",
+            "optionsZh": ["（表一段時間之後，正確）", "（表特定時刻，用法不符）", "（表特定日期，用法不符）", "（表期限，用法不符）"]
+          },
+          {
+            "sentence": "She ___ come to the party tonight; she's too tired.",
+            "options": ["won't", "wasn't", "doesn't", "isn't"],
+            "answer": 0,
+            "explanation": "will not 的縮寫是 won't，表達對未來的否定意願/推測。",
+            "target_grammar": "未來簡單式",
+            "optionsZh": ["（未來式否定，正確）", "（過去式否定，時態不符）", "（現在式否定，時態不符）", "（be動詞否定，用法不符）"]
+          },
+          {
+            "sentence": "We ___ to Japan next spring; the tickets are already booked.",
+            "options": ["go", "are going", "went", "have gone"],
+            "answer": 1,
+            "explanation": "現在進行式可以表達已經確定的未來計畫，常搭配來去動詞 go。",
+            "target_grammar": "未來簡單式",
+            "optionsZh": ["（原形動詞，時態不符）", "（現在進行式表未來計畫，正確）", "（過去式，時態不符）", "（現在完成式，時態不符）"]
+          },
+          {
+            "sentence": "This afternoon I ___ a meeting with my boss.",
+            "options": ["have", "am having", "had", "has"],
+            "answer": 1,
+            "explanation": "this+時間依上下文表示未來，搭配現在進行式表達已排定的近未來計畫。",
+            "target_grammar": "未來簡單式",
+            "optionsZh": ["（現在簡單式，較不符合已排定計畫語感）", "（現在進行式表未來計畫，正確）", "（過去式，時態不符）", "（第三人稱單數，主詞不符）"]
+          },
+          {
+            "sentence": "___ she be at the airport tomorrow morning?",
+            "options": ["Will", "Does", "Is", "Shall"],
+            "answer": 0,
+            "explanation": "will 的疑問句直接把 will 移到主詞前。",
+            "target_grammar": "未來簡單式",
+            "optionsZh": ["（未來式疑問句，正確）", "（一般動詞助動詞，不適用於be動詞）", "（be動詞現在式，時態不符）", "（限第一人稱使用，主詞不符）"]
+          }
+        ],
+        "cloze": {
+          "title": "Weekend Plans",
+          "passage": "This Saturday, my family __(1)__ a trip to the countryside; we've already packed our bags. If the weather __(2)__ nice, we will go hiking in the mountains. My dad said, \"I __(3)__ drive us there early in the morning.\" We __(4)__ stay at a small guesthouse for one night, and we plan to come back by Sunday evening. I can't wait — it __(5)__ be a fun weekend!",
+          "blanks": [
+            {
+              "n": 1,
+              "options": ["take", "takes", "are taking", "took"],
+              "answer": 2,
+              "explanation": "行李已經打包好，用現在進行式表達已經確定的未來計畫。",
+              "optionsZh": ["（原形動詞，時態不符）", "（現在簡單式，時態不符）", "（現在進行式表未來計畫，正確）", "（過去式，時態不符）"]
+            },
+            {
+              "n": 2,
+              "options": ["will be", "is", "was", "is being"],
+              "answer": 1,
+              "explanation": "if 引導的子句表達未來時要用現在簡單式，不能用 will。",
+              "optionsZh": ["（附屬子句不可用未來式，錯誤）", "（子句用現在式表未來，正確）", "（過去式，時態不符）", "（現在進行式，用法不符）"]
+            },
+            {
+              "n": 3,
+              "options": ["will", "shall", "would", "should"],
+              "answer": 0,
+              "explanation": "will 表達當下的意願/決定。",
+              "optionsZh": ["（表意願，正確）", "（限第一人稱表將要，此處為引號內個人陳述亦可但will更常見）", "（表委婉語氣，語意不符）", "（表建議，語意不符）"]
+            },
+            {
+              "n": 4,
+              "options": ["are going to", "go", "went", "have gone"],
+              "answer": 0,
+              "explanation": "be going to 表示事先已經規劃好的計畫。",
+              "optionsZh": ["（表事先計畫，正確）", "（原形動詞，時態不符）", "（過去式，時態不符）", "（現在完成式，時態不符）"]
+            },
+            {
+              "n": 5,
+              "options": ["will", "is", "was", "shall"],
+              "answer": 0,
+              "explanation": "will 表達對未來的預測。",
+              "optionsZh": ["（表預測，正確）", "（現在式，時態不符）", "（過去式，時態不符）", "（限第一人稱，主詞不符it）"]
+            }
+          ]
+        }
+      }
+      },
+      {
+        "id": "3-2",
+        "title": "現在完成式",
+        "teaching": {
+          "explanation": "<b>核心概念</b><br>現在完成式描述「動作發生在過去，但影響或關聯一直延續到現在」。跟過去簡單式最大的不同：過去簡單式講的事「在過去就結束了」，現在完成式講的事「跟現在還有關係」。<br><br><b>三種使用情境</b><br>① 完成或結果：I have finished my homework.（我功課寫完了——重點是「現在」的狀態：作業完成了）<br>② 持續時間：I have lived here for five years.（我住這裡五年了——從過去持續到現在）<br>③ 經驗與次數：I have been to Japan twice.（我去過日本兩次——強調到目前為止的經驗）<br><br><b>完整信號詞表</b><br>【完成或結果】already（已經，用於肯定句）、just（剛剛）、yet（尚未，用於否定句/疑問句）<br>【經驗】ever（曾經，限疑問句）、never（從未）、before、once、twice、many times<br>【時間距離】for+一段時間（可搭配任何時態，視上下文而定）、since+過去時間點（自從…）、until now、so far、for/in the last/past+時間、these+時間、lately/recently<br><br><b>句型</b><br>肯定：She has finished the book.　否定：She hasn't finished the book.　疑問：Has she finished the book? — Yes, she has. / No, she hasn't.<br>問句（因為現在完成式關乎「時間距離」與「經驗次數」，常用）：How long have you learned English? / How many times has he read this book?<br><br><b>常見易混淆地雷</b><br>① when 不能用在現在完成式的問句：when 問的是「時間點」，現在完成式問的是「時間距離」，要問時間點必須改用過去簡單式。（✅ When did you learn English? ❌ When have you learned English?）<br>② 瞬間動作動詞（begin、die、arrive、get up）不能跟 for/since 併用，因為瞬間動作沒有「持續的時間距離」：Andy has been dead for ten years.（用be dead代替die）<br>③ already/just 放在助動詞have/has「後面」，簡答時放「前面」：Have you eaten yet? — Yes, I already have.<br>④ yet 用於否定句/疑問句，放句尾：I haven't finished yet.<br>⑤ have been in（待在某地一段時間）vs have been to（去過某地的經驗）vs have gone to（去了某地、人還沒回來）：He has been in Japan for a week. / She has been to Paris twice. / He has gone to the store.<br>⑥ have/has 表擁有沒有進行式，這點跟其他章節一致。<br>⑦ It has been+時間+since+過去式子句＝It is+時間+since...：It has been ten years since we graduated. = It is ten years since we graduated.<br>⑧ 現在完成式 vs 過去簡單式：過去簡單式陳述「該動作在過去發生並結束」；現在完成式強調「動作影響延續到現在」。",
+          "examples": [
+            { "en": "I have already cleaned my room.", "zh": "我已經整理過我的房間了。" },
+            { "en": "Have you ever tried Thai food?", "zh": "你吃過泰式料理嗎？" },
+            { "en": "She hasn't called me back yet.", "zh": "她還沒有回電給我。" },
+            { "en": "We have known each other since middle school.", "zh": "我們從國中就認識彼此了。" },
+            { "en": "He has lived in this city for over ten years.", "zh": "他住在這座城市超過十年了。" },
+            { "en": "My brother has just come back from his trip.", "zh": "我哥哥剛從旅行回來。" },
+            { "en": "How many times have you watched this movie?", "zh": "你看過這部電影幾次了？" },
+            { "en": "She has gone to the gym; she'll be back later.", "zh": "她去健身房了，等一下就回來。" }
+          ]
+        },
+        "quiz": {
+        "mc": [
+          {
+            "sentence": "I ___ my homework already.",
+            "options": ["finish", "finished", "have finished", "am finishing"],
+            "answer": 2,
+            "explanation": "already 是現在完成式常見信號詞，表達「已經完成」的結果，用 have finished。",
+            "target_grammar": "現在完成式",
+            "optionsZh": ["（原形動詞，時態不符）", "（過去簡單式，較不強調對現在的影響）", "（現在完成式，正確）", "（現在進行式，時態不符）"]
+          },
+          {
+            "sentence": "___ you ever been to Korea?",
+            "options": ["Do", "Did", "Have", "Are"],
+            "answer": 2,
+            "explanation": "ever 是現在完成式表經驗的信號詞，限用於疑問句，問句用 Have。",
+            "target_grammar": "現在完成式",
+            "optionsZh": ["（一般動詞助動詞，不適用於現在完成式）", "（過去式助動詞，時態不符）", "（現在完成式疑問句，正確）", "（be動詞，用法不符）"]
+          },
+          {
+            "sentence": "She hasn't replied to my email ___.",
+            "options": ["already", "yet", "just", "before"],
+            "answer": 1,
+            "explanation": "yet 用於否定句/疑問句，放句尾，表達「尚未」。",
+            "target_grammar": "現在完成式",
+            "optionsZh": ["（already用於肯定句，用法不符）", "（yet用於否定句句尾，正確）", "（just用於肯定句句中，用法不符）", "（before通常搭配經驗語境，此處不符）"]
+          },
+          {
+            "sentence": "___ did you learn to swim?",
+            "options": ["How long", "When", "How many times", "Since when"],
+            "answer": 1,
+            "explanation": "問「時間點」要用過去簡單式搭配 When，不能用現在完成式（when不可用於現在完成式問句）。",
+            "target_grammar": "現在完成式",
+            "optionsZh": ["（問時間距離，需搭配現在完成式，此句是過去式）", "（問時間點搭配過去簡單式，正確）", "（問經驗次數，需搭配現在完成式，此句是過去式）", "（問時間距離，需搭配現在完成式，此句是過去式）"]
+          },
+          {
+            "sentence": "My grandmother ___ dead for three years.",
+            "options": ["has been", "has died", "is", "was"],
+            "answer": 0,
+            "explanation": "die 是瞬間動作，不能跟 for 併用，要用 has been dead 表達持續的狀態。",
+            "target_grammar": "現在完成式",
+            "optionsZh": ["（用be dead表持續狀態，正確）", "（瞬間動作不可跟for併用，錯誤）", "（現在簡單式，時態不符）", "（過去簡單式，時態不符）"]
+          },
+          {
+            "sentence": "A: Have you finished the report? B: Yes, I ___ have.",
+            "options": ["already", "yet", "before", "ever"],
+            "answer": 0,
+            "explanation": "already 在簡答句中要放在助動詞 have 前面。",
+            "target_grammar": "現在完成式",
+            "optionsZh": ["（已經，簡答句中置於have前，正確）", "（yet用於否定/疑問句，用法不符）", "（before通常搭配經驗語境，此處不符）", "（ever限用疑問句，用法不符）"]
+          },
+          {
+            "sentence": "He ___ to Australia twice; he loves it there.",
+            "options": ["has been", "has gone", "went", "is"],
+            "answer": 0,
+            "explanation": "have been to 表示「去過」的經驗，主詞現在人在這裡（還能表達喜歡那裡的感覺），用 has been to。",
+            "target_grammar": "現在完成式",
+            "optionsZh": ["（have been to表經驗，正確）", "（have gone to表去了尚未回來，語意不符仍在此地）", "（過去簡單式，較不強調經驗延續）", "（現在簡單式，時態不符）"]
+          },
+          {
+            "sentence": "We ___ friends since we were kids.",
+            "options": ["are", "have been", "were", "had been"],
+            "answer": 1,
+            "explanation": "since+過去時間點子句，搭配現在完成式表達「從過去持續到現在」。",
+            "target_grammar": "現在完成式",
+            "optionsZh": ["（現在簡單式，缺乏持續語感）", "（現在完成式配合since，正確）", "（過去簡單式，語意不符持續到現在）", "（過去完成式，時態不符）"]
+          },
+          {
+            "sentence": "I haven't seen my cousin ___ last Christmas.",
+            "options": ["for", "since", "during", "in"],
+            "answer": 1,
+            "explanation": "since+過去時間點，表示「自從…以來」，搭配現在完成式。",
+            "target_grammar": "現在完成式",
+            "optionsZh": ["（for搭配一段時間長度，此處為時間點不符）", "（since搭配過去時間點，正確）", "（during搭配某段期間，用法不符）", "（in搭配較長時間單位，用法不符）"]
+          },
+          {
+            "sentence": "___ has it been since you moved here?",
+            "options": ["How long", "When", "How", "What time"],
+            "answer": 0,
+            "explanation": "How long 用來詢問現在完成式的「時間距離」。",
+            "target_grammar": "現在完成式",
+            "optionsZh": ["（問時間距離，正確）", "（問時間點，不適用於現在完成式問句）", "（問方式，語意不符）", "（問時刻，不適用於現在完成式問句）"]
+          }
+        ],
+        "cloze": {
+          "title": "My Pen Pal",
+          "passage": "I __(1)__ a pen pal in Canada for three years now. We __(2)__ emails since we first met online, and I __(3)__ visited her country twice already. She __(4)__ just sent me a photo of her new puppy, and I haven't __(5)__ seen anything so cute!",
+          "blanks": [
+            {
+              "n": 1,
+              "options": ["have", "has", "had", "am having"],
+              "answer": 0,
+              "explanation": "have表示「擁有」，主詞是I，搭配for表達持續時間，用現在完成式have had更精確，但此處have本身即已表達現階段擁有的持續狀態，主詞I用have。",
+              "optionsZh": ["（主詞I用have，正確）", "（第三人稱單數才用has，主詞不符）", "（過去完成式，時態不符）", "（擁有無進行式，錯誤）"]
+            },
+            {
+              "n": 2,
+              "options": ["exchange", "exchanged", "have exchanged", "are exchanging"],
+              "answer": 2,
+              "explanation": "since引導的子句表示「自從…」，搭配現在完成式表達持續到現在的動作。",
+              "optionsZh": ["（原形動詞，時態不符）", "（過去簡單式，較不強調持續到現在）", "（現在完成式，正確）", "（現在進行式，時態不符）"]
+            },
+            {
+              "n": 3,
+              "options": ["have", "has", "had", "am"],
+              "answer": 0,
+              "explanation": "主詞是I，現在完成式的助動詞用have。",
+              "optionsZh": ["（主詞I用have，正確）", "（第三人稱單數才用has，主詞不符）", "（過去完成式，時態不符）", "（be動詞，句構不符）"]
+            },
+            {
+              "n": 4,
+              "options": ["have", "has", "had", "is"],
+              "answer": 1,
+              "explanation": "主詞是she，第三人稱單數，現在完成式的助動詞用has，搭配just表達剛完成的動作。",
+              "optionsZh": ["（複數/第一人稱才用have，主詞不符）", "（第三人稱單數用has，正確）", "（過去完成式，時態不符）", "（be動詞，句構不符）"]
+            },
+            {
+              "n": 5,
+              "options": ["ever", "yet", "already", "just"],
+              "answer": 0,
+              "explanation": "haven't ever seen 表達「從來沒有」，ever在此加強否定語氣（＝never的概念）。",
+              "optionsZh": ["（加強否定語氣，正確）", "（yet通常用於句尾，此處位置不符）", "（already用於肯定句，用法不符）", "（just用於肯定句句中，用法不符）"]
+            }
+          ]
+        }
+      }
+      },
+      {
+        "id": "3-3",
+        "title": "過去完成式",
+        "teaching": {
+          "explanation": "<b>核心概念</b><br>過去完成式跟現在完成式的邏輯一樣，只是基準點往前挪到「過去的某個時間點」。現在完成式是「從過去到現在」，過去完成式是「從更早的過去到過去的某個時間點」——常說是「過去的過去」。<br><br><b>使用情境</b><br>① 過去某時間點之前動作的完成/結果：By the time he got home, we had already finished dinner.（他到家前，我們已經吃完晚餐了。）<br>② 過去某時間點之前動作的持續：I had lived there for ten years before I moved out.（我搬走之前，已經在那裡住了十年。）<br>③ 過去某時間點之前動作的經驗：I had never been to that city until last year.（去年之前，我從沒去過那座城市。）<br>④ 表達「更早發生的動作」，常搭配 after、before、when、as soon as、till/until 等連接詞：After the movie had ended, we went home.（電影結束後，我們就回家了。）<br><br><b>完整信號詞表</b><br>before（在…之前）、after（在…之後）、when（當…的時候）、as soon as（一…就）、by the time（到…的時候）、till/until（直到…）——這些連接詞連接兩個有時間先後關係的子句，較早發生的用過去完成式，較晚發生的用過去簡單式。<br><br><b>句型</b><br>肯定：I had finished the work.　否定：I hadn't finished the work.　疑問：Had you finished the work? — Yes, I had. / No, I hadn't.<br>問句：How long had you waited before the bus came? / How many times had you visited there before you moved?<br><br><b>常見易混淆地雷</b><br>① 判斷關鍵在「兩個過去動作的先後順序」：先發生的用過去完成式，後發生的用過去簡單式。By the time she arrived, the meeting had already started.（先started，後arrived）<br>② 表達過去的歷史事實、法則時只用過去簡單式，不可用過去完成式：Taiwan was once called Formosa.（不是 had been called）<br>③ 間接引述句中，若主要子句是過去式，直接引語若描述更早發生的事，受詞子句要改成過去完成式：He said that he had already eaten.<br>④ 表達過去未實現的願望，動詞常用 hope、think、want、plan、intend、expect 的過去完成式：I had hoped to see you, but you didn't come.<br>⑤ 假設語氣：對過去事實的相反假設，if子句用過去完成式：If I had known, I would have told you.<br>⑥ 過去完成式的動詞形式不分人稱單複數，都是 had+過去分詞。<br>⑦ 過去完成式強調「順序」，不是單純的「很久以前」，重點是相對於另一個過去事件哪個先發生。<br>⑧ had+過去分詞的「had」也是助動詞，疑問句直接把had移到主詞前。",
+          "examples": [
+            { "en": "By the time I arrived, the movie had already started.", "zh": "我到的時候，電影已經開始了。" },
+            { "en": "She had never seen snow before she visited Canada.", "zh": "她去加拿大之前從沒看過雪。" },
+            { "en": "We had finished dinner when he called.", "zh": "他打來的時候，我們已經吃完晚餐了。" },
+            { "en": "Had you met him before the meeting?", "zh": "你在會議之前見過他嗎？" },
+            { "en": "After the rain had stopped, we went outside.", "zh": "雨停之後，我們就出去了。" },
+            { "en": "I had studied French for two years before I moved to Paris.", "zh": "我搬去巴黎之前已經學了兩年法文。" },
+            { "en": "He told me that he had already bought the tickets.", "zh": "他告訴我他已經買好票了。" },
+            { "en": "If I had known about the traffic, I would have left earlier.", "zh": "如果我早知道會塞車，我就會提早出發了。" }
+          ]
+        },
+        "quiz": {
+        "mc": [
+          {
+            "sentence": "By the time we got to the station, the train ___ already.",
+            "options": ["leaves", "left", "had left", "has left"],
+            "answer": 2,
+            "explanation": "先發生的動作（火車離開）用過去完成式，後發生的動作（我們抵達）用過去簡單式。",
+            "target_grammar": "過去完成式",
+            "optionsZh": ["（現在簡單式，時態不符）", "（過去簡單式，此處應為較早發生的動作）", "（過去完成式，正確）", "（現在完成式，時態不符）"]
+          },
+          {
+            "sentence": "She ___ never eaten sushi before she went to Japan.",
+            "options": ["has", "had", "is", "was"],
+            "answer": 1,
+            "explanation": "before引導的子句表示「更早的經驗」，較早發生的動作用過去完成式，助動詞用had。",
+            "target_grammar": "過去完成式",
+            "optionsZh": ["（現在完成式，時態不符）", "（過去完成式，正確）", "（be動詞現在式，句構不符）", "（be動詞過去式，句構不符）"]
+          },
+          {
+            "sentence": "After the guests ___, we started cleaning up.",
+            "options": ["leave", "left", "had left", "have left"],
+            "answer": 2,
+            "explanation": "after引導的子句表示先發生的動作（客人離開），用過去完成式。",
+            "target_grammar": "過去完成式",
+            "optionsZh": ["（原形動詞，時態不符）", "（過去簡單式，此處應為較早發生的動作）", "（過去完成式，正確）", "（現在完成式，時態不符）"]
+          },
+          {
+            "sentence": "Taiwan ___ once called \"Formosa\" by Portuguese sailors.",
+            "options": ["was", "had been", "has been", "is"],
+            "answer": 0,
+            "explanation": "表達過去的歷史事實只用過去簡單式，不可用過去完成式。",
+            "target_grammar": "過去完成式",
+            "optionsZh": ["（歷史事實用過去簡單式，正確）", "（歷史事實不可用過去完成式，錯誤）", "（現在完成式，時態不符）", "（現在簡單式，時態不符）"]
+          },
+          {
+            "sentence": "He told me that he ___ the movie already.",
+            "options": ["watches", "watched", "had watched", "watch"],
+            "answer": 2,
+            "explanation": "間接引述句中，主要子句是過去式（told），受詞子句描述更早發生的事要改成過去完成式。",
+            "target_grammar": "過去完成式",
+            "optionsZh": ["（現在簡單式，時態不符）", "（過去簡單式，未表達更早發生的層次）", "（過去完成式，正確）", "（原形動詞，時態不符）"]
+          },
+          {
+            "sentence": "If I ___ known about the meeting, I would have attended.",
+            "options": ["have", "had", "was", "would"],
+            "answer": 1,
+            "explanation": "對過去事實的相反假設，if子句用過去完成式 had known。",
+            "target_grammar": "過去完成式",
+            "optionsZh": ["（現在完成式，時態不符假設語氣）", "（過去完成式，正確）", "（be動詞，句構不符）", "（重複使用would，句構不符）"]
+          },
+          {
+            "sentence": "___ you finished your homework before your mom got home?",
+            "options": ["Do", "Did", "Have", "Had"],
+            "answer": 3,
+            "explanation": "過去完成式的疑問句把 had 移到主詞前。",
+            "target_grammar": "過去完成式",
+            "optionsZh": ["（一般動詞助動詞，不適用於過去完成式）", "（過去簡單式助動詞，時態不符）", "（現在完成式助動詞，時態不符）", "（過去完成式疑問句，正確）"]
+          },
+          {
+            "sentence": "I had never traveled abroad ___ I visited Korea last year.",
+            "options": ["until", "since", "for", "during"],
+            "answer": 0,
+            "explanation": "until 表示「直到…為止」，搭配過去完成式描述在那之前從未發生過的經驗。",
+            "target_grammar": "過去完成式",
+            "optionsZh": ["（表直到某時間點，正確）", "（since通常搭配現在完成式，用法不符）", "（for搭配一段時間長度，用法不符）", "（during搭配某段期間，用法不符）"]
+          },
+          {
+            "sentence": "By the time the police arrived, the thief ___ already ___.",
+            "options": ["has / escaped", "had / escaped", "was / escaping", "did / escape"],
+            "answer": 1,
+            "explanation": "小偷逃跑發生在警察抵達之前，是較早發生的動作，用過去完成式 had escaped。",
+            "target_grammar": "過去完成式",
+            "optionsZh": ["（現在完成式，時態不符）", "（過去完成式，正確）", "（過去進行式，較不強調已完成）", "（過去簡單式句構不符空格數）"]
+          },
+          {
+            "sentence": "How long ___ you waited before the bus finally came?",
+            "options": ["did", "have", "had", "were"],
+            "answer": 2,
+            "explanation": "過去完成式的問句用 How long+had+主詞+p.p.，詢問在某過去時間點之前已經持續多久。",
+            "target_grammar": "過去完成式",
+            "optionsZh": ["（過去簡單式助動詞，時態不符）", "（現在完成式助動詞，時態不符）", "（過去完成式，正確）", "（be動詞，句構不符）"]
+          }
+        ],
+        "cloze": {
+          "title": "A Lucky Escape",
+          "passage": "By the time firefighters arrived, the family __(1)__ already __(2)__ the burning house safely. The fire __(3)__ started in the kitchen while everyone was asleep. Luckily, the smoke alarm __(4)__ them up in time. The father later said that he __(5)__ never been so scared in his life.",
+          "blanks": [
+            {
+              "n": 1,
+              "options": ["has", "had", "was", "is"],
+              "answer": 1,
+              "explanation": "全家人逃出去發生在消防員抵達之前，用過去完成式的助動詞had。",
+              "optionsZh": ["（現在完成式，時態不符）", "（過去完成式，正確）", "（be動詞過去式，句構不符）", "（be動詞現在式，時態不符）"]
+            },
+            {
+              "n": 2,
+              "options": ["leave", "left", "had left", "have left"],
+              "answer": 1,
+              "explanation": "跟had搭配的過去分詞，leave的過去分詞是left。",
+              "optionsZh": ["（原形動詞，句構不符had）", "（過去分詞，正確）", "（重複使用had，句構不符）", "（現在完成式重複助動詞，句構不符）"]
+            },
+            {
+              "n": 3,
+              "options": ["has", "had", "was", "is"],
+              "answer": 1,
+              "explanation": "火災開始燃燒是比「大家逃出去」更早發生的事，用過去完成式had started。",
+              "optionsZh": ["（現在完成式，時態不符）", "（過去完成式，正確）", "（be動詞過去式，句構不符started）", "（be動詞現在式，時態不符）"]
+            },
+            {
+              "n": 4,
+              "options": ["wake", "woke", "had woken", "has woken"],
+              "answer": 1,
+              "explanation": "煙霧警報器叫醒大家這個動作，跟逃出去是相近的過去事件，用過去簡單式woke。",
+              "optionsZh": ["（原形動詞，時態不符）", "（過去簡單式，正確）", "（過去完成式，此處不需表達更早層次）", "（現在完成式，時態不符）"]
+            },
+            {
+              "n": 5,
+              "options": ["has", "had", "was", "did"],
+              "answer": 1,
+              "explanation": "間接引述句中，主要子句是過去式（said），受詞子句表達更早/持續到那時的狀態要用過去完成式had。",
+              "optionsZh": ["（現在完成式，時態不符）", "（過去完成式，正確）", "（be動詞，句構不符）", "（過去簡單式助動詞，句構不符been）"]
+            }
+          ]
+        }
+      }
+      }
     ]
   },
   "4": {
