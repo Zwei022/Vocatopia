@@ -1541,11 +1541,11 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .hm-fruit{position:absolute;transform:translate(-50%,-50%);width:72px;height:75px;border:none;cursor:pointer;z-index:2;
   background:url('public/images/icons/level-apple.png') center/contain no-repeat;
   filter:drop-shadow(0 4px 3px rgba(75,56,42,.35));
-  color:#fff;font-family:var(--font-display);font-weight:900;font-size:21px;
+  color:#2B1B10;font-family:'Kalam',var(--font-display);font-weight:700;font-size:25px;
   transition:transform .12s}
 .hm-fruit:hover{transform:translate(-50%,-50%) scale(1.06)}
 .hm-fruit:active{transform:translate(-50%,-50%) scale(.92)}
-.hm-fruit-num{position:relative;top:6px;text-shadow:0 1px 2px rgba(0,0,0,.5),0 0 5px rgba(75,56,42,.4)}
+.hm-fruit-num{position:relative;top:6px;text-shadow:0 1px 0 rgba(255,255,255,.35)}
 /* 目前關卡：紅色光圈呼吸提示 */
 .hm-fruit-cur{animation:fruitRing 1.8s ease-in-out infinite}
 @keyframes fruitRing{
