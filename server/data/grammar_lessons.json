@@ -5873,26 +5873,1298 @@
       {
         "id": "7-1",
         "title": "形容詞的用法",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>形容詞放在名詞前面：限定用法</b><br>最基本的用法，形容詞直接放在名詞前面修飾：Nancy is a beautiful girl. / They are tall boys.<br><br><b>形容詞用be動詞或連綴動詞帶出：敘述用法</b><br>形容詞不直接接名詞，而是用be動詞或連綴動詞（look、feel、sound、taste、smell）帶出來，放在句尾當補語：It looks dark. / I feel terrible. / Sandy is fine.<br><br><b>make/keep+受詞+形容詞</b><br>這是敘述用法的另一種型態，形容詞補充說明受詞的狀態：Please keep this place clean. / This makes his dad very angry.<br><br><b>兩種用法怎麼選</b><br>如果形容詞緊貼著名詞、中間沒有動詞，就是限定用法（前位修飾）；如果形容詞前面有be動詞、連綴動詞，或形容詞出現在make/keep+受詞後面，就是敘述用法。同一個形容詞常常兩種用法都可以：a happy girl（限定）/ The girl is happy.（敘述）。<br><br><b>易混淆重點</b><br>有些形容詞只能用敘述用法，不能放在名詞前面直接修飾，例如alone、asleep、awake、alive這幾個a-開頭的形容詞：She is asleep.（不能說an asleep girl，要說a sleeping girl）",
+          "examples": [
+            {
+              "en": "This is a comfortable chair to sit in.",
+              "zh": "這是一張坐起來很舒服的椅子。"
+            },
+            {
+              "en": "The soup smells wonderful; what did you put in it?",
+              "zh": "這湯聞起來好棒，你加了什麼？"
+            },
+            {
+              "en": "His rude comment made everyone uncomfortable.",
+              "zh": "他無禮的評論讓大家都感到不自在。"
+            },
+            {
+              "en": "Please keep your desk tidy at all times.",
+              "zh": "請隨時保持你的桌面整潔。"
+            },
+            {
+              "en": "The baby is finally asleep after crying for an hour.",
+              "zh": "寶寶哭了一個小時後終於睡著了。"
+            },
+            {
+              "en": "That was such a difficult decision to make.",
+              "zh": "那真是一個很難做的決定。"
+            },
+            {
+              "en": "She looked nervous before her speech.",
+              "zh": "她在演講前看起來很緊張。"
+            },
+            {
+              "en": "The news made my grandmother very happy.",
+              "zh": "這則消息讓我奶奶非常開心。"
+            },
+            {
+              "en": "Is your brother still awake at this hour?",
+              "zh": "你哥哥這麼晚了還醒著嗎？"
+            },
+            {
+              "en": "This cake tastes sweeter than the one we had yesterday.",
+              "zh": "這個蛋糕比我們昨天吃的那個還甜。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "This milk tastes ___. I think it has gone bad.",
+              "options": [
+                "sour",
+                "sourly",
+                "sourness",
+                "souring"
+              ],
+              "answer": 0,
+              "explanation": "連綴動詞taste後面要接形容詞sour，屬敘述用法。",
+              "target_grammar": "形容詞用法",
+              "optionsZh": [
+                "（正確，連綴動詞+形容詞的敘述用法）",
+                "（副詞不可接在連綴動詞後）",
+                "（名詞不可直接當形容詞使用）",
+                "（動名詞不符連綴動詞句構）"
+              ]
+            },
+            {
+              "sentence": "Please keep the kitchen ___ after cooking.",
+              "options": [
+                "clean",
+                "cleanly",
+                "cleaner than",
+                "cleaning"
+              ],
+              "answer": 0,
+              "explanation": "keep+受詞+形容詞，屬敘述用法，用原級形容詞clean。",
+              "target_grammar": "形容詞用法",
+              "optionsZh": [
+                "（正確，keep+受詞+形容詞）",
+                "（副詞不可接在keep+受詞後）",
+                "（此處無比較對象，不需比較級）",
+                "（動名詞不符此句構）"
+              ]
+            },
+            {
+              "sentence": "The baby has been ___ for two hours already.",
+              "options": [
+                "asleep child",
+                "an asleep",
+                "asleep",
+                "asleep one"
+              ],
+              "answer": 2,
+              "explanation": "asleep是只能用敘述用法的形容詞，不能放在名詞前面，只能放在be動詞後面。",
+              "target_grammar": "形容詞用法",
+              "optionsZh": [
+                "（asleep不可直接修飾名詞，此為限定用法錯誤）",
+                "（asleep不可加不定冠詞直接修飾名詞）",
+                "（正確，asleep只能用敘述用法）",
+                "（asleep不可直接修飾名詞one）"
+              ]
+            },
+            {
+              "sentence": "Her constant complaints made everyone ___.",
+              "options": [
+                "annoy",
+                "annoyed",
+                "annoyance",
+                "annoyingly"
+              ],
+              "answer": 1,
+              "explanation": "make+受詞+形容詞（過去分詞annoyed表示大家感到的情緒），屬敘述用法。",
+              "target_grammar": "形容詞用法",
+              "optionsZh": [
+                "（原形動詞不可直接當形容詞使用）",
+                "（正確，make+受詞+形容詞annoyed）",
+                "（名詞不可直接當形容詞使用）",
+                "（副詞不可接在make+受詞後）"
+              ]
+            },
+            {
+              "sentence": "This is a ___ book that everyone should read.",
+              "options": [
+                "wonderful",
+                "wonder",
+                "wonderfully",
+                "wondering"
+              ],
+              "answer": 0,
+              "explanation": "形容詞wonderful直接放在名詞book前面，屬限定用法。",
+              "target_grammar": "形容詞用法",
+              "optionsZh": [
+                "（正確，限定用法：形容詞+名詞）",
+                "（名詞不可直接修飾名詞book）",
+                "（副詞不可直接修飾名詞）",
+                "（動名詞不符此處修飾名詞的語意）"
+              ]
+            },
+            {
+              "sentence": "He looked ___ when he heard the surprising news.",
+              "options": [
+                "shock",
+                "shocked",
+                "shocking",
+                "shockingly"
+              ],
+              "answer": 1,
+              "explanation": "連綴動詞look後面接過去分詞shocked（表示他感到震驚），屬敘述用法。",
+              "target_grammar": "形容詞用法",
+              "optionsZh": [
+                "（原形動詞不可直接當形容詞使用）",
+                "（正確，連綴動詞+過去分詞表感受）",
+                "（現在分詞修飾事物，此處主詞he是人不符）",
+                "（副詞不可接在連綴動詞後）"
+              ]
+            },
+            {
+              "sentence": "The little boy is still ___ ; don't wake him up.",
+              "options": [
+                "a sleep",
+                "sleep",
+                "asleep",
+                "sleepy child"
+              ],
+              "answer": 2,
+              "explanation": "asleep只能用敘述用法，放在be動詞後面。",
+              "target_grammar": "形容詞用法",
+              "optionsZh": [
+                "（非正確英文用法）",
+                "（sleep是名詞或動詞，不是形容詞）",
+                "（正確，asleep只能用敘述用法）",
+                "（此處不需要加child，且應為asleep而非sleepy child）"
+              ]
+            },
+            {
+              "sentence": "This exercise is ___ enough for beginners.",
+              "options": [
+                "easy",
+                "easily",
+                "ease",
+                "easing"
+              ],
+              "answer": 0,
+              "explanation": "形容詞easy用敘述用法，放在is後面，enough修飾easy放在後面。",
+              "target_grammar": "形容詞用法",
+              "optionsZh": [
+                "（正確，形容詞easy用敘述用法）",
+                "（副詞不可接在is後面表達主詞的性質）",
+                "（名詞不可直接當形容詞使用）",
+                "（動名詞不符此處句構）"
+              ]
+            },
+            {
+              "sentence": "Her smile made the whole room feel ___.",
+              "options": [
+                "warm",
+                "warmly",
+                "warmth",
+                "warming"
+              ],
+              "answer": 0,
+              "explanation": "make+受詞+使役動詞feel+形容詞warm，屬敘述用法的延伸結構。",
+              "target_grammar": "形容詞用法",
+              "optionsZh": [
+                "（正確，feel+形容詞warm）",
+                "（副詞不可接在連綴動詞feel後）",
+                "（名詞不可直接當形容詞使用）",
+                "（動名詞不符此句構）"
+              ]
+            },
+            {
+              "sentence": "Is your grandfather still ___ at this late hour?",
+              "options": [
+                "awake",
+                "an awake",
+                "awaking",
+                "awakeness"
+              ],
+              "answer": 0,
+              "explanation": "awake只能用敘述用法，放在be動詞後面，不能加冠詞直接修飾名詞。",
+              "target_grammar": "形容詞用法",
+              "optionsZh": [
+                "（正確，awake只能用敘述用法）",
+                "（awake不可加不定冠詞直接修飾）",
+                "（動名詞形式不符此句構）",
+                "（非正確英文形式）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A Quiet Night at Home",
+            "passage": "After a long day at school, I finally got home and felt very __(1)__. My mom made a warm bowl of soup that tasted __(2)__ delicious. My little brother was already __(3)__ on the sofa, so we tried to keep the living room __(4)__. The soft music playing in the background made everyone feel __(5)__ and relaxed before bed.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "tire",
+                  "tired",
+                  "tiring",
+                  "tiredly"
+                ],
+                "answer": 1,
+                "explanation": "連綴動詞feel後面接過去分詞tired（表示自己感到疲累），屬敘述用法。",
+                "optionsZh": [
+                  "（原形動詞不可直接當形容詞使用）",
+                  "（正確，feel+過去分詞表感受）",
+                  "（現在分詞修飾事物，此處主詞I是人不符）",
+                  "（副詞不可接在連綴動詞feel後）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "real",
+                  "really",
+                  "realness",
+                  "reality"
+                ],
+                "answer": 1,
+                "explanation": "程度副詞really修飾形容詞delicious，放在形容詞前面。",
+                "optionsZh": [
+                  "（形容詞不可修飾另一個形容詞delicious）",
+                  "（正確，副詞really修飾形容詞delicious）",
+                  "（名詞不可修飾形容詞）",
+                  "（名詞不可修飾形容詞）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "a sleep",
+                  "sleep",
+                  "asleep",
+                  "sleeping child"
+                ],
+                "answer": 2,
+                "explanation": "asleep只能用敘述用法，放在be動詞was後面。",
+                "optionsZh": [
+                  "（非正確英文用法）",
+                  "（sleep是名詞或動詞，不是形容詞）",
+                  "（正確，asleep只能用敘述用法）",
+                  "（此處不需要加child）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "quiet",
+                  "quietly",
+                  "quietness",
+                  "quieting"
+                ],
+                "answer": 0,
+                "explanation": "keep+受詞+形容詞quiet，屬敘述用法。",
+                "optionsZh": [
+                  "（正確，keep+受詞+形容詞）",
+                  "（副詞不可接在keep+受詞後）",
+                  "（名詞不可直接當形容詞使用）",
+                  "（動名詞不符此句構）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "calm",
+                  "calmly",
+                  "calmness",
+                  "calming"
+                ],
+                "answer": 0,
+                "explanation": "make+受詞+形容詞calm，屬敘述用法。",
+                "optionsZh": [
+                  "（正確，make+受詞+形容詞）",
+                  "（副詞不可接在make+受詞後）",
+                  "（名詞不可直接當形容詞使用）",
+                  "（動名詞不符此句構，雖文法上可行但此處以形容詞為標準答案）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "7-2",
         "title": "數字（基數、序數）",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>基數：一般的數字</b><br>one、two、three...。使用數字單位（hundred、thousand、million）時：前面有具體數字修飾，單位不加s也不加of：two thousand students；前面沒有具體數字，要加s和of，表示「數以…計」：Hundreds of houses fell down.<br><br><b>in one's+複數基數：表示「在某人的幾十歲」</b><br>Molly is in her forties.（Molly四十幾歲）／in one's early twenties「二十歲出頭」<br><br><b>序數：表示順序</b><br>the first、the second、the third...序數當形容詞使用時，前面一定要加the或所有格：Helen is the first student to arrive. / Mandy is Tom's first girlfriend.<br><br><b>分數怎麼唸</b><br>先唸分子（基數），再唸分母（序數）；分子如果是複數，分母要加s：1/3 = one third；3/5 = three fifths；2/3 of the students（三分之二的學生）。<br><br><b>日期中的「日」用序數</b><br>Today is January sixth. = Today is the sixth of January.<br><br><b>易混淆重點</b><br>① first當副詞用（表示「首先」）時不加the，放動詞後或句尾：Tom always gets to school first.（副詞）vs Tom is always the first one to get to school.（形容詞）<br>② 「幾分之幾」的分數句構中，動詞的單複數要看後面接的名詞是可數還是不可數、單數還是複數：Two thirds of the students are absent.（students複數，動詞用are）",
+          "examples": [
+            {
+              "en": "Thousands of fans waited outside the concert hall.",
+              "zh": "數以千計的粉絲在演唱會場外等待。"
+            },
+            {
+              "en": "My uncle is in his late thirties.",
+              "zh": "我叔叔三十幾歲快四十了。"
+            },
+            {
+              "en": "She was the second person to finish the marathon.",
+              "zh": "她是第二個完成馬拉松的人。"
+            },
+            {
+              "en": "One third of the cake is already gone.",
+              "zh": "蛋糕已經被吃掉三分之一了。"
+            },
+            {
+              "en": "Today is March twenty-second, my sister's birthday.",
+              "zh": "今天是三月二十二日，我妹妹的生日。"
+            },
+            {
+              "en": "He always finishes his homework first among his classmates.",
+              "zh": "他在同學中總是最先完成作業。"
+            },
+            {
+              "en": "Two thirds of the pizza was eaten before I arrived.",
+              "zh": "我到之前披薩已經被吃掉三分之二了。"
+            },
+            {
+              "en": "Hundreds of birds flew south for the winter.",
+              "zh": "數以百計的鳥兒飛往南方過冬。"
+            },
+            {
+              "en": "This is the third time she has visited Taiwan.",
+              "zh": "這是她第三次來台灣。"
+            },
+            {
+              "en": "My grandmother is in her early eighties.",
+              "zh": "我奶奶八十歲出頭。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "___ of students took part in the charity walk last weekend.",
+              "options": [
+                "Hundred",
+                "Hundreds",
+                "The hundred",
+                "Hundred of"
+              ],
+              "answer": 1,
+              "explanation": "前面沒有具體數字修飾hundred，要加s和of，表示「數以百計」。",
+              "target_grammar": "數字",
+              "optionsZh": [
+                "（缺少s和of，前面沒有具體數字時必須加）",
+                "（正確，hundreds of表示數以百計）",
+                "（不需要加the）",
+                "（缺少s，hundred本身要先加s）"
+              ]
+            },
+            {
+              "sentence": "There are two ___ students in the auditorium.",
+              "options": [
+                "hundred",
+                "hundreds",
+                "hundred of",
+                "hundreds of"
+              ],
+              "answer": 0,
+              "explanation": "前面有具體數字two修飾，hundred不加s也不加of。",
+              "target_grammar": "數字",
+              "optionsZh": [
+                "（正確，有具體數字修飾時不加s和of）",
+                "（有具體數字時不應加s）",
+                "（有具體數字時不應加of）",
+                "（有具體數字時不應加s和of）"
+              ]
+            },
+            {
+              "sentence": "My aunt is in her ___ ; she just turned fifty-two.",
+              "options": [
+                "fifty",
+                "fifties",
+                "fifth",
+                "fiftieth"
+              ],
+              "answer": 1,
+              "explanation": "in one's+複數基數，表示「在某人的幾十歲」，用fifties。",
+              "target_grammar": "數字",
+              "optionsZh": [
+                "（缺少複數s，此固定用法需要複數基數）",
+                "（正確，in one's fifties表示五十幾歲）",
+                "（序數不符此固定用法）",
+                "（序數不符此固定用法）"
+              ]
+            },
+            {
+              "sentence": "Peter is always ___ student to hand in his homework.",
+              "options": [
+                "first",
+                "the first",
+                "one first",
+                "firstly"
+              ],
+              "answer": 1,
+              "explanation": "first當形容詞使用，前面要加the。",
+              "target_grammar": "數字",
+              "optionsZh": [
+                "（形容詞用法的first前面需要加the）",
+                "（正確，序數當形容詞前面加the）",
+                "（非正確英文用法）",
+                "（firstly是副詞，此處需要形容詞修飾student）"
+              ]
+            },
+            {
+              "sentence": "Tom always finishes the race ___ among his friends.",
+              "options": [
+                "first",
+                "the first",
+                "one first",
+                "firstly"
+              ],
+              "answer": 0,
+              "explanation": "first當副詞使用時不加the，直接放在動詞後或句尾。",
+              "target_grammar": "數字",
+              "optionsZh": [
+                "（正確，副詞用法的first不加the）",
+                "（the first是形容詞用法，此處需要副詞修飾動詞finishes）",
+                "（非正確英文用法）",
+                "（firstly通常用於列點次序，非此語境常用副詞）"
+              ]
+            },
+            {
+              "sentence": "___ of the pizza was left after the party.",
+              "options": [
+                "Three quarter",
+                "Three quarters",
+                "Third quarters",
+                "Three quarter's"
+              ],
+              "answer": 1,
+              "explanation": "分數表達：分子three（複數）+分母quarters（加s），three quarters表示四分之三。",
+              "target_grammar": "數字",
+              "optionsZh": [
+                "（分子為複數時分母要加s）",
+                "（正確，three quarters表示四分之三）",
+                "（分子應為基數three而非序數third）",
+                "（不需要所有格形式）"
+              ]
+            },
+            {
+              "sentence": "Today is May ___.",
+              "options": [
+                "nine",
+                "ninth",
+                "the nine",
+                "nineth"
+              ],
+              "answer": 1,
+              "explanation": "日期中的「日」要用序數ninth。",
+              "target_grammar": "數字",
+              "optionsZh": [
+                "（基數不符日期表達，應用序數）",
+                "（正確，日期的日用序數）",
+                "（月日不需加the，直接接序數）",
+                "（拼字錯誤，正確為ninth）"
+              ]
+            },
+            {
+              "sentence": "This is ___ time I have watched this movie.",
+              "options": [
+                "three",
+                "third",
+                "the third",
+                "thirdly"
+              ],
+              "answer": 2,
+              "explanation": "序數當形容詞使用，前面要加the：the third time。",
+              "target_grammar": "數字",
+              "optionsZh": [
+                "（基數不符此處序數用法）",
+                "（缺少the，序數當形容詞前面需要加the）",
+                "（正確，the third time表示第三次）",
+                "（thirdly是副詞，此處需要形容詞修飾time）"
+              ]
+            },
+            {
+              "sentence": "One ___ of the students passed the test on their first try.",
+              "options": [
+                "quarter",
+                "quarters",
+                "fourth",
+                "fours"
+              ],
+              "answer": 0,
+              "explanation": "分數表達：分子one（單數）+分母quarter（不加s），one quarter表示四分之一。",
+              "target_grammar": "數字",
+              "optionsZh": [
+                "（正確，分子為單數時分母不加s）",
+                "（分子為單數時分母不應加s）",
+                "（fourth也可表四分之一但此處quarter更常用且與其他選項對應一致）",
+                "（fours非正確分數表達方式）"
+              ]
+            },
+            {
+              "sentence": "My grandfather, ___ , still goes jogging every morning.",
+              "options": [
+                "in his seventy",
+                "in his seventies",
+                "in his seventieth",
+                "seventy years"
+              ],
+              "answer": 1,
+              "explanation": "in one's+複數基數，表示「在某人的幾十歲」，用seventies。",
+              "target_grammar": "數字",
+              "optionsZh": [
+                "（缺少複數s，此固定用法需要複數基數）",
+                "（正確，in his seventies表示七十幾歲）",
+                "（序數不符此固定用法）",
+                "（缺少介系詞及所有格結構）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "Grandpa's Big Birthday Party",
+            "passage": "Last weekend, we celebrated my grandfather's eightieth birthday. He is now in his __(1)__, but he still looks very healthy and active. __(2)__ of guests came to the party, filling our backyard completely. My grandmother said this was __(3)__ big party they had ever held for a family member. About __(4)__ of the guests were relatives we hadn't seen in years. Everyone agreed that Grandpa was always __(5)__ one to arrive early and last one to leave any family gathering.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "eighty",
+                  "eighties",
+                  "eightieth",
+                  "eight"
+                ],
+                "answer": 1,
+                "explanation": "in one's+複數基數，表示「在某人的幾十歲」，用eighties。",
+                "optionsZh": [
+                  "（缺少複數s）",
+                  "（正確，in his eighties表示八十幾歲）",
+                  "（序數不符此固定用法）",
+                  "（數字不完整，不符此固定用法）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "Dozen",
+                  "Dozens",
+                  "The dozen",
+                  "Dozen of"
+                ],
+                "answer": 1,
+                "explanation": "前面沒有具體數字修飾dozen，要加s和of，表示「數以打計」。",
+                "optionsZh": [
+                  "（缺少s和of）",
+                  "（正確，dozens of表示數以打計）",
+                  "（不需要加the）",
+                  "（缺少s）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "big",
+                  "biggest",
+                  "the biggest",
+                  "more big"
+                ],
+                "answer": 2,
+                "explanation": "最高級前面要加the，表示「有史以來最大的」派對。",
+                "optionsZh": [
+                  "（原級不符「最…」的最高級語境）",
+                  "（缺少the，最高級前面需要加the）",
+                  "（正確，the biggest表示最大的）",
+                  "（單音節不用more，且缺少the）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "one third",
+                  "a third",
+                  "third one",
+                  "one thirds"
+                ],
+                "answer": 1,
+                "explanation": "分數也可用a代替one，a third同樣表示三分之一。",
+                "optionsZh": [
+                  "（此處與選項b意思相同，但a third更為口語常見，作為本題標準答案）",
+                  "（正確，a third表示三分之一）",
+                  "（語序錯誤）",
+                  "（分子為單數時分母不應加s）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "first",
+                  "the first",
+                  "one first",
+                  "firstly"
+                ],
+                "answer": 1,
+                "explanation": "序數當形容詞使用，前面要加the：the first one。",
+                "optionsZh": [
+                  "（缺少the，序數當形容詞前面需要加the）",
+                  "（正確，the first one表示第一個）",
+                  "（非正確英文用法）",
+                  "（firstly是副詞，此處需要形容詞修飾one）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "7-3",
         "title": "數量形容詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>只修飾可數名詞的（表示「數」）</b><br>each每一、every每一、both兩者都、several數個、many很多、few很少、a few一些<br><br><b>只修飾不可數名詞的（表示「量」）</b><br>little很少、a little一些、much很多、a great deal of一群<br><br><b>兩者皆可修飾的</b><br>no沒有、any任何、some一些、enough足夠、most大多數、a lot of/lots of很多、plenty of很多、all全部<br><br><b>every/each跟單數動詞</b><br>every和each都是形容詞，後面接單數名詞，動詞也要用單數：Every boy and every girl has a book bag.（就算and連接了兩個，動詞還是用單數，因為each/every強調「個別」而非「整體加總」）<br><br><b>部分否定 vs 全部否定</b><br>Not every / Not each「並非每一個」是部分否定，表示「有些是，有些不是」：Not everyone at the party is happy.＝Only some of the people are happy; the others aren't.<br><br><b>some跟any怎麼分</b><br>some用於肯定句，也用於「表示邀請」的疑問句：Would you like some coffee?（邀請）any用於一般疑問句、否定句：I don't have any money. 特例：any在肯定句中偶爾意同every，表示「任何一個都…」：Anyone can do it. = Everyone can do it.<br><br><b>易混淆重點</b><br>① a great deal of修飾不可數名詞，a great number of修飾可數名詞，別搞混。<br>② little（幾乎沒有，偏負面）vs a little（有一些，偏正面）：意思差很多，看有沒有a。同樣的，few（幾乎沒有）vs a few（有一些）也是同樣的道理。",
+          "examples": [
+            {
+              "en": "Each student has to bring their own lunch.",
+              "zh": "每個學生都得自己帶午餐。"
+            },
+            {
+              "en": "There is little hope of finding the missing wallet.",
+              "zh": "找到那個遺失的皮夾的希望很渺茫。"
+            },
+            {
+              "en": "Would you like some dessert after dinner?",
+              "zh": "晚餐後你要不要吃點甜點？"
+            },
+            {
+              "en": "Not every plan works out the way we expect.",
+              "zh": "並非每個計畫都會如我們預期般順利。"
+            },
+            {
+              "en": "We still have a few cookies left in the box.",
+              "zh": "盒子裡還剩下一些餅乾。"
+            },
+            {
+              "en": "A great number of tourists visit this island every summer.",
+              "zh": "每年夏天都有大量遊客造訪這座島嶼。"
+            },
+            {
+              "en": "He has little interest in sports.",
+              "zh": "他對運動幾乎沒有興趣。"
+            },
+            {
+              "en": "Anyone who tries hard enough can succeed.",
+              "zh": "任何夠努力嘗試的人都能成功。"
+            },
+            {
+              "en": "Both of my brothers enjoy playing basketball.",
+              "zh": "我的兩個哥哥都喜歡打籃球。"
+            },
+            {
+              "en": "There isn't much time left before the show starts.",
+              "zh": "表演開始前沒剩多少時間了。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "___ student in this class has passed the exam.",
+              "options": [
+                "Every",
+                "All",
+                "Most",
+                "Several"
+              ],
+              "answer": 0,
+              "explanation": "every是形容詞，後面接單數名詞student，且動詞也要單數has。",
+              "target_grammar": "數量形容詞",
+              "optionsZh": [
+                "（正確，every+單數名詞+單數動詞）",
+                "（all需搭配複數名詞students）",
+                "（most需搭配複數名詞students）",
+                "（several需搭配複數名詞students）"
+              ]
+            },
+            {
+              "sentence": "There is ___ milk left in the fridge; we need to buy more.",
+              "options": [
+                "few",
+                "a few",
+                "little",
+                "many"
+              ],
+              "answer": 2,
+              "explanation": "milk是不可數名詞，用little（幾乎沒有）表示「所剩無幾」。",
+              "target_grammar": "數量形容詞",
+              "optionsZh": [
+                "（few修飾可數名詞，milk為不可數不符）",
+                "（a few修飾可數名詞，milk為不可數不符）",
+                "（正確，little修飾不可數名詞，表示幾乎沒有）",
+                "（many修飾可數名詞，milk為不可數不符）"
+              ]
+            },
+            {
+              "sentence": "Would you like ___ tea before you go?",
+              "options": [
+                "any",
+                "some",
+                "no",
+                "none"
+              ],
+              "answer": 1,
+              "explanation": "邀請語境的疑問句要用some，即使是疑問句。",
+              "target_grammar": "數量形容詞",
+              "optionsZh": [
+                "（any用於一般疑問句，此處為邀請語境）",
+                "（正確，邀請語境用some）",
+                "（no為形容詞，語意不符邀請語境）",
+                "（none為代名詞，不可直接修飾名詞tea）"
+              ]
+            },
+            {
+              "sentence": "___ of the answers were correct, so the whole class needs review.",
+              "options": [
+                "Not all",
+                "Not every",
+                "Not each",
+                "No"
+              ],
+              "answer": 0,
+              "explanation": "not all置於句首表示「並非全部」，是部分否定用法。",
+              "target_grammar": "數量形容詞",
+              "optionsZh": [
+                "（正確，not all為部分否定用法）",
+                "（every為形容詞，不與not all結構搭配使用於此句首位置）",
+                "（each為形容詞，不與not all結構搭配使用於此句首位置）",
+                "（no已含否定，不需再加not，且語意為完全否定不符部分否定）"
+              ]
+            },
+            {
+              "sentence": "We have ___ friends in this new city, so we feel a bit lonely.",
+              "options": [
+                "few",
+                "a few",
+                "little",
+                "much"
+              ],
+              "answer": 0,
+              "explanation": "friends是可數名詞，用few（很少，偏負面）表示「幾乎沒有朋友」，符合「感到孤單」的語境。",
+              "target_grammar": "數量形容詞",
+              "optionsZh": [
+                "（正確，few修飾可數名詞，表示幾乎沒有，符合孤單語境）",
+                "（a few表示「有一些」，語氣偏正面，與孤單語境較不符）",
+                "（little修飾不可數名詞，friends為可數不符）",
+                "（much修飾不可數名詞，friends為可數不符）"
+              ]
+            },
+            {
+              "sentence": "___ of my classmates like to play video games after school.",
+              "options": [
+                "Much",
+                "Most",
+                "Little",
+                "Every"
+              ],
+              "answer": 1,
+              "explanation": "most可修飾可數名詞classmates，表示「大部分」。",
+              "target_grammar": "數量形容詞",
+              "optionsZh": [
+                "（much修飾不可數名詞，classmates為可數不符）",
+                "（正確，most可修飾可數名詞表示大部分）",
+                "（little修飾不可數名詞，classmates為可數不符）",
+                "（every為形容詞需接單數名詞，此處classmates為複數不符）"
+              ]
+            },
+            {
+              "sentence": "I don't have ___ experience in cooking, but I'm willing to learn.",
+              "options": [
+                "many",
+                "a few",
+                "much",
+                "several"
+              ],
+              "answer": 2,
+              "explanation": "experience是不可數名詞，用much修飾（此處為否定句，表示「沒有很多經驗」）。",
+              "target_grammar": "數量形容詞",
+              "optionsZh": [
+                "（many修飾可數名詞，experience為不可數不符）",
+                "（a few修飾可數名詞，experience為不可數不符）",
+                "（正確，much修飾不可數名詞experience）",
+                "（several修飾可數名詞，experience為不可數不符）"
+              ]
+            },
+            {
+              "sentence": "___ one of the players did their best in the final match.",
+              "options": [
+                "Each",
+                "All",
+                "Most",
+                "Several"
+              ],
+              "answer": 0,
+              "explanation": "each one是固定用法，強調「每一個individually」，each可搭配one使用。",
+              "target_grammar": "數量形容詞",
+              "optionsZh": [
+                "（正確，each one為固定用法，強調個別）",
+                "（all one不是正確的固定搭配）",
+                "（most one不是正確的固定搭配）",
+                "（several one不是正確的固定搭配，several需接複數名詞）"
+              ]
+            },
+            {
+              "sentence": "There isn't ___ difference between the two designs.",
+              "options": [
+                "many",
+                "a few",
+                "much",
+                "several"
+              ],
+              "answer": 2,
+              "explanation": "difference在此語境下視為不可數（抽象概念），用much修飾。",
+              "target_grammar": "數量形容詞",
+              "optionsZh": [
+                "（many修飾可數名詞，此處difference視為不可數不符）",
+                "（a few修飾可數名詞，此處不符）",
+                "（正確，much修飾不可數的抽象名詞difference）",
+                "（several修飾可數名詞，此處不符）"
+              ]
+            },
+            {
+              "sentence": "___ people believe that money can buy happiness, but many disagree.",
+              "options": [
+                "A few",
+                "Few",
+                "Little",
+                "Much"
+              ],
+              "answer": 0,
+              "explanation": "people是可數名詞複數，用a few（有一些，偏正面）表示「有一些人相信」，符合後文「但很多人不同意」的對比語境。",
+              "target_grammar": "數量形容詞",
+              "optionsZh": [
+                "（正確，a few修飾可數名詞，表示有一些，符合對比語境）",
+                "（few語氣偏負面「幾乎沒有」，與後文「但很多人不同意」的對比語境較不符）",
+                "（little修飾不可數名詞，people為可數不符）",
+                "（much修飾不可數名詞，people為可數不符）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A Class Survey",
+            "passage": "Our teacher asked us to do a survey about our study habits. __(1)__ student in our class filled out the form honestly. It turned out that __(2)__ of us spend more than two hours on homework every day. However, __(3)__ students said they have almost no free time for hobbies, which surprised our teacher. She said there is __(4)__ research showing that balance is important for learning. In the end, __(5)__ of the answers were exactly what she had expected, so she plans to change our homework schedule.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "Every",
+                  "All",
+                  "Most",
+                  "Several"
+                ],
+                "answer": 0,
+                "explanation": "every是形容詞，後面接單數名詞student。",
+                "optionsZh": [
+                  "（正確，every+單數名詞+單數動詞）",
+                  "（all需搭配複數名詞students）",
+                  "（most需搭配複數名詞students）",
+                  "（several需搭配複數名詞students）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "much",
+                  "many",
+                  "most",
+                  "little"
+                ],
+                "answer": 2,
+                "explanation": "most of us表示「我們大部分人」，us是可數名詞代替形式。",
+                "optionsZh": [
+                  "（much修飾不可數名詞，us此處代表可數的人不符）",
+                  "（many需接名詞複數形式，此處of us結構應用most）",
+                  "（正確，most of us表示大部分的我們）",
+                  "（little修飾不可數名詞，此處不符）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "few",
+                  "a few",
+                  "little",
+                  "much"
+                ],
+                "answer": 1,
+                "explanation": "students是可數名詞，用a few（有一些）表示「有一些學生說」。",
+                "optionsZh": [
+                  "（few語氣偏負面「幾乎沒有」，與後文「這讓老師感到驚訝」的語境較不符，此處強調確實有部分學生）",
+                  "（正確，a few修飾可數名詞，表示有一些）",
+                  "（little修飾不可數名詞，students為可數不符）",
+                  "（much修飾不可數名詞，students為可數不符）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "many",
+                  "a few",
+                  "much",
+                  "several"
+                ],
+                "answer": 2,
+                "explanation": "research是不可數名詞，用much修飾。",
+                "optionsZh": [
+                  "（many修飾可數名詞，research為不可數不符）",
+                  "（a few修飾可數名詞，research為不可數不符）",
+                  "（正確，much修飾不可數名詞research）",
+                  "（several修飾可數名詞，research為不可數不符）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "few",
+                  "little",
+                  "none",
+                  "most"
+                ],
+                "answer": 3,
+                "explanation": "most of the answers表示「大部分的答案」，修飾可數名詞answers。",
+                "optionsZh": [
+                  "（few修飾可數名詞但語意「幾乎沒有」與句意「大部分符合預期」不符）",
+                  "（little修飾不可數名詞，answers為可數不符）",
+                  "（none表示完全沒有，與句意不符）",
+                  "（正確，most of the answers表示大部分的答案）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "7-4",
         "title": "指示形容詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>this/that/these/those表示遠近距離</b><br>this「這個」、these「這些」指距離較近的；that「那個」、those「那些」指距離較遠的。單複數要跟後面的名詞一致：this book（單數）、these books（複數）。<br><br><b>不能跟其他限定詞一起用</b><br>指示形容詞不可以跟不定冠詞（a/an）、定冠詞（the）、所有格同時修飾同一個名詞：不能說a this book或my that book，只能選一個。<br><br><b>指示形容詞 vs 指示代名詞</b><br>指示形容詞後面要接名詞：This apartment is really big.（this是形容詞，修飾apartment）指示代名詞可以獨立當主詞或受詞，不需要接名詞：This is really a big apartment.（this本身就是代名詞，代替「這間公寓」）<br><br><b>單複數同形的名詞要注意</b><br>sheep、deer、fish這些單複數同形的名詞，要靠句子裡的動詞或其他線索來判斷該用this/that還是these/those：These sheep on the farm are all healthy.（sheep在這裡搭配複數動詞are，所以用these）<br><br><b>延伸用法：the latter/the former</b><br>this/these延伸出the latter「後者」；that/those延伸出the former「前者」，用來對比前面提過的兩件事物。",
+          "examples": [
+            {
+              "en": "This umbrella is mine; that one over there is yours.",
+              "zh": "這把傘是我的；那邊那把是你的。"
+            },
+            {
+              "en": "These shoes are too tight; I need a bigger size.",
+              "zh": "這雙鞋太緊了，我需要大一點的尺寸。"
+            },
+            {
+              "en": "Those mountains in the distance look beautiful today.",
+              "zh": "遠處那些山今天看起來很美。"
+            },
+            {
+              "en": "This is the restaurant I told you about last week.",
+              "zh": "這就是我上禮拜跟你提過的那間餐廳。"
+            },
+            {
+              "en": "Health and wealth are both important, but health matters more; that is above money.",
+              "zh": "健康跟財富都很重要，但健康比較重要；那是凌駕在金錢之上的。"
+            },
+            {
+              "en": "These cookies taste much better than those ones.",
+              "zh": "這些餅乾比那些好吃多了。"
+            },
+            {
+              "en": "I really like this song; can you play it again?",
+              "zh": "我真的很喜歡這首歌，你可以再播一次嗎？"
+            },
+            {
+              "en": "That was the best movie I have seen this year.",
+              "zh": "那是我今年看過最棒的電影。"
+            },
+            {
+              "en": "Between reading and writing, I prefer the latter.",
+              "zh": "在閱讀和寫作之間，我比較喜歡後者（寫作）。"
+            },
+            {
+              "en": "These deer in the park seem used to visitors.",
+              "zh": "公園裡的這些鹿似乎已經習慣遊客了。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "___ shirt I'm wearing was a gift from my aunt.",
+              "options": [
+                "This",
+                "These",
+                "That",
+                "Those"
+              ],
+              "answer": 0,
+              "explanation": "shirt是單數名詞，且是「我正在穿的」表示距離近，用this。",
+              "target_grammar": "指示形容詞",
+              "optionsZh": [
+                "（正確，this修飾單數且距離近的名詞shirt）",
+                "（these修飾複數名詞，shirt為單數不符）",
+                "（that表示距離遠，與「我正在穿」的近距離語境不符）",
+                "（those修飾複數名詞，shirt為單數不符）"
+              ]
+            },
+            {
+              "sentence": "___ mountains far away look amazing in the sunset.",
+              "options": [
+                "This",
+                "That",
+                "These",
+                "Those"
+              ],
+              "answer": 3,
+              "explanation": "mountains是複數名詞，且far away表示距離遠，用those。",
+              "target_grammar": "指示形容詞",
+              "optionsZh": [
+                "（this修飾單數名詞，mountains為複數不符）",
+                "（that修飾單數名詞，mountains為複數不符）",
+                "（these表示距離近，與far away的遠距離語境不符）",
+                "（正確，those修飾複數且距離遠的名詞mountains）"
+              ]
+            },
+            {
+              "sentence": "I can't believe ___ is really happening right now!",
+              "options": [
+                "this",
+                "these",
+                "that one",
+                "those"
+              ],
+              "answer": 0,
+              "explanation": "this當指示代名詞獨立使用，不需要接名詞，代替「這件正在發生的事」。",
+              "target_grammar": "指示形容詞",
+              "optionsZh": [
+                "（正確，this當代名詞獨立使用，代替眼前發生的事）",
+                "（these為複數，此處代替單一事件不符）",
+                "（that one通常代替特定的單一物品，此處語境較不自然）",
+                "（those為複數，此處代替單一事件不符）"
+              ]
+            },
+            {
+              "sentence": "___ sheep on the hill are grazing peacefully.",
+              "options": [
+                "This",
+                "That",
+                "These",
+                "Those one"
+              ],
+              "answer": 2,
+              "explanation": "sheep單複數同形，由句中動詞are判斷為複數，且指山丘上眼前這群，用these。",
+              "target_grammar": "指示形容詞",
+              "optionsZh": [
+                "（this修飾單數名詞，此處sheep由動詞are判斷為複數不符）",
+                "（that修飾單數名詞，此處不符）",
+                "（正確，these修飾複數的sheep，符合動詞are）",
+                "（非正確英文用法，複數應為those而非those one）"
+              ]
+            },
+            {
+              "sentence": "Between science and art, I've always preferred ___.",
+              "options": [
+                "the later",
+                "the latter",
+                "the last",
+                "the lately"
+              ],
+              "answer": 1,
+              "explanation": "the latter「後者」指前面提到的兩者中排在後面的那個（art）。",
+              "target_grammar": "指示形容詞",
+              "optionsZh": [
+                "（later拼字錯誤，正確應為latter）",
+                "（正確，the latter表示後者）",
+                "（the last意思是最後一個，不符兩者對比的語境）",
+                "（lately是副詞表示最近，不符此對比句型）"
+              ]
+            },
+            {
+              "sentence": "You can't have ___ my books; they're already borrowed.",
+              "options": [
+                "a this",
+                "my this",
+                "this",
+                "the this"
+              ],
+              "answer": 2,
+              "explanation": "指示形容詞this不可與冠詞a/the或所有格my同時修飾同一個名詞。",
+              "target_grammar": "指示形容詞",
+              "optionsZh": [
+                "（this不可與不定冠詞a同時使用）",
+                "（this不可與所有格my同時使用）",
+                "（正確，單獨使用指示形容詞this）",
+                "（this不可與定冠詞the同時使用）"
+              ]
+            },
+            {
+              "sentence": "I prefer ___ blue jacket to the red one on the rack.",
+              "options": [
+                "these",
+                "those",
+                "this",
+                "that one"
+              ],
+              "answer": 2,
+              "explanation": "jacket是單數名詞，且指「這件」（眼前的），用this。",
+              "target_grammar": "指示形容詞",
+              "optionsZh": [
+                "（these修飾複數名詞，jacket為單數不符）",
+                "（those修飾複數名詞，jacket為單數不符）",
+                "（正確，this修飾單數名詞jacket）",
+                "（that one為代名詞用法，此處jacket後面需要形容詞而非代名詞）"
+              ]
+            },
+            {
+              "sentence": "___ fish in the tank seem happier than the ones we had before.",
+              "options": [
+                "This",
+                "That",
+                "These",
+                "That one"
+              ],
+              "answer": 2,
+              "explanation": "fish單複數同形，由句中seem與比較對象「the ones」判斷為複數，用these。",
+              "target_grammar": "指示形容詞",
+              "optionsZh": [
+                "（this修飾單數名詞，此處fish由動詞seem及比較語境判斷為複數不符）",
+                "（that修飾單數名詞，此處不符）",
+                "（正確，these修飾複數的fish）",
+                "（that one為代名詞單數用法，與複數語境不符）"
+              ]
+            },
+            {
+              "sentence": "___ is exactly the kind of help I needed. Thank you!",
+              "options": [
+                "This",
+                "These",
+                "Those",
+                "That one"
+              ],
+              "answer": 0,
+              "explanation": "this當指示代名詞獨立使用，代替「這個幫助」。",
+              "target_grammar": "指示形容詞",
+              "optionsZh": [
+                "（正確，this當代名詞獨立使用）",
+                "（these為複數，此處代替單一事物不符）",
+                "（those為複數，此處代替單一事物不符）",
+                "（that one通常用於對比選項，此處單純指出眼前的幫助用this更自然）"
+              ]
+            },
+            {
+              "sentence": "Of health and money, ___ is always more important to me.",
+              "options": [
+                "the former",
+                "the latter",
+                "this one",
+                "these ones"
+              ],
+              "answer": 0,
+              "explanation": "the former「前者」指兩者中排在前面的那個（health）。",
+              "target_grammar": "指示形容詞",
+              "optionsZh": [
+                "（正確，the former表示前者）",
+                "（the latter表示後者，此處語意指健康即前者）",
+                "（this one通常代替單一具體物品，不是對比句型的標準用法）",
+                "（this one為單數用法，且非此對比句型的標準用詞）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "Two Different Neighborhoods",
+            "passage": "My family recently moved, and I've been comparing our old neighborhood with our new one. __(1)__ new house we live in now is much bigger than our old apartment. __(2)__ neighbors next door are very friendly, always waving hello. However, I still miss __(3)__ small park where I used to play with my friends. Between the quiet countryside and the busy city, I think I prefer __(4)__ — the peaceful countryside always felt more relaxing to me. __(5)__ is exactly why I sometimes feel homesick for our old town.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "This",
+                  "These",
+                  "That",
+                  "Those"
+                ],
+                "answer": 0,
+                "explanation": "house是單數名詞，且指「我們現在住的」表示距離近，用this。",
+                "optionsZh": [
+                  "（正確，this修飾單數且距離近的名詞house）",
+                  "（these修飾複數名詞，house為單數不符）",
+                  "（that表示距離遠，與「我們現在住的」語境不符）",
+                  "（those修飾複數名詞，house為單數不符）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "This",
+                  "That",
+                  "These",
+                  "Those"
+                ],
+                "answer": 2,
+                "explanation": "neighbors是複數名詞，且指「隔壁的」表示距離近，用these。",
+                "optionsZh": [
+                  "（this修飾單數名詞，neighbors為複數不符）",
+                  "（that修飾單數名詞，neighbors為複數不符）",
+                  "（正確，these修飾複數且距離近的名詞neighbors）",
+                  "（those表示距離遠，與「next door」的近距離語境不符）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "this",
+                  "these",
+                  "that",
+                  "those"
+                ],
+                "answer": 2,
+                "explanation": "park是單數名詞，且指「以前的公園」表示距離遠（過去的），用that。",
+                "optionsZh": [
+                  "（this表示距離近，與過去回憶的遠距離語境不符）",
+                  "（these修飾複數名詞，park為單數不符）",
+                  "（正確，that修飾單數且距離遠（過去）的名詞park）",
+                  "（those修飾複數名詞，park為單數不符）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "the former",
+                  "the latter",
+                  "this one",
+                  "these ones"
+                ],
+                "answer": 1,
+                "explanation": "the latter「後者」指前面提到的兩者中排在後面的那個（countryside）。",
+                "optionsZh": [
+                  "（the former表示前者，此處語意指鄉下即後者）",
+                  "（正確，the latter表示後者）",
+                  "（this one通常代替單一具體物品，不是對比句型的標準用法）",
+                  "（this one為單數用法，且非此對比句型的標準用詞）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "This",
+                  "These",
+                  "That",
+                  "Those"
+                ],
+                "answer": 0,
+                "explanation": "this當指示代名詞獨立使用，代替前面提到的整個原因。",
+                "optionsZh": [
+                  "（正確，this當代名詞獨立使用，代替前面的整體原因）",
+                  "（these為複數，此處代替單一原因不符）",
+                  "（that也可代替前面提過的事，但this更強調緊接在後的說明，此處以this為標準答案）",
+                  "（those為複數，此處代替單一原因不符）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "7-5",
