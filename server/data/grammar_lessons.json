@@ -8465,14 +8465,650 @@
       {
         "id": "7-9",
         "title": "非修飾人的形容詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>這些形容詞不能直接用人當主詞</b><br>convenient方便的、comfortable舒適的、difficult困難的、easy簡單的、possible可能的、common常見的、helpful有幫助的、serious嚴重的、simple簡單的、impossible不可能的：這些形容詞描述的是「事情本身的性質」，不是「人的狀態」，所以不能直接說People are convenient to...<br><br><b>正確句構：假主詞it+for+人+to V</b><br>It's convenient for people in big cities to take the MRT.（對大城市的人來說，搭捷運很方便。）不能說People in big cities are convenient to take the MRT.<br><br><b>為什麼要用it開頭</b><br>因為真正的主詞其實是後面的不定詞片語（to take the MRT），為了避免「頭重腳輕」（主詞太長），先用it佔住主詞的位置，把真正的主詞挪到句尾，並用for+人來說明「對誰而言」。<br><br><b>跟第10章「不定詞」的假主詞句型是同一套邏輯</b><br>只是這裡特別強調「哪些形容詞只能這樣用」——因為這些形容詞的本質是形容「一件事的性質」，不是「人的感受」（人的感受形容詞如happy、sad可以直接用人當主詞，詳見第10章）。<br><br><b>易混淆重點</b><br>① 不要看到for+人就以為所有形容詞都能這樣用；反過來，看到convenient、difficult這類形容詞，就要提高警覺，人不能直接當主詞。<br>② 這類形容詞如果真的想用人當主詞，通常要換句子架構或換別的形容詞（例如用find的句構：I find it difficult to learn Chinese.）",
+          "examples": [
+            {
+              "en": "It's easy for kids to learn new languages quickly.",
+              "zh": "對小孩來說，學習新語言很快就能上手。"
+            },
+            {
+              "en": "It was impossible for us to finish the project in one day.",
+              "zh": "我們不可能在一天內完成這個專題。"
+            },
+            {
+              "en": "It's common for teenagers to spend hours on their phones.",
+              "zh": "青少年花好幾個小時滑手機是很常見的。"
+            },
+            {
+              "en": "Is it convenient for you to meet at three o'clock?",
+              "zh": "三點跟你見面方便嗎？"
+            },
+            {
+              "en": "It's helpful for students to review their notes every night.",
+              "zh": "學生每晚複習筆記是有幫助的。"
+            },
+            {
+              "en": "It's difficult for beginners to understand this grammar rule.",
+              "zh": "對初學者來說，理解這條文法規則很困難。"
+            },
+            {
+              "en": "It's simple for her to solve these math problems.",
+              "zh": "對她來說，解這些數學題很簡單。"
+            },
+            {
+              "en": "It was serious for the company to lose such an important client.",
+              "zh": "對這間公司來說，失去這麼重要的客戶是很嚴重的事。"
+            },
+            {
+              "en": "It's possible for him to arrive before noon if there's no traffic.",
+              "zh": "如果不塞車，他有可能在中午前到達。"
+            },
+            {
+              "en": "It's comfortable for us to work from home these days.",
+              "zh": "現在對我們來說在家工作很舒適。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "___ for students to focus during a long lecture.",
+              "options": [
+                "Students are difficult",
+                "It's difficult",
+                "Difficult is it",
+                "It's difficult students"
+              ],
+              "answer": 1,
+              "explanation": "difficult是非修飾人的形容詞，要用假主詞It開頭，不能直接讓students當主詞。",
+              "target_grammar": "非修飾人的形容詞",
+              "optionsZh": [
+                "（difficult不可直接用人當主詞）",
+                "（正確，假主詞It+for+人+to V的句構）",
+                "（語序錯誤）",
+                "（缺少for，句構不完整）"
+              ]
+            },
+            {
+              "sentence": "It's ___ for tourists to get lost in this old town.",
+              "options": [
+                "common",
+                "happy",
+                "excited",
+                "glad"
+              ],
+              "answer": 0,
+              "explanation": "common是非修飾人的形容詞，符合假主詞句構；happy/excited/glad是修飾人的情緒形容詞，不需要假主詞句構。",
+              "target_grammar": "非修飾人的形容詞",
+              "optionsZh": [
+                "（正確，common為非修飾人的形容詞，符合此假主詞句構）",
+                "（happy是修飾人的情緒形容詞，此處不需要假主詞句構）",
+                "（excited是修飾人的情緒形容詞，此處不需要假主詞句構）",
+                "（glad是修飾人的情緒形容詞，此處不需要假主詞句構）"
+              ]
+            },
+            {
+              "sentence": "___ me to finish this report by tomorrow.",
+              "options": [
+                "It's possible for",
+                "I'm possible",
+                "Possible is for",
+                "For it's possible"
+              ],
+              "answer": 0,
+              "explanation": "possible是非修飾人的形容詞，要用假主詞It開頭，搭配for+人。",
+              "target_grammar": "非修飾人的形容詞",
+              "optionsZh": [
+                "（正確，It's possible for+人+to V的句構）",
+                "（possible不可直接用人當主詞）",
+                "（語序錯誤）",
+                "（語序錯誤）"
+              ]
+            },
+            {
+              "sentence": "___ for elderly people to use smartphones sometimes.",
+              "options": [
+                "Elderly people are difficult",
+                "It's difficult",
+                "It's difficult elderly people",
+                "Difficult it's"
+              ],
+              "answer": 1,
+              "explanation": "difficult是非修飾人的形容詞，要用假主詞It開頭。",
+              "target_grammar": "非修飾人的形容詞",
+              "optionsZh": [
+                "（difficult不可直接用人當主詞）",
+                "（正確，假主詞It+for+人+to V的句構）",
+                "（缺少for，句構不完整）",
+                "（語序錯誤）"
+              ]
+            },
+            {
+              "sentence": "Is ___ for you to attend the meeting this afternoon?",
+              "options": [
+                "convenient",
+                "you convenient",
+                "it convenient",
+                "convenient it"
+              ],
+              "answer": 2,
+              "explanation": "convenient是非修飾人的形容詞，疑問句一樣要用假主詞it。",
+              "target_grammar": "非修飾人的形容詞",
+              "optionsZh": [
+                "（缺少假主詞it）",
+                "（convenient不可直接用人當主詞）",
+                "（正確，疑問句一樣用假主詞it）",
+                "（語序錯誤）"
+              ]
+            },
+            {
+              "sentence": "It's ___ for people to recycle more in our city.",
+              "options": [
+                "helpful",
+                "happy",
+                "sad",
+                "angry"
+              ],
+              "answer": 0,
+              "explanation": "helpful是非修飾人的形容詞，符合假主詞句構；happy/sad/angry是修飾人的情緒形容詞。",
+              "target_grammar": "非修飾人的形容詞",
+              "optionsZh": [
+                "（正確，helpful為非修飾人的形容詞）",
+                "（happy是修飾人的情緒形容詞，不需要此假主詞句構）",
+                "（sad是修飾人的情緒形容詞，不需要此假主詞句構）",
+                "（angry是修飾人的情緒形容詞，不需要此假主詞句構）"
+              ]
+            },
+            {
+              "sentence": "It was ___ for the team to lose the championship game.",
+              "options": [
+                "serious",
+                "excited",
+                "proud",
+                "willing"
+              ],
+              "answer": 0,
+              "explanation": "serious是非修飾人的形容詞，符合假主詞句構；excited/proud/willing是修飾人的情緒形容詞。",
+              "target_grammar": "非修飾人的形容詞",
+              "optionsZh": [
+                "（正確，serious為非修飾人的形容詞）",
+                "（excited是修飾人的情緒形容詞，不需要此假主詞句構）",
+                "（proud是修飾人的情緒形容詞，不需要此假主詞句構）",
+                "（willing是修飾人的情緒形容詞，不需要此假主詞句構）"
+              ]
+            },
+            {
+              "sentence": "___ for beginners to master this skill in one week.",
+              "options": [
+                "Beginners are impossible",
+                "It's impossible",
+                "Impossible beginners are",
+                "It beginners impossible"
+              ],
+              "answer": 1,
+              "explanation": "impossible是非修飾人的形容詞，要用假主詞It開頭。",
+              "target_grammar": "非修飾人的形容詞",
+              "optionsZh": [
+                "（impossible不可直接用人當主詞）",
+                "（正確，假主詞It+for+人+to V的句構）",
+                "（語序錯誤）",
+                "（語序錯誤）"
+              ]
+            },
+            {
+              "sentence": "It's ___ for us to communicate with people from other countries now.",
+              "options": [
+                "simple",
+                "sorry",
+                "afraid",
+                "surprised"
+              ],
+              "answer": 0,
+              "explanation": "simple是非修飾人的形容詞，符合假主詞句構；sorry/afraid/surprised是修飾人的情緒形容詞。",
+              "target_grammar": "非修飾人的形容詞",
+              "optionsZh": [
+                "（正確，simple為非修飾人的形容詞）",
+                "（sorry是修飾人的情緒形容詞，不需要此假主詞句構）",
+                "（afraid是修飾人的情緒形容詞，不需要此假主詞句構）",
+                "（surprised是修飾人的情緒形容詞，不需要此假主詞句構）"
+              ]
+            },
+            {
+              "sentence": "It's ___ for children to learn a new language before age ten.",
+              "options": [
+                "easy",
+                "happy",
+                "sad",
+                "surprised"
+              ],
+              "answer": 0,
+              "explanation": "easy是非修飾人的形容詞，符合假主詞句構；happy/sad/surprised是修飾人的情緒形容詞。",
+              "target_grammar": "非修飾人的形容詞",
+              "optionsZh": [
+                "（正確，easy為非修飾人的形容詞）",
+                "（happy是修飾人的情緒形容詞，不需要此假主詞句構）",
+                "（sad是修飾人的情緒形容詞，不需要此假主詞句構）",
+                "（surprised是修飾人的情緒形容詞，不需要此假主詞句構）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "Learning to Cook",
+            "passage": "My brother recently decided to learn how to cook. At first, __(1)__ for him to even boil an egg properly. It was __(2)__ for beginners like him to follow complicated recipes without guidance, so he started with simple dishes instead. Now, __(3)__ for him to make a basic stir-fry in under twenty minutes. He said it's __(4)__ for anyone to improve quickly if they practice every day. In the future, it might even be __(5)__ for him to open his own small restaurant.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "he was difficult",
+                  "it was difficult",
+                  "difficult was it",
+                  "it difficult was"
+                ],
+                "answer": 1,
+                "explanation": "difficult是非修飾人的形容詞，要用假主詞it開頭。",
+                "optionsZh": [
+                  "（difficult不可直接用人當主詞）",
+                  "（正確，假主詞it+for+人+to V的句構）",
+                  "（語序錯誤）",
+                  "（語序錯誤）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "common",
+                  "happy",
+                  "excited",
+                  "proud"
+                ],
+                "answer": 0,
+                "explanation": "common是非修飾人的形容詞，符合假主詞句構。",
+                "optionsZh": [
+                  "（正確，common為非修飾人的形容詞）",
+                  "（happy是修飾人的情緒形容詞，不需要此假主詞句構）",
+                  "（excited是修飾人的情緒形容詞，不需要此假主詞句構）",
+                  "（proud是修飾人的情緒形容詞，不需要此假主詞句構）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "it's easy",
+                  "he's easy",
+                  "easy it's",
+                  "it easy is"
+                ],
+                "answer": 0,
+                "explanation": "easy是非修飾人的形容詞，要用假主詞it開頭。",
+                "optionsZh": [
+                  "（正確，假主詞it+for+人+to V的句構）",
+                  "（easy不可直接用人當主詞）",
+                  "（語序錯誤）",
+                  "（語序錯誤）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "possible",
+                  "glad",
+                  "afraid",
+                  "sorry"
+                ],
+                "answer": 0,
+                "explanation": "possible是非修飾人的形容詞，符合假主詞句構。",
+                "optionsZh": [
+                  "（正確，possible為非修飾人的形容詞）",
+                  "（glad是修飾人的情緒形容詞，不需要此假主詞句構）",
+                  "（afraid是修飾人的情緒形容詞，不需要此假主詞句構）",
+                  "（sorry是修飾人的情緒形容詞，不需要此假主詞句構）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "possible",
+                  "willing",
+                  "excited",
+                  "worried"
+                ],
+                "answer": 0,
+                "explanation": "possible是非修飾人的形容詞，符合假主詞句構。",
+                "optionsZh": [
+                  "（正確，possible為非修飾人的形容詞）",
+                  "（willing是修飾人的情緒形容詞，不需要此假主詞句構）",
+                  "（excited是修飾人的情緒形容詞，不需要此假主詞句構）",
+                  "（worried是修飾人的情緒形容詞，不需要此假主詞句構）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "7-10",
         "title": "常用的「形容詞＋介系詞」的連用片語",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>常見「形容詞+介系詞」固定搭配</b><br>be afraid of害怕、be good at擅長、be famous for因…著名、be different from不同於、be full of充滿、be proud of以…為榮、be worried about擔心、be tired of厭倦、be busy with忙於、be crazy about對…著迷、be popular with/among受…歡迎、be ready for準備好、be short of缺少、be similar to跟…類似、be made of/from由…製成。<br><br><b>字義相近的形容詞怎麼分</b><br>① tall（有生命體/可測量高度）vs high（無生命體/不可測得的高度）：Tom is 1.7 meters tall. / Stars are high in the sky.<br>② large（面積範圍大）vs big（體積重量大，較口語）：a large Coke / a big man<br>③ small（體型小）vs little（無形事物的小，或帶情感色彩）：a small dog / my little sister<br>④ few/a few修飾可數名詞複數；little/a little修飾不可數名詞：few friends / a little money<br><br><b>be made of / from / by / with的差別</b><br>be made of：材質沒有經過化學變化，看得出原本的樣子：The chair is made of wood.<br>be made from：材質經過化學變化，看不出原本的樣子：Wine is made from grapes.<br>be made by+人：強調製作者是誰。<br>be made with+工具/材料：強調使用的工具或原料。<br><br><b>易混淆重點</b><br>① price（價錢）只有high/low之分，沒有expensive/cheap的用法搭配price這個字本身（price is high，不會說price is expensive，要說the price is expensive這種說法其實也可以，但书中強調price常態用high/low）。<br>② be angry about+事、be angry at/with+人，兩者搭配的介系詞不同，別搞混。",
+          "examples": [
+            {
+              "en": "This restaurant is famous for its delicious desserts.",
+              "zh": "這間餐廳以美味的甜點聞名。"
+            },
+            {
+              "en": "She has always been proud of her hard-working parents.",
+              "zh": "她一直以她辛勤工作的父母為榮。"
+            },
+            {
+              "en": "The bag was full of old photographs and letters.",
+              "zh": "這個袋子裝滿了舊照片和信件。"
+            },
+            {
+              "en": "He is tired of eating the same lunch every day.",
+              "zh": "他厭倦了每天吃一樣的午餐。"
+            },
+            {
+              "en": "This shirt is made of pure cotton.",
+              "zh": "這件襯衫是純棉製的。"
+            },
+            {
+              "en": "Cheese is made from milk through a special process.",
+              "zh": "起司是用牛奶經過特殊加工製成的。"
+            },
+            {
+              "en": "My little sister is crazy about dinosaurs these days.",
+              "zh": "我妹妹最近對恐龍很著迷。"
+            },
+            {
+              "en": "The singer is popular among teenagers around the world.",
+              "zh": "這位歌手在全世界的青少年之間很受歡迎。"
+            },
+            {
+              "en": "Are you ready for the big test tomorrow?",
+              "zh": "你準備好明天的大考了嗎？"
+            },
+            {
+              "en": "This design is similar to the one we saw last week.",
+              "zh": "這個設計跟我們上禮拜看到的那個很類似。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "My grandmother is ___ her garden full of colorful flowers.",
+              "options": [
+                "proud of",
+                "proud for",
+                "proud with",
+                "proud at"
+              ],
+              "answer": 0,
+              "explanation": "be proud of「以…為榮」是固定搭配。",
+              "target_grammar": "形容詞+介系詞",
+              "optionsZh": [
+                "（正確，be proud of固定搭配）",
+                "（for不是proud的固定搭配介系詞）",
+                "（with不是proud的固定搭配介系詞）",
+                "（at不是proud的固定搭配介系詞）"
+              ]
+            },
+            {
+              "sentence": "This cake is made ___ flour, eggs, and sugar.",
+              "options": [
+                "of",
+                "from",
+                "with",
+                "by"
+              ],
+              "answer": 2,
+              "explanation": "be made with+材料/工具，強調使用了什麼原料製作。",
+              "target_grammar": "形容詞+介系詞",
+              "optionsZh": [
+                "（made of用於材質沒有化學變化，此處指的是配方原料）",
+                "（made from用於材質經過化學變化看不出原貌，此處以with更合適表達原料組成）",
+                "（正確，be made with+材料）",
+                "（made by強調製作者，此處強調材料不符）"
+              ]
+            },
+            {
+              "sentence": "Are you ___ the science test next week?",
+              "options": [
+                "ready for",
+                "ready of",
+                "ready with",
+                "ready at"
+              ],
+              "answer": 0,
+              "explanation": "be ready for「準備好…」是固定搭配。",
+              "target_grammar": "形容詞+介系詞",
+              "optionsZh": [
+                "（正確，be ready for固定搭配）",
+                "（of不是ready的固定搭配介系詞）",
+                "（with不是ready的固定搭配介系詞）",
+                "（at不是ready的固定搭配介系詞）"
+              ]
+            },
+            {
+              "sentence": "This mountain is famous ___ its beautiful sunrise view.",
+              "options": [
+                "for",
+                "of",
+                "with",
+                "at"
+              ],
+              "answer": 0,
+              "explanation": "be famous for「因…著名」是固定搭配。",
+              "target_grammar": "形容詞+介系詞",
+              "optionsZh": [
+                "（正確，be famous for固定搭配）",
+                "（of不是famous的固定搭配介系詞）",
+                "（with不是famous的固定搭配介系詞）",
+                "（at不是famous的固定搭配介系詞）"
+              ]
+            },
+            {
+              "sentence": "The stars in the sky tonight are very ___.",
+              "options": [
+                "high",
+                "tall",
+                "highly",
+                "tallness"
+              ],
+              "answer": 0,
+              "explanation": "high用於無生命體或不可測得的高度，星星屬於此類，用high。",
+              "target_grammar": "形容詞+介系詞",
+              "optionsZh": [
+                "（正確，high用於星星這類無生命體的高度）",
+                "（tall用於有生命體或可測量的高度，星星不符）",
+                "（highly為副詞，此處需要形容詞）",
+                "（名詞不可直接當形容詞使用）"
+              ]
+            },
+            {
+              "sentence": "This bottle is ___ olive oil.",
+              "options": [
+                "full of",
+                "full with",
+                "full at",
+                "full for"
+              ],
+              "answer": 0,
+              "explanation": "be full of「充滿…」是固定搭配。",
+              "target_grammar": "形容詞+介系詞",
+              "optionsZh": [
+                "（正確，be full of固定搭配）",
+                "（with不是full的固定搭配介系詞）",
+                "（at不是full的固定搭配介系詞）",
+                "（for不是full的固定搭配介系詞）"
+              ]
+            },
+            {
+              "sentence": "Wine is made ___ grapes through a long fermenting process.",
+              "options": [
+                "of",
+                "from",
+                "with",
+                "by"
+              ],
+              "answer": 1,
+              "explanation": "be made from用於材質經過化學變化、看不出原本樣子的情況，符合葡萄變成酒的過程。",
+              "target_grammar": "形容詞+介系詞",
+              "optionsZh": [
+                "（made of用於材質沒有化學變化仍看得出原貌，此處酒已看不出葡萄原貌不符）",
+                "（正確，be made from表示經過變化製成）",
+                "（made with強調使用的工具或原料組成，此處強調轉化過程更適合from）",
+                "（made by強調製作者，此處強調原料不符）"
+              ]
+            },
+            {
+              "sentence": "Tom is 1.8 meters ___, one of the tallest in his class.",
+              "options": [
+                "tall",
+                "high",
+                "tallness",
+                "highly"
+              ],
+              "answer": 0,
+              "explanation": "tall用於有生命體或可測量的身高，人屬於此類，用tall。",
+              "target_grammar": "形容詞+介系詞",
+              "optionsZh": [
+                "（正確，tall用於人的身高）",
+                "（high用於無生命體或不可測得的高度，人不符）",
+                "（名詞不可直接當形容詞使用）",
+                "（highly為副詞，此處需要形容詞）"
+              ]
+            },
+            {
+              "sentence": "My father is often ___ his phone bill being so high.",
+              "options": [
+                "angry about",
+                "angry at",
+                "angry with",
+                "angry to"
+              ],
+              "answer": 0,
+              "explanation": "be angry about+事情，符合此處「電話帳單太高」是事情而非人。",
+              "target_grammar": "形容詞+介系詞",
+              "optionsZh": [
+                "（正確，be angry about+事，此處bill是事情）",
+                "（be angry at用於對人生氣，此處為事情不符）",
+                "（be angry with用於對人生氣，此處為事情不符）",
+                "（angry to不是固定搭配用法）"
+              ]
+            },
+            {
+              "sentence": "This painting style is very ___ the one from the Renaissance period.",
+              "options": [
+                "similar to",
+                "similar with",
+                "similar for",
+                "similar at"
+              ],
+              "answer": 0,
+              "explanation": "be similar to「跟…類似」是固定搭配。",
+              "target_grammar": "形容詞+介系詞",
+              "optionsZh": [
+                "（正確，be similar to固定搭配）",
+                "（with不是similar的固定搭配介系詞）",
+                "（for不是similar的固定搭配介系詞）",
+                "（at不是similar的固定搭配介系詞）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A Family Recipe",
+            "passage": "My grandmother's cookies are __(1)__ their crunchy texture and sweet aroma. The recipe is __(2)__ simple ingredients like flour, butter, and sugar. She is always __(3)__ teaching the recipe to anyone who asks, because she believes food should be shared. Even though the cookies look __(4)__ ones you can buy at the store, they taste completely different once you try them. Whenever I visit her, I make sure I'm __(5)__ helping her bake a fresh batch.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "famous for",
+                  "famous of",
+                  "famous with",
+                  "famous at"
+                ],
+                "answer": 0,
+                "explanation": "be famous for「因…著名」是固定搭配。",
+                "optionsZh": [
+                  "（正確，be famous for固定搭配）",
+                  "（of不是famous的固定搭配介系詞）",
+                  "（with不是famous的固定搭配介系詞）",
+                  "（at不是famous的固定搭配介系詞）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "made of",
+                  "made from",
+                  "made by",
+                  "made for"
+                ],
+                "answer": 0,
+                "explanation": "be made of用於材質沒有經過化學變化、看得出原本樣子的情況，符合麵粉奶油等原料直接構成餅乾。",
+                "optionsZh": [
+                  "（正確，be made of表示原料沒有經過根本變化）",
+                  "（made from較常用於原料經過明顯化學變化後看不出原貌的情況，此處餅乾仍可看出原料）",
+                  "（made by強調製作者，此處強調材質組成不符）",
+                  "（made for不是此固定搭配用法）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "happy about",
+                  "happy with",
+                  "happy for",
+                  "happy to"
+                ],
+                "answer": 0,
+                "explanation": "be happy about+事情/動名詞，此處teaching是動名詞當受詞。",
+                "optionsZh": [
+                  "（正確，happy about+V-ing的固定搭配）",
+                  "（happy with較常搭配具體事物或人，此處動名詞teaching更適合about）",
+                  "（happy for較常用於為他人感到高興，此處語意不符）",
+                  "（happy to+原形動詞才是正確搭配，此處為動名詞teaching不符）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "similar to",
+                  "similar with",
+                  "similar for",
+                  "similar at"
+                ],
+                "answer": 0,
+                "explanation": "be similar to「跟…類似」是固定搭配。",
+                "optionsZh": [
+                  "（正確，be similar to固定搭配）",
+                  "（with不是similar的固定搭配介系詞）",
+                  "（for不是similar的固定搭配介系詞）",
+                  "（at不是similar的固定搭配介系詞）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "busy with",
+                  "busy for",
+                  "busy at",
+                  "busy to"
+                ],
+                "answer": 0,
+                "explanation": "be busy with「忙於…」是固定搭配。",
+                "optionsZh": [
+                  "（正確，be busy with固定搭配）",
+                  "（for不是busy的固定搭配介系詞）",
+                  "（at不是busy的固定搭配介系詞）",
+                  "（to不是busy的固定搭配介系詞）"
+                ]
+              }
+            ]
+          }
+        }
       }
     ]
   },
