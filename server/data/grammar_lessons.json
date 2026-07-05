@@ -8457,20 +8457,974 @@
       {
         "id": "11-1",
         "title": "情緒動詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>情緒動詞是什麼</b><br>情緒動詞是用來「激發別人情緒反應」的動詞，主詞通常是「事物」，受詞才是「感到情緒的人」，這點跟我們平常想的「人做出情緒動作」剛好相反：Writing English interests me a lot.（寫英文這件事讓我感興趣，不是「我讓寫英文感興趣」）<br><br><b>常見情緒動詞清單</b><br>interest使感興趣、excite使興奮、worry使擔憂、bore使無聊、trouble使煩惱、surprise使驚訝、touch使感動、tire使疲累、scare/frighten使害怕、confuse使困惑、satisfy使滿意、disgust使噁心、shock使震驚、amuse使覺得有趣、impress使印象深刻、embarrass使尷尬。<br><br><b>句型公式</b><br>S（事物）+情緒動詞+O（人）：The math question confuses all of the students.（這個數學問題困惑了所有學生。）<br><br><b>為什麼會有分詞形容詞</b><br>因為這些情緒動詞都是規則變化動詞，可以直接變成現在分詞（Ving）或過去分詞（Vpp）當形容詞使用——這就是下一課「分詞當情緒形容詞」的由來。搞懂情緒動詞的主詞受詞邏輯，是分辨Ving/Vpp的關鍵基礎。<br><br><b>常見錯誤</b><br>因為中文常說「我對這件事感興趣」，容易誤把人當主詞、動詞用原形：不能說I interest in this book.，要嘛用情緒動詞的被動形式（I am interested in this book.）要嘛把事物當主詞（This book interests me.）。",
+          "examples": [
+            {
+              "en": "The scary movie frightened all the little kids in the theater.",
+              "zh": "那部恐怖片嚇壞了戲院裡所有的小朋友。"
+            },
+            {
+              "en": "Her kind words touched everyone at the meeting.",
+              "zh": "她溫暖的話感動了在場所有人。"
+            },
+            {
+              "en": "This long lecture bores most of the students.",
+              "zh": "這場冗長的演講讓大部分學生感到無聊。"
+            },
+            {
+              "en": "The sudden noise outside surprised my whole family.",
+              "zh": "外面突然的噪音嚇了我全家人一跳。"
+            },
+            {
+              "en": "His careless mistake disappointed the whole team.",
+              "zh": "他粗心的錯誤讓全隊都感到失望。"
+            },
+            {
+              "en": "Playing video games all night tires my brother out.",
+              "zh": "整晚打電動讓我弟弟累壞了。"
+            },
+            {
+              "en": "This confusing map worried all the tourists.",
+              "zh": "這張令人困惑的地圖讓所有遊客都感到擔憂。"
+            },
+            {
+              "en": "Her amazing performance impressed the whole audience.",
+              "zh": "她驚人的表演讓全場觀眾印象深刻。"
+            },
+            {
+              "en": "The strange smell in the kitchen disgusted everyone.",
+              "zh": "廚房裡奇怪的味道讓大家都感到噁心。"
+            },
+            {
+              "en": "Good grades always satisfy my parents.",
+              "zh": "好成績總是讓我父母感到滿意。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "The loud thunder ___ the baby last night.",
+              "options": [
+                "scares",
+                "scared",
+                "scary",
+                "scaredly"
+              ],
+              "answer": 1,
+              "explanation": "情緒動詞scare的主詞是事物(thunder)，受詞是人(baby)，過去式加ed。",
+              "target_grammar": "情緒動詞",
+              "optionsZh": [
+                "（時態不符last night，需用過去式）",
+                "（正確，過去式scared）",
+                "（形容詞不可直接當動詞使用）",
+                "（副詞不可直接當動詞使用）"
+              ]
+            },
+            {
+              "sentence": "Math always ___ me a lot; I never understand it well.",
+              "options": [
+                "confuses",
+                "confused",
+                "confusing",
+                "is confuse"
+              ],
+              "answer": 0,
+              "explanation": "主詞math是事物，動詞用現在簡單式第三人稱單數confuses。",
+              "target_grammar": "情緒動詞",
+              "optionsZh": [
+                "（正確，現在簡單式第三人稱單數）",
+                "（過去式時態不符always的常態語境）",
+                "（動詞需搭配助動詞才可用進行式，此處不完整）",
+                "（be動詞後應接p.p.而非原形）"
+              ]
+            },
+            {
+              "sentence": "His rude behavior really ___ everyone at the party.",
+              "options": [
+                "embarrass",
+                "embarrasses",
+                "embarrassed",
+                "embarrassment"
+              ],
+              "answer": 2,
+              "explanation": "描述過去發生的派對事件，用過去式embarrassed。",
+              "target_grammar": "情緒動詞",
+              "optionsZh": [
+                "（缺少第三人稱單數或時態標記）",
+                "（現在式不符過去派對的語境）",
+                "（正確，過去式embarrassed）",
+                "（名詞不可直接當動詞使用）"
+              ]
+            },
+            {
+              "sentence": "The good news about the trip ___ all of us.",
+              "options": [
+                "excite",
+                "excites",
+                "excited",
+                "exciting"
+              ],
+              "answer": 1,
+              "explanation": "主詞news是事物，動詞用現在簡單式第三人稱單數excites。",
+              "target_grammar": "情緒動詞",
+              "optionsZh": [
+                "（缺少第三人稱單數s）",
+                "（正確，現在簡單式第三人稱單數）",
+                "（過去式與句意的現在時態不符，此處無明確過去時間標記，故以現在式為準）",
+                "（形容詞不可直接當動詞使用）"
+              ]
+            },
+            {
+              "sentence": "Watching sad movies always ___ me.",
+              "options": [
+                "touch",
+                "touches",
+                "touching",
+                "touched"
+              ],
+              "answer": 1,
+              "explanation": "主詞是動名詞片語watching sad movies，視為單數，動詞用touches。",
+              "target_grammar": "情緒動詞",
+              "optionsZh": [
+                "（缺少第三人稱單數s）",
+                "（正確，動名詞片語當主詞視為單數）",
+                "（形容詞不可直接當動詞使用）",
+                "（過去式與always的常態語境不符）"
+              ]
+            },
+            {
+              "sentence": "The professor's long speech ___ most of the audience.",
+              "options": [
+                "bore",
+                "bored",
+                "boring",
+                "bore's"
+              ],
+              "answer": 1,
+              "explanation": "描述已發生的演講事件，用過去式bored。",
+              "target_grammar": "情緒動詞",
+              "optionsZh": [
+                "（缺少過去式標記）",
+                "（正確，過去式bored）",
+                "（形容詞不可直接當動詞使用）",
+                "（非正確英文形式）"
+              ]
+            },
+            {
+              "sentence": "It ___ me that he never apologized.",
+              "options": [
+                "disappoint",
+                "disappoints",
+                "disappointing",
+                "disappointment"
+              ],
+              "answer": 1,
+              "explanation": "主詞it代替後方that子句，動詞用現在簡單式第三人稱單數disappoints。",
+              "target_grammar": "情緒動詞",
+              "optionsZh": [
+                "（缺少第三人稱單數s）",
+                "（正確，現在簡單式第三人稱單數）",
+                "（形容詞不可直接當動詞使用）",
+                "（名詞不可直接當動詞使用）"
+              ]
+            },
+            {
+              "sentence": "Her strange behavior ___ her classmates for years.",
+              "options": [
+                "confuse",
+                "confuses",
+                "has confused",
+                "confusing"
+              ],
+              "answer": 2,
+              "explanation": "for years搭配現在完成式，表示從過去持續到現在。",
+              "target_grammar": "情緒動詞",
+              "optionsZh": [
+                "（原形動詞不符第三人稱單數主詞）",
+                "（現在簡單式不符for years的持續語境）",
+                "（正確，現在完成式搭配for+時間）",
+                "（形容詞不可直接當動詞使用）"
+              ]
+            },
+            {
+              "sentence": "The results of the test ___ the teacher yesterday.",
+              "options": [
+                "satisfy",
+                "satisfies",
+                "satisfied",
+                "satisfying"
+              ],
+              "answer": 2,
+              "explanation": "yesterday明確指出過去時間，動詞用過去式satisfied。",
+              "target_grammar": "情緒動詞",
+              "optionsZh": [
+                "（時態不符yesterday過去語境）",
+                "（時態不符yesterday過去語境）",
+                "（正確，過去式satisfied）",
+                "（形容詞不可直接當動詞使用）"
+              ]
+            },
+            {
+              "sentence": "This kind of trick never ___ me.",
+              "options": [
+                "amuse",
+                "amuses",
+                "amusing",
+                "amusement"
+              ],
+              "answer": 1,
+              "explanation": "主詞this kind of trick是單數事物，動詞用現在簡單式第三人稱單數amuses。",
+              "target_grammar": "情緒動詞",
+              "optionsZh": [
+                "（缺少第三人稱單數s）",
+                "（正確，現在簡單式第三人稱單數）",
+                "（形容詞不可直接當動詞使用）",
+                "（名詞不可直接當動詞使用）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A Surprising Discovery",
+            "passage": "Last week, our science teacher showed us an experiment that really __(1)__ the whole class. At first, the strange smell from the chemicals __(2)__ a few students, but soon everyone got curious. The unexpected result __(3)__ everyone so much that we all started clapping. My best friend said the whole lesson __(4)__ him more than any video game. Even our teacher admitted that the experiment __(5)__ her the first time she tried it years ago.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "excite",
+                  "excites",
+                  "excited",
+                  "exciting"
+                ],
+                "answer": 2,
+                "explanation": "last week明確指出過去時間，動詞用過去式excited。",
+                "optionsZh": [
+                  "（時態不符last week過去語境）",
+                  "（時態不符過去語境）",
+                  "（正確，過去式excited）",
+                  "（形容詞不可直接當動詞使用）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "disgust",
+                  "disgusts",
+                  "disgusted",
+                  "disgusting"
+                ],
+                "answer": 2,
+                "explanation": "承接前文過去時態，用過去式disgusted。",
+                "optionsZh": [
+                  "（時態不符過去語境）",
+                  "（時態不符過去語境）",
+                  "（正確，過去式disgusted）",
+                  "（形容詞不可直接當動詞使用）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "surprise",
+                  "surprises",
+                  "surprised",
+                  "surprising"
+                ],
+                "answer": 2,
+                "explanation": "承接全文過去時態，用過去式surprised。",
+                "optionsZh": [
+                  "（時態不符過去語境）",
+                  "（時態不符過去語境）",
+                  "（正確，過去式surprised）",
+                  "（形容詞不可直接當動詞使用）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "interest",
+                  "interests",
+                  "interested",
+                  "interesting"
+                ],
+                "answer": 2,
+                "explanation": "由上下文past tense語境（said, was）判斷用過去式interested。",
+                "optionsZh": [
+                  "（時態不符過去語境）",
+                  "（時態不符過去語境）",
+                  "（正確，過去式interested）",
+                  "（形容詞不可直接當動詞使用）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "amaze",
+                  "amazes",
+                  "amazed",
+                  "amazing"
+                ],
+                "answer": 2,
+                "explanation": "the first time she tried it years ago是過去的事，用過去式amazed。",
+                "optionsZh": [
+                  "（時態不符years ago過去語境）",
+                  "（時態不符過去語境）",
+                  "（正確，過去式amazed）",
+                  "（形容詞不可直接當動詞使用）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "11-2",
         "title": "分詞當情緒形容詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>兩種分詞，方向完全相反</b><br>情緒現在分詞（Ving）：「令人感到…的」，通常修飾事物（因為情緒動詞的主詞本來就是事物）：The movie is interesting.<br>情緒過去分詞（Vpp）：「感到…的」，通常修飾人（因為情緒動詞的受詞本來就是人）：I am interested in the movie.<br>判斷技巧：把情緒動詞句子（事物+動詞+人）拆開來看，事物那一邊配Ving，人那一邊配Vpp。<br><br><b>Ving後面接to+受詞</b><br>句構：S（事物）+be/連綴動詞+Ving+to+O（人）：The book is becoming more interesting to me.（這本書令我越來越感興趣。）<br><br><b>Vpp後面要接「固定介系詞」，不是隨便加</b><br>句構：S（人）+be/連綴動詞+Vpp+介系詞+O（事物）。常考固定搭配：interested in、excited about、worried about、satisfied with、bored with、surprised at、shocked at/by、touched by、tired of、scared of/by。<br><br><b>常考的Ving/Vpp對照組</b><br>interesting/interested、exciting/excited、boring/bored、worrying/worried、surprising/surprised、tiring/tired、confusing/confused、satisfying/satisfied、touching/touched、embarrassing/embarrassed、disappointing/disappointed。<br><br><b>易混淆重點</b><br>① Ving不一定只能修飾事物：偶爾也可形容一群人的整體特質（a boring man「一個令人厭煩的人」），此時是在說「這個人本身讓別人感到厭煩」，邏輯上這個人扮演的其實是「事物」的角色（造成情緒的來源）。<br>② 不要看到人就直覺選Vpp、看到事就選Ving，要看「誰在造成情緒」還是「誰在感受情緒」。",
+          "examples": [
+            {
+              "en": "The ending of this novel is really touching.",
+              "zh": "這本小說的結局真的很感人。"
+            },
+            {
+              "en": "I felt embarrassed when I forgot his name.",
+              "zh": "我忘記他的名字時感到很尷尬。"
+            },
+            {
+              "en": "This puzzle is becoming more confusing to me.",
+              "zh": "這個謎題對我來說變得越來越令人困惑。"
+            },
+            {
+              "en": "She was satisfied with her test results.",
+              "zh": "她對自己的考試成績感到滿意。"
+            },
+            {
+              "en": "Everyone was shocked at the sudden announcement.",
+              "zh": "大家都對這個突如其來的宣布感到震驚。"
+            },
+            {
+              "en": "The long meeting was tiring for everyone.",
+              "zh": "這場冗長的會議讓大家都感到疲累。"
+            },
+            {
+              "en": "We are excited about the coming summer vacation.",
+              "zh": "我們對即將到來的暑假感到很興奮。"
+            },
+            {
+              "en": "His disappointing performance surprised no one.",
+              "zh": "他令人失望的表現沒有讓任何人感到驚訝。"
+            },
+            {
+              "en": "I'm tired of eating the same food every day.",
+              "zh": "我對每天吃一樣的食物感到厭倦了。"
+            },
+            {
+              "en": "The scared cat hid under the sofa all day.",
+              "zh": "那隻受驚的貓一整天都躲在沙發底下。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "This is such a(n) ___ book that I can't put it down.",
+              "options": [
+                "interesting",
+                "interested",
+                "interest",
+                "interests"
+              ],
+              "answer": 0,
+              "explanation": "book是事物，造成「有趣」的來源，用現在分詞interesting修飾。",
+              "target_grammar": "分詞當情緒形容詞",
+              "optionsZh": [
+                "（正確，事物用現在分詞Ving修飾）",
+                "（過去分詞修飾人，此處修飾事物book不符）",
+                "（名詞不可直接修飾名詞book）",
+                "（動詞第三人稱單數不可修飾名詞）"
+              ]
+            },
+            {
+              "sentence": "Linda is very ___ in Japanese culture.",
+              "options": [
+                "interesting",
+                "interested",
+                "interest",
+                "interests"
+              ],
+              "answer": 1,
+              "explanation": "Linda是人，感受到「有興趣」的情緒，用過去分詞interested，並搭配固定介系詞in。",
+              "target_grammar": "分詞當情緒形容詞",
+              "optionsZh": [
+                "（現在分詞修飾事物，此處主詞Linda是人不符）",
+                "（正確，人用過去分詞Vpp修飾，搭配介系詞in）",
+                "（名詞不可直接修飾主詞後）",
+                "（動詞第三人稱單數不可當形容詞使用）"
+              ]
+            },
+            {
+              "sentence": "All of us were ___ about the coming trip.",
+              "options": [
+                "excite",
+                "exciting",
+                "excited",
+                "excitement"
+              ],
+              "answer": 2,
+              "explanation": "all of us是人，感受到「興奮」的情緒，用過去分詞excited，搭配固定介系詞about。",
+              "target_grammar": "分詞當情緒形容詞",
+              "optionsZh": [
+                "（原形動詞不可直接當形容詞使用）",
+                "（現在分詞修飾事物，此處主詞是人不符）",
+                "（正確，人用過去分詞Vpp修飾，搭配介系詞about）",
+                "（名詞不可直接當形容詞使用）"
+              ]
+            },
+            {
+              "sentence": "The news of his win was really ___ to everyone.",
+              "options": [
+                "surprising",
+                "surprised",
+                "surprise",
+                "surprises"
+              ],
+              "answer": 0,
+              "explanation": "news是事物，造成「驚訝」的來源，用現在分詞surprising，後面可接to+人。",
+              "target_grammar": "分詞當情緒形容詞",
+              "optionsZh": [
+                "（正確，事物用現在分詞Ving修飾，後接to+人）",
+                "（過去分詞修飾人，此處主詞news是事物不符）",
+                "（名詞不可直接當形容詞使用）",
+                "（動詞第三人稱單數不可當形容詞使用）"
+              ]
+            },
+            {
+              "sentence": "I'm ___ with the service at this restaurant.",
+              "options": [
+                "satisfying",
+                "satisfied",
+                "satisfy",
+                "satisfaction"
+              ],
+              "answer": 1,
+              "explanation": "I是人，感受到「滿意」的情緒，用過去分詞satisfied，搭配固定介系詞with。",
+              "target_grammar": "分詞當情緒形容詞",
+              "optionsZh": [
+                "（現在分詞修飾事物，此處主詞I是人不符）",
+                "（正確，人用過去分詞Vpp修飾，搭配介系詞with）",
+                "（原形動詞不可直接當形容詞使用）",
+                "（名詞不可直接當形容詞使用）"
+              ]
+            },
+            {
+              "sentence": "Everyone was ___ at the shocking accident.",
+              "options": [
+                "shock",
+                "shocking",
+                "shocked",
+                "shocks"
+              ],
+              "answer": 2,
+              "explanation": "everyone是人，感受到「震驚」的情緒，用過去分詞shocked，搭配固定介系詞at。",
+              "target_grammar": "分詞當情緒形容詞",
+              "optionsZh": [
+                "（原形動詞不可直接當形容詞使用）",
+                "（現在分詞修飾事物，此處主詞everyone是人不符）",
+                "（正確，人用過去分詞Vpp修飾，搭配介系詞at）",
+                "（動詞第三人稱單數不可當形容詞使用）"
+              ]
+            },
+            {
+              "sentence": "Her ___ story made everyone in the room cry.",
+              "options": [
+                "touching",
+                "touched",
+                "touch",
+                "touches"
+              ],
+              "answer": 0,
+              "explanation": "story是事物，造成「感動」的來源，用現在分詞touching修飾。",
+              "target_grammar": "分詞當情緒形容詞",
+              "optionsZh": [
+                "（正確，事物用現在分詞Ving修飾）",
+                "（過去分詞修飾人，此處修飾事物story不符）",
+                "（原形動詞不可直接當形容詞使用）",
+                "（動詞第三人稱單數不可修飾名詞）"
+              ]
+            },
+            {
+              "sentence": "I am so ___ of doing the same homework every day.",
+              "options": [
+                "tiring",
+                "tired",
+                "tire",
+                "tires"
+              ],
+              "answer": 1,
+              "explanation": "I是人，感受到「厭倦」的情緒，用過去分詞tired，搭配固定介系詞of。",
+              "target_grammar": "分詞當情緒形容詞",
+              "optionsZh": [
+                "（現在分詞修飾事物，此處主詞I是人不符）",
+                "（正確，人用過去分詞Vpp修飾，搭配介系詞of）",
+                "（原形動詞不可直接當形容詞使用）",
+                "（動詞第三人稱單數不可當形容詞使用）"
+              ]
+            },
+            {
+              "sentence": "This is the most ___ speech I have ever heard.",
+              "options": [
+                "boring",
+                "bored",
+                "bore",
+                "bores"
+              ],
+              "answer": 0,
+              "explanation": "speech是事物，造成「無聊」的來源，用現在分詞boring修飾。",
+              "target_grammar": "分詞當情緒形容詞",
+              "optionsZh": [
+                "（正確，事物用現在分詞Ving修飾）",
+                "（過去分詞修飾人，此處修飾事物speech不符）",
+                "（原形動詞不可直接當形容詞使用）",
+                "（動詞第三人稱單數不可修飾名詞）"
+              ]
+            },
+            {
+              "sentence": "He felt ___ when he couldn't answer the question.",
+              "options": [
+                "embarrassing",
+                "embarrassed",
+                "embarrass",
+                "embarrassment"
+              ],
+              "answer": 1,
+              "explanation": "he是人，感受到「尷尬」的情緒，用過去分詞embarrassed。",
+              "target_grammar": "分詞當情緒形容詞",
+              "optionsZh": [
+                "（現在分詞修飾事物，此處主詞he是人不符）",
+                "（正確，人用過去分詞Vpp修飾）",
+                "（原形動詞不可直接當形容詞使用）",
+                "（名詞不可直接當形容詞使用）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A Field Trip to the Museum",
+            "passage": "Our class visited the science museum last Friday, and it was such an __(1)__ experience for everyone. My classmates were __(2)__ about the robot exhibit, and some of them looked truly __(3)__ in how the machines worked. However, one part of the tour was a bit __(4)__ because the guide talked too fast and gave too much information at once. By the end of the day, we were all __(5)__ but still happy about what we had learned.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "exciting",
+                  "excited",
+                  "excite",
+                  "excitement"
+                ],
+                "answer": 0,
+                "explanation": "experience是事物，造成「令人興奮」的來源，用現在分詞exciting修飾。",
+                "optionsZh": [
+                  "（正確，事物用現在分詞Ving修飾）",
+                  "（過去分詞修飾人，此處修飾事物experience不符）",
+                  "（原形動詞不可直接當形容詞使用）",
+                  "（名詞不可直接當形容詞使用）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "exciting",
+                  "excited",
+                  "excite",
+                  "excitement"
+                ],
+                "answer": 1,
+                "explanation": "my classmates是人，感受到「興奮」的情緒，用過去分詞excited，搭配介系詞about。",
+                "optionsZh": [
+                  "（現在分詞修飾事物，此處主詞是人不符）",
+                  "（正確，人用過去分詞Vpp修飾，搭配介系詞about）",
+                  "（原形動詞不可直接當形容詞使用）",
+                  "（名詞不可直接當形容詞使用）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "interesting",
+                  "interested",
+                  "interest",
+                  "interests"
+                ],
+                "answer": 1,
+                "explanation": "them是人，感受到「有興趣」的情緒，用過去分詞interested，搭配介系詞in。",
+                "optionsZh": [
+                  "（現在分詞修飾事物，此處主詞是人不符）",
+                  "（正確，人用過去分詞Vpp修飾，搭配介系詞in）",
+                  "（原形動詞不可直接當形容詞使用）",
+                  "（動詞第三人稱單數不可當形容詞使用）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "confusing",
+                  "confused",
+                  "confuse",
+                  "confusion"
+                ],
+                "answer": 0,
+                "explanation": "one part of the tour是事物，造成「令人困惑」的來源，用現在分詞confusing修飾。",
+                "optionsZh": [
+                  "（正確，事物用現在分詞Ving修飾）",
+                  "（過去分詞修飾人，此處修飾事物不符）",
+                  "（原形動詞不可直接當形容詞使用）",
+                  "（名詞不可直接當形容詞使用）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "tiring",
+                  "tired",
+                  "tire",
+                  "tires"
+                ],
+                "answer": 1,
+                "explanation": "we是人，感受到「疲累」的情緒，用過去分詞tired。",
+                "optionsZh": [
+                  "（現在分詞修飾事物，此處主詞是人不符）",
+                  "（正確，人用過去分詞Vpp修飾）",
+                  "（原形動詞不可直接當形容詞使用）",
+                  "（動詞第三人稱單數不可當形容詞使用）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "11-3",
         "title": "分詞當其他用法的形容詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>不只情緒可以用分詞，其他情況也可以</b><br>現在分詞（Ving）除了表示「令人感到…」，還可以表示「主動、正在進行」的動作：The crying boy needs help.（正在哭的男孩，強調動作正在進行）／Look out for the speeding car!（疾駛的車，強調主動、有影響力）<br>過去分詞（Vpp）除了表示「感到…」，還可以表示「被動、已完成」的狀態：the fallen leaves（落葉，已經掉落完成的狀態）／a used car（二手車，被使用過的狀態）。<br><br><b>動名詞 vs 現在分詞：長得一樣，功能不同</b><br>動名詞本質是名詞，用來說明前面名詞的「功能／用途」：a dancing machine（一臺有跳舞功能的機器，dancing是動名詞）。現在分詞本質是形容詞，用來說明「令人怎樣」或「正在做什麼」：a dancing girl（一個正在跳舞的女孩，dancing是現在分詞）。判斷技巧：問自己「這個字是在說『它是做什麼用的』還是『它正在做什麼、或給人什麼感覺』」。<br><br><b>被動語態 vs 分詞形容詞：都是be+p.p.，但意義不同</b><br>被動語態強調「動作」，是動態句：These windows have been washed many times.（強調洗窗戶這個動作發生了很多次）。分詞形容詞強調「狀態」，是靜態句：She has been married.（強調她已婚的狀態，不是在強調「結婚」這個動作本身）。<br><br><b>不及物動詞的p.p.也能當形容詞</b><br>雖然只有及物動詞才有真正的被動語態，但不及物動詞的過去分詞也可以放在be動詞後面當形容詞，表示「完成」的狀態：The computer was gone.（電腦不見了，gone不是被動語態，只是狀態形容詞，因為go是不及物動詞）<br><br><b>分詞形容詞常搭配的介系詞跟被動語態不一樣</b><br>被動語態強調動作執行者常用by：The man was hit by a car.（被動語態，強調撞這個動作）。分詞形容詞則常用其他介系詞來表達「對於…感到」：Everyone was surprised at his answer.（分詞形容詞，強調驚訝的狀態，不是被動的動作）。<br><br><b>分詞形容詞結構可以搭配情狀動詞跟情態助動詞</b><br>因為分詞形容詞的be動詞可以用get、feel、become等連綴動詞代替，所以可以搭配情態助動詞：Why do they feel so tired?（一般被動語態不會用do/does/did來造句，但分詞形容詞可以，因為這裡的核心其實是feel這個連綴動詞）",
+          "examples": [
+            {
+              "en": "Be careful of the falling rocks on the trail.",
+              "zh": "小心步道上掉落的石頭。"
+            },
+            {
+              "en": "The injured player was carried off the field.",
+              "zh": "那位受傷的球員被抬離了球場。"
+            },
+            {
+              "en": "This is a washing machine, not a drying one.",
+              "zh": "這是洗衣機，不是烘乾機。"
+            },
+            {
+              "en": "The lost dog finally found its way home.",
+              "zh": "那隻走失的狗最終找到了回家的路。"
+            },
+            {
+              "en": "Why does he always feel so worried before tests?",
+              "zh": "他為什麼考試前總是感到這麼擔心？"
+            },
+            {
+              "en": "The broken vase was thrown away yesterday.",
+              "zh": "那個破掉的花瓶昨天被丟掉了。"
+            },
+            {
+              "en": "Look at the sleeping baby in the crib.",
+              "zh": "看看搖籃裡熟睡的寶寶。"
+            },
+            {
+              "en": "The stolen bike was found near the park.",
+              "zh": "被偷的腳踏車在公園附近被找到了。"
+            },
+            {
+              "en": "Did your project get finished on time?",
+              "zh": "你的專題有準時完成嗎？"
+            },
+            {
+              "en": "The growing plant needs more sunlight now.",
+              "zh": "這株正在成長的植物現在需要更多陽光。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "Watch out for the ___ car! It's coming too fast.",
+              "options": [
+                "speed",
+                "speeding",
+                "sped",
+                "speeds"
+              ],
+              "answer": 1,
+              "explanation": "現在分詞speeding表示「正在疾駛」，強調動作正在進行。",
+              "target_grammar": "分詞當形容詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞car）",
+                "（正確，現在分詞表示動作正在進行）",
+                "（過去式不可直接修飾名詞）",
+                "（動詞第三人稱單數不可修飾名詞）"
+              ]
+            },
+            {
+              "sentence": "This is a ___ room. Please don't make noise.",
+              "options": [
+                "sleep",
+                "sleeping",
+                "slept",
+                "sleeps"
+              ],
+              "answer": 1,
+              "explanation": "sleeping room（此處指臥房用途）中的sleeping是動名詞，表示這個房間的「功能」。",
+              "target_grammar": "分詞當形容詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞room）",
+                "（正確，動名詞表示房間的功能）",
+                "（過去式不可直接修飾名詞）",
+                "（動詞第三人稱單數不可修飾名詞）"
+              ]
+            },
+            {
+              "sentence": "The computer on my desk ___ this morning.",
+              "options": [
+                "was gone",
+                "gone",
+                "goes",
+                "is going"
+              ],
+              "answer": 0,
+              "explanation": "gone當形容詞表示「不見了」的完成狀態，前面加be動詞was。",
+              "target_grammar": "分詞當形容詞",
+              "optionsZh": [
+                "（正確，was+gone表示不見了的狀態）",
+                "（缺少be動詞，不完整）",
+                "（現在式不符this morning過去語境）",
+                "（進行式語意不符「不見了」的完成狀態）"
+              ]
+            },
+            {
+              "sentence": "These shirts ___ many times, but they still look new.",
+              "options": [
+                "have washed",
+                "have been washed",
+                "wash",
+                "washing"
+              ],
+              "answer": 1,
+              "explanation": "被動語態強調「洗」這個動作發生了很多次，用現在完成式被動have been washed。",
+              "target_grammar": "分詞當形容詞",
+              "optionsZh": [
+                "（主動語態不符，shirts是被洗的對象）",
+                "（正確，被動語態強調動作發生的次數）",
+                "（原形動詞不符時態）",
+                "（現在分詞不符被動語態句構）"
+              ]
+            },
+            {
+              "sentence": "Did your homework ___ before dinner?",
+              "options": [
+                "get done",
+                "get do",
+                "getting done",
+                "gets done"
+              ],
+              "answer": 0,
+              "explanation": "get+p.p.是口語化被動，get done表示「完成」的狀態，可搭配助動詞did造句。",
+              "target_grammar": "分詞當形容詞",
+              "optionsZh": [
+                "（正確，get+p.p.可搭配助動詞did）",
+                "（原形動詞不可直接接在get後表被動）",
+                "（進行式不符此助動詞句構）",
+                "（第三人稱單數不符助動詞did的句構，應用原形get）"
+              ]
+            },
+            {
+              "sentence": "The teacher was much ___ at his sudden answer.",
+              "options": [
+                "surprise",
+                "surprising",
+                "surprised",
+                "surprises"
+              ],
+              "answer": 2,
+              "explanation": "teacher是人，感受到「驚訝」的情緒，用過去分詞surprised，搭配介系詞at。",
+              "target_grammar": "分詞當形容詞",
+              "optionsZh": [
+                "（原形動詞不可直接當形容詞使用）",
+                "（現在分詞修飾事物，此處主詞是人不符）",
+                "（正確，人用過去分詞Vpp修飾，搭配介系詞at）",
+                "（動詞第三人稱單數不可當形容詞使用）"
+              ]
+            },
+            {
+              "sentence": "Look at the ___ leaves on the ground.",
+              "options": [
+                "fall",
+                "falling",
+                "fallen",
+                "falls"
+              ],
+              "answer": 2,
+              "explanation": "fallen leaves「落葉」，過去分詞表示已經掉落完成的狀態。",
+              "target_grammar": "分詞當形容詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞leaves）",
+                "（現在分詞表示正在掉落中，語意較不符「落葉」的完成狀態）",
+                "（正確，過去分詞表示已完成的狀態）",
+                "（動詞第三人稱單數不可修飾名詞）"
+              ]
+            },
+            {
+              "sentence": "This ___ machine can wash and dry clothes at once.",
+              "options": [
+                "wash",
+                "washing",
+                "washed",
+                "washes"
+              ],
+              "answer": 1,
+              "explanation": "washing machine中的washing是動名詞，表示機器的「功能」是洗衣服。",
+              "target_grammar": "分詞當形容詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞machine）",
+                "（正確，動名詞表示機器的功能）",
+                "（過去分詞表示被動或完成，不符「功能」語意）",
+                "（動詞第三人稱單數不可修飾名詞）"
+              ]
+            },
+            {
+              "sentence": "Why ___ she feel so nervous before the speech?",
+              "options": [
+                "does",
+                "is",
+                "was",
+                "has"
+              ],
+              "answer": 0,
+              "explanation": "分詞形容詞結構的be動詞可用連綴動詞feel代替，因此可搭配情態助動詞does造句。",
+              "target_grammar": "分詞當形容詞",
+              "optionsZh": [
+                "（正確，feel為連綴動詞可搭配助動詞does）",
+                "（is不與情態助動詞句構連用）",
+                "（was為過去式，與現在簡單式語境不符）",
+                "（has不用於此一般疑問句構）"
+              ]
+            },
+            {
+              "sentence": "The ___ dog ran away as soon as it heard the thunder.",
+              "options": [
+                "scare",
+                "scaring",
+                "scared",
+                "scares"
+              ],
+              "answer": 2,
+              "explanation": "dog是動物但在此扮演「感受到害怕情緒」的一方，用過去分詞scared修飾。",
+              "target_grammar": "分詞當形容詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾名詞dog）",
+                "（現在分詞表示造成害怕的來源，此處dog是感受害怕的一方不符）",
+                "（正確，過去分詞表示感到害怕的狀態）",
+                "（動詞第三人稱單數不可修飾名詞）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "Cleaning Up After the Storm",
+            "passage": "After the big storm last night, our neighborhood was full of __(1)__ branches and leaves everywhere. My dad found an old __(2)__ car parked outside that had been damaged by a fallen tree. We spent the whole morning picking up the __(3)__ leaves in our yard. My little sister was still __(4)__ about the loud thunder from the night before. By noon, most of the mess __(5)__, and the street looked much better.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "break",
+                  "breaking",
+                  "broken",
+                  "breaks"
+                ],
+                "answer": 2,
+                "explanation": "broken branches「斷掉的樹枝」，過去分詞表示已經斷裂完成的狀態。",
+                "optionsZh": [
+                  "（原形動詞不可直接修飾名詞branches）",
+                  "（現在分詞表示正在斷裂中，較不符已斷裂的狀態）",
+                  "（正確，過去分詞表示已完成的狀態）",
+                  "（動詞第三人稱單數不可修飾名詞）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "use",
+                  "using",
+                  "used",
+                  "uses"
+                ],
+                "answer": 2,
+                "explanation": "used car「二手車」是固定用法，過去分詞表示被使用過的狀態。",
+                "optionsZh": [
+                  "（原形動詞不可直接修飾名詞car）",
+                  "（現在分詞不符「二手車」的被動/完成語意）",
+                  "（正確，used car為固定用法）",
+                  "（動詞第三人稱單數不可修飾名詞）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "fall",
+                  "falling",
+                  "fallen",
+                  "falls"
+                ],
+                "answer": 2,
+                "explanation": "fallen leaves「落葉」，過去分詞表示已經掉落完成的狀態。",
+                "optionsZh": [
+                  "（原形動詞不可直接修飾名詞leaves）",
+                  "（現在分詞表示正在掉落中，較不符落葉的完成狀態）",
+                  "（正確，過去分詞表示已完成的狀態）",
+                  "（動詞第三人稱單數不可修飾名詞）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "scare",
+                  "scaring",
+                  "scared",
+                  "scares"
+                ],
+                "answer": 2,
+                "explanation": "my little sister是人，感受到「害怕」的情緒，用過去分詞scared。",
+                "optionsZh": [
+                  "（原形動詞不可直接當形容詞使用）",
+                  "（現在分詞修飾事物，此處主詞是人不符）",
+                  "（正確，人用過去分詞Vpp修飾）",
+                  "（動詞第三人稱單數不可當形容詞使用）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "cleaned",
+                  "was cleaned",
+                  "had gotten cleaned",
+                  "cleans"
+                ],
+                "answer": 1,
+                "explanation": "the mess是被清理的對象，用被動語態was cleaned，強調「被清理」這個動作。",
+                "optionsZh": [
+                  "（缺少be動詞，被動語態不完整）",
+                  "（正確，被動語態was cleaned）",
+                  "（此形式冗贅且非本課標準句構，正確應為was cleaned）",
+                  "（主動語態不符，mess是被清理的對象）"
+                ]
+              }
+            ]
+          }
+        }
       }
     ]
   },
