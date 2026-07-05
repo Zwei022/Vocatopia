@@ -1536,7 +1536,9 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .hm-levelmap::-webkit-scrollbar{display:none}
 .hm-lm-inner{position:relative;width:100%}
 /* 手繪水彩樹幹樹枝背景圖：一段接一段往上疊，不用擔心接縫（樹皮紋理適合重複） */
-.hm-tree-seg{position:absolute;left:0;width:100%;pointer-events:none;display:block;z-index:1}
+.hm-tree-seg{position:absolute;left:0;width:100%;pointer-events:none;display:block;z-index:1;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 5%,#000 95%,transparent 100%);
+  mask-image:linear-gradient(to bottom,transparent 0,#000 5%,#000 95%,transparent 100%)}
 /* 果實關卡按鈕：手繪水彩蘋果圖 */
 .hm-fruit{position:absolute;transform:translate(-50%,-50%);width:72px;height:75px;border:none;cursor:pointer;z-index:2;
   background:url('public/images/icons/level-apple.png') center/contain no-repeat;

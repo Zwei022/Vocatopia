@@ -4898,7 +4898,7 @@ const SLOTS_PER_SEG = TREE_SEG_SLOTS.length;
 // 最底下那一段：最低枝點(y:58%)以下其實整段都是空樹幹，裁掉那段留白，
 // 圖片素材裁到只剩原本 75% 高（tree-segment-base.png），槽位 y% 要跟著等比例放大
 const TREE_SEG_BASE_IMG = 'public/images/icons/tree-segment-base.png';
-const TREE_SEG_BASE_CROP = 0.75;
+const TREE_SEG_BASE_CROP = 0.70;
 const TREE_SEG_BASE_ASPECT = TREE_SEG_ASPECT / TREE_SEG_BASE_CROP;
 const TREE_SEG_BASE_SLOTS = TREE_SEG_SLOTS.map(c => ({ x: c.x, y: c.y / TREE_SEG_BASE_CROP }));
 
