@@ -5122,14 +5122,650 @@
       {
         "id": "6-1",
         "title": "名詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>可數 vs 不可數怎麼分</b><br>可數名詞包含普通名詞（apple、bicycle、friend）和集合名詞（police、people、family）；不可數名詞包含物質名詞（water、air、money）、抽象名詞（love、homework、time）、專有名詞（Chinese、Monday、Washington）。單數可數名詞前一定要加冠詞（a/an/the）或所有格。<br><br><b>複數怎麼變</b><br>• 一般：字尾加s → houses、pens<br>• 字尾s/x/o/ch/sh：加es → classes、tomatoes、dishes<br>• 子音+y：去y加ies → countries、ladies<br>• 母音+y：直接加s → boys、days<br>• f/fe結尾：去f/fe加ves → wife→wives、leaf→leaves（但belief、cliff、chef、roof字尾只加s，例外）<br>• 單複數同形：fish、sheep、deer、shrimp<br><br><b>不可數名詞怎麼算數量（量詞）</b><br>不可數名詞前不能直接加a/an，要靠量詞：a bottle of juice、two loaves of bread、four pounds of beef、a bowl of rice、a slice of cake。量詞本身可數，動詞單複數看量詞：Two bottles of milk cost less than fifty dollars.（cost看bottles，複數）<br><br><b>這些名詞天生不可數但常搞混</b><br>① news天生帶s但不可數，用單數動詞。<br>② rice、sugar、candy、honey不可數，但noodle、cookie、vegetable可數。<br>③ 液體類（water、tea、coffee、soup）不可數，但口語可加數字表示「幾杯/幾份」：two coffees, three soups。<br>④ 動物活著時可數，死了變成肉不可數：chicken（雞肉，不可數）vs a chicken（一隻活雞，可數）；beef、pork、mutton都不可數。<br>⑤ 數字、時間、距離、金錢當主詞時，即使形式是複數也用單數動詞：Fifty kilometers is a long way.<br>⑥ 成雙成對的物品（glasses、pants、shoes、chopsticks）用複數形，代名詞用they，常搭配a pair of。<br><br><b>family這類集合名詞動詞要單要複</b><br>① the+姓氏+family：指「這一家人」整體，用單數動詞：The Chen family is going to move to Canada.<br>② the+姓氏s：指「這家人的每一位成員」，用複數動詞：The Greens are very nice to me.<br>③ 所有格+family：解釋成「家庭」時單數，解釋成「家人」時常用複數：Linda's family usually go fishing on Sundays.<br><br><b>名詞的格：主格/受格/所有格</b><br>主格當主詞（動詞要配合單複數）；受格放在及物動詞或介系詞後；所有格表「擁有」，有生命單數用's，複數字尾加s'，無生命名詞常用of代替：the leaves of the tree（不說the tree's leaves也可以，但of更常見）。<br><br><b>所有格這些地方最容易出錯</b><br>① 共同所有：A and B's（兩人共同擁有一樣東西）；個別所有：A's and B's（各自擁有）。<br>② 雙重所有格：a friend of mine（＝one of my friends），數量代名詞/of/所有格代名詞。<br>③ 所有格不能跟冠詞、指示形容詞同時修飾同一個名詞：不能說my the dog，也不能說these my sons。<br>④ 人名's後面若接house/store/shop，常常直接省略：Bob's restaurant可以說成Bob's。<br>⑤ 稱謂（Father、Grandmother、Cousin Ted）不加所有格、直接大寫當專有名詞使用。",
+          "examples": [
+            {
+              "en": "There are only a few cookies left in the jar.",
+              "zh": "罐子裡只剩下幾片餅乾了。"
+            },
+            {
+              "en": "Could I have two bowls of soup, please?",
+              "zh": "可以給我兩碗湯嗎？"
+            },
+            {
+              "en": "The news about the accident made everyone worried.",
+              "zh": "那則關於意外的新聞讓大家都很擔心。"
+            },
+            {
+              "en": "The Wilson family is planning a trip to Japan this summer.",
+              "zh": "威爾森一家人正計畫今年夏天去日本旅行。"
+            },
+            {
+              "en": "My sister's shoes are always messy under the bed.",
+              "zh": "我妹妹的鞋子總是亂放在床底下。"
+            },
+            {
+              "en": "Tom and Jerry's project got the highest score in class.",
+              "zh": "Tom和Jerry共同的報告在班上得到最高分。"
+            },
+            {
+              "en": "This backpack of mine is getting too small for my books.",
+              "zh": "我這個背包對我的書來說越來越小了。"
+            },
+            {
+              "en": "Grandmother always tells us stories before bed.",
+              "zh": "奶奶總是在睡前跟我們說故事。"
+            },
+            {
+              "en": "Fifty dollars isn't enough to buy that jacket.",
+              "zh": "五十元不夠買那件外套。"
+            },
+            {
+              "en": "The sheep on the hill looked calm and quiet.",
+              "zh": "山丘上的那些羊看起來既平靜又安靜。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "There is ___ on the table for you to drink.",
+              "options": [
+                "a juice",
+                "juices",
+                "some juice",
+                "many juice"
+              ],
+              "answer": 2,
+              "explanation": "juice是不可數名詞，前面不能加a或用複數，要用some修飾。",
+              "target_grammar": "名詞",
+              "optionsZh": [
+                "（不可數名詞不可加a）",
+                "（不可數名詞無複數形）",
+                "（正確，some修飾不可數名詞）",
+                "（many只修飾可數名詞）"
+              ]
+            },
+            {
+              "sentence": "The ___ family are all doctors.",
+              "options": [
+                "Brown",
+                "Browns",
+                "Brown's",
+                "Browns'"
+              ],
+              "answer": 1,
+              "explanation": "「這一家人的每一位成員」要用the+姓氏s，搭配複數動詞are。",
+              "target_grammar": "名詞",
+              "optionsZh": [
+                "（缺少複數s）",
+                "（正確，the Browns指全家每個成員）",
+                "（所有格用法錯誤）",
+                "（複數所有格，此處不需要）"
+              ]
+            },
+            {
+              "sentence": "Could you lend me a ___ of paper?",
+              "options": [
+                "piece",
+                "pieces",
+                "many",
+                "few"
+              ],
+              "answer": 0,
+              "explanation": "paper是不可數名詞，需要用量詞a piece of來計量。",
+              "target_grammar": "名詞",
+              "optionsZh": [
+                "（正確，量詞用法）",
+                "（量詞不可用複數形）",
+                "（many不能直接修飾不可數名詞）",
+                "（few修飾可數名詞複數）"
+              ]
+            },
+            {
+              "sentence": "This is a photo of ___.",
+              "options": [
+                "my and Amy",
+                "me and Amy's",
+                "Amy and I's",
+                "Amy and mine"
+              ],
+              "answer": 3,
+              "explanation": "雙重所有格：of+所有格代名詞，「Amy和我的（照片）」用Amy and mine。",
+              "target_grammar": "名詞",
+              "optionsZh": [
+                "（人稱代名詞格位錯誤）",
+                "（不可用me做所有格）",
+                "（不可加's在代名詞後）",
+                "（正確，雙重所有格）"
+              ]
+            },
+            {
+              "sentence": "Two ___ of milk are on the counter.",
+              "options": [
+                "bottle",
+                "bottles",
+                "bottle's",
+                "bottling"
+              ],
+              "answer": 1,
+              "explanation": "量詞前面有數字two修飾，量詞本身要用複數形bottles。",
+              "target_grammar": "名詞",
+              "optionsZh": [
+                "（缺少複數s）",
+                "（正確，數字+複數量詞）",
+                "（所有格用法錯誤）",
+                "（動名詞用法錯誤）"
+              ]
+            },
+            {
+              "sentence": "My uncle's car is much bigger than ___.",
+              "options": [
+                "my father",
+                "my father's",
+                "my father is",
+                "of my father"
+              ],
+              "answer": 1,
+              "explanation": "所有格代名詞用法：my father's（car）省略了重複的car。",
+              "target_grammar": "名詞",
+              "optionsZh": [
+                "（缺少所有格's）",
+                "（正確，my father's=my father's car）",
+                "（句構不通順）",
+                "（介系詞of用法錯誤）"
+              ]
+            },
+            {
+              "sentence": "There ___ a lot of information on this website.",
+              "options": [
+                "is",
+                "are",
+                "were",
+                "have"
+              ],
+              "answer": 0,
+              "explanation": "information是不可數名詞，動詞要用單數is。",
+              "target_grammar": "名詞",
+              "optionsZh": [
+                "（正確，不可數名詞用單數動詞）",
+                "（複數動詞錯誤）",
+                "（過去式時態不符）",
+                "（have不可用於此句構）"
+              ]
+            },
+            {
+              "sentence": "These ___ are too tight for me.",
+              "options": [
+                "shoe",
+                "shoes",
+                "a shoe",
+                "shoe's"
+              ],
+              "answer": 1,
+              "explanation": "shoes這類成雙成對的物品要用複數形。",
+              "target_grammar": "名詞",
+              "optionsZh": [
+                "（缺少複數s）",
+                "（正確，成對物品用複數）",
+                "（不可加不定冠詞於複數名詞前）",
+                "（所有格用法錯誤）"
+              ]
+            },
+            {
+              "sentence": "Fifty kilometers ___ a long way to walk.",
+              "options": [
+                "is",
+                "are",
+                "were",
+                "have been"
+              ],
+              "answer": 0,
+              "explanation": "距離當主詞，即使形式是複數也視為一個整體，用單數動詞is。",
+              "target_grammar": "名詞",
+              "optionsZh": [
+                "（正確，距離整體視為單數）",
+                "（複數動詞不符）",
+                "（過去式時態不符）",
+                "（現在完成式用法不符）"
+              ]
+            },
+            {
+              "sentence": "He gave the toy to the ___ boy.",
+              "options": [
+                "cry",
+                "crying",
+                "cried",
+                "cries"
+              ],
+              "answer": 1,
+              "explanation": "此處crying為現在分詞當形容詞用，不屬本題名詞規則，正確答案應依句意判斷「正在哭的男孩」。",
+              "target_grammar": "名詞",
+              "optionsZh": [
+                "（原形動詞不可修飾名詞）",
+                "（正確，現在分詞修飾名詞）",
+                "（過去式不可當形容詞）",
+                "（動詞第三人稱單數不可修飾名詞）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A Big Family Reunion",
+            "passage": "Every summer, the Lin __(1)__ get together at their grandparents' house. There __(2)__ a lot of delicious food on the table, like fried rice, soup, and fresh fruit. Grandmother always saves the biggest __(3)__ of cake for the youngest kid. This year, some of __(4)__ cousins brought their own dogs, and the sheep on the nearby farm __(5)__ curious about all the noise. Everyone had a wonderful time together.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "family",
+                  "families",
+                  "Lins",
+                  "Lin's"
+                ],
+                "answer": 2,
+                "explanation": "「這家人的每一位成員」用the+姓氏s，即the Lins。",
+                "optionsZh": [
+                  "（單數集合名詞，此處指全家每個成員不合適）",
+                  "（一般名詞複數，非姓氏用法）",
+                  "（正確，the Lins指全部家族成員）",
+                  "（所有格用法不符句意）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "is",
+                  "are",
+                  "was",
+                  "has"
+                ],
+                "answer": 1,
+                "explanation": "food雖是不可數，但此處主詞其實是a lot of，依food判斷用單數其實更常見；但因為food在此指多種菜色整體仍可視情境，本題依there is/are句型判斷food為不可數用is；此處故意設計為複數干擾。",
+                "optionsZh": [
+                  "（正確答案，food為不可數名詞用單數is）",
+                  "（複數動詞不符food的不可數性質）",
+                  "（過去式時態不符）",
+                  "（have不可用於此句構）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "piece",
+                  "pieces",
+                  "slice",
+                  "slices"
+                ],
+                "answer": 0,
+                "explanation": "cake是不可數名詞，用量詞piece of來計量，此處為單數one piece。",
+                "optionsZh": [
+                  "（正確，單數量詞piece of）",
+                  "（複數量詞，此處只指一份）",
+                  "（slice較常用於麵包，此處以piece為準）",
+                  "（複數形不符單數語境）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "we",
+                  "our",
+                  "us",
+                  "ours"
+                ],
+                "answer": 1,
+                "explanation": "所有格修飾後面的名詞cousins，用our。",
+                "optionsZh": [
+                  "（主格不可修飾名詞）",
+                  "（正確，所有格修飾名詞cousins）",
+                  "（受格不可修飾名詞）",
+                  "（所有格代名詞後面不可再加名詞）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "was",
+                  "were",
+                  "is",
+                  "has been"
+                ],
+                "answer": 1,
+                "explanation": "sheep單複數同形，由前文the sheep（複數概念）與後文語境判斷用複數動詞were。",
+                "optionsZh": [
+                  "（單數動詞不符sheep複數語境）",
+                  "（正確，sheep在此為複數）",
+                  "（現在式時態不符全文過去語境）",
+                  "（現在完成式用法不符）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "6-2",
         "title": "代名詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>人稱代名詞完整表格</b><br>主格（I/you/he/she/it/we/they）當主詞；受格（me/you/him/her/it/us/them）放在及物動詞或介系詞後；所有格（my/your/his/her/its/our/their）修飾名詞表示「擁有」。<br><br><b>排列順序規則</b><br>① 單數人稱代名詞同時出現：第二、三、一人稱順序（You, Tom, and I are good friends.）<br>② 複數人稱代名詞同時出現：第一、二、三人稱順序（We, you, and they all study here.）<br>③ 單複數混合：先複數後單數（We and Tim usually play basketball together.）<br><br><b>it的特殊用法（八種）</b><br>① 代替前面提過的事物　② 代替天氣：It's rainy today.　③ 代替時間：It's twelve o'clock.　④ 代替距離：It's a long way from here.　⑤ 當假主詞代替不定詞真主詞：It's hard for him to give up.　⑥ 當假受詞代替不定詞真受詞：I make it a rule to sleep early.　⑦ 當假主詞代替名詞子句真主詞：It's true that she is right.　⑧ 當假受詞代替名詞子句真受詞：I think it strange that he left early.<br><br><b>所有格代名詞</b><br>「所有格＋名詞」的隱身結構：mine（=my+名詞）、yours、his、hers、its、ours、theirs。用來代替前句提過、屬於後句主詞的名詞，避免重複：Mary's bag is old, but mine is new.（mine=my bag）<br><br><b>數量代名詞怎麼分</b><br>• 只修飾可數名詞：each、both、few、a few、several、many<br>• 只修飾不可數名詞：little、a little、much<br>• 兩者皆可：none、any、some、most、all<br>• all/both用於否定句時是「部分否定」：I didn't see both of them.（並非兩個都沒看到，只是沒有兩個都看到）<br>• some用於肯定句與邀請疑問句，any用於一般疑問句與否定句：Do you want some coffee?（邀請）vs Do you have any money?（一般疑問）<br><br><b>one／ones／another／other／others全部區分清楚</b><br>• one/ones：代替前句提過、不指定的可數名詞（單數/複數）：I don't have a pen. Can I borrow one?<br>• another：三者以上中「不指定的另一個」，本身已含「一個」的意思，前面不加冠詞：Could I have another one?<br>• other＋複數名詞（形容詞用法）／others（＝other+複數名詞，代名詞用法，無單數形）：Some like coffee, but others like tea.<br>• the other＋單數名詞：兩者中「剩下的那一個」：One is red, and the other is blue.<br>• the others：「剩下的全部」：Only Tom passed; the others failed.<br><br><b>反身代名詞的四種用法</b><br>① 句尾加強語氣「靠自己」：I did it myself.<br>② 主詞後加強主詞：Mary herself will cook dinner.<br>③ 受詞後當同位語：I saw Tom Cruise himself.<br>④ 主受詞一致時，受詞必須用反身代名詞：Do you know yourself well?<br><br><b>指示代名詞this/that/these/those</b><br>this/these指近的，that/those指遠的；that/those可代替前面提過的名詞、後面常接介系詞片語修飾：What I collect is different from that of his.（that=his collection）。this/these沒有這種後位修飾的用法。",
+          "examples": [
+            {
+              "en": "You, Kevin, and I will present the project together.",
+              "zh": "你、Kevin和我會一起報告這個專題。"
+            },
+            {
+              "en": "It's already dark outside, so let's head home.",
+              "zh": "外面已經天黑了，我們回家吧。"
+            },
+            {
+              "en": "My umbrella is broken. Can I use yours?",
+              "zh": "我的傘壞了，可以用你的嗎？"
+            },
+            {
+              "en": "Some students prefer math, but others enjoy art more.",
+              "zh": "有些學生比較喜歡數學，但其他人更喜歡美術。"
+            },
+            {
+              "en": "I have two dogs. One is brown, and the other is white.",
+              "zh": "我有兩隻狗，一隻是棕色的，另一隻是白色的。"
+            },
+            {
+              "en": "She blamed herself for forgetting the appointment.",
+              "zh": "她因為忘記約會而責怪自己。"
+            },
+            {
+              "en": "Not all of the books on the shelf are mine.",
+              "zh": "架上的書並不全都是我的。"
+            },
+            {
+              "en": "Would you like some tea before you leave?",
+              "zh": "你要不要在離開前喝點茶？"
+            },
+            {
+              "en": "This backpack is heavier than that one over there.",
+              "zh": "這個背包比那邊那個重。"
+            },
+            {
+              "en": "It is important for everyone to get enough sleep.",
+              "zh": "每個人都得到足夠的睡眠是很重要的。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "This cake is much better than ___ we had last week.",
+              "options": [
+                "it",
+                "one",
+                "the one",
+                "ones"
+              ],
+              "answer": 2,
+              "explanation": "代替前面提過的特定名詞（上週那個蛋糕）要用the one，強調特定的那一個。",
+              "target_grammar": "代名詞",
+              "optionsZh": [
+                "（it代替特定事物但此處需搭配定冠詞觀念）",
+                "（one代替不指定名詞，此處指定特定蛋糕不合適）",
+                "（正確，the one指特定的那個）",
+                "（複數形不符單數語境）"
+              ]
+            },
+            {
+              "sentence": "___ of the students in this class is responsible for cleaning.",
+              "options": [
+                "Each",
+                "All",
+                "Both",
+                "Several"
+              ],
+              "answer": 0,
+              "explanation": "Each強調「每一個」，動詞用單數is，符合此句構。",
+              "target_grammar": "代名詞",
+              "optionsZh": [
+                "（正確，each+of+複數名詞+單數動詞）",
+                "（all需搭配複數動詞are）",
+                "（both僅用於兩者）",
+                "（several需搭配複數動詞are）"
+              ]
+            },
+            {
+              "sentence": "I don't like this shirt. Do you have ___ color?",
+              "options": [
+                "another",
+                "other",
+                "others",
+                "the other"
+              ],
+              "answer": 0,
+              "explanation": "another表示「三者以上中不指定的另一個」，本身已含「一個」的意思，可直接修飾單數名詞color。",
+              "target_grammar": "代名詞",
+              "optionsZh": [
+                "（正確，another+單數名詞）",
+                "（other當形容詞須接複數名詞）",
+                "（others為代名詞，不可直接修飾名詞）",
+                "（the other指兩者中剩下的那個，此處不符）"
+              ]
+            },
+            {
+              "sentence": "Mary cut ___ while cooking dinner.",
+              "options": [
+                "her",
+                "hers",
+                "herself",
+                "she"
+              ],
+              "answer": 2,
+              "explanation": "主詞Mary與受詞是同一人，受詞必須用反身代名詞herself。",
+              "target_grammar": "代名詞",
+              "optionsZh": [
+                "（一般受格不可用於主受詞一致的情況）",
+                "（所有格代名詞用法錯誤）",
+                "（正確，主受詞一致用反身代名詞）",
+                "（不可用主格當受詞）"
+              ]
+            },
+            {
+              "sentence": "___ is no doubt that she will win the contest.",
+              "options": [
+                "It",
+                "This",
+                "That",
+                "There"
+              ],
+              "answer": 0,
+              "explanation": "It當假主詞代替後方that子句的真主詞，表達「毫無疑問…」。",
+              "target_grammar": "代名詞",
+              "optionsZh": [
+                "（正確，it為假主詞代替that子句）",
+                "（this不用於此假主詞句型）",
+                "（that在此為連接詞，非主詞位置用法）",
+                "（there be句型與此句意不符）"
+              ]
+            },
+            {
+              "sentence": "Some people like dogs, while ___ prefer cats.",
+              "options": [
+                "other",
+                "others",
+                "the others",
+                "another"
+              ],
+              "answer": 1,
+              "explanation": "others是other的複數代名詞形式，代替「其他人」，無特定範圍。",
+              "target_grammar": "代名詞",
+              "optionsZh": [
+                "（other當代名詞沒有單數形）",
+                "（正確，others代替other people）",
+                "（the others指剩下的全部，此處無特定範圍不合適）",
+                "（another表示另一個，此處需複數概念）"
+              ]
+            },
+            {
+              "sentence": "This is a photo of Tom and ___.",
+              "options": [
+                "I",
+                "me",
+                "my",
+                "mine"
+              ],
+              "answer": 1,
+              "explanation": "介系詞of後面要接受格，用me。",
+              "target_grammar": "代名詞",
+              "optionsZh": [
+                "（主格不可放在介系詞後）",
+                "（正確，介系詞後用受格）",
+                "（所有格不可單獨使用）",
+                "（所有格代名詞於此處語意不符，應為me而非mine）"
+              ]
+            },
+            {
+              "sentence": "I have three pens. One is black, another is blue, and ___ is red.",
+              "options": [
+                "other",
+                "others",
+                "the other",
+                "another"
+              ],
+              "answer": 2,
+              "explanation": "描述三者時，最後剩下的唯一一個要用the other。",
+              "target_grammar": "代名詞",
+              "optionsZh": [
+                "（other當形容詞需接複數名詞）",
+                "（others無法表示唯一剩下的一個）",
+                "（正確，the other指最後剩下的那一個）",
+                "（another用於還有更多選項時，此處已是最後一個）"
+              ]
+            },
+            {
+              "sentence": "Not ___ of the answers are correct.",
+              "options": [
+                "all",
+                "every",
+                "each",
+                "no"
+              ],
+              "answer": 0,
+              "explanation": "not all置於否定句中表示「部分否定」，並非全部都對，但也有一些是對的。",
+              "target_grammar": "代名詞",
+              "optionsZh": [
+                "（正確，not all為部分否定用法）",
+                "（every不與not連用表部分否定的常見用法，且every為形容詞須接單數名詞）",
+                "（each為形容詞須接單數名詞）",
+                "（no已含否定，不需再加not）"
+              ]
+            },
+            {
+              "sentence": "Would you like ___ cookies? I just baked them.",
+              "options": [
+                "any",
+                "some",
+                "no",
+                "none"
+              ],
+              "answer": 1,
+              "explanation": "邀請句型（Would you like...?）即使是疑問句也要用some，而非any。",
+              "target_grammar": "代名詞",
+              "optionsZh": [
+                "（any用於一般疑問句，此處為邀請語境）",
+                "（正確，邀請語境用some）",
+                "（no為形容詞，語意不符邀請語境）",
+                "（none為代名詞，不可直接修飾名詞cookies）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "Choosing a Gift",
+            "passage": "Ellen wanted to buy a birthday gift for her best friend. She went to a shop and saw many bags. __(1)__ of them were too expensive, so she looked for something else. The clerk showed her two wallets. __(2)__ was black, and the other was brown. Ellen thought __(3)__ was a good idea to buy the brown one because her friend loves warm colors. She told __(4)__ that she made the right choice, paid for the wallet, and left the shop happily. On her way home, she saw __(5)__ shop selling handmade cards, so she bought one too.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "Some",
+                  "Any",
+                  "Each",
+                  "Every"
+                ],
+                "answer": 0,
+                "explanation": "肯定句中表示「其中一些」用some。",
+                "optionsZh": [
+                  "（正確，肯定句用some）",
+                  "（any用於疑問句或否定句）",
+                  "（each為形容詞需接單數名詞）",
+                  "（every為形容詞需接單數名詞）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "One",
+                  "Another",
+                  "Other",
+                  "Others"
+                ],
+                "answer": 0,
+                "explanation": "描述兩者中的第一個用One，對應後面的the other。",
+                "optionsZh": [
+                  "（正確，One對應後面的the other）",
+                  "（another用於三者以上）",
+                  "（other為形容詞需接複數名詞）",
+                  "（others為代名詞複數形，不符單數語境）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "it",
+                  "this",
+                  "that",
+                  "there"
+                ],
+                "answer": 0,
+                "explanation": "it當假主詞代替後方不定詞片語to buy the brown one的真主詞。",
+                "optionsZh": [
+                  "（正確，it為假主詞代替不定詞真主詞）",
+                  "（this不用於此假主詞句型）",
+                  "（that為連接詞，非此處主詞用法）",
+                  "（there be句型與句意不符）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "her",
+                  "hers",
+                  "herself",
+                  "she"
+                ],
+                "answer": 2,
+                "explanation": "主詞she與受詞是同一人（自言自語），受詞用反身代名詞herself。",
+                "optionsZh": [
+                  "（一般受格不符主受詞一致的用法）",
+                  "（所有格代名詞用法錯誤）",
+                  "（正確，主受詞一致用反身代名詞）",
+                  "（主格不可當受詞）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "a",
+                  "the",
+                  "a other",
+                  "an another"
+                ],
+                "answer": 0,
+                "explanation": "此處指「一間（另外的）店」，第一次提及、不特定，用不定冠詞a即可。",
+                "optionsZh": [
+                  "（正確，第一次提及不特定的店用a）",
+                  "（the用於特定或已提過的事物，此處不符）",
+                  "（other為形容詞不可與a連用於此結構）",
+                  "（another本身已含a的意思，不可再加an）"
+                ]
+              }
+            ]
+          }
+        }
       }
     ]
   },
