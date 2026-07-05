@@ -17248,14 +17248,650 @@
       {
         "id": "12-15",
         "title": "情緒形容詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>情緒形容詞（過去分詞）長得像被動語態，但搭配的介系詞不一樣</b><br>情緒動詞的過去分詞當形容詞使用時（詳見第11章），雖然結構是be+p.p.，但後面接的介系詞通常不是by，而是各自固定的介系詞：be surprised at對…感到驚訝、be shocked at對…感到震驚、be interested in對…感到興趣、be worried about擔心…、be satisfied with對…感到滿意、be tired of對…感到厭倦、be excited about對…感到興奮。<br><br><b>為什麼要在被動語態這章再提一次</b><br>因為情緒形容詞的be+p.p.結構很容易被誤認為是真正的被動語態（強調動作），但其實它是在描述「狀態」（人的感受），這是被動語態單元裡最容易搞混的地方，要能分辨兩者：<br>① 真被動：The window was broken by the boy.（強調「打破」這個動作，用by）<br>② 情緒形容詞：Everyone was surprised at the news.（強調「驚訝」的狀態，用at，不是by）<br><br><b>易混淆重點</b><br>① 看到be+p.p.，先問這個p.p.是不是情緒動詞來的（interest、excite、surprise等），如果是，後面大概率不會用by，而是固定的其他介系詞。<br>② 少數情況下情緒形容詞也可以搭配by，尤其是shock、amuse這類字：be shocked at/by、be amused at/by，這是例外要記住。",
+          "examples": [
+            {
+              "en": "We were all surprised at how quickly she finished the race.",
+              "zh": "我們都對她這麼快完賽感到驚訝。"
+            },
+            {
+              "en": "He was excited about his upcoming trip to Japan.",
+              "zh": "他對即將到來的日本之旅感到很興奮。"
+            },
+            {
+              "en": "She was satisfied with the results of her hard work.",
+              "zh": "她對自己努力的成果感到滿意。"
+            },
+            {
+              "en": "I'm tired of hearing the same excuse every time.",
+              "zh": "我對每次都聽到同樣的藉口感到厭煩。"
+            },
+            {
+              "en": "The whole class was shocked at the sudden announcement.",
+              "zh": "全班都對這個突然的宣布感到震驚。"
+            },
+            {
+              "en": "My parents are always worried about my safety.",
+              "zh": "我父母總是擔心我的安全。"
+            },
+            {
+              "en": "She has always been interested in ancient history.",
+              "zh": "她一直對古代歷史很感興趣。"
+            },
+            {
+              "en": "The audience was amused by the comedian's jokes.",
+              "zh": "觀眾被那位喜劇演員的笑話逗樂了。"
+            },
+            {
+              "en": "He was embarrassed about forgetting her name.",
+              "zh": "他因為忘記她的名字而感到尷尬。"
+            },
+            {
+              "en": "We were touched by the kindness of strangers.",
+              "zh": "我們被陌生人的善意所感動。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "Everyone was surprised ___ how well she performed.",
+              "options": [
+                "at",
+                "by",
+                "with",
+                "for"
+              ],
+              "answer": 0,
+              "explanation": "be surprised at是固定搭配，強調對某事感到驚訝的狀態。",
+              "target_grammar": "被動語態（情緒形容詞）",
+              "optionsZh": [
+                "（正確，be surprised at固定搭配）",
+                "（by較常用於真正的被動語態強調執行者，此處為情緒形容詞用at）",
+                "（with不是surprised的固定搭配）",
+                "（for不是surprised的固定搭配）"
+              ]
+            },
+            {
+              "sentence": "I'm really interested ___ learning new languages.",
+              "options": [
+                "in",
+                "at",
+                "with",
+                "by"
+              ],
+              "answer": 0,
+              "explanation": "be interested in是固定搭配。",
+              "target_grammar": "被動語態（情緒形容詞）",
+              "optionsZh": [
+                "（正確，be interested in固定搭配）",
+                "（at不是interested的固定搭配）",
+                "（with不是interested的固定搭配）",
+                "（by不是interested的固定搭配）"
+              ]
+            },
+            {
+              "sentence": "She was satisfied ___ the service at the hotel.",
+              "options": [
+                "with",
+                "at",
+                "by",
+                "for"
+              ],
+              "answer": 0,
+              "explanation": "be satisfied with是固定搭配。",
+              "target_grammar": "被動語態（情緒形容詞）",
+              "optionsZh": [
+                "（正確，be satisfied with固定搭配）",
+                "（at不是satisfied的固定搭配）",
+                "（by不是satisfied的固定搭配）",
+                "（for不是satisfied的固定搭配）"
+              ]
+            },
+            {
+              "sentence": "We are all worried ___ the upcoming exam.",
+              "options": [
+                "about",
+                "at",
+                "with",
+                "by"
+              ],
+              "answer": 0,
+              "explanation": "be worried about是固定搭配。",
+              "target_grammar": "被動語態（情緒形容詞）",
+              "optionsZh": [
+                "（正確，be worried about固定搭配）",
+                "（at不是worried的固定搭配）",
+                "（with不是worried的固定搭配）",
+                "（by不是worried的固定搭配）"
+              ]
+            },
+            {
+              "sentence": "He is tired ___ doing the same routine every day.",
+              "options": [
+                "of",
+                "at",
+                "with",
+                "by"
+              ],
+              "answer": 0,
+              "explanation": "be tired of是固定搭配。",
+              "target_grammar": "被動語態（情緒形容詞）",
+              "optionsZh": [
+                "（正確，be tired of固定搭配）",
+                "（at不是tired的固定搭配）",
+                "（with不是tired的固定搭配）",
+                "（by不是tired的固定搭配）"
+              ]
+            },
+            {
+              "sentence": "The audience was amused ___ the clown's silly tricks.",
+              "options": [
+                "by",
+                "with",
+                "in",
+                "for"
+              ],
+              "answer": 0,
+              "explanation": "be amused by/at都可以，此處以by為選項正解，強調被逗樂的原因。",
+              "target_grammar": "被動語態（情緒形容詞）",
+              "optionsZh": [
+                "（正確，be amused by表示因…而覺得有趣）",
+                "（with不是amused的固定搭配）",
+                "（in不是amused的固定搭配）",
+                "（for不是amused的固定搭配）"
+              ]
+            },
+            {
+              "sentence": "I was really touched ___ her thoughtful gift.",
+              "options": [
+                "by",
+                "at",
+                "with",
+                "for"
+              ],
+              "answer": 0,
+              "explanation": "be touched by是固定搭配，表示「被…感動」。",
+              "target_grammar": "被動語態（情緒形容詞）",
+              "optionsZh": [
+                "（正確，be touched by固定搭配）",
+                "（at不是touched的固定搭配）",
+                "（with不是touched的固定搭配）",
+                "（for不是touched的固定搭配）"
+              ]
+            },
+            {
+              "sentence": "She was embarrassed ___ forgetting the answer.",
+              "options": [
+                "about",
+                "at",
+                "with",
+                "by"
+              ],
+              "answer": 0,
+              "explanation": "be embarrassed about是固定搭配。",
+              "target_grammar": "被動語態（情緒形容詞）",
+              "optionsZh": [
+                "（正確，be embarrassed about固定搭配）",
+                "（at不是embarrassed的固定搭配）",
+                "（with不是embarrassed的固定搭配）",
+                "（by不是embarrassed的固定搭配）"
+              ]
+            },
+            {
+              "sentence": "Everyone in the room was shocked ___ the terrible news.",
+              "options": [
+                "at",
+                "with",
+                "for",
+                "in"
+              ],
+              "answer": 0,
+              "explanation": "be shocked at是固定搭配。",
+              "target_grammar": "被動語態（情緒形容詞）",
+              "optionsZh": [
+                "（正確，be shocked at固定搭配）",
+                "（with不是shocked的固定搭配）",
+                "（for不是shocked的固定搭配）",
+                "（in不是shocked的固定搭配）"
+              ]
+            },
+            {
+              "sentence": "They are excited ___ their trip to the beach next week.",
+              "options": [
+                "about",
+                "at",
+                "with",
+                "for"
+              ],
+              "answer": 0,
+              "explanation": "be excited about是固定搭配。",
+              "target_grammar": "被動語態（情緒形容詞）",
+              "optionsZh": [
+                "（正確，be excited about固定搭配）",
+                "（at不是excited的固定搭配）",
+                "（with不是excited的固定搭配）",
+                "（for不是excited的固定搭配）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "Preparing for a New Adventure",
+            "passage": "My family is finally moving to a new city next month, and we are all excited __(1)__ this big change. My little sister is a bit worried __(2)__ making new friends at her new school. My dad is satisfied __(3)__ the new job offer that made this move possible. Meanwhile, I have always been interested __(4)__ exploring new places, so I can't wait to see what our new home is like. Everyone was surprised __(5)__ how quickly everything came together in the end.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "about",
+                  "at",
+                  "with",
+                  "by"
+                ],
+                "answer": 0,
+                "explanation": "be excited about是固定搭配。",
+                "optionsZh": [
+                  "（正確，be excited about固定搭配）",
+                  "（at不是excited的固定搭配）",
+                  "（with不是excited的固定搭配）",
+                  "（by不是excited的固定搭配）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "about",
+                  "at",
+                  "with",
+                  "by"
+                ],
+                "answer": 0,
+                "explanation": "be worried about是固定搭配。",
+                "optionsZh": [
+                  "（正確，be worried about固定搭配）",
+                  "（at不是worried的固定搭配）",
+                  "（with不是worried的固定搭配）",
+                  "（by不是worried的固定搭配）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "with",
+                  "at",
+                  "about",
+                  "by"
+                ],
+                "answer": 0,
+                "explanation": "be satisfied with是固定搭配。",
+                "optionsZh": [
+                  "（正確，be satisfied with固定搭配）",
+                  "（at不是satisfied的固定搭配）",
+                  "（about不是satisfied的固定搭配）",
+                  "（by不是satisfied的固定搭配）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "in",
+                  "at",
+                  "with",
+                  "about"
+                ],
+                "answer": 0,
+                "explanation": "be interested in是固定搭配。",
+                "optionsZh": [
+                  "（正確，be interested in固定搭配）",
+                  "（at不是interested的固定搭配）",
+                  "（with不是interested的固定搭配）",
+                  "（about不是interested的固定搭配）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "at",
+                  "with",
+                  "about",
+                  "for"
+                ],
+                "answer": 0,
+                "explanation": "be surprised at是固定搭配。",
+                "optionsZh": [
+                  "（正確，be surprised at固定搭配）",
+                  "（with不是surprised的固定搭配）",
+                  "（about不是surprised的固定搭配）",
+                  "（for不是surprised的固定搭配）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "12-16",
         "title": "使用被動句構的動詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>有些be+p.p.表示「狀態」，後面不接by+人，而是固定介系詞</b><br>be known to為…所知曉、be covered with被…覆蓋、be filled with充滿…、be married to嫁給/娶…、be dressed in+顏色穿…顏色的衣服、be prepared for為…做好準備、be exposed to暴露於/接觸…、be located in座落於…、be used to被用來做…（注意跟used to過去習慣不同）、be finished/done with完成…<br><br><b>有些動詞習慣上常用被動式表達，即使中文翻譯聽起來像主動</b><br>be born出生、be gone消失/不見、be lost迷路/遺失、be hurt受傷、be killed被殺、be crowded擁擠、be delayed耽擱：I was born in 2010.（中文說「我出生」，但英文固定用被動was born）<br><br><b>be made of / from / with / by 四種差異</b><br>be made of：材質沒有經過化學變化，看得出原本樣子：The chair is made of wood.<br>be made from：材質經過化學變化，看不出原本樣子：Wine is made from grapes.<br>be made with：強調「使用了什麼工具/原料」製作。<br>be made by+人：強調製作者是誰。<br><br><b>易混淆重點</b><br>① 這些固定搭配要整組背下來，不能自己套用by來造句（不能說be filled by，要用be filled with）。<br>② be born、be gone這類雖然是be+p.p.的形式，但描述的是一種「狀態」，不是強調某個「動作被執行」，跟真正動態的被動語態意義上有點不同（比較接近前面12-15的情緒形容詞邏輯）。",
+          "examples": [
+            {
+              "en": "This lake is known for its crystal-clear water.",
+              "zh": "這座湖以清澈見底的湖水聞名。"
+            },
+            {
+              "en": "The hills were covered with snow after the storm.",
+              "zh": "暴風雪過後，山丘被白雪覆蓋。"
+            },
+            {
+              "en": "Her heart was filled with joy when she saw her family.",
+              "zh": "看到家人時，她的心中充滿了喜悅。"
+            },
+            {
+              "en": "My uncle is married to a woman from France.",
+              "zh": "我叔叔娶了一位來自法國的女士。"
+            },
+            {
+              "en": "The library is located in the center of the city.",
+              "zh": "這間圖書館座落在市中心。"
+            },
+            {
+              "en": "This tool is used to measure temperature accurately.",
+              "zh": "這個工具是用來精確測量溫度的。"
+            },
+            {
+              "en": "My grandmother was born in a small village.",
+              "zh": "我奶奶出生在一個小村莊。"
+            },
+            {
+              "en": "We got lost because the map was gone from my bag.",
+              "zh": "我們迷路了，因為地圖從我的包包裡不見了。"
+            },
+            {
+              "en": "This bowl is made of clay from the nearby river.",
+              "zh": "這個碗是用附近河邊的黏土做的。"
+            },
+            {
+              "en": "Cheese is made from milk through a special process.",
+              "zh": "起司是用牛奶經過特殊加工製成的。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "This restaurant is known ___ its amazing seafood dishes.",
+              "options": [
+                "for",
+                "with",
+                "at",
+                "of"
+              ],
+              "answer": 0,
+              "explanation": "be known for「以…著名」是固定搭配。",
+              "target_grammar": "被動語態（固定搭配動詞）",
+              "optionsZh": [
+                "（正確，be known for固定搭配）",
+                "（with不是known的固定搭配）",
+                "（at不是known的固定搭配）",
+                "（of不是known的固定搭配，be known to才用to）"
+              ]
+            },
+            {
+              "sentence": "The ground was covered ___ colorful autumn leaves.",
+              "options": [
+                "with",
+                "by",
+                "at",
+                "for"
+              ],
+              "answer": 0,
+              "explanation": "be covered with「被…覆蓋」是固定搭配。",
+              "target_grammar": "被動語態（固定搭配動詞）",
+              "optionsZh": [
+                "（正確，be covered with固定搭配）",
+                "（by較常用於強調執行者的真正被動語態，此處為狀態描述用with）",
+                "（at不是covered的固定搭配）",
+                "（for不是covered的固定搭配）"
+              ]
+            },
+            {
+              "sentence": "My cousin got ___ to her college sweetheart last year.",
+              "options": [
+                "married",
+                "marry",
+                "marrying",
+                "marries"
+              ],
+              "answer": 0,
+              "explanation": "get married「結婚」是固定被動片語，過去式用got married。",
+              "target_grammar": "被動語態（固定搭配動詞）",
+              "optionsZh": [
+                "（正確，got married符合last year過去語境）",
+                "（原形動詞不符get+p.p.的固定片語結構）",
+                "（動名詞不符get+p.p.的固定片語結構）",
+                "（第三人稱單數不符get+p.p.的固定片語結構）"
+              ]
+            },
+            {
+              "sentence": "This coffee shop is located ___ the corner of Main Street.",
+              "options": [
+                "on",
+                "at",
+                "in",
+                "of"
+              ],
+              "answer": 1,
+              "explanation": "be located at是常見固定搭配，用於較小的定點位置（也可視語境用on/in，但此處以at為標準答案）。",
+              "target_grammar": "被動語態（固定搭配動詞）",
+              "optionsZh": [
+                "（on較常用於表面接觸，此處以定點位置at更常見）",
+                "（正確，be located at+具體定點）",
+                "（in較常用於較大範圍的空間，corner為具體定點更適合at）",
+                "（of不是located的固定搭配）"
+              ]
+            },
+            {
+              "sentence": "This device is used ___ measure air quality.",
+              "options": [
+                "to",
+                "for",
+                "with",
+                "at"
+              ],
+              "answer": 0,
+              "explanation": "be used to+原形動詞「被用來做…」，注意這裡to是不定詞標記，不是介系詞。",
+              "target_grammar": "被動語態（固定搭配動詞）",
+              "optionsZh": [
+                "（正確，be used to+原形動詞表示用途）",
+                "（for後面應接動名詞V-ing而非原形動詞measure）",
+                "（with不是此固定搭配）",
+                "（at不是此固定搭配）"
+              ]
+            },
+            {
+              "sentence": "This bread is made ___ wheat flour and yeast.",
+              "options": [
+                "of",
+                "from",
+                "with",
+                "by"
+              ],
+              "answer": 1,
+              "explanation": "be made from用於材質經過化學變化、看不出原本樣子的情況，符合麵粉經發酵變成麵包的過程。",
+              "target_grammar": "被動語態（固定搭配動詞）",
+              "optionsZh": [
+                "（made of用於材質沒有化學變化仍看得出原貌，此處麵包已看不出麵粉原貌不符）",
+                "（正確，be made from表示經過變化製成）",
+                "（made with強調使用的工具或原料組成，此處強調轉化過程更適合from）",
+                "（made by強調製作者，此處強調原料不符）"
+              ]
+            },
+            {
+              "sentence": "This table is made ___ solid oak wood.",
+              "options": [
+                "of",
+                "from",
+                "with",
+                "by"
+              ],
+              "answer": 0,
+              "explanation": "be made of用於材質沒有經過化學變化、看得出原本樣子的情況，符合木頭做成桌子仍看得出木頭原貌。",
+              "target_grammar": "被動語態（固定搭配動詞）",
+              "optionsZh": [
+                "（正確，be made of表示材質沒有根本變化）",
+                "（made from較常用於原料經過明顯化學變化後看不出原貌的情況，此處桌子仍可看出木頭原貌）",
+                "（made with強調使用的工具或原料組成，此處強調材質本身更適合of）",
+                "（made by強調製作者，此處強調材質不符）"
+              ]
+            },
+            {
+              "sentence": "My grandmother ___ born in a small fishing village.",
+              "options": [
+                "was",
+                "is",
+                "has",
+                "did"
+              ],
+              "answer": 0,
+              "explanation": "be born「出生」是固定被動用法，描述過去發生的事，用was。",
+              "target_grammar": "被動語態（固定搭配動詞）",
+              "optionsZh": [
+                "（正確，was born符合過去出生的事實）",
+                "（is不符已發生的過去出生事件）",
+                "（has不符be born的固定搭配結構）",
+                "（did不符be born的固定搭配結構）"
+              ]
+            },
+            {
+              "sentence": "The flight ___ delayed because of the heavy fog.",
+              "options": [
+                "was",
+                "did",
+                "has",
+                "does"
+              ],
+              "answer": 0,
+              "explanation": "be delayed「被耽擱」是常見固定被動用法，過去式用was。",
+              "target_grammar": "被動語態（固定搭配動詞）",
+              "optionsZh": [
+                "（正確，was delayed符合過去發生的事件）",
+                "（did不符be delayed的固定搭配結構）",
+                "（has不符此處單純過去事件的語境，應用was而非has been）",
+                "（does不符be delayed的固定搭配結構）"
+              ]
+            },
+            {
+              "sentence": "Her eyes were filled ___ tears of joy at the wedding.",
+              "options": [
+                "with",
+                "by",
+                "at",
+                "for"
+              ],
+              "answer": 0,
+              "explanation": "be filled with「充滿…」是固定搭配。",
+              "target_grammar": "被動語態（固定搭配動詞）",
+              "optionsZh": [
+                "（正確，be filled with固定搭配）",
+                "（by較常用於強調執行者的真正被動語態，此處為狀態描述用with）",
+                "（at不是filled的固定搭配）",
+                "（for不是filled的固定搭配）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A Trip to a Famous Bakery",
+            "passage": "Last weekend, we visited a bakery that is known __(1)__ its delicious sourdough bread. The whole shop was filled __(2)__ the warm smell of freshly baked goods. According to the owner, this bread is made __(3)__ a special type of flour that comes from local farms. The bakery is located __(4)__ a quiet street near the old town square. The owner told us she was born __(5)__ a small town nearby and had always dreamed of opening her own bakery there one day.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "for",
+                  "with",
+                  "at",
+                  "of"
+                ],
+                "answer": 0,
+                "explanation": "be known for「以…著名」是固定搭配。",
+                "optionsZh": [
+                  "（正確，be known for固定搭配）",
+                  "（with不是known的固定搭配）",
+                  "（at不是known的固定搭配）",
+                  "（of不是known的固定搭配）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "with",
+                  "by",
+                  "at",
+                  "for"
+                ],
+                "answer": 0,
+                "explanation": "be filled with「充滿…」是固定搭配。",
+                "optionsZh": [
+                  "（正確，be filled with固定搭配）",
+                  "（by較常用於強調執行者的真正被動語態，此處為狀態描述用with）",
+                  "（at不是filled的固定搭配）",
+                  "（for不是filled的固定搭配）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "from",
+                  "of",
+                  "with",
+                  "by"
+                ],
+                "answer": 0,
+                "explanation": "be made from用於材質經過變化的情況，符合麵粉製成麵包的過程。",
+                "optionsZh": [
+                  "（正確，be made from表示經過變化製成）",
+                  "（made of用於材質沒有化學變化仍看得出原貌，此處不完全符合）",
+                  "（made with強調使用的工具，此處強調原料轉化更適合from）",
+                  "（made by強調製作者，此處強調原料不符）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "on",
+                  "at",
+                  "in",
+                  "of"
+                ],
+                "answer": 0,
+                "explanation": "be located on是常見固定搭配，用於街道位置。",
+                "optionsZh": [
+                  "（正確，be located on+街道名稱）",
+                  "（at較常用於具體定點，此處street用on更常見）",
+                  "（in較常用於較大範圍空間，street用on更常見）",
+                  "（of不是located的固定搭配）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "in",
+                  "at",
+                  "on",
+                  "of"
+                ],
+                "answer": 0,
+                "explanation": "be born in+地方是固定搭配，符合出生在某個城鎮的語境。",
+                "optionsZh": [
+                  "（正確，be born in+地方名稱）",
+                  "（at較常用於具體定點如車站，town用in更常見）",
+                  "（on不是born的固定搭配）",
+                  "（of不是born的固定搭配）"
+                ]
+              }
+            ]
+          }
+        }
       }
     ]
   },
