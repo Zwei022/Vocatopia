@@ -12712,26 +12712,1298 @@
       {
         "id": "12-1",
         "title": "各種時態的被動語態句",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>被動語態的基本邏輯</b><br>主動句：主詞（執行者）+及物動詞+受詞（接受者）。改成被動句：受詞變成新主詞+be+過去分詞+by+原本的主詞：Tom bought a car. → A car was bought by Tom.<br><br><b>只有及物動詞才能改被動</b><br>不及物動詞（get up、happen、arrive）沒有受詞，所以沒有被動語態：He got up at six.（無法被動化）。有些看似及物、其實是狀態動詞的也沒有被動：have/has（擁有）、own、belong to、連綴動詞（feel、look、sound、taste）都沒有被動式。<br><br><b>各時態被動語態公式（be動詞要配合時態變化）</b><br>現在簡單式：S+am/is/are+p.p.：English is studied by her every day.<br>過去簡單式：S+was/were+p.p.：A new pair of shoes were bought by Tom yesterday.<br>未來式：S+will+be+p.p.（或be going to+be+p.p.）：The movie will be seen by John next week.<br>現在進行式：S+am/is/are+being+p.p.：Some letters are being written by my brother now.<br>現在完成式：S+have/has+been+p.p.：That movie has been seen by me many times.<br><br><b>易混淆重點</b><br>① 被動句的be動詞時態要跟原本主動句的動詞時態一致，只是形式從「主詞的動詞」變成「be+p.p.」。<br>② by+受詞（原本的主詞）如果不重要或不確定，常常整個省略。<br>③ 判斷能不能被動化，先問「這個動詞後面本來有沒有受詞」，沒有受詞就沒有被動語態。",
+          "examples": [
+            {
+              "en": "This song was written by a famous composer.",
+              "zh": "這首歌是一位知名作曲家寫的。"
+            },
+            {
+              "en": "The letters will be sent by tomorrow morning.",
+              "zh": "這些信件明天早上前就會寄出。"
+            },
+            {
+              "en": "A new bridge is being built near our town.",
+              "zh": "我們鎮附近正在興建一座新橋。"
+            },
+            {
+              "en": "This book has been translated into many languages.",
+              "zh": "這本書已經被翻譯成很多種語言。"
+            },
+            {
+              "en": "The cake was eaten before I even got a slice.",
+              "zh": "在我拿到一片之前，蛋糕就已經被吃光了。"
+            },
+            {
+              "en": "These flowers are grown in my grandmother's garden.",
+              "zh": "這些花是在我奶奶的花園裡種植的。"
+            },
+            {
+              "en": "The winner will be announced at the end of the show.",
+              "zh": "得獎者將會在節目最後公布。"
+            },
+            {
+              "en": "Our project is being reviewed by the teacher right now.",
+              "zh": "我們的專題現在正被老師審查中。"
+            },
+            {
+              "en": "The mystery has never been solved.",
+              "zh": "這個謎團從未被解開過。"
+            },
+            {
+              "en": "The windows were cleaned just this morning.",
+              "zh": "這些窗戶就是今天早上才被清潔的。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "This report ___ by our manager every Friday.",
+              "options": [
+                "checks",
+                "is checked",
+                "checked",
+                "is checking"
+              ],
+              "answer": 1,
+              "explanation": "現在簡單式被動：S+is+p.p.，主詞report是被檢查的對象。",
+              "target_grammar": "被動語態",
+              "optionsZh": [
+                "（主動語態，report不是動作執行者）",
+                "（正確，現在簡單式被動is checked）",
+                "（過去式時態不符every Friday的常態語境）",
+                "（進行式被動需寫成is being checked，此形式為主動進行式不符）"
+              ]
+            },
+            {
+              "sentence": "The package ___ yesterday afternoon.",
+              "options": [
+                "delivered",
+                "was delivered",
+                "delivers",
+                "is delivered"
+              ],
+              "answer": 1,
+              "explanation": "過去簡單式被動：S+was+p.p.，符合yesterday的過去時間。",
+              "target_grammar": "被動語態",
+              "optionsZh": [
+                "（主動語態，package不是動作執行者）",
+                "（正確，過去簡單式被動was delivered）",
+                "（主動語態且時態不符過去）",
+                "（現在式時態不符yesterday過去語境）"
+              ]
+            },
+            {
+              "sentence": "A new library ___ near the school next year.",
+              "options": [
+                "will build",
+                "will be built",
+                "builds",
+                "is building"
+              ],
+              "answer": 1,
+              "explanation": "未來式被動：S+will+be+p.p.，符合next year的未來時間。",
+              "target_grammar": "被動語態",
+              "optionsZh": [
+                "（主動語態，library不是動作執行者）",
+                "（正確，未來式被動will be built）",
+                "（現在式時態不符next year未來語境）",
+                "（進行式主動語態不符library是被建造的對象）"
+              ]
+            },
+            {
+              "sentence": "The kitchen ___ cleaned right now, so please don't go in.",
+              "options": [
+                "is being",
+                "is",
+                "was being",
+                "has being"
+              ],
+              "answer": 0,
+              "explanation": "現在進行式被動：S+am/is/are+being+p.p.，符合right now的當下語境。",
+              "target_grammar": "被動語態",
+              "optionsZh": [
+                "（正確，現在進行式被動is being cleaned）",
+                "（缺少being，不完整的進行式被動結構）",
+                "（過去進行式時態不符right now現在語境）",
+                "（have/has been才是正確完成式被動結構，此為錯誤組合）"
+              ]
+            },
+            {
+              "sentence": "This movie ___ by millions of people around the world.",
+              "options": [
+                "has watched",
+                "has been watched",
+                "watches",
+                "is watch"
+              ],
+              "answer": 1,
+              "explanation": "現在完成式被動：S+has+been+p.p.，表示到目前為止累積的次數。",
+              "target_grammar": "被動語態",
+              "optionsZh": [
+                "（主動語態，movie不是動作執行者）",
+                "（正確，現在完成式被動has been watched）",
+                "（主動語態且時態不符）",
+                "（非正確英文形式）"
+              ]
+            },
+            {
+              "sentence": "Her house ___ by a professional architect ten years ago.",
+              "options": [
+                "designs",
+                "designed",
+                "was designed",
+                "is designed"
+              ],
+              "answer": 2,
+              "explanation": "過去簡單式被動：S+was+p.p.，符合ten years ago的過去時間。",
+              "target_grammar": "被動語態",
+              "optionsZh": [
+                "（主動語態，house不是動作執行者）",
+                "（主動語態過去式，house是被設計的對象不符）",
+                "（正確，過去簡單式被動was designed）",
+                "（現在式時態不符ten years ago過去語境）"
+              ]
+            },
+            {
+              "sentence": "The results of the survey ___ next Monday.",
+              "options": [
+                "announces",
+                "will be announced",
+                "announced",
+                "is announcing"
+              ],
+              "answer": 1,
+              "explanation": "未來式被動：S+will+be+p.p.，符合next Monday的未來時間。",
+              "target_grammar": "被動語態",
+              "optionsZh": [
+                "（主動語態，results不是動作執行者）",
+                "（正確，未來式被動will be announced）",
+                "（過去式時態不符next Monday未來語境）",
+                "（進行式主動語態不符results是被公布的對象）"
+              ]
+            },
+            {
+              "sentence": "This road ___ since early this morning because of construction.",
+              "options": [
+                "has closed",
+                "has been closed",
+                "closes",
+                "is closed"
+              ],
+              "answer": 1,
+              "explanation": "現在完成式被動：S+has+been+p.p.，搭配since表示從過去持續到現在。",
+              "target_grammar": "被動語態",
+              "optionsZh": [
+                "（主動語態，road不是動作執行者）",
+                "（正確，現在完成式被動has been closed，搭配since）",
+                "（現在簡單式不符since的持續語境）",
+                "（現在簡單式被動不符since的持續語境，應用完成式）"
+              ]
+            },
+            {
+              "sentence": "The stage ___ decorated for tomorrow's performance right now.",
+              "options": [
+                "is being",
+                "is",
+                "was",
+                "has been"
+              ],
+              "answer": 0,
+              "explanation": "現在進行式被動：S+is+being+p.p.，符合right now正在進行的語境。",
+              "target_grammar": "被動語態",
+              "optionsZh": [
+                "（正確，現在進行式被動is being decorated）",
+                "（缺少being，不完整的進行式被動結構）",
+                "（過去式時態不符right now現在語境）",
+                "（現在完成式不符right now正在進行的語境，應用進行式）"
+              ]
+            },
+            {
+              "sentence": "This tradition ___ for hundreds of years in our village.",
+              "options": [
+                "has practiced",
+                "has been practiced",
+                "practices",
+                "is practiced"
+              ],
+              "answer": 1,
+              "explanation": "現在完成式被動：S+has+been+p.p.，搭配for+一段時間表示持續。",
+              "target_grammar": "被動語態",
+              "optionsZh": [
+                "（主動語態，tradition不是動作執行者）",
+                "（正確，現在完成式被動has been practiced，搭配for+時間）",
+                "（現在簡單式不符for+時間的持續語境）",
+                "（現在簡單式被動不符for+時間的持續語境，應用完成式）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "The New Community Center",
+            "passage": "A new community center __(1)__ near our neighborhood right now. According to the plan, it __(2)__ completed by the end of this year. The design __(3)__ by a well-known local architect last spring. Every detail __(4)__ carefully since the project began, and residents are excited about the changes. Once it opens, the center __(5)__ by people of all ages for classes, events, and sports activities.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "is being built",
+                  "was built",
+                  "builds",
+                  "has built"
+                ],
+                "answer": 0,
+                "explanation": "現在進行式被動：S+is+being+p.p.，符合right now正在建造的語境。",
+                "optionsZh": [
+                  "（正確，現在進行式被動is being built）",
+                  "（過去式時態不符right now現在語境）",
+                  "（主動語態，center不是動作執行者）",
+                  "（主動語態現在完成式，center不是動作執行者）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "will be",
+                  "is",
+                  "was",
+                  "has been"
+                ],
+                "answer": 0,
+                "explanation": "未來式被動：S+will+be+p.p.，符合「according to the plan」預計未來完成的語境。",
+                "optionsZh": [
+                  "（正確，未來式被動will be completed）",
+                  "（現在式不符未來計畫的語境）",
+                  "（過去式不符未來計畫的語境）",
+                  "（現在完成式不符尚未發生的未來語境）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "designed",
+                  "was designed",
+                  "designs",
+                  "is designed"
+                ],
+                "answer": 1,
+                "explanation": "過去簡單式被動：S+was+p.p.，符合last spring的過去時間。",
+                "optionsZh": [
+                  "（主動語態過去式，design是被設計的對象不符）",
+                  "（正確，過去簡單式被動was designed）",
+                  "（主動語態現在式，且時態不符過去）",
+                  "（現在式時態不符last spring過去語境）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "has been checked",
+                  "is checked",
+                  "checked",
+                  "checks"
+                ],
+                "answer": 0,
+                "explanation": "現在完成式被動：S+has+been+p.p.，搭配since表示從過去持續到現在。",
+                "optionsZh": [
+                  "（正確，現在完成式被動has been checked，搭配since）",
+                  "（現在簡單式不符since的持續語境）",
+                  "（過去簡單式不符since持續至今的語境）",
+                  "（主動語態，detail不是動作執行者）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "will be used",
+                  "is used",
+                  "was used",
+                  "has used"
+                ],
+                "answer": 0,
+                "explanation": "未來式被動：S+will+be+p.p.，符合「once it opens」表示尚未發生的未來事件。",
+                "optionsZh": [
+                  "（正確，未來式被動will be used）",
+                  "（現在式不符尚未開幕的未來語境）",
+                  "（過去式不符尚未開幕的未來語境）",
+                  "（主動語態現在完成式，center不是動作執行者）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "12-2",
         "title": "有情狀助動詞的被動語態句",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>單一字助動詞的被動句構</b><br>S+can/could/will/would/shall/should/may/might/must+be+p.p.+by+O：助動詞留在主詞後面的位置不變，只是動詞從原形變成be+p.p.：He can do his homework. → His homework can be done by him.<br><br><b>片語型助動詞的被動句構</b><br>S+be going to/be able to/be supposed to+be+p.p.+by O：這類助動詞本身就帶有be動詞，要注意這個be動詞要配合主詞單複數，後面再接一個be+p.p.：Leo was able to take the bus home. → The bus was able to be taken home by Leo.<br><br><b>易混淆重點</b><br>① 助動詞被動句構中一定會出現「兩個be」的情況（片語型助動詞的be+動詞被動的be+p.p.），不要漏掉任何一個。<br>② 情狀助動詞的被動句不因主詞單複數而改變助動詞本身的形式（can、must等不隨人稱變化），但如果是be going to這類，前面的be要配合主詞。<br>③ 否定句是在助動詞後面直接加not：The door must not be opened.",
+          "examples": [
+            {
+              "en": "This medicine must be taken twice a day.",
+              "zh": "這種藥必須一天服用兩次。"
+            },
+            {
+              "en": "The homework can be finished before dinner.",
+              "zh": "作業可以在晚餐前完成。"
+            },
+            {
+              "en": "The problem should be solved as soon as possible.",
+              "zh": "這個問題應該盡快被解決。"
+            },
+            {
+              "en": "The car was going to be repaired by the mechanic.",
+              "zh": "這輛車原本要被那位技師修理。"
+            },
+            {
+              "en": "This form must be filled out before Friday.",
+              "zh": "這張表格必須在星期五前填好。"
+            },
+            {
+              "en": "The meeting might be canceled due to the storm.",
+              "zh": "這場會議可能會因為暴風雨而取消。"
+            },
+            {
+              "en": "The window should be closed before it rains.",
+              "zh": "下雨前應該把窗戶關上。"
+            },
+            {
+              "en": "That old house may be torn down next year.",
+              "zh": "那棟老房子明年可能會被拆除。"
+            },
+            {
+              "en": "The letter was supposed to be sent yesterday.",
+              "zh": "那封信原本應該昨天寄出的。"
+            },
+            {
+              "en": "This task will be handled by the new manager.",
+              "zh": "這項任務將由新來的經理處理。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "This box ___ carefully because it contains glass.",
+              "options": [
+                "must carry",
+                "must be carried",
+                "must carried",
+                "must be carry"
+              ],
+              "answer": 1,
+              "explanation": "情狀助動詞的被動句構：must+be+p.p.。",
+              "target_grammar": "被動語態（助動詞）",
+              "optionsZh": [
+                "（主動語態，box不是動作執行者）",
+                "（正確，must+be+p.p.）",
+                "（缺少be，不完整的被動結構）",
+                "（p.p.形式錯誤，應為carried而非carry）"
+              ]
+            },
+            {
+              "sentence": "All the questions ___ before the deadline.",
+              "options": [
+                "should answer",
+                "should be answered",
+                "should answered",
+                "should being answered"
+              ],
+              "answer": 1,
+              "explanation": "情狀助動詞的被動句構：should+be+p.p.。",
+              "target_grammar": "被動語態（助動詞）",
+              "optionsZh": [
+                "（主動語態，questions不是動作執行者）",
+                "（正確，should+be+p.p.）",
+                "（缺少be，不完整的被動結構）",
+                "（should後面應接原形be而非being）"
+              ]
+            },
+            {
+              "sentence": "This machine ___ by a professional technician.",
+              "options": [
+                "was able to fixed",
+                "was able to be fixed",
+                "was able fixed",
+                "were able to be fixed"
+              ],
+              "answer": 1,
+              "explanation": "片語型助動詞be able to的被動句構：was able to+be+p.p.，且主詞this machine是單數，be動詞用was。",
+              "target_grammar": "被動語態（助動詞）",
+              "optionsZh": [
+                "（缺少be，不完整的被動結構）",
+                "（正確，was able to+be+p.p.，主詞單數用was）",
+                "（缺少to be，不完整的被動結構）",
+                "（主詞this machine為單數，應用was而非were）"
+              ]
+            },
+            {
+              "sentence": "The report ___ by tomorrow morning.",
+              "options": [
+                "must to finish",
+                "must be finished",
+                "must finished",
+                "must being finished"
+              ],
+              "answer": 1,
+              "explanation": "情狀助動詞的被動句構：must+be+p.p.。",
+              "target_grammar": "被動語態（助動詞）",
+              "optionsZh": [
+                "（非正確英文形式，must後面不接to）",
+                "（正確，must+be+p.p.）",
+                "（缺少be，不完整的被動結構）",
+                "（must後面應接原形be而非being）"
+              ]
+            },
+            {
+              "sentence": "The new policy ___ starting next month.",
+              "options": [
+                "is going to apply",
+                "is going to be applied",
+                "is going be applied",
+                "was going to applied"
+              ],
+              "answer": 1,
+              "explanation": "片語型助動詞be going to的被動句構：is going to+be+p.p.。",
+              "target_grammar": "被動語態（助動詞）",
+              "optionsZh": [
+                "（主動語態，policy不是動作執行者）",
+                "（正確，is going to+be+p.p.）",
+                "（缺少to，不完整的片語助動詞結構）",
+                "（時態與be動詞形式錯誤，且缺少be）"
+              ]
+            },
+            {
+              "sentence": "This bridge ___ within two years, according to the plan.",
+              "options": [
+                "will build",
+                "will be built",
+                "will built",
+                "will being built"
+              ],
+              "answer": 1,
+              "explanation": "情狀助動詞will的被動句構：will+be+p.p.。",
+              "target_grammar": "被動語態（助動詞）",
+              "optionsZh": [
+                "（主動語態，bridge不是動作執行者）",
+                "（正確，will+be+p.p.）",
+                "（缺少be，不完整的被動結構）",
+                "（will後面應接原形be而非being）"
+              ]
+            },
+            {
+              "sentence": "The lights ___ off before you leave the room.",
+              "options": [
+                "should turn",
+                "should be turned",
+                "should turned",
+                "should being turned"
+              ],
+              "answer": 1,
+              "explanation": "情狀助動詞的被動句構：should+be+p.p.。",
+              "target_grammar": "被動語態（助動詞）",
+              "optionsZh": [
+                "（主動語態，lights不是動作執行者）",
+                "（正確，should+be+p.p.）",
+                "（缺少be，不完整的被動結構）",
+                "（should後面應接原形be而非being）"
+              ]
+            },
+            {
+              "sentence": "Everyone ___ to leave the building immediately.",
+              "options": [
+                "was supposed to told",
+                "was supposed to be told",
+                "was supposed be told",
+                "were supposed to be told"
+              ],
+              "answer": 1,
+              "explanation": "片語型助動詞be supposed to的被動句構：was supposed to+be+p.p.，主詞everyone視為單數，用was。",
+              "target_grammar": "被動語態（助動詞）",
+              "optionsZh": [
+                "（缺少be，不完整的被動結構）",
+                "（正確，was supposed to+be+p.p.，everyone視為單數）",
+                "（缺少to，不完整的片語助動詞結構）",
+                "（everyone為單數概念，應用was而非were）"
+              ]
+            },
+            {
+              "sentence": "The exam results ___ next Friday.",
+              "options": [
+                "can announce",
+                "can be announced",
+                "can announced",
+                "can being announced"
+              ],
+              "answer": 1,
+              "explanation": "情狀助動詞can的被動句構：can+be+p.p.。",
+              "target_grammar": "被動語態（助動詞）",
+              "optionsZh": [
+                "（主動語態，results不是動作執行者）",
+                "（正確，can+be+p.p.）",
+                "（缺少be，不完整的被動結構）",
+                "（can後面應接原形be而非being）"
+              ]
+            },
+            {
+              "sentence": "The window ___ ; it's freezing in here.",
+              "options": [
+                "must not open",
+                "must not be opened",
+                "must not opened",
+                "must be not opened"
+              ],
+              "answer": 1,
+              "explanation": "情狀助動詞被動句的否定：must+not+be+p.p.，not放在助動詞和be中間。",
+              "target_grammar": "被動語態（助動詞）",
+              "optionsZh": [
+                "（主動語態，window不是動作執行者）",
+                "（正確，must+not+be+p.p.）",
+                "（缺少be，不完整的被動結構）",
+                "（not的位置錯誤，應緊接在must後面）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "Preparing for the School Festival",
+            "passage": "Our school festival is coming soon, so a lot of things __(1)__ before next Friday. The stage decorations __(2)__ by the art club members this weekend. All the food booths __(3)__ carefully to make sure everything is safe to eat. The schedule __(4)__ to every classroom by tomorrow morning so students know when their performances start. If it rains, the outdoor events __(5)__ inside the gym instead.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "must do",
+                  "must be done",
+                  "must done",
+                  "must being done"
+                ],
+                "answer": 1,
+                "explanation": "情狀助動詞must的被動句構：must+be+p.p.。",
+                "optionsZh": [
+                  "（主動語態，things不是動作執行者）",
+                  "（正確，must+be+p.p.）",
+                  "（缺少be，不完整的被動結構）",
+                  "（must後面應接原形be而非being）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "will make",
+                  "will be made",
+                  "will made",
+                  "will being made"
+                ],
+                "answer": 1,
+                "explanation": "情狀助動詞will的被動句構：will+be+p.p.。",
+                "optionsZh": [
+                  "（主動語態，decorations不是動作執行者）",
+                  "（正確，will+be+p.p.）",
+                  "（缺少be，不完整的被動結構）",
+                  "（will後面應接原形be而非being）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "should check",
+                  "should be checked",
+                  "should checked",
+                  "should being checked"
+                ],
+                "answer": 1,
+                "explanation": "情狀助動詞should的被動句構：should+be+p.p.。",
+                "optionsZh": [
+                  "（主動語態，booths不是動作執行者）",
+                  "（正確，should+be+p.p.）",
+                  "（缺少be，不完整的被動結構）",
+                  "（should後面應接原形be而非being）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "is going to send",
+                  "is going to be sent",
+                  "is going be sent",
+                  "was going to sent"
+                ],
+                "answer": 1,
+                "explanation": "片語型助動詞be going to的被動句構：is going to+be+p.p.。",
+                "optionsZh": [
+                  "（主動語態，schedule不是動作執行者）",
+                  "（正確，is going to+be+p.p.）",
+                  "（缺少to，不完整的片語助動詞結構）",
+                  "（時態與be動詞形式錯誤，且缺少be）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "can hold",
+                  "can be held",
+                  "can held",
+                  "can being held"
+                ],
+                "answer": 1,
+                "explanation": "情狀助動詞can的被動句構：can+be+p.p.。",
+                "optionsZh": [
+                  "（主動語態，events不是動作執行者）",
+                  "（正確，can+be+p.p.）",
+                  "（缺少be，不完整的被動結構）",
+                  "（can後面應接原形be而非being）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "12-3",
         "title": "有感官動詞的被動語態句",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>先找出真正要被動化的動詞</b><br>感官動詞句構是「主詞+感官動詞+受詞+受詞補語」，要被動化的是主詞直接執行的那個感官動詞，不是受詞補語：I saw them play volleyball.（saw才是要被動化的動詞，play是受詞補語）<br><br><b>受詞補語在被動句中要改成to V</b><br>原本受詞補語是原形動詞，被動化後要加to：I saw them play volleyball. → They were seen to play volleyball by me.<br><br><b>如果原本受詞補語是V-ing，被動句中維持V-ing</b><br>I heard the bird singing in the tree. → The bird was heard singing in the tree by me.（原本singing強調正在進行，被動後保留現在分詞）<br><br><b>如果受詞是被動接受動作，用過去分詞</b><br>I saw the bike fixed by the man.（bike是被修理的，不是自己修，這句其實已經是descrbing受詞補語為p.p.的用法，不是感官動詞本身的被動句）<br><br><b>易混淆重點</b><br>① 從主動句判斷原本受詞補語的形式（原形/V-ing），被動化時原形要加to，V-ing維持不變。<br>② 別把「感官動詞本身的被動」和「受詞補語本身用p.p.表示被動」搞混，這是兩件不同的事（後者詳見12-13）。",
+          "examples": [
+            {
+              "en": "The kids were seen to play in the park this morning.",
+              "zh": "今天早上有人看到孩子們在公園裡玩。"
+            },
+            {
+              "en": "The dog was heard barking loudly all night.",
+              "zh": "整晚都有人聽到那隻狗在大聲吠叫。"
+            },
+            {
+              "en": "She was seen crying alone in the classroom.",
+              "zh": "有人看到她獨自一人在教室裡哭。"
+            },
+            {
+              "en": "The singer was heard to perform beautifully at the concert.",
+              "zh": "有人聽到那位歌手在演唱會上表演得很美妙。"
+            },
+            {
+              "en": "The thief was seen running away from the store.",
+              "zh": "有人看到那個小偷從商店逃跑。"
+            },
+            {
+              "en": "The baby was felt kicking inside her mother's belly.",
+              "zh": "有人感覺到寶寶在媽媽的肚子裡踢動。"
+            },
+            {
+              "en": "He was heard to shout for help near the river.",
+              "zh": "有人聽到他在河邊大喊求救。"
+            },
+            {
+              "en": "The cat was seen sleeping on the warm windowsill.",
+              "zh": "有人看到那隻貓睡在溫暖的窗台上。"
+            },
+            {
+              "en": "The students were seen to leave the building quickly.",
+              "zh": "有人看到學生們迅速離開了大樓。"
+            },
+            {
+              "en": "Strange noises were heard coming from the basement.",
+              "zh": "有人聽到奇怪的聲音從地下室傳出來。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "The boys ___ to swim across the lake by the coach.",
+              "options": [
+                "saw",
+                "were seen",
+                "were seeing",
+                "see"
+              ],
+              "answer": 1,
+              "explanation": "主動句I saw the boys swim...改為被動句時，感官動詞saw要改成were seen，受詞補語swim加to。",
+              "target_grammar": "被動語態（感官動詞）",
+              "optionsZh": [
+                "（主動語態的動詞形式，此處boys是被看到的對象需被動）",
+                "（正確，感官動詞被動化were seen）",
+                "（進行式不符此感官動詞被動句構）",
+                "（現在式且為主動語態，不符過去式被動語境）"
+              ]
+            },
+            {
+              "sentence": "The bird was heard ___ in the tree this morning.",
+              "options": [
+                "sing",
+                "to sing",
+                "singing",
+                "sang"
+              ],
+              "answer": 2,
+              "explanation": "原主動句中受詞補語若是V-ing（強調正在進行），被動句中仍維持V-ing：singing。",
+              "target_grammar": "被動語態（感官動詞）",
+              "optionsZh": [
+                "（原形動詞在此感官動詞被動句中應改為to V或維持V-ing，取決於原句形式，此處singing更符合持續動作）",
+                "（若原句受詞補語為原形動詞則應加to，但此處以持續動作singing為準）",
+                "（正確，原受詞補語為V-ing時被動句維持V-ing）",
+                "（過去式不符受詞補語的句構）"
+              ]
+            },
+            {
+              "sentence": "The students ___ to leave early by the teacher.",
+              "options": [
+                "saw",
+                "were seen",
+                "are seeing",
+                "see"
+              ],
+              "answer": 1,
+              "explanation": "感官動詞被動化：were seen，受詞補語leave改成to leave。",
+              "target_grammar": "被動語態（感官動詞）",
+              "optionsZh": [
+                "（主動語態的動詞形式，此處students是被看到的對象需被動）",
+                "（正確，感官動詞被動化were seen）",
+                "（現在進行式不符過去語境）",
+                "（現在式且為主動語態，不符此被動句構）"
+              ]
+            },
+            {
+              "sentence": "The music was heard ___ from the next room all evening.",
+              "options": [
+                "play",
+                "to play",
+                "playing",
+                "played"
+              ],
+              "answer": 2,
+              "explanation": "原主動句受詞補語為V-ing（強調持續播放），被動句中維持V-ing：playing。",
+              "target_grammar": "被動語態（感官動詞）",
+              "optionsZh": [
+                "（原形動詞不符此處持續播放的語境）",
+                "（to V較常用於原本受詞補語為原形動詞的情況，此處強調持續播放用V-ing更合適）",
+                "（正確，強調持續動作用V-ing）",
+                "（過去分詞用於受詞是被動接受的情況，此處指音樂本身持續播放）"
+              ]
+            },
+            {
+              "sentence": "The children ___ to cross the street carefully by their parents.",
+              "options": [
+                "saw",
+                "were seen",
+                "are seen",
+                "see"
+              ],
+              "answer": 1,
+              "explanation": "感官動詞被動化：were seen，且此處為過去式語境，受詞補語cross改成to cross。",
+              "target_grammar": "被動語態（感官動詞）",
+              "optionsZh": [
+                "（主動語態的動詞形式，此處children是被看到的對象需被動）",
+                "（正確，感官動詞被動化were seen，過去式）",
+                "（現在式不符過去語境）",
+                "（現在式且為主動語態，不符此被動句構）"
+              ]
+            },
+            {
+              "sentence": "Strange sounds were heard ___ from the old house at midnight.",
+              "options": [
+                "come",
+                "to come",
+                "coming",
+                "came"
+              ],
+              "answer": 2,
+              "explanation": "強調聲音持續傳出的過程，被動句中用V-ing：coming。",
+              "target_grammar": "被動語態（感官動詞）",
+              "optionsZh": [
+                "（原形動詞不符此處持續傳出的語境）",
+                "（to V較常用於原受詞補語為原形動詞的情況，此處強調持續用V-ing更合適）",
+                "（正確，強調持續動作用V-ing）",
+                "（過去式不符受詞補語的句構）"
+              ]
+            },
+            {
+              "sentence": "He ___ to leave the meeting early by several colleagues.",
+              "options": [
+                "was seen",
+                "saw",
+                "sees",
+                "is seeing"
+              ],
+              "answer": 0,
+              "explanation": "感官動詞被動化：was seen，受詞補語leave改成to leave。",
+              "target_grammar": "被動語態（感官動詞）",
+              "optionsZh": [
+                "（正確，感官動詞被動化was seen）",
+                "（主動語態的動詞形式，此處he是被看到的對象需被動）",
+                "（現在式且為主動語態，不符過去語境）",
+                "（現在進行式且為主動語態，不符此被動句構）"
+              ]
+            },
+            {
+              "sentence": "The cat was felt ___ softly against my leg.",
+              "options": [
+                "rub",
+                "to rub",
+                "rubbing",
+                "rubbed"
+              ],
+              "answer": 2,
+              "explanation": "強調貓正在磨蹭的持續動作，被動句中用V-ing：rubbing。",
+              "target_grammar": "被動語態（感官動詞）",
+              "optionsZh": [
+                "（原形動詞不符此處持續動作的語境）",
+                "（to V較常用於原受詞補語為原形動詞的情況，此處強調持續用V-ing更合適）",
+                "（正確，強調持續動作用V-ing）",
+                "（過去分詞用於受詞是被動接受的情況，此處貓是主動磨蹭）"
+              ]
+            },
+            {
+              "sentence": "The player ___ to score the winning goal by thousands of fans.",
+              "options": [
+                "was seen",
+                "saw",
+                "sees",
+                "is seeing"
+              ],
+              "answer": 0,
+              "explanation": "感官動詞被動化：was seen，受詞補語score改成to score。",
+              "target_grammar": "被動語態（感官動詞）",
+              "optionsZh": [
+                "（正確，感官動詞被動化was seen）",
+                "（主動語態的動詞形式，此處player是被看到的對象需被動）",
+                "（現在式且為主動語態，不符過去語境）",
+                "（現在進行式且為主動語態，不符此被動句構）"
+              ]
+            },
+            {
+              "sentence": "The alarm was heard ___ loudly throughout the building.",
+              "options": [
+                "ring",
+                "to ring",
+                "ringing",
+                "rang"
+              ],
+              "answer": 2,
+              "explanation": "強調警報持續響起的過程，被動句中用V-ing：ringing。",
+              "target_grammar": "被動語態（感官動詞）",
+              "optionsZh": [
+                "（原形動詞不符此處持續響起的語境）",
+                "（to V較常用於原受詞補語為原形動詞的情況，此處強調持續用V-ing更合適）",
+                "（正確，強調持續動作用V-ing）",
+                "（過去式不符受詞補語的句構）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A Strange Night at the Old House",
+            "passage": "Last night, some strange things happened at the old house near the woods. Footsteps __(1)__ walking across the upstairs floor, even though no one was supposed to be there. A dog __(2)__ barking loudly outside the gate around midnight. Later, a shadow __(3)__ to move quickly past the window by one of the neighbors. Some villagers said voices __(4)__ whispering softly near the back door. By morning, nothing __(5)__ to explain what really happened that night.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "were heard",
+                  "heard",
+                  "hear",
+                  "are hearing"
+                ],
+                "answer": 0,
+                "explanation": "感官動詞被動化：were heard，符合footsteps是被聽到的對象。",
+                "optionsZh": [
+                  "（正確，感官動詞被動化were heard）",
+                  "（主動語態的動詞形式，此處footsteps是被聽到的對象需被動）",
+                  "（現在式且為主動語態，不符過去語境）",
+                  "（現在進行式且為主動語態，不符此被動句構）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "was heard",
+                  "heard",
+                  "hears",
+                  "is hearing"
+                ],
+                "answer": 0,
+                "explanation": "感官動詞被動化：was heard，強調狗持續吠叫，後面接V-ing barking。",
+                "optionsZh": [
+                  "（正確，感官動詞被動化was heard）",
+                  "（主動語態的動詞形式，此處dog是被聽到的對象需被動）",
+                  "（現在式且為主動語態，不符過去語境）",
+                  "（現在進行式且為主動語態，不符此被動句構）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "was seen",
+                  "saw",
+                  "sees",
+                  "is seeing"
+                ],
+                "answer": 0,
+                "explanation": "感官動詞被動化：was seen，受詞補語move改成to move。",
+                "optionsZh": [
+                  "（正確，感官動詞被動化was seen）",
+                  "（主動語態的動詞形式，此處shadow是被看到的對象需被動）",
+                  "（現在式且為主動語態，不符過去語境）",
+                  "（現在進行式且為主動語態，不符此被動句構）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "were heard",
+                  "heard",
+                  "hear",
+                  "are hearing"
+                ],
+                "answer": 0,
+                "explanation": "感官動詞被動化：were heard，強調聲音持續，後面接V-ing whispering。",
+                "optionsZh": [
+                  "（正確，感官動詞被動化were heard）",
+                  "（主動語態的動詞形式，此處voices是被聽到的對象需被動）",
+                  "（現在式且為主動語態，不符過去語境）",
+                  "（現在進行式且為主動語態，不符此被動句構）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "was found",
+                  "found",
+                  "finds",
+                  "is finding"
+                ],
+                "answer": 0,
+                "explanation": "被動語態：nothing was found，表示「什麼都沒被找到」（沒有找到解釋）。",
+                "optionsZh": [
+                  "（正確，nothing was found表示沒有被找到任何解釋）",
+                  "（主動語態，nothing不是動作執行者）",
+                  "（現在式且為主動語態，不符過去語境）",
+                  "（現在進行式且為主動語態，不符此被動句構）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "12-4",
         "title": "有使役動詞的被動語態句",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>要被動化的是使役動詞本身，不是受詞補語</b><br>My teacher made us practice English.（要被動化的是made，不是practice）<br><br><b>受詞補語在被動句中要改成to V</b><br>原本使役動詞後的受詞補語是原形動詞，被動化後要加to：My teacher made us practice English with the tape. → We were made to practice English with the tape by my teacher.<br><br><b>易混淆重點</b><br>① 使役動詞have/let本身其實很少直接被動化（have/let在英語中被動用法較少見，考試較常考make的被動），make的被動句最常見：S+be+made+to V+by O。<br>② 如果受詞是被動接受動作（不是自己主動做），受詞補語要用過去分詞，這是另一種結構（詳見12-13）：My teacher made the reports done by us.（這句本身就是主動句，reports是done的接受者）<br>③ 使役動詞get的被動句較特殊，因為get本身的主動句就已經是+to V的結構，所以被動化時結構變化較小。",
+          "examples": [
+            {
+              "en": "We were made to clean the whole classroom after the party.",
+              "zh": "我們被要求在派對後打掃整間教室。"
+            },
+            {
+              "en": "The students were made to stay after school for the extra practice.",
+              "zh": "學生們被要求放學後留下來加強練習。"
+            },
+            {
+              "en": "I was made to apologize even though it wasn't my fault.",
+              "zh": "即使不是我的錯，我還是被要求道歉。"
+            },
+            {
+              "en": "The workers were made to wear safety helmets on site.",
+              "zh": "工人們被要求在工地戴上安全帽。"
+            },
+            {
+              "en": "He was made to redo his homework because of the mistakes.",
+              "zh": "因為有錯誤，他被要求重做作業。"
+            },
+            {
+              "en": "We were made to wait outside for almost an hour.",
+              "zh": "我們被要求在外面等了將近一個小時。"
+            },
+            {
+              "en": "The new employees were made to attend the training session.",
+              "zh": "新員工被要求參加訓練課程。"
+            },
+            {
+              "en": "She was made to sing in front of the whole class.",
+              "zh": "她被要求在全班面前唱歌。"
+            },
+            {
+              "en": "The players were made to run extra laps for being late.",
+              "zh": "球員們因為遲到被要求多跑幾圈。"
+            },
+            {
+              "en": "I was made to feel welcome from the very first day.",
+              "zh": "從第一天開始，我就被讓人感到很受歡迎。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "We ___ to finish the whole project by the end of the week.",
+              "options": [
+                "made",
+                "were made",
+                "are making",
+                "make"
+              ],
+              "answer": 1,
+              "explanation": "使役動詞被動化：were made，受詞補語finish改成to finish。",
+              "target_grammar": "被動語態（使役動詞）",
+              "optionsZh": [
+                "（主動語態的動詞形式，此處we是被要求的對象需被動）",
+                "（正確，使役動詞被動化were made）",
+                "（現在進行式且為主動語態，不符此被動句構）",
+                "（現在式且為主動語態，不符此被動句構）"
+              ]
+            },
+            {
+              "sentence": "The students ___ to redo their assignments because of careless mistakes.",
+              "options": [
+                "were made",
+                "made",
+                "make",
+                "are making"
+              ],
+              "answer": 0,
+              "explanation": "使役動詞被動化：were made，受詞補語redo改成to redo。",
+              "target_grammar": "被動語態（使役動詞）",
+              "optionsZh": [
+                "（正確，使役動詞被動化were made）",
+                "（主動語態的動詞形式，此處students是被要求的對象需被動）",
+                "（現在式且為主動語態，不符此被動句構）",
+                "（現在進行式且為主動語態，不符此被動句構）"
+              ]
+            },
+            {
+              "sentence": "He ___ to wait outside the office for almost an hour.",
+              "options": [
+                "made",
+                "was made",
+                "makes",
+                "is making"
+              ],
+              "answer": 1,
+              "explanation": "使役動詞被動化：was made，受詞補語wait改成to wait。",
+              "target_grammar": "被動語態（使役動詞）",
+              "optionsZh": [
+                "（主動語態的動詞形式，此處he是被要求的對象需被動）",
+                "（正確，使役動詞被動化was made）",
+                "（現在式且為主動語態，不符此被動句構）",
+                "（現在進行式且為主動語態，不符此被動句構）"
+              ]
+            },
+            {
+              "sentence": "The new employees ___ to attend a training session on their first day.",
+              "options": [
+                "were made",
+                "made",
+                "make",
+                "are making"
+              ],
+              "answer": 0,
+              "explanation": "使役動詞被動化：were made，受詞補語attend改成to attend。",
+              "target_grammar": "被動語態（使役動詞）",
+              "optionsZh": [
+                "（正確，使役動詞被動化were made）",
+                "（主動語態的動詞形式，此處employees是被要求的對象需被動）",
+                "（現在式且為主動語態，不符此被動句構）",
+                "（現在進行式且為主動語態，不符此被動句構）"
+              ]
+            },
+            {
+              "sentence": "I ___ to apologize even though it wasn't really my fault.",
+              "options": [
+                "was made",
+                "made",
+                "make",
+                "am making"
+              ],
+              "answer": 0,
+              "explanation": "使役動詞被動化：was made，受詞補語apologize改成to apologize。",
+              "target_grammar": "被動語態（使役動詞）",
+              "optionsZh": [
+                "（正確，使役動詞被動化was made）",
+                "（主動語態的動詞形式，此處I是被要求的對象需被動）",
+                "（現在式且為主動語態，不符此被動句構）",
+                "（現在進行式且為主動語態，不符此被動句構）"
+              ]
+            },
+            {
+              "sentence": "The players ___ to run extra laps because they arrived late.",
+              "options": [
+                "were made",
+                "made",
+                "make",
+                "are making"
+              ],
+              "answer": 0,
+              "explanation": "使役動詞被動化：were made，受詞補語run改成to run。",
+              "target_grammar": "被動語態（使役動詞）",
+              "optionsZh": [
+                "（正確，使役動詞被動化were made）",
+                "（主動語態的動詞形式，此處players是被要求的對象需被動）",
+                "（現在式且為主動語態，不符此被動句構）",
+                "（現在進行式且為主動語態，不符此被動句構）"
+              ]
+            },
+            {
+              "sentence": "The workers ___ to wear safety gear at all times on site.",
+              "options": [
+                "were made",
+                "made",
+                "make",
+                "are making"
+              ],
+              "answer": 0,
+              "explanation": "使役動詞被動化：were made，受詞補語wear改成to wear。",
+              "target_grammar": "被動語態（使役動詞）",
+              "optionsZh": [
+                "（正確，使役動詞被動化were made）",
+                "（主動語態的動詞形式，此處workers是被要求的對象需被動）",
+                "（現在式且為主動語態，不符此被動句構）",
+                "（現在進行式且為主動語態，不符此被動句構）"
+              ]
+            },
+            {
+              "sentence": "She ___ to sing a song in front of the entire class.",
+              "options": [
+                "was made",
+                "made",
+                "makes",
+                "is making"
+              ],
+              "answer": 0,
+              "explanation": "使役動詞被動化：was made，受詞補語sing改成to sing。",
+              "target_grammar": "被動語態（使役動詞）",
+              "optionsZh": [
+                "（正確，使役動詞被動化was made）",
+                "（主動語態的動詞形式，此處she是被要求的對象需被動）",
+                "（現在式且為主動語態，不符此被動句構）",
+                "（現在進行式且為主動語態，不符此被動句構）"
+              ]
+            },
+            {
+              "sentence": "We ___ to clean up the whole classroom after the celebration.",
+              "options": [
+                "were made",
+                "made",
+                "make",
+                "are making"
+              ],
+              "answer": 0,
+              "explanation": "使役動詞被動化：were made，受詞補語clean up改成to clean up。",
+              "target_grammar": "被動語態（使役動詞）",
+              "optionsZh": [
+                "（正確，使役動詞被動化were made）",
+                "（主動語態的動詞形式，此處we是被要求的對象需被動）",
+                "（現在式且為主動語態，不符此被動句構）",
+                "（現在進行式且為主動語態，不符此被動句構）"
+              ]
+            },
+            {
+              "sentence": "The children ___ to finish their vegetables before dessert.",
+              "options": [
+                "were made",
+                "made",
+                "make",
+                "are making"
+              ],
+              "answer": 0,
+              "explanation": "使役動詞被動化：were made，受詞補語finish改成to finish。",
+              "target_grammar": "被動語態（使役動詞）",
+              "optionsZh": [
+                "（正確，使役動詞被動化were made）",
+                "（主動語態的動詞形式，此處children是被要求的對象需被動）",
+                "（現在式且為主動語態，不符此被動句構）",
+                "（現在進行式且為主動語態，不符此被動句構）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "The First Day of Basketball Camp",
+            "passage": "On the first day of basketball camp, all the campers __(1)__ to introduce themselves to the group. After that, everyone __(2)__ to run five laps around the court as a warm-up. Some players complained a little, but they __(3)__ to keep practicing anyway. Later, the younger kids __(4)__ to sit and watch how the older players played. By the end of the day, everyone __(5)__ to feel proud of how much they had improved.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "were made",
+                  "made",
+                  "make",
+                  "are making"
+                ],
+                "answer": 0,
+                "explanation": "使役動詞被動化：were made，受詞補語introduce改成to introduce。",
+                "optionsZh": [
+                  "（正確，使役動詞被動化were made）",
+                  "（主動語態的動詞形式，此處campers是被要求的對象需被動）",
+                  "（現在式且為主動語態，不符此被動句構）",
+                  "（現在進行式且為主動語態，不符此被動句構）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "was made",
+                  "made",
+                  "makes",
+                  "is making"
+                ],
+                "answer": 0,
+                "explanation": "使役動詞被動化：was made，受詞補語run改成to run。",
+                "optionsZh": [
+                  "（正確，使役動詞被動化was made）",
+                  "（主動語態的動詞形式，此處everyone是被要求的對象需被動）",
+                  "（現在式且為主動語態，不符此被動句構）",
+                  "（現在進行式且為主動語態，不符此被動句構）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "were made",
+                  "made",
+                  "make",
+                  "are making"
+                ],
+                "answer": 0,
+                "explanation": "使役動詞被動化：were made，受詞補語keep改成to keep。",
+                "optionsZh": [
+                  "（正確，使役動詞被動化were made）",
+                  "（主動語態的動詞形式，此處they是被要求的對象需被動）",
+                  "（現在式且為主動語態，不符此被動句構）",
+                  "（現在進行式且為主動語態，不符此被動句構）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "were made",
+                  "made",
+                  "make",
+                  "are making"
+                ],
+                "answer": 0,
+                "explanation": "使役動詞被動化：were made，受詞補語sit改成to sit。",
+                "optionsZh": [
+                  "（正確，使役動詞被動化were made）",
+                  "（主動語態的動詞形式，此處kids是被要求的對象需被動）",
+                  "（現在式且為主動語態，不符此被動句構）",
+                  "（現在進行式且為主動語態，不符此被動句構）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "was made",
+                  "made",
+                  "makes",
+                  "is making"
+                ],
+                "answer": 0,
+                "explanation": "使役動詞被動化：was made，受詞補語feel改成to feel。",
+                "optionsZh": [
+                  "（正確，使役動詞被動化was made）",
+                  "（主動語態的動詞形式，此處everyone是被要求的對象需被動）",
+                  "（現在式且為主動語態，不符此被動句構）",
+                  "（現在進行式且為主動語態，不符此被動句構）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "12-5",
