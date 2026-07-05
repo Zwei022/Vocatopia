@@ -7802,14 +7802,650 @@
       {
         "id": "10-1",
         "title": "動名詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>動名詞是什麼</b><br>動名詞（V-ing）同時具有動詞和名詞的性質，讓動詞可以當名詞使用。要注意：現在分詞也長得一樣（V-ing），但現在分詞是當形容詞用（表示「令人…」或「正在…」），跟動名詞的名詞功能不一樣，別搞混。<br><br><b>動名詞的八種用法</b><br>① 當主詞：Learning English is important.（兩個以上動名詞當主詞，動詞要用複數）<br>② 當受詞：I enjoy riding a bike.（及物動詞或介系詞的受詞）<br>③ 當主詞補語：My plan is taking a trip to Europe.<br>④ 當受詞補語：I have difficulty speaking in public.<br>⑤ 當同位語：A great plan, raising money for charity, is on the way.<br>⑥ 當形容詞表示「功能」：a waiting room（等候室）、a reading room（閱覽室）<br>⑦ 所有格+動名詞，強調「某人的作為」：Do you mind my smoking here?<br>⑧ go+V-ing表示戶外休閒活動：go swimming、go camping、go fishing、go shopping<br><br><b>否定怎麼加</b><br>直接在動名詞前面加not即可：Andy suggested not seeing that movie.（不是用助動詞否定，意思會不一樣：Andy didn't suggest seeing the movie.是「沒有建議看」，跟「建議不要看」意思不同）<br><br><b>只接動名詞當受詞的動詞（重要清單）</b><br>enjoy享受、finish結束、mind介意、practice練習、avoid避免、suggest建議、consider考慮、imagine想像、quit放棄、deny否認、appreciate感激、keep保持、spend+時間/金錢+V-ing、be busy V-ing忙於…<br><br><b>常用動名詞慣用片語</b><br>look forward to+V-ing「期盼做…」；be used to+V-ing「習慣於」（注意：used to+原形動詞是「過去習慣」，跟這個意思不同）；can't help+V-ing「不得不」；be busy+V-ing「忙於」；have trouble/difficulty+V-ing「做…有困難」；It's no use+V-ing「做…沒有用」。<br><br><b>正確觀念存取區</b><br>spend+金錢/時間+(on)+V-ing：這裡的V-ing雖然長得像受詞的位置，但其實不是受詞補語，只是描述錢或時間花在什麼事情上：Peter spent all night studying math.",
+          "examples": [
+            {
+              "en": "Watching horror movies alone scares me a lot.",
+              "zh": "自己一個人看恐怖片讓我很害怕。"
+            },
+            {
+              "en": "She finished cleaning her room before dinner.",
+              "zh": "她在晚餐前打掃完了房間。"
+            },
+            {
+              "en": "Do you mind my opening the window a little?",
+              "zh": "你介意我把窗戶打開一點嗎？"
+            },
+            {
+              "en": "We are looking forward to seeing you again.",
+              "zh": "我們很期待再見到你。"
+            },
+            {
+              "en": "He suggested not telling her the bad news yet.",
+              "zh": "他建議先不要告訴她這個壞消息。"
+            },
+            {
+              "en": "My grandmother enjoys going fishing on weekends.",
+              "zh": "我奶奶喜歡週末去釣魚。"
+            },
+            {
+              "en": "I can't help laughing every time I see that video.",
+              "zh": "我每次看到那個影片都忍不住笑出來。"
+            },
+            {
+              "en": "Learning a new language takes a lot of patience.",
+              "zh": "學習一門新語言需要很多耐心。"
+            },
+            {
+              "en": "This is a smoking-free waiting room.",
+              "zh": "這是一間禁菸的候診室。"
+            },
+            {
+              "en": "It's no use worrying about something you can't change.",
+              "zh": "擔心你無法改變的事情是沒有用的。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "___ vegetables every day is good for your health.",
+              "options": [
+                "Eat",
+                "Eats",
+                "Eating",
+                "To eating"
+              ],
+              "answer": 2,
+              "explanation": "動名詞當主詞，Eating vegetables是整個動名詞片語當主詞。",
+              "target_grammar": "動名詞",
+              "optionsZh": [
+                "（原形動詞不可直接當主詞）",
+                "（動詞第三人稱單數不可當主詞）",
+                "（正確，動名詞當主詞）",
+                "（不定詞前不加to eating這種混合形式）"
+              ]
+            },
+            {
+              "sentence": "He avoided ___ about the accident.",
+              "options": [
+                "talk",
+                "to talk",
+                "talking",
+                "talked"
+              ],
+              "answer": 2,
+              "explanation": "avoid是只接動名詞當受詞的動詞。",
+              "target_grammar": "動名詞",
+              "optionsZh": [
+                "（原形動詞不可直接當受詞）",
+                "（avoid不接不定詞）",
+                "（正確，avoid+動名詞）",
+                "（過去式不可當受詞）"
+              ]
+            },
+            {
+              "sentence": "Do you mind ___ the door for me?",
+              "options": [
+                "close",
+                "to close",
+                "closing",
+                "closed"
+              ],
+              "answer": 2,
+              "explanation": "mind是只接動名詞當受詞的動詞。",
+              "target_grammar": "動名詞",
+              "optionsZh": [
+                "（原形動詞不可直接當受詞）",
+                "（mind不接不定詞）",
+                "（正確，mind+動名詞）",
+                "（過去分詞不可當受詞）"
+              ]
+            },
+            {
+              "sentence": "I'm busy ___ for the exam this week.",
+              "options": [
+                "study",
+                "to study",
+                "studying",
+                "studied"
+              ],
+              "answer": 2,
+              "explanation": "be busy+V-ing「忙於…」是固定片語。",
+              "target_grammar": "動名詞",
+              "optionsZh": [
+                "（原形動詞不符固定片語）",
+                "（不定詞不符be busy固定片語）",
+                "（正確，be busy+V-ing固定片語）",
+                "（過去分詞不符固定片語）"
+              ]
+            },
+            {
+              "sentence": "She suggested ___ to the new restaurant downtown.",
+              "options": [
+                "go",
+                "to go",
+                "going",
+                "went"
+              ],
+              "answer": 2,
+              "explanation": "suggest是只接動名詞當受詞的動詞。",
+              "target_grammar": "動名詞",
+              "optionsZh": [
+                "（原形動詞不可直接當受詞）",
+                "（suggest不接不定詞）",
+                "（正確，suggest+動名詞）",
+                "（過去式不可當受詞）"
+              ]
+            },
+            {
+              "sentence": "Would you mind ___ smoking here? It bothers other people.",
+              "options": [
+                "not",
+                "no",
+                "not to",
+                "don't"
+              ],
+              "answer": 0,
+              "explanation": "動名詞否定，直接在V-ing前加not即可：not smoking。",
+              "target_grammar": "動名詞",
+              "optionsZh": [
+                "（正確，動名詞前直接加not否定）",
+                "（no不用於此處否定動名詞）",
+                "（不需要加to，此為動名詞非不定詞）",
+                "（不可用助動詞don't否定動名詞）"
+              ]
+            },
+            {
+              "sentence": "We are looking forward to ___ the concert next week.",
+              "options": [
+                "attend",
+                "attending",
+                "attended",
+                "attends"
+              ],
+              "answer": 1,
+              "explanation": "look forward to的to是介系詞，後面要接動名詞attending。",
+              "target_grammar": "動名詞",
+              "optionsZh": [
+                "（原形動詞不可接在介系詞to後）",
+                "（正確，look forward to+V-ing）",
+                "（過去式不可接在介系詞to後）",
+                "（第三人稱單數動詞形式不可接在介系詞to後）"
+              ]
+            },
+            {
+              "sentence": "I had a hard time ___ my keys this morning.",
+              "options": [
+                "find",
+                "to find",
+                "finding",
+                "found"
+              ],
+              "answer": 2,
+              "explanation": "have a hard time+V-ing「度過艱難的時光做…」是固定片語。",
+              "target_grammar": "動名詞",
+              "optionsZh": [
+                "（原形動詞不符固定片語）",
+                "（不定詞不符have a hard time固定片語）",
+                "（正確，have a hard time+V-ing固定片語）",
+                "（過去式不符固定片語）"
+              ]
+            },
+            {
+              "sentence": "My little brother loves ___ in the park after school.",
+              "options": [
+                "play",
+                "to play",
+                "playing",
+                "played"
+              ],
+              "answer": 2,
+              "explanation": "love後面可接動名詞或不定詞，此處以動名詞playing為選項正解（皆可接的動詞）。",
+              "target_grammar": "動名詞",
+              "optionsZh": [
+                "（原形動詞不可直接當受詞）",
+                "（此處以動名詞為正解，love雖也可接不定詞但選項中only此為對）",
+                "（正確，love+動名詞）",
+                "（過去式不可當受詞）"
+              ]
+            },
+            {
+              "sentence": "It's no use ___ over something that already happened.",
+              "options": [
+                "worry",
+                "to worry",
+                "worrying",
+                "worried"
+              ],
+              "answer": 2,
+              "explanation": "It's no use+V-ing「做…沒有用」是固定片語。",
+              "target_grammar": "動名詞",
+              "optionsZh": [
+                "（原形動詞不符固定片語）",
+                "（不定詞不符It's no use固定片語）",
+                "（正確，It's no use+V-ing固定片語）",
+                "（過去分詞不符固定片語）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A New Hobby",
+            "passage": "Last month, my sister started __(1)__ pottery classes every weekend. At first, she had trouble __(2)__ the clay into any shape. She almost gave up, but her teacher suggested __(3)__ practicing a little every day instead of quitting. Now she is looking forward to __(4)__ her own bowls and cups. My mom doesn't mind __(5)__ some of her creative pottery pieces all over the living room.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "take",
+                  "to take",
+                  "taking",
+                  "took"
+                ],
+                "answer": 2,
+                "explanation": "start可接動名詞或不定詞皆可，此處以動名詞taking為正解。",
+                "optionsZh": [
+                  "（原形動詞不可直接當受詞）",
+                  "（此處以動名詞為正解）",
+                  "（正確，start+動名詞）",
+                  "（過去式不可當受詞）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "shape",
+                  "to shape",
+                  "shaping",
+                  "shaped"
+                ],
+                "answer": 2,
+                "explanation": "have trouble+V-ing「做…有困難」是固定片語。",
+                "optionsZh": [
+                  "（原形動詞不符固定片語）",
+                  "（不定詞不符have trouble固定片語）",
+                  "（正確，have trouble+V-ing固定片語）",
+                  "（過去分詞不符固定片語）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "not stop",
+                  "stop not",
+                  "not stopping",
+                  "stopping not"
+                ],
+                "answer": 2,
+                "explanation": "動名詞否定，直接在V-ing前加not：not stopping。",
+                "optionsZh": [
+                  "（缺少V-ing形式）",
+                  "（語序錯誤）",
+                  "（正確，動名詞前加not否定）",
+                  "（語序錯誤，not應放在V-ing前）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "make",
+                  "to make",
+                  "making",
+                  "made"
+                ],
+                "answer": 2,
+                "explanation": "look forward to的to是介系詞，後面要接動名詞making。",
+                "optionsZh": [
+                  "（原形動詞不可接在介系詞to後）",
+                  "（正確用法應為動名詞而非不定詞）",
+                  "（正確，look forward to+V-ing）",
+                  "（過去式不可接在介系詞to後）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "see",
+                  "to see",
+                  "seeing",
+                  "saw"
+                ],
+                "answer": 2,
+                "explanation": "mind是只接動名詞當受詞的動詞。",
+                "optionsZh": [
+                  "（原形動詞不可直接當受詞）",
+                  "（mind不接不定詞）",
+                  "（正確，mind+動名詞）",
+                  "（過去式不可當受詞）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "10-2",
         "title": "不定詞",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>不定詞也可以當名詞</b><br>不定詞（to+原形動詞）跟動名詞一樣具有名詞功能，用法幾乎一樣：當主詞、受詞、主詞補語、受詞補語、同位語。<br><br><b>當主詞時常用假主詞it</b><br>不定詞或動名詞當主詞如果太長，可以用it代替放句首，真正的主詞移到句尾：To learn English is important. = It is important to learn English.<br>若要表明是「誰」做這件事，用for+人：It's a duty for every student to study hard.<br>若要形容某人的品行、態度（kind、wise、foolish等），改用of+人：It's very kind of you to help me.<br><br><b>當受詞的規則</b><br>不定詞可以當及物動詞的受詞，但通常不當介系詞的受詞（這點跟動名詞不一樣）：I want to see a movie.<br>簡答時省略受詞，動詞後面的to要保留：Would you like to come? — I'd like to.（不能只說I would like）<br><br><b>只接不定詞當受詞的動詞（重要清單）</b><br>want想要、hope希望、decide決定、plan計畫、wish希望、expect期待、promise承諾、learn學習、would like想要、fail失敗、refuse拒絕、pretend假裝、agree同意<br><br><b>不定詞修飾形容詞（重要清單）</b><br>限定修飾人的情緒/態度形容詞：afraid、glad、happy、sad、sorry、surprised、proud、willing、ready、lucky等：I'm so happy to see you.<br><br><b>不定詞修飾特定屬性形容詞</b><br>easy、hard、difficult、convenient、impossible等：The song is easy to sing.（注意：這類形容詞不可直接用人當主詞，詳見第7章「非修飾人的形容詞」）<br><br><b>remember/forget/stop/try 意思完全不同</b><br>+to V表示「要去做」（未來）；+V-ing表示「做過/正在做」（過去）：remember to pick up（記得要去接）vs remember doing（記得做過）；stop to eat（停下來去吃）vs stop eating（停止吃）。",
+          "examples": [
+            {
+              "en": "I decided to join the school choir this year.",
+              "zh": "我決定今年加入學校合唱團。"
+            },
+            {
+              "en": "It is impossible for him to finish the work today.",
+              "zh": "他不可能今天完成這份工作。"
+            },
+            {
+              "en": "It was so kind of you to help the old man.",
+              "zh": "你幫助那位老先生真是太善良了。"
+            },
+            {
+              "en": "She refused to answer any of the questions.",
+              "zh": "她拒絕回答任何問題。"
+            },
+            {
+              "en": "Remember to lock the door before you leave.",
+              "zh": "離開前記得要鎖門。"
+            },
+            {
+              "en": "I remember locking the door this morning.",
+              "zh": "我記得今天早上有鎖門。"
+            },
+            {
+              "en": "He was too nervous to speak in front of everyone.",
+              "zh": "他太緊張了，無法在大家面前說話。"
+            },
+            {
+              "en": "This math problem is hard to solve without a calculator.",
+              "zh": "沒有計算機的話，這道數學題很難解。"
+            },
+            {
+              "en": "We stopped to take some photos of the sunset.",
+              "zh": "我們停下來拍了一些夕陽的照片。"
+            },
+            {
+              "en": "I'm proud to be part of this team.",
+              "zh": "我很驕傲能成為這個團隊的一份子。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "It is important for students ___ enough sleep.",
+              "options": [
+                "get",
+                "getting",
+                "to get",
+                "got"
+              ],
+              "answer": 2,
+              "explanation": "假主詞it代替真主詞不定詞片語，for students指出「誰」要做這件事。",
+              "target_grammar": "不定詞",
+              "optionsZh": [
+                "（原形動詞不可直接接在此句構中）",
+                "（it假主詞句型應搭配不定詞而非動名詞）",
+                "（正確，it...for+人+to V的假主詞句型）",
+                "（過去式不符此句構）"
+              ]
+            },
+            {
+              "sentence": "It was very kind ___ you to carry my bags.",
+              "options": [
+                "for",
+                "of",
+                "with",
+                "to"
+              ],
+              "answer": 1,
+              "explanation": "形容某人的品行態度（kind）要用of+人。",
+              "target_grammar": "不定詞",
+              "optionsZh": [
+                "（for用於一般不定詞句型，此處需要形容品行的of）",
+                "（正確，形容人的品行用of+人）",
+                "（with不用於此假主詞句型）",
+                "（to不用於此假主詞句型）"
+              ]
+            },
+            {
+              "sentence": "He promised ___ me the truth.",
+              "options": [
+                "tell",
+                "telling",
+                "to tell",
+                "told"
+              ],
+              "answer": 2,
+              "explanation": "promise是只接不定詞當受詞的動詞。",
+              "target_grammar": "不定詞",
+              "optionsZh": [
+                "（原形動詞不可直接當受詞）",
+                "（promise不接動名詞）",
+                "（正確，promise+不定詞）",
+                "（過去式不可當受詞）"
+              ]
+            },
+            {
+              "sentence": "Please remember ___ the lights before you leave.",
+              "options": [
+                "turn off",
+                "turning off",
+                "to turn off",
+                "turned off"
+              ],
+              "answer": 2,
+              "explanation": "remember+to V表示「記得要去做」（尚未做的事）。",
+              "target_grammar": "不定詞",
+              "optionsZh": [
+                "（原形動詞不可直接當受詞）",
+                "（remember+V-ing表示記得做過，語意不符「離開前」）",
+                "（正確，remember+to V表示記得要做）",
+                "（過去式不符句意）"
+              ]
+            },
+            {
+              "sentence": "I remember ___ this song when I was young.",
+              "options": [
+                "hear",
+                "to hear",
+                "hearing",
+                "heard"
+              ],
+              "answer": 2,
+              "explanation": "remember+V-ing表示「記得做過」（過去發生的事）。",
+              "target_grammar": "不定詞",
+              "optionsZh": [
+                "（原形動詞不可直接當受詞）",
+                "（remember+to V表示記得要做，語意不符過去回憶）",
+                "（正確，remember+V-ing表示記得做過）",
+                "（過去式不可當受詞）"
+              ]
+            },
+            {
+              "sentence": "This book is too difficult ___ for a child.",
+              "options": [
+                "read",
+                "to read",
+                "reading",
+                "reads"
+              ],
+              "answer": 1,
+              "explanation": "too...to句型，且difficult是不定詞修飾的特定屬性形容詞。",
+              "target_grammar": "不定詞",
+              "optionsZh": [
+                "（原形動詞不符too...to句型）",
+                "（正確，too...to句型）",
+                "（動名詞不符too...to句型）",
+                "（動詞第三人稱單數不符too...to句型）"
+              ]
+            },
+            {
+              "sentence": "We stopped ___ a rest after walking for hours.",
+              "options": [
+                "take",
+                "taking",
+                "to take",
+                "took"
+              ],
+              "answer": 2,
+              "explanation": "stop+to V表示「停下手邊的事去做另一件事」。",
+              "target_grammar": "不定詞",
+              "optionsZh": [
+                "（原形動詞不可直接當受詞）",
+                "（stop+V-ing表示停止正在做的事，語意不符「去休息」）",
+                "（正確，stop+to V表示停下來去做）",
+                "（過去式不可當受詞）"
+              ]
+            },
+            {
+              "sentence": "A: Would you like to join us? B: I'd love ___, but I'm busy.",
+              "options": [
+                "",
+                "to",
+                "it",
+                "that"
+              ],
+              "answer": 1,
+              "explanation": "簡答時省略不定詞受詞，但動詞後面的to要保留。",
+              "target_grammar": "不定詞",
+              "optionsZh": [
+                "（不可完全省略to）",
+                "（正確，簡答保留to）",
+                "（it不用於此簡答句型）",
+                "（that不用於此簡答句型）"
+              ]
+            },
+            {
+              "sentence": "Everyone was ___ to hear the good news.",
+              "options": [
+                "excite",
+                "excited",
+                "exciting",
+                "excitement"
+              ],
+              "answer": 1,
+              "explanation": "excited是修飾人情緒的過去分詞形容詞，後面接不定詞to hear表示原因。",
+              "target_grammar": "不定詞",
+              "optionsZh": [
+                "（原形動詞不可直接修飾人）",
+                "（正確，excited修飾人的情緒，後接不定詞表原因）",
+                "（exciting修飾事物而非人的感受）",
+                "（名詞不可直接修飾主詞was後的位置）"
+              ]
+            },
+            {
+              "sentence": "It's impossible ___ to finish this project in one day.",
+              "options": [
+                "of us",
+                "for us",
+                "us",
+                "to us"
+              ],
+              "answer": 1,
+              "explanation": "impossible不是形容人品行的形容詞，要用for+人指出「誰」做這件事。",
+              "target_grammar": "不定詞",
+              "optionsZh": [
+                "（of用於形容人的品行態度，impossible不屬此類）",
+                "（正確，一般不定詞句型用for+人）",
+                "（缺少介系詞）",
+                "（to us不符假主詞句型）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "Learning to Cook",
+            "passage": "My brother decided __(1)__ how to cook last summer. At first, it was hard for him __(2)__ even simple dishes like fried rice. He remembered __(3)__ his mother cook when he was little, so he tried to copy her steps. It was very brave of him __(4)__ new recipes without any help. Now he stops __(5)__ photos of every dish he makes before eating, just to remember his progress.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "learn",
+                  "learning",
+                  "to learn",
+                  "learned"
+                ],
+                "answer": 2,
+                "explanation": "decide是只接不定詞當受詞的動詞。",
+                "optionsZh": [
+                  "（原形動詞不可直接當受詞）",
+                  "（decide不接動名詞）",
+                  "（正確，decide+不定詞）",
+                  "（過去式不可當受詞）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "cook",
+                  "cooking",
+                  "to cook",
+                  "cooked"
+                ],
+                "answer": 2,
+                "explanation": "it is hard for him to cook是假主詞句型，hard是不定詞修飾的特定屬性形容詞。",
+                "optionsZh": [
+                  "（原形動詞不符此假主詞句構）",
+                  "（此假主詞句型應搭配不定詞而非動名詞）",
+                  "（正確，it is hard for+人+to V）",
+                  "（過去式不符此句構）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "see",
+                  "to see",
+                  "seeing",
+                  "saw"
+                ],
+                "answer": 2,
+                "explanation": "remember+V-ing表示「記得做過」（過去回憶）。",
+                "optionsZh": [
+                  "（原形動詞不可直接當受詞）",
+                  "（remember+to V表示記得要做，語意不符過去回憶）",
+                  "（正確，remember+V-ing表示記得做過）",
+                  "（過去式不可當受詞）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "of him",
+                  "for him",
+                  "him",
+                  "to him"
+                ],
+                "answer": 0,
+                "explanation": "brave是形容人品行/態度的形容詞，要用of+人。",
+                "optionsZh": [
+                  "（正確，形容人的品行用of+人）",
+                  "（for用於一般不定詞句型，brave屬形容品行類應用of）",
+                  "（缺少介系詞）",
+                  "（to him不符假主詞句型）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "take",
+                  "taking",
+                  "to take",
+                  "took"
+                ],
+                "answer": 2,
+                "explanation": "stop+to V表示「停下手邊的事去做另一件事」（停下來去拍照）。",
+                "optionsZh": [
+                  "（原形動詞不可直接當受詞）",
+                  "（stop+V-ing表示停止正在做的事，語意不符「停下來去拍照」）",
+                  "（正確，stop+to V表示停下來去做）",
+                  "（過去式不可當受詞）"
+                ]
+              }
+            ]
+          }
+        }
       }
     ]
   },
