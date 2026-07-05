@@ -14008,14 +14008,650 @@
       {
         "id": "12-5",
         "title": "有授與動詞的被動語態句",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>授與動詞有兩個受詞，被動化時可以選一個當新主詞</b><br>Mom gave me some money.（授與動詞句構：人+事物）可以有兩種被動句：<br>① 用「人」當新主詞：I was given some money by Mom.<br>② 用「事物」當新主詞：Some money was given to me by Mom.（用事物當主詞時，人的前面要加回介系詞to）<br><br><b>搭配for的授與動詞只能用「事物」當新主詞</b><br>Sue wrote a letter to Mary.可以說Mary was written a letter by Sue.但如果原本是搭配for的授與動詞（buy、make、cook），只能用事物當主詞，不能用人：Mom bought me a gift. → A gift was bought for me by Mom.（不能說I was bought a gift，這點跟搭配to的授與動詞不一樣）<br><br><b>易混淆重點</b><br>① 用事物當新主詞時，人前面一定要補回介系詞（to或for），不能省略。<br>② 判斷能不能用「人」當主詞，關鍵在原本搭配的介系詞是to還是for：to可以，for通常不行（這是書中特別強調的例外規則）。",
+          "examples": [
+            {
+              "en": "I was given a beautiful watch on my graduation day.",
+              "zh": "我畢業那天收到一只漂亮的手錶。"
+            },
+            {
+              "en": "A prize was given to the winner of the contest.",
+              "zh": "獎品頒發給了比賽的優勝者。"
+            },
+            {
+              "en": "She was sent a warning letter by the school.",
+              "zh": "她收到了學校寄來的一封警告信。"
+            },
+            {
+              "en": "A new toy was bought for my little cousin.",
+              "zh": "有人幫我的小表弟買了一個新玩具。"
+            },
+            {
+              "en": "He was shown the way to the train station by a stranger.",
+              "zh": "有位陌生人幫他指了往火車站的路。"
+            },
+            {
+              "en": "A special dinner was cooked for the guests last night.",
+              "zh": "昨晚有人為客人們煮了一頓特別的晚餐。"
+            },
+            {
+              "en": "I was told the good news by my best friend first.",
+              "zh": "我最好的朋友第一個告訴我這個好消息。"
+            },
+            {
+              "en": "A card was written to the retiring teacher by the whole class.",
+              "zh": "全班一起寫了一張卡片給即將退休的老師。"
+            },
+            {
+              "en": "We were offered free tickets to the show.",
+              "zh": "我們獲得了免費的節目票券。"
+            },
+            {
+              "en": "A new bike was made for him by his grandfather.",
+              "zh": "他的爺爺為他做了一輛新腳踏車。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "I ___ a special award at the ceremony last week.",
+              "options": [
+                "was given",
+                "gave",
+                "am giving",
+                "give"
+              ],
+              "answer": 0,
+              "explanation": "授與動詞give搭配to，可以用「人」當新主詞：I was given...",
+              "target_grammar": "被動語態（授與動詞）",
+              "optionsZh": [
+                "（正確，give搭配to時可用人當主詞was given）",
+                "（主動語態，I不是動作執行者）",
+                "（現在進行式且為主動語態，不符過去語境）",
+                "（現在式且為主動語態，不符過去語境）"
+              ]
+            },
+            {
+              "sentence": "A new dress ___ for her by her aunt.",
+              "options": [
+                "was bought",
+                "bought",
+                "buys",
+                "is buying"
+              ],
+              "answer": 0,
+              "explanation": "buy搭配for，只能用「事物」當新主詞，不能用人：A new dress was bought for her。",
+              "target_grammar": "被動語態（授與動詞）",
+              "optionsZh": [
+                "（正確，buy搭配for時只能用事物當主詞）",
+                "（主動語態，dress不是動作執行者）",
+                "（現在式且為主動語態，不符過去語境）",
+                "（現在進行式且為主動語態，不符此被動句構）"
+              ]
+            },
+            {
+              "sentence": "She ___ some flowers by her classmates on her birthday.",
+              "options": [
+                "was sent",
+                "sent",
+                "sends",
+                "is sending"
+              ],
+              "answer": 0,
+              "explanation": "send搭配to，可以用「人」當新主詞：She was sent some flowers。",
+              "target_grammar": "被動語態（授與動詞）",
+              "optionsZh": [
+                "（正確，send搭配to時可用人當主詞was sent）",
+                "（主動語態，she不是動作執行者）",
+                "（現在式且為主動語態，不符過去語境）",
+                "（現在進行式且為主動語態，不符過去語境）"
+              ]
+            },
+            {
+              "sentence": "A big meal ___ for the whole family by grandma.",
+              "options": [
+                "was cooked",
+                "cooked",
+                "cooks",
+                "is cooking"
+              ],
+              "answer": 0,
+              "explanation": "cook搭配for，只能用「事物」當新主詞：A big meal was cooked for the whole family。",
+              "target_grammar": "被動語態（授與動詞）",
+              "optionsZh": [
+                "（正確，cook搭配for時只能用事物當主詞）",
+                "（主動語態，meal不是動作執行者）",
+                "（現在式且為主動語態，不符過去語境）",
+                "（現在進行式且為主動語態，不符此被動句構）"
+              ]
+            },
+            {
+              "sentence": "The students ___ a difficult question by the professor.",
+              "options": [
+                "were asked",
+                "asked",
+                "ask",
+                "are asking"
+              ],
+              "answer": 0,
+              "explanation": "ask搭配of，可以用「人」當新主詞：The students were asked...",
+              "target_grammar": "被動語態（授與動詞）",
+              "optionsZh": [
+                "（正確，ask搭配of時可用人當主詞were asked）",
+                "（主動語態，students不是動作執行者）",
+                "（現在式且為主動語態，不符過去語境）",
+                "（現在進行式且為主動語態，不符過去語境）"
+              ]
+            },
+            {
+              "sentence": "A toy car ___ for the little boy by his uncle.",
+              "options": [
+                "was made",
+                "made",
+                "makes",
+                "is making"
+              ],
+              "answer": 0,
+              "explanation": "make搭配for，只能用「事物」當新主詞：A toy car was made for the little boy。",
+              "target_grammar": "被動語態（授與動詞）",
+              "optionsZh": [
+                "（正確，make搭配for時只能用事物當主詞）",
+                "（主動語態，toy car不是動作執行者）",
+                "（現在式且為主動語態，不符過去語境）",
+                "（現在進行式且為主動語態，不符此被動句構）"
+              ]
+            },
+            {
+              "sentence": "He ___ the correct answer by his teacher during the review.",
+              "options": [
+                "was told",
+                "told",
+                "tells",
+                "is telling"
+              ],
+              "answer": 0,
+              "explanation": "tell搭配to，可以用「人」當新主詞：He was told the correct answer。",
+              "target_grammar": "被動語態（授與動詞）",
+              "optionsZh": [
+                "（正確，tell搭配to時可用人當主詞was told）",
+                "（主動語態，he不是動作執行者）",
+                "（現在式且為主動語態，不符過去語境）",
+                "（現在進行式且為主動語態，不符過去語境）"
+              ]
+            },
+            {
+              "sentence": "A birthday cake ___ for me by my mom every year.",
+              "options": [
+                "is made",
+                "makes",
+                "made",
+                "is making"
+              ],
+              "answer": 0,
+              "explanation": "make搭配for，只能用「事物」當新主詞：A birthday cake is made for me。",
+              "target_grammar": "被動語態（授與動詞）",
+              "optionsZh": [
+                "（正確，make搭配for時只能用事物當主詞）",
+                "（主動語態，cake不是動作執行者）",
+                "（過去式時態不符every year的常態語境）",
+                "（現在進行式且為主動語態，不符此被動句構）"
+              ]
+            },
+            {
+              "sentence": "We ___ free samples by the store staff yesterday.",
+              "options": [
+                "were given",
+                "gave",
+                "give",
+                "are giving"
+              ],
+              "answer": 0,
+              "explanation": "give搭配to，可以用「人」當新主詞：We were given free samples。",
+              "target_grammar": "被動語態（授與動詞）",
+              "optionsZh": [
+                "（正確，give搭配to時可用人當主詞were given）",
+                "（主動語態，we不是動作執行者）",
+                "（現在式且為主動語態，不符過去語境）",
+                "（現在進行式且為主動語態，不符過去語境）"
+              ]
+            },
+            {
+              "sentence": "A favor ___ of him by his neighbor last week.",
+              "options": [
+                "was asked",
+                "asked",
+                "asks",
+                "is asking"
+              ],
+              "answer": 0,
+              "explanation": "ask搭配of，此處以「事物」（favor）當主詞：A favor was asked of him。",
+              "target_grammar": "被動語態（授與動詞）",
+              "optionsZh": [
+                "（正確，此處以事物favor當被動句主詞）",
+                "（主動語態，favor不是動作執行者）",
+                "（現在式且為主動語態，不符過去語境）",
+                "（現在進行式且為主動語態，不符過去語境）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A Surprise Gift for the Teacher",
+            "passage": "Last Friday, our class decided to do something special for our homeroom teacher. A beautiful card __(1)__ for her by the whole class, with everyone writing a short message inside. She __(2)__ the card during our last class of the day, and she looked very touched. A small cake __(3)__ for her by two of my classmates who love baking. Later, she __(4)__ several kind words by different students who wanted to thank her. In the end, she __(5)__ a wonderful surprise by all of us, and she said it was one of the best days of her year.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "was made",
+                  "made",
+                  "makes",
+                  "is making"
+                ],
+                "answer": 0,
+                "explanation": "make搭配for，只能用「事物」當新主詞：A beautiful card was made for her。",
+                "optionsZh": [
+                  "（正確，make搭配for時只能用事物當主詞）",
+                  "（主動語態，card不是動作執行者）",
+                  "（現在式且為主動語態，不符過去語境）",
+                  "（現在進行式且為主動語態，不符此被動句構）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "was given",
+                  "gave",
+                  "gives",
+                  "is giving"
+                ],
+                "answer": 0,
+                "explanation": "give搭配to，可以用「人」當新主詞：She was given the card。",
+                "optionsZh": [
+                  "（正確，give搭配to時可用人當主詞was given）",
+                  "（主動語態，she不是動作執行者）",
+                  "（現在式且為主動語態，不符過去語境）",
+                  "（現在進行式且為主動語態，不符過去語境）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "was baked",
+                  "baked",
+                  "bakes",
+                  "is baking"
+                ],
+                "answer": 0,
+                "explanation": "bake類似cook搭配for，只能用「事物」當新主詞：A small cake was baked for her。",
+                "optionsZh": [
+                  "（正確，bake搭配for時只能用事物當主詞）",
+                  "（主動語態，cake不是動作執行者）",
+                  "（現在式且為主動語態，不符過去語境）",
+                  "（現在進行式且為主動語態，不符此被動句構）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "was told",
+                  "told",
+                  "tells",
+                  "is telling"
+                ],
+                "answer": 0,
+                "explanation": "tell搭配to，可以用「人」當新主詞：She was told several kind words。",
+                "optionsZh": [
+                  "（正確，tell搭配to時可用人當主詞was told）",
+                  "（主動語態，she不是動作執行者）",
+                  "（現在式且為主動語態，不符過去語境）",
+                  "（現在進行式且為主動語態，不符過去語境）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "was given",
+                  "gave",
+                  "gives",
+                  "is giving"
+                ],
+                "answer": 0,
+                "explanation": "give搭配to，可以用「人」當新主詞：She was given a wonderful surprise。",
+                "optionsZh": [
+                  "（正確，give搭配to時可用人當主詞was given）",
+                  "（主動語態，she不是動作執行者）",
+                  "（現在式且為主動語態，不符過去語境）",
+                  "（現在進行式且為主動語態，不符過去語境）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "12-6",
         "title": "有介系詞的被動語態句",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>動詞後面的介系詞一定要跟著被動化的動詞走</b><br>不管是介詞動詞片語（look after）、可拆式動詞片語（turn off），還是「不及物動詞+受詞(人)+介系詞+受詞(物)」的結構，被動化時介系詞都要緊跟在動詞後面，不能丟掉：<br>① 介詞動詞：Linda is thinking of Tom. → Tom is being thought of by Linda.<br>② （介）副詞動詞：Larry always turns off the light. → The light is always turned off by Larry.<br>③ 含介系詞的受詞人+物結構：Peter asked Dad for some money. → Dad was asked for some money by Peter.<br>④ 含to V的結構：Mike tells Kevin to leave now. → Kevin is told to leave by Mike now.<br><br><b>易混淆重點</b><br>① 這類句子被動化後，句尾常會出現「動詞+介系詞」黏在一起的畫面（thought of、turned off、asked for），初學者容易誤以為介系詞是多餘的，其實它是句子結構的必要部分，不能刪掉。<br>② 副詞（always、carefully）的位置在被動句中通常還是放在be動詞後面：The light is always turned off.",
+          "examples": [
+            {
+              "en": "This problem is being talked about by the whole school.",
+              "zh": "整個學校都在討論這個問題。"
+            },
+            {
+              "en": "The lights are always turned off before we leave.",
+              "zh": "我們離開前燈總是會被關掉。"
+            },
+            {
+              "en": "My grandfather was cared for by the whole family.",
+              "zh": "我爺爺受到全家人的照顧。"
+            },
+            {
+              "en": "She was asked for advice by many of her classmates.",
+              "zh": "很多同學向她尋求建議。"
+            },
+            {
+              "en": "The music was being listened to by everyone in the room.",
+              "zh": "房間裡的每個人都在聽這首音樂。"
+            },
+            {
+              "en": "He is often laughed at because of his funny jokes.",
+              "zh": "他常常因為他的搞笑笑話被大家取笑。"
+            },
+            {
+              "en": "The trash is taken out every Monday morning.",
+              "zh": "垃圾每週一早上都會被拿出去。"
+            },
+            {
+              "en": "The kids were told to be quiet during the movie.",
+              "zh": "孩子們被告知在電影播放期間要保持安靜。"
+            },
+            {
+              "en": "This old bridge is still being looked after by the city.",
+              "zh": "這座舊橋仍然由市政府在維護照顧。"
+            },
+            {
+              "en": "The homeless were given food and blankets by volunteers.",
+              "zh": "志工們提供了食物和毯子給無家可歸的人。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "This topic ___ by many students during the discussion.",
+              "options": [
+                "was talked about",
+                "was talked",
+                "talked about",
+                "was about talked"
+              ],
+              "answer": 0,
+              "explanation": "介詞動詞talk about被動化時，介系詞about要保留在動詞後面：was talked about。",
+              "target_grammar": "被動語態（介系詞）",
+              "optionsZh": [
+                "（正確，介系詞about緊跟在動詞後面）",
+                "（缺少about，介系詞不可省略）",
+                "（主動語態，topic不是動作執行者）",
+                "（語序錯誤，about應緊跟talked之後）"
+              ]
+            },
+            {
+              "sentence": "The baby ___ by her grandmother while her parents were at work.",
+              "options": [
+                "was looked after",
+                "was looked",
+                "looked after",
+                "was after looked"
+              ],
+              "answer": 0,
+              "explanation": "介詞動詞look after被動化時，介系詞after要保留：was looked after。",
+              "target_grammar": "被動語態（介系詞）",
+              "optionsZh": [
+                "（正確，介系詞after緊跟在動詞後面）",
+                "（缺少after，介系詞不可省略）",
+                "（主動語態，baby不是動作執行者）",
+                "（語序錯誤，after應緊跟looked之後）"
+              ]
+            },
+            {
+              "sentence": "The TV ___ every night before bedtime.",
+              "options": [
+                "is turned off",
+                "is turned",
+                "turned off",
+                "is off turned"
+              ],
+              "answer": 0,
+              "explanation": "可拆式動詞片語turn off被動化時，介副詞off要保留：is turned off。",
+              "target_grammar": "被動語態（介系詞）",
+              "optionsZh": [
+                "（正確，介副詞off緊跟在動詞後面）",
+                "（缺少off，介副詞不可省略）",
+                "（主動語態，TV不是動作執行者）",
+                "（語序錯誤，off應緊跟turned之後）"
+              ]
+            },
+            {
+              "sentence": "My uncle ___ for money by a stranger on the street.",
+              "options": [
+                "was asked",
+                "asked",
+                "was asking",
+                "asks"
+              ],
+              "answer": 0,
+              "explanation": "「不及物動詞+受詞(人)+介系詞+受詞(物)」結構被動化：Dad was asked for money，介系詞for保留。",
+              "target_grammar": "被動語態（介系詞）",
+              "optionsZh": [
+                "（正確，was asked for保留介系詞for）",
+                "（主動語態，uncle不是動作執行者）",
+                "（進行式時態不符此明確過去事件的語境）",
+                "（現在式且為主動語態，不符過去語境）"
+              ]
+            },
+            {
+              "sentence": "The new policy ___ by the entire staff at the meeting.",
+              "options": [
+                "was thought of",
+                "was thought",
+                "thought of",
+                "was of thought"
+              ],
+              "answer": 0,
+              "explanation": "介詞動詞think of被動化時，介系詞of要保留：was thought of。",
+              "target_grammar": "被動語態（介系詞）",
+              "optionsZh": [
+                "（正確，介系詞of緊跟在動詞後面）",
+                "（缺少of，介系詞不可省略）",
+                "（主動語態，policy不是動作執行者）",
+                "（語序錯誤，of應緊跟thought之後）"
+              ]
+            },
+            {
+              "sentence": "Everyone in class ___ to keep quiet during the test.",
+              "options": [
+                "was told",
+                "told",
+                "tells",
+                "is telling"
+              ],
+              "answer": 0,
+              "explanation": "含to V的結構被動化：Everyone was told to keep quiet，保留to V結構。",
+              "target_grammar": "被動語態（介系詞）",
+              "optionsZh": [
+                "（正確，was told to保留不定詞結構）",
+                "（主動語態，everyone不是動作執行者）",
+                "（現在式且為主動語態，不符過去語境）",
+                "（現在進行式且為主動語態，不符過去語境）"
+              ]
+            },
+            {
+              "sentence": "He ___ at by his classmates because of his accent.",
+              "options": [
+                "is laughed",
+                "is laughing",
+                "laughs",
+                "laughed"
+              ],
+              "answer": 0,
+              "explanation": "介詞動詞laugh at被動化時，介系詞at要保留：is laughed at。",
+              "target_grammar": "被動語態（介系詞）",
+              "optionsZh": [
+                "（正確，is laughed at保留介系詞at）",
+                "（現在進行式且為主動語態，不符此被動句構）",
+                "（主動語態，he不是動作執行者）",
+                "（過去式且為主動語態，不符此被動句構）"
+              ]
+            },
+            {
+              "sentence": "The trash ___ every Monday morning by the sanitation workers.",
+              "options": [
+                "is taken out",
+                "is taken",
+                "takes out",
+                "is out taken"
+              ],
+              "answer": 0,
+              "explanation": "可拆式動詞片語take out被動化時，介副詞out要保留：is taken out。",
+              "target_grammar": "被動語態（介系詞）",
+              "optionsZh": [
+                "（正確，介副詞out緊跟在動詞後面）",
+                "（缺少out，介副詞不可省略）",
+                "（主動語態，trash不是動作執行者）",
+                "（語序錯誤，out應緊跟taken之後）"
+              ]
+            },
+            {
+              "sentence": "This song ___ to by millions of people around the world.",
+              "options": [
+                "is listened",
+                "is listening",
+                "listens",
+                "listened"
+              ],
+              "answer": 0,
+              "explanation": "不可拆式片語listen to被動化時，介系詞to要保留：is listened to。",
+              "target_grammar": "被動語態（介系詞）",
+              "optionsZh": [
+                "（正確，is listened to保留介系詞to）",
+                "（現在進行式且為主動語態，不符此被動句構）",
+                "（主動語態，song不是動作執行者）",
+                "（過去式且為主動語態，不符此被動句構）"
+              ]
+            },
+            {
+              "sentence": "The old man ___ for by his children every weekend.",
+              "options": [
+                "is cared",
+                "is caring",
+                "cares",
+                "cared"
+              ],
+              "answer": 0,
+              "explanation": "介詞動詞care for被動化時，介系詞for要保留：is cared for。",
+              "target_grammar": "被動語態（介系詞）",
+              "optionsZh": [
+                "（正確，is cared for保留介系詞for）",
+                "（現在進行式且為主動語態，不符此被動句構）",
+                "（主動語態，man不是動作執行者）",
+                "（過去式且為主動語態，不符every weekend的常態語境）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "Community Cleanup Day",
+            "passage": "Every spring, our neighborhood organizes a cleanup day. This year, the local park __(1)__ by dozens of volunteers early in the morning. All the old broken benches __(2)__ by a team of carpenters. The younger kids __(3)__ to pick up small pieces of trash near the playground. Several stray cats in the area __(4)__ for by a group of animal lovers who bring them food every week. By the end of the day, the whole neighborhood __(5)__ about for its cleanliness and teamwork.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "was cleaned up",
+                  "was cleaned",
+                  "cleaned up",
+                  "was up cleaned"
+                ],
+                "answer": 0,
+                "explanation": "可拆式動詞片語clean up被動化時，介副詞up要保留：was cleaned up。",
+                "optionsZh": [
+                  "（正確，介副詞up緊跟在動詞後面）",
+                  "（缺少up，介副詞不可省略）",
+                  "（主動語態，park不是動作執行者）",
+                  "（語序錯誤，up應緊跟cleaned之後）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "were fixed up",
+                  "were fixed",
+                  "fixed up",
+                  "were up fixed"
+                ],
+                "answer": 1,
+                "explanation": "此處fix本身作為及物動詞被動化即可：were fixed，不一定需要up（fix up為可拆式片語但此處以簡單被動fixed更常見）。",
+                "optionsZh": [
+                  "（fix up為可拆式片語也可使用，但此處以簡潔的were fixed為標準答案）",
+                  "（正確，were fixed表示被修好）",
+                  "（主動語態，benches不是動作執行者）",
+                  "（語序錯誤）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "were asked",
+                  "asked",
+                  "ask",
+                  "are asking"
+                ],
+                "answer": 0,
+                "explanation": "使役/授與類結構被動化：were asked to pick up，保留to V。",
+                "optionsZh": [
+                  "（正確，were asked to保留不定詞結構）",
+                  "（主動語態，kids不是動作執行者）",
+                  "（現在式且為主動語態，不符過去語境）",
+                  "（現在進行式且為主動語態，不符過去語境）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "were cared",
+                  "were caring",
+                  "care",
+                  "cared"
+                ],
+                "answer": 0,
+                "explanation": "介詞動詞care for被動化時，介系詞for要保留：were cared for。",
+                "optionsZh": [
+                  "（正確，were cared for保留介系詞for）",
+                  "（現在進行式且為主動語態，不符此被動句構）",
+                  "（主動語態，cats不是動作執行者）",
+                  "（過去式且為主動語態，不符此被動句構）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "was talked",
+                  "was talking",
+                  "talks",
+                  "talked"
+                ],
+                "answer": 0,
+                "explanation": "介詞動詞talk about被動化時，介系詞about要保留：was talked about。",
+                "optionsZh": [
+                  "（正確，was talked about保留介系詞about）",
+                  "（現在進行式且為主動語態，不符此被動句構）",
+                  "（主動語態，neighborhood不是動作執行者）",
+                  "（過去式且為主動語態，不符此被動句構）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "12-7",
