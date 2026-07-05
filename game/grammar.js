@@ -14,14 +14,19 @@ async function _gmLoadData() {
     console.error('文法資料載入失敗', e);
     GRAMMAR_CHAPTERS = {};
   }
-  // 資料到位時首頁關卡樹可能已畫過（星數未反映），強制重畫一次
+  _gmForceLevelMapRedraw();
+}
+_gmLoadData();
+
+// renderLevelMap() 依視窗寬度快取，同寬度不會重畫（見 script.js），
+// 所以星數一有變動（資料剛載入、小節剛測驗完）都要手動清掉快取再重畫一次
+function _gmForceLevelMapRedraw() {
   const map = document.getElementById('hmLevelMap');
   if (map && map.dataset.w) {
     delete map.dataset.w;
     if (typeof renderLevelMap === 'function') renderLevelMap();
   }
 }
-_gmLoadData();
 
 // ── 進度儲存
 const GM_PROGRESS_KEY = 'grammar_progress';
@@ -270,6 +275,7 @@ function _gmFinishQuiz() {
   const prevStars = (progress[subId] && progress[subId].stars) || 0;
   progress[subId] = { stars: Math.max(prevStars, stars), lastAcc: acc };
   _gmSaveProgress(progress);
+  _gmForceLevelMapRedraw();
 
   const starsHtml = [0,1,2].map(i => `<span class="${i < stars ? 'on' : 'off'}">★</span>`).join('');
   const ov = _gmOverlay();
