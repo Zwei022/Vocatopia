@@ -1388,7 +1388,7 @@ function switchCuratedSub(sub) {
 function switchReadTab(tab) {
   readTab = tab;
 
-  ['Deck', 'Grammar', 'Curated'].forEach(t =>
+  ['Deck', 'Grammar', 'Lessons', 'Curated'].forEach(t =>
     document.getElementById('rtab' + t).classList.toggle('active', tab === t.toLowerCase())
   );
 
@@ -1397,6 +1397,7 @@ function switchReadTab(tab) {
   const artList       = document.getElementById('artList');
   const dailyList     = document.getElementById('dailyList');
   const grammarPanel  = document.getElementById('grammarPanel');
+  const lessonsPanel  = document.getElementById('lessonsPanel');
   const curatedPanel  = document.getElementById('curatedPanel');
   const artContent    = document.getElementById('artContent');
   const quizPanel     = document.getElementById('quizPanel');
@@ -1413,6 +1414,7 @@ function switchReadTab(tab) {
   artList.style.display = 'none';
   dailyList.classList.remove('show');
   grammarPanel.classList.remove('show');
+  if (lessonsPanel) lessonsPanel.classList.remove('show');
   if (curatedPanel) curatedPanel.classList.remove('show');
   // 隱藏精選題目子面板
   const gsatListEl = document.getElementById('gsatList');
@@ -1430,10 +1432,35 @@ function switchReadTab(tab) {
   } else if (tab === 'grammar') {
     grammarPanel.classList.add('show');
     renderLib();
+  } else if (tab === 'lessons') {
+    lessonsPanel.classList.add('show');
+    renderGrammarLessonsList();
   } else if (tab === 'curated') {
     curatedPanel.classList.add('show');
     switchCuratedSub(curatedSubTab);
   }
+}
+
+// ── 閱覽室：文法教學單元列表（章節），100% 正確率完成該章全部小節後顯示 ✓ ──
+function renderGrammarLessonsList() {
+  const list = document.getElementById('grammarLessonsList');
+  if (!list) return;
+  if (typeof GRAMMAR_CHAPTERS === 'undefined' || !Object.keys(GRAMMAR_CHAPTERS).length) {
+    list.innerHTML = `<div style="text-align:center;padding:40px 0;color:var(--ink2);font-family:'Nunito',sans-serif;font-weight:700">文法資料載入中⋯</div>`;
+    setTimeout(renderGrammarLessonsList, 400);
+    return;
+  }
+  const chapterIds = Object.keys(GRAMMAR_CHAPTERS).map(Number).sort((a, b) => a - b);
+  list.innerHTML = chapterIds.map(n => {
+    const ch = GRAMMAR_CHAPTERS[n];
+    const done = typeof grammarStarsFor === 'function' && grammarStarsFor(n) === 3;
+    return `
+      <button class="glesson-row" onclick="grammarStartChapter(${n})">
+        <span class="glesson-num">第 ${n} 章</span>
+        <span class="glesson-title">${escHtml(ch.title)}</span>
+        ${done ? '<span class="glesson-check">✓</span>' : ''}
+      </button>`;
+  }).join('');
 }
 
 // ── DAILY ARTICLES UI ──
@@ -4869,82 +4896,7 @@ function updateHomeScreen() {
   if (barEl) barEl.style.width = pct + '%';
   const pctEl = document.getElementById('hmQuestPct');
   if (pctEl) pctEl.textContent = `${count}/${cats.length} 完成`;
-
-  // 關卡樹
-  renderLevelMap();
 }
-
-// ════════════════════════════════
-// 首頁關卡樹：關卡 1-20（對應文法 20 章）由下往上，手繪水彩樹幹圖 + 果實按鈕
-// 樹是「單一張」預先合成好的完整長圖：由同一個「單模組」（左右各一枝、上下留大量
-// 乾淨樹幹）重複堆疊10次組成，模組邊界本來就是無葉子的乾淨樹幹，天生無接縫、
-// 也不會切到任何葉子。果實依離線計算好的枝點百分比座標絕對定位
-// ════════════════════════════════
-const LEVEL_COUNT = 20;
-const TREE_FULL_IMG = 'public/images/icons/tree-full.jpg';
-const TREE_FULL_ASPECT = 900 / 4000;   // 合成圖寬高比（寬/高）
-// 20 個關卡枝點座標（x%, y%，由合成腳本輸出，關卡 1 在最下方）
-const TREE_SLOTS = [
-  { x: 32, y: 96.00 }, { x: 68, y: 92.40 }, { x: 32, y: 86.00 }, { x: 68, y: 82.40 },
-  { x: 32, y: 76.00 }, { x: 68, y: 72.40 }, { x: 32, y: 66.00 }, { x: 68, y: 62.40 },
-  { x: 32, y: 56.00 }, { x: 68, y: 52.40 }, { x: 32, y: 46.00 }, { x: 68, y: 42.40 },
-  { x: 32, y: 36.00 }, { x: 68, y: 32.40 }, { x: 32, y: 26.00 }, { x: 68, y: 22.40 },
-  { x: 32, y: 16.00 }, { x: 68, y: 12.40 }, { x: 32, y: 6.00 },  { x: 68, y: 2.40 },
-];
-
-function onLevelClick(n) {
-  grammarStartChapter(n);
-}
-
-function renderLevelMap() {
-  const map = document.getElementById('hmLevelMap');
-  if (!map) return;
-  const W = map.clientWidth;
-  if (!W) return;                                   // 尚未排版完成，等下次呼叫
-  if (map.dataset.w === String(W)) return;          // 同寬度已畫過，避免切頁時重畫跳動
-  const firstRender = !map.dataset.w;
-
-  const H = W / TREE_FULL_ASPECT;   // 整張樹圖依容器寬度等比縮放後的高度
-
-  const fruitsHtml = TREE_SLOTS.map((coord, i) => {
-    const n = i + 1;
-    const x = coord.x / 100 * W;
-    const y = coord.y / 100 * H;
-    const stars = (typeof grammarStarsFor === 'function' && typeof GRAMMAR_CHAPTERS !== 'undefined' && GRAMMAR_CHAPTERS[n]) ? grammarStarsFor(n) : 0;
-    const starsHtml = (typeof GRAMMAR_CHAPTERS !== 'undefined' && GRAMMAR_CHAPTERS[n])
-      ? `<span class="hm-fruit-stars">${[0,1,2].map(k => k < stars ? '★' : '<span class="off">★</span>').join('')}</span>`
-      : '';
-    return `
-      <button class="hm-fruit${n === 1 ? ' hm-fruit-cur' : ''}" style="left:${x}px;top:${y}px"
-        onclick="onLevelClick(${n})" aria-label="關卡 ${n}">
-        <span class="hm-fruit-num">${n}</span>
-        ${starsHtml}
-      </button>`;
-  }).join('');
-
-  map.innerHTML = `
-    <div class="hm-lm-inner" style="height:${H}px">
-      <img class="hm-tree-full" src="${TREE_FULL_IMG}" style="height:${H}px" alt="">
-      ${fruitsHtml}
-    </div>`;
-
-  map.dataset.w = String(W);
-  if (firstRender) map.scrollTop = map.scrollHeight;  // 初始定位在最下方（關卡 1）
-}
-
-// 視窗改變大小時重畫（保留滾動位置）
-let _lmResizeTimer = null;
-window.addEventListener('resize', () => {
-  clearTimeout(_lmResizeTimer);
-  _lmResizeTimer = setTimeout(() => {
-    const map = document.getElementById('hmLevelMap');
-    if (!map || !map.dataset.w) return;
-    const st = map.scrollTop;
-    map.dataset.w = '';
-    renderLevelMap();
-    map.scrollTop = st;
-  }, 150);
-});
 
 // 頁面載入時初始化首頁
 document.addEventListener('DOMContentLoaded', () => {

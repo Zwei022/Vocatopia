@@ -1531,27 +1531,17 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .hm-tile-soon:hover{background:var(--card);border-color:var(--line2);transform:none}
 .hm-soon-badge{position:absolute;top:7px;right:8px;font-size:8px;font-weight:800;color:var(--ink2);background:var(--card2);border:1px solid var(--line2);padding:2px 5px;border-radius:6px;font-family:'Nunito',sans-serif}
 
-/* ── 關卡樹（首頁中段：由下往上 1→10，可滾動） ── */
-.hm-levelmap{flex:1;min-height:0;overflow-y:auto;position:relative;margin-top:6px}
-.hm-levelmap::-webkit-scrollbar{display:none}
-.hm-lm-inner{position:relative;width:100%}
-/* 手繪水彩樹幹樹枝背景圖：一段接一段往上疊，不用擔心接縫（樹皮紋理適合重複） */
-.hm-tree-full{position:absolute;top:0;left:0;width:100%;pointer-events:none;display:block;z-index:1}
-/* 果實關卡按鈕：手繪水彩蘋果圖 */
-.hm-fruit{position:absolute;transform:translate(-50%,-50%);width:72px;height:75px;border:none;cursor:pointer;z-index:2;
-  background:url('public/images/icons/level-apple.png') center/contain no-repeat;
-  filter:drop-shadow(0 4px 3px rgba(75,56,42,.35));
-  color:#2B1B10;font-family:'Kalam',var(--font-display);font-weight:700;font-size:25px;
-  transition:transform .12s}
-.hm-fruit:hover{transform:translate(-50%,-50%) scale(1.06)}
-.hm-fruit:active{transform:translate(-50%,-50%) scale(.92)}
-.hm-fruit-num{position:relative;top:6px;text-shadow:0 1px 0 rgba(255,255,255,.35)}
-/* 目前關卡：紅色光圈呼吸提示 */
-.hm-fruit-cur{animation:fruitRing 1.8s ease-in-out infinite}
-@keyframes fruitRing{
-  0%,100%{filter:drop-shadow(0 4px 3px rgba(75,56,42,.35)) drop-shadow(0 0 0 rgba(224,71,46,.38))}
-  50%{filter:drop-shadow(0 4px 3px rgba(75,56,42,.35)) drop-shadow(0 0 10px rgba(224,71,46,.55))}
-}
+/* 首頁中段：文法教學關卡樹已移到閱覽室，這裡先留空維持版面間距 */
+.hm-levelmap{flex:1;min-height:0}
+
+/* ── 閱覽室：文法教學單元列表 ── */
+.glesson-list{display:flex;flex-direction:column;gap:10px;padding:4px 0 20px}
+.glesson-row{background:var(--card);border:2px solid var(--line2);border-radius:var(--r2);padding:14px 16px;
+  text-align:left;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:10px;font-family:inherit}
+.glesson-row:hover{background:var(--nav);border-color:var(--orange);transform:translateY(-1px)}
+.glesson-num{font-weight:900;color:var(--orange);font-size:13px;flex-shrink:0;font-family:'Nunito',sans-serif}
+.glesson-title{flex:1;font-weight:700;color:var(--ink);font-size:14px}
+.glesson-check{color:var(--green);font-weight:900;font-size:17px;flex-shrink:0}
 
 /* ── 文字段落放大 Lightbox */
 .txt-lightbox{position:fixed;inset:0;z-index:9999;background:rgba(75,56,42,.6);display:flex;align-items:center;justify-content:center;cursor:pointer;animation:ilbFadeIn .18s ease;padding:20px}

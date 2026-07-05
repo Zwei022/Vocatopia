@@ -527,6 +527,7 @@
       <div class="read-tabs">
         <button class="rtab" id="rtabDeck" onclick="switchReadTab('deck')">單字卡</button>
         <button class="rtab" id="rtabGrammar" onclick="switchReadTab('grammar')">字庫</button>
+        <button class="rtab" id="rtabLessons" onclick="switchReadTab('lessons')">文法教學</button>
         <button class="rtab active" id="rtabCurated" onclick="switchReadTab('curated')">精選題目</button>
       </div>
     </div>
@@ -550,6 +551,15 @@
         <div id="libSearchResult" class="lib-search-result"></div>
       </div>
       <div class="lib-list" id="libList"></div>
+    </div>
+
+    <!-- 文法教學 panel -->
+    <div class="read-panel" id="lessonsPanel">
+      <div class="lib-head">
+        <div class="lib-title">文法教學</div>
+        <div class="lib-sub">100% 正確率完成驗收後顯示 ✓</div>
+      </div>
+      <div class="glesson-list" id="grammarLessonsList"></div>
     </div>
 
     <!-- 歷屆會考 panel -->

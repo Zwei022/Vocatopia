@@ -1,5 +1,5 @@
 // ════════════════════════════════
-// 文法教學系統（首頁關卡樹入口，取代原塔防遊戲）
+// 文法教學系統（閱覽室「文法教學」分頁入口）
 // 資料來源：/server/data/grammar_lessons.json
 // 進度儲存：localStorage grammar_progress
 // ════════════════════════════════
@@ -18,13 +18,10 @@ async function _gmLoadData() {
 }
 _gmLoadData();
 
-// renderLevelMap() 依視窗寬度快取，同寬度不會重畫（見 script.js），
-// 所以星數一有變動（資料剛載入、小節剛測驗完）都要手動清掉快取再重畫一次
+// 資料剛載入完成時，若閱覽室的文法教學列表已經畫過（星數未反映），重畫一次
 function _gmForceLevelMapRedraw() {
-  const map = document.getElementById('hmLevelMap');
-  if (map && map.dataset.w) {
-    delete map.dataset.w;
-    if (typeof renderLevelMap === 'function') renderLevelMap();
+  if (typeof renderGrammarLessonsList === 'function' && document.getElementById('lessonsPanel')?.classList.contains('show')) {
+    renderGrammarLessonsList();
   }
 }
 
@@ -59,6 +56,10 @@ function gmClose() {
   const ov = _gmOverlay();
   ov.style.display = 'none';
   ov.innerHTML = '';
+  // 若閱覽室的文法教學列表正開著，關閉時順便刷新打勾狀態
+  if (typeof renderGrammarLessonsList === 'function' && document.getElementById('lessonsPanel')?.classList.contains('show')) {
+    renderGrammarLessonsList();
+  }
 }
 function _gmEsc(s) {
   return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');

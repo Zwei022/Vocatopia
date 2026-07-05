@@ -136,7 +136,3 @@
 .gm-result-stars .off { color: var(--ink3); }
 .gm-result-acc { font-size: 15px; color: var(--ink2); margin-bottom: 10px; }
 .gm-result .gm-cta { width: 240px; }
-
-/* ── 首頁關卡樹果實星等（沿用 hm-fruit-stars class，補齊顏色 token） */
-.hm-fruit-stars { color: var(--gold); font-size: 11px; letter-spacing: 1px; }
-.hm-fruit-stars .off { color: var(--ink3); }
