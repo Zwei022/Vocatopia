@@ -14656,14 +14656,650 @@
       {
         "id": "12-7",
         "title": "否定的被動語態句",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>not放在be動詞或情狀助動詞後面</b><br>① S+be+not+p.p.+by+O：I am not reading the book. → The book is not being read by me.<br>② S+情狀助動詞+not+be+p.p.+by+O：He won't teach us any more. → We won't be taught by him any more.<br><br><b>易混淆重點</b><br>① not的位置永遠緊跟在「第一個助動詞」後面，不管是be動詞還是情狀助動詞：如果句子裡有兩個助動詞（如will+be），not放在第一個will後面：won't be done，不是will not being done。<br>② 縮寫規則跟一般句子一樣：is not→isn't、was not→wasn't、will not→won't、cannot→can't。<br>③ 否定句被動化的整體結構不變，只是多了一個not，記得不要漏掉be動詞。",
+          "examples": [
+            {
+              "en": "This letter wasn't sent yesterday because of the strike.",
+              "zh": "因為罷工，這封信昨天沒有被寄出。"
+            },
+            {
+              "en": "The window isn't being cleaned right now.",
+              "zh": "這扇窗戶現在沒有正在被清洗。"
+            },
+            {
+              "en": "My phone hasn't been fixed yet.",
+              "zh": "我的手機還沒被修好。"
+            },
+            {
+              "en": "The trash won't be collected until tomorrow.",
+              "zh": "垃圾要到明天才會被收走。"
+            },
+            {
+              "en": "This song isn't often played on the radio.",
+              "zh": "這首歌不常在廣播中播放。"
+            },
+            {
+              "en": "The report wasn't finished by the deadline.",
+              "zh": "這份報告在截止日期前沒有完成。"
+            },
+            {
+              "en": "These rules aren't followed by everyone in the club.",
+              "zh": "這些規則並不是社團裡每個人都遵守。"
+            },
+            {
+              "en": "The mistake wasn't noticed until it was too late.",
+              "zh": "這個錯誤直到太遲了才被發現。"
+            },
+            {
+              "en": "The car can't be repaired before the weekend.",
+              "zh": "這輛車在週末前無法被修好。"
+            },
+            {
+              "en": "The invitation shouldn't be sent without the manager's approval.",
+              "zh": "沒有經理的同意，這份邀請函不應該被寄出。"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "This form ___ filled out yet.",
+              "options": [
+                "isn't",
+                "hasn't been",
+                "wasn't",
+                "doesn't"
+              ],
+              "answer": 1,
+              "explanation": "現在完成式被動的否定：hasn't been+p.p.，符合「還沒」的語境。",
+              "target_grammar": "被動語態（否定）",
+              "optionsZh": [
+                "（現在簡單式被動不符「還沒完成」的完成式語境）",
+                "（正確，現在完成式被動否定hasn't been filled out）",
+                "（過去簡單式不符yet的現在完成語境）",
+                "（doesn't不符被動語態結構）"
+              ]
+            },
+            {
+              "sentence": "The letter ___ sent because of the postal strike.",
+              "options": [
+                "wasn't",
+                "isn't",
+                "hasn't",
+                "doesn't"
+              ],
+              "answer": 0,
+              "explanation": "過去簡單式被動的否定：wasn't+p.p.，符合過去發生的罷工事件。",
+              "target_grammar": "被動語態（否定）",
+              "optionsZh": [
+                "（正確，過去簡單式被動否定wasn't sent）",
+                "（現在簡單式不符過去罷工事件的語境）",
+                "（現在完成式be動詞形式錯誤，應為hasn't been）",
+                "（doesn't不符被動語態結構）"
+              ]
+            },
+            {
+              "sentence": "These cookies ___ made with any sugar.",
+              "options": [
+                "aren't",
+                "isn't",
+                "weren't",
+                "don't"
+              ],
+              "answer": 0,
+              "explanation": "現在簡單式被動的否定，主詞cookies是複數，用aren't+p.p.。",
+              "target_grammar": "被動語態（否定）",
+              "optionsZh": [
+                "（正確，複數主詞用aren't）",
+                "（isn't用於單數主詞，cookies為複數不符）",
+                "（過去式不符現在製作方式的常態語境）",
+                "（don't不符被動語態結構）"
+              ]
+            },
+            {
+              "sentence": "The meeting ___ be canceled without proper notice.",
+              "options": [
+                "can't",
+                "isn't",
+                "wasn't",
+                "doesn't"
+              ],
+              "answer": 0,
+              "explanation": "情狀助動詞被動的否定：can't+be+p.p.，not緊跟在助動詞can後面（縮寫can't）。",
+              "target_grammar": "被動語態（否定）",
+              "optionsZh": [
+                "（正確，can't+be+p.p.）",
+                "（isn't不符含情狀助動詞的被動句構）",
+                "（wasn't不符含情狀助動詞的被動句構）",
+                "（doesn't不符被動語態結構）"
+              ]
+            },
+            {
+              "sentence": "The car ___ being repaired at the moment.",
+              "options": [
+                "isn't",
+                "wasn't",
+                "hasn't",
+                "doesn't"
+              ],
+              "answer": 0,
+              "explanation": "現在進行式被動的否定：isn't+being+p.p.，符合at the moment的現在語境。",
+              "target_grammar": "被動語態（否定）",
+              "optionsZh": [
+                "（正確，現在進行式被動否定isn't being repaired）",
+                "（過去式不符at the moment的現在語境）",
+                "（現在完成式be動詞形式錯誤，應為hasn't been）",
+                "（doesn't不符被動語態結構）"
+              ]
+            },
+            {
+              "sentence": "This song ___ played on the radio very often these days.",
+              "options": [
+                "isn't",
+                "wasn't",
+                "hasn't",
+                "doesn't"
+              ],
+              "answer": 0,
+              "explanation": "現在簡單式被動的否定：isn't+p.p.，符合these days的現在常態語境。",
+              "target_grammar": "被動語態（否定）",
+              "optionsZh": [
+                "（正確，現在簡單式被動否定isn't played）",
+                "（過去式不符these days的現在語境）",
+                "（現在完成式be動詞形式錯誤，應為hasn't been）",
+                "（doesn't不符被動語態結構）"
+              ]
+            },
+            {
+              "sentence": "The homework ___ finished before the deadline.",
+              "options": [
+                "wasn't",
+                "isn't",
+                "hasn't",
+                "doesn't"
+              ],
+              "answer": 0,
+              "explanation": "過去簡單式被動的否定：wasn't+p.p.，符合「截止日期前」已成過去的語境。",
+              "target_grammar": "被動語態（否定）",
+              "optionsZh": [
+                "（正確，過去簡單式被動否定wasn't finished）",
+                "（現在簡單式不符已過去的截止日期語境）",
+                "（現在完成式be動詞形式錯誤，應為hasn't been）",
+                "（doesn't不符被動語態結構）"
+              ]
+            },
+            {
+              "sentence": "This medicine ___ be taken with alcohol.",
+              "options": [
+                "shouldn't",
+                "isn't",
+                "wasn't",
+                "doesn't"
+              ],
+              "answer": 0,
+              "explanation": "情狀助動詞被動的否定：shouldn't+be+p.p.。",
+              "target_grammar": "被動語態（否定）",
+              "optionsZh": [
+                "（正確，shouldn't+be+p.p.）",
+                "（isn't不符含情狀助動詞的被動句構）",
+                "（wasn't不符含情狀助動詞的被動句構）",
+                "（doesn't不符被動語態結構）"
+              ]
+            },
+            {
+              "sentence": "The project ___ been completed on time this year.",
+              "options": [
+                "hasn't",
+                "isn't",
+                "wasn't",
+                "doesn't"
+              ],
+              "answer": 0,
+              "explanation": "現在完成式被動的否定：hasn't+been+p.p.。",
+              "target_grammar": "被動語態（否定）",
+              "optionsZh": [
+                "（正確，現在完成式被動否定hasn't been completed）",
+                "（isn't不符現在完成式的句構）",
+                "（wasn't不符現在完成式的句構）",
+                "（doesn't不符被動語態結構）"
+              ]
+            },
+            {
+              "sentence": "These rules ___ followed by everyone in our class.",
+              "options": [
+                "aren't",
+                "isn't",
+                "wasn't",
+                "doesn't"
+              ],
+              "answer": 0,
+              "explanation": "現在簡單式被動的否定，主詞rules是複數，用aren't+p.p.。",
+              "target_grammar": "被動語態（否定）",
+              "optionsZh": [
+                "（正確，複數主詞用aren't）",
+                "（isn't用於單數主詞，rules為複數不符）",
+                "（過去式不符現在常態語境）",
+                "（doesn't不符被動語態結構）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "A Delayed Project",
+            "passage": "Our school's new library project __(1)__ finished on schedule this year because of the heavy rain last month. The construction team said the roof __(2)__ completed until the weather improves. Right now, the inside walls __(3)__ painted because the workers are still fixing the ceiling. Unfortunately, the new bookshelves __(4)__ delivered yet, so students can't use the library at all. The principal announced that classes __(5)__ allowed to enter the building until everything is finally ready.",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "wasn't",
+                  "isn't",
+                  "hasn't",
+                  "doesn't"
+                ],
+                "answer": 0,
+                "explanation": "過去簡單式被動的否定：wasn't+p.p.，符合「今年」已成事實的過去語境。",
+                "optionsZh": [
+                  "（正確，過去簡單式被動否定wasn't finished）",
+                  "（現在簡單式不符已發生事實的過去語境）",
+                  "（現在完成式be動詞形式錯誤，應為hasn't been）",
+                  "（doesn't不符被動語態結構）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "won't be",
+                  "isn't",
+                  "wasn't",
+                  "doesn't"
+                ],
+                "answer": 0,
+                "explanation": "未來式被動的否定：won't be+p.p.，符合「直到天氣改善」的未來語境。",
+                "optionsZh": [
+                  "（正確，未來式被動否定won't be completed）",
+                  "（isn't不符未來語境）",
+                  "（wasn't不符未來語境）",
+                  "（doesn't不符被動語態結構）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "aren't being",
+                  "isn't being",
+                  "weren't",
+                  "don't"
+                ],
+                "answer": 0,
+                "explanation": "現在進行式被動的否定，主詞walls是複數，用aren't being+p.p.。",
+                "optionsZh": [
+                  "（正確，複數主詞用aren't being）",
+                  "（isn't用於單數主詞，walls為複數不符）",
+                  "（過去式不符right now的現在語境）",
+                  "（don't不符被動語態結構）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "haven't been",
+                  "aren't",
+                  "weren't",
+                  "don't"
+                ],
+                "answer": 0,
+                "explanation": "現在完成式被動的否定：haven't been+p.p.，符合yet「還沒」的語境。",
+                "optionsZh": [
+                  "（正確，現在完成式被動否定haven't been delivered）",
+                  "（現在簡單式不符yet完成式的語境）",
+                  "（過去式不符yet完成式的語境）",
+                  "（don't不符被動語態結構）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "won't be",
+                  "aren't",
+                  "weren't",
+                  "don't"
+                ],
+                "answer": 0,
+                "explanation": "未來式被動的否定：won't be+p.p.，符合「直到一切準備好」的未來語境。",
+                "optionsZh": [
+                  "（正確，未來式被動否定won't be allowed）",
+                  "（aren't不符未來語境）",
+                  "（weren't不符未來語境）",
+                  "（don't不符被動語態結構）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "12-8",
         "title": "疑問句的被動語態",
-        "teaching": null,
-        "quiz": []
+        "teaching": {
+          "explanation": "<b>原本be開頭的疑問句（do/does/did）</b><br>主動疑問句用do/does/did開頭時，被動化後把do/does/did拿掉，改成be動詞放句首：Do you study English every day? → Is English studied by you every day?<br><br><b>原本就有情狀助動詞的疑問句</b><br>情狀助動詞留在句首不變，be+p.p.放在新主詞後面：Should I open the door? → Should the door be opened by me?<br>Have you washed your clothes?（現在完成式疑問句）→ Have your clothes been washed by you?<br><br><b>易混淆重點</b><br>① do/does/did在被動句中會直接消失，被be動詞取代（因為do/does/did本身沒有實質意義，只是幫助構成疑問句）。<br>② 情狀助動詞（should、can、must、have）本身有意義，被動化時要保留在句首，不會被吃掉。<br>③ 回答疑問句時，若是do/does/did開頭的問句，被動化後用Yes/No+be動詞回答：Is English studied by you? — Yes, it is.",
+          "examples": [
+            {
+              "en": "Is this cake made with real chocolate?",
+              "zh": "這個蛋糕是用真正的巧克力做的嗎？"
+            },
+            {
+              "en": "Was the window broken by someone last night?",
+              "zh": "這扇窗戶昨晚是被誰打破的嗎？"
+            },
+            {
+              "en": "Should this form be signed by both parents?",
+              "zh": "這張表格應該要由雙方家長簽名嗎？"
+            },
+            {
+              "en": "Has your bike been fixed yet?",
+              "zh": "你的腳踏車修好了嗎？"
+            },
+            {
+              "en": "Are these letters going to be sent today?",
+              "zh": "這些信今天會被寄出去嗎？"
+            },
+            {
+              "en": "Can this problem be solved without extra help?",
+              "zh": "這個問題不需要額外幫助就能解決嗎？"
+            },
+            {
+              "en": "Were the cookies eaten before dinner?",
+              "zh": "這些餅乾在晚餐前就被吃掉了嗎？"
+            },
+            {
+              "en": "Must this report be submitted by Friday?",
+              "zh": "這份報告必須在星期五前繳交嗎？"
+            },
+            {
+              "en": "Is the meeting room being used right now?",
+              "zh": "會議室現在正在被使用嗎？"
+            },
+            {
+              "en": "Will the results be announced this afternoon?",
+              "zh": "結果會在今天下午公布嗎？"
+            }
+          ]
+        },
+        "quiz": {
+          "mc": [
+            {
+              "sentence": "___ this cake made with fresh strawberries?",
+              "options": [
+                "Is",
+                "Does",
+                "Did",
+                "Do"
+              ],
+              "answer": 0,
+              "explanation": "主動疑問句Does...make...改成被動時，do/does消失，改成be動詞Is放句首。",
+              "target_grammar": "被動語態（疑問句）",
+              "optionsZh": [
+                "（正確，be動詞取代do/does放句首）",
+                "（does不用於被動疑問句）",
+                "（did不用於此現在式語境的被動疑問句）",
+                "（do不用於被動疑問句）"
+              ]
+            },
+            {
+              "sentence": "___ your homework been finished yet?",
+              "options": [
+                "Has",
+                "Is",
+                "Was",
+                "Does"
+              ],
+              "answer": 0,
+              "explanation": "現在完成式疑問句的助動詞have保留在句首，此處主詞homework用has。",
+              "target_grammar": "被動語態（疑問句）",
+              "optionsZh": [
+                "（正確，現在完成式助動詞has保留句首）",
+                "（is不符現在完成式的句構）",
+                "（was不符現在完成式的句構）",
+                "（does不符現在完成式的句構）"
+              ]
+            },
+            {
+              "sentence": "___ this letter be sent by tomorrow morning?",
+              "options": [
+                "Can",
+                "Is",
+                "Does",
+                "Was"
+              ],
+              "answer": 0,
+              "explanation": "情狀助動詞can保留在句首，後面接be+p.p.。",
+              "target_grammar": "被動語態（疑問句）",
+              "optionsZh": [
+                "（正確，情狀助動詞can保留句首）",
+                "（is不符含情狀助動詞的被動疑問句構）",
+                "（does不符含情狀助動詞的被動疑問句構）",
+                "（was不符含情狀助動詞的被動疑問句構）"
+              ]
+            },
+            {
+              "sentence": "___ the window broken during the storm last night?",
+              "options": [
+                "Was",
+                "Is",
+                "Does",
+                "Did"
+              ],
+              "answer": 0,
+              "explanation": "主動疑問句Did...break...改成被動時，did消失，改成be動詞Was放句首（過去式）。",
+              "target_grammar": "被動語態（疑問句）",
+              "optionsZh": [
+                "（正確，過去式be動詞was取代did放句首）",
+                "（is不符last night過去語境）",
+                "（does不符被動疑問句構）",
+                "（did不用於被動疑問句）"
+              ]
+            },
+            {
+              "sentence": "___ this form need to be signed by a parent?",
+              "options": [
+                "Does",
+                "Is",
+                "Has",
+                "Was"
+              ],
+              "answer": 0,
+              "explanation": "此處need是一般動詞（不是被動），主動疑問句用does開頭：Does this form need to be signed...",
+              "target_grammar": "被動語態（疑問句）",
+              "optionsZh": [
+                "（正確，need為一般動詞，疑問句用does開頭）",
+                "（is不符一般動詞need的疑問句構）",
+                "（has不符此語境）",
+                "（was不符現在式語境）"
+              ]
+            },
+            {
+              "sentence": "___ the results going to be announced this week?",
+              "options": [
+                "Are",
+                "Is",
+                "Does",
+                "Did"
+              ],
+              "answer": 0,
+              "explanation": "be going to的疑問句，主詞results是複數，be動詞用Are放句首。",
+              "target_grammar": "被動語態（疑問句）",
+              "optionsZh": [
+                "（正確，複數主詞用Are）",
+                "（is用於單數主詞，results為複數不符）",
+                "（does不符be going to的句構）",
+                "（did不符現在到未來的語境）"
+              ]
+            },
+            {
+              "sentence": "___ this problem been solved by the engineers yet?",
+              "options": [
+                "Has",
+                "Is",
+                "Was",
+                "Does"
+              ],
+              "answer": 0,
+              "explanation": "現在完成式疑問句的助動詞have保留在句首，此處主詞problem用has。",
+              "target_grammar": "被動語態（疑問句）",
+              "optionsZh": [
+                "（正確，現在完成式助動詞has保留句首）",
+                "（is不符現在完成式的句構）",
+                "（was不符現在完成式的句構）",
+                "（does不符現在完成式的句構）"
+              ]
+            },
+            {
+              "sentence": "___ the cookies eaten before the guests arrived?",
+              "options": [
+                "Were",
+                "Are",
+                "Did",
+                "Do"
+              ],
+              "answer": 0,
+              "explanation": "主動疑問句Did...eat...改成被動時，did消失，改成be動詞Were放句首（過去式複數）。",
+              "target_grammar": "被動語態（疑問句）",
+              "optionsZh": [
+                "（正確，過去式複數be動詞were取代did放句首）",
+                "（are不符過去語境）",
+                "（did不用於被動疑問句）",
+                "（do不用於被動疑問句）"
+              ]
+            },
+            {
+              "sentence": "___ this report be submitted before Friday?",
+              "options": [
+                "Must",
+                "Is",
+                "Does",
+                "Was"
+              ],
+              "answer": 0,
+              "explanation": "情狀助動詞must保留在句首，後面接be+p.p.。",
+              "target_grammar": "被動語態（疑問句）",
+              "optionsZh": [
+                "（正確，情狀助動詞must保留句首）",
+                "（is不符含情狀助動詞的被動疑問句構）",
+                "（does不符含情狀助動詞的被動疑問句構）",
+                "（was不符含情狀助動詞的被動疑問句構）"
+              ]
+            },
+            {
+              "sentence": "___ the meeting room being used at the moment?",
+              "options": [
+                "Is",
+                "Does",
+                "Did",
+                "Was"
+              ],
+              "answer": 0,
+              "explanation": "主動疑問句改成現在進行式被動疑問句，用be動詞Is放句首。",
+              "target_grammar": "被動語態（疑問句）",
+              "optionsZh": [
+                "（正確，現在進行式be動詞is放句首）",
+                "（does不符進行式的句構）",
+                "（did不符at the moment的現在語境）",
+                "（was不符at the moment的現在語境）"
+              ]
+            }
+          ],
+          "cloze": {
+            "title": "Getting Ready for the Science Fair",
+            "passage": "Our science teacher asked us several questions about our project this week. __(1)__ our poster finished before the deadline? __(2)__ the experiment results recorded correctly in our notebook? __(3)__ any changes been made since our last meeting? __(4)__ this project going to be presented by all group members together? Finally, she asked, __(5)__ we need any extra materials before the big day?",
+            "blanks": [
+              {
+                "n": 1,
+                "options": [
+                  "Was",
+                  "Is",
+                  "Does",
+                  "Did"
+                ],
+                "answer": 0,
+                "explanation": "主動疑問句Did...finish...改成被動，用過去式be動詞Was放句首。",
+                "optionsZh": [
+                  "（正確，過去式be動詞was取代did放句首）",
+                  "（is不符before the deadline已過去的語境）",
+                  "（does不符被動疑問句構）",
+                  "（did不用於被動疑問句）"
+                ]
+              },
+              {
+                "n": 2,
+                "options": [
+                  "Were",
+                  "Are",
+                  "Did",
+                  "Do"
+                ],
+                "answer": 0,
+                "explanation": "主動疑問句Did...record...改成被動，用過去式複數be動詞Were放句首（results為複數）。",
+                "optionsZh": [
+                  "（正確，過去式複數be動詞were取代did放句首）",
+                  "（are不符過去語境）",
+                  "（did不用於被動疑問句）",
+                  "（do不用於被動疑問句）"
+                ]
+              },
+              {
+                "n": 3,
+                "options": [
+                  "Have",
+                  "Has",
+                  "Is",
+                  "Was"
+                ],
+                "answer": 0,
+                "explanation": "現在完成式疑問句的助動詞have保留在句首，此處主詞changes是複數，用Have。",
+                "optionsZh": [
+                  "（正確，複數主詞用Have）",
+                  "（has用於單數主詞，changes為複數不符）",
+                  "（is不符現在完成式的句構）",
+                  "（was不符現在完成式的句構）"
+                ]
+              },
+              {
+                "n": 4,
+                "options": [
+                  "Is",
+                  "Are",
+                  "Does",
+                  "Did"
+                ],
+                "answer": 0,
+                "explanation": "be going to的疑問句，主詞project是單數，be動詞用Is放句首。",
+                "optionsZh": [
+                  "（正確，單數主詞用Is）",
+                  "（are用於複數主詞，project為單數不符）",
+                  "（does不符be going to的句構）",
+                  "（did不符現在到未來的語境）"
+                ]
+              },
+              {
+                "n": 5,
+                "options": [
+                  "do",
+                  "does",
+                  "are",
+                  "is"
+                ],
+                "answer": 0,
+                "explanation": "此處need是一般動詞（主動語態，非被動），主詞we搭配助動詞do。",
+                "optionsZh": [
+                  "（正確，主詞we搭配助動詞do）",
+                  "（does用於第三人稱單數，we不符）",
+                  "（are不符一般動詞need的疑問句構）",
+                  "（is不符一般動詞need的疑問句構）"
+                ]
+              }
+            ]
+          }
+        }
       },
       {
         "id": "12-9",
