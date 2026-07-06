@@ -150,6 +150,8 @@ async function handleLogin(e) {
   _setAuthLoading(btn, false, '登入戰場');
   closeAuthOverlay();
   window.showToast && showToast(`✓ 歡迎回來，${currentProfile?.username || '勇者'}！`);
+  if (typeof _identifySocket === 'function') _identifySocket();
+  if (typeof _checkIncomingFriendRequests === 'function') _checkIncomingFriendRequests();
 }
 
 // ── REGISTER ─────────────────────────────────────────────────
@@ -206,6 +208,7 @@ async function handleRegister(e) {
   _setAuthLoading(btn, false, '建立角色');
   closeAuthOverlay();
   window.showToast && showToast(`🎉 角色「${username}」已建立！開始你的冒險吧！`);
+  if (typeof _identifySocket === 'function') _identifySocket();
 }
 
 // ── LOGOUT ───────────────────────────────────────────────────

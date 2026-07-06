@@ -3075,6 +3075,7 @@ document.addEventListener('click', e => {
     // auth 必須先完成，loadCustomDecks 才能知道 currentUser
     const loggedIn = (typeof initAuth !== 'undefined') ? await initAuth() : false;
     if (!loggedIn && typeof showAuthOverlay !== 'undefined') showAuthOverlay();
+    if (loggedIn && currentUser) { _identifySocket(); _checkIncomingFriendRequests(); }
 
     await loadCustomDecks();
 
@@ -3862,6 +3863,11 @@ function showProfile() {
         <div style="font-size:40px;margin-bottom:6px">👤</div>
         <div style="font-weight:900;font-size:18px;color:var(--white)">${currentProfile.username}</div>
         <div style="font-size:11px;color:var(--gray);margin-top:2px">${currentUser?.email || ''}</div>
+        <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;background:rgba(122,92,67,.08);border-radius:20px;padding:6px 12px;width:fit-content;margin-left:auto;margin-right:auto">
+          <span style="font-size:11px;color:var(--gray)">帳號ID</span>
+          <span style="font-size:13px;font-weight:900;color:var(--white);letter-spacing:1px">${currentProfile.friend_code || '------'}</span>
+          <button onclick="copyFriendCode()" title="複製帳號ID" style="background:none;border:none;color:var(--green3);font-size:13px;cursor:pointer;padding:0 2px">📋</button>
+        </div>
       </div>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px">
@@ -3898,6 +3904,266 @@ function showProfile() {
   document.body.appendChild(overlay);
   _refreshProfileRadar();
 }
+
+function copyFriendCode() {
+  if (!currentProfile?.friend_code) return;
+  navigator.clipboard.writeText(currentProfile.friend_code)
+    .then(() => showToast('✓ 已複製帳號ID'))
+    .catch(() => showToast('複製失敗，請手動選取'));
+}
+
+// ══════════════════════════════════════════════════════════════
+// 好友系統
+// ══════════════════════════════════════════════════════════════
+let friendsTab = 'list'; // 'list' | 'add'
+let _friendOnlineIds = new Set();
+
+// 把目前這個瀏覽器分頁的帳號告訴 server，讓其他人可以查到「這個帳號現在在線上」
+function _identifySocket() {
+  if (!currentUser) return;
+  const sock = getPvpSocket();
+  if (!sock) return;
+  sock.emit('identify', { userId: currentUser.id });
+  sock.off('friend_request_incoming', _onFriendRequestIncoming);
+  sock.on('friend_request_incoming', _onFriendRequestIncoming);
+  sock.off('friend_request_responded', _onFriendRequestResponded);
+  sock.on('friend_request_responded', _onFriendRequestResponded);
+}
+
+function _onFriendRequestIncoming({ fromUserId, fromUsername }) {
+  showToast(`👋 ${fromUsername} 想加你為好友`);
+  _checkIncomingFriendRequests();
+}
+
+function _onFriendRequestResponded({ fromUsername, accepted }) {
+  showToast(accepted ? `🎉 ${fromUsername} 接受了你的好友邀請！` : `${fromUsername} 婉拒了你的好友邀請`);
+  if (accepted && document.getElementById('friendsOverlay')) _renderFriendsList();
+}
+
+function showFriendsButton() {
+  if (!currentProfile) { showGuestProfileNotice(); return; }
+  showFriendsOverlay('list');
+}
+
+function showFriendsOverlay(tab) {
+  if (!currentProfile) { showGuestProfileNotice(); return; }
+  friendsTab = tab || 'list';
+  let overlay = document.getElementById('friendsOverlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'friendsOverlay';
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px';
+    overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
+    document.body.appendChild(overlay);
+  }
+  overlay.innerHTML = `
+    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:20px 18px;width:100%;max-width:360px;max-height:82vh;display:flex;flex-direction:column;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
+      <button onclick="document.getElementById('friendsOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer;z-index:2">✕</button>
+      <div style="font-weight:900;font-size:17px;color:var(--white);margin-bottom:14px">👥 好友</div>
+      <div style="display:flex;gap:8px;margin-bottom:14px">
+        <button class="friend-tab-btn${friendsTab === 'list' ? ' active' : ''}" onclick="showFriendsOverlay('list')">好友列表</button>
+        <button class="friend-tab-btn${friendsTab === 'add' ? ' active' : ''}" onclick="showFriendsOverlay('add')">新增好友</button>
+      </div>
+      <div id="friendsTabBody" style="flex:1;overflow-y:auto;min-height:200px"></div>
+    </div>`;
+
+  if (friendsTab === 'list') _renderFriendsList();
+  else _renderAddFriendTab();
+}
+
+async function _renderFriendsList() {
+  const body = document.getElementById('friendsTabBody');
+  if (!body) return;
+  body.innerHTML = `<div style="text-align:center;padding:30px 0;color:var(--gray);font-size:13px">載入中…</div>`;
+
+  const { data, error } = await authClient
+    .from('friend_requests')
+    .select('id, sender_id, receiver_id, sender:profiles!friend_requests_sender_id_fkey(id,username,friend_code), receiver:profiles!friend_requests_receiver_id_fkey(id,username,friend_code)')
+    .eq('status', 'accepted')
+    .or(`sender_id.eq.${currentUser.id},receiver_id.eq.${currentUser.id}`);
+
+  if (error || !data || data.length === 0) {
+    body.innerHTML = `<div style="text-align:center;padding:30px 10px;color:var(--gray);font-size:13px">還沒有好友，去「新增好友」分頁搜尋帳號ID吧！</div>`;
+    return;
+  }
+
+  const friends = data.map(row => row.sender_id === currentUser.id ? row.receiver : row.sender);
+
+  const sock = getPvpSocket();
+  const ids = friends.map(f => f.id);
+  if (sock) {
+    sock.emit('check_online', { userIds: ids }, (res) => {
+      _friendOnlineIds = new Set(res?.online || []);
+      _paintFriendOnlineDots();
+    });
+  }
+
+  body.innerHTML = `<div style="display:flex;flex-direction:column;gap:8px">
+    ${friends.map(f => `
+      <button class="friend-list-item" onclick="showUserProfile('${f.id}','${_escJs(f.username)}')">
+        <span class="friend-avatar">👤<span class="friend-online-dot" data-uid="${f.id}"></span></span>
+        <span class="friend-name">${escHtml(f.username)}</span>
+      </button>`).join('')}
+  </div>`;
+  _paintFriendOnlineDots();
+}
+
+function _paintFriendOnlineDots() {
+  document.querySelectorAll('.friend-online-dot').forEach(dot => {
+    const uid = dot.dataset.uid;
+    dot.classList.toggle('online', _friendOnlineIds.has(uid));
+  });
+  document.querySelectorAll('.friend-list-item').forEach(item => {
+    const dot = item.querySelector('.friend-online-dot');
+    item.classList.toggle('friend-offline', dot && !dot.classList.contains('online'));
+  });
+}
+
+function _renderAddFriendTab() {
+  const body = document.getElementById('friendsTabBody');
+  if (!body) return;
+  body.innerHTML = `
+    <div style="display:flex;gap:8px;margin-bottom:14px">
+      <input id="friendSearchInput" placeholder="輸入8位帳號ID" maxlength="8"
+        style="flex:1;background:var(--nav);border:1.5px solid var(--line2);border-radius:10px;padding:10px 12px;font-family:'Nunito',sans-serif;font-weight:700;font-size:14px;letter-spacing:2px;color:var(--ink);outline:none"
+        onkeydown="if(event.key==='Enter')searchFriendByCode()">
+      <button onclick="searchFriendByCode()" style="background:var(--orange);border:none;border-radius:10px;padding:0 16px;color:#fff;font-weight:800;font-family:'Nunito',sans-serif;cursor:pointer">搜尋</button>
+    </div>
+    <div id="friendSearchResult"></div>`;
+}
+
+async function searchFriendByCode() {
+  const input = document.getElementById('friendSearchInput');
+  const code = (input?.value || '').trim();
+  const resultEl = document.getElementById('friendSearchResult');
+  if (!resultEl) return;
+  if (!/^\d{8}$/.test(code)) { resultEl.innerHTML = `<div style="color:var(--gray);font-size:13px;padding:10px 2px">請輸入完整的8位數字帳號ID</div>`; return; }
+
+  resultEl.innerHTML = `<div style="color:var(--gray);font-size:13px;padding:10px 2px">搜尋中…</div>`;
+
+  const { data, error } = await authClient.from('profiles').select('id,username,friend_code').eq('friend_code', code).maybeSingle();
+
+  if (error || !data) { resultEl.innerHTML = `<div style="color:var(--gray);font-size:13px;padding:10px 2px">查無此帳號ID</div>`; return; }
+  if (data.id === currentUser.id) { resultEl.innerHTML = `<div style="color:var(--gray);font-size:13px;padding:10px 2px">這是你自己的帳號ID</div>`; return; }
+
+  resultEl.innerHTML = `
+    <button class="friend-list-item" onclick="showUserProfile('${data.id}','${_escJs(data.username)}')">
+      <span class="friend-avatar">👤</span>
+      <span class="friend-name">${escHtml(data.username)}</span>
+      <span class="friend-add-btn" onclick="event.stopPropagation();sendFriendRequest('${data.id}','${_escJs(data.username)}')">＋加好友</span>
+    </button>`;
+}
+
+async function sendFriendRequest(targetId, targetUsername) {
+  const a = currentUser.id, b = targetId;
+  const { data: existing } = await authClient
+    .from('friend_requests').select('id,status,sender_id')
+    .or(`and(sender_id.eq.${a},receiver_id.eq.${b}),and(sender_id.eq.${b},receiver_id.eq.${a})`)
+    .maybeSingle();
+
+  if (existing) {
+    if (existing.status === 'accepted') { showToast('你們已經是好友了'); return; }
+    if (existing.status === 'pending')   { showToast('邀請已送出，等待對方回應'); return; }
+    // declined → 重新送出邀請
+    await authClient.from('friend_requests').update({ status: 'pending', sender_id: a, receiver_id: b, responded_at: null }).eq('id', existing.id);
+  } else {
+    const { error } = await authClient.from('friend_requests').insert({ sender_id: a, receiver_id: b });
+    if (error) { showToast('送出邀請失敗，請稍後再試'); return; }
+  }
+
+  const sock = getPvpSocket();
+  if (sock) sock.emit('send_friend_request', { toUserId: targetId, fromUserId: a, fromUsername: currentProfile.username });
+  showToast(`✓ 已送出好友邀請給 ${targetUsername}`);
+}
+
+// ── 收到好友邀請的彈窗（首頁載入時檢查一次，即時推播也會觸發）──
+async function _checkIncomingFriendRequests() {
+  if (!currentUser || document.getElementById('friendReqPopup')) return;
+  const { data } = await authClient
+    .from('friend_requests')
+    .select('id, sender_id, sender:profiles!friend_requests_sender_id_fkey(id,username)')
+    .eq('receiver_id', currentUser.id)
+    .eq('status', 'pending')
+    .order('created_at', { ascending: true })
+    .limit(1);
+
+  if (!data || data.length === 0) return;
+  _showFriendRequestPopup(data[0]);
+}
+
+function _showFriendRequestPopup(req) {
+  const sender = req.sender;
+  const overlay = document.createElement('div');
+  overlay.id = 'friendReqPopup';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9500;display:flex;align-items:center;justify-content:center;padding:20px';
+  overlay.innerHTML = `
+    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:24px 20px;width:100%;max-width:320px;text-align:center;font-family:'Nunito',sans-serif;box-shadow:0 8px 40px rgba(75,56,42,.3)">
+      <div style="font-size:15px;font-weight:800;color:var(--white);margin-bottom:14px">好友邀請</div>
+      <button onclick="document.getElementById('friendReqPopup').remove();showUserProfile('${sender.id}','${_escJs(sender.username)}')"
+        style="background:none;border:none;font-size:44px;cursor:pointer;margin-bottom:8px" title="查看個人資料">👤</button>
+      <div style="font-weight:900;font-size:16px;color:var(--white);margin-bottom:18px">${escHtml(sender.username)} 想加你為好友</div>
+      <div style="display:flex;gap:10px">
+        <button onclick="respondFriendRequest('${req.id}','${sender.id}','${_escJs(sender.username)}',false)"
+          style="flex:1;padding:11px;background:rgba(224,71,46,.1);border:1px solid rgba(224,71,46,.35);border-radius:10px;color:#E0472E;font-weight:700;font-size:13px;cursor:pointer">婉拒</button>
+        <button onclick="respondFriendRequest('${req.id}','${sender.id}','${_escJs(sender.username)}',true)"
+          style="flex:1;padding:11px;background:var(--green3);border:none;border-radius:10px;color:#fff;font-weight:700;font-size:13px;cursor:pointer">接受</button>
+      </div>
+    </div>`;
+  document.body.appendChild(overlay);
+}
+
+async function respondFriendRequest(reqId, fromUserId, fromUsername, accept) {
+  await authClient.from('friend_requests')
+    .update({ status: accept ? 'accepted' : 'declined', responded_at: new Date().toISOString() })
+    .eq('id', reqId);
+
+  document.getElementById('friendReqPopup')?.remove();
+  showToast(accept ? `✓ 你和 ${fromUsername} 已成為好友` : '已婉拒邀請');
+
+  const sock = getPvpSocket();
+  if (sock) sock.emit('friend_request_response', { toUserId: fromUserId, fromUsername: currentProfile.username, accepted: accept });
+
+  // 若還有其他待處理邀請，接著顯示下一個
+  setTimeout(_checkIncomingFriendRequests, 400);
+}
+
+// ── 檢視他人個人資料（唯讀版）──
+async function showUserProfile(userId, fallbackName) {
+  const overlay = document.createElement('div');
+  overlay.id = 'userProfileOverlay';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9200;display:flex;align-items:center;justify-content:center;padding:16px';
+  overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
+  overlay.innerHTML = `<div style="background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:30px 20px;width:100%;max-width:320px;text-align:center;color:var(--gray);font-family:'Nunito',sans-serif">載入中…</div>`;
+  document.body.appendChild(overlay);
+
+  const { data } = await authClient.from('profiles').select('username,xp,gold,streak,wins').eq('id', userId).maybeSingle();
+  const p = data || { username: fallbackName || '玩家' };
+
+  overlay.innerHTML = `
+    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:24px 20px;width:100%;max-width:320px;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
+      <button onclick="document.getElementById('userProfileOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
+      <div style="text-align:center;margin-bottom:16px">
+        <div style="font-size:40px;margin-bottom:6px">👤</div>
+        <div style="font-weight:900;font-size:18px;color:var(--white)">${escHtml(p.username)}</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="background:rgba(122,92,67,.08);border-radius:10px;padding:10px;text-align:center">
+          <div style="font-size:18px;font-weight:900;color:var(--green3)">${p.xp||0}</div>
+          <div style="font-size:11px;color:var(--gray)">經驗值 XP</div>
+        </div>
+        <div style="background:rgba(122,92,67,.08);border-radius:10px;padding:10px;text-align:center">
+          <div style="font-size:18px;font-weight:900;color:#ff7043">${p.streak||0}</div>
+          <div style="font-size:11px;color:var(--gray)">🔥 連續天數</div>
+        </div>
+        <div style="background:rgba(122,92,67,.08);border-radius:10px;padding:10px;text-align:center;grid-column:span 2">
+          <div style="font-size:18px;font-weight:900;color:var(--white)">${p.wins||0}</div>
+          <div style="font-size:11px;color:var(--gray)">⚔️ 對戰勝場</div>
+        </div>
+      </div>
+    </div>`;
+}
+
+function _escJs(s) { return String(s ?? '').replace(/\\/g, '\\\\').replace(/'/g, "\\'"); }
 
 function showSettings() {
   const s = _loadSettingsData();

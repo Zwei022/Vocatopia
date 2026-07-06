@@ -233,7 +233,36 @@ setInterval(() => {
   }
 }, 10 * 60 * 1000);
 
+// ── 好友上線狀態 / 邀請即時推播 ──
+// onlineUsers: userId(uuid) -> Set<socket.id>，同一個帳號可能同時開多個分頁/裝置
+const onlineUsers = new Map();
+
 io.on('connection', (socket) => {
+  socket.on('identify', ({ userId }) => {
+    if (!userId) return;
+    socket.data.userId = userId;
+    if (!onlineUsers.has(userId)) onlineUsers.set(userId, new Set());
+    onlineUsers.get(userId).add(socket.id);
+  });
+
+  socket.on('check_online', ({ userIds }, cb) => {
+    if (typeof cb !== 'function' || !Array.isArray(userIds)) return;
+    const online = userIds.filter(id => onlineUsers.has(id) && onlineUsers.get(id).size > 0);
+    cb({ online });
+  });
+
+  socket.on('send_friend_request', ({ toUserId, fromUserId, fromUsername }) => {
+    const targets = onlineUsers.get(toUserId);
+    if (!targets) return;
+    for (const sid of targets) io.to(sid).emit('friend_request_incoming', { fromUserId, fromUsername });
+  });
+
+  socket.on('friend_request_response', ({ toUserId, fromUsername, accepted }) => {
+    const targets = onlineUsers.get(toUserId);
+    if (!targets) return;
+    for (const sid of targets) io.to(sid).emit('friend_request_responded', { fromUsername, accepted });
+  });
+
   socket.on('create_room', () => {
     const code = genRoomCode();
     rooms[code] = {
@@ -337,6 +366,11 @@ io.on('connection', (socket) => {
 
   socket.on('disconnect', () => {
     for (const code of Object.keys(rooms)) dropFromRoom(socket, code);
+    const uid = socket.data.userId;
+    if (uid && onlineUsers.has(uid)) {
+      onlineUsers.get(uid).delete(socket.id);
+      if (onlineUsers.get(uid).size === 0) onlineUsers.delete(uid);
+    }
   });
 });
 
