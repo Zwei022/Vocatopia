@@ -275,23 +275,53 @@ function ttEndGame() {
   const finalScore = ttGame.score;
   const finalLines = ttGame.lines;
 
-  // Phase 4：上傳排行榜
-  if (typeof ttSubmitScore === 'function') ttSubmitScore(finalScore);
+  // 本機最高分比較（決定是否顯示「新紀錄」）
+  let prevBest = 0;
+  try { prevBest = parseInt(localStorage.getItem(LS_TETRIS_BEST) || '0', 10) || 0; } catch { /* ignore */ }
+  const isNewBest = finalScore > prevBest;
+
+  // 上傳排行榜（未登入只存本機、不上榜）
+  ttSubmitScore(finalScore);
 
   const ov = _ttOverlay();
   const panel = document.createElement('div');
   panel.className = 'tt-gameover';
   panel.innerHTML = `
     <div class="tt-go-box">
-      <div class="tt-go-icon">🎮</div>
+      <div class="tt-go-icon">${isNewBest ? '🏆' : '🎮'}</div>
       <div class="tt-go-title">遊戲結束</div>
+      ${isNewBest ? '<div class="tt-go-newbest">🎉 新紀錄！</div>' : ''}
       <div class="tt-go-score">${finalScore.toLocaleString()} 分</div>
-      <div class="tt-go-lines">消除 ${finalLines} 行</div>
+      <div class="tt-go-lines">消除 ${finalLines} 行　${!isNewBest ? `· 最佳 ${prevBest.toLocaleString()}` : ''}</div>
       <div class="tt-go-btns">
         <button class="tt-go-again" onclick="tetrisClose();tetrisStart()">再玩一次</button>
         <button class="tt-go-back" onclick="tetrisClose()">返回首頁</button>
       </div>
     </div>`;
   ov.appendChild(panel);
+}
+
+// ── 上傳分數到排行榜（只保留最高分；未登入僅存本機） ──
+async function ttSubmitScore(score) {
+  try {
+    const prev = parseInt(localStorage.getItem(LS_TETRIS_BEST) || '0', 10) || 0;
+    if (score > prev) localStorage.setItem(LS_TETRIS_BEST, String(score));
+  } catch { /* ignore */ }
+
+  // 訪客不上榜
+  if (typeof currentUser === 'undefined' || !currentUser || !currentProfile || typeof authClient === 'undefined') return;
+  try {
+    const { data } = await authClient.from('tetris_scores')
+      .select('best_score').eq('user_id', currentUser.id).maybeSingle();
+    const prevBest = data ? (data.best_score || 0) : 0;
+    if (score > prevBest) {
+      await authClient.from('tetris_scores').upsert({
+        user_id: currentUser.id,
+        username: currentProfile.username,
+        best_score: score,
+        updated_at: new Date().toISOString(),
+      }, { onConflict: 'user_id' });
+    }
+  } catch { /* 表尚未建立或離線 */ }
 }
 // ttUseSkill / ttTriggerWordQuiz / ttStartTimedCycle 等由 quiz.js 定義
