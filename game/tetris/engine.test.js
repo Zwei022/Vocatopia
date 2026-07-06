@@ -25,7 +25,7 @@ let allPiecesOk = true;
 for (const type of TT_TYPES) {
   let m = TT_PIECES[type].matrix;
   const cells = m.flat().filter(x => x).length;
-  if (![3, 4, 5].includes(cells)) allPiecesOk = false;
+  if (![1, 2, 3, 4, 5].includes(cells)) allPiecesOk = false;
   let rm = m; for (let i = 0; i < 4; i++) rm = ttRotateMatrix(rm);
   if (JSON.stringify(rm) !== JSON.stringify(m)) allPiecesOk = false;
 }

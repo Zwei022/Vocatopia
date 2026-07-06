@@ -63,6 +63,8 @@
 .tt-cell.fill-u, .tt-next-cell.fill-u { background: #29C3B4; }
 .tt-cell.fill-p, .tt-next-cell.fill-p { background: #8FBF3F; }
 .tt-cell.fill-n, .tt-next-cell.fill-n { background: #C98A5E; }
+.tt-cell.fill-m, .tt-next-cell.fill-m { background: #F58A5B; }
+.tt-cell.fill-d, .tt-next-cell.fill-d { background: #58A6D6; }
 .tt-cell[class*="fill-"] {
   box-shadow: inset 2px 2px 0 rgba(255,255,255,.4),
               inset -2px -2px 0 rgba(0,0,0,.18);

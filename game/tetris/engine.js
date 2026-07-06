@@ -15,6 +15,9 @@ const TT_PIECES = {
   J: { color: 'j', matrix: [[1, 0, 0], [1, 1, 1]] },
   S: { color: 's', matrix: [[0, 1, 1], [1, 1, 0]] },
   Z: { color: 'z', matrix: [[1, 1, 0], [0, 1, 1]] },
+  // 一格 / 兩格（最小，專門補洞）
+  M1: { color: 'm', matrix: [[1]] },                   // 單格
+  D2: { color: 'd', matrix: [[1, 1]] },                // 雙格（骨牌）
   // 三格方塊（簡單、好收尾）
   V3: { color: 'v', matrix: [[1, 0], [1, 1]] },        // 小轉角
   I3: { color: 'e', matrix: [[1, 1, 1]] },             // 小長條
