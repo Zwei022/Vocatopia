@@ -1564,8 +1564,50 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .hm-tile-soon:hover{background:var(--card);border-color:var(--line2);transform:none}
 .hm-soon-badge{position:absolute;top:7px;right:8px;font-size:8px;font-weight:800;color:var(--ink2);background:var(--card2);border:1px solid var(--line2);padding:2px 5px;border-radius:6px;font-family:'Nunito',sans-serif}
 
-/* 首頁中段：文法教學關卡樹已移到閱覽室，這裡先留空維持版面間距 */
-.hm-levelmap{flex:1;min-height:0}
+/* 首頁中段：對戰入口三區塊（角色 / 排行榜 / 開始對戰） */
+.hm-battle-zone{flex:1;min-height:0;display:flex;gap:12px;padding:12px 20px 0}
+.hm-char-panel{flex:1.05;display:flex;flex-direction:column;background:var(--card);border:2.5px solid var(--line);border-radius:var(--r3);padding:12px;cursor:pointer;box-shadow:0 4px 0 rgba(122,92,67,.2);transition:transform .12s;overflow:hidden}
+.hm-char-panel:active{transform:translateY(2px)}
+.hm-char-label{font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:var(--ink2);letter-spacing:.5px;margin-bottom:6px;flex-shrink:0}
+.hm-char-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:0}
+.hm-char-img{width:auto;max-width:90%;max-height:62%;object-fit:contain;filter:drop-shadow(0 5px 6px rgba(75,56,42,.22))}
+.hm-char-name{font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--ink)}
+.hm-char-empty{color:var(--ink3);font-size:13px;font-weight:700;text-align:center}
+
+.hm-battle-right{flex:1;display:flex;flex-direction:column;gap:12px;min-height:0}
+.hm-board-card{flex:1;display:flex;flex-direction:column;background:var(--card);border:2.5px solid var(--line);border-radius:var(--r3);padding:10px 12px;box-shadow:0 4px 0 rgba(122,92,67,.2);min-height:0}
+.hm-board-head{font-family:var(--font-display);font-weight:900;font-size:14px;color:var(--ink);margin-bottom:8px;flex-shrink:0}
+.hm-board-list{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:4px;min-height:0}
+.hm-board-list::-webkit-scrollbar{width:0}
+.hm-board-row{display:flex;align-items:center;gap:6px;font-family:'Nunito',sans-serif;font-size:12px;color:var(--ink);padding:3px 2px}
+.hm-board-rank{font-weight:900;width:20px;text-align:center;flex-shrink:0;color:var(--ink2)}
+.hm-board-rank.top1{color:#F5A623}.hm-board-rank.top2{color:#B0A088}.hm-board-rank.top3{color:#CD7F32}
+.hm-board-name{flex:1;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hm-board-score{font-weight:900;color:var(--orange2);flex-shrink:0}
+.hm-board-empty{color:var(--ink3);font-size:12px;text-align:center;padding:16px 4px;font-weight:700}
+
+.hm-battle-btn{flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--red);border:none;border-radius:var(--r3);padding:16px;color:#fff;font-family:var(--font-display);font-weight:900;font-size:17px;letter-spacing:1px;cursor:pointer;box-shadow:0 4px 0 var(--red2);transition:transform .12s,box-shadow .12s}
+.hm-battle-btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--red2)}
+.hm-battle-ico{font-size:20px}
+
+/* ── 角色收藏（皇室戰爭風卡片牆） ── */
+.coll-head{padding:20px 20px 12px;flex-shrink:0}
+.coll-title{font-family:var(--font-display);font-weight:900;font-size:22px;color:var(--ink)}
+.coll-sub{font-family:'Nunito',sans-serif;font-size:12px;color:var(--ink2);margin-top:4px}
+.coll-grid{flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:4px 20px 24px;align-content:start}
+.coll-card{position:relative;display:flex;flex-direction:column;align-items:center;background:var(--card);border:2.5px solid var(--line2);border-radius:14px;padding:10px 8px 8px;cursor:pointer;transition:transform .12s,border-color .15s;box-shadow:0 3px 0 rgba(122,92,67,.15)}
+.coll-card:active{transform:translateY(2px)}
+.coll-card.rarity-common{border-color:var(--line2)}
+.coll-card.rarity-rare{border-color:#5B9BD5}
+.coll-card.rarity-epic{border-color:#A56EFF}
+.coll-card.deployed{border-color:var(--orange);box-shadow:0 3px 0 rgba(245,146,30,.35)}
+.coll-card.locked{opacity:.55;cursor:default}
+.coll-deployed-tag{position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:var(--orange);color:#fff;font-family:'Nunito',sans-serif;font-weight:800;font-size:10px;padding:2px 8px;border-radius:10px;white-space:nowrap;z-index:2}
+.coll-card-imgwrap{position:relative;width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;margin-bottom:6px}
+.coll-card-img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 3px 4px rgba(75,56,42,.2))}
+.coll-lock{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:26px;background:rgba(251,246,234,.5);border-radius:10px}
+.coll-card-name{font-family:var(--font-display);font-weight:900;font-size:13px;color:var(--ink);text-align:center;line-height:1.2}
+.coll-card-rarity{font-family:'Nunito',sans-serif;font-size:10px;font-weight:700;color:var(--ink3);margin-top:1px}
 
 /* ── 閱覽室：文法教學單元列表 ── */
 .glesson-list{display:flex;flex-direction:column;gap:10px;padding:4px 0 20px}

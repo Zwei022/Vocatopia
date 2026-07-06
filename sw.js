@@ -1,5 +1,5 @@
-const CACHE = 'vocatopia-v88';
-const ASSETS = ['/', '/index.html', '/styles.css', '/script.js', '/auth.js', '/manifest.json', '/fonts/Yozai-Regular-subset.woff2', '/game/grammar.js', '/game/grammar.css'];
+const CACHE = 'vocatopia-v89';
+const ASSETS = ['/', '/index.html', '/styles.css', '/script.js', '/auth.js', '/manifest.json', '/fonts/Yozai-Regular-subset.woff2', '/game/grammar.js', '/game/grammar.css', '/game/tetris/characters.js'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)));

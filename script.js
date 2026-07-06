@@ -359,6 +359,7 @@ function goScreen(id, btn) {
     pvpResetViews();
   }
   if (id === 'home') { updateHomeScreen(); }
+  if (id === 'decks') { renderCharCollection(); }
   closeWordPopup();
 }
 
@@ -5188,6 +5189,132 @@ function updateHomeScreen() {
   if (barEl) barEl.style.width = pct + '%';
   const pctEl = document.getElementById('hmQuestPct');
   if (pctEl) pctEl.textContent = `${count}/${cats.length} 完成`;
+
+  // 對戰入口三區塊
+  renderDeployedChar();
+  renderLeaderboard();
+}
+
+// ── 首頁：出戰角色欄 ──
+function renderDeployedChar() {
+  const body = document.getElementById('hmCharBody');
+  if (!body || typeof getDeployedChar !== 'function') return;
+  const ch = getDeployedChar();
+  if (!ch) {
+    body.innerHTML = `<div class="hm-char-empty">尚未選擇出戰角色<br>點此前往收藏</div>`;
+    return;
+  }
+  body.innerHTML = `
+    <img class="hm-char-img" src="${ch.img}" alt="${escHtml(ch.name)}">
+    <div class="hm-char-name">${escHtml(ch.name)}</div>`;
+}
+
+// ── 首頁：排行榜（前20高分）──
+async function renderLeaderboard() {
+  const list = document.getElementById('hmBoardList');
+  if (!list) return;
+  list.innerHTML = `<div class="hm-board-empty">載入中…</div>`;
+
+  let rows = [];
+  try {
+    if (typeof authClient !== 'undefined') {
+      const { data } = await authClient
+        .from('tetris_scores')
+        .select('username, best_score')
+        .order('best_score', { ascending: false })
+        .limit(20);
+      rows = data || [];
+    }
+  } catch { /* 表可能還沒建立 */ }
+
+  if (!rows.length) {
+    list.innerHTML = `<div class="hm-board-empty">還沒有紀錄<br>快來搶第一名！</div>`;
+    return;
+  }
+  list.innerHTML = rows.map((r, i) => {
+    const rank = i + 1;
+    const rankCls = rank <= 3 ? ` top${rank}` : '';
+    return `<div class="hm-board-row">
+      <span class="hm-board-rank${rankCls}">${rank}</span>
+      <span class="hm-board-name">${escHtml(r.username || '玩家')}</span>
+      <span class="hm-board-score">${(r.best_score || 0).toLocaleString()}</span>
+    </div>`;
+  }).join('');
+}
+
+// ── 開始對戰：進入俄羅斯方塊遊戲 ──
+function startTetris() {
+  if (typeof tetrisStart === 'function') {
+    tetrisStart();
+  } else {
+    showToast('遊戲載入中，請稍候…');
+  }
+}
+
+// ══════════════════════════════════════════════════════════════
+// 角色收藏系統（皇室戰爭風卡片牆）
+// ══════════════════════════════════════════════════════════════
+const RARITY_LABEL = { common: '普通', rare: '稀有', epic: '史詩' };
+
+function renderCharCollection() {
+  const grid = document.getElementById('collGrid');
+  if (!grid || typeof TETRIS_CHARACTERS === 'undefined') return;
+  const owned = getOwnedChars();
+  const deployedId = getDeployedCharId();
+
+  grid.innerHTML = Object.values(TETRIS_CHARACTERS).map(ch => {
+    const isOwned = owned.includes(ch.id);
+    const isDeployed = ch.id === deployedId;
+    return `
+      <button class="coll-card rarity-${ch.rarity}${isOwned ? '' : ' locked'}${isDeployed ? ' deployed' : ''}"
+        onclick="${isOwned ? `openCharDetail('${ch.id}')` : ''}">
+        ${isDeployed ? '<span class="coll-deployed-tag">出戰中</span>' : ''}
+        <div class="coll-card-imgwrap">
+          <img class="coll-card-img" src="${ch.img}" alt="${escHtml(ch.name)}">
+          ${isOwned ? '' : '<div class="coll-lock">🔒</div>'}
+        </div>
+        <div class="coll-card-name">${escHtml(ch.name)}</div>
+        <div class="coll-card-rarity">${RARITY_LABEL[ch.rarity] || ''}</div>
+      </button>`;
+  }).join('');
+}
+
+function openCharDetail(id) {
+  const ch = TETRIS_CHARACTERS[id];
+  if (!ch) return;
+  const isDeployed = id === getDeployedCharId();
+  const overlay = document.createElement('div');
+  overlay.id = 'charDetailOverlay';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px';
+  overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
+  overlay.innerHTML = `
+    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:18px;padding:22px 20px;width:100%;max-width:340px;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
+      <button onclick="document.getElementById('charDetailOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
+      <div style="text-align:center;margin-bottom:12px">
+        <img src="${ch.img}" alt="${escHtml(ch.name)}" style="width:120px;height:120px;object-fit:contain;filter:drop-shadow(0 5px 6px rgba(75,56,42,.22))">
+        <div style="font-family:var(--font-display);font-weight:900;font-size:20px;color:var(--white);margin-top:4px">${escHtml(ch.name)}</div>
+        <div style="font-size:12px;color:var(--gray);margin-top:2px">${RARITY_LABEL[ch.rarity] || ''}</div>
+      </div>
+      <div style="background:rgba(122,92,67,.07);border-radius:12px;padding:12px;margin-bottom:12px;font-size:13px;color:var(--ink2);line-height:1.6">${escHtml(ch.desc)}</div>
+      <div style="background:rgba(245,146,30,.1);border:1.5px solid rgba(245,146,30,.35);border-radius:12px;padding:12px;margin-bottom:16px">
+        <div style="font-weight:900;font-size:14px;color:var(--orange2);margin-bottom:4px">${ch.skill.icon} ${escHtml(ch.skill.name)}</div>
+        <div style="font-size:12px;color:var(--ink2);line-height:1.6">${escHtml(ch.skill.desc)}</div>
+      </div>
+      <button onclick="deployChar('${ch.id}')" ${isDeployed ? 'disabled' : ''}
+        style="width:100%;padding:14px;border:none;border-radius:12px;font-family:var(--font-display);font-weight:900;font-size:16px;cursor:${isDeployed ? 'default' : 'pointer'};color:#fff;background:${isDeployed ? 'var(--ink3)' : 'var(--red)'};box-shadow:${isDeployed ? 'none' : '0 4px 0 var(--red2)'}">
+        ${isDeployed ? '✓ 出戰中' : '出戰'}
+      </button>
+    </div>`;
+  document.body.appendChild(overlay);
+}
+
+function deployChar(id) {
+  setDeployedChar(id);
+  document.getElementById('charDetailOverlay')?.remove();
+  renderCharCollection();
+  renderDeployedChar();
+  const ch = TETRIS_CHARACTERS[id];
+  showToast(`✓ ${ch ? ch.name : '角色'} 已出戰！`);
 }
 
 // 頁面載入時初始化首頁

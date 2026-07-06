@@ -208,8 +208,26 @@
       <div id="aFai"></div><div id="fFai"></div>
     </div>
 
-    <!-- 關卡樹：由下往上 1→10，可上下滾動（renderLevelMap() 動態生成） -->
-    <div class="hm-levelmap" id="hmLevelMap"></div>
+    <!-- 對戰入口三區塊：角色（左）/ 排行榜（右上）/ 開始對戰（右下） -->
+    <div class="hm-battle-zone">
+      <!-- 角色（出戰中的角色，點擊進收藏更換） -->
+      <button class="hm-char-panel" id="hmCharPanel" onclick="goScreen('decks')">
+        <div class="hm-char-label">出戰角色</div>
+        <div class="hm-char-body" id="hmCharBody"><!-- renderDeployedChar() 填入 --></div>
+      </button>
+
+      <!-- 右側：排行榜 + 開始對戰 -->
+      <div class="hm-battle-right">
+        <div class="hm-board-card">
+          <div class="hm-board-head">🏆 排行榜</div>
+          <div class="hm-board-list" id="hmBoardList"><!-- renderLeaderboard() 填入 --></div>
+        </div>
+        <button class="hm-battle-btn" onclick="startTetris()">
+          <span class="hm-battle-ico">🎮</span>
+          <span class="hm-battle-txt">開始對戰</span>
+        </button>
+      </div>
+    </div>
 
     <!-- 貼底區：今日任務 + CTA -->
     <div class="hm-bottom-group">
@@ -288,11 +306,11 @@
 
   <!-- ══ DECKS（收藏 - 空白） ══ -->
   <div id="decks" class="screen">
-    <div class="rp-empty" style="margin-top:100px">
-      <div class="rp-icon">❤️</div>
-      <div class="rp-title">收藏</div>
-      <div class="rp-desc">敬請期待</div>
+    <div class="coll-head">
+      <div class="coll-title">🃏 角色收藏</div>
+      <div class="coll-sub">選擇一名角色出戰，牠的技能會在對戰中登場</div>
     </div>
+    <div class="coll-grid" id="collGrid"><!-- renderCharCollection() 填入 --></div>
     <div class="bnav">
       <button class="bn" onclick="goScreen('arena',this)"><div class="bn-ico">⚔️</div><div class="bn-lbl">競技場</div></button>
       <button class="bn active" onclick="goScreen('decks',this)"><div class="bn-dot"></div><div class="bn-ico">❤️</div><div class="bn-lbl">收藏</div></button>
@@ -862,6 +880,7 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="auth.js"></script>
+<script src="game/tetris/characters.js"></script>
 <script src="script.js"></script>
 <script>
   if ('serviceWorker' in navigator) {
