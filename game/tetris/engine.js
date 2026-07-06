@@ -112,7 +112,8 @@ function ttCreateEngine(cols = 8, rows = 16) {
   function clearLines() {
     let cleared = 0;
     for (let r = rows - 1; r >= 0; r--) {
-      if (board[r].every(cell => cell)) {
+      // 整列填滿才消除，但「懲罰列」（含灰色 'g'）是永久鎖住、不可被消除，要跳過
+      if (board[r].every(cell => cell) && !board[r].includes('g')) {
         board.splice(r, 1);
         board.unshift(Array(cols).fill(null));
         cleared++;

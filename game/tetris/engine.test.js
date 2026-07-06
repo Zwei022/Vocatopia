@@ -45,6 +45,16 @@ const e5 = ttCreateEngine(8, 16); e5.board[15][0] = 'i';
 ok('garbage not over when top clear', e5.addGarbageRow() === false);
 ok('garbage bottom all gray', e5.board[15].every(x => x === 'g'));
 
+// 懲罰列（整列灰）不可被消除：clearLines 必須跳過它，永久鎖住
+const eg = ttCreateEngine(8, 16);
+for (let c = 0; c < 8; c++) eg.board[15][c] = 'g';
+ok('garbage full row NOT cleared', eg.clearLines() === 0);
+ok('garbage row still there after clear', eg.board[15].every(x => x === 'g'));
+// 懲罰列上方的正常滿列仍可正常消除
+for (let c = 0; c < 8; c++) eg.board[14][c] = 'i';
+ok('normal row above garbage still clears', eg.clearLines() === 1);
+ok('garbage row survives clearing row above', eg.board[15].every(x => x === 'g'));
+
 // 結束判定
 const e6 = ttCreateEngine(8, 16);
 for (let r = 0; r < 4; r++) for (let c = 0; c < 8; c++) e6.board[r][c] = 'i';
