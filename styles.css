@@ -135,8 +135,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .bn.active .bn-lbl{color:var(--orange2)}
 .bn.active .bn-ico{transform:scale(1.12);filter:none}
 .bn.active .bn-ico-img img{filter:none}
-.bn-dot{position:absolute;top:5px;right:26%;width:5px;height:5px;background:var(--orange);border-radius:50%;display:none}
-.bn.active .bn-dot{display:block}
+.bn-dot{display:none}
 
 /* ════════════════════════════════
    SCREEN 2 — 單字練習
