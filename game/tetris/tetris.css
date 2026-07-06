@@ -57,6 +57,12 @@
 .tt-cell.fill-s, .tt-next-cell.fill-s { background: #5FBF6A; }
 .tt-cell.fill-z, .tt-next-cell.fill-z { background: #E0472E; }
 .tt-cell.fill-g, .tt-next-cell.fill-g { background: #9C9488; }
+.tt-cell.fill-v, .tt-next-cell.fill-v { background: #D857C4; }
+.tt-cell.fill-e, .tt-next-cell.fill-e { background: #4A5DB8; }
+.tt-cell.fill-x, .tt-next-cell.fill-x { background: #E8639E; }
+.tt-cell.fill-u, .tt-next-cell.fill-u { background: #29C3B4; }
+.tt-cell.fill-p, .tt-next-cell.fill-p { background: #8FBF3F; }
+.tt-cell.fill-n, .tt-next-cell.fill-n { background: #C98A5E; }
 .tt-cell[class*="fill-"] {
   box-shadow: inset 2px 2px 0 rgba(255,255,255,.4),
               inset -2px -2px 0 rgba(0,0,0,.18);

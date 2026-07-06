@@ -49,22 +49,32 @@ function ttMakeWordQuestion() {
   };
 }
 
-// ── 句子題庫（60秒計時題）──
+// ── 句子題庫（60秒英文選擇題）──
+// 混合三種題型（單字 / 文法 / 片語），讓計時題更有變化
+const _TT_BANKS = [
+  { file: '/server/data/question_bank_vocab_practice.json', label: '單字' },
+  { file: '/server/data/question_bank_grammar.json',        label: '文法' },
+  { file: '/server/data/question_bank_phrase.json',         label: '片語' },
+];
 let _ttSentenceBank = null;
 
 async function ttLoadSentenceBank() {
   if (_ttSentenceBank) return _ttSentenceBank;
-  try {
-    const res = await fetch('/server/data/question_bank_vocab_practice.json');
-    const data = await res.json();
-    _ttSentenceBank = Array.isArray(data) ? data : [];
-  } catch {
-    _ttSentenceBank = [];
-  }
+  const pool = [];
+  await Promise.all(_TT_BANKS.map(async (b) => {
+    try {
+      const res = await fetch(b.file);
+      const data = await res.json();
+      if (Array.isArray(data)) {
+        for (const q of data) { q._typeLabel = b.label; pool.push(q); }
+      }
+    } catch { /* 單一題庫失敗不影響其他 */ }
+  }));
+  _ttSentenceBank = pool;
   return _ttSentenceBank;
 }
 
-// 60秒計時題：回傳 { kind:'sentence', prompt(句子), options[4](英文,去掉ABC前綴), answer }
+// 60秒計時題：回傳 { kind:'sentence', typeLabel(單字/文法/片語), prompt, options[4], answer }
 function ttMakeSentenceQuestion() {
   if (!_ttSentenceBank || !_ttSentenceBank.length) return null;
   const q = _ttSentenceBank[Math.floor(Math.random() * _ttSentenceBank.length)];
@@ -72,8 +82,9 @@ function ttMakeSentenceQuestion() {
   if (options.length !== 4) return null;
   return {
     kind: 'sentence',
+    typeLabel: q._typeLabel || '',
     prompt: q.sentence,
-    promptSub: q.pos || '',
+    promptSub: q.pos || q.target_grammar || '',
     options,
     answer: q.answer,
     optionsZh: q.optionsZh || null,

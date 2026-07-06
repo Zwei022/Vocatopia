@@ -43,7 +43,7 @@ function ttShowQuiz(opts) {
   quizEl.innerHTML = `
     <div class="ttq-card ${isWord ? 'ttq-word' : 'ttq-sentence'}">
       <div class="ttq-head">
-        <span class="ttq-tag">${isWord ? '⚡ 消行快問' : '⏰ 計時挑戰'}</span>
+        <span class="ttq-tag">${isWord ? '⚡ 消行快問' : '⏰ 計時挑戰'}${!isWord && q.typeLabel ? ` · ${q.typeLabel}` : ''}</span>
         <span class="ttq-timer" id="ttqTimer">${seconds}</span>
       </div>
       <div class="ttq-bar-track"><div class="ttq-bar" id="ttqBar" style="width:100%"></div></div>

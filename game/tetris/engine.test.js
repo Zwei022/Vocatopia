@@ -1,6 +1,6 @@
 // 俄羅斯方塊引擎單元測試（純邏輯，node 直接執行：node game/tetris/engine.test.js）
 // 驗證旋轉、7-bag、碰撞、消行、懲罰、結束判定等核心規則。
-const { ttCreateEngine, ttRotateMatrix, ttCreateBag } = require('./engine.js');
+const { ttCreateEngine, ttRotateMatrix, ttCreateBag, TT_PIECES, TT_TYPES } = require('./engine.js');
 
 let pass = 0, fail = 0;
 function ok(name, cond) { if (cond) pass++; else { fail++; console.log('  ✗ FAIL:', name); } }
@@ -12,13 +12,24 @@ ok('rotate T values', JSON.stringify(ttRotateMatrix(t)) === JSON.stringify([[1, 
 let m = t; for (let i = 0; i < 4; i++) m = ttRotateMatrix(m);
 ok('rotate 4x = original', JSON.stringify(m) === JSON.stringify(t));
 
-// 7-bag 均勻
+// N-bag 均勻：每一輪把全部方塊各發一次（不重複）
+const N = TT_TYPES.length;
 const bag = ttCreateBag();
 const s1 = new Set(), s2 = new Set();
-for (let i = 0; i < 7; i++) s1.add(bag.next());
-for (let i = 0; i < 7; i++) s2.add(bag.next());
-ok('bag first 7 all unique', s1.size === 7);
-ok('bag second 7 all unique', s2.size === 7);
+for (let i = 0; i < N; i++) s1.add(bag.next());
+for (let i = 0; i < N; i++) s2.add(bag.next());
+ok('bag deals all types once per bag', s1.size === N && s2.size === N);
+
+// 所有方塊都能生成、旋轉四次回到原狀、且格子數正確（4格/5格/3格）
+let allPiecesOk = true;
+for (const type of TT_TYPES) {
+  let m = TT_PIECES[type].matrix;
+  const cells = m.flat().filter(x => x).length;
+  if (![3, 4, 5].includes(cells)) allPiecesOk = false;
+  let rm = m; for (let i = 0; i < 4; i++) rm = ttRotateMatrix(rm);
+  if (JSON.stringify(rm) !== JSON.stringify(m)) allPiecesOk = false;
+}
+ok('all pieces valid & rotate 4x back to original', allPiecesOk);
 
 // 生成與邊界
 const e = ttCreateEngine(8, 16);
