@@ -37,7 +37,8 @@ function ttShowQuiz(opts) {
 
   const quizEl = document.getElementById('ttQuiz');
   const isWord = q.kind === 'word';
-  const skillHtml = _ttSkillQuizButtonHtml();
+  // 技能只能用在英文選擇題（計時題），消行快問不顯示技能按鈕
+  const skillHtml = timed ? _ttSkillQuizButtonHtml() : '';
 
   quizEl.innerHTML = `
     <div class="ttq-card ${isWord ? 'ttq-word' : 'ttq-sentence'}">
@@ -167,12 +168,12 @@ function ttInitSkill(ch) {
   _ttUpdateSkillBtn();
 }
 
-// 側欄技能按鈕（遊戲中的持久指示 + 觸發）
+// 技能按鈕觸發（只能用在英文選擇題＝計時題）
 function ttUseSkill() {
   if (!ttGame || !ttGame.skillChar) return;
-  // 只有在題目進行中才能施放
-  if (!ttGame.quiz || !ttGame.quiz.active) {
-    showToast('答題時才能施放技能');
+  // 只能在「英文選擇題（計時題）」進行中施放
+  if (!ttGame.quiz || !ttGame.quiz.active || !ttGame.quiz.timed) {
+    showToast('技能只能用在英文選擇題');
     return;
   }
   if (!ttGame.skillArmed) { showToast('技能冷卻中'); return; }
@@ -180,8 +181,8 @@ function ttUseSkill() {
   const bonus = ttGame.skillChar.skill.bonusSeconds || 10;
   ttGame.quiz.endAt += bonus * 1000;
   ttGame.skillArmed = false;
-  // 記錄「使用當下已解決的計時題數」；若正在計時題中則要多等這一輪
-  ttGame.skillUsedAt = (ttGame.timedCount || 0) + (ttGame.quiz.timed ? 1 : 0);
+  // 在計時題中使用，需等「下一輪」計時題結束才恢復，故 +1
+  ttGame.skillUsedAt = (ttGame.timedCount || 0) + 1;
   showToast(`${ttGame.skillChar.skill.icon} ${ttGame.skillChar.skill.name}！+${bonus}秒`);
   _ttUpdateSkillBtn();
 }
@@ -199,8 +200,8 @@ function _ttSkillMaybeRecharge() {
 function _ttUpdateSkillBtn() {
   if (!ttGame) return;
   const hasSkill = !!ttGame.skillChar;
-  const inQuiz = !!(ttGame.quiz && ttGame.quiz.active);
-  const canCast = hasSkill && inQuiz && ttGame.skillArmed;
+  const inTimedQuiz = !!(ttGame.quiz && ttGame.quiz.active && ttGame.quiz.timed);
+  const canCast = hasSkill && inTimedQuiz && ttGame.skillArmed;
 
   const side = document.getElementById('ttSkill');
   if (side) {
