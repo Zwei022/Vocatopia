@@ -293,6 +293,13 @@ io.on('connection', (socket) => {
     for (const sid of targets) io.to(sid).emit('friend_request_responded', { fromUsername, accepted });
   });
 
+  // 邀請好友加入對戰房：把房號推播給對方所有在線分頁
+  socket.on('game_invite', ({ toUserId, code, fromUsername, mode }) => {
+    const targets = onlineUsers.get(toUserId);
+    if (!targets) return;
+    for (const sid of targets) io.to(sid).emit('game_invite_incoming', { code, fromUsername, mode });
+  });
+
   socket.on('create_room', ({ clientId } = {}) => {
     const code = genRoomCode();
     rooms[code] = {

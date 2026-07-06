@@ -559,6 +559,11 @@ function getPvpSocket() {
     showToast('✓ 連線已恢復');
   });
 
+  // 收到好友的對戰邀請
+  pvpSocket.on('game_invite_incoming', ({ code, fromUsername, mode }) => {
+    _showGameInvitePopup(code, fromUsername, mode);
+  });
+
   pvpSocket.on('room_created', ({ code }) => {
     roomCode = code;
     pvpState = { isHost: true, questions: [], qIdx: 0, done: false, timerInt: null };
@@ -755,6 +760,115 @@ function confirmJoin() {
   closeModal('joinModal');
   document.getElementById('joinInput').value = '';
   s.emit('join_room', { code: v, clientId: pvpClientId });
+}
+
+// 用房號直接加入（好友邀請用）
+function _joinRoomByCode(code) {
+  const s = getPvpSocket();
+  if (!s) return;
+  s.emit('join_room', { code, clientId: pvpClientId });
+}
+
+// ── 邀請好友加入目前房間 ──
+async function openInviteFriends() {
+  if (!roomCode) { showToast('請先建立房間'); return; }
+  if (!currentProfile) { showGuestProfileNotice(); return; }
+
+  let overlay = document.getElementById('inviteFriendsOverlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'inviteFriendsOverlay';
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px';
+    overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
+    document.body.appendChild(overlay);
+  }
+  overlay.innerHTML = `
+    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:20px 18px;width:100%;max-width:340px;max-height:78vh;display:flex;flex-direction:column;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
+      <button onclick="document.getElementById('inviteFriendsOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer;z-index:2">✕</button>
+      <div style="font-weight:900;font-size:17px;color:var(--white);margin-bottom:4px">👥 邀請好友</div>
+      <div style="font-size:12px;color:var(--gray);margin-bottom:14px">點擊上線中的好友，把房號送過去</div>
+      <div id="inviteFriendsList" style="flex:1;overflow-y:auto;min-height:120px"></div>
+    </div>`;
+
+  const listEl = document.getElementById('inviteFriendsList');
+  listEl.innerHTML = `<div style="text-align:center;padding:24px 0;color:var(--gray);font-size:13px">載入中…</div>`;
+
+  const { data } = await authClient
+    .from('friend_requests')
+    .select('sender_id, receiver_id, sender:profiles!friend_requests_sender_id_fkey(id,username), receiver:profiles!friend_requests_receiver_id_fkey(id,username)')
+    .eq('status', 'accepted')
+    .or(`sender_id.eq.${currentUser.id},receiver_id.eq.${currentUser.id}`);
+
+  if (!data || !data.length) {
+    listEl.innerHTML = `<div style="text-align:center;padding:24px 10px;color:var(--gray);font-size:13px">還沒有好友，去「好友」頁新增吧！</div>`;
+    return;
+  }
+  const friends = data.map(row => row.sender_id === currentUser.id ? row.receiver : row.sender);
+
+  // 查在線狀態
+  const sock = getPvpSocket();
+  let online = new Set();
+  await new Promise(resolve => {
+    if (!sock) return resolve();
+    sock.emit('check_online', { userIds: friends.map(f => f.id) }, (res) => {
+      online = new Set(res?.online || []); resolve();
+    });
+    setTimeout(resolve, 1200); // 防呆
+  });
+
+  listEl.innerHTML = `<div style="display:flex;flex-direction:column;gap:8px">
+    ${friends.map(f => {
+      const isOn = online.has(f.id);
+      return `<button class="friend-list-item${isOn ? '' : ' friend-offline'}"
+        ${isOn ? `onclick="sendGameInvite('${f.id}','${_escJs(f.username)}')"` : 'disabled'}>
+        <span class="friend-avatar">👤<span class="friend-online-dot${isOn ? ' online' : ''}"></span></span>
+        <span class="friend-name">${escHtml(f.username)}</span>
+        <span style="font-size:11px;font-weight:800;color:${isOn ? 'var(--orange2)' : 'var(--ink3)'}">${isOn ? '邀請 ›' : '離線'}</span>
+      </button>`;
+    }).join('')}
+  </div>`;
+}
+
+function sendGameInvite(friendId, friendName) {
+  if (!roomCode) return;
+  const s = getPvpSocket();
+  if (!s) return;
+  s.emit('game_invite', {
+    toUserId: friendId,
+    code: roomCode,
+    fromUsername: currentProfile ? currentProfile.username : '玩家',
+    mode: hostSelectedMode,
+  });
+  document.getElementById('inviteFriendsOverlay')?.remove();
+  showToast(`✓ 已邀請 ${friendName} 加入`);
+}
+
+// 收到邀請的彈窗
+function _showGameInvitePopup(code, fromUsername, mode) {
+  document.getElementById('gameInvitePopup')?.remove();
+  const modeLabel = mode === 'buzzer' ? '單字搶答' : '單字對決';
+  const overlay = document.createElement('div');
+  overlay.id = 'gameInvitePopup';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9500;display:flex;align-items:center;justify-content:center;padding:20px';
+  overlay.innerHTML = `
+    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:24px 20px;width:100%;max-width:320px;text-align:center;font-family:'Nunito',sans-serif;box-shadow:0 8px 40px rgba(75,56,42,.3)">
+      <div style="font-size:40px;margin-bottom:6px">⚔️</div>
+      <div style="font-weight:900;font-size:16px;color:var(--white);margin-bottom:4px">${escHtml(fromUsername)} 邀請你對戰</div>
+      <div style="font-size:12px;color:var(--gray);margin-bottom:18px">${modeLabel}・房號 ${code}</div>
+      <div style="display:flex;gap:10px">
+        <button onclick="document.getElementById('gameInvitePopup').remove()"
+          style="flex:1;padding:11px;background:rgba(224,71,46,.1);border:1px solid rgba(224,71,46,.35);border-radius:10px;color:#E0472E;font-weight:700;font-size:13px;cursor:pointer">婉拒</button>
+        <button onclick="acceptGameInvite('${code}')"
+          style="flex:1;padding:11px;background:var(--green3);border:none;border-radius:10px;color:#fff;font-weight:700;font-size:13px;cursor:pointer">加入</button>
+      </div>
+    </div>`;
+  document.body.appendChild(overlay);
+}
+
+function acceptGameInvite(code) {
+  document.getElementById('gameInvitePopup')?.remove();
+  goScreen('arena');
+  setTimeout(() => _joinRoomByCode(code), 200);
 }
 
 function hostStartBattle() {
