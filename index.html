@@ -178,7 +178,6 @@
     <div class="home-header">
       <div class="hm-header-left">
         <div class="logo">Vocatopia</div>
-        <button id="profileBtn" class="hm-profile-btn" onclick="currentProfile ? showProfile() : showGuestProfileNotice()">👤 個人資料</button>
       </div>
       <div class="hm-header-right">
         <div class="hm-gold-chip">🪙 <span id="hGold">0</span></div>
@@ -192,6 +191,11 @@
         <button id="settingsBtn" class="up-logout" onclick="showSettings()" title="設定">⚙️</button>
         <button id="loginBtn" class="up-logout" onclick="showAuthOverlay()">登入</button>
       </div>
+    </div>
+
+    <!-- 個人資料按鈕：移到深色header下方的白色區域，對齊登入按鈕 -->
+    <div class="hm-subrow">
+      <button id="profileBtn" class="hm-profile-btn" onclick="currentProfile ? showProfile() : showGuestProfileNotice()">👤 個人資料</button>
     </div>
 
     <!-- JS 相容：updateChar() 需要這些 ID，但不顯示 -->
