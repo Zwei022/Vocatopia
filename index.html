@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Kalam:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="game/grammar.css">
+<link rel="stylesheet" href="game/tetris/tetris.css">
 <link rel="manifest" href="/manifest.json">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <meta name="theme-color" content="#F0EDE6">
@@ -708,6 +709,9 @@
   <!-- 文法教學（首頁關卡樹入口，game/grammar.js 控制；置於 .phone 內以維持手機/平板外框） -->
   <div id="grammarOverlay" class="gm-overlay" style="display:none"></div>
 
+  <!-- 俄羅斯方塊對戰（開始對戰入口，game/tetris/game.js 控制） -->
+  <div id="tetrisOverlay" class="tt-overlay" style="display:none"></div>
+
   <!-- 設定面板 -->
   <div class="sett-panel" id="settingsPanel" onclick="settingsPanelClick(event)">
     <div class="sett-box">
@@ -908,6 +912,8 @@
   </div>
 
   <script src="game/grammar.js"></script>
+  <script src="game/tetris/engine.js"></script>
+  <script src="game/tetris/game.js"></script>
 
 </body>
 </html>

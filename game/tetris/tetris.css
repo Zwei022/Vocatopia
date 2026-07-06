@@ -1,0 +1,159 @@
+/* ════════════════════════════════
+   俄羅斯方塊對戰樣式（沿用全站暖色可愛風 Design Tokens）
+════════════════════════════════ */
+
+.tt-overlay {
+  position: absolute; inset: 0; z-index: 950;
+  background: var(--bg);
+  display: flex; flex-direction: column;
+  font-family: var(--font-zh);
+  overflow: hidden;
+}
+
+/* ── 頂欄 ── */
+.tt-topbar {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 14px 16px; background: var(--header);
+  border-bottom: 2px solid var(--line); flex-shrink: 0;
+}
+.tt-back {
+  border: 2px solid var(--line); background: var(--card);
+  color: var(--ink); font-weight: 700; font-size: 14px;
+  padding: 6px 12px; border-radius: var(--r); cursor: pointer;
+}
+.tt-topbar-title { font-weight: 900; font-size: 16px; color: var(--ink); }
+.tt-score-chip {
+  background: var(--goldsoft); border: 1.5px solid var(--gold);
+  border-radius: 20px; padding: 5px 12px; font-size: 13px;
+  font-weight: 800; color: var(--orange2); font-family: 'Nunito', sans-serif;
+}
+.tt-score-chip b { font-size: 15px; }
+
+/* ── 主區：棋盤 + 側欄 ── */
+.tt-main {
+  flex: 1; display: flex; gap: 12px; padding: 12px; min-height: 0;
+}
+.tt-board-wrap {
+  flex: 1; display: flex; align-items: center; justify-content: center; min-height: 0; min-width: 0;
+}
+.tt-board {
+  display: grid; gap: 2px;
+  background: var(--card2, #EFE6D2);
+  border: 3px solid var(--line);
+  border-radius: 8px; padding: 4px;
+  box-shadow: inset 0 2px 8px rgba(75,56,42,.12);
+}
+.tt-cell {
+  border-radius: 3px;
+  background: rgba(122,92,67,.06);
+}
+
+/* 立體方塊色：上左亮、下右暗，中央本色 */
+.tt-cell.fill-i, .tt-next-cell.fill-i { background: #46C7DA; }
+.tt-cell.fill-o, .tt-next-cell.fill-o { background: #F5C542; }
+.tt-cell.fill-t, .tt-next-cell.fill-t { background: #A56EFF; }
+.tt-cell.fill-l, .tt-next-cell.fill-l { background: #F5921E; }
+.tt-cell.fill-j, .tt-next-cell.fill-j { background: #4E7FD6; }
+.tt-cell.fill-s, .tt-next-cell.fill-s { background: #5FBF6A; }
+.tt-cell.fill-z, .tt-next-cell.fill-z { background: #E0472E; }
+.tt-cell.fill-g, .tt-next-cell.fill-g { background: #9C9488; }
+.tt-cell[class*="fill-"] {
+  box-shadow: inset 2px 2px 0 rgba(255,255,255,.4),
+              inset -2px -2px 0 rgba(0,0,0,.18);
+}
+
+/* ── 側欄 ── */
+.tt-side {
+  width: 92px; flex-shrink: 0; display: flex; flex-direction: column; gap: 10px;
+}
+.tt-side-card {
+  background: var(--card); border: 2px solid var(--line2);
+  border-radius: 12px; padding: 8px; text-align: center;
+}
+.tt-side-label {
+  font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 11px;
+  color: var(--ink2); margin-bottom: 6px;
+}
+.tt-next {
+  display: grid; gap: 2px; width: 100%; max-width: 60px; margin: 0 auto;
+  aspect-ratio: 1; place-content: center;
+}
+.tt-next-cell { width: 14px; height: 14px; border-radius: 2px; background: transparent; }
+.tt-next-cell[class*="fill-"] {
+  box-shadow: inset 1.5px 1.5px 0 rgba(255,255,255,.4),
+              inset -1.5px -1.5px 0 rgba(0,0,0,.18);
+}
+.tt-lines { font-family: var(--font-display); font-weight: 900; font-size: 22px; color: var(--orange2); }
+
+/* 技能按鈕 */
+.tt-skill-btn {
+  margin-top: auto; background: var(--card); border: 2.5px solid var(--orange);
+  border-radius: 14px; padding: 8px 6px; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  transition: transform .1s, opacity .15s;
+  box-shadow: 0 3px 0 rgba(245,146,30,.35);
+}
+.tt-skill-btn:active:not(:disabled) { transform: translateY(2px); box-shadow: 0 1px 0 rgba(245,146,30,.35); }
+.tt-skill-btn:disabled { opacity: .5; border-color: var(--line2); box-shadow: none; cursor: default; filter: grayscale(.6); }
+.tt-skill-ava {
+  width: 40px; height: 40px; border-radius: 10px; overflow: hidden;
+  display: flex; align-items: center; justify-content: center; font-size: 22px;
+  background: var(--orasoft);
+}
+.tt-skill-ava img { width: 100%; height: 100%; object-fit: contain; }
+.tt-skill-name { font-family: var(--font-display); font-weight: 800; font-size: 11px; color: var(--ink); }
+.tt-skill-cd { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 10px; color: var(--ink2); min-height: 12px; }
+
+/* ── 控制列（三按鈕） ── */
+.tt-controls {
+  display: flex; align-items: center; justify-content: center; gap: 18px;
+  padding: 14px 16px calc(14px + env(safe-area-inset-bottom, 0px));
+  flex-shrink: 0; background: var(--nav); border-top: 2px solid var(--line2);
+}
+.tt-ctrl {
+  border: none; cursor: pointer; color: #fff; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform .08s; user-select: none; -webkit-user-select: none; touch-action: none;
+}
+.tt-ctrl:active { transform: scale(.92); }
+.tt-ctrl-side {
+  width: 68px; height: 68px; border-radius: 18px; font-size: 26px;
+  background: var(--orange); box-shadow: 0 4px 0 #C9761580;
+}
+.tt-ctrl-side:active { box-shadow: 0 1px 0 #C9761580; }
+.tt-ctrl-circle {
+  width: 84px; height: 84px; border-radius: 50%; font-size: 30px;
+  background: var(--red); box-shadow: 0 5px 0 var(--red2);
+}
+.tt-ctrl-circle:active { box-shadow: 0 2px 0 var(--red2); }
+
+/* ── 結算畫面 ── */
+.tt-gameover {
+  position: absolute; inset: 0; z-index: 10; background: rgba(75,56,42,.6);
+  display: flex; align-items: center; justify-content: center; padding: 24px;
+}
+.tt-go-box {
+  background: var(--card); border: 2.5px solid var(--line); border-radius: 18px;
+  padding: 28px 24px; text-align: center; width: 100%; max-width: 300px;
+  box-shadow: 0 8px 40px rgba(75,56,42,.35);
+}
+.tt-go-icon { font-size: 44px; }
+.tt-go-title { font-family: var(--font-display); font-weight: 900; font-size: 22px; color: var(--ink); margin: 6px 0; }
+.tt-go-score { font-family: var(--font-display); font-weight: 900; font-size: 34px; color: var(--orange2); }
+.tt-go-lines { font-size: 13px; color: var(--ink2); margin-top: 4px; margin-bottom: 20px; }
+.tt-go-btns { display: flex; flex-direction: column; gap: 10px; }
+.tt-go-again {
+  padding: 14px; background: var(--red); border: none; border-radius: 12px;
+  color: #fff; font-family: var(--font-display); font-weight: 900; font-size: 16px;
+  cursor: pointer; box-shadow: 0 4px 0 var(--red2);
+}
+.tt-go-back {
+  padding: 12px; background: none; border: 1.5px solid var(--line2); border-radius: 12px;
+  color: var(--ink2); font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 14px; cursor: pointer;
+}
+
+/* ── 題目彈層（Phase 3 使用） ── */
+.tt-quiz {
+  position: absolute; inset: 0; z-index: 20; background: rgba(75,56,42,.55);
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+}
