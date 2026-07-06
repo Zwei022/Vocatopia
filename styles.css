@@ -488,9 +488,9 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .modal-cancel{width:100%;padding:12px;background:none;border:1.5px solid var(--line2);border-radius:var(--r2);font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:var(--ink2);cursor:pointer}
 
 /* 設定面板 */
-.sett-panel{position:absolute;inset:0;background:rgba(75,56,42,.5);z-index:500;display:none;align-items:flex-end}
-.sett-panel.open{display:flex}
-.sett-box{width:100%;max-height:85%;overflow-y:auto;background:var(--card);border-radius:var(--r3) var(--r3) 0 0;padding:22px 22px 32px;border-top:2.5px solid var(--line);box-shadow:0 -8px 40px rgba(75,56,42,.25)}
+.sett-panel{position:absolute;inset:0;background:var(--bg);z-index:500;display:none}
+.sett-panel.open{display:block}
+.sett-box{width:100%;height:100%;overflow-y:auto;background:var(--card);padding:22px 22px 32px}
 .sett-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
 .sett-title{font-family:var(--font-display);font-weight:900;font-size:19px;color:var(--ink);letter-spacing:.5px}
 .sett-close{background:var(--nav);border:1.5px solid var(--line2);border-radius:50%;width:30px;height:30px;font-size:14px;color:var(--ink2);cursor:pointer}
