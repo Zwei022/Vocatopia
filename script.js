@@ -501,6 +501,10 @@ let pvpSocket = null;
 let pvpState  = null;   // { isHost, questions, qIdx, done, timerInt }
 let hostSelectedMode = 'vocab';
 let buzzerState = null; // { qIdx, total, myAnswered, foeAnswered, myTotal, foeTotal, countdownInt }
+// 這個分頁生命週期內固定不變的識別碼：手機切到背景等造成 socket 斷線重連時（會拿到新的
+// socket.id），靠這組 id 讓伺服器認得「這還是原本那個人」，才能把中斷的對局接回來，
+// 不會因為短暫斷線就被判定「對手離開」
+const pvpClientId = (crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`);
 
 function openModal(id)  { document.getElementById(id).classList.add('show'); }
 function closeModal(id) { document.getElementById(id).classList.remove('show'); }
@@ -543,6 +547,16 @@ function getPvpSocket() {
     return pvpSocket;
   }
   pvpSocket = io();
+
+  // 斷線重連（手機切背景、訊號中斷等）：若當下還在一場對局中，回報 clientId 讓伺服器
+  // 把房間內的 host/guest 換成這個新的 socket.id，才不會被誤判「對手離開」
+  pvpSocket.on('connect', () => {
+    if (roomCode) pvpSocket.emit('rejoin_room', { code: roomCode, clientId: pvpClientId });
+  });
+
+  pvpSocket.on('room_rejoined', () => {
+    showToast('✓ 連線已恢復');
+  });
 
   pvpSocket.on('room_created', ({ code }) => {
     roomCode = code;
@@ -588,6 +602,7 @@ function getPvpSocket() {
     document.getElementById('arenaWait').style.display   = 'none';
     document.getElementById('arenaBattle').style.display = 'flex';
     document.getElementById('arenaBuzzerBattle').style.display = 'none';
+    document.getElementById('arenaResult').style.display = 'none';
     document.getElementById('arenaBnav').style.display   = 'none';
     document.getElementById('pvpDoneWait').style.display = 'none';
     // 若是「再來一場」進來的，重置結算畫面上的按鈕狀態，供下一輪結束後使用
@@ -648,7 +663,18 @@ function getPvpSocket() {
     document.getElementById('arenaWait').style.display = 'none';
     document.getElementById('arenaBattle').style.display = 'none';
     document.getElementById('arenaBuzzerBattle').style.display = 'flex';
+    document.getElementById('arenaResult').style.display = 'none';
     document.getElementById('arenaBnav').style.display = 'none';
+    // 若是「再來一場」進來的，重置結算畫面上的按鈕狀態，供下一輪結束後使用
+    const rematchBtn = document.getElementById('pvpRematchBtn');
+    if (rematchBtn) { rematchBtn.disabled = false; rematchBtn.textContent = '🔁 再來一場'; }
+    if (pvpState.rematchCountdownInt) { clearInterval(pvpState.rematchCountdownInt); pvpState.rematchCountdownInt = null; }
+    // 每題qIdx===0代表新的一局（含「再來一場」）開始，把上一局殘留的比分歸零
+    if (data.qIdx === 0) {
+      document.getElementById('bzScoreYou').textContent = '0';
+      document.getElementById('bzScoreFoe').textContent = '0';
+      buzzerState = null;
+    }
     _renderBuzzerQuestion(data);
   });
 
@@ -700,10 +726,10 @@ function getPvpSocket() {
     pvpResetViews();
   });
   pvpSocket.on('disconnect', () => {
-    if (roomCode) {
-      showToast('⚠ 連線中斷');
-      pvpResetViews();
-    }
+    // 不要立刻 pvpResetViews()：斷線常常只是手機切到背景、訊號短暫中斷，Socket.IO 會
+    // 自動重連，重連後 'connect' 監聽器會送出 rejoin_room 把對局接回來。真的確定對局救不
+    // 回來時，伺服器會emit opponent_left/room_expired，屆時再重置畫面，這裡只顯示提示。
+    if (roomCode) showToast('⚠ 連線中斷，正在嘗試重新連線…');
   });
 
   return pvpSocket;
@@ -712,7 +738,7 @@ function getPvpSocket() {
 function createRoom() {
   const s = getPvpSocket();
   if (!s) return;
-  s.emit('create_room');
+  s.emit('create_room', { clientId: pvpClientId });
 }
 
 function copyRoom() {
@@ -727,7 +753,7 @@ function confirmJoin() {
   if (!s) return;
   closeModal('joinModal');
   document.getElementById('joinInput').value = '';
-  s.emit('join_room', { code: v });
+  s.emit('join_room', { code: v, clientId: pvpClientId });
 }
 
 function hostStartBattle() {

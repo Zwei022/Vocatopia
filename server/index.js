@@ -46,7 +46,7 @@ const vocabFallback = require('./data/question_bank_vocab.json');
 
 // ── 單字搶答（buzzer）：雙方同題同步、伺服器時間計分、逐題進行 ──
 const BUZZER_QCOUNT   = 7;   // 題數
-const BUZZER_DURATION = 10;  // 每題限時（秒）
+const BUZZER_DURATION = 30;  // 每題限時（秒）
 const buzzerBank = require('./data/question_bank_vocab_practice.json');
 
 function genRoomCode() {
@@ -210,14 +210,44 @@ async function beginRound(code) {
 }
 
 // 玩家離開/斷線：通知對手並解散房間
+// 明確離開（使用者主動點擊「返回競技場」）：立即銷毀房間，不給重連機會
 function dropFromRoom(socket, code) {
   const room = rooms[code];
   if (!room || (room.host !== socket.id && room.guest !== socket.id)) return;
   socket.leave(code);
-  if (room.timer)  clearTimeout(room.timer);
-  if (room.qTimer) clearTimeout(room.qTimer);
+  if (room.timer)      clearTimeout(room.timer);
+  if (room.qTimer)     clearTimeout(room.qTimer);
+  if (room.hostGraceTimer)  clearTimeout(room.hostGraceTimer);
+  if (room.guestGraceTimer) clearTimeout(room.guestGraceTimer);
   socket.to(code).emit('opponent_left');
   delete rooms[code];
+}
+
+const RECONNECT_GRACE_MS = 15000; // 斷線後給15秒重連機會，才真正判定對手離開
+
+// 斷線（可能只是手機切到背景、訊號短暫中斷，Socket.IO會自動重連並emit rejoin_room）：
+// 先不销毁房間，給一段緩衝時間讓 rejoin_room 有機會挽回；緩衝時間內都沒重連才真正銷毀
+function scheduleRoomTeardown(socket, code) {
+  const room = rooms[code];
+  if (!room) return;
+  const isHost  = room.host  === socket.id;
+  const isGuest = room.guest === socket.id;
+  if (!isHost && !isGuest) return;
+
+  const timer = setTimeout(() => {
+    const r = rooms[code];
+    if (!r) return;
+    // 緩衝期間內若已經用新 socket.id 重新加入（rejoin_room 會把 host/guest 換成新id），
+    // 這裡的 socket.id 就不會再等於 r.host/r.guest，代表已挽回，不需要銷毀
+    if ((isHost && r.host !== socket.id) || (isGuest && r.guest !== socket.id)) return;
+    if (r.timer)  clearTimeout(r.timer);
+    if (r.qTimer) clearTimeout(r.qTimer);
+    io.to(code).emit('opponent_left');
+    delete rooms[code];
+  }, RECONNECT_GRACE_MS);
+
+  if (isHost) room.hostGraceTimer = timer;
+  else        room.guestGraceTimer = timer;
 }
 
 // 每 10 分鐘掃描並清除過期房間，防止記憶體洩漏
@@ -263,10 +293,12 @@ io.on('connection', (socket) => {
     for (const sid of targets) io.to(sid).emit('friend_request_responded', { fromUsername, accepted });
   });
 
-  socket.on('create_room', () => {
+  socket.on('create_room', ({ clientId } = {}) => {
     const code = genRoomCode();
     rooms[code] = {
       host: socket.id, guest: null,
+      hostClientId: clientId || null, guestClientId: null,
+      hostGraceTimer: null, guestGraceTimer: null,
       mode: 'vocab', state: 'lobby',
       questions: [], answers: {}, timer: null,
       createdAt: Date.now(),
@@ -275,15 +307,35 @@ io.on('connection', (socket) => {
     socket.emit('room_created', { code });
   });
 
-  socket.on('join_room', ({ code }) => {
+  socket.on('join_room', ({ code, clientId }) => {
     const room = rooms[code];
     if (!room)                   return socket.emit('room_error', { msg: '找不到房間，請確認房號' });
     if (room.state !== 'lobby')  return socket.emit('room_error', { msg: '對決已開始，無法加入' });
     if (room.guest)              return socket.emit('room_error', { msg: '房間已滿' });
     if (room.host === socket.id) return socket.emit('room_error', { msg: '不能加入自己的房間' });
     room.guest = socket.id;
+    room.guestClientId = clientId || null;
     socket.join(code);
     io.to(code).emit('room_ready', { code, mode: room.mode });
+  });
+
+  // 斷線重連：手機切到背景、訊號短暫中斷等情況會讓 socket 斷線又重連並拿到新的 socket.id，
+  // 靠 clientId（客端產生、整個分頁生命週期不變）比對回原本是房主還是對手，把 room.host/
+  // room.guest 更新成新的 socket.id，並重新加入 Socket.IO 房間，取消原本排定的「淘汰」計時器
+  socket.on('rejoin_room', ({ code, clientId }) => {
+    const room = rooms[code];
+    if (!room || !clientId) return;
+    if (room.hostClientId === clientId) {
+      room.host = socket.id;
+      socket.join(code);
+      if (room.hostGraceTimer) { clearTimeout(room.hostGraceTimer); room.hostGraceTimer = null; }
+      socket.emit('room_rejoined', { code, mode: room.mode, state: room.state });
+    } else if (room.guestClientId === clientId) {
+      room.guest = socket.id;
+      socket.join(code);
+      if (room.guestGraceTimer) { clearTimeout(room.guestGraceTimer); room.guestGraceTimer = null; }
+      socket.emit('room_rejoined', { code, mode: room.mode, state: room.state });
+    }
   });
 
   // 房主選擇切磋模式（目前僅 vocab：單字對決）
@@ -365,7 +417,7 @@ io.on('connection', (socket) => {
   socket.on('leave_room', ({ code }) => dropFromRoom(socket, code));
 
   socket.on('disconnect', () => {
-    for (const code of Object.keys(rooms)) dropFromRoom(socket, code);
+    for (const code of Object.keys(rooms)) scheduleRoomTeardown(socket, code);
     const uid = socket.data.userId;
     if (uid && onlineUsers.has(uid)) {
       onlineUsers.get(uid).delete(socket.id);
