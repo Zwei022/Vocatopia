@@ -294,6 +294,4 @@ function ttEndGame() {
     </div>`;
   ov.appendChild(panel);
 }
-
-// ── Phase 3/4 佔位：避免尚未載入時報錯（實際實作會覆蓋這些） ──
-function ttUseSkill() { /* Phase 4 覆寫 */ }
+// ttUseSkill / ttTriggerWordQuiz / ttStartTimedCycle 等由 quiz.js 定義

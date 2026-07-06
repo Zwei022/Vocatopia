@@ -152,8 +152,63 @@
   color: var(--ink2); font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 14px; cursor: pointer;
 }
 
-/* ── 題目彈層（Phase 3 使用） ── */
+/* ── 題目彈層 ── */
 .tt-quiz {
-  position: absolute; inset: 0; z-index: 20; background: rgba(75,56,42,.55);
-  display: flex; align-items: center; justify-content: center; padding: 20px;
+  position: absolute; inset: 0; z-index: 20; background: rgba(75,56,42,.6);
+  display: flex; align-items: center; justify-content: center; padding: 18px;
+}
+.ttq-card {
+  background: var(--card); border: 2.5px solid var(--line); border-radius: 18px;
+  padding: 18px 18px 16px; width: 100%; max-width: 340px;
+  box-shadow: 0 10px 44px rgba(75,56,42,.4); font-family: 'Nunito', sans-serif;
+  animation: ttqPop .18s ease-out;
+}
+@keyframes ttqPop { from { transform: scale(.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.ttq-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.ttq-tag { font-weight: 900; font-size: 13px; color: var(--orange2); }
+.ttq-timer {
+  font-family: var(--font-display); font-weight: 900; font-size: 22px; color: var(--green);
+  min-width: 30px; text-align: right;
+}
+.ttq-timer.low { color: var(--red); }
+.ttq-bar-track { height: 6px; background: var(--line2); border-radius: 3px; overflow: hidden; margin-bottom: 14px; }
+.ttq-bar { height: 100%; background: var(--green); border-radius: 3px; transition: width .1s linear; }
+.ttq-timer.low ~ .ttq-bar-track .ttq-bar, .ttq-card:has(.ttq-timer.low) .ttq-bar { background: var(--red); }
+.ttq-prompt { font-size: 15px; color: var(--ink); line-height: 1.55; margin-bottom: 14px; font-weight: 700; }
+.ttq-prompt-word { font-family: var(--font-display); font-weight: 900; font-size: 30px; text-align: center; color: var(--ink); }
+.ttq-opts { display: flex; flex-direction: column; gap: 8px; }
+.ttq-opt {
+  text-align: left; padding: 12px 14px; background: var(--nav);
+  border: 2px solid var(--line2); border-radius: 12px;
+  font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 14px; color: var(--ink);
+  cursor: pointer; transition: border-color .12s, background .12s;
+}
+.ttq-opt:active { transform: scale(.99); }
+.ttq-opt.correct { background: rgba(59,165,93,.15); border-color: var(--green); color: var(--green); }
+.ttq-opt.wrong { background: rgba(224,71,46,.12); border-color: var(--red); color: var(--red); }
+.ttq-skill-btn {
+  margin-top: 12px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 10px; border: 2px solid var(--line2); border-radius: 12px; background: var(--card2, #EFE6D2);
+  font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; color: var(--ink3); cursor: default;
+}
+.ttq-skill-btn img { width: 22px; height: 22px; object-fit: contain; }
+.ttq-skill-btn.armed {
+  border-color: var(--orange); background: var(--orasoft); color: var(--orange2); cursor: pointer;
+  box-shadow: 0 3px 0 rgba(245,146,30,.3);
+}
+.ttq-skill-btn.armed:active { transform: translateY(2px); box-shadow: 0 1px 0 rgba(245,146,30,.3); }
+.ttq-skill-plus { font-weight: 900; }
+
+/* 分數浮動提示 */
+.tt-float {
+  position: absolute; top: 46%; left: 50%; transform: translateX(-50%);
+  font-family: var(--font-display); font-weight: 900; font-size: 26px; z-index: 30;
+  pointer-events: none; animation: ttFloat 1s ease-out forwards;
+}
+.tt-float.pos { color: var(--green); }
+.tt-float.neg { color: var(--red); }
+@keyframes ttFloat {
+  0% { opacity: 0; transform: translate(-50%, 10px) scale(.8); }
+  25% { opacity: 1; transform: translate(-50%, -6px) scale(1.1); }
+  100% { opacity: 0; transform: translate(-50%, -46px) scale(1); }
 }
