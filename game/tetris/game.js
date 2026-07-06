@@ -213,22 +213,29 @@ function _ttBindControls() {
   _ttBindRepeat(right, () => _ttMove(1));
 
   // 圓圈：短按=旋轉，長按=加速下墜
+  // 用 pointer capture 把整個按放過程鎖定在按鈕上，避免 :active 縮放讓游標「離開」
+  // 而觸發 pointerleave；並用 circlePressed 鎖確保每次按放只處理一次（防止重複/連續旋轉）
+  let circlePressed = false;
   const down = (e) => {
     e.preventDefault();
+    if (!ttGame || circlePressed) return;
+    circlePressed = true;
+    try { circle.setPointerCapture(e.pointerId); } catch { /* 不支援就算了 */ }
     ttGame.isHolding = false;
     ttGame.holdTimer = setTimeout(() => { ttGame.isHolding = true; _ttStartSoftDrop(); }, 160);
   };
-  const up = (e) => {
-    e.preventDefault();
+  // 真正放開：短按→旋轉一次；長按→停止軟降。取消(pointercancel)則不旋轉
+  const finish = (doRotate) => {
+    if (!ttGame || !circlePressed) return;
+    circlePressed = false;
     clearTimeout(ttGame.holdTimer);
     if (ttGame.isHolding) _ttStopSoftDrop();
-    else _ttRotate();
+    else if (doRotate) _ttRotate();
     ttGame.isHolding = false;
   };
   circle.addEventListener('pointerdown', down);
-  circle.addEventListener('pointerup', up);
-  circle.addEventListener('pointerleave', up);
-  circle.addEventListener('pointercancel', up);
+  circle.addEventListener('pointerup', (e) => { e.preventDefault(); finish(true); });
+  circle.addEventListener('pointercancel', () => finish(false));
 
   // 鍵盤（桌面測試/遊玩）
   ttGame._keyHandler = (e) => {
@@ -250,16 +257,21 @@ function _ttBindControls() {
 
 // 點一下觸發一次；按住 260ms 後每 90ms 連發（左右移動用）
 function _ttBindRepeat(el, fn) {
-  let repeatTimer = null, delayTimer = null;
+  let repeatTimer = null, delayTimer = null, pressed = false;
   const start = (e) => {
     e.preventDefault();
+    if (pressed) return;
+    pressed = true;
+    try { el.setPointerCapture(e.pointerId); } catch { /* 不支援就算了 */ }
     fn();
     delayTimer = setTimeout(() => { repeatTimer = setInterval(fn, 90); }, 260);
   };
-  const stop = () => { clearTimeout(delayTimer); clearInterval(repeatTimer); };
+  const stop = () => {
+    pressed = false;
+    clearTimeout(delayTimer); clearInterval(repeatTimer);
+  };
   el.addEventListener('pointerdown', start);
   el.addEventListener('pointerup', stop);
-  el.addEventListener('pointerleave', stop);
   el.addEventListener('pointercancel', stop);
 }
 
