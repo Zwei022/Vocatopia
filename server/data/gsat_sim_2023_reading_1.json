@@ -1,0 +1,433 @@
+{
+  "year": 2023,
+  "rocYear": 112,
+  "type": "reading",
+  "label": "模擬試題1",
+  "source": "Vocatopia 模擬試題（比照 2026 會考架構，全文字版，用字限會考核心字）",
+  "durationMin": 60,
+  "totalQuestions": 43,
+  "sections": [
+    {
+      "kind": "single",
+      "title": "第一部分：單題",
+      "range": "第 1-19 題",
+      "items": [
+        {
+          "n": 1,
+          "stem": "My brother is very ＿＿＿. He helps me carry the heavy boxes to my room every day.",
+          "options": ["strong", "quiet", "late", "afraid"],
+          "answer": 0,
+          "optionsZh": ["強壯的", "安靜的", "遲的", "害怕的"],
+          "explanation": "能幫忙搬重箱子代表力氣大，故選 strong（強壯的）。"
+        },
+        {
+          "n": 2,
+          "stem": "It is raining hard outside. Please take an ＿＿＿ with you before you leave.",
+          "options": ["apple", "umbrella", "answer", "island"],
+          "answer": 1,
+          "optionsZh": ["蘋果", "雨傘", "答案", "島嶼"],
+          "explanation": "下大雨要帶的是 umbrella（雨傘），其餘與下雨無關。"
+        },
+        {
+          "n": 3,
+          "stem": "Sam reads many books about space, so he has a lot of ＿＿＿ about the stars and the moon.",
+          "options": ["weather", "knowledge", "money", "trouble"],
+          "answer": 1,
+          "optionsZh": ["天氣", "知識", "金錢", "麻煩"],
+          "explanation": "讀很多書就會擁有相關的 knowledge（知識），故選 (B)。"
+        },
+        {
+          "n": 4,
+          "stem": "Lisa ＿＿＿ her homework before dinner every day, so she can play after she eats.",
+          "options": ["finish", "finishes", "finishing", "to finish"],
+          "answer": 1,
+          "optionsZh": ["（原形）", "（第三人稱單數現在式，正確）", "（現在分詞）", "（不定詞）"],
+          "explanation": "主詞 Lisa 為第三人稱單數，every day 表習慣用現在簡單式，動詞加 -es，故選 finishes。"
+        },
+        {
+          "n": 5,
+          "stem": "A: ＿＿＿ you free this Saturday? B: Yes, I am. Let's go to the movies.",
+          "options": ["Do", "Are", "Is", "Does"],
+          "answer": 1,
+          "optionsZh": ["（助動詞 do）", "（be 動詞，正確）", "（be 動詞單數）", "（助動詞 does）"],
+          "explanation": "回答用 Yes, I am，可知問句用 be 動詞；主詞 you 搭配 Are，故選 (B)。"
+        },
+        {
+          "n": 6,
+          "stem": "The soup is too hot. Please wait for a few minutes, and it ＿＿＿ cooler soon.",
+          "options": ["is", "was", "will be", "has been"],
+          "answer": 2,
+          "optionsZh": ["（現在式）", "（過去式）", "（未來式，正確）", "（現在完成式）"],
+          "explanation": "soon（很快）表未來，故用未來式 will be。"
+        },
+        {
+          "n": 7,
+          "stem": "My grandmother is the ＿＿＿ person in my family. She is over ninety years old.",
+          "options": ["old", "older", "oldest", "as old"],
+          "answer": 2,
+          "optionsZh": ["（原級）", "（比較級）", "（最高級，正確）", "（同級）"],
+          "explanation": "in my family 表在一個範圍中，且前面有 the，用最高級 oldest。"
+        },
+        {
+          "n": 8,
+          "stem": "I don't have much money with me now. Could you ＿＿＿ me some, please?",
+          "options": ["lend", "borrow", "buy", "cost"],
+          "answer": 0,
+          "optionsZh": ["借出（給別人）", "借入（跟別人）", "購買", "花費"],
+          "explanation": "「借某人某物」是 lend somebody something；borrow 是向別人借，方向相反，故選 lend。"
+        },
+        {
+          "n": 9,
+          "stem": "Kevin was tired ＿＿＿ he stayed up late last night to finish his report.",
+          "options": ["so", "but", "because", "or"],
+          "answer": 2,
+          "optionsZh": ["所以", "但是", "因為", "或者"],
+          "explanation": "前句是「累」的結果，後句是原因（熬夜），故用 because 引導原因。"
+        },
+        {
+          "n": 10,
+          "stem": "The girl ＿＿＿ is standing near the door is my new classmate.",
+          "options": ["who", "which", "what", "whose"],
+          "answer": 0,
+          "optionsZh": ["（指人的關係代名詞，正確）", "（指物）", "（先行詞不明）", "（所有格）"],
+          "explanation": "先行詞 the girl 是人，且在子句中當主詞，用關係代名詞 who。"
+        },
+        {
+          "n": 11,
+          "stem": "These pictures ＿＿＿ by my sister last summer. She is really good at taking photos.",
+          "options": ["take", "took", "were taken", "are taking"],
+          "answer": 2,
+          "optionsZh": ["（原形）", "（過去式主動）", "（過去式被動，正確）", "（現在進行式）"],
+          "explanation": "照片是「被拍」的，且 last summer 為過去，用過去被動 were taken。"
+        },
+        {
+          "n": 12,
+          "stem": "We enjoyed ＿＿＿ by the lake, so we sat there and talked for a whole afternoon.",
+          "options": ["sit", "to sit", "sitting", "sat"],
+          "answer": 2,
+          "optionsZh": ["（原形）", "（不定詞）", "（動名詞，正確）", "（過去式）"],
+          "explanation": "enjoy 後面接動名詞（V-ing），故選 sitting。"
+        },
+        {
+          "n": 13,
+          "stem": "Don't worry about the test. As long as you study hard, you ＿＿＿ do well.",
+          "options": ["should", "can", "must", "need"],
+          "answer": 1,
+          "optionsZh": ["應該", "能夠（有能力）", "必須", "需要"],
+          "explanation": "「只要努力就能考好」，表示有能力做到，用 can（能夠）最合語意。"
+        },
+        {
+          "n": 14,
+          "stem": "This is the first time I ＿＿＿ Japanese food. It tastes much better than I thought.",
+          "options": ["try", "tried", "have tried", "will try"],
+          "answer": 2,
+          "optionsZh": ["（現在式）", "（過去式）", "（現在完成式，正確）", "（未來式）"],
+          "explanation": "「This is the first time + 主詞」後面常接現在完成式，表達到目前為止第一次，故用 have tried。"
+        },
+        {
+          "n": 15,
+          "stem": "The movie was so ＿＿＿ that some people fell asleep before it ended.",
+          "options": ["exciting", "boring", "surprising", "moving"],
+          "answer": 1,
+          "optionsZh": ["刺激的", "無聊的", "令人驚訝的", "感人的"],
+          "explanation": "有人看到睡著，代表電影很 boring（無聊），故選 (B)。"
+        },
+        {
+          "n": 16,
+          "stem": "You had better ＿＿＿ now, or you will miss the last train home.",
+          "options": ["leave", "to leave", "leaving", "left"],
+          "answer": 0,
+          "optionsZh": ["（原形，正確）", "（不定詞）", "（動名詞）", "（過去式）"],
+          "explanation": "had better 後面固定接原形動詞，故選 leave。"
+        },
+        {
+          "n": 17,
+          "stem": "My father asked me ＿＿＿ the window because it was getting cold in the room.",
+          "options": ["close", "closing", "to close", "closed"],
+          "answer": 2,
+          "optionsZh": ["（原形）", "（動名詞）", "（不定詞，正確）", "（過去式）"],
+          "explanation": "ask somebody to do something，故用不定詞 to close。"
+        },
+        {
+          "n": 18,
+          "stem": "Neither Tom nor his brothers ＿＿＿ interested in playing baseball on weekends.",
+          "options": ["is", "are", "was", "has"],
+          "answer": 1,
+          "optionsZh": ["（單數）", "（複數，正確）", "（過去單數）", "（完成式）"],
+          "explanation": "neither A nor B 的動詞跟「最接近的主詞」一致，這裡最近是 his brothers（複數），故用 are。"
+        },
+        {
+          "n": 19,
+          "stem": "The more you practice speaking English, the ＿＿＿ you will become at it.",
+          "options": ["good", "well", "better", "best"],
+          "answer": 2,
+          "optionsZh": ["（原級形容詞）", "（副詞）", "（比較級，正確）", "（最高級）"],
+          "explanation": "「the more... the more...」句型，兩邊都用比較級，故用 better。"
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "title": "第二部分：題組",
+      "range": "第 20-43 題",
+      "passages": [
+        {
+          "range": "20–21",
+          "passageType": "practical",
+          "title": "Green Park Summer Reading Club (公告)",
+          "passage": "Green Park Library — Summer Reading Club\n\nWho can join: Students from Grade 3 to Grade 9\nWhen: Every Saturday, July 6 to August 24, from 2:00 to 4:00 p.m.\nWhere: Room 201, second floor\n\nHow it works:\n• Read a book at home each week.\n• Come to the club and share your book with the group.\n• After you share five books, you get a free bookmark. After ten books, you get a free notebook.\n\nPlease note:\n• You must bring your own book each week. The library does not lend books during club time.\n• If you cannot come, send an email to greenpark@mail.com before Friday.",
+          "questions": [
+            {
+              "n": 20,
+              "stem": "What does a student need to do to get a free notebook?",
+              "options": ["Join the club on a weekday.", "Share ten books with the group.", "Buy ten books from the library.", "Read for four hours every Saturday."],
+              "answer": 1,
+              "optionsZh": ["在平日參加社團。", "和小組分享十本書。", "向圖書館買十本書。", "每週六讀四小時。"],
+              "explanation": "公告寫 After ten books, you get a free notebook，故選 (B)。"
+            },
+            {
+              "n": 21,
+              "stem": "According to the notice, which of the following is TRUE?",
+              "options": ["The club meets on Saturday afternoons.", "The library lends books during club time.", "Only Grade 9 students can join the club.", "Students do not need to bring any book."],
+              "answer": 0,
+              "optionsZh": ["社團在週六下午聚會。", "圖書館在社團時間出借書籍。", "只有九年級學生能參加。", "學生不需要帶任何書。"],
+              "explanation": "時間寫 Every Saturday... 2:00 to 4:00 p.m.，(A) 正確；(B)(C)(D) 均與公告相反。"
+            }
+          ]
+        },
+        {
+          "range": "22–23",
+          "passageType": "narrative",
+          "title": "The Lost Wallet",
+          "passage": "On his way to school, David found a brown wallet on the ground near the bus stop. Inside, there was some money, a bus card, and a photo of a small girl. David wanted to keep the money at first, but the smiling face in the photo made him stop.\n\nHe took the wallet to the police station after school. Two days later, a woman called to thank him. The girl in the photo was her daughter, and the wallet was a gift from her. She wanted to give David some money, but he said no. \"I only did what was right,\" he told her. From that day on, David felt happy every time he passed the bus stop.",
+          "questions": [
+            {
+              "n": 22,
+              "stem": "Why did David decide not to keep the money?",
+              "options": ["The wallet had no money in it.", "The photo of the girl made him stop.", "A police officer was watching him.", "His teacher told him to return it."],
+              "answer": 1,
+              "optionsZh": ["皮夾裡沒有錢。", "女孩的照片讓他停手。", "有警察在看著他。", "老師叫他歸還。"],
+              "explanation": "文中 the smiling face in the photo made him stop，故選 (B)。"
+            },
+            {
+              "n": 23,
+              "stem": "What does David most likely mean when he says \"I only did what was right\"?",
+              "options": ["He wanted the woman to pay him more.", "He thought returning the wallet was the correct thing to do.", "He was not sure whose wallet it was.", "He felt sorry for taking the money."],
+              "answer": 1,
+              "optionsZh": ["他想要女士付更多錢。", "他認為歸還皮夾是正確的事。", "他不確定皮夾是誰的。", "他為拿錢感到抱歉。"],
+              "explanation": "他拒絕收錢並說「只是做對的事」，表示他認為歸還是應該做的正確行為，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "24–26",
+          "passageType": "informational",
+          "title": "Why Do Leaves Change Color?",
+          "passage": "In spring and summer, most leaves are green. The green comes from something inside the leaves that helps the tree make food from sunlight. As long as there is enough sunlight and warm weather, the leaves stay green and keep working.\n\nWhen fall comes, the days grow shorter and the air turns cold. The tree slowly stops making food, and the green color begins to fade. Now we can see other colors that were always there but hidden — yellow, orange, and even red.\n\nAfter a few weeks, the leaves fall to the ground. This may look sad, but it helps the tree save water and stay alive through the cold winter. When spring returns, new green leaves will grow again.",
+          "questions": [
+            {
+              "n": 24,
+              "stem": "What is the reading mainly about?",
+              "options": ["How trees make food in winter.", "Why leaves are different sizes.", "The reason leaves change color and fall.", "How to grow a tree in your garden."],
+              "answer": 2,
+              "optionsZh": ["樹木如何在冬天製造食物。", "為何葉子大小不同。", "葉子變色與掉落的原因。", "如何在花園種樹。"],
+              "explanation": "全文解釋葉子為何變色、掉落，主旨為 (C)。"
+            },
+            {
+              "n": 25,
+              "stem": "According to the reading, why do the other colors appear in fall?",
+              "options": ["Because someone paints the leaves.", "Because the green color fades away.", "Because the leaves grow bigger.", "Because it rains more often."],
+              "answer": 1,
+              "optionsZh": ["因為有人替葉子上色。", "因為綠色褪去。", "因為葉子長得更大。", "因為下雨更頻繁。"],
+              "explanation": "文中 the green color begins to fade... we can see other colors that were always there but hidden，故選 (B)。"
+            },
+            {
+              "n": 26,
+              "stem": "What can we learn about the falling of the leaves?",
+              "options": ["It means the tree is dying.", "It helps the tree live through winter.", "It happens only in the spring.", "It stops new leaves from growing."],
+              "answer": 1,
+              "optionsZh": ["代表樹要枯死了。", "幫助樹木度過冬天。", "只發生在春天。", "阻止新葉生長。"],
+              "explanation": "文末 it helps the tree save water and stay alive through the cold winter，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "27–28",
+          "passageType": "narrative",
+          "title": "Grandpa's Old Radio",
+          "passage": "When I was young, my grandpa had an old radio on his desk. It was black and heavy, and it did not always work well. Every evening, he turned it on and listened to the news and old songs. Sometimes the sound became weak, and he had to hit the side of the radio to make it clear again.\n\nAfter Grandpa passed away, my family wanted to throw the old radio away. But I asked to keep it. I put it on my own desk, and now I turn it on when I miss him. The songs are the same ones he loved. When I close my eyes and listen, it feels as if Grandpa is still sitting beside me.",
+          "questions": [
+            {
+              "n": 27,
+              "stem": "What did Grandpa do when the radio's sound became weak?",
+              "options": ["He bought a new radio.", "He hit the side of the radio.", "He turned it off at once.", "He asked the writer for help."],
+              "answer": 1,
+              "optionsZh": ["他買新收音機。", "他敲收音機的側面。", "他馬上關掉。", "他向作者求助。"],
+              "explanation": "文中 he had to hit the side of the radio to make it clear again，故選 (B)。"
+            },
+            {
+              "n": 28,
+              "stem": "Why does the writer keep the old radio?",
+              "options": ["It is worth a lot of money.", "It still works better than new ones.", "It reminds the writer of Grandpa.", "It was a gift from a good friend."],
+              "answer": 2,
+              "optionsZh": ["它值很多錢。", "它比新的還好用。", "它讓作者想起爺爺。", "它是好友送的禮物。"],
+              "explanation": "作者想念爺爺時就打開它，聽爺爺愛的歌，故選 (C)。"
+            }
+          ]
+        },
+        {
+          "range": "29–31",
+          "passageType": "informational",
+          "title": "The City That Never Sleeps at Noon",
+          "passage": "In some hot countries near the sea, many shops and offices close in the early afternoon. This quiet rest is called a \"siesta.\" People go home, eat a big lunch, and take a short sleep before they go back to work in the evening.\n\nWhy do people do this? In the past, there was no way to keep buildings cool. The afternoon was simply too hot to work well, so it made sense to rest and wait for the cooler evening air. Families also used this time to eat together and talk.\n\nToday, life is changing. Many big companies stay open all day, and younger workers often skip the rest. Still, in small towns, the old habit continues. When you walk down the street at two in the afternoon, you may find the shops closed and the streets empty — the town is simply taking a break.",
+          "questions": [
+            {
+              "n": 29,
+              "stem": "What is a \"siesta\"?",
+              "options": ["A special kind of lunch.", "An afternoon rest.", "A summer festival.", "A morning market."],
+              "answer": 1,
+              "optionsZh": ["一種特別的午餐。", "午後的休息。", "夏季慶典。", "早晨市場。"],
+              "explanation": "文中 This quiet rest is called a siesta，指午後休息，故選 (B)。"
+            },
+            {
+              "n": 30,
+              "stem": "According to the reading, why did people start taking a siesta in the past?",
+              "options": ["The afternoon was too hot to work well.", "They did not have enough food.", "The government made a new rule.", "There were too many festivals."],
+              "answer": 0,
+              "optionsZh": ["下午太熱不利工作。", "他們沒有足夠食物。", "政府訂了新規定。", "慶典太多。"],
+              "explanation": "文中 The afternoon was simply too hot to work well，故選 (A)。"
+            },
+            {
+              "n": 31,
+              "stem": "What does the reading suggest about the siesta today?",
+              "options": ["Everyone in the city still takes it.", "It has completely disappeared.", "It is less common in big companies.", "It now happens in the morning."],
+              "answer": 2,
+              "optionsZh": ["城市裡每個人仍午休。", "它已完全消失。", "在大公司較少見。", "現在改在早上。"],
+              "explanation": "文中 Many big companies stay open all day, and younger workers often skip the rest，表示大公司較少午休，故選 (C)。"
+            }
+          ]
+        },
+        {
+          "range": "32–34",
+          "passageType": "informational",
+          "title": "Turning Trash Into Art",
+          "passage": "Every year, people throw away millions of plastic bottles, old cans, and broken toys. Most of these things end up buried in the ground, where they may stay for hundreds of years. But a group of artists in a small town found a new way to deal with this problem.\n\nInstead of buying new material, the artists collect trash from the streets and beaches. They wash it, cut it, and put the pieces together to make large animals, colorful walls, and even chairs that people can sit on. One artist made a huge fish out of thousands of bottle caps. It now stands in the middle of the town park.\n\nThe artists say their goal is not only to make beautiful things. They also want people to think about how much they throw away. \"When you see a fish made of trash,\" one artist said, \"you start to ask where all your own trash goes.\"",
+          "questions": [
+            {
+              "n": 32,
+              "stem": "Where do the artists get the material for their art?",
+              "options": ["They buy it from a store.", "They collect trash from streets and beaches.", "They cut down trees in the park.", "They ask the town to give them money."],
+              "answer": 1,
+              "optionsZh": ["他們向商店購買。", "他們從街道與海灘收集垃圾。", "他們砍公園的樹。", "他們向鎮上要錢。"],
+              "explanation": "文中 the artists collect trash from the streets and beaches，故選 (B)。"
+            },
+            {
+              "n": 33,
+              "stem": "What was the huge fish made of?",
+              "options": ["Thousands of bottle caps.", "Old newspapers.", "Pieces of wood.", "Colorful glass."],
+              "answer": 0,
+              "optionsZh": ["數千個瓶蓋。", "舊報紙。", "木片。", "彩色玻璃。"],
+              "explanation": "文中 made a huge fish out of thousands of bottle caps，故選 (A)。"
+            },
+            {
+              "n": 34,
+              "stem": "What do the artists most want people to do?",
+              "options": ["Buy more art from them.", "Move to their small town.", "Think about how much they throw away.", "Learn how to catch fish."],
+              "answer": 2,
+              "optionsZh": ["向他們買更多藝術品。", "搬到他們的小鎮。", "思考自己丟掉多少東西。", "學習如何捕魚。"],
+              "explanation": "文末藝術家希望人們思考自己丟棄了多少、垃圾去了哪裡，故選 (C)。"
+            }
+          ]
+        },
+        {
+          "range": "35–39",
+          "passageType": "dual",
+          "title": "Should Students Use Phones at School? — Two Views",
+          "passage": "■ Writer A：\nI believe students should be allowed to use phones at school. A phone is not just for games. With a phone, students can look up new words, find useful information, and read the news in seconds. When a teacher gives a hard question, the answer is right there in our hands. Also, if something happens on the way home, students can call their parents at once. Taking phones away does not stop students from playing; it only takes away a helpful tool. What schools really need to teach is how to use phones in a smart way.\n\n■ Writer B：\nI understand why phones seem useful, but I still think they cause more problems than good at school. Many students say they are looking up information, but they are really chatting with friends or playing games. When a phone rings in class, everyone loses their focus. Studies also show that students remember less when they read on a screen than on paper. School is a place to learn to think, not to search for quick answers. Students can always use phones after class, so a few quiet hours without them will not hurt.",
+          "questions": [
+            {
+              "n": 35,
+              "stem": "What does Writer A think about phones at school?",
+              "options": ["They should not be allowed at all.", "They are only good for playing games.", "They can be a helpful tool for learning.", "They should be used only by teachers."],
+              "answer": 2,
+              "optionsZh": ["完全不該被允許。", "只適合玩遊戲。", "可以是有用的學習工具。", "只有老師能用。"],
+              "explanation": "Writer A 認為手機能查字、找資料、看新聞，是 helpful tool，故選 (C)。"
+            },
+            {
+              "n": 36,
+              "stem": "According to Writer B, what problem do phones cause in class?",
+              "options": ["They make the room too hot.", "They make everyone lose their focus.", "They are too expensive for students.", "They break down very easily."],
+              "answer": 1,
+              "optionsZh": ["讓教室太熱。", "讓大家分心。", "對學生太貴。", "很容易壞。"],
+              "explanation": "Writer B 說 When a phone rings in class, everyone loses their focus，故選 (B)。"
+            },
+            {
+              "n": 37,
+              "stem": "What does Writer B say about reading on a screen?",
+              "options": ["Students read faster on a screen.", "Students remember less than on paper.", "Screens are better for the eyes.", "Screens help students think deeply."],
+              "answer": 1,
+              "optionsZh": ["在螢幕上讀得更快。", "比紙本記得更少。", "螢幕對眼睛較好。", "螢幕幫助深入思考。"],
+              "explanation": "文中 students remember less when they read on a screen than on paper，故選 (B)。"
+            },
+            {
+              "n": 38,
+              "stem": "What do both writers agree on?",
+              "options": ["Phones can never be useful.", "Students should throw away their phones.", "Phones are related to how students learn.", "Teachers should also stop using phones."],
+              "answer": 2,
+              "optionsZh": ["手機永遠無用。", "學生應丟掉手機。", "手機和學生的學習有關。", "老師也該停用手機。"],
+              "explanation": "兩位作者都在討論手機對「學習」的影響（有用/有害），共同點是手機與學習有關，故選 (C)。"
+            },
+            {
+              "n": 39,
+              "stem": "Which sentence would Writer A most likely agree with?",
+              "options": ["Schools should teach students to use phones wisely.", "Phones should be kept in the office all day.", "Students should never call their parents.", "Reading on paper is always better."],
+              "answer": 0,
+              "optionsZh": ["學校應教學生聰明用手機。", "手機該整天放在辦公室。", "學生永遠不該打給父母。", "紙本閱讀永遠較好。"],
+              "explanation": "Writer A 主張 teach how to use phones in a smart way，與 (A) 一致。"
+            }
+          ]
+        },
+        {
+          "range": "40–43",
+          "passageType": "cloze",
+          "title": "A New Friend at the Shelter (故事克漏字)",
+          "passage": "Emma had wanted a dog for a long time. Last month, her parents finally took her to an animal shelter. There were many dogs there, but one small brown dog kept looking at her with sad eyes. __(40)__ the other dogs were jumping and barking, this one just sat quietly in the corner.\n\nThe worker told Emma that the dog __(41)__ at the shelter for almost a year. No family wanted him because he was old and shy. Emma felt sorry for him and decided to take him home. She named him Coco.\n\nAt first, Coco was afraid of everything. But Emma was patient. Every day she talked to him softly and took him for a walk. __(42)__ , Coco began to trust her. Now he runs to the door every time Emma comes home. Emma is glad she chose the dog that no one else wanted. She learned that the __(43)__ friends are sometimes the ones who need us the most.",
+          "questions": [
+            {
+              "n": 40,
+              "stem": "選出第 40 格最適合的答案。",
+              "options": ["While", "Because", "So", "If"],
+              "answer": 0,
+              "optionsZh": ["當…的時候（對比）", "因為", "所以", "如果"],
+              "explanation": "前後對比「其他狗在跳、這隻卻安靜坐著」，用 While（當…時／然而）連接對比子句最合適。"
+            },
+            {
+              "n": 41,
+              "stem": "選出第 41 格最適合的答案。",
+              "options": ["is", "will be", "had been", "is being"],
+              "answer": 2,
+              "optionsZh": ["（現在式）", "（未來式）", "（過去完成式，正確）", "（現在進行被動）"],
+              "explanation": "以過去（told）為基準點，狗「在收容所待了將近一年」是更早且持續到那時的狀態，用過去完成式 had been。"
+            },
+            {
+              "n": 42,
+              "stem": "選出第 42 格最適合的答案。",
+              "options": ["Suddenly", "Slowly", "Luckily", "Sadly"],
+              "answer": 1,
+              "optionsZh": ["突然地", "慢慢地", "幸運地", "難過地"],
+              "explanation": "前文 Emma 每天耐心陪伴，Coco 是「慢慢地」開始信任她，故選 Slowly。"
+            },
+            {
+              "n": 43,
+              "stem": "選出第 43 格最適合的答案。",
+              "options": ["best", "worst", "loudest", "fastest"],
+              "answer": 0,
+              "optionsZh": ["最好的", "最糟的", "最吵的", "最快的"],
+              "explanation": "全文寓意是「最好的朋友有時正是最需要我們的」，故用 best。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

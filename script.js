@@ -1021,6 +1021,7 @@ const GSAT_EXAMS = [
   { year: 2024, type: 'listening', label: '聽力測驗', icon: '🔊', dataUrl: '/server/data/gsat_exam_2024_listening.json' },
   { year: 2023, type: 'reading',   label: '閱讀測驗', icon: '📖', dataUrl: '/server/data/gsat_exam_2023_reading.json' },
   { year: 2023, type: 'listening', label: '聽力測驗', icon: '🔊', dataUrl: '/server/data/gsat_exam_2023_listening.json' },
+  { year: 2023, type: 'sim_reading_1', label: '模擬試題1', icon: '📝', dataUrl: '/server/data/gsat_sim_2023_reading_1.json' },
 ];
 
 // 單題（第1–19題）的題型分類，供「答錯題庫」歸檔使用
