@@ -1485,6 +1485,7 @@ function openGsatExam(year, type) {
 }
 function closeGsatExam() {
   _gsatCleanupTimer();
+  gsatExam = null;   // 離開試題後清除，避免未交卷狀態誤擋其他頁面的點字查詢
   const v = document.getElementById('gsatExamView');
   v.classList.remove('gsat-fullscreen');
   v.style.display = 'none';
@@ -1498,6 +1499,7 @@ function openLibGsatExam(year, type) {
 }
 function closeLibGsatExam() {
   _gsatCleanupTimer();
+  gsatExam = null;   // 離開試題後清除，避免未交卷狀態誤擋其他頁面的點字查詢
   const v = document.getElementById('libGsatExamView');
   v.classList.remove('gsat-fullscreen');
   v.style.display = 'none';
@@ -2579,6 +2581,12 @@ function _lemmaCandidates(w) {
 }
 
 async function lookupWord(word, el) {
+  // 會考作答中不可查單字（交卷後才開放），避免作答時查字典。
+  // 直接擋在源頭，連「放大 lightbox」裡的字也一併受限。
+  if (typeof gsatExam !== 'undefined' && gsatExam && !gsatExam.submitted) {
+    if (typeof showToast === 'function') showToast('交卷後才能點字查詢單字');
+    return;
+  }
   // 優先用 WORDS 陣列開啟詳細 overlay（含字尾還原比對）
   let w = WORDS.find(x => x.word === word);
   if (!w) {

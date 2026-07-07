@@ -1502,6 +1502,9 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .gx-ptitle{font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:var(--ink);margin-bottom:10px}
 .gx-prange{color:var(--ink2);font-weight:600;font-size:11px}
 .gx-passage{font-size:13px;color:var(--ink);line-height:1.8;margin-bottom:12px}
+/* 會考作答中：段落單字暫不可點查詢（看起來像純文字），交卷後才啟用點字，避免作答時查字典 */
+.gx-passage .w{cursor:inherit;border-bottom-color:transparent;pointer-events:none}
+.gx-submitted .gx-passage .w{cursor:pointer;border-bottom-color:var(--orange);pointer-events:auto}
 .gx-passage p{margin:0 0 10px}
 .gx-passage p:last-child{margin-bottom:0}
 .gx-cap{font-size:11px;color:var(--orange2);margin-bottom:12px;line-height:1.5}
