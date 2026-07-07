@@ -1021,7 +1021,7 @@ const GSAT_EXAMS = [
   { year: 2024, type: 'listening', label: '聽力測驗', icon: '🔊', dataUrl: '/server/data/gsat_exam_2024_listening.json' },
   { year: 2023, type: 'reading',   label: '閱讀測驗', icon: '📖', dataUrl: '/server/data/gsat_exam_2023_reading.json' },
   { year: 2023, type: 'listening', label: '聽力測驗', icon: '🔊', dataUrl: '/server/data/gsat_exam_2023_listening.json' },
-  { year: 2023, type: 'sim_reading_1', label: '模擬試題1', icon: '📝', dataUrl: '/server/data/gsat_sim_2023_reading_1.json' },
+  { year: 2023, type: 'sim_reading_1', label: '模擬試題1', icon: '📝', dataUrl: '/server/data/gsat_sim_2023_reading_1.json', sim: true },
 ];
 
 // 單題（第1–19題）的題型分類，供「答錯題庫」歸檔使用
@@ -1033,8 +1033,9 @@ const GSAT_SINGLE_CAT = {
 
 function _gsatYearRowsHTML(openFnName) {
   const years = [2026, 2025, 2024, 2023];
-  return years.map(year => {
-    const exams = GSAT_EXAMS.filter(e => e.year === year);
+  // 歷屆真題（排除模擬試題，模擬試題另放下方獨立專區）
+  let html = years.map(year => {
+    const exams = GSAT_EXAMS.filter(e => e.year === year && !e.sim);
     return `
       <div class="gsat-year-row">
         <div class="gyr-year">
@@ -1053,6 +1054,24 @@ function _gsatYearRowsHTML(openFnName) {
         </div>
       </div>`;
   }).join('');
+
+  // 分界線 + 模擬試題專區
+  const sims = GSAT_EXAMS.filter(e => e.sim);
+  if (sims.length) {
+    html += `
+      <div class="gsat-divider"><span>模擬試題</span></div>
+      <div class="gsat-sim-list">
+        ${sims.map(e => {
+          const hasData = !!e.dataUrl;
+          return `
+            <button class="gyr-exam gsat-sim-exam${hasData ? '' : ' empty'}" onclick="${hasData ? `${openFnName}(${e.year},'${e.type}')` : ''}">
+              <div class="gyr-exam-name">${e.icon} ${e.label}</div>
+              <div class="gyr-exam-status">${hasData ? '開始作答' : '準備中'}</div>
+            </button>`;
+        }).join('')}
+      </div>`;
+  }
+  return html;
 }
 
 function renderGsatList() {
