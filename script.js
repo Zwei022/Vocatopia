@@ -4407,11 +4407,9 @@ function showSettings() {
     btn.classList.toggle('active', btn.textContent.includes(String(dailyGoal)));
   });
 
-  // 還原學習目標
-  const goal = s.goal || 'cap2000';
+  // 還原學習目標（目前只有「會考」上線，預設也固定是它）
   document.querySelectorAll('.sett-seg[onclick*="setGoal"]').forEach(btn => {
-    const map = { cap2000: '會考', gsat: '學測', toeic: '多益' };
-    btn.classList.toggle('active', btn.textContent.includes(map[goal] || ''));
+    btn.classList.toggle('active', btn.textContent === '會考');
   });
 
   document.getElementById('settingsPanel').classList.add('open');
@@ -4426,11 +4424,15 @@ function settingsPanelClick(e) {
 }
 
 function setGoal(goal, btn) {
+  // 目前只有「會考」真正上線，學測／多益還在準備中，先不切換也不儲存
+  if (goal !== 'cap2000') {
+    showToast('敬請期待');
+    return;
+  }
   document.querySelectorAll('.sett-seg[onclick*="setGoal"]').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   _saveSettingsData({ goal });
-  const labels = { cap2000: '會考 2000', gsat: '學測', toeic: '多益' };
-  showToast(`✓ 目標切換為「${labels[goal]}」`);
+  showToast('✓ 目標切換為「會考」');
 }
 
 function setDailyGoal(n, btn) {
@@ -4457,25 +4459,6 @@ function confirmResetWordBank() {
   showToast('✓ 字庫已重置，重新開始！');
 }
 
-function showParentBind() {
-  // 產生隨機 8 碼聯動碼（顯示用，後端功能待實作）
-  const stored = _loadSettingsData().bindCode;
-  document.getElementById('bindCodeText').textContent = stored || '——';
-  openModal('parentBindModal');
-}
-
-function generateBindCode() {
-  const code = Math.random().toString(36).slice(2, 10).toUpperCase();
-  _saveSettingsData({ bindCode: code });
-  document.getElementById('bindCodeText').textContent = code;
-}
-
-function submitParentCode() {
-  const code = document.getElementById('parentCodeInput').value.trim().toUpperCase();
-  if (!code) { showToast('請輸入聯動碼'); return; }
-  closeModal('parentBindModal');
-  showToast('✓ 已送出聯動申請（功能即將上線）');
-}
 
 function showPrivacySettings() {
   showToast('隱私設定功能即將上線');

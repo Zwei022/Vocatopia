@@ -748,7 +748,7 @@
       <div class="sett-section">
         <div class="sett-label">學習目標</div>
         <div class="sett-seg-row">
-          <button class="sett-seg" onclick="setGoal('cap2000',this)">會考 2000</button>
+          <button class="sett-seg" onclick="setGoal('cap2000',this)">會考</button>
           <button class="sett-seg" onclick="setGoal('gsat',this)">學測</button>
           <button class="sett-seg" onclick="setGoal('toeic',this)">多益</button>
         </div>
@@ -756,25 +756,8 @@
 
       <div class="sett-section">
         <div class="sett-label">帳號與資料</div>
-        <button class="sett-item-btn" onclick="showParentBind()">👨‍👩‍👧 家長聯動</button>
         <button class="sett-item-btn sett-item-danger" onclick="confirmResetWordBank()">🗑️ 重置字庫</button>
       </div>
-    </div>
-  </div>
-
-  <!-- 家長聯動 modal -->
-  <div class="modal-overlay" id="parentBindModal">
-    <div class="modal-box">
-      <div class="modal-title">👨‍👩‍👧 家長聯動</div>
-      <div class="bind-code-box">
-        <div class="bind-code-label">我的聯動碼</div>
-        <div class="bind-code-text" id="bindCodeText">——</div>
-        <button class="modal-cancel" onclick="generateBindCode()">產生新的聯動碼</button>
-      </div>
-      <div class="bind-code-label" style="margin-top:16px">或輸入家長提供的聯動碼</div>
-      <input class="modal-input" id="parentCodeInput" maxlength="8" placeholder="輸入聯動碼">
-      <button class="modal-confirm" onclick="submitParentCode()">送出</button>
-      <button class="modal-cancel" onclick="closeModal('parentBindModal')">關閉</button>
     </div>
   </div>
 
