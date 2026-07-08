@@ -478,8 +478,8 @@
       <div id="hostModePanel" style="display:none;width:100%;flex-direction:column;gap:10px">
         <div class="pvp-mode-label">選擇切磋模式</div>
         <div class="pvp-mode-row">
-          <button class="pvp-mode-chip sel" id="modeChipVocab" onclick="selectPvpMode('vocab')">📖 單字對決<span>5 題選擇・限時 30 秒</span></button>
-          <button class="pvp-mode-chip" id="modeChipBuzzer" onclick="selectPvpMode('buzzer')">⚡ 單字搶答<span>7 題搶快・限時 10 秒</span></button>
+          <button class="pvp-mode-chip sel" id="modeChipVocab" onclick="selectPvpMode('vocab')">📖 單字對決<span>5 題選擇</span></button>
+          <button class="pvp-mode-chip" id="modeChipBuzzer" onclick="selectPvpMode('buzzer')">⚡ 單字搶答<span>7 題搶快</span></button>
         </div>
         <button class="arena-btn ab-create" id="pvpStartBtn" disabled onclick="hostStartBattle()">等待對手加入⋯</button>
         <button class="arena-btn ab-invite" id="pvpInviteBtn" onclick="openInviteFriends()">👥 邀請好友</button>
@@ -489,6 +489,7 @@
       <button class="arena-btn ab-leave" onclick="leaveRoom()">離開房間</button>
     </div>
     <div id="arenaBattle">
+      <button class="pvp-quit-btn" onclick="pvpQuitBattle()" aria-label="離開對局">✕</button>
       <div class="pvp-bars">
         <div class="hp-row"><div class="hp-name you">你</div><div class="hp-track"><div class="hp-fill hp-you" id="hpYou" style="width:4%"></div></div><div class="hp-score" id="scYou" style="color:var(--green3)">0/5</div></div>
         <div class="hp-row" style="flex-direction:row-reverse"><div class="hp-name foe">對手</div><div class="hp-track"><div class="hp-fill hp-foe" id="hpFoe" style="width:4%;margin-left:auto"></div></div><div class="hp-score" id="scFoe" style="color:var(--wrong)">0/5</div></div>
@@ -503,6 +504,7 @@
     </div>
     <!-- 單字搶答戰鬥畫面 -->
     <div id="arenaBuzzerBattle" style="display:none">
+      <button class="pvp-quit-btn" onclick="pvpQuitBattle()" aria-label="離開對局">✕</button>
       <div class="bz-topbar">
         <div class="bz-avatar">
           <div class="bz-avatar-circle">🙂</div>

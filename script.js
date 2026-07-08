@@ -731,8 +731,28 @@ function getPvpSocket() {
   pvpSocket.on('rematch_error', ({ msg }) => showToast(`⚠ ${msg}`));
 
   pvpSocket.on('opponent_left', () => {
-    showToast('👋 對手已離開房間');
-    pvpResetViews();
+    // 對局進行中被對方退出：顯示正式的「對局結束」結算畫面，而不是單純跳回大廳
+    const battleEl = document.getElementById('arenaBattle');
+    const buzzerEl = document.getElementById('arenaBuzzerBattle');
+    const inBattle = battleEl.style.display !== 'none' || buzzerEl.style.display !== 'none';
+    if (inBattle) {
+      if (pvpState && pvpState.timerInt) clearInterval(pvpState.timerInt);
+      if (buzzerState && buzzerState.countdownInt) clearInterval(buzzerState.countdownInt);
+      document.getElementById('pvpResultIcon').textContent = '🚪';
+      const titleEl = document.getElementById('pvpResultTitle');
+      titleEl.textContent = '對方已退出，對局結束';
+      titleEl.style.color = 'var(--gray)';
+      document.getElementById('pvpResultScore').textContent = '';
+      battleEl.style.display = 'none';
+      buzzerEl.style.display = 'none';
+      document.getElementById('arenaResult').style.display = 'flex';
+      // 房間已被伺服器銷毀，無法再來一場
+      document.getElementById('pvpRematchBtn').style.display = 'none';
+      document.getElementById('pvpRematchWaitHint').style.display = 'none';
+    } else {
+      showToast('👋 對手已離開房間');
+      pvpResetViews();
+    }
   });
   pvpSocket.on('room_expired', () => {
     showToast('⏰ 房間已過期');
@@ -909,6 +929,14 @@ function hostRematch() {
 function leaveRoom() {
   pvpAbandonIfActive();
   pvpResetViews();
+}
+
+// 對局進行中按右上角 ✕ 主動退出（跟「離開房間」邏輯相同，但多一道確認，避免手滑誤觸）
+function pvpQuitBattle() {
+  if (!confirm('確定要離開對局嗎？對手將會看到「對局結束」。')) return;
+  pvpAbandonIfActive();
+  pvpResetViews();
+  showToast('已離開對局');
 }
 
 function _pvpSetFoeSlot(joined) {
