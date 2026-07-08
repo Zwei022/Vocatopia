@@ -551,8 +551,15 @@ function getPvpSocket() {
 
   // 斷線重連（手機切背景、訊號中斷等）：若當下還在一場對局中，回報 clientId 讓伺服器
   // 把房間內的 host/guest 換成這個新的 socket.id，才不會被誤判「對手離開」
+  //
+  // 重要：伺服器的 onlineUsers（誰在線、邀請要推播給誰）是用 socket.id 當 key，
+  // 每次重新連線都會拿到全新的 socket.id。若不重新 identify，伺服器會找不到這個人，
+  // 導致好友邀請 / 對戰邀請「送出時對方明明在線，卻靜默收不到通知」。
   pvpSocket.on('connect', () => {
     if (roomCode) pvpSocket.emit('rejoin_room', { code: roomCode, clientId: pvpClientId });
+    if (typeof currentUser !== 'undefined' && currentUser && typeof _identifySocket === 'function') {
+      _identifySocket();
+    }
   });
 
   pvpSocket.on('room_rejoined', () => {
@@ -833,14 +840,25 @@ function sendGameInvite(friendId, friendName) {
   if (!roomCode) return;
   const s = getPvpSocket();
   if (!s) return;
+  document.getElementById('inviteFriendsOverlay')?.remove();
+  let acked = false;
   s.emit('game_invite', {
     toUserId: friendId,
     code: roomCode,
     fromUsername: currentProfile ? currentProfile.username : '玩家',
     mode: hostSelectedMode,
+  }, (res) => {
+    acked = true;
+    if (res && res.delivered) {
+      showToast(`✓ 已邀請 ${friendName} 加入`);
+    } else {
+      showToast(`⚠ ${friendName} 目前似乎不在線，邀請未送達`);
+    }
   });
-  document.getElementById('inviteFriendsOverlay')?.remove();
-  showToast(`✓ 已邀請 ${friendName} 加入`);
+  // 防呆：伺服器版本太舊或封包遺失導致沒有 ack 時，避免使用者以為卡住
+  setTimeout(() => {
+    if (!acked) showToast(`⚠ 邀請 ${friendName} 逾時，請確認對方是否仍在線`);
+  }, 3000);
 }
 
 // 收到邀請的彈窗
@@ -4219,30 +4237,42 @@ async function searchFriendByCode() {
     <button class="friend-list-item" onclick="showUserProfile('${data.id}','${_escJs(data.username)}')">
       <span class="friend-avatar">👤</span>
       <span class="friend-name">${escHtml(data.username)}</span>
-      <span class="friend-add-btn" onclick="event.stopPropagation();sendFriendRequest('${data.id}','${_escJs(data.username)}')">＋加好友</span>
+      <span class="friend-add-btn" onclick="event.stopPropagation();sendFriendRequest('${data.id}','${_escJs(data.username)}',this)">＋加好友</span>
     </button>`;
 }
 
-async function sendFriendRequest(targetId, targetUsername) {
-  const a = currentUser.id, b = targetId;
-  const { data: existing } = await authClient
-    .from('friend_requests').select('id,status,sender_id')
-    .or(`and(sender_id.eq.${a},receiver_id.eq.${b}),and(sender_id.eq.${b},receiver_id.eq.${a})`)
-    .maybeSingle();
+async function sendFriendRequest(targetId, targetUsername, btnEl) {
+  // 這個動作要跑 1-2 次連續的資料庫來回，網路較慢時容易讓人以為「卡住了」，
+  // 所以按下當下立刻給視覺回饋，不要等到請求全部跑完才有反應
+  const btn = btnEl || null;
+  const originalText = btn ? btn.textContent : null;
+  if (btn) { btn.textContent = '傳送中…'; btn.style.pointerEvents = 'none'; btn.style.opacity = '0.6'; }
 
-  if (existing) {
-    if (existing.status === 'accepted') { showToast('你們已經是好友了'); return; }
-    if (existing.status === 'pending')   { showToast('邀請已送出，等待對方回應'); return; }
-    // declined → 重新送出邀請
-    await authClient.from('friend_requests').update({ status: 'pending', sender_id: a, receiver_id: b, responded_at: null }).eq('id', existing.id);
-  } else {
-    const { error } = await authClient.from('friend_requests').insert({ sender_id: a, receiver_id: b });
-    if (error) { showToast('送出邀請失敗，請稍後再試'); return; }
+  console.time('[perf] sendFriendRequest');
+  try {
+    const a = currentUser.id, b = targetId;
+    const { data: existing } = await authClient
+      .from('friend_requests').select('id,status,sender_id')
+      .or(`and(sender_id.eq.${a},receiver_id.eq.${b}),and(sender_id.eq.${b},receiver_id.eq.${a})`)
+      .maybeSingle();
+
+    if (existing) {
+      if (existing.status === 'accepted') { showToast('你們已經是好友了'); return; }
+      if (existing.status === 'pending')   { showToast('邀請已送出，等待對方回應'); return; }
+      // declined → 重新送出邀請
+      await authClient.from('friend_requests').update({ status: 'pending', sender_id: a, receiver_id: b, responded_at: null }).eq('id', existing.id);
+    } else {
+      const { error } = await authClient.from('friend_requests').insert({ sender_id: a, receiver_id: b });
+      if (error) { showToast('送出邀請失敗，請稍後再試'); return; }
+    }
+
+    const sock = getPvpSocket();
+    if (sock) sock.emit('send_friend_request', { toUserId: targetId, fromUserId: a, fromUsername: currentProfile.username });
+    showToast(`✓ 已送出好友邀請給 ${targetUsername}`);
+  } finally {
+    console.timeEnd('[perf] sendFriendRequest');
+    if (btn && originalText !== null) { btn.textContent = originalText; btn.style.pointerEvents = ''; btn.style.opacity = ''; }
   }
-
-  const sock = getPvpSocket();
-  if (sock) sock.emit('send_friend_request', { toUserId: targetId, fromUserId: a, fromUsername: currentProfile.username });
-  showToast(`✓ 已送出好友邀請給 ${targetUsername}`);
 }
 
 // ── 收到好友邀請的彈窗（首頁載入時檢查一次，即時推播也會觸發）──
@@ -5358,6 +5388,7 @@ async function renderLeaderboard() {
   list.innerHTML = `<div class="hm-board-empty">載入中…</div>`;
 
   let rows = [];
+  console.time('[perf] renderLeaderboard');
   try {
     if (typeof authClient !== 'undefined') {
       const { data } = await authClient
@@ -5367,7 +5398,9 @@ async function renderLeaderboard() {
         .limit(20);
       rows = data || [];
     }
-  } catch { /* 表可能還沒建立 */ }
+  } catch { /* 表可能還沒建立 */ } finally {
+    console.timeEnd('[perf] renderLeaderboard');
+  }
 
   if (!rows.length) {
     list.innerHTML = `<div class="hm-board-empty">還沒有紀錄<br>快來搶第一名！</div>`;

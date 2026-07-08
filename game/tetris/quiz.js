@@ -125,10 +125,25 @@ function ttStartTimedCycle() {
     if (!ttGame || ttGame.gameOver) return;
     _ttTriggerTimedQuestion();
   }, TT_TIMED_PERIOD);
+
+  // 側欄「下一題倒數」：獨立於出題節奏本身，純粹顯示距離下一題還有幾秒
+  ttGame.nextQuizAt = Date.now() + TT_TIMED_PERIOD;
+  _ttQuizCountdownTick();
+  ttGame.quizCdInt = setInterval(_ttQuizCountdownTick, 250);
 }
 
 function ttStopTimedCycle() {
   if (ttGame && ttGame.timedInt) clearInterval(ttGame.timedInt);
+  if (ttGame && ttGame.quizCdInt) clearInterval(ttGame.quizCdInt);
+}
+
+function _ttQuizCountdownTick() {
+  if (!ttGame) return;
+  const el = document.getElementById('ttQuizCountdown');
+  if (!el) return;
+  const leftSec = Math.max(0, Math.ceil((ttGame.nextQuizAt - Date.now()) / 1000));
+  el.textContent = leftSec;
+  el.classList.toggle('low', leftSec <= 5);
 }
 
 function _ttTriggerTimedQuestion(retry = 0) {
@@ -140,6 +155,8 @@ function _ttTriggerTimedQuestion(retry = 0) {
   }
   const q = ttMakeSentenceQuestion();
   if (!q) return;
+  // 這題正式出現：重置「下一題倒數」，從這一刻起再算 60 秒
+  ttGame.nextQuizAt = Date.now() + TT_TIMED_PERIOD;
   ttShowQuiz({
     q, seconds: TT_SENT_SECONDS, timed: true,
     onResolve: (correct) => {

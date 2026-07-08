@@ -294,10 +294,14 @@ io.on('connection', (socket) => {
   });
 
   // 邀請好友加入對戰房：把房號推播給對方所有在線分頁
-  socket.on('game_invite', ({ toUserId, code, fromUsername, mode }) => {
+  // 回傳 delivered 給呼叫端，讓前端知道邀請究竟有沒有送達（避免靜默失敗）
+  socket.on('game_invite', ({ toUserId, code, fromUsername, mode }, cb) => {
     const targets = onlineUsers.get(toUserId);
-    if (!targets) return;
-    for (const sid of targets) io.to(sid).emit('game_invite_incoming', { code, fromUsername, mode });
+    const delivered = !!targets && targets.size > 0;
+    if (delivered) {
+      for (const sid of targets) io.to(sid).emit('game_invite_incoming', { code, fromUsername, mode });
+    }
+    if (typeof cb === 'function') cb({ delivered });
   });
 
   socket.on('create_room', ({ clientId } = {}) => {
@@ -435,6 +439,18 @@ io.on('connection', (socket) => {
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'index.html'));
+});
+
+// ── Supabase 保溫 ping（每 4 分鐘一次）──
+// 免費方案的連線池閒置一段時間後，下一個請求會重新建立連線而變慢（實測冷連線
+// 約多 400ms），且專案本身若連續 7 天完全無活動會被自動暫停。這裡定期打一個
+// 極輕量的查詢，讓連線池與專案本身持續保持在「熱」的狀態。
+cron.schedule('*/4 * * * *', async () => {
+  try {
+    await supabase.from('profiles').select('id', { count: 'exact', head: true }).limit(1);
+  } catch (err) {
+    console.error('[Cron] Supabase 保溫 ping 失敗：', err.message);
+  }
 });
 
 // ── 每日文章 CRON（台灣時間 00:05 = UTC 16:05）──

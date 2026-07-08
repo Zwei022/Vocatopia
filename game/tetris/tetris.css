@@ -93,6 +93,10 @@
 }
 .tt-lines { font-family: var(--font-display); font-weight: 900; font-size: 22px; color: var(--orange2); }
 
+/* 右側「下一題（60秒英文選擇題）倒數」*/
+.tt-quizcd { font-family: var(--font-display); font-weight: 900; font-size: 22px; color: var(--blue, #4E7FD6); transition: color .15s; }
+.tt-quizcd.low { color: var(--red); }
+
 /* 技能按鈕 */
 .tt-skill-btn {
   margin-top: auto; background: var(--card); border: 2.5px solid var(--orange);
@@ -129,11 +133,21 @@
   background: var(--orange); box-shadow: 0 4px 0 #C9761580;
 }
 .tt-ctrl-side:active { box-shadow: 0 1px 0 #C9761580; }
+/* 圓形按鈕改為上下兩瓣：上＝旋轉，下＝加速降落 */
 .tt-ctrl-circle {
-  width: 84px; height: 84px; border-radius: 50%; font-size: 30px;
+  width: 84px; height: 84px; border-radius: 50%;
   background: var(--red); box-shadow: 0 5px 0 var(--red2);
+  display: flex; flex-direction: column; overflow: hidden;
 }
-.tt-ctrl-circle:active { box-shadow: 0 2px 0 var(--red2); }
+.tt-ctrl-half {
+  flex: 1; width: 100%; border: none; background: transparent; color: #fff;
+  font-weight: 900; font-size: 22px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  user-select: none; -webkit-user-select: none; touch-action: none;
+  transition: background-color .08s;
+}
+.tt-ctrl-half-top { border-bottom: 2px solid rgba(255,255,255,.35); }
+.tt-ctrl-half:active { background-color: rgba(0,0,0,.18); }
 
 /* ── 結算畫面 ── */
 .tt-gameover {

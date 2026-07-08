@@ -33,8 +33,6 @@ function tetrisStart() {
     paused: false,
     gameOver: false,
     softDropping: false,
-    holdTimer: null,
-    isHolding: false,
   };
 
   const ch = (typeof getDeployedChar === 'function') ? getDeployedChar() : null;
@@ -59,6 +57,10 @@ function tetrisStart() {
           <div class="tt-side-label">消除行數</div>
           <div class="tt-lines" id="ttLines">0</div>
         </div>
+        <div class="tt-side-card tt-quizcd-card">
+          <div class="tt-side-label">下一題倒數</div>
+          <div class="tt-quizcd" id="ttQuizCountdown">60</div>
+        </div>
         <button class="tt-skill-btn" id="ttSkill" onclick="ttUseSkill()" disabled>
           <div class="tt-skill-ava">${ch ? `<img src="${ch.img}" alt="">` : '🎮'}</div>
           <div class="tt-skill-name">${ch ? ch.skill.name : '技能'}</div>
@@ -69,7 +71,10 @@ function tetrisStart() {
 
     <div class="tt-controls">
       <button class="tt-ctrl tt-ctrl-side" id="ttBtnLeft" aria-label="左移">◀</button>
-      <button class="tt-ctrl tt-ctrl-circle" id="ttBtnCircle" aria-label="旋轉/下墜">◉</button>
+      <div class="tt-ctrl-circle" id="ttBtnCircle">
+        <button class="tt-ctrl-half tt-ctrl-half-top" id="ttBtnRotate" aria-label="旋轉">↻</button>
+        <button class="tt-ctrl-half tt-ctrl-half-bottom" id="ttBtnDrop" aria-label="加速降落">▼</button>
+      </div>
       <button class="tt-ctrl tt-ctrl-side" id="ttBtnRight" aria-label="右移">▶</button>
     </div>
 
@@ -206,36 +211,36 @@ function _ttStopSoftDrop() {
 function _ttBindControls() {
   const left = document.getElementById('ttBtnLeft');
   const right = document.getElementById('ttBtnRight');
-  const circle = document.getElementById('ttBtnCircle');
+  const rotateBtn = document.getElementById('ttBtnRotate');
+  const dropBtn = document.getElementById('ttBtnDrop');
 
   // 左右：點一下移動一格；按住則連續移動
   _ttBindRepeat(left, () => _ttMove(-1));
   _ttBindRepeat(right, () => _ttMove(1));
 
-  // 圓圈：短按=旋轉，長按=加速下墜
-  // 用 pointer capture 把整個按放過程鎖定在按鈕上，避免 :active 縮放讓游標「離開」
-  // 而觸發 pointerleave；並用 circlePressed 鎖確保每次按放只處理一次（防止重複/連續旋轉）
-  let circlePressed = false;
-  const down = (e) => {
+  // 圓形按鈕分上下兩瓣：上半＝旋轉（按下立即觸發一次），下半＝按住加速降落、放開恢復正常重力
+  rotateBtn.addEventListener('pointerdown', (e) => {
     e.preventDefault();
-    if (!ttGame || circlePressed) return;
-    circlePressed = true;
-    try { circle.setPointerCapture(e.pointerId); } catch { /* 不支援就算了 */ }
-    ttGame.isHolding = false;
-    ttGame.holdTimer = setTimeout(() => { ttGame.isHolding = true; _ttStartSoftDrop(); }, 160);
+    try { rotateBtn.setPointerCapture(e.pointerId); } catch { /* 不支援就算了 */ }
+    _ttRotate();
+  });
+
+  let dropPressed = false;
+  const dropDown = (e) => {
+    e.preventDefault();
+    if (!ttGame || dropPressed) return;
+    dropPressed = true;
+    try { dropBtn.setPointerCapture(e.pointerId); } catch { /* 不支援就算了 */ }
+    _ttStartSoftDrop();
   };
-  // 真正放開：短按→旋轉一次；長按→停止軟降。取消(pointercancel)則不旋轉
-  const finish = (doRotate) => {
-    if (!ttGame || !circlePressed) return;
-    circlePressed = false;
-    clearTimeout(ttGame.holdTimer);
-    if (ttGame.isHolding) _ttStopSoftDrop();
-    else if (doRotate) _ttRotate();
-    ttGame.isHolding = false;
+  const dropFinish = () => {
+    if (!dropPressed) return;
+    dropPressed = false;
+    _ttStopSoftDrop();
   };
-  circle.addEventListener('pointerdown', down);
-  circle.addEventListener('pointerup', (e) => { e.preventDefault(); finish(true); });
-  circle.addEventListener('pointercancel', () => finish(false));
+  dropBtn.addEventListener('pointerdown', dropDown);
+  dropBtn.addEventListener('pointerup', (e) => { e.preventDefault(); dropFinish(); });
+  dropBtn.addEventListener('pointercancel', dropFinish);
 
   // 鍵盤（桌面測試/遊玩）
   ttGame._keyHandler = (e) => {
@@ -322,18 +327,20 @@ async function ttSubmitScore(score) {
 
   // 訪客不上榜
   if (typeof currentUser === 'undefined' || !currentUser || !currentProfile || typeof authClient === 'undefined') return;
+  // 計時：下次若又出現「延遲許久」，主控台會印出實際毫秒數，不用再用猜的
+  console.time('[perf] submit_tetris_score');
   try {
-    const { data } = await authClient.from('tetris_scores')
-      .select('best_score').eq('user_id', currentUser.id).maybeSingle();
-    const prevBest = data ? (data.best_score || 0) : 0;
-    if (score > prevBest) {
-      await authClient.from('tetris_scores').upsert({
-        user_id: currentUser.id,
-        username: currentProfile.username,
-        best_score: score,
-        updated_at: new Date().toISOString(),
-      }, { onConflict: 'user_id' });
-    }
-  } catch { /* 表尚未建立或離線 */ }
+    // 原本「先查最高分、比較、再視情況寫入」要跑 2 次網路來回；
+    // 現在改呼叫資料庫端的 RPC，比較與寫入都在資料庫內一次完成，只跑 1 次來回。
+    const { error } = await authClient.rpc('submit_tetris_score', {
+      p_username: currentProfile.username,
+      p_score: score,
+    });
+    if (error) console.error('[ttSubmitScore] RPC 失敗：', error.message);
+  } catch (err) {
+    console.error('[ttSubmitScore] 例外：', err?.message || err);
+  } finally {
+    console.timeEnd('[perf] submit_tetris_score');
+  }
 }
 // ttUseSkill / ttTriggerWordQuiz / ttStartTimedCycle 等由 quiz.js 定義
