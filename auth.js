@@ -133,25 +133,27 @@ async function handleLogin(e) {
   _setAuthLoading(btn, true, '登入中...');
   _clearAuthError();
 
-  const { data, error } = await authClient.auth.signInWithPassword({ email, password });
+  try {
+    const { data, error } = await authClient.auth.signInWithPassword({ email, password });
 
-  if (error) {
-    _setAuthError(
-      error.message.includes('Invalid login') ? '帳號或密碼錯誤，請重新輸入'
-      : error.message.includes('Email not confirmed') ? '請先前往信箱確認帳號'
-      : error.message
-    );
+    if (error) {
+      _setAuthError(_friendlyAuthError(error, '登入'));
+      _setAuthLoading(btn, false, '登入戰場');
+      return;
+    }
+
+    currentUser = data.user;
+    await _loadProfile();
     _setAuthLoading(btn, false, '登入戰場');
-    return;
+    closeAuthOverlay();
+    window.showToast && showToast(`✓ 歡迎回來，${currentProfile?.username || '勇者'}！`);
+    if (typeof _identifySocket === 'function') _identifySocket();
+    if (typeof _checkIncomingFriendRequests === 'function') _checkIncomingFriendRequests();
+  } catch (err) {
+    console.error('[handleLogin] 例外：', err);
+    _setAuthError(_friendlyAuthError(err, '登入'));
+    _setAuthLoading(btn, false, '登入戰場');
   }
-
-  currentUser = data.user;
-  await _loadProfile();
-  _setAuthLoading(btn, false, '登入戰場');
-  closeAuthOverlay();
-  window.showToast && showToast(`✓ 歡迎回來，${currentProfile?.username || '勇者'}！`);
-  if (typeof _identifySocket === 'function') _identifySocket();
-  if (typeof _checkIncomingFriendRequests === 'function') _checkIncomingFriendRequests();
 }
 
 // ── REGISTER ─────────────────────────────────────────────────
@@ -168,47 +170,50 @@ async function handleRegister(e) {
   _setAuthLoading(btn, true, '建立中...');
   _clearAuthError();
 
-  const { data, error } = await authClient.auth.signUp({
-    email,
-    password,
-    options: { data: { username } },
-  });
+  try {
+    const { data, error } = await authClient.auth.signUp({
+      email,
+      password,
+      options: { data: { username } },
+    });
 
-  if (error) {
-    _setAuthError(
-      error.message.includes('already registered') ? '此信箱已被使用'
-      : error.message
-    );
+    if (error) {
+      _setAuthError(_friendlyAuthError(error, '註冊'));
+      _setAuthLoading(btn, false, '建立角色');
+      return;
+    }
+
+    currentUser = data.user;
+
+    // 建立 profile（不用等 email confirm）
+    const { error: profErr } = await authClient.from('profiles').insert({
+      id: currentUser.id,
+      username,
+    });
+
+    if (profErr && !(profErr.message || '').includes('duplicate')) {
+      _setAuthError(_friendlyAuthError(profErr, '角色建立'));
+      _setAuthLoading(btn, false, '建立角色');
+      return;
+    }
+
+    await _loadProfile();
+
+    // 若 Supabase 要求 email 確認
+    if (!data.session) {
+      _showConfirmScreen(email);
+      return;
+    }
+
     _setAuthLoading(btn, false, '建立角色');
-    return;
-  }
-
-  currentUser = data.user;
-
-  // 建立 profile（不用等 email confirm）
-  const { error: profErr } = await authClient.from('profiles').insert({
-    id: currentUser.id,
-    username,
-  });
-
-  if (profErr && !profErr.message.includes('duplicate')) {
-    _setAuthError('角色建立失敗：' + profErr.message);
+    closeAuthOverlay();
+    window.showToast && showToast(`🎉 角色「${username}」已建立！開始你的冒險吧！`);
+    if (typeof _identifySocket === 'function') _identifySocket();
+  } catch (err) {
+    console.error('[handleRegister] 例外：', err);
+    _setAuthError(_friendlyAuthError(err, '註冊'));
     _setAuthLoading(btn, false, '建立角色');
-    return;
   }
-
-  await _loadProfile();
-
-  // 若 Supabase 要求 email 確認
-  if (!data.session) {
-    _showConfirmScreen(email);
-    return;
-  }
-
-  _setAuthLoading(btn, false, '建立角色');
-  closeAuthOverlay();
-  window.showToast && showToast(`🎉 角色「${username}」已建立！開始你的冒險吧！`);
-  if (typeof _identifySocket === 'function') _identifySocket();
 }
 
 // ── LOGOUT ───────────────────────────────────────────────────
@@ -346,11 +351,17 @@ async function handleForgotPassword(e) {
   btn.textContent = '發送中...';
   errEl.textContent = '';
 
-  const redirectTo = window.location.origin;
-  const { error } = await authClient.auth.resetPasswordForEmail(email, { redirectTo });
+  let error;
+  try {
+    const redirectTo = window.location.origin;
+    ({ error } = await authClient.auth.resetPasswordForEmail(email, { redirectTo }));
+  } catch (err) {
+    console.error('[handleForgotPassword] 例外：', err);
+    error = err;
+  }
 
   if (error) {
-    errEl.textContent = error.message;
+    errEl.textContent = _friendlyAuthError(error, '發送重設連結');
     btn.disabled = false;
     btn.textContent = '發送重設連結';
     return;
@@ -398,10 +409,16 @@ async function handleSetNewPassword(e) {
   btn.textContent = '更新中...';
   errEl.textContent = '';
 
-  const { error } = await authClient.auth.updateUser({ password: pw1 });
+  let error;
+  try {
+    ({ error } = await authClient.auth.updateUser({ password: pw1 }));
+  } catch (err) {
+    console.error('[handleSetNewPassword] 例外：', err);
+    error = err;
+  }
 
   if (error) {
-    errEl.textContent = error.message;
+    errEl.textContent = _friendlyAuthError(error, '更新密碼');
     btn.disabled = false;
     btn.textContent = '確認更新密碼';
     return;
@@ -423,6 +440,22 @@ function _setAuthLoading(btn, loading, label) {
 function _setAuthError(msg) {
   const el = document.getElementById('authError');
   if (el) el.textContent = msg;
+}
+
+// 把 Supabase/網路錯誤轉成使用者看得懂的中文。
+// 某些網路狀況（連不到 Supabase、被防火牆/代理擋下、跨網域被攔截等）會讓
+// error.message 是空的、或整個 error 只是一個沒有 message 屬性的普通物件——
+// 這種情況直接顯示會變成 "{}" 或 "[object Object]"，所以一律先檢查再決定要顯示什麼。
+function _friendlyAuthError(error, action = '操作') {
+  const msg = (error && typeof error.message === 'string') ? error.message.trim() : '';
+  if (!msg || msg === '{}' || msg.startsWith('{') || msg === '[object Object]') {
+    return `${action}失敗，請確認網路連線後再試一次`;
+  }
+  if (msg.includes('already registered'))   return '此信箱已被使用';
+  if (msg.includes('Invalid login'))        return '帳號或密碼錯誤，請重新輸入';
+  if (msg.includes('Email not confirmed'))  return '請先前往信箱確認帳號';
+  if (msg.includes('Failed to fetch') || msg.includes('NetworkError')) return '無法連線到伺服器，請檢查網路連線';
+  return msg;
 }
 
 function _clearAuthError() {
