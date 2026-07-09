@@ -1768,8 +1768,18 @@ function renderGrammarLessonsList() {
   const list = document.getElementById('grammarLessonsList');
   if (!list) return;
   if (typeof GRAMMAR_CHAPTERS === 'undefined' || !Object.keys(GRAMMAR_CHAPTERS).length) {
+    if (typeof _gmLoadFailed !== 'undefined' && _gmLoadFailed) {
+      list.innerHTML = `<div style="text-align:center;padding:40px 0;color:var(--ink2);font-family:'Nunito',sans-serif;font-weight:700">
+        文法資料載入失敗<br>
+        <button class="modal-confirm" style="margin-top:12px;display:inline-block;width:auto;padding:8px 20px"
+                onclick="typeof _gmLoadData==='function' && _gmLoadData()">重試</button>
+      </div>`;
+      return;
+    }
     list.innerHTML = `<div style="text-align:center;padding:40px 0;color:var(--ink2);font-family:'Nunito',sans-serif;font-weight:700">文法資料載入中⋯</div>`;
-    setTimeout(renderGrammarLessonsList, 400);
+    // 重新發送請求（不是只重畫畫面），避免第一次抓取失敗就永遠卡住
+    if (typeof _gmLoadData === 'function') setTimeout(_gmLoadData, 800);
+    else setTimeout(renderGrammarLessonsList, 400);
     return;
   }
   const chapterIds = Object.keys(GRAMMAR_CHAPTERS).map(Number).sort((a, b) => a - b);
@@ -2917,8 +2927,9 @@ async function saveCustomDecks() {
 }
 
 function renderDecks() {
-  const el = document.getElementById('deckList');
-  if (!el) return;
+  const builtinEl = document.getElementById('deckListBuiltin');
+  const customEl  = document.getElementById('deckListCustom');
+  if (!builtinEl || !customEl) return;
 
   const builtinHtml = BUILTIN_DECKS.map(deck => {
     const words   = deck.getWords();
@@ -3000,7 +3011,8 @@ function renderDecks() {
 
   const hintHtml = deckCountHint;
 
-  el.innerHTML = builtinHtml + customHtml + hintHtml;
+  builtinEl.innerHTML = builtinHtml;
+  customEl.innerHTML  = customHtml + hintHtml;
 }
 
 function openNewDeckModal() {

@@ -5,6 +5,7 @@
 // ════════════════════════════════
 
 let GRAMMAR_CHAPTERS = {};
+let _gmLoadFailed = false;
 
 async function _gmLoadData() {
   try {
@@ -12,10 +13,13 @@ async function _gmLoadData() {
     const res = await fetch('/api/grammar-lessons', {
       headers: token ? { Authorization: `Bearer ${token}` } : {},
     });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
     GRAMMAR_CHAPTERS = await res.json();
+    _gmLoadFailed = false;
   } catch (e) {
     console.error('文法資料載入失敗', e);
     GRAMMAR_CHAPTERS = {};
+    _gmLoadFailed = true;
   }
   _gmForceLevelMapRedraw();
 }
