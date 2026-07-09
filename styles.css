@@ -973,6 +973,43 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
   justify-content: flex-start;
   padding-top: 18px;
 }
+
+/* 「更多用法」書本按鈕：只有 Unit1-32 主題式單字（有 rich_content）才會顯示 */
+.fc-rich-btn {
+  position: absolute; top: 10px; right: 10px; z-index: 3;
+  width: 32px; height: 32px; border-radius: 50%; border: none;
+  background: var(--orasoft); font-size: 16px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.fc-rich-btn:active { background: var(--orange); }
+
+/* 點開書本按鈕後蓋住整個背面、可捲動顯示豐富內容 */
+.fc-rich-panel {
+  position: absolute; inset: 8px; z-index: 4;
+  background: var(--card2); border: 2px solid var(--line); border-radius: var(--r2);
+  padding: 16px 14px; overflow-y: auto; text-align: left;
+}
+.fc-rich-section { margin-bottom: 14px; }
+.fc-rich-section:last-child { margin-bottom: 0; }
+.fc-rich-title {
+  font-size: 11px; font-weight: 800; color: var(--orange2);
+  letter-spacing: 1px; margin-bottom: 6px;
+}
+.fc-rich-sense { margin-bottom: 8px; font-size: 13px; }
+.fc-rich-sense .fc-rich-pos { color: var(--orange2); font-weight: 700; margin-right: 4px; }
+.fc-rich-sense .fc-rich-ex { color: var(--ink2); font-size: 12px; margin-top: 2px; }
+.fc-rich-phrase { font-size: 13px; margin-bottom: 6px; }
+.fc-rich-phrase b { color: var(--ink); }
+.fc-rich-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.fc-rich-tag {
+  background: var(--nav); border: 1.5px solid var(--line2); border-radius: 999px;
+  padding: 3px 10px; font-size: 12px; color: var(--ink);
+}
+.fc-rich-close {
+  position: absolute; top: 8px; right: 8px; width: 26px; height: 26px;
+  border-radius: 50%; border: none; background: var(--line2); color: var(--ink);
+  font-size: 13px; cursor: pointer;
+}
 .fc-back-phonetic {
   font-family: 'Courier New', monospace;
   font-size: 14px;

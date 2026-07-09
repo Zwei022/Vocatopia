@@ -118,45 +118,41 @@ function ttTriggerWordQuiz(n) {
 }
 
 // ── 60秒計時題 ──
+// 倒數只在「遊戲沒有暫停」時遞減：只要有任何題目（消行快問或計時題）彈出、
+// ttGame.paused 為 true，倒數就整個凍結，不會在玩家答題的當下持續流逝，
+// 也因此不會再跟另一題「撞在一起」，不需要碰撞重試的邏輯。
 function ttStartTimedCycle() {
   if (!ttGame) return;
   ttLoadSentenceBank();
-  ttGame.timedInt = setInterval(() => {
-    if (!ttGame || ttGame.gameOver) return;
-    _ttTriggerTimedQuestion();
-  }, TT_TIMED_PERIOD);
-
-  // 側欄「下一題倒數」：獨立於出題節奏本身，純粹顯示距離下一題還有幾秒
-  ttGame.nextQuizAt = Date.now() + TT_TIMED_PERIOD;
+  ttGame.nextQuizRemainingMs = TT_TIMED_PERIOD;
   _ttQuizCountdownTick();
   ttGame.quizCdInt = setInterval(_ttQuizCountdownTick, 250);
 }
 
 function ttStopTimedCycle() {
-  if (ttGame && ttGame.timedInt) clearInterval(ttGame.timedInt);
   if (ttGame && ttGame.quizCdInt) clearInterval(ttGame.quizCdInt);
 }
 
 function _ttQuizCountdownTick() {
   if (!ttGame) return;
+  if (!ttGame.paused && !ttGame.gameOver) {
+    ttGame.nextQuizRemainingMs -= 250;
+    if (ttGame.nextQuizRemainingMs <= 0) {
+      ttGame.nextQuizRemainingMs = TT_TIMED_PERIOD;
+      _ttTriggerTimedQuestion();
+    }
+  }
   const el = document.getElementById('ttQuizCountdown');
   if (!el) return;
-  const leftSec = Math.max(0, Math.ceil((ttGame.nextQuizAt - Date.now()) / 1000));
+  const leftSec = Math.max(0, Math.ceil(ttGame.nextQuizRemainingMs / 1000));
   el.textContent = leftSec;
   el.classList.toggle('low', leftSec <= 5);
 }
 
-function _ttTriggerTimedQuestion(retry = 0) {
+function _ttTriggerTimedQuestion() {
   if (!ttGame || ttGame.gameOver) return;
-  // 若正好有消行快問在進行，稍後再試（避免兩題疊在一起）
-  if (ttGame.quiz && ttGame.quiz.active) {
-    if (retry < 6) setTimeout(() => _ttTriggerTimedQuestion(retry + 1), 1500);
-    return;
-  }
   const q = ttMakeSentenceQuestion();
   if (!q) return;
-  // 這題正式出現：重置「下一題倒數」，從這一刻起再算 60 秒
-  ttGame.nextQuizAt = Date.now() + TT_TIMED_PERIOD;
   ttShowQuiz({
     q, seconds: TT_SENT_SECONDS, timed: true,
     onResolve: (correct) => {

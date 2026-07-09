@@ -123,12 +123,20 @@
 <div class="modal-overlay" id="upgradeModal">
   <div class="modal-box upgrade-box">
     <div class="modal-title">👑 解鎖完整備考力量</div>
-    <div class="upgrade-tiers">
-      <div class="tier"><div class="tier-name">🔓 免費版</div><div class="tier-price">$0 <span>/ 月</span></div><div class="tier-features">2000 單字卡・每日 5 篇閱讀・無限 PVP 對決・基礎角色養成</div></div>
-      <div class="tier highlight"><div class="tier-name">💳 國民衝刺包 ⭐ 最划算</div><div class="tier-price">$150 <span>/ 月</span></div><div class="tier-features">全歷屆會考題庫・家長分析後台・LINE 週報・錯題自動分類・傳奇裝備解鎖</div></div>
-      <div class="tier"><div class="tier-name">👑 AI 尊榮版</div><div class="tier-price">$300 <span>/ 月</span></div><div class="tier-features">包含以上全部・AI 錯題平行複製・AI 字本變文章・AI 口說糾錯（即將上線）</div></div>
+    <div class="upgrade-tiers" id="upgradeTiers">
+      <div class="tier highlight">
+        <div class="tier-name">💳 月付方案</div>
+        <div class="tier-price" id="upgradeMonthlyPrice">$200 <span>/ 月</span></div>
+        <div class="tier-features">文法教學全解鎖（第4章起）・模擬試題全解鎖・每日練習六科無上限</div>
+        <button class="modal-confirm" onclick="startSubscriptionPurchase('monthly')">選擇月付</button>
+      </div>
+      <div class="tier">
+        <div class="tier-name">🏆 季付方案 ⭐ 最划算</div>
+        <div class="tier-price">$500 <span>/ 3個月</span></div>
+        <div class="tier-features">內容同月付方案・平均每月約 $167，比月付省 17%</div>
+        <button class="modal-confirm" onclick="startSubscriptionPurchase('quarterly')">選擇季付</button>
+      </div>
     </div>
-    <button class="modal-confirm" onclick="closeModal('upgradeModal');showToast('✓ 感謝！付費功能即將上線，敬請期待！')">立即解鎖</button>
     <button class="modal-cancel" onclick="closeModal('upgradeModal')">稍後再說</button>
   </div>
 </div>
@@ -377,6 +385,8 @@
         </div>
         <!-- 背面：中文解釋 -->
         <div class="fc-card-back">
+          <!-- 只有 Unit1-32 主題式單字（有 rich_content）才會顯示這顆書本按鈕 -->
+          <button class="fc-rich-btn" id="fcRichBtn" style="display:none" onclick="event.stopPropagation();toggleFcRichPanel()" aria-label="更多用法">📖</button>
           <div class="fc-back-phonetic" id="fcBackPhonetic">/ɪˈɡzæmpəl/</div>
           <div class="fc-definition" id="fcDefinitionZh">例子，例如</div>
           <div class="fc-definition-en" id="fcDefinitionEn" style="display:none"></div>
@@ -385,6 +395,7 @@
             <div class="fc-example-en" id="fcExampleEn">For example, cats are animals.</div>
             <div class="fc-example-zh" id="fcExampleZh">例如，貓是動物。</div>
           </div>
+          <div class="fc-rich-panel" id="fcRichPanel" style="display:none" onclick="event.stopPropagation()"></div>
         </div>
       </div>
     </div>

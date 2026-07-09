@@ -15,6 +15,7 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.100.1",
     "@google/generative-ai": "^0.24.1",
+    "@revenuecat/purchases-capacitor": "^13.2.2",
     "@supabase/supabase-js": "^2.106.2",
     "cheerio": "^1.2.0",
     "cors": "^2.8.6",
@@ -28,6 +29,7 @@
     "@capacitor/assets": "^3.0.5",
     "@capacitor/cli": "^8.4.1",
     "@capacitor/core": "^8.4.1",
+    "@capacitor/ios": "^8.4.1",
     "concurrently": "^9.2.1",
     "nodemon": "^3.1.14",
     "socket.io-client": "^4.8.3"

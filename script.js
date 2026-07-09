@@ -198,6 +198,7 @@ function normalizeWord(w) {
     st:         'new',
     tags:       w.tags       || [],
     source:     w.source     || 'builtin',
+    rich_content: w.rich_content || null,
   };
 }
 
@@ -317,6 +318,12 @@ const BUILTIN_DECKS = [
     id: 'weak', name: '不熟字卡', emoji: '🔥',
     cls: 'deck-weak',
     getWords: () => WORDS.filter(w => w.st === 'lrn' || capturedWords.includes(w.word)),
+  },
+  // 試點：Unit 1 主題式卡組（依參考書單元分類，逐步取代整包 cap2000）
+  {
+    id: 'unit1', name: 'Unit1 身體部位和相關動詞', emoji: '💪',
+    cls: 'deck-cap2000',
+    getWords: () => WORDS.filter(w => w.tags && w.tags.includes('unit1')),
   },
 ];
 
@@ -507,8 +514,99 @@ let buzzerState = null; // { qIdx, total, myAnswered, foeAnswered, myTotal, foeT
 // 不會因為短暫斷線就被判定「對手離開」
 const pvpClientId = (crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`);
 
-function openModal(id)  { document.getElementById(id).classList.add('show'); }
+function openModal(id)  {
+  document.getElementById(id).classList.add('show');
+  if (id === 'upgradeModal') _refreshUpgradeModalPricing();
+}
 function closeModal(id) { document.getElementById(id).classList.remove('show'); }
+
+// 首次登入起 12 小時內，月付方案顯示限時優惠價 $150（原價 $200）
+const FIRST_MONTH_PROMO_WINDOW_MS = 12 * 60 * 60 * 1000;
+function _isFirstMonthPromoActive() {
+  if (!currentProfile?.created_at) return false;
+  return (Date.now() - new Date(currentProfile.created_at).getTime()) < FIRST_MONTH_PROMO_WINDOW_MS;
+}
+function _refreshUpgradeModalPricing() {
+  const priceEl = document.getElementById('upgradeMonthlyPrice');
+  if (!priceEl) return;
+  if (_isFirstMonthPromoActive()) {
+    priceEl.innerHTML = `<span style="text-decoration:line-through;opacity:.5;font-size:.7em">$200</span> $150 <span>/ 首月・限時優惠</span>`;
+  } else {
+    priceEl.innerHTML = `$200 <span>/ 月</span>`;
+  }
+}
+
+// RevenueCat 商品代碼對應（需與 Google Play Console / App Store Connect 建立的訂閱商品 ID 一致）
+const SUBSCRIPTION_PRODUCT_IDS = {
+  monthly:   'vocatopia_monthly',
+  quarterly: 'vocatopia_quarterly',
+};
+
+// TODO: 到 RevenueCat Dashboard 建立專案後，把這兩組 Public SDK Key 換成真的值再上架
+// （Android/iOS 金鑰不同，見 https://app.revenuecat.com/ → Project settings → API keys）
+const REVENUECAT_API_KEYS = {
+  android: 'REPLACE_WITH_REVENUECAT_ANDROID_PUBLIC_KEY',
+  ios:     'REPLACE_WITH_REVENUECAT_IOS_PUBLIC_KEY',
+};
+
+let _revenueCatInitialized = false;
+async function initRevenueCat(supabaseUserId) {
+  const Purchases = window.Capacitor?.Plugins?.Purchases;
+  if (!window.Capacitor?.isNativePlatform?.() || !Purchases || _revenueCatInitialized) return;
+  const platform = window.Capacitor.getPlatform(); // 'android' | 'ios'
+  const apiKey = REVENUECAT_API_KEYS[platform];
+  if (!apiKey || apiKey.startsWith('REPLACE_WITH_')) return; // 尚未設定金鑰，先不初始化
+  try {
+    await Purchases.configure({ apiKey, appUserID: supabaseUserId });
+    _revenueCatInitialized = true;
+  } catch (e) { console.error('RevenueCat 初始化失敗', e); }
+}
+
+async function startSubscriptionPurchase(planId) {
+  if (!currentUser) {
+    closeModal('upgradeModal');
+    showToast('請先登入才能訂閱喔');
+    return;
+  }
+  // Capacitor 會在原生 App 的 WebView 裡自動注入 window.Capacitor.Plugins，
+  // 在一般瀏覽器（電腦/手機直接開網頁）沒有這個橋接，代表無法完成原生訂閱購買。
+  const Purchases = window.Capacitor?.Plugins?.Purchases;
+  if (!window.Capacitor?.isNativePlatform?.() || !Purchases) {
+    showToast('請下載 Vocatopia App 才能訂閱喔');
+    return;
+  }
+  try {
+    const offerings = await Purchases.getOfferings();
+    const pkg = offerings?.current?.availablePackages?.find(
+      p => p.storeProduct.identifier === SUBSCRIPTION_PRODUCT_IDS[planId]
+    );
+    if (!pkg) { showToast('目前無法取得此方案，請稍後再試'); return; }
+
+    await Purchases.purchasePackage({ aPackage: pkg });
+    // 購買成功後 RevenueCat 會觸發 webhook 更新後端 subscriptions 表，
+    // 這裡主動 refetch 一次讓 UI 立即反映最新狀態（webhook 可能有數秒延遲）。
+    closeModal('upgradeModal');
+    showToast('🎉 訂閱成功！完整功能已解鎖');
+    if (typeof refreshSubscriptionStatus === 'function') refreshSubscriptionStatus();
+  } catch (e) {
+    if (e?.userCancelled) return;
+    console.error('訂閱購買失敗', e);
+    showToast('訂閱未完成，請稍後再試');
+  }
+}
+
+async function refreshSubscriptionStatus() {
+  const token = typeof getAuthToken === 'function' ? await getAuthToken() : null;
+  if (!token) return;
+  try {
+    const res = await fetch('/api/user/subscription-status', { headers: { Authorization: `Bearer ${token}` } });
+    if (!res.ok) return;
+    const status = await res.json();
+    window.currentSubscription = status;
+    // 文法教學資料含 locked 標記，訂閱狀態變化後重新抓一次讓畫面同步
+    if (typeof _gmLoadData === 'function') _gmLoadData();
+  } catch (e) { console.error('查詢訂閱狀態失敗', e); }
+}
 
 function selectPvpMode(mode) {
   hostSelectedMode = mode;
@@ -1067,7 +1165,7 @@ const GSAT_EXAMS = [
   { year: 2024, type: 'listening', label: '聽力測驗', icon: '🔊', dataUrl: '/server/data/gsat_exam_2024_listening.json' },
   { year: 2023, type: 'reading',   label: '閱讀測驗', icon: '📖', dataUrl: '/server/data/gsat_exam_2023_reading.json' },
   { year: 2023, type: 'listening', label: '聽力測驗', icon: '🔊', dataUrl: '/server/data/gsat_exam_2023_listening.json' },
-  { year: 2023, type: 'sim_reading_1', label: '模擬試題1', icon: '📝', dataUrl: '/server/data/gsat_sim_2023_reading_1.json', sim: true },
+  { year: 2023, type: 'sim_reading_1', label: '模擬試題1', icon: '📝', dataUrl: '/api/mock-exam/gsat_sim_2023_reading_1.json', sim: true, needsAuth: true },
 ];
 
 // 單題（第1–19題）的題型分類，供「答錯題庫」歸檔使用
@@ -1194,10 +1292,25 @@ function _openGsatExamInto(year, type, ids) {
   // 全螢幕作答模式：覆蓋上方分頁列與底部導航，只能透過「返回」退出
   viewEl.classList.add('gsat-fullscreen');
   body.innerHTML = `<div class="gx-loading">載入試卷中…</div>`;
-  fetch(exam.dataUrl)
-    .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
-    .then(data => _renderGsatExam(_normalizeGsatData(data), body, `gsat${year}${type}`))
-    .catch(err => { body.innerHTML = `<div class="gx-loading">試卷載入失敗：${_gxEsc(err.message)}</div>`; });
+  (async () => {
+    const headers = {};
+    if (exam.needsAuth) {
+      const token = typeof getAuthToken === 'function' ? await getAuthToken() : null;
+      if (token) headers.Authorization = `Bearer ${token}`;
+    }
+    fetch(exam.dataUrl, { headers })
+      .then(res => {
+        if (res.status === 403) {
+          if (typeof openModal === 'function') openModal('upgradeModal');
+          body.innerHTML = `<div class="gsat-placeholder"><div class="rp-icon">🔒</div><div class="rp-title">訂閱後解鎖</div><div class="rp-desc">模擬試題為訂閱會員專屬內容</div></div>`;
+          throw new Error('__locked__');
+        }
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(data => _renderGsatExam(_normalizeGsatData(data), body, `gsat${year}${type}`))
+      .catch(err => { if (err.message !== '__locked__') body.innerHTML = `<div class="gx-loading">試卷載入失敗：${_gxEsc(err.message)}</div>`; });
+  })();
 }
 
 // 將舊版 JSON 格式（2023/2024）正規化為 2026 格式供 renderer 使用
@@ -1667,7 +1780,7 @@ function renderGrammarLessonsList() {
       <button class="glesson-row" onclick="grammarStartChapter(${n})">
         <span class="glesson-num">第 ${n} 章</span>
         <span class="glesson-title">${escHtml(ch.title)}</span>
-        ${done ? '<span class="glesson-check">✓</span>' : ''}
+        ${ch.locked ? '<span class="glesson-lock">🔒</span>' : (done ? '<span class="glesson-check">✓</span>' : '')}
       </button>`;
   }).join('');
 }
@@ -1987,7 +2100,10 @@ async function openDailyCat(cat) {
     // 直接抓題目並開始作答（不顯示載入畫面，避免殘留遮住題目）
     artList.style.display = 'none';
     try {
-      const res = await fetch(`/api/daily-quiz/${cfg.apiType}`);
+      const _dqToken = typeof getAuthToken === 'function' ? await getAuthToken() : null;
+      const res = await fetch(`/api/daily-quiz/${cfg.apiType}`, {
+        headers: _dqToken ? { Authorization: `Bearer ${_dqToken}` } : {},
+      });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const { questions } = await res.json();
       if (!questions?.length) throw new Error('無題目資料');
@@ -3562,6 +3678,73 @@ function loadFlashcard(idx) {
   fcFlipped = false;
   updateFcMarkBtn();
   updateRecordsList();
+
+  // 「更多用法」書本按鈕：只有 Unit1-32 主題式單字（有 rich_content）才顯示，
+  // 換卡時一律先收起面板，避免殘留上一張卡片的展開狀態
+  const richBtn = document.getElementById('fcRichBtn');
+  const richPanel = document.getElementById('fcRichPanel');
+  if (richPanel) { richPanel.style.display = 'none'; richPanel.innerHTML = ''; }
+  if (richBtn) richBtn.style.display = (!isTemplate && w.rich_content) ? 'flex' : 'none';
+}
+
+// 點書本按鈕：展開/收起「更多用法」面板
+function toggleFcRichPanel() {
+  const panel = document.getElementById('fcRichPanel');
+  if (!panel) return;
+  const isOpen = panel.style.display !== 'none';
+  if (isOpen) { panel.style.display = 'none'; return; }
+  const w = fcViewList()[fcCurrentIdx];
+  panel.innerHTML = _renderFcRichPanel(w?.rich_content);
+  panel.style.display = 'block';
+}
+
+function _renderFcRichPanel(rc) {
+  if (!rc) return '';
+  const parts = [];
+
+  if (Array.isArray(rc.senses) && rc.senses.length) {
+    parts.push(`<div class="fc-rich-section">
+      <div class="fc-rich-title">其他詞性 / 義項</div>
+      ${rc.senses.map(s => `<div class="fc-rich-sense">
+        <span class="fc-rich-pos">${escHtml(s.pos || '')}</span>${escHtml(s.definition_zh || '')}
+        ${s.example_en ? `<div class="fc-rich-ex">${escHtml(s.example_en)}${s.example_zh ? '　' + escHtml(s.example_zh) : ''}</div>` : ''}
+      </div>`).join('')}
+    </div>`);
+  }
+  if (Array.isArray(rc.phrases) && rc.phrases.length) {
+    parts.push(`<div class="fc-rich-section">
+      <div class="fc-rich-title">片語搭配</div>
+      ${rc.phrases.map(p => `<div class="fc-rich-phrase"><b>${escHtml(p.phrase || '')}</b>　${escHtml(p.meaning_zh || '')}</div>`).join('')}
+    </div>`);
+  }
+  if (Array.isArray(rc.synonyms) && rc.synonyms.length) {
+    parts.push(`<div class="fc-rich-section">
+      <div class="fc-rich-title">同義字</div>
+      <div class="fc-rich-tags">${rc.synonyms.map(s => `<span class="fc-rich-tag">${escHtml(s)}</span>`).join('')}</div>
+    </div>`);
+  }
+  if (Array.isArray(rc.antonyms) && rc.antonyms.length) {
+    parts.push(`<div class="fc-rich-section">
+      <div class="fc-rich-title">反義字</div>
+      <div class="fc-rich-tags">${rc.antonyms.map(s => `<span class="fc-rich-tag">${escHtml(s)}</span>`).join('')}</div>
+    </div>`);
+  }
+  if (Array.isArray(rc.extensions) && rc.extensions.length) {
+    parts.push(`<div class="fc-rich-section">
+      <div class="fc-rich-title">衍生字</div>
+      ${rc.extensions.map(e => `<div class="fc-rich-phrase"><b>${escHtml(e.word || '')}</b>　${escHtml(e.meaning_zh || '')}</div>`).join('')}
+    </div>`);
+  }
+  if (rc.verb_forms && (rc.verb_forms.past || rc.verb_forms.pastParticiple)) {
+    const vf = rc.verb_forms;
+    parts.push(`<div class="fc-rich-section">
+      <div class="fc-rich-title">動詞三態</div>
+      <div class="fc-rich-phrase">${escHtml(vf.past || '—')} — ${escHtml(vf.pastParticiple || '—')}${vf.presentParticiple ? ' — ' + escHtml(vf.presentParticiple) : ''}</div>
+    </div>`);
+  }
+
+  if (!parts.length) return '<div class="fc-rich-section">尚無補充資料</div>';
+  return `<button class="fc-rich-close" onclick="event.stopPropagation();toggleFcRichPanel()">✕</button>` + parts.join('');
 }
 
 // 過長單字不換行，改為自動縮小字體至塞進卡片寬度

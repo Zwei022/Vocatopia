@@ -10,6 +10,12 @@ let currentUser    = null;
 let currentProfile = null;
 let _authCardOriginal = '';
 
+// 共用：取得目前登入者的 Supabase access token，未登入回傳 null
+async function getAuthToken() {
+  const { data: { session } } = await authClient.auth.getSession();
+  return session?.access_token || null;
+}
+
 // ── SESSION INIT ──────────────────────────────────────────────
 async function initAuth() {
   // 先設監聽器，確保能攔截 PASSWORD_RECOVERY（發生在 getSession 處理 URL hash 時）
@@ -79,6 +85,8 @@ async function _initUserAccount() {
     if (!res.ok) return;
     const { profile } = await res.json();
     currentProfile = profile;
+    if (typeof refreshSubscriptionStatus === 'function') refreshSubscriptionStatus();
+    if (typeof initRevenueCat === 'function') initRevenueCat(currentUser.id);
 
     // 遷移 localStorage 舊卡組到 Supabase（一次性）
     try {

@@ -8,7 +8,10 @@ let GRAMMAR_CHAPTERS = {};
 
 async function _gmLoadData() {
   try {
-    const res = await fetch('/server/data/grammar_lessons.json');
+    const token = typeof getAuthToken === 'function' ? await getAuthToken() : null;
+    const res = await fetch('/api/grammar-lessons', {
+      headers: token ? { Authorization: `Bearer ${token}` } : {},
+    });
     GRAMMAR_CHAPTERS = await res.json();
   } catch (e) {
     console.error('文法資料載入失敗', e);
@@ -67,9 +70,13 @@ function _gmEsc(s) {
 
 // ── 章節畫面：小節清單
 function grammarStartChapter(n) {
+  const ch = GRAMMAR_CHAPTERS[n];
+  if (ch && ch.locked) {
+    if (typeof openModal === 'function') openModal('upgradeModal');
+    return;
+  }
   const ov = _gmOverlay();
   ov.style.display = 'flex';
-  const ch = GRAMMAR_CHAPTERS[n];
   if (!ch) {
     ov.innerHTML = `
       <div class="gm-topbar">

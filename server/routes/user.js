@@ -1,13 +1,7 @@
 const express  = require('express');
 const router   = express.Router();
 const supabase = require('../db/supabase');
-
-async function getUserId(req) {
-  const token = (req.headers.authorization || '').replace('Bearer ', '').trim();
-  if (!token) return null;
-  const { data: { user }, error } = await supabase.auth.getUser(token);
-  return error ? null : user?.id ?? null;
-}
+const { getUserId } = require('../lib/auth');
 
 // POST /api/user/init
 // 冪等式初始化：首次登入時設定預設值；重複呼叫安全

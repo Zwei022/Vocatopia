@@ -34,6 +34,9 @@ app.use('/api/daily-articles', require('./routes/daily_articles'));
 app.use('/api/daily-quiz',      require('./routes/daily_quiz'));
 app.use('/api/listening-audio', require('./routes/listening_audio'));
 app.use('/api/tts',             require('./routes/tts'));
+app.use('/api/grammar-lessons', require('./routes/grammar'));
+app.use('/api/mock-exam',       require('./routes/mock_exam'));
+app.use('/api',                 require('./routes/subscription'));
 
 // ── PVP ROOM SYSTEM（單字對決）──
 // 流程：房主建房 → 對手憑房號加入 → 房主選模式並開始 → 伺服器統一出 5 題

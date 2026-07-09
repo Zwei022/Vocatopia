@@ -2,6 +2,7 @@ const express = require('express');
 const router  = express.Router();
 const path    = require('path');
 const fs      = require('fs');
+const { isPremiumUser } = require('../lib/subscription');
 
 const DATA_DIR   = path.resolve(__dirname, '../data');
 
@@ -36,7 +37,7 @@ function seededShuffle(arr, seed) {
   return copy;
 }
 
-router.get('/:type', (req, res) => {
+router.get('/:type', async (req, res) => {
   const { type } = req.params;
   if (!VALID_TYPES.has(type)) return res.status(400).json({ error: `Unknown type: ${type}` });
 
@@ -50,28 +51,33 @@ router.get('/:type', (req, res) => {
   const questions = Array.isArray(bank) ? bank : (bank.questions || []);
   if (!questions.length) return res.status(503).json({ error: 'Question bank is empty' });
 
+  const premium = await isPremiumUser(req);
   const today = new Date().toISOString().split('T')[0].replace(/-/g, '');
   const seed  = parseInt(today) + type.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
   const dailySize = DAILY_SIZE_BY_TYPE[type] || DEFAULT_DAILY_SIZE;
 
   let daily;
   if (type === 'listening') {
-    // 聽力保證三部分均有出現：辨識句意×1、基本問答×2、言談理解×2
+    // 聽力保證三部分均有出現：辨識句意×1、基本問答×2、言談理解×2（付費會員各部分題量加倍）
+    const mult = premium ? 2 : 1;
     const bySection = {};
     for (const q of questions) {
       const s = q.section || 'other';
       if (!bySection[s]) bySection[s] = [];
       bySection[s].push(q);
     }
-    const s1 = seededShuffle(bySection['辨識句意'] || [], seed).slice(0, 1);
-    const s2 = seededShuffle(bySection['基本問答'] || [], seed + 1).slice(0, 2);
-    const s3 = seededShuffle(bySection['言談理解'] || [], seed + 2).slice(0, 2);
+    const s1 = seededShuffle(bySection['辨識句意'] || [], seed).slice(0, 1 * mult);
+    const s2 = seededShuffle(bySection['基本問答'] || [], seed + 1).slice(0, 2 * mult);
+    const s3 = seededShuffle(bySection['言談理解'] || [], seed + 2).slice(0, 2 * mult);
     daily = seededShuffle([...s1, ...s2, ...s3], seed + 3);
+  } else if (premium) {
+    // 付費會員：不截斷，當日整個題庫（已洗牌）都可以練習
+    daily = seededShuffle(questions, seed);
   } else {
     daily = seededShuffle(questions, seed).slice(0, dailySize);
   }
 
-  res.json({ type, date: new Date().toISOString().split('T')[0], questions: daily });
+  res.json({ type, date: new Date().toISOString().split('T')[0], questions: daily, premium });
 });
 
 module.exports = router;
