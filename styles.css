@@ -122,7 +122,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 ════════════════════════════════ */
 .bnav{display:flex;background:var(--nav);border-top:1.5px solid var(--line2);padding:8px 0 max(12px,env(safe-area-inset-bottom));flex-shrink:0;margin-top:auto}
 .bn{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;cursor:pointer;padding:6px 0;position:relative;border-radius:10px;transition:background .18s,transform .25s cubic-bezier(.34,1.56,.64,1)}
-.bn-ico{font-size:21px;transition:transform .15s,filter .15s;filter:grayscale(1) opacity(.55)}
+.bn-ico{font-size:21px;height:21px;line-height:1;display:flex;align-items:center;justify-content:center;transition:transform .15s,filter .15s;filter:grayscale(1) opacity(.55)}
 .bn-ico-img img{width:21px;height:21px;object-fit:contain;display:block;filter:grayscale(1) opacity(.55);transition:filter .15s}
 .bn-lbl{font-size:12px;color:var(--ink2);font-family:'Nunito',sans-serif;font-weight:800;letter-spacing:.5px;transition:color .15s}
 /* 滑入反饋 */
@@ -776,7 +776,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
   .act-btn { padding: 20px 8px; font-size: 16px; }
 
   /* 底部導覽列加大 */
-  .bn-ico { font-size: 23px; }
+  .bn-ico { font-size: 23px; height: 23px; }
   .bn-ico-img img { width: 23px; height: 23px; }
   .bn-lbl { font-size: 11px; }
   .bnav   { padding: 10px 0 20px; }
