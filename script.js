@@ -558,7 +558,7 @@ function openModal(id)  {
 }
 function closeModal(id) { document.getElementById(id).classList.remove('show'); }
 
-// 首次登入起 12 小時內，月付方案顯示限時優惠價 $150（原價 $200）
+// 首次登入起 12 小時內，月付方案顯示限時優惠價 $150（原價 $190，價格級距對齊 App Store/Play 商店實際定價）
 const FIRST_MONTH_PROMO_WINDOW_MS = 12 * 60 * 60 * 1000;
 function _isFirstMonthPromoActive() {
   if (!currentProfile?.created_at) return false;
@@ -568,9 +568,9 @@ function _refreshUpgradeModalPricing() {
   const priceEl = document.getElementById('upgradeMonthlyPrice');
   if (!priceEl) return;
   if (_isFirstMonthPromoActive()) {
-    priceEl.innerHTML = `<span style="text-decoration:line-through;opacity:.5;font-size:.7em">$200</span> $150 <span>/ 首月・限時優惠</span>`;
+    priceEl.innerHTML = `<span style="text-decoration:line-through;opacity:.5;font-size:.7em">$190</span> $150 <span>/ 首月・限時優惠</span>`;
   } else {
-    priceEl.innerHTML = `$200 <span>/ 月</span>`;
+    priceEl.innerHTML = `$190 <span>/ 月</span>`;
   }
 }
 
