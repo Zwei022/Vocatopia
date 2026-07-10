@@ -5762,9 +5762,11 @@ async function renderLeaderboard() {
   console.time('[perf] renderLeaderboard');
   try {
     if (typeof authClient !== 'undefined') {
+      // 即時 join profiles 拿最新暱稱，不用 tetris_scores 自己存的 username 快照
+      // （快照會在玩家改名後就跟排行榜對不上，見 2026-07-11 回報）
       const { data } = await authClient
         .from('tetris_scores')
-        .select('username, best_score')
+        .select('user_id, best_score, profiles(username)')
         .order('best_score', { ascending: false })
         .limit(20);
       rows = data || [];
@@ -5780,9 +5782,10 @@ async function renderLeaderboard() {
   list.innerHTML = rows.map((r, i) => {
     const rank = i + 1;
     const rankCls = rank <= 3 ? ` top${rank}` : '';
-    return `<div class="hm-board-row">
+    const name = r.profiles?.username || '玩家';
+    return `<div class="hm-board-row" onclick="showUserProfile('${r.user_id}','${_escJs(name)}')">
       <span class="hm-board-rank${rankCls}">${rank}</span>
-      <span class="hm-board-name">${escHtml(r.username || '玩家')}</span>
+      <span class="hm-board-name">${escHtml(name)}</span>
       <span class="hm-board-score">${(r.best_score || 0).toLocaleString()}</span>
     </div>`;
   }).join('');

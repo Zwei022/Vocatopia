@@ -1665,7 +1665,8 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .hm-board-head{font-family:var(--font-display);font-weight:900;font-size:14px;color:var(--ink);margin-bottom:8px;flex-shrink:0}
 .hm-board-list{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:4px;min-height:0}
 .hm-board-list::-webkit-scrollbar{width:0}
-.hm-board-row{display:flex;align-items:center;gap:6px;font-family:'Nunito',sans-serif;font-size:12px;color:var(--ink);padding:3px 2px}
+.hm-board-row{display:flex;align-items:center;gap:6px;font-family:'Nunito',sans-serif;font-size:12px;color:var(--ink);padding:3px 2px;cursor:pointer;border-radius:6px;transition:background .1s}
+.hm-board-row:active{background:rgba(122,92,67,.1)}
 .hm-board-rank{font-weight:900;width:20px;text-align:center;flex-shrink:0;color:var(--ink2)}
 .hm-board-rank.top1{color:#F5A623}.hm-board-rank.top2{color:#B0A088}.hm-board-rank.top3{color:#CD7F32}
 .hm-board-name{flex:1;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
