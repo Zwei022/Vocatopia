@@ -30,6 +30,36 @@ router.get('/user/subscription-status', async (req, res) => {
   res.json({ is_premium: data.is_premium && stillValid, expires_at: data.expires_at });
 });
 
+// POST /api/user/redeem-code
+// 測試用兌換碼：輸入正確代碼直接把帳號升級為付費會員（走同一張 subscriptions 表，
+// 跟真實訂閱共用同一套權限判斷，差別只在 revenuecat_customer_id 標記為 redeem_code
+// 方便日後查帳分辨「真的付費」跟「測試帳號」）。
+// 代碼只存在伺服器端，不會出現在前端程式碼裡，避免任何人打開瀏覽器開發者工具看到。
+const REDEEM_CODE = 'Qaz515922$';
+
+router.post('/user/redeem-code', express.json(), async (req, res) => {
+  const userId = await getUserId(req);
+  if (!userId) return res.status(401).json({ error: 'Unauthorized' });
+
+  const code = (req.body?.code || '').trim();
+  if (code !== REDEEM_CODE) {
+    return res.status(400).json({ error: '兌換碼錯誤' });
+  }
+
+  const { error } = await supabase
+    .from('subscriptions')
+    .upsert({
+      user_id: userId,
+      is_premium: true,
+      expires_at: null,
+      revenuecat_customer_id: 'redeem_code',
+      updated_at: new Date().toISOString(),
+    }, { onConflict: 'user_id' });
+
+  if (error) return res.status(500).json({ error: error.message });
+  res.json({ ok: true });
+});
+
 // POST /api/webhooks/revenuecat
 // RevenueCat 在 Dashboard 設定 webhook 時可以帶一組 Authorization Bearer token，
 // 這裡用同一組密鑰驗證請求真的來自 RevenueCat，避免任何人偽造請求把自己設成付費會員。

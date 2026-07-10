@@ -775,6 +775,15 @@
       </div>
 
       <div class="sett-section">
+        <div class="sett-label">兌換碼</div>
+        <div class="sett-redeem-row">
+          <input type="text" id="redeemCodeInput" class="ndm-input sett-redeem-input" placeholder="輸入兌換碼" maxlength="40"
+                 onkeydown="if(event.key==='Enter')submitRedeemCode()">
+          <button class="sett-redeem-btn" onclick="submitRedeemCode()">兌換</button>
+        </div>
+      </div>
+
+      <div class="sett-section">
         <div class="sett-label">帳號與資料</div>
         <button class="sett-item-btn sett-item-danger" onclick="confirmResetWordBank()">🗑️ 重置字庫</button>
       </div>

@@ -4697,6 +4697,40 @@ function showPrivacySettings() {
   showToast('隱私設定功能即將上線');
 }
 
+// 兌換碼：驗證完全在伺服器端進行，前端只負責送出輸入值，不含任何密碼邏輯
+async function submitRedeemCode() {
+  const input = document.getElementById('redeemCodeInput');
+  const code = (input?.value || '').trim();
+  if (!code) { showToast('請輸入兌換碼'); return; }
+
+  if (typeof currentUser === 'undefined' || !currentUser) {
+    showToast('請先登入才能使用兌換碼');
+    return;
+  }
+
+  const token = typeof getAuthToken === 'function' ? await getAuthToken() : null;
+  if (!token) { showToast('請先登入才能使用兌換碼'); return; }
+
+  try {
+    const res = await fetch('/api/user/redeem-code', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ code }),
+    });
+    const data = await res.json();
+    if (!res.ok) {
+      showToast(`⚠ ${data.error || '兌換失敗'}`);
+      return;
+    }
+    if (input) input.value = '';
+    showToast('🎉 兌換成功，已升級為旗艦帳號！');
+    if (typeof refreshSubscriptionStatus === 'function') refreshSubscriptionStatus();
+  } catch (err) {
+    console.error('[submitRedeemCode] 例外：', err);
+    showToast('⚠ 網路連線異常，請稍後再試');
+  }
+}
+
 async function downloadOfflinePack() {
   if (!('serviceWorker' in navigator)) {
     showToast('❌ 此瀏覽器不支援離線功能');
