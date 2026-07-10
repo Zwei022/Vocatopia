@@ -1599,12 +1599,13 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .hm-canvas-wrap{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;width:80px;height:96px}
 
 /* ── 今日任務卡 ─────────────────── */
-.hm-quest-card{margin:10px 20px 0;background:var(--card);border:2.5px solid var(--line);border-radius:var(--r3);padding:14px 16px;flex-shrink:0;box-shadow:0 4px 0 rgba(122,92,67,.2)}
-.hm-quest-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.hm-quest-card{margin:10px 20px 0;background:var(--card);border:2.5px solid var(--line);border-radius:var(--r3);padding:10px 14px;flex-shrink:0;box-shadow:0 4px 0 rgba(122,92,67,.2)}
+.hm-quest-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
 .hm-quest-title{font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:var(--ink);letter-spacing:.3px}
 .hm-quest-reward{font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:var(--orange2);background:var(--goldsoft);border:1.5px solid var(--gold);padding:3px 10px;border-radius:12px}
-.hm-subjects{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:12px}
-.hm-subj{display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 2px;background:var(--nav);border:1.5px solid var(--line2);border-radius:10px;transition:all .2s;cursor:default}
+.hm-subjects{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:8px}
+.hm-subj{display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 2px;background:var(--nav);border:1.5px solid var(--line2);border-radius:10px;transition:all .2s;cursor:pointer}
+.hm-subj:active{transform:scale(.94)}
 .hm-subj.done{background:var(--greensoft);border-color:var(--green)}
 .hm-subj-ico{font-size:16px;line-height:1}
 .hm-subj-name{font-size:12px;font-weight:700;color:var(--ink2);font-family:'Nunito',sans-serif;letter-spacing:.3px;text-align:center}
@@ -1614,19 +1615,16 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .hm-quest-bar{height:100%;background:linear-gradient(90deg,var(--orange),var(--gold));border-radius:3px;transition:width .6s cubic-bezier(.4,0,.2,1)}
 .hm-quest-pct{font-size:11px;font-family:'Nunito',sans-serif;font-weight:700;color:var(--ink2);white-space:nowrap;flex-shrink:0}
 
-/* ── 貼底群組 ───────────────────── */
-.hm-bottom-group{margin-top:auto;display:flex;flex-direction:column;gap:8px;padding:10px 20px 0;flex-shrink:0}
+/* ── 貼底群組 ─────────────────────
+   注意：不要用 margin-top:auto——.bnav 自己已經有 margin-top:auto 把導覽列
+   貼在畫面最底部，這裡若再用 auto 會讓今日任務卡被硬擠到緊貼導覽列、沒有間距。
+   改用一般的 margin-top，讓整組（角色/排行榜/開始對戰/今日任務）維持精簡大小、
+   靠上一點，剩餘空間留給 .bnav 的 auto margin 去撐開。 */
+.hm-bottom-group{margin-top:68px;display:flex;flex-direction:column;gap:8px;padding:0 20px;flex-shrink:0}
 .hm-quest-card{margin:0}
 
 /* ── 行動區 ─────────────────────── */
 .hm-actions{padding:10px 20px 0;display:flex;flex-direction:column;gap:8px;flex:1}
-.hm-main-btn{width:100%;display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--red);border:none;border-radius:var(--r3);cursor:pointer;box-shadow:0 5px 0 var(--red2);transition:transform .12s,box-shadow .12s;text-align:left;position:relative;overflow:hidden}
-.hm-main-btn:active{transform:translateY(3px);box-shadow:0 2px 0 var(--red2)}
-.hm-main-ico{font-size:28px;flex-shrink:0}
-.hm-main-text{flex:1;min-width:0}
-.hm-main-label{font-family:var(--font-display);font-weight:900;font-size:16px;color:#fff;letter-spacing:.3px;margin-bottom:2px}
-.hm-main-sub{font-family:'Nunito',sans-serif;font-weight:600;font-size:11px;color:rgba(255,255,255,.85)}
-.hm-main-arrow{font-size:22px;color:rgba(255,255,255,.8);font-weight:300;flex-shrink:0}
 .hm-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .hm-tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:14px 8px;background:var(--card);border:2px solid var(--line2);border-radius:var(--r2);cursor:pointer;transition:background .15s,border-color .15s,transform .1s;position:relative}
 .hm-tile:active{transform:scale(.96)}
@@ -1637,18 +1635,33 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .hm-tile-soon:hover{background:var(--card);border-color:var(--line2);transform:none}
 .hm-soon-badge{position:absolute;top:7px;right:8px;font-size:8px;font-weight:800;color:var(--ink2);background:var(--card2);border:1px solid var(--line2);padding:2px 5px;border-radius:6px;font-family:'Nunito',sans-serif}
 
-/* 首頁中段：對戰入口三區塊（角色 / 排行榜 / 開始對戰） */
-.hm-battle-zone{flex:1;min-height:0;display:flex;gap:12px;padding:12px 20px 0}
-.hm-char-panel{flex:1.05;display:flex;flex-direction:column;background:var(--card);border:2.5px solid var(--line);border-radius:var(--r3);padding:12px;cursor:pointer;box-shadow:0 4px 0 rgba(122,92,67,.2);transition:transform .12s;overflow:hidden}
+/* 首頁中段：對戰入口——角色在上整列（固定高度，不會被內容撐爆）/
+   下排左排行榜、右切換模式+開始遊戲。用固定高度而非 max-height+auto，
+   避免子內容把高度撐爆導致跟下面今日任務卡重疊。gap 拉大做出留白感。 */
+.hm-battle-zone{flex-shrink:0;height:480px;display:flex;flex-direction:column;gap:16px;padding:14px 20px 0;overflow:hidden}
+/* 寬度縮到 30%（窄一半）、高度加高，align-self:flex-start 讓右側自然留白，
+   對應草圖裡角色卡片偏左、窄、高的比例——用純 flexbox 屬性做，不靠 grid 空格。 */
+.hm-char-panel{height:220px;width:30%;align-self:flex-start;flex-shrink:0;display:flex;flex-direction:column;background:var(--card);border:2.5px solid var(--line);border-radius:var(--r3);padding:14px;cursor:pointer;box-shadow:0 4px 0 rgba(122,92,67,.2);transition:transform .12s;overflow:hidden}
 .hm-char-panel:active{transform:translateY(2px)}
 .hm-char-label{font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:var(--ink2);letter-spacing:.5px;margin-bottom:6px;flex-shrink:0}
 .hm-char-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:0}
-.hm-char-img{width:auto;max-width:90%;max-height:62%;object-fit:contain;filter:drop-shadow(0 5px 6px rgba(75,56,42,.22))}
+.hm-char-img{width:auto;max-width:85%;max-height:72%;object-fit:contain;filter:drop-shadow(0 5px 6px rgba(75,56,42,.22))}
 .hm-char-name{font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--ink)}
+.hm-char-name-en{font-family:'Nunito',sans-serif;font-weight:700;font-size:11px;font-style:italic;color:var(--orange2);margin-top:-4px}
 .hm-char-empty{color:var(--ink3);font-size:13px;font-weight:700;text-align:center}
 
-.hm-battle-right{flex:1;display:flex;flex-direction:column;gap:12px;min-height:0}
-.hm-board-card{flex:1;display:flex;flex-direction:column;background:var(--card);border:2.5px solid var(--line);border-radius:var(--r3);padding:10px 12px;box-shadow:0 4px 0 rgba(122,92,67,.2);min-height:0}
+/* 下排：排行榜（左）+ 切換模式／開始遊戲（右）——寬度比例跟上方角色卡片脫鉤，
+   不然排行榜也跟著變窄會讓旁邊按鈕被拉得太寬、太扁 */
+.hm-battle-lower{flex:1;min-height:0;display:flex;gap:16px}
+/* .hm-board-card 維持預設 stretch、隨列高一起變高；.hm-battle-actions 用
+   align-self:flex-start + 固定高度跳出 stretch，按鈕不會跟著排行榜一起被拉高 */
+.hm-battle-actions{flex:1;align-self:flex-start;height:140px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.hm-mode-btn{flex:1;display:flex;align-items:center;justify-content:center;background:var(--nav);border:2.5px solid var(--line);border-radius:var(--r3);color:var(--ink2);font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;letter-spacing:.5px;cursor:pointer;transition:transform .12s,border-color .12s}
+.hm-mode-btn:active{transform:scale(.96)}
+.hm-mode-btn:hover{border-color:var(--orange);color:var(--orange2)}
+.hm-battle-actions .hm-battle-btn{flex:1.3}
+
+.hm-board-card{flex:1.2;min-height:0;min-width:0;display:flex;flex-direction:column;background:var(--card);border:2.5px solid var(--line);border-radius:var(--r3);padding:10px 12px;box-shadow:0 4px 0 rgba(122,92,67,.2)}
 .hm-board-head{font-family:var(--font-display);font-weight:900;font-size:14px;color:var(--ink);margin-bottom:8px;flex-shrink:0}
 .hm-board-list{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:4px;min-height:0}
 .hm-board-list::-webkit-scrollbar{width:0}
@@ -1659,9 +1672,9 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .hm-board-score{font-weight:900;color:var(--orange2);flex-shrink:0}
 .hm-board-empty{color:var(--ink3);font-size:12px;text-align:center;padding:16px 4px;font-weight:700}
 
-.hm-battle-btn{flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--red);border:none;border-radius:var(--r3);padding:16px;color:#fff;font-family:var(--font-display);font-weight:900;font-size:17px;letter-spacing:1px;cursor:pointer;box-shadow:0 4px 0 var(--red2);transition:transform .12s,box-shadow .12s}
+.hm-battle-btn{flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--red);border:2.5px solid var(--line);border-radius:var(--r3);padding:12px;color:#fff;font-family:var(--font-display);font-weight:900;font-size:15px;letter-spacing:1px;cursor:pointer;box-shadow:0 4px 0 var(--red2);transition:transform .12s,box-shadow .12s}
 .hm-battle-btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--red2)}
-.hm-battle-ico{font-size:20px}
+.hm-battle-ico{font-size:17px}
 
 /* ── 角色收藏（皇室戰爭風卡片牆） ── */
 .coll-head{padding:20px 20px 12px;flex-shrink:0}
@@ -1673,6 +1686,8 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .coll-card.rarity-common{border-color:var(--line2)}
 .coll-card.rarity-rare{border-color:#5B9BD5}
 .coll-card.rarity-epic{border-color:#A56EFF}
+.coll-card.rarity-mythic{border-color:#FF7AB6}
+.coll-card.rarity-legendary{border-color:#F0B429;box-shadow:0 3px 0 rgba(122,92,67,.15),0 0 10px rgba(240,180,41,.35)}
 .coll-card.deployed{border-color:var(--orange);box-shadow:0 3px 0 rgba(245,146,30,.35)}
 .coll-card.locked{opacity:.55;cursor:default}
 .coll-deployed-tag{position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:var(--orange);color:#fff;font-family:'Nunito',sans-serif;font-weight:800;font-size:10px;padding:2px 8px;border-radius:10px;white-space:nowrap;z-index:2}
@@ -1680,7 +1695,42 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .coll-card-img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 3px 4px rgba(75,56,42,.2))}
 .coll-lock{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:26px;background:rgba(251,246,234,.5);border-radius:10px}
 .coll-card-name{font-family:var(--font-display);font-weight:900;font-size:13px;color:var(--ink);text-align:center;line-height:1.2}
+.coll-card-name-en{font-family:'Nunito',sans-serif;font-weight:700;font-size:10px;font-style:italic;color:var(--orange2);white-space:nowrap}
 .coll-card-rarity{font-family:'Nunito',sans-serif;font-size:10px;font-weight:700;color:var(--ink3);margin-top:1px}
+
+/* ── 商店：常駐卡池 ── */
+.shop-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px 4px}
+.shop-title{font-family:var(--font-display);font-weight:900;font-size:20px;color:var(--ink)}
+.shop-gold{font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:var(--orange2);background:rgba(245,146,30,.1);border:1.5px solid rgba(245,146,30,.3);border-radius:20px;padding:5px 12px}
+.shop-body{flex:1;overflow-y:auto;padding:12px 20px 24px}
+.shop-pool-card{background:var(--card);border:2.5px solid var(--line);border-radius:var(--r3);padding:16px;box-shadow:0 4px 0 rgba(122,92,67,.2)}
+.shop-pool-name{font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--ink)}
+.shop-pool-sub{font-size:12px;color:var(--ink2);margin-top:2px;margin-bottom:12px}
+.shop-pool-preview{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.shop-pool-thumb{position:relative;width:56px;height:56px;border-radius:10px;border:2px solid var(--line2);background:rgba(122,92,67,.05);display:flex;align-items:center;justify-content:center}
+.shop-pool-thumb img{max-width:78%;max-height:78%;object-fit:contain}
+.shop-pool-thumb.rarity-rare{border-color:#5B9BD5}
+.shop-pool-thumb.rarity-epic{border-color:#A56EFF}
+.shop-pool-thumb.rarity-mythic{border-color:#FF7AB6}
+.shop-pool-thumb.rarity-legendary{border-color:#F0B429}
+.shop-pool-tier{position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:9px;font-weight:800;padding:1px 6px;border-radius:8px;white-space:nowrap}
+.shop-rate-btn{width:100%;padding:8px;background:none;border:1.5px dashed var(--line2);border-radius:10px;color:var(--ink2);font-family:'Nunito',sans-serif;font-weight:700;font-size:12px;cursor:pointer;margin-bottom:14px}
+.shop-rate-btn:active{transform:scale(.97)}
+.shop-draw-row{display:flex;gap:10px}
+.shop-draw-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 8px;background:var(--nav);border:2px solid var(--line2);border-radius:var(--r3);cursor:pointer;transition:transform .12s}
+.shop-draw-btn:active{transform:scale(.96)}
+.shop-draw-btn-ten{background:var(--orange);border-color:var(--line)}
+.shop-draw-btn-ten .shop-draw-label,.shop-draw-btn-ten .shop-draw-cost{color:#fff}
+.shop-draw-label{font-family:var(--font-display);font-weight:900;font-size:14px;color:var(--ink)}
+.shop-draw-cost{font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:var(--ink2)}
+
+/* ── 抽卡結果：翻牌開獎動畫 ── */
+.gacha-flip-card{perspective:800px}
+.gacha-flip-inner{position:relative;width:100%;min-height:118px;transition:transform .55s cubic-bezier(.34,1.56,.64,1);transform-style:preserve-3d}
+.gacha-flip-card.flipped .gacha-flip-inner{transform:rotateY(180deg)}
+.gacha-flip-front,.gacha-flip-back{position:absolute;inset:0;backface-visibility:hidden;display:flex;align-items:center;justify-content:center}
+.gacha-flip-front{background:linear-gradient(145deg,var(--orange),var(--gold));border:2.5px solid var(--line);border-radius:14px;font-size:28px;box-shadow:0 4px 0 rgba(122,92,67,.2)}
+.gacha-flip-back{transform:rotateY(180deg);flex-direction:column}
 
 /* ── 閱覽室：文法教學單元列表 ── */
 .glesson-list{display:flex;flex-direction:column;gap:10px;padding:4px 0 20px}

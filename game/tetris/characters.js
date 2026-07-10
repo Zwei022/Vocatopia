@@ -7,15 +7,72 @@
 const TETRIS_CHARACTERS = {
   onigiri: {
     id: 'onigiri',
-    name: '飯糰人',
+    name: '飯糰',
+    nameEn: 'rice ball',
     img: 'public/images/characters/onigiri.webp',
-    rarity: 'common',            // common / rare / epic（收藏卡框顏色用）
+    rarity: 'common',            // common / rare / epic / mythic / legendary（收藏卡框顏色用）
     desc: '香噴噴的海苔飯糰戰士，臨危不亂，總能為自己多爭取一點思考的時間。',
     skill: {
       name: '從容一刻',
       icon: '⏱️',
       desc: '只能用在英文選擇題：施放後，當前這題 +10 秒作答時間。使用後需等下一輪英文選擇題結束才能再次施放。',
       bonusSeconds: 10,
+    },
+  },
+  waffle: {
+    id: 'waffle',
+    name: '鬆餅',
+    nameEn: 'waffle',
+    img: 'public/images/characters/waffle.webp',
+    rarity: 'rare',
+    desc: '格紋外皮裹著滿滿奶油蜂蜜的暖心鬆餅，圍著格紋領巾，總能溫暖地陪你多想一下。',
+    skill: {
+      name: '蜂蜜暖流',
+      icon: '🧇',
+      desc: '只能用在英文選擇題：施放後，當前這題 +12 秒作答時間。使用後需等下一輪英文選擇題結束才能再次施放。',
+      bonusSeconds: 12,
+    },
+  },
+  canele: {
+    id: 'canele',
+    name: '可麗露',
+    nameEn: 'canelé',
+    img: 'public/images/characters/canele.webp',
+    rarity: 'epic',
+    desc: '外酥內軟的貴族甜點，圍著針織圍巾、踩著毛襪，沉穩氣場總能讓人多一份從容。',
+    skill: {
+      name: '焦糖沉思',
+      icon: '🍮',
+      desc: '只能用在英文選擇題：施放後，當前這題 +15 秒作答時間。使用後需等下一輪英文選擇題結束才能再次施放。',
+      bonusSeconds: 15,
+    },
+  },
+  sushi: {
+    id: 'sushi',
+    name: '壽司',
+    nameEn: 'sushi',
+    img: 'public/images/characters/sushi.webp',
+    rarity: 'mythic',
+    desc: '職人手捏的鮪魚握壽司，戴著櫻花毛帽，一身職人氣魄，出手總能扭轉困境。',
+    skill: {
+      name: '職人一手',
+      icon: '🍣',
+      desc: '只能用在英文選擇題：施放後，當前這題 +18 秒作答時間。使用後需等下一輪英文選擇題結束才能再次施放。',
+      bonusSeconds: 18,
+    },
+  },
+  lobster: {
+    id: 'lobster',
+    name: '龍蝦',
+    nameEn: 'lobster',
+    img: 'public/images/characters/lobster.webp',
+    rarity: 'legendary',
+    desc: '披著針織毛衣、圍著毛線圍巾的宴席王者，巨螯一舉，就是全場最壓倒性的存在。',
+    skill: {
+      name: '王者巨螯',
+      icon: '🦞',
+      desc: '只能用在英文選擇題：施放後，當前這題 +20 秒作答時間。使用後需等下一輪英文選擇題結束才能再次施放。',
+      bonusSeconds: 20,
     },
   },
 };
@@ -49,4 +106,14 @@ function getDeployedChar() {
 function setDeployedChar(id) {
   if (!TETRIS_CHARACTERS[id]) return;
   localStorage.setItem(LS_DEPLOYED_CHAR, id);
+}
+
+// 新增一名擁有的角色（抽卡/商店用）。已擁有則回傳 false，不重複加入。
+function addOwnedChar(id) {
+  if (!TETRIS_CHARACTERS[id]) return false;
+  const owned = getOwnedChars();
+  if (owned.includes(id)) return false;
+  owned.push(id);
+  localStorage.setItem(LS_OWNED_CHARS, JSON.stringify(owned));
+  return true;
 }

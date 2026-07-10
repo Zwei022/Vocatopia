@@ -217,7 +217,7 @@
       <div id="aFai"></div><div id="fFai"></div>
     </div>
 
-    <!-- 對戰入口三區塊：角色（左）/ 排行榜（右上）/ 開始對戰（右下） -->
+    <!-- 對戰入口：角色（上，整列）/ 排行榜（左下）/ 切換模式＋開始遊戲（右下） -->
     <div class="hm-battle-zone">
       <!-- 角色（出戰中的角色，點擊進收藏更換） -->
       <button class="hm-char-panel" id="hmCharPanel" onclick="goScreen('decks')">
@@ -225,16 +225,20 @@
         <div class="hm-char-body" id="hmCharBody"><!-- renderDeployedChar() 填入 --></div>
       </button>
 
-      <!-- 右側：排行榜 + 開始對戰 -->
-      <div class="hm-battle-right">
+      <!-- 下排：排行榜（左）+ 切換模式／開始遊戲（右） -->
+      <div class="hm-battle-lower">
         <div class="hm-board-card">
           <div class="hm-board-head">🏆 排行榜</div>
           <div class="hm-board-list" id="hmBoardList"><!-- renderLeaderboard() 填入 --></div>
         </div>
-        <button class="hm-battle-btn" onclick="startTetris()">
-          <span class="hm-battle-ico">🎮</span>
-          <span class="hm-battle-txt">開始對戰</span>
-        </button>
+        <div class="hm-battle-actions">
+          <button class="hm-mode-btn" onclick="showToast('敬請期待，之後會有更多小遊戲模式！')">
+            <span class="hm-mode-txt">切換模式</span>
+          </button>
+          <button class="hm-battle-btn" onclick="startTetris()">
+            <span class="hm-battle-txt">開始遊戲</span>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -256,14 +260,6 @@
           <span class="hm-quest-pct" id="hmQuestPct">0/6 完成</span>
         </div>
       </div>
-      <!-- 主要 CTA -->
-      <button class="hm-main-btn" onclick="goScreen('reading', document.querySelector('.bn:nth-child(4)'))">
-        <div class="hm-main-text">
-          <div class="hm-main-label">開始今日練習</div>
-          <div class="hm-main-sub">完成六科最高賺 750 🪙</div>
-        </div>
-        <span class="hm-main-arrow">›</span>
-      </button>
     </div>
 
     <!-- 底部導覽 -->
@@ -329,12 +325,29 @@
     </div>
   </div>
 
-  <!-- ══ SHOP（商店 - 空白） ══ -->
+  <!-- ══ SHOP（商店 - 常駐卡池） ══ -->
   <div id="shop" class="screen">
-    <div class="rp-empty" style="margin-top:100px">
-      <div class="rp-icon rp-icon-img"><img src="public/images/icons/shop.png" alt="商店"></div>
-      <div class="rp-title">商店</div>
-      <div class="rp-desc">敬請期待</div>
+    <div class="shop-head">
+      <div class="shop-title">🛍️ 商店</div>
+      <div class="shop-gold">🪙 <span id="shopGold">0</span></div>
+    </div>
+    <div class="shop-body">
+      <div class="shop-pool-card">
+        <div class="shop-pool-name">常駐卡池</div>
+        <div class="shop-pool-sub">龍蝦特獎・壽司二獎・可麗露三獎，槓龜也有金幣安慰獎</div>
+        <div class="shop-pool-preview" id="shopPoolPreview"><!-- renderShop() 填入 --></div>
+        <button class="shop-rate-btn" onclick="openGachaRates()">查看機率</button>
+        <div class="shop-draw-row">
+          <button class="shop-draw-btn" onclick="doGachaDraw(1)">
+            <span class="shop-draw-label">單抽</span>
+            <span class="shop-draw-cost">🪙 120</span>
+          </button>
+          <button class="shop-draw-btn shop-draw-btn-ten" onclick="doGachaDraw(10)">
+            <span class="shop-draw-label">十抽</span>
+            <span class="shop-draw-cost">🪙 1000</span>
+          </button>
+        </div>
+      </div>
     </div>
     <div class="bnav">
       <button class="bn" onclick="goScreen('arena',this)"><div class="bn-ico bn-ico-img"><img src="public/images/icons/arena.png" alt="競技場"></div><div class="bn-lbl">競技場</div></button>
@@ -900,6 +913,7 @@
 <script src="/socket.io/socket.io.js"></script>
 <script src="auth.js"></script>
 <script src="game/tetris/characters.js"></script>
+<script src="game/tetris/gacha.js"></script>
 <script src="script.js"></script>
 <script>
   if ('serviceWorker' in navigator) {

@@ -405,6 +405,7 @@ function goScreen(id, btn) {
   }
   if (id === 'home') { updateHomeScreen(); }
   if (id === 'decks') { renderCharCollection(); }
+  if (id === 'shop') { renderShop(); }
   closeWordPopup();
 }
 
@@ -2135,6 +2136,14 @@ function _updateDailyBadges() {
       el.classList.add('done');
     }
   });
+}
+
+// 首頁「今日任務」分類直接點擊進入：導到閱覽室→精選題目→每日練習分頁，再開啟該分類
+function startHomeDailyPractice(cat) {
+  goScreen('reading', document.querySelector('.bn:nth-child(4)'));
+  switchReadTab('curated');
+  switchCuratedSub('daily');
+  openDailyCat(cat);
 }
 
 async function openDailyCat(cat) {
@@ -5627,7 +5636,7 @@ function updateHomeScreen() {
     subEl.innerHTML = cats.map(cat => {
       const m = CAT_META[cat] || { icon: '📝', name: cat };
       const isDone = completedCats.includes(cat);
-      return `<div class="hm-subj${isDone ? ' done' : ''}">
+      return `<div class="hm-subj${isDone ? ' done' : ''}" onclick="startHomeDailyPractice('${cat}')">
         <div class="hm-subj-name">${m.name}</div>
       </div>`;
     }).join('');
@@ -5656,7 +5665,8 @@ function renderDeployedChar() {
   }
   body.innerHTML = `
     <img class="hm-char-img" src="${ch.img}" alt="${escHtml(ch.name)}">
-    <div class="hm-char-name">${escHtml(ch.name)}</div>`;
+    <div class="hm-char-name">${escHtml(ch.name)}</div>
+    ${ch.nameEn ? `<div class="hm-char-name-en">${escHtml(ch.nameEn)}</div>` : ''}`;
 }
 
 // ── 首頁：排行榜（前20高分）──
@@ -5707,7 +5717,7 @@ function startTetris() {
 // ══════════════════════════════════════════════════════════════
 // 角色收藏系統（皇室戰爭風卡片牆）
 // ══════════════════════════════════════════════════════════════
-const RARITY_LABEL = { common: '普通', rare: '稀有', epic: '史詩' };
+const RARITY_LABEL = { common: '普通', rare: '稀有', epic: '史詩', mythic: '神話', legendary: '傳奇' };
 
 function renderCharCollection() {
   const grid = document.getElementById('collGrid');
@@ -5726,7 +5736,7 @@ function renderCharCollection() {
           <img class="coll-card-img" src="${ch.img}" alt="${escHtml(ch.name)}">
           ${isOwned ? '' : '<div class="coll-lock">🔒</div>'}
         </div>
-        <div class="coll-card-name">${escHtml(ch.name)}</div>
+        <div class="coll-card-name">${escHtml(ch.name)}${ch.nameEn ? ` <span class="coll-card-name-en">${escHtml(ch.nameEn)}</span>` : ''}</div>
         <div class="coll-card-rarity">${RARITY_LABEL[ch.rarity] || ''}</div>
       </button>`;
   }).join('');
@@ -5745,7 +5755,10 @@ function openCharDetail(id) {
       <button onclick="document.getElementById('charDetailOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
       <div style="text-align:center;margin-bottom:12px">
         <img src="${ch.img}" alt="${escHtml(ch.name)}" style="width:120px;height:120px;object-fit:contain;filter:drop-shadow(0 5px 6px rgba(75,56,42,.22))">
-        <div style="font-family:var(--font-display);font-weight:900;font-size:20px;color:var(--white);margin-top:4px">${escHtml(ch.name)}</div>
+        <div style="display:flex;align-items:baseline;justify-content:center;gap:6px;margin-top:4px">
+          <span style="font-family:var(--font-display);font-weight:900;font-size:20px;color:var(--white)">${escHtml(ch.name)}</span>
+          ${ch.nameEn ? `<span style="font-size:13px;font-weight:700;color:var(--orange2);font-style:italic">${escHtml(ch.nameEn)}</span>` : ''}
+        </div>
         <div style="font-size:12px;color:var(--gray);margin-top:2px">${RARITY_LABEL[ch.rarity] || ''}</div>
       </div>
       <div style="background:rgba(122,92,67,.07);border-radius:12px;padding:12px;margin-bottom:12px;font-size:13px;color:var(--ink2);line-height:1.6">${escHtml(ch.desc)}</div>
@@ -5768,6 +5781,129 @@ function deployChar(id) {
   renderDeployedChar();
   const ch = TETRIS_CHARACTERS[id];
   showToast(`✓ ${ch ? ch.name : '角色'} 已出戰！`);
+}
+
+// ══════════════════════════════════════════════════════════════
+// 商店 / 常駐卡池抽卡
+// ══════════════════════════════════════════════════════════════
+function renderShop() {
+  const goldEl = document.getElementById('shopGold');
+  if (goldEl) goldEl.textContent = getGold().toLocaleString();
+
+  const preview = document.getElementById('shopPoolPreview');
+  if (!preview || typeof GACHA_POOL === 'undefined') return;
+  preview.innerHTML = GACHA_POOL.entries.map(entry => {
+    const ch = TETRIS_CHARACTERS[entry.charId];
+    if (!ch) return '';
+    return `<div class="shop-pool-thumb rarity-${ch.rarity}">
+      <img src="${ch.img}" alt="${escHtml(ch.name)}">
+      <span class="shop-pool-tier">${entry.tier}</span>
+    </div>`;
+  }).join('');
+}
+
+function _gachaEntryRow(entry) {
+  if (entry.isConsolation || !entry.charId) {
+    return `<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(122,92,67,.12)">
+      <div style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:20px">🪙</div>
+      <div style="flex:1">
+        <div style="font-weight:800;font-size:13px;color:var(--ink)">${entry.tier}</div>
+        <div style="font-size:11px;color:var(--ink3)">獲得 🪙${entry.gold} 金幣（不產生角色）</div>
+      </div>
+      <div style="font-weight:900;font-size:14px;color:var(--orange2)">${(entry.rate*100).toFixed(0)}%</div>
+    </div>`;
+  }
+  const ch = TETRIS_CHARACTERS[entry.charId];
+  if (!ch) return '';
+  return `<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(122,92,67,.12)">
+    <img src="${ch.img}" alt="" style="width:36px;height:36px;object-fit:contain">
+    <div style="flex:1">
+      <div style="font-weight:800;font-size:13px;color:var(--ink)">${entry.tier}・${escHtml(ch.name)}</div>
+      <div style="font-size:11px;color:var(--ink3)">重複可轉換 🪙${entry.dupRefund}</div>
+    </div>
+    <div style="font-weight:900;font-size:14px;color:var(--orange2)">${(entry.rate*100).toFixed(0)}%</div>
+  </div>`;
+}
+
+function openGachaRates() {
+  if (typeof GACHA_POOL === 'undefined') return;
+  const overlay = document.createElement('div');
+  overlay.id = 'gachaRateOverlay';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px';
+  overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
+  const rows = [...GACHA_POOL.entries, GACHA_POOL.consolation].map(_gachaEntryRow).join('');
+  overlay.innerHTML = `
+    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:18px;padding:22px 20px;width:100%;max-width:340px;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
+      <button onclick="document.getElementById('gachaRateOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
+      <div style="font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--ink);margin-bottom:12px">常駐卡池機率</div>
+      ${rows}
+    </div>`;
+  document.body.appendChild(overlay);
+}
+
+function doGachaDraw(count) {
+  if (typeof drawGacha === 'undefined') return;
+  const cost = gachaCost(count);
+  if (!canAffordGacha(count)) {
+    showToast(`🪙 金幣不足，需要 ${cost} 金幣`);
+    return;
+  }
+  addGold(-cost);
+  const results = drawGacha(count);
+  renderShop();
+  renderCharCollection();
+  showGachaResults(results);
+}
+
+function _gachaResultCardBack(r) {
+  if (r.isConsolation || !r.charId) {
+    return `<div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:100%">
+      <div class="coll-card rarity-common" style="width:100%;pointer-events:none">
+        <div class="coll-card-imgwrap" style="font-size:32px">🪙</div>
+        <div class="coll-card-name" style="font-size:11px">${escHtml(r.tier)}</div>
+      </div>
+      <div style="font-size:10px;font-weight:800;border-radius:8px;padding:2px 6px;background:var(--ink3);color:#fff">+${r.gold}🪙</div>
+    </div>`;
+  }
+  const ch = TETRIS_CHARACTERS[r.charId];
+  if (!ch) return '';
+  const tag = r.isNew
+    ? '<span style="background:var(--red);color:#fff">新角色！</span>'
+    : `<span style="background:var(--ink3);color:#fff">重複 → +${r.refund}🪙</span>`;
+  return `<div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:100%">
+    <div class="coll-card rarity-${ch.rarity}" style="width:100%;pointer-events:none">
+      <div class="coll-card-imgwrap"><img class="coll-card-img" src="${ch.img}" alt="${escHtml(ch.name)}"></div>
+      <div class="coll-card-name" style="font-size:11px">${escHtml(ch.name)}</div>
+    </div>
+    <div style="font-size:10px;font-weight:800;border-radius:8px;padding:2px 6px">${tag}</div>
+  </div>`;
+}
+
+function showGachaResults(results) {
+  const overlay = document.createElement('div');
+  overlay.id = 'gachaResultOverlay';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.6);z-index:9100;display:flex;align-items:center;justify-content:center;padding:16px';
+  overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
+  const cards = results.map((r, i) => `
+    <div class="gacha-flip-card" style="width:88px" data-idx="${i}">
+      <div class="gacha-flip-inner">
+        <div class="gacha-flip-front">🪄</div>
+        <div class="gacha-flip-back">${_gachaResultCardBack(r)}</div>
+      </div>
+    </div>`).join('');
+  overlay.innerHTML = `
+    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:18px;padding:22px 16px;width:100%;max-width:400px;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
+      <button onclick="document.getElementById('gachaResultOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
+      <div style="font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--ink);margin-bottom:14px;text-align:center">抽卡結果</div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center">${cards}</div>
+    </div>`;
+  document.body.appendChild(overlay);
+
+  // 依序翻牌揭曉，卡片數多時間隔縮短，避免十連抽等太久
+  const stagger = results.length > 6 ? 90 : 160;
+  overlay.querySelectorAll('.gacha-flip-card').forEach((card, i) => {
+    setTimeout(() => card.classList.add('flipped'), 300 + i * stagger);
+  });
 }
 
 // 頁面載入時初始化首頁
