@@ -1,0 +1,554 @@
+[
+  {
+    "unit": 15,
+    "topic": "數字 (Numbers)",
+    "total": 24,
+    "matchedCount": 16,
+    "missing": [
+      {
+        "word": "a few",
+        "tier": "基礎"
+      },
+      {
+        "word": "a little",
+        "tier": "基礎"
+      },
+      {
+        "word": "a lot",
+        "tier": "基礎"
+      },
+      {
+        "word": "total",
+        "tier": "基礎"
+      },
+      {
+        "word": "addition",
+        "tier": "進階"
+      },
+      {
+        "word": "division",
+        "tier": "進階"
+      },
+      {
+        "word": "minus",
+        "tier": "進階"
+      },
+      {
+        "word": "plus",
+        "tier": "進階"
+      }
+    ],
+    "tagged": 16,
+    "promoted": 8
+  },
+  {
+    "unit": 16,
+    "topic": "時間 (Time)",
+    "total": 71,
+    "matchedCount": 43,
+    "missing": [
+      {
+        "word": "a.m.",
+        "tier": "基礎"
+      },
+      {
+        "word": "December",
+        "tier": "基礎"
+      },
+      {
+        "word": "February",
+        "tier": "基礎"
+      },
+      {
+        "word": "Friday",
+        "tier": "基礎"
+      },
+      {
+        "word": "hour",
+        "tier": "基礎"
+      },
+      {
+        "word": "January",
+        "tier": "基礎"
+      },
+      {
+        "word": "July",
+        "tier": "基礎"
+      },
+      {
+        "word": "June",
+        "tier": "基礎"
+      },
+      {
+        "word": "March",
+        "tier": "基礎"
+      },
+      {
+        "word": "minute",
+        "tier": "基礎"
+      },
+      {
+        "word": "Monday",
+        "tier": "基礎"
+      },
+      {
+        "word": "noon",
+        "tier": "基礎"
+      },
+      {
+        "word": "November",
+        "tier": "基礎"
+      },
+      {
+        "word": "o'clock",
+        "tier": "基礎"
+      },
+      {
+        "word": "October",
+        "tier": "基礎"
+      },
+      {
+        "word": "p.m.",
+        "tier": "基礎"
+      },
+      {
+        "word": "quarter",
+        "tier": "基礎"
+      },
+      {
+        "word": "September",
+        "tier": "基礎"
+      },
+      {
+        "word": "Thursday",
+        "tier": "基礎"
+      },
+      {
+        "word": "Tuesday",
+        "tier": "基礎"
+      },
+      {
+        "word": "Wednesday",
+        "tier": "基礎"
+      },
+      {
+        "word": "alarm clock",
+        "tier": "進階"
+      },
+      {
+        "word": "monthly",
+        "tier": "進階"
+      },
+      {
+        "word": "period",
+        "tier": "進階"
+      },
+      {
+        "word": "stopwatch",
+        "tier": "進階"
+      },
+      {
+        "word": "weekday",
+        "tier": "進階"
+      },
+      {
+        "word": "weekly",
+        "tier": "進階"
+      },
+      {
+        "word": "yearly",
+        "tier": "進階"
+      }
+    ],
+    "tagged": 43,
+    "promoted": 27
+  },
+  {
+    "unit": 17,
+    "topic": "金錢 (Money)",
+    "total": 29,
+    "matchedCount": 24,
+    "missing": [
+      {
+        "word": "dollar",
+        "tier": "基礎"
+      },
+      {
+        "word": "coin",
+        "tier": "進階"
+      },
+      {
+        "word": "credit card",
+        "tier": "進階"
+      },
+      {
+        "word": "currency",
+        "tier": "進階"
+      },
+      {
+        "word": "income",
+        "tier": "進階"
+      }
+    ],
+    "tagged": 24,
+    "promoted": 10
+  },
+  {
+    "unit": 18,
+    "topic": "尺寸、形狀、測量 (Size, Shape & Measurements)",
+    "total": 73,
+    "matchedCount": 46,
+    "missing": [
+      {
+        "word": "dot",
+        "tier": "基礎"
+      },
+      {
+        "word": "gram",
+        "tier": "基礎"
+      },
+      {
+        "word": "inch",
+        "tier": "基礎"
+      },
+      {
+        "word": "kilogram",
+        "tier": "基礎"
+      },
+      {
+        "word": "pound",
+        "tier": "基礎"
+      },
+      {
+        "word": "round",
+        "tier": "基礎"
+      },
+      {
+        "word": "row",
+        "tier": "基礎"
+      },
+      {
+        "word": "tall",
+        "tier": "基礎"
+      },
+      {
+        "word": "tiny",
+        "tier": "基礎"
+      },
+      {
+        "word": "deep",
+        "tier": "進階"
+      },
+      {
+        "word": "kilometer",
+        "tier": "進階"
+      },
+      {
+        "word": "length",
+        "tier": "進階"
+      },
+      {
+        "word": "maximum",
+        "tier": "進階"
+      },
+      {
+        "word": "measure",
+        "tier": "進階"
+      },
+      {
+        "word": "meter",
+        "tier": "進階"
+      },
+      {
+        "word": "pattern",
+        "tier": "進階"
+      },
+      {
+        "word": "range",
+        "tier": "進階"
+      },
+      {
+        "word": "rectangle",
+        "tier": "進階"
+      },
+      {
+        "word": "regular",
+        "tier": "進階"
+      },
+      {
+        "word": "scale",
+        "tier": "進階"
+      },
+      {
+        "word": "spacious",
+        "tier": "進階"
+      },
+      {
+        "word": "triangle",
+        "tier": "進階"
+      },
+      {
+        "word": "volume",
+        "tier": "進階"
+      },
+      {
+        "word": "weight",
+        "tier": "進階"
+      },
+      {
+        "word": "wide",
+        "tier": "進階"
+      },
+      {
+        "word": "widen",
+        "tier": "進階"
+      },
+      {
+        "word": "width",
+        "tier": "進階"
+      }
+    ],
+    "tagged": 46,
+    "promoted": 12
+  },
+  {
+    "unit": 19,
+    "topic": "假日、節慶 (Holidays & Festivals)",
+    "total": 29,
+    "matchedCount": 13,
+    "missing": [
+      {
+        "word": "Christmas",
+        "tier": "基礎"
+      },
+      {
+        "word": "Easter",
+        "tier": "基礎"
+      },
+      {
+        "word": "Father's Day",
+        "tier": "基礎"
+      },
+      {
+        "word": "Lantern Festival",
+        "tier": "基礎"
+      },
+      {
+        "word": "Moon Festival",
+        "tier": "基礎"
+      },
+      {
+        "word": "Mother's Day",
+        "tier": "基礎"
+      },
+      {
+        "word": "New Year's Day",
+        "tier": "基礎"
+      },
+      {
+        "word": "New Year's Eve",
+        "tier": "基礎"
+      },
+      {
+        "word": "Teacher's Day",
+        "tier": "基礎"
+      },
+      {
+        "word": "congratulation",
+        "tier": "進階"
+      },
+      {
+        "word": "Double Tenth Day",
+        "tier": "進階"
+      },
+      {
+        "word": "Dragon Boat Festival",
+        "tier": "進階"
+      },
+      {
+        "word": "invitation",
+        "tier": "進階"
+      },
+      {
+        "word": "memory",
+        "tier": "進階"
+      },
+      {
+        "word": "Thanksgiving",
+        "tier": "進階"
+      },
+      {
+        "word": "Valentine's Day",
+        "tier": "進階"
+      }
+    ],
+    "tagged": 13,
+    "promoted": 1
+  },
+  {
+    "unit": 20,
+    "topic": "國家、地區、語言 (Countries, Cities & Languages)",
+    "total": 56,
+    "matchedCount": 17,
+    "missing": [
+      {
+        "word": "America",
+        "tier": "基礎"
+      },
+      {
+        "word": "American",
+        "tier": "基礎"
+      },
+      {
+        "word": "Chinese",
+        "tier": "基礎"
+      },
+      {
+        "word": "ROC",
+        "tier": "基礎"
+      },
+      {
+        "word": "Taiwan",
+        "tier": "基礎"
+      },
+      {
+        "word": "USA",
+        "tier": "基礎"
+      },
+      {
+        "word": "Australia",
+        "tier": "進階"
+      },
+      {
+        "word": "Australian",
+        "tier": "進階"
+      },
+      {
+        "word": "Britain",
+        "tier": "進階"
+      },
+      {
+        "word": "British",
+        "tier": "進階"
+      },
+      {
+        "word": "Canada",
+        "tier": "進階"
+      },
+      {
+        "word": "Canadian",
+        "tier": "進階"
+      },
+      {
+        "word": "Englishman",
+        "tier": "進階"
+      },
+      {
+        "word": "European",
+        "tier": "進階"
+      },
+      {
+        "word": "France",
+        "tier": "進階"
+      },
+      {
+        "word": "Germany",
+        "tier": "進階"
+      },
+      {
+        "word": "governmental",
+        "tier": "進階"
+      },
+      {
+        "word": "Hong Kong",
+        "tier": "進階"
+      },
+      {
+        "word": "Hualien",
+        "tier": "進階"
+      },
+      {
+        "word": "international",
+        "tier": "進階"
+      },
+      {
+        "word": "Japanese",
+        "tier": "進階"
+      },
+      {
+        "word": "Kaohsiung",
+        "tier": "進階"
+      },
+      {
+        "word": "kingdom",
+        "tier": "進階"
+      },
+      {
+        "word": "Korean",
+        "tier": "進階"
+      },
+      {
+        "word": "local",
+        "tier": "進階"
+      },
+      {
+        "word": "London",
+        "tier": "進階"
+      },
+      {
+        "word": "Mandarin",
+        "tier": "進階"
+      },
+      {
+        "word": "New York",
+        "tier": "進階"
+      },
+      {
+        "word": "overseas",
+        "tier": "進階"
+      },
+      {
+        "word": "Philippines",
+        "tier": "進階"
+      },
+      {
+        "word": "region",
+        "tier": "進階"
+      },
+      {
+        "word": "regional",
+        "tier": "進階"
+      },
+      {
+        "word": "Russia",
+        "tier": "進階"
+      },
+      {
+        "word": "Russian",
+        "tier": "進階"
+      },
+      {
+        "word": "section",
+        "tier": "進階"
+      },
+      {
+        "word": "Singapore",
+        "tier": "進階"
+      },
+      {
+        "word": "state",
+        "tier": "進階"
+      },
+      {
+        "word": "Taichung",
+        "tier": "進階"
+      },
+      {
+        "word": "Tainan",
+        "tier": "進階"
+      }
+    ],
+    "tagged": 17,
+    "promoted": 1
+  }
+]

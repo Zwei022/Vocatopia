@@ -576,7 +576,16 @@
         <div class="deck-screen-title">單字卡</div>
         <button class="deck-add-btn" onclick="openNewDeckModal()">＋ 新增</button>
       </div>
-      <div class="deck-list" id="deckList" style="padding-top:4px"></div>
+      <div class="deck-cols">
+        <div class="deck-col">
+          <div class="deck-col-title">📚 會考單字卡組</div>
+          <div class="deck-list" id="deckListBuiltin"></div>
+        </div>
+        <div class="deck-col">
+          <div class="deck-col-title">✏️ 自訂卡組</div>
+          <div class="deck-list" id="deckListCustom"></div>
+        </div>
+      </div>
     </div>
     <!-- 字庫 panel -->
     <div class="read-panel" id="grammarPanel">

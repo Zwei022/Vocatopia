@@ -586,9 +586,24 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .deck-add-btn{background:var(--orasoft);border:1.5px solid var(--orange);border-radius:20px;padding:6px 14px;color:var(--orange2);font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;cursor:pointer;display:flex;align-items:center;gap:5px;letter-spacing:.5px}
 .deck-add-btn:active{background:var(--orange);color:#fff}
 
-.deck-list{flex:1;overflow-y:auto;padding:0 20px 12px;display:flex;flex-direction:column;gap:10px}
+/* 單字卡列表：左「會考單字卡組」／右「自訂卡組」兩欄並排，各自獨立捲動 */
+.deck-cols{flex:1;display:flex;gap:10px;overflow:hidden;padding:4px 12px 0}
+.deck-col{flex:1;min-width:0;display:flex;flex-direction:column;overflow:hidden}
+.deck-col-title{font-family:'Nunito',sans-serif;font-weight:800;font-size:12.5px;color:var(--ink2);text-align:center;padding:4px 2px 8px;letter-spacing:.3px}
+
+.deck-list{flex:1;overflow-y:auto;padding:0 6px 12px;display:flex;flex-direction:column;gap:10px}
 .deck-list::-webkit-scrollbar{width:3px}
 .deck-list::-webkit-scrollbar-thumb{background:var(--line3);border-radius:2px}
+
+/* 兩欄並排時卡片較窄，內容縮得更緊湊 */
+.deck-col .deck-card{padding:12px 10px}
+.deck-col .deck-card-top{gap:8px;margin-bottom:8px}
+.deck-col .deck-emoji{font-size:22px}
+.deck-col .deck-name{font-size:13px;margin-bottom:4px;line-height:1.3}
+.deck-col .deck-chip{font-size:10.5px;padding:2px 7px}
+.deck-col .deck-go-btn{padding:7px 10px;font-size:11.5px;letter-spacing:.5px;width:100%}
+.deck-col .deck-foot{justify-content:stretch}
+.deck-col .deck-del-btn{padding:7px 9px;font-size:12px}
 
 .deck-card{background:var(--card);border:2px solid var(--line2);border-radius:var(--r2);padding:16px;cursor:pointer;transition:border-color .2s,transform .15s,box-shadow .2s}
 .deck-card:active{transform:scale(.98)}
