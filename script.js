@@ -580,11 +580,11 @@ const SUBSCRIPTION_PRODUCT_IDS = {
   quarterly: 'vocatopia_quarterly',
 };
 
-// TODO: 到 RevenueCat Dashboard 建立專案後，把這兩組 Public SDK Key 換成真的值再上架
-// （Android/iOS 金鑰不同，見 https://app.revenuecat.com/ → Project settings → API keys）
+// TODO: Android 那組 Public SDK Key 等 Google Play 那邊的 App 在 RevenueCat 建立好後再補上
+// （見 https://app.revenuecat.com/ → Project settings → API keys）
 const REVENUECAT_API_KEYS = {
   android: 'REPLACE_WITH_REVENUECAT_ANDROID_PUBLIC_KEY',
-  ios:     'REPLACE_WITH_REVENUECAT_IOS_PUBLIC_KEY',
+  ios:     'appl_ZgkudoqfeoskaKWhNiUUvYpTtbR',
 };
 
 let _revenueCatInitialized = false;
