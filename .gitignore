@@ -26,3 +26,6 @@ scripts/cmudict.dict
 # Android release 簽署金鑰（絕對不可上傳）
 android/*.keystore
 android/keystore.properties
+
+# iOS 簽署憑證私鑰/憑證申請檔（絕對不可上傳）
+ios_signing/
