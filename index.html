@@ -900,7 +900,8 @@
       <button type="submit" class="auth-submit">登入戰場</button>
     </form>
     <form id="registerForm" class="hidden" onsubmit="handleRegister(event)">
-      <input class="auth-input" id="regUsername" type="text" placeholder="稱號（暱稱）" required maxlength="20">
+      <input class="auth-input" id="regUsername" type="text" placeholder="稱號（暱稱）" required maxlength="20" oninput="checkRegUsernameAvailability()">
+      <div id="regUsernameHint" style="display:none;color:#E0472E;font-size:12px;margin:-6px 0 8px 2px">已被使用</div>
       <input class="auth-input" id="regEmail" type="email" placeholder="電子信箱" required autocomplete="email">
       <input class="auth-input" id="regPassword" type="password" placeholder="密碼（至少 6 字元）" required autocomplete="new-password">
       <button type="submit" class="auth-submit">建立角色</button>

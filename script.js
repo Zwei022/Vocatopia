@@ -4318,7 +4318,10 @@ function showProfile() {
 
       <div style="text-align:center;margin-bottom:16px">
         <div style="font-size:40px;margin-bottom:6px">👤</div>
-        <div style="font-weight:900;font-size:18px;color:var(--white)">${currentProfile.username}</div>
+        <div id="profileUsernameRow" style="display:flex;align-items:center;justify-content:center;gap:6px">
+          <span id="profileUsernameText" style="font-weight:900;font-size:18px;color:var(--white)">${escHtml(currentProfile.username)}</span>
+          <button onclick="startEditUsername()" title="修改使用者名稱" style="background:none;border:none;color:var(--green3);font-size:13px;cursor:pointer;padding:0 2px">✏️</button>
+        </div>
         <div style="font-size:11px;color:var(--gray);margin-top:2px">${currentUser?.email || ''}</div>
         <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;background:rgba(122,92,67,.08);border-radius:20px;padding:6px 12px;width:fit-content;margin-left:auto;margin-right:auto">
           <span style="font-size:11px;color:var(--gray)">帳號ID</span>
@@ -4367,6 +4370,79 @@ function copyFriendCode() {
   navigator.clipboard.writeText(currentProfile.friend_code)
     .then(() => showToast('✓ 已複製帳號ID'))
     .catch(() => showToast('複製失敗，請手動選取'));
+}
+
+let _editUsernameSeq = 0;
+let _editUsernameTaken = false;
+
+function startEditUsername() {
+  const row = document.getElementById('profileUsernameRow');
+  if (!row || !currentProfile) return;
+  row.innerHTML = `
+    <div style="display:flex;flex-direction:column;align-items:center;gap:2px">
+      <div style="display:flex;align-items:center;gap:6px">
+        <input id="profileUsernameInput" type="text" maxlength="20" value="${escHtml(currentProfile.username)}"
+          oninput="checkEditUsernameAvailability()"
+          style="width:140px;text-align:center;font-weight:900;font-size:15px;color:var(--white);background:rgba(122,92,67,.08);border:1.5px solid var(--green3);border-radius:8px;padding:5px 8px;font-family:'Nunito',sans-serif">
+        <button onclick="saveUsername()" title="儲存" style="background:none;border:none;color:var(--green3);font-size:15px;cursor:pointer;padding:0 2px">✓</button>
+        <button onclick="_reopenProfile()" title="取消" style="background:none;border:none;color:var(--gray);font-size:14px;cursor:pointer;padding:0 2px">✕</button>
+      </div>
+      <div id="profileUsernameHint" style="display:none;color:#E0472E;font-size:11px">已被使用</div>
+    </div>`;
+  _editUsernameTaken = false;
+  const input = document.getElementById('profileUsernameInput');
+  input.focus();
+  input.select();
+  input.onkeydown = e => { if (e.key === 'Enter') saveUsername(); };
+}
+
+async function checkEditUsernameAvailability() {
+  const input = document.getElementById('profileUsernameInput');
+  const hint  = document.getElementById('profileUsernameHint');
+  if (!input || !hint) return;
+  const name = input.value.trim();
+  const mySeq = ++_editUsernameSeq;
+  if (!name || name === currentProfile.username) { hint.style.display = 'none'; _editUsernameTaken = false; return; }
+
+  const taken = await isUsernameTaken(name, currentUser?.id);
+  if (mySeq !== _editUsernameSeq) return; // 過期查詢結果，丟棄
+  _editUsernameTaken = taken;
+  hint.style.display = taken ? 'block' : 'none';
+}
+
+// showProfile() 會用 appendChild 疊出一份新的彈窗，不會先移除舊的，
+// 所以取消/儲存要先關掉目前這份再重開，避免畫面疊出兩層 #profileOverlay。
+function _reopenProfile() {
+  document.getElementById('profileOverlay')?.remove();
+  showProfile();
+}
+
+async function saveUsername() {
+  const input = document.getElementById('profileUsernameInput');
+  if (!input) return;
+  const next = input.value.trim();
+  if (!next) { showToast('名稱不能是空白'); return; }
+  if (next === currentProfile.username) { _reopenProfile(); return; }
+  if (typeof authClient === 'undefined' || !currentUser) { showToast('請先登入才能修改名稱'); return; }
+
+  // 送出前再檢查一次（防止沒等 debounce 完就直接按確定，或兩人同時搶同一個暱稱）
+  if (await isUsernameTaken(next, currentUser.id)) {
+    const hint = document.getElementById('profileUsernameHint');
+    if (hint) hint.style.display = 'block';
+    showToast('這個名稱已經有人使用了，換一個試試');
+    return;
+  }
+
+  const { error } = await authClient.from('profiles').update({ username: next }).eq('id', currentUser.id);
+  if (error) {
+    // Postgres 唯一鍵衝突（unique constraint violation）
+    if (error.code === '23505') showToast('這個名稱已經有人使用了，換一個試試');
+    else showToast('修改失敗：' + error.message);
+    return;
+  }
+  currentProfile.username = next;
+  showToast('✓ 使用者名稱已更新');
+  _reopenProfile();
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -4732,8 +4808,15 @@ async function submitRedeemCode() {
       return;
     }
     if (input) input.value = '';
-    showToast('🎉 兌換成功，已升級為旗艦帳號！');
-    if (typeof refreshSubscriptionStatus === 'function') refreshSubscriptionStatus();
+    if (data.type === 'gold') {
+      if (currentProfile) currentProfile.gold = data.gold;
+      const el = document.getElementById('hGold');
+      if (el) el.textContent = data.gold.toLocaleString();
+      showToast(`🎉 兌換成功，+${data.amount.toLocaleString()} 金幣！`);
+    } else {
+      showToast('🎉 兌換成功，已升級為旗艦帳號！');
+      if (typeof refreshSubscriptionStatus === 'function') refreshSubscriptionStatus();
+    }
   } catch (err) {
     console.error('[submitRedeemCode] 例外：', err);
     showToast('⚠ 網路連線異常，請稍後再試');

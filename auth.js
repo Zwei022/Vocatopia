@@ -10,6 +10,16 @@ let currentUser    = null;
 let currentProfile = null;
 let _authCardOriginal = '';
 
+// 共用：檢查暱稱是否已被使用。excludeUserId 用於「修改自己的暱稱」時排除自己這筆。
+// 回傳 true = 已被使用（不可用）、false = 可用。
+async function isUsernameTaken(name, excludeUserId) {
+  let query = authClient.from('profiles').select('id').eq('username', name).limit(1);
+  if (excludeUserId) query = query.neq('id', excludeUserId);
+  const { data, error } = await query;
+  if (error) { console.error('[isUsernameTaken] 查詢失敗：', error); return false; }
+  return !!(data && data.length);
+}
+
 // 共用：取得目前登入者的 Supabase access token，未登入回傳 null
 async function getAuthToken() {
   const { data: { session } } = await authClient.auth.getSession();
@@ -164,6 +174,22 @@ async function handleLogin(e) {
   }
 }
 
+// ── REGISTER：暱稱即時可用性檢查 ──────────────────────────────
+let _regUsernameCheckSeq = 0;
+let _regUsernameTaken = false;
+async function checkRegUsernameAvailability() {
+  const input = document.getElementById('regUsername');
+  const hint  = document.getElementById('regUsernameHint');
+  const name  = input.value.trim();
+  const mySeq = ++_regUsernameCheckSeq;
+  if (name.length < 2) { hint.style.display = 'none'; _regUsernameTaken = false; return; }
+
+  const taken = await isUsernameTaken(name);
+  if (mySeq !== _regUsernameCheckSeq) return; // 使用者輸入更新了，這次查詢結果過期，丟棄
+  _regUsernameTaken = taken;
+  hint.style.display = taken ? 'block' : 'none';
+}
+
 // ── REGISTER ─────────────────────────────────────────────────
 async function handleRegister(e) {
   e.preventDefault();
@@ -177,6 +203,14 @@ async function handleRegister(e) {
 
   _setAuthLoading(btn, true, '建立中...');
   _clearAuthError();
+
+  // 送出前再檢查一次（防止使用者打字後沒等 debounce 完就直接送出，或兩人同時搶同一個暱稱）
+  if (await isUsernameTaken(username)) {
+    document.getElementById('regUsernameHint').style.display = 'block';
+    _setAuthError('這個暱稱已被使用，換一個試試');
+    _setAuthLoading(btn, false, '建立角色');
+    return;
+  }
 
   try {
     const { data, error } = await authClient.auth.signUp({

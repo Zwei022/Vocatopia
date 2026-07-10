@@ -31,33 +31,56 @@ router.get('/user/subscription-status', async (req, res) => {
 });
 
 // POST /api/user/redeem-code
-// 測試用兌換碼：輸入正確代碼直接把帳號升級為付費會員（走同一張 subscriptions 表，
-// 跟真實訂閱共用同一套權限判斷，差別只在 revenuecat_customer_id 標記為 redeem_code
-// 方便日後查帳分辨「真的付費」跟「測試帳號」）。
-// 代碼只存在伺服器端，不會出現在前端程式碼裡，避免任何人打開瀏覽器開發者工具看到。
+// 測試用兌換碼，代碼只存在伺服器端，不會出現在前端程式碼裡，避免任何人打開瀏覽器
+// 開發者工具看到。目前有兩組：
+//  1. REDEEM_CODE          — 升級為付費會員（走 subscriptions 表，跟真實訂閱共用同一套
+//                             權限判斷，差別只在 revenuecat_customer_id 標記為 redeem_code）
+//  2. GOLD_REDEEM_CODE     — 測試用金幣，每次兌換 +10000 金幣、無兌換次數上限（方便測試
+//                             商店抽卡等消耗金幣的功能，不需要真的刷練習賺金幣）
 const REDEEM_CODE = 'Qaz515922$';
+const GOLD_REDEEM_CODE = 'K123384027';
+const GOLD_REDEEM_AMOUNT = 10000;
 
 router.post('/user/redeem-code', express.json(), async (req, res) => {
   const userId = await getUserId(req);
   if (!userId) return res.status(401).json({ error: 'Unauthorized' });
 
   const code = (req.body?.code || '').trim();
-  if (code !== REDEEM_CODE) {
-    return res.status(400).json({ error: '兌換碼錯誤' });
+
+  if (code === REDEEM_CODE) {
+    const { error } = await supabase
+      .from('subscriptions')
+      .upsert({
+        user_id: userId,
+        is_premium: true,
+        expires_at: null,
+        revenuecat_customer_id: 'redeem_code',
+        updated_at: new Date().toISOString(),
+      }, { onConflict: 'user_id' });
+
+    if (error) return res.status(500).json({ error: error.message });
+    return res.json({ ok: true, type: 'subscription' });
   }
 
-  const { error } = await supabase
-    .from('subscriptions')
-    .upsert({
-      user_id: userId,
-      is_premium: true,
-      expires_at: null,
-      revenuecat_customer_id: 'redeem_code',
-      updated_at: new Date().toISOString(),
-    }, { onConflict: 'user_id' });
+  if (code === GOLD_REDEEM_CODE) {
+    const { data: profile, error: fetchErr } = await supabase
+      .from('profiles')
+      .select('gold')
+      .eq('id', userId)
+      .single();
+    if (fetchErr || !profile) return res.status(404).json({ error: 'Profile not found' });
 
-  if (error) return res.status(500).json({ error: error.message });
-  res.json({ ok: true });
+    const nextGold = (profile.gold || 0) + GOLD_REDEEM_AMOUNT;
+    const { error: updateErr } = await supabase
+      .from('profiles')
+      .update({ gold: nextGold })
+      .eq('id', userId);
+    if (updateErr) return res.status(500).json({ error: updateErr.message });
+
+    return res.json({ ok: true, type: 'gold', amount: GOLD_REDEEM_AMOUNT, gold: nextGold });
+  }
+
+  return res.status(400).json({ error: '兌換碼錯誤' });
 });
 
 // POST /api/webhooks/revenuecat
