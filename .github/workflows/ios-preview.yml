@@ -1,0 +1,58 @@
+name: iOS Simulator Preview Screenshots
+
+# 用 GitHub 提供的雲端 Mac runner 開 iPhone/iPad 模擬器，直接載入正式網址
+# 拍下畫面存成 artifact——因為 Capacitor App 本來就是 WKWebView 載入這個網址，
+# 這樣拍到的畫面就等同於 App Store 版本實際顯示的樣子。
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - '.github/workflows/ios-preview.yml'
+
+jobs:
+  simulator-screenshots:
+    runs-on: macos-14
+    strategy:
+      fail-fast: false
+      matrix:
+        device: ["iPhone 15", "iPad (10th generation)"]
+    steps:
+      - name: 列出這台 runner 可用的模擬器機型（方便之後除錯對照）
+        run: xcrun simctl list devicetypes
+
+      - name: 找出符合機型的可用模擬器 UDID
+        id: find
+        run: |
+          set -e
+          NAME="${{ matrix.device }}"
+          UDID=$(xcrun simctl list devices available -j | jq -r --arg NAME "$NAME" '.devices | to_entries[] | .value[] | select(.name==$NAME) | .udid' | head -1)
+          if [ -z "$UDID" ]; then
+            echo "找不到機型 $NAME，改用同類型第一個可用裝置"
+            KIND=$(echo "$NAME" | grep -oE "iPhone|iPad" | head -1)
+            UDID=$(xcrun simctl list devices available -j | jq -r --arg KIND "$KIND" '.devices | to_entries[] | .value[] | select(.name | contains($KIND)) | .udid' | head -1)
+          fi
+          echo "udid=$UDID" >> "$GITHUB_OUTPUT"
+          echo "找到裝置 UDID: $UDID"
+
+      - name: 開機模擬器
+        run: xcrun simctl boot "${{ steps.find.outputs.udid }}"
+
+      - name: 等待模擬器完全開機
+        run: xcrun simctl bootstatus "${{ steps.find.outputs.udid }}" -b
+
+      - name: 在模擬器裡打開正式網址（跟 App 實際載入的網址完全相同）
+        run: xcrun simctl openurl "${{ steps.find.outputs.udid }}" "https://vocatopia-production.up.railway.app"
+
+      - name: 等待頁面載入（含字庫/圖片等資源）
+        run: sleep 20
+
+      - name: 截圖
+        run: |
+          SAFE_NAME=$(echo "${{ matrix.device }}" | tr ' /()' '_')
+          xcrun simctl io "${{ steps.find.outputs.udid }}" screenshot "screenshot-${SAFE_NAME}.png"
+
+      - name: 上傳截圖成 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshot-${{ matrix.device }}
+          path: screenshot-*.png
