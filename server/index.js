@@ -1,21 +1,73 @@
-require('dotenv').config();
+require('dotenv').config({ quiet: true });
 const express = require('express');
 const http    = require('http');
 const { Server } = require('socket.io');
 const cors    = require('cors');
 const path    = require('path');
 const cron    = require('node-cron');
+const compression = require('compression');
+const rateLimit = require('express-rate-limit');
 const supabase = require('./db/supabase');
 const { generateAndSave } = require('./scripts/generate_daily_articles');
+
+// 單一未捕捉錯誤不應該讓整個 process（含所有 Socket.io 記憶體內房間狀態）當掉。
+// 只記錄並存活，不靜默吞掉（fail loud in logs，但不 crash）。
+process.on('uncaughtException', (err) => {
+  console.error('[FATAL] uncaughtException:', err);
+});
+process.on('unhandledRejection', (err) => {
+  console.error('[FATAL] unhandledRejection:', err);
+});
 
 const app    = express();
 const server = http.createServer(app);
 const io     = new Server(server, { cors: { origin: '*' } });
 
+// 多實例（水平擴展）時，Socket.io 預設的房間/連線狀態只存在單一 process 記憶體內，
+// 不同 instance 之間互不相通（同房間兩人可能被路由到不同 instance，永遠配對不到）。
+// 設定 REDIS_URL 後才啟用 Redis adapter 讓所有 instance 共享狀態；未設定時（現況：
+// 單一 instance）維持原本的記憶體內模式，不影響任何現有行為。
+if (process.env.REDIS_URL) {
+  const { createAdapter } = require('@socket.io/redis-adapter');
+  const Redis = require('ioredis');
+  const pubClient = new Redis(process.env.REDIS_URL);
+  const subClient = pubClient.duplicate();
+  pubClient.on('error', (err) => console.error('[Redis] pubClient error:', err.message));
+  subClient.on('error', (err) => console.error('[Redis] subClient error:', err.message));
+  io.adapter(createAdapter(pubClient, subClient));
+  console.log('[Socket.io] 已啟用 Redis adapter（多實例模式）');
+} else {
+  console.log('[Socket.io] 未設定 REDIS_URL，使用單實例記憶體模式');
+}
+
 const PORT = process.env.PORT || 3000;
 
+app.use(compression());
 app.use(cors());
 app.use(express.json());
+
+// 健康檢查：Railway / 任何負載平衡器判斷這個 instance 是否存活
+app.get('/health', (req, res) => res.status(200).json({ ok: true }));
+
+// 全站基本限流，防止單一來源打爆伺服器（各路由可再疊加更嚴格的限制）
+app.use(rateLimit({
+  windowMs: 60 * 1000,
+  max: 300,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, error: '請求過於頻繁，請稍後再試' },
+}));
+
+// 查詢單字會呼叫 Gemini API（有成本、有配額上限），需要比一般 API 更嚴格的限流，
+// 避免單一使用者/惡意來源在短時間內大量觸發 cache miss 把配額打光
+const searchLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 20,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, error: '查詢太頻繁了，請稍後再試' },
+});
+app.use('/api/words/search', searchLimiter);
 
 // 預生成靜態音頻：no-cache 讓瀏覽器每次驗證 ETag，音檔更新後立即生效
 // /api/tts/ 動態生成的音頻在 tts.js 內個別設 no-store
