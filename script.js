@@ -226,6 +226,9 @@ async function loadWords() {
     DICT  = Object.fromEntries(WORDS.map(w => [w.word, { def: w.def, phonetic: w.phonetic }]));
   }
   if (readTab === 'grammar') renderLib();
+  // 首頁的每日單字卡組如果在 WORDS 載完前就先渲染過（抽到空清單、沒有落盤），
+  // 這裡補渲染一次，確保 WORDS 到位後能立刻補上真正抽到的單字
+  if (typeof renderDailyDeckCard === 'function') renderDailyDeckCard();
 }
 
 async function loadArticles() {
@@ -5800,20 +5803,23 @@ function _dailyDeckSave(state) {
   localStorage.setItem(LS_DAILY_DECK, JSON.stringify(state));
 }
 
-// 確保今天的每日單字卡組是最新的：跨日、換卡組來源、或第一次使用都會重抽
+// 確保今天的每日單字卡組是最新的：跨日、換卡組來源、或第一次使用都會重抽。
+// 注意：WORDS 是非同步載入的（loadWords() 分頁抓取，常常比首頁 200ms 的初次渲染還慢），
+// 如果抽的當下 WORDS 還是空的，「今天」這份就不能存進 localStorage 快取，否則會把空結果
+// 卡死一整天——只有真的抽到單字才落盤，抽空的話下次呼叫（例如 WORDS 載完後）會再重抽一次。
 function _dailyDeckEnsure(forceDeckId) {
   const today = new Date().toISOString().slice(0, 10);
   const dailyGoal = (typeof _loadSettingsData === 'function' && _loadSettingsData().dailyGoal) || 20;
   let state = _dailyDeckLoad();
   const deckId = forceDeckId || (state && state.deckId) || 'cap2000';
-  const needsRefresh = !state || state.date !== today || state.deckId !== deckId || !Array.isArray(state.words);
+  const needsRefresh = !state || state.date !== today || state.deckId !== deckId || !Array.isArray(state.words) || state.words.length === 0;
 
   if (needsRefresh) {
     const deck = _dailyDeckFindById(deckId);
     const pool = _dailyDeckGetWords(deck);
     const sampled = _dailyDeckSample(pool, dailyGoal).map(w => w.word);
     state = { date: today, deckId, words: sampled };
-    _dailyDeckSave(state);
+    if (sampled.length > 0) _dailyDeckSave(state); // 抽到才落盤；抽空先不存，下次再試
   }
   return state;
 }
