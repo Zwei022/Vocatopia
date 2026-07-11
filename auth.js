@@ -80,6 +80,7 @@ async function _loadProfile() {
   }
 
   _updateHeaderUI();
+  if (typeof maybeShowTutorial === 'function') maybeShowTutorial();
 }
 
 async function _initUserAccount() {
@@ -271,6 +272,7 @@ async function logoutUser() {
 function continueAsGuest() {
   closeAuthOverlay();
   window.showToast && showToast('訪客模式：關閉後進度不會儲存');
+  if (typeof maybeShowTutorial === 'function') maybeShowTutorial();
 }
 
 // ── OVERLAY CONTROL ──────────────────────────────────────────

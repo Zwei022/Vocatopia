@@ -6015,6 +6015,93 @@ async function chooseDailyDeck(deckId) {
   showToast(`✓ 每日單字卡組已切換為「${deck ? deck.name : deckId}」`);
 }
 
+// ══════════════════════════════════════════════════════════════
+// 首次引導教學（只有帳號第一次進入才會顯示，多張卡片輪播）
+// ══════════════════════════════════════════════════════════════
+const LS_TUTORIAL_SEEN = 'voca_tutorial_seen';
+
+const TUTORIAL_SLIDES = [
+  { img: 'public/images/app_icon_transparent.webp', title: '歡迎來到 Vocatopia！', desc: '這裡是你的單字烏托邦。花一分鐘快速認識一下首頁跟底部導覽列，馬上就能開始練習！' },
+  { icon: '⚔️', title: '出戰角色 & 排行榜', desc: '出戰角色會帶著牠的技能陪你一起對戰，點角色卡片可以到收藏頁更換。旁邊的排行榜會顯示大家的最高分，點名字可以看該玩家的個人檔案。' },
+  { icon: '📚', title: '每日單字', desc: '依照你設定的每日目標字數，每天自動幫你抽一批單字卡，點卡片可以翻面（英文/中文），左右箭頭換下一個字。' },
+  { icon: '🎮', title: '開始遊戲', desc: '按下「開始遊戲」進入單字對戰俄羅斯方塊，消行會出單字快問，連續答對還有連勝加乘倍率！「切換模式」之後會開放更多玩法。' },
+  { icon: '📝', title: '今日任務', desc: '單字、片語、文法、閱讀、克漏字、聽力六個科目，每天完成可以賺金幣，全部完成還有額外獎勵。' },
+  { icon: '🏟️', title: '競技場', desc: '底部導覽列的競技場可以加好友、即時對戰單字題目，跟朋友比賽誰反應最快。' },
+  { icon: '🃏', title: '收藏', desc: '收藏頁可以查看角色收藏（含還沒解鎖的角色要怎麼取得）、切換出戰角色。' },
+  { icon: '📖', title: '閱覽室', desc: '你的單字卡組、文法教學、精選文章、歷屆會考題目都在這裡，還有「不熟字卡」自動收錄你答錯過的單字。' },
+  { icon: '🛍️', title: '商店', desc: '用金幣抽常駐卡池，有機會抽到更稀有的角色，還有保底機制不用擔心運氣太差。現在就開始探索吧！' },
+];
+
+let _tutorialIdx = 0;
+
+function _tutorialLocalSeen() {
+  try { return localStorage.getItem(LS_TUTORIAL_SEEN) === '1'; } catch { return false; }
+}
+function _tutorialMarkSeenLocal() {
+  try { localStorage.setItem(LS_TUTORIAL_SEEN, '1'); } catch { /* ignore */ }
+}
+
+// 進首頁時檢查要不要跳出教學：本機已經看過就不用問伺服器；沒看過的話，
+// 登入帳號會再問一次伺服器（換裝置登入、但曾在別台裝置看過的情況）
+async function maybeShowTutorial() {
+  if (_tutorialLocalSeen()) return;
+
+  if (typeof currentUser !== 'undefined' && currentUser && typeof authClient !== 'undefined') {
+    try {
+      const { data } = await authClient.from('profiles').select('tutorial_seen').eq('id', currentUser.id).maybeSingle();
+      if (data && data.tutorial_seen) { _tutorialMarkSeenLocal(); return; }
+    } catch { /* 查詢失敗就當作沒看過，還是顯示一次 */ }
+  }
+  openTutorial();
+}
+
+function openTutorial() {
+  _tutorialIdx = 0;
+  _tutorialRender();
+  document.getElementById('tutorialOverlay')?.classList.remove('hidden');
+}
+
+function _tutorialRender() {
+  const s = TUTORIAL_SLIDES[_tutorialIdx];
+  if (!s) return;
+  const iconEl = document.getElementById('tutIcon');
+  if (s.img) {
+    iconEl.innerHTML = `<img src="${s.img}" alt="" style="width:64px;height:64px;object-fit:contain">`;
+  } else {
+    iconEl.textContent = s.icon;
+  }
+  document.getElementById('tutTitle').textContent = s.title;
+  document.getElementById('tutDesc').textContent = s.desc;
+  document.getElementById('tutDots').innerHTML = TUTORIAL_SLIDES.map((_, i) =>
+    `<span class="tut-dot${i === _tutorialIdx ? ' active' : ''}"></span>`).join('');
+  const prevBtn = document.getElementById('tutPrevBtn');
+  const nextBtn = document.getElementById('tutNextBtn');
+  if (prevBtn) prevBtn.disabled = _tutorialIdx === 0;
+  if (nextBtn) nextBtn.textContent = _tutorialIdx === TUTORIAL_SLIDES.length - 1 ? '開始探索' : '下一步';
+}
+
+function tutorialPrev() {
+  if (_tutorialIdx === 0) return;
+  _tutorialIdx--;
+  _tutorialRender();
+}
+
+function tutorialNext() {
+  if (_tutorialIdx >= TUTORIAL_SLIDES.length - 1) { tutorialFinish(); return; }
+  _tutorialIdx++;
+  _tutorialRender();
+}
+
+function tutorialSkip() { tutorialFinish(); }
+
+async function tutorialFinish() {
+  document.getElementById('tutorialOverlay')?.classList.add('hidden');
+  _tutorialMarkSeenLocal();
+  if (typeof currentUser !== 'undefined' && currentUser && typeof authClient !== 'undefined') {
+    try { await authClient.from('profiles').update({ tutorial_seen: true }).eq('id', currentUser.id); } catch { /* ignore */ }
+  }
+}
+
 // ── 首頁：出戰角色欄 ──
 function renderDeployedChar() {
   const body = document.getElementById('hmCharBody');

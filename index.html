@@ -937,6 +937,21 @@
   </div>
 </div>
 
+<!-- 首次引導教學（只有帳號第一次進入才會顯示） -->
+<div class="tut-overlay hidden" id="tutorialOverlay">
+  <div class="tut-card">
+    <button class="tut-skip" onclick="tutorialSkip()">跳過</button>
+    <div class="tut-icon" id="tutIcon">🍙</div>
+    <div class="tut-title" id="tutTitle"></div>
+    <div class="tut-desc" id="tutDesc"></div>
+    <div class="tut-dots" id="tutDots"></div>
+    <div class="tut-btns">
+      <button class="tut-btn ghost" id="tutPrevBtn" onclick="tutorialPrev()">上一步</button>
+      <button class="tut-btn primary" id="tutNextBtn" onclick="tutorialNext()">下一步</button>
+    </div>
+  </div>
+</div>
+
 <script src="/socket.io/socket.io.js"></script>
 <script src="auth.js"></script>
 <script src="game/tetris/characters.js"></script>

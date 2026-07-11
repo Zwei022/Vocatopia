@@ -556,6 +556,25 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .auth-tab.active{background:var(--red);border-color:var(--red);color:#fff}
 .auth-input{width:100%;background:var(--nav);border:2px solid var(--line2);border-radius:var(--r);padding:13px 14px;color:var(--ink);font-family:'Nunito',sans-serif;font-size:14px;outline:none;margin-bottom:10px;display:block;transition:border-color .15s}
 .auth-input:focus{border-color:var(--orange)}
+
+/* ── 首次引導教學（多張卡片輪播） ── */
+.tut-overlay{position:fixed;inset:0;background:rgba(75,56,42,.65);z-index:700;display:flex;align-items:center;justify-content:center;padding:20px}
+.tut-overlay.hidden{display:none!important}
+.tut-card{position:relative;width:100%;max-width:340px;background:var(--card);border:2.5px solid var(--line);border-radius:var(--r3);padding:32px 24px 24px;text-align:center;box-shadow:0 12px 44px rgba(75,56,42,.35);animation:tutPop .2s ease-out}
+@keyframes tutPop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+.tut-skip{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--ink3);font-family:'Nunito',sans-serif;font-weight:700;font-size:12px;cursor:pointer}
+.tut-icon{font-size:56px;margin-bottom:14px}
+.tut-title{font-family:var(--font-display);font-weight:900;font-size:19px;color:var(--ink);margin-bottom:10px}
+.tut-desc{font-size:13px;color:var(--ink2);line-height:1.7;margin-bottom:20px;min-height:66px}
+.tut-dots{display:flex;justify-content:center;gap:6px;margin-bottom:20px}
+.tut-dot{width:7px;height:7px;border-radius:50%;background:var(--line2);transition:background .15s,transform .15s}
+.tut-dot.active{background:var(--orange);transform:scale(1.3)}
+.tut-btns{display:flex;gap:10px}
+.tut-btn{flex:1;padding:12px;border-radius:var(--r2);font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;cursor:pointer;transition:transform .12s}
+.tut-btn:active{transform:scale(.96)}
+.tut-btn.ghost{background:var(--nav);border:2px solid var(--line2);color:var(--ink2)}
+.tut-btn.ghost:disabled{opacity:.4;cursor:default}
+.tut-btn.primary{background:var(--orange);border:2px solid var(--line);color:#fff}
 .auth-input::placeholder{color:var(--ink3)}
 .auth-submit{width:100%;padding:14px;background:var(--red);border:none;border-radius:var(--r2);font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;letter-spacing:2px;color:#fff;cursor:pointer;margin-top:4px;transition:opacity .15s,transform .12s,box-shadow .12s;display:block;box-shadow:0 4px 0 var(--red2)}
 .auth-submit:active{transform:translateY(3px);box-shadow:0 1px 0 var(--red2)}
