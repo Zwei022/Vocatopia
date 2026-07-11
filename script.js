@@ -6035,7 +6035,7 @@ function showGachaResults(results) {
   const cards = results.map((r, i) => `
     <div class="gacha-flip-card ${_gachaGlowClass(r)}" style="width:176px" data-idx="${i}" data-stage="0" data-rarity="${_gachaRarityKey(r) || ''}" data-isnew="${r.isNew ? '1' : '0'}" onclick="gachaCardClick(this)">
       <div class="gacha-flip-inner">
-        <div class="gacha-flip-front"><img src="public/images/app_icon.webp" alt="Vocatopia"></div>
+        <div class="gacha-flip-front"><img src="public/images/app_icon_transparent.webp" alt="Vocatopia"></div>
         <div class="gacha-flip-back">${_gachaResultCardBack(r)}</div>
       </div>
     </div>`).join('');
