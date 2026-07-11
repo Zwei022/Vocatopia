@@ -1628,7 +1628,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
    margin-bottom 是保底間距：寬螢幕（≥640px）會觸發 .phone{height:min(100vh,900px)}
    斷點、高度被限制在 900px，.bnav 的 auto margin 能吸收的空間變少，沒有這個
    保底值的話今日任務卡在 iPad 等寬螢幕裝置上會跟底部導覽列幾乎貼在一起。 */
-.hm-bottom-group{margin-top:68px;margin-bottom:22px;display:flex;flex-direction:column;gap:8px;padding:0 20px;flex-shrink:0}
+.hm-bottom-group{margin-top:16px;margin-bottom:22px;display:flex;flex-direction:column;gap:8px;padding:0 20px;flex-shrink:0}
 .hm-quest-card{margin:0}
 
 /* ── 行動區 ─────────────────────── */

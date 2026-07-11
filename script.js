@@ -4787,7 +4787,48 @@ function saveSoundSettings() {
   const sfx = document.getElementById('sfxToggle')?.checked ?? true;
   const bgm = document.getElementById('bgmToggle')?.checked ?? false;
   _saveSettingsData({ sfx, bgm });
+  _bgmSync(); // 開關切換時（本身就是使用者手勢）立刻嘗試播放/暫停
 }
+
+// ══════════════════════════════════════════════════════════════
+// 背景音樂：全站共用一個循環播放的 <audio>，包含俄羅斯方塊對戰畫面也是同一首，
+// 不會因為切換畫面而中斷或換曲。開關存在跟 SFX 同一份 voca_settings 裡（bgm 欄位）。
+// ══════════════════════════════════════════════════════════════
+let _bgmAudio = null;
+
+function _bgmGetAudio() {
+  if (!_bgmAudio) {
+    _bgmAudio = new Audio('public/audio/bgm.mp3');
+    _bgmAudio.loop = true;
+    _bgmAudio.volume = 0.35;
+  }
+  return _bgmAudio;
+}
+
+// 依設定值播放或暫停。瀏覽器的自動播放限制要求「使用者手勢」才能出聲，
+// 所以只在使用者主動切換開關，或稍後第一次點擊畫面時才會真的呼叫 play()。
+function _bgmSync() {
+  const enabled = (_loadSettingsData().bgm === true);
+  const audio = _bgmGetAudio();
+  if (enabled) {
+    audio.play().catch(() => { /* 還沒有使用者手勢，等下一次互動再試 */ });
+  } else {
+    audio.pause();
+  }
+}
+
+// 若使用者上次已把 BGM 設為開啟，重新整理頁面後瀏覽器會擋自動播放；
+// 掛一個「第一次點擊畫面任何地方」的一次性監聽器，補播放一次。
+document.addEventListener('DOMContentLoaded', () => {
+  _bgmSync();
+  const resumeOnFirstGesture = () => {
+    if (_loadSettingsData().bgm === true) _bgmGetAudio().play().catch(() => {});
+    document.removeEventListener('click', resumeOnFirstGesture);
+    document.removeEventListener('touchstart', resumeOnFirstGesture);
+  };
+  document.addEventListener('click', resumeOnFirstGesture);
+  document.addEventListener('touchstart', resumeOnFirstGesture);
+});
 
 function confirmResetWordBank() {
   if (!confirm('確定要重置字庫嗎？\n所有單字學習狀態將歸零，這個操作無法復原。')) return;

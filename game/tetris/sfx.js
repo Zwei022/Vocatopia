@@ -13,8 +13,12 @@ function _sfxGetCtx() {
   return _sfxCtx;
 }
 
+// 跟設定頁的音效開關（sfxToggle）共用同一份 voca_settings，不再各自存一份設定
 function _sfxEnabled() {
-  try { return localStorage.getItem('voca_sfx_on') !== '0'; } catch { return true; }
+  try {
+    if (typeof _loadSettingsData === 'function') return _loadSettingsData().sfx !== false;
+    return localStorage.getItem('voca_sfx_on') !== '0';
+  } catch { return true; }
 }
 
 // 播放單一音（sweepTo 可做滑音效果）
