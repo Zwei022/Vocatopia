@@ -1635,13 +1635,13 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .hm-tile-soon:hover{background:var(--card);border-color:var(--line2);transform:none}
 .hm-soon-badge{position:absolute;top:7px;right:8px;font-size:8px;font-weight:800;color:var(--ink2);background:var(--card2);border:1px solid var(--line2);padding:2px 5px;border-radius:6px;font-family:'Nunito',sans-serif}
 
-/* 首頁中段：對戰入口——角色在上整列（固定高度，不會被內容撐爆）/
-   下排左排行榜、右切換模式+開始遊戲。用固定高度而非 max-height+auto，
-   避免子內容把高度撐爆導致跟下面今日任務卡重疊。gap 拉大做出留白感。 */
-.hm-battle-zone{flex-shrink:0;height:480px;display:flex;flex-direction:column;gap:16px;padding:14px 20px 0;overflow:hidden}
-/* 寬度縮到 30%（窄一半）、高度加高，align-self:flex-start 讓右側自然留白，
-   對應草圖裡角色卡片偏左、窄、高的比例——用純 flexbox 屬性做，不靠 grid 空格。 */
-.hm-char-panel{height:220px;width:30%;align-self:flex-start;flex-shrink:0;display:flex;flex-direction:column;background:var(--card);border:2.5px solid var(--line);border-radius:var(--r3);padding:14px;cursor:pointer;box-shadow:0 4px 0 rgba(122,92,67,.2);transition:transform .12s;overflow:hidden}
+/* 首頁中段：對戰入口 2x2 格——左上出戰角色／右上排行榜／左下每日單字／右下切換模式+開始遊戲。
+   用 CSS grid 固定兩欄兩列，四格天生等寬等高，不用再手算 flex 比例。 */
+.hm-battle-zone{flex-shrink:0;height:472px;display:flex;flex-direction:column;padding:14px 20px 0;overflow:hidden}
+.hm-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:220px 220px;gap:16px;width:100%;height:100%}
+
+/* 左上：出戰角色 */
+.hm-char-panel{width:100%;height:100%;display:flex;flex-direction:column;background:var(--card);border:2.5px solid var(--line);border-radius:var(--r3);padding:14px;cursor:pointer;box-shadow:0 4px 0 rgba(122,92,67,.2);transition:transform .12s;overflow:hidden}
 .hm-char-panel:active{transform:translateY(2px)}
 .hm-char-label{font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:var(--ink2);letter-spacing:.5px;margin-bottom:6px;flex-shrink:0}
 .hm-char-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:0}
@@ -1650,18 +1650,8 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .hm-char-name-en{font-family:'Nunito',sans-serif;font-weight:700;font-size:11px;font-style:italic;color:var(--orange2);margin-top:-4px}
 .hm-char-empty{color:var(--ink3);font-size:13px;font-weight:700;text-align:center}
 
-/* 下排：排行榜（左）+ 切換模式／開始遊戲（右）——寬度比例跟上方角色卡片脫鉤，
-   不然排行榜也跟著變窄會讓旁邊按鈕被拉得太寬、太扁 */
-.hm-battle-lower{flex:1;min-height:0;display:flex;gap:16px}
-/* .hm-board-card 維持預設 stretch、隨列高一起變高；.hm-battle-actions 用
-   align-self:flex-start + 固定高度跳出 stretch，按鈕不會跟著排行榜一起被拉高 */
-.hm-battle-actions{flex:1;align-self:flex-start;height:140px;min-width:0;display:flex;flex-direction:column;gap:10px}
-.hm-mode-btn{flex:1;display:flex;align-items:center;justify-content:center;background:var(--nav);border:2.5px solid var(--line);border-radius:var(--r3);color:var(--ink2);font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;letter-spacing:.5px;cursor:pointer;transition:transform .12s,border-color .12s}
-.hm-mode-btn:active{transform:scale(.96)}
-.hm-mode-btn:hover{border-color:var(--orange);color:var(--orange2)}
-.hm-battle-actions .hm-battle-btn{flex:1.3}
-
-.hm-board-card{flex:1.2;min-height:0;min-width:0;display:flex;flex-direction:column;background:var(--card);border:2.5px solid var(--line);border-radius:var(--r3);padding:10px 12px;box-shadow:0 4px 0 rgba(122,92,67,.2)}
+/* 右上：排行榜 */
+.hm-board-card{width:100%;height:100%;min-height:0;min-width:0;display:flex;flex-direction:column;background:var(--card);border:2.5px solid var(--line);border-radius:var(--r3);padding:10px 12px;box-shadow:0 4px 0 rgba(122,92,67,.2)}
 .hm-board-head{font-family:var(--font-display);font-weight:900;font-size:14px;color:var(--ink);margin-bottom:8px;flex-shrink:0}
 .hm-board-list{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:4px;min-height:0}
 .hm-board-list::-webkit-scrollbar{width:0}
@@ -1673,9 +1663,32 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .hm-board-score{font-weight:900;color:var(--orange2);flex-shrink:0}
 .hm-board-empty{color:var(--ink3);font-size:12px;text-align:center;padding:16px 4px;font-weight:700}
 
-.hm-battle-btn{flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--red);border:2.5px solid var(--line);border-radius:var(--r3);padding:12px;color:#fff;font-family:var(--font-display);font-weight:900;font-size:15px;letter-spacing:1px;cursor:pointer;box-shadow:0 4px 0 var(--red2);transition:transform .12s,box-shadow .12s}
+/* 右下：切換模式／開始遊戲，垂直堆疊填滿整格 */
+.hm-side-col{width:100%;height:100%;min-height:0;display:flex;flex-direction:column;gap:10px}
+.hm-mode-btn{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;background:var(--nav);border:2.5px solid var(--line);border-radius:var(--r3);color:var(--ink2);font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;letter-spacing:.5px;cursor:pointer;transition:transform .12s,border-color .12s}
+.hm-mode-btn:active{transform:scale(.96)}
+.hm-mode-btn:hover{border-color:var(--orange);color:var(--orange2)}
+.hm-battle-btn{flex:1.6;min-height:0;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--red);border:2.5px solid var(--line);border-radius:var(--r3);color:#fff;font-family:var(--font-display);font-weight:900;font-size:15px;letter-spacing:1px;cursor:pointer;box-shadow:0 4px 0 var(--red2);transition:transform .12s,box-shadow .12s}
 .hm-battle-btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--red2)}
 .hm-battle-ico{font-size:17px}
+
+/* 左下：每日單字——鑲嵌在首頁的簡易單字卡（正面英文/背面中文），可翻頁/翻面。
+   詳細版（音標/定義/例句）要到閱覽室的「每日單字卡組」卡組點進去看，這裡只做快速瀏覽。 */
+.hm-daily-deck-card{width:100%;height:100%;min-height:0;background:var(--card);border:2.5px solid var(--line);border-radius:var(--r3);padding:10px 12px;box-shadow:0 4px 0 rgba(122,92,67,.2);display:flex;flex-direction:column;gap:6px}
+.hm-dd-head{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.hm-dd-title{font-family:var(--font-display);font-weight:900;font-size:13px;color:var(--ink);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hm-dd-count{font-family:'Nunito',sans-serif;font-weight:800;font-size:10px;color:var(--orange2);background:rgba(245,146,30,.12);border-radius:10px;padding:2px 7px;white-space:nowrap;flex-shrink:0}
+.hm-dd-picker-btn{background:none;border:none;font-size:14px;cursor:pointer;padding:0 2px;flex-shrink:0}
+.hm-dd-flip{flex:1;min-height:0;perspective:800px;cursor:pointer}
+.hm-dd-inner{position:relative;width:100%;height:100%;transition:transform .4s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
+.hm-dd-flip.flipped .hm-dd-inner{transform:rotateY(180deg)}
+.hm-dd-face{position:absolute;inset:0;backface-visibility:hidden;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:10px;padding:6px;overflow:hidden;font-family:'Nunito',sans-serif}
+.hm-dd-front{background:rgba(122,92,67,.06);font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--ink)}
+.hm-dd-back{background:rgba(245,146,30,.1);transform:rotateY(180deg);font-weight:700;font-size:12px;color:var(--ink2);line-height:1.4}
+.hm-dd-nav{display:flex;align-items:center;justify-content:space-between;gap:4px;flex-shrink:0}
+.hm-dd-nav-btn{background:var(--nav);border:1.5px solid var(--line2);border-radius:8px;width:24px;height:24px;flex-shrink:0;font-size:11px;color:var(--ink2);cursor:pointer}
+.hm-dd-nav-btn:active{transform:scale(.92)}
+.hm-dd-source{font-size:10px;color:var(--ink3);flex:1;min-width:0;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
 /* ── 角色收藏（皇室戰爭風卡片牆） ── */
 .coll-head{padding:20px 20px 12px;flex-shrink:0}

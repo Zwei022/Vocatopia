@@ -356,6 +356,15 @@ const BUILTIN_DECKS = [
     cls: 'deck-weak',
     getWords: () => WORDS.filter(w => w.st === 'lrn' || capturedWords.includes(w.word)),
   },
+  {
+    id: 'daily', name: '每日單字卡組', emoji: '📅',
+    cls: 'deck-weak',
+    // 跟首頁鑲嵌的每日單字卡是同一份（依每日目標字數從所選卡組隨機抽出），
+    // 從這裡點進來走一般 flashcard 流程，看得到完整資訊（音標/定義/例句）
+    getWords: () => (typeof _dailyDeckEnsure === 'function')
+      ? WORDS.filter(w => _dailyDeckEnsure().words.includes(w.word))
+      : [],
+  },
   ...UNIT_DECK_META.map(u => ({
     id: 'unit' + u.n,
     name: `Unit${u.n} ${u.name}`,
@@ -3605,14 +3614,14 @@ function startFlashcard(deckId) {
   if (deckNameEl) deckNameEl.textContent = deckName;
 
   // 新增/管理按鈕顯示規則：
-  // 會考2000 = 固定教材僅供瀏覽（兩者皆隱藏）；不熟卡組 = 自動收錄（隱藏管理）
+  // 會考2000／每日單字卡組 = 固定教材僅供瀏覽（兩者皆隱藏）；不熟卡組 = 自動收錄（隱藏管理）
   const addBtn = document.querySelector('.fc-records-add-btn');
   if (addBtn) {
-    addBtn.style.display = (deckId === 'cap2000') ? 'none' : '';
+    addBtn.style.display = (['cap2000', 'daily'].includes(deckId)) ? 'none' : '';
   }
   const manageBtn = document.getElementById('fcManageBtn');
   if (manageBtn) {
-    manageBtn.style.display = ['cap2000', 'weak'].includes(deckId) ? 'none' : '';
+    manageBtn.style.display = ['cap2000', 'weak', 'daily'].includes(deckId) ? 'none' : '';
   }
 
   // 切換卡組時關閉殘留的管理面板，避免跨卡組誤操作
@@ -5115,7 +5124,7 @@ async function moveSelectedWords(targetDeckId, targetDeckName) {
   const sourceDeckId = fcCurrentDeckId;
 
   // 內置卡組（cap2000, weak）無法轉移 - 保持唯讀
-  if (['cap2000', 'weak'].includes(sourceDeckId)) {
+  if (['cap2000', 'weak', 'daily'].includes(sourceDeckId)) {
     showToast('❌ 內置卡組無法轉移');
     return;
   }
@@ -5129,8 +5138,8 @@ async function moveSelectedWords(targetDeckId, targetDeckName) {
   showToast('⏳ 轉移中...');
 
   try {
-    const isSourceCustom = !['cap2000', 'weak'].includes(sourceDeckId);
-    const isTargetCustom = !['cap2000', 'weak'].includes(targetDeckId);
+    const isSourceCustom = !['cap2000', 'weak', 'daily'].includes(sourceDeckId);
+    const isTargetCustom = !['cap2000', 'weak', 'daily'].includes(targetDeckId);
 
     // 無法轉移到內置卡組
     if (!isTargetCustom) {
@@ -5262,7 +5271,7 @@ async function deleteSelectedWords() {
   }
 
   // 內置卡組（cap2000, weak）無法刪除 - 保持唯讀
-  if (['cap2000', 'weak'].includes(fcCurrentDeckId)) {
+  if (['cap2000', 'weak', 'daily'].includes(fcCurrentDeckId)) {
     showToast('❌ 內置卡組無法修改');
     return;
   }
@@ -5282,7 +5291,7 @@ async function deleteSelectedWords() {
   showToast('⏳ 刪除中...');
 
   try {
-    const isCustomDeck = !['cap2000', 'weak'].includes(deckId);
+    const isCustomDeck = !['cap2000', 'weak', 'daily'].includes(deckId);
 
       // 自定義卡組：調用後端 API 刪除
       if (isCustomDeck) {
@@ -5580,7 +5589,7 @@ async function submitAddWord() {
 
     if (result.success) {
       // ===== 單字數量限制：每個卡組最多 2500 個 =====
-      const isCustomDeck = !['cap2000', 'weak'].includes(addWordState.currentDeckId);
+      const isCustomDeck = !['cap2000', 'weak', 'daily'].includes(addWordState.currentDeckId);
       const deck = customDecks.find(d => d.id === addWordState.currentDeckId) ||
                    BUILTIN_DECKS.find(d => d.id === addWordState.currentDeckId);
 
@@ -5746,6 +5755,166 @@ function updateHomeScreen() {
   // 對戰入口三區塊
   renderDeployedChar();
   renderLeaderboard();
+  renderDailyDeckCard();
+}
+
+// ══════════════════════════════════════════════════════════════
+// 首頁：每日單字卡組（依「每日目標」字數從所選卡組隨機抽字，跨日或換來源重抽）
+// ══════════════════════════════════════════════════════════════
+const LS_DAILY_DECK = 'voca_daily_deck'; // { date, deckId, words: [word,...] }
+
+function _dailyDeckAllDecks() {
+  const builtin = (typeof BUILTIN_DECKS !== 'undefined') ? BUILTIN_DECKS : [];
+  const custom = (typeof customDecks !== 'undefined') ? customDecks : [];
+  return [...builtin, ...custom];
+}
+
+function _dailyDeckFindById(id) {
+  return _dailyDeckAllDecks().find(d => d.id === id) || null;
+}
+
+// 相容 BUILTIN_DECKS（getWords()）跟自訂卡組（wordIds／words）兩種格式
+function _dailyDeckGetWords(deck) {
+  if (!deck) return [];
+  if (typeof deck.getWords === 'function') return deck.getWords();
+  if (Array.isArray(deck.words)) return deck.words;
+  if (Array.isArray(deck.wordIds) && typeof WORDS !== 'undefined') {
+    return WORDS.filter(w => deck.wordIds.includes(w.word));
+  }
+  return [];
+}
+
+function _dailyDeckSample(words, n) {
+  const arr = [...words];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr.slice(0, Math.min(n, arr.length));
+}
+
+function _dailyDeckLoad() {
+  try { return JSON.parse(localStorage.getItem(LS_DAILY_DECK) || 'null'); } catch { return null; }
+}
+function _dailyDeckSave(state) {
+  localStorage.setItem(LS_DAILY_DECK, JSON.stringify(state));
+}
+
+// 確保今天的每日單字卡組是最新的：跨日、換卡組來源、或第一次使用都會重抽
+function _dailyDeckEnsure(forceDeckId) {
+  const today = new Date().toISOString().slice(0, 10);
+  const dailyGoal = (typeof _loadSettingsData === 'function' && _loadSettingsData().dailyGoal) || 20;
+  let state = _dailyDeckLoad();
+  const deckId = forceDeckId || (state && state.deckId) || 'cap2000';
+  const needsRefresh = !state || state.date !== today || state.deckId !== deckId || !Array.isArray(state.words);
+
+  if (needsRefresh) {
+    const deck = _dailyDeckFindById(deckId);
+    const pool = _dailyDeckGetWords(deck);
+    const sampled = _dailyDeckSample(pool, dailyGoal).map(w => w.word);
+    state = { date: today, deckId, words: sampled };
+    _dailyDeckSave(state);
+  }
+  return state;
+}
+
+// 首頁鑲嵌單字卡的目前狀態（跟閱覽室的完整版 flashcard 各自獨立）
+let _hmDailyWords = [];
+let _hmDailyIdx = 0;
+let _hmDailyFlipped = false;
+const LS_DAILY_FRONT_LANG = 'voca_daily_front_lang'; // 'en' 或 'zh'，記住使用者偏好正面語言
+
+function _hmDailyFrontLang() {
+  try { return localStorage.getItem(LS_DAILY_FRONT_LANG) === 'zh' ? 'zh' : 'en'; } catch { return 'en'; }
+}
+
+// 迴轉按鈕：切換正面要顯示英文還是中文，切完立即回到正面重新顯示
+function toggleDailyCardLang() {
+  const next = _hmDailyFrontLang() === 'en' ? 'zh' : 'en';
+  try { localStorage.setItem(LS_DAILY_FRONT_LANG, next); } catch { /* ignore */ }
+  _hmDailyFlipped = false;
+  _hmRenderDailyFace();
+  showToast(next === 'zh' ? '✓ 正面改為中文' : '✓ 正面改為英文');
+}
+
+function renderDailyDeckCard() {
+  const flipEl = document.getElementById('hmDailyFlip');
+  if (!flipEl) return;
+  const state = _dailyDeckEnsure();
+  const deck = _dailyDeckFindById(state.deckId);
+  _hmDailyWords = (typeof WORDS !== 'undefined') ? WORDS.filter(w => state.words.includes(w.word)) : [];
+  if (_hmDailyIdx >= _hmDailyWords.length) _hmDailyIdx = 0;
+  _hmDailyFlipped = false;
+
+  const sourceEl = document.getElementById('hmDailyDeckSource');
+  if (sourceEl) sourceEl.textContent = deck ? deck.name : '未知卡組';
+  _hmRenderDailyFace();
+}
+
+function _hmRenderDailyFace() {
+  const countEl = document.getElementById('hmDailyDeckCount');
+  const front = document.getElementById('hmDailyFront');
+  const back = document.getElementById('hmDailyBack');
+  const flipEl = document.getElementById('hmDailyFlip');
+  if (!front || !back) return;
+
+  const w = _hmDailyWords[_hmDailyIdx];
+  if (countEl) countEl.textContent = _hmDailyWords.length ? `${_hmDailyIdx + 1}/${_hmDailyWords.length}` : '0/0';
+
+  const en = w ? w.word : '尚無單字';
+  const zh = w ? (w.definition_zh || w.def || w.definition || '（尚無中文定義）') : '';
+  const frontIsEn = _hmDailyFrontLang() === 'en';
+  front.textContent = frontIsEn ? en : zh;
+  back.textContent = frontIsEn ? zh : en;
+  if (flipEl) flipEl.classList.toggle('flipped', _hmDailyFlipped);
+}
+
+// 點卡片本體：翻面（英文 ↔ 中文）
+function flipHomeDailyCard() {
+  if (!_hmDailyWords.length) return;
+  _hmDailyFlipped = !_hmDailyFlipped;
+  _hmRenderDailyFace();
+}
+
+// 點左右箭頭：換下一/上一個字，並翻回正面
+function navHomeDailyCard(dir) {
+  if (!_hmDailyWords.length) return;
+  _hmDailyIdx = (_hmDailyIdx + dir + _hmDailyWords.length) % _hmDailyWords.length;
+  _hmDailyFlipped = false;
+  _hmRenderDailyFace();
+}
+
+// ── 選擇單字卡組（每日卡組的來源）──
+function openDailyDeckPicker() {
+  const decks = _dailyDeckAllDecks().filter(d => _dailyDeckGetWords(d).length > 0);
+  const state = _dailyDeckLoad();
+  const currentId = state ? state.deckId : 'cap2000';
+  const overlay = document.createElement('div');
+  overlay.id = 'dailyDeckPickerOverlay';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px';
+  overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
+  const rows = decks.map(d => `
+    <button onclick="chooseDailyDeck('${d.id}')" style="width:100%;display:flex;align-items:center;gap:10px;padding:12px;background:${d.id === currentId ? 'rgba(245,146,30,.12)' : 'var(--nav)'};border:2px solid ${d.id === currentId ? 'var(--orange)' : 'var(--line2)'};border-radius:12px;margin-bottom:8px;cursor:pointer;text-align:left;font-family:'Nunito',sans-serif">
+      <span style="font-size:20px">${d.emoji || '📘'}</span>
+      <span style="flex:1;font-weight:700;font-size:14px;color:var(--ink)">${escHtml(d.name)}</span>
+      ${d.id === currentId ? '<span style="color:var(--orange2);font-weight:900">✓</span>' : ''}
+    </button>`).join('');
+  overlay.innerHTML = `
+    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:18px;padding:22px 20px;width:100%;max-width:340px;max-height:70vh;overflow-y:auto;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
+      <button onclick="document.getElementById('dailyDeckPickerOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
+      <div style="font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--ink);margin-bottom:14px">選擇單字卡組</div>
+      ${rows}
+    </div>`;
+  document.body.appendChild(overlay);
+}
+
+function chooseDailyDeck(deckId) {
+  _dailyDeckEnsure(deckId);
+  document.getElementById('dailyDeckPickerOverlay')?.remove();
+  _hmDailyIdx = 0;
+  renderDailyDeckCard();
+  const deck = _dailyDeckFindById(deckId);
+  showToast(`✓ 每日單字卡組已切換為「${deck ? deck.name : deckId}」`);
 }
 
 // ── 首頁：出戰角色欄 ──

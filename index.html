@@ -217,21 +217,44 @@
       <div id="aFai"></div><div id="fFai"></div>
     </div>
 
-    <!-- 對戰入口：角色（上，整列）/ 排行榜（左下）/ 切換模式＋開始遊戲（右下） -->
+    <!-- 對戰入口 2x2 格：左上出戰角色／右上排行榜／左下每日單字／右下切換模式+開始遊戲 -->
     <div class="hm-battle-zone">
-      <!-- 角色（出戰中的角色，點擊進收藏更換） -->
-      <button class="hm-char-panel" id="hmCharPanel" onclick="goScreen('decks')">
-        <div class="hm-char-label">出戰角色</div>
-        <div class="hm-char-body" id="hmCharBody"><!-- renderDeployedChar() 填入 --></div>
-      </button>
+      <div class="hm-grid">
+        <!-- 左上：角色（出戰中的角色，點擊進收藏更換） -->
+        <button class="hm-char-panel" id="hmCharPanel" onclick="goScreen('decks')">
+          <div class="hm-char-label">出戰角色</div>
+          <div class="hm-char-body" id="hmCharBody"><!-- renderDeployedChar() 填入 --></div>
+        </button>
 
-      <!-- 下排：排行榜（左）+ 切換模式／開始遊戲（右） -->
-      <div class="hm-battle-lower">
+        <!-- 右上：排行榜 -->
         <div class="hm-board-card">
           <div class="hm-board-head">🏆 排行榜</div>
           <div class="hm-board-list" id="hmBoardList"><!-- renderLeaderboard() 填入 --></div>
         </div>
-        <div class="hm-battle-actions">
+
+        <!-- 左下：每日單字（鑲嵌在首頁的簡易單字卡，正面英文/背面中文，可翻頁） -->
+        <div class="hm-daily-deck-card">
+          <div class="hm-dd-head">
+            <span class="hm-dd-title">📚 每日單字</span>
+            <span class="hm-dd-count" id="hmDailyDeckCount">0/0</span>
+            <button class="hm-dd-picker-btn" onclick="event.stopPropagation();toggleDailyCardLang()" title="切換正面語言">🔄</button>
+            <button class="hm-dd-picker-btn" onclick="event.stopPropagation();openDailyDeckPicker()" title="選擇單字卡組">🔀</button>
+          </div>
+          <div class="hm-dd-flip" id="hmDailyFlip" onclick="flipHomeDailyCard()">
+            <div class="hm-dd-inner">
+              <div class="hm-dd-face hm-dd-front" id="hmDailyFront">尚無單字</div>
+              <div class="hm-dd-face hm-dd-back" id="hmDailyBack"></div>
+            </div>
+          </div>
+          <div class="hm-dd-nav">
+            <button class="hm-dd-nav-btn" onclick="event.stopPropagation();navHomeDailyCard(-1)">◀</button>
+            <span class="hm-dd-source" id="hmDailyDeckSource">會考總複習</span>
+            <button class="hm-dd-nav-btn" onclick="event.stopPropagation();navHomeDailyCard(1)">▶</button>
+          </div>
+        </div>
+
+        <!-- 右下：切換模式／開始遊戲 -->
+        <div class="hm-side-col">
           <button class="hm-mode-btn" onclick="showToast('敬請期待，之後會有更多小遊戲模式！')">
             <span class="hm-mode-txt">切換模式</span>
           </button>
