@@ -80,6 +80,11 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 ════════════════════════════════ */
 #home{background:var(--bg)}
 
+/* 首頁內容（header/對戰入口/今日任務）獨立捲動，.bnav 放在外面固定釘在畫面最下面，
+   不管內容實際多高（不同裝置/瀏覽器視窗高度計算不準）都不會被切掉、永遠看得到。 */
+.hm-scroll-area{flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;-webkit-overflow-scrolling:touch}
+.hm-scroll-area::-webkit-scrollbar{width:0}
+
 .home-header{padding:26px 20px 34px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;background:var(--header);border-bottom:1.5px solid var(--line2)}
 .hm-header-left{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
 .hm-profile-btn{background:var(--nav);border:1.5px solid var(--line2);border-radius:20px;color:var(--ink2);font-family:'Nunito',sans-serif;font-size:12px;font-weight:800;padding:4px 11px;cursor:pointer;transition:border-color .15s,color .15s}
