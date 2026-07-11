@@ -1556,26 +1556,12 @@ function gsatSubmit(auto) {
   _gsatMarkExamDone();
 }
 
-// 寫完全部歷屆會考（2023~2026 閱讀+聽力，不含模擬試題）解鎖角色「鬆餅」
-const GSAT_WAFFLE_UNLOCK_KEY = 'voca_gsat_done';
+// 完成一篇歷屆會考試題且正確率達 70% 以上解鎖角色「鬆餅」
 function _gsatMarkExamDone() {
-  if (!gsatExam) return;
-  const m = /^gsat(\d{4})(\w+)$/.exec(gsatExam.idprefix || '');
-  if (!m) return;
-  const key = `${m[1]}-${m[2]}`;
-
-  let done = [];
-  try { done = JSON.parse(localStorage.getItem(GSAT_WAFFLE_UNLOCK_KEY) || '[]'); } catch { /* ignore */ }
-  if (!done.includes(key)) {
-    done.push(key);
-    localStorage.setItem(GSAT_WAFFLE_UNLOCK_KEY, JSON.stringify(done));
-  }
-
-  if (typeof GSAT_EXAMS === 'undefined' || typeof addOwnedChar !== 'function') return;
-  const allPapers = GSAT_EXAMS.filter(e => !e.sim);
-  const allDone = allPapers.every(e => done.includes(`${e.year}-${e.type}`));
-  if (allDone && addOwnedChar('waffle')) {
-    showToast('🧇 恭喜寫完全部歷屆會考試題！獲得角色「鬆餅」！', 4000);
+  if (!gsatExam || !gsatExam.total || typeof addOwnedChar !== 'function') return;
+  const pct = gsatExam.correct / gsatExam.total;
+  if (pct >= 0.7 && addOwnedChar('waffle')) {
+    showToast('🧇 恭喜這份試題正確率達到 70% 以上！獲得角色「鬆餅」！', 4000);
   }
 }
 
@@ -5841,7 +5827,7 @@ function renderCharCollection() {
     const isDeployed = ch.id === deployedId;
     return `
       <button class="coll-card rarity-${ch.rarity}${isOwned ? '' : ' locked'}${isDeployed ? ' deployed' : ''}"
-        onclick="${isOwned ? `openCharDetail('${ch.id}')` : ''}">
+        onclick="openCharDetail('${ch.id}')">
         ${isDeployed ? '<span class="coll-deployed-tag">出戰中</span>' : ''}
         <div class="coll-card-imgwrap">
           <img class="coll-card-img" src="${ch.img}" alt="${escHtml(ch.name)}">
@@ -5856,19 +5842,32 @@ function renderCharCollection() {
 function openCharDetail(id) {
   const ch = TETRIS_CHARACTERS[id];
   if (!ch) return;
+  const isOwned = getOwnedChars().includes(id);
   const isDeployed = id === getDeployedCharId();
   const overlay = document.createElement('div');
   overlay.id = 'charDetailOverlay';
   overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px';
   overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
+
+  const footer = isOwned
+    ? `<button onclick="deployChar('${ch.id}')" ${isDeployed ? 'disabled' : ''}
+        style="width:100%;padding:14px;border:none;border-radius:12px;font-family:var(--font-display);font-weight:900;font-size:16px;cursor:${isDeployed ? 'default' : 'pointer'};color:#fff;background:${isDeployed ? 'var(--ink3)' : 'var(--red)'};box-shadow:${isDeployed ? 'none' : '0 4px 0 var(--red2)'}">
+        ${isDeployed ? '✓ 出戰中' : '出戰'}
+      </button>`
+    : `<div style="background:rgba(122,92,67,.1);border:1.5px dashed var(--line2);border-radius:12px;padding:12px;text-align:center">
+        <div style="font-size:12px;font-weight:800;color:var(--ink3);margin-bottom:4px">🔒 如何獲得</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.5">${escHtml(ch.acquireHint || '尚未開放取得方式')}</div>
+      </div>`;
+
   overlay.innerHTML = `
     <div style="background:var(--card);border:2.5px solid var(--line);border-radius:18px;padding:22px 20px;width:100%;max-width:340px;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
       <button onclick="document.getElementById('charDetailOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
       <div style="text-align:center;margin-bottom:12px">
-        <img src="${ch.img}" alt="${escHtml(ch.name)}" style="width:120px;height:120px;object-fit:contain;filter:drop-shadow(0 5px 6px rgba(75,56,42,.22))">
+        <img src="${ch.img}" alt="${escHtml(ch.name)}" style="width:120px;height:120px;object-fit:contain;filter:drop-shadow(0 5px 6px rgba(75,56,42,.22))${isOwned ? '' : ';filter:grayscale(.85) drop-shadow(0 5px 6px rgba(75,56,42,.22))'}">
         <div style="display:flex;align-items:baseline;justify-content:center;gap:6px;margin-top:4px">
           <span style="font-family:var(--font-display);font-weight:900;font-size:20px;color:var(--white)">${escHtml(ch.name)}</span>
           ${ch.nameEn ? `<span style="font-size:13px;font-weight:700;color:var(--orange2);font-style:italic">${escHtml(ch.nameEn)}</span>` : ''}
+          ${isOwned ? '' : '<span style="font-size:13px">🔒</span>'}
         </div>
         <div style="font-size:12px;color:var(--gray);margin-top:2px">${RARITY_LABEL[ch.rarity] || ''}</div>
       </div>
@@ -5877,10 +5876,7 @@ function openCharDetail(id) {
         <div style="font-weight:900;font-size:14px;color:var(--orange2);margin-bottom:4px">${ch.skill.icon} ${escHtml(ch.skill.name)}</div>
         <div style="font-size:12px;color:var(--ink2);line-height:1.6">${escHtml(ch.skill.desc)}</div>
       </div>
-      <button onclick="deployChar('${ch.id}')" ${isDeployed ? 'disabled' : ''}
-        style="width:100%;padding:14px;border:none;border-radius:12px;font-family:var(--font-display);font-weight:900;font-size:16px;cursor:${isDeployed ? 'default' : 'pointer'};color:#fff;background:${isDeployed ? 'var(--ink3)' : 'var(--red)'};box-shadow:${isDeployed ? 'none' : '0 4px 0 var(--red2)'}">
-        ${isDeployed ? '✓ 出戰中' : '出戰'}
-      </button>
+      ${footer}
     </div>`;
   document.body.appendChild(overlay);
 }
@@ -5908,7 +5904,7 @@ function renderShop() {
     if (!ch) return '';
     return `<div class="shop-pool-thumb rarity-${ch.rarity}">
       <img src="${ch.img}" alt="${escHtml(ch.name)}">
-      <span class="shop-pool-tier">${entry.tier}</span>
+      <span class="shop-pool-tier">${entry.tier} ${(entry.rate*100).toFixed(0)}%</span>
     </div>`;
   }).join('');
 }
@@ -5943,11 +5939,19 @@ function openGachaRates() {
   overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px';
   overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
   const rows = [...GACHA_POOL.entries, GACHA_POOL.consolation].map(_gachaEntryRow).join('');
+  const pity = typeof getGachaPity === 'function' ? getGachaPity() : { sinceLegendary: 0, sinceMythicPlus: 0 };
   overlay.innerHTML = `
     <div style="background:var(--card);border:2.5px solid var(--line);border-radius:18px;padding:22px 20px;width:100%;max-width:340px;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
       <button onclick="document.getElementById('gachaRateOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
       <div style="font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--ink);margin-bottom:12px">常駐卡池機率</div>
       ${rows}
+      <div style="margin-top:14px;background:rgba(240,180,41,.12);border:1.5px solid rgba(240,180,41,.35);border-radius:12px;padding:12px">
+        <div style="font-weight:800;font-size:12px;color:var(--ink);margin-bottom:6px">🛡️ 保底機制</div>
+        <div style="font-size:12px;color:var(--ink2);line-height:1.7">
+          ${GACHA_POOL.pityMythicPlus} 抽內必中神話以上（目前 ${pity.sinceMythicPlus}/${GACHA_POOL.pityMythicPlus}）<br>
+          ${GACHA_POOL.pityLegendary} 抽內必中傳奇（目前 ${pity.sinceLegendary}/${GACHA_POOL.pityLegendary}）
+        </div>
+      </div>
     </div>`;
   document.body.appendChild(overlay);
 }
@@ -6002,15 +6006,23 @@ function _gachaGlowClass(r) {
   return 'glow-none';
 }
 
-// 抽卡卡片要點兩次才會揭曉：第一次點擊亮出對應稀有度的光環，第二次點擊才翻牌
+// 依稀有度決定光環音效對應的 rarity key（跟 _gachaGlowClass 的分類一致）
+function _gachaRarityKey(r) {
+  if (r.isConsolation || !r.charId) return null;
+  return TETRIS_CHARACTERS[r.charId]?.rarity || null;
+}
+
+// 抽卡卡片要點兩次才會揭曉：第一次點擊亮出對應稀有度的光環（+音效），第二次點擊才翻牌（+音效）
 function gachaCardClick(el) {
   const stage = el.dataset.stage;
   if (stage === '0') {
     el.dataset.stage = '1';
     el.classList.add('glow-armed');
+    if (typeof SFX !== 'undefined') SFX.gachaGlow(el.dataset.rarity || null);
   } else if (stage === '1') {
     el.dataset.stage = '2';
     el.classList.add('flipped');
+    if (typeof SFX !== 'undefined') SFX.gachaReveal(el.dataset.isnew === '1');
   }
 }
 
@@ -6019,10 +6031,11 @@ function showGachaResults(results) {
   overlay.id = 'gachaResultOverlay';
   overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.6);z-index:9100;display:flex;align-items:center;justify-content:center;padding:16px';
   overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
+  if (typeof SFX !== 'undefined') SFX.gachaDraw();
   const cards = results.map((r, i) => `
-    <div class="gacha-flip-card ${_gachaGlowClass(r)}" style="width:176px" data-idx="${i}" data-stage="0" onclick="gachaCardClick(this)">
+    <div class="gacha-flip-card ${_gachaGlowClass(r)}" style="width:176px" data-idx="${i}" data-stage="0" data-rarity="${_gachaRarityKey(r) || ''}" data-isnew="${r.isNew ? '1' : '0'}" onclick="gachaCardClick(this)">
       <div class="gacha-flip-inner">
-        <div class="gacha-flip-front">🪄</div>
+        <div class="gacha-flip-front"><img src="public/images/app_icon.webp" alt="Vocatopia"></div>
         <div class="gacha-flip-back">${_gachaResultCardBack(r)}</div>
       </div>
     </div>`).join('');

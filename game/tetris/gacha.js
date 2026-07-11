@@ -18,7 +18,34 @@ const GACHA_POOL = {
   ],
   // 沒抽中角色時的金幣安慰獎（不產生任何角色）
   consolation: { tier: '銘謝惠顧', rate: 0.80, gold: 30 },
+  // 保底（pity）：連續多少抽沒中對應等級以上，下一抽強制觸發
+  pityLegendary: 100,  // 100 抽保底必中傳奇
+  pityMythicPlus: 50,  // 50 抽保底必中神話以上（傳奇也算數）
 };
+
+const LS_GACHA_PITY = 'voca_gacha_pity';
+
+function _gachaLoadPity() {
+  try {
+    const p = JSON.parse(localStorage.getItem(LS_GACHA_PITY) || 'null');
+    if (p && typeof p.sinceLegendary === 'number' && typeof p.sinceMythicPlus === 'number') return p;
+  } catch { /* 用預設 */ }
+  return { sinceLegendary: 0, sinceMythicPlus: 0 };
+}
+
+function _gachaSavePity(pity) {
+  localStorage.setItem(LS_GACHA_PITY, JSON.stringify(pity));
+}
+
+// 給 UI 顯示目前保底進度用
+function getGachaPity() {
+  return _gachaLoadPity();
+}
+
+function _gachaEntryRarity(entry) {
+  if (!entry || entry.isConsolation || !entry.charId) return null;
+  return TETRIS_CHARACTERS[entry.charId]?.rarity || null;
+}
 
 // 依權重隨機抽出一個卡池項目；miss 時回傳 consolation 標記
 function _gachaRollOne() {
@@ -31,14 +58,37 @@ function _gachaRollOne() {
   return { isConsolation: true, ...GACHA_POOL.consolation };
 }
 
+// 抽一次並套用保底：連續 N 抽沒中傳奇 / 神話以上，強制觸發保底
+function _gachaRollOneWithPity(pity) {
+  pity.sinceLegendary += 1;
+  pity.sinceMythicPlus += 1;
+
+  let entry = _gachaRollOne();
+  let rarity = _gachaEntryRarity(entry);
+
+  if (rarity !== 'legendary' && pity.sinceLegendary >= GACHA_POOL.pityLegendary) {
+    const forced = GACHA_POOL.entries.find(e => _gachaEntryRarity(e) === 'legendary');
+    if (forced) { entry = forced; rarity = 'legendary'; }
+  } else if (rarity !== 'legendary' && rarity !== 'mythic' && pity.sinceMythicPlus >= GACHA_POOL.pityMythicPlus) {
+    const forced = GACHA_POOL.entries.find(e => _gachaEntryRarity(e) === 'mythic');
+    if (forced) { entry = forced; rarity = 'mythic'; }
+  }
+
+  if (rarity === 'legendary') { pity.sinceLegendary = 0; pity.sinceMythicPlus = 0; }
+  else if (rarity === 'mythic') { pity.sinceMythicPlus = 0; }
+
+  return entry;
+}
+
 // 執行一次抽卡（count 次），回傳結果陣列：
 // 中獎：{ charId, tier, isNew, refund, isConsolation:false }
 // 未中獎：{ charId:null, tier, isNew:false, refund:0, isConsolation:true, gold }
-// 呼叫端負責先檢查/扣除金幣（本函式不處理金幣支出，只處理抽獎結果 + 角色持有 + 重複/安慰獎金幣）
+// 呼叫端負責先檢查/扣除金幣（本函式不處理金幣支出，只處理抽獎結果 + 角色持有 + 重複/安慰獎金幣 + 保底計數）
 function drawGacha(count) {
+  const pity = _gachaLoadPity();
   const results = [];
   for (let i = 0; i < count; i++) {
-    const entry = _gachaRollOne();
+    const entry = _gachaRollOneWithPity(pity);
     if (entry.isConsolation) {
       addGold(entry.gold);
       results.push({ charId: null, tier: entry.tier, isNew: false, refund: 0, isConsolation: true, gold: entry.gold });
@@ -49,6 +99,7 @@ function drawGacha(count) {
     if (refund > 0) addGold(refund);
     results.push({ charId: entry.charId, tier: entry.tier, isNew, refund, isConsolation: false });
   }
+  _gachaSavePity(pity);
   return results;
 }
 

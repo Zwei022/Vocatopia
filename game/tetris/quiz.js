@@ -85,6 +85,7 @@ function ttAnswerQuiz(idx) {
   clearInterval(quiz.timerInt);
 
   const correct = idx === quiz.q.answer;
+  if (typeof SFX !== 'undefined') correct ? SFX.quizCorrect() : SFX.quizWrong();
   // 揭曉
   document.querySelectorAll('.ttq-opt').forEach(btn => {
     const i = +btn.dataset.i;
@@ -125,6 +126,7 @@ function ttTriggerWordQuiz(n) {
         const canShield = ttGame.skillChar?.skill?.type === 'comboShield' && !ttGame.waffleShieldUsed;
         if (canShield) {
           ttGame.waffleShieldUsed = true;
+          if (typeof SFX !== 'undefined') SFX.skillCast();
           showToast(`${ttGame.skillChar.skill.icon} ${ttGame.skillChar.skill.name}！連勝獲得保護`);
         } else {
           ttGame.wordStreak = 0;
@@ -267,6 +269,7 @@ function ttUseSkill() {
   ttGame.skillArmed = false;
   // 在計時題中使用，需等「下一輪」計時題結束才恢復，故 +1
   ttGame.skillUsedAt = (ttGame.timedCount || 0) + 1;
+  if (typeof SFX !== 'undefined') SFX.skillCast();
   showToast(`${ttGame.skillChar.skill.icon} ${ttGame.skillChar.skill.name}！+${bonus}秒`);
   _ttUpdateSkillBtn();
 }
@@ -363,6 +366,7 @@ function ttChoosePiece(type) {
   ttClosePiecePicker();
   _ttRenderNext();
   _ttUpdateSkillBtn();
+  if (typeof SFX !== 'undefined') SFX.skillCast();
   showToast(`${ttGame.skillChar.skill.icon} 已指定下一個方塊，技能封印中`);
 }
 
@@ -375,10 +379,11 @@ function _ttCastBombPiece() {
   ttGame.skillUnsealStreak = 0;
   _ttRenderNext();
   _ttUpdateSkillBtn();
+  if (typeof SFX !== 'undefined') SFX.skillCast();
   showToast(`${ttGame.skillChar.skill.icon} 下一個方塊將變成壽司炸彈！`);
 }
 
-// 消行事件裡呼叫（game.js 的 _ttGravityStep 判斷 ev.bombed 時觸發）
+// 消行事件裡呼叫（game.js 的 _ttGravityStep 判斷 ev.bombed 時觸發，音效已在該處播放）
 function ttOnBombExplode(bombedCount) {
   const gained = 400;
   ttGame.score += gained;
@@ -393,6 +398,7 @@ function _ttCastClearBottom() {
   ttGame.skillUnsealStreak = 0;
   ttRender();
   _ttUpdateSkillBtn();
+  if (typeof SFX !== 'undefined') SFX.clearBottom();
   showTtFloat('轟！清空底部兩行', true);
   showToast(`${ttGame.skillChar.skill.icon} ${ttGame.skillChar.skill.name}！`);
 }

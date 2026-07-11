@@ -181,8 +181,14 @@ function _ttGravityStep() {
   if (!ttGame || ttGame.paused || ttGame.gameOver) return;
   const ev = ttGame.engine.tick();
   if (ev.moved && ttGame.softDropping) ttGame.score += 1; // 軟降加分
-  if (ev.bombed) { if (typeof ttOnBombExplode === 'function') ttOnBombExplode(ev.bombedCount); }
-  else if (ev.locked && ev.cleared > 0) ttOnLineClear(ev.cleared);
+  if (ev.bombed) {
+    if (typeof SFX !== 'undefined') SFX.bomb();
+    if (typeof ttOnBombExplode === 'function') ttOnBombExplode(ev.bombedCount);
+  } else if (ev.locked && ev.cleared > 0) {
+    ttOnLineClear(ev.cleared);
+  } else if (ev.locked) {
+    if (typeof SFX !== 'undefined') SFX.lock();
+  }
   if (ev.gameOver) { ttRender(); ttEndGame(); return; }
   ttRender();
 }
@@ -191,17 +197,18 @@ function _ttGravityStep() {
 function ttOnLineClear(n) {
   ttGame.lines += n;
   ttGame.score += (TT_LINE_SCORE[n] || n * 100);
+  if (typeof SFX !== 'undefined') SFX.lineClear(n);
   if (typeof ttTriggerWordQuiz === 'function') ttTriggerWordQuiz(n);
 }
 
 // ── 輸入：三按鈕 + 鍵盤（桌面測試用） ──
 function _ttMove(dir) {
   if (!ttGame || ttGame.paused || ttGame.gameOver) return;
-  if (ttGame.engine.move(dir)) ttRender();
+  if (ttGame.engine.move(dir)) { ttRender(); if (typeof SFX !== 'undefined') SFX.move(); }
 }
 function _ttRotate() {
   if (!ttGame || ttGame.paused || ttGame.gameOver) return;
-  if (ttGame.engine.rotate()) ttRender();
+  if (ttGame.engine.rotate()) { ttRender(); if (typeof SFX !== 'undefined') SFX.rotate(); }
 }
 function _ttStartSoftDrop() {
   if (!ttGame || ttGame.paused || ttGame.gameOver) return;
@@ -302,6 +309,7 @@ function ttEndGame() {
   let prevBest = 0;
   try { prevBest = parseInt(localStorage.getItem(LS_TETRIS_BEST) || '0', 10) || 0; } catch { /* ignore */ }
   const isNewBest = finalScore > prevBest;
+  if (typeof SFX !== 'undefined') isNewBest ? SFX.newRecord() : SFX.gameOver();
 
   // 上傳排行榜（未登入只存本機、不上榜）
   ttSubmitScore(finalScore);
