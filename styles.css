@@ -1645,7 +1645,18 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 
 /* 首頁中段：對戰入口 2x2 格——左上出戰角色／右上排行榜／左下每日單字／右下切換模式+開始遊戲。
    用 CSS grid 固定兩欄兩列，四格天生等寬等高，不用再手算 flex 比例。 */
-.hm-battle-zone{flex-shrink:0;height:472px;display:flex;flex-direction:column;padding:14px 20px 0;overflow:hidden}
+.hm-battle-zone{flex-shrink:0;display:flex;flex-direction:column;padding:14px 20px 0;overflow:hidden}
+
+/* 螢幕高度較矮的裝置（多數 iPhone 直向、含 Safari 工具列吃掉的空間）自動縮小版面，
+   盡量整頁裝得下不用捲動；螢幕夠高（iPad、WKWebView 拿到完整高度）則維持原尺寸。 */
+@media (max-height: 780px) {
+  .home-header{padding:14px 20px 16px}
+  .hm-subrow{padding:6px 20px 0;gap:6px}
+  .hm-battle-zone{padding:8px 20px 0}
+  .hm-grid{grid-template-rows:168px 168px;gap:10px}
+  .hm-bottom-group{margin-top:10px;margin-bottom:12px}
+  .hm-quest-card{padding:10px 14px}
+}
 .hm-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:220px 220px;gap:16px;width:100%;height:100%}
 
 /* 左上：出戰角色 */

@@ -365,7 +365,7 @@ const BUILTIN_DECKS = [
     // 跟首頁鑲嵌的每日單字卡是同一份（依每日目標字數從所選卡組隨機抽出），
     // 從這裡點進來走一般 flashcard 流程，看得到完整資訊（音標/定義/例句）
     getWords: () => (typeof _dailyDeckEnsure === 'function')
-      ? WORDS.filter(w => _dailyDeckEnsure().words.includes(w.word))
+      ? WORDS.filter(w => (_dailyDeckEnsure().word_ids || []).includes(w.id))
       : [],
   },
   ...UNIT_DECK_META.map(u => ({
@@ -4740,7 +4740,7 @@ function showSettings() {
   const sfx = document.getElementById('sfxToggle');
   const bgm = document.getElementById('bgmToggle');
   if (sfx) sfx.checked = s.sfx !== false;
-  if (bgm) bgm.checked = s.bgm === true;
+  if (bgm) bgm.checked = s.bgm !== false;
 
   // 還原 segmented controls（每日目標）
   const dailyGoal = s.dailyGoal || 20;
@@ -4808,7 +4808,7 @@ function _bgmGetAudio() {
 // 依設定值播放或暫停。瀏覽器的自動播放限制要求「使用者手勢」才能出聲，
 // 所以只在使用者主動切換開關，或稍後第一次點擊畫面時才會真的呼叫 play()。
 function _bgmSync() {
-  const enabled = (_loadSettingsData().bgm === true);
+  const enabled = (_loadSettingsData().bgm !== false);
   const audio = _bgmGetAudio();
   if (enabled) {
     audio.play().catch(() => { /* 還沒有使用者手勢，等下一次互動再試 */ });
@@ -4822,7 +4822,7 @@ function _bgmSync() {
 document.addEventListener('DOMContentLoaded', () => {
   _bgmSync();
   const resumeOnFirstGesture = () => {
-    if (_loadSettingsData().bgm === true) _bgmGetAudio().play().catch(() => {});
+    if (_loadSettingsData().bgm !== false) _bgmGetAudio().play().catch(() => {});
     document.removeEventListener('click', resumeOnFirstGesture);
     document.removeEventListener('touchstart', resumeOnFirstGesture);
   };
@@ -5803,9 +5803,10 @@ function updateHomeScreen() {
 }
 
 // ══════════════════════════════════════════════════════════════
-// 首頁：每日單字卡組（依「每日目標」字數從所選卡組隨機抽字，跨日或換來源重抽）
+// 首頁：每日單字卡組（依「每日目標」字數從所選卡組隨機抽字，跨日/換來源/目標字數變更重抽，
+// 登入帳號會同步到 Supabase profiles.daily_deck_state，同一帳號跨裝置看到一樣的內容）
 // ══════════════════════════════════════════════════════════════
-const LS_DAILY_DECK = 'voca_daily_deck'; // { date, deckId, words: [word,...] }
+const LS_DAILY_DECK = 'voca_daily_deck'; // { date, deckId, dailyGoal, word_ids: [id,...] }
 
 function _dailyDeckAllDecks() {
   const builtin = (typeof BUILTIN_DECKS !== 'undefined') ? BUILTIN_DECKS : [];
@@ -5817,14 +5818,17 @@ function _dailyDeckFindById(id) {
   return _dailyDeckAllDecks().find(d => d.id === id) || null;
 }
 
-// 相容 BUILTIN_DECKS（getWords()）跟自訂卡組（wordIds／words）兩種格式
+// 相容 BUILTIN_DECKS（getWords()）跟自訂卡組（wordIds／words）兩種格式。
+// 自訂卡組的 wordIds 存的是單字的 id（不是 word 字串），要用 w.id 比對，
+// 跟其他地方（例如 startFlashcard／moveSelectedWords）用的比對方式一致；
+// wordIds 才是權威來源，words 陣列在某些流程沒有同步更新，只當備援。
 function _dailyDeckGetWords(deck) {
   if (!deck) return [];
   if (typeof deck.getWords === 'function') return deck.getWords();
-  if (Array.isArray(deck.words)) return deck.words;
-  if (Array.isArray(deck.wordIds) && typeof WORDS !== 'undefined') {
-    return WORDS.filter(w => deck.wordIds.includes(w.word));
+  if (Array.isArray(deck.wordIds) && deck.wordIds.length && typeof WORDS !== 'undefined') {
+    return WORDS.filter(w => deck.wordIds.includes(w.id));
   }
+  if (Array.isArray(deck.words)) return deck.words;
   return [];
 }
 
@@ -5844,25 +5848,62 @@ function _dailyDeckSave(state) {
   localStorage.setItem(LS_DAILY_DECK, JSON.stringify(state));
 }
 
-// 確保今天的每日單字卡組是最新的：跨日、換卡組來源、或第一次使用都會重抽。
-// 注意：WORDS 是非同步載入的（loadWords() 分頁抓取，常常比首頁 200ms 的初次渲染還慢），
-// 如果抽的當下 WORDS 還是空的，「今天」這份就不能存進 localStorage 快取，否則會把空結果
-// 卡死一整天——只有真的抽到單字才落盤，抽空的話下次呼叫（例如 WORDS 載完後）會再重抽一次。
+// 這份快取是否還能用：日期、卡組來源、每日目標字數三者都要吻合，缺一就要重抽
+// （之前的 bug：換了每日目標字數但沒檢查，導致當天不會照新目標重抽）
+function _dailyDeckIsValid(state, today, deckId, dailyGoal) {
+  return !!(state && state.date === today && state.deckId === deckId && state.dailyGoal === dailyGoal &&
+    Array.isArray(state.word_ids) && state.word_ids.length > 0);
+}
+
+// 用 id（不是 word 字串）當唯一鍵：字庫裡有少數重複字（例如 tea/teach 各兩筆），
+// 用字串比對會一次抓到兩筆重複資料，導致抽 20 個卻顯示 21 個
+function _dailyDeckComputeFresh(deckId, dailyGoal, today) {
+  const deck = _dailyDeckFindById(deckId);
+  const pool = _dailyDeckGetWords(deck);
+  const sampled = _dailyDeckSample(pool, dailyGoal);
+  return { date: today, deckId, dailyGoal, word_ids: sampled.map(w => w.id) };
+}
+
+// 本機同步版：訪客，或是還沒等到伺服器回應前先拿來即時顯示用（不會等網路）。
+// 注意：WORDS 是非同步載入的，如果抽的當下 WORDS 還是空的，就不落盤快取，
+// 避免把空結果卡死一整天，下次呼叫（例如 WORDS 載完後）會再重抽一次。
 function _dailyDeckEnsure(forceDeckId) {
   const today = new Date().toISOString().slice(0, 10);
   const dailyGoal = (typeof _loadSettingsData === 'function' && _loadSettingsData().dailyGoal) || 20;
   let state = _dailyDeckLoad();
   const deckId = forceDeckId || (state && state.deckId) || 'cap2000';
-  const needsRefresh = !state || state.date !== today || state.deckId !== deckId || !Array.isArray(state.words) || state.words.length === 0;
 
-  if (needsRefresh) {
-    const deck = _dailyDeckFindById(deckId);
-    const pool = _dailyDeckGetWords(deck);
-    const sampled = _dailyDeckSample(pool, dailyGoal).map(w => w.word);
-    state = { date: today, deckId, words: sampled };
-    if (sampled.length > 0) _dailyDeckSave(state); // 抽到才落盤；抽空先不存，下次再試
+  if (!_dailyDeckIsValid(state, today, deckId, dailyGoal)) {
+    state = _dailyDeckComputeFresh(deckId, dailyGoal, today);
+    if (state.word_ids.length > 0) _dailyDeckSave(state);
   }
   return state;
+}
+
+// 登入帳號的跨裝置同步：先讀伺服器目前存的當天結果，日期/卡組/目標字數都吻合就直接
+// 採用（保證多裝置看到同一份）；不吻合（第一次用、換了目標字數、換裝置後第一次同步）
+// 才重新抽，並寫回伺服器讓其他裝置之後也能拿到同一份。forceDeckId 代表使用者主動換
+// 卡組來源，這種情況一律照這次選擇重抽，不能沿用伺服器舊資料。
+async function _dailyDeckSyncServer(forceDeckId) {
+  if (typeof currentUser === 'undefined' || !currentUser || typeof authClient === 'undefined') return null;
+  const today = new Date().toISOString().slice(0, 10);
+  const dailyGoal = (typeof _loadSettingsData === 'function' && _loadSettingsData().dailyGoal) || 20;
+
+  const { data, error } = await authClient.from('profiles').select('daily_deck_state').eq('id', currentUser.id).maybeSingle();
+  if (error) return null;
+  const serverState = data ? data.daily_deck_state : null;
+  const deckId = forceDeckId || (serverState && serverState.deckId) || 'cap2000';
+
+  let finalState;
+  if (!forceDeckId && _dailyDeckIsValid(serverState, today, deckId, dailyGoal)) {
+    finalState = serverState;
+  } else {
+    finalState = _dailyDeckComputeFresh(deckId, dailyGoal, today);
+    if (finalState.word_ids.length === 0) return null; // WORDS 還沒載完，先不寫回伺服器
+    await authClient.from('profiles').update({ daily_deck_state: finalState }).eq('id', currentUser.id);
+  }
+  _dailyDeckSave(finalState);
+  return finalState;
 }
 
 // 首頁鑲嵌單字卡的目前狀態（跟閱覽室的完整版 flashcard 各自獨立）
@@ -5887,9 +5928,17 @@ function toggleDailyCardLang() {
 function renderDailyDeckCard() {
   const flipEl = document.getElementById('hmDailyFlip');
   if (!flipEl) return;
-  const state = _dailyDeckEnsure();
+  // 先用本機資料立即顯示（不用等網路），登入帳號的話背景再跟伺服器同步，
+  // 有落差（例如另一台裝置已經抽過今天的份）就會補渲染成伺服器那份
+  _hmApplyDailyState(_dailyDeckEnsure());
+  if (typeof currentUser !== 'undefined' && currentUser) {
+    _dailyDeckSyncServer().then(serverState => { if (serverState) _hmApplyDailyState(serverState); });
+  }
+}
+
+function _hmApplyDailyState(state) {
   const deck = _dailyDeckFindById(state.deckId);
-  _hmDailyWords = (typeof WORDS !== 'undefined') ? WORDS.filter(w => state.words.includes(w.word)) : [];
+  _hmDailyWords = (typeof WORDS !== 'undefined') ? WORDS.filter(w => (state.word_ids || []).includes(w.id)) : [];
   if (_hmDailyIdx >= _hmDailyWords.length) _hmDailyIdx = 0;
   _hmDailyFlipped = false;
 
@@ -5955,11 +6004,13 @@ function openDailyDeckPicker() {
   document.body.appendChild(overlay);
 }
 
-function chooseDailyDeck(deckId) {
-  _dailyDeckEnsure(deckId);
+async function chooseDailyDeck(deckId) {
   document.getElementById('dailyDeckPickerOverlay')?.remove();
   _hmDailyIdx = 0;
-  renderDailyDeckCard();
+  let state = null;
+  if (typeof currentUser !== 'undefined' && currentUser) state = await _dailyDeckSyncServer(deckId);
+  if (!state) state = _dailyDeckEnsure(deckId);
+  _hmApplyDailyState(state);
   const deck = _dailyDeckFindById(deckId);
   showToast(`✓ 每日單字卡組已切換為「${deck ? deck.name : deckId}」`);
 }
