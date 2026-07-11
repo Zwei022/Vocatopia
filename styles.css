@@ -1619,8 +1619,11 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
    注意：不要用 margin-top:auto——.bnav 自己已經有 margin-top:auto 把導覽列
    貼在畫面最底部，這裡若再用 auto 會讓今日任務卡被硬擠到緊貼導覽列、沒有間距。
    改用一般的 margin-top，讓整組（角色/排行榜/開始對戰/今日任務）維持精簡大小、
-   靠上一點，剩餘空間留給 .bnav 的 auto margin 去撐開。 */
-.hm-bottom-group{margin-top:68px;display:flex;flex-direction:column;gap:8px;padding:0 20px;flex-shrink:0}
+   靠上一點，剩餘空間留給 .bnav 的 auto margin 去撐開。
+   margin-bottom 是保底間距：寬螢幕（≥640px）會觸發 .phone{height:min(100vh,900px)}
+   斷點、高度被限制在 900px，.bnav 的 auto margin 能吸收的空間變少，沒有這個
+   保底值的話今日任務卡在 iPad 等寬螢幕裝置上會跟底部導覽列幾乎貼在一起。 */
+.hm-bottom-group{margin-top:68px;margin-bottom:22px;display:flex;flex-direction:column;gap:8px;padding:0 20px;flex-shrink:0}
 .hm-quest-card{margin:0}
 
 /* ── 行動區 ─────────────────────── */
