@@ -12,6 +12,10 @@ const TT_WORD_SECONDS = 5;    // 消行快問限時
 const TT_SENT_SECONDS = 40;   // 計時題限時
 const TT_TIMED_PERIOD = 60000; // 每 60 秒出一題計時題
 
+// 消行單字題連勝加乘：連勝 N 題 → ×(1 + N*0.1)，封頂 ×2.0
+const TT_COMBO_STEP = 0.1;
+const TT_COMBO_CAP  = 2.0;
+
 function _ttEscHtml(s) {
   return String(s ?? '').replace(/[&<>"']/g, c =>
     ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -103,15 +107,32 @@ function ttAnswerQuiz(idx) {
 }
 
 // ── 消行快問（消行時觸發） ──
+// 連勝加乘只套用在答對的 +50 分上，答錯的 -30 懲罰不受倍率影響。
 function ttTriggerWordQuiz(n) {
   const q = ttMakeWordQuestion();
   if (!q) return;
   ttShowQuiz({
     q, seconds: TT_WORD_SECONDS, timed: false,
     onResolve: (correct) => {
-      ttGame.score += correct ? TT_WORD_CORRECT : TT_WORD_WRONG;
-      if (ttGame.score < 0) ttGame.score = 0;
-      showTtFloat(correct ? `+${TT_WORD_CORRECT}` : `${TT_WORD_WRONG}`, correct);
+      if (correct) {
+        ttGame.wordStreak = (ttGame.wordStreak || 0) + 1;
+        const mult = Math.min(1 + ttGame.wordStreak * TT_COMBO_STEP, TT_COMBO_CAP);
+        const gained = Math.round(TT_WORD_CORRECT * mult);
+        ttGame.score += gained;
+        showTtFloat(`+${gained}${mult > 1 ? ` ×${mult.toFixed(1)}` : ''}`, true);
+      } else {
+        // 鬆餅的暖心護盾：每局限用一次，答錯時自動觸發，保住連勝不被歸零
+        const canShield = ttGame.skillChar?.skill?.type === 'comboShield' && !ttGame.waffleShieldUsed;
+        if (canShield) {
+          ttGame.waffleShieldUsed = true;
+          showToast(`${ttGame.skillChar.skill.icon} ${ttGame.skillChar.skill.name}！連勝獲得保護`);
+        } else {
+          ttGame.wordStreak = 0;
+        }
+        ttGame.score += TT_WORD_WRONG;
+        if (ttGame.score < 0) ttGame.score = 0;
+        showTtFloat(`${TT_WORD_WRONG}`, false);
+      }
       ttRender();
     },
   });
@@ -166,25 +187,75 @@ function _ttTriggerTimedQuestion() {
         if (over) { ttRender(); ttEndGame(); return; }
       }
       _ttSkillMaybeRecharge();
+      _ttSealedSkillMaybeUnseal(correct);
       ttRender();
     },
   });
 }
 
-// ── 角色技能（飯糰人：從容一刻 = 當前題目 +10 秒） ──
-function ttInitSkill(ch) {
-  if (!ttGame) return;
-  ttGame.skillChar = ch || null;
-  ttGame.skillArmed = !!(ch && ch.skill);   // 是否可施放
-  ttGame.skillUsedAt = -1;                    // 施放時已解決的計時題數
-  ttGame.timedCount = 0;
+// 需要「用一次就封印，連續答對 N 題計時題才解封」的技能類型
+const TT_SEALED_SKILL_TYPES = ['choosePiece', 'bombPiece', 'clearBottom'];
+
+// 封印中的技能：連續答對 N 題英文選擇題（60秒計時題）才解除封印。
+// 答錯會中斷解封進度（歸零），需重新連續答對。
+function _ttSealedSkillMaybeUnseal(correct) {
+  if (!ttGame || !TT_SEALED_SKILL_TYPES.includes(ttGame.skillChar?.skill?.type) || !ttGame.skillSealed) return;
+  if (!correct) { ttGame.skillUnsealStreak = 0; _ttUpdateSkillBtn(); return; }
+
+  const need = ttGame.skillChar.skill.unsealStreak || 2;
+  ttGame.skillUnsealStreak = (ttGame.skillUnsealStreak || 0) + 1;
+  if (ttGame.skillUnsealStreak >= need) {
+    ttGame.skillSealed = false;
+    ttGame.skillUnsealStreak = 0;
+    showToast(`${ttGame.skillChar.skill.icon} ${ttGame.skillChar.skill.name}解除封印！`);
+  }
   _ttUpdateSkillBtn();
 }
 
-// 技能按鈕觸發（只能用在英文選擇題＝計時題）
+// ── 角色技能 ──
+// 五種技能類型：
+//   bonusSeconds — 飯糰/龍蝦(舊)：只能在英文選擇題（計時題）進行中手動施放，+N秒
+//   comboShield  — 鬆餅：被動技能，消行單字題答錯時自動觸發，無法手動施放
+//   choosePiece  — 可麗露：隨時可手動施放，跳出方塊表格指定下一個方塊，用後封印
+//   bombPiece    — 壽司：隨時可手動施放，下一個方塊變成壽司炸彈，鎖定時炸開 9×9 範圍，用後封印
+//   clearBottom  — 龍蝦：隨時可手動施放，直接清空棋盤最底 2 行（不管是否被鎖住），用後封印
+function ttInitSkill(ch) {
+  if (!ttGame) return;
+  ttGame.skillChar = ch || null;
+  const type = ch?.skill?.type;
+  ttGame.skillArmed = type === 'bonusSeconds';  // 是否可施放（僅 bonusSeconds 用得到）
+  ttGame.skillUsedAt = -1;                        // 施放時已解決的計時題數
+  ttGame.timedCount = 0;
+  ttGame.wordStreak = 0;                 // 消行單字題連勝計數（連勝加乘用）
+  ttGame.waffleShieldUsed = false;       // 鬆餅護盾每局限用一次
+  ttGame.skillSealed = false;            // 封印型技能是否封印中
+  ttGame.skillUnsealStreak = 0;          // 封印期間，計時題連續答對計數
+  _ttUpdateSkillBtn();
+}
+
+// 技能按鈕觸發：依技能類型分派不同行為
 function ttUseSkill() {
-  if (!ttGame || !ttGame.skillChar) return;
-  // 只能在「英文選擇題（計時題）」進行中施放
+  if (!ttGame || !ttGame.skillChar || !ttGame.skillChar.skill) return;
+  const type = ttGame.skillChar.skill.type;
+
+  if (TT_SEALED_SKILL_TYPES.includes(type)) {
+    if (ttGame.gameOver) return;
+    if (ttGame.skillSealed) {
+      const need = ttGame.skillChar.skill.unsealStreak || 2;
+      showToast(`技能封印中，需連續答對 ${need} 題英文選擇題解除（目前 ${ttGame.skillUnsealStreak || 0}/${need}）`);
+      return;
+    }
+    if (type === 'choosePiece') { ttOpenPiecePicker(); return; }
+    if (type === 'bombPiece')   { _ttCastBombPiece();  return; }
+    if (type === 'clearBottom') { _ttCastClearBottom(); return; }
+  }
+
+  if (type === 'comboShield') {
+    showToast('這是被動技能，消行單字題答錯時會自動觸發');
+    return;
+  }
+
+  // 預設：bonusSeconds（只能在英文選擇題／計時題進行中施放）
   if (!ttGame.quiz || !ttGame.quiz.active || !ttGame.quiz.timed) {
     showToast('技能只能用在英文選擇題');
     return;
@@ -200,9 +271,10 @@ function ttUseSkill() {
   _ttUpdateSkillBtn();
 }
 
-// 每次計時題結束後檢查是否該解除冷卻
+// 每次計時題結束後檢查是否該解除冷卻（僅 bonusSeconds 類型需要）
 function _ttSkillMaybeRecharge() {
   if (!ttGame || !ttGame.skillChar) return;
+  if (ttGame.skillChar.skill?.type !== 'bonusSeconds') return;
   if (!ttGame.skillArmed && (ttGame.timedCount || 0) > ttGame.skillUsedAt) {
     ttGame.skillArmed = true;
   }
@@ -213,28 +285,116 @@ function _ttSkillMaybeRecharge() {
 function _ttUpdateSkillBtn() {
   if (!ttGame) return;
   const hasSkill = !!ttGame.skillChar;
+  const type = hasSkill ? ttGame.skillChar.skill?.type : null;
   const inTimedQuiz = !!(ttGame.quiz && ttGame.quiz.active && ttGame.quiz.timed);
-  const canCast = hasSkill && inTimedQuiz && ttGame.skillArmed;
+
+  let sideDisabled = !hasSkill, sideLabel = '';
+  if (type === 'bonusSeconds') {
+    sideLabel = ttGame.skillArmed ? '就緒' : '冷卻中';
+  } else if (TT_SEALED_SKILL_TYPES.includes(type)) {
+    const need = ttGame.skillChar.skill.unsealStreak || 2;
+    sideLabel = ttGame.skillSealed ? `封印中(${ttGame.skillUnsealStreak || 0}/${need})` : '就緒';
+  } else if (type === 'comboShield') {
+    sideDisabled = true; // 被動技能，側欄按鈕不可手動點擊
+    sideLabel = ttGame.waffleShieldUsed ? '已使用' : '待機（被動）';
+  }
 
   const side = document.getElementById('ttSkill');
   if (side) {
-    side.disabled = !hasSkill;
+    side.disabled = sideDisabled;
     const cd = document.getElementById('ttSkillCd');
-    if (cd) cd.textContent = !hasSkill ? '' : (ttGame.skillArmed ? '就緒' : '冷卻中');
+    if (cd) cd.textContent = sideLabel;
   }
   const inQuizBtn = document.getElementById('ttqSkillBtn');
   if (inQuizBtn) {
+    const canCast = type === 'bonusSeconds' && inTimedQuiz && ttGame.skillArmed;
     inQuizBtn.disabled = !canCast;
     inQuizBtn.classList.toggle('armed', canCast);
   }
 }
 
+// 題目卡內的技能按鈕：只有 bonusSeconds 類型會在英文選擇題彈窗內顯示
 function _ttSkillQuizButtonHtml() {
   if (!ttGame || !ttGame.skillChar) return '';
   const ch = ttGame.skillChar;
+  if (ch.skill?.type !== 'bonusSeconds') return '';
   return `<button class="ttq-skill-btn" id="ttqSkillBtn" onclick="ttUseSkill()">
       <img src="${ch.img}" alt=""> ${ch.skill.icon} ${_ttEscHtml(ch.skill.name)} <span class="ttq-skill-plus">+${ch.skill.bonusSeconds || 10}秒</span>
     </button>`;
+}
+
+// ── 可麗露：選擇下一個方塊 ──
+function ttOpenPiecePicker() {
+  if (!ttGame || !ttGame.engine) return;
+  const el = document.getElementById('ttPiecePicker');
+  if (!el) return;
+  const tiles = TT_TYPES.map(type => {
+    const def = TT_PIECES[type];
+    const rows = def.matrix.length, cols = def.matrix[0].length;
+    let cellsHtml = '';
+    for (let r = 0; r < rows; r++)
+      for (let c = 0; c < cols; c++)
+        cellsHtml += `<div class="tt-next-cell${def.matrix[r][c] ? ' fill-' + def.color : ''}"></div>`;
+    return `<button class="ttpp-tile" onclick="ttChoosePiece('${type}')">
+      <div class="ttpp-grid" style="grid-template-columns:repeat(${cols},1fr)">${cellsHtml}</div>
+    </button>`;
+  }).join('');
+  el.innerHTML = `
+    <div class="ttpp-card">
+      <div class="ttpp-head">
+        <span class="ttpp-title">🍮 選擇下一個方塊</span>
+        <button class="ttpp-close" onclick="ttClosePiecePicker()">✕</button>
+      </div>
+      <div class="ttpp-tiles">${tiles}</div>
+    </div>`;
+  el.style.display = 'flex';
+}
+
+function ttClosePiecePicker() {
+  const el = document.getElementById('ttPiecePicker');
+  if (el) { el.style.display = 'none'; el.innerHTML = ''; }
+}
+
+function ttChoosePiece(type) {
+  if (!ttGame || !ttGame.skillChar) return;
+  ttGame.engine.setNextType(type);
+  ttGame.skillSealed = true;
+  ttGame.skillUnsealStreak = 0;
+  ttClosePiecePicker();
+  _ttRenderNext();
+  _ttUpdateSkillBtn();
+  showToast(`${ttGame.skillChar.skill.icon} 已指定下一個方塊，技能封印中`);
+}
+
+// ── 壽司：下一個方塊變成壽司炸彈（強制為單格方塊，鎖定時炸開 9×9 範圍） ──
+function _ttCastBombPiece() {
+  if (!ttGame || !ttGame.engine) return;
+  ttGame.engine.setNextType('M1');
+  ttGame.engine.markNextAsBomb();
+  ttGame.skillSealed = true;
+  ttGame.skillUnsealStreak = 0;
+  _ttRenderNext();
+  _ttUpdateSkillBtn();
+  showToast(`${ttGame.skillChar.skill.icon} 下一個方塊將變成壽司炸彈！`);
+}
+
+// 消行事件裡呼叫（game.js 的 _ttGravityStep 判斷 ev.bombed 時觸發）
+function ttOnBombExplode(bombedCount) {
+  const gained = 400;
+  ttGame.score += gained;
+  showTtFloat(`💥 炸開 ${bombedCount} 格！+${gained}`, true);
+}
+
+// ── 龍蝦：直接清空棋盤最底 2 行（不管是否被鎖住） ──
+function _ttCastClearBottom() {
+  if (!ttGame || !ttGame.engine) return;
+  ttGame.engine.clearBottomRows(2);
+  ttGame.skillSealed = true;
+  ttGame.skillUnsealStreak = 0;
+  ttRender();
+  _ttUpdateSkillBtn();
+  showTtFloat('轟！清空底部兩行', true);
+  showToast(`${ttGame.skillChar.skill.icon} ${ttGame.skillChar.skill.name}！`);
 }
 
 // ── 分數浮動提示 ──

@@ -55,8 +55,9 @@ function ttCreateBag() {
 function ttCreateEngine(cols = 8, rows = 16) {
   const board = Array.from({ length: rows }, () => Array(cols).fill(null));
   const bag = ttCreateBag();
-  let active = null;       // { type, color, matrix, row, col }
+  let active = null;       // { type, color, matrix, row, col, isBomb }
   let nextType = bag.next();
+  let pendingBomb = false; // 壽司技能：下一次 spawn() 出來的方塊要標記為炸彈
 
   function makePiece(type) {
     const def = TT_PIECES[type];
@@ -85,8 +86,23 @@ function ttCreateEngine(cols = 8, rows = 16) {
   // 生成下一個方塊；若一出生就卡住代表遊戲結束，回傳 false
   function spawn() {
     active = makePiece(nextType);
+    if (pendingBomb) {
+      active.isBomb = true;
+      active.color = 'bomb'; // 渲染用特殊顏色，跟同形狀的一般方塊做出區別
+      pendingBomb = false;
+    }
     nextType = bag.next();
     return !collides(active);
+  }
+
+  // 指定「下一個」方塊（可麗露/壽司技能用），直接覆蓋 7-bag 原本排定的結果
+  function setNextType(type) {
+    if (TT_PIECES[type]) nextType = type;
+  }
+
+  // 標記下一次 spawn() 的方塊為壽司炸彈（壽司技能用）
+  function markNextAsBomb() {
+    pendingBomb = true;
   }
 
   function move(offCol) {
@@ -136,21 +152,54 @@ function ttCreateEngine(cols = 8, rows = 16) {
     return cleared;
   }
 
-  // 重力一格：能降就降；不能降就鎖定+消行+生成新方塊
-  // 回傳 { moved, locked, cleared, gameOver }
+  // 壽司炸彈爆炸：以方塊鎖定位置為中心炸開 9×9 範圍（超出棋盤邊界的部分自動裁切）。
+  // 範圍內不論是否為一般方塊或懲罰灰色列都會被清除，不像 clearLines() 只認整列填滿。
+  // 回傳實際被清掉的格數（給計分用）。
+  function explodeBomb() {
+    const midRow = active.row + Math.floor(active.matrix.length / 2);
+    const midCol = active.col + Math.floor(active.matrix[0].length / 2);
+    let count = 0;
+    for (let r = midRow - 4; r <= midRow + 4; r++) {
+      if (r < 0 || r >= rows) continue;
+      for (let c = midCol - 4; c <= midCol + 4; c++) {
+        if (c < 0 || c >= cols) continue;
+        if (board[r][c]) count++;
+        board[r][c] = null;
+      }
+    }
+    active = null;
+    return count;
+  }
+
+  // 龍蝦技能：無條件清空最底 n 行（不論是否已鎖住或為懲罰灰色列），
+  // 上方內容整體下移對齊，最上方補齊空白列（跟 clearLines 的位移方式一致）。
+  function clearBottomRows(n) {
+    for (let i = 0; i < n; i++) {
+      board.splice(rows - 1, 1);
+      board.unshift(Array(cols).fill(null));
+    }
+  }
+
+  // 重力一格：能降就降；不能降就鎖定（或炸彈爆炸）+消行+生成新方塊
+  // 回傳 { moved, locked, cleared, gameOver, bombed, bombedCount }
   function tick() {
     if (!active) {
       const ok = spawn();
-      return { moved: false, locked: false, cleared: 0, gameOver: !ok };
+      return { moved: false, locked: false, cleared: 0, gameOver: !ok, bombed: false };
     }
     if (!collides(active, 1, 0)) {
       active.row += 1;
-      return { moved: true, locked: false, cleared: 0, gameOver: false };
+      return { moved: true, locked: false, cleared: 0, gameOver: false, bombed: false };
+    }
+    if (active.isBomb) {
+      const bombedCount = explodeBomb();
+      const ok = spawn();
+      return { moved: false, locked: true, cleared: 0, gameOver: !ok, bombed: true, bombedCount };
     }
     lockPiece();
     const cleared = clearLines();
     const ok = spawn();
-    return { moved: false, locked: true, cleared, gameOver: !ok };
+    return { moved: false, locked: true, cleared, gameOver: !ok, bombed: false };
   }
 
   // 懲罰：從最底層往上鎖一整欄（灰色不可消，其實是整列填灰）；
@@ -170,7 +219,9 @@ function ttCreateEngine(cols = 8, rows = 16) {
     cols, rows, board,
     get active() { return active; },
     get nextType() { return nextType; },
-    spawn, move, rotate, tick, clearLines, addGarbageRow, collides,
+    get pendingBomb() { return pendingBomb; },
+    spawn, move, rotate, tick, clearLines, addGarbageRow, collides, setNextType,
+    markNextAsBomb, clearBottomRows,
     // 給渲染用：回傳「棋盤 + 當前落下方塊」合併後的畫面（不改動 board）
     render() {
       const view = board.map(row => [...row]);

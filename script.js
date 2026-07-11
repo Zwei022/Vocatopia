@@ -1552,6 +1552,31 @@ function gsatSubmit(auto) {
   const bb = gsatExam.bodyEl && gsatExam.bodyEl.querySelector('.gx-bottom .gsat-submit');
   if (bb) { bb.textContent = `已交卷（答對 ${correct} / ${gsatExam.total}）`; bb.disabled = true; }
   if (gsatExam.bodyEl) gsatExam.bodyEl.scrollTop = 0;
+
+  _gsatMarkExamDone();
+}
+
+// 寫完全部歷屆會考（2023~2026 閱讀+聽力，不含模擬試題）解鎖角色「鬆餅」
+const GSAT_WAFFLE_UNLOCK_KEY = 'voca_gsat_done';
+function _gsatMarkExamDone() {
+  if (!gsatExam) return;
+  const m = /^gsat(\d{4})(\w+)$/.exec(gsatExam.idprefix || '');
+  if (!m) return;
+  const key = `${m[1]}-${m[2]}`;
+
+  let done = [];
+  try { done = JSON.parse(localStorage.getItem(GSAT_WAFFLE_UNLOCK_KEY) || '[]'); } catch { /* ignore */ }
+  if (!done.includes(key)) {
+    done.push(key);
+    localStorage.setItem(GSAT_WAFFLE_UNLOCK_KEY, JSON.stringify(done));
+  }
+
+  if (typeof GSAT_EXAMS === 'undefined' || typeof addOwnedChar !== 'function') return;
+  const allPapers = GSAT_EXAMS.filter(e => !e.sim);
+  const allDone = allPapers.every(e => done.includes(`${e.year}-${e.type}`));
+  if (allDone && addOwnedChar('waffle')) {
+    showToast('🧇 恭喜寫完全部歷屆會考試題！獲得角色「鬆餅」！', 4000);
+  }
 }
 
 function _gsatShowScore() {
@@ -5943,12 +5968,12 @@ function doGachaDraw(count) {
 
 function _gachaResultCardBack(r) {
   if (r.isConsolation || !r.charId) {
-    return `<div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:100%">
+    return `<div style="display:flex;flex-direction:column;align-items:center;gap:6px;width:100%">
       <div class="coll-card rarity-common" style="width:100%;pointer-events:none">
-        <div class="coll-card-imgwrap" style="font-size:32px">🪙</div>
-        <div class="coll-card-name" style="font-size:11px">${escHtml(r.tier)}</div>
+        <div class="coll-card-imgwrap" style="font-size:56px">🪙</div>
+        <div class="coll-card-name" style="font-size:15px">${escHtml(r.tier)}</div>
       </div>
-      <div style="font-size:10px;font-weight:800;border-radius:8px;padding:2px 6px;background:var(--ink3);color:#fff">+${r.gold}🪙</div>
+      <div style="font-size:13px;font-weight:800;border-radius:10px;padding:3px 9px;background:var(--ink3);color:#fff">+${r.gold}🪙</div>
     </div>`;
   }
   const ch = TETRIS_CHARACTERS[r.charId];
@@ -5956,13 +5981,37 @@ function _gachaResultCardBack(r) {
   const tag = r.isNew
     ? '<span style="background:var(--red);color:#fff">新角色！</span>'
     : `<span style="background:var(--ink3);color:#fff">重複 → +${r.refund}🪙</span>`;
-  return `<div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:100%">
+  return `<div style="display:flex;flex-direction:column;align-items:center;gap:6px;width:100%">
     <div class="coll-card rarity-${ch.rarity}" style="width:100%;pointer-events:none">
       <div class="coll-card-imgwrap"><img class="coll-card-img" src="${ch.img}" alt="${escHtml(ch.name)}"></div>
-      <div class="coll-card-name" style="font-size:11px">${escHtml(ch.name)}</div>
+      <div class="coll-card-name" style="font-size:15px">${escHtml(ch.name)}</div>
     </div>
-    <div style="font-size:10px;font-weight:800;border-radius:8px;padding:2px 6px">${tag}</div>
+    <div style="font-size:13px;font-weight:800;border-radius:10px;padding:3px 9px">${tag}</div>
   </div>`;
+}
+
+// 依角色稀有度決定「第一次點擊」出現的光環顏色：
+// 銘謝惠顧黯淡無光、史詩(可麗露)大量紫光、神話(壽司)大量紅光、傳奇(龍蝦)超大量金光
+function _gachaGlowClass(r) {
+  if (r.isConsolation || !r.charId) return 'glow-none';
+  const ch = TETRIS_CHARACTERS[r.charId];
+  if (!ch) return 'glow-none';
+  if (ch.rarity === 'epic') return 'glow-epic';
+  if (ch.rarity === 'mythic') return 'glow-mythic';
+  if (ch.rarity === 'legendary') return 'glow-legendary';
+  return 'glow-none';
+}
+
+// 抽卡卡片要點兩次才會揭曉：第一次點擊亮出對應稀有度的光環，第二次點擊才翻牌
+function gachaCardClick(el) {
+  const stage = el.dataset.stage;
+  if (stage === '0') {
+    el.dataset.stage = '1';
+    el.classList.add('glow-armed');
+  } else if (stage === '1') {
+    el.dataset.stage = '2';
+    el.classList.add('flipped');
+  }
 }
 
 function showGachaResults(results) {
@@ -5971,25 +6020,20 @@ function showGachaResults(results) {
   overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.6);z-index:9100;display:flex;align-items:center;justify-content:center;padding:16px';
   overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
   const cards = results.map((r, i) => `
-    <div class="gacha-flip-card" style="width:88px" data-idx="${i}">
+    <div class="gacha-flip-card ${_gachaGlowClass(r)}" style="width:176px" data-idx="${i}" data-stage="0" onclick="gachaCardClick(this)">
       <div class="gacha-flip-inner">
         <div class="gacha-flip-front">🪄</div>
         <div class="gacha-flip-back">${_gachaResultCardBack(r)}</div>
       </div>
     </div>`).join('');
   overlay.innerHTML = `
-    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:18px;padding:22px 16px;width:100%;max-width:400px;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
+    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:18px;padding:22px 16px;width:100%;max-width:760px;max-height:85vh;overflow-y:auto;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
       <button onclick="document.getElementById('gachaResultOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
-      <div style="font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--ink);margin-bottom:14px;text-align:center">抽卡結果</div>
-      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center">${cards}</div>
+      <div style="font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--ink);margin-bottom:6px;text-align:center">抽卡結果</div>
+      <div style="font-size:12px;color:var(--ink3);margin-bottom:14px;text-align:center">點一下亮光環，再點一下揭曉結果</div>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">${cards}</div>
     </div>`;
   document.body.appendChild(overlay);
-
-  // 依序翻牌揭曉，卡片數多時間隔縮短，避免十連抽等太久
-  const stagger = results.length > 6 ? 90 : 160;
-  overlay.querySelectorAll('.gacha-flip-card').forEach((card, i) => {
-    setTimeout(() => card.classList.add('flipped'), 300 + i * stagger);
-  });
 }
 
 // 頁面載入時初始化首頁

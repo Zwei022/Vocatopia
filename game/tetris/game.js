@@ -80,6 +80,9 @@ function tetrisStart() {
 
     <!-- 題目彈層（Phase 3 使用） -->
     <div class="tt-quiz" id="ttQuiz" style="display:none"></div>
+
+    <!-- 可麗露技能：選擇下一個方塊 -->
+    <div class="tt-piece-picker" id="ttPiecePicker" style="display:none"></div>
   `;
 
   ov.style.display = 'flex';
@@ -155,7 +158,8 @@ function _ttRenderNext() {
   const el = document.getElementById('ttNext');
   const type = ttGame.engine.nextType;
   const m = TT_PIECES[type].matrix;
-  const color = TT_PIECES[type].color;
+  const isBomb = !!ttGame.engine.pendingBomb;
+  const color = isBomb ? 'bomb' : TT_PIECES[type].color;
   const rows = m.length, cols = m[0].length;
   let html = '';
   for (let r = 0; r < rows; r++)
@@ -163,6 +167,7 @@ function _ttRenderNext() {
       html += `<div class="tt-next-cell${m[r][c] ? ' fill-' + color : ''}"></div>`;
   el.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
   el.innerHTML = html;
+  el.classList.toggle('tt-next-bomb', isBomb);
 }
 
 // ── 重力 ──
@@ -176,7 +181,8 @@ function _ttGravityStep() {
   if (!ttGame || ttGame.paused || ttGame.gameOver) return;
   const ev = ttGame.engine.tick();
   if (ev.moved && ttGame.softDropping) ttGame.score += 1; // 軟降加分
-  if (ev.locked && ev.cleared > 0) ttOnLineClear(ev.cleared);
+  if (ev.bombed) { if (typeof ttOnBombExplode === 'function') ttOnBombExplode(ev.bombedCount); }
+  else if (ev.locked && ev.cleared > 0) ttOnLineClear(ev.cleared);
   if (ev.gameOver) { ttRender(); ttEndGame(); return; }
   ttRender();
 }

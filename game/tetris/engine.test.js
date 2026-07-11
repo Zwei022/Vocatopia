@@ -71,5 +71,37 @@ const e6 = ttCreateEngine(8, 16);
 for (let r = 0; r < 4; r++) for (let c = 0; c < 8; c++) e6.board[r][c] = 'i';
 ok('spawn fails when top blocked', e6.spawn() === false);
 
+// setNextType / markNextAsBomb（可麗露/壽司技能）
+const e7 = ttCreateEngine(8, 16);
+e7.setNextType('I');
+ok('setNextType overrides next piece', e7.nextType === 'I');
+e7.markNextAsBomb();
+ok('pendingBomb true after markNextAsBomb', e7.pendingBomb === true);
+e7.spawn();
+ok('spawned piece is tagged as bomb', e7.active.isBomb === true && e7.active.color === 'bomb');
+ok('pendingBomb cleared after spawn consumes it', e7.pendingBomb === false);
+ok('next spawn without marking is not a bomb', (() => { e7.setNextType('O'); e7.spawn(); return e7.active.isBomb !== true; })());
+
+// 壽司炸彈：鎖定時炸開 9x9（8 欄寬的棋盤會被裁切到邊界），範圍內方塊全部清除（含懲罰灰列）
+const e8 = ttCreateEngine(8, 16);
+for (let r = 10; r < 16; r++) for (let c = 0; c < 8; c++) e8.board[r][c] = (r === 15 ? 'g' : 'i');
+e8.setNextType('M1');
+e8.markNextAsBomb();
+e8.spawn();
+e8.active.row = 15; e8.active.col = 4; // 落在最底部中間
+let bombEv = null;
+for (let i = 0; i < 5 && !bombEv; i++) { const ev = e8.tick(); if (ev.bombed) bombEv = ev; }
+ok('bomb explosion event fired', bombEv !== null);
+ok('bomb cleared cells within 9x9 (clipped to board width)', e8.board[15].every(x => x === null) && e8.board[11].every(x => x === null));
+ok('bomb clears rows above blast radius left untouched', e8.board[10].every(x => x === 'i'));
+
+// 龍蝦清盤：無條件清空最底 n 行（即使是懲罰灰列也直接移除），上方內容整體下移對齊填補空缺
+const e9 = ttCreateEngine(8, 16);
+for (let c = 0; c < 8; c++) { e9.board[15][c] = 'g'; e9.board[14][c] = 'g'; e9.board[13][c] = 'i'; }
+e9.clearBottomRows(2);
+ok('clearBottomRows removes garbage rows (bottom becomes the shifted-down row13 content, not garbage)', e9.board[15].every(x => x === 'i'));
+ok('clearBottomRows shifts everything down by n, leaving row14 empty', e9.board[14].every(x => x === null));
+ok('clearBottomRows preserves total row count', e9.board.length === 16);
+
 console.log(`\nENGINE TESTS: ${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

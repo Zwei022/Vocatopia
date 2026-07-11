@@ -13,6 +13,7 @@ const TETRIS_CHARACTERS = {
     rarity: 'common',            // common / rare / epic / mythic / legendary（收藏卡框顏色用）
     desc: '香噴噴的海苔飯糰戰士，臨危不亂，總能為自己多爭取一點思考的時間。',
     skill: {
+      type: 'bonusSeconds',
       name: '從容一刻',
       icon: '⏱️',
       desc: '只能用在英文選擇題：施放後，當前這題 +10 秒作答時間。使用後需等下一輪英文選擇題結束才能再次施放。',
@@ -25,12 +26,12 @@ const TETRIS_CHARACTERS = {
     nameEn: 'waffle',
     img: 'public/images/characters/waffle.webp',
     rarity: 'rare',
-    desc: '格紋外皮裹著滿滿奶油蜂蜜的暖心鬆餅，圍著格紋領巾，總能溫暖地陪你多想一下。',
+    desc: '格紋外皮裹著滿滿奶油蜂蜜的暖心鬆餅，圍著格紋領巾，總能溫暖地陪你撐過一次失手。',
     skill: {
-      name: '蜂蜜暖流',
+      type: 'comboShield',
+      name: '暖心護盾',
       icon: '🧇',
-      desc: '只能用在英文選擇題：施放後，當前這題 +12 秒作答時間。使用後需等下一輪英文選擇題結束才能再次施放。',
-      bonusSeconds: 12,
+      desc: '被動技能：消行單字題答錯時自動觸發，抵擋這次連勝中斷（連勝倍率不會被重置）。每局限用 1 次。',
     },
   },
   canele: {
@@ -39,12 +40,13 @@ const TETRIS_CHARACTERS = {
     nameEn: 'canelé',
     img: 'public/images/characters/canele.webp',
     rarity: 'epic',
-    desc: '外酥內軟的貴族甜點，圍著針織圍巾、踩著毛襪，沉穩氣場總能讓人多一份從容。',
+    desc: '外酥內軟的貴族甜點，圍著針織圍巾、踩著毛襪，總能提前替下一步鋪好路。',
     skill: {
-      name: '焦糖沉思',
+      type: 'choosePiece',
+      name: '焦糖布局',
       icon: '🍮',
-      desc: '只能用在英文選擇題：施放後，當前這題 +15 秒作答時間。使用後需等下一輪英文選擇題結束才能再次施放。',
-      bonusSeconds: 15,
+      desc: '施放後可從方塊表格中點選，指定下一個出現的方塊。使用後技能封印，需連續答對 2 題英文選擇題（60秒計時題）才能解除封印再次使用。',
+      unsealStreak: 2,
     },
   },
   sushi: {
@@ -53,12 +55,13 @@ const TETRIS_CHARACTERS = {
     nameEn: 'sushi',
     img: 'public/images/characters/sushi.webp',
     rarity: 'mythic',
-    desc: '職人手捏的鮪魚握壽司，戴著櫻花毛帽，一身職人氣魄，出手總能扭轉困境。',
+    desc: '職人手捏的鮪魚握壽司，戴著櫻花毛帽，一身職人氣魄，出手就是一顆震撼彈。',
     skill: {
-      name: '職人一手',
+      type: 'bombPiece',
+      name: '壽司炸彈',
       icon: '🍣',
-      desc: '只能用在英文選擇題：施放後，當前這題 +18 秒作答時間。使用後需等下一輪英文選擇題結束才能再次施放。',
-      bonusSeconds: 18,
+      desc: '施放後，下一個方塊將變成壽司炸彈（單格特殊方塊），落地鎖定時炸開 9×9 範圍，範圍內方塊全部消除。使用後技能封印，需連續答對 2 題英文選擇題（60秒計時題）才能解除封印再次使用。',
+      unsealStreak: 2,
     },
   },
   lobster: {
@@ -67,12 +70,13 @@ const TETRIS_CHARACTERS = {
     nameEn: 'lobster',
     img: 'public/images/characters/lobster.webp',
     rarity: 'legendary',
-    desc: '披著針織毛衣、圍著毛線圍巾的宴席王者，巨螯一舉，就是全場最壓倒性的存在。',
+    desc: '披著針織毛衣、圍著毛線圍巾的宴席王者，巨螯一舉，就能把整個底盤清空。',
     skill: {
-      name: '王者巨螯',
+      type: 'clearBottom',
+      name: '王者清盤',
       icon: '🦞',
-      desc: '只能用在英文選擇題：施放後，當前這題 +20 秒作答時間。使用後需等下一輪英文選擇題結束才能再次施放。',
-      bonusSeconds: 20,
+      desc: '施放後直接清空棋盤最底 2 行，無論該行是否已被鎖住（含懲罰的灰色行）。使用後技能封印，需連續答對 3 題英文選擇題（60秒計時題）才能解除封印再次使用。',
+      unsealStreak: 3,
     },
   },
 };
