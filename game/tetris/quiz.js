@@ -117,7 +117,8 @@ function ttTriggerWordQuiz(n) {
     onResolve: (correct) => {
       if (correct) {
         ttGame.wordStreak = (ttGame.wordStreak || 0) + 1;
-        const mult = Math.min(1 + ttGame.wordStreak * TT_COMBO_STEP, TT_COMBO_CAP);
+        // 第一次答對（streak=1）倍率是 ×1（沒有加成），連續第二次才開始加乘 ×1.1、第三次 ×1.2...
+        const mult = Math.min(1 + (ttGame.wordStreak - 1) * TT_COMBO_STEP, TT_COMBO_CAP);
         const gained = Math.round(TT_WORD_CORRECT * mult);
         ttGame.score += gained;
         showTtFloat(`+${gained}${mult > 1 ? ` ×${mult.toFixed(1)}` : ''}`, true);

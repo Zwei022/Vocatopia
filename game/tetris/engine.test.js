@@ -82,7 +82,7 @@ ok('spawned piece is tagged as bomb', e7.active.isBomb === true && e7.active.col
 ok('pendingBomb cleared after spawn consumes it', e7.pendingBomb === false);
 ok('next spawn without marking is not a bomb', (() => { e7.setNextType('O'); e7.spawn(); return e7.active.isBomb !== true; })());
 
-// 壽司炸彈：鎖定時炸開 5x5（8 欄寬的棋盤寬度會被裁切到邊界），範圍內方塊全部清除（含懲罰灰列）
+// 壽司炸彈：鎖定時炸開 3x3，範圍內方塊全部清除（含懲罰灰列）
 const e8 = ttCreateEngine(8, 16);
 for (let r = 10; r < 16; r++) for (let c = 0; c < 8; c++) e8.board[r][c] = (r === 15 ? 'g' : 'i');
 e8.setNextType('M1');
@@ -92,10 +92,9 @@ e8.active.row = 15; e8.active.col = 4; // 落在最底部中間
 let bombEv = null;
 for (let i = 0; i < 5 && !bombEv; i++) { const ev = e8.tick(); if (ev.bombed) bombEv = ev; }
 ok('bomb explosion event fired', bombEv !== null);
-// 中心在 col 4，5x5 只清 col 2~6（不是整個寬度都清，8 欄寬的棋盤比 9x9 時窄，不會整排清空）
-ok('bomb cleared center columns within 5x5', e8.board[15][4] === null && e8.board[13][4] === null);
-ok('bomb left edge columns outside 5x5 untouched', e8.board[15][0] === 'g' && e8.board[15][7] === 'g');
-ok('bomb clears rows above blast radius left untouched', e8.board[12].every(x => x === 'i'));
+// 中心在 row15,col4，3x3 只清 row14~15 × col3~5
+ok('bomb cleared center cells within 3x3', e8.board[15][4] === null && e8.board[14][4] === null);
+ok('bomb left cells outside 3x3 untouched', e8.board[15][0] === 'g' && e8.board[15][7] === 'g' && e8.board[13][4] === 'i');
 
 // 龍蝦清盤：無條件清空最底 n 行（即使是懲罰灰列也直接移除），上方內容整體下移對齊填補空缺
 const e9 = ttCreateEngine(8, 16);

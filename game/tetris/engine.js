@@ -152,12 +152,10 @@ function ttCreateEngine(cols = 8, rows = 16) {
     return cleared;
   }
 
-  // 壽司炸彈爆炸：以方塊鎖定位置為中心炸開 5×5 範圍（超出棋盤邊界的部分自動裁切）。
+  // 壽司炸彈爆炸：以方塊鎖定位置為中心炸開 3×3 範圍（超出棋盤邊界的部分自動裁切）。
   // 範圍內不論是否為一般方塊或懲罰灰色列都會被清除，不像 clearLines() 只認整列填滿。
-  // 註：棋盤只有 8 欄寬、16 列高，原本設計的 9×9 相對這個窄長棋盤等於整個寬度
-  // 都會被炸光、外加炸掉超過一半高度，實際玩起來比預期誇張很多，故縮小為 5×5。
   // 回傳實際被清掉的格數（給計分用）。
-  const TT_BOMB_RADIUS = 2; // 5x5：中心 ±2
+  const TT_BOMB_RADIUS = 1; // 3x3：中心 ±1
   function explodeBomb() {
     const midRow = active.row + Math.floor(active.matrix.length / 2);
     const midCol = active.col + Math.floor(active.matrix[0].length / 2);

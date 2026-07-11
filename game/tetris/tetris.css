@@ -92,13 +92,15 @@
   color: var(--ink2); margin-bottom: 6px;
 }
 .tt-next {
-  display: grid; gap: 2px; width: 100%; max-width: 60px; margin: 0 auto;
+  display: grid; gap: 3px; width: 100%; max-width: 74px; margin: 0 auto;
   aspect-ratio: 1; place-content: center;
 }
-.tt-next-cell { width: 14px; height: 14px; border-radius: 2px; background: transparent; }
+/* 空格也給一圈淡邊框，讓方塊外形（尤其五格方塊）在小尺寸下還是看得清楚輪廓 */
+.tt-next-cell { width: 17px; height: 17px; border-radius: 3px; background: transparent; border: 1px solid rgba(122,92,67,.12); }
 .tt-next-cell[class*="fill-"] {
-  box-shadow: inset 1.5px 1.5px 0 rgba(255,255,255,.4),
-              inset -1.5px -1.5px 0 rgba(0,0,0,.18);
+  border-color: transparent;
+  box-shadow: inset 2px 2px 0 rgba(255,255,255,.45),
+              inset -2px -2px 0 rgba(0,0,0,.22);
 }
 .tt-lines { font-family: var(--font-display); font-weight: 900; font-size: 22px; color: var(--orange2); }
 
