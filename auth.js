@@ -61,6 +61,10 @@ async function initAuth() {
   if (session?.user) {
     currentUser = session.user;
     await _loadProfile();
+    // 還原已持久化的 session 時，Supabase 不一定會觸發上面監聽器的 SIGNED_IN
+    // 事件（版本差異），導致登入畫面留在最上層蓋住整個 App，使用者以為
+    // 「記住我」沒生效、被迫重新手動輸入帳密登入一次。這裡直接主動關閉。
+    closeAuthOverlay();
     return true;
   }
   return false;
