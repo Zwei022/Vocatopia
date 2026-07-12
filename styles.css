@@ -1602,13 +1602,17 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
    （dc-sub 用 white-space:nowrap）的完整寬度，導致整個 grid 比手機螢幕寬、右欄被裁掉
    （真機實測發現，桌面預覽因為視窗夠寬看不出來）。加 min-width:0 讓它能縮到 1fr 的配額內。 */
 .daily-cat-grid,.bank-cat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:12px 0;width:100%;min-width:0}
-.dcat,.bank-cat{background:var(--card);border:2px solid var(--line2);border-radius:var(--r2);padding:13px 14px;text-align:left;cursor:pointer;transition:all .15s;display:flex;flex-direction:row;align-items:center;gap:12px;min-width:0}
+.dcat,.bank-cat{background:var(--card);border:2px solid var(--line2);border-radius:var(--r2);padding:14px;text-align:left;cursor:pointer;transition:all .15s;display:flex;flex-direction:column;align-items:stretch;gap:10px;min-width:0}
 .dcat:hover,.bank-cat:hover{background:var(--nav);border-color:var(--orange);transform:translateY(-1px)}
+.bank-cat{flex-direction:row;align-items:center}
+/* 每日練習卡片：圖示+標題在上面一列，數量徽章換到下面獨立一行，
+   不用再跟標題擠同一列被壓縮（真機實測發現標題被擠到逐字換行）。 */
+.dcat-top{display:flex;flex-direction:row;align-items:center;gap:12px;min-width:0}
 .dc-ico,.bc-ico{width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:var(--orasoft);border:1.5px solid var(--orange);border-radius:10px;font-size:21px;flex-shrink:0}
 .cat-txt{display:flex;flex-direction:column;gap:2px;min-width:0}
 .dc-name,.bc-name{font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:var(--ink)}
 .dc-sub,.bc-sub{font-size:12px;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.dcat-badge{margin-left:auto;flex-shrink:0;font-family:'Nunito',sans-serif;font-size:12px;background:var(--orange);color:#fff;padding:3px 8px;border-radius:10px;font-weight:800;white-space:nowrap}
+.dcat-badge{align-self:flex-start;flex-shrink:0;font-family:'Nunito',sans-serif;font-size:12px;background:var(--orange);color:#fff;padding:3px 8px;border-radius:10px;font-weight:800;white-space:nowrap}
 .dcat-badge.done{background:var(--greensoft);color:var(--green2)}
 
 /* ════════════════════════════════
