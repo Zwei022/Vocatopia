@@ -124,25 +124,13 @@ async function _initUserAccount() {
 }
 
 function _updateHeaderUI() {
-  const pill     = document.getElementById('userPill');
-  const loginBtn = document.getElementById('loginBtn');
-  if (!pill) return;
-  if (currentProfile) {
-    const nameEl = document.getElementById('userPillName');
-    if (nameEl) { nameEl.textContent = currentProfile.username; nameEl.style.display = ''; }
-    // 連續天數/勝場已移至個人資料頁面顯示，header 不再有 #hStreak/#hWins 元素
-    const streakEl = document.getElementById('hStreak');
-    if (streakEl) streakEl.textContent = currentProfile.streak || 0;
-    const winsEl = document.getElementById('hWins');
-    if (winsEl) winsEl.textContent = currentProfile.wins || 0;
-    const goldEl = document.getElementById('hGold');
-    if (goldEl) goldEl.textContent = (currentProfile.gold || 0).toLocaleString();
-    pill.style.display = 'flex';
-    if (loginBtn) loginBtn.style.display = 'none';
-  } else {
-    pill.style.display = 'none';
-    if (loginBtn) loginBtn.style.display = '';
-  }
+  // 首頁 header 精簡後不再有 #userPill/#loginBtn，登出改放進設定面板（#settingsLogoutBtn），
+  // 登入沿用「未登入時點個人資料」既有的 showGuestProfileNotice() 流程。
+  const goldEl = document.getElementById('hGold');
+  if (goldEl) goldEl.textContent = (currentProfile?.gold || 0).toLocaleString();
+
+  const logoutBtn = document.getElementById('settingsLogoutBtn');
+  if (logoutBtn) logoutBtn.style.display = currentProfile ? '' : 'none';
 }
 
 // ── LOGIN ─────────────────────────────────────────────────────

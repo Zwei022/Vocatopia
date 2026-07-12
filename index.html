@@ -184,17 +184,13 @@
   <div id="home" class="screen active">
   <div class="hm-scroll-area">
 
-    <!-- 上方深色 header 已移除；個人資料/好友/金幣/設定/登出全部合併成單一列 -->
+    <!-- 上方深色 header 已移除；個人資料/好友/金幣/設定合併成單一列。
+         登出已移進設定面板，登入則沿用「未登入時點個人資料」既有的 showGuestProfileNotice() 流程。 -->
     <div class="hm-subrow">
       <button id="profileBtn" class="hm-profile-btn" onclick="currentProfile ? showProfile() : showGuestProfileNotice()">👤 個人資料</button>
       <button id="friendsBtn" class="hm-profile-btn" onclick="showFriendsButton()">👥 好友</button>
       <div class="hm-gold-chip">🪙 <span id="hGold">0</span></div>
       <button id="settingsBtn" class="up-logout" onclick="showSettings()" title="設定">⚙️</button>
-      <!-- userPill: auth.js 控制顯示/隱藏 -->
-      <div id="userPill" class="hm-user-row" style="display:none">
-        <button class="up-logout" onclick="logoutUser()">登出</button>
-      </div>
-      <button id="loginBtn" class="up-logout" onclick="showAuthOverlay()">登入</button>
     </div>
 
     <!-- JS 相容：updateChar() 需要這些 ID，但不顯示 -->
@@ -812,6 +808,7 @@
 
       <div class="sett-section">
         <div class="sett-label">帳號與資料</div>
+        <button id="settingsLogoutBtn" class="sett-item-btn" onclick="closeSettings();logoutUser()" style="display:none">🚪 登出</button>
         <button class="sett-item-btn sett-item-danger" onclick="confirmResetWordBank()">🗑️ 重置字庫</button>
       </div>
     </div>
