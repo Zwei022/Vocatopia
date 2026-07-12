@@ -49,6 +49,14 @@ async function initAuth() {
     return false;
   }
 
+  // 上次登入沒勾「記住我」：主動清掉持久化的 session，這次冷啟動強制回登入畫面。
+  // 一定要在 getSession() 之前執行，不然已經還原的 session 就來不及擋了。
+  if (localStorage.getItem('voca_remember_me') === '0') {
+    await authClient.auth.signOut();
+    localStorage.removeItem('voca_remember_me');
+    return false;
+  }
+
   const { data: { session } } = await authClient.auth.getSession();
   if (session?.user) {
     currentUser = session.user;
@@ -152,6 +160,11 @@ async function handleLogin(e) {
       return;
     }
 
+    // 記住我：沒勾選的話，記一個旗標，下次冷啟動 App 時 initAuth() 會主動登出，
+    // 強制回到登入畫面；勾選（預設）就維持 Supabase 原本的 localStorage session 持久化。
+    const rememberMe = document.getElementById('rememberMeCheckbox')?.checked !== false;
+    localStorage.setItem('voca_remember_me', rememberMe ? '1' : '0');
+
     currentUser = data.user;
     await _loadProfile();
     _setAuthLoading(btn, false, '登入戰場');
@@ -163,6 +176,30 @@ async function handleLogin(e) {
     console.error('[handleLogin] 例外：', err);
     _setAuthError(_friendlyAuthError(err, '登入'));
     _setAuthLoading(btn, false, '登入戰場');
+  }
+}
+
+// ── OAuth 登入（Google / Apple）──────────────────────────────
+// 需要先在 Supabase Dashboard → Authentication → Providers 啟用對應的 provider
+// 並填入 Google Cloud / Apple Developer 那邊申請到的 Client ID、Secret，
+// 否則點下去會直接收到 Supabase 回傳的「provider is not enabled」錯誤。
+async function signInWithOAuth(provider) {
+  _clearAuthError();
+  // OAuth 一律視為「記住我」，跟第三方帳號的登入狀態保持一致（沒有勾選框可以取消）
+  localStorage.setItem('voca_remember_me', '1');
+  try {
+    const { error } = await authClient.auth.signInWithOAuth({
+      provider,
+      options: { redirectTo: window.location.origin },
+    });
+    if (error) {
+      _setAuthError(_friendlyAuthError(error, provider === 'google' ? 'Google 登入' : 'Apple 登入'));
+    }
+    // 成功的話 Supabase 會導去 Google/Apple 頁面，回來後由 onAuthStateChange 的
+    // SIGNED_IN 監聽器接手（見 initAuth()），這裡不用再處理後續。
+  } catch (err) {
+    console.error('[signInWithOAuth] 例外：', err);
+    _setAuthError(_friendlyAuthError(err, '第三方登入'));
   }
 }
 
@@ -203,6 +240,9 @@ async function handleRegister(e) {
     _setAuthLoading(btn, false, '建立角色');
     return;
   }
+
+  // 新帳號預設記住登入狀態（註冊表單沒有勾選框）
+  localStorage.setItem('voca_remember_me', '1');
 
   try {
     const { data, error } = await authClient.auth.signUp({

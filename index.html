@@ -905,7 +905,11 @@
     <form id="loginForm" onsubmit="handleLogin(event)">
       <input class="auth-input" id="loginEmail" type="email" placeholder="電子信箱" required autocomplete="email">
       <input class="auth-input" id="loginPassword" type="password" placeholder="密碼" required autocomplete="current-password">
-      <div style="text-align:right;margin:-4px 0 8px">
+      <div class="auth-row-between">
+        <label class="auth-remember-row">
+          <input type="checkbox" id="rememberMeCheckbox" checked>
+          <span>記住我</span>
+        </label>
         <a class="auth-forgot-link" onclick="showForgotPassword()">忘記密碼？</a>
       </div>
       <button type="submit" class="auth-submit">登入戰場</button>
@@ -918,6 +922,15 @@
       <button type="submit" class="auth-submit">建立角色</button>
     </form>
     <div class="auth-error" id="authError"></div>
+
+    <div class="auth-divider"><span>或</span></div>
+    <button class="auth-oauth-btn auth-oauth-google" onclick="signInWithOAuth('google')">
+      <img src="/icons/google-g.svg" alt="" class="auth-oauth-icon">以 Google 繼續
+    </button>
+    <button class="auth-oauth-btn auth-oauth-apple" onclick="signInWithOAuth('apple')">
+      <img src="/icons/apple-logo.svg" alt="" class="auth-oauth-icon">以 Apple 繼續
+    </button>
+
     <button class="auth-guest" onclick="continueAsGuest()">訪客體驗（進度不儲存）</button>
   </div>
 </div>
