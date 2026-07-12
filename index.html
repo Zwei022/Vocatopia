@@ -184,29 +184,17 @@
   <div id="home" class="screen active">
   <div class="hm-scroll-area">
 
-    <!-- Header -->
-    <div class="home-header">
-      <div class="hm-header-left">
-        <div class="logo">Vocatopia</div>
-      </div>
-      <div class="hm-header-right">
-        <div class="hm-gold-chip">🪙 <span id="hGold">0</span></div>
-        <!-- userPill: auth.js 控制顯示/隱藏 -->
-        <div id="userPill" class="hm-user-row" style="display:none">
-          <span id="userPillName" class="up-name" style="display:none"></span>
-          <div class="pill">🔥 <b id="hStreak">0</b></div>
-          <div class="pill" style="display:none">⚔️ <b id="hWins">0</b>勝</div>
-          <button class="up-logout" onclick="logoutUser()">登出</button>
-        </div>
-        <button id="settingsBtn" class="up-logout" onclick="showSettings()" title="設定">⚙️</button>
-        <button id="loginBtn" class="up-logout" onclick="showAuthOverlay()">登入</button>
-      </div>
-    </div>
-
-    <!-- 個人資料 / 好友按鈕：移到深色header下方的白色區域，對齊登入按鈕 -->
+    <!-- 上方深色 header 已移除；個人資料/好友/金幣/設定/登出全部合併成單一列 -->
     <div class="hm-subrow">
       <button id="profileBtn" class="hm-profile-btn" onclick="currentProfile ? showProfile() : showGuestProfileNotice()">👤 個人資料</button>
       <button id="friendsBtn" class="hm-profile-btn" onclick="showFriendsButton()">👥 好友</button>
+      <div class="hm-gold-chip">🪙 <span id="hGold">0</span></div>
+      <button id="settingsBtn" class="up-logout" onclick="showSettings()" title="設定">⚙️</button>
+      <!-- userPill: auth.js 控制顯示/隱藏 -->
+      <div id="userPill" class="hm-user-row" style="display:none">
+        <button class="up-logout" onclick="logoutUser()">登出</button>
+      </div>
+      <button id="loginBtn" class="up-logout" onclick="showAuthOverlay()">登入</button>
     </div>
 
     <!-- JS 相容：updateChar() 需要這些 ID，但不顯示 -->

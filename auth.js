@@ -130,8 +130,11 @@ function _updateHeaderUI() {
   if (currentProfile) {
     const nameEl = document.getElementById('userPillName');
     if (nameEl) { nameEl.textContent = currentProfile.username; nameEl.style.display = ''; }
-    document.getElementById('hStreak').textContent = currentProfile.streak || 0;
-    document.getElementById('hWins').textContent   = currentProfile.wins   || 0;
+    // 連續天數/勝場已移至個人資料頁面顯示，header 不再有 #hStreak/#hWins 元素
+    const streakEl = document.getElementById('hStreak');
+    if (streakEl) streakEl.textContent = currentProfile.streak || 0;
+    const winsEl = document.getElementById('hWins');
+    if (winsEl) winsEl.textContent = currentProfile.wins || 0;
     const goldEl = document.getElementById('hGold');
     if (goldEl) goldEl.textContent = (currentProfile.gold || 0).toLocaleString();
     pill.style.display = 'flex';
