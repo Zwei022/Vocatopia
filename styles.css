@@ -355,7 +355,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .rp-badge{background:var(--orasoft);border:1.5px solid var(--orange);color:var(--orange2);font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;letter-spacing:1px;padding:4px 14px;border-radius:20px;margin-top:6px}
 
 /* daily article list */
-.daily-list{flex:1;overflow-y:auto;padding:10px 20px;display:none;flex-direction:column;gap:10px}
+.daily-list{flex:1;overflow-y:auto;overflow-x:hidden;padding:10px 20px;display:none;flex-direction:column;gap:10px}
 .daily-list.show{display:flex}
 .daily-list::-webkit-scrollbar{width:3px}
 .daily-list::-webkit-scrollbar-thumb{background:var(--line3);border-radius:2px}
@@ -1597,9 +1597,12 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .gx-pqs{display:flex;flex-direction:column;gap:16px}
 .gx-bottom{padding-bottom:34px}
 
-/* 每日練習 / 答錯題庫 / 收藏題庫：題型卡（2 欄橫式） */
-.daily-cat-grid,.bank-cat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:12px 0}
-.dcat,.bank-cat{background:var(--card);border:2px solid var(--line2);border-radius:var(--r2);padding:13px 14px;text-align:left;cursor:pointer;transition:all .15s;display:flex;flex-direction:row;align-items:center;gap:12px}
+/* 每日練習 / 答錯題庫 / 收藏題庫：題型卡（2 欄橫式）
+   .dcat 是 grid item 同時也是 row-flex 容器，預設 min-width:auto 會讓它撐開到內部文字
+   （dc-sub 用 white-space:nowrap）的完整寬度，導致整個 grid 比手機螢幕寬、右欄被裁掉
+   （真機實測發現，桌面預覽因為視窗夠寬看不出來）。加 min-width:0 讓它能縮到 1fr 的配額內。 */
+.daily-cat-grid,.bank-cat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:12px 0;width:100%;min-width:0}
+.dcat,.bank-cat{background:var(--card);border:2px solid var(--line2);border-radius:var(--r2);padding:13px 14px;text-align:left;cursor:pointer;transition:all .15s;display:flex;flex-direction:row;align-items:center;gap:12px;min-width:0}
 .dcat:hover,.bank-cat:hover{background:var(--nav);border-color:var(--orange);transform:translateY(-1px)}
 .dc-ico,.bc-ico{width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:var(--orasoft);border:1.5px solid var(--orange);border-radius:10px;font-size:21px;flex-shrink:0}
 .cat-txt{display:flex;flex-direction:column;gap:2px;min-width:0}
