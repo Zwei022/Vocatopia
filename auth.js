@@ -84,6 +84,12 @@ async function _loadProfile() {
     await _initUserAccount();
   }
 
+  // 角色收藏跨裝置同步：換裝置登入時，本機 localStorage 是空的，要用伺服器
+  // 存的收藏補回來，不然已經抽到的角色會被誤判成「未解鎖」。
+  if (currentProfile && typeof restoreOwnedCharsFromServer === 'function') {
+    restoreOwnedCharsFromServer(currentProfile.owned_chars, currentProfile.deployed_char);
+  }
+
   // 將 profile 的角色屬性覆蓋 localStorage 的早期讀取值
   if (currentProfile && typeof STATS !== 'undefined') {
     STATS.str = currentProfile.str_stat ?? STATS.str;

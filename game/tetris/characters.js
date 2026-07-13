@@ -115,6 +115,7 @@ function getDeployedChar() {
 function setDeployedChar(id) {
   if (!TETRIS_CHARACTERS[id]) return;
   localStorage.setItem(LS_DEPLOYED_CHAR, id);
+  _syncCharsToServer();
 }
 
 // 新增一名擁有的角色（抽卡/商店用）。已擁有則回傳 false，不重複加入。
@@ -124,5 +125,40 @@ function addOwnedChar(id) {
   if (owned.includes(id)) return false;
   owned.push(id);
   localStorage.setItem(LS_OWNED_CHARS, JSON.stringify(owned));
+  _syncCharsToServer();
   return true;
+}
+
+// 角色收藏（owned_chars/deployed_char）跨裝置同步：本機是即時真相來源
+// （抽卡當下先落地 localStorage，體驗不卡網路），這裡是背景把最新結果
+// 補寫回 Supabase profiles，不管成功與否都不影響已經完成的抽卡結果，
+// 純粹是「盡量同步」，失敗就算了（下次任何一次 addOwnedChar/setDeployedChar
+// 呼叫都會再試一次）。currentUser/authClient 由 auth.js 提供，角色模組
+// 本身不依賴登入狀態即可運作（訪客模式純本機）。
+function _syncCharsToServer() {
+  if (typeof currentUser === 'undefined' || !currentUser || typeof authClient === 'undefined') return;
+  authClient
+    .from('profiles')
+    .update({ owned_chars: getOwnedChars(), deployed_char: getDeployedCharId() })
+    .eq('id', currentUser.id)
+    .then(({ error }) => { if (error) console.warn('[_syncCharsToServer] 同步失敗：', error.message); });
+}
+
+// 登入時從伺服器還原角色收藏：跟本機收藏取聯集（本機可能有伺服器還
+// 沒同步到的最新抽卡結果，伺服器可能有其他裝置抽到但這台還沒有的角色），
+// 合併後寫回本機，並且如果合併後有新增內容就補寫回伺服器，確保下次在
+// 任何裝置登入都能看到完整收藏。由 auth.js 的 _loadProfile() 呼叫。
+function restoreOwnedCharsFromServer(serverOwned, serverDeployed) {
+  const local = getOwnedChars();
+  const merged = Array.from(new Set([...local, ...(Array.isArray(serverOwned) ? serverOwned : [])]));
+  const changed = merged.length !== local.length;
+  if (changed) localStorage.setItem(LS_OWNED_CHARS, JSON.stringify(merged));
+
+  // 出戰角色：伺服器有紀錄且合法就採用伺服器那份（代表使用者在其他裝置切換過）；
+  // 否則維持本機目前設定。
+  if (serverDeployed && TETRIS_CHARACTERS[serverDeployed]) {
+    localStorage.setItem(LS_DEPLOYED_CHAR, serverDeployed);
+  }
+
+  if (changed || !serverDeployed) _syncCharsToServer();
 }
