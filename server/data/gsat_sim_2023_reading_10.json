@@ -261,9 +261,9 @@
         },
         {
           "range": "28–30",
-          "passageType": "narrative",
-          "title": "A Guide Named Ray",
-          "passage": "When Jenny walked through the gate of her new middle school, the huge campus looked like a maze of unfamiliar hallways and confusing stairs. She stood frozen near the entrance, unsure which building held her homeroom. Then an older student wearing a bright yellow badge walked over and smiled at her. His name was Ray, and he explained that every new student was paired with an older \"buddy\" during the first week of school.\n\nRay walked Jenny to her classroom, pointing out the library, the nurse's office, and the shortcut behind the gym that most teachers never used. He also warned her about a strict rule at the cafeteria. Students had to return their trays within five minutes after finishing their food, or their whole class would lose points. Jenny appreciated these small but important details that no map could have shown her.\n\nOver the following weeks, Jenny sometimes felt lost or nervous about a test. When that happened, she quietly texted Ray for advice, and he always replied kindly, sharing tips from his own experience. By the end of the semester, Jenny no longer needed a guide to find her way. Still, she remembered how much calmer that first day had felt, simply because someone patient had walked beside her.\n\nThe next year, new students arrived looking just as lost as she once had. Jenny put on a yellow badge of her own, ready to return the same kindness she had once received.",
+          "passageType": "dialogue",
+          "title": "Finding My Way: A Conversation on the First Day",
+          "passage": "On Jenny's first day at her new middle school, the huge campus looked like a maze of unfamiliar hallways and confusing stairs. She stood frozen near the gate, unsure which building held her homeroom. Then an older student wearing a bright yellow badge walked over and smiled at her.\n\nRay: Hi there, you look a little lost. My name's Ray. Every new student gets paired with an older \"buddy\" during the first week, and I'm yours.\nJenny: Oh, thank goodness. I have no idea where my homeroom is.\nRay: No worries, I'll walk you there. On the way, I'll show you the library and the nurse's office, too.\nJenny: That would be great. This campus feels like a real maze.\nRay: It does at first. There's actually a shortcut behind the gym that most teachers don't even know about. I'll show you later.\nJenny: Really? That sounds useful. Is there anything else I should know?\nRay: Yes, one important rule. You must return your tray within five minutes after finishing lunch in the cafeteria, or your whole class loses points.\nJenny: Wow, only five minutes? I'll remember that.\nRay: If you ever feel nervous about a test or forget something, just text me. I'll share tips from my own experience whenever you need them.\nJenny: Thank you, Ray. I already feel much calmer.\n\nBy the end of the semester, Jenny no longer needed a guide to find her way. Still, she remembered how much calmer that first day had felt, simply because someone patient had walked beside her. The next year, when new students arrived looking just as lost as she once had, Jenny put on a yellow badge of her own, ready to return the same kindness she had once received.",
           "questions": [
             {
               "n": 28,
@@ -271,23 +271,23 @@
               "options": ["A teacher walked her to every class personally.", "An older student named Ray helped guide her around.", "Her parents stayed with her the whole day.", "The school gave her a detailed map of every hallway."],
               "answer": 1,
               "optionsZh": ["老師親自帶她到每堂課。", "一位叫Ray的學長帶著她認識環境。", "父母整天陪著她。", "學校給她一張詳細的走廊地圖。"],
-              "explanation": "文中 an older student... explained that every new student was paired with an older buddy，是Ray帶著她，故選 (B)。"
+              "explanation": "對話中 Ray 表示 every new student gets paired with an older buddy... and I'm yours，是Ray帶著她認識校園，故選 (B)。"
             },
             {
               "n": 29,
-              "stem": "What rule did Ray tell Jenny about the school cafeteria?",
-              "options": ["Students must bring their own trays from home.", "Students must return their trays within five minutes after eating.", "Students are not allowed to talk during lunch.", "Students must sit in the same seat every day."],
+              "stem": "According to Ray, what happens if a student does NOT return the tray within five minutes?",
+              "options": ["The student must clean the whole cafeteria alone.", "The student's entire class loses points.", "The student cannot eat lunch the next day.", "The student must pay a small fine."],
               "answer": 1,
-              "optionsZh": ["學生必須自己從家裡帶餐盤。", "學生用完餐須在五分鐘內歸還餐盤。", "午餐時間學生不准說話。", "學生每天必須坐同一個位子。"],
-              "explanation": "文中 students had to return their trays within five minutes after finishing their food，故選 (B)。"
+              "optionsZh": ["該學生必須獨自打掃整間餐廳。", "該學生全班會被扣分。", "該學生隔天不能吃午餐。", "該學生必須繳交小額罰款。"],
+              "explanation": "Ray 說 you must return your tray within five minutes... or your whole class loses points，故選 (B)。"
             },
             {
               "n": 30,
-              "stem": "What did Jenny do the following year?",
-              "options": ["She moved to a different school.", "She became a buddy for new students herself.", "She stopped talking to Ray completely.", "She was punished for losing points at the cafeteria."],
-              "answer": 1,
-              "optionsZh": ["她轉學到別的學校。", "她自己成為新生的引導學長姊。", "她完全不再和Ray說話。", "她因為餐廳扣分被處罰。"],
-              "explanation": "文末 Jenny put on a yellow badge of her own, ready to return the same kindness，表示她成為了引導者，故選 (B)。"
+              "stem": "According to the conversation, which of the following is NOT something Ray showed or told Jenny about?",
+              "options": ["The library and the nurse's office.", "The shortcut behind the gym.", "The cafeteria tray rule.", "The location of the school's swimming pool."],
+              "answer": 3,
+              "optionsZh": ["圖書館和保健室。", "體育館後方的捷徑。", "餐廳歸還餐盤的規定。", "學校游泳池的位置。"],
+              "explanation": "對話中 Ray 提到圖書館、保健室、體育館後方的捷徑，以及餐廳五分鐘歸還餐盤的規定，但全文完全沒有提到游泳池，故選 (D)。"
             }
           ]
         },

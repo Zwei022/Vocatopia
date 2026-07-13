@@ -269,33 +269,33 @@
         },
         {
           "range": "29–31",
-          "passageType": "narrative",
-          "title": "Making Up with Jake",
-          "passage": "Ever since a silly argument during the school trip, Sam and his best friend Jake had barely spoken to each other for two whole weeks. It all started when Jake forgot to save Sam a seat on the bus. Sam got angry and said some unkind things without thinking. Both boys were too stubborn to be the first one to apologize. They simply avoided each other at lunch and in class. Sam noticed that lunchtime alone felt strangely quiet without Jake's jokes. He began to miss their old routine of trading snacks and talking about video games. One rainy afternoon, Sam saw Jake sitting by himself outside the library. Jake looked just as lonely as Sam felt. Taking a deep breath, Sam walked over to him. He admitted that he had said things he did not really mean. Jake looked surprised at first, but then he smiled. He confessed that he had felt terrible ever since the argument too. They agreed that a bus seat was much too small a thing to lose a friendship over. By the time they walked back to class together, it felt as if nothing had ever gone wrong. From that day on, whenever they disagreed about something small, they remembered how awful those two silent weeks had felt. They chose to talk things out instead of staying angry.",
+          "passageType": "letters",
+          "title": "Making Up with Jake (書信往返)",
+          "passage": "Dear Jake,\n\nI'm really sorry about what happened on the school trip. I said some unkind things when you forgot to save me a seat on the bus, and I've regretted it ever since. Lunchtime has felt so quiet without you these past two weeks, and I miss trading snacks and talking about video games with you. I know I was too stubborn to say sorry sooner. Can we please talk soon?\n\nYour friend,\nSam\n\n---\n\nDear Sam,\n\nI got your note in my locker today, and honestly, I felt a huge relief reading it. I've been sitting alone by the library every lunch, feeling just as terrible about the whole thing. I never meant to forget your seat — I was talking to the new kid and lost track of time. I should have explained that right away instead of staying silent for two weeks. Let's meet after school tomorrow.\n\nYour friend,\nJake\n\n---\n\nDear Jake,\n\nThat sounds great. I'll wait for you outside the library at three o'clock. I already told my mom I'd probably be a little late for dinner because we have a lot of video games to catch up on! I promise not to get angry so quickly next time, even over something as small as a bus seat.\n\nYour friend,\nSam\n\n---\n\nDear Sam,\n\nDeal. I'll bring the snacks this time, and we can plan our seats on the bus for the next trip together so this never happens again. Thanks for being brave enough to write first. Real friends can say sorry even when it's hard.\n\nYour friend,\nJake",
           "questions": [
             {
               "n": 29,
-              "stem": "Why didn't Sam and Jake talk to each other for two weeks?",
-              "options": ["Jake moved to a different school.", "They had an argument and were both too stubborn to apologize.", "Their teacher told them to stay apart.", "Sam was sick and stayed home."],
+              "stem": "How did Sam apologize to Jake first?",
+              "options": ["He called Jake on the phone.", "He left a note in Jake's locker.", "He asked the teacher to talk to Jake.", "He waited for Jake outside the school gate."],
               "answer": 1,
-              "optionsZh": ["Jake 轉去別的學校。", "他們吵架後都太固執不肯先道歉。", "老師叫他們分開。", "Sam 生病待在家。"],
-              "explanation": "文中 Both boys were too stubborn to be the first one to apologize，故選 (B)。"
+              "optionsZh": ["他打電話給 Jake。", "他在 Jake 的置物櫃留了一張紙條。", "他請老師去跟 Jake 談。", "他在校門口等 Jake。"],
+              "explanation": "在 Jake 回信中提到 I got your note in my locker today，可推知 Sam 是先把信留在 Jake 的置物櫃裡，故選 (B)，須對照第二封信才能確認第一封信的傳遞方式。"
             },
             {
               "n": 30,
-              "stem": "How did Sam feel about lunchtime while he and Jake were not speaking?",
-              "options": ["He enjoyed eating lunch alone.", "He felt strangely quiet and missed Jake.", "He made many new friends at lunch.", "He forgot about Jake completely."],
+              "stem": "Why did Jake forget to save Sam a seat on the bus?",
+              "options": ["He fell asleep on the bus.", "He was talking to the new kid and lost track of time.", "He got on a different bus by mistake.", "He was still angry with Sam that morning."],
               "answer": 1,
-              "optionsZh": ["他喜歡一個人吃午餐。", "他覺得莫名安靜且想念 Jake。", "他在午餐時交了很多新朋友。", "他完全忘了 Jake。"],
-              "explanation": "文中 lunchtime alone felt strangely quiet without Jake's jokes, and he began to miss their old routine，故選 (B)。"
+              "optionsZh": ["他在公車上睡著了。", "他在跟新同學說話，忘了時間。", "他不小心搭錯了公車。", "他那天早上還在生 Sam 的氣。"],
+              "explanation": "Jake 在信中解釋 I was talking to the new kid and lost track of time，故選 (B)。"
             },
             {
               "n": 31,
-              "stem": "What did Sam and Jake learn from this experience?",
-              "options": ["It is better to talk things out than to stay angry.", "It is best to avoid making any friends.", "Riding the bus alone is safer than with friends.", "Teachers should choose seats for students."],
-              "answer": 0,
-              "optionsZh": ["有話好好說比一直生氣好。", "最好不要交朋友。", "自己搭車比跟朋友一起更安全。", "老師該替學生安排座位。"],
-              "explanation": "文末 they both remembered how awful those two silent weeks had felt, and chose to talk things out instead of staying angry，故選 (A)。"
+              "stem": "What do Sam and Jake plan to do to keep this problem from happening again?",
+              "options": ["Never ride the school bus together again.", "Ask the teacher to assign seats for everyone.", "Plan their bus seats together before the next trip.", "Stop going on any future school trips."],
+              "answer": 2,
+              "optionsZh": ["再也不一起搭校車。", "請老師幫全班安排座位。", "在下次校外教學前先一起規劃公車座位。", "以後不再參加校外教學。"],
+              "explanation": "Jake 在最後一封信中提到 we can plan our seats on the bus for the next trip together so this never happens again，故選 (C)。"
             }
           ]
         },
@@ -323,11 +323,11 @@
             },
             {
               "n": 34,
-              "stem": "According to the reading, why was the printing press so important?",
-              "options": ["It made travel between cities faster.", "It helped ideas and knowledge spread much more quickly.", "It replaced the need for schools completely.", "It made handwriting more beautiful."],
-              "answer": 1,
-              "optionsZh": ["讓城市間的交通變快。", "幫助想法與知識傳播得更快。", "完全取代了學校的需求。", "讓手寫字變得更漂亮。"],
-              "explanation": "文中提到新想法、科學發現能更快在城市與國家間流傳，且歷史學家認為這項發明對知識傳播的貢獻超越其他發明，故選 (B)。"
+              "stem": "Which of the following is NOT mentioned in the reading?",
+              "options": ["Books used to take months or even years to copy by hand.", "The printing press used small metal letters that could be arranged and reused.", "The inventor of the printing press was rewarded with a large amount of gold by the king.", "The price of books dropped low enough for ordinary families to afford them."],
+              "answer": 2,
+              "optionsZh": ["書本以前要花好幾個月甚至好幾年手抄。", "印刷機使用可排列、重複使用的小型金屬活字。", "印刷機發明者獲得國王賞賜大量黃金。", "書本價格降到一般家庭也負擔得起。"],
+              "explanation": "文中提到手抄費時（(A) 有提及）、活字可排列重複使用（(B) 有提及）、書價下降到一般家庭可負擔（(D) 有提及），但全文完全沒有提到發明者受到國王賞賜黃金一事，屬於選項中未在文章出現的內容，故選 (C)。"
             }
           ]
         },

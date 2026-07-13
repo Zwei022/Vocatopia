@@ -243,35 +243,35 @@
             },
             {
               "n": 26,
-              "stem": "What can we learn about the falling of the leaves?",
-              "options": ["It means the tree is dying.", "It helps the tree live through winter.", "It happens only in the spring.", "It stops new leaves from growing."],
-              "answer": 1,
-              "optionsZh": ["代表樹要枯死了。", "幫助樹木度過冬天。", "只發生在春天。", "阻止新葉生長。"],
-              "explanation": "文末 it helps the tree save water and stay alive through the cold winter，故選 (B)。"
+              "stem": "Which of the following is NOT mentioned in the reading?",
+              "options": ["Warm, sunny days followed by cool, dry nights can make colors brighter.", "The tree slowly stops making food as the weather turns cold.", "Falling leaves help the tree save water for winter.", "Some trees can keep their bright colors all through the winter."],
+              "answer": 3,
+              "optionsZh": ["溫暖晴天接著涼爽乾燥的夜晚會讓顏色更鮮豔。", "天氣變冷時樹木會逐漸停止製造食物。", "落葉能幫助樹木在冬天保留水分。", "有些樹能整個冬天都保持鮮豔的顏色。"],
+              "explanation": "文章提到（A）warm, sunny days followed by cool, dry nights 使顏色更鮮豔、（B）the tree slowly stops making food... the air turns cold、（C）it helps the tree save water，皆有提及；但全文從未提到有樹能整個冬天保持鮮豔顏色，反而說葉子最終會落下，故 (D) 未被提及，為正確答案。"
             }
           ]
         },
         {
           "range": "27–28",
-          "passageType": "narrative",
-          "title": "Grandpa's Old Radio",
-          "passage": "When I was young, my grandpa had an old radio on his desk. It was black and heavy, and it did not always work well. Every evening, he turned it on and listened to the news and old songs. Sometimes the sound became weak, and he had to hit the side of the radio to make it clear again.\n\nI remember one rainy evening when I was seven. The radio suddenly stopped working in the middle of Grandpa's favorite song, and no amount of hitting the side could bring it back. Grandpa did not get angry. Instead, he hummed the rest of the song himself, off-key and laughing, until I was laughing too. I did not understand then why that small, broken moment stayed with me, but I do now.\n\nAfter Grandpa passed away, my family wanted to throw the old radio away. But I asked to keep it. I put it on my own desk, and now I turn it on when I miss him. I still cherish every song that comes out of it, because they are the same ones he loved. When I close my eyes and listen, it feels as if Grandpa is still sitting beside me.",
+          "passageType": "dialogue",
+          "title": "A Weekend Job?",
+          "passage": "Amy: Ben, guess what — my parents said I could get a weekend job! Mr. Lin at the corner bakery needs someone to help on Saturday mornings, and I really want to save up for a new camera.\n\nBen: That sounds exciting, but are you sure it won't affect your grades? You already stay up late finishing homework some nights.\n\nAmy: I thought about that, too. The job is only four hours every Saturday, so it shouldn't take too much time away from studying. Mr. Lin also said the pay is pretty good for students.\n\nBen: Still, it's a big change. Maybe you should try it for one month first and see how you feel before deciding to continue for the whole year.\n\nAmy: That's actually a smart idea. I'll ask my parents if we can set a rule — if my grades drop, I'll stop working right away.\n\nBen: That sounds fair. And if it goes well, maybe I'll ask my own parents about finding a small job, too. It could be a good way to learn how to manage both time and money.\n\nAmy: Exactly! It's not just about the money. I think it will teach us both to be more responsible.",
           "questions": [
             {
               "n": 27,
-              "stem": "What did Grandpa do when the radio's sound became weak?",
-              "options": ["He bought a new radio.", "He hit the side of the radio.", "He turned it off at once.", "He asked the writer for help."],
-              "answer": 1,
-              "optionsZh": ["他買新收音機。", "他敲收音機的側面。", "他馬上關掉。", "他向作者求助。"],
-              "explanation": "文中 he had to hit the side of the radio to make it clear again，故選 (B)。"
+              "stem": "What does Ben suggest Amy do before deciding to work for the whole year?",
+              "options": ["Quit the idea completely.", "Ask her parents for more pocket money.", "Try the job for one month first.", "Work every day instead of only Saturdays."],
+              "answer": 2,
+              "optionsZh": ["完全放棄這個想法。", "向父母要更多零用錢。", "先試做一個月。", "改成每天工作而非只有週六。"],
+              "explanation": "Ben 說 \"try it for one month first and see how you feel\"，建議先試一個月再決定，故選 (C)。"
             },
             {
               "n": 28,
-              "stem": "Why does the writer keep the old radio?",
-              "options": ["It is worth a lot of money.", "It still works better than new ones.", "It reminds the writer of Grandpa.", "It was a gift from a good friend."],
-              "answer": 2,
-              "optionsZh": ["它值很多錢。", "它比新的還好用。", "它讓作者想起爺爺。", "它是好友送的禮物。"],
-              "explanation": "作者想念爺爺時就打開它，聽爺爺愛的歌，故選 (C)。"
+              "stem": "In Ben's last message, what does the underlined word \"It\" most likely refer to?",
+              "options": ["Managing time and money.", "Having a small job like Amy's.", "The camera Amy wants to buy.", "Working at the bakery on Saturdays only."],
+              "answer": 1,
+              "optionsZh": ["管理時間和金錢。", "像 Amy 一樣打工。", "Amy 想買的相機。", "只在週六在麵包店工作。"],
+              "explanation": "Ben 說如果 Amy 打工進行順利，他也想找份小工作（finding a small job），接著說 It could be a good way to learn..., It 指的是「打工」這件事，故選 (B)。"
             }
           ]
         },

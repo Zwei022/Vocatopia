@@ -261,33 +261,33 @@
         },
         {
           "range": "28–30",
-          "passageType": "narrative",
-          "title": "A Small Act of Kindness",
-          "passage": "It was a freezing Monday morning, and the small coffee shop on Main Street was crowded with people escaping the cold. Behind the counter, Jake noticed an elderly man counting coins slowly, clearly a few dollars short of the price of his coffee and sandwich. The man's hands trembled slightly as he searched his pockets again. His face was turning red with embarrassment.\n\nWithout saying a word, a young woman standing in line quietly stepped forward and placed extra money on the counter. \"Add it to his order,\" she told Jake. Then she simply returned to her spot in line, as if nothing unusual had happened. The elderly man turned around, confused. But the woman only smiled and said, \"Someone did the same for me once.\"\n\nJake, who had watched hundreds of customers come and go, found himself unexpectedly moved by the small moment. He decided to write down the woman's simple gesture on a chalkboard by the door: \"Pay it forward — someone's kindness today.\" To his surprise, customers began doing exactly that over the following weeks, quietly covering the bill for a stranger behind them.\n\nJake never learned the woman's name. But her simple act of kindness kept spreading, one cup of coffee at a time, long after she had walked out into the cold morning air.",
+          "passageType": "letter",
+          "title": "Three Letters About the Class Picnic",
+          "passage": "Dear Aunt Claire,\n\nI hope this letter finds you well! I'm writing because our class is planning a picnic at Green Lake Park next month, and we need to raise about $200 for food, games, and bus tickets. Ms. Parker asked each student to find one creative way to raise money. I remembered that you used to run a small bakery, so I was wondering if you could give me some tips for a class bake sale. We're planning to sell cookies and lemonade outside the school gate every Friday afternoon.\n\nLove,\nMia\n\n---\n\nDear Mia,\n\nWhat a wonderful idea! I still remember how much fun it was decorating cookies for the neighborhood fair years ago. Instead of just giving you tips, though, I'd love to help in person. I can come to your school this Friday and show your classmates how to make simple lemon cookies that don't require a big oven. I'll also bring my old cash box so you don't need to buy one. One thing to keep in mind: always keep the raw dough refrigerated until right before baking, or the cookies will spread too thin in the pan.\n\nLove,\nAunt Claire\n\n---\n\nDear Aunt Claire,\n\nThank you so much for offering to come! Unfortunately, I need to let you know about a small change. Ms. Parker just announced that the picnic has been moved from Green Lake Park to Pine Hill Park because Green Lake is closed for cleaning this month. The bake sale date is still the same Friday, so your visit is still on! Also, three more classmates joined the bake sale team after hearing you were coming, so we might need a bigger table now.\n\nLove,\nMia",
           "questions": [
             {
               "n": 28,
-              "stem": "What did Jake notice about the elderly man?",
-              "options": ["He was arguing loudly with another customer.", "He did not have quite enough money to pay.", "He refused to order anything at all.", "He was looking for a lost wallet."],
+              "stem": "Why did Mia write her second letter to Aunt Claire?",
+              "options": ["To cancel the bake sale because not enough classmates joined.", "To tell her aunt about the new picnic location and confirm her visit is still happening.", "To ask her aunt for more money to buy an oven.", "To complain that Green Lake Park closed too early."],
               "answer": 1,
-              "optionsZh": ["他和另一位顧客大聲爭吵。", "他的錢不夠付帳。", "他完全拒絕點餐。", "他在找遺失的皮夾。"],
-              "explanation": "文中 clearly a few dollars short of the price of his coffee and sandwich，故選 (B)。"
+              "optionsZh": ["取消義賣活動，因為加入的同學不夠多。", "告知阿姨野餐地點改變，並確認拜訪依然照常。", "向阿姨要更多錢去買一台烤箱。", "抱怨綠湖公園太早關閉。"],
+              "explanation": "第三封信中 Mia 說明 Ms. Parker 宣布野餐地點從 Green Lake Park 改到 Pine Hill Park，並提到 your visit is still on，顯示她寫信主要是通知地點變更並確認阿姨仍會來，故選 (B)。"
             },
             {
               "n": 29,
-              "stem": "What did the young woman do for the elderly man?",
-              "options": ["She called his family for help.", "She quietly paid the difference for him.", "She gave him her own coffee.", "She asked Jake to give him a discount."],
-              "answer": 1,
-              "optionsZh": ["她打電話請他的家人幫忙。", "她默默替他補上差額。", "她把自己的咖啡給他。", "她請 Jake 給他打折。"],
-              "explanation": "文中 a young woman quietly stepped forward and placed extra money on the counter，故選 (B)。"
+              "stem": "Which of the following is NOT mentioned in the three letters?",
+              "options": ["Aunt Claire will bring her old cash box.", "The picnic location was changed to Pine Hill Park.", "The bake sale will sell cookies and lemonade every Friday afternoon.", "The class will also sell handmade bracelets at the bake sale."],
+              "answer": 3,
+              "optionsZh": ["Aunt Claire 會帶她的舊收銀盒來。", "野餐地點改到 Pine Hill Park。", "義賣會每週五下午賣餅乾和檸檬水。", "班上也會在義賣會上賣手工手鍊。"],
+              "explanation": "信中提到收銀盒、地點改變、每週五下午賣餅乾與檸檬水，但全文從未提到販賣手工手鍊，故選 (D)。此題須通篇核對三封信的所有細節才能確定答案。"
             },
             {
               "n": 30,
-              "stem": "What did Jake do after seeing what the woman did?",
-              "options": ["He wrote her act on a chalkboard to encourage others.", "He asked the woman to leave the shop.", "He gave the elderly man a free meal every day.", "He reported the event to the local newspaper."],
-              "answer": 0,
-              "optionsZh": ["他把她的善舉寫在黑板上鼓勵他人。", "他請那位女士離開店裡。", "他每天免費請老先生吃飯。", "他向當地報社報導這件事。"],
-              "explanation": "文中 he decided to write down the woman's simple gesture on a chalkboard by the door，故選 (A)。"
+              "stem": "According to Aunt Claire's letter, what should be done with the raw cookie dough before baking?",
+              "options": ["It should be left outside in the sun to soften.", "It should be kept in the refrigerator until right before baking.", "It should be mixed with extra sugar overnight.", "It should be baked immediately after mixing without resting."],
+              "answer": 1,
+              "optionsZh": ["應該放在太陽下曬軟。", "應該冷藏保存，直到即將烘烤前才取出。", "應該加更多糖後放隔夜。", "混合後應立即烘烤，不需靜置。"],
+              "explanation": "Aunt Claire 在信中提醒 always keep the raw dough refrigerated until right before baking, or the cookies will spread too thin in the pan，故選 (B)。"
             }
           ]
         },

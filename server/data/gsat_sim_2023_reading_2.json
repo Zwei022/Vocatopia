@@ -197,33 +197,43 @@
         },
         {
           "range": "22–24",
-          "passageType": "narrative",
-          "title": "Buddy Comes Home",
-          "passage": "Tommy's dog, Buddy, loved chasing squirrels in the backyard, but one stormy night he squeezed through a gap in the fence and ran away. Thunder crashed loudly, and Buddy, terrified by the noise, kept running until he no longer recognized the streets around him. Tommy searched every corner of the neighborhood with his father, calling Buddy's name until his voice grew hoarse. Days passed, then weeks, and still there was no sign of the little brown dog. Tommy printed posters with Buddy's photo and put them up on every corner, hoping someone would call with good news. His mother told him gently that some lost pets never come home, but Tommy refused to give up hope. Three months later, a woman named Mrs. Lin found a thin, exhausted dog hiding under her porch during a rainstorm. She noticed a faded tag on his collar and called the number printed on it right away. When Tommy picked up the phone and heard her describe the dog, his heart pounded with disbelief. He rushed to her house with his father, and the moment Buddy heard his voice, the dog leaped up and ran straight into his arms. Tommy held him tightly, tears rolling down his cheeks, hardly able to believe his best friend was finally home. Mrs. Lin smiled as she watched them, glad that her small act of kindness had reunited a boy with the dog he loved.",
+          "passageType": "chat",
+          "title": "Cancel Clubs for Study Time? (社群留言串)",
+          "passage": "Kevin: Just heard our school might cancel after-school clubs next semester and add extra study periods instead. What do you guys think about this?\n\nAmy: Honestly, I think it's a terrible idea. Robotics club is the only reason I look forward to Fridays every week. Extra study time won't make our grades better if students end up stressed and bored instead.\n\nJason: I actually don't mind the change. My scores have been dropping this term, and I feel like I could use more guided review time before exams. Clubs are fun, but grades matter more to me right now.\n\nEmily: Can't we have both? Maybe the school could just shorten club time instead of cancelling it completely. A fair fifty-fifty split between clubs and extra study seems better for everyone.\n\nRyan: Whatever the school finally decides, I really hope they ask students for our opinions first instead of just announcing a new rule. That part bothers me the most, honestly.\n\nKevin: Good points, everyone. I'll bring all these ideas to the student council meeting on Monday and see what other students think too.",
           "questions": [
             {
               "n": 22,
-              "stem": "Why did Buddy run so far from home on the stormy night?",
-              "options": ["He was chasing a squirrel across town.", "He was terrified by the sound of thunder.", "Tommy accidentally let him out the front door.", "He was looking for Mrs. Lin's porch."],
+              "stem": "What is mainly being discussed in this comment thread?",
+              "options": ["Whether the school should build a new gym.", "Whether the school should cancel after-school clubs for extra study periods.", "Whether the school should change the students' uniforms.", "Whether the school should shorten summer vacation."],
               "answer": 1,
-              "optionsZh": ["他在鎮上追松鼠。", "他被雷聲嚇到。", "湯米不小心讓他從前門跑出去。", "他在尋找林太太家的門廊。"],
-              "explanation": "文中 terrified by the noise, kept running，可知他是被雷聲嚇跑的，故選 (B)。"
+              "optionsZh": ["學校是否該蓋新的體育館。", "學校是否該取消社團改成加強讀書時間。", "學校是否該更改學生制服。", "學校是否該縮短暑假。"],
+              "explanation": "整串留言都圍繞 Kevin 一開始提到的「學校可能取消社團、改成加強讀書時間」這件事展開討論，故選 (B)。"
             },
             {
               "n": 23,
-              "stem": "How did Mrs. Lin know whom to call about the dog she found?",
-              "options": ["She recognized Buddy from a poster.", "She read a name written on his fur.", "She saw a tag with a phone number on his collar.", "Tommy's father happened to walk by her house."],
+              "stem": "What solution does Emily suggest in her comment?",
+              "options": ["Cancelling all clubs immediately.", "Keeping clubs exactly the same as before, with no changes at all.", "Splitting the time fairly between clubs and extra study.", "Letting each teacher decide individually for their own class."],
               "answer": 2,
-              "optionsZh": ["她從海報上認出巴弟。", "她看到寫在毛上的名字。", "她看到項圈上有電話號碼的名牌。", "湯米的爸爸剛好經過她家。"],
-              "explanation": "文中 she noticed a faded tag on his collar and called the number printed on it，故選 (C)。"
+              "optionsZh": ["立刻取消所有社團。", "完全維持原本社團的樣子，不做任何改變。", "把時間公平分配給社團與加強讀書。", "讓每位老師自行為自己班上決定。"],
+              "explanation": "Emily 表示 the school could just shorten club time instead of cancelling it completely，並提議 a fair fifty-fifty split，故選 (C)。"
             },
             {
               "n": 24,
-              "stem": "What can we learn about Tommy from the story?",
-              "options": ["He quickly forgot about Buddy after a few days.", "He never lost hope of finding his dog again.", "He blamed his mother for losing Buddy.", "He decided to get a different dog instead."],
+              "stem": "Based on Kevin's comments in the thread, which of the following posts would Kevin most likely write next?",
+              "options": [
+                "\"I've already decided to cancel every single club — no more discussion needed.\"",
+                "\"I brought everyone's comments to the student council on Monday, and we're now considering a plan closer to Emily's fifty-fifty idea.\"",
+                "\"I don't really care what any of you think, since the school already made its final decision.\"",
+                "\"I'm quitting the student council because this whole topic is way too stressful for me.\""
+              ],
               "answer": 1,
-              "optionsZh": ["他幾天後就忘了巴弟。", "他從未放棄再找到他的狗。", "他責怪媽媽弄丟了巴弟。", "他決定改養別隻狗。"],
-              "explanation": "文中 Tommy refused to give up hope，顯示他始終沒有放棄希望，故選 (B)。"
+              "optionsZh": [
+                "「我已經決定取消所有社團，不用再討論了。」",
+                "「我星期一把大家的意見帶去學生會，現在正考慮採用比較接近艾蜜莉提議的五五分配方案。」",
+                "「我才不管你們怎麼想，反正學校已經做出最終決定了。」",
+                "「我要退出學生會，因為這整件事讓我壓力太大了。」"
+              ],
+              "explanation": "Kevin 在留言串中展現的是願意蒐集同學意見、帶去學生會討論的開放態度（I'll bring all these ideas to the student council meeting on Monday），最符合這種立場的是持續匯集意見、考慮折衷方案的 (B)；其餘選項的獨斷、冷漠或放棄態度都與他展現的立場不符。"
             }
           ]
         },
@@ -251,11 +261,11 @@
             },
             {
               "n": 27,
-              "stem": "What do some researchers believe about the energetic dancing?",
-              "options": ["It means the bee is tired.", "It may show the flowers have very sweet nectar.", "It warns other bees of danger nearby.", "It happens only at night."],
-              "answer": 1,
-              "optionsZh": ["代表蜜蜂很累。", "可能顯示花蜜特別甜。", "警告附近有危險。", "只在夜晚發生。"],
-              "explanation": "文中 bees seem to dance more energetically when the nectar is especially sweet，故選 (B)。"
+              "stem": "Which of the following is NOT mentioned in the reading?",
+              "options": ["The direction of the dance is based on the position of the sun.", "A longer dance means the flowers are farther away.", "Bees dance more energetically when the nectar is especially sweet.", "Only the queen bee is able to perform the waggle dance."],
+              "answer": 3,
+              "optionsZh": ["舞蹈方向是根據太陽的位置決定的。", "跳舞時間越長代表花朵距離越遠。", "花蜜特別甜時，蜜蜂會跳得更賣力。", "只有蜂后才能表演搖擺舞。"],
+              "explanation": "文中提到方向依太陽位置決定、時間長短代表距離、花蜜甜時跳得更賣力，這三點都有提及；但文章說的是 when a bee finds a rich patch of flowers, it performs the waggle dance（任何一隻找到花的蜜蜂都能跳），並未提到「只有蜂后能跳舞」，故 (D) 為文章中未提及的選項，選 (D)。"
             }
           ]
         },

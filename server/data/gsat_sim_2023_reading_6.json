@@ -269,33 +269,33 @@
         },
         {
           "range": "29–31",
-          "passageType": "narrative",
-          "title": "The Silent Years",
-          "passage": "For almost three years, Grace and her younger brother, Kevin, barely spoke to each other. It had started with a small argument over a shared computer, and neither of them was willing to apologize first. The silence between them slowly grew into something much bigger than the original fight. Family dinners became quiet and uncomfortable. Their parents pretended not to notice the tension across the table.\n\nEverything changed one evening when their grandmother suddenly fell ill and had to stay in the hospital. Grace and Kevin found themselves sitting together in the waiting room, both too frightened to care about their old argument anymore. Without really planning it, Kevin reached over and held his sister's trembling hand, and Grace let him, grateful not to be facing the fear alone.\n\nTheir grandmother eventually recovered, but something between the siblings had shifted permanently. On the drive home, Kevin quietly admitted that he had missed talking to her. Grace confessed she had felt exactly the same way for a long time. Neither of them mentioned who had been right about the computer; it no longer seemed to matter at all.\n\nNow, months later, they still argue occasionally, as most siblings do. But whenever things get tense, one of them will bring up that night in the waiting room. The memory alone is usually enough to make them both start laughing instead of fighting.",
+          "passageType": "letters",
+          "title": "Letters After the Silence",
+          "passage": "Dear Kevin,\n\nI keep thinking about the night in the hospital waiting room, and it made me realize how silly our three years of silence really were. It all started with that small argument over the shared computer, and neither of us was willing to say sorry first. I still remember how quiet our dinners became after that, and how Mom and Dad pretended not to notice.\n\nLove,\nGrace\n\n---\n\nDear Grace,\n\nI'm glad you wrote first, because I never knew how to bring it up either. Honestly, I missed talking to you long before Grandma got sick. When she was in the hospital, I was so scared that I forgot I was even supposed to be angry with you. That's why I reached over and held your hand in the waiting room — I just needed someone to be scared with me.\n\nLove,\nKevin\n\n---\n\nDear Kevin,\n\nI'm glad you did that. Sitting there together, I finally understood that our fight over the computer wasn't worth three years of silence. When Grandma finally recovered and we drove home together, I remember you quietly admitting that you had missed me, and I told you I felt exactly the same way. Neither of us ever brought up who was right about the computer again; it just didn't matter anymore.\n\nLove,\nGrace\n\n---\n\nDear Grace,\n\nYou're right, it doesn't matter at all now. I think the biggest lesson for me is that being scared together in that waiting room taught us something arguing never could. We still argue sometimes, like all siblings do, but now whenever things get tense, one of us brings up that night, and we end up laughing instead of fighting. I'm really glad Grandma is okay, and I'm even more glad we finally talked again.\n\nLove,\nKevin",
           "questions": [
             {
               "n": 29,
-              "stem": "What caused the long silence between Grace and Kevin?",
+              "stem": "According to the letters, what caused the long silence between Grace and Kevin?",
               "options": ["An argument about a shared computer.", "A fight about their grandmother's medicine.", "A disagreement about their parents' rules.", "A quarrel about a school project."],
               "answer": 0,
               "optionsZh": ["關於共用電腦的爭吵。", "關於祖母藥物的爭吵。", "關於父母規定的爭執。", "關於學校作業的爭吵。"],
-              "explanation": "文中 It had started with a small argument over a shared computer，故選 (A)。"
+              "explanation": "Grace 在第一封信中提到 It all started with that small argument over the shared computer，故選 (A)。"
             },
             {
               "n": 30,
-              "stem": "What event finally brought Grace and Kevin close again?",
+              "stem": "Based on the exchange of letters, what event finally brought Grace and Kevin close again?",
               "options": ["Their grandmother's illness and hospital stay.", "A trip they took together with friends.", "A letter their parents wrote to them.", "A prize Kevin won at school."],
               "answer": 0,
               "optionsZh": ["祖母生病住院。", "與朋友一起的旅行。", "父母寫給他們的信。", "凱文在學校贏得的獎項。"],
-              "explanation": "文中 their grandmother suddenly fell ill and had to stay in the hospital 是轉折點，故選 (A)。"
+              "explanation": "Kevin 的信中提到 When she was in the hospital, I was so scared that I forgot I was even supposed to be angry with you，說明祖母生病住院是兩人和好的關鍵事件，需對照兩封信的敘述順序才能確認，故選 (A)。"
             },
             {
               "n": 31,
-              "stem": "What can we learn from this story?",
-              "options": ["Siblings should never argue with each other.", "A shared fear can help siblings put a small quarrel aside.", "Grandparents should always live with their grandchildren.", "Computers often cause permanent damage to families."],
-              "answer": 1,
-              "optionsZh": ["手足永遠不該吵架。", "共同的恐懼能幫助手足放下小爭執。", "祖父母應該永遠與孫子同住。", "電腦常對家庭造成永久傷害。"],
-              "explanation": "兩人因共同面對祖母生病的恐懼而重新和好，說明共同的恐懼經歷能化解小爭執，故選 (B)。"
+              "stem": "Which of the following is NOT mentioned in the letters?",
+              "options": ["Grace and Kevin argued over a shared computer.", "Kevin held Grace's hand in the hospital waiting room.", "Grace and Kevin wrote a letter of apology to their grandmother.", "Kevin admitted that he had missed talking to Grace."],
+              "answer": 2,
+              "optionsZh": ["Grace 和 Kevin 曾因共用電腦而吵架。", "Kevin 在醫院等候室握住了 Grace 的手。", "Grace 和 Kevin 曾寫一封道歉信給祖母。", "Kevin 承認他很想念和 Grace 說話。"],
+              "explanation": "四封信中提到了共用電腦的爭吵（A）、Kevin 在等候室握手（B）、Kevin 承認想念 Grace（D），但全文從未提到兩人寫信向祖母道歉，需逐封信比對四個選項才能確認何者未被提及，故選 (C)。"
             }
           ]
         },

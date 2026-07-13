@@ -197,33 +197,33 @@
         },
         {
           "range": "22–24",
-          "passageType": "narrative",
-          "title": "The Surprise That Almost Failed",
-          "passage": "Last Saturday, Mia's friends decided to throw her a surprise birthday party. They planned everything for weeks, choosing a theme, ordering a cake, and inviting almost everyone from her class. The hardest part was keeping the plan a secret, since Mia always seemed to notice when something unusual was happening around her.\n\nOn the day of the party, Jake was in charge of bringing Mia to the community hall without letting her guess what was waiting inside. He told her they were going to help clean up after a school event, and she agreed without any suspicion. As they walked down the hallway, Jake's phone kept buzzing with messages from the others, who were anxiously waiting behind the door.\n\nJust as Jake reached for the door handle, his phone slipped from his pocket and landed loudly on the floor. Mia turned around immediately, and for a moment, everyone worried the surprise had been ruined. Luckily, she only laughed at how clumsy Jake looked and did not think anything more of it.\n\nWhen the door finally opened, dozens of familiar faces shouted \"Happy Birthday!\" at once. Mia stood frozen, completely overwhelmed by the decorations, the music, and the warmth in the room. She later admitted that she had actually suspected something for days, but seeing her friends' effort still moved her to tears. It was, she said, the best surprise she had ever received.",
+          "passageType": "socialMedia",
+          "title": "Beach Cleanup This Saturday — Class Group Post",
+          "passage": "Emma Chen (Class Representative)\nHi everyone! Our class beach cleanup is happening this Saturday at Sunrise Beach. We'll meet at the school gate at 8:30 a.m. and take the school bus together. Please wear old clothes, and bring gloves if you have a pair at home — the school will provide extra bags for the trash. If it rains that morning, we'll move the cleanup to the following Saturday instead. Please let me know in the comments if you can come!\n\n  Liam Park: Count me in! Should we also bring our own water bottles, or will the school hand those out too?\n\n  Sophie Wu: I'm really sorry, but I can't make it this Saturday because I have a piano exam that morning. If the date gets moved because of rain, I'd love to join next time!\n\n  Noah Lin: I don't own any gloves, but since Emma said extra bags and gloves will be provided at the beach, I'll just show up without worrying about it.\n\n  Grace Ho: Does anyone know if we should bring sunscreen? Sunrise Beach gets really hot by mid-morning, even before summer starts.\n\n  Ryan Tsai: Since my home is only a five-minute drive from Sunrise Beach, I'll just meet everyone there directly instead of getting on the school bus. See you all at 8:30!",
           "questions": [
             {
               "n": 22,
-              "stem": "Why did Mia agree to go to the community hall without any suspicion?",
-              "options": ["Jake told her they were going to clean up after a school event.", "Jake told her the hall had a new movie playing.", "Mia's teacher asked her to check the hall.", "Mia had already guessed about the party."],
-              "answer": 0,
-              "optionsZh": ["傑克告訴她要去打掃學校活動後的場地。", "傑克告訴她會館有新電影上映。", "老師要她去檢查會館。", "米亞已經猜到派對的事。"],
-              "explanation": "文中 He told her they were going to help clean up after a school event, and she agreed without any suspicion，故選 (A)。"
+              "stem": "According to the discussion, which of the following is NOT mentioned?",
+              "options": ["The meeting time and place for the cleanup.", "What will happen if it rains that morning.", "The price of renting cleaning equipment for the beach.", "Whether gloves will be provided at the beach."],
+              "answer": 2,
+              "optionsZh": ["清灘的集合時間與地點。", "如果那天早上下雨會怎麼處理。", "在海灘租用清潔器材的價格。", "海灘現場是否會提供手套。"],
+              "explanation": "貼文與留言中提到了集合時間地點（8:30 a.m. at the school gate）、下雨的應變方式（move the cleanup to the following Saturday）、以及是否提供手套（gloves will be provided），但全篇從未提到任何「租用清潔器材的價格」，故選 (C)。"
             },
             {
               "n": 23,
-              "stem": "What happened right before Mia turned around near the door?",
-              "options": ["Someone shouted her name loudly.", "Jake's phone fell and made a loud sound.", "The door suddenly locked itself.", "The music started too early."],
+              "stem": "Why can't Sophie Wu join the cleanup this Saturday?",
+              "options": ["She does not like going to the beach.", "She has a piano exam that morning.", "She already went to the beach last weekend.", "She is waiting for the school bus schedule."],
               "answer": 1,
-              "optionsZh": ["有人大聲喊她的名字。", "傑克的手機掉落發出很大聲音。", "門突然自動鎖上。", "音樂太早開始播放。"],
-              "explanation": "文中 his phone slipped from his pocket and landed loudly on the floor，故選 (B)。"
+              "optionsZh": ["她不喜歡去海邊。", "她那天早上有鋼琴考試。", "她上週末已經去過海邊了。", "她在等校車的時刻表。"],
+              "explanation": "Sophie Wu 留言提到 I can't make it this Saturday because I have a piano exam that morning，故選 (B)。"
             },
             {
               "n": 24,
-              "stem": "How did Mia feel when everyone shouted \"Happy Birthday\"?",
-              "options": ["Angry that no one told her earlier.", "Bored because she already knew about it.", "Completely overwhelmed and moved to tears.", "Confused about where she was."],
-              "answer": 2,
-              "optionsZh": ["生氣沒人早點告訴她。", "無聊因為她早就知道了。", "完全被感動到落淚。", "對自己身在何處感到困惑。"],
-              "explanation": "文中 Mia stood frozen, completely overwhelmed... still moved her to tears，故選 (C)。"
+              "stem": "Which of the following comments would most likely have been posted by Ryan Tsai?",
+              "options": ["\"I'll take the school bus with everyone else since my house is far from the beach.\"", "\"Since my home is only a five-minute drive from Sunrise Beach, I'll just meet you all there instead of getting on the bus.\"", "\"I won't be able to join because I have a piano exam that morning.\"", "\"I don't have gloves, so I'll ask my mom if she has some at home.\""],
+              "answer": 1,
+              "optionsZh": ["「我會跟大家一起坐校車，因為我家離海邊很遠。」", "「因為我家開車到日出海灘只要五分鐘，我會直接在那裡跟大家會合，不搭校車。」", "「我沒辦法參加，因為那天早上我有鋼琴考試。」", "「我沒有手套，所以我會問我媽媽家裡有沒有。」"],
+              "explanation": "Ryan Tsai 的留言表示他家離海灘很近、會直接開車過去會合而不搭校車（Since my home is only a five-minute drive from Sunrise Beach, I'll just meet everyone there directly instead of getting on the school bus），與選項 (B) 內容一致，其餘選項分別符合另一位留言者（校車較遠者、Sophie、Noah）的情境，故選 (B)。"
             }
           ]
         },

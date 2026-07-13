@@ -271,33 +271,33 @@
         },
         {
           "range": "28–30",
-          "passageType": "narrative",
-          "title": "The Musician Who Almost Ran Away",
-          "passage": "Leo had practiced the violin for ten years, but every time he stood in front of an audience, his hands shook and his mind went blank. The night before his first big concert, he lay awake. He kept thinking about all the ways he might fail in front of hundreds of strangers.\n\nBackstage on the night of the concert, Leo's heart pounded so hard that he considered quietly slipping out through the back door. His teacher noticed his pale face and sat beside him. \"Everyone in that room came to enjoy the music, not to judge every mistake,\" she said gently. \"Just play for the person in the last row who needs to hear something beautiful tonight.\"\n\nWhen Leo's name was called, his legs felt like they belonged to someone else. Yet he forced himself to walk onto the stage. As soon as the first note left his violin, something inside him shifted. He stopped thinking about the audience. Instead, he focused only on the music flowing through his fingers.\n\nBy the final note, the whole hall rose in applause, and Leo realized his fear had quietly disappeared somewhere in the middle of the song. From that night on, he no longer saw the stage as something to fear. Instead, he saw it as a place where his music could finally be heard.",
+          "passageType": "dialogue",
+          "title": "A Talk Before the Concert",
+          "passage": "Emma: Hey Jake, are you nervous about tomorrow's violin concert?\nJake: Kind of. My hands still shake whenever I think about sitting in front of hundreds of people.\nEmma: I remember you felt the same way before the school talent show last year, but you did great in the end.\nJake: This time feels different, though. The concert hall is much bigger than our school stage.\nEmma: Maybe you should just focus on the music instead of the crowd. That's what my drama teacher always tells me before a play.\nJake: I've tried that before, but my mind still goes blank the second I walk onto the stage.\nEmma: Well, you've practiced almost every day after school for the past two months. I think you're more ready than you feel.\nJake: My violin teacher said something similar. She told me the audience just wants to hear something beautiful, not judge every mistake.\nEmma: Exactly. And even if you make a small mistake, most people probably won't even notice.\nJake: Thanks, Emma. Talking about it with you actually makes me feel calmer already.",
           "questions": [
             {
               "n": 28,
-              "stem": "How did Leo feel the night before his first big concert?",
-              "options": ["Excited and fully confident.", "Worried about failing in front of the audience.", "Angry at his violin teacher.", "Bored and uninterested in the concert."],
-              "answer": 1,
-              "optionsZh": ["既興奮又充滿信心。", "擔心在觀眾面前出糗。", "對小提琴老師生氣。", "對演奏會感到無聊。"],
-              "explanation": "文中 he lay awake thinking about all the ways he might fail，故選 (B)。"
+              "stem": "What is Jake mainly worried about?",
+              "options": ["He is afraid he will shake and make mistakes in front of a large audience.", "He is worried that Emma will not come to the concert.", "He thinks the concert hall is too far from his house.", "He is angry that his teacher canceled his lesson."],
+              "answer": 0,
+              "optionsZh": ["他害怕在大批觀眾面前發抖、出錯。", "他擔心艾瑪不會來看演奏會。", "他覺得音樂廳離家太遠。", "他為老師取消課程感到生氣。"],
+              "explanation": "Jake 說 My hands still shake whenever I think about sitting in front of hundreds of people，可知他擔心的是在大批觀眾前出錯，故選 (A)。"
             },
             {
               "n": 29,
-              "stem": "What did Leo's teacher tell him backstage?",
-              "options": ["To leave through the back door.", "That the audience came to enjoy the music, not judge mistakes.", "To cancel the concert.", "That he should have practiced more."],
-              "answer": 1,
-              "optionsZh": ["叫他從後門離開。", "觀眾是來享受音樂，不是來挑錯的。", "叫他取消演奏會。", "說他應該多練習。"],
-              "explanation": "老師說 Everyone in that room came to enjoy the music, not to judge every mistake，故選 (B)。"
+              "stem": "In Emma's line, \"Maybe you should just focus on the music instead of the crowd. That's what my drama teacher always tells me before a play,\" what does \"That\" refer to?",
+              "options": ["Focusing on the music instead of the crowd.", "Practicing the violin every day.", "Watching Jake's talent show performance.", "Buying a ticket for the concert."],
+              "answer": 0,
+              "optionsZh": ["專注在音樂上而非觀眾。", "每天練習小提琴。", "觀看傑克的才藝表演。", "買演奏會的票。"],
+              "explanation": "「That」指的是前一句提到的建議內容，即 focus on the music instead of the crowd（專注在音樂而非觀眾），故選 (A)。"
             },
             {
               "n": 30,
-              "stem": "What happened to Leo's fear by the end of the concert?",
-              "options": ["It became even stronger.", "It disappeared somewhere during the song.", "It returned right after the applause.", "It was replaced by anger."],
-              "answer": 1,
-              "optionsZh": ["變得更強烈。", "在演奏過程中悄悄消失了。", "掌聲後又回來了。", "被憤怒取代了。"],
-              "explanation": "文末 Leo realized his fear had quietly disappeared somewhere in the middle of the song，故選 (B)。"
+              "stem": "According to the dialogue, which of the following is NOT mentioned?",
+              "options": ["Jake practiced almost every day after school for two months.", "Emma compared this concert to Jake's performance in last year's talent show.", "Jake's violin teacher told him the audience wants to hear something beautiful.", "Jake decided to cancel his part in the concert."],
+              "answer": 3,
+              "optionsZh": ["傑克過去兩個月幾乎每天放學後都練習。", "艾瑪把這次演奏會拿來與去年才藝表演比較。", "傑克的小提琴老師告訴他觀眾想聽到美好的音樂。", "傑克決定取消他在演奏會中的部分。"],
+              "explanation": "對話中提到 Jake 幾乎每天練習兩個月（選項A有提及）、Emma 提到去年才藝表演（選項B有提及）、小提琴老師的話（選項C有提及），但全文並未提到 Jake 決定取消演出，須通篇核對才能確認，故選 (D)。"
             }
           ]
         },

@@ -261,33 +261,33 @@
         },
         {
           "range": "28–30",
-          "passageType": "narrative",
-          "title": "Grandpa's Lesson by the River",
-          "passage": "Every summer, Tommy visited his grandfather's small house beside the river, and every summer, his grandfather tried to teach him how to fish. Tommy always found the sport boring; he preferred sitting on the bank with his tablet instead of holding a fishing rod. His grandfather never scolded him for this. Instead, he simply sat beside the river each morning, humming quietly to himself and waiting patiently for a bite.\n\nOne rainy afternoon, Tommy's tablet ran out of battery, and there was nothing else to do. Reluctantly, he picked up the extra rod leaning against the porch and walked down to sit beside his grandfather. \"You have to be patient,\" his grandfather said gently, without even turning his head. \"Fish can sense when a person is in a hurry.\" Tommy rolled his eyes but stayed anyway, mostly because it was still raining outside.\n\nNearly an hour passed in complete silence before Tommy felt a sudden, sharp tug on his line. He gasped and pulled the rod back exactly as his grandfather had shown him days earlier without him even noticing. A shining fish flew out of the water, and Tommy laughed with pure delight for the first time all summer. His grandfather grinned and said nothing else was needed; the quiet river, he explained, always teaches patience to those willing to wait for it.",
+          "passageType": "social",
+          "title": "Should Emma Adopt a Puppy? — A Social Media Thread",
+          "passage": "Emma Chen: I've been thinking about adopting a puppy from the animal shelter near my apartment. I work full-time, and I'm honestly worried I won't have enough time or energy for a young dog. Has anyone here adopted a puppy while working a full-time job? I would love to hear your experiences before I make a decision! 🐶\n\nDaniel Lin: I adopted my puppy two years ago, and it was hard the first few weeks. Luckily, I work from home most days, so I could take him out every few hours. If your schedule allows for breaks, it gets much easier after the first month.\n\nPriya Patel: Before you adopt, maybe try fostering a dog for a few weeks first? Many shelters let you foster before you commit. That way, you can see if a puppy really fits into your daily life without making a permanent decision right away.\n\nMarcus Reyes: I want to be honest with you. I worked twelve-hour days when I got my first puppy, and it was exhausting for both of us. He was alone too much, and I felt terrible about it. Please think carefully before deciding, and consider your actual work hours, not just your good intentions.\n\nSofia Almeida: I don't really agree with all this worrying! As long as you love your pet, everything else will work out fine. Dogs are more flexible than people think. Just adopt him already!\n\nEmma Chen: Thank you all so much for sharing your experiences! After reading your comments, I think I'll foster a dog first before deciding for sure. That feels like the safest way to start.",
           "questions": [
             {
               "n": 28,
-              "stem": "Why did Tommy finally pick up a fishing rod that afternoon?",
-              "options": ["His grandfather forced him to.", "His tablet ran out of battery.", "He suddenly loved fishing.", "It stopped raining outside."],
+              "stem": "What is Emma mainly asking about in her original post?",
+              "options": ["Whether she should adopt an older dog instead of a puppy.", "Whether she will have enough time and energy for a puppy while working full-time.", "Whether the animal shelter charges a fee for adoption.", "Whether her apartment allows pets at all."],
               "answer": 1,
-              "optionsZh": ["爺爺強迫他。", "他的平板電腦沒電了。", "他突然愛上釣魚。", "外面停雨了。"],
-              "explanation": "文中提到 Tommy's tablet ran out of battery, and there was nothing else to do，故選 (B)。"
+              "optionsZh": ["她是否該領養成犬而非幼犬。", "她全職工作是否還有足夠的時間與精力照顧幼犬。", "動物收容所是否收取領養費用。", "她的公寓是否允許養寵物。"],
+              "explanation": "Emma 在原po中提到 I work full-time, and I'm honestly worried I won't have enough time or energy for a young dog，她主要是想知道全職工作是否還能照顧好幼犬，故選 (B)。"
             },
             {
               "n": 29,
-              "stem": "What does the grandfather believe is necessary for fishing?",
-              "options": ["Expensive equipment.", "Patience.", "Loud noise.", "A tablet."],
+              "stem": "Based on his comment, which of the following posts would Marcus most likely write himself?",
+              "options": ["\"Just adopted a kitten today! So excited, no worries at all!\"", "\"I worked twelve-hour days when I got my first puppy, and it was exhausting for both of us. Please think carefully before deciding.\"", "\"Fostering is a great first step if you're not sure yet.\"", "\"As long as you love your pet, everything else will work out fine.\""],
               "answer": 1,
-              "optionsZh": ["昂貴的裝備。", "耐心。", "很大的聲響。", "平板電腦。"],
-              "explanation": "爺爺說 You have to be patient, Fish can sense when a person is in a hurry，故選 (B)。"
+              "optionsZh": ["「我今天剛領養了一隻小貓！好興奮，完全不擔心！」", "「我第一次養幼犬時每天工作十二小時，我們兩個都累壞了。請仔細考慮清楚再做決定。」", "「如果還不確定，先寄養是很好的第一步。」", "「只要你愛你的寵物，其他一切都會順利的。」"],
+              "explanation": "Marcus 在留言中分享自己因長工時而讓幼犬獨自在家、事後感到內疚的經驗，並提醒 Emma 要謹慎考慮實際工時，語氣務實且帶有告誡意味，與選項 (B) 的內容和語氣最相符，故選 (B)。選項 (A) 語氣過於輕鬆興奮，符合 Sofia 而非 Marcus；(C) 是 Priya 建議的寄養方案；(D) 是 Sofia「愛能克服一切」的樂觀主張，皆與 Marcus 謹慎務實的立場不符。"
             },
             {
               "n": 30,
-              "stem": "How did Tommy feel after catching the fish?",
-              "options": ["Bored.", "Frightened.", "Delighted.", "Embarrassed."],
-              "answer": 2,
-              "optionsZh": ["無聊的。", "害怕的。", "十分開心的。", "尷尬的。"],
-              "explanation": "文中提到 Tommy laughed with pure delight，故選 (C)。"
+              "stem": "According to the comments, which of the following is NOT mentioned?",
+              "options": ["Someone suggests hiring a professional dog trainer.", "Someone recommends fostering a dog before adopting.", "Someone says working from home makes taking care of a puppy easier.", "Someone regrets getting a puppy while working long hours."],
+              "answer": 0,
+              "optionsZh": ["有人建議聘請專業訓犬師。", "有人建議在領養前先試著寄養。", "有人說在家工作讓照顧幼犬變得比較容易。", "有人後悔在長工時的情況下養了幼犬。"],
+              "explanation": "留言串中 Priya 建議 fostering（(B) 有提到）、Daniel 提到 work from home 讓照顧幼犬較容易（(C) 有提到）、Marcus 提到自己長工時養幼犬感到後悔（(D) 有提到），但整串留言中沒有任何人提到聘請專業訓犬師，故選 (A)。"
             }
           ]
         },

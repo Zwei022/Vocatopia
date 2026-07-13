@@ -197,9 +197,9 @@
         },
         {
           "range": "22–24",
-          "passageType": "narrative",
+          "passageType": "dialogue",
           "title": "The Woman Next Door",
-          "passage": "Mrs. Lin had lived alone next door for as long as I could remember. She rarely spoke to anyone, and her curtains were almost always closed. Most kids on our street thought she was unfriendly, maybe even a little scary, so nobody ever knocked on her door.\n\nOne winter afternoon, I saw her struggling to carry a heavy bag of rice up the icy steps to her house. Without thinking too much, I ran over and offered to help. She looked surprised at first, then quietly thanked me and invited me in for a cup of tea.\n\nInside, her small house was filled with old photographs and a warm, familiar smell of ginger tea. She told me that her husband had passed away five years earlier, and her children now lived far away in another city. Since then, she had grown used to eating dinner alone every night, though she never once complained about it.\n\nAfter that day, I began stopping by once a week, just to chat or bring her some fruit from our garden. She taught me how to fold paper cranes and told me stories about her youth. I finally realized that the woman everyone called unfriendly was actually just lonely, quietly waiting for someone to notice her.",
+          "passage": "Amy: Hey Ben, do you know old Mrs. Lin? She lives right next door to me.\nBen: You mean the woman who never says hello to anyone? Most kids on our street think she's kind of unfriendly, maybe even a little scary.\nAmy: That's what everyone believes, but nobody has ever knocked on her door to find out. Nobody really tried.\nBen: So why are you smiling when you talk about her now?\nAmy: Well, one winter afternoon I saw her struggling to carry a heavy bag of rice up the icy steps to her house. I ran over without thinking and offered to help.\nBen: What happened after that?\nAmy: She looked surprised at first, but then she quietly thanked me and invited me in for a cup of tea. Her small house was full of old photographs, and it smelled like warm ginger tea.\nBen: Did she tell you anything about herself?\nAmy: Yes. She said her husband had passed away five years earlier, and her children now live far away in another city. She eats dinner alone every night, but she never once complains about it.\nBen: That sounds really lonely.\nAmy: Exactly. So after that day, I started stopping by once a week just to chat or bring her some fruit from our garden. She even taught me how to fold paper cranes and told me stories about her youth.\nBen: I guess she just needed someone to notice her.\nAmy: That's exactly it. The woman everyone called unfriendly was actually just lonely, quietly waiting for someone to care.",
           "questions": [
             {
               "n": 22,
@@ -207,23 +207,23 @@
               "options": ["She had asked them not to visit.", "They thought she was unfriendly.", "Her house had no doorbell.", "Their parents told them not to."],
               "answer": 1,
               "optionsZh": ["她要求他們別來拜訪。", "他們認為她不友善。", "她家沒有門鈴。", "父母叫他們別去。"],
-              "explanation": "文中 kids on our street thought she was unfriendly, maybe even a little scary，故選 (B)。"
+              "explanation": "Ben 說 kids on our street think she's kind of unfriendly, maybe even a little scary，故選 (B)。"
             },
             {
               "n": 23,
-              "stem": "What does the story suggest Mrs. Lin was really feeling?",
+              "stem": "What does the dialogue suggest Mrs. Lin was really feeling?",
               "options": ["Angry at her neighbors.", "Proud of living alone.", "Lonely and wanting company.", "Afraid of children."],
               "answer": 2,
               "optionsZh": ["對鄰居生氣。", "以獨居為榮。", "孤單且渴望陪伴。", "害怕小孩。"],
-              "explanation": "文末指出她其實只是 lonely, quietly waiting for someone to notice her，故選 (C)。"
+              "explanation": "Amy 最後指出她其實只是 lonely, quietly waiting for someone to care，故選 (C)。"
             },
             {
               "n": 24,
-              "stem": "What did the writer start doing after that winter afternoon?",
-              "options": ["Moving in with Mrs. Lin.", "Visiting her regularly.", "Teaching her English.", "Asking her for money."],
-              "answer": 1,
-              "optionsZh": ["搬去和林太太同住。", "固定去拜訪她。", "教她英文。", "向她要錢。"],
-              "explanation": "文中 I began stopping by once a week，表示固定拜訪，故選 (B)。"
+              "stem": "According to the dialogue, which of the following is NOT mentioned?",
+              "options": ["Mrs. Lin's husband died five years ago.", "Amy helped Mrs. Lin carry a bag of rice.", "Mrs. Lin taught Amy how to fold paper cranes.", "Mrs. Lin's children visit her every weekend."],
+              "answer": 3,
+              "optionsZh": ["林太太的先生五年前過世了。", "艾咪幫林太太搬了一袋米。", "林太太教艾咪摺紙鶴。", "林太太的孩子每週都會來看她。"],
+              "explanation": "對話中提到林太太的孩子 live far away in another city（住在遙遠的城市），並未提到孩子每週來看她，反而與此矛盾，故選 (D)。"
             }
           ]
         },
