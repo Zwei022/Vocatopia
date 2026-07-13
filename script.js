@@ -4887,6 +4887,43 @@ async function submitRedeemCode() {
   }
 }
 
+async function submitFeedback() {
+  const input = document.getElementById('feedbackInput');
+  const message = (input?.value || '').trim();
+  if (!message) { showToast('請先輸入意見內容'); return; }
+
+  if (typeof currentUser === 'undefined' || !currentUser) {
+    showToast('請先登入才能送出意見回饋');
+    return;
+  }
+
+  const token = typeof getAuthToken === 'function' ? await getAuthToken() : null;
+  if (!token) { showToast('請先登入才能送出意見回饋'); return; }
+
+  const btn = document.getElementById('feedbackSubmitBtn');
+  if (btn) { btn.disabled = true; btn.textContent = '送出中...'; }
+
+  try {
+    const res = await fetch('/api/feedback', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message }),
+    });
+    const data = await res.json();
+    if (!res.ok) {
+      showToast(`⚠ ${data.error || '送出失敗，請稍後再試'}`);
+      return;
+    }
+    if (input) input.value = '';
+    showToast('🙏 感謝你的意見，我們會盡快查看！');
+  } catch (err) {
+    console.error('[submitFeedback] 例外：', err);
+    showToast('⚠ 網路連線異常，請稍後再試');
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = '📮 送出意見'; }
+  }
+}
+
 async function downloadOfflinePack() {
   if (!('serviceWorker' in navigator)) {
     showToast('❌ 此瀏覽器不支援離線功能');

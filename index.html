@@ -807,6 +807,12 @@
       </div>
 
       <div class="sett-section">
+        <div class="sett-label">意見回饋</div>
+        <textarea id="feedbackInput" class="ndm-input sett-feedback-textarea" placeholder="有任何建議、發現的問題都歡迎告訴我們～" maxlength="2000" rows="4"></textarea>
+        <button class="sett-item-btn" id="feedbackSubmitBtn" onclick="submitFeedback()">📮 送出意見</button>
+      </div>
+
+      <div class="sett-section">
         <div class="sett-label">帳號與資料</div>
         <button id="settingsLogoutBtn" class="sett-item-btn" onclick="closeSettings();logoutUser()" style="display:none">🚪 登出</button>
         <button class="sett-item-btn sett-item-danger" onclick="confirmResetWordBank()">🗑️ 重置字庫</button>

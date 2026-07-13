@@ -519,6 +519,8 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .sett-item-btn{width:100%;text-align:left;padding:13px 14px;background:var(--nav);border:1.5px solid var(--line2);border-radius:var(--r2);font-family:'Nunito',sans-serif;font-weight:700;font-size:14px;color:var(--ink);cursor:pointer;margin-bottom:10px}
 .sett-item-danger{color:var(--red);border-color:rgba(224,71,46,.35);background:rgba(224,71,46,.06)}
 
+.sett-feedback-textarea{resize:vertical;font-size:14px;font-weight:600;min-height:80px}
+
 .sett-redeem-row{display:flex;gap:8px}
 .sett-redeem-input{flex:1;margin-bottom:0!important}
 .sett-redeem-btn{background:var(--orange);border:none;border-radius:var(--r);padding:0 18px;color:#fff;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;letter-spacing:.5px;cursor:pointer;box-shadow:0 3px 0 var(--orange2);transition:transform .12s,box-shadow .12s;white-space:nowrap}
