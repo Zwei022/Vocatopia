@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "558167983805",
+    "project_id": "vocatopia-92dd4",
+    "storage_bucket": "vocatopia-92dd4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558167983805:android:a172b1203205ac275fd9d4",
+        "android_client_info": {
+          "package_name": "com.vocatopia.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCmupmsoYYOmbWKQDCQTGscyKLIpZ6JEQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
