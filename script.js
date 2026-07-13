@@ -204,36 +204,61 @@ function normalizeWord(w) {
 
 async function loadWords() {
   try {
-    // 伺服器單次最多允許 2000 筆（見 server/routes/words.js），先查總數，
-    // 一次算出要抓幾批，再用 Promise.all 平行送出，不用像以前那樣一批一批
-    // 排隊等（500 筆一批、序列等待，5 次來回，手機網路稍慢時每日單字卡組
-    // 要等很久才會顯示完整內容）。
-    const BATCH = 2000;
+    // 重要：即使我們請求 limit=2000/5000，Supabase(PostgREST) 自己有一道「單次最多
+    // 回傳 1000 筆」的內建上限（Max Rows 設定），伺服器端 words.js 允許的 2000 只是
+    // 「不會拒絕」，實際還是被 Supabase 悄悄砍到 1000，不會報錯。早期用固定批次數
+    // 去推進 offset（例如每次 +2000）曾經因此漏掉中間整批資料。這裡改成一律用「這次
+    // 實際拿回幾筆」來推進 offset，不管伺服器上限未來變成多少都不會再漏資料。
+    const REQUEST_LIMIT = 1000;
     let total = 0;
     try {
       const countRes = await fetch('/api/words/count');
       if (countRes.ok) total = (await countRes.json()).count || 0;
-    } catch { /* 查總數失敗就退回下面的備援序列抓取 */ }
+    } catch { /* 查總數失敗沒關係，仍可用下面的序列抓取（用是否還有資料判斷結束） */ }
 
     let all = [];
+    let parallelOk = false;
     if (total > 0) {
-      const offsets = [];
-      for (let o = 0; o < total; o += BATCH) offsets.push(o);
-      const batches = await Promise.all(
-        offsets.map(o => fetch(`/api/words?limit=${BATCH}&offset=${o}`).then(r => r.ok ? r.json() : []))
-      );
-      all = batches.flat().map(normalizeWord);
-    } else {
-      // 備援：/api/words/count 失敗時，退回原本的序列分批抓取
+      try {
+        // 用「已知總數」算出每批的起始 offset，平行送出；每批各自請求固定
+        // REQUEST_LIMIT，只要伺服器上限 >= REQUEST_LIMIT 就一定會準確拿滿，
+        // 不會有中間空洞。
+        const offsets = [];
+        for (let o = 0; o < total; o += REQUEST_LIMIT) offsets.push(o);
+        const batches = await Promise.all(
+          offsets.map(async o => {
+            const res = await fetch(`/api/words?limit=${REQUEST_LIMIT}&offset=${o}`);
+            if (!res.ok) throw new Error(`HTTP ${res.status} at offset ${o}`);
+            const data = await res.json();
+            // 任何一批實際拿到的筆數比預期少（且不是最後一批），代表伺服器上限
+            // 比 REQUEST_LIMIT 還低，平行推算的 offset 會對不上，直接視為失敗，
+            // 讓外層 catch 改用下面「用實際筆數推進」的序列抓取，不要留下資料洞。
+            const isLastBatch = o + REQUEST_LIMIT >= total;
+            if (!isLastBatch && data.length < REQUEST_LIMIT) {
+              throw new Error(`offset ${o} 只拿到 ${data.length} 筆，預期 ${REQUEST_LIMIT} 筆`);
+            }
+            return data;
+          })
+        );
+        all = batches.flat().map(normalizeWord);
+        parallelOk = true;
+      } catch (err) {
+        console.warn('[loadWords] 平行抓取失敗，改用序列抓取備援：', err.message);
+        all = [];
+      }
+    }
+    if (!parallelOk) {
+      // 序列抓取：offset 永遠用「上一批實際拿到幾筆」來推進，不管伺服器
+      // 上限是多少都能正確走完全部資料，只是比平行版慢。
       let offset = 0;
       while (true) {
-        const res  = await fetch(`/api/words?limit=${BATCH}&offset=${offset}`);
+        const res  = await fetch(`/api/words?limit=${REQUEST_LIMIT}&offset=${offset}`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         if (!Array.isArray(data) || data.length === 0) break;
         all = all.concat(data.map(normalizeWord));
-        if (data.length < BATCH) break;
-        offset += BATCH;
+        offset += data.length;
+        if (data.length < REQUEST_LIMIT) break; // 拿到的比要求的少 = 已經是最後一批
       }
     }
     if (all.length === 0) throw new Error('No words loaded');

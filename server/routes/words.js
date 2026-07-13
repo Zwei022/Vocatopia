@@ -186,10 +186,15 @@ router.post('/add', async (req, res) => {
 });
 
 // GET /api/words/count
+// 必須跟上面主列表 GET / 用同一套過濾條件（排除 user_lookup/user_custom），
+// 不然前端算出來的總筆數會比實際能列出的還多，用這個數字去算分頁批次
+// 就會產生對不上的資料洞。
 router.get('/count', async (req, res) => {
   const { count, error } = await supabase
     .from('words')
-    .select('*', { count: 'exact', head: true });
+    .select('*', { count: 'exact', head: true })
+    .not('tags', 'cs', '{user_lookup}')
+    .not('tags', 'cs', '{user_custom}');
   if (error) return res.status(500).json({ error: error.message });
   res.json({ count });
 });
