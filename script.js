@@ -1305,6 +1305,15 @@ const GSAT_EXAMS = [
   { year: 2023, type: 'reading',   label: '閱讀測驗', icon: '📖', dataUrl: '/server/data/gsat_exam_2023_reading.json' },
   { year: 2023, type: 'listening', label: '聽力測驗', icon: '🔊', dataUrl: '/server/data/gsat_exam_2023_listening.json' },
   { year: 2023, type: 'sim_reading_1', label: '模擬試題1', icon: '📝', dataUrl: '/api/mock-exam/gsat_sim_2023_reading_1.json', sim: true, needsAuth: true },
+  { year: 2023, type: 'sim_reading_2', label: '模擬試題2', icon: '📝', dataUrl: '/api/mock-exam/gsat_sim_2023_reading_2.json', sim: true, needsAuth: true },
+  { year: 2023, type: 'sim_reading_3', label: '模擬試題3', icon: '📝', dataUrl: '/api/mock-exam/gsat_sim_2023_reading_3.json', sim: true, needsAuth: true },
+  { year: 2023, type: 'sim_reading_4', label: '模擬試題4', icon: '📝', dataUrl: '/api/mock-exam/gsat_sim_2023_reading_4.json', sim: true, needsAuth: true },
+  { year: 2023, type: 'sim_reading_5', label: '模擬試題5', icon: '📝', dataUrl: '/api/mock-exam/gsat_sim_2023_reading_5.json', sim: true, needsAuth: true },
+  { year: 2023, type: 'sim_reading_6', label: '模擬試題6', icon: '📝', dataUrl: '/api/mock-exam/gsat_sim_2023_reading_6.json', sim: true, needsAuth: true },
+  { year: 2023, type: 'sim_reading_7', label: '模擬試題7', icon: '📝', dataUrl: '/api/mock-exam/gsat_sim_2023_reading_7.json', sim: true, needsAuth: true },
+  { year: 2023, type: 'sim_reading_8', label: '模擬試題8', icon: '📝', dataUrl: '/api/mock-exam/gsat_sim_2023_reading_8.json', sim: true, needsAuth: true },
+  { year: 2023, type: 'sim_reading_9', label: '模擬試題9', icon: '📝', dataUrl: '/api/mock-exam/gsat_sim_2023_reading_9.json', sim: true, needsAuth: true },
+  { year: 2023, type: 'sim_reading_10', label: '模擬試題10', icon: '📝', dataUrl: '/api/mock-exam/gsat_sim_2023_reading_10.json', sim: true, needsAuth: true },
 ];
 
 // 單題（第1–19題）的題型分類，供「答錯題庫」歸檔使用

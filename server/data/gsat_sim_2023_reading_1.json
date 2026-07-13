@@ -174,24 +174,24 @@
         {
           "range": "20–21",
           "passageType": "practical",
-          "title": "Green Park Summer Reading Club (公告)",
-          "passage": "Green Park Library — Summer Reading Club\n\nWho can join: Students from Grade 3 to Grade 9\nWhen: Every Saturday, July 6 to August 24, from 2:00 to 4:00 p.m.\nWhere: Room 201, second floor\n\nHow it works:\n• Read a book at home each week.\n• Come to the club and share your book with the group.\n• After you share five books, you get a free bookmark. After ten books, you get a free notebook.\n\nPlease note:\n• You must bring your own book each week. The library does not lend books during club time.\n• If you cannot come, send an email to greenpark@mail.com before Friday.",
+          "title": "Sunny Pizza House (菜單公告)",
+          "passage": "Sunny Pizza House — Order Menu\n\nPizza (choose one size): Small $120 / Medium $180 / Large $240\nExtra Topping (cheese, corn, mushroom, ham): $20 each\nDrink: $30 each\n\nDelivery Hours: Tuesday to Sunday, 11:00 a.m.–2:00 p.m. and 5:00 p.m.–8:00 p.m.\nClosed every Monday, and also closed on the first Sunday of each month.\n\nSpecial Offer: Combine any two large pizzas in one order and get one drink free!",
           "questions": [
             {
               "n": 20,
-              "stem": "What does a student need to do to get a free notebook?",
-              "options": ["Join the club on a weekday.", "Share ten books with the group.", "Buy ten books from the library.", "Read for four hours every Saturday."],
+              "stem": "Wendy ordered one medium pizza with two extra toppings and one drink for her family. How much did she need to pay?",
+              "options": ["$220.", "$250.", "$270.", "$290."],
               "answer": 1,
-              "optionsZh": ["在平日參加社團。", "和小組分享十本書。", "向圖書館買十本書。", "每週六讀四小時。"],
-              "explanation": "公告寫 After ten books, you get a free notebook，故選 (B)。"
+              "optionsZh": ["220元。", "250元。", "270元。", "290元。"],
+              "explanation": "中披薩 $180 ＋ 兩份加料各 $20（共 $40）＋ 飲料 $30 ＝ $250，故選 (B)。"
             },
             {
               "n": 21,
-              "stem": "According to the notice, which of the following is TRUE?",
-              "options": ["The club meets on Saturday afternoons.", "The library lends books during club time.", "Only Grade 9 students can join the club.", "Students do not need to bring any book."],
-              "answer": 0,
-              "optionsZh": ["社團在週六下午聚會。", "圖書館在社團時間出借書籍。", "只有九年級學生能參加。", "學生不需要帶任何書。"],
-              "explanation": "時間寫 Every Saturday... 2:00 to 4:00 p.m.，(A) 正確；(B)(C)(D) 均與公告相反。"
+              "stem": "This month's first Sunday falls on July 5. Which of the following is a time Ben can have his pizza delivered?",
+              "options": ["1:30 pm, July 5.", "6:00 pm, Monday.", "7:30 pm, Wednesday.", "9:00 pm, Saturday."],
+              "answer": 2,
+              "optionsZh": ["7月5日下午1:30。", "週一晚上6:00。", "週三晚上7:30。", "週六晚上9:00。"],
+              "explanation": "外送時間為週二至週日 11:00–14:00 與 17:00–20:00；週一公休，每月第一個週日也公休。7/5 是當月第一個週日（公休）；週一公休；週六 21:00 已超過打烊的 20:00；只有週三 19:30 同時符合「非公休日」與「營業時段」，故選 (C)。"
             }
           ]
         },
@@ -199,7 +199,7 @@
           "range": "22–23",
           "passageType": "narrative",
           "title": "The Lost Wallet",
-          "passage": "On his way to school, David found a brown wallet on the ground near the bus stop. Inside, there was some money, a bus card, and a photo of a small girl. David wanted to keep the money at first, but the smiling face in the photo made him stop.\n\nHe took the wallet to the police station after school. Two days later, a woman called to thank him. The girl in the photo was her daughter, and the wallet was a gift from her. She wanted to give David some money, but he said no. \"I only did what was right,\" he told her. From that day on, David felt happy every time he passed the bus stop.",
+          "passage": "On his way to school one rainy morning, David found a brown wallet lying on the wet ground near the bus stop. He picked it up and looked inside. There was some money, a bus card, and an old photo of a small girl with a bright smile. David felt tempted to keep the money at first — his family did not have much, and the extra cash could really help. But the smiling face in the photo kept looking back at him, and somehow he could not make himself walk away.\n\nInstead of keeping it, David walked straight to the police station after school and handed the wallet to an officer there. Two days later, a woman called the school to thank him. She explained that the girl in the photo was her daughter, who had passed away the year before, and the wallet had been the girl's last birthday present to her. Losing it had felt like losing her daughter all over again.\n\nThe woman wanted to give David a reward, but he refused it without a second thought. \"I only did what was right,\" he told her simply. He did not think of himself as someone special or brave; he just could not imagine keeping something that clearly meant so much to another person. From that day on, David felt a quiet kind of happiness every time he passed the bus stop, as if he carried a small secret that made the world feel a little kinder.",
           "questions": [
             {
               "n": 22,
@@ -223,7 +223,7 @@
           "range": "24–26",
           "passageType": "informational",
           "title": "Why Do Leaves Change Color?",
-          "passage": "In spring and summer, most leaves are green. The green comes from something inside the leaves that helps the tree make food from sunlight. As long as there is enough sunlight and warm weather, the leaves stay green and keep working.\n\nWhen fall comes, the days grow shorter and the air turns cold. The tree slowly stops making food, and the green color begins to fade. Now we can see other colors that were always there but hidden — yellow, orange, and even red.\n\nAfter a few weeks, the leaves fall to the ground. This may look sad, but it helps the tree save water and stay alive through the cold winter. When spring returns, new green leaves will grow again.",
+          "passage": "In spring and summer, most leaves look green because of a pigment inside them that absorbs sunlight and helps the tree make food. As long as there is enough sunlight and warm weather, this pigment stays strong and the leaves keep working.\n\nWhen fall comes, the days grow shorter and the air turns cold. The tree slowly stops making food, so the green pigment begins to break down and fade. Colors that were always there but hidden — yellow, orange, and even red — can finally be seen.\n\nInterestingly, some autumns bring much brighter colors than others. Scientists have found that the best conditions are warm, sunny days followed by cool, dry nights. This combination lets a tree make plenty of sugar during the day while slowing down its ability to send that sugar out of the leaves at night, which makes the hidden colors look even more brilliant. That is why the same tree can look dull one year and dazzling the next.\n\nAfter a few weeks, the leaves fall to the ground. Although this may look sad, it actually helps the tree save water and survive the cold winter. When spring returns, new green leaves, full of pigment once again, will grow back.",
           "questions": [
             {
               "n": 24,
@@ -236,10 +236,10 @@
             {
               "n": 25,
               "stem": "According to the reading, why do the other colors appear in fall?",
-              "options": ["Because someone paints the leaves.", "Because the green color fades away.", "Because the leaves grow bigger.", "Because it rains more often."],
+              "options": ["Because someone paints the leaves.", "Because the green pigment fades away.", "Because the leaves grow bigger.", "Because it rains more often."],
               "answer": 1,
-              "optionsZh": ["因為有人替葉子上色。", "因為綠色褪去。", "因為葉子長得更大。", "因為下雨更頻繁。"],
-              "explanation": "文中 the green color begins to fade... we can see other colors that were always there but hidden，故選 (B)。"
+              "optionsZh": ["因為有人替葉子上色。", "因為綠色素褪去。", "因為葉子長得更大。", "因為下雨更頻繁。"],
+              "explanation": "文中 the green pigment begins to break down and fade... colors that were always there but hidden can finally be seen，故選 (B)。"
             },
             {
               "n": 26,
@@ -255,7 +255,7 @@
           "range": "27–28",
           "passageType": "narrative",
           "title": "Grandpa's Old Radio",
-          "passage": "When I was young, my grandpa had an old radio on his desk. It was black and heavy, and it did not always work well. Every evening, he turned it on and listened to the news and old songs. Sometimes the sound became weak, and he had to hit the side of the radio to make it clear again.\n\nAfter Grandpa passed away, my family wanted to throw the old radio away. But I asked to keep it. I put it on my own desk, and now I turn it on when I miss him. The songs are the same ones he loved. When I close my eyes and listen, it feels as if Grandpa is still sitting beside me.",
+          "passage": "When I was young, my grandpa had an old radio on his desk. It was black and heavy, and it did not always work well. Every evening, he turned it on and listened to the news and old songs. Sometimes the sound became weak, and he had to hit the side of the radio to make it clear again.\n\nI remember one rainy evening when I was seven. The radio suddenly stopped working in the middle of Grandpa's favorite song, and no amount of hitting the side could bring it back. Grandpa did not get angry. Instead, he hummed the rest of the song himself, off-key and laughing, until I was laughing too. I did not understand then why that small, broken moment stayed with me, but I do now.\n\nAfter Grandpa passed away, my family wanted to throw the old radio away. But I asked to keep it. I put it on my own desk, and now I turn it on when I miss him. I still cherish every song that comes out of it, because they are the same ones he loved. When I close my eyes and listen, it feels as if Grandpa is still sitting beside me.",
           "questions": [
             {
               "n": 27,
@@ -279,7 +279,7 @@
           "range": "29–31",
           "passageType": "informational",
           "title": "The City That Never Sleeps at Noon",
-          "passage": "In some hot countries near the sea, many shops and offices close in the early afternoon. This quiet rest is called a \"siesta.\" People go home, eat a big lunch, and take a short sleep before they go back to work in the evening.\n\nWhy do people do this? In the past, there was no way to keep buildings cool. The afternoon was simply too hot to work well, so it made sense to rest and wait for the cooler evening air. Families also used this time to eat together and talk.\n\nToday, life is changing. Many big companies stay open all day, and younger workers often skip the rest. Still, in small towns, the old habit continues. When you walk down the street at two in the afternoon, you may find the shops closed and the streets empty — the town is simply taking a break.",
+          "passage": "In some hot countries near the sea, many shops and offices close in the early afternoon. This quiet rest is called a \"siesta.\" People go home, eat a big lunch, and take a short sleep before they go back to work in the evening. This slower pace of life once shaped the whole afternoon in these places.\n\nWhy do people do this? In the past, there was no way to keep buildings cool. The afternoon was simply too hot to work well, so it made sense to rest and wait for the cooler evening air. Families also used this time to eat together and talk.\n\nInterestingly, some doctors have studied the siesta and found that a short afternoon rest can be good for both the body and the mind. People who take a short nap often feel more awake afterward and make fewer mistakes later in the day. Because of this, a few modern offices in busy cities have started to bring back a short rest period, even if it no longer looks exactly like the siesta of the past.\n\nToday, life is changing. Many big companies stay open all day, and younger workers often skip the rest. Still, in small towns, the old habit continues at its own pace. When you walk down the street at two in the afternoon, you may find the shops closed and the streets empty — the town is simply taking a break.",
           "questions": [
             {
               "n": 29,
@@ -311,7 +311,7 @@
           "range": "32–34",
           "passageType": "informational",
           "title": "Turning Trash Into Art",
-          "passage": "Every year, people throw away millions of plastic bottles, old cans, and broken toys. Most of these things end up buried in the ground, where they may stay for hundreds of years. But a group of artists in a small town found a new way to deal with this problem.\n\nInstead of buying new material, the artists collect trash from the streets and beaches. They wash it, cut it, and put the pieces together to make large animals, colorful walls, and even chairs that people can sit on. One artist made a huge fish out of thousands of bottle caps. It now stands in the middle of the town park.\n\nThe artists say their goal is not only to make beautiful things. They also want people to think about how much they throw away. \"When you see a fish made of trash,\" one artist said, \"you start to ask where all your own trash goes.\"",
+          "passage": "Every year, people throw away millions of plastic bottles, old cans, and broken toys. Most of these things end up buried in the ground, where they may stay for hundreds of years. But a group of artists in a small town found a new way to deal with this problem: they give new life to things that people discard every day.\n\nInstead of buying new material, the artists collect trash from the streets and beaches. They wash it, cut it, and put the pieces together to make large animals, colorful walls, and even chairs that people can sit on. One artist made a huge fish out of thousands of bottle caps. It now stands in the middle of the town park.\n\nAt first, not everyone welcomed the idea. Some people in the town worried that art made from trash would make their public spaces look messy instead of beautiful. But after the giant fish was placed in the park, visitors from other towns began arriving just to see it and take pictures. Local shop owners soon noticed that these visitors often stayed to eat lunch or buy small gifts, which brought new business to the once-quiet town.\n\nThe artists say their goal is not only to make beautiful things. They also want people to think about how much they throw away. \"When you see a fish made of trash,\" one artist said, \"you start to ask where all your own trash goes.\"",
           "questions": [
             {
               "n": 32,
@@ -343,7 +343,7 @@
           "range": "35–39",
           "passageType": "dual",
           "title": "Should Students Use Phones at School? — Two Views",
-          "passage": "■ Writer A：\nI believe students should be allowed to use phones at school. A phone is not just for games. With a phone, students can look up new words, find useful information, and read the news in seconds. When a teacher gives a hard question, the answer is right there in our hands. Also, if something happens on the way home, students can call their parents at once. Taking phones away does not stop students from playing; it only takes away a helpful tool. What schools really need to teach is how to use phones in a smart way.\n\n■ Writer B：\nI understand why phones seem useful, but I still think they cause more problems than good at school. Many students say they are looking up information, but they are really chatting with friends or playing games. When a phone rings in class, everyone loses their focus. Studies also show that students remember less when they read on a screen than on paper. School is a place to learn to think, not to search for quick answers. Students can always use phones after class, so a few quiet hours without them will not hurt.",
+          "passage": "■ Writer A：\nI believe students should be allowed to use phones at school. A phone is not just for games. With a phone, students can look up new words, find useful information, and read the news in seconds. When a teacher gives a hard question, the answer is right there in our hands. Also, if something happens on the way home, students can call their parents at once. Taking phones away does not stop students from playing; it only takes away a helpful tool. Besides, in most workplaces adults are trusted to use their phones wisely and responsibly, so schools should give students the same chance to learn and practice this skill early. What schools really need to teach is how to use phones in a smart way.\n\n■ Writer B：\nI understand why phones seem useful, but I still think they cause more problems than good at school. Many students say they are looking up information, but they are really chatting with friends or playing games. When a phone rings in class, everyone loses their focus and finds it hard to concentrate again. Studies also show that students remember less when they read on a screen than on paper. Even a short break from constant messages and notifications can help students feel calmer and more able to enjoy the people sitting right next to them. School is a place to learn to think, not to search for quick answers. Students can always use phones after class, so a few quiet hours without them will not hurt.",
           "questions": [
             {
               "n": 35,
@@ -359,7 +359,7 @@
               "options": ["They make the room too hot.", "They make everyone lose their focus.", "They are too expensive for students.", "They break down very easily."],
               "answer": 1,
               "optionsZh": ["讓教室太熱。", "讓大家分心。", "對學生太貴。", "很容易壞。"],
-              "explanation": "Writer B 說 When a phone rings in class, everyone loses their focus，故選 (B)。"
+              "explanation": "Writer B 說 everyone loses their focus and finds it hard to concentrate again，故選 (B)。"
             },
             {
               "n": 37,
