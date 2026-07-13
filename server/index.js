@@ -90,6 +90,7 @@ app.use('/api/grammar-lessons', require('./routes/grammar'));
 app.use('/api/mock-exam',       require('./routes/mock_exam'));
 app.use('/api',                 require('./routes/subscription'));
 app.use('/api',                 require('./routes/feedback'));
+app.use('/api',                 require('./routes/push'));
 
 // ── PVP ROOM SYSTEM（單字對決）──
 // 流程：房主建房 → 對手憑房號加入 → 房主選模式並開始 → 伺服器統一出 5 題

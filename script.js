@@ -658,6 +658,42 @@ async function initRevenueCat(supabaseUserId) {
   } catch (e) { console.error('RevenueCat 初始化失敗', e); }
 }
 
+// ── 推播通知（FCM，只有原生 App 環境才會動作，網頁瀏覽器沒有這個 plugin）──
+let _pushInitialized = false;
+async function initPushNotifications() {
+  const Push = window.Capacitor?.Plugins?.PushNotifications;
+  if (!window.Capacitor?.isNativePlatform?.() || !Push || _pushInitialized) return;
+  _pushInitialized = true;
+
+  try {
+    let perm = await Push.checkPermissions();
+    if (perm.receive === 'prompt' || perm.receive === 'prompt-with-rationale') {
+      perm = await Push.requestPermissions();
+    }
+    if (perm.receive !== 'granted') return; // 使用者拒絕授權，不用勉強註冊
+
+    Push.addListener('registration', async ({ value: token }) => {
+      const authToken = typeof getAuthToken === 'function' ? await getAuthToken() : null;
+      if (!authToken || !token) return; // 未登入時先不送（訪客模式沒有帳號可綁定）
+      try {
+        await fetch('/api/push/register', {
+          method: 'POST',
+          headers: { Authorization: `Bearer ${authToken}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token, platform: window.Capacitor.getPlatform() }),
+        });
+      } catch (e) { console.warn('[initPushNotifications] 註冊 token 失敗：', e); }
+    });
+
+    Push.addListener('registrationError', err => console.warn('[initPushNotifications] 註冊失敗：', err));
+
+    // 通知被點擊（App 在背景或已關閉時點通知打開）：目前先只確保能正常開啟 App，
+    // 之後若要做「點通知直接跳到特定畫面」再擴充這裡依 notification.data 導頁。
+    Push.addListener('pushNotificationActionPerformed', () => { /* 之後可依需要導頁 */ });
+
+    await Push.register();
+  } catch (e) { console.warn('[initPushNotifications] 初始化失敗：', e); }
+}
+
 async function startSubscriptionPurchase(planId) {
   if (!currentUser) {
     closeModal('upgradeModal');
@@ -4966,6 +5002,42 @@ async function submitFeedback() {
     showToast('⚠ 網路連線異常，請稍後再試');
   } finally {
     if (btn) { btn.disabled = false; btn.textContent = '📮 送出意見'; }
+  }
+}
+
+async function sendTestPush() {
+  if (!window.Capacitor?.isNativePlatform?.()) {
+    showToast('⚠ 推播通知只能在手機 App 裡測試，網頁瀏覽器沒有這個功能');
+    return;
+  }
+  if (typeof currentUser === 'undefined' || !currentUser) {
+    showToast('請先登入才能測試推播通知');
+    return;
+  }
+  const token = typeof getAuthToken === 'function' ? await getAuthToken() : null;
+  if (!token) { showToast('請先登入才能測試推播通知'); return; }
+
+  const btn = document.getElementById('pushTestBtn');
+  if (btn) { btn.disabled = true; btn.textContent = '發送中...'; }
+
+  try {
+    const res = await fetch('/api/push/test', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    const data = await res.json();
+    if (!res.ok || data.reason === 'not_configured') {
+      showToast('⚠ 推播尚未設定完成，請聯絡開發者');
+    } else if (data.sent > 0) {
+      showToast(`✓ 已發送，稍等幾秒看看通知欄！`);
+    } else {
+      showToast('⚠ 找不到這個帳號的裝置 token，請確認已開啟通知權限');
+    }
+  } catch (err) {
+    console.error('[sendTestPush] 例外：', err);
+    showToast('⚠ 網路連線異常，請稍後再試');
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = '🔔 發送測試通知給我'; }
   }
 }
 

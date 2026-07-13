@@ -90,6 +90,11 @@ async function _loadProfile() {
     restoreOwnedCharsFromServer(currentProfile.owned_chars, currentProfile.deployed_char);
   }
 
+  // 推播 token 註冊：刻意放在每次登入都會跑的 _loadProfile()（而不是只有
+  // 首次登入的 _initUserAccount()），換裝置/重灌後這台裝置的 token 才會
+  // 每次都補註冊一次。
+  if (typeof initPushNotifications === 'function') initPushNotifications();
+
   // 將 profile 的角色屬性覆蓋 localStorage 的早期讀取值
   if (currentProfile && typeof STATS !== 'undefined') {
     STATS.str = currentProfile.str_stat ?? STATS.str;

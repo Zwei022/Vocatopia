@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.100.1",
+    "@capacitor/push-notifications": "^8.1.1",
     "@google/generative-ai": "^0.24.1",
     "@revenuecat/purchases-capacitor": "^13.2.2",
     "@socket.io/redis-adapter": "^8.3.0",
@@ -27,6 +28,7 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "express-rate-limit": "^8.5.2",
+    "firebase-admin": "^14.1.0",
     "ioredis": "^5.11.1",
     "node-cron": "^4.2.1",
     "socket.io": "^4.8.3",
