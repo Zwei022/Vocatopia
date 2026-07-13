@@ -1,0 +1,425 @@
+{
+  "year": 2023,
+  "rocYear": 112,
+  "type": "reading",
+  "label": "模擬試題2",
+  "source": "Vocatopia 模擬試題（比照 2026 會考架構，全文字版，用字限會考核心字）",
+  "durationMin": 60,
+  "totalQuestions": 43,
+  "sections": [
+    {
+      "kind": "single",
+      "title": "第一部分：單題",
+      "range": "第 1-19 題",
+      "items": [
+        {
+          "n": 1,
+          "stem": "Mary is very ＿＿＿. She always shares her lunch with classmates who forget theirs.",
+          "options": ["kind", "lazy", "shy", "angry"],
+          "answer": 0,
+          "optionsZh": ["親切的", "懶惰的", "害羞的", "生氣的"],
+          "explanation": "願意分享食物給別人代表她很 kind（親切的），故選 (A)。"
+        },
+        {
+          "n": 2,
+          "stem": "It is very cold today, so remember to wear a warm ＿＿＿ before you go outside.",
+          "options": ["jacket", "ticket", "pencil", "mirror"],
+          "answer": 0,
+          "optionsZh": ["外套", "票", "鉛筆", "鏡子"],
+          "explanation": "天冷出門要穿的是 jacket（外套），其餘與保暖無關。"
+        },
+        {
+          "n": 3,
+          "stem": "Peter spends every weekend fishing by the river; it has become his favorite ＿＿＿.",
+          "options": ["hobby", "danger", "mistake", "secret"],
+          "answer": 0,
+          "optionsZh": ["嗜好", "危險", "錯誤", "秘密"],
+          "explanation": "每個週末固定做的事就是他的 hobby（嗜好），故選 (A)。"
+        },
+        {
+          "n": 4,
+          "stem": "Every morning, Anna ＿＿＿ her dog before she goes to work, so the dog stays healthy and happy.",
+          "options": ["walk", "walks", "walking", "to walk"],
+          "answer": 1,
+          "optionsZh": ["（原形）", "（第三人稱單數現在式，正確）", "（現在分詞）", "（不定詞）"],
+          "explanation": "主詞 Anna 為第三人稱單數，every morning 表習慣用現在簡單式，動詞加 -s，故選 walks。"
+        },
+        {
+          "n": 5,
+          "stem": "A: ＿＿＿ your parents at home right now? B: No, they are still at the office.",
+          "options": ["Do", "Is", "Are", "Does"],
+          "answer": 2,
+          "optionsZh": ["（助動詞 do）", "（be 動詞單數）", "（be 動詞複數，正確）", "（助動詞 does）"],
+          "explanation": "回答用 they are，可知問句用 be 動詞；主詞 your parents 為複數，故選 Are。"
+        },
+        {
+          "n": 6,
+          "stem": "Look at those dark clouds. I think it ＿＿＿ soon, so let's bring an umbrella.",
+          "options": ["rains", "rained", "will rain", "has rained"],
+          "answer": 2,
+          "optionsZh": ["（現在式）", "（過去式）", "（未來式，正確）", "（現在完成式）"],
+          "explanation": "soon（很快）表未來的預測，故用未來式 will rain。"
+        },
+        {
+          "n": 7,
+          "stem": "Of all the students in the class, Jason is the ＿＿＿ at solving math problems.",
+          "options": ["fast", "faster", "fastest", "more fast"],
+          "answer": 2,
+          "optionsZh": ["（原級）", "（比較級）", "（最高級，正確）", "（誤用）"],
+          "explanation": "of all the students in the class 表在一個範圍中比較，用最高級 fastest。"
+        },
+        {
+          "n": 8,
+          "stem": "Could you please ＿＿＿ me your dictionary for a while? I forgot to bring mine today.",
+          "options": ["lend", "borrow", "keep", "sell"],
+          "answer": 0,
+          "optionsZh": ["借出（給別人）", "借入（向別人借）", "保留", "出售"],
+          "explanation": "「借某人某物」是 lend somebody something；borrow 是向別人借，方向相反，故選 lend。"
+        },
+        {
+          "n": 9,
+          "stem": "Ken missed the school bus this morning, ＿＿＿ he had to walk all the way to school.",
+          "options": ["so", "but", "because", "or"],
+          "answer": 0,
+          "optionsZh": ["所以", "但是", "因為", "或者"],
+          "explanation": "前句「錯過公車」是原因，後句「用走的到學校」是結果，故用 so 引導結果。"
+        },
+        {
+          "n": 10,
+          "stem": "The boy ＿＿＿ bike was stolen last week finally got a new one from his uncle.",
+          "options": ["who", "which", "whose", "what"],
+          "answer": 2,
+          "optionsZh": ["（指人主格）", "（指物）", "（所有格，正確）", "（先行詞不明）"],
+          "explanation": "空格後接名詞 bike，表示「某人的腳踏車」，須用所有格關係代名詞 whose。"
+        },
+        {
+          "n": 11,
+          "stem": "These cookies ＿＿＿ by my mother this morning. They smell amazing.",
+          "options": ["bake", "baked", "were baked", "are baking"],
+          "answer": 2,
+          "optionsZh": ["（原形）", "（過去式主動）", "（過去式被動，正確）", "（現在進行式）"],
+          "explanation": "餅乾是「被烤」的，且 this morning 為過去，用過去被動 were baked。"
+        },
+        {
+          "n": 12,
+          "stem": "My grandfather doesn't mind ＿＿＿ the same story again and again; he always smiles when he tells it.",
+          "options": ["tell", "to tell", "telling", "told"],
+          "answer": 2,
+          "optionsZh": ["（原形）", "（不定詞）", "（動名詞，正確）", "（過去式）"],
+          "explanation": "mind 後面固定接動名詞（V-ing），故選 telling。"
+        },
+        {
+          "n": 13,
+          "stem": "You ＿＿＿ finish your report by Friday, or the teacher will not accept it.",
+          "options": ["might", "must", "could", "would"],
+          "answer": 1,
+          "optionsZh": ["也許", "必須（正確）", "能夠", "將要"],
+          "explanation": "or 引導的後果表示「沒做到就會怎樣」，前面須用表示義務的 must（必須）。"
+        },
+        {
+          "n": 14,
+          "stem": "This is the first time Amy ＿＿＿ to another country, so she feels both nervous and excited.",
+          "options": ["travels", "traveled", "has traveled", "will travel"],
+          "answer": 2,
+          "optionsZh": ["（現在式）", "（過去式）", "（現在完成式，正確）", "（未來式）"],
+          "explanation": "「This is the first time + 主詞」後面常接現在完成式，故用 has traveled。"
+        },
+        {
+          "n": 15,
+          "stem": "The long math lecture was so ＿＿＿ that several students could not keep their eyes open.",
+          "options": ["interesting", "boring", "exciting", "surprising"],
+          "answer": 1,
+          "optionsZh": ["有趣的", "無聊的", "刺激的", "驚訝的"],
+          "explanation": "學生睏到睜不開眼，代表講座很 boring（無聊），故選 (B)。"
+        },
+        {
+          "n": 16,
+          "stem": "You had better ＿＿＿ your umbrella today; the sky looks like it might rain.",
+          "options": ["bring", "to bring", "bringing", "brought"],
+          "answer": 0,
+          "optionsZh": ["（原形，正確）", "（不定詞）", "（動名詞）", "（過去式）"],
+          "explanation": "had better 後面固定接原形動詞，故選 bring。"
+        },
+        {
+          "n": 17,
+          "stem": "The coach asked the players ＿＿＿ extra practice every evening before the big game.",
+          "options": ["do", "doing", "to do", "did"],
+          "answer": 2,
+          "optionsZh": ["（原形）", "（動名詞）", "（不定詞，正確）", "（過去式）"],
+          "explanation": "ask somebody to do something，故用不定詞 to do。"
+        },
+        {
+          "n": 18,
+          "stem": "Neither the manager nor his assistants ＿＿＿ available to answer questions this afternoon.",
+          "options": ["is", "are", "was", "has"],
+          "answer": 1,
+          "optionsZh": ["（單數）", "（複數，正確）", "（過去單數）", "（完成式）"],
+          "explanation": "neither A nor B 的動詞跟最接近的主詞一致，這裡最近是 his assistants（複數），故用 are。"
+        },
+        {
+          "n": 19,
+          "stem": "The harder Tina trains for the race, the ＿＿＿ she becomes at running long distances.",
+          "options": ["strong", "stronger", "strongest", "more strong"],
+          "answer": 1,
+          "optionsZh": ["（原級）", "（比較級，正確）", "（最高級）", "（誤用）"],
+          "explanation": "「the + 比較級... the + 比較級...」句型，兩邊都用比較級，故選 stronger。"
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "title": "第二部分：題組",
+      "range": "第 20-43 題",
+      "passages": [
+        {
+          "range": "20–21",
+          "passageType": "practical",
+          "title": "Starlight Cinema (電影院場次公告)",
+          "passage": "Starlight Cinema — Showtime & Ticket Guide\n\nTicket Prices:\nWeekday shows (Monday–Friday): NT$220\nWeekend shows (Saturday–Sunday): NT$280\n\nCombo Deal: Buy two tickets for the same show and get one large popcorn free.\n\nMember Day: Every Wednesday, members pay only NT$180 per ticket. This discount does not apply to the last show of the day, which starts at 9:30 p.m.\n\nDaily Showtimes: 11:00 a.m., 2:00 p.m., 5:00 p.m., 8:00 p.m., 9:30 p.m.",
+          "questions": [
+            {
+              "n": 20,
+              "stem": "How much does it cost for Ken to watch the 2:00 p.m. show alone next Tuesday?",
+              "options": ["NT$180.", "NT$220.", "NT$260.", "NT$280."],
+              "answer": 1,
+              "optionsZh": ["180元。", "220元。", "260元。", "280元。"],
+              "explanation": "星期二為平日，平日票價為 NT$220，故選 (B)。"
+            },
+            {
+              "n": 21,
+              "stem": "It is Wednesday. Lucy is a member and plans to watch the 9:30 p.m. show alone. How much will she need to pay for her ticket?",
+              "options": ["NT$180.", "NT$220.", "NT$260.", "NT$280."],
+              "answer": 1,
+              "optionsZh": ["180元。", "220元。", "260元。", "280元。"],
+              "explanation": "星期三雖是會員日，會員票原本只要 NT$180，但 9:30 場是當天最後一場，不適用會員優惠；因此星期三（平日）恢復平日票價 NT$220，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "22–24",
+          "passageType": "narrative",
+          "title": "Buddy Comes Home",
+          "passage": "Tommy's dog, Buddy, loved chasing squirrels in the backyard, but one stormy night he squeezed through a gap in the fence and ran away. Thunder crashed loudly, and Buddy, terrified by the noise, kept running until he no longer recognized the streets around him. Tommy searched every corner of the neighborhood with his father, calling Buddy's name until his voice grew hoarse. Days passed, then weeks, and still there was no sign of the little brown dog. Tommy printed posters with Buddy's photo and put them up on every corner, hoping someone would call with good news. His mother told him gently that some lost pets never come home, but Tommy refused to give up hope. Three months later, a woman named Mrs. Lin found a thin, exhausted dog hiding under her porch during a rainstorm. She noticed a faded tag on his collar and called the number printed on it right away. When Tommy picked up the phone and heard her describe the dog, his heart pounded with disbelief. He rushed to her house with his father, and the moment Buddy heard his voice, the dog leaped up and ran straight into his arms. Tommy held him tightly, tears rolling down his cheeks, hardly able to believe his best friend was finally home. Mrs. Lin smiled as she watched them, glad that her small act of kindness had reunited a boy with the dog he loved.",
+          "questions": [
+            {
+              "n": 22,
+              "stem": "Why did Buddy run so far from home on the stormy night?",
+              "options": ["He was chasing a squirrel across town.", "He was terrified by the sound of thunder.", "Tommy accidentally let him out the front door.", "He was looking for Mrs. Lin's porch."],
+              "answer": 1,
+              "optionsZh": ["他在鎮上追松鼠。", "他被雷聲嚇到。", "湯米不小心讓他從前門跑出去。", "他在尋找林太太家的門廊。"],
+              "explanation": "文中 terrified by the noise, kept running，可知他是被雷聲嚇跑的，故選 (B)。"
+            },
+            {
+              "n": 23,
+              "stem": "How did Mrs. Lin know whom to call about the dog she found?",
+              "options": ["She recognized Buddy from a poster.", "She read a name written on his fur.", "She saw a tag with a phone number on his collar.", "Tommy's father happened to walk by her house."],
+              "answer": 2,
+              "optionsZh": ["她從海報上認出巴弟。", "她看到寫在毛上的名字。", "她看到項圈上有電話號碼的名牌。", "湯米的爸爸剛好經過她家。"],
+              "explanation": "文中 she noticed a faded tag on his collar and called the number printed on it，故選 (C)。"
+            },
+            {
+              "n": 24,
+              "stem": "What can we learn about Tommy from the story?",
+              "options": ["He quickly forgot about Buddy after a few days.", "He never lost hope of finding his dog again.", "He blamed his mother for losing Buddy.", "He decided to get a different dog instead."],
+              "answer": 1,
+              "optionsZh": ["他幾天後就忘了巴弟。", "他從未放棄再找到他的狗。", "他責怪媽媽弄丟了巴弟。", "他決定改養別隻狗。"],
+              "explanation": "文中 Tommy refused to give up hope，顯示他始終沒有放棄希望，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "25–27",
+          "passageType": "informational",
+          "title": "How Do Bees Talk to Each Other?",
+          "passage": "Honeybees cannot speak. Yet they still manage to share important messages with the rest of their hive. When a bee finds a rich patch of flowers, it flies home. Then it performs a special pattern of movements called the waggle dance. Other bees gather closely around the dancer. They pay careful attention to every turn and shake of its body. The direction of the dance shows the others which way to fly. This direction is based on the position of the sun in the sky. The length of time the bee spends waggling tells the others exactly how far away the flowers are. A longer dance means the flowers are farther from the hive, while a shorter one means they are close by. Scientists have studied this behavior for decades. They still find it remarkable that such tiny insects can share detailed directions without saying a single word. Some researchers believe the dance may also carry information about the quality of the flowers. Bees seem to dance more energetically when the nectar is especially sweet. This natural form of communication helps the whole hive work together efficiently. It allows thousands of bees to search a wide area without wasting time or energy. Because of the waggle dance, a hive can quickly send most of its workers toward the best food sources nearby, keeping the colony well fed even when flowers are scarce.",
+          "questions": [
+            {
+              "n": 25,
+              "stem": "What is the reading mainly about?",
+              "options": ["How bees build their hives.", "How bees share information through dancing.", "Why flowers produce sweet nectar.", "How scientists catch bees to study them."],
+              "answer": 1,
+              "optionsZh": ["蜜蜂如何築巢。", "蜜蜂如何透過跳舞分享訊息。", "花為何會產生甜蜜。", "科學家如何捕捉蜜蜂研究。"],
+              "explanation": "全文說明蜜蜂如何用 waggle dance 溝通花的方向與距離，主旨為 (B)。"
+            },
+            {
+              "n": 26,
+              "stem": "According to the reading, what does the length of the dance tell other bees?",
+              "options": ["How sweet the nectar tastes.", "How many bees are needed.", "How far away the flowers are.", "How dangerous the flowers are."],
+              "answer": 2,
+              "optionsZh": ["花蜜有多甜。", "需要多少隻蜜蜂。", "花有多遠。", "花有多危險。"],
+              "explanation": "文中 the length of time the bee spends waggling tells the others exactly how far away the flowers are，故選 (C)。"
+            },
+            {
+              "n": 27,
+              "stem": "What do some researchers believe about the energetic dancing?",
+              "options": ["It means the bee is tired.", "It may show the flowers have very sweet nectar.", "It warns other bees of danger nearby.", "It happens only at night."],
+              "answer": 1,
+              "optionsZh": ["代表蜜蜂很累。", "可能顯示花蜜特別甜。", "警告附近有危險。", "只在夜晚發生。"],
+              "explanation": "文中 bees seem to dance more energetically when the nectar is especially sweet，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "28–30",
+          "passageType": "narrative",
+          "title": "An Old Friend Returns",
+          "passage": "When Grace was ten years old, her best friend Mia moved to another country because of her father's new job. The two girls promised to write letters and never forget each other. As the years passed, their messages became shorter and further apart. Grace often wondered what had happened to Mia and whether she still remembered their childhood games. Twelve years later, Grace was sitting in a small coffee shop downtown. A familiar laugh caught her attention from across the room. She turned around slowly, almost afraid to hope, and saw a woman who looked strikingly like the friend she once knew. It was indeed Mia, who had returned to the city for a short visit before starting a new job overseas. The two women stared at each other for a moment, then burst into laughter and pulled each other into a tight hug. They spent the whole afternoon talking, discovering that despite the years apart, their friendship still felt as comfortable as ever. Mia explained that she had kept every letter Grace had sent her, tucked safely inside an old wooden box. Grace felt a warmth spread through her chest. She realized that true friendship does not fade just because people live far apart. Before saying goodbye, they exchanged phone numbers and promised that this time, they would never lose touch again.",
+          "questions": [
+            {
+              "n": 28,
+              "stem": "Why did Mia and Grace stop writing to each other as often?",
+              "options": ["They had a serious argument.", "As the years passed, their letters became shorter.", "Mia's family lost Grace's address.", "Grace stopped liking Mia's letters."],
+              "answer": 1,
+              "optionsZh": ["她們大吵一架。", "隨著時間過去，信件變得越來越簡短。", "米雅的家人弄丟了葛瑞絲的地址。", "葛瑞絲不再喜歡米雅的信。"],
+              "explanation": "文中 as the years passed, their messages became shorter and further apart，故選 (B)。"
+            },
+            {
+              "n": 29,
+              "stem": "How did Grace first notice that Mia was in the coffee shop?",
+              "options": ["Mia called out her name loudly.", "She recognized Mia's laugh from across the room.", "A waiter told her Mia was there.", "She saw Mia's photo on the wall."],
+              "answer": 1,
+              "optionsZh": ["米雅大聲喊她的名字。", "她認出從房間另一頭傳來米雅的笑聲。", "服務生告訴她米雅在那裡。", "她看到牆上米雅的照片。"],
+              "explanation": "文中 a familiar laugh caught her attention from across the room，故選 (B)。"
+            },
+            {
+              "n": 30,
+              "stem": "What did Grace realize by the end of the story?",
+              "options": ["Old friendships always end in disappointment.", "True friendship does not fade even with distance.", "She should have moved abroad with Mia.", "Writing letters is no longer useful today."],
+              "answer": 1,
+              "optionsZh": ["舊友誼總是以失望收場。", "真正的友誼不會因距離而消逝。", "她當初應該和米雅一起搬到國外。", "寫信現在已經沒有用了。"],
+              "explanation": "文末 true friendship does not fade just because people live far apart，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "31–34",
+          "passageType": "informational",
+          "title": "The Story of Paper",
+          "passage": "Long before paper existed, people wrote on materials such as animal bones, stone tablets, and thin strips of bamboo. These materials were heavy and difficult to store. Around two thousand years ago, a court official in ancient China named Cai Lun improved a method for making paper. He used tree bark, old cloth, and plant fibers. His new paper was lighter, cheaper, and much easier to write on than anything used before, so it quickly became popular across the region. For centuries, the method of making paper remained a closely guarded secret. Merchants who traveled the Silk Road slowly carried the knowledge westward. It eventually reached the Middle East. Skilled workers there built the first paper mills and refined the process even further. From there, paper-making techniques spread into Europe. They arrived in Spain and Italy several centuries later. Once printing presses were invented, the demand for paper grew rapidly. Books could now be produced faster and shared with far more people than before. Paper changed the way humans recorded history, shared ideas, and passed down knowledge to future generations. Without this simple but clever invention, many stories, discoveries, and traditions might have been lost forever. Today, even though many people read on screens, paper remains an important part of daily life, from schoolbooks to letters written by hand.",
+          "questions": [
+            {
+              "n": 31,
+              "stem": "What is the reading mainly about?",
+              "options": ["How to write with a bamboo pen.", "The history and spread of paper.", "Why books are more popular than screens.", "How printing presses are built today."],
+              "answer": 1,
+              "optionsZh": ["如何用竹筆寫字。", "紙的歷史與傳播。", "為何書比螢幕更受歡迎。", "現今印刷機如何製造。"],
+              "explanation": "全文介紹紙的發明與傳播過程，主旨為 (B)。"
+            },
+            {
+              "n": 32,
+              "stem": "According to the reading, why was Cai Lun's paper better than earlier writing materials?",
+              "options": ["It was lighter, cheaper, and easier to write on.", "It could only be used by court officials.", "It was invented in Europe first.", "It did not need any plant fibers."],
+              "answer": 0,
+              "optionsZh": ["它更輕、更便宜、更容易書寫。", "只有朝廷官員能使用。", "最早在歐洲發明。", "不需要任何植物纖維。"],
+              "explanation": "文中 His new paper was lighter, cheaper, and much easier to write on than anything used before，故選 (A)。"
+            },
+            {
+              "n": 33,
+              "stem": "How did the knowledge of paper-making first travel westward?",
+              "options": ["Through letters written by Cai Lun.", "Through merchants traveling the Silk Road.", "Through printing presses shipped by boat.", "Through schoolbooks sent to Europe."],
+              "answer": 1,
+              "optionsZh": ["透過蔡倫寫的信。", "透過絲路上往來的商人。", "透過船運送的印刷機。", "透過寄到歐洲的教科書。"],
+              "explanation": "文中 merchants who traveled the Silk Road slowly carried the knowledge westward，故選 (B)。"
+            },
+            {
+              "n": 34,
+              "stem": "What happened after printing presses were invented?",
+              "options": ["Paper became less useful.", "The demand for paper grew rapidly.", "People stopped writing letters by hand.", "Paper mills in the Middle East closed down."],
+              "answer": 1,
+              "optionsZh": ["紙變得比較沒用。", "對紙的需求快速成長。", "人們不再手寫信件。", "中東的造紙廠關閉了。"],
+              "explanation": "文中 the demand for paper grew rapidly，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "35–39",
+          "passageType": "dual",
+          "title": "Should Schools Require Uniforms? — Two Views",
+          "passage": "■ Writer A：\nI think schools should require students to wear uniforms. When everyone wears the same clothes, students spend less time worrying about fashion. They can focus more of their energy on their studies instead. Uniforms also make mornings easier. Students do not have to spend precious time deciding what to wear before school. Another benefit is that uniforms can reduce the pressure some students feel to buy expensive brand-name clothing just to fit in. When students dress the same way, it becomes harder to tell who comes from a wealthy family and who does not. This can help everyone feel more equal. Schools with uniforms often report a stronger sense of community. Students feel like they belong to something bigger than themselves. Some people argue that uniforms limit self-expression. However, students can still show their personality through their hairstyles, hobbies, and the friends they choose. In my opinion, a simple uniform policy creates a calmer, more focused school environment for everyone.\n\n■ Writer B：\nI disagree that uniforms make school better. Clothing is one of the few ways students can express who they are. Taking that choice away can make school feel less personal. Many students say that choosing their own clothes each morning helps them feel more confident and ready for the day. Uniforms can also be expensive for families who already own plenty of regular clothes but must now buy a whole new set just for school. Some students report feeling uncomfortable in uniforms that do not fit well or match the weather. This discomfort can distract them from learning rather than help them focus. Instead of forcing everyone into identical outfits, schools could simply set a reasonable dress code. This approach still allows students some freedom while keeping clothing neat and appropriate. Real focus comes from good teaching, not from what students wear.",
+          "questions": [
+            {
+              "n": 35,
+              "stem": "What does Writer A think uniforms can help reduce?",
+              "options": ["The number of students in each class.", "The pressure to buy expensive brand-name clothing.", "The amount of homework students receive.", "The number of school holidays each year."],
+              "answer": 1,
+              "optionsZh": ["每班學生人數。", "購買昂貴名牌服飾的壓力。", "學生作業量。", "每年學校假期天數。"],
+              "explanation": "Writer A 認為制服能 reduce the pressure some students feel to buy expensive brand-name clothing，故選 (B)。"
+            },
+            {
+              "n": 36,
+              "stem": "According to Writer A, how can students still show their personality even with uniforms?",
+              "options": ["Through their test scores.", "Through their hairstyles, hobbies, and friends.", "Through the price of their shoes.", "Through skipping school activities."],
+              "answer": 1,
+              "optionsZh": ["透過考試成績。", "透過髮型、興趣和朋友。", "透過鞋子的價格。", "透過翹掉學校活動。"],
+              "explanation": "文中 students can still show their personality through their hairstyles, hobbies, and the friends they choose，故選 (B)。"
+            },
+            {
+              "n": 37,
+              "stem": "What problem does Writer B mention about uniforms and the weather?",
+              "options": ["Uniforms are always too expensive to replace.", "Some uniforms do not fit well or match the weather, which can distract students.", "Uniforms cannot be washed easily in winter.", "Schools never allow any changes to uniforms."],
+              "answer": 1,
+              "optionsZh": ["制服總是太貴而無法替換。", "有些制服不合身或不適合天氣，會讓學生分心。", "制服在冬天不容易清洗。", "學校從不允許制服有任何改變。"],
+              "explanation": "文中 feeling uncomfortable in uniforms that do not fit well or match the weather, which can distract them from learning，故選 (B)。"
+            },
+            {
+              "n": 38,
+              "stem": "What do both writers agree on?",
+              "options": ["Clothing is completely unrelated to school life.", "What students wear can affect their school experience.", "All schools should remove their dress codes entirely.", "Students should never wear the same clothes twice."],
+              "answer": 1,
+              "optionsZh": ["穿著和校園生活完全無關。", "學生的穿著會影響他們的校園經驗。", "所有學校都應完全取消服裝規定。", "學生不該穿同一件衣服兩次。"],
+              "explanation": "兩人都在討論穿著（制服與否）如何影響學生的專注與感受，顯示他們都同意穿著與校園經驗有關，故選 (B)。"
+            },
+            {
+              "n": 39,
+              "stem": "Which suggestion would Writer B most likely support?",
+              "options": ["Requiring identical uniforms for every student.", "Setting a reasonable dress code instead of a strict uniform.", "Banning students from choosing their own clothes forever.", "Removing all school rules about clothing."],
+              "answer": 1,
+              "optionsZh": ["要求所有學生穿一模一樣的制服。", "訂立合理的服裝規範，而非嚴格制服。", "永久禁止學生自選服裝。", "取消所有服裝相關校規。"],
+              "explanation": "Writer B 主張 schools could simply set a reasonable dress code that keeps clothing neat and appropriate，與 (B) 一致。"
+            }
+          ]
+        },
+        {
+          "range": "40–43",
+          "passageType": "cloze",
+          "title": "Jenny's Lemonade Stand (故事克漏字)",
+          "passage": "Every summer, Jenny wanted to earn her own money instead of asking her parents for allowance. One hot afternoon, she decided to set up a small lemonade stand in front of her house. __(40)__ she had never run a business before, she borrowed a recipe book from the library and practiced making lemonade until it tasted just right. On her first day, hardly any customers stopped by, and Jenny worried that her idea __(41)__ a failure. Her older brother suggested she make a colorful sign and offer a free cookie with every cup sold. The next day, more neighbors walked over, drawn by the bright sign and the smell of fresh lemonade. By the end of the week, Jenny __(42)__ enough money to buy the bicycle she had been saving for. She realized that success did not come from the very first try, but from being willing to learn and try new ideas. Jenny decided to keep her stand open every weekend, and she began saving part of her earnings for an even bigger goal. Her parents were proud to see how __(43)__ she had become, handling both the cooking and the selling almost entirely on her own.",
+          "questions": [
+            {
+              "n": 40,
+              "stem": "選出第 40 格最適合的答案。",
+              "options": ["Although", "Because", "So", "If"],
+              "answer": 0,
+              "optionsZh": ["雖然（讓步）", "因為", "所以", "如果"],
+              "explanation": "前後為對比：「雖然從未做過生意，她仍努力練習」，用 Although（雖然）連接讓步子句最合適。"
+            },
+            {
+              "n": 41,
+              "stem": "選出第 41 格最適合的答案。",
+              "options": ["is", "was", "would become", "had become"],
+              "answer": 2,
+              "optionsZh": ["（現在式）", "（過去式）", "（過去未來式，正確）", "（過去完成式）"],
+              "explanation": "以過去（worried）為基準點，表達「擔心之後會變成失敗」是站在過去看未來，須用過去未來式 would become。"
+            },
+            {
+              "n": 42,
+              "stem": "選出第 42 格最適合的答案。",
+              "options": ["earns", "earned", "had earned", "was earning"],
+              "answer": 2,
+              "optionsZh": ["（現在式）", "（過去式）", "（過去完成式，正確）", "（過去進行式）"],
+              "explanation": "By the end of the week 表示到某個過去時間點之前已完成的動作，須用過去完成式 had earned。"
+            },
+            {
+              "n": 43,
+              "stem": "選出第 43 格最適合的答案。",
+              "options": ["independent", "careless", "nervous", "forgetful"],
+              "answer": 0,
+              "optionsZh": ["獨立的", "粗心的", "緊張的", "健忘的"],
+              "explanation": "後文說她幾乎獨自處理煮製與銷售，父母為她的「獨立」感到驕傲，故選 independent。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

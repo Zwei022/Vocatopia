@@ -1,0 +1,425 @@
+{
+  "year": 2023,
+  "rocYear": 112,
+  "type": "reading",
+  "label": "模擬試題10",
+  "source": "Vocatopia 模擬試題（比照 2026 會考架構，全文字版，用字限會考核心字）",
+  "durationMin": 60,
+  "totalQuestions": 43,
+  "sections": [
+    {
+      "kind": "single",
+      "title": "第一部分：單題",
+      "range": "第 1-19 題",
+      "items": [
+        {
+          "n": 1,
+          "stem": "The new student is very ＿＿＿. She always shares her lunch with classmates who forget theirs.",
+          "options": ["generous", "nervous", "lonely", "careless"],
+          "answer": 0,
+          "optionsZh": ["慷慨的", "緊張的", "孤單的", "粗心的"],
+          "explanation": "會主動分享午餐給忘記帶的同學代表慷慨，故選 generous（慷慨的）。"
+        },
+        {
+          "n": 2,
+          "stem": "Tom forgot his ＿＿＿ at home, so he could not open the front door after school.",
+          "options": ["key", "pillow", "mirror", "blanket"],
+          "answer": 0,
+          "optionsZh": ["鑰匙", "枕頭", "鏡子", "毯子"],
+          "explanation": "無法開門是因為忘記帶 key（鑰匙），故選 (A)。"
+        },
+        {
+          "n": 3,
+          "stem": "After visiting the museum many times, Amy has gained a lot of ＿＿＿ about ancient Egypt.",
+          "options": ["excuse", "information", "accident", "traffic"],
+          "answer": 1,
+          "optionsZh": ["藉口", "資訊", "意外", "交通"],
+          "explanation": "多次參觀博物館會獲得許多 information（資訊），故選 (B)。"
+        },
+        {
+          "n": 4,
+          "stem": "My mother ＿＿＿ breakfast for the whole family every morning before going to work.",
+          "options": ["cook", "cooks", "cooking", "to cook"],
+          "answer": 1,
+          "optionsZh": ["（原形）", "（第三人稱單數現在式，正確）", "（現在分詞）", "（不定詞）"],
+          "explanation": "主詞 My mother 為第三人稱單數，every morning 表習慣用現在簡單式，動詞加 -s，故選 cooks。"
+        },
+        {
+          "n": 5,
+          "stem": "A: ＿＿＿ your parents at home right now? B: No, they are still at the supermarket.",
+          "options": ["Do", "Is", "Are", "Does"],
+          "answer": 2,
+          "optionsZh": ["（助動詞 do）", "（be 動詞單數）", "（be 動詞複數，正確）", "（助動詞 does）"],
+          "explanation": "主詞 your parents 為複數，且回答用 they are，可知問句用 be 動詞複數形，故選 Are。"
+        },
+        {
+          "n": 6,
+          "stem": "Look at those dark clouds in the sky. I'm sure it ＿＿＿ soon.",
+          "options": ["rains", "rained", "is going to rain", "has rained"],
+          "answer": 2,
+          "optionsZh": ["（現在式）", "（過去式）", "（即將發生的未來式，正確）", "（現在完成式）"],
+          "explanation": "根據眼前的烏雲（現在跡象）預測即將發生的事，用 be going to，故選 is going to rain。"
+        },
+        {
+          "n": 7,
+          "stem": "Of all the students in class, Peter runs the ＿＿＿. He always finishes first in every race.",
+          "options": ["fast", "faster", "fastest", "as fast"],
+          "answer": 2,
+          "optionsZh": ["（原級）", "（比較級）", "（最高級，正確）", "（同級）"],
+          "explanation": "of all the students in class 表在一個範圍中比較，用最高級 fastest。"
+        },
+        {
+          "n": 8,
+          "stem": "Could you please ＿＿＿ me your dictionary for a while? I forgot to bring mine today.",
+          "options": ["lend", "borrow", "return", "keep"],
+          "answer": 0,
+          "optionsZh": ["借出（給別人，正確）", "借入（跟別人借）", "歸還", "保留"],
+          "explanation": "「借某人某物（借出）」是 lend somebody something，故選 lend。"
+        },
+        {
+          "n": 9,
+          "stem": "Ann was very thirsty ＿＿＿ she had walked under the hot sun for almost two hours.",
+          "options": ["so", "but", "because", "or"],
+          "answer": 2,
+          "optionsZh": ["所以", "但是", "因為", "或者"],
+          "explanation": "前句是「口渴」的結果，後句是原因（走在太陽下很久），故用 because 引導原因。"
+        },
+        {
+          "n": 10,
+          "stem": "The book ＿＿＿ is lying on the table belongs to my little brother.",
+          "options": ["who", "which", "what", "whose"],
+          "answer": 1,
+          "optionsZh": ["（指人）", "（指物，正確）", "（先行詞不明）", "（所有格）"],
+          "explanation": "先行詞 the book 是物，且在子句中當主詞，用關係代名詞 which。"
+        },
+        {
+          "n": 11,
+          "stem": "This bridge ＿＿＿ over one hundred years ago, but it is still very strong today.",
+          "options": ["builds", "built", "was built", "is building"],
+          "answer": 2,
+          "optionsZh": ["（現在式）", "（過去式主動）", "（過去式被動，正確）", "（現在進行式）"],
+          "explanation": "橋是「被建造」的，且 over one hundred years ago 為過去，用過去被動 was built。"
+        },
+        {
+          "n": 12,
+          "stem": "The children kept ＿＿＿ in the rain even after their mother told them to stop.",
+          "options": ["play", "to play", "playing", "played"],
+          "answer": 2,
+          "optionsZh": ["（原形）", "（不定詞）", "（動名詞，正確）", "（過去式）"],
+          "explanation": "keep 後面接動名詞（V-ing）表持續做某事，故選 playing。"
+        },
+        {
+          "n": 13,
+          "stem": "You look exhausted. You ＿＿＿ take a break before you continue working on the project.",
+          "options": ["should", "can", "must", "need"],
+          "answer": 0,
+          "optionsZh": ["應該（正確）", "能夠", "必須", "需要"],
+          "explanation": "看起來很累，給予「應該休息」的建議語氣，用 should 最合適。"
+        },
+        {
+          "n": 14,
+          "stem": "This is the first time Amy ＿＿＿ such a delicious cake made by her own hands.",
+          "options": ["bakes", "baked", "has baked", "will bake"],
+          "answer": 2,
+          "optionsZh": ["（現在式）", "（過去式）", "（現在完成式，正確）", "（未來式）"],
+          "explanation": "「This is the first time + 主詞」後面常接現在完成式，表達到目前為止第一次，故用 has baked。"
+        },
+        {
+          "n": 15,
+          "stem": "The haunted house tour was so ＿＿＿ that several visitors screamed and ran outside.",
+          "options": ["scary", "funny", "relaxing", "boring"],
+          "answer": 0,
+          "optionsZh": ["恐怖的（正確）", "好笑的", "放鬆的", "無聊的"],
+          "explanation": "遊客尖叫並跑出去，代表鬼屋很 scary（恐怖的），故選 (A)。"
+        },
+        {
+          "n": 16,
+          "stem": "You had better ＿＿＿ an umbrella today; the weather report says it will rain heavily.",
+          "options": ["bring", "to bring", "bringing", "brought"],
+          "answer": 0,
+          "optionsZh": ["（原形，正確）", "（不定詞）", "（動名詞）", "（過去式）"],
+          "explanation": "had better 後面固定接原形動詞，故選 bring。"
+        },
+        {
+          "n": 17,
+          "stem": "The coach told the players ＿＿＿ extra practice every weekend before the big match.",
+          "options": ["do", "doing", "to do", "did"],
+          "answer": 2,
+          "optionsZh": ["（原形）", "（動名詞）", "（不定詞，正確）", "（過去式）"],
+          "explanation": "tell somebody to do something，故用不定詞 to do。"
+        },
+        {
+          "n": 18,
+          "stem": "Neither the manager nor his assistants ＿＿＿ available to answer the phone this afternoon.",
+          "options": ["is", "are", "was", "has"],
+          "answer": 1,
+          "optionsZh": ["（單數）", "（複數，正確）", "（過去單數）", "（完成式）"],
+          "explanation": "neither A nor B 的動詞跟「最接近的主詞」一致，這裡最近是 his assistants（複數），故用 are。"
+        },
+        {
+          "n": 19,
+          "stem": "The harder Ken trains for the race, the ＿＿＿ his results become.",
+          "options": ["good", "well", "better", "best"],
+          "answer": 2,
+          "optionsZh": ["（原級形容詞）", "（副詞）", "（比較級，正確）", "（最高級）"],
+          "explanation": "「the more/harder... the more...」句型，兩邊都用比較級，故用 better。"
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "title": "第二部分：題組",
+      "range": "第 20-43 題",
+      "passages": [
+        {
+          "range": "20–21",
+          "passageType": "practical",
+          "title": "Green Valley Zoo — Visitor Guide (動物園門票公告)",
+          "passage": "Green Valley Zoo — Visitor Guide\n\nTicket Prices: Adult $300 / Child (4–12) $150 / Senior (65 or older) $150 / Under 4 free\n\nFamily Package: 2 adults + 2 children (4–12) for $700 total. Available Monday to Friday only. Not valid on weekends or public holidays.\n\nAnnual Membership: $1,200 per person. Includes unlimited entry for 12 months and a free front-row seat at any feeding show. Members also receive 10% off all gift shop items.\n\nFeeding Show Schedule:\nElephant Show — 10:30 a.m. and 3:00 p.m., every day\nPenguin Show — 11:15 a.m., every day\nTiger Show — 1:30 p.m., Saturday and Sunday only\n\nNotice: The zoo is closed every Wednesday for cleaning.",
+          "questions": [
+            {
+              "n": 20,
+              "stem": "Mr. Lin plans to visit the zoo with his wife and two children (ages 6 and 9) this Saturday. Which plan will let his family watch the Tiger Show while paying the least amount possible?",
+              "options": ["Buy the family package for $700.", "Buy four separate tickets: two adult tickets and two child tickets.", "Buy an annual membership for the whole family.", "Wait until Wednesday and use the family package."],
+              "answer": 1,
+              "optionsZh": ["購買700元的家庭套票。", "分開購買四張票：兩張成人票、兩張兒童票。", "全家購買年度會員卡。", "等到週三再使用家庭套票。"],
+              "explanation": "老虎秀只在週六、週日舉行；家庭套票只在週一到週五有效，週六不能用，故無法選(A)。週三動物園公休，故(D)不可行。年度會員卡一人就要$1,200，全家四人太貴，並非最省錢方案，故排除(C)。只能分開買票：2×300＋2×150＝$900，雖不是最低數字但是唯一能在週六同時符合「入園規則」與「看到老虎秀」的方案，故選 (B)。這題須同時比對家庭套票規則、老虎秀時間規則與公休日規則三項資訊才能作答。"
+            },
+            {
+              "n": 21,
+              "stem": "According to the notice, which statement about the zoo is correct?",
+              "options": ["Visitors can use the family package on Saturdays and Sundays.", "Members get a discount on the food at the restaurant.", "The zoo is closed on Wednesdays, so there are no feeding shows that day.", "The Penguin Show is held only on weekends."],
+              "answer": 2,
+              "optionsZh": ["遊客週六、週日可使用家庭套票。", "會員在餐廳用餐有折扣。", "動物園週三公休，因此當天沒有餵食秀。", "企鵝秀只在週末舉行。"],
+              "explanation": "公告寫明家庭套票僅限週一到週五，故(A)錯；優惠只提到禮品店，未提餐廳，故(B)錯；企鵝秀是每天舉行，故(D)錯；動物園週三公休，因此當天自然不會有任何餵食秀，故選 (C)。"
+            }
+          ]
+        },
+        {
+          "range": "22–24",
+          "passageType": "narrative",
+          "title": "The Letter in the Attic",
+          "passage": "Last spring, Mia's family finally started cleaning out the attic that no one had touched for years. Dust covered every box, and the air smelled old and dry. While Mia was moving a heavy trunk near the window, something slipped out from between two dusty boards and landed softly at her feet. It was a yellowed envelope, its edges soft and torn, with no name written on the front.\n\nCurious, Mia carefully opened it and found a short letter written in careful, old-fashioned handwriting. It was from her grandfather to her grandmother, written the year before they got married. In it, he described how nervous he had felt the first time he asked her to dance. He had practiced the words for an entire week before finding the courage to speak. Mia had never imagined her grandfather, who now moved slowly and rarely smiled, as a nervous young man. She never knew he had once been so afraid of being rejected.\n\nThat evening, she showed the letter to her grandmother. Her grandmother's eyes filled with tears the moment she recognized the handwriting. She told Mia stories about her grandfather that Mia had never heard before, stories full of laughter, kindness, and quiet devotion. From that day on, Mia looked at the silent old man sitting by the window with completely different eyes, finally understanding the depth of feeling hidden behind his calm face.",
+          "questions": [
+            {
+              "n": 22,
+              "stem": "How did Mia find the old letter?",
+              "options": ["Her grandmother gave it to her directly.", "It fell out while she was moving a trunk in the attic.", "She found it inside a book at school.", "Her grandfather mailed it to her."],
+              "answer": 1,
+              "optionsZh": ["奶奶直接把信交給她。", "她在閣樓搬動木箱時信滑落出來。", "她在學校的書裡發現。", "爺爺把信寄給她。"],
+              "explanation": "文中 something slipped out... and landed softly at her feet while she was moving a trunk，故選 (B)。"
+            },
+            {
+              "n": 23,
+              "stem": "Why did Mia's grandmother cry when she saw the letter?",
+              "options": ["She had never seen the letter's handwriting before.", "She recognized the handwriting and remembered old memories.", "She was upset that Mia had opened her private letter.", "She did not know who had written the letter."],
+              "answer": 1,
+              "optionsZh": ["她從沒見過這種筆跡。", "她認出筆跡並想起舊回憶。", "她生氣米亞打開她的私人信件。", "她不知道信是誰寫的。"],
+              "explanation": "文中 her eyes filled with tears the moment she recognized the handwriting，故選 (B)。"
+            },
+            {
+              "n": 24,
+              "stem": "How did Mia's feelings toward her grandfather change by the end of the story?",
+              "options": ["She started to feel afraid of him.", "She realized he had once been a shy, loving young man.", "She decided to write him a letter back.", "She stopped visiting him after learning the truth."],
+              "answer": 1,
+              "optionsZh": ["她開始害怕他。", "她發現他曾是害羞、深情的年輕人。", "她決定回信給他。", "她得知真相後不再去看他。"],
+              "explanation": "文末 Mia looked at the silent old man... understanding the depth of feeling hidden behind his calm face，表示她理解了爺爺曾經是害羞卻深情的人，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "25–27",
+          "passageType": "informational",
+          "title": "Why Is the Sky Blue?",
+          "passage": "On a clear day, the sky often looks like a deep, endless blue. But sunlight itself is not blue at all. It is actually a mixture of many colors mixed together, which is why it looks almost white to our eyes. So where does the blue color in the sky come from?\n\nThe answer lies in the tiny gas molecules that fill our atmosphere. As sunlight travels through the air, it bumps into these countless molecules and scatters in every direction, a process scientists call \"scattering.\" Not all colors scatter the same amount, however. Blue light has a shorter wavelength than red or yellow light, so it bounces off the tiny molecules more easily. It then spreads across the entire sky. That is why you see blue light arriving from all directions.\n\nInterestingly, the sky does not stay blue all day. At sunrise and sunset, sunlight must travel through a much thicker layer of air to reach our eyes. Most of the blue light scatters away before it arrives. This leaves mainly red and orange light to color the sky, which is why sunsets often glow in shades of red and gold instead of blue.\n\nSo next time you look up at a blue sky, remember something simple: the color you see is not paint, but simply sunlight quietly scattering above your head.",
+          "questions": [
+            {
+              "n": 25,
+              "stem": "What causes the sky to look blue, according to the reading?",
+              "options": ["Blue paint spread across the atmosphere.", "Blue light scattering off tiny gas molecules in the air.", "The sun only produces blue light.", "Clouds turning sunlight into a blue color."],
+              "answer": 1,
+              "optionsZh": ["塗在大氣層上的藍色顏料。", "藍光被空氣中的微小氣體分子散射。", "太陽只產生藍光。", "雲把陽光變成藍色。"],
+              "explanation": "文中說明 blue light... bounces off the tiny molecules much more easily and spreads across the entire sky，故選 (B)。"
+            },
+            {
+              "n": 26,
+              "stem": "Why does the sky often turn red at sunset?",
+              "options": ["The sun becomes a different color at night.", "Most of the blue light scatters away before reaching our eyes.", "The air becomes completely empty at sunset.", "Red light travels slower than blue light."],
+              "answer": 1,
+              "optionsZh": ["太陽到了晚上會變色。", "大部分藍光在抵達眼睛前已散射掉。", "日落時空氣完全變空。", "紅光的速度比藍光慢。"],
+              "explanation": "文中 most of the blue light scatters away long before it arrives, leaving mainly red and orange light，故選 (B)。"
+            },
+            {
+              "n": 27,
+              "stem": "What is the reading mainly about?",
+              "options": ["How to predict the weather using the sky's color.", "The reason why the sky looks blue and changes color at sunset.", "How clouds are formed in the atmosphere.", "Why the sun looks bigger in the evening."],
+              "answer": 1,
+              "optionsZh": ["如何用天空顏色預測天氣。", "天空呈現藍色以及日落變色的原因。", "雲如何在大氣中形成。", "為何傍晚太陽看起來較大。"],
+              "explanation": "全文說明天空為何是藍色、日落又為何變紅，主旨為 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "28–30",
+          "passageType": "narrative",
+          "title": "A Guide Named Ray",
+          "passage": "When Jenny walked through the gate of her new middle school, the huge campus looked like a maze of unfamiliar hallways and confusing stairs. She stood frozen near the entrance, unsure which building held her homeroom. Then an older student wearing a bright yellow badge walked over and smiled at her. His name was Ray, and he explained that every new student was paired with an older \"buddy\" during the first week of school.\n\nRay walked Jenny to her classroom, pointing out the library, the nurse's office, and the shortcut behind the gym that most teachers never used. He also warned her about a strict rule at the cafeteria. Students had to return their trays within five minutes after finishing their food, or their whole class would lose points. Jenny appreciated these small but important details that no map could have shown her.\n\nOver the following weeks, Jenny sometimes felt lost or nervous about a test. When that happened, she quietly texted Ray for advice, and he always replied kindly, sharing tips from his own experience. By the end of the semester, Jenny no longer needed a guide to find her way. Still, she remembered how much calmer that first day had felt, simply because someone patient had walked beside her.\n\nThe next year, new students arrived looking just as lost as she once had. Jenny put on a yellow badge of her own, ready to return the same kindness she had once received.",
+          "questions": [
+            {
+              "n": 28,
+              "stem": "Why did Jenny feel less worried on her first day at the new school?",
+              "options": ["A teacher walked her to every class personally.", "An older student named Ray helped guide her around.", "Her parents stayed with her the whole day.", "The school gave her a detailed map of every hallway."],
+              "answer": 1,
+              "optionsZh": ["老師親自帶她到每堂課。", "一位叫Ray的學長帶著她認識環境。", "父母整天陪著她。", "學校給她一張詳細的走廊地圖。"],
+              "explanation": "文中 an older student... explained that every new student was paired with an older buddy，是Ray帶著她，故選 (B)。"
+            },
+            {
+              "n": 29,
+              "stem": "What rule did Ray tell Jenny about the school cafeteria?",
+              "options": ["Students must bring their own trays from home.", "Students must return their trays within five minutes after eating.", "Students are not allowed to talk during lunch.", "Students must sit in the same seat every day."],
+              "answer": 1,
+              "optionsZh": ["學生必須自己從家裡帶餐盤。", "學生用完餐須在五分鐘內歸還餐盤。", "午餐時間學生不准說話。", "學生每天必須坐同一個位子。"],
+              "explanation": "文中 students had to return their trays within five minutes after finishing their food，故選 (B)。"
+            },
+            {
+              "n": 30,
+              "stem": "What did Jenny do the following year?",
+              "options": ["She moved to a different school.", "She became a buddy for new students herself.", "She stopped talking to Ray completely.", "She was punished for losing points at the cafeteria."],
+              "answer": 1,
+              "optionsZh": ["她轉學到別的學校。", "她自己成為新生的引導學長姊。", "她完全不再和Ray說話。", "她因為餐廳扣分被處罰。"],
+              "explanation": "文末 Jenny put on a yellow badge of her own, ready to return the same kindness，表示她成為了引導者，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "31–34",
+          "passageType": "informational",
+          "title": "How the Compass Found Its Way",
+          "passage": "Long before modern maps and satellites existed, travelers often had no reliable way to know their direction. This was especially true at sea or in open deserts. The invention of the compass slowly changed that.\n\nHistorians believe the earliest compasses were developed in ancient China, more than two thousand years ago. At first, people noticed something strange about a certain type of stone. When allowed to spin freely, it always pointed toward the same direction. This natural stone contained a special mineral that lined up with the Earth's invisible magnetic field. Early thinkers were fascinated by this behavior, so they began shaping the stone into simple pointing tools. At that time, these tools were mainly used for choosing lucky directions when building houses.\n\nIt took several more centuries before sailors realized how useful this tool could be at sea. Ancient sailors floated a magnetized needle on a small piece of wood inside a bowl of water. In this way, they created an early compass that could be carried on ships. This simple device allowed explorers to sail farther from the coast without becoming hopelessly lost. It opened routes that had once seemed far too dangerous to attempt.\n\nToday's compasses look nothing like those early floating needles. Yet they still depend on the very same magnetic principle discovered so long ago. A tool once used for placing buildings correctly eventually helped humans cross oceans and explore the entire globe.",
+          "questions": [
+            {
+              "n": 31,
+              "stem": "Where were the earliest compasses developed, according to the reading?",
+              "options": ["Ancient Egypt.", "Ancient China.", "Ancient Greece.", "Ancient Rome."],
+              "answer": 1,
+              "optionsZh": ["古埃及。", "古代中國。", "古希臘。", "古羅馬。"],
+              "explanation": "文中 the earliest compasses were developed in ancient China，故選 (B)。"
+            },
+            {
+              "n": 32,
+              "stem": "What were the early stone compasses mainly used for?",
+              "options": ["Sailing across the ocean.", "Choosing lucky directions when building houses.", "Measuring the weather.", "Finding buried treasure."],
+              "answer": 1,
+              "optionsZh": ["航行於海洋上。", "建房子時選擇吉利的方向。", "測量天氣。", "尋找埋藏的寶藏。"],
+              "explanation": "文中 shaping the stone into simple pointing tools, mainly used for choosing lucky directions when building houses，故選 (B)。"
+            },
+            {
+              "n": 33,
+              "stem": "How did ancient sailors make an early compass for use at sea?",
+              "options": ["They carved directions onto a large rock.", "They floated a magnetized needle on wood inside a bowl of water.", "They followed the stars every night.", "They used a stone that could talk."],
+              "answer": 1,
+              "optionsZh": ["他們在大石頭上刻方向。", "他們把磁化的針放在木片上、漂浮於水碗中。", "他們每晚跟著星星走。", "他們使用會說話的石頭。"],
+              "explanation": "文中 By floating a magnetized needle on a small piece of wood inside a bowl of water，故選 (B)。"
+            },
+            {
+              "n": 34,
+              "stem": "What can we learn about the compass from the reading?",
+              "options": ["It has never changed in appearance since ancient times.", "It began as a simple tool but later helped people explore the world.", "It was invented only for military use.", "It stopped being useful after ships were invented."],
+              "answer": 1,
+              "optionsZh": ["外觀自古以來從未改變。", "它從簡單工具起步，後來幫助人類探索世界。", "它發明的唯一目的是軍事用途。", "船發明後它就不再有用。"],
+              "explanation": "文末說明指南針從建房用的簡單工具，後來幫助人類 cross oceans and explore the entire globe，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "35–39",
+          "passageType": "dual",
+          "title": "Should Students Choose Their Own Seats in Class? — Two Views",
+          "passage": "■ Writer A:\nI think students should be allowed to pick their own seats in class. When students sit next to a friend they trust, they usually feel calmer and more willing to ask questions instead of staying quiet out of fear. A classroom is not only a place to receive information; it is also a place where students learn to build friendships. If a student is placed next to someone he dislikes or barely knows, it can be hard to focus on the lesson at all. Some teachers worry that friends will only chat and ignore the lesson, but that problem can usually be solved with clear classroom rules instead of removing choice completely. Giving students a say in where they sit also teaches them responsibility, since they must show they can behave well enough to keep that freedom. In the end, a small amount of trust from teachers can lead to a calmer, happier classroom.\n\n■ Writer B:\nI disagree. Letting every student pick a seat often leads to the same small circle of friends sitting together every day, while quieter students end up isolated in the back with no one to talk to. Teachers assign seats for good reasons: they separate students who distract each other, and they make sure everyone can see the board clearly. Assigned seats also give shy students a chance to make new friends they might never approach on their own. Without any plan, some corners of the room quickly become noisy while others are ignored completely. I have also noticed that students placed next to unfamiliar classmates are often forced to communicate more, which helps them practice teamwork, a skill they will need long after they leave school. A classroom seating chart is not meant to punish anyone; it is simply a tool to make sure that learning comes first.",
+          "questions": [
+            {
+              "n": 35,
+              "stem": "What is Writer A's main opinion about seating in class?",
+              "options": ["Students should never talk to their classmates.", "Students should be allowed to choose their own seats.", "Teachers should choose seats for every student.", "Seating does not affect how students learn at all."],
+              "answer": 1,
+              "optionsZh": ["學生上課永遠不該交談。", "學生應該可以自己選座位。", "老師應為每位學生安排座位。", "座位安排完全不影響學習。"],
+              "explanation": "Writer A 主張 students should be allowed to pick their own seats，故選 (B)。"
+            },
+            {
+              "n": 36,
+              "stem": "According to Writer B, why do teachers assign seats?",
+              "options": ["To make the classroom look neat and tidy.", "To separate distracting students and help shy students make friends.", "To save time at the beginning of class.", "To follow a rule set by the government."],
+              "answer": 1,
+              "optionsZh": ["讓教室看起來整齊。", "隔開會互相分心的學生並幫助害羞學生交友。", "節省上課前的時間。", "遵守政府訂的規定。"],
+              "explanation": "文中 to separate students who distract each other... and to give shy students a chance to make new friends，故選 (B)。"
+            },
+            {
+              "n": 37,
+              "stem": "What advantage of teacher-assigned seats does Writer B mention?",
+              "options": ["Students get to sit with their best friends.", "Students are forced to communicate more and practice teamwork.", "Students can choose to sit alone.", "Students never have to talk to new classmates."],
+              "answer": 1,
+              "optionsZh": ["學生能和好朋友坐在一起。", "學生被迫多溝通、練習團隊合作。", "學生可以選擇獨自坐。", "學生永遠不用和新同學說話。"],
+              "explanation": "文中 students placed next to unfamiliar classmates are often forced to communicate more, which actually helps them practice teamwork，故選 (B)。"
+            },
+            {
+              "n": 38,
+              "stem": "What do both writers seem to agree on?",
+              "options": ["Where students sit can affect their classroom experience.", "Teachers should never make any classroom decisions.", "Students should be graded based on where they sit.", "Seating charts should be changed every single day."],
+              "answer": 0,
+              "optionsZh": ["座位安排會影響學生在課堂上的體驗。", "老師永遠不該做任何課堂決定。", "學生成績該依座位決定。", "座位表應每天更換。"],
+              "explanation": "兩位作者都認為座位安排會影響學生的感受、專注力或人際關係，共同點是座位會影響課堂體驗，故選 (A)。"
+            },
+            {
+              "n": 39,
+              "stem": "Which sentence would Writer B most likely agree with?",
+              "options": ["A seating chart can help quiet students meet new people.", "Students should always sit with their closest friends.", "Classroom rules are never necessary.", "Friendship is more important than learning in class."],
+              "answer": 0,
+              "optionsZh": ["座位表能幫助安靜的學生認識新朋友。", "學生應該永遠和最好的朋友坐在一起。", "教室規則從來都不必要。", "友誼比課堂學習更重要。"],
+              "explanation": "Writer B 認為指定座位能讓害羞的學生有機會認識新朋友，與(A)一致。"
+            }
+          ]
+        },
+        {
+          "range": "40–43",
+          "passageType": "cloze",
+          "title": "Making the Team (故事克漏字)",
+          "passage": "Leo had dreamed of joining the school basketball team since he was ten years old. __(40)__ he practiced every single day after class, he still felt nervous walking into the gym on tryout day. Twenty other students were already warming up, and most of them looked taller and stronger than him.\n\nThe coach __(41)__ everyone to run three laps around the court before starting any drills. Leo's legs felt heavy, but he pushed himself to keep up with the faster runners. During the shooting practice, he missed his first five shots, and he could feel his confidence dropping quickly.\n\n__(42)__ , he remembered what his father had told him: mistakes are only a step toward getting better. He took a deep breath and focused on his next shot, forgetting about the runners around him. This time, the ball dropped cleanly through the net, and slowly, his shots stopped missing.\n\nTwo days later, Leo saw his name on the list posted outside the gym. He read it again and again just to make sure. That afternoon, he finally understood that being the __(43)__ player in the room did not matter nearly as much as refusing to give up.",
+          "questions": [
+            {
+              "n": 40,
+              "stem": "選出第 40 格最適合的答案。",
+              "options": ["Although", "Because", "So", "If"],
+              "answer": 0,
+              "optionsZh": ["雖然（讓步，正確）", "因為", "所以", "如果"],
+              "explanation": "前後語意對比「雖然他每天練習，卻仍然緊張」，用 Although 表讓步最合適。"
+            },
+            {
+              "n": 41,
+              "stem": "選出第 41 格最適合的答案。",
+              "options": ["ask", "asked", "is asking", "will ask"],
+              "answer": 1,
+              "optionsZh": ["（原形）", "（過去式，正確）", "（現在進行式）", "（未來式）"],
+              "explanation": "全文以過去式敘事（felt, pushed, missed），此處也應用過去式 asked。"
+            },
+            {
+              "n": 42,
+              "stem": "選出第 42 格最適合的答案。",
+              "options": ["Similarly", "However", "Therefore", "Otherwise"],
+              "answer": 1,
+              "optionsZh": ["同樣地", "然而（正確）", "因此", "否則"],
+              "explanation": "前句說信心快速下滑，此句卻轉折「想起爸爸的話」，語意轉折須用 However。"
+            },
+            {
+              "n": 43,
+              "stem": "選出第 43 格最適合的答案。",
+              "options": ["tallest", "shortest", "youngest", "richest"],
+              "answer": 0,
+              "optionsZh": ["最高的（正確）", "最矮的", "最年輕的", "最富有的"],
+              "explanation": "文章一開始提到其他人 looked taller and stronger than him，故此處呼應「不是全場最高的球員」，用 tallest。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

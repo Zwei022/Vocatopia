@@ -1,0 +1,435 @@
+{
+  "year": 2023,
+  "rocYear": 112,
+  "type": "reading",
+  "label": "模擬試題4",
+  "source": "Vocatopia 模擬試題（比照 2026 會考架構，全文字版，用字限會考核心字）",
+  "durationMin": 60,
+  "totalQuestions": 43,
+  "sections": [
+    {
+      "kind": "single",
+      "title": "第一部分：單題",
+      "range": "第 1-19 題",
+      "items": [
+        {
+          "n": 1,
+          "stem": "Peter is a very ＿＿＿ boy. He never forgets to say \"thank you\" when someone helps him.",
+          "options": ["polite", "heavy", "sour", "loud"],
+          "answer": 0,
+          "optionsZh": ["有禮貌的", "重的", "酸的", "大聲的"],
+          "explanation": "會說謝謝、有禮節，符合 polite（有禮貌的），故選 (A)。"
+        },
+        {
+          "n": 2,
+          "stem": "Before the trip, my mother wrote a ＿＿＿ so we would not forget anything important.",
+          "options": ["list", "mountain", "machine", "holiday"],
+          "answer": 0,
+          "optionsZh": ["清單", "山", "機器", "假期"],
+          "explanation": "為了不忘記東西而寫下的是 list（清單），故選 (A)。"
+        },
+        {
+          "n": 3,
+          "stem": "After losing the game, the team needed some ＿＿＿ from the coach to keep trying.",
+          "options": ["encouragement", "furniture", "weight", "medicine"],
+          "answer": 0,
+          "optionsZh": ["鼓勵", "家具", "重量", "藥"],
+          "explanation": "輸掉比賽後需要教練給的是 encouragement（鼓勵），故選 (A)。"
+        },
+        {
+          "n": 4,
+          "stem": "Mr. Chen ＿＿＿ to the gym every morning before going to work.",
+          "options": ["go", "goes", "going", "went"],
+          "answer": 1,
+          "optionsZh": ["（原形）", "（第三人稱單數現在式，正確）", "（現在分詞）", "（過去式）"],
+          "explanation": "主詞 Mr. Chen 為第三人稱單數，every morning 表習慣用現在簡單式，動詞加 -es，故選 goes。"
+        },
+        {
+          "n": 5,
+          "stem": "A: ＿＿＿ your sister like spicy food? B: No, she doesn't. She always orders something mild.",
+          "options": ["Do", "Does", "Is", "Are"],
+          "answer": 1,
+          "optionsZh": ["（助動詞 do）", "（助動詞 does，正確）", "（be 動詞單數）", "（be 動詞複數）"],
+          "explanation": "回答用 No, she doesn't，可知問句用助動詞 does；主詞 your sister 為第三人稱單數，故選 (B)。"
+        },
+        {
+          "n": 6,
+          "stem": "Look at those dark clouds! It ＿＿＿ very soon, so we should go inside now.",
+          "options": ["rains", "rained", "is going to rain", "has rained"],
+          "answer": 2,
+          "optionsZh": ["（現在式）", "（過去式）", "（近未來式，正確）", "（現在完成式）"],
+          "explanation": "從眼前的烏雲判斷即將發生的事，用 be going to 表根據現況推測的近未來，故選 (C)。"
+        },
+        {
+          "n": 7,
+          "stem": "Of all the runners in the race, Amy was the ＿＿＿, so she won the gold medal.",
+          "options": ["fast", "faster", "fastest", "as fast"],
+          "answer": 2,
+          "optionsZh": ["（原級）", "（比較級）", "（最高級，正確）", "（同級）"],
+          "explanation": "of all the runners 表在一個範圍中做比較，且前面有 the，用最高級 fastest。"
+        },
+        {
+          "n": 8,
+          "stem": "I forgot my umbrella today. Could you ＿＿＿ me yours until tomorrow?",
+          "options": ["lend", "borrow", "rent", "sell"],
+          "answer": 0,
+          "optionsZh": ["借出（給別人）", "借入（跟別人借）", "租用", "販售"],
+          "explanation": "「借某人某物」是 lend somebody something，方向是說話者向對方借用，故選 lend。"
+        },
+        {
+          "n": 9,
+          "stem": "Jason failed the test ＿＿＿ he did not study at all the night before.",
+          "options": ["so", "but", "because", "although"],
+          "answer": 2,
+          "optionsZh": ["所以", "但是", "因為", "雖然"],
+          "explanation": "前句是結果（考試不及格），後句是原因（前一晚完全沒讀書），用 because 引導原因子句。"
+        },
+        {
+          "n": 10,
+          "stem": "The book ＿＿＿ is on the shelf belongs to my teacher, not to me.",
+          "options": ["who", "which", "whom", "whose"],
+          "answer": 1,
+          "optionsZh": ["（指人）", "（指物，正確）", "（受格關代）", "（所有格）"],
+          "explanation": "先行詞 the book 是物，且在子句中當主詞，用關係代名詞 which。"
+        },
+        {
+          "n": 11,
+          "stem": "This bridge ＿＿＿ over one hundred years ago, and it is still standing strong today.",
+          "options": ["builds", "built", "was built", "is building"],
+          "answer": 2,
+          "optionsZh": ["（現在式主動）", "（過去式主動）", "（過去式被動，正確）", "（現在進行式）"],
+          "explanation": "橋是「被建造」的，且 over one hundred years ago 為過去時間，用過去被動 was built。"
+        },
+        {
+          "n": 12,
+          "stem": "My little sister finished ＿＿＿ her room before our guests arrived.",
+          "options": ["clean", "to clean", "cleaning", "cleaned"],
+          "answer": 2,
+          "optionsZh": ["（原形）", "（不定詞）", "（動名詞，正確）", "（過去式）"],
+          "explanation": "finish 後面固定接動名詞（V-ing），故選 cleaning。"
+        },
+        {
+          "n": 13,
+          "stem": "You ＿＿＿ finish this report by Friday, or the manager will not be happy.",
+          "options": ["must", "may", "would", "could"],
+          "answer": 0,
+          "optionsZh": ["必須", "可能", "會（假設語氣）", "能夠"],
+          "explanation": "「否則經理會不高興」表示這是強制的義務，用 must（必須）最合語意。"
+        },
+        {
+          "n": 14,
+          "stem": "This is the third time she ＿＿＿ late for the meeting this month.",
+          "options": ["is", "was", "has been", "will be"],
+          "answer": 2,
+          "optionsZh": ["（現在式）", "（過去式）", "（現在完成式，正確）", "（未來式）"],
+          "explanation": "「This is the + 序數 + time + 主詞」後面常接現在完成式，表達到目前為止發生的次數，故用 has been。"
+        },
+        {
+          "n": 15,
+          "stem": "The haunted house was so ＿＿＿ that several children started crying halfway through.",
+          "options": ["frightening", "cheerful", "comfortable", "gentle"],
+          "answer": 0,
+          "optionsZh": ["嚇人的", "愉快的", "舒適的", "溫和的"],
+          "explanation": "有小孩嚇到哭，代表鬼屋很 frightening（嚇人的），故選 (A)。"
+        },
+        {
+          "n": 16,
+          "stem": "You had better ＿＿＿ an umbrella with you; the weather report says it will rain later.",
+          "options": ["bring", "to bring", "bringing", "brought"],
+          "answer": 0,
+          "optionsZh": ["（原形，正確）", "（不定詞）", "（動名詞）", "（過去式）"],
+          "explanation": "had better 後面固定接原形動詞，故選 bring。"
+        },
+        {
+          "n": 17,
+          "stem": "The coach told the players ＿＿＿ extra practice every weekend before the big match.",
+          "options": ["do", "doing", "to do", "did"],
+          "answer": 2,
+          "optionsZh": ["（原形）", "（動名詞）", "（不定詞，正確）", "（過去式）"],
+          "explanation": "tell somebody to do something，故用不定詞 to do。"
+        },
+        {
+          "n": 18,
+          "stem": "Each of the students in this class ＿＿＿ required to hand in a report by Monday.",
+          "options": ["is", "are", "have", "were"],
+          "answer": 0,
+          "optionsZh": ["（單數，正確）", "（複數）", "（複數完成式）", "（過去複數）"],
+          "explanation": "Each of + 複數名詞，動詞仍須用單數，且此為現在的規定，故選 is。"
+        },
+        {
+          "n": 19,
+          "stem": "The harder you work on your English, the ＿＿＿ progress you will make.",
+          "options": ["much", "more", "most", "many"],
+          "answer": 1,
+          "optionsZh": ["（原級，修飾不可數名詞但非比較級）", "（比較級，正確）", "（最高級）", "（修飾可數名詞）"],
+          "explanation": "「the 比較級..., the 比較級...」句型，progress 為不可數名詞，比較級用 more，故選 (B)。"
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "title": "第二部分：題組",
+      "range": "第 20-43 題",
+      "passages": [
+        {
+          "range": "20–21",
+          "passageType": "practical",
+          "title": "Sunshine Summer Camp (夏令營報名公告)",
+          "passage": "Sunshine Summer Camp — Registration Notice\n\nSessions:\nSession A: July 6–10 (Nature Exploration)\nSession B: July 13–17 (Science & Robots) — FULL, wait-list registration only\nSession C: July 20–24 (Art & Music)\n\nFee: $3,500 per camper per session.\n\nEarly Bird Discount: Register at least 3 weeks before a session starts and save $300 per camper.\nGroup Discount: Register 4 or more campers together for the same session and each camper saves $200.\n(Early Bird and Group discounts can be combined if both conditions are met.)\n\nRegistration Deadline: One week before each session begins.",
+          "questions": [
+            {
+              "n": 20,
+              "stem": "The Lee family registers 4 children together for Session C (July 20–24) on June 15. How much do they pay in total for all four children?",
+              "options": ["$12,000.", "$12,800.", "$13,200.", "$14,000."],
+              "answer": 0,
+              "optionsZh": ["12,000元。", "12,800元。", "13,200元。", "14,000元。"],
+              "explanation": "每人單價 $3,500；6/15 距 7/20 超過 3 週，符合早鳥優惠折抵 $300；4 人同時報名同一梯次，符合團體優惠再折抵 $200，兩項優惠可疊加，故每人實付 $3,500－$300－$200＝$3,000，四人共 $3,000×4＝$12,000，故選 (A)。"
+            },
+            {
+              "n": 21,
+              "stem": "Which of the following statements is true according to the notice?",
+              "options": [
+                "A camper can join Session B by registering directly, without joining a wait list.",
+                "Registering four campers for the same session always means they also get the early bird discount.",
+                "A family that registers two campers just 10 days before Session A starts can still join, but must pay full price for both campers.",
+                "The group discount can be used even if the campers are joining different sessions."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "梯次B可以直接報名，不需候補。",
+                "同一梯次四人一起報名，就一定也符合早鳥優惠。",
+                "在梯次A開始前10天報名的兩位小孩仍能報名，但兩人都須付全額。",
+                "即使報名不同梯次，也能使用團體優惠。"
+              ],
+              "explanation": "梯次B已額滿，需候補，故(A)錯；早鳥優惠與人數優惠是兩個各自獨立的條件，人數夠不代表自動符合提前3週的早鳥條件，故(B)錯；團體優惠僅限報名『同一梯次』的人，故(D)錯；報名截止是開營前一週，10天前報名仍在期限內，但因不到3週不符早鳥、僅2人不符團體優惠，兩人都須付全額，須同時比對『截止時間規則』與『兩項折扣規則』才能判斷，故選(C)。"
+            }
+          ]
+        },
+        {
+          "range": "22–24",
+          "passageType": "narrative",
+          "title": "A Night on the Mountain Trail",
+          "passage": "Last summer, Mia and her older brother Kyle went hiking on a mountain trail that was supposed to take only three hours. Halfway through the hike, dark clouds gathered quickly overhead. Within minutes, a sudden storm broke over the mountain. Rain poured down so hard that the narrow path turned into a stream of muddy water. The wind also grew strong enough to bend the trees around them.\n\nKyle spotted a small cave near the trail. He quickly pulled Mia inside just as thunder crashed above their heads. They sat close together, shivering in their wet clothes, and listened to the storm rage outside. Mia was frightened. However, Kyle kept talking about silly jokes and old family stories to keep her mind off the danger. Slowly, his calm voice made her fear fade a little.\n\nAfter almost two hours, the rain finally slowed to a gentle drizzle, and the sky began to brighten. Kyle checked his phone and found a weak signal. It was just enough to send their parents a short message about their location. Before long, a rescue team reached the cave and guided the tired, soaked pair safely back down the mountain.\n\nEven now, whenever Mia hears thunder, she remembers that cave and smiles instead of feeling scared, because it reminds her of how her brother stayed brave for her sake.",
+          "questions": [
+            {
+              "n": 22,
+              "stem": "What did Kyle do first when the storm suddenly broke over the mountain?",
+              "options": ["He called for a rescue team right away.", "He found a cave and brought Mia inside.", "He ran back down the trail alone.", "He called their parents immediately."],
+              "answer": 1,
+              "optionsZh": ["他馬上打電話求救。", "他找到山洞並帶米亞進去。", "他自己跑下山。", "他馬上打給父母。"],
+              "explanation": "文中 Kyle spotted a small cave... and pulled Mia inside，故選 (B)。"
+            },
+            {
+              "n": 23,
+              "stem": "How did Kyle help Mia feel less scared inside the cave?",
+              "options": ["He told jokes and old family stories.", "He gave her his dry jacket.", "He sang songs loudly.", "He promised her a reward."],
+              "answer": 0,
+              "optionsZh": ["他說笑話與家族老故事。", "他把乾外套給她。", "他大聲唱歌。", "他答應給她獎勵。"],
+              "explanation": "文中 Kyle kept talking about silly jokes and old family stories，故選 (A)。"
+            },
+            {
+              "n": 24,
+              "stem": "What does Mia think of the storm now, according to the last paragraph?",
+              "options": ["She still feels afraid whenever it thunders.", "She feels proud that she survived alone.", "She smiles because it reminds her of her brother's courage.", "She refuses to go hiking again."],
+              "answer": 2,
+              "optionsZh": ["她一聽到打雷仍會害怕。", "她為自己獨自撐過而驕傲。", "她會微笑，因為那讓她想起哥哥的勇敢。", "她拒絕再去健行。"],
+              "explanation": "文末提到她想起那次經驗會微笑，因為想起哥哥當時的勇敢（stayed brave for her sake），故選 (C)。"
+            }
+          ]
+        },
+        {
+          "range": "25–27",
+          "passageType": "informational",
+          "title": "How Are Bridges Built?",
+          "passage": "Building a bridge over a wide river is one of the most difficult jobs in engineering, and it usually begins long before any construction starts. Engineers first study the ground beneath the river. They want to make sure it can support heavy towers. They also consider how strong the wind and water current will be at that spot.\n\nOnce the design is approved, workers drive deep pillars, called piers, into the riverbed to hold up the whole structure. These piers must be strong enough to resist water pressure for decades. Because of this, builders often use special concrete that hardens even underwater. After the piers are finished, huge steel cables or beams are stretched between them. Together, these form the main frame of the bridge.\n\nFinally, workers lay the road surface on top of the frame and add railings, lights, and signs for safety. Engineers then test the bridge carefully. They check whether it can bear the weight of heavy trucks and endure strong winds without shaking too much. Some modern bridges can even move slightly during an earthquake without breaking. Engineers built this flexibility into the design on purpose.\n\nBuilding a large bridge can take several years and cost enormous amounts of money, but a well-built bridge can serve millions of travelers safely for a hundred years or more.",
+          "questions": [
+            {
+              "n": 25,
+              "stem": "What is the reading mainly about?",
+              "options": ["The history of the world's oldest bridges.", "The steps engineers follow to build a bridge.", "Why rivers are dangerous to cross.", "How to repair a broken bridge quickly."],
+              "answer": 1,
+              "optionsZh": ["世界最古老橋樑的歷史。", "工程師建橋的步驟。", "為何過河很危險。", "如何快速修復壞掉的橋。"],
+              "explanation": "全文依序介紹工程師建橋的各個步驟，主旨為 (B)。"
+            },
+            {
+              "n": 26,
+              "stem": "According to the reading, why must the piers be very strong?",
+              "options": ["They need to support lights and signs.", "They must resist water pressure for many years.", "They are the most colorful part of the bridge.", "They are built after the road surface."],
+              "answer": 1,
+              "optionsZh": ["它們要撐住燈與標誌。", "它們須承受水壓長達數十年。", "它們是橋上最有色彩的部分。", "它們在路面完成後才建造。"],
+              "explanation": "文中 These piers must be strong enough to resist water pressure for decades，故選 (B)。"
+            },
+            {
+              "n": 27,
+              "stem": "What is special about some modern bridges, according to the reading?",
+              "options": ["They never need any testing.", "They can move slightly during an earthquake without breaking.", "They are built without any steel.", "They cost almost nothing to build."],
+              "answer": 1,
+              "optionsZh": ["它們完全不需要測試。", "它們地震時能微幅移動而不斷裂。", "它們完全不用鋼材建造。", "它們幾乎不花錢建造。"],
+              "explanation": "文中 Some modern bridges can even move slightly during an earthquake without breaking，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "28–30",
+          "passageType": "narrative",
+          "title": "The Musician Who Almost Ran Away",
+          "passage": "Leo had practiced the violin for ten years, but every time he stood in front of an audience, his hands shook and his mind went blank. The night before his first big concert, he lay awake. He kept thinking about all the ways he might fail in front of hundreds of strangers.\n\nBackstage on the night of the concert, Leo's heart pounded so hard that he considered quietly slipping out through the back door. His teacher noticed his pale face and sat beside him. \"Everyone in that room came to enjoy the music, not to judge every mistake,\" she said gently. \"Just play for the person in the last row who needs to hear something beautiful tonight.\"\n\nWhen Leo's name was called, his legs felt like they belonged to someone else. Yet he forced himself to walk onto the stage. As soon as the first note left his violin, something inside him shifted. He stopped thinking about the audience. Instead, he focused only on the music flowing through his fingers.\n\nBy the final note, the whole hall rose in applause, and Leo realized his fear had quietly disappeared somewhere in the middle of the song. From that night on, he no longer saw the stage as something to fear. Instead, he saw it as a place where his music could finally be heard.",
+          "questions": [
+            {
+              "n": 28,
+              "stem": "How did Leo feel the night before his first big concert?",
+              "options": ["Excited and fully confident.", "Worried about failing in front of the audience.", "Angry at his violin teacher.", "Bored and uninterested in the concert."],
+              "answer": 1,
+              "optionsZh": ["既興奮又充滿信心。", "擔心在觀眾面前出糗。", "對小提琴老師生氣。", "對演奏會感到無聊。"],
+              "explanation": "文中 he lay awake thinking about all the ways he might fail，故選 (B)。"
+            },
+            {
+              "n": 29,
+              "stem": "What did Leo's teacher tell him backstage?",
+              "options": ["To leave through the back door.", "That the audience came to enjoy the music, not judge mistakes.", "To cancel the concert.", "That he should have practiced more."],
+              "answer": 1,
+              "optionsZh": ["叫他從後門離開。", "觀眾是來享受音樂，不是來挑錯的。", "叫他取消演奏會。", "說他應該多練習。"],
+              "explanation": "老師說 Everyone in that room came to enjoy the music, not to judge every mistake，故選 (B)。"
+            },
+            {
+              "n": 30,
+              "stem": "What happened to Leo's fear by the end of the concert?",
+              "options": ["It became even stronger.", "It disappeared somewhere during the song.", "It returned right after the applause.", "It was replaced by anger."],
+              "answer": 1,
+              "optionsZh": ["變得更強烈。", "在演奏過程中悄悄消失了。", "掌聲後又回來了。", "被憤怒取代了。"],
+              "explanation": "文末 Leo realized his fear had quietly disappeared somewhere in the middle of the song，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "31–34",
+          "passageType": "informational",
+          "title": "Beneath the Surface: The Secret Life of Coral Reefs",
+          "passage": "Coral reefs cover less than one percent of the ocean floor, yet they support about a quarter of all known sea creatures. These colorful structures are not plants or rocks, as many people assume, but are actually built by tiny animals called coral polyps. Each polyp produces a hard, stony skeleton. Over thousands of years, countless skeletons connect to form the massive reefs we see today.\n\nCoral reefs matter far beyond their beauty. Fish use the reef's countless cracks and caves to hide from larger predators. Many young sea animals also grow up safely among the coral before moving into open water. Reefs also protect coastlines by weakening powerful waves before they crash onto beaches, which helps prevent serious flooding during storms.\n\nUnfortunately, coral reefs around the world are shrinking rapidly. Rising ocean temperatures cause a condition called coral bleaching. In this condition, stressed coral polyps lose the colorful algae living inside them and slowly turn pale white. Without these algae, corals struggle to get enough energy. They can die within weeks if the water stays too warm.\n\nScientists are now testing several ways to protect reefs, including growing baby coral in labs and moving them to damaged areas. Still, most experts agree that reducing ocean pollution and slowing climate change remain the most effective long-term solutions for saving these fragile underwater cities.",
+          "questions": [
+            {
+              "n": 31,
+              "stem": "According to the reading, what are coral reefs actually built by?",
+              "options": ["Ocean rocks.", "Tiny animals called coral polyps.", "Sea plants.", "Fishing boats."],
+              "answer": 1,
+              "optionsZh": ["海底岩石。", "叫做珊瑚蟲的微小動物。", "海中植物。", "漁船。"],
+              "explanation": "文中 are actually built by tiny animals called coral polyps，故選 (B)。"
+            },
+            {
+              "n": 32,
+              "stem": "How do coral reefs help protect coastlines?",
+              "options": ["By producing fresh drinking water.", "By weakening powerful waves before they reach the beach.", "By stopping all rain from falling.", "By keeping the ocean warm."],
+              "answer": 1,
+              "optionsZh": ["製造淡水。", "在海浪到達沙灘前削弱其威力。", "阻止所有降雨。", "讓海洋保持溫暖。"],
+              "explanation": "文中 Reefs also protect coastlines by weakening powerful waves before they crash onto beaches，故選 (B)。"
+            },
+            {
+              "n": 33,
+              "stem": "What happens to coral during coral bleaching?",
+              "options": ["The coral grows much faster than normal.", "The coral loses its colorful algae and turns pale.", "The coral becomes harder than steel.", "The coral moves to warmer water on its own."],
+              "answer": 1,
+              "optionsZh": ["珊瑚長得比平常快很多。", "珊瑚失去彩色藻類並變白。", "珊瑚變得比鋼鐵還硬。", "珊瑚自行游到更溫暖的水域。"],
+              "explanation": "文中 stressed coral polyps lose the colorful algae living inside them and slowly turn pale white，故選 (B)。"
+            },
+            {
+              "n": 34,
+              "stem": "According to scientists mentioned in the reading, what is the most effective long-term solution for saving coral reefs?",
+              "options": ["Growing baby coral in labs only.", "Reducing ocean pollution and slowing climate change.", "Removing all fish from the reefs.", "Building walls around every reef."],
+              "answer": 1,
+              "optionsZh": ["只在實驗室培育小珊瑚。", "減少海洋污染並減緩氣候變遷。", "把所有魚移出珊瑚礁。", "在每個珊瑚礁周圍蓋牆。"],
+              "explanation": "文末 most experts agree that reducing ocean pollution and slowing climate change remain the most effective long-term solutions，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "35–39",
+          "passageType": "dual",
+          "title": "Are Video Games Good or Bad for Teenagers? — Two Views",
+          "passage": "■ Writer A：\nI think video games bring real benefits to teenagers, not just entertainment. Many games challenge players to solve puzzles and plan several steps ahead. Players must also work together with teammates to reach a shared goal. These skills are surprisingly similar to what teens need in school projects or future jobs. Playing with friends online can also help shy teenagers practice talking and cooperating in a low-pressure setting. Of course, playing all day without a break is unhealthy. The same is true of watching television or scrolling through social media for hours. The real issue is balance, not the games themselves. If parents set reasonable time limits and choose age-appropriate games, video games can become a positive part of a teenager's daily life. Along the way, they can teach patience, teamwork, and quick thinking.\n\n■ Writer B：\nWhile some video games do require thinking, I believe the risks for teenagers outweigh the benefits. Long hours in front of a screen often replace sleep, exercise, and face-to-face conversation. All of these matter more for a growing teenager's health. Several studies suggest that teens who play violent games for many hours each week show less patience and more frustration in daily life. Game companies also design games to be addictive. They use rewards and sounds that make it hard for anyone, especially a teenager, to stop playing. Even when a teen intends to play for only thirty minutes, that plan easily turns into three hours. Until teenagers can manage their own time responsibly, I believe families should set firm limits. A habit formed during these important years can be difficult to break later.",
+          "questions": [
+            {
+              "n": 35,
+              "stem": "According to Writer A, what can playing games with friends online help shy teenagers do?",
+              "options": ["Earn more money.", "Practice talking and cooperating in a low-pressure setting.", "Avoid all schoolwork.", "Sleep better at night."],
+              "answer": 1,
+              "optionsZh": ["賺更多錢。", "在低壓力情境下練習溝通與合作。", "逃避所有課業。", "晚上睡得更好。"],
+              "explanation": "文中 Playing with friends online can also help shy teenagers practice talking and cooperating in a low-pressure setting，故選 (B)。"
+            },
+            {
+              "n": 36,
+              "stem": "According to Writer B, what do game companies do to keep players playing longer?",
+              "options": ["They lower the price of games.", "They design games to be addictive using rewards and sounds.", "They ask parents for permission first.", "They limit each game to thirty minutes."],
+              "answer": 1,
+              "optionsZh": ["降低遊戲價格。", "用獎勵與音效設計出容易成癮的遊戲。", "先徵求家長同意。", "把每款遊戲限制在30分鐘。"],
+              "explanation": "文中 Game companies also design games to be addictive, using rewards and sounds，故選 (B)。"
+            },
+            {
+              "n": 37,
+              "stem": "What do the studies mentioned by Writer B suggest about teens who play violent games for many hours?",
+              "options": ["They become more patient over time.", "They show less patience and more frustration in daily life.", "They sleep much better at night.", "They perform better in school tests."],
+              "answer": 1,
+              "optionsZh": ["他們會變得更有耐心。", "他們在日常生活中較沒耐心、更易挫折。", "他們晚上睡得更好。", "他們考試表現更好。"],
+              "explanation": "文中 teens who play violent games for many hours each week show less patience and more frustration，故選 (B)。"
+            },
+            {
+              "n": 38,
+              "stem": "What do both writers seem to agree on?",
+              "options": ["Video games have no effect on teenagers at all.", "Playing video games for too long is not good for teenagers.", "Teenagers should stop using screens completely.", "Parents should never set any rules."],
+              "answer": 1,
+              "optionsZh": ["電玩對青少年完全沒有影響。", "玩電玩太久對青少年不好。", "青少年應完全停止使用螢幕。", "家長永遠不該設任何規則。"],
+              "explanation": "Writer A 提到玩一整天不健康，Writer B 主張長時間會有害，兩人都同意『玩太久對青少年不好』，故選 (B)。"
+            },
+            {
+              "n": 39,
+              "stem": "Which sentence would Writer B most likely agree with?",
+              "options": ["Parents should set clear limits on game time.", "Teenagers should be allowed to play as long as they want.", "Video games always improve teamwork skills.", "Screen time has no connection to sleep."],
+              "answer": 0,
+              "optionsZh": ["家長應設定明確的遊戲時間限制。", "青少年應被允許想玩多久就玩多久。", "電玩總是能增進團隊合作技巧。", "螢幕時間與睡眠毫無關聯。"],
+              "explanation": "Writer B 主張家庭應設定明確的時間限制（set firm limits），與 (A) 一致，故選 (A)。"
+            }
+          ]
+        },
+        {
+          "range": "40–43",
+          "passageType": "cloze",
+          "title": "A Kitten Named Rainy (故事克漏字)",
+          "passage": "One evening, Mia heard a soft cry outside her window during a heavy rainstorm. She looked out and saw a small gray kitten shivering under the bus stop roof. __(40)__ she quickly put on her raincoat, she ran outside to check on it.\n\nThe kitten was too weak to walk, so Mia carried it home and dried its wet fur with a towel. Her mother said the kitten __(41)__ lost for several days already, based on how thin and tired it looked. Mia decided to name it Rainy, after the stormy night they met.\n\nAt first, Rainy hid under the sofa and refused to eat. __(42)__, after a few quiet days of Mia sitting nearby and talking softly, Rainy came out and ate from her hand. Within a week, the kitten was running happily around the living room.\n\nMia posted photos online, hoping to find Rainy's original owner, but no one ever replied. In the end, she realized that Rainy had found the __(43)__ home all along — right there with her.",
+          "questions": [
+            {
+              "n": 40,
+              "stem": "選出第 40 格最適合的答案。",
+              "options": ["As soon as", "Although", "Unless", "So that"],
+              "answer": 0,
+              "optionsZh": ["一…就（正確）", "雖然", "除非", "以便"],
+              "explanation": "她「一穿上雨衣就」跑出去查看，前後動作緊接發生，用 As soon as（一…就）最合語意。"
+            },
+            {
+              "n": 41,
+              "stem": "選出第 41 格最適合的答案。",
+              "options": ["is", "will be", "had been", "is being"],
+              "answer": 2,
+              "optionsZh": ["（現在式）", "（未來式）", "（過去完成式，正確）", "（現在進行被動）"],
+              "explanation": "以過去（said）為基準點，小貓「已經走失好幾天」是更早且持續到那時的狀態，用過去完成式 had been。"
+            },
+            {
+              "n": 42,
+              "stem": "選出第 42 格最適合的答案。",
+              "options": ["Finally", "Suddenly", "Sadly", "Rarely"],
+              "answer": 0,
+              "optionsZh": ["終於（正確）", "突然地", "難過地", "很少地"],
+              "explanation": "經過幾天安靜陪伴後小貓才「終於」願意出來吃東西，表示經過一段時間才發生的結果，用 Finally 最合語意。"
+            },
+            {
+              "n": 43,
+              "stem": "選出第 43 格最適合的答案。",
+              "options": ["right", "wrong", "empty", "strange"],
+              "answer": 0,
+              "optionsZh": ["對的（正確）", "錯的", "空的", "奇怪的"],
+              "explanation": "全文寓意是雨兒早已找到「對的」家，就在米亞身邊，故用 right。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

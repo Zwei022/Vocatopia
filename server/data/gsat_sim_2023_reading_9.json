@@ -1,0 +1,425 @@
+{
+  "year": 2023,
+  "rocYear": 112,
+  "type": "reading",
+  "label": "模擬試題9",
+  "source": "Vocatopia 模擬試題（比照 2026 會考架構，全文字版，用字限會考核心字）",
+  "durationMin": 60,
+  "totalQuestions": 43,
+  "sections": [
+    {
+      "kind": "single",
+      "title": "第一部分：單題",
+      "range": "第 1-19 題",
+      "items": [
+        {
+          "n": 1,
+          "stem": "The library is very ＿＿＿, so please don't talk loudly inside.",
+          "options": ["quiet", "noisy", "funny", "crowded"],
+          "answer": 0,
+          "optionsZh": ["安靜的", "吵鬧的", "好笑的", "擁擠的"],
+          "explanation": "圖書館要求不能大聲說話，代表環境是 quiet（安靜的），故選 (A)。"
+        },
+        {
+          "n": 2,
+          "stem": "My father works at a hospital. He is a ＿＿＿ who takes care of sick people.",
+          "options": ["doctor", "teacher", "driver", "farmer"],
+          "answer": 0,
+          "optionsZh": ["醫生", "老師", "司機", "農夫"],
+          "explanation": "在醫院照顧病人的人是 doctor（醫生），故選 (A)。"
+        },
+        {
+          "n": 3,
+          "stem": "Amy ＿＿＿ to school by bike every morning.",
+          "options": ["go", "goes", "going", "went"],
+          "answer": 1,
+          "optionsZh": ["（原形）", "（第三人稱單數現在式，正確）", "（現在分詞）", "（過去式）"],
+          "explanation": "主詞 Amy 為第三人稱單數，every morning 表習慣用現在簡單式，動詞加 -es，故選 goes。"
+        },
+        {
+          "n": 4,
+          "stem": "Look at those dark clouds. It ＿＿＿ rain soon.",
+          "options": ["rain", "rains", "will rain", "rained"],
+          "answer": 2,
+          "optionsZh": ["（原形）", "（現在式）", "（未來式，正確）", "（過去式）"],
+          "explanation": "soon（很快）表未來，看到烏雲判斷即將下雨，故用未來式 will rain。"
+        },
+        {
+          "n": 5,
+          "stem": "This bag is ＿＿＿ than that one, so I will buy this one instead.",
+          "options": ["heavy", "heavier", "heaviest", "more heavy"],
+          "answer": 1,
+          "optionsZh": ["（原級）", "（比較級，正確）", "（最高級）", "（誤用）"],
+          "explanation": "than 前後兩個物品比較，用比較級 heavier，故選 (B)。"
+        },
+        {
+          "n": 6,
+          "stem": "Mount Jade is the ＿＿＿ mountain in Taiwan.",
+          "options": ["high", "higher", "highest", "most high"],
+          "answer": 2,
+          "optionsZh": ["（原級）", "（比較級）", "（最高級，正確）", "（誤用）"],
+          "explanation": "in Taiwan 表在一個範圍中，且前面有 the，用最高級 highest。"
+        },
+        {
+          "n": 7,
+          "stem": "The window ＿＿＿ by the strong wind last night.",
+          "options": ["break", "broke", "was broken", "breaking"],
+          "answer": 2,
+          "optionsZh": ["（原形）", "（過去式主動）", "（過去式被動，正確）", "（現在分詞）"],
+          "explanation": "窗戶是「被風吹破」的，且 last night 為過去，用過去被動 was broken。"
+        },
+        {
+          "n": 8,
+          "stem": "The man ＿＿＿ is standing at the door is my uncle.",
+          "options": ["who", "which", "whose", "what"],
+          "answer": 0,
+          "optionsZh": ["（指人的關係代名詞，正確）", "（指物）", "（所有格）", "（先行詞不明）"],
+          "explanation": "先行詞 the man 是人，且在子句中當主詞，用關係代名詞 who。"
+        },
+        {
+          "n": 9,
+          "stem": "This is the book ＿＿＿ I borrowed from the library last week.",
+          "options": ["who", "which", "whose", "whom"],
+          "answer": 1,
+          "optionsZh": ["（指人）", "（指物，正確）", "（所有格）", "（指人受格）"],
+          "explanation": "先行詞 the book 是物，在子句中當受詞，用關係代名詞 which。"
+        },
+        {
+          "n": 10,
+          "stem": "I ＿＿＿ my homework already, so I can watch TV now.",
+          "options": ["finish", "finished", "have finished", "will finish"],
+          "answer": 2,
+          "optionsZh": ["（原形）", "（過去式）", "（現在完成式，正確）", "（未來式）"],
+          "explanation": "already 常搭配現在完成式，表示到現在已完成的動作，故用 have finished。"
+        },
+        {
+          "n": 11,
+          "stem": "It is important ＿＿＿ enough water every day.",
+          "options": ["drink", "drinking", "to drink", "drunk"],
+          "answer": 2,
+          "optionsZh": ["（原形）", "（動名詞）", "（不定詞，正確）", "（過去分詞）"],
+          "explanation": "It is + 形容詞 + to V 的句型中，用不定詞 to drink。"
+        },
+        {
+          "n": 12,
+          "stem": "Thank you for ＿＿＿ me with my heavy bags this morning.",
+          "options": ["help", "helped", "helping", "to help"],
+          "answer": 2,
+          "optionsZh": ["（原形）", "（過去式）", "（動名詞，正確）", "（不定詞）"],
+          "explanation": "介系詞 for 後面要接動名詞，故選 helping。"
+        },
+        {
+          "n": 13,
+          "stem": "You ＿＿＿ wear a seatbelt in the car. It's the law.",
+          "options": ["can", "may", "must", "would"],
+          "answer": 2,
+          "optionsZh": ["能夠", "可以", "必須", "將會"],
+          "explanation": "「這是法律規定」表示強制性，用 must（必須）最合語意。"
+        },
+        {
+          "n": 14,
+          "stem": "＿＿＿ it was raining heavily, they still went hiking in the mountains.",
+          "options": ["Although", "Because", "So", "If"],
+          "answer": 0,
+          "optionsZh": ["雖然（正確）", "因為", "所以", "如果"],
+          "explanation": "前後語意相反（下大雨／仍去健行），用 Although 表讓步。"
+        },
+        {
+          "n": 15,
+          "stem": "If it ＿＿＿ tomorrow, we will cancel the picnic.",
+          "options": ["rain", "rains", "rained", "raining"],
+          "answer": 1,
+          "optionsZh": ["（原形）", "（現在式，正確）", "（過去式）", "（現在分詞）"],
+          "explanation": "表可能發生的條件句，if 子句用現在式代替未來，故選 rains。"
+        },
+        {
+          "n": 16,
+          "stem": "My grandfather ＿＿＿ smoke, but he quit ten years ago.",
+          "options": ["use to", "used to", "is used to", "was used"],
+          "answer": 1,
+          "optionsZh": ["（誤用）", "過去習慣如此（正確）", "習慣於（現在）", "被使用"],
+          "explanation": "used to + 原形動詞，表示過去的習慣，現在已不做，故選 used to。"
+        },
+        {
+          "n": 17,
+          "stem": "The soup smells ＿＿＿, so everyone wants to try some of it.",
+          "options": ["delicious", "terrible", "boring", "dangerous"],
+          "answer": 0,
+          "optionsZh": ["美味的", "糟糕的", "無聊的", "危險的"],
+          "explanation": "大家都想嚐嚐看，代表味道聞起來 delicious（美味的），故選 (A)。"
+        },
+        {
+          "n": 18,
+          "stem": "The tea was ＿＿＿ hot to drink right away, so we had to wait.",
+          "options": ["too", "so", "very", "such"],
+          "answer": 0,
+          "optionsZh": ["太（正確，too...to 句型）", "如此（需接 that）", "非常", "如此（需接名詞）"],
+          "explanation": "too + 形容詞 + to V，表示「太…以致於不能…」，故選 too。"
+        },
+        {
+          "n": 19,
+          "stem": "She said that she ＿＿＿ tired after the long trip.",
+          "options": ["is", "was", "be", "being"],
+          "answer": 1,
+          "optionsZh": ["（現在式）", "（過去式，正確）", "（原形）", "（現在分詞）"],
+          "explanation": "主要子句動詞 said 為過去式，依時態一致原則，子句也用過去式 was。"
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "title": "第二部分：題組",
+      "range": "第 20-43 題",
+      "passages": [
+        {
+          "range": "20–21",
+          "passageType": "practical",
+          "title": "Sunshine City Bus Pass Guide (公車月票公告)",
+          "passage": "Sunshine City Bus Pass Guide\n\nMonthly Pass: Zone A (City Only) $1,000 / Zone B (City + Suburbs, includes all Zone A rides) $1,500\n\nSingle-Ride Fare: Zone A $25 / Zone B $40\n\nTransfer Rule: Transfer to a second bus within 20 minutes and pay only $10 for the second ride, no matter which zone it is in.\n\nStudent Discount: Riders under 18 get 15% off any monthly pass.\n\nEarly Bird Offer: Buy a Zone B monthly pass before the 5th of the month and save $100 off the regular price.",
+          "questions": [
+            {
+              "n": 20,
+              "stem": "Mary takes a Zone A bus to school, then transfers to another bus within 20 minutes to reach her club. How much does she pay in total for both rides?",
+              "options": ["$25.", "$35.", "$40.", "$50."],
+              "answer": 1,
+              "optionsZh": ["25元。", "35元。", "40元。", "50元。"],
+              "explanation": "Zone A 單程 $25，20 分鐘內轉乘第二段車只需 $10，總共 $25＋$10＝$35，故選 (B)。"
+            },
+            {
+              "n": 21,
+              "stem": "Tom is 16 years old. He buys a Zone B monthly pass on the 3rd of the month. How much does he need to pay?",
+              "options": ["$1,190.", "$1,275.", "$1,400.", "$1,500."],
+              "answer": 0,
+              "optionsZh": ["1190元。", "1275元。", "1400元。", "1500元。"],
+              "explanation": "3 號購買符合「5 號前」的早鳥優惠，Zone B 月票 $1,500 先減 $100 為 $1,400；Tom 未滿 18 歲，再享學生 85 折：$1,400 × 0.85 ＝ $1,190，需同時比對早鳥規則與學生折扣兩項規則，故選 (A)。"
+            }
+          ]
+        },
+        {
+          "range": "22–24",
+          "passageType": "narrative",
+          "title": "Caught in the Storm",
+          "passage": "Mia and her little brother Leo rode their bikes to the old bridge by the river after school. The sky looked gray and heavy, but they did not think much of it. Halfway there, thick clouds rolled in and the wind grew suddenly strong, pushing hard against their bikes. Before they could turn back, rain began to pour down so heavily that they could barely see the road. Leo was scared and wanted to stop right away. Mia remembered a small wooden shed near the bridge where farmers once kept their tools. She shouted for Leo to follow her, and they pedaled hard through the storm. When they reached the shed, both of them were completely drenched, with their teeth chattering from the cold. Inside, they found an old blanket hanging on a hook. They wrapped themselves in it and waited quietly together. Leo asked nervously if their parents would be worried about them. Mia promised to call home the moment the rain stopped. They sat together and listened to the thunder roll across the sky, and slowly their fear turned into something almost exciting. After nearly an hour, the rain softened into a light drizzle, and a soft light appeared behind the clouds. Mia smiled and said this storm would make a great story to tell at dinner. Leo laughed and agreed, and they rode home slowly, soaked but happy, feeling proud that they had faced the storm together.",
+          "questions": [
+            {
+              "n": 22,
+              "stem": "Why did Mia and Leo go into the wooden shed?",
+              "options": ["They wanted to fix their bikes.", "They needed a place to hide from the storm.", "They were meeting their parents there.", "They wanted to find some farm tools."],
+              "answer": 1,
+              "optionsZh": ["他們想修理腳踏車。", "他們需要一個躲雨的地方。", "他們要在那裡跟父母碰面。", "他們想找農具。"],
+              "explanation": "文中提到 Mia remembered a small wooden shed... they pedaled as fast as they could through the storm，可知是為了躲雨，故選 (B)。"
+            },
+            {
+              "n": 23,
+              "stem": "How did Leo feel while they were waiting inside the shed?",
+              "options": ["He was bored and wanted to leave.", "He felt hungry and tired.", "He was worried at first, but then felt better.", "He was angry at his sister."],
+              "answer": 2,
+              "optionsZh": ["他覺得無聊想離開。", "他覺得又餓又累。", "他一開始擔心，後來感覺好多了。", "他對姊姊生氣。"],
+              "explanation": "文中 Leo asked nervously if their parents would be worried，之後 their fear turned into something almost exciting，顯示情緒從擔心轉為好一點，故選 (C)。"
+            },
+            {
+              "n": 24,
+              "stem": "What can we say about Mia and Leo at the end of the story?",
+              "options": ["They were angry that their bikes got wet.", "They felt proud that they had faced the storm together.", "They decided never to ride bikes again.", "They were disappointed with the whole trip."],
+              "answer": 1,
+              "optionsZh": ["他們對腳踏車淋濕感到生氣。", "他們為一起面對暴風雨感到驕傲。", "他們決定再也不騎腳踏車。", "他們對這趟旅程感到失望。"],
+              "explanation": "文末 soaked but happy, feeling proud that they had faced the storm together，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "25–28",
+          "passageType": "informational",
+          "title": "How Bats See With Sound",
+          "passage": "Most bats hunt for insects at night, when it is too dark to depend on their eyes alone. Instead of relying only on sight, bats send out extremely high-pitched sounds that human ears cannot hear at all. The sounds travel through the air until they hit an object, such as a flying insect or a tree branch. Then they bounce back as an echo. By listening carefully to these echoes, a bat can tell exactly where an object is, how big it is, and even how fast it is moving. This clever skill, called echolocation, allows bats to fly safely through total darkness without ever bumping into anything. Scientists have found that bats can send out these sounds up to two hundred times every second when closing in on prey. This helps them track a fast-moving insect with amazing accuracy. Interestingly, some insects have developed their own defense against this system. Certain moths can sense a bat's calls approaching and will suddenly drop out of the air. Others fly in a confusing zigzag pattern to escape being caught. Engineers have studied echolocation carefully because it offers useful ideas for new technology. Devices that help blind people move around safely were inspired by this idea. Underwater sonar systems used by ships came from the same basic idea. Understanding how bats hear the world continues to teach us new lessons about nature's clever design.",
+          "questions": [
+            {
+              "n": 25,
+              "stem": "What is the reading mainly about?",
+              "options": ["How bats build their nests.", "How bats use sound to find their way and hunt.", "Why bats only come out in winter.", "How to keep bats away from houses."],
+              "answer": 1,
+              "optionsZh": ["蝙蝠如何築巢。", "蝙蝠如何用聲音辨位與捕食。", "為何蝙蝠只在冬天出現。", "如何讓蝙蝠遠離房屋。"],
+              "explanation": "全文說明蝙蝠如何靠聲音（回聲定位）辨別方向與獵物，主旨為 (B)。"
+            },
+            {
+              "n": 26,
+              "stem": "According to the reading, how does a bat figure out where an insect is?",
+              "options": ["By smelling the insect in the air.", "By feeling the wind change direction.", "By listening to the echo of its own sounds.", "By watching the insect's shadow on the ground."],
+              "answer": 2,
+              "optionsZh": ["靠聞空氣中的氣味。", "靠感覺風向改變。", "靠聽自己發出聲音的回聲。", "靠看地上昆蟲的影子。"],
+              "explanation": "文中 By listening carefully to these echoes, a bat can figure out exactly where an object is，故選 (C)。"
+            },
+            {
+              "n": 27,
+              "stem": "How do some moths try to escape being caught by bats?",
+              "options": ["They hide inside flowers.", "They fly in a confusing zigzag pattern.", "They make loud sounds to scare bats.", "They stay completely still in the air."],
+              "answer": 1,
+              "optionsZh": ["躲進花朵裡。", "以令人困惑的鋸齒狀路線飛行。", "發出巨大聲音嚇跑蝙蝠。", "在空中完全靜止不動。"],
+              "explanation": "文中 will suddenly drop out of the air or fly in a confusing zigzag pattern to escape being caught，故選 (B)。"
+            },
+            {
+              "n": 28,
+              "stem": "According to the reading, what has echolocation inspired engineers to create?",
+              "options": ["Faster bicycles for city streets.", "Devices for blind people and sonar systems for ships.", "New kinds of musical instruments.", "Machines that grow food faster."],
+              "answer": 1,
+              "optionsZh": ["城市街道用的更快腳踏車。", "幫助盲人的裝置與船隻用的聲納系統。", "新型樂器。", "讓食物長得更快的機器。"],
+              "explanation": "文中 Devices that help blind people move around safely, as well as underwater sonar systems used by ships, were both inspired by the same basic idea，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "29–31",
+          "passageType": "narrative",
+          "title": "Making Up with Jake",
+          "passage": "Ever since a silly argument during the school trip, Sam and his best friend Jake had barely spoken to each other for two whole weeks. It all started when Jake forgot to save Sam a seat on the bus. Sam got angry and said some unkind things without thinking. Both boys were too stubborn to be the first one to apologize. They simply avoided each other at lunch and in class. Sam noticed that lunchtime alone felt strangely quiet without Jake's jokes. He began to miss their old routine of trading snacks and talking about video games. One rainy afternoon, Sam saw Jake sitting by himself outside the library. Jake looked just as lonely as Sam felt. Taking a deep breath, Sam walked over to him. He admitted that he had said things he did not really mean. Jake looked surprised at first, but then he smiled. He confessed that he had felt terrible ever since the argument too. They agreed that a bus seat was much too small a thing to lose a friendship over. By the time they walked back to class together, it felt as if nothing had ever gone wrong. From that day on, whenever they disagreed about something small, they remembered how awful those two silent weeks had felt. They chose to talk things out instead of staying angry.",
+          "questions": [
+            {
+              "n": 29,
+              "stem": "Why didn't Sam and Jake talk to each other for two weeks?",
+              "options": ["Jake moved to a different school.", "They had an argument and were both too stubborn to apologize.", "Their teacher told them to stay apart.", "Sam was sick and stayed home."],
+              "answer": 1,
+              "optionsZh": ["Jake 轉去別的學校。", "他們吵架後都太固執不肯先道歉。", "老師叫他們分開。", "Sam 生病待在家。"],
+              "explanation": "文中 Both boys were too stubborn to be the first one to apologize，故選 (B)。"
+            },
+            {
+              "n": 30,
+              "stem": "How did Sam feel about lunchtime while he and Jake were not speaking?",
+              "options": ["He enjoyed eating lunch alone.", "He felt strangely quiet and missed Jake.", "He made many new friends at lunch.", "He forgot about Jake completely."],
+              "answer": 1,
+              "optionsZh": ["他喜歡一個人吃午餐。", "他覺得莫名安靜且想念 Jake。", "他在午餐時交了很多新朋友。", "他完全忘了 Jake。"],
+              "explanation": "文中 lunchtime alone felt strangely quiet without Jake's jokes, and he began to miss their old routine，故選 (B)。"
+            },
+            {
+              "n": 31,
+              "stem": "What did Sam and Jake learn from this experience?",
+              "options": ["It is better to talk things out than to stay angry.", "It is best to avoid making any friends.", "Riding the bus alone is safer than with friends.", "Teachers should choose seats for students."],
+              "answer": 0,
+              "optionsZh": ["有話好好說比一直生氣好。", "最好不要交朋友。", "自己搭車比跟朋友一起更安全。", "老師該替學生安排座位。"],
+              "explanation": "文末 they both remembered how awful those two silent weeks had felt, and chose to talk things out instead of staying angry，故選 (A)。"
+            }
+          ]
+        },
+        {
+          "range": "32–34",
+          "passageType": "informational",
+          "title": "The Invention That Changed the World",
+          "passage": "Hundreds of years ago, getting a copy of a book meant someone had to write out every page by hand. This could take months or even years to finish. Because of this, books were extremely rare and expensive. Only wealthy people or religious leaders usually owned them. Everything changed when a craftsman in Europe invented a printing press. It used small metal letters that could be arranged, inked, and pressed onto paper again and again. With this new machine, a single worker could produce hundreds of identical pages. This once took the time it used to take to copy just one page by hand. As printing spread quickly across the continent, the price of books dropped fast. It dropped so low that ordinary families could finally afford to buy them. This sudden access to books encouraged more people to learn how to read. There was finally something affordable and interesting to read at home. New ideas, scientific discoveries, and different opinions could now travel between cities more quickly than before. They could even cross whole countries faster than ever. Some historians argue that this single invention spread knowledge more than almost any invention before modern computers appeared. Without it, many important discoveries might have stayed hidden in a single town. Even today, nearly every printed page we see can trace its roots back to that one clever machine from centuries ago.",
+          "questions": [
+            {
+              "n": 32,
+              "stem": "What was life like before the printing press was invented?",
+              "options": ["Books were cheap and easy to find.", "Books were rare because they had to be copied by hand.", "Everyone in the town could read easily.", "Books were only written in one language."],
+              "answer": 1,
+              "optionsZh": ["書本便宜又容易取得。", "書本很稀少，因為要用手抄寫。", "鎮上每個人都能輕易閱讀。", "書本只用一種語言寫成。"],
+              "explanation": "文中 someone had to write out every single page by hand... books were extremely rare and expensive，故選 (B)。"
+            },
+            {
+              "n": 33,
+              "stem": "What happened to the price of books after the printing press spread?",
+              "options": ["It became much higher than before.", "It stayed exactly the same.", "It dropped low enough for ordinary families to afford.", "It was no longer measured in money."],
+              "answer": 2,
+              "optionsZh": ["變得比以前更高。", "完全沒有改變。", "降到一般家庭也負擔得起。", "不再用金錢衡量。"],
+              "explanation": "文中 the price of books dropped so low that ordinary families could finally afford to buy them，故選 (C)。"
+            },
+            {
+              "n": 34,
+              "stem": "According to the reading, why was the printing press so important?",
+              "options": ["It made travel between cities faster.", "It helped ideas and knowledge spread much more quickly.", "It replaced the need for schools completely.", "It made handwriting more beautiful."],
+              "answer": 1,
+              "optionsZh": ["讓城市間的交通變快。", "幫助想法與知識傳播得更快。", "完全取代了學校的需求。", "讓手寫字變得更漂亮。"],
+              "explanation": "文中提到新想法、科學發現能更快在城市與國家間流傳，且歷史學家認為這項發明對知識傳播的貢獻超越其他發明，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "35–39",
+          "passageType": "dual",
+          "title": "Should Schools Give Homework on Weekends? — Two Views",
+          "passage": "■ Writer A：\nMany students believe that having no homework on weekends means more free time. I think a small amount of weekend homework actually helps students learn better. During a five-day school week, we cover so much new material. A short weekend review helps important lessons stay in our memory instead of fading away by Monday. Without any homework, many students spend the whole weekend watching videos or playing games. They end up forgetting nearly everything taught earlier in the week. A light workload, such as thirty minutes of review each day, is not too demanding. It still leaves plenty of time for rest, family, and hobbies. Teachers also use weekend assignments to check whether students truly understand a topic. This happens before starting something new the following week. A reasonable balance between rest and light review can prepare students far better for the challenges ahead.\n\n■ Writer B：\nI disagree, because weekends should be the only time when students can fully rest. This rest comes after five demanding days of classes, tests, and activities. Growing children need enough sleep, exercise, and family time in order to stay healthy. Constant homework leaves little room for any of that. Many students already attend extra classes or clubs on weekends. Adding homework on top of that schedule creates unnecessary pressure and exhaustion. Some studies even suggest that students who rest properly on weekends perform better the following week. This is true compared with those who spend their weekends memorizing facts. Instead of assigning more homework, teachers could simply make weekday lessons more effective. Then students would not need extra weekend review at all. A completely homework-free weekend gives students a chance to explore hobbies, spend time outdoors, or simply relax.",
+          "questions": [
+            {
+              "n": 35,
+              "stem": "According to Writer A, why is a small amount of weekend homework helpful?",
+              "options": ["It helps important lessons stay in students' memory.", "It gives teachers less work to do.", "It makes weekends feel shorter.", "It stops students from playing outside."],
+              "answer": 0,
+              "optionsZh": ["幫助重要的課程內容留在記憶中。", "讓老師的工作變少。", "讓週末感覺變短。", "阻止學生到戶外玩。"],
+              "explanation": "Writer A 說 a short weekend review helps important lessons stay in our memory instead of fading away，故選 (A)。"
+            },
+            {
+              "n": 36,
+              "stem": "What kind of weekend homework does Writer A suggest?",
+              "options": ["Several hours of new material every day.", "A light workload, such as thirty minutes of review a day.", "No homework at all on weekends.", "Only tests, with no review."],
+              "answer": 1,
+              "optionsZh": ["每天好幾個小時的新內容。", "輕量作業，如每天三十分鐘複習。", "週末完全沒有作業。", "只有考試，沒有複習。"],
+              "explanation": "文中 A light workload, such as thirty minutes of review each day, is not too demanding，故選 (B)。"
+            },
+            {
+              "n": 37,
+              "stem": "According to Writer B, what do growing children need on weekends?",
+              "options": ["More tests to check their progress.", "Enough sleep, exercise, and family time.", "Extra homework to stay busy.", "A stricter school schedule."],
+              "answer": 1,
+              "optionsZh": ["更多考試來檢視進度。", "足夠的睡眠、運動與家庭時間。", "額外作業讓自己忙碌。", "更嚴格的課表。"],
+              "explanation": "文中 Growing children need enough sleep, exercise, and family time in order to stay healthy，故選 (B)。"
+            },
+            {
+              "n": 38,
+              "stem": "What do both writers agree on?",
+              "options": ["Homework has nothing to do with how well students learn.", "Weekend time is connected to how students perform at school.", "Students should attend school seven days a week.", "Teachers should stop giving any homework forever."],
+              "answer": 1,
+              "optionsZh": ["作業和學生學得好不好毫無關係。", "週末時間與學生在校表現有關。", "學生應該一週上七天課。", "老師應該永遠不再出作業。"],
+              "explanation": "兩位作者都在討論週末的安排（複習或休息）如何影響學生接下來一週的學習表現，故選 (B)。"
+            },
+            {
+              "n": 39,
+              "stem": "Which sentence would Writer B most likely agree with?",
+              "options": ["A completely homework-free weekend helps students recover and do better later.", "Students should do homework every hour of the weekend.", "Teachers should give more tests instead of homework.", "Reading on paper is always better than on a screen."],
+              "answer": 0,
+              "optionsZh": ["完全沒有作業的週末能幫助學生恢復並在之後表現更好。", "學生應該整個週末每小時都寫作業。", "老師應該多出考試而非作業。", "紙本閱讀永遠比螢幕閱讀好。"],
+              "explanation": "Writer B 主張 students who rest properly on weekends actually perform better，且提倡 A completely homework-free weekend，與 (A) 一致。"
+            }
+          ]
+        },
+        {
+          "range": "40–43",
+          "passageType": "cloze",
+          "title": "The Art Contest (美術比賽的故事克漏字)",
+          "passage": "Ken had drawn pictures every day since he was little, but he __(40)__ entered a contest before because he was afraid of losing. This year, his art teacher encouraged him to join the city's youth art contest, so he finally decided to give it a try. For weeks, Ken worked on a painting of his grandmother's garden, adding tiny details like fallen leaves and a sleeping cat. On the day of the contest, he __(41)__ his painting to the judges with shaking hands, worried that it was not good enough compared to the others. While waiting for the results, Ken noticed another boy's painting was truly amazing, and he __(42)__ told himself that losing would be okay. __(43)__ his name was called for third place, Ken could hardly believe his ears and nearly dropped his certificate in surprise. His teacher reminded him that trying something new, even with fear, was already a kind of victory.",
+          "questions": [
+            {
+              "n": 40,
+              "stem": "選出第 40 格最適合的答案。",
+              "options": ["had never", "has never", "was never", "did never"],
+              "answer": 0,
+              "optionsZh": ["過去完成式否定（正確）", "現在完成式否定", "be 動詞過去式否定", "誤用"],
+              "explanation": "以「今年終於決定參加」的過去時間點為基準，「之前從未參加過比賽」是更早發生的狀態，用過去完成式 had never entered。"
+            },
+            {
+              "n": 41,
+              "stem": "選出第 41 格最適合的答案。",
+              "options": ["handed", "borrowed", "threw", "sold"],
+              "answer": 0,
+              "optionsZh": ["遞交（正確）", "借（入）", "丟", "賣"],
+              "explanation": "比賽當天把畫作交給評審，語意最合適的動詞是 handed（遞交），故選 (A)。"
+            },
+            {
+              "n": 42,
+              "stem": "選出第 42 格最適合的答案。",
+              "options": ["quietly", "loudly", "angrily", "rudely"],
+              "answer": 0,
+              "optionsZh": ["安靜地（正確）", "大聲地", "生氣地", "無禮地"],
+              "explanation": "Ken 是在心裡默默地告訴自己輸了也沒關係，故用 quietly（安靜地）。"
+            },
+            {
+              "n": 43,
+              "stem": "選出第 43 格最適合的答案。",
+              "options": ["When", "Because", "So", "If"],
+              "answer": 0,
+              "optionsZh": ["當…的時候（正確）", "因為", "所以", "如果"],
+              "explanation": "「當他的名字被叫到得第三名時，他幾乎不敢相信」，表示時間點的連接詞用 When 最合適。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

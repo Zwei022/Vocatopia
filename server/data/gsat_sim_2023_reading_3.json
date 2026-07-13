@@ -1,0 +1,425 @@
+{
+  "year": 2023,
+  "rocYear": 112,
+  "type": "reading",
+  "label": "模擬試題3",
+  "source": "Vocatopia 模擬試題（比照 2026 會考架構，全文字版，用字限會考核心字）",
+  "durationMin": 60,
+  "totalQuestions": 43,
+  "sections": [
+    {
+      "kind": "single",
+      "title": "第一部分：單題",
+      "range": "第 1-19 題",
+      "items": [
+        {
+          "n": 1,
+          "stem": "This restaurant is famous for its ＿＿＿ noodles. People come from other cities just to try them.",
+          "options": ["delicious", "boring", "dangerous", "empty"],
+          "answer": 0,
+          "optionsZh": ["美味的", "無聊的", "危險的", "空的"],
+          "explanation": "餐廳有名代表食物好吃，故選 delicious（美味的）。"
+        },
+        {
+          "n": 2,
+          "stem": "The library was so ＿＿＿ that I could hear my own footsteps.",
+          "options": ["crowded", "quiet", "colorful", "expensive"],
+          "answer": 1,
+          "optionsZh": ["擁擠的", "安靜的", "色彩繽紛的", "昂貴的"],
+          "explanation": "能聽到自己的腳步聲代表非常安靜，故選 quiet。"
+        },
+        {
+          "n": 3,
+          "stem": "Tom has great ＿＿＿ in math; he can solve difficult problems within minutes.",
+          "options": ["ability", "weather", "luck", "weight"],
+          "answer": 0,
+          "optionsZh": ["能力", "天氣", "運氣", "重量"],
+          "explanation": "能快速解難題代表有 ability（能力），故選 (A)。"
+        },
+        {
+          "n": 4,
+          "stem": "My mother ＿＿＿ breakfast for the whole family every morning before work.",
+          "options": ["cook", "cooks", "cooking", "to cook"],
+          "answer": 1,
+          "optionsZh": ["（原形）", "（第三人稱單數現在式，正確）", "（現在分詞）", "（不定詞）"],
+          "explanation": "主詞 My mother 為第三人稱單數，every morning 表習慣，動詞需加 -s/-es，故選 cooks。"
+        },
+        {
+          "n": 5,
+          "stem": "A: ＿＿＿ your parents at home right now? B: No, they are still at the office.",
+          "options": ["Do", "Are", "Is", "Does"],
+          "answer": 1,
+          "optionsZh": ["（助動詞 do）", "（be 動詞，正確）", "（be 動詞單數）", "（助動詞 does）"],
+          "explanation": "回答用 they are，可知問句用 be 動詞，主詞 your parents 為複數，故選 Are。"
+        },
+        {
+          "n": 6,
+          "stem": "It ＿＿＿ sunny tomorrow, so we can have the picnic in the park.",
+          "options": ["is", "was", "will be", "has been"],
+          "answer": 2,
+          "optionsZh": ["（現在式）", "（過去式）", "（未來式，正確）", "（現在完成式）"],
+          "explanation": "tomorrow 表未來，故用未來式 will be。"
+        },
+        {
+          "n": 7,
+          "stem": "Of all the rivers in the country, this one is the ＿＿＿.",
+          "options": ["long", "longer", "longest", "as long"],
+          "answer": 2,
+          "optionsZh": ["（原級）", "（比較級）", "（最高級，正確）", "（同級）"],
+          "explanation": "of all the rivers 表在一個範圍中做比較，須用最高級 longest。"
+        },
+        {
+          "n": 8,
+          "stem": "Peter forgot his pen, so he asked to ＿＿＿ one from his classmate.",
+          "options": ["lend", "borrow", "sell", "spend"],
+          "answer": 1,
+          "optionsZh": ["借出（給別人）", "借入（跟別人借）", "販賣", "花費"],
+          "explanation": "他忘了帶筆，要「向同學借」，方向是借入，故選 borrow。"
+        },
+        {
+          "n": 9,
+          "stem": "The typhoon was very strong, ＿＿＿ many flights were canceled that day.",
+          "options": ["so", "but", "although", "unless"],
+          "answer": 0,
+          "optionsZh": ["所以", "但是", "雖然", "除非"],
+          "explanation": "前句是原因（颱風強），後句是結果（航班取消），故用 so 連接因果。"
+        },
+        {
+          "n": 10,
+          "stem": "The bike ＿＿＿ is parked in front of the gate belongs to my brother.",
+          "options": ["who", "which", "whom", "whose"],
+          "answer": 1,
+          "optionsZh": ["（指人）", "（指物，正確）", "（受格，指人）", "（所有格）"],
+          "explanation": "先行詞 the bike 是物，且在子句中當主詞，用關係代名詞 which。"
+        },
+        {
+          "n": 11,
+          "stem": "This bridge ＿＿＿ over one hundred years ago, but it is still very strong today.",
+          "options": ["build", "built", "was built", "is building"],
+          "answer": 2,
+          "optionsZh": ["（原形）", "（過去式主動）", "（過去式被動，正確）", "（現在進行式）"],
+          "explanation": "橋是「被建造」的，且 over one hundred years ago 為過去時間，用過去被動 was built。"
+        },
+        {
+          "n": 12,
+          "stem": "Please let me know once you finish ＿＿＿ the report.",
+          "options": ["write", "to write", "writing", "wrote"],
+          "answer": 2,
+          "optionsZh": ["（原形）", "（不定詞）", "（動名詞，正確）", "（過去式）"],
+          "explanation": "finish 後面固定接動名詞（V-ing），故選 writing。"
+        },
+        {
+          "n": 13,
+          "stem": "You ＿＿＿ wear a helmet when you ride a motorcycle; it's the law.",
+          "options": ["should", "must", "might", "would"],
+          "answer": 1,
+          "optionsZh": ["應該", "必須（法律要求）", "可能", "將會"],
+          "explanation": "後面提到 it's the law，表示這是法律規定的義務，須用 must（必須）。"
+        },
+        {
+          "n": 14,
+          "stem": "Mark ＿＿＿ this company since he graduated from college five years ago.",
+          "options": ["works", "worked", "has worked", "will work"],
+          "answer": 2,
+          "optionsZh": ["（現在式）", "（過去式）", "（現在完成式，正確）", "（未來式）"],
+          "explanation": "since + 過去時間點，表示從過去持續到現在，須用現在完成式 has worked。"
+        },
+        {
+          "n": 15,
+          "stem": "The horror movie was so ＿＿＿ that some children hid behind their parents.",
+          "options": ["boring", "frightening", "comfortable", "cheerful"],
+          "answer": 1,
+          "optionsZh": ["無聊的", "令人害怕的", "舒適的", "愉快的"],
+          "explanation": "孩子嚇得躲到父母背後，代表電影很 frightening（令人害怕的），故選 (B)。"
+        },
+        {
+          "n": 16,
+          "stem": "You had better ＿＿＿ an umbrella; the sky looks like it's going to rain.",
+          "options": ["bring", "to bring", "bringing", "brought"],
+          "answer": 0,
+          "optionsZh": ["（原形，正確）", "（不定詞）", "（動名詞）", "（過去式）"],
+          "explanation": "had better 後面固定接原形動詞，故選 bring。"
+        },
+        {
+          "n": 17,
+          "stem": "The coach asked the players ＿＿＿ extra practice before the big game.",
+          "options": ["do", "doing", "to do", "did"],
+          "answer": 2,
+          "optionsZh": ["（原形）", "（動名詞）", "（不定詞，正確）", "（過去式）"],
+          "explanation": "ask somebody to do something，故用不定詞 to do。"
+        },
+        {
+          "n": 18,
+          "stem": "Each of the students in this class ＿＿＿ a laptop for online classes.",
+          "options": ["have", "has", "having", "had"],
+          "answer": 1,
+          "optionsZh": ["（複數）", "（單數，正確）", "（現在分詞）", "（過去式）"],
+          "explanation": "Each of + 複數名詞，主詞仍視為單數，動詞用 has。"
+        },
+        {
+          "n": 19,
+          "stem": "The more carefully you plan your trip, the ＿＿＿ problems you will have.",
+          "options": ["few", "fewer", "fewest", "less"],
+          "answer": 1,
+          "optionsZh": ["（原級）", "（比較級，正確）", "（最高級）", "（用於不可數名詞）"],
+          "explanation": "「the more..., the more...」句型，problems 為可數名詞複數，比較級用 fewer。"
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "title": "第二部分：題組",
+      "range": "第 20-43 題",
+      "passages": [
+        {
+          "range": "20–21",
+          "passageType": "practical",
+          "title": "Sun Town to Star City — Train Schedule (火車票訂票規則)",
+          "passage": "Sun Town to Star City — Train Schedule & Ticket Rules\n\nTrain No. | Type | Departs Sun Town | Arrives Star City\n101 | Local | 8:00 a.m. | 11:30 a.m.\n202 | Express | 9:00 a.m. | 11:00 a.m.\n303 | High-speed | 9:30 a.m. | 10:30 a.m.\n404 | Local | 1:00 p.m. | 4:30 p.m.\n505 | Express | 2:00 p.m. | 4:00 p.m.\n\nTicket Prices (one-way): Local $150 / Express $220 / High-speed $350\n\nEarly-Bird Discount: Book at least 7 days before departure and get 20% off. This discount is only available for Express and High-speed tickets.\nStudent Discount: Show a valid student ID and get 15% off any ticket type.\nNote: The two discounts above cannot be combined. Each passenger may use only ONE discount per ticket.\nTickets are non-refundable, but they can be exchanged for a different train of the same type at no extra cost, up to 24 hours before departure.",
+          "questions": [
+            {
+              "n": 20,
+              "stem": "Amy is a student. She books a High-speed ticket exactly 10 days before her trip and shows her student ID at the counter. Since she qualifies for both discounts but can only choose one, which discount should she choose, and how much will she pay?",
+              "options": ["Student discount, $297.5.", "Early-Bird discount, $280.", "Both discounts, $245.", "Early-Bird discount, $315."],
+              "answer": 1,
+              "optionsZh": ["學生優惠，297.5元。", "早鳥優惠，280元。", "兩者合併，245元。", "早鳥優惠，315元。"],
+              "explanation": "High-speed 原價 $350；她提前10天訂票（≥7天）符合早鳥資格，且早鳥適用於 High-speed，打8折＝$280；學生優惠打85折＝$297.5。兩優惠不可合併，須比較後選較便宜者，故選早鳥優惠 $280，需同時比對「早鳥天數規則」與「折扣不可合併規則」兩項規定才能算出正確金額。"
+            },
+            {
+              "n": 21,
+              "stem": "Ben refuses to take the Local train and needs to arrive at Star City strictly before 11:00 a.m. Which train should he take?",
+              "options": ["Train 101.", "Train 202.", "Train 303.", "Train 404."],
+              "answer": 2,
+              "optionsZh": ["101號列車。", "202號列車。", "303號列車。", "404號列車。"],
+              "explanation": "101與404為 Local，先排除；202抵達時間為11:00，並非「11:00之前」，不符合「strictly before 11:00 a.m.」；只有303（High-speed）於10:30抵達，符合條件，故選 (C)。"
+            }
+          ]
+        },
+        {
+          "range": "22–24",
+          "passageType": "narrative",
+          "title": "Grandma's Secret Garden",
+          "passage": "Behind Grandma's small house, there was a garden that always looked half wild and half magical. Colorful flowers grew beside vegetables in no clear pattern at all, yet somehow everything seemed to bloom exactly when it should. Every summer, seven-year-old Mia visited her grandmother. She spent whole afternoons following her through the narrow dirt paths between the plants.\n\nGrandma never used a plan or a calendar. She simply walked around each morning and touched the soil with her fingers. Somehow, she seemed to know exactly what every plant needed. \"Plants can't tell you with words,\" she once explained, \"but if you pay close attention, they'll tell you everything else.\" Mia thought this sounded strange at first, but she slowly began noticing small details herself, such as a drooping leaf here or a curled petal there.\n\nOne July afternoon, a sudden storm knocked down Grandma's tallest sunflower, the one she had grown proudly for three whole years. Mia expected her grandmother to be upset, maybe even to cry. Instead, Grandma knelt beside the broken stem and cut off a healthy piece. She placed it carefully in a jar of water on the windowsill. Within two weeks, tiny roots appeared, thin and pale but very much alive.\n\nThat small jar taught Mia something she never forgot: a setback does not always mean an ending. Years later, whenever life felt difficult, she still pictured her grandmother's steady hands and that broken stem quietly growing new roots.",
+          "questions": [
+            {
+              "n": 22,
+              "stem": "How did Grandma decide what each plant needed?",
+              "options": ["She followed a written plan.", "She checked a calendar every day.", "She observed the plants closely each morning.", "She asked Mia to tell her."],
+              "answer": 2,
+              "optionsZh": ["她遵循一份書面計畫。", "她每天查看日曆。", "她每天早上仔細觀察植物。", "她請 Mia 告訴她。"],
+              "explanation": "文中提到 Grandma never used a plan or a calendar，而是每天早上觀察並用手感受土壤，故選 (C)。"
+            },
+            {
+              "n": 23,
+              "stem": "What did Grandma do right after the storm broke the sunflower?",
+              "options": ["She threw the broken plant away.", "She cried and left the garden.", "She cut off a piece and put it in water.", "She planted a completely new flower."],
+              "answer": 2,
+              "optionsZh": ["她把斷掉的植株丟掉。", "她哭著離開花園。", "她剪下一段插進水中。", "她種下全新的花。"],
+              "explanation": "文中 Grandma knelt beside the broken stem, cut off a healthy piece, and placed it carefully in a jar of water，故選 (C)。"
+            },
+            {
+              "n": 24,
+              "stem": "What lesson did Mia learn from the broken sunflower?",
+              "options": ["Gardens should always be planned carefully.", "A setback does not always mean an ending.", "Storms are more dangerous than people think.", "Grandma's flowers were more special than others."],
+              "answer": 1,
+              "optionsZh": ["花園一定要仔細規劃。", "挫折不代表結束。", "暴風雨比人們想的更危險。", "祖母的花比別人的更特別。"],
+              "explanation": "文末明確指出 that small jar taught Mia... a setback does not always mean an ending，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "25–27",
+          "passageType": "informational",
+          "title": "Why Do Cats Purr?",
+          "passage": "Almost every cat owner has heard the soft, steady sound of a purr. Surprisingly, scientists still do not fully agree on why cats make this sound. For a long time, people believed cats purred only when they felt happy or relaxed. A cat curled up on a warm lap, blinking slowly, certainly seems like a picture of pure contentment.\n\nHowever, research shows the story is more complicated than that. Cats also purr when they are frightened, in pain, or even while giving birth. This has led some scientists to suggest that purring is not simply an emotion. It might instead be a way for cats to comfort themselves during stressful moments, much like a person humming quietly to feel calmer.\n\nThere is another surprising theory as well. The vibration produced during purring falls within a frequency range known to help healing in bones and muscle tissue. Some researchers believe this is why injured cats often purr. Their bodies may be using sound to speed up recovery. This idea could also explain why cats seem to heal from falls and injuries faster than many other animals of a similar size.\n\nWhatever the true reason turns out to be, one thing remains clear. A cat's purr is far more than a simple sign of joy. It may actually be a built-in tool for survival, quietly working long before any owner even notices it happening.",
+          "questions": [
+            {
+              "n": 25,
+              "stem": "What did people originally believe about why cats purr?",
+              "options": ["Cats purred only to warn other animals.", "Cats purred only when they felt happy or relaxed.", "Cats purred only right before they got sick.", "Cats purred only to communicate with humans."],
+              "answer": 1,
+              "optionsZh": ["貓咪只在警告其他動物時發出呼嚕聲。", "貓咪只在開心或放鬆時發出呼嚕聲。", "貓咪只在生病前發出呼嚕聲。", "貓咪只用呼嚕聲跟人類溝通。"],
+              "explanation": "文中 people believed cats purred only when they felt happy or relaxed，故選 (B)。"
+            },
+            {
+              "n": 26,
+              "stem": "According to the reading, besides feeling happy, when else do cats purr?",
+              "options": ["Only while they are sleeping.", "Only when other cats are nearby.", "When they are frightened, in pain, or giving birth.", "Only right after they finish eating."],
+              "answer": 2,
+              "optionsZh": ["只有在睡覺時。", "只有在附近有其他貓時。", "在害怕、疼痛或生產時。", "只有在剛吃完東西後。"],
+              "explanation": "文中 Cats also purr when they are frightened, in pain, or even while giving birth，故選 (C)。"
+            },
+            {
+              "n": 27,
+              "stem": "What is one theory scientists have about the vibration made by purring?",
+              "options": ["It may help injured cats heal faster.", "It scares away other animals.", "It helps cats find food more easily.", "It makes cats grow bigger over time."],
+              "answer": 0,
+              "optionsZh": ["可能幫助受傷的貓更快痊癒。", "能嚇跑其他動物。", "幫助貓更容易找到食物。", "讓貓隨時間長得更大。"],
+              "explanation": "文中提到呼嚕聲的震動頻率有助於骨頭與肌肉組織癒合，researchers believe this is why injured cats often purr，故選 (A)。"
+            }
+          ]
+        },
+        {
+          "range": "28–30",
+          "passageType": "narrative",
+          "title": "A Small Act of Kindness",
+          "passage": "It was a freezing Monday morning, and the small coffee shop on Main Street was crowded with people escaping the cold. Behind the counter, Jake noticed an elderly man counting coins slowly, clearly a few dollars short of the price of his coffee and sandwich. The man's hands trembled slightly as he searched his pockets again. His face was turning red with embarrassment.\n\nWithout saying a word, a young woman standing in line quietly stepped forward and placed extra money on the counter. \"Add it to his order,\" she told Jake. Then she simply returned to her spot in line, as if nothing unusual had happened. The elderly man turned around, confused. But the woman only smiled and said, \"Someone did the same for me once.\"\n\nJake, who had watched hundreds of customers come and go, found himself unexpectedly moved by the small moment. He decided to write down the woman's simple gesture on a chalkboard by the door: \"Pay it forward — someone's kindness today.\" To his surprise, customers began doing exactly that over the following weeks, quietly covering the bill for a stranger behind them.\n\nJake never learned the woman's name. But her simple act of kindness kept spreading, one cup of coffee at a time, long after she had walked out into the cold morning air.",
+          "questions": [
+            {
+              "n": 28,
+              "stem": "What did Jake notice about the elderly man?",
+              "options": ["He was arguing loudly with another customer.", "He did not have quite enough money to pay.", "He refused to order anything at all.", "He was looking for a lost wallet."],
+              "answer": 1,
+              "optionsZh": ["他和另一位顧客大聲爭吵。", "他的錢不夠付帳。", "他完全拒絕點餐。", "他在找遺失的皮夾。"],
+              "explanation": "文中 clearly a few dollars short of the price of his coffee and sandwich，故選 (B)。"
+            },
+            {
+              "n": 29,
+              "stem": "What did the young woman do for the elderly man?",
+              "options": ["She called his family for help.", "She quietly paid the difference for him.", "She gave him her own coffee.", "She asked Jake to give him a discount."],
+              "answer": 1,
+              "optionsZh": ["她打電話請他的家人幫忙。", "她默默替他補上差額。", "她把自己的咖啡給他。", "她請 Jake 給他打折。"],
+              "explanation": "文中 a young woman quietly stepped forward and placed extra money on the counter，故選 (B)。"
+            },
+            {
+              "n": 30,
+              "stem": "What did Jake do after seeing what the woman did?",
+              "options": ["He wrote her act on a chalkboard to encourage others.", "He asked the woman to leave the shop.", "He gave the elderly man a free meal every day.", "He reported the event to the local newspaper."],
+              "answer": 0,
+              "optionsZh": ["他把她的善舉寫在黑板上鼓勵他人。", "他請那位女士離開店裡。", "他每天免費請老先生吃飯。", "他向當地報社報導這件事。"],
+              "explanation": "文中 he decided to write down the woman's simple gesture on a chalkboard by the door，故選 (A)。"
+            }
+          ]
+        },
+        {
+          "range": "31–34",
+          "passageType": "informational",
+          "title": "The Surprising History of the Umbrella",
+          "passage": "Long before umbrellas became common rain gear, they were originally created for a completely different purpose: blocking sunlight. Ancient Egyptian and Chinese records show people carrying decorated shades over royalty and important guests thousands of years ago. These early umbrellas were symbols of status and power, not simple tools for staying dry.\n\nIt took many centuries before umbrellas became widely used against rain. This was largely because early designs were heavy, made from paper or silk, and fell apart quickly once soaked. In eighteenth-century England, a traveler named Jonas Hanway helped change public opinion. He carried a waterproof umbrella through the rainy streets of London every single day. At first, people mocked him, since only women were expected to use such an item back then. Men who carried umbrellas were sometimes laughed at in public.\n\nHanway, however, continued regardless of the ridicule. Slowly, other men began copying his habit once they noticed how dry he stayed compared to everyone else around him. Within a few decades, umbrellas had become an accepted item for people of every gender across the city.\n\nModern umbrellas look quite different today, built from lightweight metal frames and waterproof fabric instead of paper. Their basic purpose, however, remains unchanged. What began as a symbol carried above kings is now a simple object nearly everyone owns, tucked into a bag for the next unexpected downpour.",
+          "questions": [
+            {
+              "n": 31,
+              "stem": "What was the original purpose of early umbrellas?",
+              "options": ["To keep people dry in the rain.", "To block sunlight for royalty and important guests.", "To decorate the streets during festivals.", "To protect soldiers during battles."],
+              "answer": 1,
+              "optionsZh": ["讓人們在雨中保持乾燥。", "為王室與重要賓客遮陽。", "在慶典時裝飾街道。", "在戰爭中保護士兵。"],
+              "explanation": "文中 they were originally created for a completely different purpose: blocking sunlight，並提到用於 royalty and important guests，故選 (B)。"
+            },
+            {
+              "n": 32,
+              "stem": "Why didn't umbrellas quickly become common rain gear?",
+              "options": ["Governments did not allow people to use them.", "Early designs were heavy and fell apart when wet.", "There was almost no rain in most cities.", "Umbrellas were too small to be useful."],
+              "answer": 1,
+              "optionsZh": ["政府不允許人們使用。", "早期設計笨重，濕了就容易壞。", "多數城市幾乎不下雨。", "雨傘太小不實用。"],
+              "explanation": "文中 early designs were heavy, made from paper or silk, and fell apart quickly once soaked，故選 (B)。"
+            },
+            {
+              "n": 33,
+              "stem": "What did Jonas Hanway do?",
+              "options": ["He invented the first umbrella in history.", "He carried a waterproof umbrella in public every day, despite being mocked.", "He banned umbrellas from being used by men.", "He sold umbrellas only to royal families."],
+              "answer": 1,
+              "optionsZh": ["他發明了史上第一把雨傘。", "他每天在公開場合撐防水傘，儘管被嘲笑。", "他禁止男性使用雨傘。", "他只賣雨傘給王室。"],
+              "explanation": "文中 Hanway helped change public opinion by carrying a waterproof umbrella... At first, people mocked him... Hanway, however, continued regardless of the ridicule，故選 (B)。"
+            },
+            {
+              "n": 34,
+              "stem": "According to the reading, how are modern umbrellas different from early ones?",
+              "options": ["Modern umbrellas are only used by royalty.", "Modern umbrellas use lightweight metal and waterproof fabric.", "Modern umbrellas cannot be carried outdoors.", "Modern umbrellas are no longer sold to the public."],
+              "answer": 1,
+              "optionsZh": ["現代雨傘只有王室能用。", "現代雨傘使用輕金屬骨架與防水布料。", "現代雨傘無法帶到戶外。", "現代雨傘已不再對外販售。"],
+              "explanation": "文中 Modern umbrellas... built from lightweight metal frames and waterproof fabric instead of paper，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "35–39",
+          "passageType": "dual",
+          "title": "Is There Too Much Homework? — Two Views",
+          "passage": "■ Writer A：\nI believe schools give students far too much homework every night. After six or seven hours of classes, many students still face two or three more hours of assignments. They can hardly even think about resting. This leaves little time for sleep, exercise, or simply talking with family. Tired students often struggle to focus the next day anyway. Research also shows that piling on extra worksheets does not necessarily help students learn more. Past a certain point, students are just copying answers to finish quickly rather than actually understanding the material. What students truly need after school is time to explore their own interests, whether that means playing sports, reading for fun, or simply resting their minds. A shorter, more focused homework load would likely teach just as much while keeping students healthier and happier.\n\n■ Writer B：\nI disagree. I think a reasonable amount of homework is essential, not something schools should get rid of. Without practice at home, many lessons taught in class simply fade from memory within days. Homework gives students a chance to work through problems on their own and discover exactly which topics still confuse them. It also builds the kind of independent thinking they will need throughout their whole lives. It teaches valuable habits like managing time and meeting deadlines, skills that matter far beyond school. Of course, homework should never be so heavy that students lose all their free time. The amount always matters. But removing homework completely would leave many students unprepared for exams and for the more demanding schoolwork that awaits them in high school, where independent study becomes even more important.",
+          "questions": [
+            {
+              "n": 35,
+              "stem": "What is Writer A's main concern about homework?",
+              "options": ["It takes away time to rest and explore other interests.", "It is too easy for most students.", "It costs schools too much money.", "It is only given to younger students."],
+              "answer": 0,
+              "optionsZh": ["它剝奪了休息與探索興趣的時間。", "對大多數學生來說太簡單。", "讓學校花太多錢。", "只出給年紀較小的學生。"],
+              "explanation": "Writer A 指出作業佔去休息、運動與探索興趣的時間，故選 (A)。"
+            },
+            {
+              "n": 36,
+              "stem": "According to Writer B, what happens without homework practice at home?",
+              "options": ["Students get much more free time.", "Lessons taught in class fade from memory quickly.", "Teachers become less busy.", "Students sleep more soundly."],
+              "answer": 1,
+              "optionsZh": ["學生得到更多自由時間。", "課堂教的內容很快被遺忘。", "老師變得比較不忙。", "學生睡得更安穩。"],
+              "explanation": "文中 Without practice at home, many lessons taught in class simply fade from memory within days，故選 (B)。"
+            },
+            {
+              "n": 37,
+              "stem": "Besides subject knowledge, what does Writer B say homework teaches?",
+              "options": ["How to cook family meals.", "Time management and meeting deadlines.", "How to play team sports well.", "How to make new friends quickly."],
+              "answer": 1,
+              "optionsZh": ["如何烹煮家庭料理。", "時間管理與遵守期限。", "如何打好團體運動。", "如何快速交到新朋友。"],
+              "explanation": "文中 It also teaches valuable habits like managing time and meeting deadlines，故選 (B)。"
+            },
+            {
+              "n": 38,
+              "stem": "What do both writers seem to agree on?",
+              "options": ["Homework should never be given at all.", "The amount of homework given really matters.", "Students should be allowed to skip class.", "Homework has no real effect on learning."],
+              "answer": 1,
+              "optionsZh": ["完全不該出作業。", "作業的份量確實很重要。", "學生應該可以蹺課。", "作業對學習毫無實質影響。"],
+              "explanation": "Writer A 主張作業量應減少，Writer B 也說 the amount always matters 且不應太重，兩人都同意「份量」是關鍵，故選 (B)。"
+            },
+            {
+              "n": 39,
+              "stem": "Which statement would Writer A most likely support?",
+              "options": ["Schools should remove all homework completely and permanently.", "A lighter, more focused homework load is better than a heavy one.", "Students should be given even more homework than now.", "Homework should replace all classroom teaching."],
+              "answer": 1,
+              "optionsZh": ["學校應該永久完全取消作業。", "較輕、更聚焦的作業量勝過繁重的作業量。", "學生應該得到比現在更多的作業。", "作業應該取代所有課堂教學。"],
+              "explanation": "Writer A 主張 A shorter, more focused homework load would likely teach just as much while keeping students healthier and happier，最接近 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "40–43",
+          "passageType": "cloze",
+          "title": "A Fresh Start at a New School (故事克漏字)",
+          "passage": "When Leo transferred to a new school in September, he __(40)__ know anyone in his class, and he was too shy to speak first. On his first day, he sat alone at a corner table during lunch, staring quietly at his tray.\n\nA boy named Ryan noticed him and walked over. __(41)__ Leo looked nervous, Ryan sat down anyway and started talking about video games. To Leo's surprise, they liked exactly the same ones, and lunch suddenly felt much shorter than usual.\n\n__(42)__ , Ryan introduced Leo to his other friends, and Leo slowly became part of the group. By the end of the month, he could hardly remember what it felt like to eat lunch alone. He learned that making friends did not always require doing anything __(43)__; sometimes it simply took one small, ordinary step, taken together.",
+          "questions": [
+            {
+              "n": 40,
+              "stem": "選出第 40 格最適合的答案。",
+              "options": ["does not", "did not", "has not", "is not"],
+              "answer": 1,
+              "optionsZh": ["（現在式）", "（過去式，正確）", "（現在完成式）", "（be 動詞現在式）"],
+              "explanation": "全文以過去式敘述（transferred, sat, noticed），故用過去式否定 did not。"
+            },
+            {
+              "n": 41,
+              "stem": "選出第 41 格最適合的答案。",
+              "options": ["Because", "Although", "So", "Unless"],
+              "answer": 1,
+              "optionsZh": ["因為", "雖然（正確）", "所以", "除非"],
+              "explanation": "前後為對比語意（雖然 Leo 看起來緊張，Ryan 還是坐下），須用 Although 表讓步對比。"
+            },
+            {
+              "n": 42,
+              "stem": "選出第 42 格最適合的答案。",
+              "options": ["Suddenly", "Slowly", "Rarely", "Hardly"],
+              "answer": 1,
+              "optionsZh": ["突然地", "慢慢地（正確）", "很少地", "幾乎不"],
+              "explanation": "後文提到「到了月底才漸漸變成朋友一群人」，是漸進過程，故用 Slowly。"
+            },
+            {
+              "n": 43,
+              "stem": "選出第 43 格最適合的答案。",
+              "options": ["special", "careless", "foolish", "ordinary"],
+              "answer": 0,
+              "optionsZh": ["特別的（正確）", "粗心的", "愚蠢的", "普通的"],
+              "explanation": "全文寓意「交朋友不需要做什麼特別的事，只需一個平凡的小小舉動」，前後文以 special 對比 ordinary，故選 special。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

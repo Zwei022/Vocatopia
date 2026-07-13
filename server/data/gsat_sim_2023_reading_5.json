@@ -1,0 +1,425 @@
+{
+  "year": 2023,
+  "rocYear": 112,
+  "type": "reading",
+  "label": "模擬試題5",
+  "source": "Vocatopia 模擬試題（比照 2026 會考架構，全文字版，用字限會考核心字）",
+  "durationMin": 60,
+  "totalQuestions": 43,
+  "sections": [
+    {
+      "kind": "single",
+      "title": "第一部分：單題",
+      "range": "第 1-19 題",
+      "items": [
+        {
+          "n": 1,
+          "stem": "Jenny is a very ＿＿＿ girl. She always shares her lunch with classmates who forget theirs.",
+          "options": ["generous", "nervous", "careless", "silent"],
+          "answer": 0,
+          "optionsZh": ["慷慨的", "緊張的", "粗心的", "沉默的"],
+          "explanation": "願意主動分享午餐給同學代表她是 generous（慷慨的）的人，故選 (A)。"
+        },
+        {
+          "n": 2,
+          "stem": "The road was covered with ＿＿＿ after the truck's tire suddenly broke apart.",
+          "options": ["sand", "metal", "glass", "wood"],
+          "answer": 2,
+          "optionsZh": ["沙子", "金屬", "玻璃", "木頭"],
+          "explanation": "輪胎爆裂多半會噴出碎片，與路面覆蓋物最相關的是 glass（玻璃碎片），故選 (C)。"
+        },
+        {
+          "n": 3,
+          "stem": "After traveling to ten countries, Mark gained a lot of ＿＿＿ about different cultures.",
+          "options": ["experience", "weather", "traffic", "medicine"],
+          "answer": 0,
+          "optionsZh": ["經驗", "天氣", "交通", "藥物"],
+          "explanation": "旅行十個國家會累積許多 experience（經驗），故選 (A)。"
+        },
+        {
+          "n": 4,
+          "stem": "Ken usually ＿＿＿ the dishes right after dinner, so the kitchen never stays messy.",
+          "options": ["wash", "washes", "washing", "to wash"],
+          "answer": 1,
+          "optionsZh": ["（原形）", "（第三人稱單數現在式，正確）", "（現在分詞）", "（不定詞）"],
+          "explanation": "主詞 Ken 為第三人稱單數，usually 表習慣性動作用現在簡單式，動詞需加 -es，故選 washes。"
+        },
+        {
+          "n": 5,
+          "stem": "A: ＿＿＿ your parents at home right now? B: No, they are still at work.",
+          "options": ["Do", "Is", "Are", "Does"],
+          "answer": 2,
+          "optionsZh": ["（助動詞 do）", "（be 動詞單數）", "（be 動詞複數，正確）", "（助動詞 does）"],
+          "explanation": "主詞 your parents 為複數，且回答用 they are，故問句用 Are，選 (C)。"
+        },
+        {
+          "n": 6,
+          "stem": "Turn off the stove now, or the soup ＿＿＿ too salty in a few minutes.",
+          "options": ["becomes", "became", "will become", "has become"],
+          "answer": 2,
+          "optionsZh": ["（現在式）", "（過去式）", "（未來式，正確）", "（現在完成式）"],
+          "explanation": "in a few minutes 表未來的時間點，故用未來式 will become。"
+        },
+        {
+          "n": 7,
+          "stem": "Of all the runners in the race, Amy was the ＿＿＿, so she won first place easily.",
+          "options": ["fast", "faster", "fastest", "as fast"],
+          "answer": 2,
+          "optionsZh": ["（原級）", "（比較級）", "（最高級，正確）", "（同級）"],
+          "explanation": "of all the runners 表在一個範圍中比較所有人，且前面有 the，須用最高級 fastest。"
+        },
+        {
+          "n": 8,
+          "stem": "I forgot my umbrella today. Could you ＿＿＿ me yours until tomorrow morning?",
+          "options": ["borrow", "lend", "return", "cost"],
+          "answer": 1,
+          "optionsZh": ["借入（跟別人借）", "借出（給別人）", "歸還", "花費"],
+          "explanation": "「借某人某物」是 lend somebody something；borrow 是向別人借入，方向相反，故選 lend。"
+        },
+        {
+          "n": 9,
+          "stem": "Paul missed the school bus this morning ＿＿＿ he forgot to set his alarm clock last night.",
+          "options": ["so", "but", "because", "or"],
+          "answer": 2,
+          "optionsZh": ["所以", "但是", "因為", "或者"],
+          "explanation": "前句是「錯過校車」的結果，後句是原因（忘記設鬧鐘），須用 because 引導原因子句。"
+        },
+        {
+          "n": 10,
+          "stem": "The man ＿＿＿ is fixing the roof next door used to be my father's classmate.",
+          "options": ["which", "who", "what", "whose"],
+          "answer": 1,
+          "optionsZh": ["（指物）", "（指人的關係代名詞，正確）", "（先行詞不明）", "（所有格）"],
+          "explanation": "先行詞 the man 是人，且在子句中當主詞，須用關係代名詞 who。"
+        },
+        {
+          "n": 11,
+          "stem": "This bridge ＿＿＿ over one hundred years ago, but it still looks strong today.",
+          "options": ["builds", "built", "was built", "is building"],
+          "answer": 2,
+          "optionsZh": ["（現在式）", "（過去式主動）", "（過去式被動，正確）", "（現在進行式）"],
+          "explanation": "橋是「被建造」的，且 over one hundred years ago 表過去，須用過去被動 was built。"
+        },
+        {
+          "n": 12,
+          "stem": "The children finished ＿＿＿ their toys before their mother came home from the market.",
+          "options": ["put away", "to put away", "putting away", "put away to"],
+          "answer": 2,
+          "optionsZh": ["（原形）", "（不定詞）", "（動名詞，正確）", "（不成立）"],
+          "explanation": "finish 後面接動名詞（V-ing），故選 putting away。"
+        },
+        {
+          "n": 13,
+          "stem": "Don't give up on your dream. If you keep trying, you ＿＿＿ succeed one day.",
+          "options": ["must", "should", "can", "need"],
+          "answer": 2,
+          "optionsZh": ["必須", "應該", "能夠（有可能）", "需要"],
+          "explanation": "「持續努力就有可能成功」，表達能力或可能性，用 can 最合語意。"
+        },
+        {
+          "n": 14,
+          "stem": "This is the third time this week I ＿＿＿ my key at school, and my mother is getting upset.",
+          "options": ["leave", "left", "have left", "will leave"],
+          "answer": 2,
+          "optionsZh": ["（現在式）", "（過去式）", "（現在完成式，正確）", "（未來式）"],
+          "explanation": "「This is the + 序數 + time + 主詞」後面常接現在完成式，表達到目前為止發生的次數，故用 have left。"
+        },
+        {
+          "n": 15,
+          "stem": "The speech was so ＿＿＿ that the whole audience laughed out loud again and again.",
+          "options": ["boring", "amusing", "frightening", "confusing"],
+          "answer": 1,
+          "optionsZh": ["無聊的", "有趣好笑的", "令人害怕的", "令人困惑的"],
+          "explanation": "全場觀眾一直大笑，代表演講很 amusing（有趣好笑的），故選 (B)。"
+        },
+        {
+          "n": 16,
+          "stem": "You had better ＿＿＿ your homework before the TV show starts, or you will forget it.",
+          "options": ["finish", "to finish", "finishing", "finished"],
+          "answer": 0,
+          "optionsZh": ["（原形，正確）", "（不定詞）", "（動名詞）", "（過去式）"],
+          "explanation": "had better 後面固定接原形動詞，故選 finish。"
+        },
+        {
+          "n": 17,
+          "stem": "The coach told the players ＿＿＿ extra water before the long race began.",
+          "options": ["drink", "drinking", "to drink", "drunk"],
+          "answer": 2,
+          "optionsZh": ["（原形）", "（動名詞）", "（不定詞，正確）", "（過去分詞）"],
+          "explanation": "tell somebody to do something，故須用不定詞 to drink。"
+        },
+        {
+          "n": 18,
+          "stem": "Neither the manager nor her assistants ＿＿＿ available to answer questions this afternoon.",
+          "options": ["is", "are", "was", "has"],
+          "answer": 1,
+          "optionsZh": ["（單數）", "（複數，正確）", "（過去單數）", "（完成式）"],
+          "explanation": "neither A nor B 的動詞須與「最接近的主詞」一致，這裡最近是 her assistants（複數），故用 are。"
+        },
+        {
+          "n": 19,
+          "stem": "The earlier you leave for the airport, the ＿＿＿ trouble you will have finding a parking spot.",
+          "options": ["little", "less", "least", "few"],
+          "answer": 1,
+          "optionsZh": ["（原級）", "（比較級，正確）", "（最高級）", "（原級，用於可數名詞）"],
+          "explanation": "「the + 比較級..., the + 比較級...」句型，兩邊都須用比較級，且 trouble 為不可數名詞，故用 less。"
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "title": "第二部分：題組",
+      "range": "第 20-43 題",
+      "passages": [
+        {
+          "range": "20–21",
+          "passageType": "practical",
+          "title": "Green Hill Public Library — Borrowing Rules",
+          "passage": "Green Hill Public Library — Borrowing Rules\n\nMembership Types:\nStudent Card: borrow up to 5 books for 14 days\nAdult Card: borrow up to 8 books for 21 days\nGold Member Card: borrow up to 10 books for 30 days (yearly fee $500)\n\nOverdue Fine: $5 per book per day (maximum fine per book: $50)\n\nRenewal Rule: A book may be renewed ONE time, for the same length as the original borrowing period, but only if (1) no other reader has reserved the book, AND (2) the request is made within 3 days before the due date.\n\nSpecial Notice: Gold Members receive a 50% discount on all overdue fines. This discount does NOT apply during the Summer Reading Festival (July 1–31), when all members must pay the full fine.",
+          "questions": [
+            {
+              "n": 20,
+              "stem": "Nick has a Student Card. His book is due in 2 days, and no one else has reserved it. Can he renew it, and for how long?",
+              "options": ["No, because someone has already reserved the book.", "Yes, he can renew it once for 14 more days.", "Yes, he can renew it once for 30 more days.", "No, because he can only renew within 3 days before the due date."],
+              "answer": 1,
+              "optionsZh": ["不行，因為已經有人預約這本書。", "可以，他能續借一次，再借14天。", "可以，他能續借一次，再借30天。", "不行，因為只能在到期前3天內申請續借。"],
+              "explanation": "他的書2天後到期，符合「到期前3天內」的規定，且無人預約，故可續借；由於他是 Student Card，續借長度須與原借期相同，即14天，故選 (B)。選項 (D) 的理由描述錯誤，因為他其實正好符合3天內的條件。"
+            },
+            {
+              "n": 21,
+              "stem": "Owen is a Gold Member. He returned a book 6 days late, and the return date was July 15. How much did he need to pay?",
+              "options": ["$15.", "$30.", "$50.", "$60."],
+              "answer": 1,
+              "optionsZh": ["15元。", "30元。", "50元。", "60元。"],
+              "explanation": "逾期費為每本每天 $5，6天共 $30，未達每本上限 $50。雖然 Owen 是 Gold Member，平常有五折優惠，但 7月15日屬於暑期閱讀季（7/1–7/31），該優惠當月不適用，所以他須付全額 $30，故選 (B)。此題須同時比對「逾期費計算規則」與「暑期例外規則」兩項規定才能算出正確答案。"
+            }
+          ]
+        },
+        {
+          "range": "22–24",
+          "passageType": "narrative",
+          "title": "First Day at the Bakery",
+          "passage": "Ivy had never worked in a bakery before, and her hands were shaking as she tied on her apron for the very first time. The morning rush had already started. Customers were lining up at the counter asking for bread, coffee, and warm cinnamon rolls. Her manager, Mr. Chen, gave her a quick smile and said, \"Just watch me for the first hour, and then you can try.\" Ivy nodded, though she felt completely overwhelmed by the noise, the orders, and the smell of fresh bread all around her.\n\nBy mid-morning, a long line had formed, and Mr. Chen suddenly had to step into the kitchen to help with a burnt batch of rolls. Before Ivy could say anything, she found herself standing alone at the counter. An impatient customer in front of her wanted three coffees and a dozen donuts. Her mind went blank for a moment, but she took a deep breath and carefully repeated the whole order to make sure she understood it correctly. To her surprise, she got everything right, and the customer even thanked her with a warm smile.\n\nWhen her shift finally ended, Ivy's feet ached and her apron was covered in flour, yet she felt proud instead of tired. She realized that feeling nervous on the first day did not mean she would fail; it only meant that she truly cared about doing a good job. Walking home that evening, she was already looking forward to her second day at the small, busy bakery.",
+          "questions": [
+            {
+              "n": 22,
+              "stem": "How did Ivy feel when the bakery first got busy that morning?",
+              "options": ["Bored and sleepy.", "Overwhelmed by the noise and orders.", "Angry at her manager.", "Confident and relaxed."],
+              "answer": 1,
+              "optionsZh": ["無聊又想睡。", "被吵雜聲與訂單淹沒。", "對經理生氣。", "自信又放鬆。"],
+              "explanation": "文中提到 she felt completely overwhelmed by the noise, the orders, and the smell of fresh bread，故選 (B)。"
+            },
+            {
+              "n": 23,
+              "stem": "Why did Ivy have to handle a customer's order by herself?",
+              "options": ["Mr. Chen went home early.", "Mr. Chen had to deal with burnt rolls in the kitchen.", "The customer refused to wait for Mr. Chen.", "Mr. Chen wanted to test her on purpose."],
+              "answer": 1,
+              "optionsZh": ["陳先生提早回家了。", "陳先生必須到廚房處理烤焦的麵包捲。", "顧客不肯等陳先生。", "陳先生是故意要考驗她。"],
+              "explanation": "文中提到 Mr. Chen suddenly had to step into the kitchen to help with a burnt batch of rolls，故選 (B)。"
+            },
+            {
+              "n": 24,
+              "stem": "What did Ivy learn from her first day at work?",
+              "options": ["Being nervous means a person will fail.", "Feeling nervous does not mean she will fail.", "She should never work in a bakery again.", "Customers are always impatient."],
+              "answer": 1,
+              "optionsZh": ["緊張就代表會失敗。", "感到緊張不代表她會失敗。", "她再也不該在麵包店工作。", "顧客總是沒耐心。"],
+              "explanation": "文末提到 feeling nervous on the first day did not mean she would fail，故選 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "25–27",
+          "passageType": "informational",
+          "title": "How Volcanoes Form",
+          "passage": "Deep under the Earth's surface, temperatures are so high that solid rock slowly melts into a thick liquid called magma. Because magma is lighter than the solid rock around it, it constantly pushes upward, searching for cracks or weak spots in the Earth's crust. When enough pressure builds up over time, the magma finally forces its way through an opening, and a volcano is born.\n\nNot every volcano behaves the same way. Some volcanoes release magma slowly and gently, forming rivers of glowing lava that flow calmly down the mountainside. Others explode violently, shooting ash, gas, and rock high into the sky within seconds. Scientists explain that the difference mainly depends on how thick the magma is and how much gas is trapped inside it. Thick, gas-filled magma cannot escape easily, so pressure keeps building until it erupts suddenly and dramatically.\n\nAlthough eruptions can be dangerous, they are not always bad news for the areas around them. Over hundreds of years, cooled lava breaks down into extremely fertile soil. This is why many farmers choose to live near volcanoes despite the risk. Ash from eruptions can also travel far into the atmosphere, and it sometimes affects weather patterns across the entire planet. By studying old eruptions carefully, scientists hope to predict future ones and better protect the communities living nearby.",
+          "questions": [
+            {
+              "n": 25,
+              "stem": "What is the reading mainly about?",
+              "options": ["Why farmers grow crops near mountains.", "How volcanoes form and why they behave differently.", "How to measure the temperature of rock.", "The history of famous mountains around the world."],
+              "answer": 1,
+              "optionsZh": ["為何農夫在山邊種植作物。", "火山如何形成以及為何行為不同。", "如何測量岩石的溫度。", "世界知名山脈的歷史。"],
+              "explanation": "全文說明岩漿如何形成火山、以及火山噴發方式為何不同，主旨為 (B)。"
+            },
+            {
+              "n": 26,
+              "stem": "According to the reading, why do some volcanoes explode violently instead of releasing lava gently?",
+              "options": ["Their magma is thick and full of trapped gas.", "They are located near the ocean.", "Scientists cause them to explode.", "They contain no magma at all."],
+              "answer": 0,
+              "optionsZh": ["它們的岩漿濃稠且含有困住的氣體。", "它們位於海洋附近。", "科學家使它們爆炸。", "它們完全不含岩漿。"],
+              "explanation": "文中提到 Thick, gas-filled magma cannot escape easily, so pressure keeps building until it erupts suddenly，故選 (A)。"
+            },
+            {
+              "n": 27,
+              "stem": "What can we learn about the land near a volcano after an eruption?",
+              "options": ["It becomes too dangerous for anyone to visit.", "It stays exactly the same as before.", "It can eventually become very fertile soil.", "It turns into solid glass immediately."],
+              "answer": 2,
+              "optionsZh": ["變得太危險而無人能造訪。", "和之前完全一樣。", "最終可能變成非常肥沃的土壤。", "立刻變成堅硬的玻璃。"],
+              "explanation": "文中提到 cooled lava breaks down into extremely fertile soil，故選 (C)。"
+            }
+          ]
+        },
+        {
+          "range": "28–30",
+          "passageType": "narrative",
+          "title": "Grandpa's Lesson by the River",
+          "passage": "Every summer, Tommy visited his grandfather's small house beside the river, and every summer, his grandfather tried to teach him how to fish. Tommy always found the sport boring; he preferred sitting on the bank with his tablet instead of holding a fishing rod. His grandfather never scolded him for this. Instead, he simply sat beside the river each morning, humming quietly to himself and waiting patiently for a bite.\n\nOne rainy afternoon, Tommy's tablet ran out of battery, and there was nothing else to do. Reluctantly, he picked up the extra rod leaning against the porch and walked down to sit beside his grandfather. \"You have to be patient,\" his grandfather said gently, without even turning his head. \"Fish can sense when a person is in a hurry.\" Tommy rolled his eyes but stayed anyway, mostly because it was still raining outside.\n\nNearly an hour passed in complete silence before Tommy felt a sudden, sharp tug on his line. He gasped and pulled the rod back exactly as his grandfather had shown him days earlier without him even noticing. A shining fish flew out of the water, and Tommy laughed with pure delight for the first time all summer. His grandfather grinned and said nothing else was needed; the quiet river, he explained, always teaches patience to those willing to wait for it.",
+          "questions": [
+            {
+              "n": 28,
+              "stem": "Why did Tommy finally pick up a fishing rod that afternoon?",
+              "options": ["His grandfather forced him to.", "His tablet ran out of battery.", "He suddenly loved fishing.", "It stopped raining outside."],
+              "answer": 1,
+              "optionsZh": ["爺爺強迫他。", "他的平板電腦沒電了。", "他突然愛上釣魚。", "外面停雨了。"],
+              "explanation": "文中提到 Tommy's tablet ran out of battery, and there was nothing else to do，故選 (B)。"
+            },
+            {
+              "n": 29,
+              "stem": "What does the grandfather believe is necessary for fishing?",
+              "options": ["Expensive equipment.", "Patience.", "Loud noise.", "A tablet."],
+              "answer": 1,
+              "optionsZh": ["昂貴的裝備。", "耐心。", "很大的聲響。", "平板電腦。"],
+              "explanation": "爺爺說 You have to be patient, Fish can sense when a person is in a hurry，故選 (B)。"
+            },
+            {
+              "n": 30,
+              "stem": "How did Tommy feel after catching the fish?",
+              "options": ["Bored.", "Frightened.", "Delighted.", "Embarrassed."],
+              "answer": 2,
+              "optionsZh": ["無聊的。", "害怕的。", "十分開心的。", "尷尬的。"],
+              "explanation": "文中提到 Tommy laughed with pure delight，故選 (C)。"
+            }
+          ]
+        },
+        {
+          "range": "31–34",
+          "passageType": "informational",
+          "title": "A Sweet History: The Story of Chocolate",
+          "passage": "Long before chocolate became a sweet treat, ancient people in Central America used cacao beans in a very different way. Around three thousand years ago, they ground the beans into a bitter paste. They mixed it with water, chili peppers, and spices to make a strong drink. This drink was often reserved for kings, warriors, and important religious ceremonies. Cacao beans were considered extremely valuable. They were even used as a form of money.\n\nEuropean explorers brought cacao back across the ocean in the sixteenth century. People slowly began adding sugar and warm milk to soften its naturally bitter taste. This new, sweeter version quickly became fashionable among wealthy families throughout Europe. Still, it remained far too expensive for ordinary people to enjoy regularly. It took several more centuries before factories learned how to press and process cacao efficiently. This finally made chocolate affordable for nearly everyone.\n\nToday, chocolate is produced and enjoyed in almost every country on Earth. It appears in countless different shapes, flavors, and forms. Yet despite all these modern changes, the same cacao bean that ancient peoples once treasured as sacred remains the essential ingredient behind every chocolate bar we eat. Understanding this long history helps us appreciate something important. Chocolate, so common today, once carried enormous cultural and even spiritual meaning for the people who first discovered it.",
+          "questions": [
+            {
+              "n": 31,
+              "stem": "How did ancient people in Central America first use cacao beans?",
+              "options": ["They planted them as decorations.", "They made a bitter drink with them.", "They used them to build houses.", "They sold them only to children."],
+              "answer": 1,
+              "optionsZh": ["他們把可可豆種來當裝飾。", "他們用可可豆做成苦味飲料。", "他們用可可豆蓋房子。", "他們只賣給小孩。"],
+              "explanation": "文中提到古人 ground the beans into a bitter paste and mixed it with water... to make a strong drink，故選 (B)。"
+            },
+            {
+              "n": 32,
+              "stem": "According to the reading, why was cacao especially valuable in ancient times?",
+              "options": ["It was used as a kind of money.", "It could cure all diseases.", "It grew only once every hundred years.", "It was found only in Europe."],
+              "answer": 0,
+              "optionsZh": ["它被當成一種貨幣使用。", "它能治百病。", "每一百年才生長一次。", "只在歐洲才找得到。"],
+              "explanation": "文中提到 cacao beans... were even used as a form of money，故選 (A)。"
+            },
+            {
+              "n": 33,
+              "stem": "What happened after Europeans began adding sugar and milk to cacao?",
+              "options": ["It immediately became cheap for everyone.", "It became popular among wealthy families.", "People stopped drinking it completely.", "It was banned by the government."],
+              "answer": 1,
+              "optionsZh": ["立刻變得人人買得起。", "在富裕家庭間變得流行。", "人們完全不再喝了。", "被政府禁止。"],
+              "explanation": "文中提到 This new, sweeter version quickly became fashionable among wealthy families，故選 (B)。"
+            },
+            {
+              "n": 34,
+              "stem": "What is the writer's main purpose in this passage?",
+              "options": ["To explain how to make chocolate at home.", "To show that chocolate was once rare and meaningful, not just a common snack.", "To warn readers not to eat too much chocolate.", "To compare chocolate prices in different countries today."],
+              "answer": 1,
+              "optionsZh": ["說明如何在家自製巧克力。", "說明巧克力曾經是珍貴且富有意義的，而非只是普通零食。", "警告讀者別吃太多巧克力。", "比較現今各國巧克力的價格。"],
+              "explanation": "文末強調如今普遍的巧克力，過去曾承載重大的文化與精神意義，主旨為 (B)。"
+            }
+          ]
+        },
+        {
+          "range": "35–39",
+          "passageType": "dual",
+          "title": "Should Schools Start Later in the Morning? — Two Views",
+          "passage": "■ Writer A：\nI strongly believe that schools should start later in the morning, especially for teenagers. Research shows that teenagers' bodies naturally want to sleep later and wake up later than younger children or adults do. So waking up at six or seven in the morning goes directly against their biological clock. Because of this, many students arrive at school exhausted and unable to focus during their first two classes. This wastes valuable learning time. If school started even one hour later, students would get more rest and pay closer attention in class. They would likely perform better on tests, too. Some parents worry that a later start would waste the afternoon, but schools could simply end classes later as well. A small change in the schedule could make a real difference in students' health and grades.\n\n■ Writer B：\nWhile I understand the science behind teenage sleep, I do not think delaying school start times is a practical solution. Many parents need to leave for work early. They depend on the current schedule to drop their children off at school beforehand. If school started later, plenty of families would face serious difficulty arranging morning transportation and childcare. Furthermore, a later start would also push back after-school activities like sports practice and clubs. This would cut into time that students need for homework, family dinner, or rest in the evening. Instead of changing the entire schedule, schools could simply encourage students to set an earlier bedtime and limit screen time before sleeping. Fixing one problem should not be allowed to create several new ones for families across the community.",
+          "questions": [
+            {
+              "n": 35,
+              "stem": "According to Writer A, why do many students feel tired in the morning at school?",
+              "options": ["They stay up late playing video games.", "Their biological clock naturally makes them sleep and wake later.", "The classrooms are too cold in the morning.", "They do not like their teachers."],
+              "answer": 1,
+              "optionsZh": ["他們熬夜打電動。", "他們的生理時鐘讓他們自然較晚睡、較晚醒。", "早上教室太冷。", "他們不喜歡老師。"],
+              "explanation": "Writer A 指出 teenagers' bodies naturally want to sleep later and wake up later... goes directly against their biological clock，故選 (B)。"
+            },
+            {
+              "n": 36,
+              "stem": "According to Writer B, what problem would a later school start time cause for many families?",
+              "options": ["It would make school lunches more expensive.", "It would create difficulty with morning transportation and childcare.", "It would force schools to hire more teachers.", "It would make students forget their homework."],
+              "answer": 1,
+              "optionsZh": ["讓學校午餐變貴。", "造成早晨交通與托育安排的困難。", "迫使學校聘請更多老師。", "讓學生忘記寫作業。"],
+              "explanation": "Writer B 指出 families would face serious difficulty arranging morning transportation and childcare，故選 (B)。"
+            },
+            {
+              "n": 37,
+              "stem": "What solution does Writer B suggest instead of changing the school schedule?",
+              "options": ["Building more schools nearby.", "Setting an earlier bedtime and limiting screen time.", "Ending all after-school clubs.", "Giving students less homework."],
+              "answer": 1,
+              "optionsZh": ["在附近蓋更多學校。", "提早就寢時間並限制螢幕使用時間。", "取消所有社團活動。", "減少學生作業。"],
+              "explanation": "Writer B 建議 schools could simply encourage students to set an earlier bedtime and limit screen time before sleeping，故選 (B)。"
+            },
+            {
+              "n": 38,
+              "stem": "What do both writers agree on, even though they reach different conclusions?",
+              "options": ["Students' evening rest and schedules matter to their well-being.", "Schools should be closed on weekends.", "Homework should be removed completely.", "Parents should not be involved in school decisions."],
+              "answer": 0,
+              "optionsZh": ["學生晚間的休息與作息與其身心健康有關。", "學校週末應該停課。", "作業應該完全取消。", "家長不該參與學校決策。"],
+              "explanation": "Writer A 關心學生因缺乏休息而疲憊、成績受影響；Writer B 也提到晚間休息時間的重要性，兩人都同意作息安排與學生身心健康相關，僅結論不同，故選 (A)。"
+            },
+            {
+              "n": 39,
+              "stem": "Which sentence would Writer B most likely agree with?",
+              "options": ["A later start time might create new problems for families.", "Teenagers do not need extra sleep at all.", "Parents' morning schedules do not matter.", "After-school activities are not important to students."],
+              "answer": 0,
+              "optionsZh": ["延後上課時間可能為家庭帶來新的問題。", "青少年完全不需要額外的睡眠。", "家長的早晨行程不重要。", "課後活動對學生不重要。"],
+              "explanation": "Writer B 全文論點是延後上課會對家庭造成新的困擾（交通、托育、課後活動），與 (A) 一致。"
+            }
+          ]
+        },
+        {
+          "range": "40–43",
+          "passageType": "cloze",
+          "title": "The Talent Show Surprise (故事克漏字)",
+          "passage": "Mia had wanted to join the school talent show for years, but she never had the courage to sign up. This year, her best friend Grace begged her to enter together as a dance duo. Mia agreed nervously, and the two girls practiced every day after school. __(40)__ their moves were far from perfect, they kept trying without giving up.\n\nThree days before the show, Grace suddenly got sick and __(41)__ to leave the stage completely to Mia alone. Mia panicked; she had never planned to perform without her partner. Her teacher gently encouraged her to keep the original plan but perform it solo instead.\n\nOn the night of the show, Mia's legs trembled behind the curtain. __(42)__ , the moment the music started, all her fear seemed to disappear completely. She moved through the whole routine exactly as she and Grace had practiced together. When the song ended, the audience clapped loudly, and Mia realized that she had finally found the __(43)__ she never knew she had inside her.",
+          "questions": [
+            {
+              "n": 40,
+              "stem": "選出第 40 格最適合的答案。",
+              "options": ["Although", "Because", "So", "If"],
+              "answer": 0,
+              "optionsZh": ["雖然（表對比讓步）", "因為", "所以", "如果"],
+              "explanation": "前後為讓步關係「舞步不完美」但「仍持續練習不放棄」，用 Although（雖然）連接最合適。"
+            },
+            {
+              "n": 41,
+              "stem": "選出第 41 格最適合的答案。",
+              "options": ["has", "have", "had", "having"],
+              "answer": 2,
+              "optionsZh": ["（現在式）", "（現在式複數）", "（過去式，正確）", "（動名詞）"],
+              "explanation": "全文為過去式敘述，此處與 got sick 為同一過去時間點的連續動作，須用過去式 had（had to 的省略需搭配 to，故此處以 had 表過去式），故選 had。"
+            },
+            {
+              "n": 42,
+              "stem": "選出第 42 格最適合的答案。",
+              "options": ["Therefore", "However", "Similarly", "Finally"],
+              "answer": 1,
+              "optionsZh": ["因此", "然而（表轉折，正確）", "同樣地", "最後"],
+              "explanation": "前句「雙腿發抖」與後句「恐懼消失」語意轉折相反，須用 However（然而）連接。"
+            },
+            {
+              "n": 43,
+              "stem": "選出第 43 格最適合的答案。",
+              "options": ["courage", "silence", "weakness", "distance"],
+              "answer": 0,
+              "optionsZh": ["勇氣", "沉默", "軟弱", "距離"],
+              "explanation": "全文描述 Mia 克服恐懼、獨自完成表演，最終發現自己擁有的是 courage（勇氣），故選 (A)。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
