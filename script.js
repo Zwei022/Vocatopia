@@ -1725,8 +1725,11 @@ function _gxBeep(freq, dur, vol) {
   } catch (e) {}
 }
 
+let _gxWasBgmPlaying = false;
+
 function gsatStartListening() {
   if (!gsatExam || gsatExam.seqPlaying) return;
+  _gxWasBgmPlaying = _bgmDuckStart();
   const view = document.getElementById('gsatExamView');
   const ov = document.createElement('div');
   ov.className = 'gx-countdown';
@@ -1775,6 +1778,8 @@ function _gsatListenDone() {
   gsatExam.seqPlaying = false;
   const btn = document.getElementById('gxListenBtn');
   if (btn) { btn.disabled = false; btn.textContent = '▶ 重新播放'; }
+  _bgmDuckEnd(_gxWasBgmPlaying);
+  _gxWasBgmPlaying = false;
 }
 
 function _gsatStopAudio() {
@@ -1789,6 +1794,8 @@ function _gsatStopAudio() {
   }
   const ov = document.querySelector('.gx-countdown');
   if (ov) ov.remove();
+  _bgmDuckEnd(_gxWasBgmPlaying);
+  _gxWasBgmPlaying = false;
 }
 
 function _gsatCleanupTimer() {
@@ -2415,10 +2422,11 @@ function _stopListening() {
 function _playFallback(dialogue) {
   if (!window.speechSynthesis) return;
   window.speechSynthesis.cancel();
+  const wasBgmPlaying = _bgmDuckStart();
   const lines = dialogue.split('\n').filter(l => l.trim());
   let i = 0;
   const next = () => {
-    if (i >= lines.length) return;
+    if (i >= lines.length) { _bgmDuckEnd(wasBgmPlaying); return; }
     const m = lines[i++].match(/^([^:]+):\s*(.+)$/);
     if (!m) { next(); return; }
     const utter  = new SpeechSynthesisUtterance(m[2].trim());
@@ -2435,7 +2443,9 @@ async function _playListening(dialogue) {
   _stopListening();
   try {
     const url = await _generateListeningAudio(dialogue);
+    const wasBgmPlaying = _bgmDuckStart();
     await _playAudioUrl(url);
+    _bgmDuckEnd(wasBgmPlaying);
   } catch (err) {
     console.warn('[listening] Kokoro TTS 失敗，使用瀏覽器 TTS:', err.message);
     _playFallback(dialogue);
@@ -2548,10 +2558,12 @@ async function _listenStart() {
   }).join('');
 
   // 播放兩遍，每個 await 後都檢查是否已被取消（答題/下一題/關閉）
+  let wasBgmPlaying = false;
   try {
     const url = await _generateListeningAudio(q.dialogue);
     if (playId !== _listenPlayId) return;
     if (_listenAudio) { _listenAudio.pause(); _listenAudio = null; }
+    wasBgmPlaying = _bgmDuckStart();
     await _playAudioUrl(url);
     if (playId !== _listenPlayId) return;  // 第一遍結束後：已答題？直接停
     await new Promise(r => setTimeout(r, 700));
@@ -2562,6 +2574,8 @@ async function _listenStart() {
       console.warn('[listening] TTS 失敗，fallback:', err.message);
       _playFallback(q.dialogue);
     }
+  } finally {
+    _bgmDuckEnd(wasBgmPlaying);
   }
 }
 
@@ -3409,8 +3423,9 @@ function speak(w) {
         const objUrl = URL.createObjectURL(blob);
         const audio  = new Audio(objUrl);
         _speakAudio  = audio;
-        audio.onended = () => URL.revokeObjectURL(objUrl);
-        audio.play().catch(() => {});
+        const wasBgmPlaying = _bgmDuckStart();
+        audio.onended = () => { URL.revokeObjectURL(objUrl); _bgmDuckEnd(wasBgmPlaying); };
+        audio.play().catch(() => { _bgmDuckEnd(wasBgmPlaying); });
         return true;
       });
   }
@@ -3427,8 +3442,10 @@ function speak(w) {
     .then(played => {
       if (ctrl.signal.aborted || played) return;
       if ('speechSynthesis' in window) {
+        const wasBgmPlaying = _bgmDuckStart();
         const u = new SpeechSynthesisUtterance(w);
         u.lang = 'en-US'; u.rate = 0.95;
+        u.onend = u.onerror = () => _bgmDuckEnd(wasBgmPlaying);
         speechSynthesis.speak(u);
       }
     });
@@ -3461,14 +3478,17 @@ function speakSentence(kind, key, fallbackText) {
       const objUrl = URL.createObjectURL(blob);
       const audio  = new Audio(objUrl);
       _speakSentAudio = audio;
-      audio.onended = () => URL.revokeObjectURL(objUrl);
-      audio.play().catch(() => {});
+      const wasBgmPlaying = _bgmDuckStart();
+      audio.onended = () => { URL.revokeObjectURL(objUrl); _bgmDuckEnd(wasBgmPlaying); };
+      audio.play().catch(() => { _bgmDuckEnd(wasBgmPlaying); });
     })
     .catch(() => {
       if (ctrl.signal.aborted || !fallbackText) return;
       if ('speechSynthesis' in window) {
+        const wasBgmPlaying = _bgmDuckStart();
         const u = new SpeechSynthesisUtterance(fallbackText);
         u.lang = 'en-US'; u.rate = 0.9;
+        u.onend = u.onerror = () => _bgmDuckEnd(wasBgmPlaying);
         speechSynthesis.speak(u);
       }
     });
@@ -3666,10 +3686,17 @@ document.addEventListener('click', e => {
 // （已移除 cap2000_editable 邏輯）
 
 // ── INIT ──
-// 進場 Loading 畫面：更新提示文字、以及收掉畫面（成功或失敗都要收，避免卡住）
+// 進場 Loading 畫面：更新提示文字/進度條、以及收掉畫面（成功或失敗都要收，避免卡住）
 function _alsSetHint(text) {
   const el = document.getElementById('alsHint');
   if (el) el.textContent = text;
+}
+function _alsSetProgress(pct) {
+  pct = Math.max(0, Math.min(100, Math.round(pct)));
+  const fill = document.getElementById('alsBarFill');
+  const pctEl = document.getElementById('alsPct');
+  if (fill) fill.style.width = pct + '%';
+  if (pctEl) pctEl.textContent = pct + '%';
 }
 function _alsHide() {
   const el = document.getElementById('appLoadingScreen');
@@ -3677,25 +3704,30 @@ function _alsHide() {
 }
 // 保險：萬一某個初始化步驟卡住（例如網路很差），最多等 8 秒還是強制收掉 loading 畫面，
 // 不讓使用者被卡在啟動畫面出不去（_alsHide 本身是 idempotent，重複呼叫沒問題）。
-setTimeout(_alsHide, 8000);
+setTimeout(() => { _alsSetProgress(100); _alsHide(); }, 8000);
 
 (async function init() {
   try {
     loadStats();
+    _alsSetProgress(5);
 
     // auth 必須先完成，loadCustomDecks 才能知道 currentUser
     _alsSetHint('登入驗證中…');
     const loggedIn = (typeof initAuth !== 'undefined') ? await initAuth() : false;
     if (!loggedIn && typeof showAuthOverlay !== 'undefined') showAuthOverlay();
     if (loggedIn && currentUser) { _identifySocket(); _checkIncomingFriendRequests(); }
+    _alsSetProgress(20);
 
     _alsSetHint('載入單字卡組…');
     await loadCustomDecks();
+    _alsSetProgress(35);
 
     _alsSetHint('載入單字庫…');
     await Promise.all([loadWords(), loadArticles(), loadDailyArticles()]);
+    _alsSetProgress(65);
 
     if (typeof loadUserWordStatus !== 'undefined') await loadUserWordStatus();
+    _alsSetProgress(75);
 
     STUDY_WORDS = WORDS;
 
@@ -3709,12 +3741,15 @@ setTimeout(_alsHide, 8000);
     // 首頁已經是完整資料，而不是空白排行榜/卡片之後才慢半拍跳出來。
     _alsSetHint('準備首頁資料…');
     if (typeof updateHomeScreen === 'function') await updateHomeScreen();
+    _alsSetProgress(90);
 
     // 每日聽力練習的對話音檔改用 Supabase Storage 常駐快取後，這裡直接在 loading
     // 畫面期間就把「今天」的聽力題目對話音檔全部預先請求一次、填進 _listenCache，
     // 使用者之後點進每日聽力練習時，音檔已經在瀏覽器快取/記憶體裡，不會再有延遲。
     _alsSetHint('準備聽力音檔…');
     await _preloadTodayListeningAudio();
+    _alsSetProgress(100);
+    _alsSetHint('完成！');
   } catch (err) {
     console.error('[init] 初始化失敗:', err);
     showToast('⚠ 載入失敗，請重新整理頁面');
@@ -5022,6 +5057,23 @@ function _bgmGetAudio() {
     _bgmAudio.volume = 0.35;
   }
   return _bgmAudio;
+}
+
+// 任何語音/朗讀/聽力音效要播放前先呼叫這個「閃避」BGM（同時降低音量衝突、
+// 也避免部分 Android WebView 在多個 <audio> 同時播放時互相搶佔音訊焦點，
+// 導致其中一個完全放不出聲音的問題）。回傳值要原封不動傳給 _bgmDuckEnd，
+// 這樣才知道播放結束後該不該恢復（使用者本來就手動關掉 BGM 的話不該擅自打開）。
+function _bgmDuckStart() {
+  if (_bgmAudio && !_bgmAudio.paused) {
+    _bgmAudio.pause();
+    return true;
+  }
+  return false;
+}
+function _bgmDuckEnd(wasPlaying) {
+  if (wasPlaying && (_loadSettingsData().bgm !== false)) {
+    _bgmGetAudio().play().catch(() => {});
+  }
 }
 
 // 依設定值播放或暫停。瀏覽器的自動播放限制要求「使用者手勢」才能出聲，
