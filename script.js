@@ -204,17 +204,37 @@ function normalizeWord(w) {
 
 async function loadWords() {
   try {
-    const BATCH = 500;
-    let offset = 0;
+    // 伺服器單次最多允許 2000 筆（見 server/routes/words.js），先查總數，
+    // 一次算出要抓幾批，再用 Promise.all 平行送出，不用像以前那樣一批一批
+    // 排隊等（500 筆一批、序列等待，5 次來回，手機網路稍慢時每日單字卡組
+    // 要等很久才會顯示完整內容）。
+    const BATCH = 2000;
+    let total = 0;
+    try {
+      const countRes = await fetch('/api/words/count');
+      if (countRes.ok) total = (await countRes.json()).count || 0;
+    } catch { /* 查總數失敗就退回下面的備援序列抓取 */ }
+
     let all = [];
-    while (true) {
-      const res  = await fetch(`/api/words?limit=${BATCH}&offset=${offset}`);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      if (!Array.isArray(data) || data.length === 0) break;
-      all = all.concat(data.map(normalizeWord));
-      if (data.length < BATCH) break;
-      offset += BATCH;
+    if (total > 0) {
+      const offsets = [];
+      for (let o = 0; o < total; o += BATCH) offsets.push(o);
+      const batches = await Promise.all(
+        offsets.map(o => fetch(`/api/words?limit=${BATCH}&offset=${o}`).then(r => r.ok ? r.json() : []))
+      );
+      all = batches.flat().map(normalizeWord);
+    } else {
+      // 備援：/api/words/count 失敗時，退回原本的序列分批抓取
+      let offset = 0;
+      while (true) {
+        const res  = await fetch(`/api/words?limit=${BATCH}&offset=${offset}`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (!Array.isArray(data) || data.length === 0) break;
+        all = all.concat(data.map(normalizeWord));
+        if (data.length < BATCH) break;
+        offset += BATCH;
+      }
     }
     if (all.length === 0) throw new Error('No words loaded');
     WORDS = all;
