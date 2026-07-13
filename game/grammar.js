@@ -112,6 +112,38 @@ function grammarStartChapter(n) {
     <div class="gm-sub-list">${rows}</div>`;
 }
 
+// 把原本一整坨 <b>標題</b><br>內容<br>• 條列...<br><br> 的教學說明文字，
+// 拆成「標題卡片 + 條列區塊」的結構，取代原本的長段落 wall-of-text。
+// 前提：raw 已經先跑過 wrapWordsPreserveHtml()，內部可能夾雜 <span class="w">…</span>，
+// 但不影響這裡的切割（分隔符 <br><br>／<br>／行首符號都在 span 之外）。
+function _gmStructureExplain(raw) {
+  const sections = String(raw || '').split(/<br>\s*<br>/i).filter(s => s.trim());
+  return sections.map(section => {
+    const m = section.match(/^\s*<b>([\s\S]*?)<\/b>\s*<br>?/i);
+    let heading = '', body = section;
+    if (m) { heading = m[1]; body = section.slice(m[0].length); }
+
+    const lines = body.split(/<br>/i).map(l => l.trim()).filter(l => l);
+    const linesHtml = lines.map(line => {
+      if (/^　*例[：:]/.test(line) || /^　/.test(line)) {
+        return `<div class="gm-explain-subitem">${line.replace(/^　+/, '')}</div>`;
+      }
+      if (/^[•‧・]/.test(line)) {
+        return `<div class="gm-explain-bullet">${line.replace(/^[•‧・]\s*/, '')}</div>`;
+      }
+      if (/^[①②③④⑤⑥⑦⑧⑨]/.test(line)) {
+        return `<div class="gm-explain-bullet gm-explain-bullet-num">${line}</div>`;
+      }
+      return `<div class="gm-explain-line">${line}</div>`;
+    }).join('');
+
+    return `<div class="gm-explain-section">
+      ${heading ? `<div class="gm-explain-heading">${heading}</div>` : ''}
+      <div class="gm-explain-body">${linesHtml}</div>
+    </div>`;
+  }).join('');
+}
+
 // ── 教學卡片畫面
 let _gmCurrentCtx = null; // { chapterId, subId }
 
@@ -121,9 +153,12 @@ function gmOpenSubLesson(chapterId, subId) {
   if (!sub || !sub.teaching) return;
   _gmCurrentCtx = { chapterId, subId };
   const t = sub.teaching;
-  const examplesHtml = (t.examples || []).map(ex => `
+  const examplesHtml = (t.examples || []).map((ex, i) => `
     <div class="gm-example">
-      <div class="gm-example-en">${_gmEsc(ex.en)}</div>
+      <div style="display:flex;align-items:flex-start;gap:6px;">
+        <div class="gm-example-en" style="flex:1">${wrapWordsHtml(ex.en)}</div>
+        <button onclick="gmSpeakExample(${i})" title="朗讀例句" style="flex-shrink:0;background:none;border:none;cursor:pointer;font-size:15px;">🔊</button>
+      </div>
       <div class="gm-example-zh">${_gmEsc(ex.zh)}</div>
     </div>`).join('');
   const ov = _gmOverlay();
@@ -134,11 +169,22 @@ function gmOpenSubLesson(chapterId, subId) {
     </div>
     <div class="gm-teach-scroll">
       <div class="gm-teach-card">
-        <div class="gm-teach-explain">${t.explanation}</div>
+        <div class="gm-teach-explain">${_gmStructureExplain(wrapWordsPreserveHtml(t.explanation))}</div>
+        <div class="gm-example-group-lbl">例句</div>
         ${examplesHtml}
       </div>
       <button class="gm-cta" onclick="gmStartQuiz()">開始隨堂測驗 →</button>
     </div>`;
+}
+
+function gmSpeakExample(i) {
+  if (!_gmCurrentCtx) return;
+  const { chapterId, subId } = _gmCurrentCtx;
+  const ch = GRAMMAR_CHAPTERS[chapterId];
+  const sub = ch && ch.subLessons.find(s => s.id === subId);
+  const ex = sub && sub.teaching && sub.teaching.examples && sub.teaching.examples[i];
+  if (!ex) return;
+  speakSentence('grammar', `${subId}_${i}`, ex.en);
 }
 
 // ── 測驗畫面：10題文法選擇（mc）→ 5題克漏字題組（cloze）兩階段

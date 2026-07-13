@@ -66,6 +66,24 @@
 html,body{height:100%;overflow:hidden;background:#E3DED2}
 body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify-content:center;align-items:center}
 
+/* ── 進場 Loading 畫面 ── */
+#appLoadingScreen{
+  position:fixed;inset:0;z-index:99999;
+  background:var(--bg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  transition:opacity .35s ease;
+}
+#appLoadingScreen.als-hide{opacity:0;pointer-events:none}
+.als-logo{width:88px;height:88px;border-radius:22px;box-shadow:0 4px 0 var(--line)}
+.als-title{font-family:var(--font-ui,inherit);font-weight:900;font-size:22px;color:var(--ink);letter-spacing:.5px}
+.als-spinner{
+  width:30px;height:30px;border-radius:50%;
+  border:4px solid var(--line2);border-top-color:var(--orange);
+  animation:alsSpin .8s linear infinite;
+}
+.als-hint{font-size:13px;color:var(--ink2)}
+@keyframes alsSpin{to{transform:rotate(360deg)}}
+
 /* PHONE */
 .phone{width:100%;height:100dvh;background:var(--bg);display:flex;flex-direction:column;position:relative;overflow:hidden}
 

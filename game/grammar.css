@@ -57,11 +57,39 @@
   background: var(--card); border: 2px solid var(--line);
   border-radius: var(--r3); padding: 20px; margin-bottom: 20px;
 }
-.gm-teach-explain {
-  font-size: 15px; line-height: 1.8; color: var(--ink); white-space: pre-wrap;
+.gm-teach-explain { color: var(--ink); }
+
+/* ── 教學說明：拆成一節一節的標題卡片，取代原本一整坨長文字 */
+.gm-explain-section { margin-bottom: 18px; }
+.gm-explain-section:last-child { margin-bottom: 0; }
+.gm-explain-heading {
+  font-size: 15px; font-weight: 900; color: var(--orange);
+  padding: 8px 12px; margin-bottom: 8px;
+  background: var(--card2); border-left: 4px solid var(--orange);
+  border-radius: 0 var(--r) var(--r) 0;
+}
+.gm-explain-body { padding: 0 2px; }
+.gm-explain-line {
+  font-size: 15px; line-height: 1.8; color: var(--ink); margin-bottom: 6px;
+}
+.gm-explain-bullet {
+  font-size: 14px; line-height: 1.75; color: var(--ink);
+  padding: 4px 0 4px 14px; margin-bottom: 2px;
+  border-left: 2px solid var(--line2);
+}
+.gm-explain-bullet-num { padding-left: 4px; border-left: none; }
+.gm-explain-subitem {
+  font-size: 13px; line-height: 1.7; color: var(--ink2);
+  padding: 3px 0 3px 22px; margin-bottom: 2px;
+  border-left: 2px dashed var(--line2);
+}
+
+.gm-example-group-lbl {
+  font-size: 13px; font-weight: 900; color: var(--ink2);
+  margin: 18px 0 8px; padding-top: 14px; border-top: 1px solid var(--line2);
 }
 .gm-example {
-  margin-top: 14px; padding: 12px 14px;
+  margin-top: 10px; padding: 12px 14px;
   background: var(--card2); border-radius: var(--r); border: 1px solid var(--line2);
 }
 .gm-example-en { font-family: var(--font-ui); font-weight: 700; color: var(--ink); font-size: 15px; }

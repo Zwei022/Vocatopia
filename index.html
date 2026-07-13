@@ -15,6 +15,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
+<!-- 進場 Loading 畫面：蓋在最上層，等單字庫/每日單字組/排行榜等核心資料都準備好才淡出，
+     避免使用者一進 App 就看到還沒填好資料的畫面（排行榜空白、單字卡跳動等）。 -->
+<div id="appLoadingScreen">
+  <img src="/icons/icon-512.png" alt="Vocatopia" class="als-logo">
+  <div class="als-title">Vocatopia</div>
+  <div class="als-spinner"></div>
+  <div class="als-hint" id="alsHint">載入中…</div>
+</div>
 <canvas id="confettiCanvas"></canvas>
 <div class="fb-overlay"><div class="fb-txt" id="fbTxt"></div></div>
 <div id="toastEl" class="toast"></div>
@@ -167,7 +175,10 @@
 
     <div class="wdetail-ex-wrap" id="wdExWrap">
       <div class="wdetail-section-lbl" id="wdExLbl" style="margin-top:14px">例句</div>
-      <div class="wdetail-ex-en" id="wdExEn"></div>
+      <div class="wdetail-ex-row" style="display:flex;align-items:flex-start;gap:6px;">
+        <div class="wdetail-ex-en" id="wdExEn" style="flex:1"></div>
+        <button class="wda-ex-spk" id="wdExSpkBtn" onclick="speakWordExample()" title="朗讀例句" style="flex-shrink:0;background:none;border:none;cursor:pointer;font-size:16px;">🔊</button>
+      </div>
       <div class="wdetail-ex-zh" id="wdExZh"></div>
     </div>
 
@@ -415,7 +426,10 @@
           <div class="fc-definition-en" id="fcDefinitionEn" style="display:none"></div>
           <div class="fc-examples">
             <div class="fc-example-label" id="fcExampleLabel">例句</div>
-            <div class="fc-example-en" id="fcExampleEn">For example, cats are animals.</div>
+            <div style="display:flex;align-items:flex-start;gap:6px;">
+              <div class="fc-example-en" id="fcExampleEn" style="flex:1">For example, cats are animals.</div>
+              <button id="fcExampleSpkBtn" onclick="event.stopPropagation();fcSpeakExample()" title="朗讀例句" style="flex-shrink:0;background:none;border:none;cursor:pointer;font-size:15px;">🔊</button>
+            </div>
             <div class="fc-example-zh" id="fcExampleZh">例如，貓是動物。</div>
           </div>
           <div class="fc-rich-panel" id="fcRichPanel" style="display:none" onclick="event.stopPropagation()"></div>
@@ -904,8 +918,10 @@
   </div>
 </div>
 
-<!-- AUTH OVERLAY -->
-<div class="auth-overlay" id="authOverlay">
+<!-- AUTH OVERLAY：預設 hidden，避免第一次畫面繪製時（loading 畫面蓋住前的極短空檔）就先閃一下登入頁。
+     只有在 init() 確定「這個裝置沒有已登入的 session」時才會用 showAuthOverlay() 主動打開，
+     或使用者按登出按鈕時（logoutUser()）打開，其餘情況一律維持隱藏。 -->
+<div class="auth-overlay hidden" id="authOverlay">
   <div id="authCard" class="auth-card">
     <div class="auth-logo">VOCATOPIA</div>
     <div class="auth-subtitle">單字烏托邦</div>

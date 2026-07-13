@@ -29,3 +29,9 @@ android/keystore.properties
 
 # iOS 簽署憑證私鑰/憑證申請檔（絕對不可上傳）
 ios_signing/
+
+# 單字發音／例句朗讀／聽力對話音檔：本機批次生成後即上傳 Supabase Storage 常駐，
+# 不進 git（數千個 mp3 進 repo 會讓 repo 暴肥，且 Railway 部署本來就不需要這些檔案）
+public/audio/words/
+public/audio/sentences/
+cache/listening/

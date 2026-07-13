@@ -134,6 +134,13 @@ function wrapWordsHtml(text) {
   return out.join('');
 }
 
+// 用於已經是 HTML 的內容（例如文法教學說明，內含 <b>/<br> 等標籤與中英夾雜文字），
+// 保留既有標籤不動，只對標籤之間的純文字片段套用 wrapWordsHtml 做英文單字點字查詢包裝。
+function wrapWordsPreserveHtml(html) {
+  const parts = String(html == null ? '' : html).split(/(<[^>]+>)/g);
+  return parts.map(part => /^<[^>]+>$/.test(part) ? part : wrapWordsHtml(part)).join('');
+}
+
 // ── DATA (loaded from API) ──
 let WORDS    = [];   // populated by loadWords()
 let ARTICLES = [];   // populated by loadArticles()
@@ -2324,6 +2331,28 @@ function _startDailyQuiz(questions, context) {
   }
 }
 
+// App 進場 loading 畫面期間呼叫：先把「今天」的每日聽力練習題目對話音檔
+// 全部請求過一次，讓 _listenCache 提前填好，使用者真的點進聽力練習時零延遲。
+// 用今天日期當快取 key，跟 _startDailyQuiz 拿到的題目集合一致（同一天內同一份）。
+async function _preloadTodayListeningAudio() {
+  try {
+    const token = typeof getAuthToken === 'function' ? await getAuthToken() : null;
+    const res = await fetch('/api/daily-quiz/listening', {
+      headers: token ? { Authorization: `Bearer ${token}` } : {},
+    });
+    if (!res.ok) return;
+    const { questions } = await res.json();
+    if (!questions?.length) return;
+    await Promise.all(
+      questions
+        .filter(q => q.dialogue && !_listenCache[q.dialogue])
+        .map(q => _generateListeningAudio(q.dialogue).catch(() => {}))
+    );
+  } catch (err) {
+    console.warn('[_preloadTodayListeningAudio] 預先載入聽力音檔失敗（不影響其他功能）:', err);
+  }
+}
+
 // 背景依序預生成聽力題目的音檔（不阻塞 UI）
 async function _preGenerateListeningAudio(questions) {
   for (const q of questions) {
@@ -3343,6 +3372,10 @@ function invalidateLibCache() {
     .forEach(el => delete el.dataset.loaded);
 }
 
+// 單字發音 mp3 存放在 Supabase Storage 的 public bucket，不依賴 Railway 本機磁碟
+// （Railway 每次重新部署會清空檔案系統，本機磁碟快取撐不過一次部署）
+const SUPABASE_AUDIO_BASE = 'https://teivfkwjhrkzrdebutkz.supabase.co/storage/v1/object/public/word-audio';
+
 // 全域唯一 AbortController，確保同時只有一個 fetch 請求在進行
 let _speakController = null;
 let _speakAudio = null;
@@ -3373,10 +3406,11 @@ function speak(w) {
       });
   }
 
-  // 層 1：靜態預生成 MP3（am_michael）v2 = 全部統一 Kokoro TTS，強制失效舊快取
-  // 層 2：/api/tts/ → tts_server.py（同 am_michael 聲音，Kokoro 常駐）
-  // 層 3：Web Speech API（最終備援，tts_server 未啟動時）
-  tryPlay(`/public/audio/words/${filename}.mp3?v=2`)
+  // 層 1：Supabase Storage 預先生成 MP3（am_michael，Kokoro TTS）
+  //       改用 Storage 而非 Railway 本機磁碟，因為 Railway 每次部署會清空檔案系統
+  // 層 2：/api/tts/ → tts_server.py（同 am_michael 聲音，Kokoro 常駐，僅開發環境可用）
+  // 層 3：Web Speech API（最終備援，前兩層都失敗時）
+  tryPlay(`${SUPABASE_AUDIO_BASE}/${filename}.mp3`)
     .catch(err => {
       if (ctrl.signal.aborted) return false;
       return tryPlay(`/api/tts/${encodeURIComponent(w)}`).then(() => true).catch(() => false);
@@ -3389,6 +3423,67 @@ function speak(w) {
         speechSynthesis.speak(u);
       }
     });
+}
+
+// 例句朗讀 mp3 存放在 Supabase Storage 的 public bucket "sentence-audio"，
+// 依來源分成 words/<word>.mp3（單字例句）與 grammar/<subLessonId>_<i>.mp3（文法例句）
+const SUPABASE_SENTENCE_BASE = 'https://teivfkwjhrkzrdebutkz.supabase.co/storage/v1/object/public/sentence-audio';
+
+let _speakSentController = null;
+let _speakSentAudio = null;
+
+// kind: 'words' | 'grammar'　key: sanitized word 或 `${subLessonId}_${index}`
+// fallbackText: 找不到預生成音檔時，退回 Web Speech API 直接唸整句
+function speakSentence(kind, key, fallbackText) {
+  if (!key) return;
+
+  if (_speakSentController) { _speakSentController.abort(); _speakSentController = null; }
+  if (_speakSentAudio) { _speakSentAudio.pause(); _speakSentAudio.src = ''; _speakSentAudio = null; }
+  if ('speechSynthesis' in window) speechSynthesis.cancel();
+
+  const ctrl = new AbortController();
+  _speakSentController = ctrl;
+  const url = `${SUPABASE_SENTENCE_BASE}/${kind}/${key}.mp3`;
+
+  fetch(url, { signal: ctrl.signal })
+    .then(res => { if (!res.ok) throw new Error('not_found'); return res.blob(); })
+    .then(blob => {
+      if (ctrl.signal.aborted) return;
+      const objUrl = URL.createObjectURL(blob);
+      const audio  = new Audio(objUrl);
+      _speakSentAudio = audio;
+      audio.onended = () => URL.revokeObjectURL(objUrl);
+      audio.play().catch(() => {});
+    })
+    .catch(() => {
+      if (ctrl.signal.aborted || !fallbackText) return;
+      if ('speechSynthesis' in window) {
+        const u = new SpeechSynthesisUtterance(fallbackText);
+        u.lang = 'en-US'; u.rate = 0.9;
+        speechSynthesis.speak(u);
+      }
+    });
+}
+
+function _sentKeyFromWord(w) {
+  return (w || '').toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_'-]/g, '');
+}
+
+// 單字詳情彈窗「朗讀例句」按鈕呼叫的入口
+function speakWordExample() {
+  const word = document.getElementById('wdWord').textContent;
+  const exText = document.getElementById('wdExEn').textContent;
+  if (!exText) return;
+  speakSentence('words', _sentKeyFromWord(word), exText);
+}
+
+// 單字卡複習畫面「朗讀例句」按鈕呼叫的入口
+function fcSpeakExample() {
+  const el = document.getElementById('fcExampleEn');
+  const word = el && el.dataset.word;
+  const exText = el && el.textContent;
+  if (!word || !exText) return;
+  speakSentence('words', _sentKeyFromWord(word), exText);
 }
 
 // ── WORD DETAIL POPUP ────────────────────────────────────────────
@@ -3562,17 +3657,33 @@ document.addEventListener('click', e => {
 // （已移除 cap2000_editable 邏輯）
 
 // ── INIT ──
+// 進場 Loading 畫面：更新提示文字、以及收掉畫面（成功或失敗都要收，避免卡住）
+function _alsSetHint(text) {
+  const el = document.getElementById('alsHint');
+  if (el) el.textContent = text;
+}
+function _alsHide() {
+  const el = document.getElementById('appLoadingScreen');
+  if (el) el.classList.add('als-hide');
+}
+// 保險：萬一某個初始化步驟卡住（例如網路很差），最多等 8 秒還是強制收掉 loading 畫面，
+// 不讓使用者被卡在啟動畫面出不去（_alsHide 本身是 idempotent，重複呼叫沒問題）。
+setTimeout(_alsHide, 8000);
+
 (async function init() {
   try {
     loadStats();
 
     // auth 必須先完成，loadCustomDecks 才能知道 currentUser
+    _alsSetHint('登入驗證中…');
     const loggedIn = (typeof initAuth !== 'undefined') ? await initAuth() : false;
     if (!loggedIn && typeof showAuthOverlay !== 'undefined') showAuthOverlay();
     if (loggedIn && currentUser) { _identifySocket(); _checkIncomingFriendRequests(); }
 
+    _alsSetHint('載入單字卡組…');
     await loadCustomDecks();
 
+    _alsSetHint('載入單字庫…');
     await Promise.all([loadWords(), loadArticles(), loadDailyArticles()]);
 
     if (typeof loadUserWordStatus !== 'undefined') await loadUserWordStatus();
@@ -3583,9 +3694,23 @@ document.addEventListener('click', e => {
     renderLib();
     renderArticles();
     updateChar();
+
+    // 首頁資料（每日單字組卡片、排行榜、出戰角色）平常只在切換到首頁時才會渲染，
+    // 但首頁本來就是進場預設畫面，所以這裡主動先跑一次，讓 loading 畫面收掉時
+    // 首頁已經是完整資料，而不是空白排行榜/卡片之後才慢半拍跳出來。
+    _alsSetHint('準備首頁資料…');
+    if (typeof updateHomeScreen === 'function') await updateHomeScreen();
+
+    // 每日聽力練習的對話音檔改用 Supabase Storage 常駐快取後，這裡直接在 loading
+    // 畫面期間就把「今天」的聽力題目對話音檔全部預先請求一次、填進 _listenCache，
+    // 使用者之後點進每日聽力練習時，音檔已經在瀏覽器快取/記憶體裡，不會再有延遲。
+    _alsSetHint('準備聽力音檔…');
+    await _preloadTodayListeningAudio();
   } catch (err) {
     console.error('[init] 初始化失敗:', err);
     showToast('⚠ 載入失敗，請重新整理頁面');
+  } finally {
+    _alsHide();
   }
 })();
 
@@ -3811,11 +3936,14 @@ function loadFlashcard(idx) {
   const exampleEnEl = document.getElementById('fcExampleEn');
   const exampleZhEl = document.getElementById('fcExampleZh');
 
+  const exampleSpkBtn = document.getElementById('fcExampleSpkBtn');
   if (isQuickMode) {
     // 快速查詢：顯示字典中的例句
     exampleLabelEl.textContent = '例句';
     exampleEnEl.textContent = w.example_en || '';
     exampleZhEl.textContent = w.example_zh || '';
+    exampleEnEl.dataset.word = w.word || '';
+    if (exampleSpkBtn) exampleSpkBtn.style.display = w.example_en ? '' : 'none';
     // 如果沒有例句，隱藏整個例句區塊
     const exWrap = document.getElementById('wdExWrap');
     if (!w.example_en && !w.example_zh) {
@@ -3823,6 +3951,7 @@ function loadFlashcard(idx) {
     }
   } else {
     // 手動輸入：顯示備註（如果有的話）
+    if (exampleSpkBtn) exampleSpkBtn.style.display = 'none';
     if (w.manual_note) {
       exampleLabelEl.textContent = '備註';
       exampleEnEl.textContent = w.manual_note;
@@ -4911,6 +5040,19 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('touchstart', resumeOnFirstGesture);
 });
 
+// 使用者把 App 滑到背景（切到主畫面/切換其他 App，但沒有真的把分頁關掉）時，
+// document.visibilitychange 一樣會觸發（Android/iOS WebView 皆支援），
+// 藉此把 BGM 跟任何正在播放的單字/例句朗讀暫停，回到前景時如果設定仍是開啟才恢復播放。
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    if (_bgmAudio) _bgmAudio.pause();
+    if (_speakAudio) _speakAudio.pause();
+    if (_speakSentAudio) _speakSentAudio.pause();
+  } else {
+    _bgmSync();
+  }
+});
+
 function confirmResetWordBank() {
   if (!confirm('確定要重置字庫嗎？\n所有單字學習狀態將歸零，這個操作無法復原。')) return;
   WORDS.forEach(w => { w.st = 'new'; w._correctStreak = 0; });
@@ -5917,7 +6059,7 @@ function _awardSubjectGold(cat) {
 }
 
 // ── 首頁狀態更新 ──────────────────
-function updateHomeScreen() {
+async function updateHomeScreen() {
   const done = _dailyDoneRead();
   const cats = Object.keys(DAILY_QUOTA);
 
@@ -5952,7 +6094,7 @@ function updateHomeScreen() {
 
   // 對戰入口三區塊
   renderDeployedChar();
-  renderLeaderboard();
+  await renderLeaderboard();
   renderDailyDeckCard();
 }
 
