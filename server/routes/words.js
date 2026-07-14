@@ -185,6 +185,23 @@ router.post('/add', async (req, res) => {
   res.json({ success: true, wordId: saved[0].id, existed: false });
 });
 
+// POST /api/words/by-ids  body: { ids: [1,2,3] }
+// 自訂卡組存的是 word_ids，但主字庫列表 GET / 會刻意排除 user_lookup/user_custom
+// 標籤的字（快速查詢/手動新增的字不算進「純淨 2000 字」）。這代表換裝置或重新
+// 登入後，自訂卡組裡任何不屬於核心 2000 字的單字，光靠 loadWords() 抓回來的
+// WORDS 陣列永遠查不到，畫面就會卡在「【加載中】」的佔位字，且沒有任何重試
+// 機制能修好——這支路由專門補這個洞：直接用 id 精準查表，不受標籤過濾影響。
+router.post('/by-ids', async (req, res) => {
+  const ids = Array.isArray(req.body?.ids) ? req.body.ids.filter(id => Number.isInteger(id)) : [];
+  if (!ids.length) return res.json([]);
+  const { data, error } = await supabase
+    .from('words')
+    .select(WORD_COLUMNS)
+    .in('id', ids);
+  if (error) return res.status(500).json({ error: error.message });
+  res.json(data);
+});
+
 // GET /api/words/count
 // 必須跟上面主列表 GET / 用同一套過濾條件（排除 user_lookup/user_custom），
 // 不然前端算出來的總筆數會比實際能列出的還多，用這個數字去算分頁批次

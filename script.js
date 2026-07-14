@@ -3108,6 +3108,34 @@ async function loadCustomDecks() {
   catch { customDecks = []; }
 }
 
+// 自訂卡組裡任何不屬於核心 2000 字的單字（快速查詢/手動新增），loadWords() 抓回來的
+// 全域 WORDS 陣列一律查不到（GET /api/words 刻意排除 user_lookup/user_custom 標籤）。
+// 換裝置或重新登入後，這些字原本會永遠卡在「【加載中】」佔位字——這裡在 init() 時
+// 主動把所有自訂卡組用到、但在 WORDS 裡找不到的 wordId 一次性用 id 精準查表補回來。
+let _customWordsById = {};
+async function _ensureCustomDeckWordsLoaded() {
+  if (!customDecks.length) return;
+  const knownIds = new Set(WORDS.map(w => w.id));
+  const missing = new Set();
+  customDecks.forEach(d => (d.wordIds || []).forEach(id => {
+    if (!knownIds.has(id)) missing.add(id);
+  }));
+  if (!missing.size) return;
+
+  try {
+    const res = await fetch('/api/words/by-ids', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ids: [...missing] }),
+    });
+    if (!res.ok) return;
+    const rows = await res.json();
+    rows.forEach(w => { _customWordsById[w.id] = normalizeWord(w); });
+  } catch (err) {
+    console.warn('[_ensureCustomDeckWordsLoaded] 補抓自訂卡組單字失敗:', err);
+  }
+}
+
 async function saveCustomDecks() {
   if (typeof currentUser !== 'undefined' && currentUser && typeof authClient !== 'undefined') {
     // Full replace：先刪除全部，再重新 insert（最多 20 個 deck，開銷極小）
@@ -3317,7 +3345,7 @@ function searchWordAcrossDecks(query) {
       getWords: () => {
         const wordsMap = new Map();
         if (d.words) d.words.forEach(w => wordsMap.set(w.id, w));
-        return d.wordIds.map(id => wordsMap.get(id) || WORDS.find(w => w.id === id)).filter(Boolean);
+        return d.wordIds.map(id => wordsMap.get(id) || WORDS.find(w => w.id === id) || _customWordsById[id]).filter(Boolean);
       }
     }))
   ];
@@ -3359,7 +3387,7 @@ function renderLib() {
       getWords: () => {
         const wordsMap = new Map();
         if (d.words) d.words.forEach(w => wordsMap.set(w.id, w));
-        return d.wordIds.map(id => wordsMap.get(id) || WORDS.find(w => w.id === id)).filter(Boolean);
+        return d.wordIds.map(id => wordsMap.get(id) || WORDS.find(w => w.id === id) || _customWordsById[id]).filter(Boolean);
       }
     }))
   ];
@@ -3724,6 +3752,11 @@ setTimeout(() => { _alsSetProgress(100); _alsHide(); }, 8000);
 
     _alsSetHint('載入單字庫…');
     await Promise.all([loadWords(), loadArticles(), loadDailyArticles()]);
+    _alsSetProgress(60);
+
+    // 自訂卡組裡可能含有不屬於核心 2000 字的單字（快速查詢/手動新增），
+    // 這裡主動補查，避免使用者點開卡組時卡在「【加載中】」佔位字。
+    await _ensureCustomDeckWordsLoaded();
     _alsSetProgress(65);
 
     if (typeof loadUserWordStatus !== 'undefined') await loadUserWordStatus();
@@ -3830,6 +3863,10 @@ function startFlashcard(deckId) {
         // 備用：從全局 WORDS 中查找
         const foundWord = WORDS.find(w => w.id === wordId);
         if (foundWord) return foundWord;
+
+        // 再備用：init() 時已經用 id 精準補查過的「非核心 2000 字」快取
+        // （快速查詢/手動新增的字，WORDS 主列表本來就刻意排除這類標籤）
+        if (_customWordsById[wordId]) return _customWordsById[wordId];
 
         // 都找不到，返回空模板（不應該發生）
         return {
