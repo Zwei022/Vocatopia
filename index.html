@@ -793,10 +793,20 @@
           <span>音效 SFX</span>
           <input type="checkbox" id="sfxToggle" onchange="saveSoundSettings()">
         </label>
+        <div class="sett-vol-row" id="sfxVolRow">
+          <span class="sett-vol-icon">🔊</span>
+          <input type="range" id="sfxVolume" min="0" max="100" value="100" oninput="saveSoundSettings()">
+          <span class="sett-vol-num" id="sfxVolumeNum">100</span>
+        </div>
         <label class="sett-toggle-row">
           <span>背景音樂 BGM</span>
           <input type="checkbox" id="bgmToggle" onchange="saveSoundSettings()">
         </label>
+        <div class="sett-vol-row" id="bgmVolRow">
+          <span class="sett-vol-icon">🎵</span>
+          <input type="range" id="bgmVolume" min="0" max="100" value="35" oninput="saveSoundSettings()">
+          <span class="sett-vol-num" id="bgmVolumeNum">35</span>
+        </div>
       </div>
 
       <div class="sett-section">
@@ -816,6 +826,11 @@
           <button class="sett-seg" onclick="setGoal('gsat',this)">學測</button>
           <button class="sett-seg" onclick="setGoal('toeic',this)">多益</button>
         </div>
+      </div>
+
+      <div class="sett-section">
+        <div class="sett-label">訂閱方案</div>
+        <button class="sett-item-btn" onclick="closeSettings();openModal('upgradeModal')">👑 查看訂閱方案</button>
       </div>
 
       <div class="sett-section">
