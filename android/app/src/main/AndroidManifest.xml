@@ -18,6 +18,15 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <!-- OAuth 登入（Google/Apple）完成後，用這個自訂 URL scheme 導回 App，
+                 見 auth.js 的 signInWithOAuth() / _setupNativeOAuthListener() -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="com.vocatopia.app" android:host="auth-callback" />
+            </intent-filter>
         </activity>
 
         <provider

@@ -813,15 +813,6 @@
       </div>
 
       <div class="sett-section">
-        <div class="sett-label">兌換碼</div>
-        <div class="sett-redeem-row">
-          <input type="text" id="redeemCodeInput" class="ndm-input sett-redeem-input" placeholder="輸入兌換碼" maxlength="40"
-                 onkeydown="if(event.key==='Enter')submitRedeemCode()">
-          <button class="sett-redeem-btn" onclick="submitRedeemCode()">兌換</button>
-        </div>
-      </div>
-
-      <div class="sett-section">
         <div class="sett-label">意見回饋</div>
         <textarea id="feedbackInput" class="ndm-input sett-feedback-textarea" placeholder="有任何建議、發現的問題都歡迎告訴我們～" maxlength="2000" rows="4"></textarea>
         <button class="sett-item-btn" id="feedbackSubmitBtn" onclick="submitFeedback()">📮 送出意見</button>
@@ -836,7 +827,28 @@
         <div class="sett-label">帳號與資料</div>
         <button id="settingsLogoutBtn" class="sett-item-btn" onclick="closeSettings();logoutUser()" style="display:none">🚪 登出</button>
         <button class="sett-item-btn sett-item-danger" onclick="confirmResetWordBank()">🗑️ 重置字庫</button>
+        <button id="settingsDeleteAccountBtn" class="sett-item-btn sett-item-danger" onclick="openDeleteAccountModal()" style="display:none">⚠️ 刪除帳戶</button>
       </div>
+    </div>
+  </div>
+
+  <!-- DELETE ACCOUNT MODAL：兩步驟確認，第二步要求輸入「刪除」兩字才能真的送出，
+       避免手滑誤刪；符合 Apple/Google「App 內立即自助刪除」要求，不透過 email 客服。 -->
+  <div class="modal-overlay" id="deleteAccountModal">
+    <div class="modal-box">
+      <div class="modal-title">⚠️ 刪除帳戶</div>
+      <div style="font-size:13px;color:var(--ink2,#94826F);line-height:1.7;text-align:left;margin:12px 0">
+        此操作將<strong style="color:var(--red,#E0472E)">永久刪除</strong>您的帳號與所有相關資料，包含：
+        <ul style="margin:8px 0;padding-left:20px">
+          <li>個人資料、金幣、角色、卡組</li>
+          <li>學習紀錄、答題記錄、收藏</li>
+          <li>好友關係、競技場對戰紀錄</li>
+        </ul>
+        刪除後<strong>無法復原</strong>。若您有透過 App Store／Google Play 訂閱，刪除帳號<strong>不會</strong>自動取消訂閱扣款，請另外到訂閱管理頁面取消。
+      </div>
+      <input type="text" id="deleteAccountConfirmInput" class="modal-input" placeholder="請輸入「刪除」以確認" maxlength="10">
+      <button class="modal-confirm" id="deleteAccountConfirmBtn" style="background:var(--red,#E0472E)" onclick="confirmDeleteAccount()">永久刪除帳戶</button>
+      <button class="modal-cancel" onclick="closeModal('deleteAccountModal')">取消</button>
     </div>
   </div>
 

@@ -28,6 +28,9 @@ async function getAuthToken() {
 
 // ── SESSION INIT ──────────────────────────────────────────────
 async function initAuth() {
+  // 封裝 App 專用：註冊 OAuth 內嵌瀏覽器登入完成後導回 App 的監聽器（見 signInWithOAuth）
+  _setupNativeOAuthListener();
+
   // 先設監聽器，確保能攔截 PASSWORD_RECOVERY（發生在 getSession 處理 URL hash 時）
   authClient.auth.onAuthStateChange(async (_event, session) => {
     if (_event === 'PASSWORD_RECOVERY') {
@@ -154,6 +157,9 @@ function _updateHeaderUI() {
 
   const logoutBtn = document.getElementById('settingsLogoutBtn');
   if (logoutBtn) logoutBtn.style.display = currentProfile ? '' : 'none';
+
+  const deleteBtn = document.getElementById('settingsDeleteAccountBtn');
+  if (deleteBtn) deleteBtn.style.display = currentProfile ? '' : 'none';
 }
 
 // ── LOGIN ─────────────────────────────────────────────────────
@@ -198,11 +204,42 @@ async function handleLogin(e) {
 // 需要先在 Supabase Dashboard → Authentication → Providers 啟用對應的 provider
 // 並填入 Google Cloud / Apple Developer 那邊申請到的 Client ID、Secret，
 // 否則點下去會直接收到 Supabase 回傳的「provider is not enabled」錯誤。
+//
+// 封裝 App（Capacitor）裡不能沿用網頁版「整個分頁導去 Google/Apple 頁面」的做法：
+// Google 的登入頁會主動偵測並拒絕在一般 WebView 裡顯示，逼系統改跳到外部瀏覽器
+// 開啟（Apple App Review Guideline 4 明確認定這是不良體驗，要求改用 App 內嵌瀏覽器）。
+// 改用 @capacitor/browser 的 Browser.open() 開啟登入頁——畫面上看起來仍在 App 內
+// （SFSafariViewController / Chrome Custom Tabs），登入完成後靠自訂 URL scheme
+// （com.vocatopia.app://auth-callback）導回 App，由 App.addListener('appUrlOpen')
+// 接手把 token 交給 Supabase。網頁版（非封裝 App）則維持原本整頁導向的行為不變。
+const OAUTH_NATIVE_REDIRECT = 'com.vocatopia.app://auth-callback';
+
 async function signInWithOAuth(provider) {
   _clearAuthError();
   // OAuth 一律視為「記住我」，跟第三方帳號的登入狀態保持一致（沒有勾選框可以取消）
   localStorage.setItem('voca_remember_me', '1');
+
+  const isNative = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+
   try {
+    if (isNative) {
+      const Browser = window.Capacitor?.Plugins?.Browser;
+      const { data, error } = await authClient.auth.signInWithOAuth({
+        provider,
+        options: { redirectTo: OAUTH_NATIVE_REDIRECT, skipBrowserRedirect: true },
+      });
+      if (error) {
+        _setAuthError(_friendlyAuthError(error, provider === 'google' ? 'Google 登入' : 'Apple 登入'));
+        return;
+      }
+      if (data?.url && Browser) {
+        await Browser.open({ url: data.url });
+      }
+      // 登入完成後的導回由 _setupNativeOAuthListener()（在 initAuth() 註冊一次）
+      // 監聽 appUrlOpen 事件接手，這裡不用再等待。
+      return;
+    }
+
     const { error } = await authClient.auth.signInWithOAuth({
       provider,
       options: { redirectTo: window.location.origin },
@@ -216,6 +253,44 @@ async function signInWithOAuth(provider) {
     console.error('[signInWithOAuth] 例外：', err);
     _setAuthError(_friendlyAuthError(err, '第三方登入'));
   }
+}
+
+// 封裝 App 專用：監聽自訂 URL scheme 導回的 OAuth callback，把網址裡的 code/token
+// 交給 Supabase 換成正式 session，並關掉內嵌瀏覽器。只在 initAuth() 註冊一次。
+let _nativeOAuthListenerReady = false;
+function _setupNativeOAuthListener() {
+  if (_nativeOAuthListenerReady) return;
+  const isNative = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+  const CapApp = window.Capacitor?.Plugins?.App;
+  if (!isNative || !CapApp) return;
+  _nativeOAuthListenerReady = true;
+
+  CapApp.addListener('appUrlOpen', async ({ url }) => {
+    if (!url || !url.startsWith(OAUTH_NATIVE_REDIRECT)) return;
+    try {
+      const Browser = window.Capacitor?.Plugins?.Browser;
+      if (Browser) Browser.close().catch(() => {});
+      if (url.includes('code=')) {
+        // PKCE flow
+        const { error } = await authClient.auth.exchangeCodeForSession(url);
+        if (error) throw error;
+      } else if (url.includes('access_token=')) {
+        // Implicit flow：token 在 hash fragment，手動解析
+        const hash = url.split('#')[1] || '';
+        const params = new URLSearchParams(hash);
+        const access_token  = params.get('access_token');
+        const refresh_token = params.get('refresh_token');
+        if (access_token && refresh_token) {
+          const { error } = await authClient.auth.setSession({ access_token, refresh_token });
+          if (error) throw error;
+        }
+      }
+      // 成功後 onAuthStateChange 的 SIGNED_IN 監聽器會接手關閉登入畫面（見 initAuth()）
+    } catch (err) {
+      console.error('[_setupNativeOAuthListener] OAuth callback 處理失敗：', err);
+      _setAuthError(_friendlyAuthError(err, '第三方登入'));
+    }
+  });
 }
 
 // ── REGISTER：暱稱即時可用性檢查 ──────────────────────────────
@@ -312,6 +387,54 @@ async function logoutUser() {
   currentProfile = null;
   _updateHeaderUI();
   showAuthOverlay();
+}
+
+// ── DELETE ACCOUNT ───────────────────────────────────────────
+// App 內立即自助刪除帳號，不透過 email 客服流程（Apple Guideline 5.1.1(v) /
+// Google Play 帳號刪除政策要求）。實際刪除只是把 auth.users 這筆刪掉，其餘
+// 所有關聯資料表都設定了 ON DELETE CASCADE，資料庫層級自動連帶清乾淨。
+function openDeleteAccountModal() {
+  if (!currentUser) return;
+  const input = document.getElementById('deleteAccountConfirmInput');
+  if (input) input.value = '';
+  const el = document.getElementById('deleteAccountModal');
+  if (el) el.classList.add('show');
+}
+
+async function confirmDeleteAccount() {
+  const input = document.getElementById('deleteAccountConfirmInput');
+  if ((input?.value || '').trim() !== '刪除') {
+    window.showToast && showToast('請在輸入框中輸入「刪除」以確認');
+    return;
+  }
+  const btn = document.getElementById('deleteAccountConfirmBtn');
+  if (btn) { btn.disabled = true; btn.textContent = '刪除中...'; }
+
+  try {
+    const token = await getAuthToken();
+    if (!token) throw new Error('未登入');
+    const res = await fetch('/api/user/account', {
+      method: 'DELETE',
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      throw new Error(data.error || '刪除失敗');
+    }
+
+    // 帳號已在伺服器端刪除，這裡只需清掉本機的登入狀態並回到登入畫面
+    currentUser    = null;
+    currentProfile = null;
+    if (typeof closeModal === 'function') closeModal('deleteAccountModal');
+    _updateHeaderUI();
+    window.showToast && showToast('帳戶已永久刪除');
+    showAuthOverlay();
+  } catch (err) {
+    console.error('[confirmDeleteAccount] 例外：', err);
+    window.showToast && showToast(`⚠ ${err.message || '刪除失敗，請稍後再試'}`);
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = '永久刪除帳戶'; }
+  }
 }
 
 // ── GUEST MODE ───────────────────────────────────────────────
