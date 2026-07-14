@@ -184,13 +184,13 @@
       <div class="wdetail-section-lbl" id="wdExLbl" style="margin-top:14px">例句</div>
       <div class="wdetail-ex-row" style="display:flex;align-items:flex-start;gap:6px;">
         <div class="wdetail-ex-en" id="wdExEn" style="flex:1"></div>
-        <button class="wda-ex-spk" id="wdExSpkBtn" onclick="speakWordExample()" title="朗讀例句" style="flex-shrink:0;background:none;border:none;cursor:pointer;font-size:16px;">🔊</button>
+        <button class="wda-ex-spk spk-btn" id="wdExSpkBtn" onclick="speakWordExample(this)" title="朗讀例句" style="flex-shrink:0;background:none;border:none;cursor:pointer;font-size:16px;">🔊</button>
       </div>
       <div class="wdetail-ex-zh" id="wdExZh"></div>
     </div>
 
     <div class="wdetail-actions">
-      <button class="wda-btn wda-spk" onclick="speak(document.getElementById('wdWord').textContent)">🔊 朗讀</button>
+      <button class="wda-btn wda-spk spk-btn" onclick="speak(document.getElementById('wdWord').textContent,this)">🔊 朗讀</button>
       <button class="wda-btn wda-mark" id="wdMarkBtn" onclick="toggleWordMark()">❌ 加入不熟字卡</button>
     </div>
   </div>
@@ -438,7 +438,7 @@
             <div class="fc-example-label" id="fcExampleLabel">例句</div>
             <div style="display:flex;align-items:flex-start;gap:6px;">
               <div class="fc-example-en" id="fcExampleEn" style="flex:1">For example, cats are animals.</div>
-              <button id="fcExampleSpkBtn" onclick="event.stopPropagation();fcSpeakExample()" title="朗讀例句" style="flex-shrink:0;background:none;border:none;cursor:pointer;font-size:15px;">🔊</button>
+              <button id="fcExampleSpkBtn" class="spk-btn" onclick="event.stopPropagation();fcSpeakExample(this)" title="朗讀例句" style="flex-shrink:0;background:none;border:none;cursor:pointer;font-size:15px;">🔊</button>
             </div>
             <div class="fc-example-zh" id="fcExampleZh">例如，貓是動物。</div>
           </div>

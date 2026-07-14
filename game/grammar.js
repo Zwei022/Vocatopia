@@ -157,7 +157,7 @@ function gmOpenSubLesson(chapterId, subId) {
     <div class="gm-example">
       <div style="display:flex;align-items:flex-start;gap:6px;">
         <div class="gm-example-en" style="flex:1">${wrapWordsHtml(ex.en)}</div>
-        <button onclick="gmSpeakExample(${i})" title="朗讀例句" style="flex-shrink:0;background:none;border:none;cursor:pointer;font-size:15px;">🔊</button>
+        <button class="spk-btn" onclick="gmSpeakExample(${i},this)" title="朗讀例句" style="flex-shrink:0;background:none;border:none;cursor:pointer;font-size:15px;">🔊</button>
       </div>
       <div class="gm-example-zh">${_gmEsc(ex.zh)}</div>
     </div>`).join('');
@@ -177,14 +177,14 @@ function gmOpenSubLesson(chapterId, subId) {
     </div>`;
 }
 
-function gmSpeakExample(i) {
+function gmSpeakExample(i, btn) {
   if (!_gmCurrentCtx) return;
   const { chapterId, subId } = _gmCurrentCtx;
   const ch = GRAMMAR_CHAPTERS[chapterId];
   const sub = ch && ch.subLessons.find(s => s.id === subId);
   const ex = sub && sub.teaching && sub.teaching.examples && sub.teaching.examples[i];
   if (!ex) return;
-  speakSentence('grammar', `${subId}_${i}`, ex.en);
+  speakSentence('grammar', `${subId}_${i}`, ex.en, btn);
 }
 
 // ── 測驗畫面：10題文法選擇（mc）→ 5題克漏字題組（cloze）兩階段

@@ -3557,17 +3557,33 @@ function invalidateLibCache() {
 // （Railway 每次重新部署會清空檔案系統，本機磁碟快取撐不過一次部署）
 const SUPABASE_AUDIO_BASE = 'https://teivfkwjhrkzrdebutkz.supabase.co/storage/v1/object/public/word-audio';
 
+// 朗讀按鈕的「播放中」視覺回饋：一次只會有一個按鈕在播放，切換時把上一個的狀態清掉，
+// 避免舊按鈕卡在播放動畫出不來（speak/speakSentence 共用同一套）
+let _spkActiveEl = null;
+function _spkSetPlaying(el) {
+  if (_spkActiveEl && _spkActiveEl !== el) _spkActiveEl.classList.remove('spk-playing');
+  _spkActiveEl = el || null;
+  if (el) el.classList.add('spk-playing');
+}
+function _spkClearPlaying(el) {
+  if (el) el.classList.remove('spk-playing');
+  if (_spkActiveEl === el) _spkActiveEl = null;
+}
+
 // 全域唯一 AbortController，確保同時只有一個 fetch 請求在進行
 let _speakController = null;
 let _speakAudio = null;
 
-function speak(w) {
+// el：觸發朗讀的按鈕元素（可省略），有傳的話從點擊當下到音效播放結束全程會有
+// 「播放中」視覺回饋（脈動動畫），不再是點了看起來毫無反應
+function speak(w, el) {
   if (!w) return;
 
   // 取消上一個 fetch 請求 + 所有音頻
   if (_speakController) { _speakController.abort(); _speakController = null; }
   if (_speakAudio) { _speakAudio.pause(); _speakAudio.src = ''; _speakAudio = null; }
   if ('speechSynthesis' in window) speechSynthesis.cancel();
+  _spkSetPlaying(el);
 
   const filename = w.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_'-]/g, '');
   const ctrl = new AbortController();
@@ -3582,8 +3598,8 @@ function speak(w) {
         const audio  = new Audio(objUrl);
         _speakAudio  = audio;
         const wasBgmPlaying = _bgmDuckStart();
-        audio.onended = () => { URL.revokeObjectURL(objUrl); _bgmDuckEnd(wasBgmPlaying); };
-        audio.play().catch(() => { _bgmDuckEnd(wasBgmPlaying); });
+        audio.onended = () => { URL.revokeObjectURL(objUrl); _bgmDuckEnd(wasBgmPlaying); _spkClearPlaying(el); };
+        audio.play().catch(() => { _bgmDuckEnd(wasBgmPlaying); _spkClearPlaying(el); });
         return true;
       });
   }
@@ -3598,15 +3614,20 @@ function speak(w) {
       return tryPlay(`/api/tts/${encodeURIComponent(w)}`).then(() => true).catch(() => false);
     })
     .then(played => {
-      if (ctrl.signal.aborted || played) return;
-      if ('speechSynthesis' in window) {
-        const wasBgmPlaying = _bgmDuckStart();
-        const u = new SpeechSynthesisUtterance(w);
-        u.lang = 'en-US'; u.rate = 0.95;
-        u.onend = u.onerror = () => _bgmDuckEnd(wasBgmPlaying);
-        speechSynthesis.speak(u);
+      if (ctrl.signal.aborted) return;
+      if (!played) {
+        if ('speechSynthesis' in window) {
+          const wasBgmPlaying = _bgmDuckStart();
+          const u = new SpeechSynthesisUtterance(w);
+          u.lang = 'en-US'; u.rate = 0.95;
+          u.onend = u.onerror = () => { _bgmDuckEnd(wasBgmPlaying); _spkClearPlaying(el); };
+          speechSynthesis.speak(u);
+        } else {
+          _spkClearPlaying(el);
+        }
       }
-    });
+    })
+    .catch(() => _spkClearPlaying(el));
 }
 
 // 例句朗讀 mp3 存放在 Supabase Storage 的 public bucket "sentence-audio"，
@@ -3618,12 +3639,14 @@ let _speakSentAudio = null;
 
 // kind: 'words' | 'grammar'　key: sanitized word 或 `${subLessonId}_${index}`
 // fallbackText: 找不到預生成音檔時，退回 Web Speech API 直接唸整句
-function speakSentence(kind, key, fallbackText) {
+// el：觸發朗讀的按鈕元素（可省略），用來加上「播放中」視覺回饋，見 speak() 同款機制
+function speakSentence(kind, key, fallbackText, el) {
   if (!key) return;
 
   if (_speakSentController) { _speakSentController.abort(); _speakSentController = null; }
   if (_speakSentAudio) { _speakSentAudio.pause(); _speakSentAudio.src = ''; _speakSentAudio = null; }
   if ('speechSynthesis' in window) speechSynthesis.cancel();
+  _spkSetPlaying(el);
 
   const ctrl = new AbortController();
   _speakSentController = ctrl;
@@ -3637,17 +3660,20 @@ function speakSentence(kind, key, fallbackText) {
       const audio  = new Audio(objUrl);
       _speakSentAudio = audio;
       const wasBgmPlaying = _bgmDuckStart();
-      audio.onended = () => { URL.revokeObjectURL(objUrl); _bgmDuckEnd(wasBgmPlaying); };
-      audio.play().catch(() => { _bgmDuckEnd(wasBgmPlaying); });
+      audio.onended = () => { URL.revokeObjectURL(objUrl); _bgmDuckEnd(wasBgmPlaying); _spkClearPlaying(el); };
+      audio.play().catch(() => { _bgmDuckEnd(wasBgmPlaying); _spkClearPlaying(el); });
     })
     .catch(() => {
-      if (ctrl.signal.aborted || !fallbackText) return;
+      if (ctrl.signal.aborted) return;
+      if (!fallbackText) { _spkClearPlaying(el); return; }
       if ('speechSynthesis' in window) {
         const wasBgmPlaying = _bgmDuckStart();
         const u = new SpeechSynthesisUtterance(fallbackText);
         u.lang = 'en-US'; u.rate = 0.9;
-        u.onend = u.onerror = () => _bgmDuckEnd(wasBgmPlaying);
+        u.onend = u.onerror = () => { _bgmDuckEnd(wasBgmPlaying); _spkClearPlaying(el); };
         speechSynthesis.speak(u);
+      } else {
+        _spkClearPlaying(el);
       }
     });
 }
@@ -3657,20 +3683,20 @@ function _sentKeyFromWord(w) {
 }
 
 // 單字詳情彈窗「朗讀例句」按鈕呼叫的入口
-function speakWordExample() {
+function speakWordExample(btn) {
   const word = document.getElementById('wdWord').textContent;
   const exText = document.getElementById('wdExEn').textContent;
   if (!exText) return;
-  speakSentence('words', _sentKeyFromWord(word), exText);
+  speakSentence('words', _sentKeyFromWord(word), exText, btn);
 }
 
 // 單字卡複習畫面「朗讀例句」按鈕呼叫的入口
-function fcSpeakExample() {
+function fcSpeakExample(btn) {
   const el = document.getElementById('fcExampleEn');
   const word = el && el.dataset.word;
   const exText = el && el.textContent;
   if (!word || !exText) return;
-  speakSentence('words', _sentKeyFromWord(word), exText);
+  speakSentence('words', _sentKeyFromWord(word), exText, btn);
 }
 
 // ── WORD DETAIL POPUP ────────────────────────────────────────────

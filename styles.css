@@ -723,7 +723,9 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 /* ════════════════════════════════
    WORD DETAIL OVERLAY（字庫詳情）
 ════════════════════════════════ */
-.wdetail-overlay{position:fixed;inset:0;background:rgba(75,56,42,.5);z-index:420;display:flex;align-items:flex-end;opacity:0;pointer-events:none;transition:opacity .25s}
+/* z-index 960：點字查詢可以從任何內容畫面觸發（文法教學900、俄羅斯方塊系列最高950），
+   一定要蓋在所有內容畫面之上才看得到，之前是420，被文法教學(900)整個蓋住導致「點字功能看起來沒作用」 */
+.wdetail-overlay{position:fixed;inset:0;background:rgba(75,56,42,.5);z-index:960;display:flex;align-items:flex-end;opacity:0;pointer-events:none;transition:opacity .25s}
 .wdetail-overlay.show{opacity:1;pointer-events:auto}
 .wdetail-card{width:100%;max-width:600px;margin:0 auto;background:var(--card);border-radius:var(--r3) var(--r3) 0 0;padding:22px 24px 36px;border-top:2.5px solid var(--line);transform:translateY(40px);transition:transform .28s cubic-bezier(.4,0,.2,1);max-height:90dvh;overflow-y:auto;box-shadow:0 -8px 40px rgba(75,56,42,.25)}
 .wdetail-overlay.show .wdetail-card{transform:translateY(0)}
@@ -760,6 +762,13 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .wda-mark{background:var(--wrongsoft);border:2px solid var(--wrong);color:var(--wrong)}
 .wda-done{background:var(--greensoft);border:2px solid var(--green)!important;color:var(--green2)!important}
 .wda-ok{background:var(--goldsoft);border:2px solid var(--gold)!important;color:var(--orange2)!important}
+
+/* 朗讀按鈕（單字/例句）共用回饋：按下瞬間縮小＋播放中持續脈動，
+   讓使用者確實感覺到「有按到」跟「正在播放」，不再是點了看起來沒反應 */
+.spk-btn{transition:transform .1s}
+.spk-btn:active{transform:scale(.8)}
+.spk-btn.spk-playing{animation:spkPulse .6s ease-in-out infinite;color:var(--orange2)!important}
+@keyframes spkPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.18);opacity:.75}}
 
 /* 字庫 row cursor */
 .wrow{cursor:pointer}
