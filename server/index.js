@@ -351,14 +351,43 @@ io.on('connection', (socket) => {
   });
 
   // 邀請好友加入對戰房：把房號推播給對方所有在線分頁
-  // 回傳 delivered 給呼叫端，讓前端知道邀請究竟有沒有送達（避免靜默失敗）
+  // 回傳 delivered 給呼叫端，讓前端知道邀請究竟有沒有送達（避免靜默失敗）。
+  //
+  // 注意：光是 socket.id 還留在 onlineUsers 裡，不代表對方真的收得到——手機背景/鎖屏時
+  // WebSocket 可能已經斷線但伺服器還沒偵測到（預設 heartbeat 逾時最長要 ~45 秒），
+  // 這段期間送出的邀請過去會被誤判為「已送達」，實際上對方畫面根本沒跳出來。
+  // 改用 emit-with-ack + 逾時：只有對方分頁真的執行到彈窗程式碼並回傳確認，才算真正送達。
   socket.on('game_invite', ({ toUserId, code, fromUsername, mode }, cb) => {
-    const targets = onlineUsers.get(toUserId);
-    const delivered = !!targets && targets.size > 0;
-    if (delivered) {
-      for (const sid of targets) io.to(sid).emit('game_invite_incoming', { code, fromUsername, mode });
+    // 不論即時推播有沒有送達，都在收件夾留一筆記錄——這樣就算對方離線、
+    // 或彈窗跳出來時沒即時按到，事後還是能在收件夾找到並嘗試加入
+    // （fire-and-forget，不擋住/不影響即時推播流程本身）
+    if (toUserId) {
+      supabase.from('inbox').insert([{
+        user_id: toUserId,
+        type: 'invite',
+        title: `${fromUsername} 邀請你對戰`,
+        message: mode === 'buzzer' ? '單字搶答' : '單字對決',
+        meta: { code, fromUsername, mode },
+      }]).then(({ error }) => {
+        if (error) console.error('[game_invite] 寫入收件夾失敗:', error.message);
+      });
     }
-    if (typeof cb === 'function') cb({ delivered });
+
+    const targets = onlineUsers.get(toUserId);
+    if (!targets || targets.size === 0) {
+      if (typeof cb === 'function') cb({ delivered: false });
+      return;
+    }
+    const payload = { code, fromUsername, mode };
+    const acks = [...targets].map(sid =>
+      new Promise(resolve => {
+        io.to(sid).timeout(3000).emit('game_invite_incoming', payload, (err) => resolve(!err));
+      })
+    );
+    Promise.all(acks).then(results => {
+      const delivered = results.some(ok => ok);
+      if (typeof cb === 'function') cb({ delivered });
+    });
   });
 
   socket.on('create_room', ({ clientId } = {}) => {

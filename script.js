@@ -804,8 +804,11 @@ function getPvpSocket() {
   });
 
   // 收到好友的對戰邀請
-  pvpSocket.on('game_invite_incoming', ({ code, fromUsername, mode }) => {
+  // 第三個參數是伺服器的 emit-with-ack 回呼：一定要呼叫，讓伺服器確認這個分頁
+  // 真的執行到彈窗程式碼，才會回報邀請方「已送達」（否則對方看到的可能是假象）
+  pvpSocket.on('game_invite_incoming', ({ code, fromUsername, mode }, ack) => {
     _showGameInvitePopup(code, fromUsername, mode);
+    if (typeof ack === 'function') ack();
   });
 
   pvpSocket.on('room_created', ({ code }) => {
@@ -1113,9 +1116,11 @@ function sendGameInvite(friendId, friendName) {
     }
   });
   // 防呆：伺服器版本太舊或封包遺失導致沒有 ack 時，避免使用者以為卡住
+  // 逾時值故意比伺服器內部的 game_invite ack 逾時（3秒）長，讓真正的伺服器回應優先顯示，
+  // 這裡只是「萬一伺服器完全沒回應」的最後防線
   setTimeout(() => {
     if (!acked) showToast(`⚠ 邀請 ${friendName} 逾時，請確認對方是否仍在線`);
-  }, 3000);
+  }, 4500);
 }
 
 // 收到邀請的彈窗
@@ -1144,6 +1149,110 @@ function acceptGameInvite(code) {
   document.getElementById('gameInvitePopup')?.remove();
   goScreen('arena');
   setTimeout(() => _joinRoomByCode(code), 200);
+}
+
+// ══════════════════════════════════════════════════════════════
+// 收件夾：系統補償 / 錯過的對戰邀請記錄。
+// 邀請一律會在伺服器端寫進 inbox（不論當下有沒有即時跳出來），
+// 這樣「彈窗跳出來但沒即時按到」也還是找得到；系統補償則是後台手動塞資料進去。
+// ══════════════════════════════════════════════════════════════
+async function openInbox() {
+  if (!currentUser || typeof authClient === 'undefined') { showGuestProfileNotice(); return; }
+
+  let overlay = document.getElementById('inboxOverlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'inboxOverlay';
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px';
+    overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
+    document.body.appendChild(overlay);
+  }
+  overlay.innerHTML = `
+    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:20px 18px;width:100%;max-width:360px;max-height:78vh;display:flex;flex-direction:column;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
+      <button onclick="document.getElementById('inboxOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer;z-index:2">✕</button>
+      <div style="font-weight:900;font-size:17px;color:var(--white);margin-bottom:4px">📬 收件夾</div>
+      <div style="font-size:12px;color:var(--gray);margin-bottom:14px">系統補償、錯過的對戰邀請都在這裡</div>
+      <div id="inboxList" style="flex:1;overflow-y:auto;min-height:120px;display:flex;flex-direction:column;gap:8px"></div>
+    </div>`;
+
+  const listEl = document.getElementById('inboxList');
+  listEl.innerHTML = `<div style="text-align:center;padding:24px 0;color:var(--gray);font-size:13px">載入中…</div>`;
+
+  const { data, error } = await authClient
+    .from('inbox')
+    .select('*')
+    .eq('user_id', currentUser.id)
+    .order('created_at', { ascending: false })
+    .limit(50);
+
+  if (error) {
+    listEl.innerHTML = `<div style="text-align:center;padding:24px 10px;color:var(--gray);font-size:13px">載入失敗，請稍後再試</div>`;
+    return;
+  }
+  if (!data || !data.length) {
+    listEl.innerHTML = `<div style="text-align:center;padding:24px 10px;color:var(--gray);font-size:13px">目前沒有任何訊息</div>`;
+    return;
+  }
+  listEl.innerHTML = data.map(_inboxItemHtml).join('');
+  _refreshInboxBadge();
+}
+
+function _inboxItemHtml(item) {
+  const time = new Date(item.created_at).toLocaleString('zh-TW', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+  const claimed = item.claimed;
+  let actionHtml = '';
+  if (item.type === 'system' && item.gold_reward > 0) {
+    actionHtml = claimed
+      ? `<span style="font-size:12px;color:var(--gray)">已領取</span>`
+      : `<button onclick="claimInboxGold('${item.id}',${item.gold_reward})" style="padding:7px 14px;background:var(--green3);border:none;border-radius:8px;color:#fff;font-weight:700;font-size:12px;cursor:pointer">領取 🪙${item.gold_reward}</button>`;
+  } else if (item.type === 'invite') {
+    const code = item.meta && item.meta.code;
+    actionHtml = claimed
+      ? `<span style="font-size:12px;color:var(--gray)">已處理</span>`
+      : `<div style="display:flex;gap:8px;justify-content:flex-end">
+          <button onclick="_dismissInboxItem('${item.id}')" style="padding:7px 12px;background:none;border:1px solid var(--line2);border-radius:8px;color:var(--gray);font-weight:700;font-size:12px;cursor:pointer">忽略</button>
+          ${code ? `<button onclick="acceptGameInvite('${code}');_dismissInboxItem('${item.id}')" style="padding:7px 14px;background:var(--blue,#4E7FD6);border:none;border-radius:8px;color:#fff;font-weight:700;font-size:12px;cursor:pointer">嘗試加入</button>` : ''}
+        </div>`;
+  }
+  return `
+    <div style="background:var(--nav);border:1.5px solid var(--line2);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:6px;${claimed ? 'opacity:.55' : ''}">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-weight:700;font-size:13px;color:var(--ink)">${escHtml(item.title)}</div>
+        <div style="font-size:10px;color:var(--gray);white-space:nowrap">${time}</div>
+      </div>
+      ${item.message ? `<div style="font-size:12px;color:var(--ink2)">${escHtml(item.message)}</div>` : ''}
+      ${actionHtml ? `<div>${actionHtml}</div>` : ''}
+    </div>`;
+}
+
+// 房間邀請可能因為時間久了（房間1小時TTL）已過期，加入失敗是預期內的情況，
+// 這裡不特別攔截錯誤，交給既有的 join_room / room_error 流程處理提示
+async function claimInboxGold(id, amount) {
+  addGold(amount); // 走既有的原子加減同步（_syncGoldAtomic），不會跟其他分頁互相覆蓋
+  const { error } = await authClient.from('inbox').update({ claimed: true }).eq('id', id);
+  if (error) { console.error('[claimInboxGold]', error.message); showToast('⚠ 標記已讀失敗，請重新整理'); return; }
+  showToast(`✓ 已領取 ${amount} 金幣`);
+  openInbox();
+}
+
+async function _dismissInboxItem(id) {
+  await authClient.from('inbox').update({ claimed: true }).eq('id', id);
+  openInbox();
+}
+
+async function _refreshInboxBadge() {
+  const badge = document.getElementById('inboxBadge');
+  if (!badge) return;
+  if (!currentUser || typeof authClient === 'undefined') { badge.style.display = 'none'; return; }
+  const { count } = await authClient
+    .from('inbox').select('id', { count: 'exact', head: true })
+    .eq('user_id', currentUser.id).eq('claimed', false);
+  if (count > 0) {
+    badge.textContent = count > 99 ? '99+' : String(count);
+    badge.style.display = 'flex';
+  } else {
+    badge.style.display = 'none';
+  }
 }
 
 function hostStartBattle() {
@@ -2550,11 +2659,12 @@ async function _listenStart() {
   const q = questions[idx];
 
   // 先顯示選項，讓使用者邊聽邊看
+  quizState.selectedAnswer = null;
   const optsEl = document.getElementById('quizOpts');
   optsEl.classList.remove('revealed');
   optsEl.innerHTML = q.options.map((opt, i) => {
     const clean = opt.replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, '');
-    return `<button class="quiz-opt" onclick="answerQuestion(${i})">${String.fromCharCode(65 + i)}. ${escHtml(clean)}${_qZhSpan(q.optionsZh, i)}</button>`;
+    return `<button class="quiz-opt" onclick="selectAnswer(${i})">${String.fromCharCode(65 + i)}. ${escHtml(clean)}${_qZhSpan(q.optionsZh, i)}</button>`;
   }).join('');
 
   // 播放兩遍，每個 await 後都檢查是否已被取消（答題/下一題/關閉）
@@ -2602,6 +2712,7 @@ function renderQuestion() {
   const { questions, idx, context } = quizState;
   const q = questions[idx];
   document.getElementById('quizOpts').classList.remove('revealed');
+  quizState.selectedAnswer = null;
 
   // 題組式：克漏字（整篇空格）/ 閱讀（文章＋1–4題）一次作答
   if (q.blanks || q.questions) { _renderGroupQuestion(q); return; }
@@ -2642,7 +2753,7 @@ function renderQuestion() {
 
     document.getElementById('quizOpts').innerHTML = q.options.map((opt, i) => {
       const clean = opt.replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, '');
-      return `<button class="quiz-opt" onclick="answerQuestion(${i})">${String.fromCharCode(65 + i)}. ${escHtml(clean)}${_qZhSpan(q.optionsZh, i)}</button>`;
+      return `<button class="quiz-opt" onclick="selectAnswer(${i})">${String.fromCharCode(65 + i)}. ${escHtml(clean)}${_qZhSpan(q.optionsZh, i)}</button>`;
     }).join('');
   }
 
@@ -2795,10 +2906,29 @@ function quizToggleStar() {
   _updateBankCounts('saved');
 }
 
+// 單題模式的「預選」階段：點選項只標記橘色選中狀態，不揭曉答案，
+// 要按下送出鈕（借用 quizNextBtn）才會真的送出、變色（跟題組式的 groupSelect/submitGroup 邏輯一致）
+function selectAnswer(i) {
+  const btns = document.querySelectorAll('.quiz-opt');
+  if (btns[0] && btns[0].disabled) return; // 已經送出過，不能再選
+  quizState.selectedAnswer = i;
+  btns.forEach((b, k) => b.classList.toggle('sel', k === i));
+  const nextBtn = document.getElementById('quizNextBtn');
+  nextBtn.textContent = '送出答案';
+  nextBtn.onclick = submitAnswer;
+  nextBtn.classList.remove('hidden');
+}
+
+function submitAnswer() {
+  if (typeof quizState.selectedAnswer !== 'number') return;
+  answerQuestion(quizState.selectedAnswer);
+}
+
 function answerQuestion(chosen) {
   const { questions, idx, context } = quizState;
   const q    = questions[idx];
   const btns = document.querySelectorAll('.quiz-opt');
+  btns.forEach(b => b.classList.remove('sel')); // 預選的橘色狀態在真正揭曉時要先清掉，避免跟對錯色疊在一起
 
   _stopListening(); // 答題後停止播放
 
@@ -5033,6 +5163,20 @@ function showSettings() {
   if (sfx) sfx.checked = s.sfx !== false;
   if (bgm) bgm.checked = s.bgm !== false;
 
+  // 還原音量滑桿
+  const sfxVol = s.sfxVolume ?? 100;
+  const bgmVol = s.bgmVolume ?? 35;
+  const sfxVolEl = document.getElementById('sfxVolume');
+  const bgmVolEl = document.getElementById('bgmVolume');
+  if (sfxVolEl) sfxVolEl.value = sfxVol;
+  if (bgmVolEl) bgmVolEl.value = bgmVol;
+  const sfxVolNum = document.getElementById('sfxVolumeNum');
+  const bgmVolNum = document.getElementById('bgmVolumeNum');
+  if (sfxVolNum) sfxVolNum.textContent = sfxVol;
+  if (bgmVolNum) bgmVolNum.textContent = bgmVol;
+  document.getElementById('sfxVolRow')?.classList.toggle('disabled', s.sfx === false);
+  document.getElementById('bgmVolRow')?.classList.toggle('disabled', s.bgm === false);
+
   // 還原 segmented controls（每日目標）
   const dailyGoal = s.dailyGoal || 20;
   document.querySelectorAll('.sett-seg[onclick*="setDailyGoal"]').forEach(btn => {
@@ -5077,8 +5221,16 @@ function setDailyGoal(n, btn) {
 function saveSoundSettings() {
   const sfx = document.getElementById('sfxToggle')?.checked ?? true;
   const bgm = document.getElementById('bgmToggle')?.checked ?? false;
-  _saveSettingsData({ sfx, bgm });
-  _bgmSync(); // 開關切換時（本身就是使用者手勢）立刻嘗試播放/暫停
+  const sfxVolume = parseInt(document.getElementById('sfxVolume')?.value ?? '100', 10);
+  const bgmVolume = parseInt(document.getElementById('bgmVolume')?.value ?? '35', 10);
+  _saveSettingsData({ sfx, bgm, sfxVolume, bgmVolume });
+
+  document.getElementById('sfxVolumeNum').textContent = sfxVolume;
+  document.getElementById('bgmVolumeNum').textContent = bgmVolume;
+  document.getElementById('sfxVolRow')?.classList.toggle('disabled', !sfx);
+  document.getElementById('bgmVolRow')?.classList.toggle('disabled', !bgm);
+
+  _bgmSync(); // 開關/音量調整時（本身就是使用者手勢）立刻套用並嘗試播放/暫停
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -5091,7 +5243,7 @@ function _bgmGetAudio() {
   if (!_bgmAudio) {
     _bgmAudio = new Audio('public/audio/bgm.mp3');
     _bgmAudio.loop = true;
-    _bgmAudio.volume = 0.35;
+    _bgmAudio.volume = (_loadSettingsData().bgmVolume ?? 35) / 100;
   }
   return _bgmAudio;
 }
@@ -5126,8 +5278,10 @@ function _bgmDuckEnd(wasPlaying) {
 // 依設定值播放或暫停。瀏覽器的自動播放限制要求「使用者手勢」才能出聲，
 // 所以只在使用者主動切換開關，或稍後第一次點擊畫面時才會真的呼叫 play()。
 function _bgmSync() {
-  const enabled = (_loadSettingsData().bgm !== false);
+  const s = _loadSettingsData();
+  const enabled = (s.bgm !== false);
   const audio = _bgmGetAudio();
+  audio.volume = (s.bgmVolume ?? 35) / 100;
   if (enabled) {
     audio.play().catch(() => { /* 還沒有使用者手勢，等下一次互動再試 */ });
   } else {
@@ -6093,9 +6247,11 @@ function getGold() {
 function addGold(amount) {
   let next;
   if (typeof currentProfile !== 'undefined' && currentProfile) {
+    // 先樂觀更新本地畫面（即時反饋），實際金額由資料庫端原子加減決定，
+    // 避免多分頁/多裝置同時操作時「整值覆寫」互相覆蓋導致金幣消失或跑掉。
     next = (currentProfile.gold || 0) + amount;
     currentProfile.gold = next;
-    if (typeof syncGold !== 'undefined') syncGold(next);
+    _syncGoldAtomic(amount);
   } else {
     next = parseInt(localStorage.getItem('voca_gold') || '0') + amount;
     localStorage.setItem('voca_gold', next);
@@ -6103,6 +6259,30 @@ function addGold(amount) {
   const el = document.getElementById('hGold');
   if (el) el.textContent = next.toLocaleString();
   return next;
+}
+
+// 呼叫資料庫端原子加減 RPC，並用回傳的權威值校正本地快取（修正任何飄移）；
+// 失敗時把樂觀更新退回去，並提示使用者（不能讓畫面顯示跟資料庫不一致卻沒有任何提示）。
+async function _syncGoldAtomic(delta) {
+  if (typeof currentUser === 'undefined' || !currentUser || typeof authClient === 'undefined') return;
+  try {
+    const { data, error } = await authClient.rpc('increment_gold', {
+      p_user_id: currentUser.id,
+      p_delta: delta,
+    });
+    if (error) throw error;
+    if (typeof data === 'number' && currentProfile) {
+      currentProfile.gold = data;
+      const el = document.getElementById('hGold');
+      if (el) el.textContent = data.toLocaleString();
+    }
+  } catch (err) {
+    console.error('[_syncGoldAtomic] 金幣同步失敗:', err?.message || err);
+    if (currentProfile) currentProfile.gold = (currentProfile.gold || 0) - delta; // 退回樂觀更新
+    const el = document.getElementById('hGold');
+    if (el) el.textContent = (currentProfile?.gold || 0).toLocaleString();
+    if (typeof showToast === 'function') showToast('⚠ 金幣同步失敗，請檢查網路連線');
+  }
 }
 
 function _awardSubjectGold(cat) {

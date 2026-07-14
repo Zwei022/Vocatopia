@@ -104,5 +104,31 @@ ok('clearBottomRows removes garbage rows (bottom becomes the shifted-down row13 
 ok('clearBottomRows shifts everything down by n, leaving row14 empty', e9.board[14].every(x => x === null));
 ok('clearBottomRows preserves total row count', e9.board.length === 16);
 
+// 十字方塊已移除
+ok('X (cross) piece removed from piece set', !TT_TYPES.includes('X') && !TT_PIECES.X);
+
+// 保留/交換：空欄位時先存入，之後再用一次變成交換
+const e10 = ttCreateEngine(8, 16);
+e10.setNextType('O'); e10.spawn(); // active = O
+const firstType = e10.active.type;
+ok('hold starts empty', e10.holdType === null);
+ok('hold() succeeds on first use', e10.hold() === true);
+ok('holdType now holds the piece that was active', e10.holdType === firstType);
+ok('holdLocked true right after holding', e10.holdLocked === true);
+ok('hold() blocked a second time before next piece locks', e10.hold() === false);
+// 落地一次，holdLocked 應該解除
+for (let i = 0; i < 40 && !e10.tick().locked;) {}
+ok('holdLocked resets after a piece locks', e10.holdLocked === false);
+// 這次保留欄位已經有東西了，呼叫 hold() 應該是「交換」：目前方塊種類要變成原本存的 firstType
+const beforeSwapType = e10.active.type;
+e10.hold();
+ok('second hold swaps active piece to the previously held type', e10.active.type === firstType);
+ok('previously active piece type now sits in hold', e10.holdType === beforeSwapType);
+
+// 炸彈方塊不能保留
+const e11 = ttCreateEngine(8, 16);
+e11.setNextType('M1'); e11.markNextAsBomb(); e11.spawn();
+ok('cannot hold a bomb-marked piece', e11.hold() === false);
+
 console.log(`\nENGINE TESTS: ${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

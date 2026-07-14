@@ -22,7 +22,7 @@ const TT_PIECES = {
   V3: { color: 'v', matrix: [[1, 0], [1, 1]] },        // 小轉角
   I3: { color: 'e', matrix: [[1, 1, 1]] },             // 小長條
   // 五格方塊（有挑戰）
-  X:  { color: 'x', matrix: [[0, 1, 0], [1, 1, 1], [0, 1, 0]] }, // 十字
+  // 十字（X）已移除：五格中最容易補滿多行、對整體節奏破壞太大，拿掉後難度曲線更平順
   U:  { color: 'u', matrix: [[1, 0, 1], [1, 1, 1]] },            // U 形
   P:  { color: 'p', matrix: [[1, 1], [1, 1], [1, 0]] },          // P 形
   N:  { color: 'n', matrix: [[0, 1], [0, 1], [1, 1], [1, 0]] },  // N 形
@@ -58,6 +58,8 @@ function ttCreateEngine(cols = 8, rows = 16) {
   let active = null;       // { type, color, matrix, row, col, isBomb }
   let nextType = bag.next();
   let pendingBomb = false; // 壽司技能：下一次 spawn() 出來的方塊要標記為炸彈
+  let holdType = null;     // 保留欄位目前存放的方塊種類（null＝空）
+  let holdLocked = false;  // 同一顆方塊落下期間只能保留/交換一次，鎖定後才能再用
 
   function makePiece(type) {
     const def = TT_PIECES[type];
@@ -103,6 +105,24 @@ function ttCreateEngine(cols = 8, rows = 16) {
   // 標記下一次 spawn() 的方塊為壽司炸彈（壽司技能用）
   function markNextAsBomb() {
     pendingBomb = true;
+  }
+
+  // 保留/交換目前方塊：
+  // - 保留欄位是空的 → 把目前方塊放進保留欄位，直接從 7-bag 生出新方塊
+  // - 保留欄位已有方塊 → 跟目前方塊互換（原方塊進保留欄位，保留欄位的方塊變成目前方塊）
+  // 炸彈方塊不能保留（避免炸彈狀態跟著保留機制流失/錯亂），同一顆方塊落下期間只能用一次。
+  function hold() {
+    if (!active || active.isBomb || holdLocked) return false;
+    if (holdType === null) {
+      holdType = active.type;
+      spawn();
+    } else {
+      const swapped = holdType;
+      holdType = active.type;
+      active = makePiece(swapped);
+    }
+    holdLocked = true;
+    return true;
   }
 
   function move(offCol) {
@@ -195,11 +215,13 @@ function ttCreateEngine(cols = 8, rows = 16) {
     if (active.isBomb) {
       const bombedCount = explodeBomb();
       const ok = spawn();
+      holdLocked = false; // 這顆方塊已經落定，下一顆可以再保留/交換
       return { moved: false, locked: true, cleared: 0, gameOver: !ok, bombed: true, bombedCount };
     }
     lockPiece();
     const cleared = clearLines();
     const ok = spawn();
+    holdLocked = false; // 這顆方塊已經落定，下一顆可以再保留/交換
     return { moved: false, locked: true, cleared, gameOver: !ok, bombed: false };
   }
 
@@ -221,8 +243,10 @@ function ttCreateEngine(cols = 8, rows = 16) {
     get active() { return active; },
     get nextType() { return nextType; },
     get pendingBomb() { return pendingBomb; },
+    get holdType() { return holdType; },
+    get holdLocked() { return holdLocked; },
     spawn, move, rotate, tick, clearLines, addGarbageRow, collides, setNextType,
-    markNextAsBomb, clearBottomRows,
+    markNextAsBomb, clearBottomRows, hold,
     // 給渲染用：回傳「棋盤 + 當前落下方塊」合併後的畫面（不改動 board）
     render() {
       const view = board.map(row => [...row]);

@@ -21,18 +21,28 @@ function _sfxEnabled() {
   } catch { return true; }
 }
 
+// 音效總音量（0~1），跟設定頁的音量滑桿共用同一份 voca_settings（sfxVolume，0~100）
+function _sfxVolumeScale() {
+  try {
+    if (typeof _loadSettingsData === 'function') return (_loadSettingsData().sfxVolume ?? 100) / 100;
+    return 1;
+  } catch { return 1; }
+}
+
 // 播放單一音（sweepTo 可做滑音效果）
 function _sfxTone(freq, duration, opts = {}) {
   const ctx = _sfxGetCtx();
   if (!ctx) return;
   const { type = 'sine', volume = 0.15, delay = 0, sweepTo = null } = opts;
+  const scaledVolume = volume * _sfxVolumeScale();
+  if (scaledVolume <= 0) return;
   const osc = ctx.createOscillator();
   const gain = ctx.createGain();
   osc.type = type;
   const t0 = ctx.currentTime + delay;
   osc.frequency.setValueAtTime(freq, t0);
   if (sweepTo) osc.frequency.exponentialRampToValueAtTime(Math.max(sweepTo, 1), t0 + duration);
-  gain.gain.setValueAtTime(volume, t0);
+  gain.gain.setValueAtTime(scaledVolume, t0);
   gain.gain.exponentialRampToValueAtTime(0.001, t0 + duration);
   osc.connect(gain).connect(ctx.destination);
   osc.start(t0);
@@ -43,7 +53,9 @@ function _sfxTone(freq, duration, opts = {}) {
 function _sfxNoise(duration, opts = {}) {
   const ctx = _sfxGetCtx();
   if (!ctx) return;
-  const { volume = 0.2, delay = 0, filterFreq = null } = opts;
+  const { volume: rawVolume = 0.2, delay = 0, filterFreq = null } = opts;
+  const volume = rawVolume * _sfxVolumeScale();
+  if (volume <= 0) return;
   const bufferSize = Math.max(1, Math.floor(ctx.sampleRate * duration));
   const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
   const data = buffer.getChannelData(0);

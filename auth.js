@@ -107,6 +107,7 @@ async function _loadProfile() {
 
   _updateHeaderUI();
   if (typeof maybeShowTutorial === 'function') maybeShowTutorial();
+  if (typeof _refreshInboxBadge === 'function') _refreshInboxBadge();
 }
 
 async function _initUserAccount() {
@@ -386,6 +387,7 @@ async function logoutUser() {
   currentUser    = null;
   currentProfile = null;
   _updateHeaderUI();
+  if (typeof _refreshInboxBadge === 'function') _refreshInboxBadge();
   showAuthOverlay();
 }
 
@@ -520,14 +522,6 @@ async function syncXP(newXp) {
   if (!currentUser) return;
   await authClient.from('profiles')
     .update({ xp: newXp })
-    .eq('id', currentUser.id);
-}
-
-async function syncGold(newGold) {
-  if (!currentUser) return;
-  if (currentProfile) currentProfile.gold = newGold;
-  await authClient.from('profiles')
-    .update({ gold: newGold })
     .eq('id', currentUser.id);
 }
 

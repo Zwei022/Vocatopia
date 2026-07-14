@@ -208,6 +208,9 @@
       <button id="profileBtn" class="hm-profile-btn" onclick="currentProfile ? showProfile() : showGuestProfileNotice()">👤 個人資料</button>
       <button id="friendsBtn" class="hm-profile-btn" onclick="showFriendsButton()">👥 好友</button>
       <div class="hm-gold-chip">🪙 <span id="hGold">0</span></div>
+      <button id="inboxBtn" class="up-logout" onclick="openInbox()" title="收件夾" style="position:relative">
+        📬<span id="inboxBadge" class="inbox-badge" style="display:none">0</span>
+      </button>
       <button id="settingsBtn" class="up-logout" onclick="showSettings()" title="設定">⚙️</button>
     </div>
 

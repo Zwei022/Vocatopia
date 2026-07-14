@@ -406,6 +406,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .quiz-opts{display:flex;flex-direction:column;gap:9px;flex-shrink:0}
 .quiz-opt{padding:13px 16px;background:var(--nav);border:2px solid var(--line2);border-radius:var(--r2);font-size:15px;font-weight:600;color:var(--ink);cursor:pointer;text-align:left;transition:all .1s;font-family:'Noto Sans TC',sans-serif}
 .quiz-opt:active{transform:scale(.98)}
+.quiz-opt.sel{border-color:var(--orange)!important;background:var(--orasoft)!important;color:var(--orange2)!important}
 .quiz-opt.correct{background:var(--greensoft)!important;border-color:var(--green)!important;color:var(--green2)!important}
 .quiz-opt.wrong{background:var(--wrongsoft)!important;border-color:var(--wrong)!important;color:var(--wrong)!important}
 .quiz-opt:disabled{cursor:not-allowed}
@@ -429,7 +430,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .cloze-blank-label{font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:var(--orange2);letter-spacing:1px;margin-bottom:7px}
 .rq-heading{font-size:14px;font-weight:700;color:var(--ink);line-height:1.7;margin-bottom:8px}
 .cloze-opts{display:flex;flex-direction:column;gap:7px}
-.cloze-opt.sel{border-color:var(--red)!important;background:var(--redsoft)!important;color:var(--red)!important}
+.cloze-opt.sel{border-color:var(--orange)!important;background:var(--orasoft)!important;color:var(--orange2)!important}
 .cloze-explain{margin-top:8px;padding:8px 11px;background:var(--card2);border-left:3px solid var(--green);border-radius:0 var(--r) var(--r) 0;font-size:12px;color:var(--ink);line-height:1.7}
 
 /* 題目右上角收藏星號 */
@@ -535,6 +536,11 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .sett-label{font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:var(--ink2);letter-spacing:.5px;margin-bottom:8px}
 .sett-toggle-row{display:flex;align-items:center;justify-content:space-between;padding:10px 2px;font-family:'Nunito',sans-serif;font-weight:700;font-size:14px;color:var(--ink)}
 .sett-toggle-row input[type="checkbox"]{width:20px;height:20px;accent-color:var(--orange)}
+.sett-vol-row{display:flex;align-items:center;gap:10px;padding:0 2px 12px;transition:opacity .15s}
+.sett-vol-row.disabled{opacity:.35;pointer-events:none}
+.sett-vol-icon{font-size:14px;flex-shrink:0}
+.sett-vol-row input[type="range"]{flex:1;accent-color:var(--orange);height:4px}
+.sett-vol-num{font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:var(--ink2);min-width:28px;text-align:right}
 .sett-seg-row{display:flex;gap:8px;flex-wrap:wrap}
 .sett-seg{flex:1;min-width:64px;padding:10px 8px;background:var(--nav);border:1.5px solid var(--line2);border-radius:var(--r);font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:var(--ink2);cursor:pointer;transition:all .15s}
 .sett-seg.active{background:var(--orange);border-color:var(--orange);color:#fff}
@@ -627,6 +633,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .up-name{font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:var(--ink);max-width:72px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .up-logout{background:var(--nav);border:1.5px solid var(--line2);border-radius:20px;padding:5px 10px;color:var(--ink2);font-size:11px;font-family:'Nunito',sans-serif;font-weight:800;cursor:pointer;transition:border-color .15s}
 .up-logout:hover{border-color:var(--orange)}
+.inbox-badge{position:absolute;top:-4px;right:-4px;background:var(--red);color:#fff;font-size:9px;font-weight:900;font-family:'Nunito',sans-serif;min-width:15px;height:15px;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 3px;box-shadow:0 0 0 2px var(--nav)}
 
 /* upgrade modal */
 .upgrade-box{padding:28px 24px 40px}

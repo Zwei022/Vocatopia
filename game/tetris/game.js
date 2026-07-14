@@ -53,6 +53,10 @@ function tetrisStart() {
           <div class="tt-side-label">下一個</div>
           <div class="tt-next" id="ttNext"></div>
         </div>
+        <div class="tt-side-card" id="ttHoldCard">
+          <div class="tt-side-label">保留</div>
+          <div class="tt-next" id="ttHold"></div>
+        </div>
         <div class="tt-side-card tt-lines-card">
           <div class="tt-side-label">消除行數</div>
           <div class="tt-lines" id="ttLines">0</div>
@@ -65,6 +69,9 @@ function tetrisStart() {
           <div class="tt-skill-ava">${ch ? `<img src="${ch.img}" alt="">` : '🎮'}</div>
           <div class="tt-skill-name">${ch ? ch.skill.name : '技能'}</div>
           <div class="tt-skill-cd" id="ttSkillCd"></div>
+        </button>
+        <button class="tt-hold-btn" id="ttHoldBtn" onclick="ttUseHold()">
+          <span id="ttHoldBtnLabel">保留</span>
         </button>
       </div>
     </div>
@@ -152,22 +159,54 @@ function ttRender() {
   document.getElementById('ttScore').textContent = ttGame.score.toLocaleString();
   document.getElementById('ttLines').textContent = ttGame.lines;
   _ttRenderNext();
+  _ttRenderHold();
 }
 
-function _ttRenderNext() {
-  const el = document.getElementById('ttNext');
-  const type = ttGame.engine.nextType;
+// 共用的方塊縮圖畫法：直接依照方塊實際的行列數把容器裁成剛好的大小，
+// 不再用固定 74×74 正方形置中——窄的方塊（例如 I3、M1）以前會被夾在
+// 大方框正中間、四周留白一大圈，改成貼齊方塊實際外形後不會再有這種空洞感。
+const TT_PREVIEW_CELL = 17, TT_PREVIEW_GAP = 3;
+function _ttRenderPreviewInto(el, type, isBomb) {
+  if (!type) { el.innerHTML = ''; el.style.width = '0'; el.style.height = '0'; el.classList.remove('tt-next-bomb'); return; }
   const m = TT_PIECES[type].matrix;
-  const isBomb = !!ttGame.engine.pendingBomb;
   const color = isBomb ? 'bomb' : TT_PIECES[type].color;
   const rows = m.length, cols = m[0].length;
   let html = '';
   for (let r = 0; r < rows; r++)
     for (let c = 0; c < cols; c++)
       html += `<div class="tt-next-cell${m[r][c] ? ' fill-' + color : ''}"></div>`;
-  el.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+  el.style.gridTemplateColumns = `repeat(${cols}, ${TT_PREVIEW_CELL}px)`;
+  el.style.width  = (cols * TT_PREVIEW_CELL + (cols - 1) * TT_PREVIEW_GAP) + 'px';
+  el.style.height = (rows * TT_PREVIEW_CELL + (rows - 1) * TT_PREVIEW_GAP) + 'px';
   el.innerHTML = html;
   el.classList.toggle('tt-next-bomb', isBomb);
+}
+
+function _ttRenderNext() {
+  _ttRenderPreviewInto(document.getElementById('ttNext'), ttGame.engine.nextType, !!ttGame.engine.pendingBomb);
+}
+
+function _ttRenderHold() {
+  const holdType = ttGame.engine.holdType;
+  const el = document.getElementById('ttHold');
+  _ttRenderPreviewInto(el, holdType, false);
+  const card = document.getElementById('ttHoldCard');
+  if (card) card.classList.toggle('tt-hold-empty', !holdType);
+  const btn = document.getElementById('ttHoldBtn');
+  if (btn) {
+    const locked = !!ttGame.engine.holdLocked;
+    btn.disabled = locked;
+    document.getElementById('ttHoldBtnLabel').textContent = holdType ? '交換' : '保留';
+  }
+}
+
+// 保留/交換按鈕
+function ttUseHold() {
+  if (!ttGame || ttGame.paused || ttGame.gameOver) return;
+  if (ttGame.engine.hold()) {
+    ttRender();
+    if (typeof SFX !== 'undefined' && SFX.rotate) SFX.rotate();
+  }
 }
 
 // ── 重力 ──
@@ -265,6 +304,7 @@ function _ttBindControls() {
       if (!ttGame.softDropping) _ttStartSoftDrop();
       e.preventDefault();
     }
+    else if (e.key === 'c' || e.key === 'C' || e.key === 'Shift') { ttUseHold(); e.preventDefault(); }
   };
   ttGame._keyUpHandler = (e) => {
     if (e.key === 'ArrowDown' && ttGame && ttGame.softDropping) _ttStopSoftDrop();
