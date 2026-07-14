@@ -1729,7 +1729,7 @@ let _gxWasBgmPlaying = false;
 
 function gsatStartListening() {
   if (!gsatExam || gsatExam.seqPlaying) return;
-  _gxWasBgmPlaying = _bgmDuckStart();
+  _gxWasBgmPlaying = _bgmDuckStart(180000); // 多題連播可能長達數分鐘，保險逾時拉長到 3 分鐘
   const view = document.getElementById('gsatExamView');
   const ov = document.createElement('div');
   ov.className = 'gx-countdown';
@@ -5100,15 +5100,25 @@ function _bgmGetAudio() {
 // 也避免部分 Android WebView 在多個 <audio> 同時播放時互相搶佔音訊焦點，
 // 導致其中一個完全放不出聲音的問題）。回傳值要原封不動傳給 _bgmDuckEnd，
 // 這樣才知道播放結束後該不該恢復（使用者本來就手動關掉 BGM 的話不該擅自打開）。
-function _bgmDuckStart() {
-  if (_bgmAudio && !_bgmAudio.paused) {
+//
+// maxMs：保險逾時。部分裝置遇到音訊焦點衝突時，audio.play() 可能卡在一個
+// 「既沒播放成功也沒觸發 error/ended」的狀態（尤其某些 Android WebView），
+// 導致原本靠 onended/onerror 才會恢復 BGM 的邏輯永遠等不到那個事件、BGM
+// 卡死在暫停狀態。這裡用一個遞增序號 token 標記「目前最新的一次 duck」，
+// 逾時後如果還是同一個 token（代表期間沒有被下一次 duck 取代），就強制視為
+// 播放已結束、恢復 BGM，不管当初那次播放實際上有沒有正常結束。
+let _bgmDuckSeq = 0;
+function _bgmDuckStart(maxMs = 20000) {
+  const wasPlaying = !!(_bgmAudio && !_bgmAudio.paused);
+  const myToken = ++_bgmDuckSeq;
+  if (wasPlaying) {
     _bgmAudio.pause();
-    return true;
+    setTimeout(() => { if (myToken === _bgmDuckSeq) _bgmDuckEnd(true); }, maxMs);
   }
-  return false;
+  return wasPlaying;
 }
 function _bgmDuckEnd(wasPlaying) {
-  if (wasPlaying && (_loadSettingsData().bgm !== false)) {
+  if (wasPlaying && (_loadSettingsData().bgm !== false) && _bgmAudio && _bgmAudio.paused) {
     _bgmGetAudio().play().catch(() => {});
   }
 }
