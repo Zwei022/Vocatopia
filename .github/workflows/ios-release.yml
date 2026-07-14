@@ -13,6 +13,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: 列出這台 runner 上所有已安裝的 Xcode 版本（除錯用）
+        run: ls /Applications | grep Xcode
+
+      - name: 選用最新版 Xcode（Apple 現在要求上傳 App Store 至少要 iOS 26 SDK）
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
