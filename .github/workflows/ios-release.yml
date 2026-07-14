@@ -33,7 +33,11 @@ jobs:
           KEYCHAIN_PATH="$RUNNER_TEMP/build.keychain"
           KEYCHAIN_PASSWORD="$(uuidgen)"
 
-          echo "$IOS_DIST_CERT_P12_BASE64" | base64 --decode > "$RUNNER_TEMP/cert.p12"
+          # macOS 內建是 BSD base64（解碼旗標是 -D，不是 GNU 版的 --decode），
+          # 用 -i/-o 明確指定輸入輸出檔案，避免透過 pipe/echo 可能吃到多餘換行或被誤判成空輸入。
+          printf '%s' "$IOS_DIST_CERT_P12_BASE64" > "$RUNNER_TEMP/cert.p12.b64"
+          base64 -D -i "$RUNNER_TEMP/cert.p12.b64" -o "$RUNNER_TEMP/cert.p12"
+          ls -l "$RUNNER_TEMP/cert.p12"
 
           security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
           security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
@@ -49,7 +53,9 @@ jobs:
           set -e
           PROFILE_DIR="$HOME/Library/MobileDevice/Provisioning Profiles"
           mkdir -p "$PROFILE_DIR"
-          echo "$IOS_PROVISION_PROFILE_BASE64" | base64 --decode > "$PROFILE_DIR/vocatopia_appstore.mobileprovision"
+          printf '%s' "$IOS_PROVISION_PROFILE_BASE64" > "$RUNNER_TEMP/profile.b64"
+          base64 -D -i "$RUNNER_TEMP/profile.b64" -o "$PROFILE_DIR/vocatopia_appstore.mobileprovision"
+          ls -l "$PROFILE_DIR/vocatopia_appstore.mobileprovision"
 
       - name: Archive（手動簽章，build number 用 run number 確保遞增）
         run: |
@@ -105,7 +111,9 @@ jobs:
         run: |
           set -e
           mkdir -p "$HOME/.appstoreconnect/private_keys"
-          echo "$ASC_API_KEY_BASE64" | base64 --decode > "$HOME/.appstoreconnect/private_keys/AuthKey_${ASC_API_KEY_ID}.p8"
+          printf '%s' "$ASC_API_KEY_BASE64" > "$RUNNER_TEMP/apikey.b64"
+          base64 -D -i "$RUNNER_TEMP/apikey.b64" -o "$HOME/.appstoreconnect/private_keys/AuthKey_${ASC_API_KEY_ID}.p8"
+          ls -l "$HOME/.appstoreconnect/private_keys/AuthKey_${ASC_API_KEY_ID}.p8"
 
           IPA_PATH=$(find "$RUNNER_TEMP/export" -name "*.ipa" | head -1)
           echo "上傳檔案：$IPA_PATH"
