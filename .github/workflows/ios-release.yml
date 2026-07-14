@@ -57,7 +57,11 @@ jobs:
           base64 -D -i "$RUNNER_TEMP/profile.b64" -o "$PROFILE_DIR/vocatopia_appstore.mobileprovision"
           ls -l "$PROFILE_DIR/vocatopia_appstore.mobileprovision"
 
-      - name: Archive（手動簽章，build number 用 run number 確保遞增）
+      - name: Archive（build number 用 run number 確保遞增）
+        # 簽章設定（CODE_SIGN_STYLE=Manual、Provisioning Profile、Team）已經直接寫在
+        # App target 的 Release 設定裡（project.pbxproj），不透過命令列全域覆寫——
+        # 命令列覆寫會連 SPM 套件（例如 RevenueCat 函式庫 target）都一起套用，
+        # 但函式庫 target 本來就不支援/不需要 provisioning profile，會導致 Archive 失敗。
         run: |
           set -e
           cd ios/App
@@ -67,10 +71,6 @@ jobs:
             -configuration Release \
             -archivePath "$RUNNER_TEMP/App.xcarchive" \
             -destination 'generic/platform=iOS' \
-            CODE_SIGN_STYLE=Manual \
-            CODE_SIGN_IDENTITY="Apple Distribution" \
-            PROVISIONING_PROFILE_SPECIFIER="RevenueCat" \
-            DEVELOPMENT_TEAM=NJ7M3XM9WQ \
             CURRENT_PROJECT_VERSION="${{ github.run_number }}"
 
       - name: 產生 exportOptions.plist
