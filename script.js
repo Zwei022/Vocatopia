@@ -4907,6 +4907,8 @@ function showProfile() {
   if (!currentProfile) return;
   const mastered = (typeof WORDS !== 'undefined') ? WORDS.filter(w => w.st === 'ok').length : 0;
   const total    = (typeof WORDS !== 'undefined') ? WORDS.length : 2000;
+  const lv        = levelFromXp(currentProfile.xp || 0);
+  const unlockedSec = unlockedGrammarSections(lv.level);
 
   const overlay = document.createElement('div');
   overlay.id = 'profileOverlay';
@@ -4929,6 +4931,18 @@ function showProfile() {
           <span style="font-size:13px;font-weight:900;color:var(--white);letter-spacing:1px">${currentProfile.friend_code || '------'}</span>
           <button onclick="copyFriendCode()" title="複製帳號ID" style="background:none;border:none;color:var(--green3);font-size:13px;cursor:pointer;padding:0 2px">📋</button>
         </div>
+      </div>
+
+      <!-- #2 等級條 -->
+      <div style="background:rgba(245,146,30,.1);border:1.5px solid rgba(245,146,30,.28);border-radius:12px;padding:12px 14px;margin-bottom:14px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px">
+          <span style="font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--orange2)">Lv.<span id="xpLevelNum">${lv.level}</span></span>
+          <span style="font-size:11px;color:var(--gray)">已解鎖文法 ${unlockedSec}/${GRAMMAR_TOTAL_SECTIONS} 節</span>
+        </div>
+        <div style="background:rgba(122,92,67,.15);border-radius:8px;height:10px;overflow:hidden">
+          <div id="xpBarFill" style="height:100%;width:${lv.pct}%;background:linear-gradient(90deg,var(--orange),var(--orange2));border-radius:8px;transition:width .3s"></div>
+        </div>
+        <div id="xpBarText" style="font-size:10px;color:var(--gray);text-align:right;margin-top:4px">${lv.need ? `${lv.cur} / ${lv.need} XP` : 'MAX'}</div>
       </div>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px">
@@ -6483,6 +6497,7 @@ function _awardSubjectGold(cat) {
   const reward = GOLD_PER_CAT[cat] || 0;
   if (!reward) return;
   addGold(reward);
+  awardXp(XP_PER_SUBJECT, { source: 'daily' });   // #2 每日測驗完成一科 → XP
   const catName = (CAT_META[cat] || {}).name || cat;
   showToast(`🪙 +${reward} 金幣！${catName}完成`);
 
@@ -6494,9 +6509,135 @@ function _awardSubjectGold(cat) {
   if (allDone) {
     setTimeout(() => {
       addGold(GOLD_BONUS_ALL);
+      awardXp(XP_ALL_SUBJECTS, { source: 'daily' });   // #2 六科全完成加碼 XP
       showToast('🎉 全科完成！+100 金幣獎勵！');
     }, 1600);
   }
+}
+
+// ══════════════════════════════════════════════════════════════
+// #2 經驗值 / 等級系統
+// 累積總經驗存 profiles.xp（既有欄位），等級由曲線反推。
+// 升級曲線：Lv.L→L+1 需要 100 + (L-1)×7 XP（Lv1→2=100…Lv99→100=688，總計≈44k）。
+// 文法解鎖：已解鎖小節數 = min(92, 4 + 等級)（第1、2章免費，Lv.3=第3章結束）。
+// ══════════════════════════════════════════════════════════════
+const XP_BASE = 100, XP_STEP = 7, XP_MAX_LEVEL = 100;
+const GRAMMAR_FREE_SECTIONS = 4;      // 第1、2章免費（各2節）
+const GRAMMAR_TOTAL_SECTIONS = 92;
+const XP_PER_SUBJECT = 20;            // 每日測驗完成一科
+const XP_ALL_SUBJECTS = 40;           // 六科全完成加碼
+const XP_PER_TETRIS_BASE = 15;        // 俄羅斯方塊每場基礎
+const XP_PER_TETRIS_LINE10 = 5;       // 每消 10 行加成
+const XP_TETRIS_GAME_CAP = 40;        // 單場 XP 上限
+const XP_TETRIS_GAMES_PER_DAY = 5;    // 每日前 N 場才給 XP（防刷）
+const XP_DAILY_CAP = 360;             // 每日 XP 天花板（防刷）
+
+// 累積到「達到」Lv.L 所需的總 XP（Lv.1 = 0）。closed form。
+function xpForLevel(level) {
+  const n = Math.max(0, level - 1);   // 需要幾次升級才到 level
+  return n * XP_BASE + XP_STEP * n * (n - 1) / 2;
+}
+function xpToNext(level) { return XP_BASE + (level - 1) * XP_STEP; }
+// 由總 XP 反推 { level, cur, need, pct }
+function levelFromXp(xp) {
+  xp = Math.max(0, xp || 0);
+  let level = 1;
+  while (level < XP_MAX_LEVEL && xp >= xpForLevel(level + 1)) level++;
+  const base = xpForLevel(level);
+  const need = level < XP_MAX_LEVEL ? xpToNext(level) : 0;
+  const cur = xp - base;
+  return { level, cur, need, pct: need ? Math.min(100, cur / need * 100) : 100 };
+}
+function currentLevel() { return levelFromXp(currentProfile?.xp || 0).level; }
+// 依等級計算已解鎖的文法小節數（付費會員全解由伺服器權威把關，這裡只算等級制的量，
+// 用於升級時「新解鎖幾節」的提示訊息；實際鎖狀態以伺服器回傳的 locked 旗標為準）
+function unlockedGrammarSections(level) {
+  return Math.min(GRAMMAR_TOTAL_SECTIONS, GRAMMAR_FREE_SECTIONS + level);
+}
+
+// 每日 XP 上限追蹤（localStorage，用本地日期當 key）
+function _xpDayKey() { return 'voca_xp_day_' + new Date().toLocaleDateString('en-CA'); }
+function _xpEarnedToday() { return parseInt(localStorage.getItem(_xpDayKey()) || '0', 10) || 0; }
+function _addXpEarnedToday(n) { try { localStorage.setItem(_xpDayKey(), String(_xpEarnedToday() + n)); } catch { /* ignore */ } }
+
+let _xpSyncChain = Promise.resolve();
+// 加經驗值。opts.ignoreCap=true 時不受每日上限（新手任務一次性獎勵用）。
+async function awardXp(amount, opts = {}) {
+  if (!currentUser || typeof authClient === 'undefined' || amount <= 0) return;
+  if (!opts.ignoreCap) {
+    const room = XP_DAILY_CAP - _xpEarnedToday();
+    if (room <= 0) return;
+    amount = Math.min(amount, room);
+    if (amount <= 0) return;
+    _addXpEarnedToday(amount);
+  }
+  const before = levelFromXp(currentProfile?.xp || 0).level;
+  if (currentProfile) currentProfile.xp = (currentProfile.xp || 0) + amount;   // 樂觀更新
+  const after = levelFromXp(currentProfile?.xp || 0).level;
+  _updateXpDisplay();
+  if (after > before) _onLevelUp(before, after);
+  // 伺服器原子加值（序列化避免競態），用回傳權威值校正
+  _xpSyncChain = _xpSyncChain.then(async () => {
+    try {
+      const { data, error } = await authClient.rpc('add_xp', { p_delta: amount });
+      if (error) throw error;
+      if (typeof data === 'number' && currentProfile) { currentProfile.xp = data; _updateXpDisplay(); }
+    } catch (err) {
+      console.warn('[awardXp] 同步失敗（add_xp RPC 可能未建立）：', err?.message || err);
+    }
+  });
+}
+
+// 俄羅斯方塊一場結束給 XP（每日前 XP_TETRIS_GAMES_PER_DAY 場才給，防刷）。
+function _xpTetrisKey() { return 'voca_xp_tetris_' + new Date().toLocaleDateString('en-CA'); }
+function awardTetrisXp(lines) {
+  if (!currentUser) return;
+  const key = _xpTetrisKey();
+  const played = parseInt(localStorage.getItem(key) || '0', 10) || 0;
+  if (played >= XP_TETRIS_GAMES_PER_DAY) return;
+  try { localStorage.setItem(key, String(played + 1)); } catch { /* ignore */ }
+  const xp = Math.min(XP_TETRIS_GAME_CAP, XP_PER_TETRIS_BASE + Math.floor((lines || 0) / 10) * XP_PER_TETRIS_LINE10);
+  awardXp(xp, { source: 'tetris' });
+}
+
+function _onLevelUp(fromLv, toLv) {
+  const newly = unlockedGrammarSections(toLv) - unlockedGrammarSections(fromLv);
+  _showLevelUpCelebration(toLv, newly);
+  // 升級後重新抓文法教學資料（伺服器會依新等級回傳新的解鎖節數），並刷新列表
+  if (typeof _gmLoadData === 'function') _gmLoadData();
+}
+
+function _showLevelUpCelebration(level, newlyUnlocked) {
+  document.getElementById('levelUpOverlay')?.remove();
+  const overlay = document.createElement('div');
+  overlay.id = 'levelUpOverlay';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.6);z-index:9600;display:flex;align-items:center;justify-content:center;padding:20px';
+  overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
+  const unlockLine = newlyUnlocked > 0
+    ? `<div style="font-size:13px;color:var(--green2);font-weight:800;margin-top:8px">🔓 解鎖 ${newlyUnlocked} 個文法小節！</div>`
+    : '';
+  overlay.innerHTML = `
+    <div style="background:var(--card);border:2.5px solid var(--orange);border-radius:20px;padding:28px 24px;width:100%;max-width:320px;text-align:center;font-family:'Nunito',sans-serif;box-shadow:0 8px 40px rgba(75,56,42,.35)">
+      <div style="font-size:52px;margin-bottom:2px">⭐</div>
+      <div style="font-family:var(--font-display);font-weight:900;font-size:20px;color:var(--white)">升級！</div>
+      <div style="font-family:var(--font-display);font-weight:900;font-size:44px;color:var(--orange2);line-height:1.2;margin:4px 0">Lv.${level}</div>
+      ${unlockLine}
+      <button onclick="document.getElementById('levelUpOverlay').remove()"
+        style="width:100%;padding:12px;margin-top:16px;background:var(--orange);border:none;border-radius:12px;color:#fff;font-weight:800;font-size:14px;cursor:pointer">太棒了！</button>
+    </div>`;
+  document.body.appendChild(overlay);
+  if (typeof confetti === 'function') confetti();
+}
+
+// 更新畫面上的等級/經驗顯示（個人檔案的等級條）
+function _updateXpDisplay() {
+  const info = levelFromXp(currentProfile?.xp || 0);
+  const lvEl = document.getElementById('xpLevelNum');
+  if (lvEl) lvEl.textContent = info.level;
+  const barEl = document.getElementById('xpBarFill');
+  if (barEl) barEl.style.width = info.pct + '%';
+  const txtEl = document.getElementById('xpBarText');
+  if (txtEl) txtEl.textContent = info.need ? `${info.cur} / ${info.need} XP` : 'MAX';
 }
 
 // ── 首頁狀態更新 ──────────────────

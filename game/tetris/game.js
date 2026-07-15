@@ -366,6 +366,8 @@ function ttEndGame() {
 
   // 上傳排行榜（未登入只存本機、不上榜）
   ttSubmitScore(finalScore);
+  // #2 一場結束給經驗值（每日前 5 場、有防刷上限）
+  if (typeof awardTetrisXp === 'function') awardTetrisXp(finalLines);
 
   const ov = _ttOverlay();
   const panel = document.createElement('div');
