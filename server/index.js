@@ -109,6 +109,14 @@ const buzzerBank = require('./data/question_bank_vocab_practice.json');
 function genRoomCode() {
   return String(Math.floor(100000 + Math.random() * 900000));
 }
+
+// PVP 名牌：回傳雙方顯示名稱與稱號（#13 稱號顯示於對戰名牌）
+function _roomPlayers(room) {
+  return {
+    host:  { name: room.hostName  || '玩家', title: room.hostTitle  || '' },
+    guest: { name: room.guestName || '玩家', title: room.guestTitle || '' },
+  };
+}
 function shuffle(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     const j = 0 | Math.random() * (i + 1);
@@ -392,11 +400,13 @@ io.on('connection', (socket) => {
     });
   });
 
-  socket.on('create_room', ({ clientId } = {}) => {
+  socket.on('create_room', ({ clientId, name, title } = {}) => {
     const code = genRoomCode();
     rooms[code] = {
       host: socket.id, guest: null,
       hostClientId: clientId || null, guestClientId: null,
+      hostName: name || '玩家', hostTitle: title || '',
+      guestName: null, guestTitle: '',
       hostGraceTimer: null, guestGraceTimer: null,
       mode: 'vocab', state: 'lobby',
       questions: [], answers: {}, timer: null,
@@ -406,7 +416,7 @@ io.on('connection', (socket) => {
     socket.emit('room_created', { code });
   });
 
-  socket.on('join_room', ({ code, clientId }) => {
+  socket.on('join_room', ({ code, clientId, name, title }) => {
     const room = rooms[code];
     if (!room)                   return socket.emit('room_error', { msg: '找不到房間，請確認房號' });
     if (room.state !== 'lobby')  return socket.emit('room_error', { msg: '對決已開始，無法加入' });
@@ -414,8 +424,10 @@ io.on('connection', (socket) => {
     if (room.host === socket.id) return socket.emit('room_error', { msg: '不能加入自己的房間' });
     room.guest = socket.id;
     room.guestClientId = clientId || null;
+    room.guestName = name || '玩家';
+    room.guestTitle = title || '';
     socket.join(code);
-    io.to(code).emit('room_ready', { code, mode: room.mode });
+    io.to(code).emit('room_ready', { code, mode: room.mode, players: _roomPlayers(room) });
   });
 
   // 斷線重連：手機切到背景、訊號短暫中斷等情況會讓 socket 斷線又重連並拿到新的 socket.id，

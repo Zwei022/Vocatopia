@@ -545,9 +545,9 @@
       <div class="room-code-big" id="roomCodeBig">— — —</div>
       <button class="copy-btn" onclick="copyRoom()">📋 複製房號</button>
       <div class="vs-row">
-        <div class="player-slot slot-ready"><div class="slot-name">你</div><div class="slot-status ok">✓ 已就緒</div></div>
+        <div class="player-slot slot-ready"><div class="slot-name" id="meName">你</div><div class="slot-title" id="meTitle" style="display:none"></div><div class="slot-status ok">✓ 已就緒</div></div>
         <div class="vs-label">VS</div>
-        <div class="player-slot" id="foeSlot"><div class="slot-name" id="foeName">等待中</div><div class="slot-status wait-dots" id="foeStatus">⏳ …</div></div>
+        <div class="player-slot" id="foeSlot"><div class="slot-name" id="foeName">等待中</div><div class="slot-title" id="foeTitle" style="display:none"></div><div class="slot-status wait-dots" id="foeStatus">⏳ …</div></div>
       </div>
       <!-- 房主：選擇切磋模式 + 開始 -->
       <div id="hostModePanel" style="display:none;width:100%;flex-direction:column;gap:10px">
@@ -566,8 +566,8 @@
     <div id="arenaBattle">
       <button class="pvp-quit-btn" onclick="pvpQuitBattle()" aria-label="離開對局">✕</button>
       <div class="pvp-bars">
-        <div class="hp-row"><div class="hp-name you">你</div><div class="hp-track"><div class="hp-fill hp-you" id="hpYou" style="width:4%"></div></div><div class="hp-score" id="scYou" style="color:var(--green3)">0/5</div></div>
-        <div class="hp-row" style="flex-direction:row-reverse"><div class="hp-name foe">對手</div><div class="hp-track"><div class="hp-fill hp-foe" id="hpFoe" style="width:4%;margin-left:auto"></div></div><div class="hp-score" id="scFoe" style="color:var(--wrong)">0/5</div></div>
+        <div class="hp-row"><div class="hp-name you" id="hpNameYou">你</div><div class="hp-track"><div class="hp-fill hp-you" id="hpYou" style="width:4%"></div></div><div class="hp-score" id="scYou" style="color:var(--green3)">0/5</div></div>
+        <div class="hp-row" style="flex-direction:row-reverse"><div class="hp-name foe" id="hpNameFoe">對手</div><div class="hp-track"><div class="hp-fill hp-foe" id="hpFoe" style="width:4%;margin-left:auto"></div></div><div class="hp-score" id="scFoe" style="color:var(--wrong)">0/5</div></div>
       </div>
       <div class="pvp-q">
         <div class="pvp-timer" id="pvpTimer">0:30</div>

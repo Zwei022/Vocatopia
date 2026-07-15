@@ -827,7 +827,7 @@ function getPvpSocket() {
     btn.textContent = '等待對手加入⋯';
   });
 
-  pvpSocket.on('room_ready', ({ code }) => {
+  pvpSocket.on('room_ready', ({ code, players }) => {
     roomCode = code;
     if (!pvpState) {   // 加入方第一次收到
       pvpState = { isHost: false, questions: [], qIdx: 0, done: false, timerInt: null };
@@ -843,6 +843,7 @@ function getPvpSocket() {
       showToast('⚔ 對手已加入，可以開始對決！');
     }
     _pvpSetFoeSlot(true);
+    if (players) { pvpState.players = players; _pvpApplyNames(players); }   // #13 名牌顯示雙方稱號
   });
 
   pvpSocket.on('room_error', ({ msg }) => showToast(`⚠ ${msg}`));
@@ -1040,10 +1041,18 @@ function getPvpSocket() {
   return pvpSocket;
 }
 
+// PVP 名牌：自己的顯示名稱與稱號（稱號傳文字，server 不需對照 ACHIEVEMENTS）
+function _pvpMe() {
+  return {
+    name:  currentProfile?.username || '玩家',
+    title: currentProfile?.title ? _acTitleName(currentProfile.title) : '',
+  };
+}
+
 function createRoom() {
   const s = getPvpSocket();
   if (!s) return;
-  s.emit('create_room', { clientId: pvpClientId });
+  s.emit('create_room', { clientId: pvpClientId, ..._pvpMe() });
 }
 
 function copyRoom() {
@@ -1058,14 +1067,14 @@ function confirmJoin() {
   if (!s) return;
   closeModal('joinModal');
   document.getElementById('joinInput').value = '';
-  s.emit('join_room', { code: v, clientId: pvpClientId });
+  s.emit('join_room', { code: v, clientId: pvpClientId, ..._pvpMe() });
 }
 
 // 用房號直接加入（好友邀請用）
 function _joinRoomByCode(code) {
   const s = getPvpSocket();
   if (!s) return;
-  s.emit('join_room', { code, clientId: pvpClientId });
+  s.emit('join_room', { code, clientId: pvpClientId, ..._pvpMe() });
 }
 
 // ── 邀請好友加入目前房間 ──
@@ -1409,6 +1418,23 @@ function _pvpSetFoeSlot(joined) {
   st.textContent = joined ? '✓ 已就緒' : '⏳ …';
   st.className = joined ? 'slot-status ok' : 'slot-status wait-dots';
   document.getElementById('foeSlot').classList.toggle('slot-ready', joined);
+}
+
+// #13 依 host/guest 身分把雙方名稱＋稱號套到等待房名牌與對戰畫面血條名
+function _pvpApplyNames(players) {
+  if (!players || !pvpState) return;
+  const me  = pvpState.isHost ? players.host : players.guest;
+  const foe = pvpState.isHost ? players.guest : players.host;
+  _pvpSlot('meName', 'meTitle', me);
+  _pvpSlot('foeName', 'foeTitle', foe);
+  const y = document.getElementById('hpNameYou'); if (y && me)  y.textContent = me.name;
+  const f = document.getElementById('hpNameFoe'); if (f && foe) f.textContent = foe.name;
+}
+function _pvpSlot(nameId, titleId, p) {
+  if (!p) return;
+  const n = document.getElementById(nameId); if (n && p.name) n.textContent = p.name;
+  const t = document.getElementById(titleId);
+  if (t) { t.textContent = p.title ? `🏷️ ${p.title}` : ''; t.style.display = p.title ? '' : 'none'; }
 }
 
 function _pvpSetBars(mine, foe, total) {

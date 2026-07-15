@@ -233,7 +233,8 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .vs-row{display:grid;grid-template-columns:1fr 40px 1fr;align-items:center;gap:12px;width:100%}
 .player-slot{background:var(--card);border:2px solid var(--line2);border-radius:var(--r2);padding:14px;text-align:center}
 .slot-ready{border-color:var(--green)!important;background:var(--greensoft)!important}
-.slot-name{font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:var(--ink)}
+.slot-name{font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:var(--ink);word-break:break-word}
+.slot-title{font-family:'Nunito',sans-serif;font-weight:800;font-size:10px;color:var(--orange2);margin-top:2px}
 .slot-status{font-size:11px;color:var(--ink2);margin-top:4px}
 .slot-status.ok{color:var(--green2)}
 .vs-label{font-family:'Nunito',sans-serif;font-weight:900;font-size:16px;color:var(--red);text-align:center}
