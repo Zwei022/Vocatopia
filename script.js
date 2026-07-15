@@ -2979,6 +2979,7 @@ function answerQuestion(chosen) {
 
   const nextBtn = document.getElementById('quizNextBtn');
   nextBtn.textContent = idx >= questions.length - 1 ? '查看成績 →' : '下一題 →';
+  nextBtn.onclick = nextQuestion;   // 預選階段被改成 submitAnswer，揭曉後要改回 nextQuestion（否則點「下一題」會重送同題）
   nextBtn.classList.remove('hidden');
 }
 
