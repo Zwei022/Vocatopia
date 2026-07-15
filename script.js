@@ -1227,12 +1227,24 @@ function _inboxItemHtml(item) {
 
 // 房間邀請可能因為時間久了（房間1小時TTL）已過期，加入失敗是預期內的情況，
 // 這裡不特別攔截錯誤，交給既有的 join_room / room_error 流程處理提示
+const _claimingInbox = new Set();   // 領取中的郵件 id，擋同一封的連點
 async function claimInboxGold(id, amount) {
-  addGold(amount); // 走既有的原子加減同步（_syncGoldAtomic），不會跟其他分頁互相覆蓋
-  const { error } = await authClient.from('inbox').update({ claimed: true }).eq('id', id);
-  if (error) { console.error('[claimInboxGold]', error.message); showToast('⚠ 標記已讀失敗，請重新整理'); return; }
-  showToast(`✓ 已領取 ${amount} 金幣`);
-  openInbox();
+  if (_claimingInbox.has(id)) return;   // 同一封已在領取中，連點直接忽略
+  _claimingInbox.add(id);
+  try {
+    // 先在 DB 端把 claimed false→true（條件式更新），只有這次真的把它從未領翻成已領
+    // （回傳有 row）才發金幣。連點的第二次以後條件不成立、回傳空陣列，就不會重複加金幣。
+    const { data, error } = await authClient
+      .from('inbox').update({ claimed: true })
+      .eq('id', id).eq('claimed', false).select();
+    if (error) { console.error('[claimInboxGold]', error.message); showToast('⚠ 領取失敗，請重新整理'); return; }
+    if (!data || !data.length) return;   // 已被領取過（連點/跨裝置），不重複發金幣
+    addGold(amount); // 走既有的原子加減同步（_syncGoldAtomic），不會跟其他分頁互相覆蓋
+    showToast(`✓ 已領取 ${amount} 金幣`);
+    openInbox();
+  } finally {
+    _claimingInbox.delete(id);
+  }
 }
 
 async function _dismissInboxItem(id) {
