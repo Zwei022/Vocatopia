@@ -1,0 +1,9 @@
+NUM SUBS: 2
+==== 10-1 動名詞 ====
+explanation len: 1253
+examples count: 10
+quiz mc count: 10
+==== 10-2 不定詞 ====
+explanation len: 1106
+examples count: 10
+quiz mc count: 10

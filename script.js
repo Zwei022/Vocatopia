@@ -5067,7 +5067,7 @@ function showProfile() {
           <span id="profileUsernameText" style="font-weight:900;font-size:18px;color:var(--white)">${escHtml(currentProfile.username)}</span>
           <button onclick="startEditUsername()" title="修改使用者名稱" style="background:none;border:none;color:var(--green3);font-size:13px;cursor:pointer;padding:0 2px">✏️</button>
         </div>
-        ${currentProfile.title ? `<div style="margin-top:6px"><span style="display:inline-block;font-size:12px;font-weight:800;color:var(--orange2);background:var(--goldsoft);border:1.5px solid var(--gold);padding:3px 12px;border-radius:12px">🏷️ ${escHtml(_acTitleName(currentProfile.title))}</span></div>` : ''}
+        ${currentProfile.title ? `<div style="margin-top:6px"><span onclick="showTitleInfo('${currentProfile.title}')" title="查看稱號詳情" style="display:inline-block;cursor:pointer;font-size:12px;font-weight:800;color:var(--orange2);background:var(--goldsoft);border:1.5px solid var(--gold);padding:3px 12px;border-radius:12px">🏷️ ${escHtml(_acTitleName(currentProfile.title))} ⓘ</span></div>` : ''}
         <div style="font-size:11px;color:var(--gray);margin-top:4px">${currentUser?.email || ''}</div>
         <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;background:rgba(122,92,67,.08);border-radius:20px;padding:6px 12px;width:fit-content;margin-left:auto;margin-right:auto">
           <span style="font-size:11px;color:var(--gray)">帳號ID</span>
@@ -7355,6 +7355,60 @@ function _acUnlocked(a)  { const g = _acGoal(a); return g > 0 && a.cur() >= g; }
 function _acClaimed(id)  { const c = currentProfile?.achievements_claimed; return Array.isArray(c) && c.includes(id); }
 function _acTitleName(id){ const a = ACHIEVEMENTS.find(x => x.id === id); return a ? a.title : ''; }
 
+// ── 稱號 / 成就詳細彈窗（點稱號時顯示如何取得、獎勵、進度）──
+function showTitleInfo(id) {
+  const a = ACHIEVEMENTS.find(x => x.id === id);
+  if (!a) return;
+  const goal = _acGoal(a);
+  const cur = a.cur();
+  const capped = Math.min(cur, goal);
+  const pct = goal ? Math.min(100, Math.round(capped / goal * 100)) : 0;
+  const unlocked = _acUnlocked(a);
+  const claimed = _acClaimed(a.id);
+  const isTitle = (currentProfile?.title || '') === a.id;
+  const statusText = !unlocked
+    ? `尚未達成（差 <b>${(goal - capped).toLocaleString()}</b> ${a.unit}）`
+    : (claimed ? '已解鎖並領取' : '已達成・可領取獎勵');
+  const statusColor = unlocked ? 'var(--green,#4caf50)' : 'var(--sub,#999)';
+  let action = '';
+  if (unlocked && !claimed)      action = `<button class="unl-pick-btn" style="width:100%" onclick="closeTitleInfo();claimAchievement('${a.id}');showProfileTitleRefresh()">領取 +${a.reward} 🪙</button>`;
+  else if (unlocked && isTitle)  action = `<button class="unl-picker-close" style="width:100%" onclick="closeTitleInfo();clearTitle()">取消使用此稱號</button>`;
+  else if (unlocked && claimed)  action = `<button class="unl-pick-btn" style="width:100%" onclick="closeTitleInfo();setAchvTitle('${a.id}');showProfileTitleRefresh()">設為稱號</button>`;
+  const ov = document.createElement('div');
+  ov.id = 'titleInfoOverlay';
+  ov.className = 'unl-picker-overlay';
+  ov.onclick = e => { if (e.target === ov) closeTitleInfo(); };
+  ov.innerHTML = `
+    <div class="unl-picker-box" style="max-width:340px">
+      <div style="font-size:44px;line-height:1;margin-bottom:6px">${a.icon}</div>
+      <div class="unl-picker-title">「${escHtml(a.title)}」</div>
+      <div class="unl-picker-desc" style="margin-bottom:14px">${escHtml(a.name)}</div>
+      <div style="text-align:left;background:var(--goldsoft,#fff8e8);border:1.5px solid var(--gold,#f0c040);border-radius:12px;padding:12px 14px;margin-bottom:12px">
+        <div style="font-size:13px;color:var(--sub,#888);margin-bottom:4px">如何取得</div>
+        <div style="font-size:15px;font-weight:700;margin-bottom:10px">累計達到 ${goal.toLocaleString()} ${a.unit}</div>
+        <div class="achv-bar" style="margin-bottom:6px"><div class="achv-bar-fill" style="width:${pct}%"></div></div>
+        <div style="font-size:13px;color:var(--sub,#888)">目前進度：${capped.toLocaleString()} / ${goal.toLocaleString()} ${a.unit}（${pct}%）</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px">
+        <span style="color:var(--sub,#888)">解鎖獎勵</span><b>+${a.reward} 🪙</b>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:14px">
+        <span style="color:var(--sub,#888)">狀態</span><b style="color:${statusColor}">${statusText}</b>
+      </div>
+      ${action}
+      <button class="unl-picker-close" style="margin-top:8px" onclick="closeTitleInfo()">關閉</button>
+    </div>`;
+  document.body.appendChild(ov);
+}
+function closeTitleInfo() { document.getElementById('titleInfoOverlay')?.remove(); }
+// 若正在個人檔案頁，領取/設定後刷新徽章（動態 profileOverlay，重建即可）
+function showProfileTitleRefresh() {
+  const ov = document.getElementById('profileOverlay');
+  if (ov && typeof showProfile === 'function') {
+    setTimeout(() => { try { ov.remove(); showProfile(); } catch {} }, 200);
+  }
+}
+
 // ── 收藏頁分頁（角色 / 成就）──
 let collTab = 'chars';
 function switchCollTab(tab) {
@@ -7393,7 +7447,7 @@ function renderAchievements() {
   let html = `
     <div class="achv-summary">
       <span>已解鎖 <b>${unlockedCount}</b> / ${ACHIEVEMENTS.length}</span>
-      <span class="achv-cur-title">稱號：<b>${curTitle ? escHtml(_acTitleName(curTitle)) : '無'}</b>${curTitle ? ` <button class="achv-title-clear" onclick="clearTitle()">取消</button>` : ''}</span>
+      <span class="achv-cur-title">稱號：<b${curTitle ? ` style="cursor:pointer;text-decoration:underline dotted" onclick="showTitleInfo('${curTitle}')" title="查看稱號詳情"` : ''}>${curTitle ? escHtml(_acTitleName(curTitle)) : '無'}</b>${curTitle ? ` <button class="achv-title-clear" onclick="clearTitle()">取消</button>` : ''}</span>
     </div>`;
 
   for (const [g, list] of Object.entries(groups)) {
@@ -7412,8 +7466,8 @@ function renderAchievements() {
       else                           action = `<span class="achv-locked-tag">🔒</span>`;
       html += `
         <div class="achv-card${unlocked ? ' unlocked' : ''}">
-          <div class="achv-ico">${a.icon}</div>
-          <div class="achv-main">
+          <div class="achv-ico" style="cursor:pointer" onclick="showTitleInfo('${a.id}')">${a.icon}</div>
+          <div class="achv-main" style="cursor:pointer" onclick="showTitleInfo('${a.id}')">
             <div class="achv-name">${escHtml(a.name)}<span class="achv-titletag">「${escHtml(a.title)}」</span></div>
             <div class="achv-bar"><div class="achv-bar-fill" style="width:${pct}%"></div></div>
             <div class="achv-prog">${cur.toLocaleString()} / ${goal.toLocaleString()} ${a.unit}</div>
