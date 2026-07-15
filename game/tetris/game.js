@@ -111,15 +111,24 @@ function tetrisStart() {
   if (typeof ttStartTimedCycle === 'function') ttStartTimedCycle();
 }
 
-function tetrisClose() {
-  if (ttGame) {
-    clearInterval(ttGame.gravityInt);
+async function tetrisClose() {
+  const g = ttGame;
+  if (g) {
+    clearInterval(g.gravityInt);
     if (typeof ttStopTimedCycle === 'function') ttStopTimedCycle();
   }
   window.removeEventListener('resize', _ttResizeBoard);
   const ov = _ttOverlay();
   if (ov) { ov.style.display = 'none'; ov.innerHTML = ''; }
   ttGame = null;
+
+  // #8 未 game over 就按「離開」也要結算目前分數上榜（原本只有 game over 才送分）。
+  // 先關 UI 再送分/刷榜，讓離開反應即時。ttSubmitScore 只在刷新最高分時才寫入。
+  if (g && !g.gameOver && g.score > 0) {
+    try { await ttSubmitScore(g.score); } catch { /* 送分失敗不影響關閉 */ }
+  }
+  // #8 一場結束回首頁就即時刷新排行榜（不再等下次首頁整體重繪才更新）
+  if (typeof renderLeaderboard === 'function') renderLeaderboard();
 }
 
 // ── 棋盤 DOM 格子（一次建立，之後只改 class） ──
