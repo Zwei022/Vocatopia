@@ -7326,10 +7326,10 @@ function _acTetrisBest(){ try { return parseInt(localStorage.getItem('voca_tetri
 
 // ── 成就定義（id 一經上線不要更動，避免已領獎 / 稱號對應跑掉）──
 const ACHIEVEMENTS = [
-  { id:'word50',   group:'學習', icon:'📖', name:'初窺字海', title:'單字學徒', goal:50,   unit:'字', reward:100,  cur:_acMasteredWords, how:'在下方導覽列「單字」逐字學習，將單字標記為「熟悉」，累積掌握 50 個單字。' },
-  { id:'word200',  group:'學習', icon:'📖', name:'字彙漸豐', title:'字彙能手', goal:200,  unit:'字', reward:200,  cur:_acMasteredWords, how:'在「單字」持續學習並標記熟悉，累積掌握 200 個單字。' },
-  { id:'word500',  group:'學習', icon:'📖', name:'博聞強記', title:'字彙達人', goal:500,  unit:'字', reward:400,  cur:_acMasteredWords, how:'在「單字」持續學習並標記熟悉，累積掌握 500 個單字。' },
-  { id:'word2000', group:'學習', icon:'📖', name:'字海遨遊', title:'單字大師', goal:2000, unit:'字', reward:1000, cur:_acMasteredWords, how:'將全部 2000 會考核心單字都標記為熟悉，達成完全掌握。' },
+  { id:'word50',   group:'學習', icon:'📖', name:'初窺字海', title:'單字學徒', goal:50,   unit:'字', reward:100,  cur:_acMasteredWords, how:'到「閱覽室 → 單字卡列表」挑選一個單字卡組，逐字學習並標記為「熟悉」，累積掌握 50 個單字。' },
+  { id:'word200',  group:'學習', icon:'📖', name:'字彙漸豐', title:'字彙能手', goal:200,  unit:'字', reward:200,  cur:_acMasteredWords, how:'在「閱覽室 → 單字卡列表」持續挑選卡組學習並標記熟悉，累積掌握 200 個單字。' },
+  { id:'word500',  group:'學習', icon:'📖', name:'博聞強記', title:'字彙達人', goal:500,  unit:'字', reward:400,  cur:_acMasteredWords, how:'在「閱覽室 → 單字卡列表」持續挑選卡組學習並標記熟悉，累積掌握 500 個單字。' },
+  { id:'word2000', group:'學習', icon:'📖', name:'字海遨遊', title:'單字大師', goal:2000, unit:'字', reward:1000, cur:_acMasteredWords, how:'在「閱覽室 → 單字卡列表」將全部 2000 會考核心單字都標記為熟悉，達成完全掌握。' },
   { id:'gram10',   group:'文法', icon:'📐', name:'文法入門', title:'文法新手', goal:10,  unit:'節', reward:150, cur:_acGrammar, how:'到「閱覽室 → 文法教學」完成小節的隨堂測驗，每節需達 100%（3 星）才算通過，累積通過 10 個小節。' },
   { id:'gram30',   group:'文法', icon:'📐', name:'句法通達', title:'文法能手', goal:30,  unit:'節', reward:300, cur:_acGrammar, how:'在「閱覽室 → 文法教學」持續完成隨堂測驗（每節達 100% / 3 星），累積通過 30 個小節。' },
   { id:'gram92',   group:'文法', icon:'📐', name:'文法全解', title:'文法宗師', goal:92,  unit:'節', reward:800, cur:_acGrammar, how:'在「閱覽室 → 文法教學」把全部 92 個文法小節都測到 100%（3 星），完全精通文法。' },
