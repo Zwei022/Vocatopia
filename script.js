@@ -4909,15 +4909,6 @@ function showProfile() {
   const total    = (typeof WORDS !== 'undefined') ? WORDS.length : 2000;
   const lv        = levelFromXp(currentProfile.xp || 0);
   const unlockedSec = unlockedGrammarSections(lv.level);
-  const nb        = _newbieState();
-  const nbHtml = nb.claimed ? '' : `
-      <div style="background:rgba(61,184,112,.1);border:1.5px solid rgba(61,184,112,.28);border-radius:12px;padding:12px 14px;margin-bottom:14px">
-        <div style="font-weight:900;font-size:13px;color:var(--green2);margin-bottom:8px">🎯 新手任務（完成解鎖第1~3章文法）</div>
-        <div style="font-size:12px;color:var(--ink2);line-height:1.9">
-          <div>${nb.dailyDone ? '✅' : '⬜'} 完成一次每日測驗（任一科）</div>
-          <div>${(nb.tetris || 0) >= NEWBIE_TETRIS_GOAL ? '✅' : '⬜'} 玩 ${NEWBIE_TETRIS_GOAL} 場俄羅斯方塊（${Math.min(nb.tetris || 0, NEWBIE_TETRIS_GOAL)}/${NEWBIE_TETRIS_GOAL}）</div>
-        </div>
-      </div>`;
 
   const overlay = document.createElement('div');
   overlay.id = 'profileOverlay';
@@ -4953,7 +4944,6 @@ function showProfile() {
         </div>
         <div id="xpBarText" style="font-size:10px;color:var(--gray);text-align:right;margin-top:4px">${lv.need ? `${lv.cur} / ${lv.need} XP` : 'MAX'}</div>
       </div>
-      ${nbHtml}
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px">
         <div style="background:rgba(122,92,67,.08);border-radius:10px;padding:10px;text-align:center">
@@ -6634,6 +6624,7 @@ function _newbieProgress(type) {
     if (need > 0) awardXp(need, { ignoreCap: true, source: 'newbie' });
     showToast('🎉 新手任務完成！已解鎖第 1～3 章文法教學', 3500);
   }
+  if (typeof renderHomeQuests === 'function') renderHomeQuests();  // 首頁任務卡即時刷新
 }
 
 function _onLevelUp(fromLv, toLv) {
@@ -6710,10 +6701,84 @@ async function updateHomeScreen() {
   const pctEl = document.getElementById('hmQuestPct');
   if (pctEl) pctEl.textContent = `${count}/${cats.length} 完成`;
 
+  // 任務卡（新手任務 + 主線任務）
+  renderHomeQuests();
+
   // 對戰入口三區塊
   renderDeployedChar();
   await renderLeaderboard();
   renderDailyDeckCard();
+}
+
+// ══════════════════════════════════════════════════════════════
+// 首頁「任務」卡：新手任務 + 主線任務
+// 新手任務進度來源沿用 _newbieState()；主線任務獨立以 localStorage 記錄領取狀態。
+// ══════════════════════════════════════════════════════════════
+const MAINQUEST_DECK_WORDS  = 5;    // 主線任務1：自訂卡組需達到的單字數
+const MAINQUEST_DECK_REWARD  = 300; // 完成獎勵金幣
+
+function _mainQuestKey() { return 'voca_mainquest_' + (currentUser?.id || 'guest'); }
+function _mainQuestState() {
+  try { return JSON.parse(localStorage.getItem(_mainQuestKey()) || '{}') || {}; } catch { return {}; }
+}
+function _mainQuestSave(s) { try { localStorage.setItem(_mainQuestKey(), JSON.stringify(s)); } catch { /* ignore */ } }
+
+// 目前自訂卡組中「單字數最多的一組」有幾個字（用來判斷主線任務1是否達標）
+function _mainQuestDeckWords() {
+  if (typeof customDecks === 'undefined' || !Array.isArray(customDecks) || !customDecks.length) return 0;
+  return customDecks.reduce((mx, d) => Math.max(mx, (d.wordIds || []).length), 0);
+}
+
+function renderHomeQuests() {
+  const card = document.getElementById('hmTasksCard');
+  const body = document.getElementById('hmTasksBody');
+  if (!card || !body) return;
+
+  let html = '';
+
+  // ── 新手任務（登入後才會累積進度；完成領取後隱藏）
+  const nb = _newbieState();
+  if (currentUser && !nb.claimed) {
+    const dailyOk  = !!nb.dailyDone;
+    const tetrisN  = Math.min(nb.tetris || 0, NEWBIE_TETRIS_GOAL);
+    const tetrisOk = (nb.tetris || 0) >= NEWBIE_TETRIS_GOAL;
+    html += `
+      <div class="hm-task-group">
+        <div class="hm-task-group-title">新手任務 · 完成解鎖第 1～3 章文法</div>
+        <div class="hm-task-row">${dailyOk ? '✅' : '⬜'}<span class="hm-task-txt">完成一次每日測驗（任一科）</span></div>
+        <div class="hm-task-row">${tetrisOk ? '✅' : '⬜'}<span class="hm-task-txt">玩 ${NEWBIE_TETRIS_GOAL} 場俄羅斯方塊</span><span class="hm-task-prog">${tetrisN}/${NEWBIE_TETRIS_GOAL}</span></div>
+      </div>`;
+  }
+
+  // ── 主線任務 1：建立自訂卡組並加入 5 個單字
+  const mq = _mainQuestState();
+  if (!mq.deck5Claimed) {
+    const have = _mainQuestDeckWords();
+    const done = have >= MAINQUEST_DECK_WORDS;
+    const tail = done
+      ? `<button class="hm-task-claim" onclick="claimMainQuestDeck()">領取 +${MAINQUEST_DECK_REWARD} 🪙</button>`
+      : `<span class="hm-task-prog">${Math.min(have, MAINQUEST_DECK_WORDS)}/${MAINQUEST_DECK_WORDS}</span>`;
+    html += `
+      <div class="hm-task-group">
+        <div class="hm-task-group-title">主線任務</div>
+        <div class="hm-task-row">${done ? '✅' : '⬜'}<span class="hm-task-txt">建立一個自訂單字卡組並加入 ${MAINQUEST_DECK_WORDS} 個單字</span>${tail}</div>
+      </div>`;
+  }
+
+  if (!html) { card.style.display = 'none'; return; }
+  card.style.display = '';
+  body.innerHTML = html;
+}
+
+function claimMainQuestDeck() {
+  const mq = _mainQuestState();
+  if (mq.deck5Claimed) return;
+  if (_mainQuestDeckWords() < MAINQUEST_DECK_WORDS) { showToast('還沒達成喔，先建立一個含 5 個單字的卡組'); return; }
+  mq.deck5Claimed = true;
+  _mainQuestSave(mq);
+  addGold(MAINQUEST_DECK_REWARD);
+  showToast(`🎉 主線任務完成！+${MAINQUEST_DECK_REWARD} 🪙`, 3000);
+  renderHomeQuests();
 }
 
 // ══════════════════════════════════════════════════════════════
