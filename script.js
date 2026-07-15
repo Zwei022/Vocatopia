@@ -858,10 +858,13 @@ function getPvpSocket() {
     document.getElementById('arenaResult').style.display = 'none';
     document.getElementById('arenaBnav').style.display   = 'none';
     document.getElementById('pvpDoneWait').style.display = 'none';
-    // 若是「再來一場」進來的，重置結算畫面上的按鈕狀態，供下一輪結束後使用
+    // 若是「再來一場」進來的，重置結算畫面上的按鈕與同意狀態，供下一輪結束後使用
+    pvpState.iWantRematch = false;
+    pvpState.foeWantsRematch = false;
     const rematchBtn = document.getElementById('pvpRematchBtn');
     rematchBtn.disabled = false;
     rematchBtn.textContent = '🔁 再來一場';
+    document.getElementById('pvpRematchWaitHint').style.display = 'none';
     _pvpSetBars(0, 0, questions.length);
     // 倒數計時（顯示用；實際結算以伺服器為準）
     const endAt = Date.now() + duration * 1000;
@@ -903,9 +906,14 @@ function getPvpSocket() {
     document.getElementById('arenaBattle').style.display = 'none';
     document.getElementById('arenaBuzzerBattle').style.display = 'none';
     document.getElementById('arenaResult').style.display = 'flex';
-    // 房間仍保留在伺服器（供「再來一場」用），只有離開/斷線才會真正解散
-    document.getElementById('pvpRematchBtn').style.display      = pvpState.isHost ? 'block' : 'none';
-    document.getElementById('pvpRematchWaitHint').style.display = pvpState.isHost ? 'none'  : 'block';
+    // #10 再來一場改雙方同意制：兩邊都顯示按鈕，任一方可請求，需雙方都按才開始
+    pvpState.iWantRematch  = false;
+    pvpState.foeWantsRematch = false;
+    const rbtn = document.getElementById('pvpRematchBtn');
+    rbtn.style.display = 'block';
+    rbtn.disabled = false;
+    rbtn.textContent = '🔁 再來一場';
+    document.getElementById('pvpRematchWaitHint').style.display = 'none';
     _pvpStartRematchCountdown();
   });
 
@@ -919,8 +927,11 @@ function getPvpSocket() {
     document.getElementById('arenaResult').style.display = 'none';
     document.getElementById('arenaBnav').style.display = 'none';
     // 若是「再來一場」進來的，重置結算畫面上的按鈕狀態，供下一輪結束後使用
+    pvpState.iWantRematch = false;
+    pvpState.foeWantsRematch = false;
     const rematchBtn = document.getElementById('pvpRematchBtn');
     if (rematchBtn) { rematchBtn.disabled = false; rematchBtn.textContent = '🔁 再來一場'; }
+    document.getElementById('pvpRematchWaitHint').style.display = 'none';
     if (pvpState.rematchCountdownInt) { clearInterval(pvpState.rematchCountdownInt); pvpState.rematchCountdownInt = null; }
     // 每題qIdx===0代表新的一局（含「再來一場」）開始，把上一局殘留的比分歸零
     if (data.qIdx === 0) {
@@ -969,6 +980,25 @@ function getPvpSocket() {
   });
 
   pvpSocket.on('rematch_error', ({ msg }) => showToast(`⚠ ${msg}`));
+
+  // #10 對方按了「再來一場」：顯示提示，邀請我也按下同意
+  pvpSocket.on('rematch_requested', () => {
+    if (!pvpState) return;
+    pvpState.foeWantsRematch = true;
+    const hint = document.getElementById('pvpRematchWaitHint');
+    hint.style.display = 'block';
+    hint.textContent = '⚔️ 對方想再來一場！按「再來一場」同意';
+    const btn = document.getElementById('pvpRematchBtn');
+    if (pvpState.iWantRematch) btn.textContent = '開始中⋯';   // 我也已按 → 伺服器即將開場
+  });
+
+  // #10 我方已送出請求，等待對方同意
+  pvpSocket.on('rematch_waiting', () => {
+    if (!pvpState) return;
+    const btn = document.getElementById('pvpRematchBtn');
+    btn.disabled = true;
+    btn.textContent = pvpState.foeWantsRematch ? '開始中⋯' : '⏳ 等待對方同意⋯';
+  });
 
   pvpSocket.on('opponent_left', () => {
     // 對局進行中被對方退出：顯示正式的「對局結束」結算畫面，而不是單純跳回大廳
@@ -1310,11 +1340,13 @@ function hostStartBattle() {
   pvpSocket.emit('start_battle', { code: roomCode });
 }
 
-function hostRematch() {
-  if (!pvpState || !pvpState.isHost || !roomCode) return;
+// #10 雙方同意制：任一方按「再來一場」都送出請求，需雙方都按才真正開始。
+function requestRematch() {
+  if (!pvpState || !roomCode) return;
+  pvpState.iWantRematch = true;
   const btn = document.getElementById('pvpRematchBtn');
   btn.disabled = true;
-  btn.textContent = '出題中⋯';
+  btn.textContent = pvpState.foeWantsRematch ? '開始中⋯' : '⏳ 等待對方同意⋯';
   pvpSocket.emit('rematch', { code: roomCode });
 }
 
@@ -1346,16 +1378,16 @@ function _pvpSetBars(mine, foe, total) {
   document.getElementById('scFoe').textContent = `${foe}/${total}`;
 }
 
-// 結算畫面「再來一場」倒數 10 秒，時間到就把按鈕（房主）／等待提示（對手）都藏起來，只留「返回競技場」
+// 結算畫面「再來一場」倒數 15 秒，時間到就把按鈕與提示都藏起來，只留「返回競技場」。
+// #10 雙方同意制：倒數只在「我還沒按下」時更新按鈕文字；一旦我按了就保持「等待對方同意」。
 function _pvpStartRematchCountdown() {
   if (!pvpState) return;
   if (pvpState.rematchCountdownInt) clearInterval(pvpState.rematchCountdownInt);
   const btn  = document.getElementById('pvpRematchBtn');
   const hint = document.getElementById('pvpRematchWaitHint');
-  let left = 10;
+  let left = 15;
   const tick = () => {
-    if (pvpState.isHost) btn.textContent = `🔁 再來一場（${left}）`;
-    else hint.textContent = `🕐 等待房主決定是否再來一場⋯（${left}）`;
+    if (!pvpState.iWantRematch) btn.textContent = `🔁 再來一場（${left}）`;
     if (left <= 0) {
       clearInterval(pvpState.rematchCountdownInt);
       btn.style.display  = 'none';

@@ -182,6 +182,7 @@ function scoreForElapsed(ms) {
 function beginBuzzerRound(code) {
   const room = rooms[code];
   if (!room) return;
+  room.rematchReady = {};   // #10 新一場開始，清掉再來一場的同意狀態
   room.state = 'building';
   room.questions    = buildBuzzerQuestions();
   room.answers      = { [room.host]: [], [room.guest]: [] };
@@ -256,6 +257,7 @@ function settleBattle(code) {
 async function beginRound(code) {
   const room = rooms[code];
   if (!room) return;
+  room.rematchReady = {};                      // #10 新一場開始，清掉再來一場的同意狀態
   room.state = 'building';                    // 鎖住，避免重複開始
   const questions = await buildVocabQuestions();
   if (!rooms[code]) return;                   // 出題期間房間可能已解散
@@ -450,15 +452,27 @@ io.on('connection', (socket) => {
     else beginRound(code);
   });
 
-  // 再來一場：僅房主可觸發，需雙方都還在房內、且上一場已結算完畢
+  // 再來一場（#10 雙方同意制）：任一方都可請求，需雙方都按下才真正開始。
+  // 只有一方按下時，通知對手「對方想再來一場」、並回自己「等待對方同意」。
   socket.on('rematch', ({ code }) => {
     const room = rooms[code];
-    if (!room)                   return socket.emit('rematch_error', { msg: '房間已不存在' });
-    if (room.host !== socket.id) return; // 非房主的請求靜默忽略
+    if (!room)   return socket.emit('rematch_error', { msg: '房間已不存在' });
+    if (socket.id !== room.host && socket.id !== room.guest) return; // 不在此房內，忽略
     if (!room.guest)             return socket.emit('rematch_error', { msg: '對手已離開，無法再來一場' });
     if (room.state !== 'done')   return;
-    if (room.mode === 'buzzer') beginBuzzerRound(code);
-    else beginRound(code);
+
+    if (!room.rematchReady) room.rematchReady = {};
+    room.rematchReady[socket.id] = true;
+
+    const foeId = socket.id === room.host ? room.guest : room.host;
+    if (foeId) io.to(foeId).emit('rematch_requested');   // 對手畫面顯示「對方想再來一場」
+    socket.emit('rematch_waiting');                       // 自己畫面顯示「等待對方同意」
+
+    // 雙方都按了 → 開始新一場（beginRound/beginBuzzerRound 會清掉 rematchReady）
+    if (room.rematchReady[room.host] && room.rematchReady[room.guest]) {
+      if (room.mode === 'buzzer') beginBuzzerRound(code);
+      else beginRound(code);
+    }
   });
 
   // 單字搶答收答案：每題只收第一次作答，本人立即知道正解，對手只看到分數變動
