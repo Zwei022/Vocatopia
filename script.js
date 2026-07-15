@@ -468,7 +468,7 @@ function goScreen(id, btn) {
     pvpResetViews();
   }
   if (id === 'home') { updateHomeScreen(); }
-  if (id === 'decks') { renderCharCollection(); }
+  if (id === 'decks') { renderCollection(); }
   if (id === 'shop') { renderShop(); }
   closeWordPopup();
 }
@@ -900,7 +900,7 @@ function getPvpSocket() {
     const iconEl  = document.getElementById('pvpResultIcon');
     const titleEl = document.getElementById('pvpResultTitle');
     if (winner === null)      { iconEl.textContent = '🤝'; titleEl.textContent = '平手！';  titleEl.style.color = 'var(--orange2)'; }
-    else if (winner === myId) { iconEl.textContent = '🏆'; titleEl.textContent = '勝利！';  titleEl.style.color = 'var(--green2)';  confetti(); }
+    else if (winner === myId) { iconEl.textContent = '🏆'; titleEl.textContent = '勝利！';  titleEl.style.color = 'var(--green2)';  confetti(); _acOnPvpWin(); }
     else                      { iconEl.textContent = '💀'; titleEl.textContent = '敗北⋯'; titleEl.style.color = 'var(--wrong)'; }
     document.getElementById('pvpResultScore').textContent = isBuzzer
       ? `你 ${mine} 分 ・ 對手 ${foe} 分`
@@ -5041,7 +5041,8 @@ function showProfile() {
           <span id="profileUsernameText" style="font-weight:900;font-size:18px;color:var(--white)">${escHtml(currentProfile.username)}</span>
           <button onclick="startEditUsername()" title="修改使用者名稱" style="background:none;border:none;color:var(--green3);font-size:13px;cursor:pointer;padding:0 2px">✏️</button>
         </div>
-        <div style="font-size:11px;color:var(--gray);margin-top:2px">${currentUser?.email || ''}</div>
+        ${currentProfile.title ? `<div style="margin-top:6px"><span style="display:inline-block;font-size:12px;font-weight:800;color:var(--orange2);background:var(--goldsoft);border:1.5px solid var(--gold);padding:3px 12px;border-radius:12px">🏷️ ${escHtml(_acTitleName(currentProfile.title))}</span></div>` : ''}
+        <div style="font-size:11px;color:var(--gray);margin-top:4px">${currentUser?.email || ''}</div>
         <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;background:rgba(122,92,67,.08);border-radius:20px;padding:6px 12px;width:fit-content;margin-left:auto;margin-right:auto">
           <span style="font-size:11px;color:var(--gray)">帳號ID</span>
           <span style="font-size:13px;font-weight:900;color:var(--white);letter-spacing:1px">${currentProfile.friend_code || '------'}</span>
@@ -6624,6 +6625,7 @@ function _awardSubjectGold(cat) {
     (done[c] || []).length >= DAILY_QUOTA[c]
   );
   if (allDone) {
+    _acOnDailyAllDone();   // #13 成就：每日六科全解次數 +1
     setTimeout(() => {
       addGold(GOLD_BONUS_ALL);
       awardXp(XP_ALL_SUBJECTS, { source: 'daily' });   // #2 六科全完成加碼 XP
@@ -7269,6 +7271,177 @@ function startTetris() {
 // 角色收藏系統（皇室戰爭風卡片牆）
 // ══════════════════════════════════════════════════════════════
 const RARITY_LABEL = { common: '普通', rare: '稀有', epic: '史詩', mythic: '神話', legendary: '傳奇' };
+
+// ══════════════════════════════════════════════════════════════
+// #13 成就 / 稱號系統
+// 多數成就由現有數據即時推導（等級/連續天數/掌握字/角色數/文法解鎖/俄方最高分）；
+// 少數累計型用 profiles 計數欄位（daily_all_count / gacha_count / wins）。
+// 解鎖 = cur() >= goal；達標可領一次性金幣（claim_achievement RPC 防重複領）。
+// 已解鎖並領獎後可設為稱號（profiles.title 存成就 id），顯示於個人檔案與 PVP。
+// ══════════════════════════════════════════════════════════════
+
+// ── 成就數據來源 ──
+function _acMasteredWords() { return (typeof WORDS !== 'undefined') ? WORDS.filter(w => w.st === 'ok').length : 0; }
+function _acLevel()   { return (typeof levelFromXp === 'function') ? levelFromXp(currentProfile?.xp || 0).level : 1; }
+function _acGrammar() { return (typeof unlockedGrammarSections === 'function') ? unlockedGrammarSections(_acLevel()) : 0; }
+function _acStreak()  { return currentProfile?.streak || 0; }
+function _acOwned()   { return (typeof getOwnedChars === 'function') ? getOwnedChars().length : 0; }
+function _acCharTotal(){ return (typeof TETRIS_CHARACTERS !== 'undefined') ? Object.keys(TETRIS_CHARACTERS).length : 0; }
+function _acDailyAll(){ return currentProfile?.daily_all_count || 0; }
+function _acWins()    { return currentProfile?.wins || 0; }
+function _acGacha()   { return currentProfile?.gacha_count || 0; }
+function _acTetrisBest(){ try { return parseInt(localStorage.getItem('voca_tetris_best') || '0') || 0; } catch { return 0; } }
+
+// ── 成就定義（id 一經上線不要更動，避免已領獎 / 稱號對應跑掉）──
+const ACHIEVEMENTS = [
+  { id:'word50',   group:'學習', icon:'📖', name:'初窺字海', title:'單字學徒', goal:50,   unit:'字', reward:100,  cur:_acMasteredWords },
+  { id:'word200',  group:'學習', icon:'📖', name:'字彙漸豐', title:'字彙能手', goal:200,  unit:'字', reward:200,  cur:_acMasteredWords },
+  { id:'word500',  group:'學習', icon:'📖', name:'博聞強記', title:'字彙達人', goal:500,  unit:'字', reward:400,  cur:_acMasteredWords },
+  { id:'word2000', group:'學習', icon:'📖', name:'字海遨遊', title:'單字大師', goal:2000, unit:'字', reward:1000, cur:_acMasteredWords },
+  { id:'gram10',   group:'文法', icon:'📐', name:'文法入門', title:'文法新手', goal:10,  unit:'節', reward:150, cur:_acGrammar },
+  { id:'gram30',   group:'文法', icon:'📐', name:'句法通達', title:'文法能手', goal:30,  unit:'節', reward:300, cur:_acGrammar },
+  { id:'gram92',   group:'文法', icon:'📐', name:'文法全解', title:'文法宗師', goal:92,  unit:'節', reward:800, cur:_acGrammar },
+  { id:'lv5',   group:'等級', icon:'⭐', name:'嶄露頭角', title:'見習生', goal:5,   unit:'級', reward:100,  cur:_acLevel },
+  { id:'lv10',  group:'等級', icon:'⭐', name:'漸入佳境', title:'學徒',   goal:10,  unit:'級', reward:200,  cur:_acLevel },
+  { id:'lv30',  group:'等級', icon:'⭐', name:'實力堅強', title:'高手',   goal:30,  unit:'級', reward:500,  cur:_acLevel },
+  { id:'lv50',  group:'等級', icon:'⭐', name:'登峰造極', title:'大師',   goal:50,  unit:'級', reward:800,  cur:_acLevel },
+  { id:'lv100', group:'等級', icon:'⭐', name:'傳說境界', title:'傳說',   goal:100, unit:'級', reward:2000, cur:_acLevel },
+  { id:'streak3',   group:'毅力', icon:'🔥', name:'持之以恆', title:'勤學者', goal:3,   unit:'天', reward:100,  cur:_acStreak },
+  { id:'streak7',   group:'毅力', icon:'🔥', name:'一週不輟', title:'自律者', goal:7,   unit:'天', reward:250,  cur:_acStreak },
+  { id:'streak30',  group:'毅力', icon:'🔥', name:'月月堅持', title:'恆心者', goal:30,  unit:'天', reward:600,  cur:_acStreak },
+  { id:'streak100', group:'毅力', icon:'🔥', name:'百日淬鍊', title:'鐵人',   goal:100, unit:'天', reward:1500, cur:_acStreak },
+  { id:'char3',   group:'收藏', icon:'🃏', name:'小有收藏', title:'收藏家',   goal:3, unit:'名', reward:150,  cur:_acOwned },
+  { id:'char6',   group:'收藏', icon:'🃏', name:'陣容漸成', title:'馴獸師',   goal:6, unit:'名', reward:300,  cur:_acOwned },
+  { id:'charAll', group:'收藏', icon:'🃏', name:'全員集結', title:'圖鑑大師', goal:()=>_acCharTotal(), unit:'名', reward:1000, cur:_acOwned },
+  { id:'daily1',  group:'每日', icon:'📝', name:'全勤初體驗', title:'全勤生',   goal:1,  unit:'次', reward:100,  cur:_acDailyAll },
+  { id:'daily10', group:'每日', icon:'📝', name:'全勤常客',   title:'全勤達人', goal:10, unit:'次', reward:400,  cur:_acDailyAll },
+  { id:'daily50', group:'每日', icon:'📝', name:'全勤大師',   title:'全勤之王', goal:50, unit:'次', reward:1200, cur:_acDailyAll },
+  { id:'win1',  group:'競技', icon:'⚔️', name:'首戰告捷', title:'挑戰者', goal:1,  unit:'勝', reward:100,  cur:_acWins },
+  { id:'win10', group:'競技', icon:'⚔️', name:'沙場老手', title:'鬥士',   goal:10, unit:'勝', reward:400,  cur:_acWins },
+  { id:'win50', group:'競技', icon:'⚔️', name:'競技王者', title:'連勝王', goal:50, unit:'勝', reward:1200, cur:_acWins },
+  { id:'tetris5k',  group:'遊戲', icon:'🎮', name:'方塊新星', title:'方塊玩家', goal:5000,  unit:'分', reward:150, cur:_acTetrisBest },
+  { id:'tetris15k', group:'遊戲', icon:'🎮', name:'方塊高手', title:'方塊高手', goal:15000, unit:'分', reward:400, cur:_acTetrisBest },
+  { id:'tetris30k', group:'遊戲', icon:'🎮', name:'方塊大師', title:'方塊大師', goal:30000, unit:'分', reward:900, cur:_acTetrisBest },
+];
+
+function _acGoal(a)      { return typeof a.goal === 'function' ? a.goal() : a.goal; }
+function _acUnlocked(a)  { const g = _acGoal(a); return g > 0 && a.cur() >= g; }
+function _acClaimed(id)  { const c = currentProfile?.achievements_claimed; return Array.isArray(c) && c.includes(id); }
+function _acTitleName(id){ const a = ACHIEVEMENTS.find(x => x.id === id); return a ? a.title : ''; }
+
+// ── 收藏頁分頁（角色 / 成就）──
+let collTab = 'chars';
+function switchCollTab(tab) {
+  collTab = tab;
+  document.getElementById('collTabChars')?.classList.toggle('active', tab === 'chars');
+  document.getElementById('collTabAchv') ?.classList.toggle('active', tab === 'achv');
+  const grid = document.getElementById('collGrid');
+  const achv = document.getElementById('collAchv');
+  const title = document.getElementById('collTitle');
+  const sub  = document.getElementById('collSub');
+  if (tab === 'chars') {
+    if (grid) grid.style.display = '';
+    if (achv) achv.style.display = 'none';
+    if (title) title.textContent = '🃏 角色收藏';
+    if (sub) sub.textContent = '選擇一名角色出戰，牠的技能會在對戰中登場';
+    renderCharCollection();
+  } else {
+    if (grid) grid.style.display = 'none';
+    if (achv) achv.style.display = '';
+    if (title) title.textContent = '🏆 成就';
+    if (sub) sub.textContent = '達成條件解鎖成就，領金幣並可設為稱號';
+    renderAchievements();
+  }
+}
+// goScreen('decks') 進入時呼叫：依當前分頁渲染
+function renderCollection() { switchCollTab(collTab); }
+
+function renderAchievements() {
+  const box = document.getElementById('collAchv');
+  if (!box) return;
+  const curTitle = currentProfile?.title || '';
+  const groups = {};
+  ACHIEVEMENTS.forEach(a => { (groups[a.group] || (groups[a.group] = [])).push(a); });
+
+  const unlockedCount = ACHIEVEMENTS.filter(_acUnlocked).length;
+  let html = `
+    <div class="achv-summary">
+      <span>已解鎖 <b>${unlockedCount}</b> / ${ACHIEVEMENTS.length}</span>
+      <span class="achv-cur-title">稱號：<b>${curTitle ? escHtml(_acTitleName(curTitle)) : '無'}</b>${curTitle ? ` <button class="achv-title-clear" onclick="clearTitle()">取消</button>` : ''}</span>
+    </div>`;
+
+  for (const [g, list] of Object.entries(groups)) {
+    html += `<div class="achv-group-title">${escHtml(g)}</div><div class="achv-list">`;
+    for (const a of list) {
+      const goal = _acGoal(a);
+      const cur = Math.min(a.cur(), goal);
+      const unlocked = _acUnlocked(a);
+      const claimed = _acClaimed(a.id);
+      const isTitle = curTitle === a.id;
+      const pct = goal ? Math.min(100, Math.round(cur / goal * 100)) : 0;
+      let action;
+      if (unlocked && !claimed)      action = `<button class="achv-claim" onclick="claimAchievement('${a.id}')">領取 +${a.reward} 🪙</button>`;
+      else if (unlocked && isTitle)  action = `<span class="achv-title-on">稱號使用中</span>`;
+      else if (unlocked && claimed)  action = `<button class="achv-settitle" onclick="setAchvTitle('${a.id}')">設為稱號</button>`;
+      else                           action = `<span class="achv-locked-tag">🔒</span>`;
+      html += `
+        <div class="achv-card${unlocked ? ' unlocked' : ''}">
+          <div class="achv-ico">${a.icon}</div>
+          <div class="achv-main">
+            <div class="achv-name">${escHtml(a.name)}<span class="achv-titletag">「${escHtml(a.title)}」</span></div>
+            <div class="achv-bar"><div class="achv-bar-fill" style="width:${pct}%"></div></div>
+            <div class="achv-prog">${cur.toLocaleString()} / ${goal.toLocaleString()} ${a.unit}</div>
+          </div>
+          <div class="achv-action">${action}</div>
+        </div>`;
+    }
+    html += `</div>`;
+  }
+  box.innerHTML = html;
+}
+
+async function claimAchievement(id) {
+  const a = ACHIEVEMENTS.find(x => x.id === id);
+  if (!a || !_acUnlocked(a) || _acClaimed(id)) return;
+  if (!currentUser) { showToast('登入後才能領取成就獎勵'); return; }
+  try {
+    const { data, error } = await authClient.rpc('claim_achievement', { p_id: id, p_reward: a.reward });
+    if (error) throw error;
+    currentProfile.achievements_claimed = [...(currentProfile.achievements_claimed || []), id];
+    if (typeof data === 'number') {
+      currentProfile.gold = data;
+      const el = document.getElementById('hGold'); if (el) el.textContent = data.toLocaleString();
+      showToast(`🏆 ${a.name}！+${a.reward} 🪙`, 3000);
+    } else {
+      showToast('此成就已於其他裝置領取過');   // update 未命中（已領過）
+    }
+    renderAchievements();
+  } catch (e) { showToast('領取失敗：' + (e.message || e)); }
+}
+
+async function setAchvTitle(id) {
+  if (!currentUser) { showToast('登入後才能設定稱號'); return; }
+  if (!_acClaimed(id)) { showToast('領取成就後才能設為稱號'); return; }
+  currentProfile.title = id;
+  try { await authClient.from('profiles').update({ title: id }).eq('id', currentUser.id); } catch { /* ignore */ }
+  showToast(`✨ 稱號已設為「${_acTitleName(id)}」`);
+  renderAchievements();
+}
+async function clearTitle() {
+  currentProfile.title = null;
+  if (currentUser) { try { await authClient.from('profiles').update({ title: null }).eq('id', currentUser.id); } catch { /* ignore */ } }
+  renderAchievements();
+}
+
+// ── 累計計數埋點（各事件呼叫；樂觀更新 + 直接 update profiles）──
+async function _acBump(field, delta) {
+  if (!currentUser || !currentProfile) return;
+  currentProfile[field] = (currentProfile[field] || 0) + delta;
+  try { await authClient.from('profiles').update({ [field]: currentProfile[field] }).eq('id', currentUser.id); } catch { /* ignore */ }
+}
+function _acOnPvpWin()      { _acBump('wins', 1); }
+function _acOnDailyAllDone(){ _acBump('daily_all_count', 1); }
+function _acOnGacha(count)  { _acBump('gacha_count', count || 1); }
 
 function renderCharCollection() {
   const grid = document.getElementById('collGrid');

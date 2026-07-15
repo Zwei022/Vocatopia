@@ -1826,6 +1826,43 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .coll-title{font-family:var(--font-display);font-weight:900;font-size:22px;color:var(--ink)}
 .coll-sub{font-family:'Nunito',sans-serif;font-size:12px;color:var(--ink2);margin-top:4px}
 .coll-grid{flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:4px 20px 24px;align-content:start}
+
+/* #13 收藏頁分頁（角色 / 成就） */
+.coll-tabs{display:flex;gap:8px;padding:0 20px 8px;flex-shrink:0}
+.coll-tab{flex:1;padding:9px;border:2px solid var(--line2);background:var(--card);border-radius:12px;
+  font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:var(--ink2);cursor:pointer;transition:all .15s}
+.coll-tab.active{background:var(--orange);border-color:var(--orange);color:#fff;box-shadow:0 3px 0 var(--red2,#c74a2a)}
+
+/* #13 成就頁 */
+.coll-achv{flex:1;overflow-y:auto;padding:4px 20px 24px}
+.achv-summary{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;align-items:center;
+  font-family:'Nunito',sans-serif;font-size:12.5px;color:var(--ink2);margin-bottom:12px}
+.achv-summary b{color:var(--ink)}
+.achv-cur-title b{color:var(--orange2)}
+.achv-title-clear{margin-left:4px;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;color:var(--ink3);
+  background:var(--nav);border:1px solid var(--line2);border-radius:8px;padding:2px 8px;cursor:pointer}
+.achv-group-title{font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:var(--ink);margin:14px 0 8px}
+.achv-list{display:flex;flex-direction:column;gap:8px}
+.achv-card{display:flex;align-items:center;gap:11px;padding:11px 12px;background:var(--card);
+  border:2px solid var(--line2);border-radius:14px;opacity:.7}
+.achv-card.unlocked{opacity:1;border-color:var(--gold);background:linear-gradient(120deg,var(--goldsoft),var(--card))}
+.achv-ico{width:40px;height:40px;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  font-size:21px;background:var(--nav);border-radius:10px}
+.achv-card.unlocked .achv-ico{background:#fff;border:1.5px solid var(--gold)}
+.achv-main{flex:1;min-width:0}
+.achv-name{font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:var(--ink)}
+.achv-titletag{font-weight:700;font-size:11px;color:var(--orange2);margin-left:4px}
+.achv-bar{height:6px;background:var(--line2);border-radius:3px;overflow:hidden;margin:5px 0 3px}
+.achv-bar-fill{height:100%;background:linear-gradient(90deg,var(--orange),var(--gold));border-radius:3px;transition:width .4s}
+.achv-prog{font-family:'Nunito',sans-serif;font-size:11px;color:var(--ink3);font-weight:700}
+.achv-action{flex-shrink:0;display:flex;align-items:center}
+.achv-claim{font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#fff;background:var(--orange);
+  border:none;box-shadow:0 2px 0 var(--red2,#c74a2a);padding:6px 10px;border-radius:10px;cursor:pointer;white-space:nowrap}
+.achv-claim:active{transform:translateY(1px);box-shadow:none}
+.achv-settitle{font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:var(--orange2);background:var(--goldsoft);
+  border:1.5px solid var(--gold);padding:5px 10px;border-radius:10px;cursor:pointer;white-space:nowrap}
+.achv-title-on{font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:var(--green2);white-space:nowrap}
+.achv-locked-tag{font-size:15px;opacity:.6}
 .coll-card{position:relative;display:flex;flex-direction:column;align-items:center;background:var(--card);border:2.5px solid var(--line2);border-radius:14px;padding:10px 8px 8px;cursor:pointer;transition:transform .12s,border-color .15s;box-shadow:0 3px 0 rgba(122,92,67,.15)}
 .coll-card:active{transform:translateY(2px)}
 .coll-card.rarity-common{border-color:var(--line2)}

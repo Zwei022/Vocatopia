@@ -113,6 +113,7 @@ function drawGacha(count) {
     results.push({ charId: entry.charId, tier: entry.tier, isNew, refund, isConsolation: false });
   }
   _gachaSavePity(pity);
+  if (typeof _acOnGacha === 'function') _acOnGacha(count);   // #13 成就：抽卡次數累計
   // 記錄抽獎紀錄（最新在前）：時間 + 抽到什麼
   _gachaPushHistory(results.map(r => ({
     t: Date.now(),
