@@ -6994,7 +6994,9 @@ function _dailyDeckEnsure(forceDeckId) {
   const today = new Date().toISOString().slice(0, 10);
   const dailyGoal = (typeof _loadSettingsData === 'function' && _loadSettingsData().dailyGoal) || 20;
   let state = _dailyDeckLoad();
-  const deckId = forceDeckId || (state && state.deckId) || 'cap2000';
+  // 'daily' 不能是自己的來源（歷史殘留資料保險，正常流程已在挑選器排除）
+  let deckId = forceDeckId || (state && state.deckId) || 'cap2000';
+  if (deckId === 'daily') deckId = 'cap2000';
 
   if (!_dailyDeckIsValid(state, today, deckId, dailyGoal)) {
     state = _dailyDeckComputeFresh(deckId, dailyGoal, today);
@@ -7015,7 +7017,8 @@ async function _dailyDeckSyncServer(forceDeckId) {
   const { data, error } = await authClient.from('profiles').select('daily_deck_state').eq('id', currentUser.id).maybeSingle();
   if (error) return null;
   const serverState = data ? data.daily_deck_state : null;
-  const deckId = forceDeckId || (serverState && serverState.deckId) || 'cap2000';
+  let deckId = forceDeckId || (serverState && serverState.deckId) || 'cap2000';
+  if (deckId === 'daily') deckId = 'cap2000';
 
   let finalState;
   if (!forceDeckId && _dailyDeckIsValid(serverState, today, deckId, dailyGoal)) {
@@ -7104,8 +7107,9 @@ function navHomeDailyCard(dir) {
 }
 
 // ── 選擇單字卡組（每日卡組的來源）──
+// 排除 id==='daily'：不能把「每日單字卡組」自己選成自己的來源（會造成循環參照）
 function openDailyDeckPicker() {
-  const decks = _dailyDeckAllDecks().filter(d => _dailyDeckGetWords(d).length > 0);
+  const decks = _dailyDeckAllDecks().filter(d => d.id !== 'daily' && _dailyDeckGetWords(d).length > 0);
   const state = _dailyDeckLoad();
   const currentId = state ? state.deckId : 'cap2000';
   const overlay = document.createElement('div');
