@@ -233,8 +233,20 @@ async function signInWithOAuth(provider) {
         _setAuthError(_friendlyAuthError(error, provider === 'google' ? 'Google 登入' : 'Apple 登入'));
         return;
       }
-      if (data?.url && Browser) {
+      // Fail Loud：Supabase 沒回授權網址時要明確報錯，不能靜默無反應（見 Rule 10）
+      if (!data?.url) {
+        console.error('[signInWithOAuth] native：未取得授權 URL', data);
+        _setAuthError(`${provider === 'google' ? 'Google' : 'Apple'} 登入啟動失敗（未取得授權網址），請稍後再試`);
+        return;
+      }
+      if (Browser?.open) {
         await Browser.open({ url: data.url });
+      } else {
+        // 這台裝置上 @capacitor/browser 外掛不可用（多半是安裝的 App 版本較舊、
+        // 打包時沒同步到此外掛）。退回用系統瀏覽器開啟授權頁，至少不會靜默無反應；
+        // 登入完成一樣會導回 com.vocatopia.app://auth-callback，由下方監聽器接手。
+        console.warn('[signInWithOAuth] @capacitor/browser 不可用，改用系統瀏覽器開啟授權頁');
+        window.open(data.url, '_blank');
       }
       // 登入完成後的導回由 _setupNativeOAuthListener()（在 initAuth() 註冊一次）
       // 監聽 appUrlOpen 事件接手，這裡不用再等待。
