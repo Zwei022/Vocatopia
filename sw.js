@@ -1,4 +1,4 @@
-const CACHE = 'vocatopia-v135';
+const CACHE = 'vocatopia-v136';
 const ASSETS = ['/', '/index.html', '/styles.css', '/script.js', '/auth.js', '/manifest.json', '/fonts/Yozai-Regular-subset.woff2', '/game/grammar.js', '/game/grammar.css', '/game/tetris/characters.js', '/game/tetris/gacha.js', '/game/tetris/engine.js', '/game/tetris/game.js', '/game/tetris/vocab.js', '/game/tetris/quiz.js', '/game/tetris/sfx.js', '/game/tetris/tetris.css'];
 
 self.addEventListener('install', e => {

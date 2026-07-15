@@ -78,15 +78,20 @@ async function ttLoadSentenceBank() {
 function ttMakeSentenceQuestion() {
   if (!_ttSentenceBank || !_ttSentenceBank.length) return null;
   const q = _ttSentenceBank[Math.floor(Math.random() * _ttSentenceBank.length)];
-  const options = (q.options || []).map(o => o.replace(/^\([A-D]\)\s*/, ''));
-  if (options.length !== 4) return null;
+  const rawOpts = (q.options || []).map(o => o.replace(/^\([A-D]\)\s*/, ''));
+  if (rawOpts.length !== 4) return null;
+  const rawZh = q.optionsZh || null;
+  // per-render 洗牌選項順序（連同對應的中譯），避免同一題重複出現時正解永遠在同一位置
+  // 被死背；並保證每次出題答案位置真隨機（題庫本身正解分佈已平均，見 #15）。
+  const paired = rawOpts.map((opt, i) => ({ opt, zh: rawZh ? rawZh[i] : null, correct: i === q.answer }));
+  const shuffled = _ttShuffle(paired);
   return {
     kind: 'sentence',
     typeLabel: q._typeLabel || '',
     prompt: q.sentence,
     promptSub: q.pos || q.target_grammar || '',
-    options,
-    answer: q.answer,
-    optionsZh: q.optionsZh || null,
+    options: shuffled.map(p => p.opt),
+    answer: shuffled.findIndex(p => p.correct),
+    optionsZh: rawZh ? shuffled.map(p => p.zh) : null,
   };
 }
