@@ -8,8 +8,8 @@ const TT_WORD_CORRECT = 50;   // 消行快問答對
 const TT_WORD_WRONG   = -30;  // 消行快問答錯
 const TT_SENT_CORRECT = 150;  // 60秒計時題答對（答錯改為鎖底層一整欄）
 
-const TT_WORD_SECONDS = 5;    // 消行快問限時
-const TT_SENT_SECONDS = 40;   // 計時題限時
+const TT_WORD_SECONDS = 7;    // 消行快問（單字選擇題）限時
+const TT_SENT_SECONDS = 30;   // 計時題（英文選擇題）限時
 const TT_TIMED_PERIOD = 60000; // 每 60 秒出一題計時題
 
 // 消行單字題連勝加乘：連勝 N 題 → ×(1 + N*0.1)，封頂 ×2.0

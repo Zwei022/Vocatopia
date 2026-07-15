@@ -44,6 +44,18 @@ function tetrisStart() {
       <div class="tt-score-chip">分數 <b id="ttScore">0</b></div>
     </div>
 
+    <!-- 消除行數／下一題倒數移到方塊框上方橫排，避免擠壓右側面板（見 #16） -->
+    <div class="tt-statbar">
+      <div class="tt-stat-chip">
+        <span class="tt-stat-label">消除行數</span>
+        <span class="tt-lines" id="ttLines">0</span>
+      </div>
+      <div class="tt-stat-chip">
+        <span class="tt-stat-label">下一題倒數</span>
+        <span class="tt-quizcd" id="ttQuizCountdown">60</span>
+      </div>
+    </div>
+
     <div class="tt-main">
       <div class="tt-board-wrap" id="ttBoardWrap">
         <div class="tt-board" id="ttBoard"></div>
@@ -56,14 +68,6 @@ function tetrisStart() {
         <div class="tt-side-card" id="ttHoldCard">
           <div class="tt-side-label">保留</div>
           <div class="tt-next" id="ttHold"></div>
-        </div>
-        <div class="tt-side-card tt-lines-card">
-          <div class="tt-side-label">消除行數</div>
-          <div class="tt-lines" id="ttLines">0</div>
-        </div>
-        <div class="tt-side-card tt-quizcd-card">
-          <div class="tt-side-label">下一題倒數</div>
-          <div class="tt-quizcd" id="ttQuizCountdown">60</div>
         </div>
         <button class="tt-skill-btn" id="ttSkill" onclick="ttUseSkill()" disabled>
           <div class="tt-skill-ava">${ch ? `<img src="${ch.img}" alt="">` : '🎮'}</div>

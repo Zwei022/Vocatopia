@@ -29,6 +29,19 @@
 }
 .tt-score-chip b { font-size: 15px; }
 
+/* ── 方塊框上方橫排：消除行數 / 下一題倒數（避免擠壓右側面板，見 #16）── */
+.tt-statbar {
+  display: flex; gap: 10px; padding: 8px 12px 0; flex-shrink: 0;
+}
+.tt-stat-chip {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+  background: var(--card); border: 2px solid var(--line2); border-radius: 12px;
+  padding: 6px 10px;
+}
+.tt-stat-label {
+  font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; color: var(--ink2);
+}
+
 /* ── 主區：棋盤 + 側欄 ── */
 .tt-main {
   flex: 1; display: flex; gap: 12px; padding: 12px; min-height: 0;
