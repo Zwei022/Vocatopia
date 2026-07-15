@@ -7107,28 +7107,74 @@ function navHomeDailyCard(dir) {
 }
 
 // ── 選擇單字卡組（每日卡組的來源）──
-// 排除 id==='daily'：不能把「每日單字卡組」自己選成自己的來源（會造成循環參照）
+// 分兩類：會考單字卡組（BUILTIN_DECKS，排除 id==='daily' 避免自己選自己）／自訂卡組（customDecks）
+// 上方有一個分類按鈕，點了展開下拉選單切換分類，預設顯示「會考單字卡組」
+let _dailyPickerCat = 'builtin'; // 'builtin' | 'custom'
+
+function _dailyPickerCatDecks(cat) {
+  if (cat === 'custom') {
+    return (typeof customDecks !== 'undefined' ? customDecks : []).filter(d => _dailyDeckGetWords(d).length > 0);
+  }
+  const builtin = (typeof BUILTIN_DECKS !== 'undefined' ? BUILTIN_DECKS : []);
+  return builtin.filter(d => d.id !== 'daily' && _dailyDeckGetWords(d).length > 0);
+}
+
 function openDailyDeckPicker() {
-  const decks = _dailyDeckAllDecks().filter(d => d.id !== 'daily' && _dailyDeckGetWords(d).length > 0);
+  _dailyPickerCat = 'builtin';
+  _renderDailyDeckPicker();
+}
+
+function _renderDailyDeckPicker() {
+  let overlay = document.getElementById('dailyDeckPickerOverlay');
+  const isNew = !overlay;
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'dailyDeckPickerOverlay';
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px';
+    overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
+  }
+
   const state = _dailyDeckLoad();
   const currentId = state ? state.deckId : 'cap2000';
-  const overlay = document.createElement('div');
-  overlay.id = 'dailyDeckPickerOverlay';
-  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px';
-  overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
-  const rows = decks.map(d => `
+  const decks = _dailyPickerCatDecks(_dailyPickerCat);
+  const catLabel = _dailyPickerCat === 'custom' ? '自訂卡組' : '會考單字卡組';
+
+  const rows = decks.length ? decks.map(d => `
     <button onclick="chooseDailyDeck('${d.id}')" style="width:100%;display:flex;align-items:center;gap:10px;padding:12px;background:${d.id === currentId ? 'rgba(245,146,30,.12)' : 'var(--nav)'};border:2px solid ${d.id === currentId ? 'var(--orange)' : 'var(--line2)'};border-radius:12px;margin-bottom:8px;cursor:pointer;text-align:left;font-family:'Nunito',sans-serif">
       <span style="font-size:20px">${d.emoji || '📘'}</span>
       <span style="flex:1;font-weight:700;font-size:14px;color:var(--ink)">${escHtml(d.name)}</span>
       ${d.id === currentId ? '<span style="color:var(--orange2);font-weight:900">✓</span>' : ''}
-    </button>`).join('');
+    </button>`).join('')
+    : `<div style="text-align:center;padding:24px 0;color:var(--gray);font-size:13px">${_dailyPickerCat === 'custom' ? '尚無自訂卡組，可到「收藏」頁建立一個並加入單字' : '沒有可用卡組'}</div>`;
+
   overlay.innerHTML = `
     <div style="background:var(--card);border:2.5px solid var(--line);border-radius:18px;padding:22px 20px;width:100%;max-width:340px;max-height:70vh;overflow-y:auto;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
       <button onclick="document.getElementById('dailyDeckPickerOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
       <div style="font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--ink);margin-bottom:14px">選擇單字卡組</div>
+
+      <div style="position:relative;margin-bottom:14px">
+        <button onclick="_dailyPickerToggleCatMenu(event)" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:11px 14px;background:var(--nav);border:2px solid var(--line2);border-radius:12px;font-weight:800;font-size:14px;color:var(--ink);cursor:pointer;font-family:'Nunito',sans-serif">
+          <span>${catLabel}</span><span style="font-size:11px;color:var(--gray)">▾</span>
+        </button>
+        <div id="dailyPickerCatMenu" style="display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--card);border:2px solid var(--line);border-radius:12px;box-shadow:0 4px 16px rgba(75,56,42,.25);z-index:1;overflow:hidden">
+          <button onclick="_dailyPickerSetCat('builtin')" style="width:100%;text-align:left;padding:11px 14px;background:${_dailyPickerCat === 'builtin' ? 'rgba(245,146,30,.12)' : 'none'};border:none;font-size:14px;font-weight:700;color:var(--ink);cursor:pointer;font-family:'Nunito',sans-serif">會考單字卡組</button>
+          <button onclick="_dailyPickerSetCat('custom')" style="width:100%;text-align:left;padding:11px 14px;background:${_dailyPickerCat === 'custom' ? 'rgba(245,146,30,.12)' : 'none'};border:none;font-size:14px;font-weight:700;color:var(--ink);cursor:pointer;font-family:'Nunito',sans-serif">自訂卡組</button>
+        </div>
+      </div>
+
       ${rows}
     </div>`;
-  document.body.appendChild(overlay);
+
+  if (isNew) document.body.appendChild(overlay);
+}
+function _dailyPickerToggleCatMenu(e) {
+  if (e) e.stopPropagation();
+  const menu = document.getElementById('dailyPickerCatMenu');
+  if (menu) menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+}
+function _dailyPickerSetCat(cat) {
+  _dailyPickerCat = cat;
+  _renderDailyDeckPicker();
 }
 
 async function chooseDailyDeck(deckId) {
