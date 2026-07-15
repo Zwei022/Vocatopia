@@ -6288,17 +6288,32 @@ function addGold(amount) {
   return next;
 }
 
+// 金幣同步序列化鏈：一次抽卡會連續呼叫多次 addGold（扣款 + 每張退幣/銘謝惠顧），
+// 若各自並行 fire RPC，回應順序不保證——「後發先到」的權威回傳會覆寫本地、造成
+// 本地值與 DB 飄移，下一次操作的權威回傳又跳上來，看起來就像扣了錢反而變多。
+// 用一條 promise 鏈把所有金幣 RPC 串成序列，保證依發出順序套用、收斂到正確權威值。
+let _goldSyncChain = Promise.resolve();
+let _goldSyncPending = 0;   // 尚未完成的金幣 RPC 筆數，只有最後一筆回傳才校正畫面（避免中間值閃動）
+
 // 呼叫資料庫端原子加減 RPC，並用回傳的權威值校正本地快取（修正任何飄移）；
 // 失敗時把樂觀更新退回去，並提示使用者（不能讓畫面顯示跟資料庫不一致卻沒有任何提示）。
-async function _syncGoldAtomic(delta) {
-  if (typeof currentUser === 'undefined' || !currentUser || typeof authClient === 'undefined') return;
+function _syncGoldAtomic(delta) {
+  _goldSyncPending++;
+  _goldSyncChain = _goldSyncChain.then(() => _doGoldRpc(delta));
+  return _goldSyncChain;
+}
+
+async function _doGoldRpc(delta) {
+  if (typeof currentUser === 'undefined' || !currentUser || typeof authClient === 'undefined') { _goldSyncPending--; return; }
   try {
     const { data, error } = await authClient.rpc('increment_gold', {
       p_user_id: currentUser.id,
       p_delta: delta,
     });
     if (error) throw error;
-    if (typeof data === 'number' && currentProfile) {
+    // 只有序列中最後一筆 RPC 回傳時才用權威值校正畫面，避免多筆連續操作
+    // （抽卡扣款＋多張退幣）中間值把畫面刷來刷去。
+    if (typeof data === 'number' && currentProfile && _goldSyncPending <= 1) {
       currentProfile.gold = data;
       const el = document.getElementById('hGold');
       if (el) el.textContent = data.toLocaleString();
@@ -6309,6 +6324,8 @@ async function _syncGoldAtomic(delta) {
     const el = document.getElementById('hGold');
     if (el) el.textContent = (currentProfile?.gold || 0).toLocaleString();
     if (typeof showToast === 'function') showToast('⚠ 金幣同步失敗，請檢查網路連線');
+  } finally {
+    _goldSyncPending--;
   }
 }
 
