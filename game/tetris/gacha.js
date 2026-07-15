@@ -24,6 +24,19 @@ const GACHA_POOL = {
 };
 
 const LS_GACHA_PITY = 'voca_gacha_pity';
+const LS_GACHA_HISTORY = 'voca_gacha_history';
+const GACHA_HISTORY_MAX = 100;   // 只保留最近 100 筆抽獎紀錄
+
+function _gachaLoadHistory() {
+  try { return JSON.parse(localStorage.getItem(LS_GACHA_HISTORY) || '[]') || []; }
+  catch { return []; }
+}
+// 給 UI 顯示抽獎紀錄用（最新在前）
+function getGachaHistory() { return _gachaLoadHistory(); }
+function _gachaPushHistory(entries) {
+  const merged = entries.concat(_gachaLoadHistory()).slice(0, GACHA_HISTORY_MAX);
+  try { localStorage.setItem(LS_GACHA_HISTORY, JSON.stringify(merged)); } catch { /* ignore */ }
+}
 
 function _gachaLoadPity() {
   try {
@@ -100,6 +113,13 @@ function drawGacha(count) {
     results.push({ charId: entry.charId, tier: entry.tier, isNew, refund, isConsolation: false });
   }
   _gachaSavePity(pity);
+  // 記錄抽獎紀錄（最新在前）：時間 + 抽到什麼
+  _gachaPushHistory(results.map(r => ({
+    t: Date.now(),
+    charId: r.charId, tier: r.tier,
+    isNew: r.isNew, isConsolation: r.isConsolation,
+    gold: r.gold || 0, refund: r.refund || 0,
+  })));
   return results;
 }
 

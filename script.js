@@ -6995,6 +6995,50 @@ function renderShop() {
       <span class="shop-pool-tier">${entry.tier} ${(entry.rate*100).toFixed(0)}%</span>
     </div>`;
   }).join('');
+
+  // #14 距離保底次數
+  const pityBox = document.getElementById('shopPityInfo');
+  if (pityBox && typeof getGachaPity === 'function') {
+    const pity = getGachaPity();
+    const toMythic = Math.max(0, GACHA_POOL.pityMythicPlus - pity.sinceMythicPlus);
+    const toLegend = Math.max(0, GACHA_POOL.pityLegendary  - pity.sinceLegendary);
+    pityBox.innerHTML =
+      `<span class="shop-pity-chip">🛡️ 距神話保底 <b>${toMythic}</b> 抽</span>` +
+      `<span class="shop-pity-chip">👑 距傳奇保底 <b>${toLegend}</b> 抽</span>`;
+  }
+}
+
+// #14 抽獎紀錄彈窗（最近 100 筆，最新在前）
+function openGachaHistory() {
+  if (typeof getGachaHistory !== 'function') return;
+  const history = getGachaHistory();
+  const overlay = document.createElement('div');
+  overlay.id = 'gachaHistoryOverlay';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px';
+  overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
+  const rows = history.length ? history.map(h => {
+    const time = new Date(h.t).toLocaleString('zh-TW', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+    let label, color;
+    if (h.isConsolation || !h.charId) { label = `${h.tier}（+🪙${h.gold}）`; color = 'var(--ink3)'; }
+    else {
+      const ch = (typeof TETRIS_CHARACTERS !== 'undefined') ? TETRIS_CHARACTERS[h.charId] : null;
+      const name = ch ? ch.name : h.charId;
+      label = `${h.tier}・${name}` + (h.isNew ? '（新！）' : `（重複 +🪙${h.refund}）`);
+      color = h.isNew ? 'var(--green2)' : 'var(--ink2)';
+    }
+    return `<div style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid rgba(122,92,67,.12)">
+      <span style="font-size:12px;font-weight:700;color:${color}">${escHtml(label)}</span>
+      <span style="font-size:10px;color:var(--gray);white-space:nowrap">${time}</span>
+    </div>`;
+  }).join('') : `<div style="text-align:center;padding:26px 10px;color:var(--gray);font-size:13px">還沒有抽獎紀錄</div>`;
+  overlay.innerHTML = `
+    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:18px;padding:22px 20px;width:100%;max-width:340px;max-height:78vh;display:flex;flex-direction:column;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
+      <button onclick="document.getElementById('gachaHistoryOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
+      <div style="font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--ink);margin-bottom:4px">抽獎紀錄</div>
+      <div style="font-size:11px;color:var(--gray);margin-bottom:10px">最近 ${history.length} 筆</div>
+      <div style="flex:1;overflow-y:auto">${rows}</div>
+    </div>`;
+  document.body.appendChild(overlay);
 }
 
 function _gachaEntryRow(entry) {

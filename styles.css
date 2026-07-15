@@ -1822,6 +1822,11 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .shop-pool-thumb.rarity-mythic{border-color:#FF7AB6}
 .shop-pool-thumb.rarity-legendary{border-color:#F0B429}
 .shop-pool-tier{position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:9px;font-weight:800;padding:1px 6px;border-radius:8px;white-space:nowrap}
+.shop-pity-info{display:flex;gap:8px;margin-bottom:12px}
+.shop-pity-chip{flex:1;text-align:center;background:rgba(240,180,41,.12);border:1.5px solid rgba(240,180,41,.35);border-radius:10px;padding:7px 6px;font-size:11px;font-weight:700;color:var(--ink2)}
+.shop-pity-chip b{color:var(--orange2);font-size:14px}
+.shop-pool-btns{display:flex;gap:10px;margin-bottom:14px}
+.shop-pool-btns .shop-rate-btn{margin-bottom:0}
 .shop-rate-btn{width:100%;padding:8px;background:none;border:1.5px dashed var(--line2);border-radius:10px;color:var(--ink2);font-family:'Nunito',sans-serif;font-weight:700;font-size:12px;cursor:pointer;margin-bottom:14px}
 .shop-rate-btn:active{transform:scale(.97)}
 .shop-draw-row{display:flex;gap:10px}

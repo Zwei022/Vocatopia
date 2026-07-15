@@ -367,7 +367,11 @@
         <div class="shop-pool-name">常駐卡池</div>
         <div class="shop-pool-sub">龍蝦特獎・壽司二獎・可麗露三獎，槓龜也有金幣安慰獎（50抽保底神話、100抽保底傳奇）</div>
         <div class="shop-pool-preview" id="shopPoolPreview"><!-- renderShop() 填入 --></div>
-        <button class="shop-rate-btn" onclick="openGachaRates()">查看機率</button>
+        <div class="shop-pity-info" id="shopPityInfo"><!-- renderShop() 填入：距離保底次數 --></div>
+        <div class="shop-pool-btns">
+          <button class="shop-rate-btn" onclick="openGachaRates()">查看機率</button>
+          <button class="shop-rate-btn" onclick="openGachaHistory()">抽獎紀錄</button>
+        </div>
         <div class="shop-draw-row">
           <button class="shop-draw-btn" onclick="doGachaDraw(1)">
             <span class="shop-draw-label">單抽</span>
