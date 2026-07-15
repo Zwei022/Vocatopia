@@ -1331,6 +1331,44 @@ async function _pollInbox(silent) {
   }
 }
 
+// ── #1/#4 每日登入連續天數 ──────────────────────────────────────
+// 登入後呼叫伺服器端原子 RPC daily_checkin（以台灣時區判定當天，00:00 換日）。
+// 回傳 { streak, changed, isFirst }。第一次登入只顯示 1、不慶祝；連勝≥2 才跳恭喜畫面。
+async function _dailyCheckin() {
+  if (!currentUser || typeof authClient === 'undefined') return;
+  let res;
+  try {
+    const { data, error } = await authClient.rpc('daily_checkin');
+    if (error) throw error;
+    res = data;
+  } catch (err) {
+    console.warn('[dailyCheckin] 簽到失敗（可能 daily_checkin RPC 尚未建立）：', err?.message || err);
+    return;
+  }
+  if (!res || res.error) return;
+  if (currentProfile) currentProfile.streak = res.streak;   // 更新本地連續天數（個人檔案會顯示）
+  if (res.changed && res.streak >= 2) _showStreakCelebration(res.streak);
+}
+
+function _showStreakCelebration(streak) {
+  document.getElementById('streakCelebrate')?.remove();
+  const overlay = document.createElement('div');
+  overlay.id = 'streakCelebrate';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.6);z-index:9600;display:flex;align-items:center;justify-content:center;padding:20px';
+  overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
+  overlay.innerHTML = `
+    <div style="background:var(--card);border:2.5px solid var(--orange);border-radius:20px;padding:28px 24px;width:100%;max-width:320px;text-align:center;font-family:'Nunito',sans-serif;box-shadow:0 8px 40px rgba(75,56,42,.35)">
+      <div style="font-size:52px;margin-bottom:4px">🔥</div>
+      <div style="font-family:var(--font-display);font-weight:900;font-size:20px;color:var(--white);margin-bottom:8px">恭喜連續登入！</div>
+      <div style="font-family:var(--font-display);font-weight:900;font-size:44px;color:var(--orange2);line-height:1.1">${streak} 天</div>
+      <div style="font-size:12px;color:var(--gray);margin:10px 0 18px">明天再來，連勝就能繼續累積！</div>
+      <button onclick="document.getElementById('streakCelebrate').remove()"
+        style="width:100%;padding:12px;background:var(--orange);border:none;border-radius:12px;color:#fff;font-weight:800;font-size:14px;cursor:pointer">太棒了！</button>
+    </div>`;
+  document.body.appendChild(overlay);
+  if (typeof confetti === 'function') confetti();
+}
+
 function hostStartBattle() {
   if (!pvpState || !pvpState.isHost || !roomCode) return;
   const btn = document.getElementById('pvpStartBtn');

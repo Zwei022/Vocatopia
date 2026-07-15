@@ -108,6 +108,7 @@ async function _loadProfile() {
   _updateHeaderUI();
   if (typeof maybeShowTutorial === 'function') maybeShowTutorial();
   if (typeof _refreshInboxBadge === 'function') _refreshInboxBadge();
+  if (typeof _dailyCheckin === 'function') _dailyCheckin();   // #1/#4 每日登入連續天數簽到
 }
 
 async function _initUserAccount() {
