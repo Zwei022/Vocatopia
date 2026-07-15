@@ -73,12 +73,14 @@ function _gmEsc(s) {
 }
 
 // ── 章節畫面：小節清單
+// #2 達到指定等級才解鎖的小節：點擊時提示需要的等級（訂閱可全解）
+function gmShowLockedHint(level) {
+  if (typeof showToast === 'function') showToast(`🔒 達到 Lv.${level} 解鎖此小節，或訂閱直接全部解鎖`, 3500);
+}
+
 function grammarStartChapter(n) {
   const ch = GRAMMAR_CHAPTERS[n];
-  if (ch && ch.locked) {
-    if (typeof openModal === 'function') openModal('upgradeModal');
-    return;
-  }
+  // #2 逐節解鎖：允許進入任何章節查看小節清單（含未解鎖的，顯示所需等級），不再整章擋在門外
   const ov = _gmOverlay();
   ov.style.display = 'flex';
   if (!ch) {
@@ -92,16 +94,25 @@ function grammarStartChapter(n) {
   }
   const rows = ch.subLessons.map(s => {
     const stars = _gmSubStars(s.id);
-    const ready = !!s.teaching;
+    const locked = !!s.locked;                 // #2 等級未達解鎖
+    const ready  = !!s.teaching;               // 有教學內容（未解鎖的節伺服器不會回內容）
     const starsHtml = [0,1,2].map(i => `<span class="${i < stars ? 'on' : 'off'}">★</span>`).join('');
-    const action = ready
-      ? `gmOpenSubLesson(${ch.chapterId}, '${s.id}')`
-      : `showToast('🌱 這個小節還在準備中')`;
+    let action, right;
+    if (locked) {
+      action = `gmShowLockedHint(${s.unlockLevel || 1})`;
+      right  = `<span class="gm-sub-locklv">🔒 Lv.${s.unlockLevel || 1}</span>`;
+    } else if (ready) {
+      action = `gmOpenSubLesson(${ch.chapterId}, '${s.id}')`;
+      right  = starsHtml;
+    } else {
+      action = `showToast('🌱 這個小節還在準備中')`;
+      right  = '🔒';
+    }
     return `
-      <button class="gm-sub-row${ready ? '' : ' gm-sub-locked'}" onclick="${action}">
+      <button class="gm-sub-row${(locked || !ready) ? ' gm-sub-locked' : ''}" onclick="${action}">
         <span class="gm-sub-id">${s.id}</span>
         <span class="gm-sub-title">${_gmEsc(s.title)}</span>
-        <span class="gm-sub-stars">${ready ? starsHtml : '🔒'}</span>
+        <span class="gm-sub-stars">${right}</span>
       </button>`;
   }).join('');
   ov.innerHTML = `
