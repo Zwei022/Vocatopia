@@ -7309,7 +7309,13 @@ const RARITY_LABEL = { common: '普通', rare: '稀有', epic: '史詩', mythic:
 // ── 成就數據來源 ──
 function _acMasteredWords() { return (typeof WORDS !== 'undefined') ? WORDS.filter(w => w.st === 'ok').length : 0; }
 function _acLevel()   { return (typeof levelFromXp === 'function') ? levelFromXp(currentProfile?.xp || 0).level : 1; }
-function _acGrammar() { return (typeof unlockedGrammarSections === 'function') ? unlockedGrammarSections(_acLevel()) : 0; }
+// 文法成就＝實際「通過」的文法小節數（隨堂測驗達 100% / 3 星才算通過），非等級解鎖數
+function _acGrammar() {
+  try {
+    const p = JSON.parse(localStorage.getItem('grammar_progress') || '{}') || {};
+    return Object.values(p).filter(v => v && v.stars >= 3).length;
+  } catch { return 0; }
+}
 function _acStreak()  { return currentProfile?.streak || 0; }
 function _acOwned()   { return (typeof getOwnedChars === 'function') ? getOwnedChars().length : 0; }
 function _acCharTotal(){ return (typeof TETRIS_CHARACTERS !== 'undefined') ? Object.keys(TETRIS_CHARACTERS).length : 0; }
@@ -7320,34 +7326,34 @@ function _acTetrisBest(){ try { return parseInt(localStorage.getItem('voca_tetri
 
 // ── 成就定義（id 一經上線不要更動，避免已領獎 / 稱號對應跑掉）──
 const ACHIEVEMENTS = [
-  { id:'word50',   group:'學習', icon:'📖', name:'初窺字海', title:'單字學徒', goal:50,   unit:'字', reward:100,  cur:_acMasteredWords },
-  { id:'word200',  group:'學習', icon:'📖', name:'字彙漸豐', title:'字彙能手', goal:200,  unit:'字', reward:200,  cur:_acMasteredWords },
-  { id:'word500',  group:'學習', icon:'📖', name:'博聞強記', title:'字彙達人', goal:500,  unit:'字', reward:400,  cur:_acMasteredWords },
-  { id:'word2000', group:'學習', icon:'📖', name:'字海遨遊', title:'單字大師', goal:2000, unit:'字', reward:1000, cur:_acMasteredWords },
-  { id:'gram10',   group:'文法', icon:'📐', name:'文法入門', title:'文法新手', goal:10,  unit:'節', reward:150, cur:_acGrammar },
-  { id:'gram30',   group:'文法', icon:'📐', name:'句法通達', title:'文法能手', goal:30,  unit:'節', reward:300, cur:_acGrammar },
-  { id:'gram92',   group:'文法', icon:'📐', name:'文法全解', title:'文法宗師', goal:92,  unit:'節', reward:800, cur:_acGrammar },
-  { id:'lv5',   group:'等級', icon:'⭐', name:'嶄露頭角', title:'見習生', goal:5,   unit:'級', reward:100,  cur:_acLevel },
-  { id:'lv10',  group:'等級', icon:'⭐', name:'漸入佳境', title:'學徒',   goal:10,  unit:'級', reward:200,  cur:_acLevel },
-  { id:'lv30',  group:'等級', icon:'⭐', name:'實力堅強', title:'高手',   goal:30,  unit:'級', reward:500,  cur:_acLevel },
-  { id:'lv50',  group:'等級', icon:'⭐', name:'登峰造極', title:'大師',   goal:50,  unit:'級', reward:800,  cur:_acLevel },
-  { id:'lv100', group:'等級', icon:'⭐', name:'傳說境界', title:'傳說',   goal:100, unit:'級', reward:2000, cur:_acLevel },
-  { id:'streak3',   group:'毅力', icon:'🔥', name:'持之以恆', title:'勤學者', goal:3,   unit:'天', reward:100,  cur:_acStreak },
-  { id:'streak7',   group:'毅力', icon:'🔥', name:'一週不輟', title:'自律者', goal:7,   unit:'天', reward:250,  cur:_acStreak },
-  { id:'streak30',  group:'毅力', icon:'🔥', name:'月月堅持', title:'恆心者', goal:30,  unit:'天', reward:600,  cur:_acStreak },
-  { id:'streak100', group:'毅力', icon:'🔥', name:'百日淬鍊', title:'鐵人',   goal:100, unit:'天', reward:1500, cur:_acStreak },
-  { id:'char3',   group:'收藏', icon:'🃏', name:'小有收藏', title:'收藏家',   goal:3, unit:'名', reward:150,  cur:_acOwned },
-  { id:'char6',   group:'收藏', icon:'🃏', name:'陣容漸成', title:'馴獸師',   goal:6, unit:'名', reward:300,  cur:_acOwned },
-  { id:'charAll', group:'收藏', icon:'🃏', name:'全員集結', title:'圖鑑大師', goal:()=>_acCharTotal(), unit:'名', reward:1000, cur:_acOwned },
-  { id:'daily1',  group:'每日', icon:'📝', name:'全勤初體驗', title:'全勤生',   goal:1,  unit:'次', reward:100,  cur:_acDailyAll },
-  { id:'daily10', group:'每日', icon:'📝', name:'全勤常客',   title:'全勤達人', goal:10, unit:'次', reward:400,  cur:_acDailyAll },
-  { id:'daily50', group:'每日', icon:'📝', name:'全勤大師',   title:'全勤之王', goal:50, unit:'次', reward:1200, cur:_acDailyAll },
-  { id:'win1',  group:'競技', icon:'⚔️', name:'首戰告捷', title:'挑戰者', goal:1,  unit:'勝', reward:100,  cur:_acWins },
-  { id:'win10', group:'競技', icon:'⚔️', name:'沙場老手', title:'鬥士',   goal:10, unit:'勝', reward:400,  cur:_acWins },
-  { id:'win50', group:'競技', icon:'⚔️', name:'競技王者', title:'連勝王', goal:50, unit:'勝', reward:1200, cur:_acWins },
-  { id:'tetris5k',  group:'遊戲', icon:'🎮', name:'方塊新星', title:'方塊玩家', goal:5000,  unit:'分', reward:150, cur:_acTetrisBest },
-  { id:'tetris15k', group:'遊戲', icon:'🎮', name:'方塊高手', title:'方塊高手', goal:15000, unit:'分', reward:400, cur:_acTetrisBest },
-  { id:'tetris30k', group:'遊戲', icon:'🎮', name:'方塊大師', title:'方塊大師', goal:30000, unit:'分', reward:900, cur:_acTetrisBest },
+  { id:'word50',   group:'學習', icon:'📖', name:'初窺字海', title:'單字學徒', goal:50,   unit:'字', reward:100,  cur:_acMasteredWords, how:'在下方導覽列「單字」逐字學習，將單字標記為「熟悉」，累積掌握 50 個單字。' },
+  { id:'word200',  group:'學習', icon:'📖', name:'字彙漸豐', title:'字彙能手', goal:200,  unit:'字', reward:200,  cur:_acMasteredWords, how:'在「單字」持續學習並標記熟悉，累積掌握 200 個單字。' },
+  { id:'word500',  group:'學習', icon:'📖', name:'博聞強記', title:'字彙達人', goal:500,  unit:'字', reward:400,  cur:_acMasteredWords, how:'在「單字」持續學習並標記熟悉，累積掌握 500 個單字。' },
+  { id:'word2000', group:'學習', icon:'📖', name:'字海遨遊', title:'單字大師', goal:2000, unit:'字', reward:1000, cur:_acMasteredWords, how:'將全部 2000 會考核心單字都標記為熟悉，達成完全掌握。' },
+  { id:'gram10',   group:'文法', icon:'📐', name:'文法入門', title:'文法新手', goal:10,  unit:'節', reward:150, cur:_acGrammar, how:'到「閱覽室 → 文法教學」完成小節的隨堂測驗，每節需達 100%（3 星）才算通過，累積通過 10 個小節。' },
+  { id:'gram30',   group:'文法', icon:'📐', name:'句法通達', title:'文法能手', goal:30,  unit:'節', reward:300, cur:_acGrammar, how:'在「閱覽室 → 文法教學」持續完成隨堂測驗（每節達 100% / 3 星），累積通過 30 個小節。' },
+  { id:'gram92',   group:'文法', icon:'📐', name:'文法全解', title:'文法宗師', goal:92,  unit:'節', reward:800, cur:_acGrammar, how:'在「閱覽室 → 文法教學」把全部 92 個文法小節都測到 100%（3 星），完全精通文法。' },
+  { id:'lv5',   group:'等級', icon:'⭐', name:'嶄露頭角', title:'見習生', goal:5,   unit:'級', reward:100,  cur:_acLevel, how:'透過每日練習、學習單字、對戰累積經驗值，將等級提升到 Lv.5。' },
+  { id:'lv10',  group:'等級', icon:'⭐', name:'漸入佳境', title:'學徒',   goal:10,  unit:'級', reward:200,  cur:_acLevel, how:'持續累積經驗值，將等級提升到 Lv.10。' },
+  { id:'lv30',  group:'等級', icon:'⭐', name:'實力堅強', title:'高手',   goal:30,  unit:'級', reward:500,  cur:_acLevel, how:'持續累積經驗值，將等級提升到 Lv.30。' },
+  { id:'lv50',  group:'等級', icon:'⭐', name:'登峰造極', title:'大師',   goal:50,  unit:'級', reward:800,  cur:_acLevel, how:'持續累積經驗值，將等級提升到 Lv.50。' },
+  { id:'lv100', group:'等級', icon:'⭐', name:'傳說境界', title:'傳說',   goal:100, unit:'級', reward:2000, cur:_acLevel, how:'將等級練滿到 Lv.100，達成滿級傳說。' },
+  { id:'streak3',   group:'毅力', icon:'🔥', name:'持之以恆', title:'勤學者', goal:3,   unit:'天', reward:100,  cur:_acStreak, how:'每天登入 App 完成打卡，連續 3 天不中斷（中斷會歸零）。' },
+  { id:'streak7',   group:'毅力', icon:'🔥', name:'一週不輟', title:'自律者', goal:7,   unit:'天', reward:250,  cur:_acStreak, how:'每天登入打卡，連續 7 天不中斷。' },
+  { id:'streak30',  group:'毅力', icon:'🔥', name:'月月堅持', title:'恆心者', goal:30,  unit:'天', reward:600,  cur:_acStreak, how:'每天登入打卡，連續 30 天不中斷。' },
+  { id:'streak100', group:'毅力', icon:'🔥', name:'百日淬鍊', title:'鐵人',   goal:100, unit:'天', reward:1500, cur:_acStreak, how:'每天登入打卡，連續 100 天不中斷。' },
+  { id:'char3',   group:'收藏', icon:'🃏', name:'小有收藏', title:'收藏家',   goal:3, unit:'名', reward:150,  cur:_acOwned, how:'在「收藏 → 角色」用金幣抽卡（轉蛋），收集不同角色達 3 名。' },
+  { id:'char6',   group:'收藏', icon:'🃏', name:'陣容漸成', title:'馴獸師',   goal:6, unit:'名', reward:300,  cur:_acOwned, how:'持續抽卡收集角色，擁有不同角色達 6 名。' },
+  { id:'charAll', group:'收藏', icon:'🃏', name:'全員集結', title:'圖鑑大師', goal:()=>_acCharTotal(), unit:'名', reward:1000, cur:_acOwned, how:'透過抽卡集齊圖鑑中全部角色，完成整本圖鑑。' },
+  { id:'daily1',  group:'每日', icon:'📝', name:'全勤初體驗', title:'全勤生',   goal:1,  unit:'次', reward:100,  cur:_acDailyAll, how:'在「每日練習」單日內完成全部六個科目，累積 1 次全科完成。' },
+  { id:'daily10', group:'每日', icon:'📝', name:'全勤常客',   title:'全勤達人', goal:10, unit:'次', reward:400,  cur:_acDailyAll, how:'累積 10 個「單日完成六科」的全勤紀錄。' },
+  { id:'daily50', group:'每日', icon:'📝', name:'全勤大師',   title:'全勤之王', goal:50, unit:'次', reward:1200, cur:_acDailyAll, how:'累積 50 個「單日完成六科」的全勤紀錄。' },
+  { id:'win1',  group:'競技', icon:'⚔️', name:'首戰告捷', title:'挑戰者', goal:1,  unit:'勝', reward:100,  cur:_acWins, how:'到「競技場」進行單字對決 PVP，並贏得 1 場勝利。' },
+  { id:'win10', group:'競技', icon:'⚔️', name:'沙場老手', title:'鬥士',   goal:10, unit:'勝', reward:400,  cur:_acWins, how:'在競技場單字對決中累積 10 場勝利。' },
+  { id:'win50', group:'競技', icon:'⚔️', name:'競技王者', title:'連勝王', goal:50, unit:'勝', reward:1200, cur:_acWins, how:'在競技場單字對決中累積 50 場勝利。' },
+  { id:'tetris5k',  group:'遊戲', icon:'🎮', name:'方塊新星', title:'方塊玩家', goal:5000,  unit:'分', reward:150, cur:_acTetrisBest, how:'遊玩單字方塊遊戲，單場最高分達到 5,000 分（記錄你的最高分）。' },
+  { id:'tetris15k', group:'遊戲', icon:'🎮', name:'方塊高手', title:'方塊高手', goal:15000, unit:'分', reward:400, cur:_acTetrisBest, how:'單字方塊遊戲單場最高分達到 15,000 分。' },
+  { id:'tetris30k', group:'遊戲', icon:'🎮', name:'方塊大師', title:'方塊大師', goal:30000, unit:'分', reward:900, cur:_acTetrisBest, how:'單字方塊遊戲單場最高分達到 30,000 分。' },
 ];
 
 function _acGoal(a)      { return typeof a.goal === 'function' ? a.goal() : a.goal; }
@@ -7385,7 +7391,7 @@ function showTitleInfo(id) {
       <div class="unl-picker-desc" style="margin-bottom:14px">${escHtml(a.name)}</div>
       <div style="text-align:left;background:var(--goldsoft,#fff8e8);border:1.5px solid var(--gold,#f0c040);border-radius:12px;padding:12px 14px;margin-bottom:12px">
         <div style="font-size:13px;color:var(--sub,#888);margin-bottom:4px">如何取得</div>
-        <div style="font-size:15px;font-weight:700;margin-bottom:10px">累計達到 ${goal.toLocaleString()} ${a.unit}</div>
+        <div style="font-size:14px;font-weight:700;line-height:1.5;margin-bottom:10px">${escHtml(a.how || `累計達到 ${goal.toLocaleString()} ${a.unit}`)}</div>
         <div class="achv-bar" style="margin-bottom:6px"><div class="achv-bar-fill" style="width:${pct}%"></div></div>
         <div style="font-size:13px;color:var(--sub,#888)">目前進度：${capped.toLocaleString()} / ${goal.toLocaleString()} ${a.unit}（${pct}%）</div>
       </div>
