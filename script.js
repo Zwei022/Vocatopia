@@ -6732,17 +6732,22 @@ function _tutorialMarkSeenLocal() {
   try { localStorage.setItem(LS_TUTORIAL_SEEN, '1'); } catch { /* ignore */ }
 }
 
-// 進首頁時檢查要不要跳出教學：本機已經看過就不用問伺服器；沒看過的話，
-// 登入帳號會再問一次伺服器（換裝置登入、但曾在別台裝置看過的情況）
+// 進首頁時檢查要不要跳出教學。
+// 登入使用者：一律以「帳號」的 profiles.tutorial_seen 為準，不看 localStorage——
+//   因為 localStorage 是裝置共用的，訪客看過後切到新帳號登入會被誤判成已看過，
+//   導致新帳號第一次使用看不到引導（見回報）。每個新帳號都要各自看過一次。
+// 訪客（未登入）：才用裝置端 localStorage 判斷，看過一次就不再顯示。
 async function maybeShowTutorial() {
-  if (_tutorialLocalSeen()) return;
-
   if (typeof currentUser !== 'undefined' && currentUser && typeof authClient !== 'undefined') {
     try {
       const { data } = await authClient.from('profiles').select('tutorial_seen').eq('id', currentUser.id).maybeSingle();
-      if (data && data.tutorial_seen) { _tutorialMarkSeenLocal(); return; }
-    } catch { /* 查詢失敗就當作沒看過，還是顯示一次 */ }
+      if (data && data.tutorial_seen) return;   // 這個帳號已經看過
+    } catch { /* 查詢失敗就當沒看過，寧可多顯示一次 */ }
+    openTutorial();
+    return;
   }
+  // 訪客模式
+  if (_tutorialLocalSeen()) return;
   openTutorial();
 }
 
