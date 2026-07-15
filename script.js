@@ -1267,6 +1267,40 @@ async function _refreshInboxBadge() {
   }
 }
 
+// #9 好友對戰邀請延遲/漏收修復：socket 即時推播在手機背景/重連時不可靠，
+// 但邀請一定會寫進 inbox。這裡輪詢 inbox 當可靠備援：每 ~12 秒檢查一次，
+// 新出現且近 2 分鐘內的對戰邀請就即時彈窗（延遲上限 ~12 秒，不用重開 App）。
+// socket 快速通道仍保留，兩者靠 gameInvitePopup 單例天然去重。順便自動刷新紅點徽章。
+let _inboxPollInt = null;
+const _seenInviteIds = new Set();
+function _startInboxPolling() {
+  if (_inboxPollInt || !currentUser || typeof authClient === 'undefined') return;
+  _pollInbox(true);                                   // 首次靜默：只建立已見集合＋刷新徽章，不彈舊邀請
+  _inboxPollInt = setInterval(() => _pollInbox(false), 12000);
+}
+function _stopInboxPolling() {
+  if (_inboxPollInt) { clearInterval(_inboxPollInt); _inboxPollInt = null; }
+  _seenInviteIds.clear();
+}
+async function _pollInbox(silent) {
+  if (!currentUser || typeof authClient === 'undefined') return;
+  const { data, error } = await authClient
+    .from('inbox').select('id,type,meta,created_at')
+    .eq('user_id', currentUser.id).eq('claimed', false)
+    .order('created_at', { ascending: false }).limit(20);
+  if (error || !data) return;
+  _refreshInboxBadge();
+  for (const row of data) {
+    if (row.type !== 'invite' || _seenInviteIds.has(row.id)) continue;
+    _seenInviteIds.add(row.id);
+    // 首次載入(silent)只記錄不彈；之後只彈近 2 分鐘內的新邀請，避免翻出很舊的邀請
+    if (!silent && row.meta && row.meta.code &&
+        Date.now() - new Date(row.created_at).getTime() < 120000) {
+      _showGameInvitePopup(row.meta.code, row.meta.fromUsername || '對手', row.meta.mode);
+    }
+  }
+}
+
 function hostStartBattle() {
   if (!pvpState || !pvpState.isHost || !roomCode) return;
   const btn = document.getElementById('pvpStartBtn');
@@ -4957,6 +4991,7 @@ function _identifySocket() {
   sock.on('friend_request_incoming', _onFriendRequestIncoming);
   sock.off('friend_request_responded', _onFriendRequestResponded);
   sock.on('friend_request_responded', _onFriendRequestResponded);
+  _startInboxPolling();   // #9 啟動 inbox 輪詢當邀請可靠備援（idempotent，重連時不會重複啟動）
 }
 
 function _onFriendRequestIncoming({ fromUserId, fromUsername }) {

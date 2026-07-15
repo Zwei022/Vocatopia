@@ -399,6 +399,7 @@ async function logoutUser() {
   currentUser    = null;
   currentProfile = null;
   _updateHeaderUI();
+  if (typeof _stopInboxPolling === 'function') _stopInboxPolling();   // #9 登出停止 inbox 輪詢
   if (typeof _refreshInboxBadge === 'function') _refreshInboxBadge();
   showAuthOverlay();
 }
