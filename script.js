@@ -4909,6 +4909,15 @@ function showProfile() {
   const total    = (typeof WORDS !== 'undefined') ? WORDS.length : 2000;
   const lv        = levelFromXp(currentProfile.xp || 0);
   const unlockedSec = unlockedGrammarSections(lv.level);
+  const nb        = _newbieState();
+  const nbHtml = nb.claimed ? '' : `
+      <div style="background:rgba(61,184,112,.1);border:1.5px solid rgba(61,184,112,.28);border-radius:12px;padding:12px 14px;margin-bottom:14px">
+        <div style="font-weight:900;font-size:13px;color:var(--green2);margin-bottom:8px">🎯 新手任務（完成解鎖第1~3章文法）</div>
+        <div style="font-size:12px;color:var(--ink2);line-height:1.9">
+          <div>${nb.dailyDone ? '✅' : '⬜'} 完成一次每日測驗（任一科）</div>
+          <div>${(nb.tetris || 0) >= NEWBIE_TETRIS_GOAL ? '✅' : '⬜'} 玩 ${NEWBIE_TETRIS_GOAL} 場俄羅斯方塊（${Math.min(nb.tetris || 0, NEWBIE_TETRIS_GOAL)}/${NEWBIE_TETRIS_GOAL}）</div>
+        </div>
+      </div>`;
 
   const overlay = document.createElement('div');
   overlay.id = 'profileOverlay';
@@ -4944,6 +4953,7 @@ function showProfile() {
         </div>
         <div id="xpBarText" style="font-size:10px;color:var(--gray);text-align:right;margin-top:4px">${lv.need ? `${lv.cur} / ${lv.need} XP` : 'MAX'}</div>
       </div>
+      ${nbHtml}
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px">
         <div style="background:rgba(122,92,67,.08);border-radius:10px;padding:10px;text-align:center">
@@ -6498,6 +6508,7 @@ function _awardSubjectGold(cat) {
   if (!reward) return;
   addGold(reward);
   awardXp(XP_PER_SUBJECT, { source: 'daily' });   // #2 每日測驗完成一科 → XP
+  _newbieProgress('daily');                        // #2 新手任務：完成每日測驗
   const catName = (CAT_META[cat] || {}).name || cat;
   showToast(`🪙 +${reward} 金幣！${catName}完成`);
 
@@ -6592,12 +6603,37 @@ async function awardXp(amount, opts = {}) {
 function _xpTetrisKey() { return 'voca_xp_tetris_' + new Date().toLocaleDateString('en-CA'); }
 function awardTetrisXp(lines) {
   if (!currentUser) return;
+  _newbieProgress('tetris');   // #2 新手任務：玩一場俄羅斯方塊（先計數，不受每日 XP 場次上限影響）
   const key = _xpTetrisKey();
   const played = parseInt(localStorage.getItem(key) || '0', 10) || 0;
   if (played >= XP_TETRIS_GAMES_PER_DAY) return;
   try { localStorage.setItem(key, String(played + 1)); } catch { /* ignore */ }
   const xp = Math.min(XP_TETRIS_GAME_CAP, XP_PER_TETRIS_BASE + Math.floor((lines || 0) / 10) * XP_PER_TETRIS_LINE10);
   awardXp(xp, { source: 'tetris' });
+}
+
+// ── #2 新手任務 ──────────────────────────────────────────────
+// 任務：① 完成一次每日測驗（任一科）② 玩滿 3 場俄羅斯方塊 → 補足 XP 到 Lv.3（解鎖第1~3章）。
+const NEWBIE_TETRIS_GOAL = 3;
+function _newbieKey() { return 'voca_newbie_' + (currentUser?.id || 'guest'); }
+function _newbieState() {
+  try { return JSON.parse(localStorage.getItem(_newbieKey()) || '{}') || {}; } catch { return {}; }
+}
+function _newbieSave(s) { try { localStorage.setItem(_newbieKey(), JSON.stringify(s)); } catch { /* ignore */ } }
+function _newbieProgress(type) {
+  if (!currentUser) return;
+  const s = _newbieState();
+  if (s.claimed) return;
+  if (type === 'daily')  s.dailyDone = true;
+  if (type === 'tetris') s.tetris = (s.tetris || 0) + 1;
+  _newbieSave(s);
+  if (s.dailyDone && (s.tetris || 0) >= NEWBIE_TETRIS_GOAL) {
+    s.claimed = true;
+    _newbieSave(s);
+    const need = xpForLevel(3) - (currentProfile?.xp || 0);   // 補足到 Lv.3
+    if (need > 0) awardXp(need, { ignoreCap: true, source: 'newbie' });
+    showToast('🎉 新手任務完成！已解鎖第 1～3 章文法教學', 3500);
+  }
 }
 
 function _onLevelUp(fromLv, toLv) {
