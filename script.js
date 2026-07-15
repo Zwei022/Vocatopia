@@ -4083,6 +4083,7 @@ let fcFlipped = false;
 let fcMarked = new Set();       // 已學習（熟悉）的單字 id
 let fcFavorites = new Set();    // 收藏的單字 id（獨立於熟悉度）
 let fcRecordTab = 'unlearned';  // 學習紀錄當前分頁：learned / unlearned / fav
+let _fcRecordsSig = '';         // 學習紀錄清單上次渲染的成員簽章（純翻卡時跳過重建，見 updateRecordsList）
 
 // 學習設定（全域持久化）：只學習收藏 + 卡片正面語言
 let fcSettings = { onlyFav: false, front: 'en' };
@@ -5626,6 +5627,13 @@ function updateRecordsList() {
   const items = fcRecordTab === 'learned' ? learnedList
               : fcRecordTab === 'fav'     ? favList
               : unlearnedList;
+
+  // 效能：清單內容只在「成員變動」時才需重建 innerHTML（熟悉/收藏/分頁/卡組/字數變化）。
+  // 純翻卡（上一張/下一張）時成員完全相同，重建上千個節點是白工、造成切卡卡頓——
+  // 用簽章判斷，成員沒變就直接跳過昂貴的 innerHTML 重建。
+  const sig = `${fcCurrentDeckId}|${fcRecordTab}|${realWords.length}|${fcMarked.size}|${fcFavorites.size}|${fcSettings.onlyFav ? 1 : 0}`;
+  if (sig === _fcRecordsSig) return;
+  _fcRecordsSig = sig;
 
   // items 與 fcViewList() 在當前分頁下順序一致，索引可直接用於卡片跳轉
   const _trunc = (s, n) => (s.length > n ? s.substring(0, n) + '…' : s);
