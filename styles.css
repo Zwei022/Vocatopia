@@ -1665,6 +1665,32 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .dcat-badge{align-self:flex-start;flex-shrink:0;font-family:'Nunito',sans-serif;font-size:12px;background:var(--orange);color:#fff;padding:3px 8px;border-radius:10px;font-weight:800;white-space:nowrap}
 .dcat-badge.done{background:var(--greensoft);color:var(--green2)}
 
+/* #5(b) 無限題庫入口卡（整寬，位於六科 grid 下方） */
+.dcat-unlimited{display:flex;align-items:center;gap:12px;margin-bottom:12px;padding:14px;cursor:pointer;border-radius:var(--r2);
+  background:linear-gradient(120deg,var(--goldsoft),var(--orasoft));border:2px solid var(--gold);transition:all .15s}
+.dcat-unlimited:hover{transform:translateY(-1px);border-color:var(--orange)}
+.dcat-unlimited.locked{background:var(--card);border:2px solid var(--line2);opacity:.9}
+.dcat-unl-ico{width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:#fff;border:1.5px solid var(--gold);border-radius:10px;font-size:22px;flex-shrink:0}
+.dcat-unlimited.locked .dcat-unl-ico{border-color:var(--line2)}
+.dcat-unl-txt{flex:1;min-width:0}
+.dcat-unl-name{font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;color:var(--ink)}
+.dcat-unl-sub{font-family:'Nunito',sans-serif;font-size:11.5px;color:var(--ink2);margin-top:2px}
+.dcat-unl-arrow{font-size:13px;color:var(--orange2);flex-shrink:0}
+.dcat-unlimited.locked .dcat-unl-arrow{color:var(--ink3)}
+
+/* 無限題庫科目選單 overlay */
+.unl-picker-overlay{position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9200;display:flex;align-items:center;justify-content:center;padding:20px}
+.unl-picker-box{background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:22px 20px;width:100%;max-width:320px;box-shadow:0 8px 40px rgba(75,56,42,.3)}
+.unl-picker-title{font-family:var(--font-display,'Nunito'),sans-serif;font-weight:900;font-size:18px;color:var(--ink);text-align:center}
+.unl-picker-desc{font-family:'Nunito',sans-serif;font-size:12px;color:var(--ink2);text-align:center;margin:4px 0 14px}
+.unl-pick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.unl-pick-btn{display:flex;align-items:center;gap:8px;padding:12px 10px;border:2px solid var(--line2);background:var(--nav);border-radius:12px;
+  font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:var(--ink);cursor:pointer;transition:all .15s}
+.unl-pick-btn:hover{border-color:var(--orange);transform:translateY(-1px)}
+.unl-pick-ico{font-size:18px}
+.unl-picker-close{width:100%;margin-top:14px;padding:11px;background:var(--nav);border:1.5px solid var(--line2);border-radius:10px;
+  font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;color:var(--ink2);cursor:pointer}
+
 /* ════════════════════════════════
    HOME v2 — 遊戲化首頁
    今日任務 + 行動格（角色已移除）

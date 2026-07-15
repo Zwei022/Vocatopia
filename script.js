@@ -744,6 +744,8 @@ async function refreshSubscriptionStatus() {
     window.currentSubscription = status;
     // 文法教學資料含 locked 標記，訂閱狀態變化後重新抓一次讓畫面同步
     if (typeof _gmLoadData === 'function') _gmLoadData();
+    // #5(b) 訂閱狀態（非同步）回來後，若正在每日練習頁，刷新無限題庫入口鎖定狀態
+    if (typeof updateUnlimitedEntry === 'function') updateUnlimitedEntry();
   } catch (e) { console.error('查詢訂閱狀態失敗', e); }
 }
 
@@ -2087,6 +2089,7 @@ function switchCuratedSub(sub) {
     document.getElementById('dailyReadingBack').style.display = 'none';
     document.getElementById('artList').style.display = 'none';
     renderDailyArticles();
+    _updateDailyBadges();   // 順便刷新無限題庫入口（訂閱狀態 / 今日剩餘可賺金幣）
   } else if (sub === 'wrong') {
     document.getElementById('wrongList').classList.add('show');
     _resetBankPanel('wrong');
@@ -2488,6 +2491,7 @@ function _updateDailyBadges() {
       el.classList.add('done');
     }
   });
+  updateUnlimitedEntry();   // #5(b) 無限題庫入口跟著刷新
 }
 
 // 首頁「今日任務」分類直接點擊進入：導到閱覽室→精選題目→每日練習分頁，再開啟該分類
@@ -2496,6 +2500,105 @@ function startHomeDailyPractice(cat) {
   switchReadTab('curated');
   switchCuratedSub('daily');
   openDailyCat(cat);
+}
+
+// ══════════════════════════════════════════════════════════════
+// #5(b) 無限題庫（訂閱者專屬）
+// 訂閱者可進入無限題庫：整庫隨機、不顯示題號；每日透過無限題庫可額外賺最多 750 金幣。
+// 非訂閱者只看到鎖定入口，點擊導向訂閱。後端 /api/daily-quiz/:type?unlimited=1 已 gate premium。
+// ══════════════════════════════════════════════════════════════
+const UNLIMITED_GOLD_PER_Q     = 15;   // 無限題庫答對一題發放的金幣
+const UNLIMITED_DAILY_GOLD_CAP = 750;  // 每日透過無限題庫可額外賺的金幣上限
+
+function _isPremium() { return !!(window.currentSubscription && window.currentSubscription.is_premium); }
+
+function _unlimitedGoldKey() {
+  return 'voca_unlimited_gold_' + new Date().toISOString().slice(0, 10).replace(/-/g, '');
+}
+function _unlimitedGoldEarned() {
+  return parseInt(localStorage.getItem(_unlimitedGoldKey()) || '0') || 0;
+}
+// 發放一題無限題庫獎勵，回傳實際發出的金幣（達每日上限則回 0）
+function _addUnlimitedGold() {
+  const earned = _unlimitedGoldEarned();
+  if (earned >= UNLIMITED_DAILY_GOLD_CAP) return 0;
+  const give = Math.min(UNLIMITED_GOLD_PER_Q, UNLIMITED_DAILY_GOLD_CAP - earned);
+  localStorage.setItem(_unlimitedGoldKey(), String(earned + give));
+  addGold(give);
+  return give;
+}
+
+// 依訂閱狀態刷新無限題庫入口卡（每次進每日練習 / 徽章刷新時呼叫）
+function updateUnlimitedEntry() {
+  const el = document.getElementById('dcatUnlimited');
+  if (!el) return;
+  el.style.display = '';
+  if (_isPremium()) {
+    const left = Math.max(0, UNLIMITED_DAILY_GOLD_CAP - _unlimitedGoldEarned());
+    el.classList.remove('locked');
+    el.innerHTML = `
+      <div class="dcat-unl-ico">♾️</div>
+      <div class="dcat-unl-txt">
+        <div class="dcat-unl-name">無限題庫</div>
+        <div class="dcat-unl-sub">不限題數暢練・今日還可賺 ${left} 🪙</div>
+      </div>
+      <div class="dcat-unl-arrow">▶</div>`;
+  } else {
+    el.classList.add('locked');
+    el.innerHTML = `
+      <div class="dcat-unl-ico">🔒</div>
+      <div class="dcat-unl-txt">
+        <div class="dcat-unl-name">無限題庫</div>
+        <div class="dcat-unl-sub">訂閱解鎖・不限題數、每日多賺 750 🪙</div>
+      </div>
+      <div class="dcat-unl-arrow">▶</div>`;
+  }
+}
+
+function openUnlimitedPicker() {
+  if (!_isPremium()) {
+    if (typeof openModal === 'function') openModal('upgradeModal');
+    return;
+  }
+  const cats = Object.entries(DAILY_CAT_CONFIG).map(([key, c]) =>
+    `<button class="unl-pick-btn" onclick="closeUnlimitedPicker();openUnlimitedCat('${key}')"><span class="unl-pick-ico">${c.icon}</span>${c.label}</button>`
+  ).join('');
+  const ov = document.createElement('div');
+  ov.id = 'unlimitedPicker';
+  ov.className = 'unl-picker-overlay';
+  ov.onclick = e => { if (e.target === ov) closeUnlimitedPicker(); };
+  ov.innerHTML = `
+    <div class="unl-picker-box">
+      <div class="unl-picker-title">♾️ 無限題庫</div>
+      <div class="unl-picker-desc">選擇科目，不限題數暢練</div>
+      <div class="unl-pick-grid">${cats}</div>
+      <button class="unl-picker-close" onclick="closeUnlimitedPicker()">取消</button>
+    </div>`;
+  document.body.appendChild(ov);
+}
+function closeUnlimitedPicker() { document.getElementById('unlimitedPicker')?.remove(); }
+
+async function openUnlimitedCat(cat) {
+  const cfg = DAILY_CAT_CONFIG[cat];
+  if (!cfg) return;
+  dailyCatOpen = cat;
+  document.getElementById('dailyCats').style.display = 'none';
+  document.getElementById('artList').style.display = 'none';
+  try {
+    const token = typeof getAuthToken === 'function' ? await getAuthToken() : null;
+    const res = await fetch(`/api/daily-quiz/${cfg.apiType}?unlimited=1`, {
+      headers: token ? { Authorization: `Bearer ${token}` } : {},
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    // 後端未認證為 premium 時不會回 unlimited=true（保險，避免非會員繞過前端 gate）
+    if (!data.unlimited) { showToast('無限題庫僅限訂閱會員'); closeDailyCat(); return; }
+    if (!data.questions?.length) throw new Error('無題目資料');
+    _startDailyQuiz(data.questions, cat, { unlimited: true });
+  } catch (err) {
+    showToast('載入失敗：' + err.message);
+    closeDailyCat();
+  }
 }
 
 async function openDailyCat(cat) {
@@ -2544,13 +2647,13 @@ async function openDailyCat(cat) {
 }
 
 // 通用每日練習啟動（vocab / phrase / grammar / cloze / reading 共用）
-function _startDailyQuiz(questions, context) {
+function _startDailyQuiz(questions, context, opts = {}) {
   const normalized = questions.map(q => ({
     ...q,
     question: q.sentence || q.question,
   }));
 
-  quizState = { questions: normalized, idx: 0, score: 0, context };
+  quizState = { questions: normalized, idx: 0, score: 0, context, unlimited: !!opts.unlimited };
 
   // 隱藏整個每日練習容器與文章列表，避免上方殘留空白與重複的返回按鈕
   document.getElementById('artList').style.display = 'none';
@@ -2833,7 +2936,9 @@ function renderQuestion() {
   // 題組式：克漏字（整篇空格）/ 閱讀（文章＋1–4題）一次作答
   if (q.blanks || q.questions) { _renderGroupQuestion(q); return; }
 
-  document.getElementById('quizProgress').textContent = `第 ${idx + 1} / ${questions.length} 題`;
+  document.getElementById('quizProgress').textContent = quizState.unlimited
+    ? `♾️ 無限題庫・第 ${idx + 1} 題`
+    : `第 ${idx + 1} / ${questions.length} 題`;
 
   // Badge
   const badge = document.getElementById('quizTypeBadge');
@@ -2898,7 +3003,9 @@ function _groupItems(q) {
 
 function _renderGroupQuestion(q) {
   const { questions, idx, context } = quizState;
-  document.getElementById('quizProgress').textContent = `第 ${idx + 1} / ${questions.length} 題`;
+  document.getElementById('quizProgress').textContent = quizState.unlimited
+    ? `♾️ 無限題庫・第 ${idx + 1} 題`
+    : `第 ${idx + 1} / ${questions.length} 題`;
 
   const badge = document.getElementById('quizTypeBadge');
   if (badge) badge.style.display = 'none';
@@ -3086,9 +3193,18 @@ function answerQuestion(chosen) {
 
     // 記錄今日已完成題目（不論對錯），用於剩餘題數徽章
     if (CAT_META[context]) {
-      _dailyMarkDone(context, _qid(q));
-      _updateDailyBadges();
-      _trackSubjectStats(context, chosen === q.answer ? 1 : 0, 1);
+      if (quizState.unlimited) {
+        // 無限題庫：不寫每日 5 題進度（避免污染徽章），改發放無限題庫金幣（每日上限 750）
+        _trackSubjectStats(context, chosen === q.answer ? 1 : 0, 1);
+        if (chosen === q.answer) {
+          const g = _addUnlimitedGold();
+          if (g > 0) showToast(`🪙 +${g}（無限題庫）`);
+        }
+      } else {
+        _dailyMarkDone(context, _qid(q));
+        _updateDailyBadges();
+        _trackSubjectStats(context, chosen === q.answer ? 1 : 0, 1);
+      }
     }
 
     const explainEl = document.getElementById('quizExplain');
@@ -3106,7 +3222,7 @@ function answerQuestion(chosen) {
     console.error('[quiz] answerQuestion 揭曉階段發生例外，仍繼續顯示下一題按鈕', e);
   } finally {
     const nextBtn = document.getElementById('quizNextBtn');
-    nextBtn.textContent = idx >= questions.length - 1 ? '查看成績 →' : '下一題 →';
+    nextBtn.textContent = (!quizState.unlimited && idx >= questions.length - 1) ? '查看成績 →' : '下一題 →';
     nextBtn.onclick = nextQuestion;   // 預選階段被改成 submitAnswer，揭曉後要改回 nextQuestion（否則點「下一題」會重送同題）
     nextBtn.classList.remove('hidden');
   }

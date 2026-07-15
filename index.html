@@ -738,6 +738,8 @@
         <div class="dcat" onclick="openDailyCat('cloze')"><div class="dcat-top"><div class="dc-ico">✏️</div><div class="cat-txt"><div class="dc-name">克漏字</div><div class="dc-sub">段落填空演練</div></div></div><span class="dcat-badge" id="dcatCount_cloze"></span></div>
         <div class="dcat" onclick="openDailyCat('listening')"><div class="dcat-top"><div class="dc-ico">🎧</div><div class="cat-txt"><div class="dc-name">聽力</div><div class="dc-sub">聽力理解演練</div></div></div><span class="dcat-badge" id="dcatCount_listening"></span></div>
       </div>
+      <!-- #5(b) 無限題庫（訂閱者專屬）：內容/鎖定狀態由 updateUnlimitedEntry() 依訂閱狀態填入 -->
+      <div class="dcat-unlimited" id="dcatUnlimited" onclick="openUnlimitedPicker()" style="display:none"></div>
       <div id="dailyReadingBack" style="display:none">
         <button class="art-back" onclick="closeDailyCat()">◀ 返回每日練習</button>
       </div>
