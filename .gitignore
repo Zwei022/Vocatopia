@@ -23,6 +23,9 @@ scripts/cmudict.dict
 # 本機稽核紀錄（hook 產生，非專案內容）
 .planning/.pending-auth-captures.jsonl
 
+# 內部測試帳號清單（含明文密碼，絕對不可上傳）
+test_accounts.json
+
 # Android release 簽署金鑰（絕對不可上傳）
 android/*.keystore
 android/keystore.properties

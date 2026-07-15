@@ -2844,52 +2844,57 @@ function submitGroup() {
   if (quizState.grpDone) return;
   quizState.grpDone = true;
 
-  const items = _groupItems(q);
-  let correct = 0;
-  items.forEach((it, bi) => {
-    const chosen = quizState.grpSel[bi];
-    const ans    = it.answer;
-    // 送出後：選項文字從純文字升級為可點字查詢（跟詳解一致）
-    it.options.forEach((o, k) => {
-      const el = document.getElementById(`g_${bi}_${k}`);
-      if (!el) return;
-      el.disabled = true;
-      el.classList.remove('sel');
-      const clean = o.replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, '');
-      el.innerHTML = `${String.fromCharCode(65 + k)}. ${wrapWordsHtml(clean)}${_qZhSpan(it.optionsZh, k)}`;
-      if (k === ans) el.classList.add('correct');
-      else if (k === chosen) el.classList.add('wrong');
+  // 保底：跟 answerQuestion 一樣，揭曉過程出例外也要讓下一題按鈕正確顯示（見上方註解）。
+  try {
+    const items = _groupItems(q);
+    let correct = 0;
+    items.forEach((it, bi) => {
+      const chosen = quizState.grpSel[bi];
+      const ans    = it.answer;
+      // 送出後：選項文字從純文字升級為可點字查詢（跟詳解一致）
+      it.options.forEach((o, k) => {
+        const el = document.getElementById(`g_${bi}_${k}`);
+        if (!el) return;
+        el.disabled = true;
+        el.classList.remove('sel');
+        const clean = o.replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, '');
+        el.innerHTML = `${String.fromCharCode(65 + k)}. ${wrapWordsHtml(clean)}${_qZhSpan(it.optionsZh, k)}`;
+        if (k === ans) el.classList.add('correct');
+        else if (k === chosen) el.classList.add('wrong');
+      });
+      if (chosen === ans) correct++;
+      const headEl = document.getElementById(`gh_${bi}`);
+      if (headEl && !q.blanks) headEl.innerHTML = wrapWordsHtml(it.heading); // 克漏字格號標籤是純中文，不需升級
+      const grp = document.getElementById(`grp_${bi}`);
+      if (grp && it.explanation) {
+        const ex = document.createElement('div');
+        ex.className = 'cloze-explain';
+        ex.innerHTML = `(${it.n}) ` + wrapWordsHtml(it.explanation);
+        grp.appendChild(ex);
+      }
     });
-    if (chosen === ans) correct++;
-    const headEl = document.getElementById(`gh_${bi}`);
-    if (headEl && !q.blanks) headEl.innerHTML = wrapWordsHtml(it.heading); // 克漏字格號標籤是純中文，不需升級
-    const grp = document.getElementById(`grp_${bi}`);
-    if (grp && it.explanation) {
-      const ex = document.createElement('div');
-      ex.className = 'cloze-explain';
-      ex.innerHTML = `(${it.n}) ` + wrapWordsHtml(it.explanation);
-      grp.appendChild(ex);
+
+    document.getElementById('quizOpts').classList.add('revealed');  // 送出後顯示選項中譯
+
+    const total    = items.length;
+    const allRight = correct === total;
+    const unit     = q.blanks ? '格' : '題';
+    showFb(`答對 ${correct}/${total} ${unit}`, allRight);
+    if (allRight) quizState.score++;
+
+    // 未全對 → 整篇/整組歸檔到答錯題庫
+    if (CAT_META[context] && !allRight) {
+      _qbankAdd('wrong', context, q);
+      _updateBankCounts('wrong');
     }
-  });
-
-  document.getElementById('quizOpts').classList.add('revealed');  // 送出後顯示選項中譯
-
-  const total    = items.length;
-  const allRight = correct === total;
-  const unit     = q.blanks ? '格' : '題';
-  showFb(`答對 ${correct}/${total} ${unit}`, allRight);
-  if (allRight) quizState.score++;
-
-  // 未全對 → 整篇/整組歸檔到答錯題庫
-  if (CAT_META[context] && !allRight) {
-    _qbankAdd('wrong', context, q);
-    _updateBankCounts('wrong');
-  }
-  // 記錄今日已完成（整篇/整組算一題）
-  if (CAT_META[context]) {
-    _dailyMarkDone(context, _qid(q));
-    _updateDailyBadges();
-    _trackSubjectStats(context, correct, total);
+    // 記錄今日已完成（整篇/整組算一題）
+    if (CAT_META[context]) {
+      _dailyMarkDone(context, _qid(q));
+      _updateDailyBadges();
+      _trackSubjectStats(context, correct, total);
+    }
+  } catch (e) {
+    console.error('[quiz] submitGroup 揭曉階段發生例外，仍繼續顯示下一題按鈕', e);
   }
 
   const nextBtn = document.getElementById('quizNextBtn');
@@ -2940,59 +2945,67 @@ function answerQuestion(chosen) {
   const { questions, idx, context } = quizState;
   const q    = questions[idx];
   const btns = document.querySelectorAll('.quiz-opt');
-  btns.forEach(b => b.classList.remove('sel')); // 預選的橘色狀態在真正揭曉時要先清掉，避免跟對錯色疊在一起
 
-  _stopListening(); // 答題後停止播放
+  // 保底：揭曉過程任何一步拋出例外（例如題目資料缺欄位），也要讓「下一題／查看成績」
+  // 按鈕正確顯示並綁定 nextQuestion，避免使用者卡在畫面上、按鈕看起來能按卻沒反應
+  // （曾在 App Review 被回報：iPad 上點「下一題」沒有任何動作）。
+  try {
+    btns.forEach(b => b.classList.remove('sel')); // 預選的橘色狀態在真正揭曉時要先清掉，避免跟對錯色疊在一起
 
-  // 答題揭曉：題幹句子（單字/片語/文法題的 "The meeting was _____ ..." 這類句子）也要升級為可點字查詢
-  const qTextEl = document.querySelector('#quizQ .quiz-q-text');
-  if (qTextEl) qTextEl.innerHTML = wrapWordsHtml(q.question || q.sentence || '');
+    _stopListening(); // 答題後停止播放
 
-  // 答題揭曉：選項文字從純文字升級為可點字查詢（跟詳解一致），並標記正解/錯選樣式
-  btns.forEach((b, i) => {
-    b.disabled = true;
-    const clean = q.options[i].replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, '');
-    b.innerHTML = `${String.fromCharCode(65 + i)}. ${wrapWordsHtml(clean)}${_qZhSpan(q.optionsZh, i)}`;
-  });
-  btns[chosen].classList.add(chosen === q.answer ? 'correct' : 'wrong');
-  btns[q.answer].classList.add('correct');
+    // 答題揭曉：題幹句子（單字/片語/文法題的 "The meeting was _____ ..." 這類句子）也要升級為可點字查詢
+    const qTextEl = document.querySelector('#quizQ .quiz-q-text');
+    if (qTextEl) qTextEl.innerHTML = wrapWordsHtml(q.question || q.sentence || '');
 
-  if (chosen === q.answer) {
-    quizState.score++;
-    showFb('正確！', true);
-    navigator.vibrate && navigator.vibrate(30);
-  } else {
-    showFb('答錯了', false);
-    // 答錯自動歸檔到「答錯題庫」對應分類
-    if (CAT_META[context]) {
-      _qbankAdd('wrong', context, q);
-      _updateBankCounts('wrong');
+    // 答題揭曉：選項文字從純文字升級為可點字查詢（跟詳解一致），並標記正解/錯選樣式
+    btns.forEach((b, i) => {
+      b.disabled = true;
+      const clean = q.options[i].replace(/^\s*(?:\([A-D]\)|[A-D][.、．])\s*/u, '');
+      b.innerHTML = `${String.fromCharCode(65 + i)}. ${wrapWordsHtml(clean)}${_qZhSpan(q.optionsZh, i)}`;
+    });
+    btns[chosen].classList.add(chosen === q.answer ? 'correct' : 'wrong');
+    btns[q.answer].classList.add('correct');
+
+    if (chosen === q.answer) {
+      quizState.score++;
+      showFb('正確！', true);
+      navigator.vibrate && navigator.vibrate(30);
+    } else {
+      showFb('答錯了', false);
+      // 答錯自動歸檔到「答錯題庫」對應分類
+      if (CAT_META[context]) {
+        _qbankAdd('wrong', context, q);
+        _updateBankCounts('wrong');
+      }
     }
-  }
 
-  // 記錄今日已完成題目（不論對錯），用於剩餘題數徽章
-  if (CAT_META[context]) {
-    _dailyMarkDone(context, _qid(q));
-    _updateDailyBadges();
-    _trackSubjectStats(context, chosen === q.answer ? 1 : 0, 1);
-  }
+    // 記錄今日已完成題目（不論對錯），用於剩餘題數徽章
+    if (CAT_META[context]) {
+      _dailyMarkDone(context, _qid(q));
+      _updateDailyBadges();
+      _trackSubjectStats(context, chosen === q.answer ? 1 : 0, 1);
+    }
 
-  const explainEl = document.getElementById('quizExplain');
-  // 聽力：詳解前先顯示對話內容
-  if (context === 'listening' && q.dialogue) {
-    explainEl.innerHTML =
-      _dialogueHtml(q.dialogue) +
-      `<div>${wrapWordsHtml(q.explanation)}</div>`;
-  } else {
-    explainEl.innerHTML = wrapWordsHtml(q.explanation);
+    const explainEl = document.getElementById('quizExplain');
+    // 聽力：詳解前先顯示對話內容
+    if (context === 'listening' && q.dialogue) {
+      explainEl.innerHTML =
+        _dialogueHtml(q.dialogue) +
+        `<div>${wrapWordsHtml(q.explanation)}</div>`;
+    } else {
+      explainEl.innerHTML = wrapWordsHtml(q.explanation);
+    }
+    explainEl.classList.remove('hidden');
+    document.getElementById('quizOpts').classList.add('revealed');  // 作答後顯示選項中譯
+  } catch (e) {
+    console.error('[quiz] answerQuestion 揭曉階段發生例外，仍繼續顯示下一題按鈕', e);
+  } finally {
+    const nextBtn = document.getElementById('quizNextBtn');
+    nextBtn.textContent = idx >= questions.length - 1 ? '查看成績 →' : '下一題 →';
+    nextBtn.onclick = nextQuestion;   // 預選階段被改成 submitAnswer，揭曉後要改回 nextQuestion（否則點「下一題」會重送同題）
+    nextBtn.classList.remove('hidden');
   }
-  explainEl.classList.remove('hidden');
-  document.getElementById('quizOpts').classList.add('revealed');  // 作答後顯示選項中譯
-
-  const nextBtn = document.getElementById('quizNextBtn');
-  nextBtn.textContent = idx >= questions.length - 1 ? '查看成績 →' : '下一題 →';
-  nextBtn.onclick = nextQuestion;   // 預選階段被改成 submitAnswer，揭曉後要改回 nextQuestion（否則點「下一題」會重送同題）
-  nextBtn.classList.remove('hidden');
 }
 
 function nextQuestion() {
@@ -5330,7 +5343,19 @@ function _bgmSync() {
 
 // 若使用者上次已把 BGM 設為開啟，重新整理頁面後瀏覽器會擋自動播放；
 // 掛一個「第一次點擊畫面任何地方」的一次性監聽器，補播放一次。
+// Apple Guideline 2.3.10：iOS 版 App 不得在 App 內出現「Google Play」等第三方平台名稱，
+// 這兩處文字只有 Android 原生 App 才顯示 Google Play，iOS／網頁一律只顯示 App Store。
+function _applyStoreLabels() {
+  const isAndroid = !!(window.Capacitor?.isNativePlatform?.() && window.Capacitor.getPlatform() === 'android');
+  const label = isAndroid ? 'App Store／Google Play' : 'App Store';
+  ['storeLabelSub', 'storeLabelDel'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = label;
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  _applyStoreLabels();
   _bgmSync();
   const resumeOnFirstGesture = () => {
     if (_loadSettingsData().bgm !== false) _bgmGetAudio().play().catch(() => {});

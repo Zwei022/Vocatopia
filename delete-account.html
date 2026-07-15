@@ -72,7 +72,7 @@
       <tr><td>帳號登入資訊（電子信箱、密碼）</td><td>永久刪除</td></tr>
       <tr><td>個人資料（暱稱、金幣、角色、卡組）</td><td>永久刪除</td></tr>
       <tr><td>學習紀錄（答題記錄、收藏題目、複習進度）</td><td>永久刪除</td></tr>
-      <tr><td>訂閱紀錄</td><td>永久刪除（不影響您透過 App Store／Google Play 自行取消訂閱的權利）</td></tr>
+      <tr><td>訂閱紀錄</td><td>永久刪除（不影響您透過 <span id="storeLabel1">App Store</span> 自行取消訂閱的權利）</td></tr>
       <tr><td>好友關係、競技場對戰紀錄</td><td>永久刪除</td></tr>
     </table>
     <p>刪除後資料無法復原。若您只是想暫停使用，不需要刪除帳號，直接登出即可。</p>
@@ -80,7 +80,7 @@
 
   <div class="card">
     <h2>取消訂閱與刪除帳號的差別</h2>
-    <p>刪除 Vocatopia 帳號<strong>不會</strong>自動取消您在 App Store 或 Google Play 上的訂閱扣款。如需取消訂閱，請另外到 App Store／Google Play 的訂閱管理頁面操作，避免刪除帳號後仍持續被扣款。</p>
+    <p>刪除 Vocatopia 帳號<strong>不會</strong>自動取消您在 <span id="storeLabel2">App Store</span> 上的訂閱扣款。如需取消訂閱，請另外到 <span id="storeLabel3">App Store</span> 的訂閱管理頁面操作，避免刪除帳號後仍持續被扣款。</p>
   </div>
 
   <div class="card">
@@ -88,5 +88,16 @@
     <p>若有任何問題，歡迎來信：<a href="mailto:vocatopia.app@gmail.com">vocatopia.app@gmail.com</a></p>
   </div>
 </main>
+<script>
+  // Apple Guideline 2.3.10：iOS 原生 App 內不得出現「Google Play」字樣，只有 Android 才顯示完整版本
+  (function () {
+    var isAndroid = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform() && window.Capacitor.getPlatform() === 'android');
+    var label = isAndroid ? 'App Store／Google Play' : 'App Store';
+    ['storeLabel1', 'storeLabel2', 'storeLabel3'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.textContent = label;
+    });
+  })();
+</script>
 </body>
 </html>
