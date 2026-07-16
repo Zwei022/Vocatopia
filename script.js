@@ -1192,6 +1192,19 @@ function acceptGameInvite(code) {
   setTimeout(() => _joinRoomByCode(code), 200);
 }
 
+// 首頁右上角「更多」下拉選單（收件夾/設定）
+function toggleMoreMenu(evt) {
+  evt && evt.stopPropagation();
+  document.getElementById('moreMenu').classList.toggle('open');
+}
+function closeMoreMenu() {
+  document.getElementById('moreMenu').classList.remove('open');
+}
+document.addEventListener('click', (evt) => {
+  const wrap = document.querySelector('.hm-more-wrap');
+  if (wrap && !wrap.contains(evt.target)) closeMoreMenu();
+});
+
 // ══════════════════════════════════════════════════════════════
 // 收件夾：系統補償 / 錯過的對戰邀請記錄。
 // 邀請一律會在伺服器端寫進 inbox（不論當下有沒有即時跳出來），

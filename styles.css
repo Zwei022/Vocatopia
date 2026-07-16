@@ -636,6 +636,13 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .up-logout:hover{border-color:var(--orange)}
 .inbox-badge{position:absolute;top:-4px;right:-4px;background:var(--red);color:#fff;font-size:9px;font-weight:900;font-family:'Nunito',sans-serif;min-width:15px;height:15px;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 3px;box-shadow:0 0 0 2px var(--nav)}
 
+/* 首頁右上角「更多」下拉選單（收件夾/設定合併） */
+.hm-more-wrap{position:relative}
+.hm-more-menu{display:none;position:absolute;top:calc(100% + 6px);right:0;background:var(--card);border:1.5px solid var(--line2);border-radius:14px;box-shadow:0 4px 0 rgba(122,92,67,.2);padding:6px;min-width:132px;z-index:50;flex-direction:column;gap:4px}
+.hm-more-menu.open{display:flex}
+.hm-more-item{background:transparent;border:none;border-radius:9px;padding:8px 10px;color:var(--ink);font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;text-align:left;cursor:pointer;transition:background .15s}
+.hm-more-item:hover{background:var(--card2)}
+
 /* upgrade modal */
 .upgrade-box{padding:28px 24px 40px}
 .upgrade-tiers{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
