@@ -7822,11 +7822,11 @@ function openCharDetail(id) {
 
   // 卡牌外框版面：頂部灰白名稱列 + 卡面圖滿版當背景 + 內縮的稀有度小框緊貼底部故事/技能框
   overlay.innerHTML = `
-    <div style="width:100%;max-width:300px;font-family:'Nunito',sans-serif">
+    <div style="position:relative;width:100%;max-width:300px;font-family:'Nunito',sans-serif">
+      <button onclick="document.getElementById('charDetailOverlay').remove()" style="position:absolute;top:-12px;right:-12px;z-index:4;width:26px;height:26px;border:2px solid var(--card);border-radius:50%;background:rgba(43,30,20,.85);color:#fff;font-size:13px;cursor:pointer;line-height:1">✕</button>
+
       <div style="position:relative;width:100%;aspect-ratio:2/3;border-radius:18px;overflow:hidden;border:3px solid ${rarityColor};box-shadow:0 8px 40px rgba(75,56,42,.35);background:var(--card)">
         <img src="${ch.cardImg || ch.img}" alt="${escHtml(ch.name)}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center${isOwned ? '' : ';filter:grayscale(.85)'}">
-
-        <button onclick="document.getElementById('charDetailOverlay').remove()" style="position:absolute;top:-10px;right:-6px;z-index:4;width:26px;height:26px;border:2px solid var(--card);border-radius:50%;background:rgba(43,30,20,.85);color:#fff;font-size:13px;cursor:pointer;line-height:1">✕</button>
 
         <div style="position:absolute;top:10px;left:8px;right:8px;z-index:2;aspect-ratio:911/154">
           <div style="position:absolute;left:2.31%;top:28.57%;width:94.84%;height:48.05%;background:${rarityColor};opacity:.42;border-radius:4px"></div>
