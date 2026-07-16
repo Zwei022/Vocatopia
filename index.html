@@ -119,6 +119,16 @@
   </div>
 </div>
 
+<!-- 每日簽到獎勵 -->
+<div class="modal-overlay" id="checkinModal">
+  <div class="modal-box">
+    <div class="modal-title">🔥 每日簽到</div>
+    <div class="checkin-grid" id="checkinGrid"></div>
+    <div class="checkin-note" id="checkinNote"></div>
+    <button class="modal-confirm" onclick="closeModal('checkinModal')">知道了</button>
+  </div>
+</div>
+
 <!-- MOVE WORDS MODAL（管理模式：移轉到其他自訂卡組） -->
 <div class="modal-overlay" id="moveWordsModal">
   <div class="modal-box">
@@ -206,6 +216,7 @@
          登出已移進設定面板，登入則沿用「未登入時點個人資料」既有的 showGuestProfileNotice() 流程。 -->
     <div class="hm-subrow">
       <button id="profileBtn" class="hm-profile-btn" onclick="currentProfile ? showProfile() : showGuestProfileNotice()">👤 個人資料</button>
+      <button id="checkinBtn" class="hm-profile-btn" onclick="openCheckinScreen()">🔥 簽到</button>
       <div class="hm-gold-chip">🪙 <span id="hGold">0</span></div>
       <div class="hm-more-wrap">
         <button id="moreMenuBtn" class="up-logout" onclick="toggleMoreMenu(event)" title="更多" style="position:relative">

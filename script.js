@@ -1393,6 +1393,38 @@ function _showStreakCelebration(streak) {
   if (typeof confetti === 'function') confetti();
 }
 
+// 每日簽到獎勵：7 天一循環，獎勵金額先用前端固定表（之後要換成後端可設定的 checkin_reward_config 表）
+const CHECKIN_REWARD_TABLE = [10, 10, 15, 15, 20, 20, 50];
+function openCheckinScreen() {
+  if (!currentUser || typeof authClient === 'undefined') { showGuestProfileNotice(); return; }
+  _renderCheckinCalendar();
+  openModal('checkinModal');
+}
+function _renderCheckinCalendar() {
+  const streak = currentProfile?.streak || 0;
+  const dayInCycle = streak > 0 ? ((streak - 1) % 7) + 1 : 0;
+  const grid = document.getElementById('checkinGrid');
+  const note = document.getElementById('checkinNote');
+  if (!grid) return;
+  grid.innerHTML = CHECKIN_REWARD_TABLE.map((gold, i) => {
+    const day = i + 1;
+    let state = 'future';
+    if (day < dayInCycle) state = 'done';
+    else if (day === dayInCycle && streak > 0) state = 'today';
+    return `
+      <div class="checkin-day checkin-${state}">
+        <div class="checkin-day-label">第${day}天</div>
+        <div class="checkin-day-icon">${state === 'done' ? '✅' : state === 'today' ? '🔥' : '🪙'}</div>
+        <div class="checkin-day-gold">+${gold}</div>
+      </div>`;
+  }).join('');
+  if (note) {
+    note.textContent = streak > 0
+      ? `已連續簽到 ${streak} 天，明天再來延續連勝！`
+      : '今天先登入簽到一次，開始累積連勝吧！';
+  }
+}
+
 function hostStartBattle() {
   if (!pvpState || !pvpState.isHost || !roomCode) return;
   const btn = document.getElementById('pvpStartBtn');

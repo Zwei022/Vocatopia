@@ -526,6 +526,16 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .modal-confirm:active{transform:translateY(3px);box-shadow:0 1px 0 var(--red2)}
 .modal-cancel{width:100%;padding:12px;background:none;border:1.5px solid var(--line2);border-radius:var(--r2);font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:var(--ink2);cursor:pointer}
 
+/* 每日簽到獎勵月曆 */
+.checkin-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+.checkin-day{background:var(--card2);border:1.5px solid var(--line2);border-radius:12px;padding:8px 4px;text-align:center}
+.checkin-day-label{font-size:10px;font-weight:800;color:var(--ink2);font-family:'Nunito',sans-serif}
+.checkin-day-icon{font-size:20px;margin:4px 0}
+.checkin-day-gold{font-size:11px;font-weight:900;color:var(--orange2);font-family:'Nunito',sans-serif}
+.checkin-day.checkin-done{background:var(--greensoft);border-color:var(--green)}
+.checkin-day.checkin-today{background:var(--goldsoft);border-color:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+.checkin-note{font-size:12px;color:var(--ink2);text-align:center;margin-bottom:14px;font-family:'Nunito',sans-serif}
+
 /* 設定面板 */
 .sett-panel{position:absolute;inset:0;background:var(--bg);z-index:500;display:none}
 .sett-panel.open{display:block}
