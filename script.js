@@ -7828,16 +7828,11 @@ function openCharDetail(id) {
 
         <button onclick="document.getElementById('charDetailOverlay').remove()" style="position:absolute;top:-10px;right:-6px;z-index:4;width:26px;height:26px;border:2px solid var(--card);border-radius:50%;background:rgba(43,30,20,.85);color:#fff;font-size:13px;cursor:pointer;line-height:1">✕</button>
 
-        <div style="position:absolute;top:10px;left:8px;right:8px;z-index:2;height:50px">
-          <svg viewBox="0 0 320 50" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible">
-            <path fill-rule="evenodd" fill="${rarityColor}" stroke="#2B1E14" stroke-width="2"
-              d="M0,25 L16,8 L40,16 L64,6 L96,14 L130,4 L160,0 L190,4 L224,14 L256,6 L280,16 L304,8 L320,25 L304,42 L16,42 Z
-                 M26,16 L294,16 L294,38 L26,38 Z" />
-            <rect x="26" y="16" width="268" height="22" rx="5" fill="${rarityColor}" fill-opacity=".42" stroke="#2B1E14" stroke-width="1"/>
-            <text x="160" y="10" font-size="13" text-anchor="middle" dominant-baseline="middle">🍴</text>
-          </svg>
-          <div style="position:absolute;left:8.1%;width:83.8%;top:34%;height:42%;display:flex;align-items:center;justify-content:center;gap:5px">
-            <span style="font-family:var(--font-display);font-weight:900;font-size:14px;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.45)">${escHtml(ch.name)}</span>
+        <div style="position:absolute;top:10px;left:8px;right:8px;z-index:2;aspect-ratio:911/154">
+          <div style="position:absolute;left:2.31%;top:28.57%;width:94.84%;height:48.05%;background:${rarityColor};opacity:.42;border-radius:4px"></div>
+          <img src="public/images/frames/ribbon_${ch.rarity}.png" alt="" style="position:absolute;inset:0;width:100%;height:100%">
+          <div style="position:absolute;left:2.31%;top:28.57%;width:94.84%;height:48.05%;display:flex;align-items:center;justify-content:center;gap:5px">
+            <span style="font-family:var(--font-display);font-weight:900;font-size:14px;color:var(--ink);text-shadow:0 1px 2px rgba(255,255,255,.5)">${escHtml(ch.name)}</span>
             ${isOwned ? '' : `<span style="font-size:11px">🔒</span>`}
           </div>
         </div>
