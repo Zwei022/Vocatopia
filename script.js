@@ -7707,9 +7707,9 @@ function openCharDetail(id) {
 
         <button onclick="document.getElementById('charDetailOverlay').remove()" style="position:absolute;top:10px;right:10px;z-index:3;width:26px;height:26px;border:none;border-radius:50%;background:rgba(43,30,20,.5);color:#fff;font-size:14px;cursor:pointer;line-height:1">✕</button>
 
-        <div style="position:absolute;top:0;left:0;right:0;z-index:2;background:linear-gradient(rgba(251,246,234,.92),rgba(251,246,234,.75) 70%,transparent);padding:10px 40px 16px 14px">
-          <span style="font-family:var(--font-display);font-weight:900;font-size:18px;color:var(--ink)">${escHtml(ch.name)}</span>
-          ${isOwned ? '' : '<span style="font-size:13px;margin-left:4px">🔒</span>'}
+        <div style="position:absolute;top:0;left:0;right:0;z-index:2;background:${rarityColor};padding:10px 40px 10px 14px">
+          <span style="font-family:var(--font-display);font-weight:900;font-size:18px;color:${ch.rarity === 'common' ? 'var(--ink)' : '#fff'}">${escHtml(ch.name)}</span>
+          ${isOwned ? '' : `<span style="font-size:13px;margin-left:4px">🔒</span>`}
         </div>
 
         <div style="position:absolute;left:14px;right:14px;bottom:14px;z-index:2">
