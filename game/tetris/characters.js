@@ -7,9 +7,10 @@
 const TETRIS_CHARACTERS = {
   onigiri: {
     id: 'onigiri',
-    name: '飯糰',
+    name: '海苔飯糰',
     nameEn: 'rice ball',
     img: 'public/images/characters/onigiri.webp',
+    cardImg: 'public/images/characters/onigiri.webp', // TODO: 換成新版動漫萌少女擬人卡面圖（試畫中）
     rarity: 'common',            // common / rare / epic / mythic / legendary（收藏卡框顏色用）
     acquireHint: '帳號預設擁有',
     desc: '香噴噴的海苔飯糰戰士，臨危不亂，總能為自己多爭取一點思考的時間。',
@@ -23,9 +24,10 @@ const TETRIS_CHARACTERS = {
   },
   waffle: {
     id: 'waffle',
-    name: '鬆餅',
+    name: '楓糖鬆餅',
     nameEn: 'waffle',
     img: 'public/images/characters/waffle.webp',
+    cardImg: 'public/images/characters/waffle.webp', // TODO: 換成新版動漫萌少女擬人卡面圖
     rarity: 'rare',
     acquireHint: '完成一篇歷屆會考試題，正確率達 70% 以上即可解鎖',
     desc: '格紋外皮裹著滿滿奶油蜂蜜的暖心鬆餅，圍著格紋領巾，總能溫暖地陪你撐過一次失手。',
@@ -38,9 +40,10 @@ const TETRIS_CHARACTERS = {
   },
   canele: {
     id: 'canele',
-    name: '可麗露',
+    name: '蘭姆可麗露',
     nameEn: 'canelé',
     img: 'public/images/characters/canele.webp',
+    cardImg: 'public/images/characters/canele.webp', // TODO: 換成新版動漫萌少女擬人卡面圖
     rarity: 'epic',
     acquireHint: '商店常駐卡池抽卡取得（三獎，機率 15%）',
     desc: '外酥內軟的貴族甜點，圍著針織圍巾、踩著毛襪，總能提前替下一步鋪好路。',
@@ -54,9 +57,10 @@ const TETRIS_CHARACTERS = {
   },
   sushi: {
     id: 'sushi',
-    name: '壽司',
+    name: '鮭魚壽司',
     nameEn: 'sushi',
     img: 'public/images/characters/sushi.webp',
+    cardImg: 'public/images/characters/sushi.webp', // TODO: 換成新版動漫萌少女擬人卡面圖
     rarity: 'mythic',
     acquireHint: '商店常駐卡池抽卡取得（二獎，機率 4%，50抽保底必中神話以上）',
     desc: '職人手捏的鮪魚握壽司，戴著櫻花毛帽，一身職人氣魄，出手就是一顆震撼彈。',
@@ -70,9 +74,10 @@ const TETRIS_CHARACTERS = {
   },
   lobster: {
     id: 'lobster',
-    name: '龍蝦',
+    name: '焗烤龍蝦',
     nameEn: 'lobster',
     img: 'public/images/characters/lobster.webp',
+    cardImg: 'public/images/characters/lobster.webp', // TODO: 換成新版動漫萌少女擬人卡面圖
     rarity: 'legendary',
     acquireHint: '商店常駐卡池抽卡取得（特獎，機率 1%，100抽保底必中傳奇）',
     desc: '披著針織毛衣、圍著毛線圍巾的宴席王者，巨螯一舉，就能把整個底盤清空。',

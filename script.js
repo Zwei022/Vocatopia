@@ -7421,6 +7421,8 @@ function startTetris() {
 // 角色收藏系統（皇室戰爭風卡片牆）
 // ══════════════════════════════════════════════════════════════
 const RARITY_LABEL = { common: '普通', rare: '稀有', epic: '史詩', mythic: '神話', legendary: '傳奇' };
+// 稀有度對應色（跟 styles.css 的 .coll-card.rarity-* 邊框色保持同一份規範，卡牌彈窗共用同一色票）
+const RARITY_COLOR = { common: 'var(--line2)', rare: '#5B9BD5', epic: '#A56EFF', mythic: '#FF7AB6', legendary: '#F0B429' };
 
 // ══════════════════════════════════════════════════════════════
 // #13 成就 / 稱號系統
@@ -7667,7 +7669,7 @@ function renderCharCollection() {
         onclick="openCharDetail('${ch.id}')">
         ${isDeployed ? '<span class="coll-deployed-tag">出戰中</span>' : ''}
         <div class="coll-card-imgwrap">
-          <img class="coll-card-img" src="${ch.img}" alt="${escHtml(ch.name)}">
+          <img class="coll-card-img" src="${ch.cardImg || ch.img}" alt="${escHtml(ch.name)}">
           ${isOwned ? '' : '<div class="coll-lock">🔒</div>'}
         </div>
         <div class="coll-card-name">${escHtml(ch.name)}${ch.nameEn ? ` <span class="coll-card-name-en">${escHtml(ch.nameEn)}</span>` : ''}</div>
@@ -7681,6 +7683,7 @@ function openCharDetail(id) {
   if (!ch) return;
   const isOwned = getOwnedChars().includes(id);
   const isDeployed = id === getDeployedCharId();
+  const rarityColor = RARITY_COLOR[ch.rarity] || 'var(--line2)';
   const overlay = document.createElement('div');
   overlay.id = 'charDetailOverlay';
   overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px';
@@ -7696,24 +7699,32 @@ function openCharDetail(id) {
         <div style="font-size:13px;color:var(--ink2);line-height:1.5">${escHtml(ch.acquireHint || '尚未開放取得方式')}</div>
       </div>`;
 
+  // 卡牌外框版面：頂部灰白名稱列 + 卡面圖滿版當背景 + 內縮的稀有度小框緊貼底部故事/技能框
   overlay.innerHTML = `
-    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:18px;padding:22px 20px;width:100%;max-width:340px;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
-      <button onclick="document.getElementById('charDetailOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
-      <div style="text-align:center;margin-bottom:12px">
-        <img src="${ch.img}" alt="${escHtml(ch.name)}" style="width:120px;height:120px;object-fit:contain;filter:drop-shadow(0 5px 6px rgba(75,56,42,.22))${isOwned ? '' : ';filter:grayscale(.85) drop-shadow(0 5px 6px rgba(75,56,42,.22))'}">
-        <div style="display:flex;align-items:baseline;justify-content:center;gap:6px;margin-top:4px">
-          <span style="font-family:var(--font-display);font-weight:900;font-size:20px;color:var(--white)">${escHtml(ch.name)}</span>
-          ${ch.nameEn ? `<span style="font-size:13px;font-weight:700;color:var(--orange2);font-style:italic">${escHtml(ch.nameEn)}</span>` : ''}
-          ${isOwned ? '' : '<span style="font-size:13px">🔒</span>'}
+    <div style="width:100%;max-width:300px;font-family:'Nunito',sans-serif">
+      <div style="position:relative;width:100%;aspect-ratio:2/3;border-radius:18px;overflow:hidden;border:3px solid ${rarityColor};box-shadow:0 8px 40px rgba(75,56,42,.35);background:var(--card)">
+        <img src="${ch.cardImg || ch.img}" alt="${escHtml(ch.name)}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center${isOwned ? '' : ';filter:grayscale(.85)'}">
+
+        <button onclick="document.getElementById('charDetailOverlay').remove()" style="position:absolute;top:10px;right:10px;z-index:3;width:26px;height:26px;border:none;border-radius:50%;background:rgba(43,30,20,.5);color:#fff;font-size:14px;cursor:pointer;line-height:1">✕</button>
+
+        <div style="position:absolute;top:0;left:0;right:0;z-index:2;background:linear-gradient(rgba(251,246,234,.92),rgba(251,246,234,.75) 70%,transparent);padding:10px 40px 16px 14px">
+          <span style="font-family:var(--font-display);font-weight:900;font-size:18px;color:var(--ink)">${escHtml(ch.name)}</span>
+          ${isOwned ? '' : '<span style="font-size:13px;margin-left:4px">🔒</span>'}
         </div>
-        <div style="font-size:12px;color:var(--gray);margin-top:2px">${RARITY_LABEL[ch.rarity] || ''}</div>
+
+        <div style="position:absolute;left:14px;right:14px;bottom:14px;z-index:2">
+          <div style="background:rgba(43,30,20,.68);border-radius:10px 10px 0 0;padding:6px 12px;display:flex;align-items:baseline;gap:6px;border-bottom:1px solid ${rarityColor}">
+            <span style="font-weight:900;font-size:12px;color:${rarityColor}">${RARITY_LABEL[ch.rarity] || ''}</span>
+            ${ch.nameEn ? `<span style="font-size:11px;font-weight:700;color:rgba(255,255,255,.75);font-style:italic">${escHtml(ch.nameEn)}</span>` : ''}
+          </div>
+          <div style="background:rgba(43,30,20,.55);border-radius:0 0 10px 10px;padding:10px 12px 12px">
+            <div style="font-size:12px;color:rgba(255,255,255,.92);line-height:1.55;margin-bottom:8px">${escHtml(ch.desc)}</div>
+            <div style="font-weight:900;font-size:12px;color:#fff;margin-bottom:2px">${ch.skill.icon} ${escHtml(ch.skill.name)}</div>
+            <div style="font-size:11px;color:rgba(255,255,255,.85);line-height:1.5">${escHtml(ch.skill.desc)}</div>
+          </div>
+        </div>
       </div>
-      <div style="background:rgba(122,92,67,.07);border-radius:12px;padding:12px;margin-bottom:12px;font-size:13px;color:var(--ink2);line-height:1.6">${escHtml(ch.desc)}</div>
-      <div style="background:rgba(245,146,30,.1);border:1.5px solid rgba(245,146,30,.35);border-radius:12px;padding:12px;margin-bottom:16px">
-        <div style="font-weight:900;font-size:14px;color:var(--orange2);margin-bottom:4px">${ch.skill.icon} ${escHtml(ch.skill.name)}</div>
-        <div style="font-size:12px;color:var(--ink2);line-height:1.6">${escHtml(ch.skill.desc)}</div>
-      </div>
-      ${footer}
+      <div style="margin-top:12px">${footer}</div>
     </div>`;
   document.body.appendChild(overlay);
 }
