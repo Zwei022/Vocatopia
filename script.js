@@ -1370,7 +1370,10 @@ async function _dailyCheckin() {
     return;
   }
   if (!res || res.error) return;
-  if (currentProfile) currentProfile.streak = res.streak;   // 更新本地連續天數（個人檔案會顯示）
+  if (currentProfile) {
+    currentProfile.streak = res.streak;       // 更新本地連續天數（個人檔案會顯示）
+    currentProfile.last_checkin = res.today;  // 供簽到月曆判斷今天是否已領取
+  }
   if (res.changed && typeof res.gold === 'number' && currentProfile) {
     // 簽到獎勵金幣已由 daily_checkin RPC 原子入帳，這裡只同步權威值，不再呼叫 addGold（避免重複入帳）
     currentProfile.gold = res.gold;
@@ -1423,6 +1426,10 @@ async function _getCheckinRewardTable() {
     return CHECKIN_REWARD_FALLBACK;
   }
 }
+// 與 daily_checkin() RPC 用的「台灣時區今天」算法一致（date 欄位序列化成 YYYY-MM-DD）
+function _taipeiToday() {
+  return new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Taipei' });
+}
 async function openCheckinScreen() {
   if (!currentUser || typeof authClient === 'undefined') { showGuestProfileNotice(); return; }
   await _renderCheckinCalendar();
@@ -1433,6 +1440,7 @@ async function _renderCheckinCalendar() {
   const dayInCycle = streak > 0 ? ((streak - 1) % 7) + 1 : 0;
   const grid = document.getElementById('checkinGrid');
   const note = document.getElementById('checkinNote');
+  const btn = document.getElementById('checkinActionBtn');
   if (!grid) return;
   const rewardTable = await _getCheckinRewardTable();
   grid.innerHTML = rewardTable.map((gold, i) => {
@@ -1452,6 +1460,24 @@ async function _renderCheckinCalendar() {
       ? `已連續簽到 ${streak} 天，明天再來延續連勝！`
       : '今天先登入簽到一次，開始累積連勝吧！';
   }
+  const claimedToday = currentProfile?.last_checkin === _taipeiToday();
+  if (btn) {
+    if (claimedToday) {
+      btn.textContent = '已領取';
+      btn.disabled = true;
+      btn.onclick = null;
+    } else {
+      btn.textContent = '領取';
+      btn.disabled = false;
+      btn.onclick = claimTodayCheckin;
+    }
+  }
+}
+async function claimTodayCheckin() {
+  const btn = document.getElementById('checkinActionBtn');
+  if (btn) { btn.disabled = true; btn.textContent = '領取中…'; }
+  await _dailyCheckin();
+  await _renderCheckinCalendar();
 }
 
 function hostStartBattle() {

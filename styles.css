@@ -524,6 +524,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .modal-input:focus{border-color:var(--orange)}
 .modal-confirm{width:100%;padding:14px;background:var(--red);border:none;border-radius:var(--r2);font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;letter-spacing:2px;color:#fff;cursor:pointer;margin-bottom:8px;box-shadow:0 4px 0 var(--red2);transition:transform .12s,box-shadow .12s}
 .modal-confirm:active{transform:translateY(3px);box-shadow:0 1px 0 var(--red2)}
+.modal-confirm:disabled{background:var(--line3);color:var(--ink3);box-shadow:none;cursor:default}
 .modal-cancel{width:100%;padding:12px;background:none;border:1.5px solid var(--line2);border-radius:var(--r2);font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:var(--ink2);cursor:pointer}
 
 /* 每日簽到獎勵月曆 */
