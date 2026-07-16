@@ -1371,20 +1371,30 @@ async function _dailyCheckin() {
   }
   if (!res || res.error) return;
   if (currentProfile) currentProfile.streak = res.streak;   // 更新本地連續天數（個人檔案會顯示）
-  if (res.changed && res.streak >= 2) _showStreakCelebration(res.streak);
+  if (res.changed && typeof res.gold === 'number' && currentProfile) {
+    // 簽到獎勵金幣已由 daily_checkin RPC 原子入帳，這裡只同步權威值，不再呼叫 addGold（避免重複入帳）
+    currentProfile.gold = res.gold;
+    const el = document.getElementById('hGold');
+    if (el) el.textContent = res.gold.toLocaleString();
+  }
+  if (res.changed && res.streak >= 2) _showStreakCelebration(res.streak, res.reward_amount);
 }
 
-function _showStreakCelebration(streak) {
+function _showStreakCelebration(streak, rewardAmount) {
   document.getElementById('streakCelebrate')?.remove();
   const overlay = document.createElement('div');
   overlay.id = 'streakCelebrate';
   overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.6);z-index:9600;display:flex;align-items:center;justify-content:center;padding:20px';
   overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
+  const rewardLine = rewardAmount > 0
+    ? `<div style="font-size:15px;font-weight:800;color:var(--orange2);margin-bottom:10px">🪙 獲得 ${rewardAmount} 金幣</div>`
+    : '';
   overlay.innerHTML = `
     <div style="background:var(--card);border:2.5px solid var(--orange);border-radius:20px;padding:28px 24px;width:100%;max-width:320px;text-align:center;font-family:'Nunito',sans-serif;box-shadow:0 8px 40px rgba(75,56,42,.35)">
       <div style="font-size:52px;margin-bottom:4px">🔥</div>
       <div style="font-family:var(--font-display);font-weight:900;font-size:20px;color:var(--white);margin-bottom:8px">恭喜連續登入！</div>
       <div style="font-family:var(--font-display);font-weight:900;font-size:44px;color:var(--orange2);line-height:1.1">${streak} 天</div>
+      ${rewardLine}
       <div style="font-size:12px;color:var(--gray);margin:10px 0 18px">明天再來，連勝就能繼續累積！</div>
       <button onclick="document.getElementById('streakCelebrate').remove()"
         style="width:100%;padding:12px;background:var(--orange);border:none;border-radius:12px;color:#fff;font-weight:800;font-size:14px;cursor:pointer">太棒了！</button>
@@ -1393,20 +1403,39 @@ function _showStreakCelebration(streak) {
   if (typeof confetti === 'function') confetti();
 }
 
-// 每日簽到獎勵：7 天一循環，獎勵金額先用前端固定表（之後要換成後端可設定的 checkin_reward_config 表）
-const CHECKIN_REWARD_TABLE = [10, 10, 15, 15, 20, 20, 50];
-function openCheckinScreen() {
+// 每日簽到獎勵：7 天一循環。獎勵內容權威來源是 Supabase checkin_reward_config 表
+// （改獎勵只需要改資料庫，不必動程式碼）；抓不到時退回這組固定表當離線保險。
+const CHECKIN_REWARD_FALLBACK = [10, 10, 15, 15, 20, 20, 50];
+let _checkinRewardCache = null;
+async function _getCheckinRewardTable() {
+  if (_checkinRewardCache) return _checkinRewardCache;
+  if (typeof authClient === 'undefined' || !authClient) return CHECKIN_REWARD_FALLBACK;
+  try {
+    const { data, error } = await authClient
+      .from('checkin_reward_config')
+      .select('day_index, amount')
+      .order('day_index');
+    if (error || !data || data.length !== 7) throw error || new Error('unexpected row count');
+    _checkinRewardCache = data.sort((a, b) => a.day_index - b.day_index).map(r => r.amount);
+    return _checkinRewardCache;
+  } catch (err) {
+    console.warn('[checkin] 讀取獎勵表失敗，改用前端固定表：', err?.message || err);
+    return CHECKIN_REWARD_FALLBACK;
+  }
+}
+async function openCheckinScreen() {
   if (!currentUser || typeof authClient === 'undefined') { showGuestProfileNotice(); return; }
-  _renderCheckinCalendar();
+  await _renderCheckinCalendar();
   openModal('checkinModal');
 }
-function _renderCheckinCalendar() {
+async function _renderCheckinCalendar() {
   const streak = currentProfile?.streak || 0;
   const dayInCycle = streak > 0 ? ((streak - 1) % 7) + 1 : 0;
   const grid = document.getElementById('checkinGrid');
   const note = document.getElementById('checkinNote');
   if (!grid) return;
-  grid.innerHTML = CHECKIN_REWARD_TABLE.map((gold, i) => {
+  const rewardTable = await _getCheckinRewardTable();
+  grid.innerHTML = rewardTable.map((gold, i) => {
     const day = i + 1;
     let state = 'future';
     if (day < dayInCycle) state = 'done';
