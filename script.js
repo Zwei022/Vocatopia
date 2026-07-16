@@ -7544,7 +7544,6 @@ function startTetris() {
 const RARITY_LABEL = { common: '普通', rare: '稀有', epic: '史詩', mythic: '神話', legendary: '傳奇' };
 // 稀有度對應色（跟 styles.css 的 .coll-card.rarity-* 邊框色保持同一份規範，卡牌彈窗共用同一色票）
 const RARITY_COLOR = { common: 'var(--line2)', rare: '#5B9BD5', epic: '#A56EFF', mythic: '#FF7AB6', legendary: '#F0B429' };
-const RARITY_ICON  = { common: '🟤', rare: '🔵', epic: '🟣', mythic: '🌈', legendary: '👑' };
 
 // ══════════════════════════════════════════════════════════════
 // #13 成就 / 稱號系統
@@ -7829,12 +7828,19 @@ function openCharDetail(id) {
 
         <button onclick="document.getElementById('charDetailOverlay').remove()" style="position:absolute;top:-10px;right:-6px;z-index:4;width:26px;height:26px;border:2px solid var(--card);border-radius:50%;background:rgba(43,30,20,.85);color:#fff;font-size:13px;cursor:pointer;line-height:1">✕</button>
 
-        <div style="position:absolute;top:12px;left:12px;right:12px;z-index:2;height:34px;background:${rarityColor};clip-path:polygon(0 0,100% 0,100% 60%,93% 100%,86% 60%,79% 100%,72% 60%,65% 100%,58% 60%,51% 100%,44% 60%,37% 100%,30% 60%,23% 100%,16% 60%,9% 100%,2% 60%,0 100%);display:flex;align-items:center;padding:0 32px">
-          <span style="font-family:var(--font-display);font-weight:900;font-size:15px;color:${ch.rarity === 'common' ? 'var(--ink)' : '#fff'};text-shadow:0 1px 2px rgba(0,0,0,.25)">${escHtml(ch.name)}</span>
-          ${isOwned ? '' : `<span style="font-size:12px;margin-left:4px">🔒</span>`}
+        <div style="position:absolute;top:10px;left:8px;right:8px;z-index:2;height:50px">
+          <svg viewBox="0 0 320 50" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible">
+            <path fill-rule="evenodd" fill="${rarityColor}" stroke="#2B1E14" stroke-width="2"
+              d="M0,25 L16,8 L40,16 L64,6 L96,14 L130,4 L160,0 L190,4 L224,14 L256,6 L280,16 L304,8 L320,25 L304,42 L16,42 Z
+                 M26,16 L294,16 L294,38 L26,38 Z" />
+            <rect x="26" y="16" width="268" height="22" rx="5" fill="${rarityColor}" fill-opacity=".42" stroke="#2B1E14" stroke-width="1"/>
+            <text x="160" y="10" font-size="13" text-anchor="middle" dominant-baseline="middle">🍴</text>
+          </svg>
+          <div style="position:absolute;left:8.1%;width:83.8%;top:34%;height:42%;display:flex;align-items:center;justify-content:center;gap:5px">
+            <span style="font-family:var(--font-display);font-weight:900;font-size:14px;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.45)">${escHtml(ch.name)}</span>
+            ${isOwned ? '' : `<span style="font-size:11px">🔒</span>`}
+          </div>
         </div>
-        <div style="position:absolute;top:6px;left:8px;z-index:3;width:28px;height:28px;border-radius:50%;background:rgba(30,20,12,.9);border:2px solid ${rarityColor};display:flex;align-items:center;justify-content:center;font-size:14px">${RARITY_ICON[ch.rarity] || ''}</div>
-        <div style="position:absolute;top:6px;right:8px;z-index:3;width:28px;height:28px;border-radius:50%;background:rgba(30,20,12,.9);border:2px solid ${rarityColor};display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#fff">◆1</div>
 
         <div style="position:absolute;left:14px;right:14px;bottom:14px;z-index:2">
           <div style="background:rgba(43,30,20,.68);border-radius:10px 10px 0 0;padding:6px 12px;display:flex;align-items:baseline;gap:6px;border-bottom:1px solid ${rarityColor}">
