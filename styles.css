@@ -1585,6 +1585,10 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .gyr-exam.empty:hover{background:var(--card2);border-color:var(--line2)}
 .gyr-exam.empty .gyr-exam-name{color:var(--ink3)}
 .gyr-exam.empty .gyr-exam-status{color:var(--ink3)}
+.gyr-exam.locked{opacity:.55;cursor:pointer}
+.gyr-exam.locked:hover{background:var(--nav);border-color:var(--line2)}
+.gyr-exam.locked .gyr-exam-status{color:var(--ink3)}
+.gyr-exam .glesson-lock{margin-left:4px;font-size:11px}
 
 /* 模擬試題專區：與歷屆真題用分界線區隔 */
 .gsat-divider{display:flex;align-items:center;gap:12px;margin:6px 2px 2px;color:var(--ink2)}

@@ -835,6 +835,9 @@ async function refreshSubscriptionStatus() {
     if (typeof _gmLoadData === 'function') _gmLoadData();
     // #5(b) 訂閱狀態（非同步）回來後，若正在每日練習頁，刷新無限題庫入口鎖定狀態
     if (typeof updateUnlimitedEntry === 'function') updateUnlimitedEntry();
+    // 模擬試題（閱覽室/圖書館）訂閱鎖定狀態同步刷新
+    if (typeof renderGsatList === 'function') renderGsatList();
+    if (typeof renderGsatLib === 'function') renderGsatLib();
   } catch (e) { console.error('查詢訂閱狀態失敗', e); }
 }
 
