@@ -206,13 +206,13 @@
          登出已移進設定面板，登入則沿用「未登入時點個人資料」既有的 showGuestProfileNotice() 流程。 -->
     <div class="hm-subrow">
       <button id="profileBtn" class="hm-profile-btn" onclick="currentProfile ? showProfile() : showGuestProfileNotice()">👤 個人資料</button>
-      <button id="friendsBtn" class="hm-profile-btn" onclick="showFriendsButton()">👥 好友</button>
       <div class="hm-gold-chip">🪙 <span id="hGold">0</span></div>
       <div class="hm-more-wrap">
         <button id="moreMenuBtn" class="up-logout" onclick="toggleMoreMenu(event)" title="更多" style="position:relative">
           ⋯<span id="inboxBadge" class="inbox-badge" style="display:none">0</span>
         </button>
         <div id="moreMenu" class="hm-more-menu">
+          <button class="hm-more-item" onclick="closeMoreMenu();showFriendsButton()">👥 好友</button>
           <button class="hm-more-item" onclick="closeMoreMenu();openInbox()">📬 收件夾</button>
           <button class="hm-more-item" onclick="closeMoreMenu();showSettings()">⚙️ 設定</button>
         </div>
