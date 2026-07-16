@@ -1789,18 +1789,21 @@ function _gsatYearRowsHTML(openFnName) {
       </div>`;
   }).join('');
 
-  // 分界線 + 模擬試題專區
+  // 分界線 + 模擬試題專區（訂閱者專屬，比照文法教學：非訂閱者變暗+鎖頭，點擊導向訂閱）
   const sims = GSAT_EXAMS.filter(e => e.sim);
   if (sims.length) {
+    const premium = _isPremium();
     html += `
       <div class="gsat-divider"><span>模擬試題</span></div>
       <div class="gsat-sim-list">
         ${sims.map(e => {
           const hasData = !!e.dataUrl;
+          const locked = hasData && !premium;
+          const onclick = !hasData ? '' : locked ? "openModal('upgradeModal')" : `${openFnName}(${e.year},'${e.type}')`;
           return `
-            <button class="gyr-exam gsat-sim-exam${hasData ? '' : ' empty'}" onclick="${hasData ? `${openFnName}(${e.year},'${e.type}')` : ''}">
-              <div class="gyr-exam-name">${e.icon} ${e.label}</div>
-              <div class="gyr-exam-status">${hasData ? '開始作答' : '準備中'}</div>
+            <button class="gyr-exam gsat-sim-exam${hasData ? '' : ' empty'}${locked ? ' locked' : ''}" onclick="${onclick}">
+              <div class="gyr-exam-name">${e.icon} ${e.label}${locked ? '<span class="glesson-lock">🔒</span>' : ''}</div>
+              <div class="gyr-exam-status">${!hasData ? '準備中' : locked ? '訂閱解鎖' : '開始作答'}</div>
             </button>`;
         }).join('')}
       </div>`;
@@ -8070,9 +8073,9 @@ function _gachaSpreadStack(stack) {
   [...stack.children].forEach(el => { el.style.top = ''; el.style.zIndex = ''; });
 }
 
-function _gachaCardMarkup(r, i, styleExtra) {
+function _gachaCardMarkup(r, i, styleExtra, width = 176) {
   return `
-    <div class="gacha-flip-card ${_gachaGlowClass(r)}" style="width:176px${styleExtra ? ';' + styleExtra : ''}" data-idx="${i}" data-flipped="0" data-isnew="${r.isNew ? '1' : '0'}" onclick="_gachaTapFlip(this)">
+    <div class="gacha-flip-card ${_gachaGlowClass(r)}" style="width:${width}px${styleExtra ? ';' + styleExtra : ''}" data-idx="${i}" data-flipped="0" data-isnew="${r.isNew ? '1' : '0'}" onclick="_gachaTapFlip(this)">
       <div class="gacha-flip-inner">
         <div class="gacha-flip-front pack-back"><img src="public/images/app_icon_transparent.webp" alt="Vocatopia"></div>
         <div class="gacha-flip-back">${_gachaResultCardBack(r)}</div>
@@ -8142,17 +8145,18 @@ function _showGachaPackResults(results) {
 
   const isSingle = results.length === 1;
   const cardsHtml = isSingle
-    ? `<div class="gacha-single">${_gachaCardMarkup(results[0], 0)}</div>`
+    ? `<div class="gacha-single">${_gachaCardMarkup(results[0], 0, '', 240)}</div>`
     : `<div class="gacha-stack" style="height:${236 + (results.length - 1) * 16}px">
         ${results.map((r, i) => _gachaCardMarkup(r, i, `top:${(results.length - 1 - i) * 16}px;z-index:${i + 1}`)).join('')}
       </div>`;
   const allBtn = isSingle ? '' : `<button onclick="_gachaRevealAll(this)" style="margin-top:14px;width:100%;padding:12px;border:none;border-radius:12px;font-family:var(--font-display);font-weight:900;font-size:14px;color:#fff;background:var(--red);box-shadow:0 4px 0 var(--red2);cursor:pointer">一鍵翻開</button>`;
+  const modalWidth = isSingle ? 300 : 400;
 
   overlay.innerHTML = `
-    <div class="gacha-pack-results" style="background:var(--card);border:2.5px solid var(--line);border-radius:18px;padding:22px 16px;width:100%;max-width:400px;max-height:85vh;overflow-y:auto;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
+    <div class="gacha-pack-results" style="background:var(--card);border:2.5px solid var(--line);border-radius:18px;padding:26px 18px;width:100%;max-width:${modalWidth}px;max-height:85vh;overflow-y:auto;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
       <button onclick="document.getElementById('gachaResultOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
-      <div style="font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--ink);margin-bottom:6px;text-align:center">抽卡結果</div>
-      <div style="font-size:12px;color:var(--ink3);margin-bottom:14px;text-align:center">點卡片翻開，邊緣發光代表稀有度更高</div>
+      <div style="font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--ink);margin-bottom:8px;line-height:1.4;text-align:center">抽卡結果</div>
+      <div style="font-size:12px;color:var(--ink3);margin-bottom:16px;line-height:1.5;text-align:center">點卡片翻開，邊緣發光代表稀有度更高</div>
       <div style="display:flex;justify-content:center">${cardsHtml}</div>
       ${allBtn}
     </div>`;

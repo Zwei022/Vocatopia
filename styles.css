@@ -1983,6 +1983,9 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .gacha-tray{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:14px}
 .gacha-tray .gacha-flip-card{width:120px}
 
+/* 單抽結果：卡片放大呈現，彈窗也跟著縮到剛好貼合大小的寬度，避免看起來小小一個很空 */
+.gacha-single .gacha-flip-inner{min-height:322px}
+
 /* ── 閱覽室：文法教學單元列表 ── */
 .glesson-list{display:flex;flex-direction:column;gap:10px;padding:4px 0 20px}
 .glesson-row{background:var(--card);border:2px solid var(--line2);border-radius:var(--r2);padding:14px 16px;
