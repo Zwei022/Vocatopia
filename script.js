@@ -7933,22 +7933,52 @@ function _gachaRarityKey(r) {
   return TETRIS_CHARACTERS[r.charId]?.rarity || null;
 }
 
-// 單次點擊直接翻牌（拆包動畫已經提供懸念，不再需要「先點亮光環再點翻牌」兩段式）
-function _gachaTapFlip(el) {
+// 單次點擊直接翻牌（拆包動畫已經提供懸念，不再需要「先點亮光環再點翻牌」兩段式）。
+// moveToTray：手動一張一張點開時，翻完要移到旁邊的檢視區，避免擋住還沒翻的疊牌；
+// 一鍵翻開時傳 false，改在全部翻完後把整疊牌一起攤開（_gachaSpreadStack）。
+function _gachaTapFlip(el, moveToTray = true) {
   if (el.dataset.flipped === '1') return;
   el.dataset.flipped = '1';
   el.classList.add('flipped');
   if (typeof SFX !== 'undefined') SFX.gachaReveal(el.dataset.isnew === '1');
+  if (moveToTray) setTimeout(() => _gachaMoveToTray(el), 600);
 }
 
-// 一鍵翻開：把還沒翻的卡依序（小延遲）全部翻開，做出連續掀牌的節奏感
+// 把手動翻開的單張卡從疊牌移到下方檢視區（拿掉絕對定位的疊牌座標，改成一般排列）
+function _gachaMoveToTray(el) {
+  const stack = el.closest('.gacha-stack');
+  if (!stack) return; // 單抽沒有疊牌可移
+  let tray = stack.parentElement.querySelector('.gacha-tray');
+  if (!tray) {
+    tray = document.createElement('div');
+    tray.className = 'gacha-tray';
+    stack.insertAdjacentElement('afterend', tray);
+  }
+  el.style.top = '';
+  el.style.zIndex = '';
+  tray.appendChild(el);
+}
+
+// 一鍵翻開：把還沒翻的卡依序（小延遲）全部翻開，翻完後把整疊牌攤開成不重疊的網格
 function _gachaRevealAll(btn) {
   const stack = btn.closest('.gacha-pack-results')?.querySelector('.gacha-stack, .gacha-single');
   if (!stack) return;
   const cards = [...stack.querySelectorAll('.gacha-flip-card')].filter(el => el.dataset.flipped !== '1');
-  cards.forEach((el, i) => setTimeout(() => _gachaTapFlip(el), i * 140));
+  cards.forEach((el, i) => setTimeout(() => _gachaTapFlip(el, false), i * 140));
   btn.disabled = true;
   btn.textContent = '翻開中…';
+  setTimeout(() => {
+    _gachaSpreadStack(stack);
+    btn.style.display = 'none';
+  }, cards.length * 140 + 650);
+}
+
+// 把整疊牌從堆疊狀態攤開成不重疊的網格排列
+function _gachaSpreadStack(stack) {
+  if (!stack.classList.contains('gacha-stack')) return; // 單抽本來就沒有堆疊
+  stack.classList.add('spread');
+  stack.style.height = '';
+  [...stack.children].forEach(el => { el.style.top = ''; el.style.zIndex = ''; });
 }
 
 function _gachaCardMarkup(r, i, styleExtra) {

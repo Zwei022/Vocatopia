@@ -1972,8 +1972,16 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 @keyframes gachaSwipeHint{0%,100%{transform:translateX(0)}50%{transform:translateX(10px)}}
 
 /* 十連抽疊牌堆：每張卡用 inline style 設定 translateY/z-index 做出扇形堆疊 */
-.gacha-stack{position:relative;width:176px;margin:0 auto}
+.gacha-stack{position:relative;width:176px;margin:0 auto;transition:height .3s}
 .gacha-stack .gacha-flip-card{position:absolute;top:0;left:0;width:100%}
+
+/* 一鍵翻開後，整疊牌攤開成不重疊的網格（拿掉絕對定位，改成一般排列） */
+.gacha-stack.spread{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;width:100%}
+.gacha-stack.spread .gacha-flip-card{position:static;width:120px}
+
+/* 手動一張一張翻開時，翻完的卡移到這裡並排檢視，不擋住還沒翻的疊牌 */
+.gacha-tray{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:14px}
+.gacha-tray .gacha-flip-card{width:120px}
 
 /* ── 閱覽室：文法教學單元列表 ── */
 .glesson-list{display:flex;flex-direction:column;gap:10px;padding:4px 0 20px}
