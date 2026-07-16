@@ -39,3 +39,30 @@
 ### 其他慣例
 - 每次改動前端資產必須升版 `sw.js` 的 `CACHE` 版本號
 - 字體：`Nunito`（顯示/數字）+ `Noto Sans TC`（中文內文）；已移除 Space Grotesk
+
+## App 全域返回鍵/手勢返回架構（2026-07-16 定案，第一階段）
+
+### 背景
+全站原本有 6 種不同的「開關語言」並存，且完全沒有 Android 實體返回鍵／iOS
+邊緣滑動手勢的處理（`@capacitor/app` 早就裝了但沒註冊 `backButton` 監聽）。
+
+### 第一階段涵蓋範圍
+- **標準彈窗**（`.modal-overlay` + `.show`）：`openModal(id)`/`closeModal(id)`
+  改為維護全域堆疊 `_modalStack`，開啟 push、關閉（不論是被 ✕ 按鈕/背景點擊/
+  返回鍵關閉）都要 filter 掉，因此**新彈窗一律要透過這兩個函式開關，不可以
+  直接操作 `.show` class**，否則堆疊會跟畫面顯示狀態脫節。
+- **畫面切換**（`.screen` + `.active`）：`goScreen(id, btn)` 改為維護
+  `_screenHistory`，每次「真的换到不同畫面」才 push 前一個 id。
+
+### 特殊全螢幕蓋版（教學導覽/設定面板/動態彈窗如簽到恭喜與收件夾/測驗子畫面）
+這類**沒有各自的返回堆疊**，按返回鍵/手勢一律是「直接關閉 + 回首頁」
+（`_closeAnySpecialOverlay()` + `goScreen('home')`），不會回到「使用者原本在的
+那個畫面」。這是刻意的取捨（分階段做，避免一次全部重構），新增這類全螢幕蓋版
+時要記得在 `_closeAnySpecialOverlay()` 補上對應的判斷式。
+
+### 統一返回邏輯 `handleBack()`（`script.js`）
+優先序：特殊蓋版 → 標準彈窗堆疊（關最上層）→ 畫面歷史（回上一頁）→
+都空了（已在首頁）→ 2 秒內再按一次才真的 `App.exitApp()`。
+Android 由 `CapApp.addListener('backButton', handleBack)` 觸發；iOS 沒有實體
+返回鍵，改用螢幕左緣 24px 內起始、右滑超過 60px 的手勢偵測觸發同一個
+`handleBack()`，只在 `Capacitor.getPlatform() === 'ios'` 時啟用。

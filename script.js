@@ -450,7 +450,11 @@ function goReadTab(tab, btn) {
   goScreen('reading', btn);
 }
 
-function goScreen(id, btn) {
+// App 全域返回鍵/手勢返回：畫面切換歷史（見 handleBack()）
+let _screenHistory = ['home'];
+function goScreen(id, btn, _fromBack) {
+  const prevActive = document.querySelector('.screen.active');
+  if (!_fromBack && prevActive && prevActive.id !== id) _screenHistory.push(prevActive.id);
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   const screenEl = document.getElementById(id);
   screenEl.classList.add('active');
@@ -617,11 +621,96 @@ let buzzerState = null; // { qIdx, total, myAnswered, foeAnswered, myTotal, foeT
 // 不會因為短暫斷線就被判定「對手離開」
 const pvpClientId = (crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`);
 
+// App 全域返回鍵/手勢返回：標準彈窗堆疊（見 handleBack()）
+let _modalStack = [];
 function openModal(id)  {
   document.getElementById(id).classList.add('show');
+  if (!_modalStack.includes(id)) _modalStack.push(id);
   if (id === 'upgradeModal') _refreshUpgradeModalPricing();
 }
-function closeModal(id) { document.getElementById(id).classList.remove('show'); }
+function closeModal(id) {
+  document.getElementById(id).classList.remove('show');
+  _modalStack = _modalStack.filter(m => m !== id);
+}
+
+// ══════════════════════════════════════════════════════════════
+// App 全域返回鍵（Android 實體鍵）／手勢返回（iOS 邊緣左滑）統一處理。
+// 優先序：特殊全螢幕蓋版（教學導覽/設定面板/動態彈窗/測驗子畫面，這類目前
+// 沒有各自的返回堆疊，按返回一律直接關閉並回首頁）→ 標準彈窗堆疊 → 畫面切換
+// 歷史 → 都空了才是「再按一次離開 App」。
+// ══════════════════════════════════════════════════════════════
+function _closeAnySpecialOverlay() {
+  const tutorial = document.getElementById('tutorialOverlay');
+  if (tutorial && !tutorial.classList.contains('hidden')) { tutorialFinish(); return true; }
+
+  const settPanel = document.getElementById('settingsPanel');
+  if (settPanel && settPanel.classList.contains('open')) { closeSettings(); return true; }
+
+  const streak = document.getElementById('streakCelebrate');
+  if (streak) { streak.remove(); return true; }
+
+  const inbox = document.getElementById('inboxOverlay');
+  if (inbox) { inbox.remove(); return true; }
+
+  const fcQuiz = document.getElementById('fcQuizOverlay');
+  if (fcQuiz && fcQuiz.classList.contains('show')) { closeFcQuiz(); return true; }
+
+  const matchOverlay = document.getElementById('matchOverlay');
+  if (matchOverlay && matchOverlay.classList.contains('show')) { closeMatchGame(); return true; }
+
+  return false;
+}
+
+let _lastBackPressAt = 0;
+function handleBack() {
+  if (_closeAnySpecialOverlay()) { goScreen('home'); return; }
+
+  if (_modalStack.length) { closeModal(_modalStack[_modalStack.length - 1]); return; }
+
+  if (_screenHistory.length > 1) {
+    const prevId = _screenHistory.pop();
+    goScreen(prevId, null, true);
+    return;
+  }
+
+  // 已在首頁且沒有任何彈窗/蓋版：再按一次（2 秒內）才真的離開 App
+  const now = Date.now();
+  if (now - _lastBackPressAt < 2000) {
+    window.Capacitor?.Plugins?.App?.exitApp();
+  } else {
+    _lastBackPressAt = now;
+    if (typeof showToast === 'function') showToast('再按一次返回鍵離開');
+  }
+}
+
+function _setupBackHandling() {
+  const isNative = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+  if (!isNative) return;
+
+  const CapApp = window.Capacitor?.Plugins?.App;
+  if (CapApp) CapApp.addListener('backButton', handleBack);
+
+  // iOS 沒有實體返回鍵，用邊緣左滑手勢觸發同一套邏輯
+  if (window.Capacitor.getPlatform() === 'ios') {
+    const EDGE_ZONE_PX = 24;
+    const SWIPE_THRESHOLD_PX = 60;
+    let touchStartX = null, touchStartY = null;
+    document.addEventListener('touchstart', e => {
+      const t = e.touches[0];
+      touchStartX = t.clientX <= EDGE_ZONE_PX ? t.clientX : null;
+      touchStartY = t.clientY;
+    }, { passive: true });
+    document.addEventListener('touchend', e => {
+      if (touchStartX === null) return;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - touchStartX;
+      const dy = Math.abs(t.clientY - touchStartY);
+      if (dx > SWIPE_THRESHOLD_PX && dy < SWIPE_THRESHOLD_PX) handleBack();
+      touchStartX = null;
+    }, { passive: true });
+  }
+}
+document.addEventListener('DOMContentLoaded', _setupBackHandling);
 
 // 首次登入起 12 小時內，月付方案顯示限時優惠價 $150（原價 $190，價格級距對齊 App Store/Play 商店實際定價）
 const FIRST_MONTH_PROMO_WINDOW_MS = 12 * 60 * 60 * 1000;
