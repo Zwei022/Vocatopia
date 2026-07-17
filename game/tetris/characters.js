@@ -63,7 +63,7 @@ const TETRIS_CHARACTERS = {
     cardImg: 'public/images/characters/sushi.webp', // TODO: 換成新版動漫萌少女擬人卡面圖
     rarity: 'mythic',
     acquireHint: '商店常駐卡池抽卡取得（二獎，機率 4%，50抽保底必中神話以上）',
-    desc: '職人手捏的鮪魚握壽司，戴著櫻花毛帽，一身職人氣魄，出手就是一顆震撼彈。',
+    desc: '職人手捏的鮭魚握壽司，戴著櫻花毛帽，一身職人氣魄，出手就是一顆震撼彈。',
     skill: {
       type: 'bombPiece',
       name: '壽司炸彈',
