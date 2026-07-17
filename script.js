@@ -4790,6 +4790,7 @@ function openFcSwipeScreen() {
   goScreen('fcSwipe');
   fcPauseAutoplay();
   loadSwipeCard(fcCurrentIdx);
+  _fcSwipeInit(); // 保險：萬一 DOMContentLoaded 當下綁定失敗，進畫面時再試一次（有 _fcSwipeBound 防重複綁定）
 }
 
 function flipSwipeCard() {

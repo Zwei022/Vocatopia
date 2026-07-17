@@ -1013,7 +1013,8 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
   max-height: 520px;
   margin: 0 auto;
   position: relative;
-  touch-action: pan-y;
+  touch-action: none;
+  user-select: none;
 }
 .fc-swipe-wrap.fc-swipe-snap { transition: transform .22s ease-out; }
 .fc-swipe-wrap .fc-card { width: 100%; max-width: none; margin: 0; height: 100%; }
