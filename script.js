@@ -4861,12 +4861,14 @@ function loadSwipeCard(idx) {
 
 function _updateSwipeMarkBtn(w) {
   w = w || fcViewList()[fcCurrentIdx];
-  const btn = document.getElementById('fcsMarkBtn');
-  const icon = document.getElementById('fcsMarkIcon');
-  if (!w || !btn || !icon) return;
+  const btns = document.querySelectorAll('.fcs-mark-btn');
+  if (!w || !btns.length) return;
   const marked = fcFavorites.has(w.id);
-  btn.classList.toggle('marked', marked);
-  icon.textContent = marked ? '★' : '☆';
+  btns.forEach(btn => {
+    btn.classList.toggle('marked', marked);
+    const icon = btn.querySelector('.fcs-mark-icon');
+    if (icon) icon.textContent = marked ? '★' : '☆';
+  });
 }
 
 function swipeToggleMark() {

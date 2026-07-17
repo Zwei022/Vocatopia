@@ -572,8 +572,8 @@
           <div class="fc-card-front">
             <div class="fcs-card-top-row">
               <button class="fcs-icon-btn" onclick="event.stopPropagation();fcPlayAudio()" title="播放發音">🔊</button>
-              <button class="fcs-icon-btn" id="fcsMarkBtn" onclick="event.stopPropagation();swipeToggleMark()" title="收藏">
-                <span id="fcsMarkIcon">☆</span>
+              <button class="fcs-icon-btn fcs-mark-btn" onclick="event.stopPropagation();swipeToggleMark()" title="收藏">
+                <span class="fcs-mark-icon">☆</span>
               </button>
             </div>
             <div class="fc-top-info">
@@ -585,6 +585,12 @@
           </div>
           <!-- 背面：中文解釋 -->
           <div class="fc-card-back">
+            <div class="fcs-card-top-row">
+              <button class="fcs-icon-btn" onclick="event.stopPropagation();fcPlayAudio()" title="播放發音">🔊</button>
+              <button class="fcs-icon-btn fcs-mark-btn" onclick="event.stopPropagation();swipeToggleMark()" title="收藏">
+                <span class="fcs-mark-icon">☆</span>
+              </button>
+            </div>
             <div class="fc-back-phonetic" id="fcsBackPhonetic">/ɪˈɡzæmpəl/</div>
             <div class="fc-definition" id="fcsDefinitionZh">例子，例如</div>
             <div class="fc-examples">
