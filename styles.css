@@ -976,6 +976,25 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .fc-mode-icon { font-size: 16px; }
 .fc-mode-label { font-size: 9px; font-weight: 700; }
 
+/* 熟悉/不熟悉累計數字（滑動判定用） */
+.fc-swipe-counters {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 56px);
+  max-width: 320px;
+  margin: 10px auto 0;
+}
+.fc-swipe-count {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  padding: 3px 12px;
+  border-radius: 999px;
+  border: 2px solid;
+}
+.fc-swipe-count-no  { color: var(--orange2); border-color: var(--orange); background: var(--orasoft); }
+.fc-swipe-count-yes { color: var(--green2); border-color: var(--green); background: var(--greensoft); }
+
 /* 主卡片容器 */
 .fc-card-container {
   display: flex;
@@ -984,6 +1003,34 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
   padding: 24px 16px;
   width: 100%;
 }
+
+/* 拖曳位移/旋轉套在這一層，跟 .fc-card 自己的翻面 rotateY 互不干擾 */
+.fc-swipe-wrap {
+  width: calc(100% - 40px);
+  max-width: 320px;
+  height: 380px;
+  margin: 0 auto;
+  position: relative;
+  touch-action: pan-y;
+}
+.fc-swipe-wrap.fc-swipe-snap { transition: transform .22s ease-out; }
+.fc-swipe-wrap .fc-card { width: 100%; max-width: none; margin: 0; height: 100%; }
+
+.fc-swipe-label {
+  position: absolute;
+  top: 16px;
+  z-index: 5;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 20px;
+  padding: 5px 14px;
+  border-radius: 10px;
+  border: 3px solid;
+  opacity: 0;
+  pointer-events: none;
+}
+.fc-swipe-label-yes { right: 12px; color: var(--green2); border-color: var(--green); background: var(--greensoft); transform: rotate(8deg); }
+.fc-swipe-label-no  { left: 12px; color: var(--orange2); border-color: var(--orange); background: var(--orasoft); transform: rotate(-8deg); }
 
 /* 卡片樣式（可翻轉） */
 .fc-card {
@@ -1207,6 +1254,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
   transform: scale(.95);
 }
 .fc-btn-mark.marked { color: var(--gold); border-color: var(--gold); }
+.fc-btn-autoplay.playing { background: var(--orasoft); border-color: var(--orange); color: var(--orange2); }
 .fc-btn-next, .fc-btn-skip {  }
 
 /* 熟悉度判定列 */

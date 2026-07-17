@@ -4759,6 +4759,9 @@ function fitFcWord() {
 }
 
 function flipCard() {
+  // 使用者手動點卡片翻面時要暫停自動播放；自動播放自己驅動翻面時（_fcAutoplayDriving）不能觸發，
+  // 否則播放到一半就會被自己按掉。
+  if (!_fcAutoplayDriving) fcPauseAutoplay();
   const card = document.getElementById('fcCard');
   card.classList.toggle('flipped');
   fcFlipped = !fcFlipped;
@@ -4772,10 +4775,129 @@ function fcNextCard() {
 }
 
 function fcPrevCard() {
+  fcPauseAutoplay();
   const len = fcViewList().length;
   if (!len) return;
   fcCurrentIdx = (fcCurrentIdx - 1 + len) % len;
   loadFlashcard(fcCurrentIdx);
+}
+
+// ══════════════════════════════════════════════════════════════
+// 單字卡滑動判定（比照 Quizlet：手指拖曳跟隨、超過角度閾值放開即判定
+// 熟悉/不熟悉，跟現有 fcSetFamiliar() 共用同一套資料，不另外建立新狀態）
+// ══════════════════════════════════════════════════════════════
+const FC_SWIPE_ROTATE_FACTOR = 0.12;  // 拖曳距離 → 旋轉角度的換算比例
+const FC_SWIPE_ROTATE_MAX    = 60;    // 旋轉角度上限（度）
+const FC_SWIPE_COMMIT_DEG    = 45;    // 放開時旋轉角度超過這個值就判定滑動成立
+
+function _fcSwipeInit() {
+  const wrap = document.getElementById('fcSwipeWrap');
+  if (!wrap || wrap._fcSwipeBound) return;
+  wrap._fcSwipeBound = true;
+
+  const labelYes = document.getElementById('fcSwipeLabelYes');
+  const labelNo  = document.getElementById('fcSwipeLabelNo');
+  let dragging = false, dx = 0, dy = 0;
+
+  const onMove = e => {
+    if (!dragging) return;
+    const x = e.touches ? e.touches[0].clientX : e.clientX;
+    const y = e.touches ? e.touches[0].clientY : e.clientY;
+    dx = x - wrap._startX;
+    dy = y - wrap._startY;
+    const rotate = Math.max(-FC_SWIPE_ROTATE_MAX, Math.min(FC_SWIPE_ROTATE_MAX, dx * FC_SWIPE_ROTATE_FACTOR));
+    wrap.style.transform = `translateX(${dx}px) translateY(${dy * .12}px) rotate(${rotate}deg)`;
+    const progress = Math.min(1, Math.abs(rotate) / FC_SWIPE_COMMIT_DEG);
+    labelYes.style.opacity = dx > 0 ? progress : 0;
+    labelNo.style.opacity  = dx < 0 ? progress : 0;
+  };
+  const onUp = () => {
+    if (!dragging) return;
+    dragging = false;
+    window.removeEventListener('pointermove', onMove);
+    window.removeEventListener('pointerup', onUp);
+    const rotate = Math.max(-FC_SWIPE_ROTATE_MAX, Math.min(FC_SWIPE_ROTATE_MAX, dx * FC_SWIPE_ROTATE_FACTOR));
+    if (Math.abs(rotate) >= FC_SWIPE_COMMIT_DEG) {
+      _fcCommitSwipe(dx > 0);
+    } else {
+      wrap.classList.add('fc-swipe-snap');
+      wrap.style.transform = '';
+      labelYes.style.opacity = 0;
+      labelNo.style.opacity = 0;
+      setTimeout(() => wrap.classList.remove('fc-swipe-snap'), 220);
+    }
+  };
+  wrap.addEventListener('pointerdown', e => {
+    // 卡片內部的功能按鈕（朗讀、更多用法）點下去不應該被當成滑動手勢
+    if (e.target.closest('.fc-rich-btn, .spk-btn')) return;
+    fcPauseAutoplay();
+    dragging = true;
+    dx = 0; dy = 0;
+    wrap._startX = e.clientX;
+    wrap._startY = e.clientY;
+    wrap.classList.remove('fc-swipe-snap');
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerup', onUp);
+  });
+}
+
+function _fcCommitSwipe(isFamiliar) {
+  const wrap = document.getElementById('fcSwipeWrap');
+  const flyX = (isFamiliar ? 1 : -1) * ((window.innerWidth || 400) * 1.1);
+  wrap.style.transition = 'transform .3s ease-out';
+  wrap.style.transform = `translateX(${flyX}px) rotate(${isFamiliar ? 30 : -30}deg)`;
+  setTimeout(() => {
+    wrap.style.transition = '';
+    wrap.style.transform = '';
+    document.getElementById('fcSwipeLabelYes').style.opacity = 0;
+    document.getElementById('fcSwipeLabelNo').style.opacity = 0;
+    fcSetFamiliar(isFamiliar);   // 既有邏輯：更新 fcMarked、進到下一張、連動學習紀錄清單
+  }, 260);
+}
+
+document.addEventListener('DOMContentLoaded', _fcSwipeInit);
+
+// ══════════════════════════════════════════════════════════════
+// 單字卡自動播放：正面看 3 秒 → 翻面看 3 秒 → 換下一張，單純循環瀏覽
+// 不自動判定熟悉/不熟悉（那是滑動或按鈕才會做的事）。整副卡循環一輪後自動停止。
+// ══════════════════════════════════════════════════════════════
+let _fcAutoplayTimer = null;
+let _fcAutoplayDriving = false;   // 自動播放正在自己觸發 flipCard() 時設為 true，避免被 fcPauseAutoplay 誤擋
+let _fcAutoplayCount = 0;
+
+function fcToggleAutoplay() {
+  if (_fcAutoplayTimer) { fcPauseAutoplay(); return; }
+  const list = fcViewList();
+  if (!list.length) return;
+  _fcAutoplayCount = 0;
+  const btn = document.getElementById('fcAutoplayBtn');
+  if (btn) btn.classList.add('playing');
+  _fcAutoplayStep('front');
+}
+
+function _fcAutoplayStep(phase) {
+  _fcAutoplayDriving = true;
+  if (phase === 'front') { if (fcFlipped) flipCard(); }
+  else                   { if (!fcFlipped) flipCard(); }
+  _fcAutoplayDriving = false;
+
+  _fcAutoplayTimer = setTimeout(() => {
+    if (phase === 'front') {
+      _fcAutoplayStep('back');
+      return;
+    }
+    _fcAutoplayCount++;
+    const list = fcViewList();
+    if (_fcAutoplayCount >= list.length) { fcPauseAutoplay(); return; }
+    fcNextCard();
+    _fcAutoplayStep('front');
+  }, 3000);
+}
+
+function fcPauseAutoplay() {
+  if (_fcAutoplayTimer) { clearTimeout(_fcAutoplayTimer); _fcAutoplayTimer = null; }
+  const btn = document.getElementById('fcAutoplayBtn');
+  if (btn) btn.classList.remove('playing');
 }
 
 // 星星按鈕＝收藏（獨立狀態，不影響已學習/未學習分類）
@@ -5975,6 +6097,11 @@ function updateRecordsList() {
   document.getElementById('countUnlearned').textContent = unlearnedList.length;
   const favCountEl = document.getElementById('countFav');
   if (favCountEl) favCountEl.textContent = favList.length;
+  // 單字卡滑動畫面的熟悉/不熟悉累計數字，跟學習紀錄用同一份分類結果
+  const fcFamEl = document.getElementById('fcFamiliarCount');
+  const fcUnfamEl = document.getElementById('fcUnfamiliarCount');
+  if (fcFamEl) fcFamEl.textContent = learnedList.length;
+  if (fcUnfamEl) fcUnfamEl.textContent = unlearnedList.length;
 
   const items = fcRecordTab === 'learned' ? learnedList
               : fcRecordTab === 'fav'     ? favList

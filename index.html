@@ -435,9 +435,9 @@
 
     <!-- 側邊模式欄 -->
     <div class="fc-modes">
-      <button class="fc-mode-btn fc-mode-active" onclick="switchFlashcardMode('flip')" title="翻牌模式">
+      <button class="fc-mode-btn fc-mode-active" onclick="switchFlashcardMode('flip')" title="單字卡">
         <div class="fc-mode-icon">🃏</div>
-        <div class="fc-mode-label">翻牌</div>
+        <div class="fc-mode-label">單字卡</div>
       </button>
       <button class="fc-mode-btn" onclick="switchFlashcardMode('quiz')" title="測驗模式">
         <div class="fc-mode-icon">✍</div>
@@ -449,8 +449,17 @@
       </button>
     </div>
 
+    <!-- 熟悉/不熟悉累計數字（滑動判定用，比照 Quizlet 式滑卡） -->
+    <div class="fc-swipe-counters">
+      <span class="fc-swipe-count fc-swipe-count-no" id="fcUnfamiliarCount">0</span>
+      <span class="fc-swipe-count fc-swipe-count-yes" id="fcFamiliarCount">0</span>
+    </div>
+
     <!-- 主卡片區域 -->
     <div class="fc-card-container">
+      <div class="fc-swipe-wrap" id="fcSwipeWrap">
+        <div class="fc-swipe-label fc-swipe-label-no" id="fcSwipeLabelNo">仍在學習</div>
+        <div class="fc-swipe-label fc-swipe-label-yes" id="fcSwipeLabelYes">知道</div>
       <div class="fc-card" id="fcCard" onclick="flipCard()">
         <!-- 正面：英文單字 -->
         <div class="fc-card-front">
@@ -479,6 +488,7 @@
           <div class="fc-rich-panel" id="fcRichPanel" style="display:none" onclick="event.stopPropagation()"></div>
         </div>
       </div>
+      </div>
     </div>
 
     <!-- 熟悉度判定列 -->
@@ -495,6 +505,7 @@
       </button>
       <button class="fc-btn fc-btn-play" onclick="fcPlayAudio()" title="播放發音">🔊</button>
       <button class="fc-btn fc-btn-next" onclick="fcNextCard()" title="下一個">▶</button>
+      <button class="fc-btn fc-btn-autoplay" id="fcAutoplayBtn" onclick="fcToggleAutoplay()" title="自動播放">🔁</button>
       <button class="fc-btn fc-btn-settings" onclick="showFcSettings()" title="設置">⚙</button>
     </div>
 
