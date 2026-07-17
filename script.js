@@ -4745,10 +4745,9 @@ function _renderFcRichPanel(rc) {
 }
 
 // 過長單字不換行，改為自動縮小字體至塞進卡片寬度
-function fitFcWord() {
-  const el = document.getElementById('fcWord');
+function _fitWordEl(el) {
   if (!el || !el.parentElement) return;
-  el.style.fontSize = '';  // 還原 CSS 預設（56px）再重新量測
+  el.style.fontSize = '';  // 還原 CSS 預設再重新量測
   const avail = el.parentElement.clientWidth - 48;  // 扣除卡片左右 padding 24px
   if (avail <= 0) return;  // 畫面尚未顯示時跳過
   let size = parseFloat(getComputedStyle(el).fontSize);
@@ -4757,11 +4756,9 @@ function fitFcWord() {
     el.style.fontSize = size + 'px';
   }
 }
+function fitFcWord() { _fitWordEl(document.getElementById('fcWord')); }
 
 function flipCard() {
-  // 使用者手動點卡片翻面時要暫停自動播放；自動播放自己驅動翻面時（_fcAutoplayDriving）不能觸發，
-  // 否則播放到一半就會被自己按掉。
-  if (!_fcAutoplayDriving) fcPauseAutoplay();
   const card = document.getElementById('fcCard');
   card.classList.toggle('flipped');
   fcFlipped = !fcFlipped;
@@ -4775,7 +4772,6 @@ function fcNextCard() {
 }
 
 function fcPrevCard() {
-  fcPauseAutoplay();
   const len = fcViewList().length;
   if (!len) return;
   fcCurrentIdx = (fcCurrentIdx - 1 + len) % len;
@@ -4783,20 +4779,130 @@ function fcPrevCard() {
 }
 
 // ══════════════════════════════════════════════════════════════
-// 單字卡滑動判定（比照 Quizlet：手指拖曳跟隨、超過角度閾值放開即判定
-// 熟悉/不熟悉，跟現有 fcSetFamiliar() 共用同一套資料，不另外建立新狀態）
+// 單字卡（滑動版）：跟「翻牌」模式完全獨立的畫面（#fcSwipe），
+// 共用同一份 fcWords/fcCurrentIdx/fcMarked/fcFavorites 資料，但有自己的
+// DOM/render/flip 狀態，不會互相干擾。手指拖曳跟隨、超過角度閾值放開即判定
+// 熟悉/不熟悉，並直接呼叫既有 fcSetFamiliar() 更新 fcMarked（跟學習紀錄連動）。
 // ══════════════════════════════════════════════════════════════
+let fcSwipeFlipped = false;
+
+function openFcSwipeScreen() {
+  goScreen('fcSwipe');
+  fcPauseAutoplay();
+  loadSwipeCard(fcCurrentIdx);
+}
+
+function flipSwipeCard() {
+  const card = document.getElementById('fcsCard');
+  if (!card) return;
+  card.classList.toggle('flipped');
+  fcSwipeFlipped = !fcSwipeFlipped;
+}
+
+function swipeNextCard() {
+  const len = fcViewList().length;
+  if (!len) return;
+  fcCurrentIdx = (fcCurrentIdx + 1) % len;
+  loadSwipeCard(fcCurrentIdx);
+}
+
+function swipePrevCard() {
+  fcPauseAutoplay();
+  const len = fcViewList().length;
+  if (!len) return;
+  fcCurrentIdx = (fcCurrentIdx - 1 + len) % len;
+  loadSwipeCard(fcCurrentIdx);
+}
+
+function loadSwipeCard(idx) {
+  const list = fcViewList();
+  const progEl = document.getElementById('fcsProgress');
+  const card = document.getElementById('fcsCard');
+  if (!list.length) {
+    if (progEl) progEl.textContent = '0 / 0';
+    const emptyMsg = STUDY_WORDS.length ? '此分類沒有單字' : '尚無單字';
+    document.getElementById('fcsWord').textContent = emptyMsg;
+    document.getElementById('fcsDefinitionZh').textContent = emptyMsg;
+    ['fcsPos', 'fcsPhonetic', 'fcsBackPhonetic', 'fcsExampleEn', 'fcsExampleZh'].forEach(id => {
+      const el = document.getElementById(id); if (el) el.textContent = '';
+    });
+    if (card) card.classList.remove('flipped');
+    fcSwipeFlipped = false;
+    return;
+  }
+  if (idx >= list.length) idx = list.length - 1;
+  fcCurrentIdx = idx;
+  const w = list[idx];
+  const isTemplate = w.id === 'empty_template';
+  const frontIsZh = fcSettings.front === 'zh' && !isTemplate;
+
+  const wordEl = document.getElementById('fcsWord');
+  wordEl.textContent = isTemplate ? '尚無單字' : (frontIsZh ? (w.definition_zh || w.def || w.definition || '—') : w.word);
+  _fitWordEl(wordEl);
+
+  let phonetic = (w.phonetic || '').replace(/^\/+/, '/').replace(/\/+$/, '/');
+  if (phonetic && !phonetic.startsWith('/')) phonetic = `/${phonetic}`;
+  if (phonetic && !phonetic.endsWith('/')) phonetic = `${phonetic}/`;
+
+  document.getElementById('fcsPos').textContent = isTemplate ? '' : (w.pos || 'n.');
+  document.getElementById('fcsPhonetic').textContent = frontIsZh ? '' : phonetic;
+  document.getElementById('fcsBackPhonetic').textContent = phonetic;
+  document.getElementById('fcsDefinitionZh').textContent = frontIsZh ? w.word : (w.definition_zh || w.def || w.definition || '未知');
+  document.getElementById('fcsExampleEn').textContent = w.example_en || '';
+  document.getElementById('fcsExampleZh').textContent = w.example_zh || '';
+
+  if (progEl) progEl.textContent = `${idx + 1} / ${list.length}`;
+  if (card) card.classList.remove('flipped');
+  fcSwipeFlipped = false;
+
+  _updateSwipeMarkBtn(w);
+  updateRecordsList(); // 順帶刷新學習紀錄清單（已含 fcFamiliarCount/fcUnfamiliarCount 的更新）
+}
+
+function _updateSwipeMarkBtn(w) {
+  w = w || fcViewList()[fcCurrentIdx];
+  const btn = document.getElementById('fcsMarkBtn');
+  const icon = document.getElementById('fcsMarkIcon');
+  if (!w || !btn || !icon) return;
+  const marked = fcFavorites.has(w.id);
+  btn.classList.toggle('marked', marked);
+  icon.textContent = marked ? '★' : '☆';
+}
+
+function swipeToggleMark() {
+  const w = fcViewList()[fcCurrentIdx];
+  if (!w || w.id === 'empty_template') return;
+  if (fcFavorites.has(w.id)) fcFavorites.delete(w.id); else fcFavorites.add(w.id);
+  _fcSaveMarks();
+  _updateSwipeMarkBtn(w);
+  updateRecordsList();
+}
+
+// 滑動判定成立後（左滑不熟悉／右滑熟悉）直接借用既有 fcSetFamiliar()，但它預設
+// 用 loadFlashcard() 换下一張（給翻牌模式用），這裡改呼叫 loadSwipeCard()。
+function _swipeSetFamiliar(isFamiliar) {
+  const before = fcViewList();
+  const w = before[fcCurrentIdx];
+  if (!w || w.id === 'empty_template') return;
+  if (isFamiliar) fcMarked.add(w.id); else fcMarked.delete(w.id);
+  _fcSaveMarks();
+  const after = fcViewList();
+  loadSwipeCard(after.length < before.length
+    ? (after.length ? fcCurrentIdx % after.length : 0)
+    : (fcCurrentIdx + 1) % (after.length || 1));
+}
+
 const FC_SWIPE_ROTATE_FACTOR = 0.12;  // 拖曳距離 → 旋轉角度的換算比例
 const FC_SWIPE_ROTATE_MAX    = 60;    // 旋轉角度上限（度）
 const FC_SWIPE_COMMIT_DEG    = 45;    // 放開時旋轉角度超過這個值就判定滑動成立
 
 function _fcSwipeInit() {
-  const wrap = document.getElementById('fcSwipeWrap');
+  const wrap = document.getElementById('fcsSwipeWrap');
   if (!wrap || wrap._fcSwipeBound) return;
   wrap._fcSwipeBound = true;
 
-  const labelYes = document.getElementById('fcSwipeLabelYes');
-  const labelNo  = document.getElementById('fcSwipeLabelNo');
+  const labelYes = document.getElementById('fcsSwipeLabelYes');
+  const labelNo  = document.getElementById('fcsSwipeLabelNo');
   let dragging = false, dx = 0, dy = 0;
 
   const onMove = e => {
@@ -4842,27 +4948,27 @@ function _fcSwipeInit() {
 }
 
 function _fcCommitSwipe(isFamiliar) {
-  const wrap = document.getElementById('fcSwipeWrap');
+  const wrap = document.getElementById('fcsSwipeWrap');
   const flyX = (isFamiliar ? 1 : -1) * ((window.innerWidth || 400) * 1.1);
   wrap.style.transition = 'transform .3s ease-out';
   wrap.style.transform = `translateX(${flyX}px) rotate(${isFamiliar ? 30 : -30}deg)`;
   setTimeout(() => {
     wrap.style.transition = '';
     wrap.style.transform = '';
-    document.getElementById('fcSwipeLabelYes').style.opacity = 0;
-    document.getElementById('fcSwipeLabelNo').style.opacity = 0;
-    fcSetFamiliar(isFamiliar);   // 既有邏輯：更新 fcMarked、進到下一張、連動學習紀錄清單
+    document.getElementById('fcsSwipeLabelYes').style.opacity = 0;
+    document.getElementById('fcsSwipeLabelNo').style.opacity = 0;
+    _swipeSetFamiliar(isFamiliar);
   }, 260);
 }
 
 document.addEventListener('DOMContentLoaded', _fcSwipeInit);
 
 // ══════════════════════════════════════════════════════════════
-// 單字卡自動播放：正面看 3 秒 → 翻面看 3 秒 → 換下一張，單純循環瀏覽
+// 自動播放：正面看 3 秒 → 翻面看 3 秒 → 換下一張，單純循環瀏覽，
 // 不自動判定熟悉/不熟悉（那是滑動或按鈕才會做的事）。整副卡循環一輪後自動停止。
 // ══════════════════════════════════════════════════════════════
 let _fcAutoplayTimer = null;
-let _fcAutoplayDriving = false;   // 自動播放正在自己觸發 flipCard() 時設為 true，避免被 fcPauseAutoplay 誤擋
+let _fcAutoplayDriving = false;   // 自動播放正在自己觸發 flipSwipeCard() 時設為 true，避免被暫停邏輯誤擋
 let _fcAutoplayCount = 0;
 
 function fcToggleAutoplay() {
@@ -4870,15 +4976,15 @@ function fcToggleAutoplay() {
   const list = fcViewList();
   if (!list.length) return;
   _fcAutoplayCount = 0;
-  const btn = document.getElementById('fcAutoplayBtn');
+  const btn = document.getElementById('fcsAutoplayBtn');
   if (btn) btn.classList.add('playing');
   _fcAutoplayStep('front');
 }
 
 function _fcAutoplayStep(phase) {
   _fcAutoplayDriving = true;
-  if (phase === 'front') { if (fcFlipped) flipCard(); }
-  else                   { if (!fcFlipped) flipCard(); }
+  if (phase === 'front') { if (fcSwipeFlipped) flipSwipeCard(); }
+  else                   { if (!fcSwipeFlipped) flipSwipeCard(); }
   _fcAutoplayDriving = false;
 
   _fcAutoplayTimer = setTimeout(() => {
@@ -4889,14 +4995,14 @@ function _fcAutoplayStep(phase) {
     _fcAutoplayCount++;
     const list = fcViewList();
     if (_fcAutoplayCount >= list.length) { fcPauseAutoplay(); return; }
-    fcNextCard();
+    swipeNextCard();
     _fcAutoplayStep('front');
   }, 3000);
 }
 
 function fcPauseAutoplay() {
   if (_fcAutoplayTimer) { clearTimeout(_fcAutoplayTimer); _fcAutoplayTimer = null; }
-  const btn = document.getElementById('fcAutoplayBtn');
+  const btn = document.getElementById('fcsAutoplayBtn');
   if (btn) btn.classList.remove('playing');
 }
 

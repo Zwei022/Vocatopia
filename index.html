@@ -435,9 +435,13 @@
 
     <!-- 側邊模式欄 -->
     <div class="fc-modes">
-      <button class="fc-mode-btn fc-mode-active" onclick="switchFlashcardMode('flip')" title="單字卡">
-        <div class="fc-mode-icon">🃏</div>
+      <button class="fc-mode-btn" onclick="openFcSwipeScreen()" title="單字卡（滑動版）">
+        <div class="fc-mode-icon">🗂️</div>
         <div class="fc-mode-label">單字卡</div>
+      </button>
+      <button class="fc-mode-btn fc-mode-active" onclick="switchFlashcardMode('flip')" title="翻牌模式">
+        <div class="fc-mode-icon">🃏</div>
+        <div class="fc-mode-label">翻牌</div>
       </button>
       <button class="fc-mode-btn" onclick="switchFlashcardMode('quiz')" title="測驗模式">
         <div class="fc-mode-icon">✍</div>
@@ -449,17 +453,8 @@
       </button>
     </div>
 
-    <!-- 熟悉/不熟悉累計數字（滑動判定用，比照 Quizlet 式滑卡） -->
-    <div class="fc-swipe-counters">
-      <span class="fc-swipe-count fc-swipe-count-no" id="fcUnfamiliarCount">0</span>
-      <span class="fc-swipe-count fc-swipe-count-yes" id="fcFamiliarCount">0</span>
-    </div>
-
     <!-- 主卡片區域 -->
     <div class="fc-card-container">
-      <div class="fc-swipe-wrap" id="fcSwipeWrap">
-        <div class="fc-swipe-label fc-swipe-label-no" id="fcSwipeLabelNo">仍在學習</div>
-        <div class="fc-swipe-label fc-swipe-label-yes" id="fcSwipeLabelYes">知道</div>
       <div class="fc-card" id="fcCard" onclick="flipCard()">
         <!-- 正面：英文單字 -->
         <div class="fc-card-front">
@@ -488,7 +483,6 @@
           <div class="fc-rich-panel" id="fcRichPanel" style="display:none" onclick="event.stopPropagation()"></div>
         </div>
       </div>
-      </div>
     </div>
 
     <!-- 熟悉度判定列 -->
@@ -505,7 +499,6 @@
       </button>
       <button class="fc-btn fc-btn-play" onclick="fcPlayAudio()" title="播放發音">🔊</button>
       <button class="fc-btn fc-btn-next" onclick="fcNextCard()" title="下一個">▶</button>
-      <button class="fc-btn fc-btn-autoplay" id="fcAutoplayBtn" onclick="fcToggleAutoplay()" title="自動播放">🔁</button>
       <button class="fc-btn fc-btn-settings" onclick="showFcSettings()" title="設置">⚙</button>
     </div>
 
@@ -554,6 +547,59 @@
       <div class="fc-records-list" id="fcRecordsList">
         <!-- 動態生成的單字列表 -->
       </div>
+    </div>
+  </div>
+
+  <!-- ══ 單字卡（滑動版）══ 跟「翻牌」模式完全獨立的畫面，滿版卡片、不顯示學習紀錄 -->
+  <div id="fcSwipe" class="screen fc-screen">
+    <div class="fc-header">
+      <button class="fc-close-btn" onclick="fcPauseAutoplay();goScreen('flashcard')">✕</button>
+      <span class="fc-progress" id="fcsProgress">1 / 2000</span>
+      <button class="fc-close-btn" onclick="showFcSettings()" title="設置">⚙</button>
+    </div>
+
+    <div class="fc-swipe-counters">
+      <span class="fc-swipe-count fc-swipe-count-no" id="fcsUnfamiliarCount">0</span>
+      <span class="fc-swipe-count fc-swipe-count-yes" id="fcsFamiliarCount">0</span>
+    </div>
+
+    <div class="fcs-card-container">
+      <div class="fc-swipe-wrap" id="fcsSwipeWrap">
+        <div class="fc-swipe-label fc-swipe-label-no" id="fcsSwipeLabelNo">仍在學習</div>
+        <div class="fc-swipe-label fc-swipe-label-yes" id="fcsSwipeLabelYes">知道</div>
+        <div class="fc-card fcs-card" id="fcsCard" onclick="flipSwipeCard()">
+          <!-- 正面：英文單字 -->
+          <div class="fc-card-front">
+            <div class="fcs-card-top-row">
+              <button class="fcs-icon-btn" onclick="event.stopPropagation();fcPlayAudio()" title="播放發音">🔊</button>
+              <button class="fcs-icon-btn" id="fcsMarkBtn" onclick="event.stopPropagation();swipeToggleMark()" title="收藏">
+                <span id="fcsMarkIcon">☆</span>
+              </button>
+            </div>
+            <div class="fc-top-info">
+              <span class="fc-pos" id="fcsPos">n.</span>
+              <span class="fc-phonetic" id="fcsPhonetic">/ɪˈɡzæmpəl/</span>
+            </div>
+            <div class="fc-word" id="fcsWord">Example</div>
+            <div class="fc-hint">點擊翻轉</div>
+          </div>
+          <!-- 背面：中文解釋 -->
+          <div class="fc-card-back">
+            <div class="fc-back-phonetic" id="fcsBackPhonetic">/ɪˈɡzæmpəl/</div>
+            <div class="fc-definition" id="fcsDefinitionZh">例子，例如</div>
+            <div class="fc-examples">
+              <div class="fc-example-label">例句</div>
+              <div class="fc-example-en" id="fcsExampleEn">For example, cats are animals.</div>
+              <div class="fc-example-zh" id="fcsExampleZh">例如，貓是動物。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fcs-controls">
+      <button class="fcs-ctrl-btn" onclick="swipePrevCard()" title="上一張">↺</button>
+      <button class="fcs-ctrl-btn" id="fcsAutoplayBtn" onclick="fcToggleAutoplay()" title="自動播放">▶</button>
     </div>
   </div>
 
