@@ -797,8 +797,8 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
    RESPONSIVE
 ════════════════════════════════ */
 
-/* ── 平板 (≥ 640px) ── */
-@media (min-width: 640px) {
+/* ── 平板 (≥ 640px)，只在橫向時套用；直立平板要跟手機一樣滿版顯示 ── */
+@media (min-width: 640px) and (orientation: landscape) {
   .wdetail-overlay { align-items: center; }
   .wdetail-card { border-radius: var(--r3); border: 2.5px solid var(--line); max-width: 460px; }
   html, body { overflow: visible; }
@@ -840,8 +840,8 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
   .auth-card { border-radius: var(--r3); border: 2.5px solid var(--line); max-width: 420px; padding-bottom: 32px; }
 }
 
-/* ── 桌面 (≥ 1024px) ── */
-@media (min-width: 1024px) {
+/* ── 桌面 (≥ 1024px)，只在橫向時套用；直立平板要跟手機一樣滿版顯示 ── */
+@media (min-width: 1024px) and (orientation: landscape) {
   .phone {
     max-width: 760px;
     height: min(100vh, 880px);
