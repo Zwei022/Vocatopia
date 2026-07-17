@@ -13,7 +13,7 @@
 /* ── 頂欄 ── */
 .tt-topbar {
   display: flex; align-items: center; justify-content: space-between; gap: 10px;
-  padding: 14px 16px; background: var(--header);
+  padding: max(14px,env(safe-area-inset-top)) 16px 14px; background: var(--header);
   border-bottom: 2px solid var(--line); flex-shrink: 0;
 }
 .tt-back {
