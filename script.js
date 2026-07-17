@@ -803,13 +803,30 @@ async function startSubscriptionPurchase(planId) {
     showToast('請下載 Vocatopia App 才能訂閱喔');
     return;
   }
+  let offerings;
   try {
-    const offerings = await Purchases.getOfferings();
-    const pkg = offerings?.current?.availablePackages?.find(
-      p => p.storeProduct.identifier === SUBSCRIPTION_PRODUCT_IDS[planId]
-    );
-    if (!pkg) { showToast('目前無法取得此方案，請稍後再試'); return; }
+    offerings = await Purchases.getOfferings();
+  } catch (e) {
+    // 抓不到 offerings 通常代表 RevenueCat 後台的 Offering/Product 設定有問題，
+    // 或 App Store Connect 的付費 App 合約沒簽——不是單純網路問題，印出完整錯誤方便查。
+    console.error('[startSubscriptionPurchase] getOfferings 失敗：', e);
+    showToast('無法取得訂閱方案，請確認 App Store Connect 付費 App 合約是否已簽署');
+    return;
+  }
 
+  const pkg = offerings?.current?.availablePackages?.find(
+    p => p.storeProduct.identifier === SUBSCRIPTION_PRODUCT_IDS[planId]
+  );
+  if (!pkg) {
+    console.error('[startSubscriptionPurchase] 找不到對應商品', {
+      planId, wantedProductId: SUBSCRIPTION_PRODUCT_IDS[planId],
+      availableIds: offerings?.current?.availablePackages?.map(p => p.storeProduct.identifier),
+    });
+    showToast('目前無法取得此方案，請稍後再試');
+    return;
+  }
+
+  try {
     await Purchases.purchasePackage({ aPackage: pkg });
     // 購買成功後 RevenueCat 會觸發 webhook 更新後端 subscriptions 表，
     // 這裡主動 refetch 一次讓 UI 立即反映最新狀態（webhook 可能有數秒延遲）。
@@ -818,8 +835,9 @@ async function startSubscriptionPurchase(planId) {
     if (typeof refreshSubscriptionStatus === 'function') refreshSubscriptionStatus();
   } catch (e) {
     if (e?.userCancelled) return;
-    console.error('訂閱購買失敗', e);
-    showToast('訂閱未完成，請稍後再試');
+    // 印出完整錯誤（code/message），下次審核卡住才查得出真正原因，不要只看到同一句「稍後再試」
+    console.error('[startSubscriptionPurchase] purchasePackage 失敗：', e?.code, e?.message, e);
+    showToast(`訂閱未完成：${e?.message || '請稍後再試'}`);
   }
 }
 
