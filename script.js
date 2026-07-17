@@ -4915,7 +4915,7 @@ function _swipeSetFamiliar(isFamiliar) {
 
 const FC_SWIPE_ROTATE_FACTOR = 0.12;  // 拖曳距離 → 旋轉角度的換算比例
 const FC_SWIPE_ROTATE_MAX    = 60;    // 旋轉角度上限（度）
-const FC_SWIPE_COMMIT_DEG    = 20;    // 放開時旋轉角度超過這個值就判定滑動成立（原本 45 度換算要拖曳將近整張卡寬，實際手滑根本達不到，改低一點才自然）
+const FC_SWIPE_COMMIT_DEG    = 15;    // 放開時旋轉角度超過這個值就判定滑動成立
 
 // 注意：這裡刻意不用 Pointer Events。Capacitor iOS 用的 WKWebView 對
 // pointermove/pointerup 的支援不穩定（實機測試會整個收不到後續事件，
