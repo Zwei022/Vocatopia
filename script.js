@@ -4901,17 +4901,6 @@ function swipeToggleMark() {
 
 // 滑動判定成立後（左滑不熟悉／右滑熟悉）直接借用既有 fcSetFamiliar()，但它預設
 // 用 loadFlashcard() 换下一張（給翻牌模式用），這裡改呼叫 loadSwipeCard()。
-function _swipeSetFamiliar(isFamiliar) {
-  const before = fcViewList();
-  const w = before[fcCurrentIdx];
-  if (!w || w.id === 'empty_template') return;
-  if (isFamiliar) fcMarked.add(w.id); else fcMarked.delete(w.id);
-  _fcSaveMarks();
-  const after = fcViewList();
-  loadSwipeCard(after.length < before.length
-    ? (after.length ? fcCurrentIdx % after.length : 0)
-    : (fcCurrentIdx + 1) % (after.length || 1));
-}
 
 const FC_SWIPE_ROTATE_FACTOR = 0.12;  // 拖曳距離 → 旋轉角度的換算比例
 const FC_SWIPE_ROTATE_MAX    = 60;    // 旋轉角度上限（度）
@@ -5000,12 +4989,26 @@ function _fcCommitSwipe(isFamiliar) {
   const flyX = (isFamiliar ? 1 : -1) * ((window.innerWidth || 400) * 1.1);
   wrap.style.transition = 'transform .3s ease-out';
   wrap.style.transform = `translateX(${flyX}px) rotate(${isFamiliar ? 30 : -30}deg)`;
+
+  // 資料/計數立刻更新，不等飛出動畫播完才做——動畫只是視覺效果，
+  // 不該拖慢「熟悉/不熟悉」判定與計數字的反應速度。
+  const before = fcViewList();
+  const w = before[fcCurrentIdx];
+  if (w && w.id !== 'empty_template') {
+    if (isFamiliar) fcMarked.add(w.id); else fcMarked.delete(w.id);
+    _fcSaveMarks();
+    updateRecordsList(); // 立即刷新 fcFamiliarCount/fcUnfamiliarCount
+  }
+
   setTimeout(() => {
     wrap.style.transition = '';
     wrap.style.transform = '';
     document.getElementById('fcsSwipeLabelYes').style.opacity = 0;
     document.getElementById('fcsSwipeLabelNo').style.opacity = 0;
-    _swipeSetFamiliar(isFamiliar);
+    const after = fcViewList();
+    loadSwipeCard(after.length < before.length
+      ? (after.length ? fcCurrentIdx % after.length : 0)
+      : (fcCurrentIdx + 1) % (after.length || 1));
   }, 260);
 }
 
