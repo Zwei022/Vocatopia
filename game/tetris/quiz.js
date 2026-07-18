@@ -16,6 +16,11 @@ const TT_TIMED_PERIOD = 60000; // 每 60 秒出一題計時題
 const TT_COMBO_STEP = 0.1;
 const TT_COMBO_CAP  = 2.0;
 
+// #14 積分模式閱讀理解關卡（每 5000 分觸發一次，只有 ttGame.mode==='ranked' 才會出現）
+const TT_READING_STEP    = 5000;
+const TT_READING_SECONDS = 45;
+const TT_READING_CORRECT = 300;
+
 function _ttEscHtml(s) {
   return String(s ?? '').replace(/[&<>"']/g, c =>
     ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -41,16 +46,20 @@ function ttShowQuiz(opts) {
 
   const quizEl = document.getElementById('ttQuiz');
   const isWord = q.kind === 'word';
-  // 技能只能用在英文選擇題（計時題），消行快問不顯示技能按鈕
-  const skillHtml = timed ? _ttSkillQuizButtonHtml() : '';
+  const isReading = q.kind === 'reading';
+  // 技能只能用在英文選擇題（計時題），消行快問/閱讀理解不顯示技能按鈕
+  const skillHtml = (timed && !isReading) ? _ttSkillQuizButtonHtml() : '';
+  const tag = isReading ? '📖 閱讀理解' : (isWord ? '⚡ 消行快問' : '⏰ 計時挑戰');
+  const passageHtml = isReading ? `<div class="ttq-passage">${_ttEscHtml(q.passage)}</div>` : '';
 
   quizEl.innerHTML = `
-    <div class="ttq-card ${isWord ? 'ttq-word' : 'ttq-sentence'}">
+    <div class="ttq-card ${isWord ? 'ttq-word' : isReading ? 'ttq-reading' : 'ttq-sentence'}">
       <div class="ttq-head">
-        <span class="ttq-tag">${isWord ? '⚡ 消行快問' : '⏰ 計時挑戰'}${!isWord && q.typeLabel ? ` · ${q.typeLabel}` : ''}</span>
+        <span class="ttq-tag">${tag}${!isWord && !isReading && q.typeLabel ? ` · ${q.typeLabel}` : ''}</span>
         <span class="ttq-timer" id="ttqTimer">${seconds}</span>
       </div>
       <div class="ttq-bar-track"><div class="ttq-bar" id="ttqBar" style="width:100%"></div></div>
+      ${passageHtml}
       <div class="ttq-prompt ${isWord ? 'ttq-prompt-word' : ''}">${_ttEscHtml(q.prompt)}</div>
       <div class="ttq-opts" id="ttqOpts">
         ${q.options.map((o, i) => `<button class="ttq-opt" data-i="${i}" onclick="ttAnswerQuiz(${i})">${_ttEscHtml(o)}</button>`).join('')}
@@ -102,7 +111,7 @@ function ttAnswerQuiz(idx) {
     // 恢復遊戲（若 onResolve 未觸發結束）
     if (ttGame && !ttGame.gameOver) {
       ttGame.paused = false;
-      _ttSetGravity(ttGame.softDropping ? TT_SOFTDROP_MS : TT_GRAVITY_MS);
+      _ttSetGravity(ttGame.softDropping ? TT_SOFTDROP_MS : ttGame.currentGravityMs);
     }
   }, 850);
 }
@@ -120,7 +129,7 @@ function ttTriggerWordQuiz(n) {
         // 第一次答對（streak=1）倍率是 ×1（沒有加成），連續第二次才開始加乘 ×1.1、第三次 ×1.2...
         const mult = Math.min(1 + (ttGame.wordStreak - 1) * TT_COMBO_STEP, TT_COMBO_CAP);
         const gained = Math.round(TT_WORD_CORRECT * mult);
-        ttGame.score += gained;
+        _ttAddScore(gained);
         showTtFloat(`+${gained}${mult > 1 ? ` ×${mult.toFixed(1)}` : ''}`, true);
       } else {
         // 鬆餅的暖心護盾：每局限用一次，答錯時自動觸發，保住連勝不被歸零
@@ -132,8 +141,7 @@ function ttTriggerWordQuiz(n) {
         } else {
           ttGame.wordStreak = 0;
         }
-        ttGame.score += TT_WORD_WRONG;
-        if (ttGame.score < 0) ttGame.score = 0;
+        _ttAddScore(TT_WORD_WRONG);
         showTtFloat(`${TT_WORD_WRONG}`, false);
       }
       ttRender();
@@ -182,7 +190,7 @@ function _ttTriggerTimedQuestion() {
     onResolve: (correct) => {
       ttGame.timedCount = (ttGame.timedCount || 0) + 1;
       if (correct) {
-        ttGame.score += TT_SENT_CORRECT;
+        _ttAddScore(TT_SENT_CORRECT);
         showTtFloat(`+${TT_SENT_CORRECT}`, true);
       } else {
         const over = ttGame.engine.addGarbageRow();
@@ -191,6 +199,37 @@ function _ttTriggerTimedQuestion() {
       }
       _ttSkillMaybeRecharge();
       _ttSealedSkillMaybeUnseal(correct);
+      ttRender();
+    },
+  });
+}
+
+// ── #14 積分模式閱讀理解關卡（每 5000 分觸發一次）──
+// 由 game.js 的 _ttAddScore() 在每次分數變動後呼叫；只有積分模式、且沒有題目正在進行時才觸發。
+function _ttCheckReadingGate() {
+  if (!ttGame || ttGame.mode !== 'ranked' || ttGame.gameOver) return;
+  if (ttGame.quiz && ttGame.quiz.active) return;
+  if (ttGame.nextReadingThreshold == null) ttGame.nextReadingThreshold = TT_READING_STEP;
+  if (ttGame.score < ttGame.nextReadingThreshold) return;
+  ttGame.nextReadingThreshold += TT_READING_STEP;
+  _ttTriggerReadingQuiz();
+}
+
+async function _ttTriggerReadingQuiz() {
+  if (!ttGame || ttGame.gameOver) return;
+  const q = await ttMakeReadingQuestion();
+  if (!q || !ttGame || ttGame.gameOver) return;   // 載入期間遊戲可能已結束/離開
+  ttShowQuiz({
+    q, seconds: TT_READING_SECONDS, timed: false,
+    onResolve: (correct) => {
+      if (correct) {
+        _ttAddScore(TT_READING_CORRECT);
+        showTtFloat(`+${TT_READING_CORRECT}`, true);
+      } else {
+        ttGame.engine.lockSideWalls();
+        showTtFloat('左右封鎖！填滿整排解鎖', false);
+        showToast('📖 閱讀理解答錯，左右兩側整條封鎖，填滿一整排即可解鎖該行');
+      }
       ttRender();
     },
   });
@@ -387,7 +426,7 @@ function _ttCastBombPiece() {
 // 消行事件裡呼叫（game.js 的 _ttGravityStep 判斷 ev.bombed 時觸發，音效已在該處播放）
 function ttOnBombExplode(bombedCount) {
   const gained = 400;
-  ttGame.score += gained;
+  _ttAddScore(gained);
   showTtFloat(`💥 炸開 ${bombedCount} 格！+${gained}`, true);
 }
 

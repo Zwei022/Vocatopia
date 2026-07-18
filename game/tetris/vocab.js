@@ -95,3 +95,47 @@ function ttMakeSentenceQuestion() {
     optionsZh: rawZh ? shuffled.map(p => p.zh) : null,
   };
 }
+
+// ── #14 積分模式閱讀理解關卡（每 5000 分觸發一次）──
+// 直接沿用每日練習「閱讀」題庫（跟 daily_quiz 共用同一份資料，不另外造內容）。
+// 只挑字數 >=150 字的篇章（該題庫實際分布 1~295 字，篩選後約 20 篇，貼近 200~300 字的需求）。
+const TT_READING_MIN_WORDS = 150;
+let _ttReadingBank = null;
+
+async function ttLoadReadingBank() {
+  if (_ttReadingBank) return _ttReadingBank;
+  let pool = [];
+  try {
+    const res = await fetch('/server/data/question_bank_reading.json');
+    const data = await res.json();
+    if (Array.isArray(data)) {
+      pool = data.filter(p =>
+        p && p.passage && Array.isArray(p.questions) && p.questions.length &&
+        p.passage.trim().split(/\s+/).length >= TT_READING_MIN_WORDS
+      );
+    }
+  } catch { /* 載入失敗不影響其他題型 */ }
+  _ttReadingBank = pool;
+  return _ttReadingBank;
+}
+
+// 回傳 { kind:'reading', passage, prompt(題目), options[4], answer, optionsZh }
+async function ttMakeReadingQuestion() {
+  const bank = await ttLoadReadingBank();
+  if (!bank.length) return null;
+  const p = bank[Math.floor(Math.random() * bank.length)];
+  const q = p.questions[Math.floor(Math.random() * p.questions.length)];
+  const rawOpts = (q.options || []).map(o => o.replace(/^\([A-D]\)\s*/, ''));
+  if (rawOpts.length !== 4) return null;
+  const rawZh = q.optionsZh || null;
+  const paired = rawOpts.map((opt, i) => ({ opt, zh: rawZh ? rawZh[i] : null, correct: i === q.answer }));
+  const shuffled = _ttShuffle(paired);
+  return {
+    kind: 'reading',
+    passage: p.passage,
+    prompt: q.question,
+    options: shuffled.map(x => x.opt),
+    answer: shuffled.findIndex(x => x.correct),
+    optionsZh: rawZh ? shuffled.map(x => x.zh) : null,
+  };
+}

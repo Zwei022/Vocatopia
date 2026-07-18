@@ -7994,13 +7994,30 @@ async function renderLeaderboard() {
   }).join('');
 }
 
-// ── 開始對戰：進入俄羅斯方塊遊戲 ──
+// ── 開始對戰：先選模式（單機／積分），再進入俄羅斯方塊遊戲 ──
 function startTetris() {
-  if (typeof tetrisStart === 'function') {
-    tetrisStart();
-  } else {
-    showToast('遊戲載入中，請稍候…');
-  }
+  if (typeof tetrisStart !== 'function') { showToast('遊戲載入中，請稍候…'); return; }
+  document.getElementById('ttModePicker')?.remove();
+  const ov = document.createElement('div');
+  ov.id = 'ttModePicker';
+  ov.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.6);z-index:9600;display:flex;align-items:center;justify-content:center;padding:20px;padding-top:max(20px,env(safe-area-inset-top))';
+  ov.onclick = e => { if (e.target === ov) ov.remove(); };
+  ov.innerHTML = `
+    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:20px;padding:24px 22px;width:100%;max-width:320px;text-align:center;font-family:'Nunito',sans-serif;box-shadow:0 8px 40px rgba(75,56,42,.35)">
+      <div style="font-size:40px;margin-bottom:4px">🎮</div>
+      <div style="font-family:var(--font-display);font-weight:900;font-size:19px;color:var(--ink)">選擇遊戲模式</div>
+      <button onclick="document.getElementById('ttModePicker').remove();tetrisStart('solo')"
+        style="width:100%;text-align:left;padding:14px 16px;margin-top:16px;background:var(--card2);border:2px solid var(--line2);border-radius:14px;cursor:pointer">
+        <div style="font-weight:800;font-size:15px;color:var(--ink)">🧘 單機模式</div>
+        <div style="font-size:12px;color:var(--ink2);margin-top:2px">輕鬆練習，重力速度固定，不上排行榜、不計入個人最高分</div>
+      </button>
+      <button onclick="document.getElementById('ttModePicker').remove();tetrisStart('ranked')"
+        style="width:100%;text-align:left;padding:14px 16px;margin-top:10px;background:var(--redsoft,#fdeee9);border:2px solid var(--red);border-radius:14px;cursor:pointer">
+        <div style="font-weight:800;font-size:15px;color:var(--red2)">🏆 積分模式</div>
+        <div style="font-size:12px;color:var(--ink2);margin-top:2px">計入排行榜與最高分；重力會隨時間加快，每 5000 分會遇到閱讀理解關卡</div>
+      </button>
+    </div>`;
+  document.body.appendChild(ov);
 }
 
 // ══════════════════════════════════════════════════════════════

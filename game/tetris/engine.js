@@ -225,6 +225,17 @@ function ttCreateEngine(cols = 8, rows = 16) {
     return { moved: false, locked: true, cleared, gameOver: !ok, bombed: false };
   }
 
+  // #14 積分模式閱讀理解關卡答錯懲罰：左右兩排（第 0 欄與最後一欄）從最上到最下整條鎖成牆。
+  // 跟 addGarbageRow 的灰色 'g' 不同——'w' 沒有排進 clearLines() 的排除清單，
+  // 所以哪一整排（含牆格）被填滿，那一排照常消除，牆格跟著一起消失（= 該行解鎖）；
+  // 其他還沒填滿的行牆格則維持鎖住。
+  function lockSideWalls() {
+    for (let r = 0; r < rows; r++) {
+      board[r][0] = 'w';
+      board[r][cols - 1] = 'w';
+    }
+  }
+
   // 懲罰：從最底層往上鎖一整欄（灰色不可消，其實是整列填灰）；
   // 若因此頂到最上方視為遊戲結束
   function addGarbageRow() {
@@ -245,7 +256,7 @@ function ttCreateEngine(cols = 8, rows = 16) {
     get pendingBomb() { return pendingBomb; },
     get holdType() { return holdType; },
     get holdLocked() { return holdLocked; },
-    spawn, move, rotate, tick, clearLines, addGarbageRow, collides, setNextType,
+    spawn, move, rotate, tick, clearLines, addGarbageRow, lockSideWalls, collides, setNextType,
     markNextAsBomb, clearBottomRows, hold,
     // 給渲染用：回傳「棋盤 + 當前落下方塊」合併後的畫面（不改動 board）
     render() {

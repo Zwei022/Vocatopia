@@ -11,6 +11,12 @@ const TT_ROWS = 16;
 const TT_GRAVITY_MS  = 700;   // 一般下降速度
 const TT_SOFTDROP_MS = 55;    // 長按加速下降速度
 
+// #14 模式拆分：單機（solo，不上榜不計最高分，難度固定）／積分（ranked，上榜、算最高分、
+// 重力隨時間漸快、每 5000 分有閱讀理解關卡）。規則其餘完全相同。
+const TT_RANKED_RAMP_MS    = 20000; // 積分模式每隔多久重力加快一次
+const TT_RANKED_RAMP_STEP  = 40;    // 每次加快多少毫秒
+const TT_RANKED_RAMP_FLOOR = 200;   // 最快不低於這個值
+
 // 消行計分表
 const TT_LINE_SCORE = { 1: 100, 2: 300, 3: 500, 4: 800 };
 
@@ -18,18 +24,23 @@ let ttGame = null;
 
 function _ttOverlay() { return document.getElementById('tetrisOverlay'); }
 
-function tetrisStart() {
+function tetrisStart(mode) {
   const ov = _ttOverlay();
   if (!ov) return;
+  mode = (mode === 'ranked') ? 'ranked' : 'solo';
 
   const engine = ttCreateEngine(TT_COLS, TT_ROWS);
   engine.spawn();
 
   ttGame = {
     engine,
+    mode,
     score: 0,
     lines: 0,
     gravityInt: null,
+    rankedRampInt: null,
+    currentGravityMs: TT_GRAVITY_MS,
+    nextReadingThreshold: TT_READING_STEP,
     paused: false,
     gameOver: false,
     softDropping: false,
@@ -40,7 +51,7 @@ function tetrisStart() {
   ov.innerHTML = `
     <div class="tt-topbar">
       <button class="tt-back" onclick="tetrisClose()">← 離開</button>
-      <div class="tt-topbar-title">單字對戰</div>
+      <div class="tt-topbar-title">${mode === 'ranked' ? '🏆 積分模式' : '🧘 單機模式'}</div>
       <div class="tt-score-chip">分數 <b id="ttScore">0</b></div>
     </div>
 
@@ -104,17 +115,38 @@ function tetrisStart() {
   window.addEventListener('resize', _ttResizeBoard);
 
   ttRender();
-  _ttSetGravity(TT_GRAVITY_MS);
+  _ttSetGravity(ttGame.currentGravityMs);
+  if (mode === 'ranked') _ttStartRankedRamp();
 
   // Phase 4：技能與計時題會在此啟動
   if (typeof ttInitSkill === 'function') ttInitSkill(ch);
   if (typeof ttStartTimedCycle === 'function') ttStartTimedCycle();
 }
 
+// 積分模式：每隔 TT_RANKED_RAMP_MS 重力加快一次，最快封頂在 TT_RANKED_RAMP_FLOOR
+function _ttStartRankedRamp() {
+  if (!ttGame) return;
+  ttGame.rankedRampInt = setInterval(() => {
+    if (!ttGame || ttGame.gameOver) return;
+    if (ttGame.currentGravityMs <= TT_RANKED_RAMP_FLOOR) return;
+    ttGame.currentGravityMs = Math.max(TT_RANKED_RAMP_FLOOR, ttGame.currentGravityMs - TT_RANKED_RAMP_STEP);
+    if (!ttGame.paused && !ttGame.softDropping) _ttSetGravity(ttGame.currentGravityMs);
+  }, TT_RANKED_RAMP_MS);
+}
+
+// 集中處理分數變動：統一下限保護（不會變負數），並在積分模式檢查是否觸發閱讀理解關卡
+function _ttAddScore(n) {
+  if (!ttGame) return;
+  ttGame.score += n;
+  if (ttGame.score < 0) ttGame.score = 0;
+  if (typeof _ttCheckReadingGate === 'function') _ttCheckReadingGate();
+}
+
 async function tetrisClose() {
   const g = ttGame;
   if (g) {
     clearInterval(g.gravityInt);
+    if (g.rankedRampInt) clearInterval(g.rankedRampInt);
     if (typeof ttStopTimedCycle === 'function') ttStopTimedCycle();
   }
   window.removeEventListener('resize', _ttResizeBoard);
@@ -124,8 +156,9 @@ async function tetrisClose() {
 
   // #8 未 game over 就按「離開」也要結算目前分數上榜（原本只有 game over 才送分）。
   // 先關 UI 再送分/刷榜，讓離開反應即時。ttSubmitScore 只在刷新最高分時才寫入。
+  // #14 單機模式（g.mode !== 'ranked'）一律不送分、不計最高分。
   if (g && !g.gameOver && g.score > 0) {
-    try { await ttSubmitScore(g.score); } catch { /* 送分失敗不影響關閉 */ }
+    try { await ttSubmitScore(g.score, g.mode); } catch { /* 送分失敗不影響關閉 */ }
   }
   // #8 一場結束回首頁就即時刷新排行榜（不再等下次首頁整體重繪才更新）
   if (typeof renderLeaderboard === 'function') renderLeaderboard();
@@ -232,7 +265,7 @@ function _ttSetGravity(ms) {
 function _ttGravityStep() {
   if (!ttGame || ttGame.paused || ttGame.gameOver) return;
   const ev = ttGame.engine.tick();
-  if (ev.moved && ttGame.softDropping) ttGame.score += 1; // 軟降加分
+  if (ev.moved && ttGame.softDropping) _ttAddScore(1); // 軟降加分
   if (ev.bombed) {
     if (typeof SFX !== 'undefined') SFX.bomb();
     if (typeof ttOnBombExplode === 'function') ttOnBombExplode(ev.bombedCount);
@@ -248,7 +281,7 @@ function _ttGravityStep() {
 // 消行事件：基礎加分（Phase 3 會在此觸發單字快問）
 function ttOnLineClear(n) {
   ttGame.lines += n;
-  ttGame.score += (TT_LINE_SCORE[n] || n * 100);
+  _ttAddScore(TT_LINE_SCORE[n] || n * 100);
   if (typeof SFX !== 'undefined') SFX.lineClear(n);
   if (typeof ttTriggerWordQuiz === 'function') ttTriggerWordQuiz(n);
 }
@@ -270,7 +303,7 @@ function _ttStartSoftDrop() {
 function _ttStopSoftDrop() {
   if (!ttGame) return;
   ttGame.softDropping = false;
-  _ttSetGravity(TT_GRAVITY_MS);
+  _ttSetGravity(ttGame.currentGravityMs);
 }
 
 function _ttBindControls() {
@@ -351,22 +384,25 @@ function ttEndGame() {
   if (!ttGame || ttGame.gameOver) return;
   ttGame.gameOver = true;
   clearInterval(ttGame.gravityInt);
+  if (ttGame.rankedRampInt) clearInterval(ttGame.rankedRampInt);
   if (typeof ttStopTimedCycle === 'function') ttStopTimedCycle();
   document.removeEventListener('keydown', ttGame._keyHandler);
   document.removeEventListener('keyup', ttGame._keyUpHandler);
 
   const finalScore = ttGame.score;
   const finalLines = ttGame.lines;
+  const mode = ttGame.mode;
+  const isRanked = mode === 'ranked';
 
-  // 本機最高分比較（決定是否顯示「新紀錄」）
+  // 本機最高分比較（決定是否顯示「新紀錄」）；#14 單機模式不計入最高分，不比較、不顯示新紀錄
   let prevBest = 0;
   try { prevBest = parseInt(localStorage.getItem(LS_TETRIS_BEST) || '0', 10) || 0; } catch { /* ignore */ }
-  const isNewBest = finalScore > prevBest;
+  const isNewBest = isRanked && finalScore > prevBest;
   if (typeof SFX !== 'undefined') isNewBest ? SFX.newRecord() : SFX.gameOver();
 
-  // 上傳排行榜（未登入只存本機、不上榜）
-  ttSubmitScore(finalScore);
-  // #2 一場結束給經驗值（每日前 5 場、有防刷上限）
+  // 上傳排行榜（只有積分模式；未登入只存本機、不上榜）
+  ttSubmitScore(finalScore, mode);
+  // #2 一場結束給經驗值（每日前 5 場、有防刷上限，兩種模式都給）
   if (typeof awardTetrisXp === 'function') awardTetrisXp(finalLines);
 
   const ov = _ttOverlay();
@@ -378,17 +414,19 @@ function ttEndGame() {
       <div class="tt-go-title">遊戲結束</div>
       ${isNewBest ? '<div class="tt-go-newbest">🎉 新紀錄！</div>' : ''}
       <div class="tt-go-score">${finalScore.toLocaleString()} 分</div>
-      <div class="tt-go-lines">消除 ${finalLines} 行　${!isNewBest ? `· 最佳 ${prevBest.toLocaleString()}` : ''}</div>
+      <div class="tt-go-lines">消除 ${finalLines} 行　${isRanked ? (!isNewBest ? `· 最佳 ${prevBest.toLocaleString()}` : '') : '· 單機模式（不計入排行榜）'}</div>
       <div class="tt-go-btns">
-        <button class="tt-go-again" onclick="tetrisClose();tetrisStart()">再玩一次</button>
+        <button class="tt-go-again" onclick="tetrisClose();tetrisStart('${mode}')">再玩一次</button>
         <button class="tt-go-back" onclick="tetrisClose()">返回首頁</button>
       </div>
     </div>`;
   ov.appendChild(panel);
 }
 
-// ── 上傳分數到排行榜（只保留最高分；未登入僅存本機） ──
-async function ttSubmitScore(score) {
+// ── 上傳分數到排行榜（只保留最高分；未登入僅存本機；#14 只有積分模式才計分/上榜） ──
+async function ttSubmitScore(score, mode) {
+  if (mode !== 'ranked') return;
+
   try {
     const prev = parseInt(localStorage.getItem(LS_TETRIS_BEST) || '0', 10) || 0;
     if (score > prev) localStorage.setItem(LS_TETRIS_BEST, String(score));

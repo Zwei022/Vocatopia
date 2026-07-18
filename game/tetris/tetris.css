@@ -70,6 +70,10 @@
 .tt-cell.fill-s, .tt-next-cell.fill-s { background: #5FBF6A; }
 .tt-cell.fill-z, .tt-next-cell.fill-z { background: #E0472E; }
 .tt-cell.fill-g, .tt-next-cell.fill-g { background: #9C9488; }
+/* #14 積分模式閱讀理解答錯：左右兩排封鎖牆，跟灰色懲罰列做出區別（磚紅條紋感） */
+.tt-cell.fill-w {
+  background: repeating-linear-gradient(135deg, #8A3A2E, #8A3A2E 4px, #6E2C22 4px, #6E2C22 8px);
+}
 .tt-cell.fill-v, .tt-next-cell.fill-v { background: #D857C4; }
 .tt-cell.fill-e, .tt-next-cell.fill-e { background: #4A5DB8; }
 .tt-cell.fill-x, .tt-next-cell.fill-x { background: #E8639E; }
@@ -238,6 +242,13 @@
 .ttq-timer.low ~ .ttq-bar-track .ttq-bar, .ttq-card:has(.ttq-timer.low) .ttq-bar { background: var(--red); }
 .ttq-prompt { font-size: 15px; color: var(--ink); line-height: 1.55; margin-bottom: 14px; font-weight: 700; }
 .ttq-prompt-word { font-family: var(--font-display); font-weight: 900; font-size: 30px; text-align: center; color: var(--ink); }
+/* #14 閱讀理解關卡：短文區塊可捲動，避免長文把整張卡撐爆版面 */
+.ttq-reading { max-width: 380px; }
+.ttq-passage {
+  max-height: 34vh; overflow-y: auto; font-size: 13px; line-height: 1.6; color: var(--ink2);
+  background: var(--card2, #EFE6D2); border: 1.5px solid var(--line2); border-radius: 10px;
+  padding: 10px 12px; margin-bottom: 12px; white-space: pre-wrap;
+}
 .ttq-opts { display: flex; flex-direction: column; gap: 8px; }
 .ttq-opt {
   text-align: left; padding: 12px 14px; background: var(--nav);
