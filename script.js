@@ -5397,20 +5397,27 @@ function _renderFcSettingsUI() {
   document.getElementById('fcSetFrontZh').classList.toggle('active', fcSettings.front === 'zh');
 }
 
+// 翻牌畫面（#flashcard）跟單字卡滑動畫面（#fcSwipe）是各自獨立的 DOM，
+// 設定變更要兩邊都刷新，不然只改到目前沒在看的那個畫面，使用者會覺得設定沒作用。
+function _refreshAllFcScreens(idx) {
+  loadFlashcard(idx);
+  if (typeof loadSwipeCard === 'function') loadSwipeCard(idx);
+}
+
 function toggleFcOnlyFav() {
   fcSettings.onlyFav = !fcSettings.onlyFav;
   _saveFcSettings();
   _renderFcSettingsUI();
   // 重新套用過濾：回到清單第一張
   fcCurrentIdx = 0;
-  loadFlashcard(0);
+  _refreshAllFcScreens(0);
 }
 
 function setFcFront(side) {
   fcSettings.front = side;
   _saveFcSettings();
   _renderFcSettingsUI();
-  loadFlashcard(fcCurrentIdx);
+  _refreshAllFcScreens(fcCurrentIdx);
 }
 
 // ── SETTINGS PANEL ──────────────────────────────────────────────
