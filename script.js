@@ -5540,7 +5540,9 @@ function showProfile() {
 
   const overlay = document.createElement('div');
   overlay.id = 'profileOverlay';
-  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto';
+  // 卡片內容高、螢幕矮時卡片會頂到最上緣，右上角 ✕ 就會被狀態列/動態島擋住點不到，
+  // 上方留白要保底加上安全區域高度（比照全站其他畫面的 safe-area 處理方式）。
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px;padding-top:max(16px,env(safe-area-inset-top));overflow-y:auto';
   overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
 
   overlay.innerHTML = `
