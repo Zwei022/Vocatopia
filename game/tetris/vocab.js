@@ -97,22 +97,18 @@ function ttMakeSentenceQuestion() {
 }
 
 // ── #14 積分模式閱讀理解關卡（每 5000 分觸發一次）──
-// 直接沿用每日練習「閱讀」題庫（跟 daily_quiz 共用同一份資料，不另外造內容）。
-// 只挑字數 >=150 字的篇章（該題庫實際分布 1~295 字，篩選後約 20 篇，貼近 200~300 字的需求）。
-const TT_READING_MIN_WORDS = 150;
+// 專屬題庫（跟每日練習閱讀題庫分開），50 篇原創短文、每篇 200~300 字、恰好 1 題，
+// 避免跟每日練習共用題庫時篇數太少（只有 20 篇符合字數）導致短時間內重複機率過高。
 let _ttReadingBank = null;
 
 async function ttLoadReadingBank() {
   if (_ttReadingBank) return _ttReadingBank;
   let pool = [];
   try {
-    const res = await fetch('/server/data/question_bank_reading.json');
+    const res = await fetch('/server/data/tetris_reading_bank.json');
     const data = await res.json();
     if (Array.isArray(data)) {
-      pool = data.filter(p =>
-        p && p.passage && Array.isArray(p.questions) && p.questions.length &&
-        p.passage.trim().split(/\s+/).length >= TT_READING_MIN_WORDS
-      );
+      pool = data.filter(p => p && p.passage && Array.isArray(p.questions) && p.questions.length);
     }
   } catch { /* 載入失敗不影響其他題型 */ }
   _ttReadingBank = pool;

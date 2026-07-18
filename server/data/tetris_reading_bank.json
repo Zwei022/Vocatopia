@@ -1,0 +1,902 @@
+[
+  {
+    "type": "reading",
+    "id": "tt_reading_001",
+    "passageType": "narrative",
+    "title": "The Community Garden",
+    "passage": "Last spring, our neighborhood decided to turn an empty lot into a community garden. At first, the ground was covered with rocks and old bottles, and a few neighbors even doubted the plan would ever succeed. A group of neighbors, including my family, spent three weekends clearing the space, pulling out weeds, and adding fresh soil that we bought together as a group.\n\nBy May, we had planted tomatoes, carrots, and sunflowers in small wooden boxes built by one of the fathers on our street. Everyone took turns watering the plants and pulling weeds every evening after dinner. Mrs. Chen, who lives next door, taught us how to protect young plants from bugs without using chemicals, and she also showed the younger children how to tell weeds from vegetables.\n\nBy August, the garden was full of color, buzzing with bees and filled with the smell of ripe tomatoes. We shared the vegetables with families on our street, and children who had never grown anything before were proud to bring home their own carrots. The empty lot that once looked forgotten and unwanted had become a lively place where neighbors talked, laughed, and worked together every single weekend.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What was the empty lot like before the neighbors started working on it?",
+        "options": ["(A) It was full of flowers", "(B) It was covered with rocks and bottles", "(C) It already had a garden", "(D) It was used as a parking lot"],
+        "answer": 1,
+        "explanation": "文中提到「the ground was covered with rocks and old bottles」，說明空地原本布滿石頭與舊瓶子，故選 B。",
+        "optionsZh": ["它開滿了花朵", "地上布滿石頭和瓶子", "那裡已經有一座花園", "它被當作停車場使用"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_002",
+    "passageType": "informational",
+    "title": "Why Honey Bees Matter",
+    "passage": "Honey bees may be small, but they play a huge role in growing the food we eat every single day. When bees visit flowers to collect nectar, they carry pollen from one plant to another without even realizing it. This process, called pollination, helps plants produce fruits, vegetables, and seeds that eventually end up on our dinner tables.\n\nScientists say that about one third of the food on our tables depends on pollinators like bees, butterflies, and other small insects. Without them, apples, almonds, and many other crops would become much harder and more expensive to grow. In recent years, however, the number of honey bees around the world has been falling sharply because of disease, pesticides, and the steady loss of wildflowers in both cities and farmland.\n\nTo help bees survive, some farmers are planting more flowers near their fields instead of removing them, and some cities are creating small gardens designed just for bees to visit. Even a home balcony with a few flowering plants can offer bees a place to rest and feed, showing that ordinary people everywhere can help protect these tiny but essential workers.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "According to the passage, why are honey bees important?",
+        "options": ["(A) They make the air cleaner", "(B) They help plants produce fruits and vegetables through pollination", "(C) They protect crops from insects", "(D) They help farmers water their fields"],
+        "answer": 1,
+        "explanation": "文中說明蜜蜂採蜜時會傳播花粉，這個過程稱為授粉，能幫助植物結出果實和蔬菜，故選 B。",
+        "optionsZh": ["牠們讓空氣更乾淨", "牠們透過授粉幫助植物結出水果和蔬菜", "牠們保護作物不受昆蟲侵害", "牠們幫助農夫灌溉田地"],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_003",
+    "passageType": "narrative",
+    "title": "My First Part-Time Job",
+    "passage": "When I turned sixteen, I got my first part-time job at a small bakery near my school, mostly because I wanted to earn my own money for once. On my first day, I was so nervous that I dropped a full tray of bread rolls on the floor in front of several customers. The owner, Mr. Lin, just laughed gently and told me that everyone makes mistakes when they are learning something completely new.\n\nOver the next few months, I slowly learned how to wrap orders neatly, use the cash register without mistakes, and greet customers with a smile even when I was exhausted after school. The job was not always easy or pleasant. I had to wake up very early on weekends, and sometimes my hands hurt from carrying heavy trays back and forth across the shop.\n\nStill, I gradually began to enjoy the work more than I expected. I liked hearing customers say the bread smelled wonderful, and I felt genuinely proud whenever I could finish my tasks without asking for help. By the end of summer, Mr. Lin trusted me enough to open the shop by myself in the early morning, and I realized how much I had grown since that first nervous, clumsy morning.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What happened on the writer's first day at the bakery?",
+        "options": ["(A) She was praised by a customer", "(B) She dropped a tray of bread rolls", "(C) She opened the shop alone", "(D) She learned to use the cash register perfectly"],
+        "answer": 1,
+        "explanation": "文中提到「I dropped a tray of bread rolls on the floor」，說明第一天她緊張到打翻了一盤麵包，故選 B。",
+        "optionsZh": ["她被一位顧客稱讚", "她打翻了一盤麵包捲", "她獨自開店", "她完美地學會使用收銀機"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_004",
+    "passageType": "informational",
+    "title": "The Return of Fireflies",
+    "passage": "Fireflies, the small insects that glow softly in the dark, used to fill summer nights in many towns across the country. In recent decades, however, people living in cities have noticed fewer and fewer fireflies each year. Bright street lights, growing air pollution, and the steady loss of grassy areas have all made it harder for these gentle insects to survive and find mates during the short summer season.\n\nFireflies use their light to send silent signals to each other in the darkness, a kind of glowing conversation between males and females. When streets and parks are too bright at night, fireflies cannot see these delicate signals clearly, so their numbers slowly decrease year after year without anyone noticing right away. Some towns have started special projects to bring fireflies back to their parks and riverbanks. They have reduced outdoor lighting in certain areas and stopped using strong chemicals on the grass near ponds and streams.\n\nAfter a few years of these careful changes, some of these towns began to see fireflies again during warm summer nights. Local families now visit the parks after sunset just to watch the tiny lights blink softly among the trees, a simple and quiet joy that had almost completely disappeared from daily life.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What did some towns do to help fireflies return?",
+        "options": ["(A) They built more street lights", "(B) They reduced outdoor lighting and stopped using strong chemicals", "(C) They moved fireflies from other countries", "(D) They closed the parks completely"],
+        "answer": 1,
+        "explanation": "文中提到部分城鎮「reduced outdoor lighting in certain parks and stopped using strong chemicals on the grass」，故選 B。",
+        "optionsZh": ["他們建造更多路燈", "他們減少戶外照明並停止使用強效化學藥劑", "他們從其他國家搬來螢火蟲", "他們把公園完全關閉"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_005",
+    "passageType": "narrative",
+    "title": "Learning to Skateboard",
+    "passage": "When Mia was twelve, she watched her older brother skateboard every afternoon at the park near their house, gliding smoothly past the benches. She wanted to try it too, but she was afraid of falling down in front of the other kids who were always watching. One weekend, after weeks of quietly wishing, her brother finally offered to teach her the basics.\n\nThe first few tries were harder than she expected. Mia fell down twice and scraped her knee badly, but she refused to give up and go back inside. Her brother patiently showed her how to keep her balance by bending her knees slightly and looking forward instead of staring down at her feet the whole time.\n\nAfter two full weeks of practice every single evening, Mia could finally ride across the park without falling even once. She still could not do any fancy tricks, but she felt genuinely proud every time she pushed off the ground and rolled forward smoothly and steadily. Her brother told her that even the best skateboarders in the world fell hundreds of times before they got good, and Mia slowly began to understand that getting better at something new almost always means being willing to fall first.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What can we infer about Mia from the passage?",
+        "options": ["(A) She gave up skateboarding after falling", "(B) She was determined to keep practicing despite falling", "(C) She was already a skilled skateboarder", "(D) She did not want her brother's help"],
+        "answer": 1,
+        "explanation": "文中提到她雖然跌倒受傷卻「refused to give up」，並持續練習兩週，可推論她個性堅持，故選 B。",
+        "optionsZh": ["她跌倒後就放棄了滑板", "她儘管跌倒仍決心繼續練習", "她已經是熟練的滑板高手", "她不想要哥哥的幫助"],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_006",
+    "passageType": "informational",
+    "title": "The Secret Life of Coral Reefs",
+    "passage": "Coral reefs are sometimes called the rainforests of the sea because they are home to so many different kinds of fish and other sea creatures. Although coral looks like colorful rock resting on the ocean floor, it is actually made of tiny living animals called polyps. These small creatures build hard shells around themselves for protection, and over hundreds of years, these shells slowly form the huge, colorful reefs that we recognize today.\n\nCoral reefs need clean, warm water to survive and grow healthily. When ocean temperatures rise too much because of climate change, the coral becomes stressed and loses its bright colors, a serious problem known as coral bleaching. Without help, bleached coral can eventually die completely, and the many fish that depend on the reef for food and shelter are then forced to search for a new home elsewhere.\n\nScientists around the world are now working hard to protect coral reefs by growing new coral in special underwater nurseries built specifically for this purpose. Volunteers carefully attach young coral pieces onto damaged reefs, hoping that these new colonies will grow strong enough over time to support ocean life for many years to come.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What happens when ocean temperatures rise too much?",
+        "options": ["(A) Coral grows faster", "(B) Coral becomes stressed and loses its color", "(C) More fish come to live near the coral", "(D) The coral turns into rock immediately"],
+        "answer": 1,
+        "explanation": "文中提到水溫過高會讓珊瑚「becomes stressed and loses its bright colors」，也就是珊瑚白化，故選 B。",
+        "optionsZh": ["珊瑚生長得更快", "珊瑚會感到壓力並失去顏色", "更多魚會來到珊瑚附近居住", "珊瑚會立刻變成岩石"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_007",
+    "passageType": "narrative",
+    "title": "The Old Bookstore",
+    "passage": "There used to be a small bookstore at the corner of my street, run for many years by an old man named Mr. Wu. Every day after school, I would stop by to look at the used books piled from floor to ceiling in narrow, dusty rows. Mr. Wu never rushed me out, even if I stayed for an hour reading without buying anything at all.\n\nLast month, a small handwritten sign appeared in the window saying the store would close at the end of the year. Mr. Wu explained quietly that fewer and fewer people were buying paper books nowadays, and he could no longer afford to pay the rising rent. When I first heard the news, I felt as if I were losing an old and trusted friend.\n\nOn the very last day, many neighbors came to say goodbye and buy their favorite books at a special discount price. Mr. Wu gave me a book I had always wanted but never bought, saying it was a small gift for years of quiet, comfortable company. I walked home that evening holding the book tightly, wondering where I would spend my lonely afternoons now that the little bookstore was finally gone.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "Why did Mr. Wu decide to close his bookstore?",
+        "options": ["(A) He wanted to retire and travel", "(B) Fewer people were buying paper books, so he could not pay the rent", "(C) The building was going to be torn down", "(D) He was moving to another city"],
+        "answer": 1,
+        "explanation": "文中提到 Mr. Wu 表示「fewer people were buying paper books, and he could no longer pay the rent」，故選 B。",
+        "optionsZh": ["他想退休去旅行", "買紙本書的人變少，讓他付不起租金", "這棟建築物即將被拆除", "他要搬去另一個城市"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_008",
+    "passageType": "informational",
+    "title": "How Migratory Birds Find Their Way",
+    "passage": "Every year, millions of birds fly thousands of kilometers between their summer and winter homes, crossing mountains, deserts, and wide oceans along the way. This long, exhausting journey is called migration. Some small birds travel across entire oceans without stopping to rest even once, which seems almost impossible for creatures that weigh less than a small apple.\n\nScientists have long wondered exactly how birds know where to go on these enormous journeys. Research shows that many birds can somehow sense the Earth's magnetic field, almost like carrying an invisible compass inside their small bodies. Others rely on the position of the sun and stars at night, or remember landmarks such as rivers, coastlines, and mountains from earlier trips they made with their parents.\n\nYoung birds that migrate for the first time often follow older, more experienced birds within their group, staying close and copying their movements carefully. Over time, as they repeat the journey year after year, they learn the route so well that they can eventually complete the same difficult trip completely alone. This remarkable sense of direction allows birds to return to the exact same nesting spot every single year, even after flying across half of the entire world.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "How do young birds usually learn their migration route for the first time?",
+        "options": ["(A) By reading maps left by scientists", "(B) By following older, more experienced birds", "(C) By staying in one place all year", "(D) By listening to human guides"],
+        "answer": 1,
+        "explanation": "文中提到「Young birds that migrate for the first time often follow older, more experienced birds in their group」，故選 B。",
+        "optionsZh": ["透過閱讀科學家留下的地圖", "跟隨較年長、經驗豐富的鳥類", "整年待在同一個地方", "聽從人類嚮導的指示"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_009",
+    "passageType": "narrative",
+    "title": "The Talent Show",
+    "passage": "Ethan had never performed in front of a real audience before, but his music teacher finally convinced him to join the school talent show this year. For several weeks, he practiced his guitar every night alone in his room, playing the exact same song over and over until his fingers ached badly.\n\nOn the night of the show, Ethan waited nervously backstage with his heart pounding loudly in his chest. When he finally walked onto the brightly lit stage, the strong lights made it hard to see the audience clearly, which actually helped him feel slightly less nervous than expected. He took a slow, deep breath and began to play the opening notes carefully.\n\nHalfway through the song, Ethan made a small but noticeable mistake, hitting the wrong string at the wrong moment. Instead of stopping completely, he decided to keep playing steadily as if nothing unusual had happened at all. To his great surprise, most people in the audience did not seem to notice the small error. When he finally finished, the whole room clapped loudly and warmly, and his music teacher gave him a proud, encouraging smile from the front row. Ethan slowly realized that the hardest part had never really been the mistake itself, but simply finding the courage to walk onto the stage in the first place.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What can we infer about Ethan after the performance?",
+        "options": ["(A) He regretted joining the talent show", "(B) He learned that courage mattered more than being perfect", "(C) He decided never to play guitar again", "(D) He was angry at his music teacher"],
+        "answer": 1,
+        "explanation": "文中最後說「the hardest part had not been the mistake, but simply finding the courage」，顯示他體會到勇氣比完美更重要，故選 B。",
+        "optionsZh": ["他後悔參加才藝表演", "他明白勇氣比完美更重要", "他決定再也不彈吉他了", "他對音樂老師感到生氣"],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_010",
+    "passageType": "informational",
+    "title": "The Rise of Bike-Sharing",
+    "passage": "In many large cities around the world, bright yellow or orange bicycles can be seen parked neatly along the streets, ready for anyone passing by to use. These bike-sharing systems allow ordinary people to rent a bicycle for a short trip using a simple phone app, and then leave it at another station located near their final destination.\n\nCities originally introduced bike-sharing programs to reduce heavy traffic and air pollution caused by too many cars on the road. For short trips across town, riding a shared bicycle can actually be faster than driving a car, especially during busy hours when roads become badly crowded with vehicles. Many office workers now use shared bikes to travel from the train station to their workplace instead of waiting for a taxi.\n\nHowever, bike-sharing systems also bring some new and unexpected problems. Some careless users leave bicycles lying in the wrong places, blocking narrow sidewalks or building entrances completely. Cities are now working carefully on better parking rules and building more organized stations to keep the whole system tidy, hoping that shared bikes can continue making short trips easier without creating brand-new trouble on the crowded streets.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What is one problem caused by bike-sharing mentioned in the passage?",
+        "options": ["(A) The bicycles are too expensive to rent", "(B) Some users leave bicycles in places that block sidewalks", "(C) The bicycles break down too often", "(D) There are not enough bicycles in any city"],
+        "answer": 1,
+        "explanation": "文中提到「Some users leave bicycles in the wrong places, blocking sidewalks or building entrances」，故選 B。",
+        "optionsZh": ["租借腳踏車太貴", "有些使用者亂停腳踏車，擋住人行道", "腳踏車經常故障", "任何城市的腳踏車數量都不足"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_011",
+    "passageType": "narrative",
+    "title": "A Rainy Camping Trip",
+    "passage": "My family had planned a camping trip for months, but on the very day we arrived at the campsite, dark heavy clouds quickly filled the entire sky. By early evening, heavy rain was pouring down loudly on our tent, and cold water slowly began leaking in from one corner near the entrance.\n\nInstead of giving up completely and driving straight home, my father calmly suggested that we make the very best of the difficult situation. We moved our sleeping bags carefully to the dry side of the tent and played simple card games by flashlight while listening to the steady rain outside. My little sister, who had always been afraid of thunder, slowly started laughing along happily with the rest of us.\n\nThe next morning, the sky finally cleared, and everything outside looked remarkably fresh and green after the long storm had passed. We hiked together to a nearby waterfall that was much stronger and louder than usual because of all the extra rain. Looking back now, that unexpected rainy night somehow became one of our favorite family memories, proving that sometimes the trips that do not go exactly as planned turn out to be the most memorable of all.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "How did the family react when it started raining heavily?",
+        "options": ["(A) They immediately drove home", "(B) They stayed calm and made the best of the situation", "(C) They complained the whole night", "(D) They asked the campsite for a refund"],
+        "answer": 1,
+        "explanation": "文中提到父親提議「make the best of it」，一家人移動睡袋並打牌度過雨夜，顯示他們保持冷靜、樂觀應對，故選 B。",
+        "optionsZh": ["他們立刻開車回家", "他們保持冷靜並盡力度過難關", "他們整晚都在抱怨", "他們向露營地要求退費"],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_012",
+    "passageType": "informational",
+    "title": "Why We Should Reduce Food Waste",
+    "passage": "Every single year, families all around the world throw away large amounts of food that is still perfectly good to eat. Vegetables that look slightly strange or bent, bread that is just one day old, and leftovers that no one finished eating often end up straight in the trash instead of on someone's dinner plate.\n\nThis ongoing waste is actually a much bigger problem than many people realize at first. Growing food requires plenty of water, land, and energy, so throwing perfectly edible food away also wastes every single one of these valuable resources. When food slowly rots inside crowded landfills, it produces harmful gases that can damage the environment even further over time.\n\nThere are several simple ways for ordinary families to reduce food waste right at home. Carefully planning meals before going shopping, storing food properly in the refrigerator, and creatively using leftovers in brand-new recipes can all genuinely help. Some communities have also recently started sharing extra food with neighbors or donating it directly to people in need, turning what used to be considered trash into a valuable and welcome gift instead of letting it simply go to waste.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What is the main idea of this passage?",
+        "options": ["(A) Food waste is not a serious problem", "(B) Reducing food waste helps save resources and the environment", "(C) Families should stop buying vegetables", "(D) Only restaurants produce food waste"],
+        "answer": 1,
+        "explanation": "全文說明食物浪費會連帶浪費水、土地與能源，並提出減少浪費的方法，主旨是呼籲減少食物浪費以保護資源與環境，故選 B。",
+        "optionsZh": ["食物浪費不是嚴重的問題", "減少食物浪費有助於節省資源與保護環境", "家庭應該停止購買蔬菜", "只有餐廳會製造食物浪費"],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_013",
+    "passageType": "narrative",
+    "title": "The Science Fair Project",
+    "passage": "For this year's school science fair, Lucas decided to build a small water filter using ordinary sand, gravel, and pieces of charcoal he found at home. His classmates mostly chose much easier topics, but Lucas really wanted to try building something that could actually solve a real, practical problem.\n\nThe first version of his filter did not work very well at all; the water that finally came out was still noticeably cloudy and slightly brown. Lucas patiently spent several weekends testing different amounts and combinations of each material, carefully writing down his results in a small notebook every single time he tried something new. His mother often found him still working quietly at the kitchen table late into the night.\n\nBy the day of the science fair, Lucas had finally built a filter that turned muddy, dirty water almost completely clear and clean. The judges were genuinely impressed, not only by the final result but also by how carefully he had recorded each failed attempt along the way. Lucas did not end up winning first place that day, but he still felt deeply proud, knowing that his many hours of patient testing had taught him far more than any quick, easy success ever could have.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What can be inferred about Lucas from the passage?",
+        "options": ["(A) He gave up easily when his filter did not work", "(B) He valued the learning process as much as winning", "(C) He copied his project idea from a classmate", "(D) He finished his project in one afternoon"],
+        "answer": 1,
+        "explanation": "文中提到他雖未得第一名，卻「felt proud knowing that his hours of patient testing had taught him more」，顯示他重視學習過程勝於獲勝，故選 B。",
+        "optionsZh": ["過濾器失敗時他很容易放棄", "他重視學習過程不亞於獲勝", "他抄襲同學的專題點子", "他一個下午就完成了專題"],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_014",
+    "passageType": "informational",
+    "title": "The Story of Composting",
+    "passage": "Composting is a simple, natural way of turning ordinary kitchen scraps, such as vegetable peels, eggshells, and old coffee grounds, into rich soil that helps garden plants grow strong and healthy. Instead of throwing food waste straight into the regular trash, many families now collect it in a small bin outside and let it break down naturally over several patient weeks.\n\nInside a typical compost bin, tiny living organisms such as bacteria, fungi, and earthworms slowly break down the food scraps into a dark, crumbly material that smells surprisingly earthy. This finished material is completely full of nutrients that garden plants desperately need, making it a natural, effective, and completely free fertilizer for home gardens of any size.\n\nComposting also helps protect the environment in another genuinely important way. When food waste is sent to a crowded landfill instead of a compost bin, it slowly produces harmful gases that contribute significantly to climate change over time. By composting regularly at home, families can meaningfully reduce the amount of trash they send to landfills, while also creating healthier soil for their own gardens, turning everyday kitchen waste into something genuinely useful for everyone.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "According to the passage, what breaks down the food scraps inside a compost bin?",
+        "options": ["(A) Sunlight and heat", "(B) Tiny organisms such as bacteria and worms", "(C) Chemical fertilizers", "(D) Cold temperatures"],
+        "answer": 1,
+        "explanation": "文中提到「tiny organisms such as bacteria and worms slowly break down the food scraps」，故選 B。",
+        "optionsZh": ["陽光與熱度", "細菌和蚯蚓等微小生物", "化學肥料", "低溫"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_015",
+    "passageType": "narrative",
+    "title": "Grandma's Dumplings",
+    "passage": "Every single Lunar New Year, my grandmother gathers the whole family together in her small, warm kitchen to make dumplings from scratch. When I was much younger, I honestly thought this yearly tradition was quite boring and slow, but as I grew older, I gradually began to look forward to it eagerly every single year without fail.\n\nThis year, my grandmother finally let me help fold the dumplings myself instead of simply watching from the side as usual. My first few attempts looked messy and uneven, with the filling constantly spilling out from the sides. She patiently showed me exactly how to pinch the edges tightly together. She gently told me that her own mother had taught her the very same way, standing at this exact same kitchen table many decades earlier.\n\nAs we worked steadily together, my grandmother happily shared old stories about her childhood, while my little cousins ran around the kitchen trying to steal small pieces of raw dough. By the time we finally finished, hundreds of neatly folded dumplings covered the entire table. I quietly understood that we were not just making food together that afternoon. We were carefully passing down a small but meaningful piece of our family's history, one carefully folded dumpling at a time.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What is this passage mainly about?",
+        "options": ["(A) How to cook the perfect dumpling", "(B) A family tradition of making dumplings together", "(C) A competition between family members", "(D) A recipe that failed completely"],
+        "answer": 1,
+        "explanation": "全文描述作者與家人一同包餃子的傳統，並體會到這是傳承家族歷史的方式，主旨是關於家族一起包餃子的傳統，故選 B。",
+        "optionsZh": ["如何煮出完美的餃子", "一家人一起包餃子的傳統", "家人之間的比賽", "一份完全失敗的食譜"],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_016",
+    "passageType": "informational",
+    "title": "The Truth About Sea Turtles",
+    "passage": "Sea turtles have quietly lived in the world's oceans for more than one hundred million years, yet today many different species are seriously in danger of disappearing forever. Female sea turtles always return to the exact same beach where they themselves were born to lay their own eggs, often traveling thousands of kilometers across open ocean just to reach it safely.\n\nUnfortunately, sea turtles now face many serious dangers created directly by human activity. Bright artificial lights near beaches can badly confuse newly hatched baby turtles, causing them to crawl toward busy roads instead of safely toward the ocean waves. Plastic bags floating carelessly in the sea can also closely resemble jellyfish, one of the turtles' favorite foods, and accidentally eating plastic can make turtles extremely and sometimes fatally ill.\n\nTo help protect these truly ancient animals, dedicated volunteers in many coastal towns now patrol the beaches carefully during nesting season, marking nests clearly and turning off unnecessary lights nearby at night. Some conservation organizations also help injured turtles recover fully in special facilities before releasing them safely back into the sea, giving these remarkable creatures a much better chance to continue their incredible, ancient journey across the wide ocean.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "Why can bright lights near beaches be dangerous for baby sea turtles?",
+        "options": ["(A) The lights attract sharks", "(B) The lights can confuse them and lead them toward roads instead of the ocean", "(C) The lights make the sand too hot", "(D) The lights stop the eggs from hatching"],
+        "answer": 1,
+        "explanation": "文中提到「Bright lights near beaches can confuse baby turtles, causing them to crawl toward roads instead of the ocean」，故選 B。",
+        "optionsZh": ["燈光會吸引鯊魚", "燈光會使牠們迷失方向，爬向馬路而非海洋", "燈光會讓沙灘過熱", "燈光會阻止蛋孵化"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_017",
+    "passageType": "narrative",
+    "title": "The Kite Festival",
+    "passage": "Every single autumn, my hometown proudly holds a colorful kite festival on the wide open field near the river. Families all across town spend several weeks beforehand carefully designing and building their own homemade kites, each one hoping to fly the most colorful and impressive kite in the entire sky that day.\n\nThis year, my little brother and I decided to build a kite shaped like a long dragon, using thin bamboo sticks and bright red paper we bought from a craft shop. On the morning of the festival, the wind was disappointingly weak, and our kite kept falling straight to the ground no matter how hard and how far we ran across the field. My brother almost gave up completely in frustration, but a friendly older man standing nearby offered to help us carefully adjust the long tail of the kite.\n\nWith his simple advice, our dragon kite finally rose smoothly into the sky and stayed there proudly for hours, dancing gracefully above hundreds of other colorful kites. My brother could not stop smiling widely as he watched our kite soar much higher than most of the others nearby. That evening, as the sun slowly set behind the distant mountains, the sky was still filled with beautiful shapes, and I quietly realized the festival was really less about winning and more about the simple joy shared among neighbors.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "How did the brother's kite finally manage to fly well?",
+        "options": ["(A) They bought a new kite", "(B) An older man helped them adjust the tail of the kite", "(C) The wind suddenly became much stronger", "(D) They gave up and watched other kites instead"],
+        "answer": 1,
+        "explanation": "文中提到「an older man nearby offered to help us adjust the tail of the kite」之後，風箏才順利升空，故選 B。",
+        "optionsZh": ["他們買了一個新風箏", "一位長者幫他們調整了風箏的尾巴", "風突然變得強勁許多", "他們放棄並改看別人的風箏"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_018",
+    "passageType": "informational",
+    "title": "The Power of Public Art",
+    "passage": "In recent years, many cities around the world have started painting large, colorful murals across the sides of old, forgotten buildings. What used to be plain, dull gray walls have gradually become giant pieces of public art, proudly showing everything from local history to wild animals and famous city landmarks recognized by everyone.\n\nThese large murals do far more than simply make city streets look more beautiful and colorful. Recent studies show that public art can genuinely make entire neighborhoods feel safer and more welcoming, encouraging ordinary people to walk confidently through areas they once carefully avoided at night. Local small businesses located near popular murals often report noticeably more visitors, since curious people travel from other distant parts of the city just to take photos in front of the impressive artwork.\n\nMany of these detailed murals are created by local artists working closely together with everyday community members, who sometimes help choose the final design or even paint small parts of the wall themselves. This kind of teamwork turns public art into something far more meaningful than simple decoration; it steadily becomes a shared community project that gives ordinary residents a genuine sense of pride in the place where they live.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "According to the passage, what effect can public murals have on a neighborhood?",
+        "options": ["(A) They make the area feel less safe", "(B) They can make neighborhoods feel safer and attract more visitors", "(C) They stop local businesses from growing", "(D) They are always painted by professional artists alone"],
+        "answer": 1,
+        "explanation": "文中提到公共藝術「can make neighborhoods feel safer and more welcoming」，且能吸引更多遊客，故選 B。",
+        "optionsZh": ["會讓該區域感覺較不安全", "能讓社區感覺更安全並吸引更多遊客", "會阻礙當地商家的發展", "永遠只由專業藝術家獨自繪製"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_019",
+    "passageType": "narrative",
+    "title": "The Photography Club",
+    "passage": "When Hannah first joined the school photography club, she had to borrow her father's old, heavy camera because she simply could not afford to buy a brand-new one herself. Some of her classmates in the same club already owned expensive, modern equipment, and at first, Hannah honestly felt quite embarrassed about her simple, outdated gear compared to theirs.\n\nInstead of quietly giving up, Hannah decided to focus carefully on finding genuinely interesting subjects instead of constantly worrying about her old camera. She spent many quiet afternoons photographing small, ordinary details that other people usually completely ignored, such as raindrops resting on green leaves or the long shadows of bicycles parked outside the school gate.\n\nWhen the club finally held its yearly photography exhibition, Hannah's simple photographs genuinely surprised everyone in attendance. The judges said her pictures told simple but deeply meaningful stories, something that expensive cameras alone could never truly create on their own. Her quiet photo of an elderly street vendor even won second place in the entire school competition that year. Hannah slowly learned that having the fanciest, most expensive tools mattered far less in the end than truly noticing the ordinary world around her every day.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What lesson did Hannah learn by the end of the passage?",
+        "options": ["(A) Expensive cameras always take the best photos", "(B) Noticing the world around her mattered more than having fancy equipment", "(C) She should quit the photography club", "(D) Winning competitions is the only goal of photography"],
+        "answer": 1,
+        "explanation": "文末提到「having the fanciest tools mattered far less than truly noticing the world around her」，故選 B。",
+        "optionsZh": ["昂貴的相機永遠能拍出最好的照片", "留意周遭的世界比擁有高級器材更重要", "她應該退出攝影社", "贏得比賽是攝影唯一的目標"],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_020",
+    "passageType": "informational",
+    "title": "City Parks and Mental Health",
+    "passage": "Living in a busy, crowded city can be genuinely stressful, with constant noise, heavy traffic, and large crowds surrounding people almost every single day of the week. Researchers have carefully found that spending even a short time in green outdoor spaces, such as public parks, can meaningfully help reduce this daily stress and noticeably improve people's mood in a surprisingly short amount of time.\n\nOne well-known study found that a simple walk of just twenty minutes inside a quiet park could measurably lower levels of stress hormones circulating in the body. Being peacefully surrounded by tall trees, soft grass, and open sky seems to give the busy brain a genuine break from the constant stimulation of noisy city streets. Even simply looking at photographs of nature has been shown in smaller studies to have a small but noticeable calming effect on people.\n\nBecause of these encouraging findings, some city planners are now actively working to build more small parks and quiet green corners directly into crowded neighborhoods, instead of relying only on large parks located far away from where most people actually live. The overall goal is to make sure that everyone, no matter where exactly they live within the busy city, has a quiet green space nearby whenever they truly need a moment to relax and breathe.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What did the study mentioned in the passage find about walking in a park?",
+        "options": ["(A) It had no effect on stress at all", "(B) A twenty-minute walk could lower stress hormone levels", "(C) It only helped people who lived far from the city", "(D) It made people feel more tired"],
+        "answer": 1,
+        "explanation": "文中提到「a walk of just twenty minutes in a park could lower levels of stress hormones in the body」，故選 B。",
+        "optionsZh": ["對壓力完全沒有影響", "二十分鐘的散步能降低壓力荷爾蒙", "只對住在城市外圍的人有幫助", "會讓人感覺更疲憊"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_021",
+    "passageType": "narrative",
+    "title": "The Lost Wallet",
+    "passage": "On his usual way home from school one ordinary afternoon, Daniel unexpectedly found a worn brown wallet lying quietly on the sidewalk. Inside, he found some folded cash, a student identification card, and several old family photographs tucked carefully into a side pocket. His very first thought was that the money inside could easily buy the video game he had wanted for many months.\n\nHowever, when Daniel looked more closely at the faded photographs again, he began to think seriously about how deeply worried the owner must feel after losing something so personal and irreplaceable. He decided to check the home address printed on the identification card, and he walked a full twenty minutes just to return the wallet in person that same day.\n\nThe elderly owner was absolutely overjoyed to see his wallet safely returned, especially the precious photos of his late wife that he could genuinely never replace again. He tried politely to give Daniel a small cash reward, but Daniel firmly and kindly refused, saying that simply seeing the old man's obvious relief was reward enough for him. Walking slowly home that quiet evening, Daniel felt a kind of deep happiness that no video game could ever have possibly given him.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "Why did Daniel decide to return the wallet instead of keeping the money?",
+        "options": ["(A) He was afraid of getting caught by the police", "(B) He thought about how worried the owner must feel", "(C) His parents forced him to return it", "(D) The wallet did not have any money inside"],
+        "answer": 1,
+        "explanation": "文中提到他看到照片後「thought about how worried the owner must feel after losing something so personal」，才決定歸還，故選 B。",
+        "optionsZh": ["他害怕被警察抓到", "他想到失主一定很擔心", "他的父母強迫他歸還", "皮夾裡根本沒有錢"],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_022",
+    "passageType": "informational",
+    "title": "Why Sleep Matters for Teenagers",
+    "passage": "Many teenagers today simply do not get enough quality sleep because of heavy homework, constant phone use, and increasingly busy daily schedules. Doctors generally recommend that teenagers sleep somewhere between eight and ten full hours each night, but recent studies clearly show that most teens actually sleep far less than that amount on regular school nights.\n\nDuring deep sleep, the brain quietly organizes memories collected from the entire day and carefully repairs the body after physical activity and growth. Without enough proper sleep, students often find it noticeably harder to concentrate fully in class, remember what they carefully studied the night before, and calmly control their emotions when something unexpectedly goes wrong during the day.\n\nExperts suggest a few simple daily habits that can genuinely help teenagers sleep much better at night. Turning off phones and other bright screens at least thirty minutes before bedtime can make it considerably easier to fall asleep, since bright screens can trick the tired brain into staying awake longer than necessary. Keeping a consistent, regular bedtime, even on relaxed weekends, also helps the body naturally develop a healthy sleep routine that genuinely supports both learning and overall long-term health.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What does the passage suggest teenagers do before bed to sleep better?",
+        "options": ["(A) Do more homework right before sleeping", "(B) Turn off phones and screens at least thirty minutes before bed", "(C) Sleep at a different time every night", "(D) Exercise heavily right before bedtime"],
+        "answer": 1,
+        "explanation": "文中提到「Turning off phones and other screens at least thirty minutes before bed can make it easier to fall asleep」，故選 B。",
+        "optionsZh": ["睡前多做功課", "睡前至少三十分鐘關掉手機和螢幕", "每晚在不同時間睡覺", "睡前做劇烈運動"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_023",
+    "passageType": "narrative",
+    "title": "The New Student",
+    "passage": "When Amy suddenly moved to a completely new city in the middle of the school year, she worried privately that making any real friends there would be nearly impossible. On her very first day at the new school, she sat completely alone at lunch, quietly watching groups of students who clearly already knew each other extremely well.\n\nA week later, her class was unexpectedly assigned a group science project, and Amy was carefully placed together with three classmates she had genuinely never spoken to before that day. At first, the small group worked together quite quietly and awkwardly, but as they slowly built their science model together over several afternoons, they began joking about their small mistakes and casually sharing snacks during short breaks between classes.\n\nBy the time the group project was finally finished, Amy realized with surprise that she had actually started looking forward to going to school again each morning. The friendly classmates from her group began regularly inviting her to eat lunch together with them, and within just a single month, Amy no longer felt like the awkward new student at all. She slowly learned that real friendship does not always need a perfect first day, just one shared task that quietly gives people a genuine reason to talk.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What helped Amy start making friends at her new school?",
+        "options": ["(A) A teacher introduced her to the whole class", "(B) A group science project brought her together with classmates", "(C) She joined a sports team", "(D) Her parents invited classmates to her house"],
+        "answer": 1,
+        "explanation": "文中提到分組科學專題讓她與三位同學合作，之後同組同學開始邀她一起吃午餐，故選 B。",
+        "optionsZh": ["一位老師向全班介紹她", "分組科學專題讓她和同學們熟識起來", "她加入了運動校隊", "她的父母邀請同學到家裡"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_024",
+    "passageType": "informational",
+    "title": "The Hidden Cost of Fast Fashion",
+    "passage": "Clothes today are often noticeably cheaper and far more widely available than ever before, largely thanks to a fast-growing industry known simply as fast fashion. Brand-new clothing styles appear in stores every few weeks now, quietly encouraging shoppers to buy new outfits frequently instead of comfortably wearing the same clothes for several years like people once did.\n\nHowever, this modern convenience actually comes with a hidden and often overlooked cost. Producing so much clothing so quickly requires genuinely large amounts of water, energy, and various chemicals, and much of this clothing sadly ends up in crowded landfills after being worn only a handful of times. Factory workers in some countries also face extremely long working hours and disappointingly low pay, all in order to keep final prices low enough for everyday customers.\n\nTo respond thoughtfully to these growing problems, some shoppers have recently started choosing secondhand clothing instead, or carefully repairing old items rather than simply throwing them away. A steadily growing number of conscious shoppers now specifically look for clothing brands that use recycled materials or pay their workers genuinely fair wages, clearly showing that small individual choices made by many customers can slowly push the entire fashion industry toward more responsible and sustainable practices.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What is one hidden cost of fast fashion mentioned in the passage?",
+        "options": ["(A) Clothes become more expensive every year", "(B) Producing clothing quickly requires large amounts of water and energy", "(C) Stores stop introducing new styles", "(D) Workers are given shorter working hours"],
+        "answer": 1,
+        "explanation": "文中提到「Producing so much clothing quickly requires large amounts of water, energy, and chemicals」，故選 B。",
+        "optionsZh": ["衣服每年變得更貴", "快速生產衣物需要大量的水和能源", "商店停止推出新款式", "工人的工時被縮短"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_025",
+    "passageType": "narrative",
+    "title": "The Broken Bicycle",
+    "passage": "On the important morning of the school race, Tommy suddenly discovered that the metal chain on his old bicycle had completely broken overnight. With only twenty short minutes left before the race was scheduled to start, he honestly felt like giving up on the whole race completely.\n\nHis kind neighbor, Mr. Park, who happened to be fixing his own car engine in the driveway that morning, quickly noticed Tommy's obvious panic and immediately offered to help him out. Using various tools from his cluttered garage, Mr. Park worked quickly to repair the broken chain, carefully explaining each small step along the way so that Tommy could genuinely understand what had gone wrong in the first place.\n\nTommy finally arrived at the crowded starting line just in time, breathing heavily and sweating from running the whole way with his bicycle at his side. Although he did not manage to win first place that day, simply finishing the race at all felt like a real personal victory after such a stressful and chaotic morning. That evening, Tommy thanked Mr. Park warmly with a small homemade card, feeling deeply grateful that one kind neighbor had turned what could easily have been a total disaster into a happy memory he would fondly laugh about for years to come.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "How did Tommy manage to arrive at the race on time?",
+        "options": ["(A) He bought a brand-new bicycle", "(B) His neighbor, Mr. Park, helped repair the broken chain", "(C) He asked the school to delay the race", "(D) He borrowed a bicycle from a classmate"],
+        "answer": 1,
+        "explanation": "文中提到鄰居 Mr. Park 用車庫的工具修好了鏈條，Tommy 才得以及時到場，故選 B。",
+        "optionsZh": ["他買了一台全新的腳踏車", "鄰居 Mr. Park 幫忙修好了斷掉的鏈條", "他要求學校延後比賽", "他向同學借了一台腳踏車"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_026",
+    "passageType": "informational",
+    "title": "The Science of Yawning",
+    "passage": "Almost every single person yawns regularly, and it happens to be one of the most strangely contagious actions among humans anywhere in the world. When one person yawns quietly in a room, other people nearby often find themselves suddenly yawning within just a few seconds, even if they are not tired at all themselves.\n\nScientists are still actively studying exactly why humans yawn so frequently, but several interesting theories currently exist. One popular idea suggests that yawning actually helps cool down the brain, since opening the mouth widely allows extra cool air to flow in and slightly lower the brain's overall temperature. Another separate theory closely connects yawning to boredom or a general lack of concentration, which may explain why people often yawn repeatedly during long, quiet lectures at school.\n\nThe strangely contagious nature of yawning may actually be closely linked to empathy, which is simply the human ability to share and understand the feelings of people around us. Some careful studies have even found that people who are naturally more sensitive to others' emotions tend to catch yawns from others more easily than most. This strange but oddly familiar habit, it seems, may actually say far more about our deep social connections than most ordinary people ever realized before.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "According to one theory in the passage, why might yawning be contagious?",
+        "options": ["(A) It is connected to empathy and sharing others' feelings", "(B) It only happens when people are extremely tired", "(C) It is caused by loud noises in a room", "(D) It only happens between family members"],
+        "answer": 0,
+        "explanation": "文中提到打哈欠的傳染性「may be linked to empathy, the ability to share the feelings of people around us」，故選 A。",
+        "optionsZh": ["它與同理心以及分享他人感受有關", "它只會在人極度疲憊時發生", "它是由房間裡的噪音引起的", "它只會發生在家人之間"],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_027",
+    "passageType": "narrative",
+    "title": "Learning to Cook",
+    "passage": "When his mother suddenly went away on a week-long business trip, sixteen-year-old Jason quickly realized he would genuinely need to cook his own meals completely alone for the very first time in his life. His very first nervous attempt at fried rice turned almost immediately into a smoky, chaotic mess that eventually set off the loud kitchen smoke alarm.\n\nInstead of simply ordering takeout food every single night that week, Jason decided instead to call his patient grandmother, who happily explained her traditional cooking steps carefully over a series of video calls. Slowly but steadily, with her gentle guidance, Jason learned exactly how to properly heat the pan, season his food correctly, and carefully time each cooking step so that nothing ever burned again.\n\nBy the very end of that busy week, Jason could finally cook a simple but genuinely tasty dinner completely without any outside help at all. When his tired mother finally returned home from her trip, she was pleasantly surprised to find a warm home-cooked meal waiting for her instead of a pile of empty takeout containers. Jason proudly told her that cooking had turned out to be much harder than he originally expected, but also far more satisfying than he had ever honestly imagined it could be.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "How did Jason improve his cooking skills during the week?",
+        "options": ["(A) He watched cooking videos alone", "(B) His grandmother guided him through video calls", "(C) He took a cooking class at school", "(D) His mother came home early to help him"],
+        "answer": 1,
+        "explanation": "文中提到他打電話給祖母，祖母透過視訊通話教他烹飪步驟，故選 B。",
+        "optionsZh": ["他自己看烹飪影片", "他的祖母透過視訊通話指導他", "他在學校上了烹飪課", "他的媽媽提早回家幫忙他"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_028",
+    "passageType": "informational",
+    "title": "The Importance of Handwashing",
+    "passage": "Washing hands properly with soap and clean water remains one of the simplest and cheapest ways to stay genuinely healthy, yet surprisingly many people still do not do it correctly or often enough during a normal day. Careful studies clearly show that proper, thorough handwashing can greatly reduce the everyday spread of common illnesses such as colds, flu, and uncomfortable stomach infections.\n\nMany people mistakenly believe that simply rinsing hands with plain water alone is enough to stay clean, but soap actually plays a genuinely essential role in the process. Soap effectively breaks down the outer protective layer of germs, making it much easier for running water to wash them away completely afterward. Health experts strongly recommend scrubbing hands thoroughly for at least twenty full seconds, which happens to be about the same amount of time it takes to quietly sing a short, simple song twice through.\n\nHandwashing becomes especially critical before eating any meal, immediately after using the restroom, and right after touching busy public surfaces such as door handles or stair handrails. Although it certainly seems like a small, unimportant habit at first glance, doctors consistently say that regular, consistent handwashing remains one of the most effective and genuinely low-cost ways to prevent the wider spread of disease in schools, homes, and busy workplaces.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "According to the passage, why is soap important when washing hands?",
+        "options": ["(A) It makes hands smell nice", "(B) It breaks down germs, making them easier to wash away", "(C) It replaces the need for water completely", "(D) It only works on visible dirt"],
+        "answer": 1,
+        "explanation": "文中提到「Soap breaks down the outer layer of germs, making it much easier for water to wash them away completely」，故選 B。",
+        "optionsZh": ["它讓雙手聞起來很香", "它會分解細菌，讓水更容易將其沖走", "它能完全取代用水洗手", "它只對看得見的髒污有效"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_029",
+    "passageType": "narrative",
+    "title": "The Piano Recital",
+    "passage": "Sophie had carefully practiced the exact same piano piece every single day for three whole months before her important recital, yet she still felt genuinely nervous walking slowly onto the crowded stage that evening. Her patient teacher had reminded her many times before that small mistakes were completely normal, but Sophie still secretly wanted her final performance to be absolutely perfect.\n\nAbout halfway through the piece, her nervous fingers suddenly slipped, and she accidentally played the completely wrong note in front of everyone. For one long, terrifying moment, Sophie froze completely, unsure whether she should stop playing and awkwardly start the piece over again. Suddenly remembering her teacher's calm advice, she took one slow, deep breath and simply continued playing steadily as if nothing unusual had happened at all.\n\nAfter the recital finally ended, several parents sitting in the audience told Sophie how genuinely beautifully she had played that evening, and none of them even mentioned the small mistake at all. Her teacher later gently explained that most casual listeners focus mainly on the overall feeling of the music, not on tiny errors that nervous performers often notice far more than anyone else in the room ever could. Sophie left the recital hall feeling quietly proud, having finally learned that recovering gracefully mattered far more than playing without a single flaw.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What lesson did Sophie learn from her recital experience?",
+        "options": ["(A) She should quit playing the piano", "(B) Recovering gracefully from mistakes matters more than perfection", "(C) Audiences always notice every small mistake", "(D) She should never perform in public again"],
+        "answer": 1,
+        "explanation": "文末提到她體會到「recovering gracefully mattered far more than playing without a single flaw」，故選 B。",
+        "optionsZh": ["她應該放棄彈鋼琴", "從錯誤中優雅地恢復比完美更重要", "觀眾總是會注意到每個小錯誤", "她應該再也不要公開表演"],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_030",
+    "passageType": "informational",
+    "title": "Why Cities Are Planting More Trees",
+    "passage": "Walking slowly down a quiet street lined with tall, leafy trees feels remarkably different from walking down one made entirely of gray concrete and glass. In recent years, many city governments around the world have started deliberately planting more trees along busy streets and inside public squares, and the underlying reasons clearly go far beyond simply making the city look slightly nicer.\n\nTrees genuinely help cool down entire cities during hot summers by generously providing cool shade and steadily releasing moisture into the surrounding air, a natural process that can noticeably lower street temperatures by several degrees. They also actively absorb harmful air pollution produced daily by passing cars and nearby factories, meaningfully helping to clean the air that city residents breathe in every single day.\n\nBeyond these clear environmental benefits, careful studies also show that streets lined with more trees tend to have noticeably calmer traffic overall, since drivers naturally tend to slow down in areas that feel more like a peaceful park than a busy highway. As cities everywhere continue to grow larger and more crowded, urban planners are increasingly treating trees not merely as simple decoration, but as a genuinely essential part of keeping busy urban areas livable and healthy for absolutely everyone who lives there.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "According to the passage, how do trees help cool down cities?",
+        "options": ["(A) By blocking all sunlight completely", "(B) By providing shade and releasing moisture into the air", "(C) By slowing down car engines", "(D) By reducing the number of buildings"],
+        "answer": 1,
+        "explanation": "文中提到樹木「providing shade and releasing moisture into the air」能降低街道溫度，故選 B。",
+        "optionsZh": ["完全阻擋陽光", "提供樹蔭並釋放水氣到空氣中", "使汽車引擎變慢", "減少建築物的數量"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_031",
+    "passageType": "narrative",
+    "title": "The Rescue Dog",
+    "passage": "When the Lee family first visited the crowded animal shelter, they had originally planned to adopt a young, energetic puppy, but instead they quietly noticed an older dog sitting calmly alone in the corner of the very last cage. The tired shelter staff explained that this dog, named Max, had already been at the shelter for almost a full year, mainly because most visitors strongly preferred adopting younger animals instead.\n\nDespite his advanced age, Max gently wagged his tail whenever someone walked slowly past his cage, never barking loudly or seeming upset in any way. The Lee family's youngest daughter quietly sat down right beside his cage and firmly refused to leave, insisting loudly that Max clearly deserved a loving home just as much as any bouncy young puppy did.\n\nExactly one week later, Max finally moved into the Lee family's comfortable house, and within just a few days, he had already learned every single corner of the backyard and the exact time each family member usually arrived home. The family often happily said afterward that adopting an older dog had turned out to be one of the calmest and most genuinely rewarding decisions they had ever made together as a family.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "Why had Max stayed at the shelter for almost a year?",
+        "options": ["(A) He was too aggressive to be adopted", "(B) Most visitors preferred younger animals", "(C) The shelter refused to let anyone adopt him", "(D) He was too sick to leave the shelter"],
+        "answer": 1,
+        "explanation": "文中提到工作人員解釋「most visitors preferred younger animals」，故選 B。",
+        "optionsZh": ["他個性太具攻擊性而無法被領養", "多數訪客偏好較年輕的動物", "收容所拒絕讓任何人領養他", "他病得太重無法離開收容所"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_032",
+    "passageType": "informational",
+    "title": "The Growing Popularity of Board Games",
+    "passage": "While many people naturally assume that modern video games have completely replaced traditional board games by now, actual sales figures for board games have grown steadily and consistently over recent years. Small cafes designed specifically for playing board games have opened in many cities worldwide, filled with tall shelves holding hundreds of different game titles for curious customers to try together.\n\nOne clear reason for this steady growth is that board games strongly encourage genuine face-to-face interaction, something that many people today feel they are increasingly missing in a world completely filled with digital screens. Playing a board game naturally requires players to sit closely together, talk openly, and react to each other in real time, creating a rich social experience that is genuinely difficult to replicate through any online platform.\n\nModern board games have also become far more creative and structurally complex than the simple games many older people remember fondly from their own childhood. Talented designers now regularly create games featuring rich storylines, beautifully detailed artwork, and challenging strategic decisions that can take several hours to complete, successfully attracting players who genuinely enjoy both friendly competition and immersive storytelling within the very same shared experience.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What is one reason board games have become more popular, according to the passage?",
+        "options": ["(A) They are cheaper than video games", "(B) They encourage face-to-face interaction between players", "(C) They no longer require any strategy", "(D) They can only be played alone"],
+        "answer": 1,
+        "explanation": "文中提到桌遊「encourage face-to-face interaction」是其受歡迎的原因之一，故選 B。",
+        "optionsZh": ["它們比電玩遊戲便宜", "它們鼓勵玩家面對面互動", "它們不再需要任何策略", "它們只能一個人玩"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_033",
+    "passageType": "narrative",
+    "title": "The Class Trip Mishap",
+    "passage": "During our exciting class trip to the large science museum, our strict teacher gave every single student clear instructions to stay closely with their assigned small group at all times. Somewhere between the enormous dinosaur exhibit and the dark space section, I accidentally became separated from my group while pausing to look closely at a detailed model of the entire solar system.\n\nAt first, I honestly panicked a little, walking quickly through unfamiliar, crowded hallways while anxiously searching for any familiar face among the crowd. Then I suddenly remembered exactly what our teacher had clearly said before the trip even began: if we ever got separated or lost, we should immediately go to the information desk located near the main entrance and simply wait quietly there.\n\nI eventually found my way back to the busy entrance and waited nervously for almost fifteen long minutes before my teacher finally arrived, clearly visible relieved to see me perfectly safe. Instead of scolding me harshly in front of everyone, she simply and calmly reminded the whole class once again how important it truly was to follow instructions carefully during school trips. That day genuinely taught me that staying calm and remembering simple instructions can solve a stressful problem far better than panicking ever could.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What did the writer do after realizing he was lost?",
+        "options": ["(A) He immediately called his parents", "(B) He went to the information desk near the entrance as instructed", "(C) He asked a stranger to drive him home", "(D) He stayed at the dinosaur exhibit the whole time"],
+        "answer": 1,
+        "explanation": "文中提到他想起老師的指示，前往入口附近的服務台等候，故選 B。",
+        "optionsZh": ["他立刻打電話給父母", "他依照指示前往入口附近的服務台", "他請陌生人開車送他回家", "他一直待在恐龍展區"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_034",
+    "passageType": "informational",
+    "title": "The Language of Body Movement",
+    "passage": "Human communication does not only happen directly through spoken words alone. Researchers carefully estimate that a genuinely large part of what we naturally express to other people actually comes from body language instead, including subtle facial expressions, small hand gestures, and even the simple way we choose to stand or sit.\n\nCertain specific body movements seem to carry remarkably similar meanings across many completely different cultures worldwide. For example, people living in very different countries often smile naturally when they feel happy, or cross their arms tightly when they feel defensive or uncomfortable, even without ever being formally taught these subtle signals directly by anyone. However, other specific gestures can mean completely different things depending entirely on where a particular person happened to grow up, which sometimes sadly leads to confusing and awkward misunderstandings between travelers and local residents.\n\nUnderstanding basic body language can be especially useful when meeting new people who speak a completely different language, since a warm, genuine smile or a friendly nod can quietly communicate goodwill even before any actual words are formally exchanged. Paying closer attention to these silent, unspoken signals, experts consistently say, can make everyday conversations feel far more genuine and help build mutual trust more quickly between complete strangers meeting for the first time.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "According to the passage, why might body language cause misunderstandings between travelers and locals?",
+        "options": ["(A) Because facial expressions never change between cultures", "(B) Because some gestures can mean different things in different cultures", "(C) Because travelers never use body language at all", "(D) Because locals refuse to communicate with travelers"],
+        "answer": 1,
+        "explanation": "文中提到「other gestures can mean completely different things depending on where a person grows up」，因此可能造成誤解，故選 B。",
+        "optionsZh": ["因為臉部表情在各文化中永遠不變", "因為某些手勢在不同文化中代表不同意思", "因為旅客完全不使用肢體語言", "因為當地人拒絕與旅客溝通"],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_035",
+    "passageType": "narrative",
+    "title": "The School Garden Club",
+    "passage": "When the school first announced a brand-new gardening club, Olivia decided to join mostly because her best friend eagerly asked her to, not really because she personally cared very much about plants at the time. During the very first club meeting, all the members were given a small, badly neglected patch of land behind the gym building to slowly turn into a proper working garden.\n\nAt first, Olivia genuinely found the physical work quite boring, constantly digging in the hard dirt and pulling stubborn weeds under the hot afternoon sun. However, as the slow weeks steadily passed and small green sprouts gradually began appearing exactly where they had carefully planted seeds, she suddenly found herself eagerly checking on the small garden every single morning before class started, curious to see how much it had grown overnight.\n\nBy the very end of the school semester, the once-empty, neglected patch of land had fully become a small but genuinely thriving garden filled with fresh herbs and colorful flowers that the whole school community could freely enjoy. Olivia, who had originally joined the club almost entirely by accident, ended up proudly volunteering to lead the entire club the following year, genuinely surprised by how much she had unexpectedly come to love watching things quietly grow.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "How did Olivia's feelings about the garden club change over time?",
+        "options": ["(A) She quickly lost interest and left the club", "(B) She grew to genuinely enjoy the gardening work", "(C) She never cared about the garden at all", "(D) She joined only to avoid other school activities"],
+        "answer": 1,
+        "explanation": "文中提到她從一開始覺得無聊，到後來每天早上都會去查看花園，甚至隔年自願擔任社長，顯示她逐漸真心喜歡上園藝，故選 B。",
+        "optionsZh": ["她很快就失去興趣並離開社團", "她漸漸真心喜歡上園藝工作", "她從頭到尾都不在乎花園", "她加入只是為了逃避其他校內活動"],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_036",
+    "passageType": "informational",
+    "title": "The Rise of Urban Beekeeping",
+    "passage": "Beehives are certainly no longer found only out in the quiet countryside anymore. In recent years, more and more ordinary city residents have started keeping their own bees on flat rooftops and in small backyards, a growing practice generally known as urban beekeeping. Some large hotels and busy office buildings have even added rooftop beehives as part of their broader environmental sustainability projects.\n\nSurprisingly enough, bees living in cities can sometimes actually produce more honey than bees living out in rural farming areas. This is partly because city parks and private gardens often contain a genuinely wide variety of flowering plants blooming throughout the entire year, giving city bees a steady and reliable supply of nectar. Busy urban areas also tend to use noticeably fewer harmful pesticides on ornamental plants compared to large industrial farms.\n\nUrban beekeeping does certainly come with its own unique set of challenges, including finding enough available space and making absolutely sure that nearby neighbors feel comfortable living so close to an active hive. Still, many dedicated urban beekeepers consistently say that the genuine reward of producing local honey, while also actively supporting the pollination of nearby gardens, makes the considerable extra effort worthwhile for both people and the surrounding environment.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "Why can bees in cities sometimes produce more honey than bees in rural areas?",
+        "options": ["(A) City parks contain a wide variety of flowering plants year-round", "(B) City bees are given extra sugar by beekeepers", "(C) Rural areas do not allow beekeeping at all", "(D) City bees are a special, faster-working species"],
+        "answer": 0,
+        "explanation": "文中提到「city parks and gardens often contain a wide variety of flowering plants throughout the year, giving bees a steady supply of nectar」，故選 A。",
+        "optionsZh": ["城市公園全年都有多樣化的開花植物", "城市的蜜蜂被養蜂人額外餵食糖分", "鄉村地區完全不允許養蜂", "城市的蜜蜂是特殊、工作更快的品種"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_037",
+    "passageType": "narrative",
+    "title": "The Volunteer Firefighter",
+    "passage": "In our small, quiet mountain town, most local firefighters are actually unpaid volunteers who hold regular full-time jobs during the ordinary day. My uncle, who normally works as a car mechanic, has served as a dedicated volunteer firefighter for over ten full years now, always ready to leave his busy shop the very moment an emergency call suddenly comes in.\n\nLast winter, a dangerous fire unexpectedly broke out in an elderly neighbor's small home late one freezing night. My uncle rushed immediately from his warm, comfortable bed straight into the freezing cold night air to help put out the spreading flames alongside the rest of his dedicated volunteer team. By the time official firefighters from the much larger nearby city finally arrived almost an hour later, my uncle's small local team had already brought the dangerous fire completely under control, successfully saving most of the house.\n\nWhen I later asked my uncle why he continued volunteering despite the obvious danger and lost sleep involved, he simply and calmly said that our small mountain town could not always afford to wait for outside help to eventually arrive. His quiet, steady dedication genuinely made me realize that everyday heroes often live right next door to us, doing truly extraordinary things without ever expecting any special recognition in return.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "Why does the uncle continue volunteering as a firefighter?",
+        "options": ["(A) He wants public recognition for his work", "(B) He believes the small town cannot always wait for outside help", "(C) He is paid a large salary for it", "(D) He was forced to volunteer by the town government"],
+        "answer": 1,
+        "explanation": "文中提到他表示「our small town could not always wait for outside help to arrive」，故選 B。",
+        "optionsZh": ["他想要獲得公眾的認可", "他認為小鎮不能總是等待外部救援", "他因此獲得高額薪水", "他被鎮政府強迫去當志工"],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_038",
+    "passageType": "informational",
+    "title": "How Weather Forecasters Predict the Future",
+    "passage": "Every single morning, millions of ordinary people quickly check the daily weather forecast before deciding exactly what to wear or whether to bring along an umbrella. Behind these simple, everyday predictions lies a genuinely complex scientific process that carefully combines satellite images, weather balloons, and extremely powerful computers working together.\n\nProfessional weather forecasters constantly collect huge amounts of raw data about temperature, air pressure, and shifting wind patterns from thousands of weather stations located all around the entire world. Powerful computers then use all of this collected data to run extremely complicated mathematical models that carefully simulate exactly how the atmosphere might change over the next several hours or days. Because weather systems are naturally and constantly shifting, even small, tiny errors in the original starting data can eventually lead to very different final predictions.\n\nThis is precisely why weather forecasts for tomorrow tend to be far more reliably accurate than similar forecasts made for an entire week ahead of time. Despite these ongoing technical challenges, modern weather forecasting has genuinely improved a great deal over the past few decades, giving ordinary people enough advance warning to properly prepare for dangerous storms and helping local farmers carefully plan exactly when to plant or harvest their valuable crops.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "Why are forecasts for tomorrow usually more accurate than forecasts for a week later?",
+        "options": ["(A) Because weather never changes within a week", "(B) Because small errors in data can lead to very different predictions over time", "(C) Because computers cannot process weekly data", "(D) Because satellites only work for one day at a time"],
+        "answer": 1,
+        "explanation": "文中提到「even small errors in the starting data can lead to very different predictions」，時間拉長誤差會擴大，故選 B。",
+        "optionsZh": ["因為天氣在一週內完全不會改變", "因為資料中的微小誤差經過時間會導致預測差異很大", "因為電腦無法處理一週的資料", "因為衛星一次只能運作一天"],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_039",
+    "passageType": "narrative",
+    "title": "The Stamp Collection",
+    "passage": "Ever since he was eight years old, Henry has carefully collected postage stamps from letters his family occasionally received, neatly placing each one into a special album his own grandfather had given him years earlier. Other kids his exact age often teased him openly, saying loudly that stamp collecting was simply an old-fashioned, boring hobby meant for elderly people, not for someone young like him.\n\nHenry, however, refused to let the constant teasing stop him from continuing. Instead, he slowly began researching the fascinating history behind each individual stamp, patiently learning about different countries, famous historical people, and important events represented on these small, colorful pieces of paper. His growing album slowly expanded into several hundred stamps collected from over thirty different countries around the world.\n\nWhen his school eventually held its annual hobby exhibition, Henry nervously displayed his entire collection, quietly expecting even more teasing from his skeptical classmates. Surprisingly, however, many curious students gathered eagerly around his display table, genuinely fascinated by the interesting stories behind stamps from distant places they had never even heard of before that day. On that memorable day, Henry finally realized that a hobby considered old-fashioned by some people could still spark genuine curiosity in others when shared with real enthusiasm and passion.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What happened when Henry displayed his stamp collection at the school exhibition?",
+        "options": ["(A) No one showed any interest in his collection", "(B) Many classmates were fascinated by the stories behind the stamps", "(C) His teacher asked him to remove the display", "(D) He decided to stop collecting stamps afterward"],
+        "answer": 1,
+        "explanation": "文中提到「many students gathered around his table, fascinated by the stories behind stamps」，故選 B。",
+        "optionsZh": ["沒有人對他的收藏感興趣", "許多同學對郵票背後的故事深感著迷", "老師要求他撤掉展示", "他之後決定停止收集郵票"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_040",
+    "passageType": "informational",
+    "title": "The Benefits of Learning a Musical Instrument",
+    "passage": "Learning to properly play a musical instrument genuinely takes many years of patient, consistent practice, but careful researchers have found that all this considerable effort brings real benefits that reach far beyond simply being able to play a single song well. Multiple studies strongly suggest that children who dedicate time to learning an instrument often develop noticeably stronger memory skills and considerably better overall concentration compared to those children who do not.\n\nPlaying an instrument well genuinely requires the young brain to skillfully coordinate many different tasks all at once, such as carefully reading musical notes, moving individual fingers with real precision, and listening intently to the exact sound being produced in real time. This complex mental coordination appears to meaningfully strengthen important connections within the brain that can also directly help with other school subjects, including mathematics and general language learning.\n\nBeyond these clear mental benefits, learning an instrument often quietly teaches valuable life lessons about patience and gracefully handling repeated failure along the way. Musicians must eventually accept that small mistakes are simply a completely normal part of regular practice, and genuine progress usually comes slowly and gradually rather than happening all at once overnight. Many experienced teachers firmly believe that this steady, patient process builds genuine character just as effectively as it builds actual musical skill.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What life lesson does learning an instrument often teach, according to the passage?",
+        "options": ["(A) That talent matters more than practice", "(B) That patience and handling failure are important parts of progress", "(C) That mistakes should always be avoided completely", "(D) That music lessons are only useful for professional musicians"],
+        "answer": 1,
+        "explanation": "文中提到學樂器教會人「patience and handling failure」，進步是逐漸累積而非一蹴可幾，故選 B。",
+        "optionsZh": ["天賦比練習更重要", "耐心與面對失敗是進步的重要部分", "錯誤永遠應該被完全避免", "音樂課只對職業音樂家有用"],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_041",
+    "passageType": "narrative",
+    "title": "The Night Market Vendor",
+    "passage": "Every single evening after school ended, I would walk slowly past the exact same night market stall run by a friendly elderly woman selling freshly grilled corn on the cob. She always remembered my usual order perfectly without ever needing to ask me directly, and she often quietly added an extra piece of corn without ever charging me any additional money.\n\nOne particularly rainy evening, I noticed that her small stall was noticeably much quieter than usual, and I clearly saw that the woman's tired hands were shaking slightly as she worked carefully at her grill. When I gently asked if she was feeling alright, she quietly admitted that business had been genuinely slow all week long because of the unusually bad weather, and she was seriously worried about being able to pay her monthly rent on time.\n\nThe very next day, I told several of my close friends about her difficult situation, and a few of them kindly decided to visit her small stall together after school. Within just one single week, word had spread quickly among students, and her modest stall became noticeably busier than it had ever been before. Watching her warm smile slowly return as customers lined up eagerly again taught me that sometimes even the smallest act of spreading kindness can genuinely change someone's entire difficult week.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "Why was the vendor's stall quieter than usual on the rainy evening?",
+        "options": ["(A) She had decided to close early", "(B) Business had been slow all week because of bad weather", "(C) The market had been shut down by the city", "(D) She had run out of corn to sell"],
+        "answer": 1,
+        "explanation": "文中提到她表示「business had been slow all week because of the bad weather」，故選 B。",
+        "optionsZh": ["她決定提早收攤", "由於天氣不好，整週生意都很清淡", "市場被市政府關閉了", "她的玉米已經賣完了"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_042",
+    "passageType": "informational",
+    "title": "Why Recycling Electronics Matters",
+    "passage": "Old phones, laptops, and various other electronic devices often end up sitting completely forgotten inside a cluttered drawer, or even worse, get thrown directly into the regular household trash. However, electronic waste, sometimes commonly called e-waste, actually contains various materials that can be either genuinely valuable or seriously harmful if not handled and processed correctly by trained professionals.\n\nHidden inside many everyday devices are small but valuable amounts of precious metals, such as gold and silver, which can be carefully recovered and reused whenever the devices are properly and safely recycled. At the same exact time, these same electronics also unfortunately contain harmful chemical substances that can seriously pollute local soil and groundwater if the devices are simply thrown carelessly into regular landfills.\n\nMany major cities now proudly offer special recycling programs designed specifically for old electronics, where local residents can safely drop off unwanted devices instead of placing them directly into the regular household trash. Some electronics retail stores also happily accept old, unwanted devices in direct exchange for small discounts on brand-new purchases, giving everyday customers an extra practical reason to recycle responsibly instead of letting old, unused gadgets simply pile up forgotten at home.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What is one reason recycling electronics is important, according to the passage?",
+        "options": ["(A) Electronics contain valuable metals that can be reused", "(B) Old electronics never contain any harmful materials", "(C) Recycling electronics is required by law everywhere", "(D) New electronics cannot be made without recycling"],
+        "answer": 0,
+        "explanation": "文中提到裝置內含有「valuable metals, such as gold and silver, which can be recovered and reused」，故選 A。",
+        "optionsZh": ["電子產品含有可回收再利用的貴重金屬", "舊的電子產品完全不含任何有害物質", "所有地方都以法律規定必須回收電子產品", "沒有回收就無法製造新的電子產品"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_043",
+    "passageType": "narrative",
+    "title": "The Used-Book Exchange",
+    "passage": "Our busy school library recently decided to hold a special used-book exchange event, allowing curious students to trade books they had already finished reading for exciting new titles instead of always having to buy brand-new books themselves. At first, only a small handful of students bothered bringing books to trade, and the whole event honestly seemed like it might quietly turn into a complete failure.\n\nThe determined school librarian, however, absolutely refused to give up on her original idea so easily. She carefully placed colorful, eye-catching posters all around the busy hallways and personally encouraged students who genuinely loved reading to bring at least one spare book from home. Slowly but steadily, more and more students began participating enthusiastically, genuinely curious about what interesting titles their classmates might unexpectedly bring in.\n\nBy the very final day of the entire event, the originally small exchange table had impressively grown into a long row of shelves completely filled with several hundred donated books. Students who had rarely visited the school library much before started stopping by regularly, eagerly searching for their next favorite story to read. The librarian later happily said that watching once-reluctant readers genuinely discover a real love of books was easily the most rewarding part of the entire memorable event.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "How did the used-book exchange event change over time?",
+        "options": ["(A) It stayed small and unpopular the whole time", "(B) It grew from a small event into a popular activity with many books", "(C) It was cancelled after the first day", "(D) Only teachers participated in the exchange"],
+        "answer": 1,
+        "explanation": "文中提到活動從一開始只有少數學生參加，到最後變成滿滿一整排書架，顯示活動逐漸擴大，故選 B。",
+        "optionsZh": ["活動始終冷清、不受歡迎", "活動從小規模逐漸發展成擁有大量書籍的熱門活動", "活動在第一天就被取消", "只有老師參與了這場交換活動"],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_044",
+    "passageType": "informational",
+    "title": "The Truth About Multitasking",
+    "passage": "Many students today genuinely believe that studying quietly while listening to music, texting friends constantly, and watching short videos all at the exact same time somehow makes them noticeably more efficient overall. However, careful scientific research on multitasking strongly suggests that the human brain is actually not designed at all to properly focus on multiple demanding tasks all at once.\n\nWhat honestly feels like true multitasking is actually often just the brain quickly and repeatedly switching back and forth between different tasks, rather than genuinely doing them both simultaneously as people assume. Each single time the brain switches its focus, it takes a small but real amount of time to fully re-engage properly with the new task, which can noticeably slow down overall progress and clearly increase the chance of careless mistakes.\n\nCareful studies comparing students who studied with constant distractions to those who studied in quiet, genuinely focused environments found that the second group generally remembered information considerably better and completed their assigned tasks much more quickly overall. Based directly on this growing body of research, many experienced teachers now strongly recommend setting aside phones and other distractions completely during dedicated study time, even for just short periods, to genuinely help students learn far more effectively.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "According to the passage, what actually happens when people think they are multitasking?",
+        "options": ["(A) The brain does multiple tasks at exactly the same time", "(B) The brain quickly switches back and forth between tasks", "(C) The brain completely shuts down one task", "(D) The brain becomes twice as fast at every task"],
+        "answer": 1,
+        "explanation": "文中提到「What feels like multitasking is often the brain quickly switching back and forth between tasks」，故選 B。",
+        "optionsZh": ["大腦真的同時處理多項任務", "大腦其實是快速在不同任務間切換", "大腦會完全關閉其中一項任務", "大腦處理每項任務的速度都變成兩倍快"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_045",
+    "passageType": "narrative",
+    "title": "The Family Recipe Contest",
+    "passage": "Every single summer, our large extended family proudly holds a friendly cooking contest where each household brings one dish carefully based on an old, cherished family recipe. This particular year, my mother decided to finally let me prepare our family's traditional dish completely by myself for the very first time, carefully using my great-grandmother's original handwritten recipe for sweet rice cake.\n\nThe old recipe card was badly faded and genuinely hard to read clearly, with several important measurements smudged completely beyond recognition after so many years. I honestly had to guess carefully at a few specific amounts, calling my aunt several separate times just to ask about small details my great-grandmother had apparently never bothered to write down clearly in the first place.\n\nWhen the important contest day finally arrived, I nervously placed my finished rice cake on the long table alongside dishes made by cousins who clearly had far more cooking experience than I did. To my genuine surprise, several relatives said afterward that my particular version tasted almost exactly like the one they still fondly remembered from their own childhood. My grandmother, especially, seemed visibly moved, saying quietly that it reminded her strongly of eating the very same dish many decades earlier, made carefully by her own mother's loving hands.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What difficulty did the writer face while preparing the family dish?",
+        "options": ["(A) The recipe card was faded and hard to read clearly", "(B) The family refused to share the recipe with her", "(C) She had no ingredients available at home", "(D) The contest rules did not allow old recipes"],
+        "answer": 0,
+        "explanation": "文中提到「The recipe card was faded and hard to read, with some measurements smudged beyond recognition」，故選 A。",
+        "optionsZh": ["食譜卡片褪色且難以辨讀", "家人拒絕把食譜分享給她", "她家裡完全沒有材料可用", "比賽規則不允許使用老食譜"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_046",
+    "passageType": "informational",
+    "title": "The Science Behind Rainbows",
+    "passage": "A beautiful rainbow appears in the sky whenever bright sunlight passes cleanly through countless tiny raindrops still floating gently in the air after a passing storm. As individual rays of light enter each small raindrop, the light bends slightly and gradually separates into different visible colors, quite similar to how ordinary light passes cleanly through a triangular glass prism in a science classroom.\n\nEach individual color of light bends by a slightly different exact amount as it travels through the water droplet, which is precisely why the colors of a rainbow always appear in the exact same fixed order, ranging from red on the outer edge all the way to violet on the inner edge. Because rainbows depend entirely on the exact angle formed between the sunlight, the raindrops, and the observer's own eyes, no two separate people ever actually see exactly the same rainbow, even when standing right next to each other at the same moment.\n\nRainbows usually appear directly opposite the sun's position in the sky, which is precisely why people often notice them most clearly in the late afternoon after a passing rain shower, when the sun sits low in the western sky. Understanding the relatively simple science behind this colorful natural phenomenon certainly does not make it any less genuinely beautiful to watch quietly appear stretched across the open sky.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "Why do the colors of a rainbow always appear in the same order?",
+        "options": ["(A) Because each color bends by a slightly different amount through water", "(B) Because rainbows only appear in the morning", "(C) Because raindrops are always the same size", "(D) Because sunlight has only one color inside it"],
+        "answer": 0,
+        "explanation": "文中提到「Each color of light bends by a slightly different amount as it moves through the water」，因此顏色順序固定，故選 A。",
+        "optionsZh": ["因為每種顏色的光在通過水時彎曲的角度略有不同", "因為彩虹只會在早上出現", "因為雨滴的大小永遠相同", "因為陽光內只含有一種顏色"],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_047",
+    "passageType": "narrative",
+    "title": "The Solo Camping Trip",
+    "passage": "For his fourteenth birthday celebration, Marcus specifically asked his slightly hesitant parents for permission to go camping completely alone for one full night in the quiet forest behind their family's small cabin, an area he had actually visited many times before together with his father. His parents naturally hesitated at first, but eventually agreed, carefully giving him a detailed list of important safety rules to follow closely throughout the night.\n\nSetting up the tent completely alone took considerably longer than Marcus had originally expected, and by the time he finally finished the difficult task, the sun had already begun quietly setting behind the trees. As real darkness slowly fell across the forest, every single small sound seemed noticeably louder than usual, and Marcus found himself nervously checking his flashlight batteries again and again throughout the evening.\n\nDespite feeling genuinely nervous the entire time, Marcus eventually managed to fall asleep, waking up early the next morning to the peaceful sound of birds singing instead of anything remotely frightening. Walking slowly back to the cabin afterward, he felt an unfamiliar but genuine sense of quiet pride, realizing that facing his own fears completely alone in the quiet forest had taught him far more about real independence than any single lesson at school ever possibly could have.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "How did Marcus feel while camping alone at night?",
+        "options": ["(A) Completely calm and unafraid the entire time", "(B) Nervous, but he managed to fall asleep eventually", "(C) So frightened that he walked home immediately", "(D) Angry at his parents for letting him go"],
+        "answer": 1,
+        "explanation": "文中提到他不斷檢查手電筒電池，顯示緊張，但「managed to fall asleep eventually」，故選 B。",
+        "optionsZh": ["全程完全冷靜、毫不害怕", "感到緊張，但最終還是睡著了", "害怕到立刻走路回家", "對讓他去露營的父母感到生氣"],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_048",
+    "passageType": "informational",
+    "title": "The Story Behind Chopsticks",
+    "passage": "Chopsticks have been widely used as everyday eating utensils in various parts of Asia for literally thousands of years now, and their long, interesting history reveals several fascinating details about exactly how eating habits have gradually changed over time. Early chopsticks were actually originally used mainly for cooking purposes, helping ordinary people reach carefully into hot boiling pots to stir or retrieve food without accidentally burning their bare hands.\n\nOver many centuries, chopsticks gradually became the main primary tool used directly at the dining table as well, not merely in the kitchen. Some careful historians believe that this significant shift happened partly because food was traditionally cut into much smaller bite-sized pieces before cooking even began, making sharp knives considerably less necessary during actual meals compared to certain other world cultures.\n\nToday, chopsticks are commonly made from many completely different materials, including natural wood, bamboo, polished metal, and modern plastic, and their exact design can vary noticeably between different Asian countries. Learning to properly use chopsticks certainly takes considerable practice for many complete beginners, but for people who genuinely grew up using them every single day, chopsticks feel just as natural and effortless as casually using a simple fork or spoon.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What were early chopsticks originally used for, according to the passage?",
+        "options": ["(A) Eating directly at the dining table", "(B) Cooking, especially reaching into hot pots", "(C) Cutting large pieces of meat", "(D) Serving tea to guests"],
+        "answer": 1,
+        "explanation": "文中提到早期筷子「originally used mainly for cooking, helping people reach into hot pots」，故選 B。",
+        "optionsZh": ["在餐桌上直接進食", "烹飪用途，特別是伸入熱鍋中取物", "切割大塊的肉", "為客人端茶"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_049",
+    "passageType": "narrative",
+    "title": "The Unexpected Substitute Teacher",
+    "passage": "When our usual math teacher suddenly went on unexpected sick leave, a friendly substitute teacher named Mr. Adams quietly arrived, and most students naturally expected a fairly boring week filled with dull worksheets. Instead, Mr. Adams genuinely surprised absolutely everyone by cleverly turning ordinary math lessons into small friendly competitions and clever puzzles, something our regular teacher had honestly never tried before in class.\n\nStudents who normally struggled quite a bit with math, including myself, suddenly found ourselves paying much closer attention than usual, genuinely eager to solve each new puzzle before our classmates could finish first. Mr. Adams calmly explained that he personally believed math often felt intimidating mainly because students rarely saw it as something genuinely fun or clearly connected to real everyday problems.\n\nBy the very end of that memorable week, several classmates who usually dreaded math class quite openly were now actively asking Mr. Adams thoughtful questions right after the bell rang, something that almost never happened during our regular lessons before. When our original teacher finally returned, many students openly admitted that they had actually learned considerably more that particular week than they had ever expected, clearly proving that sometimes an unexpected change can genuinely reveal a completely new way of looking at an old, familiar subject.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "How did Mr. Adams make math lessons different from usual?",
+        "options": ["(A) He gave students more worksheets than usual", "(B) He turned lessons into small competitions and puzzles", "(C) He cancelled math class for the whole week", "(D) He only reviewed old lessons students already knew"],
+        "answer": 1,
+        "explanation": "文中提到 Mr. Adams「turning math lessons into small competitions and puzzles」，故選 B。",
+        "optionsZh": ["他給學生比平常更多的作業單", "他把課程變成小型競賽和謎題", "他取消了整週的數學課", "他只複習學生已經學過的內容"],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_050",
+    "passageType": "informational",
+    "title": "The Hidden World of Ant Colonies",
+    "passage": "Ants may certainly be tiny, individual creatures, but the enormous colonies they patiently build together are surprisingly complex, sometimes containing several million individual ants all working seamlessly together as if they were somehow a single, unified organism. Each individual ant within the colony has a specific assigned role to perform, such as gathering food, protecting the underground nest, or carefully caring for the colony's young.\n\nAnts primarily communicate with each other mainly through invisible chemical signals called pheromones, rather than through sounds or visible gestures like humans typically use. When one worker ant successfully discovers a good source of food nearby, it carefully leaves a faint trail of pheromones along its path back to the nest, allowing other nearby ants to easily follow that exact same path directly to the food without ever needing any spoken instructions at all.\n\nScientists carefully studying ant colonies have found that this remarkably simple communication system somehow allows ants to reliably solve surprisingly complicated problems together, such as efficiently finding the shortest possible path between two separate locations. Engineers have even directly used careful observations of natural ant behavior to help design more efficient computer networks and delivery routes, clearly showing that studying these genuinely tiny insects can offer valuable, practical lessons for solving much larger and more complex human problems.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "How do ants mainly communicate with each other, according to the passage?",
+        "options": ["(A) Through sounds and body movements", "(B) Through chemical signals called pheromones", "(C) Through direct physical contact only", "(D) Through visual signals using their eyes"],
+        "answer": 1,
+        "explanation": "文中提到螞蟻「communicate mainly through chemical signals called pheromones」，故選 B。",
+        "optionsZh": ["透過聲音與肢體動作", "透過稱為費洛蒙的化學訊號", "只透過直接的身體接觸", "透過眼睛傳遞的視覺訊號"],
+        "questionType": "detail"
+      }
+    ]
+  }
+]

@@ -18,7 +18,7 @@ const TT_COMBO_CAP  = 2.0;
 
 // #14 積分模式閱讀理解關卡（每 5000 分觸發一次，只有 ttGame.mode==='ranked' 才會出現）
 const TT_READING_STEP    = 5000;
-const TT_READING_SECONDS = 45;
+const TT_READING_SECONDS = 40;
 const TT_READING_CORRECT = 300;
 
 function _ttEscHtml(s) {
