@@ -216,12 +216,80 @@ async function handleLogin(e) {
 // 接手把 token 交給 Supabase。網頁版（非封裝 App）則維持原本整頁導向的行為不變。
 const OAUTH_NATIVE_REDIRECT = 'com.vocatopia.app://auth-callback';
 
+// ── 原生 Apple 登入（iOS 專用，繞開內嵌瀏覽器）──────────────────────
+// 2026-07-18：App Review 回報「iPad 上 Sign in with Apple 登入沒反應」（iPhone 自
+// 測正常，推測是裝置/系統版本差異）。原本 Apple 跟 Google 共用同一套「開內嵌瀏覽器
+// 走網頁版 OAuth」邏輯，但蘋果官方建議、且行為更一致的做法是直接呼叫系統原生
+// ASAuthorizationAppleIDProvider API（Face ID/Touch ID 直接確認，不經過 WebView），
+// 改用 @capacitor-community/apple-sign-in 外掛，只在 iOS 原生環境走這條路；
+// Google 登入、網頁版、Android 都維持原本的網頁 OAuth 流程不變。
+function _randomNonce(length = 32) {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const bytes = new Uint8Array(length);
+  crypto.getRandomValues(bytes);
+  return Array.from(bytes, b => chars[b % chars.length]).join('');
+}
+
+async function _sha256Hex(str) {
+  const data = new TextEncoder().encode(str);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function signInWithAppleNative() {
+  _clearAuthError();
+  localStorage.setItem('voca_remember_me', '1');
+
+  const SignInWithApple = window.Capacitor?.Plugins?.SignInWithApple;
+  if (!SignInWithApple) {
+    console.error('[signInWithAppleNative] 外掛不可用（多半是安裝的 App 版本較舊）');
+    _setAuthError('這個版本的 App 尚未支援原生 Apple 登入，請更新 App 後再試');
+    return;
+  }
+
+  try {
+    // Apple 要求送到原生 API 的 nonce 要先做 SHA256，Supabase 那邊驗證時用未雜湊
+    // 的原始值比對（signInWithIdToken 的 nonce 參數會自動雜湊後跟 token 內的比對）。
+    const rawNonce = _randomNonce();
+    const hashedNonce = await _sha256Hex(rawNonce);
+
+    const { response } = await SignInWithApple.authorize({
+      clientId: 'com.vocatopia.app', // 原生流程實際上會忽略這個欄位，一律用 App 自己的 Bundle ID
+      redirectURI: OAUTH_NATIVE_REDIRECT,
+      scopes: 'name email',
+      nonce: hashedNonce,
+    });
+
+    const { error } = await authClient.auth.signInWithIdToken({
+      provider: 'apple',
+      token: response.identityToken,
+      nonce: rawNonce,
+    });
+    if (error) {
+      _setAuthError(_friendlyAuthError(error, 'Apple 登入'));
+      return;
+    }
+    // 成功後 onAuthStateChange 的 SIGNED_IN 監聽器會接手（見 initAuth()）
+  } catch (err) {
+    // 使用者在系統原生確認畫面按「取消」（ASAuthorizationError.canceled，code 1001），
+    // 這是正常操作不是錯誤，不用顯示錯誤訊息打擾使用者
+    if (String(err?.code) === '1001' || String(err?.message || '').includes('1001')) return;
+    console.error('[signInWithAppleNative] 例外：', err);
+    _setAuthError(_friendlyAuthError(err, 'Apple 登入'));
+  }
+}
+
 async function signInWithOAuth(provider) {
   _clearAuthError();
   // OAuth 一律視為「記住我」，跟第三方帳號的登入狀態保持一致（沒有勾選框可以取消）
   localStorage.setItem('voca_remember_me', '1');
 
   const isNative = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+
+  // iOS 原生環境的 Apple 登入改走上面的原生 API，不進入下面的網頁 OAuth 分支
+  if (isNative && provider === 'apple' && window.Capacitor.getPlatform() === 'ios') {
+    return signInWithAppleNative();
+  }
 
   try {
     if (isNative) {
