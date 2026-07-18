@@ -2440,6 +2440,7 @@ function renderDailyArticles() {
 function closeDailyCat() {
   dailyCatOpen = null;
   document.getElementById('dailyCats').style.display = '';
+  if (typeof updateUnlimitedEntry === 'function') updateUnlimitedEntry(); // 恢復顯示 #dcatUnlimited（跟開啟時對稱）
   document.getElementById('dailyReadingBack').style.display = 'none';
   document.getElementById('artList').style.display = 'none';
 }
@@ -2843,6 +2844,10 @@ async function openUnlimitedCat(cat) {
 async function openDailyCat(cat) {
   dailyCatOpen = cat;
   document.getElementById('dailyCats').style.display = 'none';
+  // #dcatUnlimited 是 #dailyCats 的兄弟元素，不在它裡面，隱藏 #dailyCats 不會
+  // 連帶隱藏它；忘記一起藏會導致抓題目的等待期間畫面上獨留一張無限題庫卡片。
+  const unlEl = document.getElementById('dcatUnlimited');
+  if (unlEl) unlEl.style.display = 'none';
   document.getElementById('dailyReadingBack').style.display = '';
   const artList = document.getElementById('artList');
 
