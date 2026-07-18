@@ -25,6 +25,7 @@ scripts/cmudict.dict
 
 # 內部測試帳號清單（含明文密碼，絕對不可上傳）
 test_accounts.json
+teacher_test_account.json
 
 # Android release 簽署金鑰（絕對不可上傳）
 android/*.keystore
