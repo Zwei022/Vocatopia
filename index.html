@@ -374,9 +374,11 @@
     <div class="coll-tabs">
       <button class="coll-tab active" id="collTabChars" onclick="switchCollTab('chars')">🃏 角色</button>
       <button class="coll-tab" id="collTabAchv" onclick="switchCollTab('achv')">🏆 成就</button>
+      <button class="coll-tab" id="collTabQuest" onclick="switchCollTab('quest')">📜 任務</button>
     </div>
     <div class="coll-grid" id="collGrid"><!-- renderCharCollection() 填入 --></div>
     <div class="coll-achv" id="collAchv" style="display:none"><!-- renderAchievements() 填入 --></div>
+    <div class="coll-achv" id="collQuest" style="display:none"><!-- renderQuestList() 填入 --></div>
     <div class="bnav">
       <button class="bn" onclick="goScreen('arena',this)"><div class="bn-ico bn-ico-img"><img src="public/images/icons/arena.png" alt="競技場"></div><div class="bn-lbl">競技場</div></button>
       <button class="bn active" onclick="goScreen('decks',this)"><div class="bn-dot"></div><div class="bn-ico bn-ico-img"><img src="public/images/icons/favorites.png" alt="收藏"></div><div class="bn-lbl">收藏</div></button>

@@ -66,3 +66,31 @@
 Android 由 `CapApp.addListener('backButton', handleBack)` 觸發；iOS 沒有實體
 返回鍵，改用螢幕左緣 24px 內起始、右滑超過 60px 的手勢偵測觸發同一個
 `handleBack()`，只在 `Capacitor.getPlatform() === 'ios'` 時啟用。
+
+## 一次性獎勵型系統的標準架構（成就 / 簽到 / 任務，2026-07-18 定案）
+
+凡是「達成條件 → 玩家手動或自動領取 → 只能領一次」的系統（`ACHIEVEMENTS`／
+`checkin_reward_config`／`QUEST_MAIN`+`QUEST_SIDE`），一律遵循同一套分工：
+
+- **內容定義在前端**：data-driven 陣列（`id, name/desc, goal, unit, reward(s), cur()`），
+  `cur()` 回傳目前進度數字，`goal` 是達成門檻，`cur() >= goal` 才算達成。
+  **`id` 一經上線不得更動**（否則已領取/稱號對應會跑掉）。
+- **領取狀態存 Supabase**：`profiles.<x>_claimed jsonb` 陣列（如
+  `achievements_claimed`／`quests_claimed`），原子領取 RPC 用同一套寫法：
+  `update ... set reward欄位 = reward欄位 + p_amount, x_claimed = x_claimed || to_jsonb(p_id) where id = auth.uid() and not (x_claimed ? p_id)`，
+  未命中回傳 `null`（代表已在別裝置領過），命中回傳新的權威值。
+  RPC 檔案放 `supabase/migrations/`，貼到 Supabase SQL Editor 執行一次即可，
+  這個專案沒有正式的 migration runner。
+- **信任模型是分層的**：`cur()` 的資料來源如果本來就是伺服器權威值
+  （`currentProfile.xp/streak/wins/gacha_count` 等），直接讀就好；如果是全新
+  指標且只是「決定要不要顯示可領取」的用途（例如任務系統新增的查字次數、
+  配對遊戲最佳秒數、方塊單局消行數），可以用 `localStorage` 累積，因為最終
+  發獎仍然被 RPC 的 `not (x_claimed ? p_id)` 擋住，本地數字被竄改也只能「提早
+  看到可領取」，不會真的重複領獎。不要為了這類次要指標新增資料庫欄位。
+- **UI 沿用「收藏」screen 的分頁模式**：`#decks` screen 用 `.coll-tabs` 分頁
+  切換 `.coll-grid`（角色）／`.coll-achv`（成就 / 任務，共用同一組
+  `achv-card`/`achv-bar`/`achv-claim` CSS class，不要另外造一套樣式），
+  `switchCollTab(tab)` 統一管控顯示切換與觸發對應的 `render*()`。
+- 任務系統額外多一層「主線鏈」：`QUEST_MAIN` 陣列的順序即解鎖順序，
+  `_qMainAvailable(idx)` 判斷「前一關是否已領取」，未解鎖的關卡在 UI 上鎖住
+  且 `claimQuest()` 會擋掉跳關領取。

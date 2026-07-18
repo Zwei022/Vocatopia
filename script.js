@@ -2088,6 +2088,7 @@ function gsatSubmit(auto) {
       !confirm(`還有 ${unanswered} 題未作答，確定要交卷嗎？`)) return;
 
   gsatExam.submitted = true;
+  if (typeof _questBumpGsat === 'function') _questBumpGsat();   // #14 支線任務：歷屆會考題庫完成計數
   clearInterval(gsatExam.timerId);
   _gsatStopAudio();   // 交卷即停止連續播放與所有音檔
 
@@ -3582,6 +3583,7 @@ async function lookupWord(word, el) {
     if (typeof showToast === 'function') showToast('交卷後才能點字查詢單字');
     return;
   }
+  if (typeof _questBumpLookup === 'function') _questBumpLookup();   // #14 支線任務：字典查詢次數計數
   // 優先用 WORDS 陣列開啟詳細 overlay（含字尾還原比對）
   let w = WORDS.find(x => x.word === word);
   if (!w) {
@@ -5374,6 +5376,7 @@ function _finishMatchGame() {
   } else {
     bestText = `此卡組最佳紀錄：${prevBest.toFixed(1)} 秒`;
   }
+  if (typeof _questBumpMatchBest === 'function') _questBumpMatchBest(elapsed);   // #14 支線任務：全域配對最佳秒數
 
   setTimeout(() => {
     document.getElementById('matchResultTime').textContent = elapsed.toFixed(1) + ' 秒';
@@ -7135,6 +7138,7 @@ function _awardSubjectGold(cat) {
   addGold(reward);
   awardXp(XP_PER_SUBJECT, { source: 'daily' });   // #2 每日測驗完成一科 → XP
   _newbieProgress('daily');                        // #2 新手任務：完成每日測驗
+  if (typeof _questBumpCatDone === 'function') _questBumpCatDone(cat);   // #14 支線任務：科目一次性完成旗標
   const catName = (CAT_META[cat] || {}).name || cat;
   showToast(`🪙 +${reward} 金幣！${catName}完成`);
 
@@ -7156,12 +7160,16 @@ function _awardSubjectGold(cat) {
 // ══════════════════════════════════════════════════════════════
 // #2 經驗值 / 等級系統
 // 累積總經驗存 profiles.xp（既有欄位），等級由曲線反推。
-// 升級曲線：Lv.L→L+1 需要 100 + (L-1)×7 XP（Lv1→2=100…Lv99→100=688，總計≈44k）。
-// 文法解鎖：已解鎖小節數 = min(92, 4 + 等級)（第1、2章免費，Lv.3=第3章結束）。
+// 升級曲線：Lv.L→L+1 需要 100 + (L-1)×9 XP（Lv1→2=100…Lv99→100=882，總計≈53.6k）。
+// 註：XP_STEP 原為 7，因 #14 任務系統上線後一次性任務 XP 較多，調陡避免升級步調被任務衝過快
+// （測試階段尚未正式上線，帳號會在上線前重置，故直接調整不做保底遷移）。
+// 文法解鎖：已解鎖小節數改與等級「脫鉤」，見 unlockedGrammarSections()——避免任務 XP 暴衝
+// 一次解鎖過多文法小節；付費會員仍由伺服器權威全解，不受此速度限制。
 // ══════════════════════════════════════════════════════════════
-const XP_BASE = 100, XP_STEP = 7, XP_MAX_LEVEL = 100;
+const XP_BASE = 100, XP_STEP = 9, XP_MAX_LEVEL = 100;
 const GRAMMAR_FREE_SECTIONS = 4;      // 第1、2章免費（各2節）
 const GRAMMAR_TOTAL_SECTIONS = 92;
+const GRAMMAR_UNLOCK_PER_LEVEL = 0.75; // 每級解鎖節數係數（<1，故無法只靠練等免費解鎖全部 92 節，需訂閱）
 const XP_PER_SUBJECT = 20;            // 每日測驗完成一科
 const XP_ALL_SUBJECTS = 40;           // 六科全完成加碼
 const XP_PER_TETRIS_BASE = 15;        // 俄羅斯方塊每場基礎
@@ -7190,7 +7198,7 @@ function currentLevel() { return levelFromXp(currentProfile?.xp || 0).level; }
 // 依等級計算已解鎖的文法小節數（付費會員全解由伺服器權威把關，這裡只算等級制的量，
 // 用於升級時「新解鎖幾節」的提示訊息；實際鎖狀態以伺服器回傳的 locked 旗標為準）
 function unlockedGrammarSections(level) {
-  return Math.min(GRAMMAR_TOTAL_SECTIONS, GRAMMAR_FREE_SECTIONS + level);
+  return Math.min(GRAMMAR_TOTAL_SECTIONS, GRAMMAR_FREE_SECTIONS + Math.floor(level * GRAMMAR_UNLOCK_PER_LEVEL));
 }
 
 // 每日 XP 上限追蹤（localStorage，用本地日期當 key）
@@ -7237,6 +7245,7 @@ function awardTetrisXp(lines) {
   try { localStorage.setItem(key, String(played + 1)); } catch { /* ignore */ }
   const xp = Math.min(XP_TETRIS_GAME_CAP, XP_PER_TETRIS_BASE + Math.floor((lines || 0) / 10) * XP_PER_TETRIS_LINE10);
   awardXp(xp, { source: 'tetris' });
+  if (typeof _questBumpTetrisLines === 'function') _questBumpTetrisLines(lines || 0);   // #14 主線任務：單局最高消行數
 }
 
 // ── #2 新手任務 ──────────────────────────────────────────────
@@ -7348,24 +7357,121 @@ async function updateHomeScreen() {
 }
 
 // ══════════════════════════════════════════════════════════════
-// 首頁「任務」卡：新手任務 + 主線任務
-// 新手任務進度來源沿用 _newbieState()；主線任務獨立以 localStorage 記錄領取狀態。
+// #14 主線 / 支線任務系統
+// 主線：6 關依序解鎖（前一關未領取，下一關不可領）。支線：7 個無序清單，一次性、不重置。
+// 資料驅動寫法比照 ACHIEVEMENTS（cur() >= goal 判斷達成），已領取狀態存 profiles.quests_claimed，
+// 原子領取走 claim_quest RPC（比照 claim_achievement，未領過才同時發金幣＋XP）。
+// 新增指標（收藏數/配對最佳秒數/方塊消行/查字次數/科目一次性完成旗標/會考完成次數）用 localStorage
+// 累積進度，信任模型比照既有 tetris/newbie 任務：本地只決定「顯示可領」，實際發獎仍受伺服器防重複把關。
 // ══════════════════════════════════════════════════════════════
-const MAINQUEST_DECK_WORDS  = 5;    // 主線任務1：自訂卡組需達到的單字數
-const MAINQUEST_DECK_REWARD  = 300; // 完成獎勵金幣
 
-function _mainQuestKey() { return 'voca_mainquest_' + (currentUser?.id || 'guest'); }
-function _mainQuestState() {
-  try { return JSON.parse(localStorage.getItem(_mainQuestKey()) || '{}') || {}; } catch { return {}; }
-}
-function _mainQuestSave(s) { try { localStorage.setItem(_mainQuestKey(), JSON.stringify(s)); } catch { /* ignore */ } }
-
-// 目前自訂卡組中「單字數最多的一組」有幾個字（用來判斷主線任務1是否達標）
+// 目前自訂卡組中「單字數最多的一組」有幾個字（主線任務1）
 function _mainQuestDeckWords() {
   if (typeof customDecks === 'undefined' || !Array.isArray(customDecks) || !customDecks.length) return 0;
   return customDecks.reduce((mx, d) => Math.max(mx, (d.wordIds || []).length), 0);
 }
 
+function _questFavTotal() {
+  const ids = new Set();
+  try {
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (k && k.startsWith('voca_fc_fav_')) {
+        (JSON.parse(localStorage.getItem(k) || '[]') || []).forEach(id => ids.add(id));
+      }
+    }
+  } catch { /* ignore */ }
+  return ids.size;
+}
+function _questBumpMatchBest(elapsed) {
+  const key = 'voca_quest_match_best';
+  const prev = parseFloat(localStorage.getItem(key));
+  if (isNaN(prev) || elapsed < prev) { try { localStorage.setItem(key, String(elapsed)); } catch { /* ignore */ } }
+}
+function _questMatchUnder15() { const v = parseFloat(localStorage.getItem('voca_quest_match_best')); return (!isNaN(v) && v <= 15) ? 1 : 0; }
+
+function _questBumpTetrisLines(lines) {
+  const key = 'voca_quest_tetris_best_lines';
+  const prev = parseInt(localStorage.getItem(key) || '0', 10) || 0;
+  if (lines > prev) { try { localStorage.setItem(key, String(lines)); } catch { /* ignore */ } }
+}
+function _questTetrisBestLines() { return parseInt(localStorage.getItem('voca_quest_tetris_best_lines') || '0', 10) || 0; }
+
+function _questBumpLookup() {
+  const key = 'voca_quest_lookup_count';
+  try { localStorage.setItem(key, String((parseInt(localStorage.getItem(key) || '0', 10) || 0) + 1)); } catch { /* ignore */ }
+}
+function _questLookupCount() { return parseInt(localStorage.getItem('voca_quest_lookup_count') || '0', 10) || 0; }
+
+function _questBumpCatDone(cat) { try { localStorage.setItem('voca_quest_catdone_' + cat, '1'); } catch { /* ignore */ } }
+function _questCatDone(cat) { return localStorage.getItem('voca_quest_catdone_' + cat) === '1' ? 1 : 0; }
+
+function _questBumpGsat() {
+  const key = 'voca_quest_gsat_count';
+  try { localStorage.setItem(key, String((parseInt(localStorage.getItem(key) || '0', 10) || 0) + 1)); } catch { /* ignore */ }
+}
+function _questGsatCount() { return parseInt(localStorage.getItem('voca_quest_gsat_count') || '0', 10) || 0; }
+
+// ── 主線任務定義（id 一經上線不要更動，避免已領獎狀態跑掉）──
+const QUEST_MAIN = [
+  { id: 'mq1_deck5',    name: '組一副自訂卡組',   desc: '建立一個自訂單字卡組並加入 5 個單字', goal: 5,  unit: '字', gold: 50,  xp: 80,  cur: _mainQuestDeckWords },
+  { id: 'mq2_streak3',  name: '養成學習習慣',     desc: '簽到累積 3 天',                       goal: 3,  unit: '天', gold: 70,  xp: 100, cur: () => _acStreak() },
+  { id: 'mq3_win1',     name: '初上競技場',       desc: '在競技場完成一場對戰並獲勝',           goal: 1,  unit: '勝', gold: 90,  xp: 130, cur: () => _acWins() },
+  { id: 'mq4_tetris10', name: '方塊高手初體驗',   desc: '俄羅斯方塊單局消除滿 10 行',           goal: 10, unit: '行', gold: 130, xp: 180, cur: _questTetrisBestLines },
+  { id: 'mq5_word50',   name: '字庫小有所成',     desc: '字庫熟悉度標記達 50 字',               goal: 50, unit: '字', gold: 160, xp: 220, cur: () => _acMasteredWords() },
+  { id: 'mq6_gacha1',   name: '初次抽卡',         desc: '在商店抽一次卡包',                     goal: 1,  unit: '次', gold: 100, xp: 150, cur: () => _acGacha() },
+];
+
+// ── 支線任務定義（無序、不重置）──
+const QUEST_SIDE = [
+  { id: 'sq_fav10',    name: '收藏家的第一步', desc: '收藏 10 個單字',               goal: 10, unit: '字', gold: 30, xp: 40, cur: _questFavTotal },
+  { id: 'sq_match15',  name: '配對高手',       desc: '配對遊戲 15 秒內完成一次',      goal: 1,  unit: '次', gold: 30, xp: 40, cur: _questMatchUnder15 },
+  { id: 'sq_cloze1',   name: '克漏字新手',     desc: '完成一次克漏字每日測驗',        goal: 1,  unit: '次', gold: 30, xp: 40, cur: () => _questCatDone('cloze') },
+  { id: 'sq_listen1',  name: '耳聰目明',       desc: '完成一次聽力每日測驗',          goal: 1,  unit: '次', gold: 30, xp: 40, cur: () => _questCatDone('listening') },
+  { id: 'sq_lookup20', name: '字典常客',       desc: '點字查詢單字累計 20 次',        goal: 20, unit: '次', gold: 30, xp: 40, cur: _questLookupCount },
+  { id: 'sq_dailyall1',name: '全勤生',         desc: '單日完成六科每日練習',          goal: 1,  unit: '次', gold: 40, xp: 60, cur: () => currentProfile?.daily_all_count || 0 },
+  { id: 'sq_gsat1',    name: '模擬應戰',       desc: '完成一回歷屆會考題庫測驗',      goal: 1,  unit: '回', gold: 40, xp: 60, cur: _questGsatCount },
+];
+
+function _qClaimed(id) { const c = currentProfile?.quests_claimed; return Array.isArray(c) && c.includes(id); }
+function _qMainAvailable(idx) { return idx === 0 || _qClaimed(QUEST_MAIN[idx - 1].id); }
+
+async function claimQuest(id) {
+  const all = [...QUEST_MAIN, ...QUEST_SIDE];
+  const q = all.find(x => x.id === id);
+  if (!q || _qClaimed(id)) return;
+  if (!currentUser) { showToast('登入後才能領取任務獎勵'); return; }
+  const mi = QUEST_MAIN.findIndex(x => x.id === id);
+  if (mi > 0 && !_qMainAvailable(mi)) { showToast('請先完成前一關主線任務'); return; }
+  if (q.cur() < q.goal) { showToast('還沒達成喔'); return; }
+  try {
+    const { data, error } = await authClient.rpc('claim_quest', { p_id: id, p_gold: q.gold, p_xp: q.xp });
+    if (error) throw error;
+    if (data) {
+      currentProfile.quests_claimed = [...(currentProfile.quests_claimed || []), id];
+      const beforeLv = levelFromXp((currentProfile.xp || 0) - q.xp).level;
+      if (typeof data.gold === 'number') {
+        currentProfile.gold = data.gold;
+        const el = document.getElementById('hGold'); if (el) el.textContent = data.gold.toLocaleString();
+      }
+      if (typeof data.xp === 'number') {
+        currentProfile.xp = data.xp;
+        _updateXpDisplay();
+        const afterLv = levelFromXp(currentProfile.xp).level;
+        if (afterLv > beforeLv) _onLevelUp(beforeLv, afterLv);
+      }
+      showToast(`🎉 ${q.name}完成！+${q.gold} 🪙 +${q.xp} XP`, 3000);
+    } else {
+      showToast('此任務已於其他裝置領取過');
+    }
+    renderHomeQuests();
+    if (typeof renderQuestList === 'function') renderQuestList();
+  } catch (e) { showToast('領取失敗：' + (e.message || e)); }
+}
+
+function openQuestList() { goScreen('decks'); switchCollTab('quest'); }
+
+// ── 首頁「任務」卡：新手任務 + 目前主線關卡 + 支線可領提示 ──
 function renderHomeQuests() {
   const card = document.getElementById('hmTasksCard');
   const body = document.getElementById('hmTasksBody');
@@ -7387,19 +7493,33 @@ function renderHomeQuests() {
       </div>`;
   }
 
-  // ── 主線任務 1：建立自訂卡組並加入 5 個單字
-  const mq = _mainQuestState();
-  if (!mq.deck5Claimed) {
-    const have = _mainQuestDeckWords();
-    const done = have >= MAINQUEST_DECK_WORDS;
-    const tail = done
-      ? `<button class="hm-task-claim" onclick="claimMainQuestDeck()">領取 +${MAINQUEST_DECK_REWARD} 🪙</button>`
-      : `<span class="hm-task-prog">${Math.min(have, MAINQUEST_DECK_WORDS)}/${MAINQUEST_DECK_WORDS}</span>`;
-    html += `
-      <div class="hm-task-group">
-        <div class="hm-task-group-title">主線任務</div>
-        <div class="hm-task-row">${done ? '✅' : '⬜'}<span class="hm-task-txt">建立一個自訂單字卡組並加入 ${MAINQUEST_DECK_WORDS} 個單字</span>${tail}</div>
-      </div>`;
+  // ── 主線任務：只顯示目前進行中的這一關
+  if (currentUser) {
+    const mIdx = QUEST_MAIN.findIndex(q => !_qClaimed(q.id));
+    if (mIdx !== -1) {
+      const q = QUEST_MAIN[mIdx];
+      const cur = Math.min(q.cur(), q.goal);
+      const done = cur >= q.goal;
+      const tail = done
+        ? `<button class="hm-task-claim" onclick="claimQuest('${q.id}')">領取 +${q.gold}🪙+${q.xp}XP</button>`
+        : `<span class="hm-task-prog">${cur}/${q.goal}</span>`;
+      html += `
+        <div class="hm-task-group">
+          <div class="hm-task-group-title">主線任務 · 第 ${mIdx + 1}/${QUEST_MAIN.length} 關</div>
+          <div class="hm-task-row">${done ? '✅' : '⬜'}<span class="hm-task-txt">${escHtml(q.desc)}</span>${tail}</div>
+        </div>`;
+    }
+
+    // ── 支線任務：可領取數量提示（詳細清單在「收藏 → 任務」分頁）
+    const sideReady = QUEST_SIDE.filter(q => !_qClaimed(q.id) && q.cur() >= q.goal).length;
+    if (sideReady > 0) {
+      html += `
+        <div class="hm-task-group">
+          <div class="hm-task-row"><span class="hm-task-txt">📜 有 ${sideReady} 個支線任務可領取獎勵</span>
+            <button class="hm-task-claim" onclick="openQuestList()">前往查看</button>
+          </div>
+        </div>`;
+    }
   }
 
   if (!html) { card.style.display = 'none'; return; }
@@ -7407,15 +7527,62 @@ function renderHomeQuests() {
   body.innerHTML = html;
 }
 
-function claimMainQuestDeck() {
-  const mq = _mainQuestState();
-  if (mq.deck5Claimed) return;
-  if (_mainQuestDeckWords() < MAINQUEST_DECK_WORDS) { showToast('還沒達成喔，先建立一個含 5 個單字的卡組'); return; }
-  mq.deck5Claimed = true;
-  _mainQuestSave(mq);
-  addGold(MAINQUEST_DECK_REWARD);
-  showToast(`🎉 主線任務完成！+${MAINQUEST_DECK_REWARD} 🪙`, 3000);
-  renderHomeQuests();
+// ── 「收藏 → 任務」分頁：完整任務清單 ──
+function renderQuestList() {
+  const box = document.getElementById('collQuest');
+  if (!box) return;
+  const mainClaimedCount = QUEST_MAIN.filter(q => _qClaimed(q.id)).length;
+
+  let html = `<div class="achv-summary"><span>主線進度 <b>${mainClaimedCount}</b> / ${QUEST_MAIN.length}</span></div>`;
+
+  html += `<div class="achv-group-title">主線任務</div><div class="achv-list">`;
+  QUEST_MAIN.forEach((q, i) => {
+    const claimed = _qClaimed(q.id);
+    const available = _qMainAvailable(i);
+    const cur = Math.min(q.cur(), q.goal);
+    const ready = available && cur >= q.goal;
+    const pct = available ? Math.min(100, Math.round(cur / q.goal * 100)) : 0;
+    let action;
+    if (claimed) action = `<span class="achv-locked-tag">✅</span>`;
+    else if (!available) action = `<span class="achv-locked-tag">🔒</span>`;
+    else if (ready) action = `<button class="achv-claim" onclick="claimQuest('${q.id}')">領取 +${q.gold}🪙</button>`;
+    else action = '';
+    html += `
+      <div class="achv-card${ready && !claimed ? ' unlocked' : ''}">
+        <div class="achv-ico">${i + 1}</div>
+        <div class="achv-main">
+          <div class="achv-name">${escHtml(q.name)}<span class="achv-titletag">${escHtml(q.desc)}</span></div>
+          <div class="achv-bar"><div class="achv-bar-fill" style="width:${pct}%"></div></div>
+          <div class="achv-prog">${available ? `${cur.toLocaleString()} / ${q.goal.toLocaleString()} ${q.unit}` : '尚未解鎖（需先完成前一關）'}</div>
+        </div>
+        <div class="achv-action">${action}</div>
+      </div>`;
+  });
+  html += `</div>`;
+
+  html += `<div class="achv-group-title">支線任務</div><div class="achv-list">`;
+  QUEST_SIDE.forEach(q => {
+    const claimed = _qClaimed(q.id);
+    const cur = Math.min(q.cur(), q.goal);
+    const ready = cur >= q.goal;
+    const pct = Math.min(100, Math.round(cur / q.goal * 100));
+    const action = claimed
+      ? `<span class="achv-locked-tag">✅</span>`
+      : (ready ? `<button class="achv-claim" onclick="claimQuest('${q.id}')">領取 +${q.gold}🪙</button>` : `<span class="achv-locked-tag">🔒</span>`);
+    html += `
+      <div class="achv-card${ready && !claimed ? ' unlocked' : ''}">
+        <div class="achv-ico">📜</div>
+        <div class="achv-main">
+          <div class="achv-name">${escHtml(q.name)}</div>
+          <div class="achv-bar"><div class="achv-bar-fill" style="width:${pct}%"></div></div>
+          <div class="achv-prog">${escHtml(q.desc)}（${cur.toLocaleString()} / ${q.goal.toLocaleString()} ${q.unit}）</div>
+        </div>
+        <div class="achv-action">${action}</div>
+      </div>`;
+  });
+  html += `</div>`;
+
+  box.innerHTML = html;
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -7966,19 +8133,30 @@ function switchCollTab(tab) {
   collTab = tab;
   document.getElementById('collTabChars')?.classList.toggle('active', tab === 'chars');
   document.getElementById('collTabAchv') ?.classList.toggle('active', tab === 'achv');
-  const grid = document.getElementById('collGrid');
-  const achv = document.getElementById('collAchv');
+  document.getElementById('collTabQuest')?.classList.toggle('active', tab === 'quest');
+  const grid  = document.getElementById('collGrid');
+  const achv  = document.getElementById('collAchv');
+  const quest = document.getElementById('collQuest');
   const title = document.getElementById('collTitle');
   const sub  = document.getElementById('collSub');
   if (tab === 'chars') {
     if (grid) grid.style.display = '';
     if (achv) achv.style.display = 'none';
+    if (quest) quest.style.display = 'none';
     if (title) title.textContent = '🃏 角色收藏';
     if (sub) sub.textContent = '選擇一名角色出戰，牠的技能會在對戰中登場';
     renderCharCollection();
+  } else if (tab === 'quest') {
+    if (grid) grid.style.display = 'none';
+    if (achv) achv.style.display = 'none';
+    if (quest) quest.style.display = '';
+    if (title) title.textContent = '📜 任務';
+    if (sub) sub.textContent = '完成主線與支線任務，領取金幣與經驗值獎勵';
+    renderQuestList();
   } else {
     if (grid) grid.style.display = 'none';
     if (achv) achv.style.display = '';
+    if (quest) quest.style.display = 'none';
     if (title) title.textContent = '🏆 成就';
     if (sub) sub.textContent = '達成條件解鎖成就，領金幣並可設為稱號';
     renderAchievements();
