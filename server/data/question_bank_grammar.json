@@ -229,1102 +229,5902 @@
   },
   {
     "sentence": "My brother and I _____ students at the same junior high school.",
-    "options": ["(A) are", "(B) is", "(C) am", "(D) be"],
+    "options": [
+      "(A) are",
+      "(B) is",
+      "(C) am",
+      "(D) be"
+    ],
     "answer": 0,
     "explanation": "主詞 my brother and I 為複數，be動詞現在式用 are。",
     "target_grammar": "be動詞／連綴動詞",
     "id": "grammar_12",
-    "optionsZh": ["（複數現在式）", "（單數現在式）", "（第一人稱單數）", "（原形）"],
+    "optionsZh": [
+      "（複數現在式）",
+      "（單數現在式）",
+      "（第一人稱單數）",
+      "（原形）"
+    ],
     "difficulty": 1,
     "grammar_point_id": "GP001"
   },
   {
     "sentence": "Chris _____ tired after the long trip.",
-    "options": ["(A) look", "(B) looks", "(C) looking", "(D) looked"],
+    "options": [
+      "(A) look",
+      "(B) looks",
+      "(C) looking",
+      "(D) looked"
+    ],
     "answer": 1,
     "explanation": "主詞 Chris 為第三人稱單數，連綴動詞 look 需加 -s，故 looks。",
     "target_grammar": "be動詞／連綴動詞",
     "id": "grammar_13",
-    "optionsZh": ["（原形）", "（第三人稱單數）", "（現在分詞）", "（過去式）"],
+    "optionsZh": [
+      "（原形）",
+      "（第三人稱單數）",
+      "（現在分詞）",
+      "（過去式）"
+    ],
     "difficulty": 1,
     "grammar_point_id": "GP001"
   },
   {
     "sentence": "The flowers in the garden _____ beautiful this spring.",
-    "options": ["(A) looks", "(B) looking", "(C) look", "(D) looked"],
+    "options": [
+      "(A) looks",
+      "(B) looking",
+      "(C) look",
+      "(D) looked"
+    ],
     "answer": 2,
     "explanation": "主詞 the flowers 為複數，連綴動詞不加 -s，故 look。",
     "target_grammar": "be動詞／連綴動詞",
     "id": "grammar_14",
-    "optionsZh": ["（第三人稱單數）", "（現在分詞）", "（原形）", "（過去式）"],
+    "optionsZh": [
+      "（第三人稱單數）",
+      "（現在分詞）",
+      "（原形）",
+      "（過去式）"
+    ],
     "difficulty": 1,
     "grammar_point_id": "GP001"
   },
   {
     "sentence": "My grandmother _____ very happy when she saw us.",
-    "options": ["(A) look", "(B) looks", "(C) looking", "(D) looked"],
+    "options": [
+      "(A) look",
+      "(B) looks",
+      "(C) looking",
+      "(D) looked"
+    ],
     "answer": 3,
     "explanation": "句意描述過去看到我們時的反應，故用過去式 looked。",
     "target_grammar": "be動詞／連綴動詞",
     "id": "grammar_15",
-    "optionsZh": ["（原形）", "（第三人稱單數）", "（現在分詞）", "（過去式）"],
+    "optionsZh": [
+      "（原形）",
+      "（第三人稱單數）",
+      "（現在分詞）",
+      "（過去式）"
+    ],
     "difficulty": 1,
     "grammar_point_id": "GP001"
   },
   {
     "sentence": "Yesterday, they _____ hungry after playing basketball for two hours.",
-    "options": ["(A) were", "(B) was", "(C) is", "(D) are"],
+    "options": [
+      "(A) were",
+      "(B) was",
+      "(C) is",
+      "(D) are"
+    ],
     "answer": 0,
     "explanation": "主詞 they 為複數，且描述過去（yesterday），be動詞用 were。",
     "target_grammar": "be動詞／連綴動詞",
     "id": "grammar_16",
-    "optionsZh": ["（過去式複數）", "（過去式單數）", "（現在式單數）", "（現在式複數）"],
+    "optionsZh": [
+      "（過去式複數）",
+      "（過去式單數）",
+      "（現在式單數）",
+      "（現在式複數）"
+    ],
     "difficulty": 1,
     "grammar_point_id": "GP001"
   },
   {
     "sentence": "This cake _____ great; can I have a piece?",
-    "options": ["(A) smell", "(B) smells", "(C) smelling", "(D) smelled"],
+    "options": [
+      "(A) smell",
+      "(B) smells",
+      "(C) smelling",
+      "(D) smelled"
+    ],
     "answer": 1,
     "explanation": "主詞 this cake 為第三人稱單數，連綴動詞加 -s，故 smells。",
     "target_grammar": "be動詞／連綴動詞",
     "id": "grammar_17",
-    "optionsZh": ["（原形）", "（第三人稱單數）", "（現在分詞）", "（過去式）"],
+    "optionsZh": [
+      "（原形）",
+      "（第三人稱單數）",
+      "（現在分詞）",
+      "（過去式）"
+    ],
     "difficulty": 1,
     "grammar_point_id": "GP001"
   },
   {
     "sentence": "My uncle _____ a soldier ten years ago.",
-    "options": ["(A) is", "(B) were", "(C) was", "(D) are"],
+    "options": [
+      "(A) is",
+      "(B) were",
+      "(C) was",
+      "(D) are"
+    ],
     "answer": 2,
     "explanation": "主詞 my uncle 為單數，過去時間（ten years ago），be動詞用 was。",
     "target_grammar": "be動詞／連綴動詞",
     "id": "grammar_18",
-    "optionsZh": ["（現在式單數）", "（過去式複數）", "（過去式單數）", "（現在式複數）"],
+    "optionsZh": [
+      "（現在式單數）",
+      "（過去式複數）",
+      "（過去式單數）",
+      "（現在式複數）"
+    ],
     "difficulty": 1,
     "grammar_point_id": "GP001"
   },
   {
     "sentence": "My little sister _____ only five years old now.",
-    "options": ["(A) am", "(B) are", "(C) be", "(D) is"],
+    "options": [
+      "(A) am",
+      "(B) are",
+      "(C) be",
+      "(D) is"
+    ],
     "answer": 3,
     "explanation": "主詞 my little sister 為單數，現在式，be動詞用 is。",
     "target_grammar": "be動詞／連綴動詞",
     "id": "grammar_19",
-    "optionsZh": ["（第一人稱單數）", "（複數／第二人稱）", "（原形）", "（第三人稱單數）"],
+    "optionsZh": [
+      "（第一人稱單數）",
+      "（複數／第二人稱）",
+      "（原形）",
+      "（第三人稱單數）"
+    ],
     "difficulty": 1,
     "grammar_point_id": "GP001"
   },
   {
     "sentence": "The music from the concert _____ amazing.",
-    "options": ["(A) sounds", "(B) sound", "(C) sounding", "(D) sounded"],
+    "options": [
+      "(A) sounds",
+      "(B) sound",
+      "(C) sounding",
+      "(D) sounded"
+    ],
     "answer": 0,
     "explanation": "主詞 the music 為單數，連綴動詞加 -s，故 sounds。",
     "target_grammar": "be動詞／連綴動詞",
     "id": "grammar_20",
-    "optionsZh": ["（第三人稱單數）", "（原形）", "（現在分詞）", "（過去式）"],
+    "optionsZh": [
+      "（第三人稱單數）",
+      "（原形）",
+      "（現在分詞）",
+      "（過去式）"
+    ],
     "difficulty": 1,
     "grammar_point_id": "GP001"
   },
   {
     "sentence": "My father _____ to work by bus every day.",
-    "options": ["(A) go", "(B) goes", "(C) going", "(D) gone"],
+    "options": [
+      "(A) go",
+      "(B) goes",
+      "(C) going",
+      "(D) gone"
+    ],
     "answer": 1,
     "explanation": "主詞 my father 為第三人稱單數，一般動詞現在式加 -es，故 goes。",
     "target_grammar": "一般動詞現在式",
     "id": "grammar_21",
-    "optionsZh": ["（原形）", "（第三人稱單數）", "（現在分詞）", "（過去分詞）"],
+    "optionsZh": [
+      "（原形）",
+      "（第三人稱單數）",
+      "（現在分詞）",
+      "（過去分詞）"
+    ],
     "difficulty": 1,
     "grammar_point_id": "GP002"
   },
   {
     "sentence": "She always _____ her teeth before going to bed.",
-    "options": ["(A) brush", "(B) brushing", "(C) brushes", "(D) brushed"],
+    "options": [
+      "(A) brush",
+      "(B) brushing",
+      "(C) brushes",
+      "(D) brushed"
+    ],
     "answer": 2,
     "explanation": "主詞 she 搭配 always，第三人稱單數動詞加 -es，故 brushes。",
     "target_grammar": "一般動詞現在式",
     "id": "grammar_22",
-    "optionsZh": ["（原形）", "（現在分詞）", "（第三人稱單數）", "（過去式）"],
+    "optionsZh": [
+      "（原形）",
+      "（現在分詞）",
+      "（第三人稱單數）",
+      "（過去式）"
+    ],
     "difficulty": 1,
     "grammar_point_id": "GP002"
   },
   {
     "sentence": "The store _____ at nine o'clock every morning.",
-    "options": ["(A) open", "(B) opening", "(C) opened", "(D) opens"],
+    "options": [
+      "(A) open",
+      "(B) opening",
+      "(C) opened",
+      "(D) opens"
+    ],
     "answer": 3,
     "explanation": "主詞 the store 為第三人稱單數，動詞加 -s，故 opens。",
     "target_grammar": "一般動詞現在式",
     "id": "grammar_23",
-    "optionsZh": ["（原形）", "（現在分詞）", "（過去式）", "（第三人稱單數）"],
+    "optionsZh": [
+      "（原形）",
+      "（現在分詞）",
+      "（過去式）",
+      "（第三人稱單數）"
+    ],
     "difficulty": 1,
     "grammar_point_id": "GP002"
   },
   {
     "sentence": "My parents usually _____ dinner together on weekends.",
-    "options": ["(A) cook", "(B) cooks", "(C) cooking", "(D) cooked"],
+    "options": [
+      "(A) cook",
+      "(B) cooks",
+      "(C) cooking",
+      "(D) cooked"
+    ],
     "answer": 0,
     "explanation": "主詞 my parents 為複數，一般動詞現在式不加 -s，故 cook。",
     "target_grammar": "一般動詞現在式",
     "id": "grammar_24",
-    "optionsZh": ["（原形）", "（第三人稱單數）", "（現在分詞）", "（過去式）"],
+    "optionsZh": [
+      "（原形）",
+      "（第三人稱單數）",
+      "（現在分詞）",
+      "（過去式）"
+    ],
     "difficulty": 1,
     "grammar_point_id": "GP002"
   },
   {
     "sentence": "Tom never _____ breakfast before school.",
-    "options": ["(A) eat", "(B) eats", "(C) eating", "(D) ate"],
+    "options": [
+      "(A) eat",
+      "(B) eats",
+      "(C) eating",
+      "(D) ate"
+    ],
     "answer": 1,
     "explanation": "主詞 Tom 搭配 never，第三人稱單數動詞加 -s，故 eats。",
     "target_grammar": "一般動詞現在式",
     "id": "grammar_25",
-    "optionsZh": ["（原形）", "（第三人稱單數）", "（現在分詞）", "（過去式）"],
+    "optionsZh": [
+      "（原形）",
+      "（第三人稱單數）",
+      "（現在分詞）",
+      "（過去式）"
+    ],
     "difficulty": 1,
     "grammar_point_id": "GP002"
   },
   {
     "sentence": "The bus _____ this route twice an hour.",
-    "options": ["(A) run", "(B) running", "(C) runs", "(D) ran"],
+    "options": [
+      "(A) run",
+      "(B) running",
+      "(C) runs",
+      "(D) ran"
+    ],
     "answer": 2,
     "explanation": "主詞 the bus 為單數，動詞加 -s，故 runs。",
     "target_grammar": "一般動詞現在式",
     "id": "grammar_26",
-    "optionsZh": ["（原形）", "（現在分詞）", "（第三人稱單數）", "（過去式）"],
+    "optionsZh": [
+      "（原形）",
+      "（現在分詞）",
+      "（第三人稱單數）",
+      "（過去式）"
+    ],
     "difficulty": 1,
     "grammar_point_id": "GP002"
   },
   {
     "sentence": "Our teacher usually _____ us a lot of homework.",
-    "options": ["(A) give", "(B) giving", "(C) gave", "(D) gives"],
+    "options": [
+      "(A) give",
+      "(B) giving",
+      "(C) gave",
+      "(D) gives"
+    ],
     "answer": 3,
     "explanation": "主詞 our teacher 為單數，動詞加 -s，故 gives。",
     "target_grammar": "一般動詞現在式",
     "id": "grammar_27",
-    "optionsZh": ["（原形）", "（現在分詞）", "（過去式）", "（第三人稱單數）"],
+    "optionsZh": [
+      "（原形）",
+      "（現在分詞）",
+      "（過去式）",
+      "（第三人稱單數）"
+    ],
     "difficulty": 1,
     "grammar_point_id": "GP002"
   },
   {
     "sentence": "Most students in our class _____ bicycles to school.",
-    "options": ["(A) ride", "(B) rides", "(C) riding", "(D) rode"],
+    "options": [
+      "(A) ride",
+      "(B) rides",
+      "(C) riding",
+      "(D) rode"
+    ],
     "answer": 0,
     "explanation": "主詞 most students 為複數，動詞不加 -s，故 ride。",
     "target_grammar": "一般動詞現在式",
     "id": "grammar_28",
-    "optionsZh": ["（原形）", "（第三人稱單數）", "（現在分詞）", "（過去式）"],
+    "optionsZh": [
+      "（原形）",
+      "（第三人稱單數）",
+      "（現在分詞）",
+      "（過去式）"
+    ],
     "difficulty": 1,
     "grammar_point_id": "GP002"
   },
   {
     "sentence": "Last summer, my family _____ to Kaohsiung for a short vacation.",
-    "options": ["(A) travel", "(B) traveled", "(C) travels", "(D) traveling"],
+    "options": [
+      "(A) travel",
+      "(B) traveled",
+      "(C) travels",
+      "(D) traveling"
+    ],
     "answer": 1,
     "explanation": "句子描述 last summer 發生的事，用過去式 traveled。",
     "target_grammar": "過去簡單式",
     "id": "grammar_29",
-    "optionsZh": ["（原形）", "（過去式）", "（第三人稱單數）", "（現在分詞）"],
+    "optionsZh": [
+      "（原形）",
+      "（過去式）",
+      "（第三人稱單數）",
+      "（現在分詞）"
+    ],
     "difficulty": 2,
     "grammar_point_id": "GP003"
   },
   {
     "sentence": "He _____ his key somewhere in the classroom yesterday.",
-    "options": ["(A) lose", "(B) loses", "(C) lost", "(D) losing"],
+    "options": [
+      "(A) lose",
+      "(B) loses",
+      "(C) lost",
+      "(D) losing"
+    ],
     "answer": 2,
     "explanation": "yesterday 表示過去，動詞用過去式 lost。",
     "target_grammar": "過去簡單式",
     "id": "grammar_30",
-    "optionsZh": ["（原形）", "（第三人稱單數）", "（過去式）", "（現在分詞）"],
+    "optionsZh": [
+      "（原形）",
+      "（第三人稱單數）",
+      "（過去式）",
+      "（現在分詞）"
+    ],
     "difficulty": 2,
     "grammar_point_id": "GP003"
   },
   {
     "sentence": "We _____ a wonderful movie at the theater last night.",
-    "options": ["(A) watch", "(B) watches", "(C) watching", "(D) watched"],
+    "options": [
+      "(A) watch",
+      "(B) watches",
+      "(C) watching",
+      "(D) watched"
+    ],
     "answer": 3,
     "explanation": "last night 表示過去，動詞用過去式 watched。",
     "target_grammar": "過去簡單式",
     "id": "grammar_31",
-    "optionsZh": ["（原形）", "（第三人稱單數）", "（現在分詞）", "（過去式）"],
+    "optionsZh": [
+      "（原形）",
+      "（第三人稱單數）",
+      "（現在分詞）",
+      "（過去式）"
+    ],
     "difficulty": 2,
     "grammar_point_id": "GP003"
   },
   {
     "sentence": "I think it _____ rain tomorrow afternoon, so bring an umbrella.",
-    "options": ["(A) will", "(B) can", "(C) must", "(D) should"],
+    "options": [
+      "(A) will",
+      "(B) can",
+      "(C) must",
+      "(D) should"
+    ],
     "answer": 0,
     "explanation": "以 I think 表達對未來的預測看法，用 will 表未來。",
     "target_grammar": "未來式",
     "id": "grammar_32",
-    "optionsZh": ["（未來式will）", "（能力can）", "（義務must）", "（建議should）"],
+    "optionsZh": [
+      "（未來式will）",
+      "（能力can）",
+      "（義務must）",
+      "（建議should）"
+    ],
     "difficulty": 2,
     "grammar_point_id": "GP004"
   },
   {
     "sentence": "Look at those dark clouds! It _____ rain very soon.",
-    "options": ["(A) will", "(B) is going to", "(C) was going to", "(D) has gone to"],
+    "options": [
+      "(A) will",
+      "(B) is going to",
+      "(C) was going to",
+      "(D) has gone to"
+    ],
     "answer": 1,
     "explanation": "dark clouds 是眼前可見的證據，依此推測即將發生的事用 be going to，而非單純預測用的 will。",
     "target_grammar": "未來式",
     "id": "grammar_33",
-    "optionsZh": ["（單純預測will）", "（依證據推測be going to）", "（過去計畫）", "（現在完成不合文法）"],
+    "optionsZh": [
+      "（單純預測will）",
+      "（依證據推測be going to）",
+      "（過去計畫）",
+      "（現在完成不合文法）"
+    ],
     "difficulty": 2,
     "grammar_point_id": "GP004"
   },
   {
     "sentence": "Please be quiet. The baby _____ in the next room right now.",
-    "options": ["(A) sleeps", "(B) slept", "(C) is sleeping", "(D) sleep"],
+    "options": [
+      "(A) sleeps",
+      "(B) slept",
+      "(C) is sleeping",
+      "(D) sleep"
+    ],
     "answer": 2,
     "explanation": "right now 表示此刻正在進行的動作，用現在進行式 is sleeping。",
     "target_grammar": "現在進行式",
     "id": "grammar_34",
-    "optionsZh": ["（第三人稱單數）", "（過去式）", "（現在進行式）", "（原形）"],
+    "optionsZh": [
+      "（第三人稱單數）",
+      "（過去式）",
+      "（現在進行式）",
+      "（原形）"
+    ],
     "difficulty": 2,
     "grammar_point_id": "GP005"
   },
   {
     "sentence": "Look! The kids _____ soccer in the yard at this moment.",
-    "options": ["(A) play", "(B) played", "(C) plays", "(D) are playing"],
+    "options": [
+      "(A) play",
+      "(B) played",
+      "(C) plays",
+      "(D) are playing"
+    ],
     "answer": 3,
     "explanation": "at this moment 表示正在發生，用現在進行式 are playing，主詞複數用 are。",
     "target_grammar": "現在進行式",
     "id": "grammar_35",
-    "optionsZh": ["（原形）", "（過去式）", "（第三人稱單數）", "（現在進行式複數）"],
+    "optionsZh": [
+      "（原形）",
+      "（過去式）",
+      "（第三人稱單數）",
+      "（現在進行式複數）"
+    ],
     "difficulty": 2,
     "grammar_point_id": "GP005"
   },
   {
     "sentence": "This umbrella is not mine. Is it _____?",
-    "options": ["(A) yours", "(B) you", "(C) your", "(D) you're"],
+    "options": [
+      "(A) yours",
+      "(B) you",
+      "(C) your",
+      "(D) you're"
+    ],
     "answer": 0,
     "explanation": "詢問傘的所有權，用所有代名詞 yours（= your umbrella）。",
     "target_grammar": "代名詞",
     "id": "grammar_36",
-    "optionsZh": ["（所有代名詞）", "（受格）", "（所有格）", "（you are 縮寫）"],
+    "optionsZh": [
+      "（所有代名詞）",
+      "（受格）",
+      "（所有格）",
+      "（you are 縮寫）"
+    ],
     "difficulty": 2,
     "grammar_point_id": "GP020"
   },
   {
     "sentence": "Mary hurt _____ while riding her bike yesterday.",
-    "options": ["(A) her", "(B) herself", "(C) she", "(D) hers"],
+    "options": [
+      "(A) her",
+      "(B) herself",
+      "(C) she",
+      "(D) hers"
+    ],
     "answer": 1,
     "explanation": "Mary 弄傷了「自己」，動作回歸主詞本身，用反身代名詞 herself。",
     "target_grammar": "代名詞",
     "id": "grammar_37",
-    "optionsZh": ["（受格）", "（反身代名詞）", "（主格）", "（所有代名詞）"],
+    "optionsZh": [
+      "（受格）",
+      "（反身代名詞）",
+      "（主格）",
+      "（所有代名詞）"
+    ],
     "difficulty": 2,
     "grammar_point_id": "GP020"
   },
   {
     "sentence": "The dog buried _____ bone in the backyard.",
-    "options": ["(A) it", "(B) it's", "(C) its", "(D) itself"],
+    "options": [
+      "(A) it",
+      "(B) it's",
+      "(C) its",
+      "(D) itself"
+    ],
     "answer": 2,
     "explanation": "狗埋的是「牠的」骨頭，用所有格 its 修飾名詞 bone。",
     "target_grammar": "代名詞",
     "id": "grammar_38",
-    "optionsZh": ["（主受格）", "（it is 縮寫）", "（所有格）", "（反身代名詞）"],
+    "optionsZh": [
+      "（主受格）",
+      "（it is 縮寫）",
+      "（所有格）",
+      "（反身代名詞）"
+    ],
     "difficulty": 2,
     "grammar_point_id": "GP020"
   },
   {
     "sentence": "My father works as _____ engineer in a big company.",
-    "options": ["(A) a", "(B) the", "(C) some", "(D) an"],
+    "options": [
+      "(A) a",
+      "(B) the",
+      "(C) some",
+      "(D) an"
+    ],
     "answer": 3,
     "explanation": "engineer 為母音開頭的可數名詞單數，冠詞用 an。",
     "target_grammar": "冠詞",
     "id": "grammar_39",
-    "optionsZh": ["（不定冠詞子音開頭）", "（定冠詞）", "（不定量詞）", "（不定冠詞母音開頭）"],
+    "optionsZh": [
+      "（不定冠詞子音開頭）",
+      "（定冠詞）",
+      "（不定量詞）",
+      "（不定冠詞母音開頭）"
+    ],
     "difficulty": 2,
     "grammar_point_id": "GP021"
   },
   {
     "sentence": "_____ moon looks especially bright tonight.",
-    "options": ["(A) The", "(B) A", "(C) An", "(D) Some"],
+    "options": [
+      "(A) The",
+      "(B) A",
+      "(C) An",
+      "(D) Some"
+    ],
     "answer": 0,
     "explanation": "月亮是獨一無二的事物，用定冠詞 The。",
     "target_grammar": "冠詞",
     "id": "grammar_40",
-    "optionsZh": ["（定冠詞）", "（不定冠詞子音）", "（不定冠詞母音）", "（不定量詞）"],
+    "optionsZh": [
+      "（定冠詞）",
+      "（不定冠詞子音）",
+      "（不定冠詞母音）",
+      "（不定量詞）"
+    ],
     "difficulty": 2,
     "grammar_point_id": "GP021"
   },
   {
     "sentence": "You _____ finish your homework before you watch TV.",
-    "options": ["(A) can", "(B) must", "(C) may", "(D) would"],
+    "options": [
+      "(A) can",
+      "(B) must",
+      "(C) may",
+      "(D) would"
+    ],
     "answer": 1,
     "explanation": "句意表達「強制性義務」要先做完功課，用 must。",
     "target_grammar": "情態助動詞",
     "id": "grammar_41",
-    "optionsZh": ["（能力/許可can）", "（義務must）", "（推測許可may）", "（過去願意would）"],
+    "optionsZh": [
+      "（能力/許可can）",
+      "（義務must）",
+      "（推測許可may）",
+      "（過去願意would）"
+    ],
     "difficulty": 2,
     "grammar_point_id": "GP022"
   },
   {
     "sentence": "When I was a child, I _____ to visit my grandparents every summer.",
-    "options": ["(A) use to", "(B) using to", "(C) used to", "(D) used"],
+    "options": [
+      "(A) use to",
+      "(B) using to",
+      "(C) used to",
+      "(D) used"
+    ],
     "answer": 2,
     "explanation": "描述過去經常性但現在已不做的習慣，用 used to。",
     "target_grammar": "情態助動詞",
     "id": "grammar_42",
-    "optionsZh": ["（文法錯誤）", "（文法錯誤）", "（過去習慣used to）", "（單獨used字義不同）"],
+    "optionsZh": [
+      "（文法錯誤）",
+      "（文法錯誤）",
+      "（過去習慣used to）",
+      "（單獨used字義不同）"
+    ],
     "difficulty": 2,
     "grammar_point_id": "GP022"
   },
   {
     "sentence": "_____ you help me carry these boxes upstairs?",
-    "options": ["(A) Must", "(B) Should", "(C) Need", "(D) Could"],
+    "options": [
+      "(A) Must",
+      "(B) Should",
+      "(C) Need",
+      "(D) Could"
+    ],
     "answer": 3,
     "explanation": "禮貌地請求他人幫忙，用情態助動詞 Could。",
     "target_grammar": "情態助動詞",
     "id": "grammar_43",
-    "optionsZh": ["（強烈義務）", "（建議）", "（需要）", "（禮貌請求Could）"],
+    "optionsZh": [
+      "（強烈義務）",
+      "（建議）",
+      "（需要）",
+      "（禮貌請求Could）"
+    ],
     "difficulty": 2,
     "grammar_point_id": "GP022"
   },
   {
     "sentence": "The concert will start _____ 7:30 in the evening.",
-    "options": ["(A) at", "(B) in", "(C) on", "(D) by"],
+    "options": [
+      "(A) at",
+      "(B) in",
+      "(C) on",
+      "(D) by"
+    ],
     "answer": 0,
     "explanation": "表示明確時刻用 at，7:30 是時間點。",
     "target_grammar": "介系詞",
     "id": "grammar_44",
-    "optionsZh": ["（明確時間點at）", "（月/年份in）", "（日期on）", "（期限by）"],
+    "optionsZh": [
+      "（明確時間點at）",
+      "（月/年份in）",
+      "（日期on）",
+      "（期限by）"
+    ],
     "difficulty": 2,
     "grammar_point_id": "GP025"
   },
   {
     "sentence": "There is a nice café _____ the corner of this street.",
-    "options": ["(A) at", "(B) on", "(C) in", "(D) by"],
+    "options": [
+      "(A) at",
+      "(B) on",
+      "(C) in",
+      "(D) by"
+    ],
     "answer": 1,
     "explanation": "on the corner 表示在街角，為固定介系詞搭配。",
     "target_grammar": "介系詞",
     "id": "grammar_45",
-    "optionsZh": ["（定點at）", "（表面/街角on）", "（範圍in）", "（方式by）"],
+    "optionsZh": [
+      "（定點at）",
+      "（表面/街角on）",
+      "（範圍in）",
+      "（方式by）"
+    ],
     "difficulty": 2,
     "grammar_point_id": "GP025"
   },
   {
     "sentence": "I _____ this book twice, so I don't need to read it again.",
-    "options": ["(A) read", "(B) readed", "(C) have read", "(D) am reading"],
+    "options": [
+      "(A) read",
+      "(B) readed",
+      "(C) have read",
+      "(D) am reading"
+    ],
     "answer": 2,
     "explanation": "twice 搭配現在完成式表示經驗次數，故用 have read。",
     "target_grammar": "現在完成式",
     "id": "grammar_46",
-    "optionsZh": ["（原形/過去式同形）", "（錯誤拼法）", "（現在完成式）", "（現在進行式）"],
+    "optionsZh": [
+      "（原形/過去式同形）",
+      "（錯誤拼法）",
+      "（現在完成式）",
+      "（現在進行式）"
+    ],
     "difficulty": 3,
     "grammar_point_id": "GP006"
   },
   {
     "sentence": "She _____ to Japan three times since she was a child.",
-    "options": ["(A) go", "(B) went", "(C) is going", "(D) has been"],
+    "options": [
+      "(A) go",
+      "(B) went",
+      "(C) is going",
+      "(D) has been"
+    ],
     "answer": 3,
     "explanation": "since she was a child 表示從過去持續到現在的經驗，用現在完成式 has been。",
     "target_grammar": "現在完成式",
     "id": "grammar_47",
-    "optionsZh": ["（原形）", "（過去式）", "（現在進行式）", "（現在完成式經驗）"],
+    "optionsZh": [
+      "（原形）",
+      "（過去式）",
+      "（現在進行式）",
+      "（現在完成式經驗）"
+    ],
     "difficulty": 3,
     "grammar_point_id": "GP006"
   },
   {
     "sentence": "We _____ each other since elementary school.",
-    "options": ["(A) have known", "(B) know", "(C) knew", "(D) are knowing"],
+    "options": [
+      "(A) have known",
+      "(B) know",
+      "(C) knew",
+      "(D) are knowing"
+    ],
     "answer": 0,
     "explanation": "since elementary school 表示從過去持續至今的狀態，用現在完成式 have known。",
     "target_grammar": "現在完成式",
     "id": "grammar_48",
-    "optionsZh": ["（現在完成式）", "（原形）", "（過去式）", "（狀態動詞誤用進行式）"],
+    "optionsZh": [
+      "（現在完成式）",
+      "（原形）",
+      "（過去式）",
+      "（狀態動詞誤用進行式）"
+    ],
     "difficulty": 3,
     "grammar_point_id": "GP006"
   },
   {
     "sentence": "This backpack is _____ than the one I bought last year.",
-    "options": ["(A) comfortable", "(B) more comfortable", "(C) comfortabler", "(D) most comfortable"],
+    "options": [
+      "(A) comfortable",
+      "(B) more comfortable",
+      "(C) comfortabler",
+      "(D) most comfortable"
+    ],
     "answer": 1,
     "explanation": "than 表比較，comfortable 為多音節形容詞需加 more。",
     "target_grammar": "比較級與最高級",
     "id": "grammar_49",
-    "optionsZh": ["（原級）", "（比較級）", "（錯誤形式）", "（最高級）"],
+    "optionsZh": [
+      "（原級）",
+      "（比較級）",
+      "（錯誤形式）",
+      "（最高級）"
+    ],
     "difficulty": 3,
     "grammar_point_id": "GP008"
   },
   {
     "sentence": "Of all the students in our class, David runs _____.",
-    "options": ["(A) fast", "(B) faster", "(C) the fastest", "(D) more fast"],
+    "options": [
+      "(A) fast",
+      "(B) faster",
+      "(C) the fastest",
+      "(D) more fast"
+    ],
     "answer": 2,
     "explanation": "of all the students 表示三者以上比較，用最高級 the fastest。",
     "target_grammar": "比較級與最高級",
     "id": "grammar_50",
-    "optionsZh": ["（原級）", "（比較級）", "（最高級）", "（錯誤雙重比較）"],
+    "optionsZh": [
+      "（原級）",
+      "（比較級）",
+      "（最高級）",
+      "（錯誤雙重比較）"
+    ],
     "difficulty": 3,
     "grammar_point_id": "GP008"
   },
   {
     "sentence": "My parents decided _____ a new car this year.",
-    "options": ["(A) buy", "(B) buying", "(C) bought", "(D) to buy"],
+    "options": [
+      "(A) buy",
+      "(B) buying",
+      "(C) bought",
+      "(D) to buy"
+    ],
     "answer": 3,
     "explanation": "decide 後面接不定詞 to-V，故用 to buy。",
     "target_grammar": "不定詞",
     "id": "grammar_51",
-    "optionsZh": ["（原形）", "（動名詞）", "（過去式）", "（不定詞）"],
+    "optionsZh": [
+      "（原形）",
+      "（動名詞）",
+      "（過去式）",
+      "（不定詞）"
+    ],
     "difficulty": 3,
     "grammar_point_id": "GP009"
   },
   {
     "sentence": "It is important _____ enough water every day.",
-    "options": ["(A) to drink", "(B) drink", "(C) drinking", "(D) drank"],
+    "options": [
+      "(A) to drink",
+      "(B) drink",
+      "(C) drinking",
+      "(D) drank"
+    ],
     "answer": 0,
     "explanation": "不定詞作主詞補語表達「重要的是要做的事」，用 It is important to-V。",
     "target_grammar": "不定詞",
     "id": "grammar_52",
-    "optionsZh": ["（不定詞）", "（原形）", "（動名詞）", "（過去式）"],
+    "optionsZh": [
+      "（不定詞）",
+      "（原形）",
+      "（動名詞）",
+      "（過去式）"
+    ],
     "difficulty": 3,
     "grammar_point_id": "GP009"
   },
   {
     "sentence": "She went to the library _____ some information for her report.",
-    "options": ["(A) find", "(B) to find", "(C) finding", "(D) found"],
+    "options": [
+      "(A) find",
+      "(B) to find",
+      "(C) finding",
+      "(D) found"
+    ],
     "answer": 1,
     "explanation": "不定詞表目的（去圖書館的目的），故用 to find。",
     "target_grammar": "不定詞",
     "id": "grammar_53",
-    "optionsZh": ["（原形）", "（不定詞表目的）", "（動名詞）", "（過去式）"],
+    "optionsZh": [
+      "（原形）",
+      "（不定詞表目的）",
+      "（動名詞）",
+      "（過去式）"
+    ],
     "difficulty": 3,
     "grammar_point_id": "GP009"
   },
   {
     "sentence": "He really enjoys _____ basketball with his friends after school.",
-    "options": ["(A) play", "(B) to play", "(C) playing", "(D) played"],
+    "options": [
+      "(A) play",
+      "(B) to play",
+      "(C) playing",
+      "(D) played"
+    ],
     "answer": 2,
     "explanation": "enjoy 後面須接動名詞 V-ing 當受詞，故用 playing。",
     "target_grammar": "動名詞",
     "id": "grammar_54",
-    "optionsZh": ["（原形）", "（不定詞）", "（動名詞）", "（過去式）"],
+    "optionsZh": [
+      "（原形）",
+      "（不定詞）",
+      "（動名詞）",
+      "（過去式）"
+    ],
     "difficulty": 3,
     "grammar_point_id": "GP010"
   },
   {
     "sentence": "She is interested in _____ a new language.",
-    "options": ["(A) learn", "(B) to learn", "(C) learned", "(D) learning"],
+    "options": [
+      "(A) learn",
+      "(B) to learn",
+      "(C) learned",
+      "(D) learning"
+    ],
     "answer": 3,
     "explanation": "be interested in 為介系詞片語，後面須接動名詞，故用 learning。",
     "target_grammar": "動名詞",
     "id": "grammar_55",
-    "optionsZh": ["（原形）", "（不定詞）", "（過去式）", "（動名詞）"],
+    "optionsZh": [
+      "（原形）",
+      "（不定詞）",
+      "（過去式）",
+      "（動名詞）"
+    ],
     "difficulty": 3,
     "grammar_point_id": "GP010"
   },
   {
     "sentence": "This bridge _____ over one hundred years ago.",
-    "options": ["(A) was built", "(B) built", "(C) builds", "(D) is building"],
+    "options": [
+      "(A) was built",
+      "(B) built",
+      "(C) builds",
+      "(D) is building"
+    ],
     "answer": 0,
     "explanation": "橋是被建造的一方，且為過去事件，用過去被動 was built。",
     "target_grammar": "被動語態",
     "id": "grammar_56",
-    "optionsZh": ["（過去被動）", "（過去主動）", "（現在主動）", "（現在進行主動）"],
+    "optionsZh": [
+      "（過去被動）",
+      "（過去主動）",
+      "（現在主動）",
+      "（現在進行主動）"
+    ],
     "difficulty": 3,
     "grammar_point_id": "GP011"
   },
   {
     "sentence": "The letters _____ by the secretary every morning.",
-    "options": ["(A) sort", "(B) are sorted", "(C) sorted", "(D) is sorted"],
+    "options": [
+      "(A) sort",
+      "(B) are sorted",
+      "(C) sorted",
+      "(D) is sorted"
+    ],
     "answer": 1,
     "explanation": "信件是被分類的一方，主詞複數用現在被動 are sorted。",
     "target_grammar": "被動語態",
     "id": "grammar_57",
-    "optionsZh": ["（原形主動）", "（現在被動複數）", "（過去式主動）", "（現在被動單數）"],
+    "optionsZh": [
+      "（原形主動）",
+      "（現在被動複數）",
+      "（過去式主動）",
+      "（現在被動單數）"
+    ],
     "difficulty": 3,
     "grammar_point_id": "GP011"
   },
   {
     "sentence": "The rules _____ carefully by all the players before the game starts.",
-    "options": ["(A) must follow", "(B) followed", "(C) must be followed", "(D) are follow"],
+    "options": [
+      "(A) must follow",
+      "(B) followed",
+      "(C) must be followed",
+      "(D) are follow"
+    ],
     "answer": 2,
     "explanation": "規則是被遵守的一方，搭配情態助動詞的被動用 must be followed。",
     "target_grammar": "被動語態",
     "id": "grammar_58",
-    "optionsZh": ["（主動情態）", "（過去主動）", "（情態被動）", "（文法錯誤）"],
+    "optionsZh": [
+      "（主動情態）",
+      "（過去主動）",
+      "（情態被動）",
+      "（文法錯誤）"
+    ],
     "difficulty": 3,
     "grammar_point_id": "GP011"
   },
   {
     "sentence": "The woman _____ lives next door is a famous singer.",
-    "options": ["(A) which", "(B) whom", "(C) whose", "(D) who"],
+    "options": [
+      "(A) which",
+      "(B) whom",
+      "(C) whose",
+      "(D) who"
+    ],
     "answer": 3,
     "explanation": "先行詞 the woman 為人，用關代 who。",
     "target_grammar": "關係代名詞",
     "id": "grammar_59",
-    "optionsZh": ["（先行詞為物）", "（受格關代）", "（所有格關代）", "（先行詞為人）"],
+    "optionsZh": [
+      "（先行詞為物）",
+      "（受格關代）",
+      "（所有格關代）",
+      "（先行詞為人）"
+    ],
     "difficulty": 3,
     "grammar_point_id": "GP012"
   },
   {
     "sentence": "I still have the pen _____ my father gave me for my birthday.",
-    "options": ["(A) which", "(B) who", "(C) whom", "(D) whose"],
+    "options": [
+      "(A) which",
+      "(B) who",
+      "(C) whom",
+      "(D) whose"
+    ],
     "answer": 0,
     "explanation": "先行詞 the pen 為物，用關代 which。",
     "target_grammar": "關係代名詞",
     "id": "grammar_60",
-    "optionsZh": ["（先行詞為物）", "（先行詞為人）", "（受格關代）", "（所有格關代）"],
+    "optionsZh": [
+      "（先行詞為物）",
+      "（先行詞為人）",
+      "（受格關代）",
+      "（所有格關代）"
+    ],
     "difficulty": 3,
     "grammar_point_id": "GP012"
   },
   {
     "sentence": "_____ it was raining heavily, we still went hiking as planned.",
-    "options": ["(A) Because", "(B) Although", "(C) So", "(D) Unless"],
+    "options": [
+      "(A) Because",
+      "(B) Although",
+      "(C) So",
+      "(D) Unless"
+    ],
     "answer": 1,
     "explanation": "前後句意為讓步關係（儘管下大雨仍去健行），用 Although。",
     "target_grammar": "連接詞",
     "id": "grammar_61",
-    "optionsZh": ["（因果）", "（讓步）", "（結果）", "（除非）"],
+    "optionsZh": [
+      "（因果）",
+      "（讓步）",
+      "（結果）",
+      "（除非）"
+    ],
     "difficulty": 3,
     "grammar_point_id": "GP019"
   },
   {
     "sentence": "You can choose _____ tea or coffee for breakfast.",
-    "options": ["(A) both", "(B) neither", "(C) either", "(D) whether"],
+    "options": [
+      "(A) both",
+      "(B) neither",
+      "(C) either",
+      "(D) whether"
+    ],
     "answer": 2,
     "explanation": "either...or 表示兩者擇一，故用 either。",
     "target_grammar": "連接詞",
     "id": "grammar_62",
-    "optionsZh": ["（both...and）", "（neither...nor）", "（either...or）", "（是否）"],
+    "optionsZh": [
+      "（both...and）",
+      "（neither...nor）",
+      "（either...or）",
+      "（是否）"
+    ],
     "difficulty": 3,
     "grammar_point_id": "GP019"
   },
   {
     "sentence": "I _____ for over two hours, so I am very tired now.",
-    "options": ["(A) study", "(B) studied", "(C) am studying", "(D) have been studying"],
+    "options": [
+      "(A) study",
+      "(B) studied",
+      "(C) am studying",
+      "(D) have been studying"
+    ],
     "answer": 3,
     "explanation": "for over two hours 搭配現在完成進行式，強調持續到現在的動作，故用 have been studying。",
     "target_grammar": "現在完成進行式",
     "id": "grammar_63",
-    "optionsZh": ["（原形）", "（過去式）", "（現在進行式）", "（現在完成進行式）"],
+    "optionsZh": [
+      "（原形）",
+      "（過去式）",
+      "（現在進行式）",
+      "（現在完成進行式）"
+    ],
     "difficulty": 4,
     "grammar_point_id": "GP007"
   },
   {
     "sentence": "He _____ Chinese for six years, and he still enjoys it.",
-    "options": ["(A) has been learning", "(B) learns", "(C) learned", "(D) is learning"],
+    "options": [
+      "(A) has been learning",
+      "(B) learns",
+      "(C) learned",
+      "(D) is learning"
+    ],
     "answer": 0,
     "explanation": "for six years 且動作持續進行至今，用現在完成進行式 has been learning。",
     "target_grammar": "現在完成進行式",
     "id": "grammar_64",
-    "optionsZh": ["（現在完成進行式）", "（第三人稱單數）", "（過去式）", "（現在進行式）"],
+    "optionsZh": [
+      "（現在完成進行式）",
+      "（第三人稱單數）",
+      "（過去式）",
+      "（現在進行式）"
+    ],
     "difficulty": 4,
     "grammar_point_id": "GP007"
   },
   {
     "sentence": "They _____ this song over and over since this morning; it's stuck in my head now.",
-    "options": ["(A) sing", "(B) have been singing", "(C) sang", "(D) are singing"],
+    "options": [
+      "(A) sing",
+      "(B) have been singing",
+      "(C) sang",
+      "(D) are singing"
+    ],
     "answer": 1,
     "explanation": "since this morning 搭配現在完成進行式，強調反覆持續的動作，故用 have been singing。",
     "target_grammar": "現在完成進行式",
     "id": "grammar_65",
-    "optionsZh": ["（原形）", "（現在完成進行式）", "（過去式）", "（現在進行式複數）"],
+    "optionsZh": [
+      "（原形）",
+      "（現在完成進行式）",
+      "（過去式）",
+      "（現在進行式複數）"
+    ],
     "difficulty": 4,
     "grammar_point_id": "GP007"
   },
   {
     "sentence": "Do you remember the day _____ we first met at the school festival?",
-    "options": ["(A) where", "(B) why", "(C) when", "(D) which"],
+    "options": [
+      "(A) where",
+      "(B) why",
+      "(C) when",
+      "(D) which"
+    ],
     "answer": 2,
     "explanation": "先行詞 the day 為時間，用關係副詞 when。",
     "target_grammar": "關係副詞",
     "id": "grammar_66",
-    "optionsZh": ["（地點關係副詞）", "（原因關係副詞）", "（時間關係副詞）", "（關係代名詞）"],
+    "optionsZh": [
+      "（地點關係副詞）",
+      "（原因關係副詞）",
+      "（時間關係副詞）",
+      "（關係代名詞）"
+    ],
     "difficulty": 4,
     "grammar_point_id": "GP013"
   },
   {
     "sentence": "This is the small town _____ my grandparents have lived for fifty years.",
-    "options": ["(A) when", "(B) why", "(C) which", "(D) where"],
+    "options": [
+      "(A) when",
+      "(B) why",
+      "(C) which",
+      "(D) where"
+    ],
     "answer": 3,
     "explanation": "先行詞 the small town 為地點，用關係副詞 where。",
     "target_grammar": "關係副詞",
     "id": "grammar_67",
-    "optionsZh": ["（時間關係副詞）", "（原因關係副詞）", "（關係代名詞）", "（地點關係副詞）"],
+    "optionsZh": [
+      "（時間關係副詞）",
+      "（原因關係副詞）",
+      "（關係代名詞）",
+      "（地點關係副詞）"
+    ],
     "difficulty": 4,
     "grammar_point_id": "GP013"
   },
   {
     "sentence": "If I _____ a bird, I would fly all over the world.",
-    "options": ["(A) were", "(B) was", "(C) am", "(D) will be"],
+    "options": [
+      "(A) were",
+      "(B) was",
+      "(C) am",
+      "(D) will be"
+    ],
     "answer": 0,
     "explanation": "與現在事實相反的假設語氣，If 子句 be動詞一律用 were。",
     "target_grammar": "假設語氣",
     "id": "grammar_68",
-    "optionsZh": ["（假設語氣一律用were）", "（一般過去式單數）", "（現在式）", "（未來式）"],
+    "optionsZh": [
+      "（假設語氣一律用were）",
+      "（一般過去式單數）",
+      "（現在式）",
+      "（未來式）"
+    ],
     "difficulty": 4,
     "grammar_point_id": "GP014"
   },
   {
     "sentence": "If she studied harder, she _____ pass the exam easily.",
-    "options": ["(A) will", "(B) would", "(C) can", "(D) does"],
+    "options": [
+      "(A) will",
+      "(B) would",
+      "(C) can",
+      "(D) does"
+    ],
     "answer": 1,
     "explanation": "假設語氣的主要子句用 would + 原形動詞。",
     "target_grammar": "假設語氣",
     "id": "grammar_69",
-    "optionsZh": ["（未來式，與假設不搭）", "（假設語氣主要子句）", "（能力）", "（一般現在式助動詞）"],
+    "optionsZh": [
+      "（未來式，與假設不搭）",
+      "（假設語氣主要子句）",
+      "（能力）",
+      "（一般現在式助動詞）"
+    ],
     "difficulty": 4,
     "grammar_point_id": "GP014"
   },
   {
     "sentence": "I would help you with the project if I _____ more free time.",
-    "options": ["(A) have", "(B) has", "(C) had", "(D) will have"],
+    "options": [
+      "(A) have",
+      "(B) has",
+      "(C) had",
+      "(D) will have"
+    ],
     "answer": 2,
     "explanation": "與現在事實相反的假設語氣，If 子句用過去式 had。",
     "target_grammar": "假設語氣",
     "id": "grammar_70",
-    "optionsZh": ["（現在式）", "（第三人稱單數）", "（假設語氣過去式）", "（未來完成）"],
+    "optionsZh": [
+      "（現在式）",
+      "（第三人稱單數）",
+      "（假設語氣過去式）",
+      "（未來完成）"
+    ],
     "difficulty": 4,
     "grammar_point_id": "GP014"
   },
   {
     "sentence": "We saw him _____ the ball into the goal during the last minute of the game.",
-    "options": ["(A) to kick", "(B) kicked", "(C) kicking", "(D) kick"],
+    "options": [
+      "(A) to kick",
+      "(B) kicked",
+      "(C) kicking",
+      "(D) kick"
+    ],
     "answer": 3,
     "explanation": "感官動詞 see 後接受詞補語用原形動詞表示完整動作，故用 kick。",
     "target_grammar": "感官動詞",
     "id": "grammar_71",
-    "optionsZh": ["（不定詞，感官動詞不用）", "（過去式，感官動詞不用）", "（現在分詞，強調進行中）", "（原形，感官動詞接受詞補語）"],
+    "optionsZh": [
+      "（不定詞，感官動詞不用）",
+      "（過去式，感官動詞不用）",
+      "（現在分詞，強調進行中）",
+      "（原形，感官動詞接受詞補語）"
+    ],
     "difficulty": 4,
     "grammar_point_id": "GP015"
   },
   {
     "sentence": "We heard the birds _____ beautifully outside the window this morning.",
-    "options": ["(A) singing", "(B) to sing", "(C) sang", "(D) sung"],
+    "options": [
+      "(A) singing",
+      "(B) to sing",
+      "(C) sang",
+      "(D) sung"
+    ],
     "answer": 0,
     "explanation": "感官動詞 hear 後接 V-ing 表示動作正在進行中，故用 singing。",
     "target_grammar": "感官動詞",
     "id": "grammar_72",
-    "optionsZh": ["（現在分詞，強調進行中）", "（不定詞，感官動詞不用）", "（過去式，文法錯誤）", "（過去分詞，文法錯誤）"],
+    "optionsZh": [
+      "（現在分詞，強調進行中）",
+      "（不定詞，感官動詞不用）",
+      "（過去式，文法錯誤）",
+      "（過去分詞，文法錯誤）"
+    ],
     "difficulty": 4,
     "grammar_point_id": "GP015"
   },
   {
     "sentence": "My mom always makes me _____ my room before I go out to play.",
-    "options": ["(A) to clean", "(B) clean", "(C) cleaning", "(D) cleaned"],
+    "options": [
+      "(A) to clean",
+      "(B) clean",
+      "(C) cleaning",
+      "(D) cleaned"
+    ],
     "answer": 1,
     "explanation": "使役動詞 make 後面接受詞補語須用原形動詞，故用 clean。",
     "target_grammar": "使役動詞",
     "id": "grammar_73",
-    "optionsZh": ["（不定詞，使役動詞不用）", "（原形，使役動詞接受詞補語）", "（動名詞，使役動詞不用）", "（過去式，文法錯誤）"],
+    "optionsZh": [
+      "（不定詞，使役動詞不用）",
+      "（原形，使役動詞接受詞補語）",
+      "（動名詞，使役動詞不用）",
+      "（過去式，文法錯誤）"
+    ],
     "difficulty": 4,
     "grammar_point_id": "GP016"
   },
   {
     "sentence": "The teacher let the students _____ early because of the typhoon warning.",
-    "options": ["(A) to leave", "(B) left", "(C) leave", "(D) leaving"],
+    "options": [
+      "(A) to leave",
+      "(B) left",
+      "(C) leave",
+      "(D) leaving"
+    ],
     "answer": 2,
     "explanation": "使役動詞 let 後面接受詞補語須用原形動詞，故用 leave。",
     "target_grammar": "使役動詞",
     "id": "grammar_74",
-    "optionsZh": ["（不定詞，使役動詞不用）", "（過去式，文法錯誤）", "（原形，使役動詞接受詞補語）", "（現在分詞，使役動詞不用）"],
+    "optionsZh": [
+      "（不定詞，使役動詞不用）",
+      "（過去式，文法錯誤）",
+      "（原形，使役動詞接受詞補語）",
+      "（現在分詞，使役動詞不用）"
+    ],
     "difficulty": 4,
     "grammar_point_id": "GP016"
   },
   {
     "sentence": "Could you tell me _____ the nearest MRT station is?",
-    "options": ["(A) where is", "(B) that", "(C) what", "(D) where"],
+    "options": [
+      "(A) where is",
+      "(B) that",
+      "(C) what",
+      "(D) where"
+    ],
     "answer": 3,
     "explanation": "間接問句須維持直述語序（主詞+動詞），只需 where，不能保留疑問語序 where is。",
     "target_grammar": "間接問句",
     "id": "grammar_75",
-    "optionsZh": ["（保留疑問語序，錯誤）", "（不符語意）", "（不符語意）", "（間接問句用直述語序）"],
+    "optionsZh": [
+      "（保留疑問語序，錯誤）",
+      "（不符語意）",
+      "（不符語意）",
+      "（間接問句用直述語序）"
+    ],
     "difficulty": 4,
     "grammar_point_id": "GP017"
   },
   {
     "sentence": "I wonder _____ he will come to the party tonight.",
-    "options": ["(A) if", "(B) that", "(C) what", "(D) why"],
+    "options": [
+      "(A) if",
+      "(B) that",
+      "(C) what",
+      "(D) why"
+    ],
     "answer": 0,
     "explanation": "wonder 後接間接問句，表示是否，用連接詞 if。",
     "target_grammar": "間接問句",
     "id": "grammar_76",
-    "optionsZh": ["（間接問句表是否）", "（不符語意）", "（不符語意）", "（不符語意）"],
+    "optionsZh": [
+      "（間接問句表是否）",
+      "（不符語意）",
+      "（不符語意）",
+      "（不符語意）"
+    ],
     "difficulty": 4,
     "grammar_point_id": "GP017"
   },
   {
     "sentence": "_____ she said surprised everyone at the meeting.",
-    "options": ["(A) That", "(B) What", "(C) Which", "(D) Who"],
+    "options": [
+      "(A) That",
+      "(B) What",
+      "(C) Which",
+      "(D) Who"
+    ],
     "answer": 1,
     "explanation": "What she said（她說的話）作整個句子的主詞，為名詞子句，故用 What。",
     "target_grammar": "名詞子句",
     "id": "grammar_77",
-    "optionsZh": ["（不符語意）", "（名詞子句作主詞）", "（不符語意）", "（不符語意）"],
+    "optionsZh": [
+      "（不符語意）",
+      "（名詞子句作主詞）",
+      "（不符語意）",
+      "（不符語意）"
+    ],
     "difficulty": 4,
     "grammar_point_id": "GP024"
   },
   {
     "sentence": "I don't know _____ the shop is open on Sundays.",
-    "options": ["(A) what", "(B) which", "(C) whether", "(D) who"],
+    "options": [
+      "(A) what",
+      "(B) which",
+      "(C) whether",
+      "(D) who"
+    ],
     "answer": 2,
     "explanation": "don't know 後接是否的名詞子句，用 whether。",
     "target_grammar": "名詞子句",
     "id": "grammar_78",
-    "optionsZh": ["（不符語意）", "（不符語意）", "（間接問句表是否）", "（不符語意）"],
+    "optionsZh": [
+      "（不符語意）",
+      "（不符語意）",
+      "（間接問句表是否）",
+      "（不符語意）"
+    ],
     "difficulty": 4,
     "grammar_point_id": "GP024"
   },
   {
     "sentence": "The fact _____ he lied to us made everyone very angry.",
-    "options": ["(A) what", "(B) which", "(C) who", "(D) that"],
+    "options": [
+      "(A) what",
+      "(B) which",
+      "(C) who",
+      "(D) that"
+    ],
     "answer": 3,
     "explanation": "the fact that... 為同位語名詞子句，說明 fact 的內容，用 that。",
     "target_grammar": "名詞子句",
     "id": "grammar_79",
-    "optionsZh": ["（不符語意）", "（不符語意）", "（不符語意）", "（同位語名詞子句）"],
+    "optionsZh": [
+      "（不符語意）",
+      "（不符語意）",
+      "（不符語意）",
+      "（同位語名詞子句）"
+    ],
     "difficulty": 4,
     "grammar_point_id": "GP024"
   },
   {
     "sentence": "_____ tired from the long journey, the travelers decided to rest at a nearby hotel.",
-    "options": ["(A) Feeling", "(B) Felt", "(C) Feel", "(D) To feel"],
+    "options": [
+      "(A) Feeling",
+      "(B) Felt",
+      "(C) Feel",
+      "(D) To feel"
+    ],
     "answer": 0,
     "explanation": "原句為 Because they felt tired，簡化為分詞構句用現在分詞 Feeling。",
     "target_grammar": "分詞構句",
     "id": "grammar_80",
-    "optionsZh": ["（現在分詞，主動）", "（動詞過去式，非分詞構句）", "（原形，非分詞構句）", "（不定詞，非分詞構句）"],
+    "optionsZh": [
+      "（現在分詞，主動）",
+      "（動詞過去式，非分詞構句）",
+      "（原形，非分詞構句）",
+      "（不定詞，非分詞構句）"
+    ],
     "difficulty": 5,
     "grammar_point_id": "GP018"
   },
   {
     "sentence": "_____ by the loud noise, the baby began to cry suddenly.",
-    "options": ["(A) Frightening", "(B) Frightened", "(C) Frighten", "(D) To frighten"],
+    "options": [
+      "(A) Frightening",
+      "(B) Frightened",
+      "(C) Frighten",
+      "(D) To frighten"
+    ],
     "answer": 1,
     "explanation": "嬰兒是被嚇到的一方，被動意義用過去分詞 Frightened。",
     "target_grammar": "分詞構句",
     "id": "grammar_81",
-    "optionsZh": ["（現在分詞，主動意義）", "（過去分詞，被動意義）", "（原形，非分詞構句）", "（不定詞，非分詞構句）"],
+    "optionsZh": [
+      "（現在分詞，主動意義）",
+      "（過去分詞，被動意義）",
+      "（原形，非分詞構句）",
+      "（不定詞，非分詞構句）"
+    ],
     "difficulty": 5,
     "grammar_point_id": "GP018"
   },
   {
     "sentence": "_____ his homework, Tom finally went out to play basketball.",
-    "options": ["(A) Finishing", "(B) Finished", "(C) Having finished", "(D) To finish"],
+    "options": [
+      "(A) Finishing",
+      "(B) Finished",
+      "(C) Having finished",
+      "(D) To finish"
+    ],
     "answer": 2,
     "explanation": "先做完功課才出去玩，動作發生在主要子句之前，用完成式分詞構句 Having finished。",
     "target_grammar": "分詞構句",
     "id": "grammar_82",
-    "optionsZh": ["（現在分詞，同時發生）", "（過去分詞，被動意義）", "（完成式分詞，先發生）", "（不定詞，非分詞構句）"],
+    "optionsZh": [
+      "（現在分詞，同時發生）",
+      "（過去分詞，被動意義）",
+      "（完成式分詞，先發生）",
+      "（不定詞，非分詞構句）"
+    ],
     "difficulty": 5,
     "grammar_point_id": "GP018"
   },
   {
     "sentence": "_____ in a small village, she never had the chance to see the ocean until she was twenty.",
-    "options": ["(A) Growing up", "(B) Grown up", "(C) To grow up", "(D) Having grown up"],
+    "options": [
+      "(A) Growing up",
+      "(B) Grown up",
+      "(C) To grow up",
+      "(D) Having grown up"
+    ],
     "answer": 3,
     "explanation": "在鄉下長大的經驗發生在主要子句之前，用完成式分詞構句 Having grown up。",
     "target_grammar": "分詞構句",
     "id": "grammar_83",
-    "optionsZh": ["（現在分詞，同時發生）", "（過去分詞，被動意義）", "（不定詞，非分詞構句）", "（完成式分詞，先發生）"],
+    "optionsZh": [
+      "（現在分詞，同時發生）",
+      "（過去分詞，被動意義）",
+      "（不定詞，非分詞構句）",
+      "（完成式分詞，先發生）"
+    ],
     "difficulty": 5,
     "grammar_point_id": "GP018"
   },
   {
     "sentence": "_____ heavily outside, we decided to stay home and watch a movie.",
-    "options": ["(A) Raining", "(B) Rained", "(C) To rain", "(D) Rain"],
+    "options": [
+      "(A) Raining",
+      "(B) Rained",
+      "(C) To rain",
+      "(D) Rain"
+    ],
     "answer": 0,
     "explanation": "原句為 Because it was raining heavily，簡化為分詞構句用現在分詞 Raining。",
     "target_grammar": "分詞構句",
     "id": "grammar_84",
-    "optionsZh": ["（現在分詞，主動）", "（過去式，非分詞構句）", "（不定詞，非分詞構句）", "（原形，非分詞構句）"],
+    "optionsZh": [
+      "（現在分詞，主動）",
+      "（過去式，非分詞構句）",
+      "（不定詞，非分詞構句）",
+      "（原形，非分詞構句）"
+    ],
     "difficulty": 5,
     "grammar_point_id": "GP018"
   },
   {
     "sentence": "_____ how to swim, my little brother was afraid of the deep end of the pool.",
-    "options": ["(A) Not know", "(B) Not knowing", "(C) Knowing not", "(D) Don't know"],
+    "options": [
+      "(A) Not know",
+      "(B) Not knowing",
+      "(C) Knowing not",
+      "(D) Don't know"
+    ],
     "answer": 1,
     "explanation": "否定分詞構句，not 放在分詞前，故用 Not knowing。",
     "target_grammar": "分詞構句",
     "id": "grammar_85",
-    "optionsZh": ["（否定詞位置錯誤）", "（否定分詞構句，正確）", "（否定詞位置錯誤）", "（一般動詞否定，非分詞構句）"],
+    "optionsZh": [
+      "（否定詞位置錯誤）",
+      "（否定分詞構句，正確）",
+      "（否定詞位置錯誤）",
+      "（一般動詞否定，非分詞構句）"
+    ],
     "difficulty": 5,
     "grammar_point_id": "GP018"
   },
   {
     "sentence": "_____ with a difficult problem, the students asked their teacher for help.",
-    "options": ["(A) Facing", "(B) Face", "(C) Faced", "(D) To face"],
+    "options": [
+      "(A) Facing",
+      "(B) Face",
+      "(C) Faced",
+      "(D) To face"
+    ],
     "answer": 2,
     "explanation": "學生是面對難題的一方，被動意義用過去分詞 Faced。",
     "target_grammar": "分詞構句",
     "id": "grammar_86",
-    "optionsZh": ["（現在分詞，主動意義）", "（原形，非分詞構句）", "（過去分詞，被動意義）", "（不定詞，非分詞構句）"],
+    "optionsZh": [
+      "（現在分詞，主動意義）",
+      "（原形，非分詞構句）",
+      "（過去分詞，被動意義）",
+      "（不定詞，非分詞構句）"
+    ],
     "difficulty": 5,
     "grammar_point_id": "GP018"
   },
   {
     "sentence": "_____ every possible solution, the engineers still could not fix the machine.",
-    "options": ["(A) Trying", "(B) Tried", "(C) To try", "(D) Having tried"],
+    "options": [
+      "(A) Trying",
+      "(B) Tried",
+      "(C) To try",
+      "(D) Having tried"
+    ],
     "answer": 3,
     "explanation": "嘗試所有方法發生在無法修好之前，用完成式分詞構句 Having tried。",
     "target_grammar": "分詞構句",
     "id": "grammar_87",
-    "optionsZh": ["（現在分詞，同時發生）", "（過去分詞，被動意義）", "（不定詞，非分詞構句）", "（完成式分詞，先發生）"],
+    "optionsZh": [
+      "（現在分詞，同時發生）",
+      "（過去分詞，被動意義）",
+      "（不定詞，非分詞構句）",
+      "（完成式分詞，先發生）"
+    ],
     "difficulty": 5,
     "grammar_point_id": "GP018"
   },
   {
     "sentence": "_____ carefully, the plan should work perfectly.",
-    "options": ["(A) Followed", "(B) Following", "(C) Follow", "(D) To follow"],
+    "options": [
+      "(A) Followed",
+      "(B) Following",
+      "(C) Follow",
+      "(D) To follow"
+    ],
     "answer": 0,
     "explanation": "計畫是被遵循的一方，被動意義用過去分詞 Followed。",
     "target_grammar": "分詞構句",
     "id": "grammar_88",
-    "optionsZh": ["（過去分詞，被動意義）", "（現在分詞，主動意義）", "（原形，非分詞構句）", "（不定詞，非分詞構句）"],
+    "optionsZh": [
+      "（過去分詞，被動意義）",
+      "（現在分詞，主動意義）",
+      "（原形，非分詞構句）",
+      "（不定詞，非分詞構句）"
+    ],
     "difficulty": 5,
     "grammar_point_id": "GP018"
   },
   {
     "sentence": "_____ from the top of the tower, the city looked absolutely beautiful.",
-    "options": ["(A) Seeing", "(B) Seen", "(C) See", "(D) To see"],
+    "options": [
+      "(A) Seeing",
+      "(B) Seen",
+      "(C) See",
+      "(D) To see"
+    ],
     "answer": 1,
     "explanation": "城市是被看見的一方，被動意義用過去分詞 Seen。",
     "target_grammar": "分詞構句",
     "id": "grammar_89",
-    "optionsZh": ["（現在分詞，主動意義）", "（過去分詞，被動意義）", "（原形，非分詞構句）", "（不定詞，非分詞構句）"],
+    "optionsZh": [
+      "（現在分詞，主動意義）",
+      "（過去分詞，被動意義）",
+      "（原形，非分詞構句）",
+      "（不定詞，非分詞構句）"
+    ],
     "difficulty": 5,
     "grammar_point_id": "GP018"
   },
   {
     "sentence": "_____ nothing more to say, she quietly left the room.",
-    "options": ["(A) Have", "(B) Had", "(C) Having", "(D) To have"],
+    "options": [
+      "(A) Have",
+      "(B) Had",
+      "(C) Having",
+      "(D) To have"
+    ],
     "answer": 2,
     "explanation": "Having nothing more to say 表示「因為沒有更多話要說」，用現在分詞 Having。",
     "target_grammar": "分詞構句",
     "id": "grammar_90",
-    "optionsZh": ["（原形，非分詞構句）", "（過去式，非分詞構句）", "（現在分詞，表原因）", "（不定詞，非分詞構句）"],
+    "optionsZh": [
+      "（原形，非分詞構句）",
+      "（過去式，非分詞構句）",
+      "（現在分詞，表原因）",
+      "（不定詞，非分詞構句）"
+    ],
     "difficulty": 5,
     "grammar_point_id": "GP018"
   },
   {
     "sentence": "_____ by her classmates' kind words, Amy felt much better about the contest.",
-    "options": ["(A) Encouraging", "(B) Encourage", "(C) To encourage", "(D) Encouraged"],
+    "options": [
+      "(A) Encouraging",
+      "(B) Encourage",
+      "(C) To encourage",
+      "(D) Encouraged"
+    ],
     "answer": 3,
     "explanation": "Amy 是被鼓勵的一方，被動意義用過去分詞 Encouraged。",
     "target_grammar": "分詞構句",
     "id": "grammar_91",
-    "optionsZh": ["（現在分詞，主動意義）", "（原形，非分詞構句）", "（不定詞，非分詞構句）", "（過去分詞，被動意義）"],
+    "optionsZh": [
+      "（現在分詞，主動意義）",
+      "（原形，非分詞構句）",
+      "（不定詞，非分詞構句）",
+      "（過去分詞，被動意義）"
+    ],
     "difficulty": 5,
     "grammar_point_id": "GP018"
   },
   {
     "sentence": "_____ the instructions carefully, he still could not assemble the shelf correctly.",
-    "options": ["(A) Having read", "(B) Reading", "(C) Read", "(D) To read"],
+    "options": [
+      "(A) Having read",
+      "(B) Reading",
+      "(C) Read",
+      "(D) To read"
+    ],
     "answer": 0,
     "explanation": "雖然讀了說明書，仍組裝不好，讓步語氣搭配完成式分詞構句 Having read。",
     "target_grammar": "分詞構句",
     "id": "grammar_92",
-    "optionsZh": ["（完成式分詞，先發生）", "（現在分詞，同時發生）", "（過去式，非分詞構句）", "（不定詞，非分詞構句）"],
+    "optionsZh": [
+      "（完成式分詞，先發生）",
+      "（現在分詞，同時發生）",
+      "（過去式，非分詞構句）",
+      "（不定詞，非分詞構句）"
+    ],
     "difficulty": 5,
     "grammar_point_id": "GP018"
   },
   {
     "sentence": "_____ that the shop was closed, we decided to order food online instead.",
-    "options": ["(A) Realized", "(B) Realizing", "(C) Realize", "(D) To realize"],
+    "options": [
+      "(A) Realized",
+      "(B) Realizing",
+      "(C) Realize",
+      "(D) To realize"
+    ],
     "answer": 1,
     "explanation": "發現店家關門後才決定改叫外送，主動意義用現在分詞 Realizing。",
     "target_grammar": "分詞構句",
     "id": "grammar_93",
-    "optionsZh": ["（過去分詞，被動意義不合）", "（現在分詞，主動意義）", "（原形，非分詞構句）", "（不定詞，非分詞構句）"],
+    "optionsZh": [
+      "（過去分詞，被動意義不合）",
+      "（現在分詞，主動意義）",
+      "（原形，非分詞構句）",
+      "（不定詞，非分詞構句）"
+    ],
     "difficulty": 5,
     "grammar_point_id": "GP018"
   },
   {
     "sentence": "_____ from a wealthy family, he never had to worry about money as a child.",
-    "options": ["(A) Come", "(B) Came", "(C) Coming", "(D) To come"],
+    "options": [
+      "(A) Come",
+      "(B) Came",
+      "(C) Coming",
+      "(D) To come"
+    ],
     "answer": 2,
     "explanation": "Coming from a wealthy family 表示因為出身富裕家庭，用現在分詞 Coming。",
     "target_grammar": "分詞構句",
     "id": "grammar_94",
-    "optionsZh": ["（原形，非分詞構句）", "（過去式，非分詞構句）", "（現在分詞，主動意義）", "（不定詞，非分詞構句）"],
+    "optionsZh": [
+      "（原形，非分詞構句）",
+      "（過去式，非分詞構句）",
+      "（現在分詞，主動意義）",
+      "（不定詞，非分詞構句）"
+    ],
     "difficulty": 5,
     "grammar_point_id": "GP018"
   },
   {
     "sentence": "_____ down by the rain, the flowers in the garden looked a little sad.",
-    "options": ["(A) Beating", "(B) Beat", "(C) To beat", "(D) Beaten"],
+    "options": [
+      "(A) Beating",
+      "(B) Beat",
+      "(C) To beat",
+      "(D) Beaten"
+    ],
     "answer": 3,
     "explanation": "花是被雨打的一方，被動意義用過去分詞 Beaten。",
     "target_grammar": "分詞構句",
     "id": "grammar_95",
-    "optionsZh": ["（現在分詞，主動意義不合）", "（原形，非分詞構句）", "（不定詞，非分詞構句）", "（過去分詞，被動意義）"],
+    "optionsZh": [
+      "（現在分詞，主動意義不合）",
+      "（原形，非分詞構句）",
+      "（不定詞，非分詞構句）",
+      "（過去分詞，被動意義）"
+    ],
     "difficulty": 5,
     "grammar_point_id": "GP018"
   },
   {
     "sentence": "_____ have I seen such a beautiful sunset as the one last night.",
-    "options": ["(A) Never", "(B) Ever", "(C) Always", "(D) Often"],
+    "options": [
+      "(A) Never",
+      "(B) Ever",
+      "(C) Always",
+      "(D) Often"
+    ],
     "answer": 0,
     "explanation": "Never 放句首表示「從未」，需倒裝為 have + 主詞 + p.p.。",
     "target_grammar": "否定副詞倒裝",
     "id": "grammar_96",
-    "optionsZh": ["（從未，須倒裝）", "（不符語意）", "（不符語意）", "（不符語意）"],
+    "optionsZh": [
+      "（從未，須倒裝）",
+      "（不符語意）",
+      "（不符語意）",
+      "（不符語意）"
+    ],
     "difficulty": 6,
     "grammar_point_id": "GP023"
   },
   {
     "sentence": "_____ she got home did she realize that she had left her phone on the bus.",
-    "options": ["(A) Until", "(B) Not until", "(C) Not", "(D) Only"],
+    "options": [
+      "(A) Until",
+      "(B) Not until",
+      "(C) Not",
+      "(D) Only"
+    ],
     "answer": 1,
     "explanation": "Not until 為否定副詞片語放句首，主要子句須倒裝為 did + 主詞 + 原形。",
     "target_grammar": "否定副詞倒裝",
     "id": "grammar_97",
-    "optionsZh": ["（未倒裝觸發詞）", "（Not until，須倒裝）", "（不完整）", "（不符語意）"],
+    "optionsZh": [
+      "（未倒裝觸發詞）",
+      "（Not until，須倒裝）",
+      "（不完整）",
+      "（不符語意）"
+    ],
     "difficulty": 6,
     "grammar_point_id": "GP023"
   },
   {
     "sentence": "_____ had the concert begun when the singer suddenly lost her voice.",
-    "options": ["(A) No longer", "(B) Not longer", "(C) No sooner", "(D) No later"],
+    "options": [
+      "(A) No longer",
+      "(B) Not longer",
+      "(C) No sooner",
+      "(D) No later"
+    ],
     "answer": 2,
     "explanation": "No sooner...when 表示「一...就」，No sooner 放句首須倒裝 had + 主詞 + p.p.。",
     "target_grammar": "否定副詞倒裝",
     "id": "grammar_98",
-    "optionsZh": ["（不再，語意不符）", "（文法錯誤）", "（一…就，須倒裝）", "（文法錯誤）"],
+    "optionsZh": [
+      "（不再，語意不符）",
+      "（文法錯誤）",
+      "（一…就，須倒裝）",
+      "（文法錯誤）"
+    ],
     "difficulty": 6,
     "grammar_point_id": "GP023"
   },
   {
     "sentence": "_____ does he complain about his heavy workload at the office.",
-    "options": ["(A) Usually", "(B) Often", "(C) Always", "(D) Rarely"],
+    "options": [
+      "(A) Usually",
+      "(B) Often",
+      "(C) Always",
+      "(D) Rarely"
+    ],
     "answer": 3,
     "explanation": "Rarely 為頻率副詞，放句首表示「很少」，須倒裝為 does + 主詞 + 原形。",
     "target_grammar": "否定副詞倒裝",
     "id": "grammar_99",
-    "optionsZh": ["（不符語意，不觸發倒裝）", "（不符語意）", "（不符語意）", "（很少，須倒裝）"],
+    "optionsZh": [
+      "（不符語意，不觸發倒裝）",
+      "（不符語意）",
+      "（不符語意）",
+      "（很少，須倒裝）"
+    ],
     "difficulty": 6,
     "grammar_point_id": "GP023"
   },
   {
     "sentence": "_____ did I imagine that I would win first prize in the speech contest.",
-    "options": ["(A) Little", "(B) Much", "(C) Some", "(D) A little"],
+    "options": [
+      "(A) Little",
+      "(B) Much",
+      "(C) Some",
+      "(D) A little"
+    ],
     "answer": 0,
     "explanation": "Little 表示「一點也不」，放句首須倒裝為 did + 主詞 + 原形。",
     "target_grammar": "否定副詞倒裝",
     "id": "grammar_100",
-    "optionsZh": ["（一點也不，須倒裝）", "（不符語意）", "（不符語意）", "（不觸發倒裝）"],
+    "optionsZh": [
+      "（一點也不，須倒裝）",
+      "（不符語意）",
+      "（不符語意）",
+      "（不觸發倒裝）"
+    ],
     "difficulty": 6,
     "grammar_point_id": "GP023"
   },
   {
     "sentence": "_____ have I tasted such delicious dumplings before this trip.",
-    "options": ["(A) Sometimes", "(B) Seldom", "(C) Usually", "(D) Often"],
+    "options": [
+      "(A) Sometimes",
+      "(B) Seldom",
+      "(C) Usually",
+      "(D) Often"
+    ],
     "answer": 1,
     "explanation": "Seldom 表示「很少」，放句首須倒裝為 have + 主詞 + p.p.。",
     "target_grammar": "否定副詞倒裝",
     "id": "grammar_101",
-    "optionsZh": ["（不觸發倒裝）", "（很少，須倒裝）", "（不觸發倒裝）", "（不觸發倒裝）"],
+    "optionsZh": [
+      "（不觸發倒裝）",
+      "（很少，須倒裝）",
+      "（不觸發倒裝）",
+      "（不觸發倒裝）"
+    ],
     "difficulty": 6,
     "grammar_point_id": "GP023"
   },
   {
     "sentence": "_____ was he allowed to leave the classroom during the exam.",
-    "options": ["(A) In any case", "(B) With no reason", "(C) Under no circumstances", "(D) By all means"],
+    "options": [
+      "(A) In any case",
+      "(B) With no reason",
+      "(C) Under no circumstances",
+      "(D) By all means"
+    ],
     "answer": 2,
     "explanation": "Under no circumstances 表示「在任何情況下都不」，放句首須倒裝為 was + 主詞。",
     "target_grammar": "否定副詞倒裝",
     "id": "grammar_102",
-    "optionsZh": ["（不符語意）", "（不符語意）", "（絕不，須倒裝）", "（不符語意）"],
+    "optionsZh": [
+      "（不符語意）",
+      "（不符語意）",
+      "（絕不，須倒裝）",
+      "（不符語意）"
+    ],
     "difficulty": 6,
     "grammar_point_id": "GP023"
   },
   {
     "sentence": "_____ you finish your work on time will you be allowed to go home early.",
-    "options": ["(A) Even if", "(B) As if", "(C) So that", "(D) Only if"],
+    "options": [
+      "(A) Even if",
+      "(B) As if",
+      "(C) So that",
+      "(D) Only if"
+    ],
     "answer": 3,
     "explanation": "Only if 表示「只有在...情況下」，主要子句須倒裝為 will + 主詞。",
     "target_grammar": "否定副詞倒裝",
     "id": "grammar_103",
-    "optionsZh": ["（不觸發主要子句倒裝）", "（不觸發倒裝）", "（不觸發倒裝）", "（只有…才，須倒裝）"],
+    "optionsZh": [
+      "（不觸發主要子句倒裝）",
+      "（不觸發倒裝）",
+      "（不觸發倒裝）",
+      "（只有…才，須倒裝）"
+    ],
     "difficulty": 6,
     "grammar_point_id": "GP023"
   },
   {
     "sentence": "_____ had she finished her speech when the audience began to applaud.",
-    "options": ["(A) Hardly", "(B) Rarely", "(C) Seldom", "(D) Never"],
+    "options": [
+      "(A) Hardly",
+      "(B) Rarely",
+      "(C) Seldom",
+      "(D) Never"
+    ],
     "answer": 0,
     "explanation": "Hardly...when 表示「一...就」，Hardly 放句首須倒裝為 had + 主詞 + p.p.。",
     "target_grammar": "否定副詞倒裝",
     "id": "grammar_104",
-    "optionsZh": ["（一…就，須倒裝）", "（不符語意）", "（不符語意）", "（不符語意）"],
+    "optionsZh": [
+      "（一…就，須倒裝）",
+      "（不符語意）",
+      "（不符語意）",
+      "（不符語意）"
+    ],
     "difficulty": 6,
     "grammar_point_id": "GP023"
   },
   {
     "sentence": "_____ did the coach praise the team's effort, but he also gave everyone a small reward.",
-    "options": ["(A) Not even", "(B) Not only", "(C) Not just", "(D) Only"],
+    "options": [
+      "(A) Not even",
+      "(B) Not only",
+      "(C) Not just",
+      "(D) Only"
+    ],
     "answer": 1,
     "explanation": "Not only...but also 中 Not only 放句首須倒裝為 did + 主詞 + 原形。",
     "target_grammar": "否定副詞倒裝",
     "id": "grammar_105",
-    "optionsZh": ["（不符語意）", "（不僅…而且，須倒裝）", "（不符語意）", "（不符語意）"],
+    "optionsZh": [
+      "（不符語意）",
+      "（不僅…而且，須倒裝）",
+      "（不符語意）",
+      "（不符語意）"
+    ],
     "difficulty": 6,
     "grammar_point_id": "GP023"
   },
   {
     "sentence": "_____ in this small town had anyone seen such a strange creature before.",
-    "options": ["(A) Somewhere", "(B) Anywhere", "(C) Nowhere", "(D) Everywhere"],
+    "options": [
+      "(A) Somewhere",
+      "(B) Anywhere",
+      "(C) Nowhere",
+      "(D) Everywhere"
+    ],
     "answer": 2,
     "explanation": "Nowhere 為否定地方副詞，放句首須倒裝為 had + 主詞 + p.p.。",
     "target_grammar": "否定副詞倒裝",
     "id": "grammar_106",
-    "optionsZh": ["（不符語意）", "（不符語意）", "（無處，須倒裝）", "（不符語意）"],
+    "optionsZh": [
+      "（不符語意）",
+      "（不符語意）",
+      "（無處，須倒裝）",
+      "（不符語意）"
+    ],
     "difficulty": 6,
     "grammar_point_id": "GP023"
   },
   {
     "sentence": "_____ repeated attempts did the scientists finally succeed in the experiment.",
-    "options": ["(A) Only before", "(B) Even after", "(C) Just after", "(D) Only after"],
+    "options": [
+      "(A) Only before",
+      "(B) Even after",
+      "(C) Just after",
+      "(D) Only after"
+    ],
     "answer": 3,
     "explanation": "Only after 表示「只有在...之後」，主要子句須倒裝為 did + 主詞 + 原形。",
     "target_grammar": "否定副詞倒裝",
     "id": "grammar_107",
-    "optionsZh": ["（不符語意）", "（不觸發倒裝）", "（不觸發倒裝）", "（只有在…之後，須倒裝）"],
+    "optionsZh": [
+      "（不符語意）",
+      "（不觸發倒裝）",
+      "（不觸發倒裝）",
+      "（只有在…之後，須倒裝）"
+    ],
     "difficulty": 6,
     "grammar_point_id": "GP023"
   },
   {
     "sentence": "_____ difficult was the final exam that many students left the room in tears.",
-    "options": ["(A) So", "(B) Such", "(C) Very", "(D) Too"],
+    "options": [
+      "(A) So",
+      "(B) Such",
+      "(C) Very",
+      "(D) Too"
+    ],
     "answer": 0,
     "explanation": "So + 形容詞 + be動詞 + 主詞 + that 為倒裝句型，表示程度之深。",
     "target_grammar": "否定副詞倒裝",
     "id": "grammar_108",
-    "optionsZh": ["（So+形容詞+be+主詞+that，須倒裝）", "（Such+be+主詞+that，須倒裝，此處文法不搭）", "（不觸發倒裝）", "（不觸發倒裝）"],
+    "optionsZh": [
+      "（So+形容詞+be+主詞+that，須倒裝）",
+      "（Such+be+主詞+that，須倒裝，此處文法不搭）",
+      "（不觸發倒裝）",
+      "（不觸發倒裝）"
+    ],
     "difficulty": 6,
     "grammar_point_id": "GP023"
   },
   {
     "sentence": "_____ was his surprise that he could not say a single word.",
-    "options": ["(A) So", "(B) Such", "(C) Very", "(D) That"],
+    "options": [
+      "(A) So",
+      "(B) Such",
+      "(C) Very",
+      "(D) That"
+    ],
     "answer": 1,
     "explanation": "Such + be動詞 + 主詞 + that 為倒裝句型，表示程度之深。",
     "target_grammar": "否定副詞倒裝",
     "id": "grammar_109",
-    "optionsZh": ["（So+形容詞+be+主詞+that，此處文法不搭）", "（Such+be+主詞+that，須倒裝）", "（不觸發倒裝）", "（不符語意）"],
+    "optionsZh": [
+      "（So+形容詞+be+主詞+that，此處文法不搭）",
+      "（Such+be+主詞+that，須倒裝）",
+      "（不觸發倒裝）",
+      "（不符語意）"
+    ],
     "difficulty": 6,
     "grammar_point_id": "GP023"
   },
   {
     "sentence": "_____ a single word did the little boy say during the whole long trip home.",
-    "options": ["(A) No", "(B) Never", "(C) Not", "(D) Hardly"],
+    "options": [
+      "(A) No",
+      "(B) Never",
+      "(C) Not",
+      "(D) Hardly"
+    ],
     "answer": 2,
     "explanation": "Not a single word 放句首否定，主要子句須倒裝為 did + 主詞 + 原形。",
     "target_grammar": "否定副詞倒裝",
     "id": "grammar_110",
-    "optionsZh": ["（不符語意）", "（不符語意）", "（Not a single word，須倒裝）", "（不符語意）"],
+    "optionsZh": [
+      "（不符語意）",
+      "（不符語意）",
+      "（Not a single word，須倒裝）",
+      "（不符語意）"
+    ],
     "difficulty": 6,
     "grammar_point_id": "GP023"
   },
   {
     "sentence": "_____ should you share your personal password with a stranger online.",
-    "options": ["(A) Even though", "(B) As long as", "(C) Now that", "(D) On no account"],
+    "options": [
+      "(A) Even though",
+      "(B) As long as",
+      "(C) Now that",
+      "(D) On no account"
+    ],
     "answer": 3,
     "explanation": "On no account 表示「絕不」，放句首須倒裝為 should + 主詞。",
     "target_grammar": "否定副詞倒裝",
     "id": "grammar_111",
-    "optionsZh": ["（不觸發倒裝）", "（不觸發倒裝）", "（不觸發倒裝）", "（絕不，須倒裝）"],
+    "optionsZh": [
+      "（不觸發倒裝）",
+      "（不觸發倒裝）",
+      "（不觸發倒裝）",
+      "（絕不，須倒裝）"
+    ],
     "difficulty": 6,
     "grammar_point_id": "GP023"
+  },
+  {
+    "sentence": "We _____ in this city since 2015, so we know it very well now.",
+    "options": [
+      "(A) live",
+      "(B) lived",
+      "(C) have lived",
+      "(D) are living"
+    ],
+    "answer": 2,
+    "explanation": "since + 過去時間點，表示動作持續到現在，用現在完成式 have lived。",
+    "target_grammar": "現在完成式",
+    "id": "grammar_112",
+    "optionsZh": [
+      "（現在式）",
+      "（過去式）",
+      "（現在完成式）",
+      "（現在進行式）"
+    ]
+  },
+  {
+    "sentence": "He _____ his homework already, so he can watch TV now.",
+    "options": [
+      "(A) finishes",
+      "(B) finished",
+      "(C) has finished",
+      "(D) is finishing"
+    ],
+    "answer": 2,
+    "explanation": "already 常與現在完成式連用，表示動作已完成，故用 has finished。",
+    "target_grammar": "現在完成式",
+    "id": "grammar_113",
+    "optionsZh": [
+      "（現在式）",
+      "（過去式）",
+      "（現在完成式）",
+      "（現在進行式）"
+    ]
+  },
+  {
+    "sentence": "I have never _____ such a beautiful garden before.",
+    "options": [
+      "(A) see",
+      "(B) saw",
+      "(C) seen",
+      "(D) seeing"
+    ],
+    "answer": 2,
+    "explanation": "have + never + 過去分詞，表示「從未」，故用 seen。",
+    "target_grammar": "現在完成式",
+    "id": "grammar_114",
+    "optionsZh": [
+      "（原形）",
+      "（過去式）",
+      "（過去分詞）",
+      "（現在分詞）"
+    ]
+  },
+  {
+    "sentence": "They _____ dinner yet, so let's wait a little longer.",
+    "options": [
+      "(A) don't have",
+      "(B) didn't have",
+      "(C) haven't had",
+      "(D) aren't having"
+    ],
+    "answer": 2,
+    "explanation": "yet 常與現在完成式連用，表示「尚未」，故用 haven't had。",
+    "target_grammar": "現在完成式",
+    "id": "grammar_115",
+    "optionsZh": [
+      "（現在式否定）",
+      "（過去式否定）",
+      "（現在完成否定）",
+      "（現在進行否定）"
+    ]
+  },
+  {
+    "sentence": "How long _____ the piano? — Since I was six years old.",
+    "options": [
+      "(A) do you play",
+      "(B) did you play",
+      "(C) have you played",
+      "(D) are you playing"
+    ],
+    "answer": 2,
+    "explanation": "回答用 Since，表示動作持續至今，問句須用現在完成式。",
+    "target_grammar": "現在完成式",
+    "id": "grammar_116",
+    "optionsZh": [
+      "（現在式問句）",
+      "（過去式問句）",
+      "（現在完成問句）",
+      "（現在進行問句）"
+    ]
+  },
+  {
+    "sentence": "My uncle _____ to Japan four times, and he wants to go again next month.",
+    "options": [
+      "(A) goes",
+      "(B) went",
+      "(C) has been",
+      "(D) is going"
+    ],
+    "answer": 2,
+    "explanation": "four times 表示經驗次數，用現在完成式 has been to。",
+    "target_grammar": "現在完成式",
+    "id": "grammar_117",
+    "optionsZh": [
+      "（現在式）",
+      "（過去式）",
+      "（現在完成，曾經去過）",
+      "（現在進行式）"
+    ]
+  },
+  {
+    "sentence": "She _____ her purse, so she can't pay for the ticket now.",
+    "options": [
+      "(A) loses",
+      "(B) lost",
+      "(C) has lost",
+      "(D) is losing"
+    ],
+    "answer": 2,
+    "explanation": "動作結果影響到現在（現在無法付錢），用現在完成式 has lost。",
+    "target_grammar": "現在完成式",
+    "id": "grammar_118",
+    "optionsZh": [
+      "（現在式）",
+      "（過去式）",
+      "（現在完成，結果影響現在）",
+      "（現在進行式）"
+    ]
+  },
+  {
+    "sentence": "We _____ each other since we were in elementary school.",
+    "options": [
+      "(A) know",
+      "(B) knew",
+      "(C) have known",
+      "(D) are knowing"
+    ],
+    "answer": 2,
+    "explanation": "since 引導過去時間點，表示狀態持續至今，用現在完成式 have known。",
+    "target_grammar": "現在完成式",
+    "id": "grammar_119",
+    "optionsZh": [
+      "（現在式）",
+      "（過去式）",
+      "（現在完成式）",
+      "（現在進行式，誤，know不用進行式）"
+    ]
+  },
+  {
+    "sentence": "This bridge _____ over a hundred years ago, but it is still very strong today.",
+    "options": [
+      "(A) built",
+      "(B) was built",
+      "(C) builds",
+      "(D) has built"
+    ],
+    "answer": 1,
+    "explanation": "橋樑是被建造的對象，且為過去事件，用過去被動 was built。",
+    "target_grammar": "被動語態",
+    "id": "grammar_120",
+    "optionsZh": [
+      "（主動過去）",
+      "（被動過去）",
+      "（主動現在）",
+      "（主動完成）"
+    ]
+  },
+  {
+    "sentence": "The letters _____ by the postman every morning before eight o'clock.",
+    "options": [
+      "(A) deliver",
+      "(B) delivers",
+      "(C) are delivered",
+      "(D) delivered"
+    ],
+    "answer": 2,
+    "explanation": "letters 是動作的承受者，且為習慣性動作，用被動現在式 are delivered。",
+    "target_grammar": "被動語態",
+    "id": "grammar_121",
+    "optionsZh": [
+      "（主動原形）",
+      "（主動三單）",
+      "（被動現在式）",
+      "（主動過去式）"
+    ]
+  },
+  {
+    "sentence": "The new hospital _____ next year, according to the mayor's plan.",
+    "options": [
+      "(A) will build",
+      "(B) will be built",
+      "(C) builds",
+      "(D) is building"
+    ],
+    "answer": 1,
+    "explanation": "hospital 是被建造的對象，且為未來事件，用未來被動 will be built。",
+    "target_grammar": "被動語態",
+    "id": "grammar_122",
+    "optionsZh": [
+      "（未來主動，誤）",
+      "（未來被動）",
+      "（現在式）",
+      "（現在進行式）"
+    ]
+  },
+  {
+    "sentence": "My bike _____ while I was in the classroom yesterday.",
+    "options": [
+      "(A) stole",
+      "(B) was stolen",
+      "(C) steals",
+      "(D) has stolen"
+    ],
+    "answer": 1,
+    "explanation": "bike 是被偷的對象，且為過去事件，用過去被動 was stolen。",
+    "target_grammar": "被動語態",
+    "id": "grammar_123",
+    "optionsZh": [
+      "（主動過去，誤）",
+      "（被動過去）",
+      "（主動現在）",
+      "（主動完成）"
+    ]
+  },
+  {
+    "sentence": "This song _____ by a famous singer many years ago, and it is still popular today.",
+    "options": [
+      "(A) writes",
+      "(B) wrote",
+      "(C) was written",
+      "(D) is written"
+    ],
+    "answer": 2,
+    "explanation": "song 是被創作的對象，且為過去事件（many years ago），用過去被動 was written。",
+    "target_grammar": "被動語態",
+    "id": "grammar_124",
+    "optionsZh": [
+      "（主動現在）",
+      "（主動過去，誤）",
+      "（被動過去）",
+      "（被動現在）"
+    ]
+  },
+  {
+    "sentence": "English _____ in many countries around the world.",
+    "options": [
+      "(A) speaks",
+      "(B) is spoken",
+      "(C) speak",
+      "(D) spoke"
+    ],
+    "answer": 1,
+    "explanation": "English 是被使用的語言，描述普遍事實，用被動現在式 is spoken。",
+    "target_grammar": "被動語態",
+    "id": "grammar_125",
+    "optionsZh": [
+      "（主動三單，誤）",
+      "（被動現在）",
+      "（主動原形）",
+      "（主動過去）"
+    ]
+  },
+  {
+    "sentence": "The homework must _____ before Friday, or you will get a low score.",
+    "options": [
+      "(A) finish",
+      "(B) finished",
+      "(C) be finished",
+      "(D) finishing"
+    ],
+    "answer": 2,
+    "explanation": "homework 是被完成的對象，情態動詞 must 後接被動不定詞 be finished。",
+    "target_grammar": "被動語態",
+    "id": "grammar_126",
+    "optionsZh": [
+      "（主動原形，誤）",
+      "（過去式，誤）",
+      "（被動原形）",
+      "（動名詞，誤）"
+    ]
+  },
+  {
+    "sentence": "The window in our classroom _____ by someone before we came in this morning.",
+    "options": [
+      "(A) broke",
+      "(B) had been broken",
+      "(C) breaks",
+      "(D) is breaking"
+    ],
+    "answer": 1,
+    "explanation": "打破窗戶發生在「我們進教室之前」，且窗戶是被打破的對象，用過去完成被動 had been broken。",
+    "target_grammar": "被動語態",
+    "id": "grammar_127",
+    "optionsZh": [
+      "（主動過去，誤）",
+      "（被動過去完成）",
+      "（主動現在）",
+      "（主動進行）"
+    ]
+  },
+  {
+    "sentence": "The boy _____ sits next to me in class is very friendly.",
+    "options": [
+      "(A) whom",
+      "(B) who",
+      "(C) whose",
+      "(D) which"
+    ],
+    "answer": 1,
+    "explanation": "先行詞 boy 是人，在子句中當主詞，用主格關係代名詞 who。",
+    "target_grammar": "關係代名詞",
+    "id": "grammar_128",
+    "optionsZh": [
+      "（受格關代，人）",
+      "（主格關代，人）",
+      "（所有格關代）",
+      "（關代，指物）"
+    ]
+  },
+  {
+    "sentence": "I like books _____ have happy endings.",
+    "options": [
+      "(A) who",
+      "(B) whose",
+      "(C) which",
+      "(D) whom"
+    ],
+    "answer": 2,
+    "explanation": "先行詞 books 是物，在子句中當主詞，用 which。",
+    "target_grammar": "關係代名詞",
+    "id": "grammar_129",
+    "optionsZh": [
+      "（關代，指人）",
+      "（所有格關代）",
+      "（主格關代，指物）",
+      "（受格關代，指人）"
+    ]
+  },
+  {
+    "sentence": "The woman _____ is standing near the door is my aunt.",
+    "options": [
+      "(A) which",
+      "(B) who",
+      "(C) whom",
+      "(D) whose"
+    ],
+    "answer": 1,
+    "explanation": "先行詞 woman 是人且為子句主詞，用主格關代 who。",
+    "target_grammar": "關係代名詞",
+    "id": "grammar_130",
+    "optionsZh": [
+      "（關代，指物）",
+      "（主格關代，人）",
+      "（受格關代，人）",
+      "（所有格關代）"
+    ]
+  },
+  {
+    "sentence": "Students _____ study hard usually get good grades.",
+    "options": [
+      "(A) whom",
+      "(B) which",
+      "(C) who",
+      "(D) whose"
+    ],
+    "answer": 2,
+    "explanation": "先行詞 students 是人且為子句主詞，用主格關代 who。",
+    "target_grammar": "關係代名詞",
+    "id": "grammar_131",
+    "optionsZh": [
+      "（受格關代）",
+      "（關代指物）",
+      "（主格關代）",
+      "（所有格關代）"
+    ]
+  },
+  {
+    "sentence": "I have a dog _____ always makes me laugh.",
+    "options": [
+      "(A) who",
+      "(B) whom",
+      "(C) which",
+      "(D) whose"
+    ],
+    "answer": 2,
+    "explanation": "先行詞 dog 是動物（視為物），在子句中當主詞，用 which。",
+    "target_grammar": "關係代名詞",
+    "id": "grammar_132",
+    "optionsZh": [
+      "（關代指人）",
+      "（受格關代）",
+      "（主格關代指物）",
+      "（所有格關代）"
+    ]
+  },
+  {
+    "sentence": "The people _____ live next door are very kind.",
+    "options": [
+      "(A) which",
+      "(B) whose",
+      "(C) who",
+      "(D) whom"
+    ],
+    "answer": 2,
+    "explanation": "先行詞 people 是人且為子句主詞，用主格關代 who。",
+    "target_grammar": "關係代名詞",
+    "id": "grammar_133",
+    "optionsZh": [
+      "（關代指物）",
+      "（所有格關代）",
+      "（主格關代）",
+      "（受格關代）"
+    ]
+  },
+  {
+    "sentence": "The man _____ I met yesterday is a famous doctor.",
+    "options": [
+      "(A) who",
+      "(B) whom",
+      "(C) whose",
+      "(D) which"
+    ],
+    "answer": 1,
+    "explanation": "先行詞 man 是人，在子句中當受詞（I met him），用受格關代 whom。",
+    "target_grammar": "關係代名詞",
+    "id": "grammar_134",
+    "optionsZh": [
+      "（主格關代）",
+      "（受格關代，人）",
+      "（所有格關代）",
+      "（關代指物）"
+    ]
+  },
+  {
+    "sentence": "This is the movie _____ we watched last weekend.",
+    "options": [
+      "(A) who",
+      "(B) whose",
+      "(C) which",
+      "(D) whom"
+    ],
+    "answer": 2,
+    "explanation": "先行詞 movie 是物且在子句中當受詞，用 which。",
+    "target_grammar": "關係代名詞",
+    "id": "grammar_135",
+    "optionsZh": [
+      "（關代指人）",
+      "（所有格關代）",
+      "（受格關代，指物）",
+      "（受格關代，指人）"
+    ]
+  },
+  {
+    "sentence": "The teacher _____ the students respect most is Mr. Lin.",
+    "options": [
+      "(A) whose",
+      "(B) who",
+      "(C) whom",
+      "(D) where"
+    ],
+    "answer": 2,
+    "explanation": "先行詞 teacher 是人，在子句中當受詞（respect him），用受格關代 whom。",
+    "target_grammar": "關係代名詞",
+    "id": "grammar_136",
+    "optionsZh": [
+      "（所有格關代）",
+      "（主格關代）",
+      "（受格關代）",
+      "（關係副詞）"
+    ]
+  },
+  {
+    "sentence": "The song _____ I heard on the radio was very beautiful.",
+    "options": [
+      "(A) whom",
+      "(B) which",
+      "(C) who",
+      "(D) whose"
+    ],
+    "answer": 1,
+    "explanation": "先行詞 song 是物，在子句中當受詞，用 which。",
+    "target_grammar": "關係代名詞",
+    "id": "grammar_137",
+    "optionsZh": [
+      "（受格關代，指人）",
+      "（受格關代，指物）",
+      "（主格關代）",
+      "（所有格關代）"
+    ]
+  },
+  {
+    "sentence": "The girl _____ my brother likes lives in the next town.",
+    "options": [
+      "(A) which",
+      "(B) whose",
+      "(C) whom",
+      "(D) where"
+    ],
+    "answer": 2,
+    "explanation": "先行詞 girl 是人，在子句中當受詞（likes her），用受格關代 whom。",
+    "target_grammar": "關係代名詞",
+    "id": "grammar_138",
+    "optionsZh": [
+      "（關代指物）",
+      "（所有格關代）",
+      "（受格關代，指人）",
+      "（關係副詞）"
+    ]
+  },
+  {
+    "sentence": "That is the boy _____ father is a police officer.",
+    "options": [
+      "(A) who",
+      "(B) whom",
+      "(C) whose",
+      "(D) which"
+    ],
+    "answer": 2,
+    "explanation": "表示 boy 的 father，用所有格關係代名詞 whose。",
+    "target_grammar": "關係代名詞",
+    "id": "grammar_139",
+    "optionsZh": [
+      "（主格）",
+      "（受格）",
+      "（所有格關代）",
+      "（關代指物）"
+    ]
+  },
+  {
+    "sentence": "I know a family _____ house is next to the river.",
+    "options": [
+      "(A) which",
+      "(B) whose",
+      "(C) who",
+      "(D) whom"
+    ],
+    "answer": 1,
+    "explanation": "表示 family 的 house，用所有格關係代名詞 whose。",
+    "target_grammar": "關係代名詞",
+    "id": "grammar_140",
+    "optionsZh": [
+      "（關代指物）",
+      "（所有格關代）",
+      "（主格關代）",
+      "（受格關代）"
+    ]
+  },
+  {
+    "sentence": "The writer _____ novel won the prize will visit our school.",
+    "options": [
+      "(A) whom",
+      "(B) who",
+      "(C) whose",
+      "(D) which"
+    ],
+    "answer": 2,
+    "explanation": "表示 writer 的 novel，用所有格關係代名詞 whose。",
+    "target_grammar": "關係代名詞",
+    "id": "grammar_141",
+    "optionsZh": [
+      "（受格）",
+      "（主格）",
+      "（所有格）",
+      "（關代指物）"
+    ]
+  },
+  {
+    "sentence": "We helped a boy _____ bike was broken.",
+    "options": [
+      "(A) whose",
+      "(B) who",
+      "(C) whom",
+      "(D) which"
+    ],
+    "answer": 0,
+    "explanation": "表示 boy 的 bike，用所有格關係代名詞 whose。",
+    "target_grammar": "關係代名詞",
+    "id": "grammar_142",
+    "optionsZh": [
+      "（所有格關代）",
+      "（主格關代）",
+      "（受格關代）",
+      "（關代指物）"
+    ]
+  },
+  {
+    "sentence": "This is the park _____ we often play basketball.",
+    "options": [
+      "(A) which",
+      "(B) who",
+      "(C) where",
+      "(D) whom"
+    ],
+    "answer": 2,
+    "explanation": "先行詞 park 是地點，用關係副詞 where。",
+    "target_grammar": "關係副詞",
+    "id": "grammar_143",
+    "optionsZh": [
+      "（關代指物）",
+      "（關代指人）",
+      "（關係副詞，地點）",
+      "（受格關代）"
+    ]
+  },
+  {
+    "sentence": "I still remember the day _____ I first met you.",
+    "options": [
+      "(A) where",
+      "(B) when",
+      "(C) which",
+      "(D) who"
+    ],
+    "answer": 1,
+    "explanation": "先行詞 day 是時間，用關係副詞 when。",
+    "target_grammar": "關係副詞",
+    "id": "grammar_144",
+    "optionsZh": [
+      "（關係副詞，地點）",
+      "（關係副詞，時間）",
+      "（關代指物）",
+      "（關代指人）"
+    ]
+  },
+  {
+    "sentence": "Nobody knows the reason _____ he left the team suddenly.",
+    "options": [
+      "(A) when",
+      "(B) where",
+      "(C) why",
+      "(D) which"
+    ],
+    "answer": 2,
+    "explanation": "先行詞 reason，用關係副詞 why 說明原因。",
+    "target_grammar": "關係副詞",
+    "id": "grammar_145",
+    "optionsZh": [
+      "（關係副詞，時間）",
+      "（關係副詞，地點）",
+      "（關係副詞，原因）",
+      "（關代指物）"
+    ]
+  },
+  {
+    "sentence": "The town _____ my grandmother was born is very small.",
+    "options": [
+      "(A) which",
+      "(B) where",
+      "(C) who",
+      "(D) whom"
+    ],
+    "answer": 1,
+    "explanation": "先行詞 town 是地點，用關係副詞 where。",
+    "target_grammar": "關係副詞",
+    "id": "grammar_146",
+    "optionsZh": [
+      "（關代指物）",
+      "（關係副詞，地點）",
+      "（關代指人）",
+      "（受格關代）"
+    ]
+  },
+  {
+    "sentence": "I'll never forget the summer _____ we traveled around the island.",
+    "options": [
+      "(A) why",
+      "(B) where",
+      "(C) when",
+      "(D) which"
+    ],
+    "answer": 2,
+    "explanation": "先行詞 summer 是時間，用關係副詞 when。",
+    "target_grammar": "關係副詞",
+    "id": "grammar_147",
+    "optionsZh": [
+      "（關係副詞，原因）",
+      "（關係副詞，地點）",
+      "（關係副詞，時間）",
+      "（關代指物）"
+    ]
+  },
+  {
+    "sentence": "This exam is _____ than the last one, so study harder.",
+    "options": [
+      "(A) hard",
+      "(B) harder",
+      "(C) hardest",
+      "(D) more hard"
+    ],
+    "answer": 1,
+    "explanation": "than 表比較，hard 為單音節形容詞，比較級加 -er 為 harder。",
+    "target_grammar": "比較級",
+    "id": "grammar_148",
+    "optionsZh": [
+      "（原級）",
+      "（比較級）",
+      "（最高級）",
+      "（錯誤比較級）"
+    ]
+  },
+  {
+    "sentence": "My brother is _____ than me, so he can reach the top shelf.",
+    "options": [
+      "(A) tall",
+      "(B) taller",
+      "(C) tallest",
+      "(D) more tall"
+    ],
+    "answer": 1,
+    "explanation": "than 表比較，tall 為單音節形容詞，比較級加 -er。",
+    "target_grammar": "比較級",
+    "id": "grammar_149",
+    "optionsZh": [
+      "（原級）",
+      "（比較級）",
+      "（最高級）",
+      "（錯誤形式）"
+    ]
+  },
+  {
+    "sentence": "This question is _____ than that one, so let's answer it first.",
+    "options": [
+      "(A) easier",
+      "(B) easy",
+      "(C) more easy",
+      "(D) easiest"
+    ],
+    "answer": 0,
+    "explanation": "than 表比較，easy 去 y 加 ier 為 easier。",
+    "target_grammar": "比較級",
+    "id": "grammar_150",
+    "optionsZh": [
+      "（比較級）",
+      "（原級）",
+      "（錯誤比較級）",
+      "（最高級）"
+    ]
+  },
+  {
+    "sentence": "Health is _____ important than money in life.",
+    "options": [
+      "(A) more",
+      "(B) most",
+      "(C) much",
+      "(D) very"
+    ],
+    "answer": 0,
+    "explanation": "important 為多音節形容詞，比較級須用 more，配合 than。",
+    "target_grammar": "比較級",
+    "id": "grammar_151",
+    "optionsZh": [
+      "（比較級用法）",
+      "（最高級用法，誤）",
+      "（修飾詞，誤）",
+      "（修飾詞，誤）"
+    ]
+  },
+  {
+    "sentence": "The weather today is _____ than yesterday.",
+    "options": [
+      "(A) bad",
+      "(B) worse",
+      "(C) worst",
+      "(D) more bad"
+    ],
+    "answer": 1,
+    "explanation": "bad 的比較級為不規則變化 worse。",
+    "target_grammar": "比較級",
+    "id": "grammar_152",
+    "optionsZh": [
+      "（原級）",
+      "（不規則比較級）",
+      "（最高級）",
+      "（錯誤比較級）"
+    ]
+  },
+  {
+    "sentence": "This car is _____ expensive than that one, so I can't afford it.",
+    "options": [
+      "(A) much more",
+      "(B) very",
+      "(C) more much",
+      "(D) most"
+    ],
+    "answer": 0,
+    "explanation": "much 可修飾比較級表「更加」，expensive 為多音節須用 more expensive。",
+    "target_grammar": "比較級",
+    "id": "grammar_153",
+    "optionsZh": [
+      "（正確修飾比較級）",
+      "（修飾原級，誤）",
+      "（語序錯誤）",
+      "（最高級，誤）"
+    ]
+  },
+  {
+    "sentence": "This is _____ building in the whole city.",
+    "options": [
+      "(A) taller",
+      "(B) tall",
+      "(C) the tallest",
+      "(D) more tall"
+    ],
+    "answer": 2,
+    "explanation": "表示「全市中最高的」，用最高級 the tallest。",
+    "target_grammar": "最高級",
+    "id": "grammar_154",
+    "optionsZh": [
+      "（比較級）",
+      "（原級）",
+      "（最高級）",
+      "（錯誤形式）"
+    ]
+  },
+  {
+    "sentence": "Of all my classmates, Amy is _____ diligent.",
+    "options": [
+      "(A) more",
+      "(B) the most",
+      "(C) most",
+      "(D) much"
+    ],
+    "answer": 1,
+    "explanation": "diligent 為多音節形容詞，最高級須加 the most。",
+    "target_grammar": "最高級",
+    "id": "grammar_155",
+    "optionsZh": [
+      "（比較級用法）",
+      "（最高級用法）",
+      "（缺冠詞，誤）",
+      "（修飾詞，誤）"
+    ]
+  },
+  {
+    "sentence": "This is _____ book I have ever read.",
+    "options": [
+      "(A) interesting",
+      "(B) more interesting",
+      "(C) the most interesting",
+      "(D) most interesting"
+    ],
+    "answer": 2,
+    "explanation": "ever 配合最高級表「有史以來最…」，須加 the。",
+    "target_grammar": "最高級",
+    "id": "grammar_156",
+    "optionsZh": [
+      "（原級）",
+      "（比較級）",
+      "（最高級，正確）",
+      "（缺冠詞，誤）"
+    ]
+  },
+  {
+    "sentence": "Mount Jade is _____ mountain in Taiwan.",
+    "options": [
+      "(A) high",
+      "(B) higher",
+      "(C) the highest",
+      "(D) more high"
+    ],
+    "answer": 2,
+    "explanation": "表示「台灣最高的山」，用最高級 the highest。",
+    "target_grammar": "最高級",
+    "id": "grammar_157",
+    "optionsZh": [
+      "（原級）",
+      "（比較級）",
+      "（最高級）",
+      "（錯誤形式）"
+    ]
+  },
+  {
+    "sentence": "Who is _____ runner on the team?",
+    "options": [
+      "(A) fast",
+      "(B) faster",
+      "(C) the fastest",
+      "(D) more fast"
+    ],
+    "answer": 2,
+    "explanation": "詢問「隊上最快的人」，用最高級 the fastest。",
+    "target_grammar": "最高級",
+    "id": "grammar_158",
+    "optionsZh": [
+      "（原級）",
+      "（比較級）",
+      "（最高級）",
+      "（錯誤形式）"
+    ]
+  },
+  {
+    "sentence": "This bag is as _____ as that one, so they cost the same.",
+    "options": [
+      "(A) heavy",
+      "(B) heavier",
+      "(C) heaviest",
+      "(D) more heavy"
+    ],
+    "answer": 0,
+    "explanation": "as...as 句型中間須用形容詞原級 heavy。",
+    "target_grammar": "原級比較",
+    "id": "grammar_159",
+    "optionsZh": [
+      "（原級，正確）",
+      "（比較級）",
+      "（最高級）",
+      "（錯誤比較級）"
+    ]
+  },
+  {
+    "sentence": "My sister can run as _____ as I can.",
+    "options": [
+      "(A) faster",
+      "(B) fast",
+      "(C) fastest",
+      "(D) more fast"
+    ],
+    "answer": 1,
+    "explanation": "as...as 句型中間須用副詞原級 fast。",
+    "target_grammar": "原級比較",
+    "id": "grammar_160",
+    "optionsZh": [
+      "（比較級）",
+      "（原級）",
+      "（最高級）",
+      "（錯誤形式）"
+    ]
+  },
+  {
+    "sentence": "This lake is not as _____ as that one.",
+    "options": [
+      "(A) deep",
+      "(B) deeper",
+      "(C) deepest",
+      "(D) more deep"
+    ],
+    "answer": 0,
+    "explanation": "not as...as 句型中間用形容詞原級 deep。",
+    "target_grammar": "原級比較",
+    "id": "grammar_161",
+    "optionsZh": [
+      "（原級）",
+      "（比較級）",
+      "（最高級）",
+      "（錯誤形式）"
+    ]
+  },
+  {
+    "sentence": "Please try to be as _____ as possible when you take the exam.",
+    "options": [
+      "(A) careful",
+      "(B) more careful",
+      "(C) carefully",
+      "(D) most careful"
+    ],
+    "answer": 0,
+    "explanation": "as...as possible 中間須用形容詞原級 careful。",
+    "target_grammar": "原級比較",
+    "id": "grammar_162",
+    "optionsZh": [
+      "（原級形容詞）",
+      "（比較級）",
+      "（副詞形式，誤）",
+      "（最高級）"
+    ]
+  },
+  {
+    "sentence": "If it _____ tomorrow, we will stay home and watch movies.",
+    "options": [
+      "(A) rains",
+      "(B) will rain",
+      "(C) rained",
+      "(D) is raining"
+    ],
+    "answer": 0,
+    "explanation": "第一類條件句，if 子句用現在式表未來，主要子句才用 will。",
+    "target_grammar": "條件句",
+    "id": "grammar_163",
+    "optionsZh": [
+      "（現在式，正確）",
+      "（未來式，誤）",
+      "（過去式，誤）",
+      "（現在進行式，誤）"
+    ]
+  },
+  {
+    "sentence": "If you _____ hard, you will pass the exam.",
+    "options": [
+      "(A) will study",
+      "(B) study",
+      "(C) studied",
+      "(D) have studied"
+    ],
+    "answer": 1,
+    "explanation": "if 子句用現在簡單式，主要子句用 will + 原形動詞表未來結果。",
+    "target_grammar": "條件句",
+    "id": "grammar_164",
+    "optionsZh": [
+      "（未來式，誤）",
+      "（現在式）",
+      "（過去式）",
+      "（現在完成式）"
+    ]
+  },
+  {
+    "sentence": "We will go to the beach if the weather _____ nice this weekend.",
+    "options": [
+      "(A) is",
+      "(B) will be",
+      "(C) was",
+      "(D) has been"
+    ],
+    "answer": 0,
+    "explanation": "if 子句表示條件用現在式 is，主要子句用 will go。",
+    "target_grammar": "條件句",
+    "id": "grammar_165",
+    "optionsZh": [
+      "（現在式）",
+      "（未來式，誤）",
+      "（過去式）",
+      "（現在完成式）"
+    ]
+  },
+  {
+    "sentence": "If you _____ me, I will help you with your homework.",
+    "options": [
+      "(A) asked",
+      "(B) will ask",
+      "(C) ask",
+      "(D) have asked"
+    ],
+    "answer": 2,
+    "explanation": "if 子句用現在式 ask，配合主要子句 will help。",
+    "target_grammar": "條件句",
+    "id": "grammar_166",
+    "optionsZh": [
+      "（過去式）",
+      "（未來式，誤）",
+      "（現在式）",
+      "（現在完成式）"
+    ]
+  },
+  {
+    "sentence": "She will be very happy if she _____ the singing contest.",
+    "options": [
+      "(A) wins",
+      "(B) will win",
+      "(C) won",
+      "(D) is winning"
+    ],
+    "answer": 0,
+    "explanation": "if 子句用現在式 wins，表示未來的可能條件。",
+    "target_grammar": "條件句",
+    "id": "grammar_167",
+    "optionsZh": [
+      "（現在式）",
+      "（未來式，誤）",
+      "（過去式）",
+      "（現在進行式）"
+    ]
+  },
+  {
+    "sentence": "If it doesn't rain, we _____ a picnic in the park tomorrow.",
+    "options": [
+      "(A) have",
+      "(B) had",
+      "(C) will have",
+      "(D) are having"
+    ],
+    "answer": 2,
+    "explanation": "主要子句表示未來結果，用 will + 原形動詞。",
+    "target_grammar": "條件句",
+    "id": "grammar_168",
+    "optionsZh": [
+      "（現在式，誤）",
+      "（過去式，誤）",
+      "（未來式）",
+      "（現在進行式，誤）"
+    ]
+  },
+  {
+    "sentence": "If I _____ a bird, I would fly around the world.",
+    "options": [
+      "(A) am",
+      "(B) were",
+      "(C) was",
+      "(D) will be"
+    ],
+    "answer": 1,
+    "explanation": "與現在事實相反的假設，if 子句的 be 動詞一律用 were。",
+    "target_grammar": "假設語氣",
+    "id": "grammar_169",
+    "optionsZh": [
+      "（現在式，誤）",
+      "（假設語氣過去式）",
+      "（口語過去式，誤）",
+      "（未來式，誤）"
+    ]
+  },
+  {
+    "sentence": "If she had more time, she _____ learn to play the guitar.",
+    "options": [
+      "(A) will",
+      "(B) would",
+      "(C) can",
+      "(D) must"
+    ],
+    "answer": 1,
+    "explanation": "與現在事實相反的假設句，主要子句用 would + 原形動詞。",
+    "target_grammar": "假設語氣",
+    "id": "grammar_170",
+    "optionsZh": [
+      "（未來式助動詞，誤）",
+      "（假設語氣助動詞）",
+      "（情態動詞，誤）",
+      "（情態動詞，誤）"
+    ]
+  },
+  {
+    "sentence": "If I were you, I _____ apologize to her right away.",
+    "options": [
+      "(A) will",
+      "(B) would",
+      "(C) am",
+      "(D) do"
+    ],
+    "answer": 1,
+    "explanation": "If I were you 為典型假設語氣，主要子句用 would。",
+    "target_grammar": "假設語氣",
+    "id": "grammar_171",
+    "optionsZh": [
+      "（未來式，誤）",
+      "（假設語氣）",
+      "（現在式，誤）",
+      "（現在式，誤）"
+    ]
+  },
+  {
+    "sentence": "If he _____ harder, he would win the race.",
+    "options": [
+      "(A) practices",
+      "(B) practiced",
+      "(C) will practice",
+      "(D) has practiced"
+    ],
+    "answer": 1,
+    "explanation": "與現在事實相反的假設句，if 子句動詞須用過去式。",
+    "target_grammar": "假設語氣",
+    "id": "grammar_172",
+    "optionsZh": [
+      "（現在式，誤）",
+      "（假設語氣過去式）",
+      "（未來式，誤）",
+      "（現在完成式，誤）"
+    ]
+  },
+  {
+    "sentence": "If we had a bigger kitchen, we _____ cook more often.",
+    "options": [
+      "(A) would",
+      "(B) will",
+      "(C) can",
+      "(D) must"
+    ],
+    "answer": 0,
+    "explanation": "與現在事實相反的假設，主要子句用 would + 原形動詞。",
+    "target_grammar": "假設語氣",
+    "id": "grammar_173",
+    "optionsZh": [
+      "（假設語氣）",
+      "（未來式，誤）",
+      "（情態動詞，誤）",
+      "（情態動詞，誤）"
+    ]
+  },
+  {
+    "sentence": "What would you do if you _____ a million dollars?",
+    "options": [
+      "(A) have",
+      "(B) had",
+      "(C) will have",
+      "(D) has"
+    ],
+    "answer": 1,
+    "explanation": "與現在事實相反的假設句，if 子句用過去式 had。",
+    "target_grammar": "假設語氣",
+    "id": "grammar_174",
+    "optionsZh": [
+      "（現在式，誤）",
+      "（假設語氣過去式）",
+      "（未來式，誤）",
+      "（三單現在式，誤）"
+    ]
+  },
+  {
+    "sentence": "I wish I _____ taller, but I am the shortest in my class.",
+    "options": [
+      "(A) am",
+      "(B) was",
+      "(C) were",
+      "(D) will be"
+    ],
+    "answer": 2,
+    "explanation": "wish 後接與現在事實相反的假設，be 動詞一律用 were。",
+    "target_grammar": "假設語氣",
+    "id": "grammar_175",
+    "optionsZh": [
+      "（現在式，誤）",
+      "（口語過去式，誤）",
+      "（假設語氣）",
+      "（未來式，誤）"
+    ]
+  },
+  {
+    "sentence": "She wishes she _____ more free time to travel.",
+    "options": [
+      "(A) has",
+      "(B) had",
+      "(C) will have",
+      "(D) have"
+    ],
+    "answer": 1,
+    "explanation": "wish 後表示與現在事實相反的願望，動詞用過去式 had。",
+    "target_grammar": "假設語氣",
+    "id": "grammar_176",
+    "optionsZh": [
+      "（現在式，誤）",
+      "（假設語氣過去式）",
+      "（未來式，誤）",
+      "（原形，誤）"
+    ]
+  },
+  {
+    "sentence": "I wish I _____ speak French fluently.",
+    "options": [
+      "(A) can",
+      "(B) could",
+      "(C) will",
+      "(D) may"
+    ],
+    "answer": 1,
+    "explanation": "wish 後表達與現在事實相反的願望，情態動詞用過去式 could。",
+    "target_grammar": "假設語氣",
+    "id": "grammar_177",
+    "optionsZh": [
+      "（現在式情態動詞，誤）",
+      "（假設語氣情態動詞）",
+      "（未來式，誤）",
+      "（現在式情態動詞，誤）"
+    ]
+  },
+  {
+    "sentence": "He wishes he _____ so much candy when he was young.",
+    "options": [
+      "(A) doesn't eat",
+      "(B) didn't eat",
+      "(C) hadn't eaten",
+      "(D) hasn't eaten"
+    ],
+    "answer": 2,
+    "explanation": "wish 後接與過去事實相反的假設時，用過去完成式 hadn't eaten。",
+    "target_grammar": "假設語氣",
+    "id": "grammar_178",
+    "optionsZh": [
+      "（現在式否定，誤）",
+      "（過去式否定，誤）",
+      "（與過去事實相反假設）",
+      "（現在完成否定，誤）"
+    ]
+  },
+  {
+    "sentence": "By the time I arrived at the station, the train _____ already left.",
+    "options": [
+      "(A) has",
+      "(B) had",
+      "(C) was",
+      "(D) is"
+    ],
+    "answer": 1,
+    "explanation": "過去某時間點之前已完成的動作，用過去完成式 had left。",
+    "target_grammar": "過去完成式",
+    "id": "grammar_179",
+    "optionsZh": [
+      "（現在完成式，誤）",
+      "（過去完成式）",
+      "（過去式be動詞，誤）",
+      "（現在式，誤）"
+    ]
+  },
+  {
+    "sentence": "When I got home, I found that someone _____ the window.",
+    "options": [
+      "(A) breaks",
+      "(B) broke",
+      "(C) had broken",
+      "(D) has broken"
+    ],
+    "answer": 2,
+    "explanation": "打破窗戶發生在「回家發現」之前，用過去完成式 had broken。",
+    "target_grammar": "過去完成式",
+    "id": "grammar_180",
+    "optionsZh": [
+      "（現在式，誤）",
+      "（過去式，誤）",
+      "（過去完成式）",
+      "（現在完成式，誤）"
+    ]
+  },
+  {
+    "sentence": "She _____ finished her dinner before her mother came home.",
+    "options": [
+      "(A) has",
+      "(B) had",
+      "(C) was",
+      "(D) is"
+    ],
+    "answer": 1,
+    "explanation": "吃完晚餐發生在媽媽回家之前，用過去完成式 had finished。",
+    "target_grammar": "過去完成式",
+    "id": "grammar_181",
+    "optionsZh": [
+      "（現在完成，誤）",
+      "（過去完成式）",
+      "（過去式，誤）",
+      "（現在式，誤）"
+    ]
+  },
+  {
+    "sentence": "The movie _____ already started when we got to the theater.",
+    "options": [
+      "(A) has",
+      "(B) had",
+      "(C) is",
+      "(D) was"
+    ],
+    "answer": 1,
+    "explanation": "電影開演發生在「到達戲院」之前，用過去完成式 had started。",
+    "target_grammar": "過去完成式",
+    "id": "grammar_182",
+    "optionsZh": [
+      "（現在完成，誤）",
+      "（過去完成式）",
+      "（現在式，誤）",
+      "（過去式be動詞，誤）"
+    ]
+  },
+  {
+    "sentence": "I had never seen snow before I _____ to Japan last winter.",
+    "options": [
+      "(A) travel",
+      "(B) traveled",
+      "(C) had traveled",
+      "(D) have traveled"
+    ],
+    "answer": 1,
+    "explanation": "主要子句已用過去完成式 had seen，附屬子句表示單一過去動作，用過去式 traveled。",
+    "target_grammar": "過去完成式",
+    "id": "grammar_183",
+    "optionsZh": [
+      "（現在式，誤）",
+      "（過去式）",
+      "（過去完成式，誤）",
+      "（現在完成式，誤）"
+    ]
+  },
+  {
+    "sentence": "I _____ this book for two weeks, and I am almost finished.",
+    "options": [
+      "(A) read",
+      "(B) am reading",
+      "(C) have been reading",
+      "(D) have read"
+    ],
+    "answer": 2,
+    "explanation": "for + 一段時間，強調動作持續進行至今，用現在完成進行式 have been reading。",
+    "target_grammar": "現在完成進行式",
+    "id": "grammar_184",
+    "optionsZh": [
+      "（過去式）",
+      "（現在進行式）",
+      "（現在完成進行式）",
+      "（現在完成式）"
+    ]
+  },
+  {
+    "sentence": "It _____ raining since this morning, so the ground is still wet.",
+    "options": [
+      "(A) rains",
+      "(B) rained",
+      "(C) is raining",
+      "(D) has been raining"
+    ],
+    "answer": 3,
+    "explanation": "since + 時間點，強調動作持續至今，用現在完成進行式 has been raining。",
+    "target_grammar": "現在完成進行式",
+    "id": "grammar_185",
+    "optionsZh": [
+      "（現在式，誤）",
+      "（過去式，誤）",
+      "（現在進行式，誤）",
+      "（現在完成進行式）"
+    ]
+  },
+  {
+    "sentence": "They _____ for the bus for twenty minutes, and it still hasn't come.",
+    "options": [
+      "(A) wait",
+      "(B) waited",
+      "(C) have been waiting",
+      "(D) have waited"
+    ],
+    "answer": 2,
+    "explanation": "for + 一段時間，強調持續動作，用現在完成進行式 have been waiting。",
+    "target_grammar": "現在完成進行式",
+    "id": "grammar_186",
+    "optionsZh": [
+      "（現在式）",
+      "（過去式）",
+      "（現在完成進行式）",
+      "（現在完成式）"
+    ]
+  },
+  {
+    "sentence": "My eyes are tired because I _____ at the computer all afternoon.",
+    "options": [
+      "(A) look",
+      "(B) looked",
+      "(C) have been looking",
+      "(D) had looked"
+    ],
+    "answer": 2,
+    "explanation": "all afternoon 強調持續到現在的動作，用現在完成進行式 have been looking。",
+    "target_grammar": "現在完成進行式",
+    "id": "grammar_187",
+    "optionsZh": [
+      "（現在式）",
+      "（過去式）",
+      "（現在完成進行式）",
+      "（過去完成式，誤）"
+    ]
+  },
+  {
+    "sentence": "I _____ my bike when it suddenly started to rain.",
+    "options": [
+      "(A) ride",
+      "(B) rode",
+      "(C) was riding",
+      "(D) have ridden"
+    ],
+    "answer": 2,
+    "explanation": "when 引導的過去單一動作打斷正在進行的動作，用過去進行式 was riding。",
+    "target_grammar": "過去進行式",
+    "id": "grammar_188",
+    "optionsZh": [
+      "（現在式）",
+      "（過去式）",
+      "（過去進行式）",
+      "（現在完成式）"
+    ]
+  },
+  {
+    "sentence": "What _____ you doing at eight o'clock last night?",
+    "options": [
+      "(A) are",
+      "(B) were",
+      "(C) do",
+      "(D) did"
+    ],
+    "answer": 1,
+    "explanation": "描述過去某特定時刻正在進行的動作，用過去進行式 were doing。",
+    "target_grammar": "過去進行式",
+    "id": "grammar_189",
+    "optionsZh": [
+      "（現在式be動詞）",
+      "（過去進行式be動詞）",
+      "（現在式助動詞）",
+      "（過去式助動詞）"
+    ]
+  },
+  {
+    "sentence": "While she _____ dinner, her phone rang.",
+    "options": [
+      "(A) cooks",
+      "(B) cooked",
+      "(C) was cooking",
+      "(D) has cooked"
+    ],
+    "answer": 2,
+    "explanation": "while 表示正在進行的背景動作被另一動作打斷，用過去進行式 was cooking。",
+    "target_grammar": "過去進行式",
+    "id": "grammar_190",
+    "optionsZh": [
+      "（現在式）",
+      "（過去式）",
+      "（過去進行式）",
+      "（現在完成式）"
+    ]
+  },
+  {
+    "sentence": "The children _____ in the park when it began to snow.",
+    "options": [
+      "(A) play",
+      "(B) played",
+      "(C) were playing",
+      "(D) have played"
+    ],
+    "answer": 2,
+    "explanation": "過去某時刻正在進行的動作被另一過去動作打斷，用過去進行式。",
+    "target_grammar": "過去進行式",
+    "id": "grammar_191",
+    "optionsZh": [
+      "（現在式）",
+      "（過去式）",
+      "（過去進行式）",
+      "（現在完成式）"
+    ]
+  },
+  {
+    "sentence": "I _____ TV when the lights suddenly went out.",
+    "options": [
+      "(A) watch",
+      "(B) watched",
+      "(C) was watching",
+      "(D) have watched"
+    ],
+    "answer": 2,
+    "explanation": "過去進行式表示動作正在進行時被打斷。",
+    "target_grammar": "過去進行式",
+    "id": "grammar_192",
+    "optionsZh": [
+      "（現在式）",
+      "（過去式）",
+      "（過去進行式）",
+      "（現在完成式）"
+    ]
+  },
+  {
+    "sentence": "Look at those dark clouds! It _____ soon.",
+    "options": [
+      "(A) rains",
+      "(B) will rain",
+      "(C) is going to rain",
+      "(D) rained"
+    ],
+    "answer": 2,
+    "explanation": "根據現在的跡象（烏雲）預測即將發生的事，用 be going to。",
+    "target_grammar": "未來式",
+    "id": "grammar_193",
+    "optionsZh": [
+      "（現在式，誤）",
+      "（未來式will，較不合語境）",
+      "（be going to未來式）",
+      "（過去式，誤）"
+    ]
+  },
+  {
+    "sentence": "I _____ my grandparents this weekend; I've already bought the train tickets.",
+    "options": [
+      "(A) visit",
+      "(B) am going to visit",
+      "(C) visited",
+      "(D) will visit"
+    ],
+    "answer": 1,
+    "explanation": "已經買好車票，表示事先計畫好的未來，用 be going to。",
+    "target_grammar": "未來式",
+    "id": "grammar_194",
+    "optionsZh": [
+      "（現在式，誤）",
+      "（事先計畫的未來）",
+      "（過去式，誤）",
+      "（臨時決定的未來，較不合）"
+    ]
+  },
+  {
+    "sentence": "A: The phone is ringing. B: I _____ it.",
+    "options": [
+      "(A) answer",
+      "(B) answered",
+      "(C) am answering",
+      "(D) will answer"
+    ],
+    "answer": 3,
+    "explanation": "當下臨時決定的未來動作，用 will。",
+    "target_grammar": "未來式",
+    "id": "grammar_195",
+    "optionsZh": [
+      "（現在式，誤）",
+      "（過去式，誤）",
+      "（現在進行式，誤）",
+      "（臨時決定的未來）"
+    ]
+  },
+  {
+    "sentence": "The train _____ at nine o'clock tomorrow morning.",
+    "options": [
+      "(A) leaves",
+      "(B) left",
+      "(C) is leaving",
+      "(D) has left"
+    ],
+    "answer": 0,
+    "explanation": "表示按照時刻表安排的未來，可用現在簡單式表示排定的未來。",
+    "target_grammar": "未來式",
+    "id": "grammar_196",
+    "optionsZh": [
+      "（現在式表排定未來）",
+      "（過去式，誤）",
+      "（現在進行式，較不合）",
+      "（現在完成式，誤）"
+    ]
+  },
+  {
+    "sentence": "Next year, my sister _____ college, so our house will be quieter.",
+    "options": [
+      "(A) enters",
+      "(B) entered",
+      "(C) will enter",
+      "(D) has entered"
+    ],
+    "answer": 2,
+    "explanation": "next year 表示未來時間，用未來式 will enter。",
+    "target_grammar": "未來式",
+    "id": "grammar_197",
+    "optionsZh": [
+      "（現在式，誤）",
+      "（過去式，誤）",
+      "（未來式）",
+      "（現在完成式，誤）"
+    ]
+  },
+  {
+    "sentence": "We _____ a party for my mother's birthday next Saturday.",
+    "options": [
+      "(A) have",
+      "(B) had",
+      "(C) are going to have",
+      "(D) have had"
+    ],
+    "answer": 2,
+    "explanation": "事先計畫好的未來活動，用 be going to。",
+    "target_grammar": "未來式",
+    "id": "grammar_198",
+    "optionsZh": [
+      "（現在式，誤）",
+      "（過去式，誤）",
+      "（be going to未來式）",
+      "（現在完成式，誤）"
+    ]
+  },
+  {
+    "sentence": "Please be quiet. My father _____ on the phone right now.",
+    "options": [
+      "(A) talks",
+      "(B) talked",
+      "(C) is talking",
+      "(D) has talked"
+    ],
+    "answer": 2,
+    "explanation": "right now 表示此刻正在進行的動作，用現在進行式。",
+    "target_grammar": "現在進行式",
+    "id": "grammar_199",
+    "optionsZh": [
+      "（現在簡單式，誤）",
+      "（過去式，誤）",
+      "（現在進行式）",
+      "（現在完成式，誤）"
+    ]
+  },
+  {
+    "sentence": "The sun _____ in the east every morning.",
+    "options": [
+      "(A) rises",
+      "(B) is rising",
+      "(C) rose",
+      "(D) has risen"
+    ],
+    "answer": 0,
+    "explanation": "描述恆常不變的自然現象，用現在簡單式 rises。",
+    "target_grammar": "現在簡單式",
+    "id": "grammar_200",
+    "optionsZh": [
+      "（現在簡單式，正確）",
+      "（現在進行式，誤）",
+      "（過去式，誤）",
+      "（現在完成式，誤）"
+    ]
+  },
+  {
+    "sentence": "Look! The dog _____ after its own tail again.",
+    "options": [
+      "(A) runs",
+      "(B) is running",
+      "(C) ran",
+      "(D) has run"
+    ],
+    "answer": 1,
+    "explanation": "Look 提示此刻正在發生的動作，用現在進行式。",
+    "target_grammar": "現在進行式",
+    "id": "grammar_201",
+    "optionsZh": [
+      "（現在簡單式，誤）",
+      "（現在進行式）",
+      "（過去式，誤）",
+      "（現在完成式，誤）"
+    ]
+  },
+  {
+    "sentence": "My mother usually _____ breakfast for the whole family.",
+    "options": [
+      "(A) is cooking",
+      "(B) cooks",
+      "(C) cooked",
+      "(D) has cooked"
+    ],
+    "answer": 1,
+    "explanation": "usually 表示習慣性動作，用現在簡單式 cooks。",
+    "target_grammar": "現在簡單式",
+    "id": "grammar_202",
+    "optionsZh": [
+      "（現在進行式，誤）",
+      "（現在簡單式）",
+      "（過去式，誤）",
+      "（現在完成式，誤）"
+    ]
+  },
+  {
+    "sentence": "My father enjoys _____ in the garden every weekend.",
+    "options": [
+      "(A) work",
+      "(B) to work",
+      "(C) working",
+      "(D) worked"
+    ],
+    "answer": 2,
+    "explanation": "enjoy 後接動名詞當受詞，故用 working。",
+    "target_grammar": "動名詞",
+    "id": "grammar_203",
+    "optionsZh": [
+      "（原形）",
+      "（不定詞）",
+      "（動名詞）",
+      "（過去式）"
+    ]
+  },
+  {
+    "sentence": "She finished _____ her homework before dinner.",
+    "options": [
+      "(A) do",
+      "(B) to do",
+      "(C) doing",
+      "(D) did"
+    ],
+    "answer": 2,
+    "explanation": "finish 後須接動名詞當受詞，故用 doing。",
+    "target_grammar": "動名詞",
+    "id": "grammar_204",
+    "optionsZh": [
+      "（原形）",
+      "（不定詞）",
+      "（動名詞）",
+      "（過去式）"
+    ]
+  },
+  {
+    "sentence": "_____ vegetables every day is good for your health.",
+    "options": [
+      "(A) Eat",
+      "(B) To eat",
+      "(C) Eating",
+      "(D) Ate"
+    ],
+    "answer": 2,
+    "explanation": "動名詞可當句子主詞，此處用 Eating。",
+    "target_grammar": "動名詞",
+    "id": "grammar_205",
+    "optionsZh": [
+      "（原形，誤）",
+      "（不定詞當主詞，非本題答案）",
+      "（動名詞當主詞）",
+      "（過去式，誤）"
+    ]
+  },
+  {
+    "sentence": "He is good at _____ pictures with his phone.",
+    "options": [
+      "(A) take",
+      "(B) to take",
+      "(C) taking",
+      "(D) took"
+    ],
+    "answer": 2,
+    "explanation": "介系詞 at 後面須接動名詞，故用 taking。",
+    "target_grammar": "動名詞",
+    "id": "grammar_206",
+    "optionsZh": [
+      "（原形）",
+      "（不定詞）",
+      "（動名詞）",
+      "（過去式）"
+    ]
+  },
+  {
+    "sentence": "Would you mind _____ the window? It's a bit cold in here.",
+    "options": [
+      "(A) close",
+      "(B) to close",
+      "(C) closing",
+      "(D) closed"
+    ],
+    "answer": 2,
+    "explanation": "mind 後面須接動名詞當受詞，故用 closing。",
+    "target_grammar": "動名詞",
+    "id": "grammar_207",
+    "optionsZh": [
+      "（原形）",
+      "（不定詞）",
+      "（動名詞）",
+      "（過去分詞）"
+    ]
+  },
+  {
+    "sentence": "I am thinking about _____ a new bike for my birthday.",
+    "options": [
+      "(A) buy",
+      "(B) to buy",
+      "(C) buying",
+      "(D) bought"
+    ],
+    "answer": 2,
+    "explanation": "介系詞 about 後接動名詞，故用 buying。",
+    "target_grammar": "動名詞",
+    "id": "grammar_208",
+    "optionsZh": [
+      "（原形）",
+      "（不定詞）",
+      "（動名詞）",
+      "（過去式）"
+    ]
+  },
+  {
+    "sentence": "I want _____ a doctor when I grow up.",
+    "options": [
+      "(A) become",
+      "(B) to become",
+      "(C) becoming",
+      "(D) became"
+    ],
+    "answer": 1,
+    "explanation": "want 後面須接不定詞 to V 當受詞。",
+    "target_grammar": "不定詞",
+    "id": "grammar_209",
+    "optionsZh": [
+      "（原形）",
+      "（不定詞）",
+      "（動名詞）",
+      "（過去式）"
+    ]
+  },
+  {
+    "sentence": "She decided _____ harder for the coming exam.",
+    "options": [
+      "(A) study",
+      "(B) studying",
+      "(C) to study",
+      "(D) studied"
+    ],
+    "answer": 2,
+    "explanation": "decide 後面須接不定詞 to V。",
+    "target_grammar": "不定詞",
+    "id": "grammar_210",
+    "optionsZh": [
+      "（原形）",
+      "（動名詞）",
+      "（不定詞）",
+      "（過去式）"
+    ]
+  },
+  {
+    "sentence": "It is important for students _____ enough sleep every night.",
+    "options": [
+      "(A) drink",
+      "(B) to drink",
+      "(C) drinking",
+      "(D) drank"
+    ],
+    "answer": 1,
+    "explanation": "It is + 形容詞 + to V 為固定句型，用不定詞。",
+    "target_grammar": "不定詞",
+    "id": "grammar_211",
+    "optionsZh": [
+      "（原形）",
+      "（不定詞）",
+      "（動名詞）",
+      "（過去式）"
+    ]
+  },
+  {
+    "sentence": "My parents told me _____ home before dark.",
+    "options": [
+      "(A) come",
+      "(B) coming",
+      "(C) came",
+      "(D) to come"
+    ],
+    "answer": 3,
+    "explanation": "tell + 受詞 + to V，表示要求對方做某事。",
+    "target_grammar": "不定詞",
+    "id": "grammar_212",
+    "optionsZh": [
+      "（原形）",
+      "（動名詞）",
+      "（過去式）",
+      "（不定詞）"
+    ]
+  },
+  {
+    "sentence": "We were happy _____ the good news from our teacher.",
+    "options": [
+      "(A) hear",
+      "(B) to hear",
+      "(C) hearing",
+      "(D) heard"
+    ],
+    "answer": 1,
+    "explanation": "情緒形容詞（happy）後常接不定詞 to V 表原因。",
+    "target_grammar": "不定詞",
+    "id": "grammar_213",
+    "optionsZh": [
+      "（原形）",
+      "（不定詞，表原因）",
+      "（動名詞）",
+      "（過去式）"
+    ]
+  },
+  {
+    "sentence": "He worked hard _____ enough money for the trip.",
+    "options": [
+      "(A) save",
+      "(B) saving",
+      "(C) to save",
+      "(D) saved"
+    ],
+    "answer": 2,
+    "explanation": "不定詞可表示目的「為了…」，故用 to save。",
+    "target_grammar": "不定詞",
+    "id": "grammar_214",
+    "optionsZh": [
+      "（原形）",
+      "（動名詞）",
+      "（不定詞表目的）",
+      "（過去式）"
+    ]
+  },
+  {
+    "sentence": "Don't forget _____ the lights off before you leave the room.",
+    "options": [
+      "(A) turning",
+      "(B) to turn",
+      "(C) turn",
+      "(D) turned"
+    ],
+    "answer": 1,
+    "explanation": "forget to V 表示「忘記將要做的事」，故用 to turn。",
+    "target_grammar": "動名詞與不定詞辨析",
+    "id": "grammar_215",
+    "optionsZh": [
+      "（動名詞，表已做過的事，誤）",
+      "（不定詞，表尚未做的事）",
+      "（原形）",
+      "（過去式）"
+    ]
+  },
+  {
+    "sentence": "I remember _____ this movie with my family last year.",
+    "options": [
+      "(A) to watch",
+      "(B) watching",
+      "(C) watch",
+      "(D) watched"
+    ],
+    "answer": 1,
+    "explanation": "remember + V-ing 表示「記得已做過的事」。",
+    "target_grammar": "動名詞與不定詞辨析",
+    "id": "grammar_216",
+    "optionsZh": [
+      "（不定詞，表尚未做，誤）",
+      "（動名詞，表已做過）",
+      "（原形）",
+      "（過去式）"
+    ]
+  },
+  {
+    "sentence": "Please stop _____ during the movie; it's disturbing others.",
+    "options": [
+      "(A) to talk",
+      "(B) talk",
+      "(C) talking",
+      "(D) talked"
+    ],
+    "answer": 2,
+    "explanation": "stop + V-ing 表示「停止正在做的事」。",
+    "target_grammar": "動名詞與不定詞辨析",
+    "id": "grammar_217",
+    "optionsZh": [
+      "（不定詞，表停下來去做，誤）",
+      "（原形）",
+      "（動名詞，表停止動作）",
+      "（過去式）"
+    ]
+  },
+  {
+    "sentence": "We stopped _____ a rest because we were very tired.",
+    "options": [
+      "(A) taking",
+      "(B) to take",
+      "(C) take",
+      "(D) took"
+    ],
+    "answer": 1,
+    "explanation": "stop + to V 表示「停下來去做某事」。",
+    "target_grammar": "動名詞與不定詞辨析",
+    "id": "grammar_218",
+    "optionsZh": [
+      "（動名詞，表停止動作，誤）",
+      "（不定詞，表停下來去做）",
+      "（原形）",
+      "（過去式）"
+    ]
+  },
+  {
+    "sentence": "_____ tired after the long trip, we decided to go to bed early.",
+    "options": [
+      "(A) Feel",
+      "(B) Feeling",
+      "(C) Felt",
+      "(D) To feel"
+    ],
+    "answer": 1,
+    "explanation": "分詞構句中，主詞與 feel 為主動關係，用現在分詞 Feeling。",
+    "target_grammar": "分詞構句",
+    "id": "grammar_219",
+    "optionsZh": [
+      "（原形）",
+      "（現在分詞，主動）",
+      "（過去分詞，被動，誤）",
+      "（不定詞）"
+    ]
+  },
+  {
+    "sentence": "_____ from the top of the mountain, the city looks very small.",
+    "options": [
+      "(A) See",
+      "(B) Seeing",
+      "(C) Seen",
+      "(D) To see"
+    ],
+    "answer": 2,
+    "explanation": "分詞構句中，主詞 city 是被看見的，動作與主詞為被動關係，用過去分詞 Seen。",
+    "target_grammar": "分詞構句",
+    "id": "grammar_220",
+    "optionsZh": [
+      "（原形）",
+      "（現在分詞，主動，誤）",
+      "（過去分詞，被動）",
+      "（不定詞）"
+    ]
+  },
+  {
+    "sentence": "_____ his homework, Tom went out to play basketball.",
+    "options": [
+      "(A) Finish",
+      "(B) Finishing",
+      "(C) Finished",
+      "(D) To finish"
+    ],
+    "answer": 1,
+    "explanation": "分詞構句表示「做完…之後」，主詞 Tom 與 finish 為主動關係，用現在分詞 Finishing。",
+    "target_grammar": "分詞構句",
+    "id": "grammar_221",
+    "optionsZh": [
+      "（原形）",
+      "（現在分詞，主動）",
+      "（過去分詞，被動，誤）",
+      "（不定詞）"
+    ]
+  },
+  {
+    "sentence": "_____ by the loud noise, the baby began to cry.",
+    "options": [
+      "(A) Frighten",
+      "(B) Frightening",
+      "(C) Frightened",
+      "(D) To frighten"
+    ],
+    "answer": 2,
+    "explanation": "主詞 baby 是被嚇到的，動作與主詞為被動關係，用過去分詞 Frightened。",
+    "target_grammar": "分詞構句",
+    "id": "grammar_222",
+    "optionsZh": [
+      "（原形）",
+      "（現在分詞，主動，誤）",
+      "（過去分詞，被動）",
+      "（不定詞）"
+    ]
+  },
+  {
+    "sentence": "_____ in a small village, she never saw the sea until she was ten.",
+    "options": [
+      "(A) Grow",
+      "(B) Growing",
+      "(C) Grown",
+      "(D) To grow"
+    ],
+    "answer": 1,
+    "explanation": "分詞構句表示「因為在小村莊長大」，主詞與 grow 為主動關係，用現在分詞 Growing。",
+    "target_grammar": "分詞構句",
+    "id": "grammar_223",
+    "optionsZh": [
+      "（原形）",
+      "（現在分詞，主動）",
+      "（過去分詞，被動，誤）",
+      "（不定詞）"
+    ]
+  },
+  {
+    "sentence": "The story was so _____ that all the students wanted to read it again.",
+    "options": [
+      "(A) interesting",
+      "(B) interested",
+      "(C) interest",
+      "(D) interests"
+    ],
+    "answer": 0,
+    "explanation": "story 本身「使人感興趣」，修飾事物用現在分詞 interesting。",
+    "target_grammar": "分詞形容詞",
+    "id": "grammar_224",
+    "optionsZh": [
+      "（現在分詞，主動，令人感興趣）",
+      "（過去分詞，感到有興趣）",
+      "（原形）",
+      "（三單動詞）"
+    ]
+  },
+  {
+    "sentence": "I was really _____ in the science class today.",
+    "options": [
+      "(A) interesting",
+      "(B) interested",
+      "(C) interest",
+      "(D) interests"
+    ],
+    "answer": 1,
+    "explanation": "人「感到有興趣」用過去分詞 interested。",
+    "target_grammar": "分詞形容詞",
+    "id": "grammar_225",
+    "optionsZh": [
+      "（現在分詞，誤）",
+      "（過去分詞，感到…）",
+      "（原形）",
+      "（三單動詞）"
+    ]
+  },
+  {
+    "sentence": "The math problem was so _____ that nobody could solve it.",
+    "options": [
+      "(A) confused",
+      "(B) confusing",
+      "(C) confuse",
+      "(D) confuses"
+    ],
+    "answer": 1,
+    "explanation": "事物「令人困惑」用現在分詞 confusing。",
+    "target_grammar": "分詞形容詞",
+    "id": "grammar_226",
+    "optionsZh": [
+      "（過去分詞，感到困惑，誤）",
+      "（現在分詞，令人困惑）",
+      "（原形）",
+      "（三單動詞）"
+    ]
+  },
+  {
+    "sentence": "After hearing the news, everyone in the room was very _____.",
+    "options": [
+      "(A) exciting",
+      "(B) excite",
+      "(C) excited",
+      "(D) excites"
+    ],
+    "answer": 2,
+    "explanation": "人「感到興奮」用過去分詞 excited。",
+    "target_grammar": "分詞形容詞",
+    "id": "grammar_227",
+    "optionsZh": [
+      "（現在分詞，誤）",
+      "（原形）",
+      "（過去分詞，感到興奮）",
+      "（三單動詞）"
+    ]
+  },
+  {
+    "sentence": "It was a _____ game, and the fans cheered loudly until the end.",
+    "options": [
+      "(A) excited",
+      "(B) exciting",
+      "(C) excite",
+      "(D) excites"
+    ],
+    "answer": 1,
+    "explanation": "game 本身「令人興奮」，修飾事物用現在分詞 exciting。",
+    "target_grammar": "分詞形容詞",
+    "id": "grammar_228",
+    "optionsZh": [
+      "（過去分詞，誤）",
+      "（現在分詞，令人興奮）",
+      "（原形）",
+      "（三單動詞）"
+    ]
+  },
+  {
+    "sentence": "You _____ turn off your phone during the exam.",
+    "options": [
+      "(A) must",
+      "(B) may",
+      "(C) can",
+      "(D) would"
+    ],
+    "answer": 0,
+    "explanation": "表示「必須」的義務，用 must。",
+    "target_grammar": "情態動詞",
+    "id": "grammar_229",
+    "optionsZh": [
+      "（義務）",
+      "（許可）",
+      "（能力）",
+      "（意願）"
+    ]
+  },
+  {
+    "sentence": "_____ I borrow your pen for a minute?",
+    "options": [
+      "(A) Must",
+      "(B) May",
+      "(C) Would",
+      "(D) Should"
+    ],
+    "answer": 1,
+    "explanation": "禮貌地請求許可，用 May。",
+    "target_grammar": "情態動詞",
+    "id": "grammar_230",
+    "optionsZh": [
+      "（義務，誤）",
+      "（請求許可）",
+      "（意願）",
+      "（建議）"
+    ]
+  },
+  {
+    "sentence": "You _____ be tired after such a long trip.",
+    "options": [
+      "(A) must",
+      "(B) can",
+      "(C) may",
+      "(D) should"
+    ],
+    "answer": 0,
+    "explanation": "根據合理推測「一定是」，用 must 表肯定推測。",
+    "target_grammar": "情態動詞",
+    "id": "grammar_231",
+    "optionsZh": [
+      "（肯定推測）",
+      "（能力，誤）",
+      "（可能性，較弱）",
+      "（建議，誤）"
+    ]
+  },
+  {
+    "sentence": "It _____ rain later, so bring your umbrella just in case.",
+    "options": [
+      "(A) must",
+      "(B) might",
+      "(C) can",
+      "(D) should"
+    ],
+    "answer": 1,
+    "explanation": "表示「也許、可能」的推測，用 might。",
+    "target_grammar": "情態動詞",
+    "id": "grammar_232",
+    "optionsZh": [
+      "（肯定推測，誤）",
+      "（可能性推測）",
+      "（能力，誤）",
+      "（建議，誤）"
+    ]
+  },
+  {
+    "sentence": "Students _____ not run in the hallway; it's against the rules.",
+    "options": [
+      "(A) must",
+      "(B) can",
+      "(C) may",
+      "(D) will"
+    ],
+    "answer": 0,
+    "explanation": "表示禁止的規定，用 must not。",
+    "target_grammar": "情態動詞",
+    "id": "grammar_233",
+    "optionsZh": [
+      "（禁止）",
+      "（能力，誤）",
+      "（許可，誤）",
+      "（未來式，誤）"
+    ]
+  },
+  {
+    "sentence": "You look sick. You _____ see a doctor as soon as possible.",
+    "options": [
+      "(A) can",
+      "(B) should",
+      "(C) may",
+      "(D) will"
+    ],
+    "answer": 1,
+    "explanation": "表示建議，用 should。",
+    "target_grammar": "情態動詞",
+    "id": "grammar_234",
+    "optionsZh": [
+      "（能力，誤）",
+      "（建議）",
+      "（許可，誤）",
+      "（未來式，誤）"
+    ]
+  },
+  {
+    "sentence": "When she was young, she _____ swim very fast.",
+    "options": [
+      "(A) must",
+      "(B) should",
+      "(C) could",
+      "(D) may"
+    ],
+    "answer": 2,
+    "explanation": "表示過去的能力，用 could。",
+    "target_grammar": "情態動詞",
+    "id": "grammar_235",
+    "optionsZh": [
+      "（義務，誤）",
+      "（建議，誤）",
+      "（過去能力）",
+      "（許可，誤）"
+    ]
+  },
+  {
+    "sentence": "This report must _____ before Friday afternoon.",
+    "options": [
+      "(A) finish",
+      "(B) be finished",
+      "(C) finished",
+      "(D) finishing"
+    ],
+    "answer": 1,
+    "explanation": "report 是被完成的對象，情態動詞後接被動不定詞 be finished。",
+    "target_grammar": "情態動詞",
+    "id": "grammar_236",
+    "optionsZh": [
+      "（主動原形，誤）",
+      "（被動不定詞）",
+      "（過去式，誤）",
+      "（動名詞，誤）"
+    ]
+  },
+  {
+    "sentence": "The problem can _____ easily if we work together.",
+    "options": [
+      "(A) solve",
+      "(B) solved",
+      "(C) be solved",
+      "(D) solving"
+    ],
+    "answer": 2,
+    "explanation": "problem 是被解決的對象，can 後接被動 be solved。",
+    "target_grammar": "情態動詞",
+    "id": "grammar_237",
+    "optionsZh": [
+      "（主動原形，誤）",
+      "（過去分詞，誤）",
+      "（被動不定詞）",
+      "（動名詞，誤）"
+    ]
+  },
+  {
+    "sentence": "Loud music should not _____ in the library.",
+    "options": [
+      "(A) play",
+      "(B) played",
+      "(C) be played",
+      "(D) playing"
+    ],
+    "answer": 2,
+    "explanation": "music 是被播放的對象，should 後接被動 be played。",
+    "target_grammar": "情態動詞",
+    "id": "grammar_238",
+    "optionsZh": [
+      "（主動原形，誤）",
+      "（過去式，誤）",
+      "（被動不定詞）",
+      "（動名詞，誤）"
+    ]
+  },
+  {
+    "sentence": "This medicine must _____ after meals, not before.",
+    "options": [
+      "(A) take",
+      "(B) be taken",
+      "(C) took",
+      "(D) taking"
+    ],
+    "answer": 1,
+    "explanation": "medicine 是被服用的對象，must 後接被動 be taken。",
+    "target_grammar": "情態動詞",
+    "id": "grammar_239",
+    "optionsZh": [
+      "（主動原形，誤）",
+      "（被動不定詞）",
+      "（過去式，誤）",
+      "（動名詞，誤）"
+    ]
+  },
+  {
+    "sentence": "_____ he was very tired, he kept studying for the exam.",
+    "options": [
+      "(A) Because",
+      "(B) Although",
+      "(C) So",
+      "(D) If"
+    ],
+    "answer": 1,
+    "explanation": "前後語意轉折（雖然累仍繼續讀書），用 Although。",
+    "target_grammar": "連接詞",
+    "id": "grammar_240",
+    "optionsZh": [
+      "（因為）",
+      "（雖然）",
+      "（所以）",
+      "（如果）"
+    ]
+  },
+  {
+    "sentence": "She went to school _____ she had a bad cold.",
+    "options": [
+      "(A) although",
+      "(B) because",
+      "(C) so",
+      "(D) unless"
+    ],
+    "answer": 0,
+    "explanation": "前後語意轉折（雖然感冒仍去上學），用 although。",
+    "target_grammar": "連接詞",
+    "id": "grammar_241",
+    "optionsZh": [
+      "（雖然）",
+      "（因為）",
+      "（所以）",
+      "（除非）"
+    ]
+  },
+  {
+    "sentence": "_____ the movie was long, the children enjoyed every minute of it.",
+    "options": [
+      "(A) Because",
+      "(B) Though",
+      "(C) So that",
+      "(D) Unless"
+    ],
+    "answer": 1,
+    "explanation": "表讓步「儘管電影很長」，用 Though。",
+    "target_grammar": "連接詞",
+    "id": "grammar_242",
+    "optionsZh": [
+      "（因為）",
+      "（雖然）",
+      "（為了）",
+      "（除非）"
+    ]
+  },
+  {
+    "sentence": "He didn't give up, _____ he failed the first time.",
+    "options": [
+      "(A) so",
+      "(B) because",
+      "(C) although",
+      "(D) unless"
+    ],
+    "answer": 2,
+    "explanation": "前後語意轉折（雖然第一次失敗仍不放棄），用 although。",
+    "target_grammar": "連接詞",
+    "id": "grammar_243",
+    "optionsZh": [
+      "（所以）",
+      "（因為）",
+      "（雖然）",
+      "（除非）"
+    ]
+  },
+  {
+    "sentence": "We stayed at home _____ it was raining heavily outside.",
+    "options": [
+      "(A) although",
+      "(B) because",
+      "(C) so that",
+      "(D) unless"
+    ],
+    "answer": 1,
+    "explanation": "表原因「因為外面下大雨」，用 because。",
+    "target_grammar": "連接詞",
+    "id": "grammar_244",
+    "optionsZh": [
+      "（雖然）",
+      "（因為）",
+      "（為了）",
+      "（除非）"
+    ]
+  },
+  {
+    "sentence": "_____ she studies hard every day, she always gets good grades.",
+    "options": [
+      "(A) Although",
+      "(B) Unless",
+      "(C) Since",
+      "(D) So that"
+    ],
+    "answer": 2,
+    "explanation": "since 在此表原因「既然、因為」，引導原因子句。",
+    "target_grammar": "連接詞",
+    "id": "grammar_245",
+    "optionsZh": [
+      "（雖然）",
+      "（除非）",
+      "（因為，既然）",
+      "（為了）"
+    ]
+  },
+  {
+    "sentence": "_____ it was getting dark, we decided to go home early.",
+    "options": [
+      "(A) Although",
+      "(B) As",
+      "(C) Unless",
+      "(D) So that"
+    ],
+    "answer": 1,
+    "explanation": "as 在此表原因「由於天色漸暗」。",
+    "target_grammar": "連接詞",
+    "id": "grammar_246",
+    "optionsZh": [
+      "（雖然）",
+      "（因為，由於）",
+      "（除非）",
+      "（為了）"
+    ]
+  },
+  {
+    "sentence": "I couldn't answer the phone _____ I was taking a shower.",
+    "options": [
+      "(A) because",
+      "(B) although",
+      "(C) unless",
+      "(D) so that"
+    ],
+    "answer": 0,
+    "explanation": "表原因「因為在洗澡」，用 because。",
+    "target_grammar": "連接詞",
+    "id": "grammar_247",
+    "optionsZh": [
+      "（因為）",
+      "（雖然）",
+      "（除非）",
+      "（為了）"
+    ]
+  },
+  {
+    "sentence": "The bag was so _____ that I couldn't lift it by myself.",
+    "options": [
+      "(A) heavy",
+      "(B) heavier",
+      "(C) heaviest",
+      "(D) more heavy"
+    ],
+    "answer": 0,
+    "explanation": "so + 形容詞原級 + that 子句，表示「如此…以致於」。",
+    "target_grammar": "so...that句型",
+    "id": "grammar_248",
+    "optionsZh": [
+      "（原級，正確）",
+      "（比較級）",
+      "（最高級）",
+      "（錯誤比較級）"
+    ]
+  },
+  {
+    "sentence": "He spoke so _____ that nobody could hear him clearly.",
+    "options": [
+      "(A) quiet",
+      "(B) quietly",
+      "(C) quieter",
+      "(D) quietest"
+    ],
+    "answer": 1,
+    "explanation": "so 修飾動詞須用副詞 quietly，構成 so...that 句型。",
+    "target_grammar": "so...that句型",
+    "id": "grammar_249",
+    "optionsZh": [
+      "（形容詞，誤）",
+      "（副詞，正確）",
+      "（比較級）",
+      "（最高級）"
+    ]
+  },
+  {
+    "sentence": "It was such _____ day that we decided to go to the beach.",
+    "options": [
+      "(A) a nice",
+      "(B) nice",
+      "(C) a nicer",
+      "(D) the nicest"
+    ],
+    "answer": 0,
+    "explanation": "such + a/an + 形容詞 + 名詞 + that 子句為固定句型。",
+    "target_grammar": "so...that句型",
+    "id": "grammar_250",
+    "optionsZh": [
+      "（such正確用法）",
+      "（缺冠詞，誤）",
+      "（比較級，誤）",
+      "（最高級，誤）"
+    ]
+  },
+  {
+    "sentence": "The music was so _____ that everyone started dancing.",
+    "options": [
+      "(A) exciting",
+      "(B) excited",
+      "(C) excite",
+      "(D) excites"
+    ],
+    "answer": 0,
+    "explanation": "so + 現在分詞形容詞（令人興奮的）+ that 子句。",
+    "target_grammar": "so...that句型",
+    "id": "grammar_251",
+    "optionsZh": [
+      "（現在分詞，正確）",
+      "（過去分詞，誤）",
+      "（原形）",
+      "（三單動詞）"
+    ]
+  },
+  {
+    "sentence": "I got up early _____ I could catch the first train.",
+    "options": [
+      "(A) so that",
+      "(B) because",
+      "(C) although",
+      "(D) unless"
+    ],
+    "answer": 0,
+    "explanation": "so that 引導目的子句，表示「為了、以便」。",
+    "target_grammar": "目的子句",
+    "id": "grammar_252",
+    "optionsZh": [
+      "（目的子句）",
+      "（原因子句）",
+      "（讓步子句）",
+      "（條件子句）"
+    ]
+  },
+  {
+    "sentence": "She studies every night _____ pass the entrance exam.",
+    "options": [
+      "(A) so that",
+      "(B) in order to",
+      "(C) because of",
+      "(D) although"
+    ],
+    "answer": 1,
+    "explanation": "in order to + 原形動詞，表示目的「為了」。",
+    "target_grammar": "目的子句",
+    "id": "grammar_253",
+    "optionsZh": [
+      "（目的子句連接詞，誤，須接動詞）",
+      "（不定詞表目的）",
+      "（介系詞片語）",
+      "（讓步連接詞）"
+    ]
+  },
+  {
+    "sentence": "We left home early _____ we wouldn't be late for the movie.",
+    "options": [
+      "(A) so that",
+      "(B) because",
+      "(C) unless",
+      "(D) though"
+    ],
+    "answer": 0,
+    "explanation": "so that 引導目的子句，通常搭配助動詞 would/could。",
+    "target_grammar": "目的子句",
+    "id": "grammar_254",
+    "optionsZh": [
+      "（目的子句）",
+      "（原因子句）",
+      "（條件子句）",
+      "（讓步子句）"
+    ]
+  },
+  {
+    "sentence": "He turned off the TV _____ study for tomorrow's test.",
+    "options": [
+      "(A) so that",
+      "(B) to",
+      "(C) because",
+      "(D) unless"
+    ],
+    "answer": 1,
+    "explanation": "不定詞 to V 可表示目的「為了讀書」。",
+    "target_grammar": "目的子句",
+    "id": "grammar_255",
+    "optionsZh": [
+      "（目的子句連接詞，誤）",
+      "（不定詞表目的）",
+      "（原因連接詞）",
+      "（條件連接詞）"
+    ]
+  },
+  {
+    "sentence": "You will be late for school _____ you leave right now.",
+    "options": [
+      "(A) if",
+      "(B) unless",
+      "(C) because",
+      "(D) although"
+    ],
+    "answer": 1,
+    "explanation": "unless = if...not，表示「除非」。",
+    "target_grammar": "連接詞",
+    "id": "grammar_256",
+    "optionsZh": [
+      "（如果）",
+      "（除非）",
+      "（因為）",
+      "（雖然）"
+    ]
+  },
+  {
+    "sentence": "_____ it stops raining, the game will be canceled.",
+    "options": [
+      "(A) Although",
+      "(B) Because",
+      "(C) Unless",
+      "(D) So that"
+    ],
+    "answer": 2,
+    "explanation": "unless 表示「除非」，等於 if...not。",
+    "target_grammar": "連接詞",
+    "id": "grammar_257",
+    "optionsZh": [
+      "（雖然）",
+      "（因為）",
+      "（除非）",
+      "（為了）"
+    ]
+  },
+  {
+    "sentence": "I won't go to the party _____ you go with me.",
+    "options": [
+      "(A) unless",
+      "(B) although",
+      "(C) because",
+      "(D) so that"
+    ],
+    "answer": 0,
+    "explanation": "unless 表示「除非」你跟我一起去，否則不會去。",
+    "target_grammar": "連接詞",
+    "id": "grammar_258",
+    "optionsZh": [
+      "（除非）",
+      "（雖然）",
+      "（因為）",
+      "（為了）"
+    ]
+  },
+  {
+    "sentence": "_____ I was walking home, I met my old classmate.",
+    "options": [
+      "(A) When",
+      "(B) While",
+      "(C) Since",
+      "(D) Unless"
+    ],
+    "answer": 1,
+    "explanation": "while 引導一段持續進行的背景動作，期間發生另一件事。",
+    "target_grammar": "連接詞",
+    "id": "grammar_259",
+    "optionsZh": [
+      "（當，單一時間點）",
+      "（當…期間，持續動作）",
+      "（自從）",
+      "（除非）"
+    ]
+  },
+  {
+    "sentence": "_____ the bell rang, all the students ran into the classroom.",
+    "options": [
+      "(A) While",
+      "(B) When",
+      "(C) Although",
+      "(D) Unless"
+    ],
+    "answer": 1,
+    "explanation": "when 引導單一時間點發生的動作。",
+    "target_grammar": "連接詞",
+    "id": "grammar_260",
+    "optionsZh": [
+      "（當…期間）",
+      "（當，單一時間點）",
+      "（雖然）",
+      "（除非）"
+    ]
+  },
+  {
+    "sentence": "_____ my mother was cooking, my father was reading the newspaper.",
+    "options": [
+      "(A) When",
+      "(B) While",
+      "(C) Because",
+      "(D) Unless"
+    ],
+    "answer": 1,
+    "explanation": "while 表示兩個動作同時進行，故用 while。",
+    "target_grammar": "連接詞",
+    "id": "grammar_261",
+    "optionsZh": [
+      "（當，單一時間點）",
+      "（當…同時，持續動作）",
+      "（因為）",
+      "（除非）"
+    ]
+  },
+  {
+    "sentence": "_____ he heard the good news, he jumped up with joy.",
+    "options": [
+      "(A) While",
+      "(B) When",
+      "(C) Unless",
+      "(D) So that"
+    ],
+    "answer": 1,
+    "explanation": "when 表示某一時間點發生的動作。",
+    "target_grammar": "連接詞",
+    "id": "grammar_262",
+    "optionsZh": [
+      "（當…期間）",
+      "（當，時間點）",
+      "（除非）",
+      "（為了）"
+    ]
+  },
+  {
+    "sentence": "The soup was too _____ for the baby to eat.",
+    "options": [
+      "(A) hot",
+      "(B) hotter",
+      "(C) hottest",
+      "(D) more hot"
+    ],
+    "answer": 0,
+    "explanation": "too + 形容詞原級 + to V，表示「太…以致於不能」。",
+    "target_grammar": "too...to句型",
+    "id": "grammar_263",
+    "optionsZh": [
+      "（原級，正確）",
+      "（比較級）",
+      "（最高級）",
+      "（錯誤比較級）"
+    ]
+  },
+  {
+    "sentence": "She is _____ enough to take care of her little brother.",
+    "options": [
+      "(A) old",
+      "(B) older",
+      "(C) oldest",
+      "(D) more old"
+    ],
+    "answer": 0,
+    "explanation": "形容詞原級 + enough + to V，表示「足夠…以…」。",
+    "target_grammar": "enough to句型",
+    "id": "grammar_264",
+    "optionsZh": [
+      "（原級，正確）",
+      "（比較級）",
+      "（最高級）",
+      "（錯誤比較級）"
+    ]
+  },
+  {
+    "sentence": "He ran too _____ for us to catch up with him.",
+    "options": [
+      "(A) fast",
+      "(B) faster",
+      "(C) fastest",
+      "(D) more fast"
+    ],
+    "answer": 0,
+    "explanation": "too + 副詞原級 + to V，表示「太…以致於不能」。",
+    "target_grammar": "too...to句型",
+    "id": "grammar_265",
+    "optionsZh": [
+      "（原級，正確）",
+      "（比較級）",
+      "（最高級）",
+      "（錯誤比較級）"
+    ]
+  },
+  {
+    "sentence": "This box is light enough _____ by a child.",
+    "options": [
+      "(A) carry",
+      "(B) to carry",
+      "(C) carrying",
+      "(D) carried"
+    ],
+    "answer": 1,
+    "explanation": "enough + to V，表示「足夠…可以…」。",
+    "target_grammar": "enough to句型",
+    "id": "grammar_266",
+    "optionsZh": [
+      "（原形，誤）",
+      "（不定詞）",
+      "（動名詞，誤）",
+      "（過去分詞，誤）"
+    ]
+  },
+  {
+    "sentence": "My mother always makes me _____ my room before dinner.",
+    "options": [
+      "(A) to clean",
+      "(B) clean",
+      "(C) cleaning",
+      "(D) cleaned"
+    ],
+    "answer": 1,
+    "explanation": "make + 受詞 + 原形動詞，表示「使、讓」。",
+    "target_grammar": "使役動詞",
+    "id": "grammar_267",
+    "optionsZh": [
+      "（不定詞，誤）",
+      "（原形動詞）",
+      "（動名詞，誤）",
+      "（過去分詞，誤）"
+    ]
+  },
+  {
+    "sentence": "Please let me _____ you with your bags.",
+    "options": [
+      "(A) to help",
+      "(B) helping",
+      "(C) help",
+      "(D) helped"
+    ],
+    "answer": 2,
+    "explanation": "let + 受詞 + 原形動詞。",
+    "target_grammar": "使役動詞",
+    "id": "grammar_268",
+    "optionsZh": [
+      "（不定詞，誤）",
+      "（動名詞，誤）",
+      "（原形動詞）",
+      "（過去分詞，誤）"
+    ]
+  },
+  {
+    "sentence": "The teacher had the students _____ their essays again.",
+    "options": [
+      "(A) to write",
+      "(B) write",
+      "(C) writing",
+      "(D) written"
+    ],
+    "answer": 1,
+    "explanation": "have + 受詞 + 原形動詞，表示「要求某人做」。",
+    "target_grammar": "使役動詞",
+    "id": "grammar_269",
+    "optionsZh": [
+      "（不定詞，誤）",
+      "（原形動詞）",
+      "（動名詞，誤）",
+      "（過去分詞，誤）"
+    ]
+  },
+  {
+    "sentence": "My father won't let me _____ out after ten o'clock.",
+    "options": [
+      "(A) to go",
+      "(B) going",
+      "(C) go",
+      "(D) gone"
+    ],
+    "answer": 2,
+    "explanation": "let + 受詞 + 原形動詞。",
+    "target_grammar": "使役動詞",
+    "id": "grammar_270",
+    "optionsZh": [
+      "（不定詞，誤）",
+      "（動名詞，誤）",
+      "（原形動詞）",
+      "（過去分詞，誤）"
+    ]
+  },
+  {
+    "sentence": "I saw him _____ across the street when the accident happened.",
+    "options": [
+      "(A) to run",
+      "(B) run",
+      "(C) ran",
+      "(D) runs"
+    ],
+    "answer": 1,
+    "explanation": "知覺動詞 see + 受詞 + 原形動詞，表示看到完整過程。",
+    "target_grammar": "知覺動詞",
+    "id": "grammar_271",
+    "optionsZh": [
+      "（不定詞，誤）",
+      "（原形動詞）",
+      "（過去式，誤）",
+      "（三單現在式，誤）"
+    ]
+  },
+  {
+    "sentence": "We heard someone _____ our names outside the door.",
+    "options": [
+      "(A) call",
+      "(B) to call",
+      "(C) called",
+      "(D) calls"
+    ],
+    "answer": 0,
+    "explanation": "知覺動詞 hear + 受詞 + 原形動詞。",
+    "target_grammar": "知覺動詞",
+    "id": "grammar_272",
+    "optionsZh": [
+      "（原形動詞）",
+      "（不定詞，誤）",
+      "（過去式，誤）",
+      "（三單現在式，誤）"
+    ]
+  },
+  {
+    "sentence": "I felt the ground _____ during the earthquake.",
+    "options": [
+      "(A) shaking",
+      "(B) shake",
+      "(C) to shake",
+      "(D) shook"
+    ],
+    "answer": 1,
+    "explanation": "知覺動詞 feel + 受詞 + 原形動詞，表示感覺到完整動作。",
+    "target_grammar": "知覺動詞",
+    "id": "grammar_273",
+    "optionsZh": [
+      "（現在分詞，非首選）",
+      "（原形動詞）",
+      "（不定詞，誤）",
+      "（過去式，誤）"
+    ]
+  },
+  {
+    "sentence": "Do you know _____ the museum opens?",
+    "options": [
+      "(A) when does",
+      "(B) when",
+      "(C) does when",
+      "(D) when will"
+    ],
+    "answer": 1,
+    "explanation": "間接問句須用「疑問詞＋主詞＋動詞」的直述句語序。",
+    "target_grammar": "間接問句",
+    "id": "grammar_274",
+    "optionsZh": [
+      "（直接問句語序，誤）",
+      "（間接問句語序，正確）",
+      "（錯誤語序）",
+      "（未來式問句，誤）"
+    ]
+  },
+  {
+    "sentence": "Could you tell me _____ the station?",
+    "options": [
+      "(A) how can I get to",
+      "(B) how I can get to",
+      "(C) how do I get to",
+      "(D) how get I to"
+    ],
+    "answer": 1,
+    "explanation": "間接問句語序為「疑問詞＋主詞＋動詞」。",
+    "target_grammar": "間接問句",
+    "id": "grammar_275",
+    "optionsZh": [
+      "（直接問句語序，誤）",
+      "（間接問句語序，正確）",
+      "（直接問句語序，誤）",
+      "（錯誤語序）"
+    ]
+  },
+  {
+    "sentence": "I wonder _____ she will come to the party tonight.",
+    "options": [
+      "(A) that",
+      "(B) if",
+      "(C) what",
+      "(D) which"
+    ],
+    "answer": 1,
+    "explanation": "表示不確定的間接問句，用 if 引導（是否）。",
+    "target_grammar": "間接問句",
+    "id": "grammar_276",
+    "optionsZh": [
+      "（名詞子句連接詞，誤）",
+      "（是否，正確）",
+      "（疑問代名詞，誤）",
+      "（疑問代名詞，誤）"
+    ]
+  },
+  {
+    "sentence": "_____ does this word mean in Chinese?",
+    "options": [
+      "(A) Who",
+      "(B) What",
+      "(C) Where",
+      "(D) Why"
+    ],
+    "answer": 1,
+    "explanation": "詢問字義用疑問詞 what。",
+    "target_grammar": "疑問句",
+    "id": "grammar_277",
+    "optionsZh": [
+      "（誰）",
+      "（什麼）",
+      "（哪裡）",
+      "（為什麼）"
+    ]
+  },
+  {
+    "sentence": "_____ books does she have on her shelf?",
+    "options": [
+      "(A) How much",
+      "(B) How many",
+      "(C) How long",
+      "(D) How often"
+    ],
+    "answer": 1,
+    "explanation": "books 為可數名詞複數，詢問數量用 How many。",
+    "target_grammar": "疑問句",
+    "id": "grammar_278",
+    "optionsZh": [
+      "（詢問不可數量）",
+      "（詢問可數數量）",
+      "（詢問長度或時間）",
+      "（詢問頻率）"
+    ]
+  },
+  {
+    "sentence": "Can you tell me _____ this bus goes downtown?",
+    "options": [
+      "(A) does",
+      "(B) whether",
+      "(C) what",
+      "(D) who"
+    ],
+    "answer": 1,
+    "explanation": "間接問句用 whether（是否）取代直接的 yes/no 問句。",
+    "target_grammar": "間接問句",
+    "id": "grammar_279",
+    "optionsZh": [
+      "（助動詞，誤，非間接問句語序）",
+      "（是否，正確）",
+      "（什麼，誤）",
+      "（誰，誤）"
+    ]
+  },
+  {
+    "sentence": "You like playing basketball, _____?",
+    "options": [
+      "(A) do you",
+      "(B) don't you",
+      "(C) aren't you",
+      "(D) didn't you"
+    ],
+    "answer": 1,
+    "explanation": "前句為肯定敘述句，附加問句用否定形式 don't you。",
+    "target_grammar": "附加問句",
+    "id": "grammar_280",
+    "optionsZh": [
+      "（肯定附加問句，誤）",
+      "（否定附加問句，正確）",
+      "（be動詞否定，誤）",
+      "（過去式否定，誤）"
+    ]
+  },
+  {
+    "sentence": "She isn't feeling well today, _____?",
+    "options": [
+      "(A) is she",
+      "(B) isn't she",
+      "(C) does she",
+      "(D) doesn't she"
+    ],
+    "answer": 0,
+    "explanation": "前句為否定敘述句，附加問句用肯定形式 is she。",
+    "target_grammar": "附加問句",
+    "id": "grammar_281",
+    "optionsZh": [
+      "（肯定附加問句，正確）",
+      "（否定附加問句，誤）",
+      "（一般動詞肯定，誤）",
+      "（一般動詞否定，誤）"
+    ]
+  },
+  {
+    "sentence": "Let's go to the park this afternoon, _____?",
+    "options": [
+      "(A) do we",
+      "(B) don't we",
+      "(C) shall we",
+      "(D) will we"
+    ],
+    "answer": 2,
+    "explanation": "Let's 開頭的祈使句，附加問句固定用 shall we。",
+    "target_grammar": "附加問句",
+    "id": "grammar_282",
+    "optionsZh": [
+      "（一般動詞肯定，誤）",
+      "（一般動詞否定，誤）",
+      "（固定附加問句，正確）",
+      "（未來式，誤）"
+    ]
+  },
+  {
+    "sentence": "My mother said that she _____ tired after work.",
+    "options": [
+      "(A) is",
+      "(B) was",
+      "(C) has been",
+      "(D) will be"
+    ],
+    "answer": 1,
+    "explanation": "主要子句 said 為過去式，依時態一致原則，從屬子句動詞也須改為過去式 was。",
+    "target_grammar": "間接引語",
+    "id": "grammar_283",
+    "optionsZh": [
+      "（現在式，誤）",
+      "（過去式，時態一致）",
+      "（現在完成式，誤）",
+      "（未來式，誤）"
+    ]
+  },
+  {
+    "sentence": "He told me that he _____ finish the project by Friday.",
+    "options": [
+      "(A) can",
+      "(B) could",
+      "(C) will",
+      "(D) may"
+    ],
+    "answer": 1,
+    "explanation": "主要子句 told 為過去式，情態動詞 can 須配合改為 could。",
+    "target_grammar": "間接引語",
+    "id": "grammar_284",
+    "optionsZh": [
+      "（現在式情態動詞，誤）",
+      "（過去式情態動詞，時態一致）",
+      "（未來式，誤）",
+      "（現在式情態動詞，誤）"
+    ]
+  },
+  {
+    "sentence": "The teacher said that the earth _____ around the sun.",
+    "options": [
+      "(A) goes",
+      "(B) went",
+      "(C) had gone",
+      "(D) will go"
+    ],
+    "answer": 0,
+    "explanation": "描述永恆真理時，即使主要子句是過去式，仍維持現在式 goes。",
+    "target_grammar": "間接引語",
+    "id": "grammar_285",
+    "optionsZh": [
+      "（現在式，不變的事實）",
+      "（過去式，誤）",
+      "（過去完成式，誤）",
+      "（未來式，誤）"
+    ]
+  },
+  {
+    "sentence": "She asked me _____ I had finished my homework.",
+    "options": [
+      "(A) that",
+      "(B) if",
+      "(C) what",
+      "(D) which"
+    ],
+    "answer": 1,
+    "explanation": "將 yes/no 問句轉為間接引語，用 if（是否）連接。",
+    "target_grammar": "間接引語",
+    "id": "grammar_286",
+    "optionsZh": [
+      "（名詞子句連接詞，誤）",
+      "（是否，正確）",
+      "（疑問代名詞，誤）",
+      "（疑問代名詞，誤）"
+    ]
+  },
+  {
+    "sentence": "Never _____ such a beautiful sunset before.",
+    "options": [
+      "(A) I have seen",
+      "(B) have I seen",
+      "(C) I saw",
+      "(D) did I saw"
+    ],
+    "answer": 1,
+    "explanation": "否定副詞 Never 置於句首，須用倒裝語序「助動詞＋主詞＋過去分詞」。",
+    "target_grammar": "倒裝句",
+    "id": "grammar_287",
+    "optionsZh": [
+      "（一般語序，誤）",
+      "（倒裝語序，正確）",
+      "（過去式一般語序，誤）",
+      "（雙重過去式，誤）"
+    ]
+  },
+  {
+    "sentence": "Not only _____ smart, but she is also very hardworking.",
+    "options": [
+      "(A) she is",
+      "(B) is she",
+      "(C) she was",
+      "(D) was she"
+    ],
+    "answer": 1,
+    "explanation": "Not only 置於句首時，須用倒裝語序 is she。",
+    "target_grammar": "倒裝句",
+    "id": "grammar_288",
+    "optionsZh": [
+      "（一般語序，誤）",
+      "（倒裝語序，正確）",
+      "（過去式一般語序，誤）",
+      "（過去式倒裝，誤）"
+    ]
+  },
+  {
+    "sentence": "Rarely _____ him complain about his difficult homework.",
+    "options": [
+      "(A) we hear",
+      "(B) do we hear",
+      "(C) we heard",
+      "(D) did we hear"
+    ],
+    "answer": 1,
+    "explanation": "否定頻率副詞 Rarely 置於句首，須用倒裝語序 do we hear。",
+    "target_grammar": "倒裝句",
+    "id": "grammar_289",
+    "optionsZh": [
+      "（一般語序，誤）",
+      "（倒裝語序，正確）",
+      "（過去式一般語序，誤）",
+      "（過去式倒裝，誤，語意應為現在）"
+    ]
+  },
+  {
+    "sentence": "My uncle _____ me a nice watch for my birthday.",
+    "options": [
+      "(A) gave",
+      "(B) said",
+      "(C) told",
+      "(D) spoke"
+    ],
+    "answer": 0,
+    "explanation": "give 可接雙受詞（人＋物），故用 gave me a watch。",
+    "target_grammar": "授與動詞",
+    "id": "grammar_290",
+    "optionsZh": [
+      "（授與動詞，正確）",
+      "（不接雙受詞，誤）",
+      "（須接to的動詞，誤）",
+      "（不及物動詞，誤）"
+    ]
+  },
+  {
+    "sentence": "Could you _____ me the salt, please?",
+    "options": [
+      "(A) say",
+      "(B) tell",
+      "(C) pass",
+      "(D) speak"
+    ],
+    "answer": 2,
+    "explanation": "pass 可接雙受詞（人＋物），表示「遞給」。",
+    "target_grammar": "授與動詞",
+    "id": "grammar_291",
+    "optionsZh": [
+      "（不接雙受詞，誤）",
+      "（接雙受詞但語意不符，誤）",
+      "（授與動詞，正確）",
+      "（不及物動詞，誤）"
+    ]
+  },
+  {
+    "sentence": "The teacher _____ us an interesting story yesterday.",
+    "options": [
+      "(A) said",
+      "(B) told",
+      "(C) spoke",
+      "(D) talked"
+    ],
+    "answer": 1,
+    "explanation": "tell 可接雙受詞（人＋物），故用 told us a story。",
+    "target_grammar": "授與動詞",
+    "id": "grammar_292",
+    "optionsZh": [
+      "（不接雙受詞，誤）",
+      "（授與動詞，正確）",
+      "（不接雙受詞，誤）",
+      "（不及物動詞，誤）"
+    ]
+  },
+  {
+    "sentence": "There _____ a lot of students in the library right now.",
+    "options": [
+      "(A) is",
+      "(B) are",
+      "(C) was",
+      "(D) has"
+    ],
+    "answer": 1,
+    "explanation": "There be 句型須與後方名詞的單複數一致，students 為複數用 are。",
+    "target_grammar": "There be句型",
+    "id": "grammar_293",
+    "optionsZh": [
+      "（be動詞單數，誤）",
+      "（be動詞複數，正確）",
+      "（過去式，誤）",
+      "（一般動詞，誤）"
+    ]
+  },
+  {
+    "sentence": "There _____ some milk in the fridge, so you don't need to buy more.",
+    "options": [
+      "(A) are",
+      "(B) is",
+      "(C) were",
+      "(D) have"
+    ],
+    "answer": 1,
+    "explanation": "milk 為不可數名詞，視為單數，用 is。",
+    "target_grammar": "There be句型",
+    "id": "grammar_294",
+    "optionsZh": [
+      "（be動詞複數，誤）",
+      "（be動詞單數，正確）",
+      "（過去式複數，誤）",
+      "（一般動詞，誤）"
+    ]
+  },
+  {
+    "sentence": "There _____ many people at the concert last night.",
+    "options": [
+      "(A) is",
+      "(B) was",
+      "(C) were",
+      "(D) are"
+    ],
+    "answer": 2,
+    "explanation": "last night 表過去，且 people 為複數，用 were。",
+    "target_grammar": "There be句型",
+    "id": "grammar_295",
+    "optionsZh": [
+      "（現在單數，誤）",
+      "（過去單數，誤）",
+      "（過去複數，正確）",
+      "（現在複數，誤）"
+    ]
+  },
+  {
+    "sentence": "I wanted to go to the party, _____ I had too much homework to finish.",
+    "options": [
+      "(A) and",
+      "(B) but",
+      "(C) or",
+      "(D) so"
+    ],
+    "answer": 1,
+    "explanation": "前後語意轉折（想去但功課太多），用 but。",
+    "target_grammar": "對等連接詞",
+    "id": "grammar_296",
+    "optionsZh": [
+      "（而且）",
+      "（但是）",
+      "（或者）",
+      "（所以）"
+    ]
+  },
+  {
+    "sentence": "You can have tea _____ coffee; both are free.",
+    "options": [
+      "(A) and",
+      "(B) but",
+      "(C) or",
+      "(D) so"
+    ],
+    "answer": 2,
+    "explanation": "表示兩者選一，用 or。",
+    "target_grammar": "對等連接詞",
+    "id": "grammar_297",
+    "optionsZh": [
+      "（而且）",
+      "（但是）",
+      "（或者）",
+      "（所以）"
+    ]
+  },
+  {
+    "sentence": "It started to rain, _____ we decided to stay indoors.",
+    "options": [
+      "(A) but",
+      "(B) or",
+      "(C) so",
+      "(D) and"
+    ],
+    "answer": 2,
+    "explanation": "前後為因果關係（下雨所以留在室內），用 so。",
+    "target_grammar": "對等連接詞",
+    "id": "grammar_298",
+    "optionsZh": [
+      "（但是）",
+      "（或者）",
+      "（所以）",
+      "（而且）"
+    ]
+  },
+  {
+    "sentence": "Water _____ at 100 degrees Celsius.",
+    "options": [
+      "(A) boils",
+      "(B) boiled",
+      "(C) is boiling",
+      "(D) has boiled"
+    ],
+    "answer": 0,
+    "explanation": "描述科學事實，用現在簡單式 boils。",
+    "target_grammar": "現在簡單式",
+    "id": "grammar_299",
+    "optionsZh": [
+      "（現在簡單式，正確）",
+      "（過去式，誤）",
+      "（現在進行式，誤）",
+      "（現在完成式，誤）"
+    ]
+  },
+  {
+    "sentence": "My father _____ to the office by bus every day.",
+    "options": [
+      "(A) go",
+      "(B) goes",
+      "(C) went",
+      "(D) is going"
+    ],
+    "answer": 1,
+    "explanation": "主詞 father 為第三人稱單數，習慣性動作用現在簡單式加 s。",
+    "target_grammar": "現在簡單式",
+    "id": "grammar_300",
+    "optionsZh": [
+      "（缺三單s，誤）",
+      "（現在簡單式，正確）",
+      "（過去式，誤）",
+      "（現在進行式，誤）"
+    ]
+  },
+  {
+    "sentence": "The shop _____ at nine o'clock every morning.",
+    "options": [
+      "(A) open",
+      "(B) opens",
+      "(C) opened",
+      "(D) is opening"
+    ],
+    "answer": 1,
+    "explanation": "表示固定的營業時間，用現在簡單式 opens。",
+    "target_grammar": "現在簡單式",
+    "id": "grammar_301",
+    "optionsZh": [
+      "（缺三單s，誤）",
+      "（現在簡單式，正確）",
+      "（過去式，誤）",
+      "（現在進行式，誤）"
+    ]
+  },
+  {
+    "sentence": "We _____ to the zoo last Sunday and saw many animals.",
+    "options": [
+      "(A) go",
+      "(B) went",
+      "(C) have gone",
+      "(D) are going"
+    ],
+    "answer": 1,
+    "explanation": "last Sunday 為明確過去時間，用過去簡單式 went。",
+    "target_grammar": "過去簡單式",
+    "id": "grammar_302",
+    "optionsZh": [
+      "（現在式，誤）",
+      "（過去式，正確）",
+      "（現在完成式，誤）",
+      "（現在進行式，誤）"
+    ]
+  },
+  {
+    "sentence": "She _____ her keys yesterday, but she found them later.",
+    "options": [
+      "(A) loses",
+      "(B) lost",
+      "(C) has lost",
+      "(D) is losing"
+    ],
+    "answer": 1,
+    "explanation": "yesterday 為明確過去時間，用過去簡單式 lost。",
+    "target_grammar": "過去簡單式",
+    "id": "grammar_303",
+    "optionsZh": [
+      "（現在式，誤）",
+      "（過去式，正確）",
+      "（現在完成式，誤）",
+      "（現在進行式，誤）"
+    ]
+  },
+  {
+    "sentence": "They _____ a wonderful trip to the mountains two years ago.",
+    "options": [
+      "(A) have",
+      "(B) had",
+      "(C) has",
+      "(D) are having"
+    ],
+    "answer": 1,
+    "explanation": "two years ago 為明確過去時間，用過去簡單式 had。",
+    "target_grammar": "過去簡單式",
+    "id": "grammar_304",
+    "optionsZh": [
+      "（現在式，誤）",
+      "（過去式，正確）",
+      "（三單現在式，誤）",
+      "（現在進行式，誤）"
+    ]
+  },
+  {
+    "sentence": "_____ a good friend is not always easy.",
+    "options": [
+      "(A) Be",
+      "(B) Being",
+      "(C) To be",
+      "(D) Been"
+    ],
+    "answer": 2,
+    "explanation": "不定詞片語可當句子主詞，表示「要成為…」。",
+    "target_grammar": "不定詞當主詞",
+    "id": "grammar_305",
+    "optionsZh": [
+      "（原形，誤）",
+      "（動名詞，非本題答案）",
+      "（不定詞當主詞）",
+      "（過去分詞，誤）"
+    ]
+  },
+  {
+    "sentence": "My goal this year is _____ my English grade.",
+    "options": [
+      "(A) improve",
+      "(B) improving",
+      "(C) to improve",
+      "(D) improved"
+    ],
+    "answer": 2,
+    "explanation": "be 動詞後接不定詞當主詞補語，表示目標內容。",
+    "target_grammar": "不定詞當主詞補語",
+    "id": "grammar_306",
+    "optionsZh": [
+      "（原形，誤）",
+      "（動名詞，非本題答案）",
+      "（不定詞當主詞補語）",
+      "（過去分詞，誤）"
+    ]
+  },
+  {
+    "sentence": "The doctor advised him _____ more vegetables and less meat.",
+    "options": [
+      "(A) eat",
+      "(B) eating",
+      "(C) to eat",
+      "(D) ate"
+    ],
+    "answer": 2,
+    "explanation": "advise + 受詞 + to V，表示建議某人做某事。",
+    "target_grammar": "不定詞",
+    "id": "grammar_307",
+    "optionsZh": [
+      "（原形，誤）",
+      "（動名詞，誤）",
+      "（不定詞）",
+      "（過去式，誤）"
+    ]
+  },
+  {
+    "sentence": "_____ you practice, the better you will become at playing the piano.",
+    "options": [
+      "(A) More",
+      "(B) The more",
+      "(C) Much more",
+      "(D) Most"
+    ],
+    "answer": 1,
+    "explanation": "the + 比較級, the + 比較級 句型，表示「越…就越…」。",
+    "target_grammar": "比較級句型",
+    "id": "grammar_308",
+    "optionsZh": [
+      "（缺定冠詞，誤）",
+      "（正確句型）",
+      "（修飾詞誤用）",
+      "（最高級，誤）"
+    ]
+  },
+  {
+    "sentence": "The _____ the fruit is, the more expensive it becomes.",
+    "options": [
+      "(A) fresh",
+      "(B) fresher",
+      "(C) freshest",
+      "(D) more fresh"
+    ],
+    "answer": 1,
+    "explanation": "the + 比較級, the + 比較級 句型，形容詞須用比較級 fresher。",
+    "target_grammar": "比較級句型",
+    "id": "grammar_309",
+    "optionsZh": [
+      "（原級，誤）",
+      "（正確比較級）",
+      "（最高級，誤）",
+      "（錯誤比較級）"
+    ]
+  },
+  {
+    "sentence": "He talks as if he _____ everything about computers.",
+    "options": [
+      "(A) knows",
+      "(B) knew",
+      "(C) has known",
+      "(D) will know"
+    ],
+    "answer": 1,
+    "explanation": "as if 表示與現在事實相反的假設，動詞用過去式 knew。",
+    "target_grammar": "假設語氣",
+    "id": "grammar_310",
+    "optionsZh": [
+      "（現在式，誤）",
+      "（假設語氣過去式）",
+      "（現在完成式，誤）",
+      "（未來式，誤）"
+    ]
+  },
+  {
+    "sentence": "If only I _____ more time to prepare for the exam!",
+    "options": [
+      "(A) have",
+      "(B) had",
+      "(C) will have",
+      "(D) has"
+    ],
+    "answer": 1,
+    "explanation": "If only 表示與現在事實相反的強烈願望，動詞用過去式 had。",
+    "target_grammar": "假設語氣",
+    "id": "grammar_311",
+    "optionsZh": [
+      "（現在式，誤）",
+      "（假設語氣過去式）",
+      "（未來式，誤）",
+      "（三單現在式，誤）"
+    ]
   }
 ]

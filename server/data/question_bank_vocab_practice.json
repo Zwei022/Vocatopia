@@ -1,1210 +1,6130 @@
 [
   {
     "sentence": "The typhoon was coming, so the school decided to _____ the sports day to a safer date.",
-    "options": ["(A) cancel", "(B) enjoy", "(C) postpone", "(D) win"],
+    "options": [
+      "(A) cancel",
+      "(B) enjoy",
+      "(C) postpone",
+      "(D) win"
+    ],
     "answer": 2,
     "explanation": "postpone 指延期。颱風來襲、改到較安全的日期是把活動延後，故選 postpone；cancel 為取消，與「to a safer date」改期不符。",
     "pos": "動詞",
     "id": "vocab_0",
-    "optionsZh": ["取消", "享受", "延期", "贏得"]
+    "optionsZh": [
+      "取消",
+      "享受",
+      "延期",
+      "贏得"
+    ]
   },
   {
     "sentence": "Mr. Lin is a _____ man who often donates money to help poor children in his town.",
-    "options": ["(A) greedy", "(B) generous", "(C) careless", "(D) curious"],
+    "options": [
+      "(A) greedy",
+      "(B) generous",
+      "(C) careless",
+      "(D) curious"
+    ],
     "answer": 1,
     "explanation": "generous 指慷慨大方。常捐錢幫助貧童正是慷慨，故選 generous；greedy 貪心語意相反。",
     "pos": "形容詞",
     "id": "vocab_1",
-    "optionsZh": ["貪心的", "慷慨的", "粗心的", "好奇的"]
+    "optionsZh": [
+      "貪心的",
+      "慷慨的",
+      "粗心的",
+      "好奇的"
+    ]
   },
   {
     "sentence": "The instructions were so _____ that none of us knew how to set up the new machine.",
-    "options": ["(A) clear", "(B) simple", "(C) confusing", "(D) helpful"],
+    "options": [
+      "(A) clear",
+      "(B) simple",
+      "(C) confusing",
+      "(D) helpful"
+    ],
     "answer": 2,
     "explanation": "confusing 指令人困惑。正因說明令人困惑，大家才不會操作，clear、simple、helpful 都與「none of us knew」矛盾。",
     "pos": "形容詞",
     "id": "vocab_2",
-    "optionsZh": ["清楚的", "簡單的", "令人困惑的", "有幫助的"]
+    "optionsZh": [
+      "清楚的",
+      "簡單的",
+      "令人困惑的",
+      "有幫助的"
+    ]
   },
   {
     "sentence": "She felt _____ after running for a whole hour, so she sat down to drink some water.",
-    "options": ["(A) excited", "(B) cheerful", "(C) curious", "(D) exhausted"],
+    "options": [
+      "(A) excited",
+      "(B) cheerful",
+      "(C) curious",
+      "(D) exhausted"
+    ],
     "answer": 3,
     "explanation": "exhausted 指筋疲力盡。跑了一整個小時後坐下喝水，符合疲累的情境，故選 exhausted。",
     "pos": "形容詞",
     "id": "vocab_3",
-    "optionsZh": ["興奮的", "愉快的", "好奇的", "精疲力盡的"]
+    "optionsZh": [
+      "興奮的",
+      "愉快的",
+      "好奇的",
+      "精疲力盡的"
+    ]
   },
   {
     "sentence": "The little boy tried to _____ his broken toy by sticking the pieces together with glue.",
-    "options": ["(A) repair", "(B) reject", "(C) remove", "(D) review"],
+    "options": [
+      "(A) repair",
+      "(B) reject",
+      "(C) remove",
+      "(D) review"
+    ],
     "answer": 0,
     "explanation": "repair 指修理。用膠水把碎片黏在一起是修理玩具，故選 repair；其餘 r 開頭字語意都不合。",
     "pos": "動詞",
     "id": "vocab_4",
-    "optionsZh": ["修理", "拒絕", "移除", "複習、檢視"]
+    "optionsZh": [
+      "修理",
+      "拒絕",
+      "移除",
+      "複習、檢視"
+    ]
   },
   {
     "sentence": "Because the traffic was terrible, the bus _____ at the station twenty minutes later than usual.",
-    "options": ["(A) departed", "(B) arrived", "(C) escaped", "(D) returned"],
+    "options": [
+      "(A) departed",
+      "(B) arrived",
+      "(C) escaped",
+      "(D) returned"
+    ],
     "answer": 1,
     "explanation": "arrive 指抵達。公車比平常晚到站，故選 arrived；depart 是出發，語意相反。",
     "pos": "動詞",
     "id": "vocab_5",
-    "optionsZh": ["出發、離開", "抵達", "逃跑", "返回"]
+    "optionsZh": [
+      "出發、離開",
+      "抵達",
+      "逃跑",
+      "返回"
+    ]
   },
   {
     "sentence": "The hotel room was very _____ ; we could hear every word from the people next door.",
-    "options": ["(A) silent", "(B) clean", "(C) empty", "(D) noisy"],
+    "options": [
+      "(A) silent",
+      "(B) clean",
+      "(C) empty",
+      "(D) noisy"
+    ],
     "answer": 3,
     "explanation": "noisy 指吵雜。能聽到隔壁的每句話，表示房間很吵、隔音差，故選 noisy；silent 安靜語意相反。",
     "pos": "形容詞",
     "id": "vocab_6",
-    "optionsZh": ["安靜的", "乾淨的", "空的", "吵鬧的"]
+    "optionsZh": [
+      "安靜的",
+      "乾淨的",
+      "空的",
+      "吵鬧的"
+    ]
   },
   {
     "sentence": "Remember to _____ the electricity bill before the end of this month, or the power will be cut.",
-    "options": ["(A) pay", "(B) buy", "(C) sell", "(D) spend"],
+    "options": [
+      "(A) pay",
+      "(B) buy",
+      "(C) sell",
+      "(D) spend"
+    ],
     "answer": 0,
     "explanation": "pay 指支付。月底前要繳電費，否則會被斷電，故選 pay。",
     "pos": "動詞",
     "id": "vocab_7",
-    "optionsZh": ["付錢", "購買", "販賣", "花費"]
+    "optionsZh": [
+      "付錢",
+      "購買",
+      "販賣",
+      "花費"
+    ]
   },
   {
     "sentence": "He spoke so _____ that the people sitting at the back could not hear him at all.",
-    "options": ["(A) loudly", "(B) clearly", "(C) quietly", "(D) quickly"],
+    "options": [
+      "(A) loudly",
+      "(B) clearly",
+      "(C) quietly",
+      "(D) quickly"
+    ],
     "answer": 2,
     "explanation": "quietly 指小聲地。後排完全聽不到，表示他講得太小聲，故選 quietly；loudly 大聲相反。",
     "pos": "副詞",
     "id": "vocab_8",
-    "optionsZh": ["大聲地", "清楚地", "安靜地", "快速地"]
+    "optionsZh": [
+      "大聲地",
+      "清楚地",
+      "安靜地",
+      "快速地"
+    ]
   },
   {
     "sentence": "After the long holiday, the students felt _____ to go back to school and meet their friends.",
-    "options": ["(A) afraid", "(B) eager", "(C) bored", "(D) sorry"],
+    "options": [
+      "(A) afraid",
+      "(B) eager",
+      "(C) bored",
+      "(D) sorry"
+    ],
     "answer": 1,
     "explanation": "eager 指渴望的。長假後想回學校見朋友是滿心期待，故選 eager。",
     "pos": "形容詞",
     "id": "vocab_9",
-    "optionsZh": ["害怕的", "渴望的", "無聊的", "抱歉的"]
+    "optionsZh": [
+      "害怕的",
+      "渴望的",
+      "無聊的",
+      "抱歉的"
+    ]
   },
   {
     "sentence": "The scientist will _____ the results of the experiment at the meeting next Friday.",
-    "options": ["(A) present", "(B) prevent", "(C) pretend", "(D) prefer"],
+    "options": [
+      "(A) present",
+      "(B) prevent",
+      "(C) pretend",
+      "(D) prefer"
+    ],
     "answer": 0,
     "explanation": "present 指發表、呈現。在會議上發表實驗結果，故選 present；其餘形近字語意都不同。",
     "pos": "動詞",
     "id": "vocab_10",
-    "optionsZh": ["呈現、頒發", "預防", "假裝", "比較喜歡"]
+    "optionsZh": [
+      "呈現、頒發",
+      "預防",
+      "假裝",
+      "比較喜歡"
+    ]
   },
   {
     "sentence": "The mountain road becomes very _____ after it rains, so drivers should slow down.",
-    "options": ["(A) sunny", "(B) crowded", "(C) narrow", "(D) slippery"],
+    "options": [
+      "(A) sunny",
+      "(B) crowded",
+      "(C) narrow",
+      "(D) slippery"
+    ],
     "answer": 3,
     "explanation": "slippery 指濕滑的。下雨後路面濕滑、駕駛要減速，故選 slippery。",
     "pos": "形容詞",
     "id": "vocab_11",
-    "optionsZh": ["晴朗的", "擁擠的", "狹窄的", "滑的"]
+    "optionsZh": [
+      "晴朗的",
+      "擁擠的",
+      "狹窄的",
+      "滑的"
+    ]
   },
   {
     "sentence": "Tom forgot his pen, so he had to _____ one from his classmate.",
-    "options": ["(A) borrow", "(B) lend", "(C) keep", "(D) throw"],
+    "options": [
+      "(A) borrow",
+      "(B) lend",
+      "(C) keep",
+      "(D) throw"
+    ],
     "answer": 0,
     "explanation": "borrow 指向別人借東西。忘記帶筆只好向同學借一枝，故選 borrow；lend 是借出，方向相反。",
     "pos": "動詞",
     "id": "vocab_12",
-    "optionsZh": ["借入", "借出", "保留", "丟掉"],
+    "optionsZh": [
+      "借入",
+      "借出",
+      "保留",
+      "丟掉"
+    ],
     "difficulty": 1,
     "vocab_tier": "T1"
   },
   {
     "sentence": "Please _____ this book to the library before Friday.",
-    "options": ["(A) buy", "(B) return", "(C) write", "(D) read"],
+    "options": [
+      "(A) buy",
+      "(B) return",
+      "(C) write",
+      "(D) read"
+    ],
     "answer": 1,
     "explanation": "return 指歸還。要求週五前把書還給圖書館，故選 return。",
     "pos": "動詞",
     "id": "vocab_13",
-    "optionsZh": ["購買", "歸還", "書寫", "閱讀"],
+    "optionsZh": [
+      "購買",
+      "歸還",
+      "書寫",
+      "閱讀"
+    ],
     "difficulty": 1,
     "vocab_tier": "T1"
   },
   {
     "sentence": "It started to rain, so Amy opened her _____ to keep dry.",
-    "options": ["(A) fan", "(B) blanket", "(C) umbrella", "(D) towel"],
+    "options": [
+      "(A) fan",
+      "(B) blanket",
+      "(C) umbrella",
+      "(D) towel"
+    ],
     "answer": 2,
     "explanation": "umbrella 指雨傘。下雨了要撐傘保持乾燥，故選 umbrella。",
     "pos": "名詞",
     "id": "vocab_14",
-    "optionsZh": ["扇子", "毯子", "雨傘", "毛巾"],
+    "optionsZh": [
+      "扇子",
+      "毯子",
+      "雨傘",
+      "毛巾"
+    ],
     "difficulty": 1,
     "vocab_tier": "T1"
   },
   {
     "sentence": "Before dinner, remember to _____ your hands with soap.",
-    "options": ["(A) dry", "(B) cut", "(C) burn", "(D) wash"],
+    "options": [
+      "(A) dry",
+      "(B) cut",
+      "(C) burn",
+      "(D) wash"
+    ],
     "answer": 3,
     "explanation": "wash 指清洗。飯前用肥皂洗手是衛生習慣，故選 wash。",
     "pos": "動詞",
     "id": "vocab_15",
-    "optionsZh": ["弄乾", "切", "燒", "清洗"],
+    "optionsZh": [
+      "弄乾",
+      "切",
+      "燒",
+      "清洗"
+    ],
     "difficulty": 1,
     "vocab_tier": "T1"
   },
   {
     "sentence": "Danny worked hard and managed to _____ his homework before dinner.",
-    "options": ["(A) finish", "(B) start", "(C) forget", "(D) lose"],
+    "options": [
+      "(A) finish",
+      "(B) start",
+      "(C) forget",
+      "(D) lose"
+    ],
     "answer": 0,
     "explanation": "finish 指完成。認真做完功課才能趕上晚餐時間，故選 finish；start 開始語意相反。",
     "pos": "動詞",
     "id": "vocab_16",
-    "optionsZh": ["完成", "開始", "忘記", "遺失"],
+    "optionsZh": [
+      "完成",
+      "開始",
+      "忘記",
+      "遺失"
+    ],
     "difficulty": 1,
     "vocab_tier": "T1"
   },
   {
     "sentence": "When Amy didn't know a word, she looked it up in a _____.",
-    "options": ["(A) newspaper", "(B) dictionary", "(C) calendar", "(D) magazine"],
+    "options": [
+      "(A) newspaper",
+      "(B) dictionary",
+      "(C) calendar",
+      "(D) magazine"
+    ],
     "answer": 1,
     "explanation": "dictionary 指字典。查詢不懂的單字要用字典，故選 dictionary。",
     "pos": "名詞",
     "id": "vocab_17",
-    "optionsZh": ["報紙", "字典", "日曆", "雜誌"],
+    "optionsZh": [
+      "報紙",
+      "字典",
+      "日曆",
+      "雜誌"
+    ],
     "difficulty": 1,
     "vocab_tier": "T1"
   },
   {
     "sentence": "Please don't _____ to bring your umbrella; it may rain today.",
-    "options": ["(A) lose", "(B) buy", "(C) forget", "(D) sell"],
+    "options": [
+      "(A) lose",
+      "(B) buy",
+      "(C) forget",
+      "(D) sell"
+    ],
     "answer": 2,
     "explanation": "forget 指忘記。提醒別忘記帶傘以免淋雨，故選 forget。",
     "pos": "動詞",
     "id": "vocab_18",
-    "optionsZh": ["遺失", "購買", "忘記", "販賣"],
+    "optionsZh": [
+      "遺失",
+      "購買",
+      "忘記",
+      "販賣"
+    ],
     "difficulty": 1,
     "vocab_tier": "T1"
   },
   {
     "sentence": "You need to buy a _____ before you can get on the train.",
-    "options": ["(A) menu", "(B) receipt", "(C) package", "(D) ticket"],
+    "options": [
+      "(A) menu",
+      "(B) receipt",
+      "(C) package",
+      "(D) ticket"
+    ],
     "answer": 3,
     "explanation": "ticket 指車票。搭火車前要先買票，故選 ticket。",
     "pos": "名詞",
     "id": "vocab_19",
-    "optionsZh": ["菜單", "收據", "包裹", "票"],
+    "optionsZh": [
+      "菜單",
+      "收據",
+      "包裹",
+      "票"
+    ],
     "difficulty": 1,
     "vocab_tier": "T1"
   },
   {
     "sentence": "The door was heavy, so John had to _____ it hard to open it.",
-    "options": ["(A) push", "(B) pull", "(C) kick", "(D) lift"],
+    "options": [
+      "(A) push",
+      "(B) pull",
+      "(C) kick",
+      "(D) lift"
+    ],
     "answer": 0,
     "explanation": "push 指推。門很重需要用力推才能打開，故選 push；pull 拉是反方向動作。",
     "pos": "動詞",
     "id": "vocab_20",
-    "optionsZh": ["推", "拉", "踢", "舉起"],
+    "optionsZh": [
+      "推",
+      "拉",
+      "踢",
+      "舉起"
+    ],
     "difficulty": 1,
     "vocab_tier": "T1"
   },
   {
     "sentence": "The little girl tried to _____ the rope to ring the bell.",
-    "options": ["(A) push", "(B) pull", "(C) throw", "(D) drop"],
+    "options": [
+      "(A) push",
+      "(B) pull",
+      "(C) throw",
+      "(D) drop"
+    ],
     "answer": 1,
     "explanation": "pull 指拉。拉繩子才能讓鈴響，故選 pull。",
     "pos": "動詞",
     "id": "vocab_21",
-    "optionsZh": ["推", "拉", "丟", "放下"],
+    "optionsZh": [
+      "推",
+      "拉",
+      "丟",
+      "放下"
+    ],
     "difficulty": 1,
     "vocab_tier": "T1"
   },
   {
     "sentence": "After school, the children ran to the _____ to play on the swings.",
-    "options": ["(A) kitchen", "(B) hospital", "(C) playground", "(D) library"],
+    "options": [
+      "(A) kitchen",
+      "(B) hospital",
+      "(C) playground",
+      "(D) library"
+    ],
     "answer": 2,
     "explanation": "playground 指遊樂場。放學後去盪鞦韆要到遊樂場，故選 playground。",
     "pos": "名詞",
     "id": "vocab_22",
-    "optionsZh": ["廚房", "醫院", "遊樂場", "圖書館"],
+    "optionsZh": [
+      "廚房",
+      "醫院",
+      "遊樂場",
+      "圖書館"
+    ],
     "difficulty": 1,
     "vocab_tier": "T1"
   },
   {
     "sentence": "Be careful! Don't _____ the glass cup while washing it.",
-    "options": ["(A) fix", "(B) paint", "(C) clean", "(D) break"],
+    "options": [
+      "(A) fix",
+      "(B) paint",
+      "(C) clean",
+      "(D) break"
+    ],
     "answer": 3,
     "explanation": "break 指打破。洗杯子時要小心避免打破，故選 break。",
     "pos": "動詞",
     "id": "vocab_23",
-    "optionsZh": ["修理", "上漆", "清潔", "打破"],
+    "optionsZh": [
+      "修理",
+      "上漆",
+      "清潔",
+      "打破"
+    ],
     "difficulty": 1,
     "vocab_tier": "T1"
   },
   {
     "sentence": "Every morning, Ken puts his books and lunch box into his _____.",
-    "options": ["(A) backpack", "(B) wallet", "(C) drawer", "(D) closet"],
+    "options": [
+      "(A) backpack",
+      "(B) wallet",
+      "(C) drawer",
+      "(D) closet"
+    ],
     "answer": 0,
     "explanation": "backpack 指背包。把書和便當放進背包準備上學，故選 backpack。",
     "pos": "名詞",
     "id": "vocab_24",
-    "optionsZh": ["背包", "皮夾", "抽屜", "衣櫃"],
+    "optionsZh": [
+      "背包",
+      "皮夾",
+      "抽屜",
+      "衣櫃"
+    ],
     "difficulty": 1,
     "vocab_tier": "T1"
   },
   {
     "sentence": "The movie will _____ at seven o'clock, so let's hurry.",
-    "options": ["(A) end", "(B) begin", "(C) stop", "(D) close"],
+    "options": [
+      "(A) end",
+      "(B) begin",
+      "(C) stop",
+      "(D) close"
+    ],
     "answer": 1,
     "explanation": "begin 指開始。電影七點要開始了必須趕快，故選 begin；end 結束語意相反。",
     "pos": "動詞",
     "id": "vocab_25",
-    "optionsZh": ["結束", "開始", "停止", "關閉"],
+    "optionsZh": [
+      "結束",
+      "開始",
+      "停止",
+      "關閉"
+    ],
     "difficulty": 1,
     "vocab_tier": "T1"
   },
   {
     "sentence": "The _____ grows rice and vegetables on his land every year.",
-    "options": ["(A) singer", "(B) driver", "(C) farmer", "(D) doctor"],
+    "options": [
+      "(A) singer",
+      "(B) driver",
+      "(C) farmer",
+      "(D) doctor"
+    ],
     "answer": 2,
     "explanation": "farmer 指農夫。在自己土地上種稻米蔬菜的人是農夫，故選 farmer。",
     "pos": "名詞",
     "id": "vocab_26",
-    "optionsZh": ["歌手", "駕駛", "農夫", "醫生"],
+    "optionsZh": [
+      "歌手",
+      "駕駛",
+      "農夫",
+      "醫生"
+    ],
     "difficulty": 1,
     "vocab_tier": "T1"
   },
   {
     "sentence": "Please don't _____ your trash on the ground; use the trash can.",
-    "options": ["(A) keep", "(B) wash", "(C) buy", "(D) throw"],
+    "options": [
+      "(A) keep",
+      "(B) wash",
+      "(C) buy",
+      "(D) throw"
+    ],
     "answer": 3,
     "explanation": "throw 指丟。垃圾不能亂丟要丟進垃圾桶，故選 throw。",
     "pos": "動詞",
     "id": "vocab_27",
-    "optionsZh": ["保留", "清洗", "購買", "丟"],
+    "optionsZh": [
+      "保留",
+      "清洗",
+      "購買",
+      "丟"
+    ],
     "difficulty": 1,
     "vocab_tier": "T1"
   },
   {
     "sentence": "After the accident, he was sent to the _____ to see a doctor.",
-    "options": ["(A) hospital", "(B) library", "(C) hotel", "(D) factory"],
+    "options": [
+      "(A) hospital",
+      "(B) library",
+      "(C) hotel",
+      "(D) factory"
+    ],
     "answer": 0,
     "explanation": "hospital 指醫院。意外後要送醫看診，故選 hospital。",
     "pos": "名詞",
     "id": "vocab_28",
-    "optionsZh": ["醫院", "圖書館", "飯店", "工廠"],
+    "optionsZh": [
+      "醫院",
+      "圖書館",
+      "飯店",
+      "工廠"
+    ],
     "difficulty": 1,
     "vocab_tier": "T1"
   },
   {
     "sentence": "The night market was so _____ that we could hardly move.",
-    "options": ["(A) spacious", "(B) crowded", "(C) peaceful", "(D) silent"],
+    "options": [
+      "(A) spacious",
+      "(B) crowded",
+      "(C) peaceful",
+      "(D) silent"
+    ],
     "answer": 1,
     "explanation": "crowded 指擁擠的。夜市人多到幾乎無法移動，故選 crowded；peaceful、silent 皆與擁擠情境相反。",
     "pos": "形容詞",
     "id": "vocab_29",
-    "optionsZh": ["寬敞的", "擁擠的", "平靜的", "安靜的"],
+    "optionsZh": [
+      "寬敞的",
+      "擁擠的",
+      "平靜的",
+      "安靜的"
+    ],
     "difficulty": 2,
     "vocab_tier": "T1-T2"
   },
   {
     "sentence": "Emma decided to _____ all her classmates to her birthday party next Saturday.",
-    "options": ["(A) refuse", "(B) ignore", "(C) invite", "(D) blame"],
+    "options": [
+      "(A) refuse",
+      "(B) ignore",
+      "(C) invite",
+      "(D) blame"
+    ],
     "answer": 2,
     "explanation": "invite 指邀請。決定邀請全班同學參加生日派對，故選 invite。",
     "pos": "動詞",
     "id": "vocab_30",
-    "optionsZh": ["拒絕", "忽視", "邀請", "責怪"],
+    "optionsZh": [
+      "拒絕",
+      "忽視",
+      "邀請",
+      "責怪"
+    ],
     "difficulty": 2,
     "vocab_tier": "T1-T2"
   },
   {
     "sentence": "The cake Grandma made was so _____ that everyone asked for a second piece.",
-    "options": ["(A) awful", "(B) plain", "(C) spicy", "(D) delicious"],
+    "options": [
+      "(A) awful",
+      "(B) plain",
+      "(C) spicy",
+      "(D) delicious"
+    ],
     "answer": 3,
     "explanation": "delicious 指美味的。大家都要求再吃一塊，暗示蛋糕非常好吃，故選 delicious。",
     "pos": "形容詞",
     "id": "vocab_31",
-    "optionsZh": ["糟糕的", "平淡的", "辣的", "美味的"],
+    "optionsZh": [
+      "糟糕的",
+      "平淡的",
+      "辣的",
+      "美味的"
+    ],
     "difficulty": 2,
     "vocab_tier": "T1-T2"
   },
   {
     "sentence": "If you want to speak English well, you need to _____ every single day.",
-    "options": ["(A) practice", "(B) memorize", "(C) imagine", "(D) translate"],
+    "options": [
+      "(A) practice",
+      "(B) memorize",
+      "(C) imagine",
+      "(D) translate"
+    ],
     "answer": 0,
     "explanation": "practice 指練習。想把英文說好需要每天練習，故選 practice。",
     "pos": "動詞",
     "id": "vocab_32",
-    "optionsZh": ["練習", "記憶", "想像", "翻譯"],
+    "optionsZh": [
+      "練習",
+      "記憶",
+      "想像",
+      "翻譯"
+    ],
     "difficulty": 2,
     "vocab_tier": "T1-T2"
   },
   {
     "sentence": "Before the big exam, Judy felt so _____ that she could not sleep well.",
-    "options": ["(A) relaxed", "(B) nervous", "(C) confident", "(D) sleepy"],
+    "options": [
+      "(A) relaxed",
+      "(B) nervous",
+      "(C) confident",
+      "(D) sleepy"
+    ],
     "answer": 1,
     "explanation": "nervous 指緊張的。考前緊張到睡不好，故選 nervous；relaxed 放鬆語意相反。",
     "pos": "形容詞",
     "id": "vocab_33",
-    "optionsZh": ["放鬆的", "緊張的", "有自信的", "想睡的"],
+    "optionsZh": [
+      "放鬆的",
+      "緊張的",
+      "有自信的",
+      "想睡的"
+    ],
     "difficulty": 2,
     "vocab_tier": "T1-T2"
   },
   {
     "sentence": "The teacher had to _____ the difficult grammar rule again and again.",
-    "options": ["(A) memorize", "(B) ignore", "(C) explain", "(D) hide"],
+    "options": [
+      "(A) memorize",
+      "(B) ignore",
+      "(C) explain",
+      "(D) hide"
+    ],
     "answer": 2,
     "explanation": "explain 指解釋。困難的文法規則需要老師一再解釋，故選 explain。",
     "pos": "動詞",
     "id": "vocab_34",
-    "optionsZh": ["背誦", "忽視", "解釋", "隱藏"],
+    "optionsZh": [
+      "背誦",
+      "忽視",
+      "解釋",
+      "隱藏"
+    ],
     "difficulty": 2,
     "vocab_tier": "T1-T2"
   },
   {
     "sentence": "It is _____ to say \"thank you\" when someone helps you.",
-    "options": ["(A) rude", "(B) lazy", "(C) careless", "(D) polite"],
+    "options": [
+      "(A) rude",
+      "(B) lazy",
+      "(C) careless",
+      "(D) polite"
+    ],
     "answer": 3,
     "explanation": "polite 指有禮貌的。別人幫忙時說謝謝是禮貌的表現，故選 polite。",
     "pos": "形容詞",
     "id": "vocab_35",
-    "optionsZh": ["無禮的", "懶惰的", "粗心的", "有禮貌的"],
+    "optionsZh": [
+      "無禮的",
+      "懶惰的",
+      "粗心的",
+      "有禮貌的"
+    ],
     "difficulty": 2,
     "vocab_tier": "T1-T2"
   },
   {
     "sentence": "Turning off the lights when you leave a room can help protect the _____.",
-    "options": ["(A) environment", "(B) population", "(C) economy", "(D) technology"],
+    "options": [
+      "(A) environment",
+      "(B) population",
+      "(C) economy",
+      "(D) technology"
+    ],
     "answer": 0,
     "explanation": "environment 指環境。隨手關燈能幫助保護環境，故選 environment。",
     "pos": "名詞",
     "id": "vocab_36",
-    "optionsZh": ["環境", "人口", "經濟", "科技"],
+    "optionsZh": [
+      "環境",
+      "人口",
+      "經濟",
+      "科技"
+    ],
     "difficulty": 2,
     "vocab_tier": "T1-T2"
   },
   {
     "sentence": "Reading more books every week can really _____ your writing skills.",
-    "options": ["(A) reduce", "(B) improve", "(C) damage", "(D) waste"],
+    "options": [
+      "(A) reduce",
+      "(B) improve",
+      "(C) damage",
+      "(D) waste"
+    ],
     "answer": 1,
     "explanation": "improve 指改善。多閱讀能改善寫作能力，故選 improve；reduce 減少與句意不符。",
     "pos": "動詞",
     "id": "vocab_37",
-    "optionsZh": ["減少", "改善", "損害", "浪費"],
+    "optionsZh": [
+      "減少",
+      "改善",
+      "損害",
+      "浪費"
+    ],
     "difficulty": 2,
     "vocab_tier": "T1-T2"
   },
   {
     "sentence": "This sofa is so _____ that I always fall asleep on it.",
-    "options": ["(A) hard", "(B) cold", "(C) comfortable", "(D) heavy"],
+    "options": [
+      "(A) hard",
+      "(B) cold",
+      "(C) comfortable",
+      "(D) heavy"
+    ],
     "answer": 2,
     "explanation": "comfortable 指舒適的。坐在上面總是不小心睡著，暗示沙發很舒適，故選 comfortable。",
     "pos": "形容詞",
     "id": "vocab_38",
-    "optionsZh": ["硬的", "冷的", "舒適的", "重的"],
+    "optionsZh": [
+      "硬的",
+      "冷的",
+      "舒適的",
+      "重的"
+    ],
     "difficulty": 2,
     "vocab_tier": "T1-T2"
   },
   {
     "sentence": "Wearing a helmet can _____ your head if you fall off your bike.",
-    "options": ["(A) hurt", "(B) hide", "(C) replace", "(D) protect"],
+    "options": [
+      "(A) hurt",
+      "(B) hide",
+      "(C) replace",
+      "(D) protect"
+    ],
     "answer": 3,
     "explanation": "protect 指保護。戴安全帽能在跌倒時保護頭部，故選 protect。",
     "pos": "動詞",
     "id": "vocab_39",
-    "optionsZh": ["傷害", "隱藏", "取代", "保護"],
+    "optionsZh": [
+      "傷害",
+      "隱藏",
+      "取代",
+      "保護"
+    ],
     "difficulty": 2,
     "vocab_tier": "T1-T2"
   },
   {
     "sentence": "The twins look so _____ that even their teacher cannot tell them apart.",
-    "options": ["(A) similar", "(B) different", "(C) opposite", "(D) strange"],
+    "options": [
+      "(A) similar",
+      "(B) different",
+      "(C) opposite",
+      "(D) strange"
+    ],
     "answer": 0,
     "explanation": "similar 指相似的。連老師都分不出雙胞胎，暗示他們長得很像，故選 similar。",
     "pos": "形容詞",
     "id": "vocab_40",
-    "optionsZh": ["相似的", "不同的", "相反的", "奇怪的"],
+    "optionsZh": [
+      "相似的",
+      "不同的",
+      "相反的",
+      "奇怪的"
+    ],
     "difficulty": 2,
     "vocab_tier": "T1-T2"
   },
   {
     "sentence": "Jason likes to _____ stamps from different countries as his hobby.",
-    "options": ["(A) throw away", "(B) collect", "(C) sell", "(D) borrow"],
+    "options": [
+      "(A) throw away",
+      "(B) collect",
+      "(C) sell",
+      "(D) borrow"
+    ],
     "answer": 1,
     "explanation": "collect 指收集。當作興趣收集各國郵票，故選 collect。",
     "pos": "動詞",
     "id": "vocab_41",
-    "optionsZh": ["丟棄", "收集", "販賣", "借入"],
+    "optionsZh": [
+      "丟棄",
+      "收集",
+      "販賣",
+      "借入"
+    ],
     "difficulty": 2,
     "vocab_tier": "T1-T2"
   },
   {
     "sentence": "Living near the MRT station is very _____ for people who work in the city.",
-    "options": ["(A) expensive", "(B) dangerous", "(C) convenient", "(D) noisy"],
+    "options": [
+      "(A) expensive",
+      "(B) dangerous",
+      "(C) convenient",
+      "(D) noisy"
+    ],
     "answer": 2,
     "explanation": "convenient 指方便的。住在捷運站附近對上班族來說很方便，故選 convenient。",
     "pos": "形容詞",
     "id": "vocab_42",
-    "optionsZh": ["昂貴的", "危險的", "方便的", "吵鬧的"],
+    "optionsZh": [
+      "昂貴的",
+      "危險的",
+      "方便的",
+      "吵鬧的"
+    ],
     "difficulty": 2,
     "vocab_tier": "T1-T2"
   },
   {
     "sentence": "Good coaches always _____ their players, even after they lose a game.",
-    "options": ["(A) blame", "(B) punish", "(C) ignore", "(D) encourage"],
+    "options": [
+      "(A) blame",
+      "(B) punish",
+      "(C) ignore",
+      "(D) encourage"
+    ],
     "answer": 3,
     "explanation": "encourage 指鼓勵。好教練即使輸球也會鼓勵球員，故選 encourage；blame 責怪語意相反。",
     "pos": "動詞",
     "id": "vocab_43",
-    "optionsZh": ["責怪", "懲罰", "忽視", "鼓勵"],
+    "optionsZh": [
+      "責怪",
+      "懲罰",
+      "忽視",
+      "鼓勵"
+    ],
     "difficulty": 2,
     "vocab_tier": "T1-T2"
   },
   {
     "sentence": "A good nurse must be _____ when taking care of sick people.",
-    "options": ["(A) patient", "(B) impatient", "(C) careless", "(D) selfish"],
+    "options": [
+      "(A) patient",
+      "(B) impatient",
+      "(C) careless",
+      "(D) selfish"
+    ],
     "answer": 0,
     "explanation": "patient 指有耐心的。照顧病人需要耐心，故選 patient。",
     "pos": "形容詞",
     "id": "vocab_44",
-    "optionsZh": ["有耐心的", "沒耐心的", "粗心的", "自私的"],
+    "optionsZh": [
+      "有耐心的",
+      "沒耐心的",
+      "粗心的",
+      "自私的"
+    ],
     "difficulty": 2,
     "vocab_tier": "T1-T2"
   },
   {
     "sentence": "Students should _____ for the test by reviewing their notes every night.",
-    "options": ["(A) forget", "(B) prepare", "(C) cancel", "(D) avoid"],
+    "options": [
+      "(A) forget",
+      "(B) prepare",
+      "(C) cancel",
+      "(D) avoid"
+    ],
     "answer": 1,
     "explanation": "prepare 指準備。學生應該複習筆記為考試做準備，故選 prepare。",
     "pos": "動詞",
     "id": "vocab_45",
-    "optionsZh": ["忘記", "準備", "取消", "避免"],
+    "optionsZh": [
+      "忘記",
+      "準備",
+      "取消",
+      "避免"
+    ],
     "difficulty": 2,
     "vocab_tier": "T1-T2"
   },
   {
     "sentence": "Because her little sister was afraid of the dark, Amy decided to _____ her to the bathroom at night.",
-    "options": ["(A) follow", "(B) guide", "(C) accompany", "(D) lead"],
+    "options": [
+      "(A) follow",
+      "(B) guide",
+      "(C) accompany",
+      "(D) lead"
+    ],
     "answer": 2,
     "explanation": "accompany 指陪同。妹妹怕黑，所以決定晚上陪她去廁所，故選 accompany。",
     "pos": "動詞",
     "id": "vocab_46",
-    "optionsZh": ["跟隨", "引導", "陪同", "帶領"],
+    "optionsZh": [
+      "跟隨",
+      "引導",
+      "陪同",
+      "帶領"
+    ],
     "difficulty": 3,
     "vocab_tier": "T2"
   },
   {
     "sentence": "Since the flight was delayed for hours, all the passengers waiting at the gate became increasingly _____.",
-    "options": ["(A) curious", "(B) confident", "(C) relieved", "(D) anxious"],
+    "options": [
+      "(A) curious",
+      "(B) confident",
+      "(C) relieved",
+      "(D) anxious"
+    ],
     "answer": 3,
     "explanation": "anxious 指焦慮的。班機延誤數小時使乘客越來越焦慮，故選 anxious。",
     "pos": "形容詞",
     "id": "vocab_47",
-    "optionsZh": ["好奇的", "有自信的", "鬆一口氣的", "焦慮的"],
+    "optionsZh": [
+      "好奇的",
+      "有自信的",
+      "鬆一口氣的",
+      "焦慮的"
+    ],
     "difficulty": 3,
     "vocab_tier": "T2"
   },
   {
     "sentence": "After training every day for a whole year, the young athlete finally managed to _____ her Olympic dream.",
-    "options": ["(A) achieve", "(B) reach", "(C) attempt", "(D) pursue"],
+    "options": [
+      "(A) achieve",
+      "(B) reach",
+      "(C) attempt",
+      "(D) pursue"
+    ],
     "answer": 0,
     "explanation": "achieve 指達成。訓練一整年終於達成奧運夢想，故選 achieve。",
     "pos": "動詞",
     "id": "vocab_48",
-    "optionsZh": ["達成", "到達", "嘗試", "追求"],
+    "optionsZh": [
+      "達成",
+      "到達",
+      "嘗試",
+      "追求"
+    ],
     "difficulty": 3,
     "vocab_tier": "T2"
   },
   {
     "sentence": "Even though the weather was terrible, the rescue team _____ found all the missing hikers before nightfall.",
-    "options": ["(A) hardly", "(B) successfully", "(C) barely", "(D) rarely"],
+    "options": [
+      "(A) hardly",
+      "(B) successfully",
+      "(C) barely",
+      "(D) rarely"
+    ],
     "answer": 1,
     "explanation": "successfully 指成功地。儘管天氣惡劣，搜救隊仍成功找到所有失蹤登山客，故選 successfully。",
     "pos": "副詞",
     "id": "vocab_49",
-    "optionsZh": ["幾乎不", "成功地", "勉強地", "很少"],
+    "optionsZh": [
+      "幾乎不",
+      "成功地",
+      "勉強地",
+      "很少"
+    ],
     "difficulty": 3,
     "vocab_tier": "T2"
   },
   {
     "sentence": "Since the museum is very popular, all visitors are _____ to book tickets online in advance.",
-    "options": ["(A) allowed", "(B) invited", "(C) required", "(D) permitted"],
+    "options": [
+      "(A) allowed",
+      "(B) invited",
+      "(C) required",
+      "(D) permitted"
+    ],
     "answer": 2,
     "explanation": "required 指被要求的。博物館太熱門，遊客被要求先上網訂票，故選 required。",
     "pos": "動詞",
     "id": "vocab_50",
-    "optionsZh": ["被允許", "被邀請", "被要求", "被許可"],
+    "optionsZh": [
+      "被允許",
+      "被邀請",
+      "被要求",
+      "被許可"
+    ],
     "difficulty": 3,
     "vocab_tier": "T2"
   },
   {
     "sentence": "Although the shop was small, the prices were so _____ that many customers came back again and again.",
-    "options": ["(A) expensive", "(B) generous", "(C) flexible", "(D) reasonable"],
+    "options": [
+      "(A) expensive",
+      "(B) generous",
+      "(C) flexible",
+      "(D) reasonable"
+    ],
     "answer": 3,
     "explanation": "reasonable 指合理的。價格合理讓顧客願意一再光顧，故選 reasonable。",
     "pos": "形容詞",
     "id": "vocab_51",
-    "optionsZh": ["昂貴的", "慷慨的", "有彈性的", "合理的"],
+    "optionsZh": [
+      "昂貴的",
+      "慷慨的",
+      "有彈性的",
+      "合理的"
+    ],
     "difficulty": 3,
     "vocab_tier": "T2"
   },
   {
     "sentence": "Since my friend enjoyed the restaurant so much, she decided to _____ it to everyone in our group.",
-    "options": ["(A) recommend", "(B) mention", "(C) complain", "(D) criticize"],
+    "options": [
+      "(A) recommend",
+      "(B) mention",
+      "(C) complain",
+      "(D) criticize"
+    ],
     "answer": 0,
     "explanation": "recommend 指推薦。朋友很喜歡這間餐廳，因此決定推薦給大家，故選 recommend。",
     "pos": "動詞",
     "id": "vocab_52",
-    "optionsZh": ["推薦", "提及", "抱怨", "批評"],
+    "optionsZh": [
+      "推薦",
+      "提及",
+      "抱怨",
+      "批評"
+    ],
     "difficulty": 3,
     "vocab_tier": "T2"
   },
   {
     "sentence": "Although the injury was serious at first, the patient's condition _____ improved over the following weeks.",
-    "options": ["(A) suddenly", "(B) gradually", "(C) immediately", "(D) rapidly"],
+    "options": [
+      "(A) suddenly",
+      "(B) gradually",
+      "(C) immediately",
+      "(D) rapidly"
+    ],
     "answer": 1,
     "explanation": "gradually 指逐漸地。傷勢在接下來幾週內逐漸好轉，故選 gradually；suddenly 突然與情境不符。",
     "pos": "副詞",
     "id": "vocab_53",
-    "optionsZh": ["突然地", "逐漸地", "立刻", "快速地"],
+    "optionsZh": [
+      "突然地",
+      "逐漸地",
+      "立刻",
+      "快速地"
+    ],
     "difficulty": 3,
     "vocab_tier": "T2"
   },
   {
     "sentence": "Because the road was under construction, drivers were told to _____ that area during rush hour.",
-    "options": ["(A) enter", "(B) block", "(C) avoid", "(D) repair"],
+    "options": [
+      "(A) enter",
+      "(B) block",
+      "(C) avoid",
+      "(D) repair"
+    ],
     "answer": 2,
     "explanation": "avoid 指避免。道路施工，駕駛被告知尖峰時間要避開該區域，故選 avoid。",
     "pos": "動詞",
     "id": "vocab_54",
-    "optionsZh": ["進入", "阻擋", "避免", "修理"],
+    "optionsZh": [
+      "進入",
+      "阻擋",
+      "避免",
+      "修理"
+    ],
     "difficulty": 3,
     "vocab_tier": "T2"
   },
   {
     "sentence": "Even though it was her first speech contest, Mia looked very _____ standing on the stage.",
-    "options": ["(A) nervous", "(B) ashamed", "(C) confused", "(D) confident"],
+    "options": [
+      "(A) nervous",
+      "(B) ashamed",
+      "(C) confused",
+      "(D) confident"
+    ],
     "answer": 3,
     "explanation": "confident 指有自信的。雖是第一次參加演講比賽，Mia 站上台看起來很有自信，故選 confident。",
     "pos": "形容詞",
     "id": "vocab_55",
-    "optionsZh": ["緊張的", "羞愧的", "困惑的", "有自信的"],
+    "optionsZh": [
+      "緊張的",
+      "羞愧的",
+      "困惑的",
+      "有自信的"
+    ],
     "difficulty": 3,
     "vocab_tier": "T2"
   },
   {
     "sentence": "Since he worked so hard on the project, everyone agreed that he _____ the award.",
-    "options": ["(A) deserve", "(B) deny", "(C) ignore", "(D) reject"],
+    "options": [
+      "(A) deserve",
+      "(B) deny",
+      "(C) ignore",
+      "(D) reject"
+    ],
     "answer": 0,
     "explanation": "deserve 指應得。他在專案上如此努力，大家都認為他應得這個獎，故選 deserve。",
     "pos": "動詞",
     "id": "vocab_56",
-    "optionsZh": ["應得", "否認", "忽視", "拒絕"],
+    "optionsZh": [
+      "應得",
+      "否認",
+      "忽視",
+      "拒絕"
+    ],
     "difficulty": 3,
     "vocab_tier": "T2"
   },
   {
     "sentence": "Although the trip had many delays, the tired travelers _____ arrived at their hotel late at night.",
-    "options": ["(A) rarely", "(B) eventually", "(C) hardly", "(D) never"],
+    "options": [
+      "(A) rarely",
+      "(B) eventually",
+      "(C) hardly",
+      "(D) never"
+    ],
     "answer": 1,
     "explanation": "eventually 指最終。儘管旅途一再延誤，疲憊的旅客最終在深夜抵達飯店，故選 eventually。",
     "pos": "副詞",
     "id": "vocab_57",
-    "optionsZh": ["很少", "最終", "幾乎不", "從不"],
+    "optionsZh": [
+      "很少",
+      "最終",
+      "幾乎不",
+      "從不"
+    ],
     "difficulty": 3,
     "vocab_tier": "T2"
   },
   {
     "sentence": "Even with a broken leg, the climber somehow _____ to reach the top of the mountain.",
-    "options": ["(A) refuse", "(B) forget", "(C) manage", "(D) hesitate"],
+    "options": [
+      "(A) refuse",
+      "(B) forget",
+      "(C) manage",
+      "(D) hesitate"
+    ],
     "answer": 2,
     "explanation": "manage(to)指設法做到。即使腿受傷，攀登者仍設法登頂，故選 manage。",
     "pos": "動詞",
     "id": "vocab_58",
-    "optionsZh": ["拒絕", "忘記", "設法", "猶豫"],
+    "optionsZh": [
+      "拒絕",
+      "忘記",
+      "設法",
+      "猶豫"
+    ],
     "difficulty": 3,
     "vocab_tier": "T2"
   },
   {
     "sentence": "Because the old bridge was no longer _____, the city decided to build a new one.",
-    "options": ["(A) famous", "(B) expensive", "(C) beautiful", "(D) reliable"],
+    "options": [
+      "(A) famous",
+      "(B) expensive",
+      "(C) beautiful",
+      "(D) reliable"
+    ],
     "answer": 3,
     "explanation": "reliable 指可靠的。舊橋不再可靠，市政府決定新建一座，故選 reliable。",
     "pos": "形容詞",
     "id": "vocab_59",
-    "optionsZh": ["有名的", "昂貴的", "美麗的", "可靠的"],
+    "optionsZh": [
+      "有名的",
+      "昂貴的",
+      "美麗的",
+      "可靠的"
+    ],
     "difficulty": 3,
     "vocab_tier": "T2"
   },
   {
     "sentence": "Many students _____ their teacher because she always helps them patiently after class.",
-    "options": ["(A) admire", "(B) blame", "(C) doubt", "(D) envy"],
+    "options": [
+      "(A) admire",
+      "(B) blame",
+      "(C) doubt",
+      "(D) envy"
+    ],
     "answer": 0,
     "explanation": "admire 指欽佩。老師總是耐心幫助學生，因此許多學生欽佩她，故選 admire。",
     "pos": "動詞",
     "id": "vocab_60",
-    "optionsZh": ["欽佩", "責怪", "懷疑", "嫉妒"],
+    "optionsZh": [
+      "欽佩",
+      "責怪",
+      "懷疑",
+      "嫉妒"
+    ],
     "difficulty": 3,
     "vocab_tier": "T2"
   },
   {
     "sentence": "Since he was worried about his exam results, he _____ checked his phone for the announcement.",
-    "options": ["(A) rarely", "(B) constantly", "(C) hardly", "(D) never"],
+    "options": [
+      "(A) rarely",
+      "(B) constantly",
+      "(C) hardly",
+      "(D) never"
+    ],
     "answer": 1,
     "explanation": "constantly 指不斷地。擔心考試結果，他不斷查看手機，故選 constantly。",
     "pos": "副詞",
     "id": "vocab_61",
-    "optionsZh": ["很少", "不斷地", "幾乎不", "從不"],
+    "optionsZh": [
+      "很少",
+      "不斷地",
+      "幾乎不",
+      "從不"
+    ],
     "difficulty": 3,
     "vocab_tier": "T2"
   },
   {
     "sentence": "Although she wanted to try the roller coaster, she _____ before finally getting on it.",
-    "options": ["(A) refuse", "(B) agree", "(C) hesitate", "(D) decide"],
+    "options": [
+      "(A) refuse",
+      "(B) agree",
+      "(C) hesitate",
+      "(D) decide"
+    ],
     "answer": 2,
     "explanation": "hesitate 指猶豫。雖然想玩雲霄飛車，她還是猶豫了一下才坐上去，故選 hesitate。",
     "pos": "動詞",
     "id": "vocab_62",
-    "optionsZh": ["拒絕", "同意", "猶豫", "決定"],
+    "optionsZh": [
+      "拒絕",
+      "同意",
+      "猶豫",
+      "決定"
+    ],
     "difficulty": 3,
     "vocab_tier": "T2"
   },
   {
     "sentence": "Even though the puzzle was extremely difficult, Leo refused to _____ until he solved it.",
-    "options": ["(A) give in", "(B) give away", "(C) give back", "(D) give up"],
+    "options": [
+      "(A) give in",
+      "(B) give away",
+      "(C) give back",
+      "(D) give up"
+    ],
     "answer": 3,
     "explanation": "give up 指放棄。拼圖極難但 Leo 不肯放棄直到解開，故選 give up。",
     "pos": "片語動詞",
     "id": "vocab_63",
-    "optionsZh": ["屈服", "贈送", "歸還", "放棄"],
+    "optionsZh": [
+      "屈服",
+      "贈送",
+      "歸還",
+      "放棄"
+    ],
     "difficulty": 4,
     "vocab_tier": "T2-T3"
   },
   {
     "sentence": "Because it started raining heavily, the coach decided to _____ the outdoor practice until next week.",
-    "options": ["(A) put off", "(B) put on", "(C) put up", "(D) put away"],
+    "options": [
+      "(A) put off",
+      "(B) put on",
+      "(C) put up",
+      "(D) put away"
+    ],
     "answer": 0,
     "explanation": "put off 指延後。雨勢過大，教練決定將戶外練習延後到下週，故選 put off。",
     "pos": "片語動詞",
     "id": "vocab_64",
-    "optionsZh": ["延後", "穿上", "忍受、張貼", "收起來"],
+    "optionsZh": [
+      "延後",
+      "穿上",
+      "忍受、張貼",
+      "收起來"
+    ],
     "difficulty": 4,
     "vocab_tier": "T2-T3"
   },
   {
     "sentence": "The manager was late again; _____, his car had broken down on the highway.",
-    "options": ["(A) obviously", "(B) apparently", "(C) definitely", "(D) probably"],
+    "options": [
+      "(A) obviously",
+      "(B) apparently",
+      "(C) definitely",
+      "(D) probably"
+    ],
     "answer": 1,
     "explanation": "apparently 指據說、顯然。經理又遲到了，據說他的車在高速公路上拋錨，故選 apparently。",
     "pos": "副詞",
     "id": "vocab_65",
-    "optionsZh": ["明顯地", "據說、顯然", "確定地", "可能地"],
+    "optionsZh": [
+      "明顯地",
+      "據說、顯然",
+      "確定地",
+      "可能地"
+    ],
     "difficulty": 4,
     "vocab_tier": "T2-T3"
   },
   {
     "sentence": "Before the hike, make sure you bring _____ water, since there are no stores along the trail.",
-    "options": ["(A) efficient", "(B) deficient", "(C) sufficient", "(D) proficient"],
+    "options": [
+      "(A) efficient",
+      "(B) deficient",
+      "(C) sufficient",
+      "(D) proficient"
+    ],
     "answer": 2,
     "explanation": "sufficient 指足夠的。健行前應帶足夠的水，因為途中沒有商店，故選 sufficient。",
     "pos": "形容詞",
     "id": "vocab_66",
-    "optionsZh": ["有效率的", "不足的", "足夠的", "精通的"],
+    "optionsZh": [
+      "有效率的",
+      "不足的",
+      "足夠的",
+      "精通的"
+    ],
     "difficulty": 4,
     "vocab_tier": "T2-T3"
   },
   {
     "sentence": "The design team spent all week trying to _____ a new solution for the packaging problem.",
-    "options": ["(A) come across", "(B) come along", "(C) come over", "(D) come up with"],
+    "options": [
+      "(A) come across",
+      "(B) come along",
+      "(C) come over",
+      "(D) come up with"
+    ],
     "answer": 3,
     "explanation": "come up with 指想出。設計團隊整週都在設法想出包裝新方案，故選 come up with。",
     "pos": "片語動詞",
     "id": "vocab_67",
-    "optionsZh": ["偶然遇到", "一起去、進展", "順道拜訪", "想出"],
+    "optionsZh": [
+      "偶然遇到",
+      "一起去、進展",
+      "順道拜訪",
+      "想出"
+    ],
     "difficulty": 4,
     "vocab_tier": "T2-T3"
   },
   {
     "sentence": "Although she usually cooks at home, she _____ orders food when she is too tired.",
-    "options": ["(A) occasionally", "(B) constantly", "(C) rarely", "(D) hardly"],
+    "options": [
+      "(A) occasionally",
+      "(B) constantly",
+      "(C) rarely",
+      "(D) hardly"
+    ],
     "answer": 0,
     "explanation": "occasionally 指偶爾。雖然通常在家煮飯，太累時偶爾會叫外送，故選 occasionally。",
     "pos": "副詞",
     "id": "vocab_68",
-    "optionsZh": ["偶爾", "不斷地", "很少", "幾乎不"],
+    "optionsZh": [
+      "偶爾",
+      "不斷地",
+      "很少",
+      "幾乎不"
+    ],
     "difficulty": 4,
     "vocab_tier": "T2-T3"
   },
   {
     "sentence": "The new policy caused a _____ change in how students use the library.",
-    "options": ["(A) negligible", "(B) significant", "(C) temporary", "(D) minor"],
+    "options": [
+      "(A) negligible",
+      "(B) significant",
+      "(C) temporary",
+      "(D) minor"
+    ],
     "answer": 1,
     "explanation": "significant 指重大的。新政策造成圖書館使用方式的重大改變，故選 significant。",
     "pos": "形容詞",
     "id": "vocab_69",
-    "optionsZh": ["微不足道的", "重大的", "暫時的", "次要的"],
+    "optionsZh": [
+      "微不足道的",
+      "重大的",
+      "暫時的",
+      "次要的"
+    ],
     "difficulty": 4,
     "vocab_tier": "T2-T3"
   },
   {
     "sentence": "Even though the salary was good, she decided to _____ the job offer because of the long hours.",
-    "options": ["(A) turn up", "(B) turn in", "(C) turn down", "(D) turn out"],
+    "options": [
+      "(A) turn up",
+      "(B) turn in",
+      "(C) turn down",
+      "(D) turn out"
+    ],
     "answer": 2,
     "explanation": "turn down 指拒絕。儘管薪水不錯，她仍因工時過長而拒絕這份工作，故選 turn down。",
     "pos": "片語動詞",
     "id": "vocab_70",
-    "optionsZh": ["出現、調高", "繳交", "拒絕", "結果是"],
+    "optionsZh": [
+      "出現、調高",
+      "繳交",
+      "拒絕",
+      "結果是"
+    ],
     "difficulty": 4,
     "vocab_tier": "T2-T3"
   },
   {
     "sentence": "Although the plan wasn't finalized, the manager said the event would _____ happen next month.",
-    "options": ["(A) possibly", "(B) hardly", "(C) rarely", "(D) definitely"],
+    "options": [
+      "(A) possibly",
+      "(B) hardly",
+      "(C) rarely",
+      "(D) definitely"
+    ],
     "answer": 3,
     "explanation": "definitely 指確定地。雖然計畫尚未定案，經理仍表示活動下個月一定會舉行，故選 definitely。",
     "pos": "副詞",
     "id": "vocab_71",
-    "optionsZh": ["可能地", "幾乎不", "很少", "確定地"],
+    "optionsZh": [
+      "可能地",
+      "幾乎不",
+      "很少",
+      "確定地"
+    ],
     "difficulty": 4,
     "vocab_tier": "T2-T3"
   },
   {
     "sentence": "The new machine is much more _____ than the old one, finishing the same task in half the time.",
-    "options": ["(A) efficient", "(B) sufficient", "(C) effective", "(D) proficient"],
+    "options": [
+      "(A) efficient",
+      "(B) sufficient",
+      "(C) effective",
+      "(D) proficient"
+    ],
     "answer": 0,
     "explanation": "efficient 指有效率的。新機器能在一半時間內完成同樣工作，遠比舊機器有效率，故選 efficient。",
     "pos": "形容詞",
     "id": "vocab_72",
-    "optionsZh": ["有效率的", "足夠的", "有效的", "精通的"],
+    "optionsZh": [
+      "有效率的",
+      "足夠的",
+      "有效的",
+      "精通的"
+    ],
     "difficulty": 4,
     "vocab_tier": "T2-T3"
   },
   {
     "sentence": "Before opening the new store, the company needed to _____ a detailed market survey.",
-    "options": ["(A) carry on", "(B) carry out", "(C) carry away", "(D) carry over"],
+    "options": [
+      "(A) carry on",
+      "(B) carry out",
+      "(C) carry away",
+      "(D) carry over"
+    ],
     "answer": 1,
     "explanation": "carry out 指執行。開新店前公司需要先執行詳細的市場調查，故選 carry out。",
     "pos": "片語動詞",
     "id": "vocab_73",
-    "optionsZh": ["繼續", "執行", "沖昏頭、帶走", "延續到"],
+    "optionsZh": [
+      "繼續",
+      "執行",
+      "沖昏頭、帶走",
+      "延續到"
+    ],
     "difficulty": 4,
     "vocab_tier": "T2-T3"
   },
   {
     "sentence": "Although she enjoys most sports, she is _____ fond of swimming.",
-    "options": ["(A) generally", "(B) rarely", "(C) particularly", "(D) hardly"],
+    "options": [
+      "(A) generally",
+      "(B) rarely",
+      "(C) particularly",
+      "(D) hardly"
+    ],
     "answer": 2,
     "explanation": "particularly 指特別地。雖然大部分運動她都喜歡，但特別喜愛游泳，故選 particularly。",
     "pos": "副詞",
     "id": "vocab_74",
-    "optionsZh": ["一般來說", "很少", "特別地", "幾乎不"],
+    "optionsZh": [
+      "一般來說",
+      "很少",
+      "特別地",
+      "幾乎不"
+    ],
     "difficulty": 4,
     "vocab_tier": "T2-T3"
   },
   {
     "sentence": "Even though the task was difficult, he was _____ to ask for help because he wanted to prove himself.",
-    "options": ["(A) eager", "(B) willing", "(C) anxious", "(D) reluctant"],
+    "options": [
+      "(A) eager",
+      "(B) willing",
+      "(C) anxious",
+      "(D) reluctant"
+    ],
     "answer": 3,
     "explanation": "reluctant 指不情願的。任務雖難，他仍不情願求助，因為想證明自己，故選 reluctant。",
     "pos": "形容詞",
     "id": "vocab_75",
-    "optionsZh": ["渴望的", "願意的", "焦慮的", "不情願的"],
+    "optionsZh": [
+      "渴望的",
+      "願意的",
+      "焦慮的",
+      "不情願的"
+    ],
     "difficulty": 4,
     "vocab_tier": "T2-T3"
   },
   {
     "sentence": "After checking the manual several times, she finally managed to _____ how the device worked.",
-    "options": ["(A) figure out", "(B) find out", "(C) look out", "(D) work out"],
+    "options": [
+      "(A) figure out",
+      "(B) find out",
+      "(C) look out",
+      "(D) work out"
+    ],
     "answer": 0,
     "explanation": "figure out 指弄清楚。查了說明書好幾次後，她終於弄清楚裝置的運作方式，故選 figure out。",
     "pos": "片語動詞",
     "id": "vocab_76",
-    "optionsZh": ["弄清楚", "發現", "小心", "想出、運動"],
+    "optionsZh": [
+      "弄清楚",
+      "發現",
+      "小心",
+      "想出、運動"
+    ],
     "difficulty": 4,
     "vocab_tier": "T2-T3"
   },
   {
     "sentence": "Since he hadn't studied at all, he was _____ nervous before the test.",
-    "options": ["(A) apparently", "(B) obviously", "(C) definitely", "(D) absolutely"],
+    "options": [
+      "(A) apparently",
+      "(B) obviously",
+      "(C) definitely",
+      "(D) absolutely"
+    ],
     "answer": 1,
     "explanation": "obviously 指明顯地。完全沒讀書，考前他明顯很緊張，故選 obviously。",
     "pos": "副詞",
     "id": "vocab_77",
-    "optionsZh": ["據說", "明顯地", "確定地", "絕對地"],
+    "optionsZh": [
+      "據說",
+      "明顯地",
+      "確定地",
+      "絕對地"
+    ],
     "difficulty": 4,
     "vocab_tier": "T2-T3"
   },
   {
     "sentence": "A _____ roommate always keeps the noise down when others are sleeping.",
-    "options": ["(A) careless", "(B) selfish", "(C) considerate", "(D) rude"],
+    "options": [
+      "(A) careless",
+      "(B) selfish",
+      "(C) considerate",
+      "(D) rude"
+    ],
     "answer": 2,
     "explanation": "considerate 指體貼的。體貼的室友總會在別人睡覺時放低音量，故選 considerate。",
     "pos": "形容詞",
     "id": "vocab_78",
-    "optionsZh": ["粗心的", "自私的", "體貼的", "無禮的"],
+    "optionsZh": [
+      "粗心的",
+      "自私的",
+      "體貼的",
+      "無禮的"
+    ],
     "difficulty": 4,
     "vocab_tier": "T2-T3"
   },
   {
     "sentence": "On the way to the airport, their car suddenly _____, so they had to call a taxi.",
-    "options": ["(A) break up", "(B) break out", "(C) break in", "(D) break down"],
+    "options": [
+      "(A) break up",
+      "(B) break out",
+      "(C) break in",
+      "(D) break down"
+    ],
     "answer": 3,
     "explanation": "break down 指故障。前往機場途中車子突然故障，只好叫計程車，故選 break down。",
     "pos": "片語動詞",
     "id": "vocab_79",
-    "optionsZh": ["分手", "爆發", "闖入", "故障"],
+    "optionsZh": [
+      "分手",
+      "爆發",
+      "闖入",
+      "故障"
+    ],
     "difficulty": 4,
     "vocab_tier": "T2-T3"
   },
   {
     "sentence": "Because the storm warning had just been issued and the organizers worried about safety, they decided to _____ the outdoor concert.",
-    "options": ["(A) call off", "(B) carry out", "(C) call for", "(D) call on"],
+    "options": [
+      "(A) call off",
+      "(B) carry out",
+      "(C) call for",
+      "(D) call on"
+    ],
     "answer": 0,
     "explanation": "call off 指取消。暴風警報剛發布，主辦單位擔心安全便決定取消戶外演唱會，故選 call off。",
     "pos": "片語動詞",
     "id": "vocab_80",
-    "optionsZh": ["取消", "執行", "需要、呼籲", "拜訪、號召"],
+    "optionsZh": [
+      "取消",
+      "執行",
+      "需要、呼籲",
+      "拜訪、號召"
+    ],
     "difficulty": 5,
     "vocab_tier": "T3-T4"
   },
   {
     "sentence": "Since the two companies were fighting over the same small market and neither would back down, a price war _____ broke out.",
-    "options": ["(A) occasionally", "(B) inevitably", "(C) temporarily", "(D) eventually"],
+    "options": [
+      "(A) occasionally",
+      "(B) inevitably",
+      "(C) temporarily",
+      "(D) eventually"
+    ],
     "answer": 1,
     "explanation": "inevitably 指不可避免地。兩家公司都不肯讓步，價格戰不可避免地爆發，故選 inevitably。",
     "pos": "副詞",
     "id": "vocab_81",
-    "optionsZh": ["偶爾", "不可避免地", "暫時地", "最終"],
+    "optionsZh": [
+      "偶爾",
+      "不可避免地",
+      "暫時地",
+      "最終"
+    ],
     "difficulty": 5,
     "vocab_tier": "T3-T4"
   },
   {
     "sentence": "Although the theory sounded strange to most scientists at the time, later experiments were able to _____ that it was actually correct.",
-    "options": ["(A) assume", "(B) imagine", "(C) demonstrate", "(D) doubt"],
+    "options": [
+      "(A) assume",
+      "(B) imagine",
+      "(C) demonstrate",
+      "(D) doubt"
+    ],
     "answer": 2,
     "explanation": "demonstrate 指證明。理論當初聽起來很怪，但後來的實驗證明它是對的，故選 demonstrate。",
     "pos": "動詞",
     "id": "vocab_82",
-    "optionsZh": ["假設", "想像", "證明", "懷疑"],
+    "optionsZh": [
+      "假設",
+      "想像",
+      "證明",
+      "懷疑"
+    ],
     "difficulty": 5,
     "vocab_tier": "T3-T4"
   },
   {
     "sentence": "Even though the noise from the construction site outside her window kept her awake every night, she had no choice but to _____ it until the project ended.",
-    "options": ["(A) look forward to", "(B) get rid of", "(C) keep up with", "(D) put up with"],
+    "options": [
+      "(A) look forward to",
+      "(B) get rid of",
+      "(C) keep up with",
+      "(D) put up with"
+    ],
     "answer": 3,
     "explanation": "put up with 指忍受。窗外施工噪音吵到睡不著，她別無選擇只能忍受到工程結束，故選 put up with。",
     "pos": "片語動詞",
     "id": "vocab_83",
-    "optionsZh": ["期待", "擺脫", "跟上", "忍受"],
+    "optionsZh": [
+      "期待",
+      "擺脫",
+      "跟上",
+      "忍受"
+    ],
     "difficulty": 5,
     "vocab_tier": "T3-T4"
   },
   {
     "sentence": "Because the factory had ignored the safety regulations for years, and an inspection finally revealed the violations, the government _____ shut it down.",
-    "options": ["(A) consequently", "(B) previously", "(C) temporarily", "(D) occasionally"],
+    "options": [
+      "(A) consequently",
+      "(B) previously",
+      "(C) temporarily",
+      "(D) occasionally"
+    ],
     "answer": 0,
     "explanation": "consequently 指因此。工廠多年忽視安全法規，稽查揭露違規後政府因此將其關閉，故選 consequently。",
     "pos": "副詞",
     "id": "vocab_84",
-    "optionsZh": ["因此", "先前", "暫時地", "偶爾"],
+    "optionsZh": [
+      "因此",
+      "先前",
+      "暫時地",
+      "偶爾"
+    ],
     "difficulty": 5,
     "vocab_tier": "T3-T4"
   },
   {
     "sentence": "Although he was reluctant to admit his mistake in front of the whole team, he eventually had to _____ that the plan had failed.",
-    "options": ["(A) deny", "(B) acknowledge", "(C) ignore", "(D) predict"],
+    "options": [
+      "(A) deny",
+      "(B) acknowledge",
+      "(C) ignore",
+      "(D) predict"
+    ],
     "answer": 1,
     "explanation": "acknowledge 指承認。雖不情願在全隊面前認錯，他最終還是承認計畫失敗，故選 acknowledge。",
     "pos": "動詞",
     "id": "vocab_85",
-    "optionsZh": ["否認", "承認", "忽視", "預測"],
+    "optionsZh": [
+      "否認",
+      "承認",
+      "忽視",
+      "預測"
+    ],
     "difficulty": 5,
     "vocab_tier": "T3-T4"
   },
   {
     "sentence": "Since the boy had cheated on the test before without being caught, he assumed he could _____ it again this time.",
-    "options": ["(A) put up with", "(B) come up with", "(C) get away with", "(D) end up with"],
+    "options": [
+      "(A) put up with",
+      "(B) come up with",
+      "(C) get away with",
+      "(D) end up with"
+    ],
     "answer": 2,
     "explanation": "get away with 指僥倖逃脫責罰。之前作弊沒被抓到，他以為這次還能僥倖過關，故選 get away with。",
     "pos": "片語動詞",
     "id": "vocab_86",
-    "optionsZh": ["忍受", "想出", "僥倖逃脫責罰", "最終落得"],
+    "optionsZh": [
+      "忍受",
+      "想出",
+      "僥倖逃脫責罰",
+      "最終落得"
+    ],
     "difficulty": 5,
     "vocab_tier": "T3-T4"
   },
   {
     "sentence": "Since the CEO abruptly canceled all her meetings and left the office early without any explanation, something urgent had _____ happened at home.",
-    "options": ["(A) apparently", "(B) definitely", "(C) rarely", "(D) presumably"],
+    "options": [
+      "(A) apparently",
+      "(B) definitely",
+      "(C) rarely",
+      "(D) presumably"
+    ],
     "answer": 3,
     "explanation": "presumably 指據推測。執行長突然取消所有會議提早離開卻不解釋，家裡據推測發生急事，故選 presumably。",
     "pos": "副詞",
     "id": "vocab_87",
-    "optionsZh": ["據說", "確定地", "很少", "據推測"],
+    "optionsZh": [
+      "據說",
+      "確定地",
+      "很少",
+      "據推測"
+    ],
     "difficulty": 5,
     "vocab_tier": "T3-T4"
   },
   {
     "sentence": "Because the manager constantly criticized her work in front of other colleagues, his comments began to _____ her confidence.",
-    "options": ["(A) undermine", "(B) boost", "(C) inspire", "(D) restore"],
+    "options": [
+      "(A) undermine",
+      "(B) boost",
+      "(C) inspire",
+      "(D) restore"
+    ],
     "answer": 0,
     "explanation": "undermine 指削弱。經理在同事面前不斷批評她的工作，這些話開始削弱她的自信，故選 undermine。",
     "pos": "動詞",
     "id": "vocab_88",
-    "optionsZh": ["削弱", "提升", "激勵", "恢復"],
+    "optionsZh": [
+      "削弱",
+      "提升",
+      "激勵",
+      "恢復"
+    ],
     "difficulty": 5,
     "vocab_tier": "T3-T4"
   },
   {
     "sentence": "While cleaning out the old attic that her grandmother had left untouched for decades, she happened to _____ a collection of handwritten letters.",
-    "options": ["(A) come along", "(B) come across", "(C) get across", "(D) go along"],
+    "options": [
+      "(A) come along",
+      "(B) come across",
+      "(C) get across",
+      "(D) go along"
+    ],
     "answer": 1,
     "explanation": "come across 指偶然發現。整理祖母多年未動的閣樓時，她偶然發現一疊手寫信件，故選 come across。",
     "pos": "片語動詞",
     "id": "vocab_89",
-    "optionsZh": ["一起去、進展", "偶然發現", "傳達清楚", "附和、沿著走"],
+    "optionsZh": [
+      "一起去、進展",
+      "偶然發現",
+      "傳達清楚",
+      "附和、沿著走"
+    ],
     "difficulty": 5,
     "vocab_tier": "T3-T4"
   },
   {
     "sentence": "Although she had strongly opposed the idea during the meeting, she _____ agreed to follow the new schedule after her boss insisted.",
-    "options": ["(A) eagerly", "(B) gladly", "(C) reluctantly", "(D) immediately"],
+    "options": [
+      "(A) eagerly",
+      "(B) gladly",
+      "(C) reluctantly",
+      "(D) immediately"
+    ],
     "answer": 2,
     "explanation": "reluctantly 指不情願地。雖然在會議上強烈反對，老闆堅持後她還是不情願地同意新時程，故選 reluctantly。",
     "pos": "副詞",
     "id": "vocab_90",
-    "optionsZh": ["渴望地", "樂意地", "不情願地", "立刻"],
+    "optionsZh": [
+      "渴望地",
+      "樂意地",
+      "不情願地",
+      "立刻"
+    ],
     "difficulty": 5,
     "vocab_tier": "T3-T4"
   },
   {
     "sentence": "Since the airline had canceled the flight without warning and many passengers missed important events, the company agreed to _____ them with vouchers.",
-    "options": ["(A) complain", "(B) apologize", "(C) negotiate", "(D) compensate"],
+    "options": [
+      "(A) complain",
+      "(B) apologize",
+      "(C) negotiate",
+      "(D) compensate"
+    ],
     "answer": 3,
     "explanation": "compensate 指補償。航空公司無預警取消班機導致乘客錯過重要行程，公司同意以票券補償，故選 compensate。",
     "pos": "動詞",
     "id": "vocab_91",
-    "optionsZh": ["抱怨", "道歉", "協商", "補償"],
+    "optionsZh": [
+      "抱怨",
+      "道歉",
+      "協商",
+      "補償"
+    ],
     "difficulty": 5,
     "vocab_tier": "T3-T4"
   },
   {
     "sentence": "When the founder retired unexpectedly after the company's sudden financial trouble, his daughter had to _____ the business much sooner than planned.",
-    "options": ["(A) take over", "(B) take off", "(C) take up", "(D) take after"],
+    "options": [
+      "(A) take over",
+      "(B) take off",
+      "(C) take up",
+      "(D) take after"
+    ],
     "answer": 0,
     "explanation": "take over 指接管。創辦人在公司財務出狀況後突然退休，女兒被迫提早接管事業，故選 take over。",
     "pos": "片語動詞",
     "id": "vocab_92",
-    "optionsZh": ["接管", "起飛、脫下", "開始從事", "長得像"],
+    "optionsZh": [
+      "接管",
+      "起飛、脫下",
+      "開始從事",
+      "長得像"
+    ],
     "difficulty": 5,
     "vocab_tier": "T3-T4"
   },
   {
     "sentence": "Because the bridge had been damaged in the earthquake and inspectors closed it for repairs, traffic in the area was _____ diverted to a longer route.",
-    "options": ["(A) previously", "(B) subsequently", "(C) temporarily", "(D) rarely"],
+    "options": [
+      "(A) previously",
+      "(B) subsequently",
+      "(C) temporarily",
+      "(D) rarely"
+    ],
     "answer": 1,
     "explanation": "subsequently 指隨後。橋樑在地震中受損遭關閉維修，該區交通隨後被改道，故選 subsequently。",
     "pos": "副詞",
     "id": "vocab_93",
-    "optionsZh": ["先前", "隨後", "暫時地", "很少"],
+    "optionsZh": [
+      "先前",
+      "隨後",
+      "暫時地",
+      "很少"
+    ],
     "difficulty": 5,
     "vocab_tier": "T3-T4"
   },
   {
     "sentence": "Since the weather forecast had warned of heavy rain for days, the farmers had already begun to _____ a poor harvest this year.",
-    "options": ["(A) ignore", "(B) regret", "(C) anticipate", "(D) celebrate"],
+    "options": [
+      "(A) ignore",
+      "(B) regret",
+      "(C) anticipate",
+      "(D) celebrate"
+    ],
     "answer": 2,
     "explanation": "anticipate 指預期。氣象預報連日警告豪雨，農民已開始預期今年將歉收，故選 anticipate。",
     "pos": "動詞",
     "id": "vocab_94",
-    "optionsZh": ["忽視", "後悔", "預期", "慶祝"],
+    "optionsZh": [
+      "忽視",
+      "後悔",
+      "預期",
+      "慶祝"
+    ],
     "difficulty": 5,
     "vocab_tier": "T3-T4"
   },
   {
     "sentence": "Even though the old photograph was faded and torn, she decided to _____ it because it was the only picture of her grandparents.",
-    "options": ["(A) give up on", "(B) look out for", "(C) catch up with", "(D) hold on to"],
+    "options": [
+      "(A) give up on",
+      "(B) look out for",
+      "(C) catch up with",
+      "(D) hold on to"
+    ],
     "answer": 3,
     "explanation": "hold on to 指緊抓不放。舊照片雖褪色破損，她仍決定留著，因為那是祖父母唯一的照片，故選 hold on to。",
     "pos": "片語動詞",
     "id": "vocab_95",
-    "optionsZh": ["放棄", "留意", "趕上", "緊抓不放"],
+    "optionsZh": [
+      "放棄",
+      "留意",
+      "趕上",
+      "緊抓不放"
+    ],
     "difficulty": 5,
     "vocab_tier": "T3-T4"
   },
   {
     "sentence": "Since Grandpa lives on a remote island far from the mainland and travel there is difficult, the rest of the family only manages to visit him _____, usually just once every few years.",
-    "options": ["(A) once in a blue moon", "(B) once and for all", "(C) once upon a time", "(D) once in a while"],
+    "options": [
+      "(A) once in a blue moon",
+      "(B) once and for all",
+      "(C) once upon a time",
+      "(D) once in a while"
+    ],
     "answer": 0,
     "explanation": "once in a blue moon 指千載難逢地、極少發生。爺爺住在偏遠離島，全家人通常好幾年才去看他一次，故選 once in a blue moon。",
     "pos": "慣用語",
     "id": "vocab_96",
-    "optionsZh": ["千載難逢地", "一勞永逸地", "從前", "偶爾"],
+    "optionsZh": [
+      "千載難逢地",
+      "一勞永逸地",
+      "從前",
+      "偶爾"
+    ],
     "difficulty": 6,
     "vocab_tier": "T4-T5"
   },
   {
     "sentence": "Although the two laptops look almost identical on the outside, they are very different _____ battery life and processing speed.",
-    "options": ["(A) in spite of", "(B) in terms of", "(C) in case of", "(D) in favor of"],
+    "options": [
+      "(A) in spite of",
+      "(B) in terms of",
+      "(C) in case of",
+      "(D) in favor of"
+    ],
     "answer": 1,
     "explanation": "in terms of 指就...而言。兩台筆電外觀幾乎一樣，但電池續航力與處理速度上差異很大，故選 in terms of。",
     "pos": "介系詞片語",
     "id": "vocab_97",
-    "optionsZh": ["儘管", "就…而言", "萬一", "贊成"],
+    "optionsZh": [
+      "儘管",
+      "就…而言",
+      "萬一",
+      "贊成"
+    ],
     "difficulty": 6,
     "vocab_tier": "T4-T5"
   },
   {
     "sentence": "Even though she had promised to attend the meeting, she texted to say she was feeling a bit _____ and would need to reschedule.",
-    "options": ["(A) over the moon", "(B) on thin ice", "(C) under the weather", "(D) in hot water"],
+    "options": [
+      "(A) over the moon",
+      "(B) on thin ice",
+      "(C) under the weather",
+      "(D) in hot water"
+    ],
     "answer": 2,
     "explanation": "under the weather 指身體不舒服。她原本答應開會，卻傳訊息說身體不太舒服需要改期，故選 under the weather。",
     "pos": "慣用語",
     "id": "vocab_98",
-    "optionsZh": ["欣喜若狂", "處境危險", "身體不舒服", "有麻煩"],
+    "optionsZh": [
+      "欣喜若狂",
+      "處境危險",
+      "身體不舒服",
+      "有麻煩"
+    ],
     "difficulty": 6,
     "vocab_tier": "T4-T5"
   },
   {
     "sentence": "Although it took her nearly two years after the divorce, she finally began to _____ the fact that her old life was truly over.",
-    "options": ["(A) keep in touch with", "(B) catch up with", "(C) put up with", "(D) come to terms with"],
+    "options": [
+      "(A) keep in touch with",
+      "(B) catch up with",
+      "(C) put up with",
+      "(D) come to terms with"
+    ],
     "answer": 3,
     "explanation": "come to terms with 指接受(難以接受的事實)。離婚近兩年後，她才終於開始接受舊生活真正結束的事實，故選 come to terms with。",
     "pos": "片語動詞",
     "id": "vocab_99",
-    "optionsZh": ["保持聯絡", "趕上", "忍受", "接受（難以接受的事實）"],
+    "optionsZh": [
+      "保持聯絡",
+      "趕上",
+      "忍受",
+      "接受（難以接受的事實）"
+    ],
     "difficulty": 6,
     "vocab_tier": "T4-T5"
   },
   {
     "sentence": "Because the young executive was so determined to get promoted, he worked overtime every night, often _____ his health and family time.",
-    "options": ["(A) at the expense of", "(B) in spite of", "(C) on behalf of", "(D) in charge of"],
+    "options": [
+      "(A) at the expense of",
+      "(B) in spite of",
+      "(C) on behalf of",
+      "(D) in charge of"
+    ],
     "answer": 0,
     "explanation": "at the expense of 指以...為代價。年輕主管為了升遷每晚加班，常以健康與家庭時間為代價，故選 at the expense of。",
     "pos": "介系詞片語",
     "id": "vocab_100",
-    "optionsZh": ["以…為代價", "儘管", "代表", "負責"],
+    "optionsZh": [
+      "以…為代價",
+      "儘管",
+      "代表",
+      "負責"
+    ],
     "difficulty": 6,
     "vocab_tier": "T4-T5"
   },
   {
     "sentence": "Although losing his job seemed like a disaster at the time, it turned out to be _____, since it pushed him to start the business he had always dreamed of.",
-    "options": ["(A) a piece of cake", "(B) a blessing in disguise", "(C) a drop in the ocean", "(D) a shot in the dark"],
+    "options": [
+      "(A) a piece of cake",
+      "(B) a blessing in disguise",
+      "(C) a drop in the ocean",
+      "(D) a shot in the dark"
+    ],
     "answer": 1,
     "explanation": "a blessing in disguise 指因禍得福。失業當時看似災難，卻促使他開始夢想已久的事業，故選 a blessing in disguise。",
     "pos": "慣用語",
     "id": "vocab_101",
-    "optionsZh": ["小事一樁", "因禍得福", "滄海一粟", "瞎猜"],
+    "optionsZh": [
+      "小事一樁",
+      "因禍得福",
+      "滄海一粟",
+      "瞎猜"
+    ],
     "difficulty": 6,
     "vocab_tier": "T4-T5"
   },
   {
     "sentence": "Even though the family had lost most of their savings in the crash, they still tried hard to _____ by keeping their large house and expensive car.",
-    "options": ["(A) keep an eye out", "(B) keep in mind", "(C) keep up appearances", "(D) keep track of"],
+    "options": [
+      "(A) keep an eye out",
+      "(B) keep in mind",
+      "(C) keep up appearances",
+      "(D) keep track of"
+    ],
     "answer": 2,
     "explanation": "keep up appearances 指維持體面、裝門面。家裡財務出狀況後仍勉強保留大房子和名車撐場面，故選 keep up appearances。",
     "pos": "片語動詞",
     "id": "vocab_102",
-    "optionsZh": ["留意", "記住", "維持體面、裝門面", "追蹤記錄"],
+    "optionsZh": [
+      "留意",
+      "記住",
+      "維持體面、裝門面",
+      "追蹤記錄"
+    ],
     "difficulty": 6,
     "vocab_tier": "T4-T5"
   },
   {
     "sentence": "Although the rescue workers were exhausted and the storm kept growing stronger, they continued searching for survivors _____ great danger.",
-    "options": ["(A) in the light of", "(B) in the name of", "(C) in the wake of", "(D) in the face of"],
+    "options": [
+      "(A) in the light of",
+      "(B) in the name of",
+      "(C) in the wake of",
+      "(D) in the face of"
+    ],
     "answer": 3,
     "explanation": "in the face of 指面對(困難)。救難人員筋疲力盡且風暴持續增強，仍在極大危險中持續搜救，故選 in the face of。",
     "pos": "介系詞片語",
     "id": "vocab_103",
-    "optionsZh": ["鑑於", "以…之名", "緊隨其後", "面對（困難）"],
+    "optionsZh": [
+      "鑑於",
+      "以…之名",
+      "緊隨其後",
+      "面對（困難）"
+    ],
     "difficulty": 6,
     "vocab_tier": "T4-T5"
   },
   {
     "sentence": "Although he dreaded going to the dentist, he finally decided to _____ and book the appointment he had been avoiding for months.",
-    "options": ["(A) bite the bullet", "(B) break the ice", "(C) burn the bridge", "(D) beat around the bush"],
+    "options": [
+      "(A) bite the bullet",
+      "(B) break the ice",
+      "(C) burn the bridge",
+      "(D) beat around the bush"
+    ],
     "answer": 0,
     "explanation": "bite the bullet 指咬緊牙關面對。雖然害怕看牙醫，他終於決定硬著頭皮預約已拖延數月的看診，故選 bite the bullet。",
     "pos": "慣用語",
     "id": "vocab_104",
-    "optionsZh": ["咬緊牙關面對", "打破僵局", "斷絕退路", "拐彎抹角"],
+    "optionsZh": [
+      "咬緊牙關面對",
+      "打破僵局",
+      "斷絕退路",
+      "拐彎抹角"
+    ],
     "difficulty": 6,
     "vocab_tier": "T4-T5"
   },
   {
     "sentence": "Since both of her part-time jobs paid very little and rent kept rising every year, she struggled every month just to _____.",
-    "options": ["(A) make a scene", "(B) make ends meet", "(C) make up her mind", "(D) make the most of it"],
+    "options": [
+      "(A) make a scene",
+      "(B) make ends meet",
+      "(C) make up her mind",
+      "(D) make the most of it"
+    ],
     "answer": 1,
     "explanation": "make ends meet 指收支平衡。兩份兼職薪水都很低，房租又年年上漲，她每月都得努力維持收支平衡，故選 make ends meet。",
     "pos": "慣用語",
     "id": "vocab_105",
-    "optionsZh": ["大吵大鬧", "收支平衡", "下定決心", "充分利用"],
+    "optionsZh": [
+      "大吵大鬧",
+      "收支平衡",
+      "下定決心",
+      "充分利用"
+    ],
     "difficulty": 6,
     "vocab_tier": "T4-T5"
   },
   {
     "sentence": "Because the director was traveling abroad and could not attend the ceremony, his assistant accepted the award _____ the whole company.",
-    "options": ["(A) in spite of", "(B) in favor of", "(C) on behalf of", "(D) at the expense of"],
+    "options": [
+      "(A) in spite of",
+      "(B) in favor of",
+      "(C) on behalf of",
+      "(D) at the expense of"
+    ],
     "answer": 2,
     "explanation": "on behalf of 指代表。導演出國無法出席頒獎典禮，助理代表整間公司領獎，故選 on behalf of。",
     "pos": "介系詞片語",
     "id": "vocab_106",
-    "optionsZh": ["儘管", "贊成", "代表", "以…為代價"],
+    "optionsZh": [
+      "儘管",
+      "贊成",
+      "代表",
+      "以…為代價"
+    ],
     "difficulty": 6,
     "vocab_tier": "T4-T5"
   },
   {
     "sentence": "Although everyone had promised to keep the surprise party a secret, Jenny accidentally _____ while chatting with the birthday girl on the phone.",
-    "options": ["(A) broke the ice", "(B) crossed the line", "(C) missed the boat", "(D) spilled the beans"],
+    "options": [
+      "(A) broke the ice",
+      "(B) crossed the line",
+      "(C) missed the boat",
+      "(D) spilled the beans"
+    ],
     "answer": 3,
     "explanation": "spill the beans 指洩漏秘密。大家都答應保密驚喜派對，珍妮卻在跟壽星聊天時不小心洩漏了秘密，故選 spilled the beans。",
     "pos": "慣用語",
     "id": "vocab_107",
-    "optionsZh": ["打破僵局", "越線", "錯失良機", "洩漏秘密"],
+    "optionsZh": [
+      "打破僵局",
+      "越線",
+      "錯失良機",
+      "洩漏秘密"
+    ],
     "difficulty": 6,
     "vocab_tier": "T4-T5"
   },
   {
     "sentence": "Although his email sounded polite on the surface, she could _____ and tell that he was actually quite upset about the decision.",
-    "options": ["(A) read between the lines", "(B) jump to conclusions", "(C) beat around the bush", "(D) turn over a new leaf"],
+    "options": [
+      "(A) read between the lines",
+      "(B) jump to conclusions",
+      "(C) beat around the bush",
+      "(D) turn over a new leaf"
+    ],
     "answer": 0,
     "explanation": "read between the lines 指解讀言外之意。他的信表面禮貌，但她能解讀言外之意知道他其實對決定很不滿，故選 read between the lines。",
     "pos": "慣用語",
     "id": "vocab_108",
-    "optionsZh": ["解讀言外之意", "妄下結論", "拐彎抹角", "改過自新"],
+    "optionsZh": [
+      "解讀言外之意",
+      "妄下結論",
+      "拐彎抹角",
+      "改過自新"
+    ],
     "difficulty": 6,
     "vocab_tier": "T4-T5"
   },
   {
     "sentence": "Since the new employees had many questions about the company's policies, the manager sent a detailed email _____ vacation days and sick leave.",
-    "options": ["(A) in spite of", "(B) with regard to", "(C) in return for", "(D) on top of"],
+    "options": [
+      "(A) in spite of",
+      "(B) with regard to",
+      "(C) in return for",
+      "(D) on top of"
+    ],
     "answer": 1,
     "explanation": "with regard to 指關於。新進員工對公司政策有許多疑問，經理發了一封關於休假與病假規定的詳細信件，故選 with regard to。",
     "pos": "介系詞片語",
     "id": "vocab_109",
-    "optionsZh": ["儘管", "關於", "作為…的回報", "除…之外"],
+    "optionsZh": [
+      "儘管",
+      "關於",
+      "作為…的回報",
+      "除…之外"
+    ],
     "difficulty": 6,
     "vocab_tier": "T4-T5"
   },
   {
     "sentence": "Because the contractor was under pressure to finish the building before the deadline, he began to _____, which later caused serious safety problems.",
-    "options": ["(A) cut it out", "(B) cut in line", "(C) cut corners", "(D) cut back"],
+    "options": [
+      "(A) cut it out",
+      "(B) cut in line",
+      "(C) cut corners",
+      "(D) cut back"
+    ],
     "answer": 2,
     "explanation": "cut corners 指偷工減料。承包商為了趕在期限前完工開始偷工減料，之後造成嚴重的安全問題，故選 cut corners。",
     "pos": "慣用語",
     "id": "vocab_110",
-    "optionsZh": ["住手", "插隊", "偷工減料", "削減"],
+    "optionsZh": [
+      "住手",
+      "插隊",
+      "偷工減料",
+      "削減"
+    ],
     "difficulty": 6,
     "vocab_tier": "T4-T5"
   },
   {
     "sentence": "Although the company had received several confusing complaints from customers, the manager was determined to _____ the real cause of the problem.",
-    "options": ["(A) get away with", "(B) get around to", "(C) get on with", "(D) get to the bottom of"],
+    "options": [
+      "(A) get away with",
+      "(B) get around to",
+      "(C) get on with",
+      "(D) get to the bottom of"
+    ],
     "answer": 3,
     "explanation": "get to the bottom of 指查明真相。公司收到多起令人困惑的客訴，經理決心查明問題真正的原因，故選 get to the bottom of。",
     "pos": "片語動詞",
     "id": "vocab_111",
-    "optionsZh": ["僥倖逃脫", "終於抽空做", "繼續、與…相處", "查明真相"],
+    "optionsZh": [
+      "僥倖逃脫",
+      "終於抽空做",
+      "繼續、與…相處",
+      "查明真相"
+    ],
     "difficulty": 6,
     "vocab_tier": "T4-T5"
+  },
+  {
+    "sentence": "After stepping on her foot by accident, Tom quickly turned to _____ to the woman on the train.",
+    "options": [
+      "(A) apologize",
+      "(B) complain",
+      "(C) argue",
+      "(D) forgive"
+    ],
+    "answer": 0,
+    "explanation": "apologize 指道歉。不小心踩到別人的腳應該道歉，故選 apologize；complain 抱怨語意不符。",
+    "pos": "動詞",
+    "id": "vocab_112",
+    "optionsZh": [
+      "道歉",
+      "抱怨",
+      "爭吵",
+      "原諒"
+    ]
+  },
+  {
+    "sentence": "I really _____ your help with my math homework; I could not have finished it without you.",
+    "options": [
+      "(A) appreciate",
+      "(B) ignore",
+      "(C) doubt",
+      "(D) blame"
+    ],
+    "answer": 0,
+    "explanation": "appreciate 指感激。他人幫忙寫功課應心懷感激，故選 appreciate。",
+    "pos": "動詞",
+    "id": "vocab_113",
+    "optionsZh": [
+      "感激",
+      "忽視",
+      "懷疑",
+      "責怪"
+    ]
+  },
+  {
+    "sentence": "The two brothers often _____ about which TV channel to watch.",
+    "options": [
+      "(A) agree",
+      "(B) argue",
+      "(C) apologize",
+      "(D) forgive"
+    ],
+    "answer": 1,
+    "explanation": "argue 指爭吵。因看哪個頻道意見不合而爭吵，故選 argue；agree 同意語意相反。",
+    "pos": "動詞",
+    "id": "vocab_114",
+    "optionsZh": [
+      "同意",
+      "爭吵",
+      "道歉",
+      "原諒"
+    ]
+  },
+  {
+    "sentence": "All students are required to _____ the school assembly every Monday morning.",
+    "options": [
+      "(A) avoid",
+      "(B) leave",
+      "(C) attend",
+      "(D) refuse"
+    ],
+    "answer": 2,
+    "explanation": "attend 指出席。學生每週一早上都必須出席週會，故選 attend。",
+    "pos": "動詞",
+    "id": "vocab_115",
+    "optionsZh": [
+      "避開",
+      "離開",
+      "出席",
+      "拒絕"
+    ]
+  },
+  {
+    "sentence": "The whole family gathered together to _____ Grandpa's eightieth birthday.",
+    "options": [
+      "(A) celebrate",
+      "(B) cancel",
+      "(C) remember",
+      "(D) ignore"
+    ],
+    "answer": 0,
+    "explanation": "celebrate 指慶祝。全家聚在一起慶祝爺爺八十歲生日，故選 celebrate。",
+    "pos": "動詞",
+    "id": "vocab_116",
+    "optionsZh": [
+      "慶祝",
+      "取消",
+      "記得",
+      "忽視"
+    ]
+  },
+  {
+    "sentence": "Several customers began to _____ loudly when the restaurant took over an hour to serve their food.",
+    "options": [
+      "(A) praise",
+      "(B) complain",
+      "(C) apologize",
+      "(D) agree"
+    ],
+    "answer": 1,
+    "explanation": "complain 指抱怨。上菜等超過一小時，顧客開始大聲抱怨，故選 complain。",
+    "pos": "動詞",
+    "id": "vocab_117",
+    "optionsZh": [
+      "稱讚",
+      "抱怨",
+      "道歉",
+      "同意"
+    ]
+  },
+  {
+    "sentence": "This bottle of juice _____ a lot of sugar, so you shouldn't drink too much of it.",
+    "options": [
+      "(A) contains",
+      "(B) wastes",
+      "(C) produces",
+      "(D) needs"
+    ],
+    "answer": 0,
+    "explanation": "contain 指含有。果汁含糖量高，不宜喝太多，故選 contains。",
+    "pos": "動詞",
+    "id": "vocab_118",
+    "optionsZh": [
+      "含有",
+      "浪費",
+      "生產",
+      "需要"
+    ]
+  },
+  {
+    "sentence": "Even though it started to rain, the players decided to _____ the game.",
+    "options": [
+      "(A) quit",
+      "(B) continue",
+      "(C) cancel",
+      "(D) delay"
+    ],
+    "answer": 1,
+    "explanation": "continue 指繼續。即使下雨，球員仍決定繼續比賽，故選 continue；quit 放棄語意相反。",
+    "pos": "動詞",
+    "id": "vocab_119",
+    "optionsZh": [
+      "放棄",
+      "繼續",
+      "取消",
+      "延遲"
+    ]
+  },
+  {
+    "sentence": "It is important to _____ your temper instead of shouting at others when you are angry.",
+    "options": [
+      "(A) control",
+      "(B) lose",
+      "(C) hide",
+      "(D) express"
+    ],
+    "answer": 0,
+    "explanation": "control 指控制。生氣時應控制脾氣而非對人吼叫，故選 control。",
+    "pos": "動詞",
+    "id": "vocab_120",
+    "optionsZh": [
+      "控制",
+      "失去",
+      "隱藏",
+      "表達"
+    ]
+  },
+  {
+    "sentence": "Doctors are working hard to find a new medicine to _____ the disease.",
+    "options": [
+      "(A) cure",
+      "(B) cause",
+      "(C) spread",
+      "(D) catch"
+    ],
+    "answer": 0,
+    "explanation": "cure 指治癒。醫生努力研發新藥治癒疾病，故選 cure。",
+    "pos": "動詞",
+    "id": "vocab_121",
+    "optionsZh": [
+      "治癒",
+      "導致",
+      "散播",
+      "感染"
+    ]
+  },
+  {
+    "sentence": "The heavy storm _____ many houses along the coast last night.",
+    "options": [
+      "(A) built",
+      "(B) repaired",
+      "(C) damaged",
+      "(D) protected"
+    ],
+    "answer": 2,
+    "explanation": "damage 指損害。強烈風暴損毀了沿海許多房屋，故選 damaged。",
+    "pos": "動詞",
+    "id": "vocab_122",
+    "optionsZh": [
+      "建造",
+      "修理",
+      "損害",
+      "保護"
+    ]
+  },
+  {
+    "sentence": "Every December, families _____ their houses with colorful lights and ornaments.",
+    "options": [
+      "(A) decorate",
+      "(B) hide",
+      "(C) clean",
+      "(D) buy"
+    ],
+    "answer": 0,
+    "explanation": "decorate 指裝飾。十二月家家戶戶用彩燈和裝飾品裝飾房子，故選 decorate。",
+    "pos": "動詞",
+    "id": "vocab_123",
+    "optionsZh": [
+      "裝飾",
+      "隱藏",
+      "清潔",
+      "購買"
+    ]
+  },
+  {
+    "sentence": "The heavy snow _____ the flight for almost five hours.",
+    "options": [
+      "(A) delayed",
+      "(B) canceled",
+      "(C) arrived",
+      "(D) finished"
+    ],
+    "answer": 0,
+    "explanation": "delay 指延誤。大雪使班機延誤將近五小時，故選 delayed。",
+    "pos": "動詞",
+    "id": "vocab_124",
+    "optionsZh": [
+      "延誤",
+      "取消",
+      "抵達",
+      "結束"
+    ]
+  },
+  {
+    "sentence": "The company promises to _____ your package within three days.",
+    "options": [
+      "(A) buy",
+      "(B) deliver",
+      "(C) return",
+      "(D) collect"
+    ],
+    "answer": 1,
+    "explanation": "deliver 指遞送。公司承諾三天內遞送包裹，故選 deliver。",
+    "pos": "動詞",
+    "id": "vocab_125",
+    "optionsZh": [
+      "購買",
+      "遞送",
+      "歸還",
+      "收集"
+    ]
+  },
+  {
+    "sentence": "Can you _____ what the thief looked like to the police officer?",
+    "options": [
+      "(A) describe",
+      "(B) imagine",
+      "(C) hide",
+      "(D) forget"
+    ],
+    "answer": 0,
+    "explanation": "describe 指描述。向警察描述小偷的外貌，故選 describe。",
+    "pos": "動詞",
+    "id": "vocab_126",
+    "optionsZh": [
+      "描述",
+      "想像",
+      "隱藏",
+      "忘記"
+    ]
+  },
+  {
+    "sentence": "Scientists are trying to _____ a cheaper way to produce clean energy.",
+    "options": [
+      "(A) waste",
+      "(B) develop",
+      "(C) hide",
+      "(D) reject"
+    ],
+    "answer": 1,
+    "explanation": "develop 指開發。科學家嘗試開發更便宜的乾淨能源生產方式，故選 develop。",
+    "pos": "動詞",
+    "id": "vocab_127",
+    "optionsZh": [
+      "浪費",
+      "開發",
+      "隱藏",
+      "拒絕"
+    ]
+  },
+  {
+    "sentence": "The magician made the rabbit _____ right in front of the audience.",
+    "options": [
+      "(A) appear",
+      "(B) disappear",
+      "(C) grow",
+      "(D) arrive"
+    ],
+    "answer": 1,
+    "explanation": "disappear 指消失。魔術師讓兔子在觀眾面前消失，故選 disappear。",
+    "pos": "動詞",
+    "id": "vocab_128",
+    "optionsZh": [
+      "出現",
+      "消失",
+      "生長",
+      "抵達"
+    ]
+  },
+  {
+    "sentence": "Scientists _____ a new kind of insect deep in the rain forest.",
+    "options": [
+      "(A) discovered",
+      "(B) lost",
+      "(C) hid",
+      "(D) forgot"
+    ],
+    "answer": 0,
+    "explanation": "discover 指發現。科學家在雨林深處發現新種昆蟲，故選 discovered。",
+    "pos": "動詞",
+    "id": "vocab_129",
+    "optionsZh": [
+      "發現",
+      "遺失",
+      "隱藏",
+      "忘記"
+    ]
+  },
+  {
+    "sentence": "The teacher asked the students to _____ the topic in small groups.",
+    "options": [
+      "(A) discuss",
+      "(B) forget",
+      "(C) avoid",
+      "(D) ignore"
+    ],
+    "answer": 0,
+    "explanation": "discuss 指討論。老師要學生分組討論主題，故選 discuss。",
+    "pos": "動詞",
+    "id": "vocab_130",
+    "optionsZh": [
+      "討論",
+      "忘記",
+      "避開",
+      "忽視"
+    ]
+  },
+  {
+    "sentence": "The teacher decided to _____ the class into four small groups for the project.",
+    "options": [
+      "(A) divide",
+      "(B) join",
+      "(C) collect",
+      "(D) mix"
+    ],
+    "answer": 0,
+    "explanation": "divide 指分成。老師決定將班級分成四小組進行專案，故選 divide。",
+    "pos": "動詞",
+    "id": "vocab_131",
+    "optionsZh": [
+      "分成",
+      "加入",
+      "收集",
+      "混合"
+    ]
+  },
+  {
+    "sentence": "He works part-time on weekends to _____ some extra money.",
+    "options": [
+      "(A) keep",
+      "(B) earn",
+      "(C) borrow",
+      "(D) waste"
+    ],
+    "answer": 1,
+    "explanation": "earn 指賺取。週末打工賺取額外的錢，故選 earn。",
+    "pos": "動詞",
+    "id": "vocab_132",
+    "optionsZh": [
+      "保留",
+      "賺取",
+      "借入",
+      "浪費"
+    ]
+  },
+  {
+    "sentence": "Falling asleep during the meeting really _____ him in front of his boss.",
+    "options": [
+      "(A) embarrassed",
+      "(B) pleased",
+      "(C) satisfied",
+      "(D) excited"
+    ],
+    "answer": 0,
+    "explanation": "embarrass 指使尷尬。開會打瞌睡讓他在老闆面前很尷尬，故選 embarrassed。",
+    "pos": "動詞",
+    "id": "vocab_133",
+    "optionsZh": [
+      "使尷尬",
+      "使高興",
+      "使滿意",
+      "使興奮"
+    ]
+  },
+  {
+    "sentence": "The doctor carefully _____ the patient's arm to see if the bone was broken.",
+    "options": [
+      "(A) examined",
+      "(B) ignored",
+      "(C) painted",
+      "(D) covered"
+    ],
+    "answer": 0,
+    "explanation": "examine 指檢查。醫生仔細檢查病人的手臂看骨頭是否斷裂，故選 examined。",
+    "pos": "動詞",
+    "id": "vocab_134",
+    "optionsZh": [
+      "檢查",
+      "忽視",
+      "上漆",
+      "覆蓋"
+    ]
+  },
+  {
+    "sentence": "Many people believe that ghosts do not really _____.",
+    "options": [
+      "(A) exist",
+      "(B) happen",
+      "(C) appear",
+      "(D) live"
+    ],
+    "answer": 0,
+    "explanation": "exist 指存在。許多人相信鬼並不真的存在，故選 exist。",
+    "pos": "動詞",
+    "id": "vocab_135",
+    "optionsZh": [
+      "存在",
+      "發生",
+      "出現",
+      "居住"
+    ]
+  },
+  {
+    "sentence": "We didn't _____ so many people to come to the small party.",
+    "options": [
+      "(A) expect",
+      "(B) invite",
+      "(C) allow",
+      "(D) refuse"
+    ],
+    "answer": 0,
+    "explanation": "expect 指預期。沒有預期到這麼多人來參加小派對，故選 expect。",
+    "pos": "動詞",
+    "id": "vocab_136",
+    "optionsZh": [
+      "預期",
+      "邀請",
+      "允許",
+      "拒絕"
+    ]
+  },
+  {
+    "sentence": "It took her a long time to _____ her friend for breaking the promise.",
+    "options": [
+      "(A) blame",
+      "(B) forgive",
+      "(C) doubt",
+      "(D) punish"
+    ],
+    "answer": 1,
+    "explanation": "forgive 指原諒。花了很長時間才原諒朋友違背承諾，故選 forgive。",
+    "pos": "動詞",
+    "id": "vocab_137",
+    "optionsZh": [
+      "責怪",
+      "原諒",
+      "懷疑",
+      "懲罰"
+    ]
+  },
+  {
+    "sentence": "Dark clouds began to _____ in the sky, so we hurried home before the rain started.",
+    "options": [
+      "(A) gather",
+      "(B) disappear",
+      "(C) shine",
+      "(D) fall"
+    ],
+    "answer": 0,
+    "explanation": "gather 指聚集。烏雲開始在天空聚集，因此趕在下雨前回家，故選 gather。",
+    "pos": "動詞",
+    "id": "vocab_138",
+    "optionsZh": [
+      "聚集",
+      "消失",
+      "照耀",
+      "落下"
+    ]
+  },
+  {
+    "sentence": "The host stood at the door to _____ each guest with a warm smile.",
+    "options": [
+      "(A) greet",
+      "(B) blame",
+      "(C) refuse",
+      "(D) ignore"
+    ],
+    "answer": 0,
+    "explanation": "greet 指問候、迎接。主人站在門口以微笑迎接每位客人，故選 greet。",
+    "pos": "動詞",
+    "id": "vocab_139",
+    "optionsZh": [
+      "迎接",
+      "責怪",
+      "拒絕",
+      "忽視"
+    ]
+  },
+  {
+    "sentence": "The company decided to _____ three new engineers this month.",
+    "options": [
+      "(A) fire",
+      "(B) hire",
+      "(C) punish",
+      "(D) refuse"
+    ],
+    "answer": 1,
+    "explanation": "hire 指雇用。公司決定本月雇用三位新工程師，故選 hire；fire 解雇語意相反。",
+    "pos": "動詞",
+    "id": "vocab_140",
+    "optionsZh": [
+      "解雇",
+      "雇用",
+      "懲罰",
+      "拒絕"
+    ]
+  },
+  {
+    "sentence": "Wolves usually _____ in groups instead of alone.",
+    "options": [
+      "(A) hunt",
+      "(B) rest",
+      "(C) hide",
+      "(D) play"
+    ],
+    "answer": 0,
+    "explanation": "hunt 指狩獵。狼通常成群狩獵而非獨自行動，故選 hunt。",
+    "pos": "動詞",
+    "id": "vocab_141",
+    "optionsZh": [
+      "狩獵",
+      "休息",
+      "躲藏",
+      "玩耍"
+    ]
+  },
+  {
+    "sentence": "The price of the tour does not _____ meals or hotel rooms.",
+    "options": [
+      "(A) include",
+      "(B) waste",
+      "(C) ignore",
+      "(D) refuse"
+    ],
+    "answer": 0,
+    "explanation": "include 指包含。旅行團費用不包含餐費或住宿，故選 include。",
+    "pos": "動詞",
+    "id": "vocab_142",
+    "optionsZh": [
+      "包含",
+      "浪費",
+      "忽視",
+      "拒絕"
+    ]
+  },
+  {
+    "sentence": "The number of visitors to the museum has _____ greatly since it added new exhibits.",
+    "options": [
+      "(A) increased",
+      "(B) decreased",
+      "(C) canceled",
+      "(D) disappeared"
+    ],
+    "answer": 0,
+    "explanation": "increase 指增加。新增展覽後博物館遊客數大幅增加，故選 increased。",
+    "pos": "動詞",
+    "id": "vocab_143",
+    "optionsZh": [
+      "增加",
+      "減少",
+      "取消",
+      "消失"
+    ]
+  },
+  {
+    "sentence": "Although Amy offered to pay, her friend _____ on paying for dinner himself.",
+    "options": [
+      "(A) insisted",
+      "(B) refused",
+      "(C) agreed",
+      "(D) forgot"
+    ],
+    "answer": 0,
+    "explanation": "insist 指堅持。儘管 Amy 表示要付錢，朋友仍堅持自己付晚餐錢，故選 insisted。",
+    "pos": "動詞",
+    "id": "vocab_144",
+    "optionsZh": [
+      "堅持",
+      "拒絕",
+      "同意",
+      "忘記"
+    ]
+  },
+  {
+    "sentence": "It is impolite to _____ someone while they are still speaking.",
+    "options": [
+      "(A) interrupt",
+      "(B) greet",
+      "(C) blame",
+      "(D) praise"
+    ],
+    "answer": 0,
+    "explanation": "interrupt 指打斷。別人說話時打斷是不禮貌的行為，故選 interrupt。",
+    "pos": "動詞",
+    "id": "vocab_145",
+    "optionsZh": [
+      "打斷",
+      "問候",
+      "責怪",
+      "稱讚"
+    ]
+  },
+  {
+    "sentence": "Let me _____ my new classmate, who just moved here from Tainan.",
+    "options": [
+      "(A) introduce",
+      "(B) forget",
+      "(C) hide",
+      "(D) ignore"
+    ],
+    "answer": 0,
+    "explanation": "introduce 指介紹。介紹剛從台南搬來的新同學，故選 introduce。",
+    "pos": "動詞",
+    "id": "vocab_146",
+    "optionsZh": [
+      "介紹",
+      "忘記",
+      "隱藏",
+      "忽視"
+    ]
+  },
+  {
+    "sentence": "Alexander Graham Bell is famous for helping to _____ the telephone.",
+    "options": [
+      "(A) invent",
+      "(B) discover",
+      "(C) buy",
+      "(D) repair"
+    ],
+    "answer": 0,
+    "explanation": "invent 指發明。貝爾以協助發明電話聞名，故選 invent；discover 指發現既有事物，語意不同。",
+    "pos": "動詞",
+    "id": "vocab_147",
+    "optionsZh": [
+      "發明",
+      "發現",
+      "購買",
+      "修理"
+    ]
+  },
+  {
+    "sentence": "It is important to _____ good relationships with your neighbors.",
+    "options": [
+      "(A) maintain",
+      "(B) break",
+      "(C) avoid",
+      "(D) waste"
+    ],
+    "answer": 0,
+    "explanation": "maintain 指維持。與鄰居維持良好關係很重要，故選 maintain。",
+    "pos": "動詞",
+    "id": "vocab_148",
+    "optionsZh": [
+      "維持",
+      "破壞",
+      "避免",
+      "浪費"
+    ]
+  },
+  {
+    "sentence": "Drivers must _____ the traffic rules to keep everyone safe.",
+    "options": [
+      "(A) break",
+      "(B) obey",
+      "(C) forget",
+      "(D) ignore"
+    ],
+    "answer": 1,
+    "explanation": "obey 指遵守。駕駛必須遵守交通規則以維護安全，故選 obey；break 違反語意相反。",
+    "pos": "動詞",
+    "id": "vocab_149",
+    "optionsZh": [
+      "違反",
+      "遵守",
+      "忘記",
+      "忽視"
+    ]
+  },
+  {
+    "sentence": "A kind stranger _____ to help the old man carry his heavy bags.",
+    "options": [
+      "(A) refused",
+      "(B) forgot",
+      "(C) offered",
+      "(D) ignored"
+    ],
+    "answer": 2,
+    "explanation": "offer 指主動提供。好心的陌生人主動提出幫老人提重物，故選 offered。",
+    "pos": "動詞",
+    "id": "vocab_150",
+    "optionsZh": [
+      "拒絕",
+      "忘記",
+      "主動提出",
+      "忽視"
+    ]
+  },
+  {
+    "sentence": "It took the new worker a week to learn how to _____ the machine safely.",
+    "options": [
+      "(A) operate",
+      "(B) break",
+      "(C) buy",
+      "(D) waste"
+    ],
+    "answer": 0,
+    "explanation": "operate 指操作。新員工花一週學會安全操作機器，故選 operate。",
+    "pos": "動詞",
+    "id": "vocab_151",
+    "optionsZh": [
+      "操作",
+      "打破",
+      "購買",
+      "浪費"
+    ]
+  },
+  {
+    "sentence": "The students worked together to _____ a charity concert for the flood victims.",
+    "options": [
+      "(A) cancel",
+      "(B) organize",
+      "(C) attend",
+      "(D) avoid"
+    ],
+    "answer": 1,
+    "explanation": "organize 指籌辦。學生合力籌辦一場為水災受災戶募款的慈善音樂會，故選 organize。",
+    "pos": "動詞",
+    "id": "vocab_152",
+    "optionsZh": [
+      "取消",
+      "籌辦",
+      "出席",
+      "避免"
+    ]
+  },
+  {
+    "sentence": "Factories that _____ the river without permission should be fined.",
+    "options": [
+      "(A) pollute",
+      "(B) protect",
+      "(C) clean",
+      "(D) help"
+    ],
+    "answer": 0,
+    "explanation": "pollute 指污染。未經許可污染河流的工廠應被罰款，故選 pollute。",
+    "pos": "動詞",
+    "id": "vocab_153",
+    "optionsZh": [
+      "污染",
+      "保護",
+      "清潔",
+      "幫助"
+    ]
+  },
+  {
+    "sentence": "The coach always _____ his players in public, even when they make mistakes.",
+    "options": [
+      "(A) blames",
+      "(B) punishes",
+      "(C) praises",
+      "(D) ignores"
+    ],
+    "answer": 2,
+    "explanation": "praise 指稱讚。教練即使球員犯錯也總在公開場合稱讚他們，故選 praises。",
+    "pos": "動詞",
+    "id": "vocab_154",
+    "optionsZh": [
+      "責怪",
+      "懲罰",
+      "稱讚",
+      "忽視"
+    ]
+  },
+  {
+    "sentence": "This factory can _____ over a thousand toys every day.",
+    "options": [
+      "(A) produce",
+      "(B) waste",
+      "(C) buy",
+      "(D) collect"
+    ],
+    "answer": 0,
+    "explanation": "produce 指生產。這間工廠每天能生產超過一千個玩具，故選 produce。",
+    "pos": "動詞",
+    "id": "vocab_155",
+    "optionsZh": [
+      "生產",
+      "浪費",
+      "購買",
+      "收集"
+    ]
+  },
+  {
+    "sentence": "Ben _____ his mother that he would clean his room before dinner.",
+    "options": [
+      "(A) promised",
+      "(B) doubted",
+      "(C) refused",
+      "(D) forgot"
+    ],
+    "answer": 0,
+    "explanation": "promise 指承諾。Ben 向媽媽承諾晚餐前會整理房間，故選 promised。",
+    "pos": "動詞",
+    "id": "vocab_156",
+    "optionsZh": [
+      "承諾",
+      "懷疑",
+      "拒絕",
+      "忘記"
+    ]
+  },
+  {
+    "sentence": "The teacher decided to _____ the students who broke the classroom rules.",
+    "options": [
+      "(A) praise",
+      "(B) forgive",
+      "(C) punish",
+      "(D) blame"
+    ],
+    "answer": 2,
+    "explanation": "punish 指懲罰。老師決定懲罰違反班規的學生，故選 punish。",
+    "pos": "動詞",
+    "id": "vocab_157",
+    "optionsZh": [
+      "稱讚",
+      "原諒",
+      "懲罰",
+      "責怪"
+    ]
+  },
+  {
+    "sentence": "Halfway to school, Ken suddenly _____ that he had left his lunch box at home.",
+    "options": [
+      "(A) realized",
+      "(B) forgot",
+      "(C) imagined",
+      "(D) doubted"
+    ],
+    "answer": 0,
+    "explanation": "realize 指意識到。走到半路 Ken 突然意識到便當忘在家裡，故選 realized。",
+    "pos": "動詞",
+    "id": "vocab_158",
+    "optionsZh": [
+      "意識到",
+      "忘記",
+      "想像",
+      "懷疑"
+    ]
+  },
+  {
+    "sentence": "Every year, Grandma _____ many birthday cards from her grandchildren.",
+    "options": [
+      "(A) loses",
+      "(B) receives",
+      "(C) buys",
+      "(D) borrows"
+    ],
+    "answer": 1,
+    "explanation": "receive 指收到。奶奶每年都會收到孫子女寄來的生日卡，故選 receives。",
+    "pos": "動詞",
+    "id": "vocab_159",
+    "optionsZh": [
+      "遺失",
+      "收到",
+      "購買",
+      "借入"
+    ]
+  },
+  {
+    "sentence": "It took him almost a month to _____ from his bad cold.",
+    "options": [
+      "(A) recover",
+      "(B) struggle",
+      "(C) hide",
+      "(D) fail"
+    ],
+    "answer": 0,
+    "explanation": "recover 指康復。他花了將近一個月才從重感冒中康復，故選 recover。",
+    "pos": "動詞",
+    "id": "vocab_160",
+    "optionsZh": [
+      "康復",
+      "掙扎",
+      "躲藏",
+      "失敗"
+    ]
+  },
+  {
+    "sentence": "The manager decided to _____ the plan because it was too expensive.",
+    "options": [
+      "(A) accept",
+      "(B) reject",
+      "(C) support",
+      "(D) follow"
+    ],
+    "answer": 1,
+    "explanation": "reject 指拒絕、駁回。經理因計畫太昂貴而決定駁回，故選 reject；accept 接受語意相反。",
+    "pos": "動詞",
+    "id": "vocab_161",
+    "optionsZh": [
+      "接受",
+      "拒絕",
+      "支持",
+      "遵循"
+    ]
+  },
+  {
+    "sentence": "Please _____ me to bring my umbrella tomorrow morning.",
+    "options": [
+      "(A) remind",
+      "(B) forget",
+      "(C) allow",
+      "(D) invite"
+    ],
+    "answer": 0,
+    "explanation": "remind 指提醒。請提醒我明天早上帶傘，故選 remind。",
+    "pos": "動詞",
+    "id": "vocab_162",
+    "optionsZh": [
+      "提醒",
+      "忘記",
+      "允許",
+      "邀請"
+    ]
+  },
+  {
+    "sentence": "Since they only need the car for one day, they decided to _____ one instead of buying it.",
+    "options": [
+      "(A) rent",
+      "(B) buy",
+      "(C) return",
+      "(D) fix"
+    ],
+    "answer": 0,
+    "explanation": "rent 指租用。只需要用車一天，決定租車而非購買，故選 rent。",
+    "pos": "動詞",
+    "id": "vocab_163",
+    "optionsZh": [
+      "租用",
+      "購買",
+      "歸還",
+      "修理"
+    ]
+  },
+  {
+    "sentence": "Could you please _____ the question? I didn't hear it clearly.",
+    "options": [
+      "(A) repeat",
+      "(B) answer",
+      "(C) forget",
+      "(D) hide"
+    ],
+    "answer": 0,
+    "explanation": "repeat 指重複。沒聽清楚問題，因此請對方再說一次，故選 repeat。",
+    "pos": "動詞",
+    "id": "vocab_164",
+    "optionsZh": [
+      "重複",
+      "回答",
+      "忘記",
+      "隱藏"
+    ]
+  },
+  {
+    "sentence": "She hasn't _____ to my message yet, so I'm not sure if she got it.",
+    "options": [
+      "(A) replied",
+      "(B) returned",
+      "(C) collected",
+      "(D) canceled"
+    ],
+    "answer": 0,
+    "explanation": "reply 指回覆。她還沒回覆我的訊息，不確定是否收到，故選 replied。",
+    "pos": "動詞",
+    "id": "vocab_165",
+    "optionsZh": [
+      "回覆",
+      "歸還",
+      "收集",
+      "取消"
+    ]
+  },
+  {
+    "sentence": "Good students should _____ their teachers and classmates.",
+    "options": [
+      "(A) respect",
+      "(B) blame",
+      "(C) ignore",
+      "(D) doubt"
+    ],
+    "answer": 0,
+    "explanation": "respect 指尊重。好學生應尊重師長與同學，故選 respect。",
+    "pos": "動詞",
+    "id": "vocab_166",
+    "optionsZh": [
+      "尊重",
+      "責怪",
+      "忽視",
+      "懷疑"
+    ]
+  },
+  {
+    "sentence": "Please _____ the best answer from the four choices below.",
+    "options": [
+      "(A) select",
+      "(B) ignore",
+      "(C) hide",
+      "(D) waste"
+    ],
+    "answer": 0,
+    "explanation": "select 指選擇。從下方四個選項中選出最佳答案，故選 select。",
+    "pos": "動詞",
+    "id": "vocab_167",
+    "optionsZh": [
+      "選擇",
+      "忽視",
+      "隱藏",
+      "浪費"
+    ]
+  },
+  {
+    "sentence": "The teacher asked the students to _____ the trash into paper, plastic, and glass.",
+    "options": [
+      "(A) mix",
+      "(B) separate",
+      "(C) collect",
+      "(D) throw"
+    ],
+    "answer": 1,
+    "explanation": "separate 指分開、分類。老師要學生把垃圾分成紙類、塑膠和玻璃，故選 separate。",
+    "pos": "動詞",
+    "id": "vocab_168",
+    "optionsZh": [
+      "混合",
+      "分開",
+      "收集",
+      "丟"
+    ]
+  },
+  {
+    "sentence": "It took the whole class an hour to _____ the difficult math problem.",
+    "options": [
+      "(A) solve",
+      "(B) create",
+      "(C) copy",
+      "(D) hide"
+    ],
+    "answer": 0,
+    "explanation": "solve 指解決。全班花了一小時解出這道困難的數學題，故選 solve。",
+    "pos": "動詞",
+    "id": "vocab_169",
+    "optionsZh": [
+      "解決",
+      "創造",
+      "抄襲",
+      "隱藏"
+    ]
+  },
+  {
+    "sentence": "The thief tried to _____ the woman's purse on the crowded bus.",
+    "options": [
+      "(A) steal",
+      "(B) return",
+      "(C) find",
+      "(D) buy"
+    ],
+    "answer": 0,
+    "explanation": "steal 指偷竊。小偷試圖在擁擠的公車上偷走婦人的皮包，故選 steal。",
+    "pos": "動詞",
+    "id": "vocab_170",
+    "optionsZh": [
+      "偷竊",
+      "歸還",
+      "尋找",
+      "購買"
+    ]
+  },
+  {
+    "sentence": "After many failures, he finally _____ in passing the driving test.",
+    "options": [
+      "(A) succeeded",
+      "(B) failed",
+      "(C) refused",
+      "(D) forgave"
+    ],
+    "answer": 0,
+    "explanation": "succeed 指成功。經歷多次失敗，他終於成功通過駕照考試，故選 succeeded。",
+    "pos": "動詞",
+    "id": "vocab_171",
+    "optionsZh": [
+      "成功",
+      "失敗",
+      "拒絕",
+      "原諒"
+    ]
+  },
+  {
+    "sentence": "My doctor _____ that I drink more water every day.",
+    "options": [
+      "(A) suggested",
+      "(B) forgot",
+      "(C) doubted",
+      "(D) refused"
+    ],
+    "answer": 0,
+    "explanation": "suggest 指建議。醫生建議我每天多喝水，故選 suggested。",
+    "pos": "動詞",
+    "id": "vocab_172",
+    "optionsZh": [
+      "建議",
+      "忘記",
+      "懷疑",
+      "拒絕"
+    ]
+  },
+  {
+    "sentence": "My parents always _____ me in whatever I choose to do.",
+    "options": [
+      "(A) support",
+      "(B) blame",
+      "(C) doubt",
+      "(D) refuse"
+    ],
+    "answer": 0,
+    "explanation": "support 指支持。父母總是支持我做的任何選擇，故選 support。",
+    "pos": "動詞",
+    "id": "vocab_173",
+    "optionsZh": [
+      "支持",
+      "責怪",
+      "懷疑",
+      "拒絕"
+    ]
+  },
+  {
+    "sentence": "It is amazing that the little plant managed to _____ the cold winter.",
+    "options": [
+      "(A) survive",
+      "(B) hide",
+      "(C) grow up",
+      "(D) disappear"
+    ],
+    "answer": 0,
+    "explanation": "survive 指存活。這株小植物竟能撐過寒冬存活下來，令人驚訝，故選 survive。",
+    "pos": "動詞",
+    "id": "vocab_174",
+    "optionsZh": [
+      "存活",
+      "躲藏",
+      "長大",
+      "消失"
+    ]
+  },
+  {
+    "sentence": "The small dog began to bark loudly when a stranger tried to _____ its owner.",
+    "options": [
+      "(A) attack",
+      "(B) greet",
+      "(C) help",
+      "(D) follow"
+    ],
+    "answer": 0,
+    "explanation": "attack 指攻擊。陌生人試圖攻擊主人，小狗因此大聲吠叫，故選 attack。",
+    "pos": "動詞",
+    "id": "vocab_175",
+    "optionsZh": [
+      "攻擊",
+      "問候",
+      "幫助",
+      "跟隨"
+    ]
+  },
+  {
+    "sentence": "Instead of trying to _____ each other, the team members decided to fix the problem together.",
+    "options": [
+      "(A) blame",
+      "(B) forgive",
+      "(C) praise",
+      "(D) doubt"
+    ],
+    "answer": 0,
+    "explanation": "blame 指責怪。與其互相責怪，隊員決定一起解決問題，故選 blame。",
+    "pos": "動詞",
+    "id": "vocab_176",
+    "optionsZh": [
+      "責怪",
+      "原諒",
+      "稱讚",
+      "懷疑"
+    ]
+  },
+  {
+    "sentence": "The car _____ on the highway caused a long traffic jam this morning.",
+    "options": [
+      "(A) accident",
+      "(B) opinion",
+      "(C) advantage",
+      "(D) appearance"
+    ],
+    "answer": 0,
+    "explanation": "accident 指意外事故。高速公路上的意外事故造成今早長長的塞車，故選 accident。",
+    "pos": "名詞",
+    "id": "vocab_177",
+    "optionsZh": [
+      "意外事故",
+      "意見",
+      "優點",
+      "外觀"
+    ]
+  },
+  {
+    "sentence": "Speaking two languages gives her a big _____ when looking for a job.",
+    "options": [
+      "(A) advantage",
+      "(B) distance",
+      "(C) difficulty",
+      "(D) danger"
+    ],
+    "answer": 0,
+    "explanation": "advantage 指優點、優勢。會說兩種語言在求職時是很大的優勢，故選 advantage。",
+    "pos": "名詞",
+    "id": "vocab_178",
+    "optionsZh": [
+      "優點",
+      "距離",
+      "困難",
+      "危險"
+    ]
+  },
+  {
+    "sentence": "You only need a small _____ of sugar to make this cake sweet enough.",
+    "options": [
+      "(A) amount",
+      "(B) number",
+      "(C) part",
+      "(D) weight"
+    ],
+    "answer": 0,
+    "explanation": "amount 指（不可數的）數量，糖是不可數名詞，故用 amount 而非 number，選 amount。",
+    "pos": "名詞",
+    "id": "vocab_179",
+    "optionsZh": [
+      "數量",
+      "數目",
+      "部分",
+      "重量"
+    ]
+  },
+  {
+    "sentence": "People should not judge others only by their _____.",
+    "options": [
+      "(A) appearance",
+      "(B) attention",
+      "(C) advantage",
+      "(D) ability"
+    ],
+    "answer": 0,
+    "explanation": "appearance 指外表。不應只憑外表評斷他人，故選 appearance。",
+    "pos": "名詞",
+    "id": "vocab_180",
+    "optionsZh": [
+      "外表",
+      "注意力",
+      "優點",
+      "能力"
+    ]
+  },
+  {
+    "sentence": "I read an interesting _____ about ocean pollution in the newspaper this morning.",
+    "options": [
+      "(A) article",
+      "(B) advertisement",
+      "(C) letter",
+      "(D) message"
+    ],
+    "answer": 0,
+    "explanation": "article 指文章。今早在報紙上讀到一篇關於海洋污染的有趣文章，故選 article。",
+    "pos": "名詞",
+    "id": "vocab_181",
+    "optionsZh": [
+      "文章",
+      "廣告",
+      "信件",
+      "訊息"
+    ]
+  },
+  {
+    "sentence": "The singer bowed to the _____ after finishing her last song.",
+    "options": [
+      "(A) audience",
+      "(B) player",
+      "(C) visitor",
+      "(D) customer"
+    ],
+    "answer": 0,
+    "explanation": "audience 指觀眾。歌手唱完最後一首歌向觀眾鞠躬，故選 audience。",
+    "pos": "名詞",
+    "id": "vocab_182",
+    "optionsZh": [
+      "觀眾",
+      "選手",
+      "訪客",
+      "顧客"
+    ]
+  },
+  {
+    "sentence": "Reading books every day is good exercise for your _____.",
+    "options": [
+      "(A) brain",
+      "(B) heart",
+      "(C) arm",
+      "(D) skin"
+    ],
+    "answer": 0,
+    "explanation": "brain 指大腦。每天讀書對大腦是很好的運動，故選 brain。",
+    "pos": "名詞",
+    "id": "vocab_183",
+    "optionsZh": [
+      "大腦",
+      "心臟",
+      "手臂",
+      "皮膚"
+    ]
+  },
+  {
+    "sentence": "After graduating from college, she started her _____ as a nurse.",
+    "options": [
+      "(A) career",
+      "(B) hobby",
+      "(C) habit",
+      "(D) holiday"
+    ],
+    "answer": 0,
+    "explanation": "career 指職業生涯。大學畢業後她展開護理師的職業生涯，故選 career。",
+    "pos": "名詞",
+    "id": "vocab_184",
+    "optionsZh": [
+      "職業生涯",
+      "嗜好",
+      "習慣",
+      "假期"
+    ]
+  },
+  {
+    "sentence": "This trip to Japan may be my only _____ to see cherry blossoms in person.",
+    "options": [
+      "(A) chance",
+      "(B) choice",
+      "(C) charge",
+      "(D) change"
+    ],
+    "answer": 0,
+    "explanation": "chance 指機會。這趟日本行可能是親眼看櫻花的唯一機會，故選 chance。",
+    "pos": "名詞",
+    "id": "vocab_185",
+    "optionsZh": [
+      "機會",
+      "選擇",
+      "費用",
+      "改變"
+    ]
+  },
+  {
+    "sentence": "The main _____ in the movie is a brave young girl who saves her village.",
+    "options": [
+      "(A) character",
+      "(B) audience",
+      "(C) actor",
+      "(D) artist"
+    ],
+    "answer": 0,
+    "explanation": "character 指角色。電影主角是拯救村莊的勇敢女孩，故選 character。",
+    "pos": "名詞",
+    "id": "vocab_186",
+    "optionsZh": [
+      "角色",
+      "觀眾",
+      "演員",
+      "藝術家"
+    ]
+  },
+  {
+    "sentence": "As a good _____, you should follow the laws of your country.",
+    "options": [
+      "(A) citizen",
+      "(B) guest",
+      "(C) customer",
+      "(D) visitor"
+    ],
+    "answer": 0,
+    "explanation": "citizen 指公民。身為好公民應遵守國家的法律，故選 citizen。",
+    "pos": "名詞",
+    "id": "vocab_187",
+    "optionsZh": [
+      "公民",
+      "客人",
+      "顧客",
+      "訪客"
+    ]
+  },
+  {
+    "sentence": "Scientists study how human activities are slowly changing the Earth's _____.",
+    "options": [
+      "(A) climate",
+      "(B) nature",
+      "(C) temperature",
+      "(D) population"
+    ],
+    "answer": 0,
+    "explanation": "climate 指氣候。科學家研究人類活動如何緩慢改變地球的氣候，故選 climate。",
+    "pos": "名詞",
+    "id": "vocab_188",
+    "optionsZh": [
+      "氣候",
+      "大自然",
+      "溫度",
+      "人口"
+    ]
+  },
+  {
+    "sentence": "The teacher wrote a short _____ on my essay to explain what I should improve.",
+    "options": [
+      "(A) comment",
+      "(B) command",
+      "(C) contract",
+      "(D) contact"
+    ],
+    "answer": 0,
+    "explanation": "comment 指評語。老師在作文上寫了簡短評語說明該改進之處，故選 comment。",
+    "pos": "名詞",
+    "id": "vocab_189",
+    "optionsZh": [
+      "評語",
+      "命令",
+      "合約",
+      "聯繫"
+    ]
+  },
+  {
+    "sentence": "The two neighbors had a _____ over where to put the fence between their yards.",
+    "options": [
+      "(A) conflict",
+      "(B) relation",
+      "(C) opinion",
+      "(D) conversation"
+    ],
+    "answer": 0,
+    "explanation": "conflict 指衝突。兩位鄰居因院子間籬笆位置起了衝突，故選 conflict。",
+    "pos": "名詞",
+    "id": "vocab_190",
+    "optionsZh": [
+      "衝突",
+      "關係",
+      "意見",
+      "對話"
+    ]
+  },
+  {
+    "sentence": "It took a lot of _____ for her to speak in front of the whole school.",
+    "options": [
+      "(A) courage",
+      "(B) fear",
+      "(C) doubt",
+      "(D) pride"
+    ],
+    "answer": 0,
+    "explanation": "courage 指勇氣。在全校面前演講需要很大的勇氣，故選 courage。",
+    "pos": "名詞",
+    "id": "vocab_191",
+    "optionsZh": [
+      "勇氣",
+      "恐懼",
+      "懷疑",
+      "驕傲"
+    ]
+  },
+  {
+    "sentence": "Stealing money from other people is a serious _____.",
+    "options": [
+      "(A) crime",
+      "(B) mistake",
+      "(C) accident",
+      "(D) habit"
+    ],
+    "answer": 0,
+    "explanation": "crime 指犯罪。偷別人的錢是嚴重的犯罪行為，故選 crime。",
+    "pos": "名詞",
+    "id": "vocab_192",
+    "optionsZh": [
+      "罪行",
+      "錯誤",
+      "意外",
+      "習慣"
+    ]
+  },
+  {
+    "sentence": "The company faced a financial _____ after losing its biggest customer.",
+    "options": [
+      "(A) crisis",
+      "(B) success",
+      "(C) advantage",
+      "(D) progress"
+    ],
+    "answer": 0,
+    "explanation": "crisis 指危機。公司失去最大客戶後面臨財務危機，故選 crisis。",
+    "pos": "名詞",
+    "id": "vocab_193",
+    "optionsZh": [
+      "危機",
+      "成功",
+      "優點",
+      "進步"
+    ]
+  },
+  {
+    "sentence": "Traveling to different countries helps you understand other people's _____.",
+    "options": [
+      "(A) culture",
+      "(B) climate",
+      "(C) population",
+      "(D) custom"
+    ],
+    "answer": 0,
+    "explanation": "culture 指文化。到不同國家旅行有助於了解他人的文化，故選 culture。",
+    "pos": "名詞",
+    "id": "vocab_194",
+    "optionsZh": [
+      "文化",
+      "氣候",
+      "人口",
+      "習俗"
+    ]
+  },
+  {
+    "sentence": "Taking off your shoes before entering a house is a common _____ in Taiwan.",
+    "options": [
+      "(A) custom",
+      "(B) culture",
+      "(C) course",
+      "(D) cost"
+    ],
+    "answer": 0,
+    "explanation": "custom 指習俗。進屋前脫鞋在台灣是常見習俗，故選 custom。",
+    "pos": "名詞",
+    "id": "vocab_195",
+    "optionsZh": [
+      "習俗",
+      "文化",
+      "課程",
+      "費用"
+    ]
+  },
+  {
+    "sentence": "The class held a _____ about whether students should wear uniforms.",
+    "options": [
+      "(A) debate",
+      "(B) conversation",
+      "(C) speech",
+      "(D) interview"
+    ],
+    "answer": 0,
+    "explanation": "debate 指辯論。班上針對是否該穿制服舉行辯論，故選 debate。",
+    "pos": "名詞",
+    "id": "vocab_196",
+    "optionsZh": [
+      "辯論",
+      "對話",
+      "演說",
+      "訪談"
+    ]
+  },
+  {
+    "sentence": "She earned a _____ in biology from the university last year.",
+    "options": [
+      "(A) degree",
+      "(B) grade",
+      "(C) level",
+      "(D) class"
+    ],
+    "answer": 0,
+    "explanation": "degree 指學位。她去年從大學取得生物學學位，故選 degree。",
+    "pos": "名詞",
+    "id": "vocab_197",
+    "optionsZh": [
+      "學位",
+      "分數",
+      "程度",
+      "班級"
+    ]
+  },
+  {
+    "sentence": "His strong _____ to become a doctor pushed him to study very hard.",
+    "options": [
+      "(A) desire",
+      "(B) doubt",
+      "(C) fear",
+      "(D) habit"
+    ],
+    "answer": 0,
+    "explanation": "desire 指渴望。想成為醫生的強烈渴望驅使他努力讀書，故選 desire。",
+    "pos": "名詞",
+    "id": "vocab_198",
+    "optionsZh": [
+      "渴望",
+      "懷疑",
+      "恐懼",
+      "習慣"
+    ]
+  },
+  {
+    "sentence": "The _____ between the two cities is about two hundred kilometers.",
+    "options": [
+      "(A) distance",
+      "(B) length",
+      "(C) height",
+      "(D) area"
+    ],
+    "answer": 0,
+    "explanation": "distance 指距離。兩城市間的距離約兩百公里，故選 distance。",
+    "pos": "名詞",
+    "id": "vocab_199",
+    "optionsZh": [
+      "距離",
+      "長度",
+      "高度",
+      "面積"
+    ]
+  },
+  {
+    "sentence": "It is the manager's _____ to make sure all workers follow safety rules.",
+    "options": [
+      "(A) duty",
+      "(B) hobby",
+      "(C) favor",
+      "(D) habit"
+    ],
+    "answer": 0,
+    "explanation": "duty 指職責。確保員工遵守安全規則是經理的職責，故選 duty。",
+    "pos": "名詞",
+    "id": "vocab_200",
+    "optionsZh": [
+      "職責",
+      "嗜好",
+      "恩惠",
+      "習慣"
+    ]
+  },
+  {
+    "sentence": "Good _____ can open many doors for young people in the future.",
+    "options": [
+      "(A) education",
+      "(B) information",
+      "(C) invitation",
+      "(D) instrument"
+    ],
+    "answer": 0,
+    "explanation": "education 指教育。良好的教育能為年輕人開啟未來許多機會，故選 education。",
+    "pos": "名詞",
+    "id": "vocab_201",
+    "optionsZh": [
+      "教育",
+      "資訊",
+      "邀請",
+      "樂器/工具"
+    ]
+  },
+  {
+    "sentence": "Winning the championship took years of hard _____ from the whole team.",
+    "options": [
+      "(A) effort",
+      "(B) luck",
+      "(C) chance",
+      "(D) habit"
+    ],
+    "answer": 0,
+    "explanation": "effort 指努力。奪冠是全隊多年努力的成果，故選 effort。",
+    "pos": "名詞",
+    "id": "vocab_202",
+    "optionsZh": [
+      "努力",
+      "運氣",
+      "機會",
+      "習慣"
+    ]
+  },
+  {
+    "sentence": "Trust is an important _____ of any good friendship.",
+    "options": [
+      "(A) element",
+      "(B) accident",
+      "(C) advantage",
+      "(D) crisis"
+    ],
+    "answer": 0,
+    "explanation": "element 指要素。信任是任何良好友誼的重要要素，故選 element。",
+    "pos": "名詞",
+    "id": "vocab_203",
+    "optionsZh": [
+      "要素",
+      "意外",
+      "優點",
+      "危機"
+    ]
+  },
+  {
+    "sentence": "It is normal to show strong _____ such as joy or sadness at a wedding.",
+    "options": [
+      "(A) emotion",
+      "(B) opinion",
+      "(C) attention",
+      "(D) information"
+    ],
+    "answer": 0,
+    "explanation": "emotion 指情緒。婚禮上展現喜悅或悲傷等強烈情緒是正常的，故選 emotion。",
+    "pos": "名詞",
+    "id": "vocab_204",
+    "optionsZh": [
+      "情緒",
+      "意見",
+      "注意力",
+      "資訊"
+    ]
+  },
+  {
+    "sentence": "There was a small _____ in the report, so we had to fix it before sending it out.",
+    "options": [
+      "(A) error",
+      "(B) advantage",
+      "(C) effort",
+      "(D) element"
+    ],
+    "answer": 0,
+    "explanation": "error 指錯誤。報告中有個小錯誤，寄出前必須修正，故選 error。",
+    "pos": "名詞",
+    "id": "vocab_205",
+    "optionsZh": [
+      "錯誤",
+      "優點",
+      "努力",
+      "要素"
+    ]
+  },
+  {
+    "sentence": "It wasn't your _____ that the bus was late; there was heavy traffic.",
+    "options": [
+      "(A) fault",
+      "(B) favor",
+      "(C) fact",
+      "(D) fear"
+    ],
+    "answer": 0,
+    "explanation": "fault 指過錯。公車遲到不是你的過錯，是交通壅塞造成的，故選 fault。",
+    "pos": "名詞",
+    "id": "vocab_206",
+    "optionsZh": [
+      "過錯",
+      "恩惠",
+      "事實",
+      "恐懼"
+    ]
+  },
+  {
+    "sentence": "The heavy rain caused a serious _____ in the low areas of the city.",
+    "options": [
+      "(A) flood",
+      "(B) storm",
+      "(C) fog",
+      "(D) wave"
+    ],
+    "answer": 0,
+    "explanation": "flood 指洪水。豪雨在城市低窪地區造成嚴重洪水，故選 flood。",
+    "pos": "名詞",
+    "id": "vocab_207",
+    "optionsZh": [
+      "洪水",
+      "暴風雨",
+      "霧",
+      "海浪"
+    ]
+  },
+  {
+    "sentence": "This new phone has a special _____ that can translate languages instantly.",
+    "options": [
+      "(A) function",
+      "(B) fashion",
+      "(C) future",
+      "(D) fault"
+    ],
+    "answer": 0,
+    "explanation": "function 指功能。這款新手機有能即時翻譯的特殊功能，故選 function。",
+    "pos": "名詞",
+    "id": "vocab_208",
+    "optionsZh": [
+      "功能",
+      "流行",
+      "未來",
+      "過錯"
+    ]
+  },
+  {
+    "sentence": "Waving your hand is a common _____ for saying goodbye.",
+    "options": [
+      "(A) gesture",
+      "(B) custom",
+      "(C) manner",
+      "(D) habit"
+    ],
+    "answer": 0,
+    "explanation": "gesture 指手勢、姿勢。揮手是常見的道別手勢，故選 gesture。",
+    "pos": "名詞",
+    "id": "vocab_209",
+    "optionsZh": [
+      "手勢",
+      "習俗",
+      "禮貌",
+      "習慣"
+    ]
+  },
+  {
+    "sentence": "Brushing your teeth twice a day is a healthy _____.",
+    "options": [
+      "(A) habit",
+      "(B) hobby",
+      "(C) duty",
+      "(D) custom"
+    ],
+    "answer": 0,
+    "explanation": "habit 指習慣。每天刷牙兩次是健康的習慣，故選 habit。",
+    "pos": "名詞",
+    "id": "vocab_210",
+    "optionsZh": [
+      "習慣",
+      "嗜好",
+      "職責",
+      "習俗"
+    ]
+  },
+  {
+    "sentence": "Honesty is one of the most important qualities in a good friend.",
+    "options": [
+      "(A) Honesty",
+      "(B) Beauty",
+      "(C) Fashion",
+      "(D) Danger"
+    ],
+    "answer": 0,
+    "explanation": "honesty 指誠實。誠實是好朋友最重要的特質之一，故選 Honesty。",
+    "pos": "名詞",
+    "id": "vocab_211",
+    "optionsZh": [
+      "誠實",
+      "美貌",
+      "流行",
+      "危險"
+    ]
+  },
+  {
+    "sentence": "His great sense of _____ always makes everyone in the room laugh.",
+    "options": [
+      "(A) humor",
+      "(B) fashion",
+      "(C) manner",
+      "(D) style"
+    ],
+    "answer": 0,
+    "explanation": "humor 指幽默感。他的幽默感總能讓在場所有人發笑，故選 humor。",
+    "pos": "名詞",
+    "id": "vocab_212",
+    "optionsZh": [
+      "幽默",
+      "流行",
+      "禮貌",
+      "風格"
+    ]
+  },
+  {
+    "sentence": "The teacher explained the _____ of getting enough sleep before an exam.",
+    "options": [
+      "(A) importance",
+      "(B) amount",
+      "(C) danger",
+      "(D) length"
+    ],
+    "answer": 0,
+    "explanation": "importance 指重要性。老師解說考前睡眠充足的重要性，故選 importance。",
+    "pos": "名詞",
+    "id": "vocab_213",
+    "optionsZh": [
+      "重要性",
+      "數量",
+      "危險",
+      "長度"
+    ]
+  },
+  {
+    "sentence": "Since he got a new job, his monthly _____ has increased a lot.",
+    "options": [
+      "(A) income",
+      "(B) cost",
+      "(C) price",
+      "(D) charge"
+    ],
+    "answer": 0,
+    "explanation": "income 指收入。換新工作後他的月收入大幅增加，故選 income。",
+    "pos": "名詞",
+    "id": "vocab_214",
+    "optionsZh": [
+      "收入",
+      "成本",
+      "價格",
+      "費用"
+    ]
+  },
+  {
+    "sentence": "Tourism is one of the most important parts of this country's _____.",
+    "options": [
+      "(A) industry",
+      "(B) education",
+      "(C) government",
+      "(D) population"
+    ],
+    "answer": 0,
+    "explanation": "industry 指產業。觀光業是這個國家產業中最重要的一環，故選 industry。",
+    "pos": "名詞",
+    "id": "vocab_215",
+    "optionsZh": [
+      "產業",
+      "教育",
+      "政府",
+      "人口"
+    ]
+  },
+  {
+    "sentence": "Parents have a great _____ on how their children think about the world.",
+    "options": [
+      "(A) influence",
+      "(B) instance",
+      "(C) instrument",
+      "(D) importance"
+    ],
+    "answer": 0,
+    "explanation": "influence 指影響力。父母對孩子看待世界的方式有很大影響力，故選 influence。",
+    "pos": "名詞",
+    "id": "vocab_216",
+    "optionsZh": [
+      "影響力",
+      "例子",
+      "樂器/工具",
+      "重要性"
+    ]
+  },
+  {
+    "sentence": "The violin is a musical _____ that is often used in classical music.",
+    "options": [
+      "(A) instrument",
+      "(B) instance",
+      "(C) industry",
+      "(D) influence"
+    ],
+    "answer": 0,
+    "explanation": "instrument 指樂器（工具）。小提琴是古典音樂常用的樂器，故選 instrument。",
+    "pos": "名詞",
+    "id": "vocab_217",
+    "optionsZh": [
+      "樂器/工具",
+      "例子",
+      "產業",
+      "影響力"
+    ]
+  },
+  {
+    "sentence": "There were three _____ missing from my shopping list.",
+    "options": [
+      "(A) items",
+      "(B) elements",
+      "(C) instances",
+      "(D) amounts"
+    ],
+    "answer": 0,
+    "explanation": "item 指項目、物品。購物清單中少了三項物品，故選 items。",
+    "pos": "名詞",
+    "id": "vocab_218",
+    "optionsZh": [
+      "項目",
+      "要素",
+      "例子",
+      "數量"
+    ]
+  },
+  {
+    "sentence": "Reading many books can give you a lot of useful _____.",
+    "options": [
+      "(A) knowledge",
+      "(B) money",
+      "(C) luck",
+      "(D) energy"
+    ],
+    "answer": 0,
+    "explanation": "knowledge 指知識。閱讀許多書能獲得許多有用的知識，故選 knowledge。",
+    "pos": "名詞",
+    "id": "vocab_219",
+    "optionsZh": [
+      "知識",
+      "金錢",
+      "運氣",
+      "精力"
+    ]
+  },
+  {
+    "sentence": "A _____ of sleep can make it hard for students to focus in class.",
+    "options": [
+      "(A) lack",
+      "(B) level",
+      "(C) length",
+      "(D) limit"
+    ],
+    "answer": 0,
+    "explanation": "lack 指缺乏。睡眠不足會讓學生上課難以專心，故選 lack。",
+    "pos": "名詞",
+    "id": "vocab_220",
+    "optionsZh": [
+      "缺乏",
+      "程度",
+      "長度",
+      "限制"
+    ]
+  },
+  {
+    "sentence": "The _____ of the swimming pool is fifty meters.",
+    "options": [
+      "(A) length",
+      "(B) height",
+      "(C) weight",
+      "(D) area"
+    ],
+    "answer": 0,
+    "explanation": "length 指長度。游泳池的長度是五十公尺，故選 length。",
+    "pos": "名詞",
+    "id": "vocab_221",
+    "optionsZh": [
+      "長度",
+      "高度",
+      "重量",
+      "面積"
+    ]
+  },
+  {
+    "sentence": "Her English has reached an advanced _____ after years of practice.",
+    "options": [
+      "(A) level",
+      "(B) limit",
+      "(C) length",
+      "(D) lack"
+    ],
+    "answer": 0,
+    "explanation": "level 指程度、級別。多年練習後她的英文已達高階程度，故選 level。",
+    "pos": "名詞",
+    "id": "vocab_222",
+    "optionsZh": [
+      "程度",
+      "限制",
+      "長度",
+      "缺乏"
+    ]
+  },
+  {
+    "sentence": "There is a speed _____ of sixty kilometers per hour on this road.",
+    "options": [
+      "(A) limit",
+      "(B) level",
+      "(C) length",
+      "(D) lack"
+    ],
+    "answer": 0,
+    "explanation": "limit 指限制。這條路的速限是每小時六十公里，故選 limit。",
+    "pos": "名詞",
+    "id": "vocab_223",
+    "optionsZh": [
+      "限制",
+      "程度",
+      "長度",
+      "缺乏"
+    ]
+  },
+  {
+    "sentence": "The hotel's _____ near the beach makes it very popular with tourists.",
+    "options": [
+      "(A) location",
+      "(B) direction",
+      "(C) distance",
+      "(D) position"
+    ],
+    "answer": 0,
+    "explanation": "location 指位置。飯店靠近海灘的位置使其深受遊客喜愛，故選 location。",
+    "pos": "名詞",
+    "id": "vocab_224",
+    "optionsZh": [
+      "位置",
+      "方向",
+      "距離",
+      "職位"
+    ]
+  },
+  {
+    "sentence": "The team's coach was very upset about their _____ in the final game.",
+    "options": [
+      "(A) loss",
+      "(B) victory",
+      "(C) chance",
+      "(D) progress"
+    ],
+    "answer": 0,
+    "explanation": "loss 指失敗、損失。教練對決賽的失利感到難過，故選 loss；victory 勝利語意相反。",
+    "pos": "名詞",
+    "id": "vocab_225",
+    "optionsZh": [
+      "失敗",
+      "勝利",
+      "機會",
+      "進步"
+    ]
+  },
+  {
+    "sentence": "With a bit of _____, we might still catch the last bus home.",
+    "options": [
+      "(A) luck",
+      "(B) effort",
+      "(C) courage",
+      "(D) energy"
+    ],
+    "answer": 0,
+    "explanation": "luck 指運氣。運氣好的話還可能趕上最後一班回家的公車，故選 luck。",
+    "pos": "名詞",
+    "id": "vocab_226",
+    "optionsZh": [
+      "運氣",
+      "努力",
+      "勇氣",
+      "精力"
+    ]
+  },
+  {
+    "sentence": "It is bad _____ to talk loudly on the phone in a library.",
+    "options": [
+      "(A) manner",
+      "(B) matter",
+      "(C) material",
+      "(D) measure"
+    ],
+    "answer": 0,
+    "explanation": "manner 指禮貌、態度。在圖書館大聲講電話是不禮貌的行為，故選 manner。",
+    "pos": "名詞",
+    "id": "vocab_227",
+    "optionsZh": [
+      "禮貌/態度",
+      "事情",
+      "材料",
+      "措施"
+    ]
+  },
+  {
+    "sentence": "Cotton is a soft, comfortable _____ often used for making shirts.",
+    "options": [
+      "(A) material",
+      "(B) manner",
+      "(C) matter",
+      "(D) measure"
+    ],
+    "answer": 0,
+    "explanation": "material 指材料。棉是柔軟舒適的材料，常用來製作襯衫，故選 material。",
+    "pos": "名詞",
+    "id": "vocab_228",
+    "optionsZh": [
+      "材料",
+      "禮貌",
+      "事情",
+      "措施"
+    ]
+  },
+  {
+    "sentence": "I looked up the word in the dictionary to find its exact _____.",
+    "options": [
+      "(A) meaning",
+      "(B) message",
+      "(C) memory",
+      "(D) method"
+    ],
+    "answer": 0,
+    "explanation": "meaning 指意思。查字典是為了找出單字的確切意思，故選 meaning。",
+    "pos": "名詞",
+    "id": "vocab_229",
+    "optionsZh": [
+      "意思",
+      "訊息",
+      "記憶",
+      "方法"
+    ]
+  },
+  {
+    "sentence": "Visiting my old elementary school brought back many happy _____.",
+    "options": [
+      "(A) memories",
+      "(B) meanings",
+      "(C) methods",
+      "(D) messages"
+    ],
+    "answer": 0,
+    "explanation": "memory 指回憶。回到小學母校勾起許多快樂的回憶，故選 memories。",
+    "pos": "名詞",
+    "id": "vocab_230",
+    "optionsZh": [
+      "回憶",
+      "意思",
+      "方法",
+      "訊息"
+    ]
+  },
+  {
+    "sentence": "The teacher introduced a new _____ for learning English vocabulary quickly.",
+    "options": [
+      "(A) method",
+      "(B) memory",
+      "(C) meaning",
+      "(D) message"
+    ],
+    "answer": 0,
+    "explanation": "method 指方法。老師介紹了一個能快速學習英語單字的新方法，故選 method。",
+    "pos": "名詞",
+    "id": "vocab_231",
+    "optionsZh": [
+      "方法",
+      "記憶",
+      "意思",
+      "訊息"
+    ]
+  },
+  {
+    "sentence": "Everyone makes _____ sometimes; the important thing is to learn from them.",
+    "options": [
+      "(A) mistakes",
+      "(B) methods",
+      "(C) manners",
+      "(D) memories"
+    ],
+    "answer": 0,
+    "explanation": "mistake 指錯誤。人人都會犯錯，重要的是從中學習，故選 mistakes。",
+    "pos": "名詞",
+    "id": "vocab_232",
+    "optionsZh": [
+      "錯誤",
+      "方法",
+      "禮貌",
+      "回憶"
+    ]
+  },
+  {
+    "sentence": "Please wait a _____ ; I will be right back with your order.",
+    "options": [
+      "(A) moment",
+      "(B) method",
+      "(C) mistake",
+      "(D) memory"
+    ],
+    "answer": 0,
+    "explanation": "moment 指片刻。請稍等片刻，馬上為您送上餐點，故選 moment。",
+    "pos": "名詞",
+    "id": "vocab_233",
+    "optionsZh": [
+      "片刻",
+      "方法",
+      "錯誤",
+      "回憶"
+    ]
+  },
+  {
+    "sentence": "Spending time in _____ can help reduce stress and make you feel calm.",
+    "options": [
+      "(A) nature",
+      "(B) culture",
+      "(C) climate",
+      "(D) society"
+    ],
+    "answer": 0,
+    "explanation": "nature 指大自然。親近大自然有助於減壓並使人平靜，故選 nature。",
+    "pos": "名詞",
+    "id": "vocab_234",
+    "optionsZh": [
+      "大自然",
+      "文化",
+      "氣候",
+      "社會"
+    ]
+  },
+  {
+    "sentence": "I would like to hear your _____ before we make the final decision.",
+    "options": [
+      "(A) opinion",
+      "(B) information",
+      "(C) instrument",
+      "(D) invitation"
+    ],
+    "answer": 0,
+    "explanation": "opinion 指意見。做最終決定前想聽聽你的意見，故選 opinion。",
+    "pos": "名詞",
+    "id": "vocab_235",
+    "optionsZh": [
+      "意見",
+      "資訊",
+      "樂器/工具",
+      "邀請"
+    ]
+  },
+  {
+    "sentence": "This dress has a beautiful floral _____ printed on the fabric.",
+    "options": [
+      "(A) pattern",
+      "(B) material",
+      "(C) method",
+      "(D) manner"
+    ],
+    "answer": 0,
+    "explanation": "pattern 指花樣、圖案。這件洋裝印有美麗的花朵圖案，故選 pattern。",
+    "pos": "名詞",
+    "id": "vocab_236",
+    "optionsZh": [
+      "花樣",
+      "材料",
+      "方法",
+      "禮貌"
+    ]
+  },
+  {
+    "sentence": "The Ming Dynasty was an important _____ in Chinese history.",
+    "options": [
+      "(A) period",
+      "(B) moment",
+      "(C) degree",
+      "(D) level"
+    ],
+    "answer": 0,
+    "explanation": "period 指時期。明朝是中國歷史上重要的一個時期，故選 period。",
+    "pos": "名詞",
+    "id": "vocab_237",
+    "optionsZh": [
+      "時期",
+      "片刻",
+      "程度",
+      "等級"
+    ]
+  },
+  {
+    "sentence": "The _____ of this small town has grown quickly in the past ten years.",
+    "options": [
+      "(A) population",
+      "(B) location",
+      "(C) industry",
+      "(D) education"
+    ],
+    "answer": 0,
+    "explanation": "population 指人口。這座小鎮的人口在過去十年迅速成長，故選 population。",
+    "pos": "名詞",
+    "id": "vocab_238",
+    "optionsZh": [
+      "人口",
+      "位置",
+      "產業",
+      "教育"
+    ]
+  },
+  {
+    "sentence": "She was offered a manager _____ at the company after five years of hard work.",
+    "options": [
+      "(A) position",
+      "(B) opinion",
+      "(C) pattern",
+      "(D) period"
+    ],
+    "answer": 0,
+    "explanation": "position 指職位。她努力工作五年後獲得經理職位，故選 position。",
+    "pos": "名詞",
+    "id": "vocab_239",
+    "optionsZh": [
+      "職位",
+      "意見",
+      "花樣",
+      "時期"
+    ]
+  },
+  {
+    "sentence": "Students often feel a lot of _____ before final exams.",
+    "options": [
+      "(A) pressure",
+      "(B) pleasure",
+      "(C) purpose",
+      "(D) progress"
+    ],
+    "answer": 0,
+    "explanation": "pressure 指壓力。學生在期末考前常感到很大壓力，故選 pressure。",
+    "pos": "名詞",
+    "id": "vocab_240",
+    "optionsZh": [
+      "壓力",
+      "樂趣",
+      "目的",
+      "進步"
+    ]
+  },
+  {
+    "sentence": "He felt great _____ when his daughter graduated from college.",
+    "options": [
+      "(A) pride",
+      "(B) anger",
+      "(C) fear",
+      "(D) doubt"
+    ],
+    "answer": 0,
+    "explanation": "pride 指驕傲、自豪。女兒大學畢業讓他感到十分自豪，故選 pride。",
+    "pos": "名詞",
+    "id": "vocab_241",
+    "optionsZh": [
+      "驕傲",
+      "生氣",
+      "恐懼",
+      "懷疑"
+    ]
+  },
+  {
+    "sentence": "She won the first _____ in the school painting contest.",
+    "options": [
+      "(A) prize",
+      "(B) price",
+      "(C) pride",
+      "(D) purpose"
+    ],
+    "answer": 0,
+    "explanation": "prize 指獎項。她在校內繪畫比賽中獲得首獎，故選 prize。",
+    "pos": "名詞",
+    "id": "vocab_242",
+    "optionsZh": [
+      "獎項",
+      "價格",
+      "驕傲",
+      "目的"
+    ]
+  },
+  {
+    "sentence": "The doctor said her leg was making good _____ after the surgery.",
+    "options": [
+      "(A) progress",
+      "(B) pressure",
+      "(C) pride",
+      "(D) prize"
+    ],
+    "answer": 0,
+    "explanation": "progress 指進展。醫生說她手術後腿部復原進展良好，故選 progress。",
+    "pos": "名詞",
+    "id": "vocab_243",
+    "optionsZh": [
+      "進展",
+      "壓力",
+      "驕傲",
+      "獎項"
+    ]
+  },
+  {
+    "sentence": "The _____ of this meeting is to discuss next month's school trip.",
+    "options": [
+      "(A) purpose",
+      "(B) position",
+      "(C) pattern",
+      "(D) period"
+    ],
+    "answer": 0,
+    "explanation": "purpose 指目的。這場會議的目的是討論下個月的校外教學，故選 purpose。",
+    "pos": "名詞",
+    "id": "vocab_244",
+    "optionsZh": [
+      "目的",
+      "職位",
+      "花樣",
+      "時期"
+    ]
+  },
+  {
+    "sentence": "This shop is famous for the high _____ of its handmade shoes.",
+    "options": [
+      "(A) quality",
+      "(B) quantity",
+      "(C) quarter",
+      "(D) quiz"
+    ],
+    "answer": 0,
+    "explanation": "quality 指品質。這間店以手工鞋的高品質聞名，故選 quality。",
+    "pos": "名詞",
+    "id": "vocab_245",
+    "optionsZh": [
+      "品質",
+      "數量",
+      "四分之一",
+      "小考"
+    ]
+  },
+  {
+    "sentence": "The farmer produces a large _____ of rice every harvest season.",
+    "options": [
+      "(A) quantity",
+      "(B) quality",
+      "(C) quarter",
+      "(D) quiz"
+    ],
+    "answer": 0,
+    "explanation": "quantity 指數量。這位農夫每個收成季生產大量稻米，故選 quantity。",
+    "pos": "名詞",
+    "id": "vocab_246",
+    "optionsZh": [
+      "數量",
+      "品質",
+      "四分之一",
+      "小考"
+    ]
+  },
+  {
+    "sentence": "Nobody knows the exact _____ why the flight was delayed.",
+    "options": [
+      "(A) reason",
+      "(B) result",
+      "(C) relation",
+      "(D) rule"
+    ],
+    "answer": 0,
+    "explanation": "reason 指原因。沒有人知道班機延誤的確切原因，故選 reason。",
+    "pos": "名詞",
+    "id": "vocab_247",
+    "optionsZh": [
+      "原因",
+      "結果",
+      "關係",
+      "規則"
+    ]
+  },
+  {
+    "sentence": "The two countries have kept a friendly _____ for many years.",
+    "options": [
+      "(A) relation",
+      "(B) reason",
+      "(C) result",
+      "(D) rule"
+    ],
+    "answer": 0,
+    "explanation": "relation 指關係。這兩國多年來一直保持友好關係，故選 relation。",
+    "pos": "名詞",
+    "id": "vocab_248",
+    "optionsZh": [
+      "關係",
+      "原因",
+      "結果",
+      "規則"
+    ]
+  },
+  {
+    "sentence": "The _____ of the experiment surprised even the scientists themselves.",
+    "options": [
+      "(A) result",
+      "(B) reason",
+      "(C) relation",
+      "(D) rule"
+    ],
+    "answer": 0,
+    "explanation": "result 指結果。實驗結果連科學家自己都感到驚訝，故選 result。",
+    "pos": "名詞",
+    "id": "vocab_249",
+    "optionsZh": [
+      "結果",
+      "原因",
+      "關係",
+      "規則"
+    ]
+  },
+  {
+    "sentence": "Wearing a seat belt is important for your own _____.",
+    "options": [
+      "(A) safety",
+      "(B) speed",
+      "(C) service",
+      "(D) sense"
+    ],
+    "answer": 0,
+    "explanation": "safety 指安全。繫安全帶對自身安全很重要，故選 safety。",
+    "pos": "名詞",
+    "id": "vocab_250",
+    "optionsZh": [
+      "安全",
+      "速度",
+      "服務",
+      "感官"
+    ]
+  },
+  {
+    "sentence": "Dogs have a much better _____ of smell than humans do.",
+    "options": [
+      "(A) sense",
+      "(B) sight",
+      "(C) safety",
+      "(D) skill"
+    ],
+    "answer": 0,
+    "explanation": "sense 指感官。狗的嗅覺比人類敏銳得多，故選 sense (of smell)。",
+    "pos": "名詞",
+    "id": "vocab_251",
+    "optionsZh": [
+      "感官",
+      "視力",
+      "安全",
+      "技巧"
+    ]
+  },
+  {
+    "sentence": "Cooking is a useful _____ that everyone should learn.",
+    "options": [
+      "(A) skill",
+      "(B) sense",
+      "(C) sight",
+      "(D) safety"
+    ],
+    "answer": 0,
+    "explanation": "skill 指技能。烹飪是每個人都該學習的實用技能，故選 skill。",
+    "pos": "名詞",
+    "id": "vocab_252",
+    "optionsZh": [
+      "技能",
+      "感官",
+      "視力",
+      "安全"
+    ]
+  },
+  {
+    "sentence": "Everyone plays a part in building a better _____ for future generations.",
+    "options": [
+      "(A) society",
+      "(B) culture",
+      "(C) population",
+      "(D) government"
+    ],
+    "answer": 0,
+    "explanation": "society 指社會。每個人都在為後代打造更好的社會盡一份力，故選 society。",
+    "pos": "名詞",
+    "id": "vocab_253",
+    "optionsZh": [
+      "社會",
+      "文化",
+      "人口",
+      "政府"
+    ]
+  },
+  {
+    "sentence": "The driver slowed down his _____ when he saw the school zone sign.",
+    "options": [
+      "(A) speed",
+      "(B) safety",
+      "(C) sense",
+      "(D) skill"
+    ],
+    "answer": 0,
+    "explanation": "speed 指速度。看到學校區標誌後駕駛減慢車速，故選 speed。",
+    "pos": "名詞",
+    "id": "vocab_254",
+    "optionsZh": [
+      "速度",
+      "安全",
+      "感官",
+      "技能"
+    ]
+  },
+  {
+    "sentence": "This restaurant keeps a very high _____ of cleanliness in its kitchen.",
+    "options": [
+      "(A) standard",
+      "(B) style",
+      "(C) symbol",
+      "(D) success"
+    ],
+    "answer": 0,
+    "explanation": "standard 指標準。這間餐廳的廚房清潔標準非常高，故選 standard。",
+    "pos": "名詞",
+    "id": "vocab_255",
+    "optionsZh": [
+      "標準",
+      "風格",
+      "象徵",
+      "成功"
+    ]
+  },
+  {
+    "sentence": "Her fashion _____ is simple but always looks elegant.",
+    "options": [
+      "(A) style",
+      "(B) standard",
+      "(C) symbol",
+      "(D) success"
+    ],
+    "answer": 0,
+    "explanation": "style 指風格。她的穿搭風格簡單卻總是很優雅，故選 style。",
+    "pos": "名詞",
+    "id": "vocab_256",
+    "optionsZh": [
+      "風格",
+      "標準",
+      "象徵",
+      "成功"
+    ]
+  },
+  {
+    "sentence": "A red heart is often used as a _____ of love.",
+    "options": [
+      "(A) symbol",
+      "(B) style",
+      "(C) standard",
+      "(D) success"
+    ],
+    "answer": 0,
+    "explanation": "symbol 指象徵。紅色的心經常被當作愛的象徵，故選 symbol。",
+    "pos": "名詞",
+    "id": "vocab_257",
+    "optionsZh": [
+      "象徵",
+      "風格",
+      "標準",
+      "成功"
+    ]
+  },
+  {
+    "sentence": "Cleaning the whole house before the guests arrive is not an easy _____.",
+    "options": [
+      "(A) task",
+      "(B) topic",
+      "(C) term",
+      "(D) tour"
+    ],
+    "answer": 0,
+    "explanation": "task 指任務。客人來之前把整間房子打掃乾淨不是容易的任務，故選 task。",
+    "pos": "名詞",
+    "id": "vocab_258",
+    "optionsZh": [
+      "任務",
+      "主題",
+      "學期",
+      "旅行"
+    ]
+  },
+  {
+    "sentence": "The nurse checked the child's _____ because he felt very hot.",
+    "options": [
+      "(A) temperature",
+      "(B) climate",
+      "(C) weight",
+      "(D) height"
+    ],
+    "answer": 0,
+    "explanation": "temperature 指體溫、溫度。因孩子發燙，護理師測量他的體溫，故選 temperature。",
+    "pos": "名詞",
+    "id": "vocab_259",
+    "optionsZh": [
+      "體溫/溫度",
+      "氣候",
+      "體重",
+      "身高"
+    ]
+  },
+  {
+    "sentence": "Global warming is a serious _____ that students discussed in science class.",
+    "options": [
+      "(A) topic",
+      "(B) task",
+      "(C) term",
+      "(D) tour"
+    ],
+    "answer": 0,
+    "explanation": "topic 指主題。全球暖化是學生在自然課討論的嚴肅主題，故選 topic。",
+    "pos": "名詞",
+    "id": "vocab_260",
+    "optionsZh": [
+      "主題",
+      "任務",
+      "學期",
+      "旅行"
+    ]
+  },
+  {
+    "sentence": "Eating rice dumplings during the Dragon Boat Festival is an old _____.",
+    "options": [
+      "(A) tradition",
+      "(B) fashion",
+      "(C) topic",
+      "(D) task"
+    ],
+    "answer": 0,
+    "explanation": "tradition 指傳統。端午節吃粽子是古老的傳統，故選 tradition。",
+    "pos": "名詞",
+    "id": "vocab_261",
+    "optionsZh": [
+      "傳統",
+      "流行",
+      "主題",
+      "任務"
+    ]
+  },
+  {
+    "sentence": "This old painting has great _____ because it was made by a famous artist.",
+    "options": [
+      "(A) value",
+      "(B) price",
+      "(C) cost",
+      "(D) charge"
+    ],
+    "answer": 0,
+    "explanation": "value 指價值。這幅古畫因出自名家之手而深具價值，故選 value。",
+    "pos": "名詞",
+    "id": "vocab_262",
+    "optionsZh": [
+      "價值",
+      "價格",
+      "成本",
+      "費用"
+    ]
+  },
+  {
+    "sentence": "The whole town celebrated the team's _____ in the championship game.",
+    "options": [
+      "(A) victory",
+      "(B) loss",
+      "(C) chance",
+      "(D) progress"
+    ],
+    "answer": 0,
+    "explanation": "victory 指勝利。全鎮都在慶祝球隊在冠軍賽的勝利，故選 victory；loss 失敗語意相反。",
+    "pos": "名詞",
+    "id": "vocab_263",
+    "optionsZh": [
+      "勝利",
+      "失敗",
+      "機會",
+      "進步"
+    ]
+  },
+  {
+    "sentence": "The doctor asked him to check his _____ every month.",
+    "options": [
+      "(A) weight",
+      "(B) height",
+      "(C) temperature",
+      "(D) length"
+    ],
+    "answer": 0,
+    "explanation": "weight 指體重。醫生要他每個月量體重，故選 weight。",
+    "pos": "名詞",
+    "id": "vocab_264",
+    "optionsZh": [
+      "體重",
+      "身高",
+      "體溫",
+      "長度"
+    ]
+  },
+  {
+    "sentence": "As a _____, she travels around the world to report important news.",
+    "options": [
+      "(A) journalist",
+      "(B) artist",
+      "(C) actor",
+      "(D) engineer"
+    ],
+    "answer": 0,
+    "explanation": "journalist 指記者。身為記者，她到世界各地報導重要新聞，故選 journalist。",
+    "pos": "名詞",
+    "id": "vocab_265",
+    "optionsZh": [
+      "記者",
+      "藝術家",
+      "演員",
+      "工程師"
+    ]
+  },
+  {
+    "sentence": "My grandfather is still very _____ ; he goes hiking every weekend.",
+    "options": [
+      "(A) active",
+      "(B) lazy",
+      "(C) careless",
+      "(D) rude"
+    ],
+    "answer": 0,
+    "explanation": "active 指活躍的。祖父仍很活躍，每週末都去健行，故選 active。",
+    "pos": "形容詞",
+    "id": "vocab_266",
+    "optionsZh": [
+      "活躍的",
+      "懶惰的",
+      "粗心的",
+      "無禮的"
+    ]
+  },
+  {
+    "sentence": "The museum displays many _____ tools used thousands of years ago.",
+    "options": [
+      "(A) ancient",
+      "(B) modern",
+      "(C) recent",
+      "(D) local"
+    ],
+    "answer": 0,
+    "explanation": "ancient 指古代的。博物館展示許多數千年前使用的古老工具，故選 ancient；modern 現代的語意相反。",
+    "pos": "形容詞",
+    "id": "vocab_267",
+    "optionsZh": [
+      "古代的",
+      "現代的",
+      "最近的",
+      "當地的"
+    ]
+  },
+  {
+    "sentence": "Sorry, this seat is not _____ because someone has already booked it.",
+    "options": [
+      "(A) available",
+      "(B) empty",
+      "(C) popular",
+      "(D) private"
+    ],
+    "answer": 0,
+    "explanation": "available 指可利用的。這個座位已被人預訂，故不可利用，選 available。",
+    "pos": "形容詞",
+    "id": "vocab_268",
+    "optionsZh": [
+      "可利用的",
+      "空的",
+      "受歡迎的",
+      "私人的"
+    ]
+  },
+  {
+    "sentence": "She wasn't _____ that her phone had fallen out of her bag.",
+    "options": [
+      "(A) aware",
+      "(B) proud",
+      "(C) confident",
+      "(D) careful"
+    ],
+    "answer": 0,
+    "explanation": "aware 指知道、意識到的。她沒意識到手機從包包掉出來了，故選 aware。",
+    "pos": "形容詞",
+    "id": "vocab_269",
+    "optionsZh": [
+      "知道的",
+      "驕傲的",
+      "有自信的",
+      "小心的"
+    ]
+  },
+  {
+    "sentence": "It was very _____ of the boy to jump into the river to save the drowning dog.",
+    "options": [
+      "(A) brave",
+      "(B) careless",
+      "(C) selfish",
+      "(D) lazy"
+    ],
+    "answer": 0,
+    "explanation": "brave 指勇敢的。男孩跳入河中救溺水的狗是很勇敢的行為，故選 brave。",
+    "pos": "形容詞",
+    "id": "vocab_270",
+    "optionsZh": [
+      "勇敢的",
+      "粗心的",
+      "自私的",
+      "懶惰的"
+    ]
+  },
+  {
+    "sentence": "The classroom felt warm and _____ because of the large windows.",
+    "options": [
+      "(A) bright",
+      "(B) dark",
+      "(C) narrow",
+      "(D) empty"
+    ],
+    "answer": 0,
+    "explanation": "bright 指明亮的。因大窗戶使教室顯得溫暖明亮，故選 bright；dark 陰暗相反。",
+    "pos": "形容詞",
+    "id": "vocab_271",
+    "optionsZh": [
+      "明亮的",
+      "陰暗的",
+      "狹窄的",
+      "空的"
+    ]
+  },
+  {
+    "sentence": "Even during the fire drill, the teacher stayed _____ and led the students outside.",
+    "options": [
+      "(A) calm",
+      "(B) nervous",
+      "(C) worried",
+      "(D) confused"
+    ],
+    "answer": 0,
+    "explanation": "calm 指冷靜的。即使消防演習期間，老師仍保持冷靜帶學生到戶外，故選 calm。",
+    "pos": "形容詞",
+    "id": "vocab_272",
+    "optionsZh": [
+      "冷靜的",
+      "緊張的",
+      "擔心的",
+      "困惑的"
+    ]
+  },
+  {
+    "sentence": "It was _____ of him to leave the door unlocked all night.",
+    "options": [
+      "(A) careless",
+      "(B) careful",
+      "(C) considerate",
+      "(D) polite"
+    ],
+    "answer": 0,
+    "explanation": "careless 指粗心的。整晚沒鎖門是粗心的行為，故選 careless；careful 小心的語意相反。",
+    "pos": "形容詞",
+    "id": "vocab_273",
+    "optionsZh": [
+      "粗心的",
+      "小心的",
+      "體貼的",
+      "有禮貌的"
+    ]
+  },
+  {
+    "sentence": "The night market sells lots of _____ but delicious snacks.",
+    "options": [
+      "(A) cheap",
+      "(B) expensive",
+      "(C) precious",
+      "(D) valuable"
+    ],
+    "answer": 0,
+    "explanation": "cheap 指便宜的。夜市賣許多便宜卻美味的小吃，故選 cheap；expensive 昂貴語意相反。",
+    "pos": "形容詞",
+    "id": "vocab_274",
+    "optionsZh": [
+      "便宜的",
+      "昂貴的",
+      "珍貴的",
+      "有價值的"
+    ]
+  },
+  {
+    "sentence": "The _____ fox found a way to get the grapes without climbing the tree.",
+    "options": [
+      "(A) clever",
+      "(B) foolish",
+      "(C) lazy",
+      "(D) careless"
+    ],
+    "answer": 0,
+    "explanation": "clever 指聰明的。這隻聰明的狐狸不用爬樹就找到方法拿到葡萄，故選 clever。",
+    "pos": "形容詞",
+    "id": "vocab_275",
+    "optionsZh": [
+      "聰明的",
+      "愚蠢的",
+      "懶惰的",
+      "粗心的"
+    ]
+  },
+  {
+    "sentence": "Catching a cold is a _____ illness, especially in winter.",
+    "options": [
+      "(A) common",
+      "(B) rare",
+      "(C) difficult",
+      "(D) dangerous"
+    ],
+    "answer": 0,
+    "explanation": "common 指常見的。感冒是常見疾病，冬天尤其常見，故選 common；rare 罕見語意相反。",
+    "pos": "形容詞",
+    "id": "vocab_276",
+    "optionsZh": [
+      "常見的",
+      "罕見的",
+      "困難的",
+      "危險的"
+    ]
+  },
+  {
+    "sentence": "The building project is now _____ and the new library will open next week.",
+    "options": [
+      "(A) complete",
+      "(B) empty",
+      "(C) narrow",
+      "(D) formal"
+    ],
+    "answer": 0,
+    "explanation": "complete 指完成的。工程已完成，新圖書館下週開幕，故選 complete。",
+    "pos": "形容詞",
+    "id": "vocab_277",
+    "optionsZh": [
+      "完成的",
+      "空的",
+      "狹窄的",
+      "正式的"
+    ]
+  },
+  {
+    "sentence": "Swimming alone in the deep sea can be very _____.",
+    "options": [
+      "(A) dangerous",
+      "(B) safe",
+      "(C) calm",
+      "(D) pleasant"
+    ],
+    "answer": 0,
+    "explanation": "dangerous 指危險的。獨自在深海游泳很危險，故選 dangerous；safe 安全語意相反。",
+    "pos": "形容詞",
+    "id": "vocab_278",
+    "optionsZh": [
+      "危險的",
+      "安全的",
+      "平靜的",
+      "令人愉快的"
+    ]
+  },
+  {
+    "sentence": "Because his grandfather is _____, he always speaks a little louder to him.",
+    "options": [
+      "(A) deaf",
+      "(B) blind",
+      "(C) dumb",
+      "(D) ill"
+    ],
+    "answer": 0,
+    "explanation": "deaf 指耳聾的。因為爺爺聽力不好，他跟爺爺講話總是比較大聲，故選 deaf。",
+    "pos": "形容詞",
+    "id": "vocab_279",
+    "optionsZh": [
+      "耳聾的",
+      "失明的",
+      "啞的",
+      "生病的"
+    ]
+  },
+  {
+    "sentence": "Being a _____ student, Mary always finishes her homework before playing games.",
+    "options": [
+      "(A) diligent",
+      "(B) lazy",
+      "(C) careless",
+      "(D) rude"
+    ],
+    "answer": 0,
+    "explanation": "diligent 指勤奮的。身為勤奮的學生，Mary 總是先完成作業才玩遊戲，故選 diligent。",
+    "pos": "形容詞",
+    "id": "vocab_280",
+    "optionsZh": [
+      "勤奮的",
+      "懶惰的",
+      "粗心的",
+      "無禮的"
+    ]
+  },
+  {
+    "sentence": "It is _____ to copy your classmate's answers during a test.",
+    "options": [
+      "(A) dishonest",
+      "(B) honest",
+      "(C) polite",
+      "(D) careful"
+    ],
+    "answer": 0,
+    "explanation": "dishonest 指不誠實的。考試抄同學答案是不誠實的行為，故選 dishonest；honest 誠實的語意相反。",
+    "pos": "形容詞",
+    "id": "vocab_281",
+    "optionsZh": [
+      "不誠實的",
+      "誠實的",
+      "有禮貌的",
+      "小心的"
+    ]
+  },
+  {
+    "sentence": "They could see a _____ mountain from the top of the hill.",
+    "options": [
+      "(A) distant",
+      "(B) near",
+      "(C) narrow",
+      "(D) local"
+    ],
+    "answer": 0,
+    "explanation": "distant 指遙遠的。從山丘頂端可看到遠方的山，故選 distant。",
+    "pos": "形容詞",
+    "id": "vocab_282",
+    "optionsZh": [
+      "遙遠的",
+      "近的",
+      "狹窄的",
+      "當地的"
+    ]
+  },
+  {
+    "sentence": "The classroom was completely _____ after all the students went home.",
+    "options": [
+      "(A) empty",
+      "(B) full",
+      "(C) crowded",
+      "(D) noisy"
+    ],
+    "answer": 0,
+    "explanation": "empty 指空的。學生都回家後教室完全空無一人，故選 empty；full 滿的語意相反。",
+    "pos": "形容詞",
+    "id": "vocab_283",
+    "optionsZh": [
+      "空的",
+      "滿的",
+      "擁擠的",
+      "吵鬧的"
+    ]
+  },
+  {
+    "sentence": "Everyone should be treated in an _____ way, no matter how rich or poor they are.",
+    "options": [
+      "(A) equal",
+      "(B) similar",
+      "(C) narrow",
+      "(D) different"
+    ],
+    "answer": 0,
+    "explanation": "equal 指平等的。不論貧富都應受到平等對待，故選 equal。",
+    "pos": "形容詞",
+    "id": "vocab_284",
+    "optionsZh": [
+      "平等的",
+      "相似的",
+      "狹窄的",
+      "不同的"
+    ]
+  },
+  {
+    "sentence": "I don't know the _____ time the meeting will start, but it should be around nine.",
+    "options": [
+      "(A) exact",
+      "(B) recent",
+      "(C) common",
+      "(D) formal"
+    ],
+    "answer": 0,
+    "explanation": "exact 指確切的。不確定會議確切開始時間，只知道大約九點，故選 exact。",
+    "pos": "形容詞",
+    "id": "vocab_285",
+    "optionsZh": [
+      "確切的",
+      "最近的",
+      "常見的",
+      "正式的"
+    ]
+  },
+  {
+    "sentence": "Her English teacher gave her an _____ grade for her speech.",
+    "options": [
+      "(A) excellent",
+      "(B) terrible",
+      "(C) horrible",
+      "(D) poor"
+    ],
+    "answer": 0,
+    "explanation": "excellent 指優秀的。英文老師給她的演講打了優秀的成績，故選 excellent。",
+    "pos": "形容詞",
+    "id": "vocab_286",
+    "optionsZh": [
+      "優秀的",
+      "可怕的",
+      "恐怖的",
+      "差的"
+    ]
+  },
+  {
+    "sentence": "This small town became _____ after the movie was filmed here.",
+    "options": [
+      "(A) famous",
+      "(B) common",
+      "(C) local",
+      "(D) distant"
+    ],
+    "answer": 0,
+    "explanation": "famous 指有名的。這個小鎮因電影在此拍攝而變得有名，故選 famous。",
+    "pos": "形容詞",
+    "id": "vocab_287",
+    "optionsZh": [
+      "有名的",
+      "常見的",
+      "當地的",
+      "遙遠的"
+    ]
+  },
+  {
+    "sentence": "We had a _____ time at the beach; it was the best trip of the summer.",
+    "options": [
+      "(A) fantastic",
+      "(B) terrible",
+      "(C) horrible",
+      "(D) sad"
+    ],
+    "answer": 0,
+    "explanation": "fantastic 指極好的。在海邊玩得非常開心，是夏天最棒的旅行，故選 fantastic。",
+    "pos": "形容詞",
+    "id": "vocab_288",
+    "optionsZh": [
+      "極好的",
+      "糟糕的",
+      "可怕的",
+      "悲傷的"
+    ]
+  },
+  {
+    "sentence": "It was _____ of him to walk home alone in the storm without an umbrella.",
+    "options": [
+      "(A) foolish",
+      "(B) clever",
+      "(C) careful",
+      "(D) brave"
+    ],
+    "answer": 0,
+    "explanation": "foolish 指愚蠢的。暴風雨中沒帶傘獨自走路回家是愚蠢的行為，故選 foolish。",
+    "pos": "形容詞",
+    "id": "vocab_289",
+    "optionsZh": [
+      "愚蠢的",
+      "聰明的",
+      "小心的",
+      "勇敢的"
+    ]
+  },
+  {
+    "sentence": "You should wear _____ clothes to the job interview tomorrow.",
+    "options": [
+      "(A) formal",
+      "(B) plain",
+      "(C) fancy",
+      "(D) cheap"
+    ],
+    "answer": 0,
+    "explanation": "formal 指正式的。明天面試應穿正式服裝，故選 formal。",
+    "pos": "形容詞",
+    "id": "vocab_290",
+    "optionsZh": [
+      "正式的",
+      "樸素的",
+      "花俏的",
+      "便宜的"
+    ]
+  },
+  {
+    "sentence": "The vegetables at this market are always _____, straight from the farm.",
+    "options": [
+      "(A) fresh",
+      "(B) old",
+      "(C) dirty",
+      "(D) cheap"
+    ],
+    "answer": 0,
+    "explanation": "fresh 指新鮮的。這市場的蔬菜直送農場，總是新鮮，故選 fresh。",
+    "pos": "形容詞",
+    "id": "vocab_291",
+    "optionsZh": [
+      "新鮮的",
+      "舊的",
+      "髒的",
+      "便宜的"
+    ]
+  },
+  {
+    "sentence": "Our new neighbor is very _____ ; she always says hello and smiles at us.",
+    "options": [
+      "(A) friendly",
+      "(B) rude",
+      "(C) unfriendly",
+      "(D) selfish"
+    ],
+    "answer": 0,
+    "explanation": "friendly 指友善的。新鄰居總是打招呼微笑，非常友善，故選 friendly。",
+    "pos": "形容詞",
+    "id": "vocab_292",
+    "optionsZh": [
+      "友善的",
+      "無禮的",
+      "不友善的",
+      "自私的"
+    ]
+  },
+  {
+    "sentence": "The nurse spoke in a _____ voice to calm the crying baby.",
+    "options": [
+      "(A) gentle",
+      "(B) rude",
+      "(C) loud",
+      "(D) sharp"
+    ],
+    "answer": 0,
+    "explanation": "gentle 指溫柔的。護理師用溫柔的聲音安撫哭泣的嬰兒，故選 gentle。",
+    "pos": "形容詞",
+    "id": "vocab_293",
+    "optionsZh": [
+      "溫柔的",
+      "無禮的",
+      "大聲的",
+      "尖銳的"
+    ]
+  },
+  {
+    "sentence": "The sun set over the sea, painting the sky a beautiful _____ color.",
+    "options": [
+      "(A) golden",
+      "(B) silver",
+      "(C) blank",
+      "(D) pale"
+    ],
+    "answer": 0,
+    "explanation": "golden 指金黃色的。夕陽將天空染成美麗的金黃色，故選 golden。",
+    "pos": "形容詞",
+    "id": "vocab_294",
+    "optionsZh": [
+      "金黃色的",
+      "銀色的",
+      "空白的",
+      "蒼白的"
+    ]
+  },
+  {
+    "sentence": "Eating vegetables and exercising regularly can keep you _____.",
+    "options": [
+      "(A) healthy",
+      "(B) hungry",
+      "(C) lonely",
+      "(D) tidy"
+    ],
+    "answer": 0,
+    "explanation": "healthy 指健康的。吃蔬菜並規律運動能保持健康，故選 healthy。",
+    "pos": "形容詞",
+    "id": "vocab_295",
+    "optionsZh": [
+      "健康的",
+      "飢餓的",
+      "孤單的",
+      "整潔的"
+    ]
+  },
+  {
+    "sentence": "The librarian was very _____ and helped me find the book I needed.",
+    "options": [
+      "(A) helpful",
+      "(B) careless",
+      "(C) rude",
+      "(D) lazy"
+    ],
+    "answer": 0,
+    "explanation": "helpful 指樂於助人的。圖書館員很樂於助人，幫我找到需要的書，故選 helpful。",
+    "pos": "形容詞",
+    "id": "vocab_296",
+    "optionsZh": [
+      "樂於助人的",
+      "粗心的",
+      "無禮的",
+      "懶惰的"
+    ]
+  },
+  {
+    "sentence": "You should always be _____ with your parents, even when you make a mistake.",
+    "options": [
+      "(A) honest",
+      "(B) dishonest",
+      "(C) careless",
+      "(D) rude"
+    ],
+    "answer": 0,
+    "explanation": "honest 指誠實的。即使犯錯也應對父母保持誠實，故選 honest。",
+    "pos": "形容詞",
+    "id": "vocab_297",
+    "optionsZh": [
+      "誠實的",
+      "不誠實的",
+      "粗心的",
+      "無禮的"
+    ]
+  },
+  {
+    "sentence": "The smell coming from the trash can was absolutely _____.",
+    "options": [
+      "(A) horrible",
+      "(B) delicious",
+      "(C) pleasant",
+      "(D) nice"
+    ],
+    "answer": 0,
+    "explanation": "horrible 指可怕的、糟糕的。垃圾桶傳來的味道非常糟糕，故選 horrible。",
+    "pos": "形容詞",
+    "id": "vocab_298",
+    "optionsZh": [
+      "可怕的",
+      "美味的",
+      "令人愉快的",
+      "好的"
+    ]
+  },
+  {
+    "sentence": "A _____ wave hit the boat and almost knocked the fisherman into the sea.",
+    "options": [
+      "(A) huge",
+      "(B) tiny",
+      "(C) narrow",
+      "(D) empty"
+    ],
+    "answer": 0,
+    "explanation": "huge 指巨大的。一個巨浪打上船，幾乎把漁夫打入海中，故選 huge。",
+    "pos": "形容詞",
+    "id": "vocab_299",
+    "optionsZh": [
+      "巨大的",
+      "微小的",
+      "狹窄的",
+      "空的"
+    ]
+  },
+  {
+    "sentence": "Even after winning the award, the singer remained _____ and thanked her whole team.",
+    "options": [
+      "(A) humble",
+      "(B) proud",
+      "(C) rude",
+      "(D) selfish"
+    ],
+    "answer": 0,
+    "explanation": "humble 指謙虛的。得獎後歌手仍謙虛地感謝整個團隊，故選 humble。",
+    "pos": "形容詞",
+    "id": "vocab_300",
+    "optionsZh": [
+      "謙虛的",
+      "驕傲的",
+      "無禮的",
+      "自私的"
+    ]
+  },
+  {
+    "sentence": "Summer in Taiwan is often hot and _____, which makes people feel uncomfortable.",
+    "options": [
+      "(A) humid",
+      "(B) dry",
+      "(C) cold",
+      "(D) freezing"
+    ],
+    "answer": 0,
+    "explanation": "humid 指潮濕悶熱的。台灣夏天常又熱又潮濕，令人不適，故選 humid；dry 乾燥語意相反。",
+    "pos": "形容詞",
+    "id": "vocab_301",
+    "optionsZh": [
+      "潮濕的",
+      "乾燥的",
+      "寒冷的",
+      "冰凍的"
+    ]
+  },
+  {
+    "sentence": "Talking with your mouth full is considered _____ at the dinner table.",
+    "options": [
+      "(A) impolite",
+      "(B) polite",
+      "(C) careful",
+      "(D) helpful"
+    ],
+    "answer": 0,
+    "explanation": "impolite 指沒禮貌的。用餐時滿嘴食物說話被視為沒禮貌，故選 impolite。",
+    "pos": "形容詞",
+    "id": "vocab_302",
+    "optionsZh": [
+      "沒禮貌的",
+      "有禮貌的",
+      "小心的",
+      "樂於助人的"
+    ]
+  },
+  {
+    "sentence": "After moving out of her parents' house, she became more _____.",
+    "options": [
+      "(A) independent",
+      "(B) quiet",
+      "(C) lazy",
+      "(D) careless"
+    ],
+    "answer": 0,
+    "explanation": "independent 指獨立的。搬出父母家後她變得更獨立，故選 independent。",
+    "pos": "形容詞",
+    "id": "vocab_303",
+    "optionsZh": [
+      "獨立的",
+      "安靜的",
+      "懶惰的",
+      "粗心的"
+    ]
+  },
+  {
+    "sentence": "Dolphins are known to be one of the most _____ animals in the ocean.",
+    "options": [
+      "(A) intelligent",
+      "(B) foolish",
+      "(C) lazy",
+      "(D) dumb"
+    ],
+    "answer": 0,
+    "explanation": "intelligent 指聰明的。海豚以是海中最聰明的動物之一聞名，故選 intelligent。",
+    "pos": "形容詞",
+    "id": "vocab_304",
+    "optionsZh": [
+      "聰明的",
+      "愚蠢的",
+      "懶惰的",
+      "笨的"
+    ]
+  },
+  {
+    "sentence": "Living far away from his family, he sometimes feels _____ on holidays.",
+    "options": [
+      "(A) lonely",
+      "(B) crowded",
+      "(C) friendly",
+      "(D) confident"
+    ],
+    "answer": 0,
+    "explanation": "lonely 指孤單的。遠離家人生活，假日時有時會感到孤單，故選 lonely。",
+    "pos": "形容詞",
+    "id": "vocab_305",
+    "optionsZh": [
+      "孤單的",
+      "擁擠的",
+      "友善的",
+      "有自信的"
+    ]
+  },
+  {
+    "sentence": "He was so tired that he could _____ keep his eyes open during the movie.",
+    "options": [
+      "(A) hardly",
+      "(B) always",
+      "(C) often",
+      "(D) never"
+    ],
+    "answer": 0,
+    "explanation": "hardly 指幾乎不。他累到幾乎無法睜開眼睛看電影，故選 hardly。",
+    "pos": "副詞",
+    "id": "vocab_306",
+    "optionsZh": [
+      "幾乎不",
+      "總是",
+      "經常",
+      "從不"
+    ]
+  },
+  {
+    "sentence": "It is _____ midnight, so we should go to bed soon.",
+    "options": [
+      "(A) nearly",
+      "(B) hardly",
+      "(C) already",
+      "(D) never"
+    ],
+    "answer": 0,
+    "explanation": "nearly 指幾乎、將近。時間將近午夜了，該去睡覺了，故選 nearly。",
+    "pos": "副詞",
+    "id": "vocab_307",
+    "optionsZh": [
+      "幾乎",
+      "幾乎不",
+      "已經",
+      "從不"
+    ]
+  },
+  {
+    "sentence": "It looks cloudy outside, so it will _____ rain this afternoon.",
+    "options": [
+      "(A) probably",
+      "(B) hardly",
+      "(C) already",
+      "(D) never"
+    ],
+    "answer": 0,
+    "explanation": "probably 指可能。外面烏雲密布，下午很可能會下雨，故選 probably。",
+    "pos": "副詞",
+    "id": "vocab_308",
+    "optionsZh": [
+      "可能地",
+      "幾乎不",
+      "已經",
+      "從不"
+    ]
+  },
+  {
+    "sentence": "She finished her breakfast _____ so she wouldn't miss the school bus.",
+    "options": [
+      "(A) quickly",
+      "(B) carefully",
+      "(C) hardly",
+      "(D) already"
+    ],
+    "answer": 0,
+    "explanation": "quickly 指快速地。她快速吃完早餐以免錯過校車，故選 quickly。",
+    "pos": "副詞",
+    "id": "vocab_309",
+    "optionsZh": [
+      "快速地",
+      "小心地",
+      "幾乎不",
+      "已經"
+    ]
+  },
+  {
+    "sentence": "The instructions were written so _____ that even a young child could follow them.",
+    "options": [
+      "(A) simply",
+      "(B) hardly",
+      "(C) actually",
+      "(D) quickly"
+    ],
+    "answer": 0,
+    "explanation": "simply 指簡單地。說明寫得如此簡單，連小孩都能照著做，故選 simply。",
+    "pos": "副詞",
+    "id": "vocab_310",
+    "optionsZh": [
+      "簡單地",
+      "幾乎不",
+      "實際上",
+      "快速地"
+    ]
+  },
+  {
+    "sentence": "The lights _____ went out during the storm, and the whole room turned dark.",
+    "options": [
+      "(A) suddenly",
+      "(B) already",
+      "(C) hardly",
+      "(D) nearly"
+    ],
+    "answer": 0,
+    "explanation": "suddenly 指突然地。暴風雨中燈突然熄滅，整個房間變暗，故選 suddenly。",
+    "pos": "副詞",
+    "id": "vocab_311",
+    "optionsZh": [
+      "突然地",
+      "已經",
+      "幾乎不",
+      "幾乎"
+    ]
   }
 ]
