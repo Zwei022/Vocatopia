@@ -1196,7 +1196,7 @@ async function openInviteFriends() {
   if (!overlay) {
     overlay = document.createElement('div');
     overlay.id = 'inviteFriendsOverlay';
-    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px;padding-top:max(16px,env(safe-area-inset-top))';
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:flex-start;justify-content:center;padding:16px;padding-top:max(50px,calc(env(safe-area-inset-top) + 20px));overflow-y:auto';
     overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
     document.body.appendChild(overlay);
   }
@@ -1280,7 +1280,7 @@ function _showGameInvitePopup(code, fromUsername, mode) {
   const modeLabel = mode === 'buzzer' ? '單字搶答' : '單字對決';
   const overlay = document.createElement('div');
   overlay.id = 'gameInvitePopup';
-  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9500;display:flex;align-items:center;justify-content:center;padding:20px;padding-top:max(20px,env(safe-area-inset-top))';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9500;display:flex;align-items:flex-start;justify-content:center;padding:20px;padding-top:max(50px,calc(env(safe-area-inset-top) + 20px));overflow-y:auto';
   overlay.innerHTML = `
     <div style="background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:24px 20px;width:100%;max-width:320px;text-align:center;font-family:'Nunito',sans-serif;box-shadow:0 8px 40px rgba(75,56,42,.3)">
       <div style="font-size:40px;margin-bottom:6px">⚔️</div>
@@ -1327,7 +1327,7 @@ async function openInbox() {
   if (!overlay) {
     overlay = document.createElement('div');
     overlay.id = 'inboxOverlay';
-    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px;padding-top:max(16px,env(safe-area-inset-top))';
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:flex-start;justify-content:center;padding:16px;padding-top:max(50px,calc(env(safe-area-inset-top) + 20px));overflow-y:auto';
     overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
     document.body.appendChild(overlay);
   }
@@ -1497,7 +1497,7 @@ function _showStreakCelebration(streak, rewardAmount) {
   document.getElementById('streakCelebrate')?.remove();
   const overlay = document.createElement('div');
   overlay.id = 'streakCelebrate';
-  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.6);z-index:9600;display:flex;align-items:center;justify-content:center;padding:20px;padding-top:max(20px,env(safe-area-inset-top))';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.6);z-index:9600;display:flex;align-items:flex-start;justify-content:center;padding:20px;padding-top:max(50px,calc(env(safe-area-inset-top) + 20px));overflow-y:auto';
   overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
   const rewardLine = rewardAmount > 0
     ? `<div style="font-size:15px;font-weight:800;color:var(--orange2);margin-bottom:10px">🪙 獲得 ${rewardAmount} 金幣</div>`
@@ -5737,7 +5737,7 @@ function showFriendsOverlay(tab) {
   if (!overlay) {
     overlay = document.createElement('div');
     overlay.id = 'friendsOverlay';
-    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px;padding-top:max(16px,env(safe-area-inset-top))';
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:flex-start;justify-content:center;padding:16px;padding-top:max(50px,calc(env(safe-area-inset-top) + 20px));overflow-y:auto';
     overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
     document.body.appendChild(overlay);
   }
@@ -5892,7 +5892,7 @@ function _showFriendRequestPopup(req) {
   const sender = req.sender;
   const overlay = document.createElement('div');
   overlay.id = 'friendReqPopup';
-  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9500;display:flex;align-items:center;justify-content:center;padding:20px;padding-top:max(20px,env(safe-area-inset-top))';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9500;display:flex;align-items:flex-start;justify-content:center;padding:20px;padding-top:max(50px,calc(env(safe-area-inset-top) + 20px));overflow-y:auto';
   overlay.innerHTML = `
     <div style="background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:24px 20px;width:100%;max-width:320px;text-align:center;font-family:'Nunito',sans-serif;box-shadow:0 8px 40px rgba(75,56,42,.3)">
       <div style="font-size:15px;font-weight:800;color:var(--white);margin-bottom:14px">好友邀請</div>
@@ -5928,7 +5928,7 @@ async function respondFriendRequest(reqId, fromUserId, fromUsername, accept) {
 async function showUserProfile(userId, fallbackName) {
   const overlay = document.createElement('div');
   overlay.id = 'userProfileOverlay';
-  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9200;display:flex;align-items:center;justify-content:center;padding:16px;padding-top:max(16px,env(safe-area-inset-top))';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9200;display:flex;align-items:flex-start;justify-content:center;padding:16px;padding-top:max(50px,calc(env(safe-area-inset-top) + 20px));overflow-y:auto';
   overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
   overlay.innerHTML = `<div style="background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:30px 20px;width:100%;max-width:320px;text-align:center;color:var(--gray);font-family:'Nunito',sans-serif">載入中…</div>`;
   document.body.appendChild(overlay);
@@ -7286,7 +7286,7 @@ function _showLevelUpCelebration(level, newlyUnlocked) {
   document.getElementById('levelUpOverlay')?.remove();
   const overlay = document.createElement('div');
   overlay.id = 'levelUpOverlay';
-  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.6);z-index:9600;display:flex;align-items:center;justify-content:center;padding:20px;padding-top:max(20px,env(safe-area-inset-top))';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.6);z-index:9600;display:flex;align-items:flex-start;justify-content:center;padding:20px;padding-top:max(50px,calc(env(safe-area-inset-top) + 20px));overflow-y:auto';
   overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
   const unlockLine = newlyUnlocked > 0
     ? `<div style="font-size:13px;color:var(--green2);font-weight:800;margin-top:8px">🔓 解鎖 ${newlyUnlocked} 個文法小節！</div>`
@@ -7794,7 +7794,7 @@ function _renderDailyDeckPicker() {
   if (!overlay) {
     overlay = document.createElement('div');
     overlay.id = 'dailyDeckPickerOverlay';
-    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px;padding-top:max(16px,env(safe-area-inset-top))';
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:flex-start;justify-content:center;padding:16px;padding-top:max(50px,calc(env(safe-area-inset-top) + 20px));overflow-y:auto';
     overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
   }
 
@@ -8018,7 +8018,7 @@ function openTetrisModePicker() {
   const cur = _ttSelectedMode();
   const ov = document.createElement('div');
   ov.id = 'ttModePicker';
-  ov.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.6);z-index:9600;display:flex;align-items:center;justify-content:center;padding:20px;padding-top:max(20px,env(safe-area-inset-top))';
+  ov.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.6);z-index:9600;display:flex;align-items:flex-start;justify-content:center;padding:20px;padding-top:max(50px,calc(env(safe-area-inset-top) + 20px));overflow-y:auto';
   ov.onclick = e => { if (e.target === ov) ov.remove(); };
   ov.innerHTML = `
     <div style="background:var(--card);border:2.5px solid var(--line);border-radius:20px;padding:24px 22px;width:100%;max-width:320px;text-align:center;font-family:'Nunito',sans-serif;box-shadow:0 8px 40px rgba(75,56,42,.35)">
@@ -8324,7 +8324,7 @@ function openCharDetail(id) {
   const rarityColor = RARITY_COLOR[ch.rarity] || 'var(--line2)';
   const overlay = document.createElement('div');
   overlay.id = 'charDetailOverlay';
-  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px;padding-top:max(16px,env(safe-area-inset-top))';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:flex-start;justify-content:center;padding:16px;padding-top:max(50px,calc(env(safe-area-inset-top) + 20px));overflow-y:auto';
   overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
 
   const footer = isOwned
@@ -8416,7 +8416,7 @@ function openGachaHistory() {
   const history = getGachaHistory();
   const overlay = document.createElement('div');
   overlay.id = 'gachaHistoryOverlay';
-  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px;padding-top:max(16px,env(safe-area-inset-top))';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:flex-start;justify-content:center;padding:16px;padding-top:max(50px,calc(env(safe-area-inset-top) + 20px));overflow-y:auto';
   overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
   const rows = history.length ? history.map(h => {
     const time = new Date(h.t).toLocaleString('zh-TW', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' });
@@ -8470,7 +8470,7 @@ function openGachaRates() {
   if (typeof GACHA_POOL === 'undefined') return;
   const overlay = document.createElement('div');
   overlay.id = 'gachaRateOverlay';
-  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px;padding-top:max(16px,env(safe-area-inset-top))';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:flex-start;justify-content:center;padding:16px;padding-top:max(50px,calc(env(safe-area-inset-top) + 20px));overflow-y:auto';
   overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
   const rows = [...GACHA_POOL.entries, GACHA_POOL.consolation].map(_gachaEntryRow).join('');
   const pity = typeof getGachaPity === 'function' ? getGachaPity() : { sinceLegendary: 0, sinceMythicPlus: 0 };
@@ -8661,7 +8661,7 @@ function showGachaPackOpen(results) {
 function _showGachaPackResults(results) {
   const overlay = document.createElement('div');
   overlay.id = 'gachaResultOverlay';
-  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.6);z-index:9100;display:flex;align-items:center;justify-content:center;padding:16px;padding-top:max(16px,env(safe-area-inset-top))';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.6);z-index:9100;display:flex;align-items:flex-start;justify-content:center;padding:16px;padding-top:max(50px,calc(env(safe-area-inset-top) + 20px));overflow-y:auto';
   overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
 
   const isSingle = results.length === 1;
