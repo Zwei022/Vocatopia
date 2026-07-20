@@ -9,10 +9,20 @@
     "questions": [
       {
         "question": "What was the empty lot like before the neighbors started working on it?",
-        "options": ["(A) It was full of flowers", "(B) It was covered with rocks and bottles", "(C) It already had a garden", "(D) It was used as a parking lot"],
+        "options": [
+          "(A) It was full of flowers",
+          "(B) It was covered with rocks and bottles",
+          "(C) It already had a garden",
+          "(D) It was used as a parking lot"
+        ],
         "answer": 1,
         "explanation": "文中提到「the ground was covered with rocks and old bottles」，說明空地原本布滿石頭與舊瓶子，故選 B。",
-        "optionsZh": ["它開滿了花朵", "地上布滿石頭和瓶子", "那裡已經有一座花園", "它被當作停車場使用"],
+        "optionsZh": [
+          "它開滿了花朵",
+          "地上布滿石頭和瓶子",
+          "那裡已經有一座花園",
+          "它被當作停車場使用"
+        ],
         "questionType": "detail"
       }
     ]
@@ -27,10 +37,20 @@
     "questions": [
       {
         "question": "According to the passage, why are honey bees important?",
-        "options": ["(A) They make the air cleaner", "(B) They help plants produce fruits and vegetables through pollination", "(C) They protect crops from insects", "(D) They help farmers water their fields"],
+        "options": [
+          "(A) They make the air cleaner",
+          "(B) They help plants produce fruits and vegetables through pollination",
+          "(C) They protect crops from insects",
+          "(D) They help farmers water their fields"
+        ],
         "answer": 1,
         "explanation": "文中說明蜜蜂採蜜時會傳播花粉，這個過程稱為授粉，能幫助植物結出果實和蔬菜，故選 B。",
-        "optionsZh": ["牠們讓空氣更乾淨", "牠們透過授粉幫助植物結出水果和蔬菜", "牠們保護作物不受昆蟲侵害", "牠們幫助農夫灌溉田地"],
+        "optionsZh": [
+          "牠們讓空氣更乾淨",
+          "牠們透過授粉幫助植物結出水果和蔬菜",
+          "牠們保護作物不受昆蟲侵害",
+          "牠們幫助農夫灌溉田地"
+        ],
         "questionType": "main_idea"
       }
     ]
@@ -45,10 +65,20 @@
     "questions": [
       {
         "question": "What happened on the writer's first day at the bakery?",
-        "options": ["(A) She was praised by a customer", "(B) She dropped a tray of bread rolls", "(C) She opened the shop alone", "(D) She learned to use the cash register perfectly"],
+        "options": [
+          "(A) She was praised by a customer",
+          "(B) She dropped a tray of bread rolls",
+          "(C) She opened the shop alone",
+          "(D) She learned to use the cash register perfectly"
+        ],
         "answer": 1,
         "explanation": "文中提到「I dropped a tray of bread rolls on the floor」，說明第一天她緊張到打翻了一盤麵包，故選 B。",
-        "optionsZh": ["她被一位顧客稱讚", "她打翻了一盤麵包捲", "她獨自開店", "她完美地學會使用收銀機"],
+        "optionsZh": [
+          "她被一位顧客稱讚",
+          "她打翻了一盤麵包捲",
+          "她獨自開店",
+          "她完美地學會使用收銀機"
+        ],
         "questionType": "detail"
       }
     ]
@@ -63,10 +93,20 @@
     "questions": [
       {
         "question": "What did some towns do to help fireflies return?",
-        "options": ["(A) They built more street lights", "(B) They reduced outdoor lighting and stopped using strong chemicals", "(C) They moved fireflies from other countries", "(D) They closed the parks completely"],
+        "options": [
+          "(A) They built more street lights",
+          "(B) They reduced outdoor lighting and stopped using strong chemicals",
+          "(C) They moved fireflies from other countries",
+          "(D) They closed the parks completely"
+        ],
         "answer": 1,
         "explanation": "文中提到部分城鎮「reduced outdoor lighting in certain parks and stopped using strong chemicals on the grass」，故選 B。",
-        "optionsZh": ["他們建造更多路燈", "他們減少戶外照明並停止使用強效化學藥劑", "他們從其他國家搬來螢火蟲", "他們把公園完全關閉"],
+        "optionsZh": [
+          "他們建造更多路燈",
+          "他們減少戶外照明並停止使用強效化學藥劑",
+          "他們從其他國家搬來螢火蟲",
+          "他們把公園完全關閉"
+        ],
         "questionType": "detail"
       }
     ]
@@ -81,10 +121,20 @@
     "questions": [
       {
         "question": "What can we infer about Mia from the passage?",
-        "options": ["(A) She gave up skateboarding after falling", "(B) She was determined to keep practicing despite falling", "(C) She was already a skilled skateboarder", "(D) She did not want her brother's help"],
+        "options": [
+          "(A) She gave up skateboarding after falling",
+          "(B) She was determined to keep practicing despite falling",
+          "(C) She was already a skilled skateboarder",
+          "(D) She did not want her brother's help"
+        ],
         "answer": 1,
         "explanation": "文中提到她雖然跌倒受傷卻「refused to give up」，並持續練習兩週，可推論她個性堅持，故選 B。",
-        "optionsZh": ["她跌倒後就放棄了滑板", "她儘管跌倒仍決心繼續練習", "她已經是熟練的滑板高手", "她不想要哥哥的幫助"],
+        "optionsZh": [
+          "她跌倒後就放棄了滑板",
+          "她儘管跌倒仍決心繼續練習",
+          "她已經是熟練的滑板高手",
+          "她不想要哥哥的幫助"
+        ],
         "questionType": "inference"
       }
     ]
@@ -99,10 +149,20 @@
     "questions": [
       {
         "question": "What happens when ocean temperatures rise too much?",
-        "options": ["(A) Coral grows faster", "(B) Coral becomes stressed and loses its color", "(C) More fish come to live near the coral", "(D) The coral turns into rock immediately"],
+        "options": [
+          "(A) Coral grows faster",
+          "(B) Coral becomes stressed and loses its color",
+          "(C) More fish come to live near the coral",
+          "(D) The coral turns into rock immediately"
+        ],
         "answer": 1,
         "explanation": "文中提到水溫過高會讓珊瑚「becomes stressed and loses its bright colors」，也就是珊瑚白化，故選 B。",
-        "optionsZh": ["珊瑚生長得更快", "珊瑚會感到壓力並失去顏色", "更多魚會來到珊瑚附近居住", "珊瑚會立刻變成岩石"],
+        "optionsZh": [
+          "珊瑚生長得更快",
+          "珊瑚會感到壓力並失去顏色",
+          "更多魚會來到珊瑚附近居住",
+          "珊瑚會立刻變成岩石"
+        ],
         "questionType": "detail"
       }
     ]
@@ -117,10 +177,20 @@
     "questions": [
       {
         "question": "Why did Mr. Wu decide to close his bookstore?",
-        "options": ["(A) He wanted to retire and travel", "(B) Fewer people were buying paper books, so he could not pay the rent", "(C) The building was going to be torn down", "(D) He was moving to another city"],
+        "options": [
+          "(A) He wanted to retire and travel",
+          "(B) Fewer people were buying paper books, so he could not pay the rent",
+          "(C) The building was going to be torn down",
+          "(D) He was moving to another city"
+        ],
         "answer": 1,
         "explanation": "文中提到 Mr. Wu 表示「fewer people were buying paper books, and he could no longer pay the rent」，故選 B。",
-        "optionsZh": ["他想退休去旅行", "買紙本書的人變少，讓他付不起租金", "這棟建築物即將被拆除", "他要搬去另一個城市"],
+        "optionsZh": [
+          "他想退休去旅行",
+          "買紙本書的人變少，讓他付不起租金",
+          "這棟建築物即將被拆除",
+          "他要搬去另一個城市"
+        ],
         "questionType": "detail"
       }
     ]
@@ -135,10 +205,20 @@
     "questions": [
       {
         "question": "How do young birds usually learn their migration route for the first time?",
-        "options": ["(A) By reading maps left by scientists", "(B) By following older, more experienced birds", "(C) By staying in one place all year", "(D) By listening to human guides"],
+        "options": [
+          "(A) By reading maps left by scientists",
+          "(B) By following older, more experienced birds",
+          "(C) By staying in one place all year",
+          "(D) By listening to human guides"
+        ],
         "answer": 1,
         "explanation": "文中提到「Young birds that migrate for the first time often follow older, more experienced birds in their group」，故選 B。",
-        "optionsZh": ["透過閱讀科學家留下的地圖", "跟隨較年長、經驗豐富的鳥類", "整年待在同一個地方", "聽從人類嚮導的指示"],
+        "optionsZh": [
+          "透過閱讀科學家留下的地圖",
+          "跟隨較年長、經驗豐富的鳥類",
+          "整年待在同一個地方",
+          "聽從人類嚮導的指示"
+        ],
         "questionType": "detail"
       }
     ]
@@ -153,10 +233,20 @@
     "questions": [
       {
         "question": "What can we infer about Ethan after the performance?",
-        "options": ["(A) He regretted joining the talent show", "(B) He learned that courage mattered more than being perfect", "(C) He decided never to play guitar again", "(D) He was angry at his music teacher"],
+        "options": [
+          "(A) He regretted joining the talent show",
+          "(B) He learned that courage mattered more than being perfect",
+          "(C) He decided never to play guitar again",
+          "(D) He was angry at his music teacher"
+        ],
         "answer": 1,
         "explanation": "文中最後說「the hardest part had not been the mistake, but simply finding the courage」，顯示他體會到勇氣比完美更重要，故選 B。",
-        "optionsZh": ["他後悔參加才藝表演", "他明白勇氣比完美更重要", "他決定再也不彈吉他了", "他對音樂老師感到生氣"],
+        "optionsZh": [
+          "他後悔參加才藝表演",
+          "他明白勇氣比完美更重要",
+          "他決定再也不彈吉他了",
+          "他對音樂老師感到生氣"
+        ],
         "questionType": "inference"
       }
     ]
@@ -171,10 +261,20 @@
     "questions": [
       {
         "question": "What is one problem caused by bike-sharing mentioned in the passage?",
-        "options": ["(A) The bicycles are too expensive to rent", "(B) Some users leave bicycles in places that block sidewalks", "(C) The bicycles break down too often", "(D) There are not enough bicycles in any city"],
+        "options": [
+          "(A) The bicycles are too expensive to rent",
+          "(B) Some users leave bicycles in places that block sidewalks",
+          "(C) The bicycles break down too often",
+          "(D) There are not enough bicycles in any city"
+        ],
         "answer": 1,
         "explanation": "文中提到「Some users leave bicycles in the wrong places, blocking sidewalks or building entrances」，故選 B。",
-        "optionsZh": ["租借腳踏車太貴", "有些使用者亂停腳踏車，擋住人行道", "腳踏車經常故障", "任何城市的腳踏車數量都不足"],
+        "optionsZh": [
+          "租借腳踏車太貴",
+          "有些使用者亂停腳踏車，擋住人行道",
+          "腳踏車經常故障",
+          "任何城市的腳踏車數量都不足"
+        ],
         "questionType": "detail"
       }
     ]
@@ -189,10 +289,20 @@
     "questions": [
       {
         "question": "How did the family react when it started raining heavily?",
-        "options": ["(A) They immediately drove home", "(B) They stayed calm and made the best of the situation", "(C) They complained the whole night", "(D) They asked the campsite for a refund"],
+        "options": [
+          "(A) They immediately drove home",
+          "(B) They stayed calm and made the best of the situation",
+          "(C) They complained the whole night",
+          "(D) They asked the campsite for a refund"
+        ],
         "answer": 1,
         "explanation": "文中提到父親提議「make the best of it」，一家人移動睡袋並打牌度過雨夜，顯示他們保持冷靜、樂觀應對，故選 B。",
-        "optionsZh": ["他們立刻開車回家", "他們保持冷靜並盡力度過難關", "他們整晚都在抱怨", "他們向露營地要求退費"],
+        "optionsZh": [
+          "他們立刻開車回家",
+          "他們保持冷靜並盡力度過難關",
+          "他們整晚都在抱怨",
+          "他們向露營地要求退費"
+        ],
         "questionType": "inference"
       }
     ]
@@ -207,10 +317,20 @@
     "questions": [
       {
         "question": "What is the main idea of this passage?",
-        "options": ["(A) Food waste is not a serious problem", "(B) Reducing food waste helps save resources and the environment", "(C) Families should stop buying vegetables", "(D) Only restaurants produce food waste"],
+        "options": [
+          "(A) Food waste is not a serious problem",
+          "(B) Reducing food waste helps save resources and the environment",
+          "(C) Families should stop buying vegetables",
+          "(D) Only restaurants produce food waste"
+        ],
         "answer": 1,
         "explanation": "全文說明食物浪費會連帶浪費水、土地與能源，並提出減少浪費的方法，主旨是呼籲減少食物浪費以保護資源與環境，故選 B。",
-        "optionsZh": ["食物浪費不是嚴重的問題", "減少食物浪費有助於節省資源與保護環境", "家庭應該停止購買蔬菜", "只有餐廳會製造食物浪費"],
+        "optionsZh": [
+          "食物浪費不是嚴重的問題",
+          "減少食物浪費有助於節省資源與保護環境",
+          "家庭應該停止購買蔬菜",
+          "只有餐廳會製造食物浪費"
+        ],
         "questionType": "main_idea"
       }
     ]
@@ -225,10 +345,20 @@
     "questions": [
       {
         "question": "What can be inferred about Lucas from the passage?",
-        "options": ["(A) He gave up easily when his filter did not work", "(B) He valued the learning process as much as winning", "(C) He copied his project idea from a classmate", "(D) He finished his project in one afternoon"],
+        "options": [
+          "(A) He gave up easily when his filter did not work",
+          "(B) He valued the learning process as much as winning",
+          "(C) He copied his project idea from a classmate",
+          "(D) He finished his project in one afternoon"
+        ],
         "answer": 1,
         "explanation": "文中提到他雖未得第一名，卻「felt proud knowing that his hours of patient testing had taught him more」，顯示他重視學習過程勝於獲勝，故選 B。",
-        "optionsZh": ["過濾器失敗時他很容易放棄", "他重視學習過程不亞於獲勝", "他抄襲同學的專題點子", "他一個下午就完成了專題"],
+        "optionsZh": [
+          "過濾器失敗時他很容易放棄",
+          "他重視學習過程不亞於獲勝",
+          "他抄襲同學的專題點子",
+          "他一個下午就完成了專題"
+        ],
         "questionType": "inference"
       }
     ]
@@ -243,10 +373,20 @@
     "questions": [
       {
         "question": "According to the passage, what breaks down the food scraps inside a compost bin?",
-        "options": ["(A) Sunlight and heat", "(B) Tiny organisms such as bacteria and worms", "(C) Chemical fertilizers", "(D) Cold temperatures"],
+        "options": [
+          "(A) Sunlight and heat",
+          "(B) Tiny organisms such as bacteria and worms",
+          "(C) Chemical fertilizers",
+          "(D) Cold temperatures"
+        ],
         "answer": 1,
         "explanation": "文中提到「tiny organisms such as bacteria and worms slowly break down the food scraps」，故選 B。",
-        "optionsZh": ["陽光與熱度", "細菌和蚯蚓等微小生物", "化學肥料", "低溫"],
+        "optionsZh": [
+          "陽光與熱度",
+          "細菌和蚯蚓等微小生物",
+          "化學肥料",
+          "低溫"
+        ],
         "questionType": "detail"
       }
     ]
@@ -261,10 +401,20 @@
     "questions": [
       {
         "question": "What is this passage mainly about?",
-        "options": ["(A) How to cook the perfect dumpling", "(B) A family tradition of making dumplings together", "(C) A competition between family members", "(D) A recipe that failed completely"],
+        "options": [
+          "(A) How to cook the perfect dumpling",
+          "(B) A family tradition of making dumplings together",
+          "(C) A competition between family members",
+          "(D) A recipe that failed completely"
+        ],
         "answer": 1,
         "explanation": "全文描述作者與家人一同包餃子的傳統，並體會到這是傳承家族歷史的方式，主旨是關於家族一起包餃子的傳統，故選 B。",
-        "optionsZh": ["如何煮出完美的餃子", "一家人一起包餃子的傳統", "家人之間的比賽", "一份完全失敗的食譜"],
+        "optionsZh": [
+          "如何煮出完美的餃子",
+          "一家人一起包餃子的傳統",
+          "家人之間的比賽",
+          "一份完全失敗的食譜"
+        ],
         "questionType": "main_idea"
       }
     ]
@@ -279,10 +429,20 @@
     "questions": [
       {
         "question": "Why can bright lights near beaches be dangerous for baby sea turtles?",
-        "options": ["(A) The lights attract sharks", "(B) The lights can confuse them and lead them toward roads instead of the ocean", "(C) The lights make the sand too hot", "(D) The lights stop the eggs from hatching"],
+        "options": [
+          "(A) The lights attract sharks",
+          "(B) The lights can confuse them and lead them toward roads instead of the ocean",
+          "(C) The lights make the sand too hot",
+          "(D) The lights stop the eggs from hatching"
+        ],
         "answer": 1,
         "explanation": "文中提到「Bright lights near beaches can confuse baby turtles, causing them to crawl toward roads instead of the ocean」，故選 B。",
-        "optionsZh": ["燈光會吸引鯊魚", "燈光會使牠們迷失方向，爬向馬路而非海洋", "燈光會讓沙灘過熱", "燈光會阻止蛋孵化"],
+        "optionsZh": [
+          "燈光會吸引鯊魚",
+          "燈光會使牠們迷失方向，爬向馬路而非海洋",
+          "燈光會讓沙灘過熱",
+          "燈光會阻止蛋孵化"
+        ],
         "questionType": "detail"
       }
     ]
@@ -297,10 +457,20 @@
     "questions": [
       {
         "question": "How did the brother's kite finally manage to fly well?",
-        "options": ["(A) They bought a new kite", "(B) An older man helped them adjust the tail of the kite", "(C) The wind suddenly became much stronger", "(D) They gave up and watched other kites instead"],
+        "options": [
+          "(A) They bought a new kite",
+          "(B) An older man helped them adjust the tail of the kite",
+          "(C) The wind suddenly became much stronger",
+          "(D) They gave up and watched other kites instead"
+        ],
         "answer": 1,
         "explanation": "文中提到「an older man nearby offered to help us adjust the tail of the kite」之後，風箏才順利升空，故選 B。",
-        "optionsZh": ["他們買了一個新風箏", "一位長者幫他們調整了風箏的尾巴", "風突然變得強勁許多", "他們放棄並改看別人的風箏"],
+        "optionsZh": [
+          "他們買了一個新風箏",
+          "一位長者幫他們調整了風箏的尾巴",
+          "風突然變得強勁許多",
+          "他們放棄並改看別人的風箏"
+        ],
         "questionType": "detail"
       }
     ]
@@ -315,10 +485,20 @@
     "questions": [
       {
         "question": "According to the passage, what effect can public murals have on a neighborhood?",
-        "options": ["(A) They make the area feel less safe", "(B) They can make neighborhoods feel safer and attract more visitors", "(C) They stop local businesses from growing", "(D) They are always painted by professional artists alone"],
+        "options": [
+          "(A) They make the area feel less safe",
+          "(B) They can make neighborhoods feel safer and attract more visitors",
+          "(C) They stop local businesses from growing",
+          "(D) They are always painted by professional artists alone"
+        ],
         "answer": 1,
         "explanation": "文中提到公共藝術「can make neighborhoods feel safer and more welcoming」，且能吸引更多遊客，故選 B。",
-        "optionsZh": ["會讓該區域感覺較不安全", "能讓社區感覺更安全並吸引更多遊客", "會阻礙當地商家的發展", "永遠只由專業藝術家獨自繪製"],
+        "optionsZh": [
+          "會讓該區域感覺較不安全",
+          "能讓社區感覺更安全並吸引更多遊客",
+          "會阻礙當地商家的發展",
+          "永遠只由專業藝術家獨自繪製"
+        ],
         "questionType": "detail"
       }
     ]
@@ -333,10 +513,20 @@
     "questions": [
       {
         "question": "What lesson did Hannah learn by the end of the passage?",
-        "options": ["(A) Expensive cameras always take the best photos", "(B) Noticing the world around her mattered more than having fancy equipment", "(C) She should quit the photography club", "(D) Winning competitions is the only goal of photography"],
+        "options": [
+          "(A) Expensive cameras always take the best photos",
+          "(B) Noticing the world around her mattered more than having fancy equipment",
+          "(C) She should quit the photography club",
+          "(D) Winning competitions is the only goal of photography"
+        ],
         "answer": 1,
         "explanation": "文末提到「having the fanciest tools mattered far less than truly noticing the world around her」，故選 B。",
-        "optionsZh": ["昂貴的相機永遠能拍出最好的照片", "留意周遭的世界比擁有高級器材更重要", "她應該退出攝影社", "贏得比賽是攝影唯一的目標"],
+        "optionsZh": [
+          "昂貴的相機永遠能拍出最好的照片",
+          "留意周遭的世界比擁有高級器材更重要",
+          "她應該退出攝影社",
+          "贏得比賽是攝影唯一的目標"
+        ],
         "questionType": "inference"
       }
     ]
@@ -351,10 +541,20 @@
     "questions": [
       {
         "question": "What did the study mentioned in the passage find about walking in a park?",
-        "options": ["(A) It had no effect on stress at all", "(B) A twenty-minute walk could lower stress hormone levels", "(C) It only helped people who lived far from the city", "(D) It made people feel more tired"],
+        "options": [
+          "(A) It had no effect on stress at all",
+          "(B) A twenty-minute walk could lower stress hormone levels",
+          "(C) It only helped people who lived far from the city",
+          "(D) It made people feel more tired"
+        ],
         "answer": 1,
         "explanation": "文中提到「a walk of just twenty minutes in a park could lower levels of stress hormones in the body」，故選 B。",
-        "optionsZh": ["對壓力完全沒有影響", "二十分鐘的散步能降低壓力荷爾蒙", "只對住在城市外圍的人有幫助", "會讓人感覺更疲憊"],
+        "optionsZh": [
+          "對壓力完全沒有影響",
+          "二十分鐘的散步能降低壓力荷爾蒙",
+          "只對住在城市外圍的人有幫助",
+          "會讓人感覺更疲憊"
+        ],
         "questionType": "detail"
       }
     ]
@@ -369,10 +569,20 @@
     "questions": [
       {
         "question": "Why did Daniel decide to return the wallet instead of keeping the money?",
-        "options": ["(A) He was afraid of getting caught by the police", "(B) He thought about how worried the owner must feel", "(C) His parents forced him to return it", "(D) The wallet did not have any money inside"],
+        "options": [
+          "(A) He was afraid of getting caught by the police",
+          "(B) He thought about how worried the owner must feel",
+          "(C) His parents forced him to return it",
+          "(D) The wallet did not have any money inside"
+        ],
         "answer": 1,
         "explanation": "文中提到他看到照片後「thought about how worried the owner must feel after losing something so personal」，才決定歸還，故選 B。",
-        "optionsZh": ["他害怕被警察抓到", "他想到失主一定很擔心", "他的父母強迫他歸還", "皮夾裡根本沒有錢"],
+        "optionsZh": [
+          "他害怕被警察抓到",
+          "他想到失主一定很擔心",
+          "他的父母強迫他歸還",
+          "皮夾裡根本沒有錢"
+        ],
         "questionType": "inference"
       }
     ]
@@ -387,10 +597,20 @@
     "questions": [
       {
         "question": "What does the passage suggest teenagers do before bed to sleep better?",
-        "options": ["(A) Do more homework right before sleeping", "(B) Turn off phones and screens at least thirty minutes before bed", "(C) Sleep at a different time every night", "(D) Exercise heavily right before bedtime"],
+        "options": [
+          "(A) Do more homework right before sleeping",
+          "(B) Turn off phones and screens at least thirty minutes before bed",
+          "(C) Sleep at a different time every night",
+          "(D) Exercise heavily right before bedtime"
+        ],
         "answer": 1,
         "explanation": "文中提到「Turning off phones and other screens at least thirty minutes before bed can make it easier to fall asleep」，故選 B。",
-        "optionsZh": ["睡前多做功課", "睡前至少三十分鐘關掉手機和螢幕", "每晚在不同時間睡覺", "睡前做劇烈運動"],
+        "optionsZh": [
+          "睡前多做功課",
+          "睡前至少三十分鐘關掉手機和螢幕",
+          "每晚在不同時間睡覺",
+          "睡前做劇烈運動"
+        ],
         "questionType": "detail"
       }
     ]
@@ -405,10 +625,20 @@
     "questions": [
       {
         "question": "What helped Amy start making friends at her new school?",
-        "options": ["(A) A teacher introduced her to the whole class", "(B) A group science project brought her together with classmates", "(C) She joined a sports team", "(D) Her parents invited classmates to her house"],
+        "options": [
+          "(A) A teacher introduced her to the whole class",
+          "(B) A group science project brought her together with classmates",
+          "(C) She joined a sports team",
+          "(D) Her parents invited classmates to her house"
+        ],
         "answer": 1,
         "explanation": "文中提到分組科學專題讓她與三位同學合作，之後同組同學開始邀她一起吃午餐，故選 B。",
-        "optionsZh": ["一位老師向全班介紹她", "分組科學專題讓她和同學們熟識起來", "她加入了運動校隊", "她的父母邀請同學到家裡"],
+        "optionsZh": [
+          "一位老師向全班介紹她",
+          "分組科學專題讓她和同學們熟識起來",
+          "她加入了運動校隊",
+          "她的父母邀請同學到家裡"
+        ],
         "questionType": "detail"
       }
     ]
@@ -423,10 +653,20 @@
     "questions": [
       {
         "question": "What is one hidden cost of fast fashion mentioned in the passage?",
-        "options": ["(A) Clothes become more expensive every year", "(B) Producing clothing quickly requires large amounts of water and energy", "(C) Stores stop introducing new styles", "(D) Workers are given shorter working hours"],
+        "options": [
+          "(A) Clothes become more expensive every year",
+          "(B) Producing clothing quickly requires large amounts of water and energy",
+          "(C) Stores stop introducing new styles",
+          "(D) Workers are given shorter working hours"
+        ],
         "answer": 1,
         "explanation": "文中提到「Producing so much clothing quickly requires large amounts of water, energy, and chemicals」，故選 B。",
-        "optionsZh": ["衣服每年變得更貴", "快速生產衣物需要大量的水和能源", "商店停止推出新款式", "工人的工時被縮短"],
+        "optionsZh": [
+          "衣服每年變得更貴",
+          "快速生產衣物需要大量的水和能源",
+          "商店停止推出新款式",
+          "工人的工時被縮短"
+        ],
         "questionType": "detail"
       }
     ]
@@ -441,10 +681,20 @@
     "questions": [
       {
         "question": "How did Tommy manage to arrive at the race on time?",
-        "options": ["(A) He bought a brand-new bicycle", "(B) His neighbor, Mr. Park, helped repair the broken chain", "(C) He asked the school to delay the race", "(D) He borrowed a bicycle from a classmate"],
+        "options": [
+          "(A) He bought a brand-new bicycle",
+          "(B) His neighbor, Mr. Park, helped repair the broken chain",
+          "(C) He asked the school to delay the race",
+          "(D) He borrowed a bicycle from a classmate"
+        ],
         "answer": 1,
         "explanation": "文中提到鄰居 Mr. Park 用車庫的工具修好了鏈條，Tommy 才得以及時到場，故選 B。",
-        "optionsZh": ["他買了一台全新的腳踏車", "鄰居 Mr. Park 幫忙修好了斷掉的鏈條", "他要求學校延後比賽", "他向同學借了一台腳踏車"],
+        "optionsZh": [
+          "他買了一台全新的腳踏車",
+          "鄰居 Mr. Park 幫忙修好了斷掉的鏈條",
+          "他要求學校延後比賽",
+          "他向同學借了一台腳踏車"
+        ],
         "questionType": "detail"
       }
     ]
@@ -459,10 +709,20 @@
     "questions": [
       {
         "question": "According to one theory in the passage, why might yawning be contagious?",
-        "options": ["(A) It is connected to empathy and sharing others' feelings", "(B) It only happens when people are extremely tired", "(C) It is caused by loud noises in a room", "(D) It only happens between family members"],
+        "options": [
+          "(A) It is connected to empathy and sharing others' feelings",
+          "(B) It only happens when people are extremely tired",
+          "(C) It is caused by loud noises in a room",
+          "(D) It only happens between family members"
+        ],
         "answer": 0,
         "explanation": "文中提到打哈欠的傳染性「may be linked to empathy, the ability to share the feelings of people around us」，故選 A。",
-        "optionsZh": ["它與同理心以及分享他人感受有關", "它只會在人極度疲憊時發生", "它是由房間裡的噪音引起的", "它只會發生在家人之間"],
+        "optionsZh": [
+          "它與同理心以及分享他人感受有關",
+          "它只會在人極度疲憊時發生",
+          "它是由房間裡的噪音引起的",
+          "它只會發生在家人之間"
+        ],
         "questionType": "inference"
       }
     ]
@@ -477,10 +737,20 @@
     "questions": [
       {
         "question": "How did Jason improve his cooking skills during the week?",
-        "options": ["(A) He watched cooking videos alone", "(B) His grandmother guided him through video calls", "(C) He took a cooking class at school", "(D) His mother came home early to help him"],
+        "options": [
+          "(A) He watched cooking videos alone",
+          "(B) His grandmother guided him through video calls",
+          "(C) He took a cooking class at school",
+          "(D) His mother came home early to help him"
+        ],
         "answer": 1,
         "explanation": "文中提到他打電話給祖母，祖母透過視訊通話教他烹飪步驟，故選 B。",
-        "optionsZh": ["他自己看烹飪影片", "他的祖母透過視訊通話指導他", "他在學校上了烹飪課", "他的媽媽提早回家幫忙他"],
+        "optionsZh": [
+          "他自己看烹飪影片",
+          "他的祖母透過視訊通話指導他",
+          "他在學校上了烹飪課",
+          "他的媽媽提早回家幫忙他"
+        ],
         "questionType": "detail"
       }
     ]
@@ -495,10 +765,20 @@
     "questions": [
       {
         "question": "According to the passage, why is soap important when washing hands?",
-        "options": ["(A) It makes hands smell nice", "(B) It breaks down germs, making them easier to wash away", "(C) It replaces the need for water completely", "(D) It only works on visible dirt"],
+        "options": [
+          "(A) It makes hands smell nice",
+          "(B) It breaks down germs, making them easier to wash away",
+          "(C) It replaces the need for water completely",
+          "(D) It only works on visible dirt"
+        ],
         "answer": 1,
         "explanation": "文中提到「Soap breaks down the outer layer of germs, making it much easier for water to wash them away completely」，故選 B。",
-        "optionsZh": ["它讓雙手聞起來很香", "它會分解細菌，讓水更容易將其沖走", "它能完全取代用水洗手", "它只對看得見的髒污有效"],
+        "optionsZh": [
+          "它讓雙手聞起來很香",
+          "它會分解細菌，讓水更容易將其沖走",
+          "它能完全取代用水洗手",
+          "它只對看得見的髒污有效"
+        ],
         "questionType": "detail"
       }
     ]
@@ -513,10 +793,20 @@
     "questions": [
       {
         "question": "What lesson did Sophie learn from her recital experience?",
-        "options": ["(A) She should quit playing the piano", "(B) Recovering gracefully from mistakes matters more than perfection", "(C) Audiences always notice every small mistake", "(D) She should never perform in public again"],
+        "options": [
+          "(A) She should quit playing the piano",
+          "(B) Recovering gracefully from mistakes matters more than perfection",
+          "(C) Audiences always notice every small mistake",
+          "(D) She should never perform in public again"
+        ],
         "answer": 1,
         "explanation": "文末提到她體會到「recovering gracefully mattered far more than playing without a single flaw」，故選 B。",
-        "optionsZh": ["她應該放棄彈鋼琴", "從錯誤中優雅地恢復比完美更重要", "觀眾總是會注意到每個小錯誤", "她應該再也不要公開表演"],
+        "optionsZh": [
+          "她應該放棄彈鋼琴",
+          "從錯誤中優雅地恢復比完美更重要",
+          "觀眾總是會注意到每個小錯誤",
+          "她應該再也不要公開表演"
+        ],
         "questionType": "inference"
       }
     ]
@@ -531,10 +821,20 @@
     "questions": [
       {
         "question": "According to the passage, how do trees help cool down cities?",
-        "options": ["(A) By blocking all sunlight completely", "(B) By providing shade and releasing moisture into the air", "(C) By slowing down car engines", "(D) By reducing the number of buildings"],
+        "options": [
+          "(A) By blocking all sunlight completely",
+          "(B) By providing shade and releasing moisture into the air",
+          "(C) By slowing down car engines",
+          "(D) By reducing the number of buildings"
+        ],
         "answer": 1,
         "explanation": "文中提到樹木「providing shade and releasing moisture into the air」能降低街道溫度，故選 B。",
-        "optionsZh": ["完全阻擋陽光", "提供樹蔭並釋放水氣到空氣中", "使汽車引擎變慢", "減少建築物的數量"],
+        "optionsZh": [
+          "完全阻擋陽光",
+          "提供樹蔭並釋放水氣到空氣中",
+          "使汽車引擎變慢",
+          "減少建築物的數量"
+        ],
         "questionType": "detail"
       }
     ]
@@ -549,10 +849,20 @@
     "questions": [
       {
         "question": "Why had Max stayed at the shelter for almost a year?",
-        "options": ["(A) He was too aggressive to be adopted", "(B) Most visitors preferred younger animals", "(C) The shelter refused to let anyone adopt him", "(D) He was too sick to leave the shelter"],
+        "options": [
+          "(A) He was too aggressive to be adopted",
+          "(B) Most visitors preferred younger animals",
+          "(C) The shelter refused to let anyone adopt him",
+          "(D) He was too sick to leave the shelter"
+        ],
         "answer": 1,
         "explanation": "文中提到工作人員解釋「most visitors preferred younger animals」，故選 B。",
-        "optionsZh": ["他個性太具攻擊性而無法被領養", "多數訪客偏好較年輕的動物", "收容所拒絕讓任何人領養他", "他病得太重無法離開收容所"],
+        "optionsZh": [
+          "他個性太具攻擊性而無法被領養",
+          "多數訪客偏好較年輕的動物",
+          "收容所拒絕讓任何人領養他",
+          "他病得太重無法離開收容所"
+        ],
         "questionType": "detail"
       }
     ]
@@ -567,10 +877,20 @@
     "questions": [
       {
         "question": "What is one reason board games have become more popular, according to the passage?",
-        "options": ["(A) They are cheaper than video games", "(B) They encourage face-to-face interaction between players", "(C) They no longer require any strategy", "(D) They can only be played alone"],
+        "options": [
+          "(A) They are cheaper than video games",
+          "(B) They encourage face-to-face interaction between players",
+          "(C) They no longer require any strategy",
+          "(D) They can only be played alone"
+        ],
         "answer": 1,
         "explanation": "文中提到桌遊「encourage face-to-face interaction」是其受歡迎的原因之一，故選 B。",
-        "optionsZh": ["它們比電玩遊戲便宜", "它們鼓勵玩家面對面互動", "它們不再需要任何策略", "它們只能一個人玩"],
+        "optionsZh": [
+          "它們比電玩遊戲便宜",
+          "它們鼓勵玩家面對面互動",
+          "它們不再需要任何策略",
+          "它們只能一個人玩"
+        ],
         "questionType": "detail"
       }
     ]
@@ -585,10 +905,20 @@
     "questions": [
       {
         "question": "What did the writer do after realizing he was lost?",
-        "options": ["(A) He immediately called his parents", "(B) He went to the information desk near the entrance as instructed", "(C) He asked a stranger to drive him home", "(D) He stayed at the dinosaur exhibit the whole time"],
+        "options": [
+          "(A) He immediately called his parents",
+          "(B) He went to the information desk near the entrance as instructed",
+          "(C) He asked a stranger to drive him home",
+          "(D) He stayed at the dinosaur exhibit the whole time"
+        ],
         "answer": 1,
         "explanation": "文中提到他想起老師的指示，前往入口附近的服務台等候，故選 B。",
-        "optionsZh": ["他立刻打電話給父母", "他依照指示前往入口附近的服務台", "他請陌生人開車送他回家", "他一直待在恐龍展區"],
+        "optionsZh": [
+          "他立刻打電話給父母",
+          "他依照指示前往入口附近的服務台",
+          "他請陌生人開車送他回家",
+          "他一直待在恐龍展區"
+        ],
         "questionType": "detail"
       }
     ]
@@ -603,10 +933,20 @@
     "questions": [
       {
         "question": "According to the passage, why might body language cause misunderstandings between travelers and locals?",
-        "options": ["(A) Because facial expressions never change between cultures", "(B) Because some gestures can mean different things in different cultures", "(C) Because travelers never use body language at all", "(D) Because locals refuse to communicate with travelers"],
+        "options": [
+          "(A) Because facial expressions never change between cultures",
+          "(B) Because some gestures can mean different things in different cultures",
+          "(C) Because travelers never use body language at all",
+          "(D) Because locals refuse to communicate with travelers"
+        ],
         "answer": 1,
         "explanation": "文中提到「other gestures can mean completely different things depending on where a person grows up」，因此可能造成誤解，故選 B。",
-        "optionsZh": ["因為臉部表情在各文化中永遠不變", "因為某些手勢在不同文化中代表不同意思", "因為旅客完全不使用肢體語言", "因為當地人拒絕與旅客溝通"],
+        "optionsZh": [
+          "因為臉部表情在各文化中永遠不變",
+          "因為某些手勢在不同文化中代表不同意思",
+          "因為旅客完全不使用肢體語言",
+          "因為當地人拒絕與旅客溝通"
+        ],
         "questionType": "inference"
       }
     ]
@@ -621,10 +961,20 @@
     "questions": [
       {
         "question": "How did Olivia's feelings about the garden club change over time?",
-        "options": ["(A) She quickly lost interest and left the club", "(B) She grew to genuinely enjoy the gardening work", "(C) She never cared about the garden at all", "(D) She joined only to avoid other school activities"],
+        "options": [
+          "(A) She quickly lost interest and left the club",
+          "(B) She grew to genuinely enjoy the gardening work",
+          "(C) She never cared about the garden at all",
+          "(D) She joined only to avoid other school activities"
+        ],
         "answer": 1,
         "explanation": "文中提到她從一開始覺得無聊，到後來每天早上都會去查看花園，甚至隔年自願擔任社長，顯示她逐漸真心喜歡上園藝，故選 B。",
-        "optionsZh": ["她很快就失去興趣並離開社團", "她漸漸真心喜歡上園藝工作", "她從頭到尾都不在乎花園", "她加入只是為了逃避其他校內活動"],
+        "optionsZh": [
+          "她很快就失去興趣並離開社團",
+          "她漸漸真心喜歡上園藝工作",
+          "她從頭到尾都不在乎花園",
+          "她加入只是為了逃避其他校內活動"
+        ],
         "questionType": "inference"
       }
     ]
@@ -639,10 +989,20 @@
     "questions": [
       {
         "question": "Why can bees in cities sometimes produce more honey than bees in rural areas?",
-        "options": ["(A) City parks contain a wide variety of flowering plants year-round", "(B) City bees are given extra sugar by beekeepers", "(C) Rural areas do not allow beekeeping at all", "(D) City bees are a special, faster-working species"],
+        "options": [
+          "(A) City parks contain a wide variety of flowering plants year-round",
+          "(B) City bees are given extra sugar by beekeepers",
+          "(C) Rural areas do not allow beekeeping at all",
+          "(D) City bees are a special, faster-working species"
+        ],
         "answer": 0,
         "explanation": "文中提到「city parks and gardens often contain a wide variety of flowering plants throughout the year, giving bees a steady supply of nectar」，故選 A。",
-        "optionsZh": ["城市公園全年都有多樣化的開花植物", "城市的蜜蜂被養蜂人額外餵食糖分", "鄉村地區完全不允許養蜂", "城市的蜜蜂是特殊、工作更快的品種"],
+        "optionsZh": [
+          "城市公園全年都有多樣化的開花植物",
+          "城市的蜜蜂被養蜂人額外餵食糖分",
+          "鄉村地區完全不允許養蜂",
+          "城市的蜜蜂是特殊、工作更快的品種"
+        ],
         "questionType": "detail"
       }
     ]
@@ -657,10 +1017,20 @@
     "questions": [
       {
         "question": "Why does the uncle continue volunteering as a firefighter?",
-        "options": ["(A) He wants public recognition for his work", "(B) He believes the small town cannot always wait for outside help", "(C) He is paid a large salary for it", "(D) He was forced to volunteer by the town government"],
+        "options": [
+          "(A) He wants public recognition for his work",
+          "(B) He believes the small town cannot always wait for outside help",
+          "(C) He is paid a large salary for it",
+          "(D) He was forced to volunteer by the town government"
+        ],
         "answer": 1,
         "explanation": "文中提到他表示「our small town could not always wait for outside help to arrive」，故選 B。",
-        "optionsZh": ["他想要獲得公眾的認可", "他認為小鎮不能總是等待外部救援", "他因此獲得高額薪水", "他被鎮政府強迫去當志工"],
+        "optionsZh": [
+          "他想要獲得公眾的認可",
+          "他認為小鎮不能總是等待外部救援",
+          "他因此獲得高額薪水",
+          "他被鎮政府強迫去當志工"
+        ],
         "questionType": "inference"
       }
     ]
@@ -675,10 +1045,20 @@
     "questions": [
       {
         "question": "Why are forecasts for tomorrow usually more accurate than forecasts for a week later?",
-        "options": ["(A) Because weather never changes within a week", "(B) Because small errors in data can lead to very different predictions over time", "(C) Because computers cannot process weekly data", "(D) Because satellites only work for one day at a time"],
+        "options": [
+          "(A) Because weather never changes within a week",
+          "(B) Because small errors in data can lead to very different predictions over time",
+          "(C) Because computers cannot process weekly data",
+          "(D) Because satellites only work for one day at a time"
+        ],
         "answer": 1,
         "explanation": "文中提到「even small errors in the starting data can lead to very different predictions」，時間拉長誤差會擴大，故選 B。",
-        "optionsZh": ["因為天氣在一週內完全不會改變", "因為資料中的微小誤差經過時間會導致預測差異很大", "因為電腦無法處理一週的資料", "因為衛星一次只能運作一天"],
+        "optionsZh": [
+          "因為天氣在一週內完全不會改變",
+          "因為資料中的微小誤差經過時間會導致預測差異很大",
+          "因為電腦無法處理一週的資料",
+          "因為衛星一次只能運作一天"
+        ],
         "questionType": "inference"
       }
     ]
@@ -693,10 +1073,20 @@
     "questions": [
       {
         "question": "What happened when Henry displayed his stamp collection at the school exhibition?",
-        "options": ["(A) No one showed any interest in his collection", "(B) Many classmates were fascinated by the stories behind the stamps", "(C) His teacher asked him to remove the display", "(D) He decided to stop collecting stamps afterward"],
+        "options": [
+          "(A) No one showed any interest in his collection",
+          "(B) Many classmates were fascinated by the stories behind the stamps",
+          "(C) His teacher asked him to remove the display",
+          "(D) He decided to stop collecting stamps afterward"
+        ],
         "answer": 1,
         "explanation": "文中提到「many students gathered around his table, fascinated by the stories behind stamps」，故選 B。",
-        "optionsZh": ["沒有人對他的收藏感興趣", "許多同學對郵票背後的故事深感著迷", "老師要求他撤掉展示", "他之後決定停止收集郵票"],
+        "optionsZh": [
+          "沒有人對他的收藏感興趣",
+          "許多同學對郵票背後的故事深感著迷",
+          "老師要求他撤掉展示",
+          "他之後決定停止收集郵票"
+        ],
         "questionType": "detail"
       }
     ]
@@ -711,10 +1101,20 @@
     "questions": [
       {
         "question": "What life lesson does learning an instrument often teach, according to the passage?",
-        "options": ["(A) That talent matters more than practice", "(B) That patience and handling failure are important parts of progress", "(C) That mistakes should always be avoided completely", "(D) That music lessons are only useful for professional musicians"],
+        "options": [
+          "(A) That talent matters more than practice",
+          "(B) That patience and handling failure are important parts of progress",
+          "(C) That mistakes should always be avoided completely",
+          "(D) That music lessons are only useful for professional musicians"
+        ],
         "answer": 1,
         "explanation": "文中提到學樂器教會人「patience and handling failure」，進步是逐漸累積而非一蹴可幾，故選 B。",
-        "optionsZh": ["天賦比練習更重要", "耐心與面對失敗是進步的重要部分", "錯誤永遠應該被完全避免", "音樂課只對職業音樂家有用"],
+        "optionsZh": [
+          "天賦比練習更重要",
+          "耐心與面對失敗是進步的重要部分",
+          "錯誤永遠應該被完全避免",
+          "音樂課只對職業音樂家有用"
+        ],
         "questionType": "main_idea"
       }
     ]
@@ -729,10 +1129,20 @@
     "questions": [
       {
         "question": "Why was the vendor's stall quieter than usual on the rainy evening?",
-        "options": ["(A) She had decided to close early", "(B) Business had been slow all week because of bad weather", "(C) The market had been shut down by the city", "(D) She had run out of corn to sell"],
+        "options": [
+          "(A) She had decided to close early",
+          "(B) Business had been slow all week because of bad weather",
+          "(C) The market had been shut down by the city",
+          "(D) She had run out of corn to sell"
+        ],
         "answer": 1,
         "explanation": "文中提到她表示「business had been slow all week because of the bad weather」，故選 B。",
-        "optionsZh": ["她決定提早收攤", "由於天氣不好，整週生意都很清淡", "市場被市政府關閉了", "她的玉米已經賣完了"],
+        "optionsZh": [
+          "她決定提早收攤",
+          "由於天氣不好，整週生意都很清淡",
+          "市場被市政府關閉了",
+          "她的玉米已經賣完了"
+        ],
         "questionType": "detail"
       }
     ]
@@ -747,10 +1157,20 @@
     "questions": [
       {
         "question": "What is one reason recycling electronics is important, according to the passage?",
-        "options": ["(A) Electronics contain valuable metals that can be reused", "(B) Old electronics never contain any harmful materials", "(C) Recycling electronics is required by law everywhere", "(D) New electronics cannot be made without recycling"],
+        "options": [
+          "(A) Electronics contain valuable metals that can be reused",
+          "(B) Old electronics never contain any harmful materials",
+          "(C) Recycling electronics is required by law everywhere",
+          "(D) New electronics cannot be made without recycling"
+        ],
         "answer": 0,
         "explanation": "文中提到裝置內含有「valuable metals, such as gold and silver, which can be recovered and reused」，故選 A。",
-        "optionsZh": ["電子產品含有可回收再利用的貴重金屬", "舊的電子產品完全不含任何有害物質", "所有地方都以法律規定必須回收電子產品", "沒有回收就無法製造新的電子產品"],
+        "optionsZh": [
+          "電子產品含有可回收再利用的貴重金屬",
+          "舊的電子產品完全不含任何有害物質",
+          "所有地方都以法律規定必須回收電子產品",
+          "沒有回收就無法製造新的電子產品"
+        ],
         "questionType": "detail"
       }
     ]
@@ -765,10 +1185,20 @@
     "questions": [
       {
         "question": "How did the used-book exchange event change over time?",
-        "options": ["(A) It stayed small and unpopular the whole time", "(B) It grew from a small event into a popular activity with many books", "(C) It was cancelled after the first day", "(D) Only teachers participated in the exchange"],
+        "options": [
+          "(A) It stayed small and unpopular the whole time",
+          "(B) It grew from a small event into a popular activity with many books",
+          "(C) It was cancelled after the first day",
+          "(D) Only teachers participated in the exchange"
+        ],
         "answer": 1,
         "explanation": "文中提到活動從一開始只有少數學生參加，到最後變成滿滿一整排書架，顯示活動逐漸擴大，故選 B。",
-        "optionsZh": ["活動始終冷清、不受歡迎", "活動從小規模逐漸發展成擁有大量書籍的熱門活動", "活動在第一天就被取消", "只有老師參與了這場交換活動"],
+        "optionsZh": [
+          "活動始終冷清、不受歡迎",
+          "活動從小規模逐漸發展成擁有大量書籍的熱門活動",
+          "活動在第一天就被取消",
+          "只有老師參與了這場交換活動"
+        ],
         "questionType": "inference"
       }
     ]
@@ -783,10 +1213,20 @@
     "questions": [
       {
         "question": "According to the passage, what actually happens when people think they are multitasking?",
-        "options": ["(A) The brain does multiple tasks at exactly the same time", "(B) The brain quickly switches back and forth between tasks", "(C) The brain completely shuts down one task", "(D) The brain becomes twice as fast at every task"],
+        "options": [
+          "(A) The brain does multiple tasks at exactly the same time",
+          "(B) The brain quickly switches back and forth between tasks",
+          "(C) The brain completely shuts down one task",
+          "(D) The brain becomes twice as fast at every task"
+        ],
         "answer": 1,
         "explanation": "文中提到「What feels like multitasking is often the brain quickly switching back and forth between tasks」，故選 B。",
-        "optionsZh": ["大腦真的同時處理多項任務", "大腦其實是快速在不同任務間切換", "大腦會完全關閉其中一項任務", "大腦處理每項任務的速度都變成兩倍快"],
+        "optionsZh": [
+          "大腦真的同時處理多項任務",
+          "大腦其實是快速在不同任務間切換",
+          "大腦會完全關閉其中一項任務",
+          "大腦處理每項任務的速度都變成兩倍快"
+        ],
         "questionType": "detail"
       }
     ]
@@ -801,10 +1241,20 @@
     "questions": [
       {
         "question": "What difficulty did the writer face while preparing the family dish?",
-        "options": ["(A) The recipe card was faded and hard to read clearly", "(B) The family refused to share the recipe with her", "(C) She had no ingredients available at home", "(D) The contest rules did not allow old recipes"],
+        "options": [
+          "(A) The recipe card was faded and hard to read clearly",
+          "(B) The family refused to share the recipe with her",
+          "(C) She had no ingredients available at home",
+          "(D) The contest rules did not allow old recipes"
+        ],
         "answer": 0,
         "explanation": "文中提到「The recipe card was faded and hard to read, with some measurements smudged beyond recognition」，故選 A。",
-        "optionsZh": ["食譜卡片褪色且難以辨讀", "家人拒絕把食譜分享給她", "她家裡完全沒有材料可用", "比賽規則不允許使用老食譜"],
+        "optionsZh": [
+          "食譜卡片褪色且難以辨讀",
+          "家人拒絕把食譜分享給她",
+          "她家裡完全沒有材料可用",
+          "比賽規則不允許使用老食譜"
+        ],
         "questionType": "detail"
       }
     ]
@@ -819,10 +1269,20 @@
     "questions": [
       {
         "question": "Why do the colors of a rainbow always appear in the same order?",
-        "options": ["(A) Because each color bends by a slightly different amount through water", "(B) Because rainbows only appear in the morning", "(C) Because raindrops are always the same size", "(D) Because sunlight has only one color inside it"],
+        "options": [
+          "(A) Because each color bends by a slightly different amount through water",
+          "(B) Because rainbows only appear in the morning",
+          "(C) Because raindrops are always the same size",
+          "(D) Because sunlight has only one color inside it"
+        ],
         "answer": 0,
         "explanation": "文中提到「Each color of light bends by a slightly different amount as it moves through the water」，因此顏色順序固定，故選 A。",
-        "optionsZh": ["因為每種顏色的光在通過水時彎曲的角度略有不同", "因為彩虹只會在早上出現", "因為雨滴的大小永遠相同", "因為陽光內只含有一種顏色"],
+        "optionsZh": [
+          "因為每種顏色的光在通過水時彎曲的角度略有不同",
+          "因為彩虹只會在早上出現",
+          "因為雨滴的大小永遠相同",
+          "因為陽光內只含有一種顏色"
+        ],
         "questionType": "inference"
       }
     ]
@@ -837,10 +1297,20 @@
     "questions": [
       {
         "question": "How did Marcus feel while camping alone at night?",
-        "options": ["(A) Completely calm and unafraid the entire time", "(B) Nervous, but he managed to fall asleep eventually", "(C) So frightened that he walked home immediately", "(D) Angry at his parents for letting him go"],
+        "options": [
+          "(A) Completely calm and unafraid the entire time",
+          "(B) Nervous, but he managed to fall asleep eventually",
+          "(C) So frightened that he walked home immediately",
+          "(D) Angry at his parents for letting him go"
+        ],
         "answer": 1,
         "explanation": "文中提到他不斷檢查手電筒電池，顯示緊張，但「managed to fall asleep eventually」，故選 B。",
-        "optionsZh": ["全程完全冷靜、毫不害怕", "感到緊張，但最終還是睡著了", "害怕到立刻走路回家", "對讓他去露營的父母感到生氣"],
+        "optionsZh": [
+          "全程完全冷靜、毫不害怕",
+          "感到緊張，但最終還是睡著了",
+          "害怕到立刻走路回家",
+          "對讓他去露營的父母感到生氣"
+        ],
         "questionType": "inference"
       }
     ]
@@ -855,10 +1325,20 @@
     "questions": [
       {
         "question": "What were early chopsticks originally used for, according to the passage?",
-        "options": ["(A) Eating directly at the dining table", "(B) Cooking, especially reaching into hot pots", "(C) Cutting large pieces of meat", "(D) Serving tea to guests"],
+        "options": [
+          "(A) Eating directly at the dining table",
+          "(B) Cooking, especially reaching into hot pots",
+          "(C) Cutting large pieces of meat",
+          "(D) Serving tea to guests"
+        ],
         "answer": 1,
         "explanation": "文中提到早期筷子「originally used mainly for cooking, helping people reach into hot pots」，故選 B。",
-        "optionsZh": ["在餐桌上直接進食", "烹飪用途，特別是伸入熱鍋中取物", "切割大塊的肉", "為客人端茶"],
+        "optionsZh": [
+          "在餐桌上直接進食",
+          "烹飪用途，特別是伸入熱鍋中取物",
+          "切割大塊的肉",
+          "為客人端茶"
+        ],
         "questionType": "detail"
       }
     ]
@@ -873,10 +1353,20 @@
     "questions": [
       {
         "question": "How did Mr. Adams make math lessons different from usual?",
-        "options": ["(A) He gave students more worksheets than usual", "(B) He turned lessons into small competitions and puzzles", "(C) He cancelled math class for the whole week", "(D) He only reviewed old lessons students already knew"],
+        "options": [
+          "(A) He gave students more worksheets than usual",
+          "(B) He turned lessons into small competitions and puzzles",
+          "(C) He cancelled math class for the whole week",
+          "(D) He only reviewed old lessons students already knew"
+        ],
         "answer": 1,
         "explanation": "文中提到 Mr. Adams「turning math lessons into small competitions and puzzles」，故選 B。",
-        "optionsZh": ["他給學生比平常更多的作業單", "他把課程變成小型競賽和謎題", "他取消了整週的數學課", "他只複習學生已經學過的內容"],
+        "optionsZh": [
+          "他給學生比平常更多的作業單",
+          "他把課程變成小型競賽和謎題",
+          "他取消了整週的數學課",
+          "他只複習學生已經學過的內容"
+        ],
         "questionType": "detail"
       }
     ]
@@ -891,11 +1381,1421 @@
     "questions": [
       {
         "question": "How do ants mainly communicate with each other, according to the passage?",
-        "options": ["(A) Through sounds and body movements", "(B) Through chemical signals called pheromones", "(C) Through direct physical contact only", "(D) Through visual signals using their eyes"],
+        "options": [
+          "(A) Through sounds and body movements",
+          "(B) Through chemical signals called pheromones",
+          "(C) Through direct physical contact only",
+          "(D) Through visual signals using their eyes"
+        ],
         "answer": 1,
         "explanation": "文中提到螞蟻「communicate mainly through chemical signals called pheromones」，故選 B。",
-        "optionsZh": ["透過聲音與肢體動作", "透過稱為費洛蒙的化學訊號", "只透過直接的身體接觸", "透過眼睛傳遞的視覺訊號"],
+        "optionsZh": [
+          "透過聲音與肢體動作",
+          "透過稱為費洛蒙的化學訊號",
+          "只透過直接的身體接觸",
+          "透過眼睛傳遞的視覺訊號"
+        ],
         "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_051",
+    "passageType": "narrative",
+    "title": "The School Basketball Tryout",
+    "passage": "When the sign-up sheet for the school basketball team appeared on the gym wall, I stared at it for almost five minutes before writing my name. I had practiced shooting hoops in my driveway every evening for months, but I had never played on an actual team, and the thought of trying out in front of the coach made my stomach twist with nerves.\n\nOn the day of the tryout, about thirty students showed up, and most of them looked far more confident than I felt. The coach divided us into small groups and asked us to dribble around cones, pass to a partner, and finally take turns shooting free throws. My hands were shaking during the first few drills, but once I focused on the basket instead of the other players watching me, my shots began to fall more smoothly.\n\nA week later, the team list was posted outside the gym office, and I pushed through the crowd to find my name near the bottom of the page. It did not matter that I would likely sit on the bench for most early games; what mattered was that months of quiet practice in my driveway had finally paid off in front of people who mattered.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "How did the narrator most likely feel after seeing his name on the team list?",
+        "options": [
+          "(A) Disappointed because he expected to be a starter",
+          "(B) Proud that his practice had finally been rewarded",
+          "(C) Confused about why he was chosen",
+          "(D) Worried that the coach made a mistake"
+        ],
+        "answer": 1,
+        "explanation": "文末提到「months of quiet practice... had finally paid off」，顯示敘述者對自己的努力得到回報感到驕傲，故選 B。",
+        "optionsZh": [
+          "失望，因為他原本期待成為先發球員",
+          "驕傲，因為他的努力終於得到回報",
+          "困惑，不知道自己為何被選上",
+          "擔心教練選錯了人"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_052",
+    "passageType": "informational",
+    "title": "The Science of Dreams",
+    "passage": "Almost everyone dreams every night, even though many people forget most of what they saw within minutes of waking up. Scientists have studied sleep for decades, and they now believe that dreaming happens most vividly during a stage called REM sleep, when our eyes move rapidly beneath closed eyelids and our brain becomes almost as active as when we are awake.\n\nResearchers are still debating exactly why we dream, but several theories offer helpful clues. One idea suggests that dreams help the brain sort through memories from the day, keeping useful information while clearing out details that no longer matter. Another theory proposes that dreaming allows people to safely practice handling frightening or stressful situations, which may explain why so many dreams involve being chased or facing sudden danger.\n\nInterestingly, studies show that people who are woken up during REM sleep can usually describe their dreams in great detail, while those woken later often remember almost nothing at all. This has led some scientists to suggest that dreams are not lost after we wake up; instead, they simply fade quickly unless we make an effort to recall them right away, such as by writing them down immediately after opening our eyes.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What is the main idea of this passage?",
+        "options": [
+          "(A) Dreams always predict future events",
+          "(B) Scientists fully understand why humans dream",
+          "(C) Dreaming mostly happens during REM sleep and may help the brain process memories",
+          "(D) People never remember their dreams"
+        ],
+        "answer": 2,
+        "explanation": "全文說明做夢主要發生在快速動眼期(REM)，並討論夢境可能幫助大腦整理記憶或處理壓力，故選 C 最符合主旨。",
+        "optionsZh": [
+          "夢境總是能預知未來的事",
+          "科學家已完全了解人類為何做夢",
+          "做夢主要發生在快速動眼期，可能幫助大腦處理記憶",
+          "人們從來都不會記得自己的夢"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_053",
+    "passageType": "narrative",
+    "title": "The Missing Cat",
+    "passage": "Our cat, Mochi, had never once run away in the three years we owned him, so when he did not appear for dinner one evening, my whole family began to panic. My little sister cried while checking under every piece of furniture, and my mother immediately printed out flyers with Mochi's photo to hang around the neighborhood before it got dark.\n\nWe spent the next two hours walking up and down our street, calling his name and shaking a bag of his favorite treats. Several neighbors joined the search after seeing our flyers, and one elderly man mentioned that he had noticed a gray cat sitting near the old drainage pipe behind the community center earlier that afternoon. We rushed over immediately, and sure enough, we found Mochi crouched deep inside the pipe, too frightened by a passing dog to come back out on his own.\n\nIt took nearly twenty minutes of gentle coaxing and a handful of treats before Mochi finally crawled toward us, meowing loudly as if scolding us for taking so long to find him. That night, my sister slept with Mochi curled beside her pillow, and we all agreed that from then on, we would keep the backyard gate closed no matter how quickly we were leaving the house.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "Why had Mochi hidden inside the drainage pipe?",
+        "options": [
+          "(A) He was chasing a mouse",
+          "(B) He was scared of a passing dog",
+          "(C) He wanted to sleep somewhere cool",
+          "(D) He was lost and could not find his way home"
+        ],
+        "answer": 1,
+        "explanation": "文中提到 Mochi「too frightened by a passing dog to come back out on his own」，說明牠是被路過的狗嚇到才躲進水管，故選 B。",
+        "optionsZh": [
+          "牠在追一隻老鼠",
+          "牠被一隻路過的狗嚇到了",
+          "牠想找個涼爽的地方睡覺",
+          "牠迷路了找不到回家的路"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_054",
+    "passageType": "informational",
+    "title": "How Volcanoes Shape the Earth",
+    "passage": "Volcanoes are often seen only as dangerous forces of destruction, but they have actually played a major role in shaping the surface of our planet over millions of years. When molten rock, called magma, rises from deep underground and erupts as lava, it slowly builds new land as it cools and hardens, sometimes creating entire mountains or even new islands in the middle of the ocean.\n\nMany of the world's most fertile farming regions sit near volcanoes, which might seem surprising given how destructive eruptions can be. The ash released during an eruption is rich in minerals that plants need to grow, and over time this ash breaks down into extremely fertile soil. This is one reason why millions of people continue to live and farm near active volcanoes despite the ongoing risk of future eruptions.\n\nScientists today monitor volcanoes closely using instruments that detect small earthquakes, changes in gas levels, and even slight shifts in the shape of the ground, all of which can signal that an eruption may be coming. While predicting the exact moment of an eruption remains extremely difficult, these warning systems have already helped save countless lives by giving nearby communities enough time to evacuate safely before disaster strikes.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "According to the passage, why do many people live near volcanoes despite the danger?",
+        "options": [
+          "(A) Volcanoes provide a source of clean water",
+          "(B) The land near volcanoes is often very fertile for farming",
+          "(C) Governments require people to live there",
+          "(D) Volcanoes protect nearby areas from storms"
+        ],
+        "answer": 1,
+        "explanation": "文中提到火山灰富含礦物質，使土壤變得非常肥沃，因此許多人願意住在火山附近耕作，故選 B。",
+        "optionsZh": [
+          "火山能提供乾淨的水源",
+          "火山附近的土地通常非常肥沃，適合耕種",
+          "政府要求人們住在那裡",
+          "火山能保護附近地區不受暴風雨侵襲"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_055",
+    "passageType": "narrative",
+    "title": "The Summer Internship",
+    "passage": "I never expected to spend my summer vacation answering phones and organizing files at a small architecture firm downtown, but when my uncle offered me a two-week internship, my parents insisted that the experience would be good for me. On the first day, I felt completely out of place among adults discussing blueprints and building codes I barely understood.\n\nBy the second week, however, one of the architects noticed how carefully I studied the drawings pinned around the office, and she began explaining the basic ideas behind each design. She showed me how a building's shape could affect how much natural light entered each room, and how choosing the right materials could make a home both beautiful and energy efficient. For the first time, the strange lines and numbers on the blueprints started to make real sense.\n\nOn my last day, she handed me a simple task: sketch a small reading nook for an actual client's living room using what I had learned. I spent hours adjusting the size of the window and the placement of the bookshelf, and when she reviewed my sketch, she smiled and said parts of it might actually be used. I left that summer no longer thinking of architecture as boring lines on paper, but as a way of shaping how people live.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What can be inferred about the narrator's feelings toward architecture by the end of the internship?",
+        "options": [
+          "(A) He still found it boring and confusing",
+          "(B) He developed a genuine interest in the field",
+          "(C) He decided never to think about it again",
+          "(D) He preferred answering phones instead"
+        ],
+        "answer": 1,
+        "explanation": "文末提到敘述者不再認為建築只是無聊的線條，而是塑造人們生活的方式，顯示他對建築產生了真正的興趣，故選 B。",
+        "optionsZh": [
+          "他仍然覺得建築無聊又難懂",
+          "他對這個領域產生了真正的興趣",
+          "他決定以後再也不去想它",
+          "他比較喜歡接電話的工作"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_056",
+    "passageType": "informational",
+    "title": "The Benefits of Journaling",
+    "passage": "Writing a few lines in a personal journal each day might seem like a small habit, but researchers have found that it can offer surprisingly powerful benefits for both the mind and body. Many psychologists now recommend journaling as a simple way to reduce stress, since putting worries into words often makes them feel more manageable than when they remain trapped inside our heads.\n\nStudies have also shown that people who journal regularly tend to sleep better at night. Writing down the day's events, including anything that caused anxiety, seems to help the brain process those thoughts before bedtime instead of replaying them repeatedly once the lights go out. Some doctors even suggest keeping a journal beside the bed specifically for this purpose, encouraging patients to write for just five minutes before turning off the lamp.\n\nJournaling does not require perfect grammar, beautiful handwriting, or deep philosophical insight to be effective. Simply describing what happened during the day, how it made you feel, and what you are grateful for can be enough to notice real benefits over time. For students especially, keeping a journal can also become a valuable record of personal growth, allowing them to look back years later and see exactly how far they have come.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "According to the passage, how might journaling before bedtime help someone sleep?",
+        "options": [
+          "(A) It tires the hand from writing",
+          "(B) It helps the brain process thoughts instead of replaying them",
+          "(C) It makes the room feel calmer",
+          "(D) It replaces the need for medicine"
+        ],
+        "answer": 1,
+        "explanation": "文中說明睡前寫日記能幫助大腦處理當天的想法，而不是不斷在腦中重複播放，故選 B。",
+        "optionsZh": [
+          "書寫會讓手感到疲累",
+          "它能幫助大腦處理想法，而不是不斷重複播放",
+          "它會讓房間感覺更平靜",
+          "它能取代藥物的作用"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_057",
+    "passageType": "narrative",
+    "title": "The Neighborhood Bake Sale",
+    "passage": "Our street decided to hold a bake sale to raise money for a family whose house had been damaged in a small fire, and my mother volunteered our kitchen as the main baking station for the entire weekend. By Friday night, our counters were covered with flour, mixing bowls, and trays of cookies waiting to cool before being packed into bags.\n\nSaturday morning arrived with gray clouds that worried everyone helping set up the tables outside the community center, but the rain thankfully held off. Neighbors of all ages contributed something, from Mr. Alvarez's famous banana bread to a shy ten-year-old boy who proudly displayed a plate of slightly lopsided cupcakes he had decorated himself. Within the first hour, half the tables were already nearly empty.\n\nBy the time we packed up in the afternoon, we had raised far more money than anyone had originally expected, enough to help the family replace several damaged appliances. What surprised me most, though, was not the amount of money collected but how many strangers had stopped simply to chat, share stories, and offer encouragement to one another. The bake sale had started as a fundraiser, but by the end of the day, it felt more like the whole street had become one large family.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What was the main purpose of the bake sale?",
+        "options": [
+          "(A) To celebrate a neighborhood holiday",
+          "(B) To raise money for a family whose house was damaged in a fire",
+          "(C) To introduce new neighbors to each other",
+          "(D) To sell baked goods for a school fundraiser"
+        ],
+        "answer": 1,
+        "explanation": "文章開頭說明義賣是為了幫助房屋因火災受損的家庭籌措資金，故選 B。",
+        "optionsZh": [
+          "為了慶祝社區的節日",
+          "為了替房屋因火災受損的家庭籌款",
+          "為了讓新鄰居互相認識",
+          "為了替學校募款而賣糕點"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_058",
+    "passageType": "informational",
+    "title": "How Glaciers Are Melting",
+    "passage": "Glaciers are enormous rivers of slowly moving ice found in mountain ranges and polar regions around the world, and they have existed in many places for thousands of years. In recent decades, however, scientists have observed that glaciers nearly everywhere are shrinking at a much faster rate than in the past, mainly because rising global temperatures cause ice to melt faster than new snow can replace it.\n\nThis melting matters far beyond the mountains where glaciers are located. Many rivers that millions of people depend on for drinking water and farming are fed by glacial meltwater, and as glaciers continue to shrink, these water supplies could eventually become unreliable during the driest months of the year. In addition, melting glaciers and ice sheets contribute significantly to rising sea levels, which threatens coastal cities and low-lying islands across the globe.\n\nResearchers now use satellites and ground measurements to track glacier size year after year, creating detailed records that help predict future changes. Some glaciers have already lost so much ice that scientists no longer expect them to survive the next fifty years. While reversing this trend would require major global efforts to reduce greenhouse gas emissions, understanding exactly how and why glaciers are melting remains an essential first step toward protecting the communities that depend on them.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "Why is glacier melting a concern for people who do not live near mountains?",
+        "options": [
+          "(A) Because glaciers control the weather everywhere",
+          "(B) Because glaciers feed rivers used for drinking water and cause rising sea levels",
+          "(C) Because glaciers produce most of the world's electricity",
+          "(D) Because glaciers prevent earthquakes"
+        ],
+        "answer": 1,
+        "explanation": "文中提到冰川融水供給河流的飲用水和灌溉用水，且融化的冰川會導致海平面上升，影響沿海城市，故選 B。",
+        "optionsZh": [
+          "因為冰川控制著全世界的天氣",
+          "因為冰川供給河流飲用水，且融化會導致海平面上升",
+          "因為冰川生產全世界大部分的電力",
+          "因為冰川能防止地震發生"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_059",
+    "passageType": "narrative",
+    "title": "The Robotics Competition",
+    "passage": "Our robotics club had spent nearly four months building a small robot designed to sort colored balls into matching bins, and the regional competition finally arrived on a cold Saturday morning in November. We had tested the robot dozens of times in our cramped classroom, but the competition arena looked completely different, with brighter lights and a slicker floor that made our robot's wheels slip unexpectedly.\n\nDuring our first practice run on the actual course, the robot's sensor failed to detect the blue balls correctly, sorting nearly half of them into the wrong bin. Panic spread through our team as the clock ticked down toward our official match. Our team captain, usually calm under pressure, quickly suggested adjusting the sensor's height by just a few millimeters, a change none of us had tried before because it seemed too small to matter.\n\nWhen our official match began, we held our breath as the robot rolled forward and began sorting the balls one by one. To everyone's relief, the tiny adjustment had worked perfectly, and our robot sorted every single ball correctly for the first time all day. We did not win first place overall, but placing third out of twenty teams felt like an enormous victory after such a stressful morning.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What problem did the team's robot have during the practice run?",
+        "options": [
+          "(A) Its wheels stopped moving completely",
+          "(B) Its sensor failed to detect blue balls correctly",
+          "(C) It ran out of battery power",
+          "(D) It moved too slowly to finish in time"
+        ],
+        "answer": 1,
+        "explanation": "文中提到機器人的感應器無法正確偵測藍色球，導致近一半的球被分類到錯誤的箱子，故選 B。",
+        "optionsZh": [
+          "它的輪子完全停止轉動",
+          "它的感應器無法正確偵測藍色球",
+          "它的電池電量耗盡",
+          "它移動得太慢，來不及完成"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_060",
+    "passageType": "informational",
+    "title": "The History of Tea",
+    "passage": "Tea is one of the most widely consumed drinks in the world today, but its story began thousands of years ago in ancient China. According to legend, an emperor discovered tea by accident when a few leaves from a nearby tree drifted into a pot of boiling water he was preparing, creating a fragrant drink he found surprisingly pleasant to taste.\n\nFor many centuries, tea remained mostly a Chinese tradition, valued not only as a beverage but also as an important part of medicine and culture. It eventually spread to Japan, where it developed into an elaborate ceremony emphasizing calmness, respect, and careful preparation. Traders later carried tea westward along busy routes, and by the seventeenth century, it had become fashionable among wealthy families across Europe, who often served it in delicate porcelain cups.\n\nToday, tea is grown and enjoyed in nearly every corner of the world, from the misty hillsides of India to small farms in South America. Different regions have developed their own unique styles, ranging from strong black tea served with milk to delicate green tea poured without any additions at all. Despite these countless variations, tea continues to bring people together in much the same simple way it did thousands of years ago.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What is this passage mainly about?",
+        "options": [
+          "(A) How to properly brew a cup of tea",
+          "(B) The health benefits of drinking tea daily",
+          "(C) The historical origin and spread of tea around the world",
+          "(D) A comparison between coffee and tea"
+        ],
+        "answer": 2,
+        "explanation": "全文從茶在中國的起源開始，敘述它如何傳播到日本、歐洲及全世界，故主旨為茶的歷史起源與傳播，選 C。",
+        "optionsZh": [
+          "如何正確地泡一杯茶",
+          "每天喝茶的健康好處",
+          "茶的歷史起源以及在全世界的傳播",
+          "咖啡與茶的比較"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_061",
+    "passageType": "narrative",
+    "title": "The First Day at the Animal Shelter",
+    "passage": "I had wanted to volunteer at the local animal shelter for over a year, but my parents kept insisting I wait until I was old enough to handle the responsibility properly. On my fourteenth birthday, they finally agreed to sign the permission form, and I could barely sleep the night before my first shift began.\n\nThe shelter manager assigned me to help clean the dog kennels and refill water bowls, a task that sounded simple until I actually stood in front of a large, nervous dog who barked loudly every time I approached his cage. A more experienced volunteer noticed my hesitation and showed me how to move slowly, avoid direct eye contact, and speak in a calm, quiet voice instead of rushing through the work.\n\nBy the end of my three-hour shift, that same nervous dog had allowed me to sit beside his kennel and gently scratch behind his ears. The shelter manager later told me he had been surrendered by a previous owner and rarely trusted new people so quickly. Walking home that evening, exhausted and covered in dog hair, I realized that patience mattered far more than any amount of enthusiasm I had brought with me that morning.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What did the narrator learn from her first shift at the shelter?",
+        "options": [
+          "(A) That dogs should always be avoided when nervous",
+          "(B) That patience mattered more than enthusiasm",
+          "(C) That cleaning kennels was the most important job",
+          "(D) That she was not ready to volunteer yet"
+        ],
+        "answer": 1,
+        "explanation": "文末提到她體悟到「patience mattered far more than any amount of enthusiasm」，說明耐心比熱情更重要，故選 B。",
+        "optionsZh": [
+          "狗狗緊張時應該完全避開牠",
+          "耐心比熱情更重要",
+          "清潔狗舍是最重要的工作",
+          "她還沒準備好去當志工"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_062",
+    "passageType": "informational",
+    "title": "Why We Get Goosebumps",
+    "passage": "Almost everyone has experienced goosebumps at some point, whether from stepping outside on a freezing morning or feeling a sudden chill while watching a scary movie. These tiny bumps appear when small muscles at the base of each hair follicle contract, causing the hair to stand up slightly straighter than usual.\n\nScientists believe this reaction is actually a leftover trait from our distant ancestors. For animals covered in thick fur, raising the hair like this trapped a layer of warm air close to the skin, helping them stay warm in cold weather. The same reaction also made animals appear larger and more threatening when frightened, which could help scare away potential predators or rivals.\n\nHumans no longer have enough body hair for goosebumps to keep us warm or make us look bigger, yet the reflex remains built into our nervous system regardless. This is why goosebumps can appear not only from cold temperatures but also from strong emotions, such as listening to powerful music, watching an exciting sports moment, or feeling a sudden rush of fear. Even though the original purpose has mostly disappeared, this small physical reaction continues to connect us to our ancient evolutionary past.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "According to the passage, why did goosebumps originally help our ancestors?",
+        "options": [
+          "(A) They helped animals swim faster",
+          "(B) They kept ancestors warm and made them appear larger to predators",
+          "(C) They improved eyesight in the dark",
+          "(D) They helped ancestors digest food more easily"
+        ],
+        "answer": 1,
+        "explanation": "文中說明豎起的毛髮能鎖住溫暖空氣保暖，同時讓動物看起來更大、更具威脅性以嚇退掠食者，故選 B。",
+        "optionsZh": [
+          "它們幫助動物游得更快",
+          "它們能保暖，並讓祖先在掠食者面前顯得更巨大",
+          "它們能改善夜間視力",
+          "它們幫助祖先更容易消化食物"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_063",
+    "passageType": "narrative",
+    "title": "The Lost Hiking Trail",
+    "passage": "My father and I set out early one Saturday morning to hike a trail we had walked together many times before, but a recent storm had knocked down several trees, hiding the usual path markers beneath piles of broken branches. About an hour into the hike, we realized we had somehow wandered off the marked trail without noticing exactly where we had gone wrong.\n\nInstead of panicking, my father pulled out the small compass he always kept in his backpack and reminded me of the basic navigation skills he had taught me years earlier. We compared the compass direction with the general shape of the mountain ridge we could see through the trees, slowly working out roughly where the main trail should be located relative to our current position.\n\nAfter nearly forty minutes of careful, deliberate walking, we spotted a faded orange marker nailed to a tree trunk, and relief washed over both of us at the same moment. My father later admitted that even experienced hikers occasionally lose the trail, and that staying calm rather than rushing forward blindly was always the safest choice. That evening, as tired as I felt, I found myself already looking forward to our next hike together.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What did the father do when they realized they had left the marked trail?",
+        "options": [
+          "(A) He called for help on his phone",
+          "(B) He used a compass and the mountain ridge to figure out their position",
+          "(C) He decided to turn back immediately without a plan",
+          "(D) He waited for another hiker to find them"
+        ],
+        "answer": 1,
+        "explanation": "文中提到父親拿出指南針，並比對山脊的形狀來判斷主要步道大致的方向與位置，故選 B。",
+        "optionsZh": [
+          "他用手機打電話求助",
+          "他利用指南針和山脊的形狀來判斷位置",
+          "他決定毫無計畫地立刻折返",
+          "他等待其他登山客來找他們"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_064",
+    "passageType": "informational",
+    "title": "The Rise of Electric Cars",
+    "passage": "Electric cars were once considered a rare and expensive novelty, but in recent years they have become an increasingly common sight on roads around the world. Unlike traditional vehicles that burn gasoline, electric cars run on rechargeable batteries, producing no exhaust fumes while driving and generally requiring far less regular maintenance than gasoline-powered engines.\n\nOne major reason for this rapid growth has been steadily improving battery technology, which now allows many electric cars to travel several hundred kilometers on a single charge, a distance that would have seemed impossible just fifteen years ago. Governments in many countries have also encouraged the shift by offering financial incentives to buyers and investing heavily in public charging stations along highways and in city centers.\n\nDespite this progress, electric cars still face real challenges before they can fully replace gasoline vehicles everywhere. Charging an electric car generally takes much longer than filling a gas tank, and in some rural areas, charging stations remain scarce or difficult to find. Battery production also requires certain rare minerals that raise their own environmental and ethical concerns. Even so, most experts agree that electric vehicles will continue playing a growing role in transportation as technology and infrastructure keep improving.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "According to the passage, what challenge do electric cars still face?",
+        "options": [
+          "(A) They cannot travel long distances at all",
+          "(B) Charging takes longer than filling a gas tank and stations can be scarce",
+          "(C) They require more maintenance than gasoline cars",
+          "(D) Governments refuse to support their development"
+        ],
+        "answer": 1,
+        "explanation": "文中提到充電比加油花費更多時間，且在偏遠地區充電站仍然稀少，故選 B。",
+        "optionsZh": [
+          "它們完全無法行駛長距離",
+          "充電比加油花更多時間，且充電站可能很稀少",
+          "它們比汽油車需要更多保養",
+          "政府拒絕支持它們的發展"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_065",
+    "passageType": "narrative",
+    "title": "The School Debate Team",
+    "passage": "When my teacher suggested I join the school debate team, I laughed out loud, certain she had mistaken me for a more confident student. I had always avoided speaking in front of the class, preferring to sit quietly near the back and let others answer questions instead. Still, she insisted I at least attend one practice session before deciding for certain.\n\nMy first practice was far more terrifying than I expected. I was given only ten minutes to prepare an argument about whether school lunches should be free for every student, and my hands trembled so badly that I nearly dropped my notecards while walking to the front of the room. My argument was disorganized, and I forgot half of what I had planned to say, yet nobody laughed or criticized me the way I had feared.\n\nOver the following weeks, the team captain worked patiently with me on organizing my thoughts and speaking more slowly instead of rushing through nervousness. By our first actual competition two months later, I still felt nervous, but my voice no longer shook uncontrollably, and I managed to make three clear points that even earned a nod of approval from one of the judges. Debate had not magically transformed me into a confident speaker, but it had proven I was capable of far more than I once believed.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "What can be inferred about the narrator's growth throughout the passage?",
+        "options": [
+          "(A) She remained just as nervous as before with no change",
+          "(B) She gradually built confidence through practice despite still feeling nervous",
+          "(C) She quit the debate team after the first practice",
+          "(D) She became the most confident speaker on the team immediately"
+        ],
+        "answer": 1,
+        "explanation": "文中描述她從第一次練習極度緊張，到比賽時雖仍緊張但能清楚表達論點，顯示她透過練習逐漸建立自信，故選 B。",
+        "optionsZh": [
+          "她始終和之前一樣緊張，毫無改變",
+          "儘管仍會緊張，她透過練習逐漸建立自信",
+          "她在第一次練習後就退出辯論隊",
+          "她立刻成為隊上最自信的演說者"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_066",
+    "passageType": "informational",
+    "title": "The Secret Language of Whales",
+    "passage": "Beneath the surface of the ocean, whales communicate using a remarkable range of sounds that can travel astonishing distances through water. Humpback whales, for example, are famous for producing long, complex songs that can last more than twenty minutes and repeat in patterns that scientists are still working to fully understand.\n\nThese underwater sounds serve several important purposes. Some calls appear to help whales locate food or navigate through dark, murky waters where vision alone would not be reliable. Other sounds seem to play a role in attracting mates, with male humpback whales in particular singing elaborate songs during breeding season that can be heard by other whales many kilometers away. Researchers have also noticed that whale songs slowly change over time, with entire populations gradually adopting new patterns, almost like a shifting musical trend passed from whale to whale.\n\nUnderstanding whale communication has become increasingly urgent as ocean noise from ships, construction, and other human activity continues to rise. Loud background noise can make it much harder for whales to hear each other clearly, sometimes forcing them to call louder or abandon certain areas entirely. By studying these underwater conversations more closely, scientists hope to better protect whale populations from the growing pressures of an increasingly noisy ocean.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "According to the passage, how has human activity affected whale communication?",
+        "options": [
+          "(A) It has made whale songs shorter and simpler",
+          "(B) Ocean noise from ships and construction makes it harder for whales to hear each other",
+          "(C) It has stopped whales from migrating altogether",
+          "(D) It has improved the accuracy of whale navigation"
+        ],
+        "answer": 1,
+        "explanation": "文中提到船隻與工程等人類活動產生的海洋噪音，使鯨魚更難聽清楚彼此的叫聲，甚至被迫放棄某些區域，故選 B。",
+        "optionsZh": [
+          "它讓鯨魚的歌聲變得更短更簡單",
+          "船隻與工程的海洋噪音使鯨魚更難聽清楚彼此",
+          "它讓鯨魚完全停止遷徙",
+          "它提升了鯨魚導航的準確度"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_067",
+    "passageType": "narrative",
+    "title": "The Grandfather's Workshop",
+    "passage": "Every summer, I spent two weeks staying at my grandfather's house, where an old wooden workshop stood at the back of his overgrown garden, filled with tools whose purposes I never fully understood as a young child. This particular summer, my grandfather finally invited me inside to help him build a simple wooden birdhouse instead of just watching from the doorway as usual.\n\nHe handed me a small handsaw and patiently showed me how to cut along the pencil line without splintering the wood, correcting my grip several times before I finally got it right. My first few cuts were crooked and uneven, but rather than fixing my mistakes himself, he encouraged me to sand down the rough edges and try again on the next piece of wood.\n\nBy the end of the second week, we had built a slightly lopsided but sturdy birdhouse together, which my grandfather insisted on hanging in the exact center of his garden despite its obvious imperfections. He told me that the crooked lines actually made it more special, since they proved it had been made by hand rather than a machine. Years later, long after that summer had ended, I still think of that small workshop whenever I see birds gathering near a birdhouse.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "Why did the grandfather want to hang the birdhouse despite its imperfections?",
+        "options": [
+          "(A) He did not notice the crooked lines",
+          "(B) He believed the imperfections showed it was handmade and special",
+          "(C) He planned to fix it later",
+          "(D) He had no other birdhouse to use"
+        ],
+        "answer": 1,
+        "explanation": "文中提到祖父認為歪斜的線條反而讓鳥屋更特別，因為那證明是手工製作而非機器製造，故選 B。",
+        "optionsZh": [
+          "他沒注意到鳥屋歪斜的線條",
+          "他認為不完美之處證明這是手工製作，因而特別",
+          "他打算之後再修好它",
+          "他沒有其他的鳥屋可以用"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_068",
+    "passageType": "informational",
+    "title": "The Science of Laughter",
+    "passage": "Laughter is something almost every person experiences regularly, yet scientists have found that it is a far more complicated behavior than it first appears. Unlike most other sounds we make on purpose, laughter is often triggered automatically, sometimes even when a person is trying hard to stay serious during an important or formal moment.\n\nResearch shows that laughter is not only about finding something funny. Studies observing people in everyday conversations found that most laughter actually happens in response to ordinary comments rather than genuine jokes, suggesting that laughter serves an important social function beyond simple humor. It appears to help people bond with each other, signal friendliness, and ease tension during awkward or stressful situations.\n\nLaughter also produces measurable physical effects on the body. When a person laughs, muscles throughout the face and stomach contract, breathing changes, and the brain releases chemicals that can temporarily reduce stress and improve mood. Some hospitals have even introduced laughter therapy programs, encouraging patients to watch comedies or participate in group activities designed to encourage genuine laughter as a supplement to traditional medical treatment. While laughter alone cannot cure illness, many doctors agree that it plays a valuable role in overall well-being.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "What is the main idea of this passage?",
+        "options": [
+          "(A) Laughter only happens when something is genuinely funny",
+          "(B) Laughter serves social and physical purposes beyond simple humor",
+          "(C) Laughter therapy can cure serious diseases",
+          "(D) Most people rarely laugh during conversations"
+        ],
+        "answer": 1,
+        "explanation": "全文說明笑聲不只是對幽默的反應，還具有社交連結、緩解壓力等生理與心理功能，故選 B 最符合主旨。",
+        "optionsZh": [
+          "笑聲只在真正有趣的事情發生時才出現",
+          "笑聲除了幽默感之外，還具有社交與生理上的功能",
+          "笑聲治療能治癒嚴重疾病",
+          "大多數人在對話中很少笑"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_069",
+    "passageType": "narrative",
+    "title": "The Chess Club Championship",
+    "passage": "I joined the school chess club mostly because my best friend begged me to sign up with her, not because I had any real interest in the game beyond knowing how the pieces moved. To my surprise, I found myself staying after school twice a week just to study strategies, and within a few months, our coach announced that I had qualified for the club's internal championship match.\n\nMy opponent in the final round was a boy two years older than me who had already won the tournament twice before, and I assumed I would lose within the first fifteen minutes. Instead, the game stretched on for nearly an hour, both of us studying the board carefully before every single move. Midway through, I noticed a small opening he seemed to have overlooked, a chance to trade pieces in a way that would leave me with a slight advantage.\n\nWhen I finally moved my knight into position for checkmate, the entire room fell silent for a moment before erupting into applause from the other club members watching nearby. My opponent shook my hand graciously and admitted he had underestimated me completely. I walked home that afternoon still holding the small trophy, unable to stop smiling the entire way.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "How did the narrator win the championship match?",
+        "options": [
+          "(A) Her opponent gave up before the game ended",
+          "(B) She noticed an opening her opponent overlooked and gained an advantage",
+          "(C) The coach declared her the winner automatically",
+          "(D) She used a strategy she had memorized from a book"
+        ],
+        "answer": 1,
+        "explanation": "文中提到她發現對手忽略的一個機會，藉此交換棋子取得些微優勢，最終將死對手，故選 B。",
+        "optionsZh": [
+          "她的對手在比賽結束前就放棄了",
+          "她發現對手忽略的破綻，藉此取得優勢",
+          "教練自動宣布她獲勝",
+          "她使用了一個從書上背下來的策略"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_070",
+    "passageType": "informational",
+    "title": "Why Cities Need More Bike Lanes",
+    "passage": "As traffic congestion and air pollution continue to grow in many major cities, urban planners are increasingly focusing on bicycles as part of the solution rather than simply widening roads for more cars. Building dedicated bike lanes, separated safely from busy vehicle traffic, has become one of the most discussed strategies for making cities more livable and environmentally friendly.\n\nStudies from cities that have added protected bike lanes show clear benefits beyond simply reducing pollution. When cycling becomes safer and more convenient, more residents choose bicycles over cars for short trips, which in turn reduces overall traffic congestion for everyone, including drivers. Local businesses along these bike routes have also reported increased customer visits, since cyclists tend to stop more easily than drivers searching for parking spaces.\n\nDespite these documented benefits, adding new bike lanes often faces resistance from residents worried about losing parking spaces or slowing down car traffic during the construction period. City planners argue that these short-term inconveniences are usually outweighed by long-term improvements in safety, air quality, and public health. As more cities around the world share data proving these benefits, urban planning experts increasingly view expanded bike infrastructure not as an optional convenience but as an essential investment in a city's future.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "According to the passage, why do some residents resist new bike lanes?",
+        "options": [
+          "(A) They believe cycling is dangerous for everyone",
+          "(B) They worry about losing parking spaces and slower traffic during construction",
+          "(C) They think bike lanes are too expensive to build",
+          "(D) They prefer walking over cycling"
+        ],
+        "answer": 1,
+        "explanation": "文中提到居民擔心失去停車位，以及施工期間造成車流變慢，故選 B。",
+        "optionsZh": [
+          "他們認為騎車對每個人來說都很危險",
+          "他們擔心失去停車位，以及施工期間車流變慢",
+          "他們認為興建自行車道太昂貴",
+          "他們比較喜歡走路而非騎車"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_071",
+    "passageType": "narrative",
+    "title": "The Storm That Knocked Out Power",
+    "passage": "The typhoon warnings had been broadcast for two days before the storm actually arrived, but nothing quite prepared our family for how loud the wind would sound against our windows late that night. Around midnight, the lights flickered twice and then went out completely, leaving the entire neighborhood in total darkness except for the occasional flash of lightning.\n\nMy mother calmly lit several candles she had stored in the kitchen drawer for exactly this kind of emergency, while my father checked that all the windows were properly secured against the strengthening wind outside. Without television or internet to distract us, my younger brother suggested we play a card game by candlelight, something our family had not done together in years because everyone was usually busy with phones or homework.\n\nThe power remained out for almost eighteen hours, and by the time it finally returned the next afternoon, we had played more card games in one night than during the entire previous year combined. My brother later admitted that he almost wished the storm had lasted a little longer, since he had genuinely enjoyed having our full, undivided attention without any screens competing for it. That unexpected night taught our family how much we had been missing simply by being too busy to notice.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What can be inferred about the family's usual daily life from this passage?",
+        "options": [
+          "(A) They frequently play card games together every night",
+          "(B) They were usually too busy with phones and homework to spend time together",
+          "(C) They never experience power outages in their area",
+          "(D) They dislike spending time with each other"
+        ],
+        "answer": 1,
+        "explanation": "文中提到弟弟說平常大家忙著滑手機或做功課，暗示他們平時很少一起花時間相處，故選 B。",
+        "optionsZh": [
+          "他們平常每晚都會一起玩牌",
+          "他們平常太忙於滑手機和寫作業，很少一起相處",
+          "他們所在地區從未停電過",
+          "他們不喜歡彼此相處的時光"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_072",
+    "passageType": "informational",
+    "title": "The History of the Post Office",
+    "passage": "Long before telephones or the internet existed, the postal system served as the primary way people communicated across long distances, connecting families, businesses, and governments separated by hundreds or even thousands of kilometers. Ancient civilizations, including the Persian Empire and Imperial China, developed early mail systems using relays of messengers on horseback to deliver official documents quickly across vast territories.\n\nModern postal services as we recognize them today began developing during the nineteenth century, when countries introduced standardized postage stamps and fixed prices based on weight rather than distance traveled. This change made sending mail dramatically more affordable for ordinary citizens, not just wealthy merchants or government officials, and letter writing quickly became a common part of everyday life across many countries.\n\nToday, even though email and instant messaging have replaced much of the postal system's original role, postal services continue to play an essential part in modern life through package delivery. The rapid growth of online shopping has actually increased demand for postal workers in many countries, as millions of packages now travel through sorting centers every single day. Despite predictions decades ago that the internet would make postal services obsolete, the system has instead adapted and remains a vital part of how goods move around the world.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "What is the main idea of the passage?",
+        "options": [
+          "(A) Postal services have completely disappeared because of the internet",
+          "(B) The postal system has a long history and has adapted to remain relevant today",
+          "(C) Ancient civilizations never had any way to send messages",
+          "(D) Postage stamps are no longer used anywhere in the world"
+        ],
+        "answer": 1,
+        "explanation": "全文從古代驛站制度講到現代因網路購物而增加的包裹遞送需求，說明郵政系統歷史悠久並持續調適以保持重要性，故選 B。",
+        "optionsZh": [
+          "郵政服務已因網路而完全消失",
+          "郵政系統歷史悠久，並持續調適以維持其重要性",
+          "古代文明從未有任何傳遞訊息的方式",
+          "全世界已不再使用郵票"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_073",
+    "passageType": "narrative",
+    "title": "The Origami Club",
+    "passage": "I started the origami club at my school almost as a joke, printing a handful of flyers with a paper crane on them and expecting maybe two or three people to show up out of curiosity. To my genuine surprise, nearly fifteen students crowded into the classroom on our first meeting, several of them admitting they had never folded a single piece of paper before in their lives.\n\nTeaching complete beginners turned out to be far more challenging than I had expected. Simple folds that felt automatic to me, since I had practiced origami for years, confused several members completely, and I quickly learned to slow down and demonstrate each step multiple times instead of rushing ahead. One member in particular struggled for nearly three entire meetings just to fold a basic paper boat correctly, yet he refused to give up despite his obvious frustration.\n\nBy the end of the semester, our club had planned a small exhibition displaying everything members had learned, including that same student's surprisingly detailed paper dragon, folded from a single uncut sheet of paper. Watching him proudly explain his folding process to visiting parents reminded me why I had started the club in the first place. What began as a small joke had somehow become the part of my week I looked forward to the most.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What lesson did the narrator learn from teaching origami to beginners?",
+        "options": [
+          "(A) Origami is too difficult for most people to learn",
+          "(B) He needed to slow down and demonstrate steps multiple times",
+          "(C) Beginners should give up if they struggle too long",
+          "(D) Paper cranes are easier to fold than paper boats"
+        ],
+        "answer": 1,
+        "explanation": "文中提到他很快學會要放慢速度、多次示範每個步驟，而不是急著往下教，故選 B。",
+        "optionsZh": [
+          "摺紙對大多數人來說太困難了",
+          "他需要放慢速度，多次示範每個步驟",
+          "初學者若卡關太久就應該放棄",
+          "紙鶴比紙船更容易摺"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_074",
+    "passageType": "informational",
+    "title": "How Plants Communicate With Each Other",
+    "passage": "For a long time, scientists assumed that plants simply grew where they were planted, reacting only to sunlight, water, and soil without any real ability to sense or respond to their surroundings in more complex ways. Recent research, however, has revealed that many plants actually communicate with each other through chemical signals, challenging our traditional understanding of how plant life works.\n\nWhen certain plants are attacked by insects, they release chemical compounds into the air that can be detected by nearby plants of the same species. These neighboring plants often respond by producing their own defensive chemicals in advance, effectively preparing themselves for a potential insect attack before it even happens. Some trees also appear to share resources through underground fungal networks connecting their root systems, sometimes sending nutrients to smaller or weaker trees nearby.\n\nWhile plants clearly do not communicate using language or consciousness the way animals do, these discoveries suggest that plant behavior is far more interconnected and responsive than most people previously believed. Scientists continue studying exactly how widespread these chemical signals are among different plant species and environments. Understanding these hidden connections could eventually help farmers develop more natural methods of protecting crops from pests without relying so heavily on chemical pesticides.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "According to the passage, how do plants respond when nearby plants are attacked by insects?",
+        "options": [
+          "(A) They immediately die to avoid the same attack",
+          "(B) They release chemical signals and produce defensive chemicals in advance",
+          "(C) They grow taller to escape the insects",
+          "(D) They stop producing nutrients entirely"
+        ],
+        "answer": 1,
+        "explanation": "文中提到植物被攻擊時會釋放化學物質，附近的植物偵測到後會提前製造防禦性化學物質，故選 B。",
+        "optionsZh": [
+          "它們會立刻死亡以避免相同的攻擊",
+          "它們會釋放化學訊號，並提前製造防禦性化學物質",
+          "它們會長得更高以逃離昆蟲",
+          "它們會完全停止製造養分"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_075",
+    "passageType": "narrative",
+    "title": "The Night Shift at the Bakery",
+    "passage": "My uncle owns a small bakery that opens before sunrise, and during summer vacation, he let me join him for a single overnight shift so I could see exactly how the bread I loved eating actually got made. I arrived at the bakery at eleven at night, expecting a quiet, sleepy atmosphere, but instead found the kitchen already bustling with activity under bright fluorescent lights.\n\nMy uncle handed me a large apron and immediately put me to work measuring flour and sugar for the morning's first batch of dough. The kitchen was warm from the ovens, and the smell of yeast filled the air within minutes of the mixers starting. Around two in the morning, exhaustion began creeping in, but my uncle kept working steadily, explaining that timing mattered more than anything else in baking, since dough that rose for even a few minutes too long could ruin an entire batch.\n\nBy five in the morning, trays of golden bread lined every counter, filling the small bakery with a warmth that made my tired eyes feel slightly less heavy. Watching the first customers arrive just after sunrise, unaware of the hours of careful work that had gone into their simple breakfast bread, gave me a completely new appreciation for something I had always taken for granted.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What did the narrator realize by the end of the night shift?",
+        "options": [
+          "(A) Baking bread requires very little effort",
+          "(B) He gained a new appreciation for the work behind everyday bread",
+          "(C) He decided baking was not interesting at all",
+          "(D) Customers usually know how much work goes into baking"
+        ],
+        "answer": 1,
+        "explanation": "文末提到他對這件他一直視為理所當然的事情，有了全新的體會與感激，故選 B。",
+        "optionsZh": [
+          "烤麵包幾乎不需要花費什麼心力",
+          "他對日常麵包背後的辛勞有了新的感激",
+          "他覺得烘焙一點也不有趣",
+          "顧客通常都知道烘焙背後花費了多少心力"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_076",
+    "passageType": "informational",
+    "title": "The Truth About Energy Drinks",
+    "passage": "Energy drinks have become extremely popular among students and young adults searching for a quick boost before exams, sports practice, or late-night study sessions. Brightly colored cans lining store shelves often promise increased focus, alertness, and energy, but health experts warn that these drinks carry risks that are not always clearly understood by the people consuming them regularly.\n\nMost energy drinks contain very high amounts of caffeine, often far more than a typical cup of coffee, combined with large quantities of sugar and other stimulating ingredients. While a moderate amount of caffeine can genuinely improve alertness for a short period, consuming too much at once can cause a rapid heartbeat, anxiety, difficulty sleeping, and uncomfortable stomach problems, especially in younger people whose bodies are still developing and more sensitive to stimulants.\n\nDoctors particularly worry about teenagers who drink multiple energy drinks in a single day, sometimes combining them with little sleep or additional caffeine from other sources like coffee or soda. Many health organizations now recommend that young people avoid energy drinks entirely, suggesting that adequate sleep, balanced meals, and regular exercise provide safer and more sustainable sources of energy. Understanding these risks does not mean giving up all caffeine completely, but it does mean reading labels carefully and consuming these drinks with real caution.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "What is the main idea of this passage?",
+        "options": [
+          "(A) Energy drinks are completely safe for everyone to consume",
+          "(B) Energy drinks carry health risks, especially for young people, and should be consumed carefully",
+          "(C) Coffee is more dangerous than energy drinks",
+          "(D) All caffeine should be avoided by everyone at all times"
+        ],
+        "answer": 1,
+        "explanation": "全文說明能量飲料含有大量咖啡因與糖分，對年輕人風險特別高，建議謹慎飲用，故選 B 最符合主旨。",
+        "optionsZh": [
+          "能量飲料對每個人來說都完全安全",
+          "能量飲料對年輕人風險特別高，應謹慎飲用",
+          "咖啡比能量飲料更危險",
+          "所有人都應該永遠避免攝取咖啡因"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_077",
+    "passageType": "narrative",
+    "title": "The School Newspaper",
+    "passage": "When our school newspaper lost nearly half its staff to graduation last year, the remaining editors asked for volunteers willing to take on extra responsibilities, and I nervously raised my hand to become the new sports section writer despite having never written a real article before. My first assignment was covering our school's basketball team, a subject I actually knew very little about beyond occasionally watching games with friends.\n\nMy first draft came back covered in red editing marks, with the head editor pointing out that I had simply listed the final score without describing any of the exciting moments that had actually happened during the game. She encouraged me to attend the next game with a notebook instead of just watching casually, jotting down specific plays, player reactions, and small details that could bring the article to life for readers who had not attended.\n\nMy second article, describing a dramatic last-second shot that won the game, received noticeably fewer corrections and even earned a small compliment from the editor about my improved storytelling. By the end of the semester, several classmates mentioned they had actually started reading the sports section specifically because of my articles. Writing had never been something I considered myself good at, but that small newspaper office slowly proved otherwise.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What change did the narrator make between the first and second articles?",
+        "options": [
+          "(A) She stopped attending the games entirely",
+          "(B) She began taking notes on specific details to bring the article to life",
+          "(C) She asked another writer to write the article for her",
+          "(D) She focused only on listing the final score"
+        ],
+        "answer": 1,
+        "explanation": "文中提到編輯建議她帶筆記本記下具體的球賽細節，讓文章更生動，她因此改進了寫作方式，故選 B。",
+        "optionsZh": [
+          "她完全不再去看比賽",
+          "她開始記錄具體細節，讓文章更生動",
+          "她請另一位作者代寫文章",
+          "她只專注於列出最終比分"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_078",
+    "passageType": "informational",
+    "title": "Why Libraries Still Matter",
+    "passage": "In an age when nearly any piece of information seems available instantly through a smartphone, some people question whether public libraries still serve a meaningful purpose. Despite these doubts, libraries across the world continue to attract millions of visitors each year, offering far more than simply rows of books waiting to be borrowed.\n\nMany libraries have transformed into community spaces offering free access to computers, printers, and reliable internet connections, resources that remain essential for people who cannot afford them at home. Libraries also host free events ranging from children's story hours to job-training workshops and language classes, making them valuable gathering places for people of all ages and backgrounds within a community. For students without a quiet place to study at home, libraries provide a peaceful, distraction-free environment available at no cost whatsoever.\n\nPerhaps most importantly, librarians themselves offer expertise that search engines simply cannot replicate, helping visitors evaluate whether information found online is trustworthy and accurate. In a world increasingly filled with misleading or false information, this human guidance has become more valuable rather than less. Far from becoming obsolete, libraries have adapted to remain relevant, proving that access to trustworthy knowledge and welcoming public spaces are needs that technology alone cannot fully replace.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "According to the passage, why are librarians especially valuable today?",
+        "options": [
+          "(A) They can fix computers faster than technicians",
+          "(B) They help people evaluate whether online information is trustworthy",
+          "(C) They write books for the library collection",
+          "(D) They replace the need for teachers in schools"
+        ],
+        "answer": 1,
+        "explanation": "文中提到圖書館員能協助讀者判斷網路資訊是否可信，這是搜尋引擎無法取代的專業，故選 B。",
+        "optionsZh": [
+          "他們修電腦的速度比技師還快",
+          "他們協助人們判斷網路資訊是否值得信賴",
+          "他們替圖書館的館藏寫書",
+          "他們取代了學校裡教師的角色"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_079",
+    "passageType": "narrative",
+    "title": "The Swimming Lessons",
+    "passage": "I had been terrified of deep water since nearly drowning in a lake during a family vacation when I was six years old, and by the time I turned thirteen, I still could not swim a single lap without panicking halfway through the pool. My parents finally enrolled me in private lessons with an instructor known for working patiently with nervous older students.\n\nDuring our first lesson, she did not even ask me to enter the water immediately. Instead, we simply sat at the edge of the pool while she asked me to describe exactly what frightened me most, listening carefully without dismissing my fear as childish or unreasonable. Over the following weeks, she introduced small, manageable steps, starting with simply floating while holding onto the pool's edge before gradually letting go for just a few seconds at a time.\n\nIt took nearly two full months before I managed to swim across the entire pool without stopping, and when I finally reached the other side, I burst into tears of pure relief rather than embarrassment. My instructor later told me that fear rarely disappears through force, but through small, repeated proof that we are actually capable of more than our fear convinces us to believe. That lesson has stayed with me in situations that had nothing to do with swimming at all.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "What lesson did the narrator learn from her swimming instructor?",
+        "options": [
+          "(A) Fear should always be ignored completely",
+          "(B) Fear can be overcome through small, repeated steps rather than force",
+          "(C) Deep water is always too dangerous to swim in",
+          "(D) Only young children can learn to overcome fear"
+        ],
+        "answer": 1,
+        "explanation": "文中提到教練告訴她，恐懼很少能用強迫的方式消除，而是透過一次次小小的證明自己能做到，逐步克服，故選 B。",
+        "optionsZh": [
+          "恐懼應該永遠被完全忽視",
+          "恐懼可以透過反覆的小步驟克服，而非強迫自己",
+          "深水永遠太危險，不能游泳",
+          "只有小孩才能學會克服恐懼"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_080",
+    "passageType": "informational",
+    "title": "The Science of Color Blindness",
+    "passage": "Color blindness affects a surprising number of people around the world, particularly men, and yet many people misunderstand what the condition actually involves. Contrary to what the name suggests, most people with color blindness do not see the world only in black and white; instead, they usually struggle to distinguish between specific colors, most commonly red and green.\n\nThis condition occurs because of differences in the light-sensitive cells located at the back of the eye, called cone cells, which normally allow humans to perceive a wide range of colors. People with typical color vision have three types of functioning cone cells, each sensitive to different wavelengths of light. In people with color blindness, one or more of these cone cell types may be missing, weakened, or function differently than usual, making certain color combinations difficult or impossible to tell apart.\n\nColor blindness is most often inherited genetically and cannot currently be cured, though special glasses and phone applications have been developed to help some people perceive certain colors more distinctly. Many everyday designs, including traffic lights and warning signs, now intentionally include shapes or positions alongside colors specifically so that color-blind individuals can still interpret them correctly. Understanding this condition has gradually led to a more inclusive, thoughtfully designed world for everyone.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "According to the passage, why do traffic lights include specific positions in addition to colors?",
+        "options": [
+          "(A) To make them brighter at night",
+          "(B) So that color-blind individuals can still interpret them correctly",
+          "(C) Because colored lights are more expensive to produce",
+          "(D) To match international design standards exactly"
+        ],
+        "answer": 1,
+        "explanation": "文中提到紅綠燈等設計特意加入形狀或位置，讓色盲人士仍能正確判讀，故選 B。",
+        "optionsZh": [
+          "為了讓它們在夜晚更明亮",
+          "讓色盲人士仍能正確判讀號誌",
+          "因為有顏色的燈製造成本較高",
+          "為了完全符合國際設計標準"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_081",
+    "passageType": "narrative",
+    "title": "The Family Road Trip",
+    "passage": "My parents announced weeks in advance that our summer vacation would involve driving nearly ten hours to visit relatives instead of flying, a decision my younger brother and I protested loudly, convinced that spending an entire day trapped in the car would be unbearably boring. My father insisted the drive itself would become part of the memory, though at the time I dismissed this as something parents simply said to justify inconvenient decisions.\n\nAbout three hours into the drive, we stopped at a small roadside diner that my parents remembered fondly from a trip they had taken years before we were born. The pancakes were surprisingly delicious, and the elderly owner told us stories about the town's history while refilling our drinks without being asked. Later that afternoon, we passed through a stretch of mountains so beautiful that my father pulled over twice just so we could take photographs of the view stretching endlessly below us.\n\nBy the time we finally arrived at our relatives' house well after dark, exhausted but strangely satisfied, I found myself already telling my cousins about the diner and the mountain views rather than complaining about the length of the drive. My father had been right after all, though I never admitted it to him directly until many years later.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What can be inferred about the narrator's opinion of the road trip by the end of the passage?",
+        "options": [
+          "(A) She still believed the drive was a complete waste of time",
+          "(B) She came to appreciate the trip more than she expected",
+          "(C) She regretted stopping at the diner",
+          "(D) She wished they had flown instead"
+        ],
+        "answer": 1,
+        "explanation": "文中提到她抵達後迫不及待跟表親分享沿途的餐廳和山景，而非抱怨車程太長，顯示她後來相當欣賞這趟旅程，故選 B。",
+        "optionsZh": [
+          "她仍然認為這趟車程完全是浪費時間",
+          "她漸漸體會到這趟旅程比她預期的更值得珍惜",
+          "她後悔在餐廳停留",
+          "她希望當初改搭飛機"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_082",
+    "passageType": "informational",
+    "title": "How Recycled Paper Is Made",
+    "passage": "Every time a piece of used paper is placed into a recycling bin instead of the trash, it begins a fascinating journey that eventually transforms it into brand new paper products. The process starts at a recycling facility, where collected paper is sorted by type and quality, since materials like newspaper, cardboard, and office paper each require slightly different treatment during recycling.\n\nOnce sorted, the paper is mixed with water and broken down into a thick, pulpy mixture, a process that also helps remove staples, tape, and other contaminants that do not belong in the final product. This pulp then passes through screens and cleaning equipment designed to filter out remaining impurities, including tiny bits of plastic or ink that could weaken the finished paper. Chemicals are sometimes added at this stage to remove ink completely, especially when recycling printed materials like newspapers or magazines.\n\nAfter cleaning, the pulp is spread thinly across large rollers and dried into new sheets of paper, ready to be cut, packaged, and shipped to stores. While recycled paper generally cannot be reused indefinitely, since the fibers gradually weaken with each cycle, most paper can still be recycled several times before the fibers become too short and weak for further use. This process saves significant amounts of water, energy, and trees compared to producing paper entirely from new materials.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "According to the passage, why can recycled paper not be reused indefinitely?",
+        "options": [
+          "(A) Because recycling machines can only be used a limited number of times",
+          "(B) Because the paper fibers gradually weaken with each recycling cycle",
+          "(C) Because ink cannot ever be removed from paper",
+          "(D) Because governments limit how many times paper can be recycled"
+        ],
+        "answer": 1,
+        "explanation": "文中提到紙張纖維在每次回收循環中會逐漸變弱，最終變得太短太脆弱而無法再利用，故選 B。",
+        "optionsZh": [
+          "因為回收機器只能使用有限的次數",
+          "因為紙張纖維在每次回收循環中會逐漸變弱",
+          "因為油墨永遠無法從紙張中去除",
+          "因為政府限制紙張可回收的次數"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_083",
+    "passageType": "narrative",
+    "title": "The Street Musician",
+    "passage": "Every afternoon on my walk home from school, I passed an elderly street musician playing an old, slightly out-of-tune guitar near the subway entrance, and for over a year, I never once stopped to listen, always assuming I was too busy or too embarrassed to be seen standing still on a crowded sidewalk. One rainy afternoon, however, my train was delayed, leaving me with nothing to do but stand nearby under the station's overhang.\n\nAs I listened more closely than ever before, I realized the songs he played were not random melodies but carefully arranged pieces, some of which sounded surprisingly complex despite his simple, worn guitar. When the song ended, I found myself dropping a few coins into his open guitar case, and to my surprise, he thanked me by name, explaining that he had noticed me walking past almost every single day for over a year.\n\nFrom that day forward, I began stopping for a few minutes each afternoon, sometimes just to chat, and I learned that he had once performed professionally before an injury made regular concerts impossible. He told me that playing on the street, even to people who rushed past without listening, still made him feel connected to music in a way nothing else could replace. I never looked at street musicians the same way again.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "What change happened in the narrator's behavior after the rainy afternoon?",
+        "options": [
+          "(A) She stopped walking past the musician entirely",
+          "(B) She began stopping to listen and talk with the musician regularly",
+          "(C) She reported the musician to the subway station",
+          "(D) She avoided the subway entrance from then on"
+        ],
+        "answer": 1,
+        "explanation": "文中提到從那天起，她開始每天下午停下來聽幾分鐘，有時還會和音樂家聊天，故選 B。",
+        "optionsZh": [
+          "她從此完全不再經過那位音樂家",
+          "她開始定期停下來聆聽並和音樂家聊天",
+          "她向地鐵站舉報了那位音樂家",
+          "她從此避開那個地鐵入口"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_084",
+    "passageType": "informational",
+    "title": "The Importance of Wetlands",
+    "passage": "Wetlands, including marshes, swamps, and mangrove forests, are often overlooked when people think about valuable natural habitats, yet these unique environments provide some of the most important ecological benefits found anywhere on Earth. Unlike forests or grasslands, wetlands exist in a constant state between land and water, creating conditions that support an extraordinary variety of plants and animals found nowhere else.\n\nOne of the most valuable functions of wetlands is their natural ability to filter pollutants from water before it reaches rivers, lakes, or oceans. As water slowly moves through dense wetland vegetation, harmful chemicals and excess nutrients become trapped in the soil and plant roots, significantly improving water quality for communities located downstream. Wetlands also act as natural sponges during heavy rainfall, absorbing large amounts of water and reducing the severity of flooding in nearby towns and cities.\n\nDespite these clear benefits, wetlands around the world have been disappearing rapidly, often drained or filled in to make way for farmland, roads, or new construction projects. Conservationists warn that losing wetlands means losing crucial flood protection, water filtration, and habitat for countless species, many of which cannot survive anywhere else. Restoring damaged wetlands has therefore become an increasingly urgent priority for environmental organizations working to protect both wildlife and human communities from these growing risks.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "According to the passage, how do wetlands help reduce flooding?",
+        "options": [
+          "(A) They redirect rivers away from cities",
+          "(B) They absorb large amounts of water like natural sponges during heavy rain",
+          "(C) They block rainfall from reaching the ground",
+          "(D) They increase the speed of water flow downstream"
+        ],
+        "answer": 1,
+        "explanation": "文中提到濕地在大雨時如天然海綿般吸收大量水分，減少附近城鎮的水患嚴重程度，故選 B。",
+        "optionsZh": [
+          "它們將河流引導遠離城市",
+          "它們如天然海綿般在大雨時吸收大量水分",
+          "它們阻擋雨水落到地面",
+          "它們加快下游的水流速度"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_085",
+    "passageType": "narrative",
+    "title": "The Lost Dog Poster",
+    "passage": "While walking home from school, I noticed a handmade poster taped crookedly to a lamppost, showing a blurry photo of a small brown dog along with a phone number written in slightly shaky handwriting. Something about the poster stuck with me, especially the short handwritten note at the bottom explaining that the dog belonged to an elderly woman who lived alone and had recently lost her husband.\n\nI mentioned the poster to my mother that evening, and together we decided to spend part of our Saturday searching nearby parks and streets, printing extra copies of the poster to hang in areas the original owner might not have reached. We knocked on doors, asked shopkeepers to keep an eye out, and checked behind several buildings where stray animals sometimes gathered during colder weather.\n\nBy Sunday afternoon, we still had not found the dog ourselves, but a neighbor called the number on our extra posters after recognizing the dog resting under her porch. When we visited the elderly woman a few days later to see how she was doing, she hugged us both immediately, explaining through tears that her dog had felt like the only company she had left since her husband passed away. That small poster taught me how much a stranger's simple loss could matter to an entire neighborhood.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "Why did the poster affect the narrator so strongly?",
+        "options": [
+          "(A) Because the reward money was very high",
+          "(B) Because the note explained the dog belonged to a lonely elderly woman",
+          "(C) Because she recognized the dog immediately",
+          "(D) Because she had lost her own dog before"
+        ],
+        "answer": 1,
+        "explanation": "文中提到海報上的手寫說明讓她印象深刻，說明這隻狗屬於一位剛失去丈夫、獨居的老婦人，故選 B。",
+        "optionsZh": [
+          "因為懸賞金額非常高",
+          "因為說明中提到這隻狗屬於一位孤獨的老婦人",
+          "因為她立刻認出了那隻狗",
+          "因為她自己以前也丟失過狗"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_086",
+    "passageType": "informational",
+    "title": "The Science of Thunder and Lightning",
+    "passage": "Thunderstorms have fascinated and frightened people for thousands of years, long before scientists fully understood the physical processes causing the bright flashes of lightning and the loud rumbling sounds of thunder that follow. Lightning occurs when electrical charges build up inside storm clouds, eventually releasing a powerful burst of electricity either between clouds or from a cloud down to the ground below.\n\nThunder is directly caused by lightning rather than being a separate, unrelated phenomenon. When a lightning bolt strikes, it instantly heats the surrounding air to an extremely high temperature, causing the air to expand explosively and create the sound waves we hear as thunder. Because light travels far faster than sound, we almost always see the flash of lightning before hearing the accompanying thunder, even though both events actually happen at exactly the same moment.\n\nThis time difference between seeing lightning and hearing thunder can actually be used to estimate roughly how far away a storm is located. By counting the seconds between the flash and the sound, then dividing by approximately three, people can calculate the storm's distance in kilometers. Understanding this simple trick has helped many people judge whether a storm is approaching quickly or moving safely away, which remains an important skill for staying safe during severe weather.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "According to the passage, why do people usually see lightning before hearing thunder?",
+        "options": [
+          "(A) Because lightning happens before thunder is created",
+          "(B) Because light travels faster than sound even though both happen at the same moment",
+          "(C) Because thunder only occurs after lightning stops completely",
+          "(D) Because clouds block the sound of thunder"
+        ],
+        "answer": 1,
+        "explanation": "文中提到光速比聲速快，因此雖然閃電與雷聲同時發生，人們總是先看到閃光才聽到雷聲，故選 B。",
+        "optionsZh": [
+          "因為閃電發生的時間早於雷聲產生",
+          "因為光速比聲速快，儘管兩者其實同時發生",
+          "因為雷聲只在閃電完全停止後才出現",
+          "因為雲層會阻擋雷聲傳播"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_087",
+    "passageType": "narrative",
+    "title": "The Community Clean-Up Day",
+    "passage": "Our neighborhood association organized a clean-up day along the small river that ran behind our housing development, and I only agreed to join because my best friend refused to go alone and my mother insisted the fresh air would be good for me. I arrived expecting a boring morning of picking up a few scattered candy wrappers near the walking path.\n\nInstead, we discovered that years of littering had left the riverbank far messier than any of us had imagined, with old tires, plastic bottles, and even a rusted shopping cart half-buried in the mud near the water's edge. Organizers split everyone into small teams equipped with gloves and large trash bags, and by midmorning, our group alone had filled nearly a dozen bags with garbage pulled carefully from the water and surrounding bushes.\n\nWhat surprised me most was watching a group of younger children excitedly point out a small family of ducks swimming near a section of the riverbank we had just cleared of debris, something none of us had noticed hiding there earlier that morning. By the time we finished in the early afternoon, exhausted and covered in mud, the riverbank looked noticeably brighter and more welcoming than it had in years. I left that day no longer viewing the river as simply background scenery I walked past without noticing.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What is the main idea of this passage?",
+        "options": [
+          "(A) Cleaning up the river was a waste of time",
+          "(B) A community clean-up revealed hidden wildlife and restored the riverbank",
+          "(C) Children are better at cleaning than adults",
+          "(D) The narrator disliked participating in the event"
+        ],
+        "answer": 1,
+        "explanation": "全文描述清潔活動如何清出大量垃圾，並意外發現隱藏其中的鴨子家族，最終讓河岸恢復生機，故選 B 最符合主旨。",
+        "optionsZh": [
+          "清理河流是浪費時間的事",
+          "社區清潔活動意外發現野生動物，並讓河岸恢復生機",
+          "小孩比大人更擅長清潔工作",
+          "敘述者不喜歡參與這項活動"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_088",
+    "passageType": "informational",
+    "title": "How Bread Is Made",
+    "passage": "Bread has been a staple food across countless cultures for thousands of years, yet the basic science behind turning simple flour and water into a warm, fluffy loaf remains something many people never fully consider. The process begins when flour, water, and a small amount of yeast are mixed together, forming a sticky dough that requires careful kneading to develop its structure.\n\nKneading might seem like a simple physical task, but it actually serves an important scientific purpose, encouraging proteins in the flour to form long, elastic strands called gluten. This gluten network is what allows bread dough to trap tiny bubbles of gas produced by the yeast as it feeds on natural sugars within the flour, causing the dough to rise slowly over time. Without properly developed gluten, bread would remain flat and dense rather than light and airy.\n\nOnce the dough has risen sufficiently, usually after being left undisturbed in a warm location for an hour or more, it is shaped and placed into a hot oven. The intense heat causes the trapped gas bubbles to expand rapidly one final time before the outer surface hardens into a golden crust, locking the bread's final shape into place. This entire transformation, from simple ingredients into a finished loaf, typically takes only a few hours from start to finish.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "According to the passage, what is the main purpose of kneading dough?",
+        "options": [
+          "(A) To add more flavor to the bread",
+          "(B) To develop gluten that traps gas bubbles and helps the dough rise",
+          "(C) To cool the dough down before baking",
+          "(D) To remove excess water from the flour"
+        ],
+        "answer": 1,
+        "explanation": "文中提到揉麵能促使麵粉中的蛋白質形成麩質網絡，鎖住酵母產生的氣體，讓麵團逐漸膨脹，故選 B。",
+        "optionsZh": [
+          "為了替麵包增添更多風味",
+          "為了形成麩質，鎖住氣泡並幫助麵團膨脹",
+          "為了在烘烤前讓麵團降溫",
+          "為了去除麵粉中多餘的水分"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_089",
+    "passageType": "narrative",
+    "title": "The Karate Belt Test",
+    "passage": "After training in karate for nearly two years, I finally felt ready to test for my green belt, a rank that required demonstrating not only physical technique but also breaking a wooden board with a single strike, something I had never successfully done during any of our practice sessions. The night before the test, I barely slept, replaying the movements over and over in my mind.\n\nDuring the actual examination, my forms and sparring went reasonably well, earning nods of approval from the panel of instructors watching closely. When it finally came time for the board break, my hands were shaking so badly that I worried I might not even hit the board squarely. My instructor quietly reminded me of something he had repeated countless times during training: focus on a point beyond the board rather than the board itself, trusting the technique instead of the fear.\n\nMy first strike bounced off without breaking anything, and disappointment washed over me immediately as I heard a few quiet gasps from the watching parents. The head instructor calmly allowed me a second attempt, and this time, remembering to focus beyond the board exactly as instructed, I struck cleanly, and the board split cleanly in two. Walking home afterward with my new green belt, I understood that trusting your training under pressure mattered just as much as the technique itself.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What advice did the instructor give before the board break?",
+        "options": [
+          "(A) To hit the board as hard as possible without thinking",
+          "(B) To focus on a point beyond the board rather than the board itself",
+          "(C) To wait until his hands stopped shaking completely",
+          "(D) To ask for a third attempt if needed"
+        ],
+        "answer": 1,
+        "explanation": "文中提到教練提醒他要專注在木板之外的一點，而非盯著木板本身，相信自己的技巧而非恐懼，故選 B。",
+        "optionsZh": [
+          "不假思索地用盡全力擊打木板",
+          "專注在木板之外的一點，而不是盯著木板本身",
+          "等到雙手完全停止顫抖再出手",
+          "如有需要就要求第三次機會"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_090",
+    "passageType": "informational",
+    "title": "The Rise of Community Fridges",
+    "passage": "In cities around the world, an increasingly common sight on street corners is the community fridge, a simple refrigerator placed in a public location where anyone can leave extra food or take items they need, entirely free of charge and without requiring any explanation or paperwork. These fridges are typically maintained by local volunteers rather than any government agency or business.\n\nThe concept behind community fridges is straightforward but powerful in addressing food waste and hunger at the same time. Restaurants, grocery stores, and individual households often have surplus food that would otherwise be thrown away, and rather than discarding perfectly good items, they can simply place them in the nearest community fridge for someone else to use. Meanwhile, people facing financial difficulty can access fresh food discreetly, without the stigma sometimes associated with visiting a traditional food bank during limited operating hours.\n\nRunning a community fridge does require ongoing effort, since volunteers must regularly clean the refrigerator, check that food remains safe to eat, and ensure electricity continues running smoothly at the location. Despite these challenges, the number of community fridges has grown rapidly in recent years, particularly in neighborhoods where access to affordable, fresh food remains limited. Supporters argue that these small refrigerators represent a simple, community-driven solution to two problems that often go unnoticed until they affect someone directly.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "According to the passage, what two problems do community fridges try to solve at the same time?",
+        "options": [
+          "(A) Traffic congestion and pollution",
+          "(B) Food waste and hunger",
+          "(C) Unemployment and housing shortages",
+          "(D) Electricity costs and water shortages"
+        ],
+        "answer": 1,
+        "explanation": "文中提到社區冰箱能同時解決食物浪費以及糧食不足的問題，故選 B。",
+        "optionsZh": [
+          "交通壅塞與空氣汙染",
+          "食物浪費與糧食不足",
+          "失業與住房短缺",
+          "電費成本與缺水問題"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_091",
+    "passageType": "narrative",
+    "title": "The Substitute Coach",
+    "passage": "Our regular soccer coach broke his leg two weeks before the championship tournament, leaving our team without proper guidance at the worst possible moment. The school quickly arranged a substitute coach, a quiet young man fresh out of college who had never coached a competitive youth team before, and most of us assumed the tournament was already lost.\n\nOur new coach spent the first practice mostly observing rather than instructing, watching how each player moved and communicated during scrimmages before saying much of anything. Several teammates complained that he seemed unprepared, but by the second practice, he began making small, specific suggestions tailored to individual players rather than repeating generic drills our old coach had used for years. He noticed, for example, that our usual midfielder played much better when positioned closer to the goal, a change our previous coach had never considered trying.\n\nBy tournament day, our team played with a confidence and chemistry that surprised even ourselves, ultimately reaching the semifinals for the first time in school history. After our final match, several players thanked him directly, admitting they had doubted him unfairly at the beginning. He simply smiled and said that coaching was never really about years of experience, but about paying close enough attention to notice what a team genuinely needed.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What can be inferred about the substitute coach's coaching style?",
+        "options": [
+          "(A) He relied entirely on generic drills without adjusting to players",
+          "(B) He carefully observed players and made specific adjustments based on their strengths",
+          "(C) He ignored player feedback throughout the season",
+          "(D) He refused to change any strategies from the previous coach"
+        ],
+        "answer": 1,
+        "explanation": "文中提到他先仔細觀察球員，再針對個別球員提出具體調整，例如改變中場球員的站位，故選 B。",
+        "optionsZh": [
+          "他完全依賴一般性訓練，不因球員調整",
+          "他仔細觀察球員，並根據他們的優勢做出具體調整",
+          "他整個賽季都忽視球員的意見",
+          "他拒絕改變前任教練的任何策略"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_092",
+    "passageType": "informational",
+    "title": "Why Owls Can Turn Their Heads So Far",
+    "passage": "Owls are famous for their ability to rotate their heads much farther than humans or most other animals, sometimes turning nearly two hundred seventy degrees in either direction, an ability that has fascinated scientists and casual observers alike for many years. This remarkable flexibility exists because owls face a unique physical limitation that most other birds and mammals do not share.\n\nUnlike humans, whose eyes can shift and roll within their sockets to look in different directions, owl eyes are fixed firmly in place, unable to move independently at all. This design allows owls to gather more light and see more clearly at night, an essential advantage for hunting after dark, but it also means owls must move their entire head simply to look sideways or behind them. To compensate for this limitation, owls evolved specialized neck structures, including extra vertebrae and unusually flexible blood vessels that prevent blood flow from being cut off during extreme head rotation.\n\nWithout these specialized adaptations, rotating the head so dramatically would likely damage blood vessels and restrict blood flow to the brain, potentially causing the owl to lose consciousness. Scientists studying owl anatomy have even used these discoveries to inspire safer designs for medical equipment, including catheters intended to bend without collapsing. This unusual adaptation demonstrates how solving one biological limitation can lead to remarkably creative evolutionary solutions.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "Why do owls need to turn their heads so far compared to other animals?",
+        "options": [
+          "(A) Because their eyes are fixed and cannot move independently",
+          "(B) Because their necks are naturally weaker than other birds",
+          "(C) Because they have no ears to detect direction",
+          "(D) Because they cannot fly forward easily"
+        ],
+        "answer": 0,
+        "explanation": "文中提到貓頭鷹的眼睛固定不能轉動，因此必須轉動整個頭部才能看向側面或後方，故選 A。",
+        "optionsZh": [
+          "因為牠們的眼睛固定，無法自行轉動",
+          "因為牠們的脖子天生比其他鳥類更脆弱",
+          "因為牠們沒有耳朵可以辨別方向",
+          "因為牠們無法輕易向前飛行"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_093",
+    "passageType": "narrative",
+    "title": "The Handmade Birthday Card",
+    "passage": "With only a few dollars left in my savings after buying school supplies, I could not afford a proper birthday gift for my best friend's fifteenth birthday, so I decided to make her a card by hand instead, secretly worried that it would look cheap and thoughtless compared to gifts from her other friends. I spent nearly three evenings cutting colored paper, drawing small illustrations, and carefully writing memories we had shared since elementary school.\n\nEach page of the card described a different memory, from the time we got hopelessly lost during a school field trip to the ridiculous inside jokes that still made us laugh years later. My handwriting was messy in places, and one of my drawings looked more like a confused blob than the cat it was supposed to represent, but I refused to start over, worried I would run out of time before her party.\n\nWhen she finally opened the card at her birthday party, surrounded by wrapped gifts from other guests, she went completely silent for several long seconds before hugging me tightly, tears forming in her eyes. She later told me that out of everything she received that day, my handmade card was the gift she kept displayed on her bookshelf months afterward. I learned that effort and thought could matter far more than anything bought from a store.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What is the main idea of this passage?",
+        "options": [
+          "(A) Handmade gifts always look messy and thoughtless",
+          "(B) A thoughtful handmade gift can mean more than an expensive store-bought one",
+          "(C) The narrator regretted not buying a proper gift",
+          "(D) Friendship depends entirely on the value of gifts exchanged"
+        ],
+        "answer": 1,
+        "explanation": "全文說明手作卡片雖不完美，卻讓朋友深受感動並長期珍藏，顯示用心的禮物可能比昂貴的商品更有意義，故選 B。",
+        "optionsZh": [
+          "手工禮物總是顯得凌亂又不用心",
+          "用心製作的手工禮物可能比昂貴的商品更有意義",
+          "敘述者後悔沒有買一份像樣的禮物",
+          "友誼完全取決於交換禮物的價值"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_094",
+    "passageType": "informational",
+    "title": "The Science of Static Electricity",
+    "passage": "Almost everyone has experienced a small electric shock after touching a metal doorknob or noticed hair standing up after pulling off a wool sweater, both common examples of static electricity in everyday life. This phenomenon occurs when electrons, tiny negatively charged particles, transfer from one object to another through friction, leaving one surface with extra electrons and the other with a shortage.\n\nWhen two different materials rub against each other, such as your shoes against a carpet or a balloon against your hair, electrons can jump from one surface to the other. This creates an imbalance of electrical charge, with one object becoming negatively charged and the other becoming positively charged. Since opposite charges naturally attract each other, this imbalance can cause noticeable effects, including hair standing on end or a small spark jumping between your finger and a metal object once you touch it.\n\nStatic electricity tends to be far more noticeable during dry winter months compared to humid summer weather, because moisture in the air actually helps electrical charges dissipate more quickly rather than building up on surfaces. This explains why static shocks feel far more common and stronger during cold, dry seasons. While usually harmless, understanding static electricity has also helped engineers design safer equipment for handling sensitive electronics, which can be damaged by even small, sudden static discharges.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "According to the passage, why is static electricity more noticeable in winter?",
+        "options": [
+          "(A) Because cold air contains more electrons naturally",
+          "(B) Because dry air allows electrical charges to build up rather than dissipate",
+          "(C) Because people wear more metal jewelry in winter",
+          "(D) Because winter clothing is always made of wool"
+        ],
+        "answer": 1,
+        "explanation": "文中提到潮濕空氣有助於電荷更快消散，而乾燥的冬季空氣則讓電荷更容易累積，故選 B。",
+        "optionsZh": [
+          "因為冷空氣天生含有更多電子",
+          "因為乾燥空氣讓電荷容易累積而非消散",
+          "因為人們在冬天配戴更多金屬飾品",
+          "因為冬季衣物永遠都是羊毛材質"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_095",
+    "passageType": "narrative",
+    "title": "The Lemonade Stand",
+    "passage": "When I was eleven years old, I decided to set up a lemonade stand outside our house to save money for a bicycle I desperately wanted, convinced that customers would line up eagerly the moment I opened for business. My first Saturday morning was a complete disaster, with almost no one stopping by except my own neighbors, who politely bought a cup out of obvious sympathy rather than genuine thirst.\n\nDiscouraged but not quite ready to give up, I asked my older cousin for advice, and she suggested moving my stand closer to the busy park entrance a few blocks away instead of our quiet residential street where few people ever walked past. She also recommended making a colorful sign and offering a slightly lower price than the convenience store nearby, small changes that felt almost too simple to actually matter.\n\nThe following Saturday, positioned near the park entrance with my new sign, I sold nearly triple the amount from my first attempt, and by the end of summer, I had saved enough money to buy the bicycle along with a helmet. Looking back, that small lemonade stand taught me more about paying attention to what customers actually wanted than any single school lesson ever had, a lesson that stuck with me long after the bicycle eventually wore out.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What change helped the narrator sell more lemonade the second Saturday?",
+        "options": [
+          "(A) She raised her prices significantly",
+          "(B) She moved her stand near the busy park entrance and made a colorful sign",
+          "(C) She gave away free samples to everyone passing by",
+          "(D) She asked her parents to help sell the lemonade"
+        ],
+        "answer": 1,
+        "explanation": "文中提到表姊建議她把攤位移到人潮較多的公園入口附近，並製作醒目的招牌，這些改變讓她第二週賣出更多檸檬水，故選 B。",
+        "optionsZh": [
+          "她大幅提高了售價",
+          "她把攤位移到人潮較多的公園入口，並做了醒目招牌",
+          "她開始免費贈送樣品給路過的人",
+          "她請父母幫忙賣檸檬水"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_096",
+    "passageType": "informational",
+    "title": "How Mountains Are Formed",
+    "passage": "Mountains might appear permanent and unchanging, standing exactly as they have for millions of years, but they are actually the result of powerful geological forces that continue shaping the Earth's surface even today, though usually far too slowly for humans to notice within a single lifetime. Most mountains form through the movement of massive plates that make up the Earth's outer crust, which are constantly shifting, colliding, and sliding past one another over enormous spans of time.\n\nWhen two of these plates collide head-on, neither one able to slide beneath the other easily, the tremendous pressure forces the land upward, gradually creating towering mountain ranges over millions of years. The Himalayas, home to the world's tallest peaks, formed this way when the plate carrying India slowly collided with the much larger Asian plate, a collision that actually continues today, meaning these mountains are technically still growing taller extremely slowly each year.\n\nNot all mountains form through collision alone. Some result from volcanic activity, building up gradually as repeated eruptions deposit layer after layer of cooled lava and ash. Others form through massive cracks in the Earth's crust, where certain sections of land rise while neighboring sections sink lower, creating dramatic differences in elevation over relatively short geological distances. Regardless of exactly how they form, mountains remain living proof of the powerful, ongoing forces shaping our planet beneath our feet.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "According to the passage, why are the Himalayas still technically growing taller?",
+        "options": [
+          "(A) Because volcanic eruptions continue adding new lava layers",
+          "(B) Because the collision between the Indian and Asian plates is still ongoing",
+          "(C) Because erosion has stopped affecting the mountains",
+          "(D) Because scientists are adding measurements incorrectly"
+        ],
+        "answer": 1,
+        "explanation": "文中提到印度板塊與亞洲板塊的碰撞至今仍在持續進行，因此喜馬拉雅山理論上仍在極緩慢地增高，故選 B。",
+        "optionsZh": [
+          "因為火山噴發持續增加新的熔岩層",
+          "因為印度板塊與亞洲板塊的碰撞至今仍在持續",
+          "因為侵蝕作用已經停止影響這些山脈",
+          "因為科學家的測量方式有誤"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_097",
+    "passageType": "narrative",
+    "title": "The School Play Backstage",
+    "passage": "I auditioned for our school's spring play hoping for a small speaking role, but instead I was assigned to work backstage handling props and costume changes, a position I initially considered a disappointing consolation prize rather than a real part of the production. For the first few rehearsals, I quietly resented spending hours in the dark wings while other students received applause under the bright stage lights.\n\nDuring the second week of rehearsals, our lead actress suddenly lost her voice completely during a particularly demanding scene, and the entire cast froze in confused silence, unsure how to continue without stopping the rehearsal entirely. Having memorized nearly every line from listening backstage for weeks, I quietly fed her the missing lines from just offstage, allowing the rehearsal to continue smoothly without the director even noticing the brief interruption.\n\nAfterward, our director pulled me aside and thanked me, admitting she had never realized how closely backstage crew members needed to follow the entire script just to do their jobs properly. On opening night, watching from the wings as costume changes happened flawlessly and props appeared exactly on cue, I finally understood that the performance the audience applauded depended entirely on work happening in the shadows where nobody could see it. I left that production with a completely different appreciation for every role involved in bringing a play to life.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What can be inferred about the narrator's view of backstage work by the end of the passage?",
+        "options": [
+          "(A) He still considered it unimportant compared to acting",
+          "(B) He gained a new appreciation for the importance of backstage roles",
+          "(C) He quit the production after the incident",
+          "(D) He decided backstage work was easier than acting"
+        ],
+        "answer": 1,
+        "explanation": "文末提到他終於了解觀眾鼓掌的演出，完全仰賴幕後看不見的工作，因而對每個角色都有全新的體會，故選 B。",
+        "optionsZh": [
+          "他仍然認為幕後工作比演戲不重要",
+          "他對幕後工作的重要性有了全新的體會",
+          "他在事件發生後退出了這場製作",
+          "他認為幕後工作比演戲更簡單"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_098",
+    "passageType": "informational",
+    "title": "The Benefits of Walking to School",
+    "passage": "Decades ago, walking or cycling to school was the normal way most children traveled each morning, but today far fewer students walk regularly, with many instead being driven by car even for relatively short distances. Health experts and researchers have become increasingly concerned about this shift, pointing to numerous benefits that regular walking provides beyond simply getting from one place to another.\n\nStudies have shown that children who walk to school tend to arrive more alert and focused, likely because physical activity increases blood flow to the brain and helps reduce morning restlessness before classes even begin. Regular walking also contributes to healthier body weight and stronger cardiovascular fitness over time, benefits that become increasingly important as childhood obesity rates continue rising in many countries around the world.\n\nBeyond physical health, walking to school with friends or family members offers valuable opportunities for conversation and social connection that a quiet car ride typically does not provide in the same way. Some schools have responded to these benefits by organizing supervised walking groups, sometimes called walking school buses, where an adult volunteer walks a fixed route each morning, picking up small groups of students along the way. These programs address safety concerns that many parents raise about traffic while still preserving the physical and social advantages of walking together as a group.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "What is a 'walking school bus' as described in the passage?",
+        "options": [
+          "(A) A special bus that only stops near schools",
+          "(B) A supervised group of students walking a fixed route with an adult volunteer",
+          "(C) A digital app that tracks students walking to school",
+          "(D) A new type of electric vehicle for schools"
+        ],
+        "answer": 1,
+        "explanation": "文中提到「walking school buses」是由成年志工帶領，沿著固定路線一路接學生的步行團體，故選 B。",
+        "optionsZh": [
+          "一種只在學校附近停靠的特殊公車",
+          "由成年志工帶領、沿固定路線步行的學生團體",
+          "一款追蹤學生步行上學的數位應用程式",
+          "一種給學校使用的新型電動車"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_099",
+    "passageType": "narrative",
+    "title": "The Violin Lesson",
+    "passage": "My parents enrolled me in violin lessons when I was eight years old, mostly because my older sister had already quit piano after only three months, and they hoped I might show more dedication toward a different instrument. For the first two years, I dreaded every single weekly lesson, convinced that the screeching sounds coming from my violin would never improve no matter how much I practiced.\n\nEverything changed slightly during my third year, when my teacher assigned a piece that was noticeably more difficult than anything I had previously attempted, warning me honestly that most students needed several months of daily practice before playing it smoothly. Rather than feeling discouraged, something about the challenge sparked genuine determination for the first time, and I began practicing an extra thirty minutes each evening without my parents needing to remind me at all.\n\nAfter nearly four months of steady practice, I performed the piece during our studio's spring recital, and although I made two small mistakes partway through, I finished the piece feeling prouder than I had ever felt about anything violin-related before that moment. My teacher told me afterward that watching a student move from dreading practice to seeking out challenges was the most rewarding part of teaching. I still play violin today, though now entirely because I genuinely want to, not because my parents once signed me up.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What caused the narrator's attitude toward violin practice to change?",
+        "options": [
+          "(A) Her parents began forcing her to practice more",
+          "(B) A difficult piece sparked genuine determination in her",
+          "(C) Her sister returned to playing piano alongside her",
+          "(D) Her teacher offered a reward for daily practice"
+        ],
+        "answer": 1,
+        "explanation": "文中提到在第三年被指派一首更困難的曲子後，挑戰激發了她真正的決心，開始主動額外練習，故選 B。",
+        "optionsZh": [
+          "她的父母開始強迫她練習更多",
+          "一首困難的曲子激發了她真正的決心",
+          "她的姊姊也一起回來彈鋼琴",
+          "老師提供了每天練習的獎勵"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "tt_reading_100",
+    "passageType": "informational",
+    "title": "The Science of Ocean Currents",
+    "passage": "Beneath the surface of the world's oceans flows a vast, interconnected system of moving water known as ocean currents, powerful streams that circulate constantly around the globe, driven by a combination of wind patterns, differences in water temperature, and the rotation of the Earth itself. Some currents flow along the surface, easily influenced by wind, while others move slowly through the deep ocean, driven mainly by differences in water density.\n\nThese currents play an enormous role in regulating global climate patterns, often in ways that surprise people unfamiliar with ocean science. Warm currents originating near the equator carry heat toward polar regions, while cold currents move in the opposite direction, helping distribute temperature more evenly across the planet than would otherwise be possible. Certain coastal regions owe their surprisingly mild climates almost entirely to nearby warm currents passing along their shores, even at latitudes that would typically be much colder without this influence.\n\nOcean currents also affect marine life significantly, transporting nutrients that support fish populations and other sea creatures across vast distances. Fishing communities have relied on this knowledge for generations, understanding that certain currents reliably bring nutrient-rich water that attracts large numbers of fish during specific seasons. As global temperatures continue changing, scientists are closely monitoring whether shifting ocean currents might disrupt these long-established patterns, potentially affecting weather, fishing industries, and coastal communities around the world in ways not yet fully understood.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "According to the passage, how do ocean currents affect global climate?",
+        "options": [
+          "(A) They prevent all temperature changes on Earth",
+          "(B) Warm and cold currents help distribute heat more evenly across the planet",
+          "(C) They only affect temperatures in polar regions",
+          "(D) They have no measurable effect on climate at all"
+        ],
+        "answer": 1,
+        "explanation": "文中提到暖流將熱量帶往極區，冷流則反向流動，兩者共同讓全球溫度分布更均勻，故選 B。",
+        "optionsZh": [
+          "它們能防止地球上所有的溫度變化",
+          "暖流與冷流共同幫助全球溫度分布更均勻",
+          "它們只影響極區的溫度",
+          "它們對氣候完全沒有可測量的影響"
+        ],
+        "questionType": "main_idea"
       }
     ]
   }
