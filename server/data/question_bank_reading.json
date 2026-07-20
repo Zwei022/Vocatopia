@@ -2698,5 +2698,3123 @@
         "questionType": "main_idea"
       }
     ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_42",
+    "passageType": "informational",
+    "title": "Night Owls and Early Birds (說明文)",
+    "passage": "Some people jump out of bed at six in the morning full of energy. Others feel half asleep until noon but come alive late at night. Scientists call these two types \"early birds\" and \"night owls,\" and the difference is not just about habit — it is partly written in our genes.\nInside our bodies, a kind of internal clock controls when we feel sleepy and when we feel awake. This clock is called the circadian rhythm. For early birds, the clock makes them feel tired earlier in the evening and ready to wake up before sunrise. For night owls, the same clock runs a few hours later, so they feel most alert in the late afternoon or evening.\nThis difference can cause problems for night owls, especially students. Most schools start early in the morning, which does not match a night owl's natural clock. As a result, many night owls feel tired and cannot focus well during morning classes, even if they went to bed at a normal time.\nScientists suggest that understanding your own body clock can help you plan your day better. A night owl might study best after dinner, while an early bird might do better finishing homework right after school. Instead of fighting against your natural rhythm, working with it can make learning easier.",
+    "questions": [
+      {
+        "question": "What is the circadian rhythm?",
+        "options": [
+          "(A) A type of exercise for the body",
+          "(B) An internal clock that controls sleep and wake times",
+          "(C) A test used in schools",
+          "(D) A kind of medicine for tired students"
+        ],
+        "answer": 1,
+        "explanation": "文中說 a kind of internal clock controls when we feel sleepy and when we feel awake... This clock is called the circadian rhythm，故選 B。",
+        "optionsZh": [
+          "一種身體的運動",
+          "控制睡眠與清醒時間的內在時鐘",
+          "學校使用的一種測驗",
+          "給疲倦學生吃的藥"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why do night owls often have trouble in morning classes?",
+        "options": [
+          "(A) They do not like their teachers",
+          "(B) Their body clock makes them feel alert later in the day",
+          "(C) They always go to bed very late on purpose",
+          "(D) They are not interested in school at all"
+        ],
+        "answer": 1,
+        "explanation": "第三段說夜貓子的生理時鐘較晚，導致早上上課難以專心，即使正常時間就寢仍然如此，故選 B。",
+        "optionsZh": [
+          "他們不喜歡老師",
+          "他們的生理時鐘讓他們較晚才感到清醒",
+          "他們總是故意很晚睡",
+          "他們對學校完全沒興趣"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What is the main idea of this passage?",
+        "options": [
+          "(A) Everyone should wake up at six in the morning",
+          "(B) Schools should be closed in the morning",
+          "(C) People have different natural body clocks that affect their daily rhythm",
+          "(D) Night owls are lazier than early birds"
+        ],
+        "answer": 2,
+        "explanation": "全文說明「早鳥」與「夜貓子」因體內生理時鐘不同而有不同作息，並建議依此安排生活，故選 C。",
+        "optionsZh": [
+          "每個人都應該在早上六點起床",
+          "學校應該早上停課",
+          "人們有不同的天生生理時鐘，影響日常作息",
+          "夜貓子比早鳥懶惰"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_43",
+    "passageType": "dual",
+    "title": "Should Students Wear School Uniforms? — Two Views (雙方觀點)",
+    "passage": "■ View A — By Grace Huang, Grade 8 Student\n\nI believe school uniforms are a good idea. When everyone wears the same clothes, no one feels bad about not having expensive brand-name clothing. Before my school started using uniforms, some students often talked about who wore the newest shoes or the most fashionable jacket. Now, we spend less time worrying about clothes and more time focusing on our studies. Uniforms also make it easy to get ready in the morning — I do not need to spend time choosing an outfit every day.\n\n■ View B — By Mr. Chen, Parent\n\nI do not agree with strict uniform rules. Clothing is one of the few ways young people can express who they are. When students are forced to wear exactly the same thing every day, they lose a small but important chance to show their own style and personality. I also think uniforms can be uncomfortable, especially in hot weather, and buying new uniforms every year can be expensive for some families. Schools should trust students to dress neatly without forcing everyone into the same clothes.",
+    "questions": [
+      {
+        "question": "According to Grace, what problem did uniforms solve at her school?",
+        "options": [
+          "(A) Students were often late for class",
+          "(B) Students spent too much time and worry comparing clothing",
+          "(C) Students forgot to bring their books",
+          "(D) Students did not like their teachers"
+        ],
+        "answer": 1,
+        "explanation": "Grace 提到制服前有人常常討論誰的鞋子最新、外套最流行，制服讓大家較少為此煩惱，故選 B。",
+        "optionsZh": [
+          "學生常常上課遲到",
+          "學生花太多時間與心力比較穿著",
+          "學生忘記帶課本",
+          "學生不喜歡老師"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What is Mr. Chen's main concern about uniforms?",
+        "options": [
+          "(A) They are always too small",
+          "(B) They limit students' chance to express their own style",
+          "(C) They make students study less",
+          "(D) They are not allowed by law"
+        ],
+        "answer": 1,
+        "explanation": "Mr. Chen 認為服裝是年輕人展現自我的方式之一，制服讓學生失去展現個性風格的機會，故選 B。",
+        "optionsZh": [
+          "制服總是太小",
+          "制服限制了學生展現自我風格的機會",
+          "制服讓學生變得不愛讀書",
+          "制服是法律所不允許的"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What do both writers seem to agree on, based on the passage?",
+        "options": [
+          "(A) Clothing choices can affect how students feel at school",
+          "(B) School uniforms should be free for everyone",
+          "(C) Students should choose their own school subjects",
+          "(D) Fashion is not important to teenagers at all"
+        ],
+        "answer": 0,
+        "explanation": "Grace 談到制服如何影響學生比較與心情，Mr. Chen 談到服裝如何影響學生的自我表達，兩人都認同穿著會影響學生的感受，故選 A。",
+        "optionsZh": [
+          "穿著選擇會影響學生在校的感受",
+          "校服應該對每個人都免費",
+          "學生應該自己選課",
+          "時尚對青少年完全不重要"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What is the best title for these two passages?",
+        "options": [
+          "(A) How to Buy Cheap Clothes",
+          "(B) School Uniforms: A Debate",
+          "(C) The History of Fashion",
+          "(D) Why Parents Dislike School"
+        ],
+        "answer": 1,
+        "explanation": "兩篇短文分別代表贊成與反對校服的立場，屬於一場辯論，故最佳標題為 B。",
+        "optionsZh": [
+          "如何買便宜的衣服",
+          "校服：一場辯論",
+          "時尚的歷史",
+          "為什麼家長討厭學校"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_44",
+    "passageType": "chat",
+    "title": "Group Project Trouble (對話)",
+    "passage": "",
+    "caption": "Leo: Hey, are you done with your part of the science report?\nMia: Not yet. I still need to add the graphs. Sorry, I've been busy this week.\nLeo: No worries, but the report is due Friday. Can you finish it by Thursday night?\nMia: I think so. Can you send me the data again? I lost my copy.\nLeo: Sure, I'll email it to you tonight.\nMia: Thanks! I'll also ask Noah to check my part before I send it to you.\nLeo: Great idea. Let's all meet online Thursday at 8 to put everything together.\nMia: Sounds good. I'll be there.",
+    "questions": [
+      {
+        "question": "What does Mia still need to finish?",
+        "options": [
+          "(A) Writing the introduction",
+          "(B) Adding the graphs",
+          "(C) Printing the report",
+          "(D) Choosing the topic"
+        ],
+        "answer": 1,
+        "explanation": "Mia 說 I still need to add the graphs，表示她還沒完成圖表部分，故選 B。",
+        "optionsZh": [
+          "寫引言",
+          "加入圖表",
+          "列印報告",
+          "選擇主題"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What will the group do on Thursday at 8?",
+        "options": [
+          "(A) Turn in the final report",
+          "(B) Meet online to put the report together",
+          "(C) Have a science test",
+          "(D) Go to Noah's house"
+        ],
+        "answer": 1,
+        "explanation": "Leo 提議 Let's all meet online Thursday at 8 to put everything together，故選 B。",
+        "optionsZh": [
+          "繳交最終報告",
+          "上線集合並整合報告",
+          "考科學考試",
+          "去 Noah 家"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_45",
+    "passageType": "practical",
+    "title": "Sunday Farmers Market Flyer (傳單)",
+    "passage": "SUNNYSIDE FARMERS MARKET\nEvery Sunday, 7:00 a.m. – 12:00 p.m.\nLocation: Central Park, next to the fountain\n\nWhat You'll Find:\n• Fresh fruits and vegetables from local farms\n• Homemade bread and jam\n• Handmade soap and candles\n• Live music from 9:00 to 11:00 a.m.\n\nBring your own bag and get a 10% discount at any fruit stall!\nRainy days: The market moves indoors to the community hall.\nQuestions? Call 03-456-7890.",
+    "questions": [
+      {
+        "question": "How can shoppers get a 10% discount at a fruit stall?",
+        "options": [
+          "(A) By arriving before 8:00 a.m.",
+          "(B) By bringing their own bag",
+          "(C) By listening to the live music",
+          "(D) By calling ahead"
+        ],
+        "answer": 1,
+        "explanation": "傳單寫 Bring your own bag and get a 10% discount at any fruit stall，故選 B。",
+        "optionsZh": [
+          "提早在8點前抵達",
+          "自備購物袋",
+          "聆聽現場音樂",
+          "事先致電"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Where does the market move to on a rainy day?",
+        "options": [
+          "(A) A nearby school",
+          "(B) The community hall",
+          "(C) A shopping mall",
+          "(D) Someone's house"
+        ],
+        "answer": 1,
+        "explanation": "傳單寫 Rainy days: The market moves indoors to the community hall，故選 B。",
+        "optionsZh": [
+          "附近的學校",
+          "社區活動中心",
+          "購物中心",
+          "某人的家"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "If a family arrives at the market at 10:30 a.m., what will they most likely experience?",
+        "options": [
+          "(A) The market is already closed",
+          "(B) They can still hear live music",
+          "(C) All the fruit is already sold out",
+          "(D) They must wait outside for one hour"
+        ],
+        "answer": 1,
+        "explanation": "現場音樂為 9:00 到 11:00，10:30 到達仍可聽到音樂；市場開到中午 12 點才結束，故選 B。",
+        "optionsZh": [
+          "市場已經打烊",
+          "他們仍能聽到現場音樂",
+          "所有水果都已賣完",
+          "他們必須在外面等一小時"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_46",
+    "passageType": "practical",
+    "title": "Have You Seen Milo? (尋貓啟事)",
+    "passage": "MISSING CAT — Please Help!\nName: Milo\nDescription: Orange fur with white paws, green eyes, wearing a blue collar with a bell\nLast seen: Near Maple Street Park on Tuesday evening\nMilo is friendly but shy around strangers. He may hide under cars or bushes if he is scared.\nIf you see him, please do NOT chase him. Instead, call us right away at 0912-345-678, and leave some food nearby to keep him close.\nReward: NT$1000 for anyone who helps bring him home safely.",
+    "questions": [
+      {
+        "question": "What should you do if you see Milo?",
+        "options": [
+          "(A) Chase him until you catch him",
+          "(B) Call the owner and leave food nearby",
+          "(C) Take him home immediately",
+          "(D) Ignore him and walk away"
+        ],
+        "answer": 1,
+        "explanation": "啟事寫 please do NOT chase him. Instead, call us right away... and leave some food nearby，故選 B。",
+        "optionsZh": [
+          "追著他直到抓到",
+          "打電話給主人並留下食物",
+          "立刻把他帶回家",
+          "不理會並走開"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Where was Milo last seen?",
+        "options": [
+          "(A) Near Maple Street Park",
+          "(B) Inside a car",
+          "(C) At a pet shop",
+          "(D) In the owner's house"
+        ],
+        "answer": 0,
+        "explanation": "啟事寫 Last seen: Near Maple Street Park on Tuesday evening，故選 A。",
+        "optionsZh": [
+          "楓樹街公園附近",
+          "在車子裡",
+          "在寵物店",
+          "在主人家中"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_47",
+    "passageType": "narrative",
+    "title": "Learning to Surf (故事)",
+    "passage": "The first time I stood on a surfboard, I fell into the water within two seconds. My cousin Jay, who had been surfing for years, laughed and told me not to give up. \"Everyone falls at the beginning,\" he said. \"The ocean is a patient teacher.\"\nFor the rest of that summer morning, I tried again and again. My arms grew tired from paddling, and salt water stung my eyes. Each time a wave pushed me off the board, I climbed back on without thinking twice. Somewhere between the tenth and twentieth fall, something changed. I stopped worrying about falling and simply focused on the feeling of the water beneath the board.\nThen it happened. A gentle wave lifted me up, and for a few seconds, I actually stood and rode it all the way to the shore. My legs shook, but I was smiling so wide that my face hurt. Jay cheered from the water.\nThat day taught me something I still remember: skills worth having rarely come easily. It is the falling, not just the standing, that makes the moment on the board feel so good.",
+    "questions": [
+      {
+        "question": "What did Jay tell the writer at the beginning?",
+        "options": [
+          "(A) Surfing is too dangerous for beginners",
+          "(B) Everyone falls at first, so keep trying",
+          "(C) The writer should quit and try another sport",
+          "(D) The ocean is too cold in summer"
+        ],
+        "answer": 1,
+        "explanation": "Jay 說 Everyone falls at the beginning... The ocean is a patient teacher，鼓勵作者別放棄，故選 B。",
+        "optionsZh": [
+          "衝浪對初學者來說太危險",
+          "每個人一開始都會摔倒，繼續嘗試就好",
+          "作者應該放棄改玩別的運動",
+          "夏天的海水太冷"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What changed after the writer fell many times?",
+        "options": [
+          "(A) The writer decided to stop surfing",
+          "(B) The writer stopped worrying and focused on the feeling of the water",
+          "(C) Jay took over and finished the lesson",
+          "(D) The waves became much smaller"
+        ],
+        "answer": 1,
+        "explanation": "文中說在跌倒十幾次後 I stopped worrying about falling and simply focused on the feeling of the water，故選 B。",
+        "optionsZh": [
+          "作者決定放棄衝浪",
+          "作者不再擔心，開始專注於水的感覺",
+          "Jay 接手完成課程",
+          "海浪變小了很多"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What is the main lesson the writer learned that day?",
+        "options": [
+          "(A) Surfing is easier than it looks",
+          "(B) Falling is part of learning a skill worth having",
+          "(C) The ocean is dangerous for beginners",
+          "(D) Family members make the best teachers"
+        ],
+        "answer": 1,
+        "explanation": "末段點出 skills worth having rarely come easily... It is the falling... that makes the moment feel so good，主旨是跌倒是學習過程的一部分，故選 B。",
+        "optionsZh": [
+          "衝浪比看起來簡單",
+          "跌倒是學習有價值技能過程的一部分",
+          "海洋對初學者很危險",
+          "家人是最好的老師"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_48",
+    "passageType": "informational",
+    "title": "The Power of a Short Nap (說明文)",
+    "passage": "In many countries, taking a nap in the middle of the day is seen as a habit only for babies or the elderly. But science tells a different story: a short nap can be one of the most useful tools for staying sharp and healthy.\nStudies show that a nap of just twenty minutes can improve memory, mood, and attention. During this short rest, the brain gets a chance to organize information from the morning and prepare for the rest of the day. People who take short naps often make fewer mistakes and react more quickly than those who do not.\nHowever, timing matters. Experts suggest napping in the early afternoon, usually between 1:00 and 3:00 p.m. Napping too late in the day can make it harder to fall asleep at night. Length also matters — a nap that lasts more than thirty minutes may leave a person feeling groggy instead of refreshed, because the body starts entering a deeper stage of sleep.\nSome companies now provide nap rooms for workers, understanding that a well-rested employee is often a more productive one. Instead of seeing naps as a sign of laziness, we might start seeing them as a smart way to recharge.",
+    "questions": [
+      {
+        "question": "According to the passage, what can a short nap improve?",
+        "options": [
+          "(A) Height and weight",
+          "(B) Memory, mood, and attention",
+          "(C) Eyesight only",
+          "(D) The ability to speak new languages"
+        ],
+        "answer": 1,
+        "explanation": "文中提到 a short nap of just twenty minutes can improve memory, mood, and attention，故選 B。",
+        "optionsZh": [
+          "身高與體重",
+          "記憶力、心情與注意力",
+          "只有視力",
+          "說新語言的能力"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why might a nap longer than thirty minutes make someone feel groggy?",
+        "options": [
+          "(A) The body starts entering a deeper stage of sleep",
+          "(B) The room usually becomes too cold",
+          "(C) It is against company rules",
+          "(D) The person forgets to set an alarm"
+        ],
+        "answer": 0,
+        "explanation": "文中說超過三十分鐘的午睡讓人昏沉，因為身體開始進入更深的睡眠階段，故選 A。",
+        "optionsZh": [
+          "身體開始進入更深的睡眠階段",
+          "房間通常變得太冷",
+          "這違反公司規定",
+          "此人忘記設鬧鐘"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What does \"groggy\" most likely mean in the third paragraph?",
+        "options": [
+          "(A) Feeling fully energetic",
+          "(B) Feeling confused and sleepy",
+          "(C) Feeling extremely hungry",
+          "(D) Feeling proud and confident"
+        ],
+        "answer": 1,
+        "explanation": "前後文對比「refreshed（神清氣爽）」，可推知 groggy 是相反的感覺，即昏沉想睡，故選 B。",
+        "optionsZh": [
+          "感到充滿活力",
+          "感到昏沉想睡",
+          "感到非常飢餓",
+          "感到自豪又有自信"
+        ],
+        "questionType": "vocabulary"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_49",
+    "passageType": "informational",
+    "title": "Why Does Bread Rise? (說明文)",
+    "passage": "Have you ever watched bread dough grow bigger and bigger before it goes into the oven? This magic is caused by tiny living things called yeast.\nYeast is a kind of fungus, too small to see with our eyes. When yeast is mixed with flour, water, and a little sugar, it starts to \"eat\" the sugar. As it eats, the yeast produces a gas called carbon dioxide. This gas forms small bubbles inside the dough, and the bubbles push the dough to expand, making it rise.\nWarm temperatures help yeast work faster, which is why bakers often place dough in a warm spot to rise. If the dough is too cold, the yeast becomes slow and sleepy, and the bread will not rise well. If it is too hot, however, the yeast can die.\nOnce the dough is baked in the oven, the heat kills the yeast and the gas bubbles become fixed in place. That is why baked bread has all those small holes inside — each one is a tiny footprint left by hardworking yeast.",
+    "questions": [
+      {
+        "question": "What does yeast produce when it eats sugar in the dough?",
+        "options": [
+          "(A) Salt",
+          "(B) Carbon dioxide gas",
+          "(C) Extra flour",
+          "(D) Cold water"
+        ],
+        "answer": 1,
+        "explanation": "文中說酵母吃糖後 produces a gas called carbon dioxide，故選 B。",
+        "optionsZh": [
+          "鹽",
+          "二氧化碳氣體",
+          "額外的麵粉",
+          "冷水"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why do bakers often put dough in a warm place?",
+        "options": [
+          "(A) Warm temperatures help yeast work faster",
+          "(B) It makes the dough taste sweeter",
+          "(C) It stops the dough from getting moldy",
+          "(D) It helps the flour turn white"
+        ],
+        "answer": 0,
+        "explanation": "文中說 Warm temperatures help yeast work faster，故麵包師常把麵團放在溫暖處，選 A。",
+        "optionsZh": [
+          "溫暖的溫度讓酵母作用更快",
+          "讓麵團嚐起來更甜",
+          "防止麵團發霉",
+          "幫助麵粉變白"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What causes the small holes inside baked bread?",
+        "options": [
+          "(A) Small pieces of sugar",
+          "(B) Gas bubbles made by the yeast",
+          "(C) Water that did not mix well",
+          "(D) Air from the oven fan"
+        ],
+        "answer": 1,
+        "explanation": "末段解釋烘烤後氣泡固定在麵包中形成小孔，這些氣泡是酵母產生的，故選 B。",
+        "optionsZh": [
+          "小塊的糖",
+          "酵母製造的氣泡",
+          "沒有混合均勻的水",
+          "烤箱風扇吹進的空氣"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_50",
+    "passageType": "narrative",
+    "title": "The Silent Reading Hour (故事)",
+    "passage": "At first, Owen hated Silent Reading Hour. Every Friday afternoon, his teacher, Ms. Park, turned off the lights, put on soft music, and told the class to read anything they liked for forty-five minutes. Owen usually just stared at the ceiling and waited for time to pass.\nOne Friday, Owen forgot his phone at home and had nothing else to do. Bored, he picked up a comic book about a boy who could talk to animals. Within a few pages, he was completely lost in the story. He barely noticed when Ms. Park announced that time was up.\nAfter that day, Owen started bringing a different book every Friday. He read about explorers, robots, and even a girl who solved mysteries in her neighborhood. He began looking forward to Fridays instead of dreading them.\nBy the end of the school year, Owen had read more books than anyone else in his class. When his mother asked what changed his mind about reading, he laughed and said, \"I guess I just needed to find the right story.\"",
+    "questions": [
+      {
+        "question": "How did Owen feel about Silent Reading Hour at first?",
+        "options": [
+          "(A) He loved it more than any other class",
+          "(B) He did not enjoy it and felt bored",
+          "(C) He was too nervous to read",
+          "(D) He always fell asleep"
+        ],
+        "answer": 1,
+        "explanation": "文中說一開始 Owen hated Silent Reading Hour，只是盯著天花板等時間過去，故選 B。",
+        "optionsZh": [
+          "他比任何課都更喜歡這堂課",
+          "他不喜歡而且感到無聊",
+          "他緊張到無法閱讀",
+          "他總是睡著"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What happened when Owen forgot his phone one Friday?",
+        "options": [
+          "(A) He went home to get it",
+          "(B) He got in trouble with Ms. Park",
+          "(C) He picked up a comic book and got lost in the story",
+          "(D) He asked to borrow a friend's phone"
+        ],
+        "answer": 2,
+        "explanation": "當天他無事可做，拿起一本漫畫書，很快就完全沉浸在故事裡，故選 C。",
+        "optionsZh": [
+          "他回家去拿手機",
+          "他因此被 Ms. Park 責罵",
+          "他拿起一本漫畫書並沉浸在故事裡",
+          "他向朋友借手機"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does this story mainly suggest?",
+        "options": [
+          "(A) Reading is only fun with comic books",
+          "(B) Finding the right book can change how someone feels about reading",
+          "(C) Students should not use phones at school",
+          "(D) Teachers should stop giving silent reading time"
+        ],
+        "answer": 1,
+        "explanation": "故事透過 Owen 找到適合自己的書籍後愛上閱讀，最後點出「我只是需要找到對的故事」，主旨為找到合適的書能改變人對閱讀的看法，故選 B。",
+        "optionsZh": [
+          "閱讀只有漫畫書才有趣",
+          "找到對的書能改變一個人對閱讀的看法",
+          "學生在學校不該用手機",
+          "老師應停止安排靜讀時間"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_51",
+    "passageType": "informational",
+    "title": "Why Do Onions Make You Cry? (說明文)",
+    "passage": "Cutting an onion is a common kitchen task, but it often comes with an unwanted side effect: tears. Why does something we plan to eat make us cry before it even reaches the table?\nThe answer lies inside the onion's cells. When you cut an onion, you break open tiny cells that release a special chemical. This chemical quickly turns into a gas that floats up into the air and reaches your eyes. Once the gas touches your eyes, it mixes with the water there and forms a mild acid. Your eyes sense this as something that can hurt them, so they immediately make tears to wash it away.\nThere are a few simple tricks that may reduce tears while cutting onions. Chilling the onion in the refrigerator before cutting can slow down the chemical reaction. Cutting the onion near running water or a fan can also help carry the gas away before it reaches your eyes. Some people even wear goggles, similar to swimming goggles, to protect their eyes completely.\nSo the next time an onion makes you cry, remember: it is not really sad at all. It is simply chemistry doing its job.",
+    "questions": [
+      {
+        "question": "What happens when you cut an onion, according to the passage?",
+        "options": [
+          "(A) The onion releases a sweet smell",
+          "(B) A chemical is released and turns into a gas",
+          "(C) The onion becomes softer immediately",
+          "(D) The onion loses all of its color"
+        ],
+        "answer": 1,
+        "explanation": "文中說切洋蔥時破壞細胞，釋放出的化學物質會迅速變成氣體，故選 B。",
+        "optionsZh": [
+          "洋蔥散發出甜味",
+          "釋放出的化學物質變成氣體",
+          "洋蔥立刻變軟",
+          "洋蔥失去所有顏色"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why do the eyes make tears when cutting onions?",
+        "options": [
+          "(A) Because the gas forms a mild acid that the eyes want to wash away",
+          "(B) Because the onion is too spicy to eat",
+          "(C) Because the eyes are allergic to all vegetables",
+          "(D) Because cutting takes too much time"
+        ],
+        "answer": 0,
+        "explanation": "文中解釋氣體遇到眼睛的水分形成溫和的酸，眼睛感覺受威脅便流淚沖走它，故選 A。",
+        "optionsZh": [
+          "因為氣體形成溫和的酸，眼睛想沖洗掉它",
+          "因為洋蔥太辣不能吃",
+          "因為眼睛對所有蔬菜過敏",
+          "因為切菜花太多時間"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "Which method is mentioned as a way to reduce tears while cutting onions?",
+        "options": [
+          "(A) Cutting the onion in complete darkness",
+          "(B) Chilling the onion before cutting",
+          "(C) Cutting the onion very slowly",
+          "(D) Adding sugar to the onion first"
+        ],
+        "answer": 1,
+        "explanation": "文中提到 Chilling the onion in the refrigerator before cutting can slow down the chemical reaction，故選 B。",
+        "optionsZh": [
+          "在完全黑暗中切洋蔥",
+          "切之前先冷藏洋蔥",
+          "非常緩慢地切洋蔥",
+          "先在洋蔥上加糖"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_52",
+    "passageType": "narrative",
+    "title": "The New Neighbor (故事)",
+    "passage": "When the moving truck parked next door, Emma peeked through the curtains, curious about who would live there. An old man got out slowly, carrying a small box of plants. He looked tired but smiled at the empty street.\nFor the first week, Emma only waved from a distance. But one afternoon, she noticed the old man struggling to carry a heavy bag of soil into his yard. Without thinking, she ran over and offered to help. \"Thank you, young lady,\" he said, wiping his forehead. \"I'm Mr. Alvarez. I used to be a farmer, and I still can't live without a garden.\"\nOver the next few weeks, Emma often stopped by after school to help water the plants. Mr. Alvarez taught her the names of vegetables she had never heard of and told stories about his old farm far away. In return, Emma brought him cookies her mother baked.\nBy summer, Mr. Alvarez's yard was full of colorful vegetables, and Emma had learned more about gardening than she ever expected. What started as a simple wave from a window had grown into a real friendship.",
+    "questions": [
+      {
+        "question": "How did Emma first help Mr. Alvarez?",
+        "options": [
+          "(A) By carrying a heavy bag of soil",
+          "(B) By driving him to the store",
+          "(C) By cooking dinner for him",
+          "(D) By fixing his moving truck"
+        ],
+        "answer": 0,
+        "explanation": "文中說 Mr. Alvarez 搬運沉重的土壤袋很吃力，Emma 主動跑去幫忙，故選 A。",
+        "optionsZh": [
+          "幫忙搬運沉重的土壤袋",
+          "開車載他去商店",
+          "為他煮晚餐",
+          "修理他的搬家貨車"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What did Mr. Alvarez used to do before he retired?",
+        "options": [
+          "(A) He was a farmer",
+          "(B) He was a teacher",
+          "(C) He was a truck driver",
+          "(D) He was a cook"
+        ],
+        "answer": 0,
+        "explanation": "Mr. Alvarez 說 I used to be a farmer, and I still can't live without a garden，故選 A。",
+        "optionsZh": [
+          "他曾經是農夫",
+          "他曾經是老師",
+          "他曾經是貨車司機",
+          "他曾經是廚師"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does the story mainly show?",
+        "options": [
+          "(A) Gardening is easier than most people think",
+          "(B) A small act of kindness can grow into a real friendship",
+          "(C) Old people should not live alone",
+          "(D) Moving to a new house is always stressful"
+        ],
+        "answer": 1,
+        "explanation": "故事描述 Emma 一開始只是幫忙，最後兩人成為真正的朋友，主旨為小小的善意可以發展成友誼，故選 B。",
+        "optionsZh": [
+          "園藝比大多數人想的簡單",
+          "一個小小的善意可以發展成真正的友誼",
+          "老年人不該獨自居住",
+          "搬家總是令人壓力很大"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_53",
+    "passageType": "practical",
+    "title": "Library Late Fee Notice (公告)",
+    "passage": "RIVERBEND PUBLIC LIBRARY — Late Fee Reminder\nBooks and magazines may be borrowed for 14 days.\nDVDs may be borrowed for 7 days.\nLate fees:\n• Books/magazines: NT$2 per day\n• DVDs: NT$5 per day\n(Maximum fee per item: NT$100)\nItems more than 30 days late will be marked as \"lost,\" and the borrower must pay the full price of the item.\nRenewals: You may renew an item once online or by phone, unless someone else has reserved it.\nQuestions? Ask at the front desk or call 04-2233-4455.",
+    "questions": [
+      {
+        "question": "How long can a DVD be borrowed before it becomes late?",
+        "options": [
+          "(A) 7 days",
+          "(B) 14 days",
+          "(C) 21 days",
+          "(D) 30 days"
+        ],
+        "answer": 0,
+        "explanation": "公告寫 DVDs may be borrowed for 7 days，故選 A。",
+        "optionsZh": [
+          "7天",
+          "14天",
+          "21天",
+          "30天"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What happens if a book is more than 30 days late?",
+        "options": [
+          "(A) The fee stops increasing",
+          "(B) It is marked as lost, and the borrower must pay the full price",
+          "(C) The borrower can keep it for free",
+          "(D) The library sends the book to another branch"
+        ],
+        "answer": 1,
+        "explanation": "公告寫 Items more than 30 days late will be marked as \"lost,\" and the borrower must pay the full price，故選 B。",
+        "optionsZh": [
+          "罰金停止增加",
+          "會被標記為遺失，借閱者須付全額",
+          "借閱者可以免費保留該書",
+          "圖書館會把書送到另一個分館"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Can a borrower always renew a book they have?",
+        "options": [
+          "(A) Yes, as many times as they want",
+          "(B) No, only if no one else has reserved it",
+          "(C) No, renewals are never allowed",
+          "(D) Yes, but only in person"
+        ],
+        "answer": 1,
+        "explanation": "公告寫 You may renew an item once online or by phone, unless someone else has reserved it，表示若被他人預約則不能續借，故選 B。",
+        "optionsZh": [
+          "可以，想借多少次都行",
+          "不行，除非沒有人預約該書",
+          "不行，完全不能續借",
+          "可以，但只能親自辦理"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_54",
+    "passageType": "informational",
+    "title": "The Science Behind Procrastination (說明文)",
+    "passage": "Almost everyone has put off an important task until the last minute, even when they knew it was a bad idea. This habit is called procrastination, and scientists say it is not really about being lazy.\nResearch shows that procrastination is closely connected to how our brains handle emotions. When we think about a difficult or boring task, our brain often feels a small amount of stress or discomfort. To avoid this uncomfortable feeling, the brain looks for something more enjoyable to do instead, like checking a phone or watching videos. In this way, procrastination is less about time management and more about managing emotions.\nInterestingly, waiting until the last minute can sometimes work — the pressure of a close deadline pushes some people to focus quickly. However, this approach often causes more stress and lower quality work over time.\nExperts suggest breaking a big task into smaller steps to make it feel less overwhelming. Starting with just five minutes of work, rather than trying to finish everything at once, can trick the brain into feeling less uncomfortable and help a person get started.",
+    "questions": [
+      {
+        "question": "According to the passage, what is procrastination closely connected to?",
+        "options": [
+          "(A) How our brains handle emotions",
+          "(B) How much sleep a person gets",
+          "(C) A person's height and weight",
+          "(D) The weather outside"
+        ],
+        "answer": 0,
+        "explanation": "文中說 procrastination is closely connected to how our brains handle emotions，故選 A。",
+        "optionsZh": [
+          "大腦如何處理情緒",
+          "一個人的睡眠量",
+          "一個人的身高體重",
+          "外面的天氣"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why does the brain look for something more enjoyable when facing a boring task?",
+        "options": [
+          "(A) To avoid the uncomfortable feeling caused by the task",
+          "(B) To finish the task faster",
+          "(C) To please other people",
+          "(D) To save electricity"
+        ],
+        "answer": 0,
+        "explanation": "文中說面對困難或無聊的任務時大腦會感到不適，因此尋找更愉快的事來逃避這種感覺，故選 A。",
+        "optionsZh": [
+          "為了避開任務帶來的不適感",
+          "為了更快完成任務",
+          "為了取悅他人",
+          "為了省電"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What do experts suggest to help a person get started on a task?",
+        "options": [
+          "(A) Waiting until the very last minute",
+          "(B) Breaking the task into smaller steps",
+          "(C) Asking someone else to finish it",
+          "(D) Avoiding the task completely"
+        ],
+        "answer": 1,
+        "explanation": "末段建議 breaking a big task into smaller steps，並從五分鐘開始，故選 B。",
+        "optionsZh": [
+          "等到最後一刻",
+          "把任務拆成更小的步驟",
+          "請別人代為完成",
+          "完全避開這個任務"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_55",
+    "passageType": "dual",
+    "title": "Should School Start Later? — Two Views (雙方觀點)",
+    "passage": "■ View A — By Ryan Tsai, Grade 9 Student\n\nOur school starts at 7:30 a.m., and I think that is far too early. Studies show that teenagers naturally fall asleep later than adults and need more sleep at night. When school starts so early, most students do not get enough rest, which makes it hard to focus during morning classes. I often feel half asleep until third period. If school started even one hour later, students would arrive more awake and ready to learn.\n\n■ View B — By Ms. Torres, School Principal\n\nWhile I understand students' concerns about sleep, starting school later creates other problems. Many parents need to drop their children off before going to work, and a later start time would make this difficult. Bus schedules, after-school activities, and sports practices are also carefully planned around the current schedule. Changing the start time would affect many families and require reorganizing the entire school day. Instead, I encourage students to manage their bedtime better and avoid using phones late at night.",
+    "questions": [
+      {
+        "question": "What is Ryan's main reason for wanting school to start later?",
+        "options": [
+          "(A) He dislikes his teachers",
+          "(B) Teenagers need more sleep and struggle to focus when school starts too early",
+          "(C) He wants more time to play video games",
+          "(D) The bus is often late"
+        ],
+        "answer": 1,
+        "explanation": "Ryan 提到青少年天生需要更多睡眠，太早上學讓他們難以專心上課，故選 B。",
+        "optionsZh": [
+          "他不喜歡老師",
+          "青少年需要更多睡眠，太早上學難以專心",
+          "他想要更多時間打電動",
+          "校車經常誤點"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What concern does Ms. Torres raise about starting school later?",
+        "options": [
+          "(A) It would be too expensive for the school",
+          "(B) It would create problems for parents' work schedules and other activities",
+          "(C) Students would not like the new schedule",
+          "(D) Teachers would need extra training"
+        ],
+        "answer": 1,
+        "explanation": "Ms. Torres 提到家長需要上班前送小孩，公車時間和課後活動也已依現行時間安排，更改會造成困擾，故選 B。",
+        "optionsZh": [
+          "對學校來說太昂貴",
+          "會為家長的上班時間及其他活動帶來困擾",
+          "學生不會喜歡新的時間表",
+          "老師需要額外的培訓"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does Ms. Torres suggest instead of changing the school start time?",
+        "options": [
+          "(A) Managing bedtime better and avoiding phones late at night",
+          "(B) Adding more homework",
+          "(C) Shortening the school day",
+          "(D) Canceling after-school activities"
+        ],
+        "answer": 0,
+        "explanation": "Ms. Torres 最後建議學生應更好地管理就寢時間並避免熬夜使用手機，故選 A。",
+        "optionsZh": [
+          "更好地管理就寢時間並避免晚上用手機",
+          "增加更多作業",
+          "縮短上學時間",
+          "取消課後活動"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What can we infer both Ryan and Ms. Torres care about?",
+        "options": [
+          "(A) How well students perform at school",
+          "(B) Increasing school fees",
+          "(C) Reducing the number of school subjects",
+          "(D) Building a new school building"
+        ],
+        "answer": 0,
+        "explanation": "Ryan 關心睡眠不足影響專注力，Ms. Torres 則關心整體校務安排，兩人其實都關心學生在校表現，故選 A。",
+        "optionsZh": [
+          "學生在校的表現",
+          "提高學費",
+          "減少學科數量",
+          "興建新校舍"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_56",
+    "passageType": "chat",
+    "title": "Weekend Movie Plan (對話)",
+    "passage": "",
+    "caption": "Chloe: Do you want to watch the new superhero movie this Saturday?\nJake: I'd love to! What time does it start?\nChloe: There's a show at 2 p.m. and another at 5 p.m.\nJake: Let's go to the 5 p.m. show. I have a piano lesson until 4.\nChloe: Okay! Should we buy tickets online now?\nJake: Yes, let's do that so we don't have to wait in line.\nChloe: Great. I'll book two tickets and send you the confirmation.\nJake: Thanks! I'll bring some snacks for us to share.",
+    "questions": [
+      {
+        "question": "Why does Jake want to watch the 5 p.m. show instead of the 2 p.m. show?",
+        "options": [
+          "(A) He is not free until after his piano lesson",
+          "(B) He does not like the 2 p.m. showtime",
+          "(C) The 5 p.m. tickets are cheaper",
+          "(D) Chloe cannot go at 2 p.m."
+        ],
+        "answer": 0,
+        "explanation": "Jake 說 I have a piano lesson until 4，因此無法看2點的場次，只能選5點，故選 A。",
+        "optionsZh": [
+          "他要上鋼琴課到4點才有空",
+          "他不喜歡2點的場次",
+          "5點的票比較便宜",
+          "Chloe 2點沒空"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What will Jake bring to the movie?",
+        "options": [
+          "(A) Tickets",
+          "(B) Snacks",
+          "(C) A blanket",
+          "(D) A camera"
+        ],
+        "answer": 1,
+        "explanation": "Jake 說 I'll bring some snacks for us to share，故選 B。",
+        "optionsZh": [
+          "電影票",
+          "零食",
+          "毯子",
+          "相機"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_57",
+    "passageType": "informational",
+    "title": "The Invention of the Zipper (說明文)",
+    "passage": "Today, zippers are found on almost everything — jackets, bags, boots, and pencil cases. But before zippers existed, people had to rely on buttons, hooks, and laces to close their clothing, which took much more time.\nThe zipper was not invented all at once. In 1893, an American engineer created an early version, but it did not work very well and often came apart. It took another inventor, Gideon Sundback, to improve the design in 1913. His version had small teeth that locked together smoothly, much like the zippers we use today.\nAt first, people were not sure about this strange new invention. Zippers became popular only after companies started using them on boots and tobacco pouches, showing customers how quick and convenient they were. By the 1930s, clothing designers began adding zippers to jackets and pants, and the invention quickly spread around the world.\nWhat seems like a simple, ordinary object today actually took decades of testing and improvement. The next time you zip up a jacket in seconds, remember that this convenience was once considered a bold new idea.",
+    "questions": [
+      {
+        "question": "Who improved the zipper's design in 1913?",
+        "options": [
+          "(A) An American engineer in 1893",
+          "(B) Gideon Sundback",
+          "(C) A clothing designer",
+          "(D) A boot company owner"
+        ],
+        "answer": 1,
+        "explanation": "文中提到 It took another inventor, Gideon Sundback, to improve the design in 1913，故選 B。",
+        "optionsZh": [
+          "1893年的美國工程師",
+          "Gideon Sundback",
+          "一位服裝設計師",
+          "一家靴子公司的老闆"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "How did zippers first become popular with customers?",
+        "options": [
+          "(A) Through use on boots and tobacco pouches",
+          "(B) Through advertisements on television",
+          "(C) Through free gifts at stores",
+          "(D) Through school programs"
+        ],
+        "answer": 0,
+        "explanation": "文中說 Zippers became popular only after companies started using them on boots and tobacco pouches，故選 A。",
+        "optionsZh": [
+          "透過用於靴子和菸草袋",
+          "透過電視廣告",
+          "透過商店的免費贈品",
+          "透過學校課程"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What is the main idea of this passage?",
+        "options": [
+          "(A) Zippers are difficult to use",
+          "(B) The zipper took years of improvement before becoming a common invention",
+          "(C) Buttons are better than zippers",
+          "(D) Only rich people could afford zippers"
+        ],
+        "answer": 1,
+        "explanation": "全文描述拉鍊從最初不完美的版本到經過改良、逐漸普及的過程，故選 B。",
+        "optionsZh": [
+          "拉鍊很難使用",
+          "拉鍊經過多年改良才成為常見的發明",
+          "鈕扣比拉鍊好",
+          "只有有錢人才買得起拉鍊"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_58",
+    "passageType": "narrative",
+    "title": "Grandpa's Balcony Garden (故事)",
+    "passage": "My grandfather lived in a small apartment with only a narrow balcony, but somehow he grew tomatoes, peppers, and herbs in pots lined up along the railing. Every summer when I visited, he would hand me a small watering can and say, \"The plants missed you.\"\nAt first, I thought it was strange that a grown man cared so much about a few pots of vegetables. But Grandpa always seemed happiest when he was out there, gently touching the leaves and checking for new buds. He told me that gardening reminded him of his childhood on a real farm, before his family moved to the city.\nOne summer, a terrible storm knocked over most of his pots. I expected him to be upset, but he just smiled and said, \"We'll plant again. That's what gardens teach you — things grow back if you keep trying.\"\nI am older now, living far from that small balcony, but whenever something in my life goes wrong, I remember his words. Somewhere in a tiny apartment, an old man once taught me that patience and hope can grow in even the smallest space.",
+    "questions": [
+      {
+        "question": "What did Grandpa grow on his balcony?",
+        "options": [
+          "(A) Flowers only",
+          "(B) Tomatoes, peppers, and herbs",
+          "(C) Fruit trees",
+          "(D) Rice"
+        ],
+        "answer": 1,
+        "explanation": "文中說 he grew tomatoes, peppers, and herbs in pots，故選 B。",
+        "optionsZh": [
+          "只有花",
+          "番茄、青椒和香草",
+          "果樹",
+          "稻米"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why did gardening mean so much to Grandpa?",
+        "options": [
+          "(A) It reminded him of his childhood on a farm",
+          "(B) It helped him make money",
+          "(C) It was required by his apartment building",
+          "(D) It made his balcony look bigger"
+        ],
+        "answer": 0,
+        "explanation": "文中說 gardening reminded him of his childhood on a real farm，故選 A。",
+        "optionsZh": [
+          "讓他想起小時候在農場的生活",
+          "幫他賺錢",
+          "是公寓的規定",
+          "讓陽台看起來更大"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What lesson does the writer remember from Grandpa's words after the storm?",
+        "options": [
+          "(A) Storms are always dangerous",
+          "(B) Things grow back if you keep trying",
+          "(C) It is better to give up early",
+          "(D) Gardens should be kept indoors"
+        ],
+        "answer": 1,
+        "explanation": "爺爺說 things grow back if you keep trying，作者長大後仍記得這句話，代表耐心與希望的價值，故選 B。",
+        "optionsZh": [
+          "暴風雨總是很危險",
+          "只要持續嘗試，事物就會重新生長",
+          "早點放棄比較好",
+          "花園應該種在室內"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_59",
+    "passageType": "practical",
+    "title": "Museum Scavenger Hunt (活動說明)",
+    "passage": "NATIONAL SCIENCE MUSEUM — Family Scavenger Hunt!\nEvery weekend, join our free scavenger hunt and explore the museum in a fun way!\nHow it works:\n1. Pick up a hunt card at the front desk (free for all visitors).\n2. Find 8 hidden clues around the museum before 4:30 p.m.\n3. Return your completed card to the front desk.\n4. Get a small prize and a sticker!\n\nThe hunt is best for children aged 6 to 12, but everyone is welcome to try.\nNote: Prizes are limited to the first 50 completed cards each day.\nHave fun exploring — and remember, running inside the museum is not allowed!",
+    "questions": [
+      {
+        "question": "What must visitors do first to join the scavenger hunt?",
+        "options": [
+          "(A) Pay an entry fee",
+          "(B) Pick up a hunt card at the front desk",
+          "(C) Sign up online one week early",
+          "(D) Bring their own map"
+        ],
+        "answer": 1,
+        "explanation": "說明第1步驟寫 Pick up a hunt card at the front desk (free for all visitors)，故選 B。",
+        "optionsZh": [
+          "支付入場費",
+          "在服務台領取尋寶卡",
+          "提前一週線上報名",
+          "自備地圖"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What happens if more than 50 people complete the hunt on the same day?",
+        "options": [
+          "(A) Everyone still receives a prize",
+          "(B) Only the first 50 completed cards receive a prize",
+          "(C) The museum closes early",
+          "(D) The hunt is canceled for the day"
+        ],
+        "answer": 1,
+        "explanation": "說明寫 Prizes are limited to the first 50 completed cards each day，超過50份則後來者無獎品，故選 B。",
+        "optionsZh": [
+          "每個人仍能拿到獎品",
+          "只有最先完成的50張卡片能拿到獎品",
+          "博物館提早關門",
+          "當天的尋寶活動取消"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_60",
+    "passageType": "informational",
+    "title": "Why Are Some People Left-Handed? (說明文)",
+    "passage": "Most people use their right hand for writing, throwing, and eating, but about one out of every ten people naturally prefers their left hand. For a long time, scientists were not sure why this difference exists.\nOne clue comes from the brain. The human brain has two sides, and each side controls different tasks. For most people, the left side of the brain, which controls the right hand, is stronger at controlling detailed movements. For left-handed people, this pattern is often reversed or mixed, though scientists still do not fully understand why.\nIn the past, being left-handed was sometimes seen as unusual or even wrong. In some schools long ago, left-handed children were forced to write with their right hand instead, even though it felt uncomfortable and unnatural to them. Thankfully, most schools today allow students to use whichever hand feels natural.\nInterestingly, research has found that left-handed people may have some advantages in certain sports, such as fencing or baseball, because their opponents are less used to facing a left-handed player. Being left-handed is simply a different way the brain and body work together — not something better or worse than being right-handed.",
+    "questions": [
+      {
+        "question": "About how many people are naturally left-handed, according to the passage?",
+        "options": [
+          "(A) About one out of every ten people",
+          "(B) About half of all people",
+          "(C) Almost everyone",
+          "(D) Almost no one"
+        ],
+        "answer": 0,
+        "explanation": "文中提到 about one out of every ten people naturally prefers their left hand，故選 A。",
+        "optionsZh": [
+          "大約每十人中有一人",
+          "大約一半的人",
+          "幾乎每個人",
+          "幾乎沒有人"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "How were some left-handed children treated in schools long ago?",
+        "options": [
+          "(A) They were praised for being different",
+          "(B) They were forced to write with their right hand",
+          "(C) They were given extra homework",
+          "(D) They were allowed to skip writing class"
+        ],
+        "answer": 1,
+        "explanation": "文中說過去有些學校強迫左撇子小孩用右手寫字，即使感覺不自然，故選 B。",
+        "optionsZh": [
+          "他們因與眾不同而受到讚賞",
+          "他們被強迫用右手寫字",
+          "他們被要求做額外的作業",
+          "他們被允許不上寫字課"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What advantage does the passage mention for left-handed athletes?",
+        "options": [
+          "(A) They can run faster than others",
+          "(B) Opponents are less used to facing a left-handed player",
+          "(C) They never lose in sports competitions",
+          "(D) They need less training than others"
+        ],
+        "answer": 1,
+        "explanation": "文中提到左撇子在某些運動中可能有優勢，因為對手較不習慣面對左撇子選手，故選 B。",
+        "optionsZh": [
+          "他們跑得比別人快",
+          "對手較不習慣面對左撇子選手",
+          "他們在比賽中從不落敗",
+          "他們需要的訓練比別人少"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_61",
+    "passageType": "narrative",
+    "title": "The Broken Umbrella (故事)",
+    "passage": "It was pouring rain when Wendy realized her umbrella had a broken rib, flopping uselessly to one side. She stood under the bus stop shelter, watching water drip through the gap, and wondered how she would make it to school dry.\nA boy from her class, Peter, stood nearby holding a large blue umbrella. He noticed her staring at the sky and said, \"You can share mine if you're heading toward the school.\" Wendy hesitated. She barely knew Peter, but the rain was not stopping anytime soon.\nThey walked together, careful to keep both of them under the umbrella. Peter talked about a video game he was designing for a school project, and Wendy found herself laughing at his jokes about his poorly drawn characters. By the time they reached the school gate, her shoes were wet, but she felt strangely cheerful.\n\"Thanks for sharing,\" Wendy said. \"I owe you one.\"\n\"No problem,\" Peter replied. \"Maybe you can help me draw better characters sometime.\"\nWendy smiled, realizing that a rainy morning had turned into the start of an unexpected friendship.",
+    "questions": [
+      {
+        "question": "What was wrong with Wendy's umbrella?",
+        "options": [
+          "(A) It had a broken rib and flopped to one side",
+          "(B) It was too small to use",
+          "(C) She left it at home",
+          "(D) It was the wrong color"
+        ],
+        "answer": 0,
+        "explanation": "文中說 her umbrella had a broken rib, flopping uselessly to one side，故選 A。",
+        "optionsZh": [
+          "傘骨壞了，垂向一邊",
+          "傘太小不能用",
+          "她把傘忘在家裡",
+          "顏色不對"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What did Peter offer to do for Wendy?",
+        "options": [
+          "(A) Buy her a new umbrella",
+          "(B) Let her share his umbrella to school",
+          "(C) Carry her school bag",
+          "(D) Walk her home after school"
+        ],
+        "answer": 1,
+        "explanation": "Peter 說 You can share mine if you're heading toward the school，邀請她共用雨傘，故選 B。",
+        "optionsZh": [
+          "買一把新雨傘給她",
+          "讓她共用他的雨傘走到學校",
+          "幫她背書包",
+          "放學後送她回家"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does the ending of the story suggest?",
+        "options": [
+          "(A) Wendy and Peter will never speak again",
+          "(B) A small kind act led to the start of a new friendship",
+          "(C) Wendy was angry about getting wet",
+          "(D) Peter regretted offering to share his umbrella"
+        ],
+        "answer": 1,
+        "explanation": "文末 Wendy 笑著意識到一場雨天意外開啟了一段友誼，故選 B。",
+        "optionsZh": [
+          "Wendy 和 Peter 以後再也不會說話",
+          "小小的善舉開啟了一段新友誼",
+          "Wendy 對淋濕感到生氣",
+          "Peter 後悔提議共用雨傘"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_62",
+    "passageType": "practical",
+    "title": "Robotics Club Sign-Up Sheet (報名表)",
+    "passage": "GREENWOOD JUNIOR HIGH — Robotics Club\nWant to build and program your own robot? Join us!\nMeeting Time: Every Wednesday, 3:30–5:00 p.m., Room 204\nWho can join: Grades 7–9, no experience needed\nWhat to bring: A notebook and a curious mind — all tools and parts are provided by the school\nMembers will work in teams of four to build a robot for the district competition in November.\nSign-up sheets are on the bulletin board outside the science lab. Space is limited to 24 students, so sign up early!\nQuestions? Talk to Mr. Diaz in Room 204 after school.",
+    "questions": [
+      {
+        "question": "What do students need to bring to Robotics Club?",
+        "options": [
+          "(A) Their own robot parts",
+          "(B) A notebook and a curious mind",
+          "(C) A laptop computer",
+          "(D) Money for tools"
+        ],
+        "answer": 1,
+        "explanation": "說明寫 What to bring: A notebook and a curious mind — all tools and parts are provided by the school，故選 B。",
+        "optionsZh": [
+          "自備機器人零件",
+          "一本筆記本和好奇心",
+          "一台筆記型電腦",
+          "購買工具的錢"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "How many students can join Robotics Club at most?",
+        "options": [
+          "(A) 4",
+          "(B) 12",
+          "(C) 24",
+          "(D) 30"
+        ],
+        "answer": 2,
+        "explanation": "說明寫 Space is limited to 24 students，故選 C。",
+        "optionsZh": [
+          "4人",
+          "12人",
+          "24人",
+          "30人"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What will club members do for the district competition?",
+        "options": [
+          "(A) Work alone to build a robot",
+          "(B) Work in teams of four to build a robot",
+          "(C) Watch other schools compete",
+          "(D) Write a report about robots"
+        ],
+        "answer": 1,
+        "explanation": "說明寫 Members will work in teams of four to build a robot for the district competition in November，故選 B。",
+        "optionsZh": [
+          "獨自建造機器人",
+          "四人一組建造機器人",
+          "觀看其他學校比賽",
+          "撰寫關於機器人的報告"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_63",
+    "passageType": "informational",
+    "title": "The Science of Blushing (說明文)",
+    "passage": "When someone feels embarrassed, their cheeks often turn pink or red. This reaction, known as blushing, happens so quickly that most people cannot control it, even when they want to.\nBlushing is caused by the body's stress response. When we feel embarrassed, our brain sends a signal that makes blood vessels near the surface of the skin widen. More blood flows close to the skin, especially in the face, which causes the reddish color. Interestingly, the face has more blood vessels close to the surface than most other parts of the body, which is why blushing usually shows on the cheeks rather than the arms or legs.\nScientists have long wondered why humans evolved this strange, uncontrollable reaction. One theory suggests that blushing may actually be helpful. When someone blushes after making a mistake, it can silently signal to others, \"I know I did something wrong, and I feel bad about it.\" This may help repair social relationships, since people often forgive someone who appears to feel true embarrassment.\nSo the next time your face turns red in front of others, remember that this reaction, though uncomfortable, might actually be helping you connect with the people around you.",
+    "questions": [
+      {
+        "question": "What causes the skin to turn red when a person blushes?",
+        "options": [
+          "(A) Blood vessels near the skin's surface widen",
+          "(B) The skin becomes very cold",
+          "(C) The person stops breathing for a moment",
+          "(D) Sweat covers the face"
+        ],
+        "answer": 0,
+        "explanation": "文中說大腦發出訊號使皮膚表層附近的血管擴張，血液靠近皮膚使臉部變紅，故選 A。",
+        "optionsZh": [
+          "皮膚表層附近的血管擴張",
+          "皮膚變得非常冷",
+          "此人暫時停止呼吸",
+          "汗水覆蓋臉部"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why does blushing usually appear on the cheeks rather than the arms?",
+        "options": [
+          "(A) The face has more blood vessels close to the surface",
+          "(B) The arms are usually covered by clothing",
+          "(C) The cheeks are more sensitive to sunlight",
+          "(D) The face moves more than the arms"
+        ],
+        "answer": 0,
+        "explanation": "文中提到臉部比身體其他部位有更多接近表層的血管，因此臉頰容易發紅，故選 A。",
+        "optionsZh": [
+          "臉部有更多靠近表層的血管",
+          "手臂通常被衣物遮蓋",
+          "臉頰對陽光更敏感",
+          "臉部動作比手臂多"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "According to one theory, why might blushing be helpful?",
+        "options": [
+          "(A) It makes a person look more attractive",
+          "(B) It may help repair social relationships by showing true embarrassment",
+          "(C) It helps a person think more clearly",
+          "(D) It protects the skin from the sun"
+        ],
+        "answer": 1,
+        "explanation": "文中說臉紅可能悄悄傳達真誠的尷尬感，有助於修復人際關係，故選 B。",
+        "optionsZh": [
+          "讓一個人看起來更有魅力",
+          "透過展現真誠的尷尬感幫助修復人際關係",
+          "幫助一個人思考更清楚",
+          "保護皮膚不受陽光傷害"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_64",
+    "passageType": "narrative",
+    "title": "A Trip to the Night Zoo (故事)",
+    "passage": "Most people visit the zoo during the day, but on my tenth birthday, my parents surprised me with tickets to the Night Zoo — a special event held only twice a year. I had never imagined the zoo could look and feel so different after dark.\nAs soon as we walked in, the paths were lit only by small lanterns, and the air felt cooler and quieter than usual. Animals that hid during the day were suddenly wide awake. We watched owls silently spread their wings and heard the low calls of animals I had never even heard about before.\nMy favorite part was the flashlight tour through the nocturnal animal house, where a guide showed us bats hanging upside down and a slow-moving creature called a slow loris with enormous round eyes. The guide explained that many animals are actually more active at night to avoid the heat and hide from predators.\nBy the time we left, my legs were tired, but my mind was full of new questions about animals I had never noticed before. I realized the zoo I thought I already knew still had entire hidden worlds waiting to be discovered.",
+    "questions": [
+      {
+        "question": "Why did the animals at the Night Zoo seem so different from usual?",
+        "options": [
+          "(A) They were fed differently at night",
+          "(B) Animals that hide during the day were wide awake at night",
+          "(C) New animals had just arrived at the zoo",
+          "(D) The zookeepers dressed the animals in costumes"
+        ],
+        "answer": 1,
+        "explanation": "文中說白天躲藏的動物在晚上變得清醒活躍，故選 B。",
+        "optionsZh": [
+          "晚上餵食方式不同",
+          "白天躲藏的動物在晚上變得清醒",
+          "動物園剛引進新動物",
+          "動物園員工幫動物穿了服裝"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What did the guide explain about why many animals are active at night?",
+        "options": [
+          "(A) To avoid the heat and hide from predators",
+          "(B) Because zookeepers train them to be nocturnal",
+          "(C) Because they cannot see well during the day",
+          "(D) Because nighttime food tastes better"
+        ],
+        "answer": 0,
+        "explanation": "導覽員解釋 many animals are actually more active at night to avoid the heat and hide from predators，故選 A。",
+        "optionsZh": [
+          "為了避開炎熱並躲避掠食者",
+          "因為飼育員訓練牠們變成夜行動物",
+          "因為牠們白天視力不好",
+          "因為晚上的食物比較好吃"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What did the writer realize by the end of the trip?",
+        "options": [
+          "(A) The zoo is boring during the day",
+          "(B) The familiar zoo still had hidden worlds to discover",
+          "(C) Nocturnal animals are dangerous to visitors",
+          "(D) Night events should happen every week"
+        ],
+        "answer": 1,
+        "explanation": "文末寫 the zoo I thought I already knew still had entire hidden worlds waiting to be discovered，故選 B。",
+        "optionsZh": [
+          "動物園白天很無聊",
+          "熟悉的動物園仍有等待被發現的隱藏世界",
+          "夜行動物對遊客很危險",
+          "夜間活動應該每週舉辦"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_65",
+    "passageType": "comics",
+    "title": "The Homework Excuse (四格漫畫)",
+    "passage": "",
+    "caption": "Panel 1: A boy named Tim sits at his desk at night, staring at an empty notebook with a worried face. A clock on the wall shows 11:00 p.m.\nPanel 2: The next morning, Tim rushes into the classroom, breathing heavily, and tells his teacher, \"My dog ate my homework, Ms. Lee!\"\nPanel 3: Ms. Lee raises an eyebrow and calmly says, \"That's strange — you told me last month your family doesn't have a dog.\"\nPanel 4: Tim's face turns red with embarrassment. He looks down and mumbles, \"I'll have it done by tomorrow, I promise.\"",
+    "questions": [
+      {
+        "question": "What excuse did Tim give his teacher for not doing his homework?",
+        "options": [
+          "(A) He said he was sick",
+          "(B) He said his dog ate it",
+          "(C) He said he lost his notebook",
+          "(D) He said the internet was down"
+        ],
+        "answer": 1,
+        "explanation": "第2格 Tim 對老師說 \"My dog ate my homework\"，故選 B。",
+        "optionsZh": [
+          "他說自己生病了",
+          "他說狗把作業吃掉了",
+          "他說筆記本弄丟了",
+          "他說網路斷線了"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What is the main idea of this comic?",
+        "options": [
+          "(A) Dogs should not be kept as pets",
+          "(B) Ms. Lee forgets things easily",
+          "(C) A student's excuse does not match what he said before",
+          "(D) Homework is not important"
+        ],
+        "answer": 2,
+        "explanation": "老師指出 Tim 上個月才說家裡沒有狗，藉口與先前所說矛盾，被拆穿，故選 C。",
+        "optionsZh": [
+          "狗不應該被當寵物飼養",
+          "Ms. Lee 很健忘",
+          "學生的藉口與先前所說的不一致",
+          "作業不重要"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_66",
+    "passageType": "dual",
+    "title": "Should Homework Be Banned? — Two Views (雙方觀點)",
+    "passage": "■ View A — By Sophia Lin, Grade 8 Student\n\nI think schools should get rid of homework, or at least give much less of it. After a full day of classes, my brain feels tired, and homework only adds more stress to my evenings. I also believe homework does not always help students learn — sometimes I just copy answers to finish quickly instead of really understanding the material. If schools gave less homework, students would have more time to rest, play sports, and spend time with family, which are all important parts of growing up.\n\n■ View B — By Mr. Patel, Math Teacher\n\nHomework plays an important role in learning, especially for subjects like math and language. Class time is often too short to fully practice a new skill, and homework gives students a chance to review what they learned and find out what they still do not understand. Without practice at home, many students would forget new material quickly. Of course, homework should be reasonable in amount, but removing it completely would likely hurt students' long-term learning.",
+    "questions": [
+      {
+        "question": "What is Sophia's main complaint about homework?",
+        "options": [
+          "(A) It is always too easy",
+          "(B) It adds stress and does not always help real understanding",
+          "(C) It takes away class time",
+          "(D) It is graded unfairly"
+        ],
+        "answer": 1,
+        "explanation": "Sophia 說作業增加壓力，有時只是抄答案完成，並未真正理解教材，故選 B。",
+        "optionsZh": [
+          "作業總是太簡單",
+          "作業增加壓力，也不總能幫助真正理解",
+          "作業占用上課時間",
+          "作業評分不公平"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "According to Mr. Patel, why is homework important for subjects like math?",
+        "options": [
+          "(A) Class time is often too short to fully practice a new skill",
+          "(B) It keeps students busy after school",
+          "(C) It replaces the need for tests",
+          "(D) It is required by the government"
+        ],
+        "answer": 0,
+        "explanation": "Mr. Patel 說上課時間常不足以充分練習新技能，作業給學生複習及發現不懂之處的機會，故選 A。",
+        "optionsZh": [
+          "上課時間常不足以充分練習新技能",
+          "讓學生放學後保持忙碌",
+          "取代考試的需求",
+          "這是政府規定"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What common concern do Sophia and Mr. Patel both seem to share?",
+        "options": [
+          "(A) Whether homework helps students actually learn",
+          "(B) Whether school lunches are healthy",
+          "(C) Whether teachers should be paid more",
+          "(D) Whether students should wear uniforms"
+        ],
+        "answer": 0,
+        "explanation": "Sophia 認為作業有時無助於真正理解，Mr. Patel 則主張適量作業有助複習學習，兩人皆關注作業是否真正幫助學習，故選 A。",
+        "optionsZh": [
+          "作業是否真正幫助學生學習",
+          "學校午餐是否健康",
+          "老師是否應該加薪",
+          "學生是否該穿制服"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What is the best title for these two passages?",
+        "options": [
+          "(A) The Best Way to Study for Exams",
+          "(B) Homework: Necessary or Not?",
+          "(C) How to Become a Math Teacher",
+          "(D) The History of School Subjects"
+        ],
+        "answer": 1,
+        "explanation": "兩篇短文分別代表對「作業是否必要」的贊成與反對意見，故選 B。",
+        "optionsZh": [
+          "準備考試的最佳方法",
+          "作業：必要與否？",
+          "如何成為數學老師",
+          "學校科目的歷史"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_67",
+    "passageType": "narrative",
+    "title": "The Search for Biscuit (故事)",
+    "passage": "When Ella's dog, Biscuit, slipped out of the front gate one evening, panic set in immediately. Biscuit had never run away before, and Ella had no idea which direction he might have gone.\nHer family split up to search different streets, calling Biscuit's name into the dark. Ella printed pictures of Biscuit on her phone and showed them to anyone she passed, asking if they had seen a small brown dog with a red collar. Most people shook their heads, but one elderly woman said she had seen a dog matching that description near the park about an hour earlier.\nElla ran toward the park, her heart pounding with hope. Under a bench near the pond, she spotted a familiar shape shivering in the cold. \"Biscuit!\" she shouted, and the dog's ears perked up immediately before he ran straight into her arms.\nWalking home with Biscuit safely on his leash, Ella promised herself she would always double-check the gate from now on. Some lessons, she realized, were worth learning the hard way.",
+    "questions": [
+      {
+        "question": "How did Ella try to get information about Biscuit while searching?",
+        "options": [
+          "(A) By calling the police station",
+          "(B) By showing pictures of Biscuit to people she passed",
+          "(C) By posting on television",
+          "(D) By checking every pet shop in town"
+        ],
+        "answer": 1,
+        "explanation": "文中說她 showed them to anyone she passed, asking if they had seen a small brown dog，故選 B。",
+        "optionsZh": [
+          "打電話給警察局",
+          "向路人展示 Biscuit 的照片",
+          "在電視上發布消息",
+          "檢查鎮上每間寵物店"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Where did Ella finally find Biscuit?",
+        "options": [
+          "(A) Under a bench near the pond in the park",
+          "(B) In front of her house",
+          "(C) At a neighbor's yard",
+          "(D) Inside a pet shop"
+        ],
+        "answer": 0,
+        "explanation": "文中說 Under a bench near the pond, she spotted a familiar shape，故選 A。",
+        "optionsZh": [
+          "公園池塘邊的長椅下",
+          "她家門前",
+          "鄰居的院子",
+          "寵物店裡"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What lesson did Ella learn from this experience?",
+        "options": [
+          "(A) Dogs should never be kept as pets",
+          "(B) She should always double-check the gate from now on",
+          "(C) Parks are dangerous for pets",
+          "(D) She should never let Biscuit outside again"
+        ],
+        "answer": 1,
+        "explanation": "文末寫 she would always double-check the gate from now on，這是她學到的教訓，故選 B。",
+        "optionsZh": [
+          "狗永遠不該被當寵物飼養",
+          "她從此以後會隨時再次檢查大門",
+          "公園對寵物很危險",
+          "她再也不會讓 Biscuit 出門"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_68",
+    "passageType": "practical",
+    "title": "Free English Tutoring Bulletin (社區公告)",
+    "passage": "MAPLEWOOD COMMUNITY CENTER — Free English Tutoring\nStruggling with English homework or want extra practice? Come to our free tutoring sessions!\nWhen: Tuesdays and Thursdays, 4:00–5:30 p.m.\nWho can join: Students in Grades 6–9\nWhat we offer:\n• Help with reading, writing, and grammar\n• Small groups of 4–5 students per volunteer tutor\n• Free snacks and drinks\nHow to join: Bring your student ID and sign in at the front desk. No advance registration needed — just walk in!\nParents are welcome to wait in the reading room next door.",
+    "questions": [
+      {
+        "question": "What do students need to bring to join the tutoring session?",
+        "options": [
+          "(A) A permission letter from a teacher",
+          "(B) Their student ID",
+          "(C) A laptop computer",
+          "(D) Money for snacks"
+        ],
+        "answer": 1,
+        "explanation": "公告寫 Bring your student ID and sign in at the front desk，故選 B。",
+        "optionsZh": [
+          "老師的許可信",
+          "學生證",
+          "筆記型電腦",
+          "買點心的錢"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Does a student need to register in advance for the tutoring session?",
+        "options": [
+          "(A) Yes, one week before",
+          "(B) Yes, by phone only",
+          "(C) No, students can just walk in",
+          "(D) No, but they must pay a fee"
+        ],
+        "answer": 2,
+        "explanation": "公告寫 No advance registration needed — just walk in，故選 C。",
+        "optionsZh": [
+          "需要，提前一週報名",
+          "需要，只能透過電話",
+          "不需要，直接前往即可",
+          "不需要，但要付費"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What can parents do while their child is in the tutoring session?",
+        "options": [
+          "(A) Wait in the reading room next door",
+          "(B) Join the tutoring session too",
+          "(C) Pick up their child after one hour",
+          "(D) Take the free snacks home"
+        ],
+        "answer": 0,
+        "explanation": "公告寫 Parents are welcome to wait in the reading room next door，故選 A。",
+        "optionsZh": [
+          "在隔壁的閱覽室等候",
+          "一起加入輔導課程",
+          "一小時後接走孩子",
+          "把免費點心帶回家"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_69",
+    "passageType": "informational",
+    "title": "The Art of Origami (說明文)",
+    "passage": "With nothing but a single square piece of paper, some people can create a graceful crane, a roaring lion, or even a tiny working box. This traditional art of paper folding, called origami, began in Japan hundreds of years ago and has since spread across the world.\nWhat makes origami special is that it uses no scissors and no glue — only careful folds transform a flat sheet into a three-dimensional shape. Each fold must be precise, because even a small mistake early on can change the entire final shape. This is why origami is often used to teach patience and attention to detail, especially to children.\nOrigami is not just for fun. Engineers and scientists have started studying paper-folding techniques to solve real-world problems. For example, some space equipment is designed using origami methods so that large solar panels can be folded into a small, compact shape for launch, and then unfold once they reach space.\nWhat began as a simple form of art has grown into a bridge between tradition and modern technology, showing that even the humblest materials can inspire powerful ideas.",
+    "questions": [
+      {
+        "question": "Where did origami begin, according to the passage?",
+        "options": [
+          "(A) China",
+          "(B) Japan",
+          "(C) The United States",
+          "(D) France"
+        ],
+        "answer": 1,
+        "explanation": "文中說 This traditional art of paper folding, called origami, began in Japan hundreds of years ago，故選 B。",
+        "optionsZh": [
+          "中國",
+          "日本",
+          "美國",
+          "法國"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What tools does origami avoid using?",
+        "options": [
+          "(A) Scissors and glue",
+          "(B) Rulers and pencils",
+          "(C) Colored paper",
+          "(D) Tables and chairs"
+        ],
+        "answer": 0,
+        "explanation": "文中說 it uses no scissors and no glue，故選 A。",
+        "optionsZh": [
+          "剪刀和膠水",
+          "尺和鉛筆",
+          "彩色紙",
+          "桌子和椅子"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "How have engineers used origami techniques, according to the passage?",
+        "options": [
+          "(A) To design furniture for homes",
+          "(B) To fold solar panels into a compact shape for space equipment",
+          "(C) To build stronger bridges",
+          "(D) To create new kinds of paper"
+        ],
+        "answer": 1,
+        "explanation": "文中提到工程師運用摺紙原理設計太空設備，讓太陽能板摺疊後方便發射，故選 B。",
+        "optionsZh": [
+          "設計家用家具",
+          "把太陽能板摺成緊湊形狀用於太空設備",
+          "建造更堅固的橋樑",
+          "製造新型紙張"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_70",
+    "passageType": "narrative",
+    "title": "The Day I Rode Alone (故事)",
+    "passage": "For weeks, my father held onto the back of my bicycle seat every time I practiced, running beside me down our street. I felt safe knowing he was there, but I never actually learned to balance on my own — I always relied on his hand keeping me steady.\nOne Saturday morning, I turned around expecting to see him jogging behind me, but the street behind me was empty. I had been riding by myself for almost a whole block without realizing it. My heart jumped, and out of surprise, I nearly fell over.\n\"You did it!\" my father called from where he had quietly let go minutes earlier. He had been walking, not running, the entire time.\nAt first, I felt a little tricked, but then a wave of pride washed over me. I pedaled harder, circling the block twice just to prove to myself that it was not luck. When I finally stopped in front of our house, my legs were shaking, but I was grinning from ear to ear.\nThat small, wobbly ride taught me something bigger than balance: sometimes we are more capable than we realize, especially when someone believes in us quietly from a distance.",
+    "questions": [
+      {
+        "question": "What did the writer realize when looking behind while riding?",
+        "options": [
+          "(A) Her father was still holding the seat",
+          "(B) The street behind her was empty because her father had let go",
+          "(C) Her bicycle had a flat tire",
+          "(D) Her father had gone back inside the house"
+        ],
+        "answer": 1,
+        "explanation": "文中說她回頭發現街道空無一人，才知道爸爸早已放手，故選 B。",
+        "optionsZh": [
+          "爸爸仍抓著座椅",
+          "身後的街道是空的，因為爸爸已經放手",
+          "腳踏車輪胎沒氣了",
+          "爸爸已經回到屋內"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "How did the writer feel right after realizing she was riding alone?",
+        "options": [
+          "(A) Calm and unsurprised",
+          "(B) Surprised, and then proud",
+          "(C) Angry at her father",
+          "(D) Bored with riding"
+        ],
+        "answer": 1,
+        "explanation": "文中先寫 My heart jumped 感到驚訝，接著 a wave of pride washed over me，故選 B。",
+        "optionsZh": [
+          "冷靜且不意外",
+          "驚訝，接著感到自豪",
+          "對爸爸生氣",
+          "對騎車感到無聊"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What is the main lesson of this story?",
+        "options": [
+          "(A) Bicycles are dangerous for beginners",
+          "(B) People can be more capable than they realize, especially with quiet support",
+          "(C) Fathers should always hold the bicycle seat",
+          "(D) Riding alone is always a bad idea"
+        ],
+        "answer": 1,
+        "explanation": "末段點出 sometimes we are more capable than we realize, especially when someone believes in us quietly，故選 B。",
+        "optionsZh": [
+          "腳踏車對初學者很危險",
+          "人有時比自己想像的更有能力，尤其在有人默默支持時",
+          "爸爸應該一直扶著座椅",
+          "獨自騎車總是不好的主意"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_71",
+    "passageType": "informational",
+    "title": "Why Do We Get Goosebumps? (說明文)",
+    "passage": "When you feel cold, scared, or even deeply moved by music, small bumps sometimes appear on your skin, and the tiny hairs on your arms stand up straight. This reaction is called goosebumps, and it is actually left over from our animal ancestors.\nLong ago, early humans had much more body hair than we do today. When they felt cold, tiny muscles at the base of each hair would tighten, making the hair stand up. This trapped a layer of warm air close to the skin, helping to keep the body warm, similar to how a cat's fur puffs up in cold weather.\nGoosebumps also appeared when early humans felt frightened. Standing hair made the body look bigger, which may have helped scare away enemies or predators. Even though modern humans have much less body hair, the same muscles under our skin still react the same way.\nInterestingly, goosebumps can also happen when we listen to powerful music or watch an emotional movie scene. Scientists believe this happens because strong emotions activate the same nervous system pathway as fear or cold, even though there is no real danger or chill involved.",
+    "questions": [
+      {
+        "question": "Why did goosebumps help keep early humans warm?",
+        "options": [
+          "(A) They made the skin produce more sweat",
+          "(B) Standing hair trapped a layer of warm air close to the skin",
+          "(C) They made the body shrink to save heat",
+          "(D) They caused the body to shiver more"
+        ],
+        "answer": 1,
+        "explanation": "文中說豎起的毛髮能鎖住靠近皮膚的溫暖空氣，達到保暖效果，故選 B。",
+        "optionsZh": [
+          "讓皮膚分泌更多汗水",
+          "豎起的毛髮鎖住靠近皮膚的溫暖空氣",
+          "讓身體縮小以節省熱量",
+          "讓身體更加顫抖"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "How might goosebumps have helped early humans when they felt frightened?",
+        "options": [
+          "(A) By making them run faster",
+          "(B) By making the body look bigger to scare away enemies",
+          "(C) By making them fall asleep quickly",
+          "(D) By making their voice louder"
+        ],
+        "answer": 1,
+        "explanation": "文中說豎毛讓身體看起來更大，可能有助於嚇退敵人或掠食者，故選 B。",
+        "optionsZh": [
+          "讓他們跑得更快",
+          "讓身體看起來更大以嚇退敵人",
+          "讓他們很快入睡",
+          "讓他們的聲音更大"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why might a person get goosebumps while listening to powerful music?",
+        "options": [
+          "(A) Because music always makes the room colder",
+          "(B) Because strong emotions activate the same pathway as fear or cold",
+          "(C) Because music causes the skin to sweat",
+          "(D) Because loud sounds damage the skin"
+        ],
+        "answer": 1,
+        "explanation": "末段解釋強烈情緒會啟動與恐懼或寒冷相同的神經路徑，因此聽音樂也可能起雞皮疙瘩，故選 B。",
+        "optionsZh": [
+          "因為音樂總是讓房間變冷",
+          "因為強烈情緒啟動與恐懼或寒冷相同的神經路徑",
+          "因為音樂讓皮膚流汗",
+          "因為大聲的聲音會傷害皮膚"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_72",
+    "passageType": "narrative",
+    "title": "The School Newspaper Club (故事)",
+    "passage": "Nora joined the school newspaper club mostly because her best friend asked her to, not because she thought she had anything interesting to write about. During the first meeting, the club leader asked everyone to pitch a story idea, and Nora's mind went completely blank while other students listed exciting topics one after another.\nThat weekend, while walking home, Nora noticed an elderly man feeding stray cats behind the school every evening. Curious, she stopped to ask him about it. He explained that he had been doing this quietly for almost ten years, never telling anyone, simply because he could not stand to see hungry animals.\nNora wrote his story carefully, trying to capture how ordinary the man seemed even though his small habit meant so much to the neighborhood cats. When the article was published, several students told her it was their favorite piece in the whole newspaper.\nNora realized that she did not need a dramatic topic to write something meaningful. Sometimes the most powerful stories were hiding quietly in places people walked past every day without noticing.",
+    "questions": [
+      {
+        "question": "Why did Nora originally join the newspaper club?",
+        "options": [
+          "(A) She had always dreamed of being a writer",
+          "(B) Her best friend asked her to join",
+          "(C) Her teacher forced her to join",
+          "(D) She wanted extra credit for a class"
+        ],
+        "answer": 1,
+        "explanation": "文中說她加入社團 mostly because her best friend asked her to，故選 B。",
+        "optionsZh": [
+          "她一直夢想成為作家",
+          "她的好朋友邀她加入",
+          "她被老師強迫加入",
+          "她想為某堂課加分"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What did Nora discover about the elderly man?",
+        "options": [
+          "(A) He was a former newspaper writer",
+          "(B) He had been quietly feeding stray cats for almost ten years",
+          "(C) He owned a pet shop nearby",
+          "(D) He worked as a school security guard"
+        ],
+        "answer": 1,
+        "explanation": "文中說老人 had been doing this quietly for almost ten years，指餵養流浪貓，故選 B。",
+        "optionsZh": [
+          "他曾是報社記者",
+          "他默默地餵養流浪貓將近十年",
+          "他在附近經營寵物店",
+          "他是學校的警衛"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What did Nora learn by the end of the story?",
+        "options": [
+          "(A) Only dramatic topics make good stories",
+          "(B) Meaningful stories can be found in ordinary, everyday places",
+          "(C) Writing for the newspaper is a waste of time",
+          "(D) Cats are more interesting than people"
+        ],
+        "answer": 1,
+        "explanation": "末段點出 the most powerful stories were hiding quietly in places people walked past every day，故選 B。",
+        "optionsZh": [
+          "只有戲劇性的主題才能寫出好故事",
+          "有意義的故事可能藏在日常平凡之處",
+          "為校刊寫作是浪費時間",
+          "貓比人更有趣"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_73",
+    "passageType": "practical",
+    "title": "Star Cinema Discount Coupon (優惠券)",
+    "passage": "STAR CINEMA — Student Discount Coupon\nShow this coupon (printed or on your phone) at the ticket counter to get:\n• NT$60 off one movie ticket\n• Valid for students with a valid student ID\n• Valid Monday to Thursday only (not valid on weekends or holidays)\n• One coupon per person, per visit\n\nThis coupon cannot be combined with any other discount or promotion.\nExpires: August 31\nEnjoy the movies at Star Cinema!",
+    "questions": [
+      {
+        "question": "What must a student show along with the coupon to get the discount?",
+        "options": [
+          "(A) A valid student ID",
+          "(B) A parent's signature",
+          "(C) A receipt from another store",
+          "(D) A membership card"
+        ],
+        "answer": 0,
+        "explanation": "優惠券寫 Valid for students with a valid student ID，故選 A。",
+        "optionsZh": [
+          "有效的學生證",
+          "家長簽名",
+          "其他商店的收據",
+          "會員卡"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "On which day can this coupon NOT be used?",
+        "options": [
+          "(A) Monday",
+          "(B) Tuesday",
+          "(C) Wednesday",
+          "(D) Saturday"
+        ],
+        "answer": 3,
+        "explanation": "優惠券寫 Valid Monday to Thursday only (not valid on weekends or holidays)，週六屬於週末，不可使用，故選 D。",
+        "optionsZh": [
+          "星期一",
+          "星期二",
+          "星期三",
+          "星期六"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "Can a student use this coupon together with another store promotion?",
+        "options": [
+          "(A) Yes, always",
+          "(B) No, it cannot be combined with any other discount",
+          "(C) Yes, but only on weekends",
+          "(D) No, it can never be used at all"
+        ],
+        "answer": 1,
+        "explanation": "優惠券寫 This coupon cannot be combined with any other discount or promotion，故選 B。",
+        "optionsZh": [
+          "可以，永遠都行",
+          "不行，不能與其他優惠合併使用",
+          "可以，但只限週末",
+          "不行，完全不能使用"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_74",
+    "passageType": "informational",
+    "title": "The History of the Traffic Light (說明文)",
+    "passage": "Before cars filled the streets, cities were already struggling with traffic problems caused by horses, carriages, and pedestrians all sharing the same busy roads. The very first traffic signal, installed in London in 1868, was actually designed for this earlier kind of traffic, not cars.\nThis early signal used gas lamps and had to be operated by a police officer standing beside it, turning the light by hand. Unfortunately, the gas lamp exploded only a few weeks after it was installed, injuring the officer and causing the project to be abandoned for many years.\nAs cars became more common in the early 1900s, the need for a safer traffic system returned. In 1920, an American police officer named William Potts is often credited with creating the modern three-color traffic light — red, yellow, and green — in Detroit. His design used electricity instead of gas, making it far safer and easier to maintain.\nToday, traffic lights are found in almost every city around the world, quietly managing the flow of millions of vehicles every day. What began as a dangerous experiment eventually became one of the most important inventions for keeping city streets safe.",
+    "questions": [
+      {
+        "question": "What was the very first traffic signal designed for?",
+        "options": [
+          "(A) Airplanes",
+          "(B) Horses, carriages, and pedestrians",
+          "(C) Bicycles only",
+          "(D) Trains"
+        ],
+        "answer": 1,
+        "explanation": "文中說最早的號誌是為馬匹、馬車與行人共用道路的交通問題而設計，故選 B。",
+        "optionsZh": [
+          "飛機",
+          "馬匹、馬車和行人",
+          "只有腳踏車",
+          "火車"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What happened to the first traffic signal in London?",
+        "options": [
+          "(A) It worked perfectly for many years",
+          "(B) The gas lamp exploded, injuring the officer",
+          "(C) It was replaced by a modern light immediately",
+          "(D) It was moved to another country"
+        ],
+        "answer": 1,
+        "explanation": "文中說 the gas lamp exploded only a few weeks after it was installed, injuring the officer，故選 B。",
+        "optionsZh": [
+          "運作良好持續多年",
+          "瓦斯燈爆炸，使警官受傷",
+          "立刻被現代號誌取代",
+          "被搬移到另一個國家"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Who is credited with creating the modern three-color traffic light?",
+        "options": [
+          "(A) A police officer in London",
+          "(B) William Potts, a police officer in Detroit",
+          "(C) A car company owner",
+          "(D) A team of scientists in Japan"
+        ],
+        "answer": 1,
+        "explanation": "文中說 William Potts is often credited with creating the modern three-color traffic light... in Detroit，故選 B。",
+        "optionsZh": [
+          "倫敦的一位警官",
+          "底特律的警官 William Potts",
+          "一位汽車公司老闆",
+          "日本的一組科學家"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_75",
+    "passageType": "narrative",
+    "title": "My Robot Vacuum's First Week (故事)",
+    "passage": "My family got a robot vacuum for the living room, and I was convinced it would make my life easier. Instead, its first week at home turned into a series of small disasters that had the whole family laughing.\nOn the very first day, the little machine got its wheels tangled in a phone charger cable and spent twenty minutes spinning in circles, beeping helplessly until my sister rescued it. The next day, it discovered my shoes by the door and pushed one all the way into the kitchen, as if it had decided the shoe did not belong there.\nBy the third day, it had somehow gotten stuck under the couch and refused to come out, making a sad little humming sound until my father lifted the couch to free it. My mother joked that our new robot had more personality than our old vacuum ever did.\nBy the end of the week, though, something changed. It began avoiding the charger cable, learned the shape of our furniture, and cleaned the floor without a single mistake. Watching it glide smoothly across the living room, I realized that even machines, like people, sometimes need time to learn.",
+    "questions": [
+      {
+        "question": "What happened to the robot vacuum on the first day?",
+        "options": [
+          "(A) It got its wheels tangled in a phone charger cable",
+          "(B) It broke completely and stopped working",
+          "(C) It cleaned the whole house perfectly",
+          "(D) It was returned to the store"
+        ],
+        "answer": 0,
+        "explanation": "文中說第一天 its wheels tangled in a phone charger cable，並困在原地打轉，故選 A。",
+        "optionsZh": [
+          "輪子被手機充電線纏住",
+          "完全故障停止運作",
+          "把整間屋子打掃得很完美",
+          "被退回商店"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What happened by the end of the first week?",
+        "options": [
+          "(A) The family decided to return the vacuum",
+          "(B) The vacuum began cleaning without mistakes",
+          "(C) The vacuum stopped working completely",
+          "(D) The family bought a second robot vacuum"
+        ],
+        "answer": 1,
+        "explanation": "文末說一週後它開始避開電線、學會家具形狀，並無誤地清潔地板，故選 B。",
+        "optionsZh": [
+          "家人決定退貨",
+          "掃地機器人開始無誤地打掃",
+          "掃地機器人完全停止運作",
+          "家人又買了第二台掃地機器人"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What did the writer realize by watching the robot vacuum improve?",
+        "options": [
+          "(A) Machines are always perfect from the start",
+          "(B) Even machines, like people, sometimes need time to learn",
+          "(C) Robots should not be used at home",
+          "(D) Old vacuums work better than new ones"
+        ],
+        "answer": 1,
+        "explanation": "末句 even machines, like people, sometimes need time to learn，正是全文主旨，故選 B。",
+        "optionsZh": [
+          "機器一開始就總是完美的",
+          "即使是機器，也像人一樣有時需要時間學習",
+          "機器人不該用於家中",
+          "舊吸塵器比新的好用"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_76",
+    "passageType": "practical",
+    "title": "Typhoon Weather Alert Notice (氣象公告)",
+    "passage": "CITYWIDE TYPHOON ALERT — Please Read Carefully\nA typhoon is expected to reach our area tomorrow afternoon. Please prepare in advance.\nWhat to do:\n• Stock up on drinking water and food that does not need cooking\n• Charge your phone and any flashlights\n• Move loose objects on balconies indoors\n• Stay away from windows during strong wind\nSchool and Work: All schools will be closed tomorrow. Companies may allow employees to work from home — please check with your employer.\nEmergency Hotline: If you need help during the typhoon, call 119.\nStay safe, and check local news for updates.",
+    "questions": [
+      {
+        "question": "What should people do with loose objects on their balconies?",
+        "options": [
+          "(A) Leave them outside as usual",
+          "(B) Move them indoors",
+          "(C) Sell them before the typhoon",
+          "(D) Throw them away"
+        ],
+        "answer": 1,
+        "explanation": "公告寫 Move loose objects on balconies indoors，故選 B。",
+        "optionsZh": [
+          "照常放在外面",
+          "移到室內",
+          "在颱風前賣掉",
+          "丟棄"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "According to the notice, will schools be open tomorrow?",
+        "options": [
+          "(A) Yes, as usual",
+          "(B) No, all schools will be closed",
+          "(C) Only elementary schools will close",
+          "(D) Only high schools will close"
+        ],
+        "answer": 1,
+        "explanation": "公告寫 All schools will be closed tomorrow，故選 B。",
+        "optionsZh": [
+          "會，照常上課",
+          "不會，所有學校都停課",
+          "只有國小停課",
+          "只有高中停課"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What number should someone call if they need help during the typhoon?",
+        "options": [
+          "(A) 110",
+          "(B) 112",
+          "(C) 119",
+          "(D) 100"
+        ],
+        "answer": 2,
+        "explanation": "公告寫 Emergency Hotline... call 119，故選 C。",
+        "optionsZh": [
+          "110",
+          "112",
+          "119",
+          "100"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_77",
+    "passageType": "informational",
+    "title": "The Secret of Sourdough Bread (說明文)",
+    "passage": "Sourdough bread has a unique tangy taste and a chewy texture that many people love, but what makes it different from ordinary bread is not a special ingredient — it is the absence of one.\nMost bread recipes use commercial yeast, a product bought in a package, to help dough rise. Sourdough bread, however, relies on a natural mixture of wild yeast and bacteria called a \"starter.\" This starter is made by simply mixing flour and water and leaving it out at room temperature for several days. Over time, wild yeast that naturally exists in the air and on the flour begins to grow inside the mixture.\nCaring for a sourdough starter takes patience. It must be \"fed\" regularly with more flour and water, or the wild yeast inside will grow weak and stop working properly. Many bakers give their starters nicknames and treat them almost like pets, since a healthy starter can be kept alive and used for years, even decades.\nThe slow, natural fermentation process is also what gives sourdough its distinct sour flavor and helps make the bread easier to digest for some people. In a world of fast food, sourdough bread reminds us that some of the best things still take time.",
+    "questions": [
+      {
+        "question": "What is a sourdough \"starter\" made of?",
+        "options": [
+          "(A) A packaged commercial yeast product",
+          "(B) A natural mixture of wild yeast and bacteria from flour and water",
+          "(C) Sugar and butter",
+          "(D) Milk and eggs"
+        ],
+        "answer": 1,
+        "explanation": "文中說 starter 是由麵粉與水混合，經自然野生酵母與細菌作用形成，故選 B。",
+        "optionsZh": [
+          "包裝販售的商業酵母產品",
+          "由麵粉與水形成的天然野生酵母與細菌混合物",
+          "糖和奶油",
+          "牛奶和雞蛋"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What must be done regularly to keep a sourdough starter healthy?",
+        "options": [
+          "(A) It must be kept in the refrigerator at all times",
+          "(B) It must be \"fed\" with more flour and water",
+          "(C) It must be exposed to sunlight",
+          "(D) It must be mixed with sugar daily"
+        ],
+        "answer": 1,
+        "explanation": "文中說 It must be fed regularly with more flour and water, or the wild yeast inside will grow weak，故選 B。",
+        "optionsZh": [
+          "必須一直放在冰箱裡",
+          "必須用更多的麵粉和水「餵養」",
+          "必須曬太陽",
+          "必須每天加糖"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What is the main idea of the last paragraph?",
+        "options": [
+          "(A) Sourdough bread is more expensive than other bread",
+          "(B) The slow fermentation process gives sourdough its unique flavor and benefits",
+          "(C) Sourdough bread should be avoided by everyone",
+          "(D) Fast food is always unhealthy"
+        ],
+        "answer": 1,
+        "explanation": "末段說明緩慢發酵造就了酸種麵包獨特的風味並可能有助消化，主旨為此過程帶來獨特風味與好處，故選 B。",
+        "optionsZh": [
+          "酸種麵包比其他麵包更貴",
+          "緩慢的發酵過程賦予酸種麵包獨特風味與好處",
+          "每個人都應避免吃酸種麵包",
+          "速食總是不健康的"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_78",
+    "passageType": "narrative",
+    "title": "The Kind Stranger at the Bus Stop (故事)",
+    "passage": "It was already dark when I realized I had left my wallet at home, standing alone at the bus stop with no way to pay for my ride. I checked my bag three times, hoping the wallet would magically appear, but of course it did not.\nAn older woman sitting on the bench noticed my worried face. \"Are you all right?\" she asked gently. I explained my situation, feeling embarrassed to admit such a simple mistake to a stranger. Without hesitation, she opened her purse and handed me enough coins for the bus fare.\n\"You can pay it forward someday,\" she said with a warm smile, waving away my thanks. \"That's how I got through some hard days when I was young.\"\nI rode the bus home that night thinking about her words. A few weeks later, I saw a young student at the same bus stop, frantically searching his pockets for money. Without a second thought, I offered him some coins, remembering the kindness of a stranger who had once done the same for me.\nThat small chain of kindness, passed from one stranger to another, taught me that even the smallest gesture can travel farther than we imagine.",
+    "questions": [
+      {
+        "question": "What problem did the writer have at the bus stop?",
+        "options": [
+          "(A) The bus never arrived",
+          "(B) The writer had left their wallet at home",
+          "(C) The writer got lost",
+          "(D) The bus stop was closed for repairs"
+        ],
+        "answer": 1,
+        "explanation": "文中說 I had left my wallet at home，沒有錢搭車，故選 B。",
+        "optionsZh": [
+          "公車一直沒來",
+          "作者把錢包忘在家裡",
+          "作者迷路了",
+          "公車站正在維修關閉"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What did the older woman ask the writer to do with her kindness?",
+        "options": [
+          "(A) Pay her back the exact amount next week",
+          "(B) Pay it forward to someone else someday",
+          "(C) Write her a thank-you letter",
+          "(D) Tell everyone about what she did"
+        ],
+        "answer": 1,
+        "explanation": "她說 You can pay it forward someday，希望作者將善意傳遞給別人，故選 B。",
+        "optionsZh": [
+          "下週還她確切的金額",
+          "有一天把善意傳遞給別人",
+          "寫感謝信給她",
+          "告訴大家她做的事"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What is the main idea of this story?",
+        "options": [
+          "(A) Strangers should never be trusted",
+          "(B) A small act of kindness can be passed on and travel far",
+          "(C) It is dangerous to forget your wallet",
+          "(D) Bus stops are unsafe at night"
+        ],
+        "answer": 1,
+        "explanation": "故事描述善意如何從一位陌生人傳到作者，再傳給另一位學生，主旨為小小善舉能傳遞得很遠，故選 B。",
+        "optionsZh": [
+          "永遠不該信任陌生人",
+          "小小的善舉能被傳遞並延續下去",
+          "忘記帶錢包很危險",
+          "公車站晚上不安全"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_79",
+    "passageType": "informational",
+    "title": "Do Fish Really Sleep? (說明文)",
+    "passage": "It might seem like a strange question, but scientists have long studied whether fish actually sleep, since most fish do not have eyelids and cannot close their eyes like humans do.\nThe answer is yes — fish do sleep, but in a way that looks quite different from human sleep. Instead of lying down and closing their eyes, many fish enter a resting state where their movement slows down greatly, their breathing becomes steady, and they become less responsive to what is happening around them. Some fish rest near the bottom of the water, some float in place, and a few even find a safe spot between rocks or coral to stay still.\nInterestingly, certain kinds of fish, like parrotfish, create a soft, jelly-like layer around their bodies at night, believed to help hide their scent from predators while they rest. Other fish, such as some sharks, must keep swimming even while resting because they need constant water flow over their gills to breathe.\nSo the next time you look at a fish tank and see the fish floating quietly, it might not be simply relaxing — it could actually be fast asleep.",
+    "questions": [
+      {
+        "question": "Why do scientists find it tricky to know whether fish sleep?",
+        "options": [
+          "(A) Fish live only in water",
+          "(B) Most fish do not have eyelids and cannot close their eyes",
+          "(C) Fish never stop moving",
+          "(D) Fish cannot be studied in tanks"
+        ],
+        "answer": 1,
+        "explanation": "文中說 most fish do not have eyelids and cannot close their eyes like humans do，因此難以直接判斷牠們是否在睡覺，故選 B。",
+        "optionsZh": [
+          "魚只生活在水中",
+          "大多數魚沒有眼皮，無法像人一樣閉眼",
+          "魚從不停止移動",
+          "魚無法在水族箱中被研究"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What happens to fish during their resting state?",
+        "options": [
+          "(A) Their movement slows down and they become less responsive",
+          "(B) They completely stop breathing",
+          "(C) They swim faster than usual",
+          "(D) They change color completely"
+        ],
+        "answer": 0,
+        "explanation": "文中說休息狀態中魚的活動大幅減緩、呼吸變穩定、對周遭反應變少，故選 A。",
+        "optionsZh": [
+          "牠們的活動減緩，對周遭反應變少",
+          "牠們完全停止呼吸",
+          "牠們游得比平常快",
+          "牠們完全改變顏色"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why do parrotfish create a jelly-like layer around their bodies at night?",
+        "options": [
+          "(A) To keep their skin warm",
+          "(B) To help hide their scent from predators",
+          "(C) To attract other fish",
+          "(D) To make their color brighter"
+        ],
+        "answer": 1,
+        "explanation": "文中說這層果凍狀分泌物 believed to help hide their scent from predators，故選 B。",
+        "optionsZh": [
+          "為了保持皮膚溫暖",
+          "有助於掩蓋氣味以躲避掠食者",
+          "為了吸引其他魚類",
+          "為了讓顏色更鮮豔"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_80",
+    "passageType": "informational",
+    "title": "How Fireworks Get Their Colors (說明文)",
+    "passage": "Every festival night, the sky lights up with bursts of red, green, blue, and gold, but few people stop to wonder how fireworks create such vivid colors. The secret lies in chemistry.\nInside every firework are tiny packets of chemical compounds called metal salts. When a firework explodes, the intense heat causes these metal salts to burn and release energy in the form of light. Different metals produce different colors when burned. For example, strontium salts create bright red light, copper compounds produce blue, and sodium creates a strong yellow-orange glow, similar to the color of some streetlights.\nCreating a firework with the perfect color and timing takes great skill. Firework makers must carefully calculate the exact amount of each chemical, as well as how the explosion is shaped, to control both the color and the pattern of light in the sky. Blue fireworks, interestingly, are considered the hardest to create because the chemical reaction for producing blue light is more delicate and easily disturbed by other elements in the mixture.\nSo the next time you watch fireworks light up the night, remember that each burst of color is the result of careful chemistry, not just a beautiful accident.",
+    "questions": [
+      {
+        "question": "What causes fireworks to produce different colors?",
+        "options": [
+          "(A) Different shapes of the firework container",
+          "(B) Different metal salts burning inside the firework",
+          "(C) The height at which the firework explodes",
+          "(D) The time of night the firework is launched"
+        ],
+        "answer": 1,
+        "explanation": "文中說不同金屬鹽燃燒時會產生不同顏色的光，故選 B。",
+        "optionsZh": [
+          "煙火容器的不同形狀",
+          "煙火內燃燒的不同金屬鹽",
+          "煙火爆炸的高度",
+          "施放煙火的時間"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Which metal is mentioned as creating red light in fireworks?",
+        "options": [
+          "(A) Copper",
+          "(B) Sodium",
+          "(C) Strontium",
+          "(D) Iron"
+        ],
+        "answer": 2,
+        "explanation": "文中提到 strontium salts create bright red light，故選 C。",
+        "optionsZh": [
+          "銅",
+          "鈉",
+          "鍶",
+          "鐵"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why are blue fireworks considered the hardest to create?",
+        "options": [
+          "(A) Blue chemicals are very expensive to buy",
+          "(B) The chemical reaction for blue light is delicate and easily disturbed",
+          "(C) Blue light cannot be seen clearly at night",
+          "(D) Blue fireworks require special weather"
+        ],
+        "answer": 1,
+        "explanation": "文中說產生藍色光的化學反應較細膩，容易受混合物中其他元素干擾，故選 B。",
+        "optionsZh": [
+          "藍色化學藥品購買非常昂貴",
+          "產生藍光的化學反應細膩，容易被干擾",
+          "藍光在夜晚無法清楚看見",
+          "藍色煙火需要特殊天氣"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_81",
+    "passageType": "narrative",
+    "title": "A Night Without Electricity (故事)",
+    "passage": "The lights flickered twice before the whole house went completely dark. Outside, thunder rolled across the sky, and my phone showed almost no battery left. I groaned, imagining a boring night with nothing to do.\nMy little sister, however, seemed delighted. She dragged out an old box of candles and, with our mother's help, lit them one by one until the living room glowed with a soft, warm light. \"It's like camping inside the house,\" she said, grinning in the candlelight.\nWith no television or phones to distract us, we ended up playing an old card game that had been sitting forgotten in a drawer for years. My father told stories about power outages when he was a child, back when storms like this happened more often. We laughed harder than we had in weeks, our voices echoing strangely in the quiet, dark house.\nWhen the lights finally came back around midnight, no one rushed to turn on the television. We simply sat there for another moment, strangely reluctant to end the evening. I realized that sometimes losing something we depend on can accidentally give us something we did not know we were missing.",
+    "questions": [
+      {
+        "question": "How did the writer's little sister react to the power outage?",
+        "options": [
+          "(A) She was scared and cried",
+          "(B) She was delighted and got out candles",
+          "(C) She fell asleep immediately",
+          "(D) She complained the whole time"
+        ],
+        "answer": 1,
+        "explanation": "文中說妹妹 seemed delighted，並拿出蠟燭點亮客廳，故選 B。",
+        "optionsZh": [
+          "她很害怕並哭了",
+          "她感到興奮並拿出蠟燭",
+          "她立刻睡著了",
+          "她一直抱怨"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What did the family do during the power outage?",
+        "options": [
+          "(A) They went to a neighbor's house",
+          "(B) They played an old card game and told stories",
+          "(C) They watched a movie on a phone",
+          "(D) They went to sleep immediately"
+        ],
+        "answer": 1,
+        "explanation": "文中說他們玩起舊的紙牌遊戲，父親也講起以前停電的故事，故選 B。",
+        "optionsZh": [
+          "他們去鄰居家",
+          "他們玩舊紙牌遊戲並講故事",
+          "他們用手機看電影",
+          "他們立刻去睡覺"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What did the writer realize by the end of the night?",
+        "options": [
+          "(A) Power outages should be avoided at all costs",
+          "(B) Losing something we depend on can accidentally bring something valuable",
+          "(C) Candles are more dangerous than electric lights",
+          "(D) Card games are more fun than television"
+        ],
+        "answer": 1,
+        "explanation": "末句 sometimes losing something we depend on can accidentally give us something we did not know we were missing，正是主旨，故選 B。",
+        "optionsZh": [
+          "應不惜一切代價避免停電",
+          "失去依賴的事物有時反而帶來意外珍貴的收穫",
+          "蠟燭比電燈更危險",
+          "紙牌遊戲比電視更好玩"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_82",
+    "passageType": "practical",
+    "title": "Community Clean-Up Day (社區公告)",
+    "passage": "MAPLE STREET NEIGHBORHOOD — Community Clean-Up Day\nSaturday, October 18th, 9:00 a.m. – 12:00 p.m.\nMeeting Point: Corner of Maple Street and 5th Avenue\n\nWhat we will do:\n• Pick up trash along the streets and near the river\n• Paint over graffiti on the community wall\n• Plant new flowers in the park entrance\n\nWhat to bring: Gloves (we will also have extra pairs), a reusable water bottle, and sunscreen.\nAll volunteers will receive a free T-shirt and a certificate of participation. Snacks and drinks will be provided at noon.\nSign up by October 15th at the neighborhood office or online at mapleclean.org.",
+    "questions": [
+      {
+        "question": "What time does the Community Clean-Up Day end?",
+        "options": [
+          "(A) 9:00 a.m.",
+          "(B) 10:00 a.m.",
+          "(C) 12:00 p.m.",
+          "(D) 3:00 p.m."
+        ],
+        "answer": 2,
+        "explanation": "公告寫 9:00 a.m. – 12:00 p.m.，活動於中午12點結束，故選 C。",
+        "optionsZh": [
+          "上午9:00",
+          "上午10:00",
+          "中午12:00",
+          "下午3:00"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What will volunteers receive for joining the event?",
+        "options": [
+          "(A) Money for their time",
+          "(B) A free T-shirt and a certificate",
+          "(C) A new bicycle",
+          "(D) Free tickets to a movie"
+        ],
+        "answer": 1,
+        "explanation": "公告寫 All volunteers will receive a free T-shirt and a certificate of participation，故選 B。",
+        "optionsZh": [
+          "參與活動的報酬",
+          "免費T恤和證書",
+          "一台新腳踏車",
+          "免費電影票"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What is one task volunteers will do during the event?",
+        "options": [
+          "(A) Building a new playground",
+          "(B) Painting over graffiti on the community wall",
+          "(C) Repairing broken streetlights",
+          "(D) Collecting money for charity"
+        ],
+        "answer": 1,
+        "explanation": "公告寫 Paint over graffiti on the community wall，故選 B。",
+        "optionsZh": [
+          "建造新的遊樂場",
+          "覆蓋社區牆上的塗鴉",
+          "修理故障的路燈",
+          "為慈善機構募款"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_83",
+    "passageType": "narrative",
+    "title": "The Great Alarm Clock Battle (故事)",
+    "passage": "Every school morning felt like a small war between me and my alarm clock. I would set three separate alarms, five minutes apart, convinced this clever plan would finally get me out of bed on time. Instead, I simply learned to silence all three without ever fully waking up.\nOne morning, my older brother, tired of my constant lateness, secretly placed my phone across the room instead of on my nightstand. When the alarm rang, I had no choice but to physically get up and walk across the cold floor to turn it off. To my surprise, once I was standing, I felt too awake to crawl back into bed.\nAt first, I was annoyed at his little trick, but I noticed something interesting — I actually made it to breakfast on time for the first time in weeks. The next night, I placed my phone across the room myself, half expecting the plan to fail.\nIt did not fail. Slowly, waking up on time stopped feeling like an impossible battle. My brother just laughed and said, \"Sometimes you don't need more alarms — you just need one good reason to stand up.\"",
+    "questions": [
+      {
+        "question": "What trick did the writer's brother play with the phone?",
+        "options": [
+          "(A) He hid the phone completely",
+          "(B) He placed the phone across the room instead of on the nightstand",
+          "(C) He turned off all the alarms",
+          "(D) He set the alarm one hour earlier"
+        ],
+        "answer": 1,
+        "explanation": "文中說哥哥 secretly placed my phone across the room instead of on my nightstand，故選 B。",
+        "optionsZh": [
+          "他把手機完全藏起來",
+          "他把手機放在房間另一端，而不是床頭櫃上",
+          "他關掉了所有鬧鐘",
+          "他把鬧鐘提早一小時設定"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why did this trick help the writer wake up on time?",
+        "options": [
+          "(A) Because standing up made her feel too awake to go back to bed",
+          "(B) Because the phone made a much louder sound",
+          "(C) Because her brother woke her up personally every day",
+          "(D) Because she was afraid of being punished"
+        ],
+        "answer": 0,
+        "explanation": "文中說起身走到房間另一端後 I felt too awake to crawl back into bed，故選 A。",
+        "optionsZh": [
+          "因為站起來後感覺太清醒而無法再回床上",
+          "因為手機的鈴聲變得更大聲",
+          "因為哥哥每天親自叫醒她",
+          "因為她害怕被處罰"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What is the main idea of the story?",
+        "options": [
+          "(A) More alarms always work better than fewer",
+          "(B) A small change in habit can solve a problem that seemed impossible",
+          "(C) Brothers should not play tricks on their siblings",
+          "(D) Getting up early is impossible for most students"
+        ],
+        "answer": 1,
+        "explanation": "故事透過簡單改變（把手機放遠）解決長期起床困難的問題，主旨為小小的習慣改變能解決看似困難的問題，故選 B。",
+        "optionsZh": [
+          "鬧鐘越多效果總是越好",
+          "小小的習慣改變能解決看似不可能的問題",
+          "哥哥不該對弟妹惡作劇",
+          "對大多數學生來說早起是不可能的"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_84",
+    "passageType": "informational",
+    "title": "The Rise of Online Learning (說明文)",
+    "passage": "In the past, learning a new subject usually meant sitting in a classroom with a teacher and a group of classmates. Today, more and more students are choosing to learn online, using videos, apps, and websites instead of, or in addition to, traditional classrooms.\nOne major advantage of online learning is flexibility. Students can often study at their own pace, pausing a lesson to review a difficult part or speeding through material they already understand. This is especially helpful for students who learn faster or slower than the average pace of a classroom. Online platforms also allow students in remote areas, without access to certain schools or teachers, to learn subjects that might otherwise be unavailable to them.\nHowever, online learning also comes with challenges. Without a teacher physically present, some students find it harder to stay focused or ask questions right away. Learning online also requires strong self-discipline, since there is no classmate or teacher directly checking whether a student is paying attention.\nMany experts now believe the best approach may be a mix of both methods — combining the structure and social connection of classroom learning with the flexibility and convenience that online tools provide.",
+    "questions": [
+      {
+        "question": "What is mentioned as a major advantage of online learning?",
+        "options": [
+          "(A) It is always completely free",
+          "(B) Flexibility to study at one's own pace",
+          "(C) It replaces the need for any teacher",
+          "(D) It requires no internet connection"
+        ],
+        "answer": 1,
+        "explanation": "文中說 One major advantage of online learning is flexibility，可依自己步調學習，故選 B。",
+        "optionsZh": [
+          "永遠完全免費",
+          "可依自己的步調彈性學習",
+          "完全不需要老師",
+          "不需要網路連線"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What challenge does online learning create for some students?",
+        "options": [
+          "(A) It costs too much money for most families",
+          "(B) It is harder to stay focused without a teacher physically present",
+          "(C) It only works for very young children",
+          "(D) It requires students to travel far away"
+        ],
+        "answer": 1,
+        "explanation": "文中說沒有老師實際在場，有些學生較難保持專注或即時提問，故選 B。",
+        "optionsZh": [
+          "對大多數家庭而言太昂貴",
+          "沒有老師實際在場較難保持專注",
+          "只適用於非常年幼的孩童",
+          "需要學生長途跋涉"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What do many experts suggest as the best approach to learning?",
+        "options": [
+          "(A) Using only online tools",
+          "(B) Using only traditional classrooms",
+          "(C) Combining classroom learning with online tools",
+          "(D) Avoiding both methods completely"
+        ],
+        "answer": 2,
+        "explanation": "末段說專家認為最好的方法是結合課堂學習的結構與網路學習的彈性，故選 C。",
+        "optionsZh": [
+          "只使用網路工具",
+          "只使用傳統教室",
+          "結合課堂學習與網路工具",
+          "完全避開這兩種方法"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_85",
+    "passageType": "chat",
+    "title": "Planning a Surprise Birthday Party (對話)",
+    "passage": "",
+    "caption": "Zoe: We need to plan Dad's surprise party for Saturday. Can you help?\nLiam: Of course! What do we need?\nZoe: I already ordered the cake. Can you buy balloons and decorations?\nLiam: Sure. Should we invite Uncle Marco too?\nZoe: Yes! I'll call him tonight, but don't tell Dad anything.\nLiam: Got it. What time should everyone arrive?\nZoe: Let's say 6 p.m., an hour before Dad usually gets home.\nLiam: Perfect. I'll bring the decorations by 5.",
+    "questions": [
+      {
+        "question": "What has Zoe already taken care of for the party?",
+        "options": [
+          "(A) The balloons",
+          "(B) The cake",
+          "(C) Inviting Uncle Marco",
+          "(D) The decorations"
+        ],
+        "answer": 1,
+        "explanation": "Zoe 說 I already ordered the cake，故選 B。",
+        "optionsZh": [
+          "氣球",
+          "蛋糕",
+          "邀請Marco叔叔",
+          "裝飾品"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why did Zoe choose 6 p.m. for guests to arrive?",
+        "options": [
+          "(A) Because the restaurant closes at 6",
+          "(B) Because it is an hour before Dad usually gets home",
+          "(C) Because Liam suggested that time",
+          "(D) Because the cake will be ready then"
+        ],
+        "answer": 1,
+        "explanation": "Zoe 說 Let's say 6 p.m., an hour before Dad usually gets home，故選 B。",
+        "optionsZh": [
+          "因為餐廳6點打烊",
+          "因為那是爸爸平常到家前一小時",
+          "因為那是Liam建議的時間",
+          "因為那時蛋糕才會準備好"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_86",
+    "passageType": "informational",
+    "title": "The Mystery of Déjà Vu (說明文)",
+    "passage": "Have you ever entered a place for the first time but suddenly felt certain you had been there before? This strange, brief feeling is called déjà vu, a French phrase meaning \"already seen.\" Studies suggest that most people experience déjà vu at least once in their lives, often during their teenage or young adult years.\nScientists do not fully agree on why déjà vu happens, but they have several interesting theories. One idea suggests that déjà vu occurs when the brain mistakenly processes a new experience using the same pathway used for memory, causing the brain to falsely label a new moment as familiar. Another theory suggests it may happen when the brain briefly experiences a tiny delay in processing information from the two eyes, creating a strange sense of repetition.\nInterestingly, déjà vu tends to happen less often as people get older. Some researchers believe this may be because the brain becomes better at telling the difference between real memories and unfamiliar experiences as it matures.\nWhile scientists continue to study this mysterious feeling, one thing is certain: déjà vu remains one of the most puzzling and fascinating tricks our brain can play on us.",
+    "questions": [
+      {
+        "question": "What does the phrase \"déjà vu\" mean?",
+        "options": [
+          "(A) \"Already seen\"",
+          "(B) \"Never before\"",
+          "(C) \"完全忘記\"",
+          "(D) \"Very afraid\""
+        ],
+        "answer": 0,
+        "explanation": "文中說 déjà vu, a French phrase meaning \"already seen\"，故選 A。",
+        "optionsZh": [
+          "「已經見過」",
+          "「從未見過」",
+          "完全忘記",
+          "「非常害怕」"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "According to one theory, why might déjà vu happen?",
+        "options": [
+          "(A) The brain processes a new experience using the same pathway used for memory",
+          "(B) The eyes stop working correctly",
+          "(C) The person is not getting enough sleep",
+          "(D) The brain completely shuts down for a second"
+        ],
+        "answer": 0,
+        "explanation": "文中提到一種理論認為大腦用記憶的路徑處理新經驗，因而誤把新時刻標記為熟悉，故選 A。",
+        "optionsZh": [
+          "大腦用處理記憶的相同路徑來處理新經驗",
+          "眼睛停止正常運作",
+          "此人睡眠不足",
+          "大腦瞬間完全停止運作"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What tends to happen to déjà vu as people get older, according to the passage?",
+        "options": [
+          "(A) It happens more often",
+          "(B) It happens less often",
+          "(C) It becomes more painful",
+          "(D) It disappears completely at age eighteen"
+        ],
+        "answer": 1,
+        "explanation": "文中說 déjà vu tends to happen less often as people get older，故選 B。",
+        "optionsZh": [
+          "發生得更頻繁",
+          "發生得較不頻繁",
+          "變得更痛苦",
+          "在18歲時完全消失"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_87",
+    "passageType": "narrative",
+    "title": "Piano Competition Nerves (故事)",
+    "passage": "Backstage at the piano competition, my hands felt cold and my stomach twisted into knots. I had practiced the same piece almost every day for three months, yet standing so close to the stage made me forget how the first note even began.\nA girl waiting beside me, clearly noticing my shaking hands, offered a small piece of advice. \"I used to get so nervous I'd forget entire pieces,\" she said calmly. \"Now I just imagine I'm playing for myself, alone in my room. The audience disappears that way.\"\nWhen my name was finally called, I walked onto the stage on shaky legs, sat down, and took a slow breath, trying her trick. I imagined my quiet bedroom instead of the crowded auditorium. Slowly, my fingers found the first note, then the second, and the melody began flowing almost on its own.\nI made a small mistake near the end, but I kept playing, refusing to let it stop the music. When I finished, the applause felt surprisingly warm. I did not win first place that day, but I walked off stage prouder than I had ever felt — not because I played perfectly, but because I did not let fear silence the music.",
+    "questions": [
+      {
+        "question": "What advice did the girl backstage give the writer?",
+        "options": [
+          "(A) Look directly at the judges the whole time",
+          "(B) Imagine playing alone in your room instead of for the audience",
+          "(C) Skip the difficult parts of the piece",
+          "(D) Play the piece faster than usual"
+        ],
+        "answer": 1,
+        "explanation": "那位女孩建議想像自己在房間獨自演奏，這樣觀眾就會「消失」，故選 B。",
+        "optionsZh": [
+          "全程直視評審",
+          "想像自己獨自在房間演奏，而不是面對觀眾",
+          "跳過困難的部分",
+          "彈得比平常快"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What happened near the end of the writer's performance?",
+        "options": [
+          "(A) The writer stopped playing completely",
+          "(B) The writer made a small mistake but kept playing",
+          "(C) The writer forgot the entire piece",
+          "(D) The writer left the stage early"
+        ],
+        "answer": 1,
+        "explanation": "文中說 I made a small mistake near the end, but I kept playing，故選 B。",
+        "optionsZh": [
+          "作者完全停止演奏",
+          "作者犯了小錯誤但繼續演奏",
+          "作者忘記整首曲子",
+          "作者提早離開舞台"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why did the writer feel proud after the performance, even without winning first place?",
+        "options": [
+          "(A) Because the writer played faster than everyone else",
+          "(B) Because the writer did not let fear silence the music",
+          "(C) Because the judges praised the writer directly",
+          "(D) Because the writer's family was in the audience"
+        ],
+        "answer": 1,
+        "explanation": "末句 not because I played perfectly, but because I did not let fear silence the music，正是原因，故選 B。",
+        "optionsZh": [
+          "因為作者彈得比所有人都快",
+          "因為作者沒有讓恐懼讓音樂停止",
+          "因為評審當面稱讚作者",
+          "因為作者的家人在觀眾席"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_88",
+    "passageType": "practical",
+    "title": "School Cafeteria Menu Update (公告)",
+    "passage": "GREENFIELD JUNIOR HIGH — Cafeteria Menu Update\nStarting next Monday, our cafeteria will offer more choices at lunch!\nNew items include:\n• A vegetarian option every day\n• Fresh fruit cups (instead of only whole fruit)\n• A soup bar on Wednesdays and Fridays\nPrices will stay the same: NT$60 for a full meal, NT$30 for soup or salad only.\nStudents with food allergies should inform the cafeteria staff in advance. A list of ingredients for each dish will be posted daily near the serving counter.\nWe hope these changes make lunchtime healthier and more enjoyable for everyone!",
+    "questions": [
+      {
+        "question": "On which days will the soup bar be available?",
+        "options": [
+          "(A) Monday and Tuesday",
+          "(B) Wednesday and Friday",
+          "(C) Every day of the week",
+          "(D) Only on Monday"
+        ],
+        "answer": 1,
+        "explanation": "公告寫 A soup bar on Wednesdays and Fridays，故選 B。",
+        "optionsZh": [
+          "星期一和星期二",
+          "星期三和星期五",
+          "一週每天",
+          "只有星期一"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "How much does a full meal cost after the menu update?",
+        "options": [
+          "(A) NT$30",
+          "(B) NT$60",
+          "(C) NT$90",
+          "(D) NT$120"
+        ],
+        "answer": 1,
+        "explanation": "公告寫 NT$60 for a full meal，價格保持不變，故選 B。",
+        "optionsZh": [
+          "新台幣30元",
+          "新台幣60元",
+          "新台幣90元",
+          "新台幣120元"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What should a student with food allergies do?",
+        "options": [
+          "(A) Bring their own lunch every day",
+          "(B) Inform the cafeteria staff in advance",
+          "(C) Avoid eating lunch at school",
+          "(D) Ask their teacher to cook for them"
+        ],
+        "answer": 1,
+        "explanation": "公告寫 Students with food allergies should inform the cafeteria staff in advance，故選 B。",
+        "optionsZh": [
+          "每天自帶午餐",
+          "事先告知餐廳工作人員",
+          "避免在學校吃午餐",
+          "請老師幫忙煮飯"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_89",
+    "passageType": "informational",
+    "title": "The Science Behind Fall Leaves (說明文)",
+    "passage": "Every autumn, forests transform from a sea of green into brilliant shades of red, orange, and yellow. This colorful change is not magic — it is the result of a natural process happening inside each leaf.\nDuring spring and summer, leaves appear green because of a chemical called chlorophyll, which helps plants absorb sunlight and turn it into energy. As days grow shorter and temperatures drop in autumn, trees prepare for winter by slowing down and eventually stopping the production of chlorophyll. As the green color fades, other colors that were hiding inside the leaf the whole time finally become visible.\nYellow and orange colors come from chemicals called carotenoids, which were always present in the leaf but hidden behind the stronger green color. Red colors, however, are often created fresh in autumn, as sugars trapped inside the leaf react with sunlight and cool temperatures.\nEventually, the tree forms a special layer at the base of each leaf stem, cutting off water and nutrients completely. This causes the leaf to dry out and fall to the ground, making space for fresh new leaves to grow again in spring.",
+    "questions": [
+      {
+        "question": "Why do leaves appear green during spring and summer?",
+        "options": [
+          "(A) Because of a chemical called chlorophyll",
+          "(B) Because trees are cold during that time",
+          "(C) Because sunlight turns leaves green directly",
+          "(D) Because of a special layer at the leaf stem"
+        ],
+        "answer": 0,
+        "explanation": "文中說綠色來自 chlorophyll，故選 A。",
+        "optionsZh": [
+          "因為一種叫葉綠素的化學物質",
+          "因為那段時間樹木很冷",
+          "因為陽光直接把葉子變綠",
+          "因為葉柄底部的特殊層"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Where do the yellow and orange colors come from, according to the passage?",
+        "options": [
+          "(A) They are created only after the leaf falls",
+          "(B) They come from carotenoids that were hidden by the green color",
+          "(C) They are painted onto leaves by frost",
+          "(D) They come only from red sugars"
+        ],
+        "answer": 1,
+        "explanation": "文中說黃色和橙色來自 carotenoids，這些色素本來就存在但被綠色遮蓋，故選 B。",
+        "optionsZh": [
+          "只有葉子掉落後才產生",
+          "來自被綠色遮蓋的類胡蘿蔔素",
+          "由霜凍畫上去的",
+          "只來自紅色的糖分"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What finally causes a leaf to fall to the ground?",
+        "options": [
+          "(A) A special layer at the leaf stem cuts off water and nutrients",
+          "(B) Strong wind blows the leaf away",
+          "(C) The chlorophyll suddenly disappears",
+          "(D) Animals eat through the leaf stem"
+        ],
+        "answer": 0,
+        "explanation": "末段說樹木在葉柄底部形成特殊層，切斷水分和養分，使葉子乾枯掉落，故選 A。",
+        "optionsZh": [
+          "葉柄底部的特殊層切斷了水分和養分",
+          "強風把葉子吹走",
+          "葉綠素突然消失",
+          "動物咬斷葉柄"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_90",
+    "passageType": "narrative",
+    "title": "The Quiet Kid Who Loved to Paint (故事)",
+    "passage": "Everyone in class knew Daniel as the quiet kid who rarely spoke during group discussions and usually ate lunch alone. Few people knew that after school, he spent hours in his room, filling notebooks with detailed paintings of imaginary cities and creatures.\nWhen our art teacher announced a school-wide art contest, most students assumed the winner would be one of the outgoing, popular students who always seemed confident. Daniel, however, quietly submitted a painting of a floating city surrounded by glowing clouds, without telling anyone in advance.\nWhen the results were announced, the whole school gathered around the winning painting, stunned to learn it had been created by Daniel. Suddenly, classmates who had barely spoken to him before were asking questions about his painting technique and how long it had taken.\nDaniel seemed surprised but pleased by the attention, though he still spoke quietly, almost shyly, about his work. Watching him explain his painting with quiet confidence, I realized that people are often far more interesting than their quiet exterior suggests — we simply have to give them the chance to show it.",
+    "questions": [
+      {
+        "question": "How did most classmates view Daniel before the contest?",
+        "options": [
+          "(A) As the most popular student in class",
+          "(B) As a quiet kid who rarely spoke and ate lunch alone",
+          "(C) As the best athlete in school",
+          "(D) As someone who never went to school"
+        ],
+        "answer": 1,
+        "explanation": "文中說大家認識他是 quiet kid who rarely spoke during group discussions and usually ate lunch alone，故選 B。",
+        "optionsZh": [
+          "班上最受歡迎的學生",
+          "很少說話、常獨自吃午餐的安靜孩子",
+          "學校裡最厲害的運動員",
+          "從不來學校的學生"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What did Daniel submit to the school art contest?",
+        "options": [
+          "(A) A painting of a floating city surrounded by glowing clouds",
+          "(B) A painting of his classmates",
+          "(C) A short story about his school",
+          "(D) A photograph of his neighborhood"
+        ],
+        "answer": 0,
+        "explanation": "文中說他提交 a painting of a floating city surrounded by glowing clouds，故選 A。",
+        "optionsZh": [
+          "一幅被發光雲朵環繞的漂浮城市畫作",
+          "一幅同學的畫像",
+          "一篇關於學校的短篇故事",
+          "一張社區的照片"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What did the writer realize by watching Daniel after he won?",
+        "options": [
+          "(A) Art contests are not fair to quiet students",
+          "(B) Quiet people are often more interesting than their exterior suggests",
+          "(C) Winning a contest changes a person completely",
+          "(D) Only outgoing students can be talented"
+        ],
+        "answer": 1,
+        "explanation": "末段點出 people are often far more interesting than their quiet exterior suggests，正是主旨，故選 B。",
+        "optionsZh": [
+          "藝術比賽對安靜的學生不公平",
+          "安靜的人往往比外表看起來更有趣",
+          "贏得比賽會徹底改變一個人",
+          "只有外向的學生才有才華"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_91",
+    "passageType": "dual",
+    "title": "Should Zoos Exist? — Two Views (雙方觀點)",
+    "passage": "■ View A — By Dr. Amara Osei, Wildlife Researcher\n\nModern zoos play an important role in protecting endangered animals. Many species facing extinction in the wild are being carefully bred in zoos, keeping their populations alive until it may be safe to return them to nature. Zoos also allow millions of children and adults to see animals up close, which often creates a lasting interest in protecting wildlife and the environment. Without this personal connection, many people would never feel motivated to support conservation efforts happening far away from their own cities.\n\n■ View B — By Tomas Reyes, Animal Rights Activist\n\nWhile the goals of zoos may sound good, keeping wild animals in enclosures, no matter how large, still limits their natural behavior and freedom. Many animals in zoos show signs of stress and boredom, repeating the same movements again and again inside small spaces. Instead of keeping animals in cities far from their natural homes, we should invest more in protecting their original habitats and supporting research in the wild. True conservation should focus on saving nature itself, not moving animals away from it.",
+    "questions": [
+      {
+        "question": "According to Dr. Osei, how do zoos help protect endangered animals?",
+        "options": [
+          "(A) By breeding them carefully to keep populations alive",
+          "(B) By selling them to other countries",
+          "(C) By training them to perform tricks",
+          "(D) By releasing them immediately into any environment"
+        ],
+        "answer": 0,
+        "explanation": "Dr. Osei 說瀕危物種在動物園中被小心繁殖，維持族群存續，故選 A。",
+        "optionsZh": [
+          "透過小心繁殖以維持族群存續",
+          "把牠們賣到其他國家",
+          "訓練牠們表演特技",
+          "立刻把牠們釋放到任何環境"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What is Tomas Reyes's main concern about zoos?",
+        "options": [
+          "(A) Zoos are too expensive to run",
+          "(B) Keeping animals in enclosures limits their natural behavior and freedom",
+          "(C) Zoos do not have enough visitors",
+          "(D) Zoo animals eat too much food"
+        ],
+        "answer": 1,
+        "explanation": "Tomas 認為即使圍欄再大，仍限制動物的自然行為與自由，故選 B。",
+        "optionsZh": [
+          "經營動物園費用太高",
+          "把動物關在圍欄裡限制了牠們的自然行為與自由",
+          "動物園遊客不夠多",
+          "動物園裡的動物吃太多食物"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does Tomas suggest instead of keeping animals in zoos?",
+        "options": [
+          "(A) Investing more in protecting animals' original habitats",
+          "(B) Building bigger zoos in every city",
+          "(C) Selling zoo animals to private owners",
+          "(D) Stopping all wildlife research completely"
+        ],
+        "answer": 0,
+        "explanation": "Tomas 建議應把資源投入保護動物原本的棲地及野外研究，故選 A。",
+        "optionsZh": [
+          "投入更多資源保護動物原本的棲地",
+          "在每個城市建更大的動物園",
+          "把動物園的動物賣給私人",
+          "完全停止所有野生動物研究"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What can we infer both writers care about?",
+        "options": [
+          "(A) The long-term survival and well-being of wild animals",
+          "(B) Increasing zoo ticket prices",
+          "(C) Reducing the number of wildlife researchers",
+          "(D) Making zoos more entertaining"
+        ],
+        "answer": 0,
+        "explanation": "Dr. Osei 關心物種存續，Tomas 關心動物福祉與棲地保護，兩人都關心野生動物的長期生存與福祉，故選 A。",
+        "optionsZh": [
+          "野生動物的長期生存與福祉",
+          "調漲動物園門票價格",
+          "減少野生動物研究人員",
+          "讓動物園更具娛樂性"
+        ],
+        "questionType": "inference"
+      }
+    ]
   }
 ]

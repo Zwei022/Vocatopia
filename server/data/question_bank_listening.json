@@ -538,5 +538,905 @@
       "向同學借字典。",
       "把手機收進書包並從書架借字典。"
     ]
+  },
+  {
+    "id": "listen_s1_09",
+    "section": "辨識句意",
+    "dialogue": "Man: The girl is standing on a chair to reach the top shelf of the bookcase.",
+    "question": "Which description best matches what you heard?",
+    "options": [
+      "(A) The girl is standing on a chair to reach the top shelf.",
+      "(B) The girl is sitting on the floor reading a book.",
+      "(C) The girl is sleeping in her bed."
+    ],
+    "answer": 0,
+    "explanation": "句子說「女孩站在椅子上要拿書櫃最上層的東西」，(A) 完全符合，故選 A。(B) 坐在地板看書、(C) 睡覺，均不符。",
+    "optionsZh": [
+      "女孩站在椅子上要拿書櫃最上層的東西。",
+      "女孩坐在地板上看書。",
+      "女孩在床上睡覺。"
+    ]
+  },
+  {
+    "id": "listen_s1_10",
+    "section": "辨識句意",
+    "dialogue": "Woman: Two boys are playing basketball on the court behind the school.",
+    "question": "Which description best matches what you heard?",
+    "options": [
+      "(A) Two boys are swimming in the pool.",
+      "(B) Two boys are playing basketball behind the school.",
+      "(C) One boy is reading alone in the classroom."
+    ],
+    "answer": 1,
+    "explanation": "句子說「兩個男孩在學校後面的球場打籃球」，(B) 完全符合，故選 B。",
+    "optionsZh": [
+      "兩個男孩在游泳池游泳。",
+      "兩個男孩在學校後面打籃球。",
+      "一個男孩獨自在教室看書。"
+    ]
+  },
+  {
+    "id": "listen_s1_11",
+    "section": "辨識句意",
+    "dialogue": "Man: The old man is feeding the birds beside the lake every morning.",
+    "question": "Which description best matches what you heard?",
+    "options": [
+      "(A) The old man is fishing beside the lake.",
+      "(B) The old man is walking his dog in the park.",
+      "(C) The old man is feeding the birds beside the lake."
+    ],
+    "answer": 2,
+    "explanation": "句子說「老先生每天早上在湖邊餵鳥」，(C) 完全符合，故選 C。",
+    "optionsZh": [
+      "老先生在湖邊釣魚。",
+      "老先生在公園遛狗。",
+      "老先生每天早上在湖邊餵鳥。"
+    ]
+  },
+  {
+    "id": "listen_s1_12",
+    "section": "辨識句意",
+    "dialogue": "Woman: The students are cleaning the classroom windows after class.",
+    "question": "Which description best matches what you heard?",
+    "options": [
+      "(A) The students are cleaning the classroom windows.",
+      "(B) The students are eating lunch in the classroom.",
+      "(C) The students are drawing pictures on the board."
+    ],
+    "answer": 0,
+    "explanation": "句子說「學生放學後在擦教室的窗戶」，(A) 完全符合，故選 A。",
+    "optionsZh": [
+      "學生正在擦教室的窗戶。",
+      "學生正在教室裡吃午餐。",
+      "學生正在黑板上畫畫。"
+    ]
+  },
+  {
+    "id": "listen_s1_13",
+    "section": "辨識句意",
+    "dialogue": "Man: The baby is crying loudly because she dropped her toy on the floor.",
+    "question": "Which description best matches what you heard?",
+    "options": [
+      "(A) The baby is laughing at her toy.",
+      "(B) The baby is crying because she dropped her toy.",
+      "(C) The baby is sleeping quietly in the room."
+    ],
+    "answer": 1,
+    "explanation": "句子說「嬰兒因為玩具掉在地上而大哭」，(B) 完全符合，故選 B。",
+    "optionsZh": [
+      "嬰兒對著玩具笑。",
+      "嬰兒因為玩具掉在地上而哭。",
+      "嬰兒在房間裡安靜地睡覺。"
+    ]
+  },
+  {
+    "id": "listen_s1_14",
+    "section": "辨識句意",
+    "dialogue": "Woman: The workers are building a new bridge across the river.",
+    "question": "Which description best matches what you heard?",
+    "options": [
+      "(A) The workers are painting a house.",
+      "(B) The workers are fixing a broken road.",
+      "(C) The workers are building a new bridge across the river."
+    ],
+    "answer": 2,
+    "explanation": "句子說「工人正在河上建造一座新橋」，(C) 完全符合，故選 C。",
+    "optionsZh": [
+      "工人正在油漆房子。",
+      "工人正在修理損壞的道路。",
+      "工人正在河上建造一座新橋。"
+    ]
+  },
+  {
+    "id": "listen_s1_15",
+    "section": "辨識句意",
+    "dialogue": "Man: The cat is sleeping on top of the warm car in the sun.",
+    "question": "Which description best matches what you heard?",
+    "options": [
+      "(A) The cat is running after a mouse.",
+      "(B) The cat is sleeping on top of a warm car.",
+      "(C) The cat is drinking milk from a bowl."
+    ],
+    "answer": 1,
+    "explanation": "句子說「貓咪在陽光下趴在溫暖的車頂睡覺」，(B) 完全符合，故選 B。",
+    "optionsZh": [
+      "貓咪在追老鼠。",
+      "貓咪趴在溫暖的車頂睡覺。",
+      "貓咪正在碗裡喝牛奶。"
+    ]
+  },
+  {
+    "id": "listen_s1_16",
+    "section": "辨識句意",
+    "dialogue": "Woman: The girl is drawing a picture of her family on a piece of paper.",
+    "question": "Which description best matches what you heard?",
+    "options": [
+      "(A) The girl is drawing a picture of her family.",
+      "(B) The girl is writing a letter to her friend.",
+      "(C) The girl is folding paper into a boat."
+    ],
+    "answer": 0,
+    "explanation": "句子說「女孩正在紙上畫她的家人」，(A) 完全符合，故選 A。",
+    "optionsZh": [
+      "女孩正在紙上畫她的家人。",
+      "女孩正在寫信給朋友。",
+      "女孩正在把紙折成小船。"
+    ]
+  },
+  {
+    "id": "listen_s1_17",
+    "section": "辨識句意",
+    "dialogue": "Man: The farmer is picking apples in the field early in the morning.",
+    "question": "Which description best matches what you heard?",
+    "options": [
+      "(A) The farmer is planting seeds in the field.",
+      "(B) The farmer is picking apples in the field.",
+      "(C) The farmer is driving a truck to the market."
+    ],
+    "answer": 1,
+    "explanation": "句子說「農夫一大早在田裡摘蘋果」，(B) 完全符合，故選 B。",
+    "optionsZh": [
+      "農夫在田裡種植種子。",
+      "農夫在田裡摘蘋果。",
+      "農夫開卡車去市場。"
+    ]
+  },
+  {
+    "id": "listen_s1_18",
+    "section": "辨識句意",
+    "dialogue": "Woman: The boy fell off his bike but he stood up and smiled.",
+    "question": "Which description best matches what you heard?",
+    "options": [
+      "(A) The boy fell off his bike and started crying.",
+      "(B) The boy fell off his bike but stood up and smiled.",
+      "(C) The boy is riding his bike very fast."
+    ],
+    "answer": 1,
+    "explanation": "句子說「男孩從腳踏車上摔下來，但站起來笑了」，(B) 完全符合，故選 B。",
+    "optionsZh": [
+      "男孩從腳踏車摔下來後哭了。",
+      "男孩摔下腳踏車但站起來笑了。",
+      "男孩正騎腳踏車騎得很快。"
+    ]
+  },
+  {
+    "id": "listen_s1_19",
+    "section": "辨識句意",
+    "dialogue": "Man: The teacher is writing new words on the board and the students are copying them.",
+    "question": "Which description best matches what you heard?",
+    "options": [
+      "(A) The teacher is writing new words and the students are copying them.",
+      "(B) The students are taking a test in silence.",
+      "(C) The teacher is singing a song with the students."
+    ],
+    "answer": 0,
+    "explanation": "句子說「老師在黑板上寫新單字，學生們在抄寫」，(A) 完全符合，故選 A。",
+    "optionsZh": [
+      "老師寫新單字，學生們在抄寫。",
+      "學生們正安靜地考試。",
+      "老師和學生一起唱歌。"
+    ]
+  },
+  {
+    "id": "listen_s1_20",
+    "section": "辨識句意",
+    "dialogue": "Woman: The waiter is bringing hot soup to the table by the window.",
+    "question": "Which description best matches what you heard?",
+    "options": [
+      "(A) The waiter is cleaning the table by the window.",
+      "(B) The waiter is bringing hot soup to the table by the window.",
+      "(C) The waiter is taking the menu away from the table."
+    ],
+    "answer": 1,
+    "explanation": "句子說「服務生正端熱湯到窗邊的桌子」，(B) 完全符合，故選 B。",
+    "optionsZh": [
+      "服務生正在清理窗邊的桌子。",
+      "服務生正端熱湯到窗邊的桌子。",
+      "服務生正把菜單從桌上收走。"
+    ]
+  },
+  {
+    "id": "listen_s1_21",
+    "section": "辨識句意",
+    "dialogue": "Man: The children are jumping into the pool one after another.",
+    "question": "Which description best matches what you heard?",
+    "options": [
+      "(A) The children are sitting quietly by the pool.",
+      "(B) The children are jumping into the pool one after another.",
+      "(C) The children are drying their hair after a shower."
+    ],
+    "answer": 1,
+    "explanation": "句子說「孩子們一個接一個跳進游泳池」，(B) 完全符合，故選 B。",
+    "optionsZh": [
+      "孩子們安靜地坐在游泳池邊。",
+      "孩子們一個接一個跳進游泳池。",
+      "孩子們洗完澡在吹乾頭髮。"
+    ]
+  },
+  {
+    "id": "listen_s1_22",
+    "section": "辨識句意",
+    "dialogue": "Woman: The man is fixing the broken chair with a hammer in the yard.",
+    "question": "Which description best matches what you heard?",
+    "options": [
+      "(A) The man is buying a new chair at the store.",
+      "(B) The man is throwing away an old chair.",
+      "(C) The man is fixing the broken chair with a hammer."
+    ],
+    "answer": 2,
+    "explanation": "句子說「男士在院子裡用鎚子修理壞掉的椅子」，(C) 完全符合，故選 C。",
+    "optionsZh": [
+      "男士在商店買新椅子。",
+      "男士正把舊椅子丟掉。",
+      "男士正用鎚子修理壞掉的椅子。"
+    ]
+  },
+  {
+    "id": "listen_s1_23",
+    "section": "辨識句意",
+    "dialogue": "Man: The girl is helping her little brother tie his shoes before school.",
+    "question": "Which description best matches what you heard?",
+    "options": [
+      "(A) The girl is helping her little brother tie his shoes.",
+      "(B) The girl is teaching her brother to read.",
+      "(C) The girl is carrying her brother on her back."
+    ],
+    "answer": 0,
+    "explanation": "句子說「女孩在上學前幫弟弟綁鞋帶」，(A) 完全符合，故選 A。",
+    "optionsZh": [
+      "女孩正在幫弟弟綁鞋帶。",
+      "女孩正在教弟弟認字。",
+      "女孩正背著弟弟走路。"
+    ]
+  },
+  {
+    "id": "listen_s2_13",
+    "section": "基本問答",
+    "dialogue": "Woman: What time does the movie start tonight?",
+    "question": "Which is the best response?",
+    "options": [
+      "(A) It starts at seven thirty.",
+      "(B) I like action movies the most.",
+      "(C) The ticket costs two hundred dollars."
+    ],
+    "answer": 0,
+    "explanation": "問「電影今晚幾點開始？」，(A) 「七點半開始」直接回答時間，故選 A。",
+    "optionsZh": [
+      "七點半開始。",
+      "我最喜歡動作片。",
+      "票價是兩百元。"
+    ]
+  },
+  {
+    "id": "listen_s2_14",
+    "section": "基本問答",
+    "dialogue": "Man: I feel really tired today. I didn't sleep well last night.",
+    "question": "Which is the best response?",
+    "options": [
+      "(A) You should try to rest more tonight.",
+      "(B) I slept for ten hours last night.",
+      "(C) Tomorrow is a holiday."
+    ],
+    "answer": 0,
+    "explanation": "說「今天很累，昨晚沒睡好」，(A) 「你今晚應該多休息」是關心的回應，故選 A。",
+    "optionsZh": [
+      "你今晚應該多休息。",
+      "我昨晚睡了十小時。",
+      "明天放假。"
+    ]
+  },
+  {
+    "id": "listen_s2_15",
+    "section": "基本問答",
+    "dialogue": "Woman: Excuse me, does this bus go to the train station?",
+    "question": "Which is the best response?",
+    "options": [
+      "(A) Yes, it stops there in about ten minutes.",
+      "(B) The train was very crowded this morning.",
+      "(C) I usually walk to school."
+    ],
+    "answer": 0,
+    "explanation": "問「這班公車有到火車站嗎？」，(A) 「有，大約十分鐘後會停在那裡」直接回答，故選 A。",
+    "optionsZh": [
+      "有，大約十分鐘後會停靠那裡。",
+      "今天早上火車很擁擠。",
+      "我通常走路上學。"
+    ]
+  },
+  {
+    "id": "listen_s2_16",
+    "section": "基本問答",
+    "dialogue": "Man: I lost my umbrella somewhere on the bus.",
+    "question": "Which is the best response?",
+    "options": [
+      "(A) That's too bad. You can ask the driver about it.",
+      "(B) It's sunny outside today.",
+      "(C) I bought a new bag yesterday."
+    ],
+    "answer": 0,
+    "explanation": "說「我在公車上弄丟了雨傘」，(A) 「真可惜，你可以問司機」給出實用建議，故選 A。",
+    "optionsZh": [
+      "真可惜，你可以問司機看看。",
+      "今天外面天氣晴朗。",
+      "我昨天買了一個新包包。"
+    ]
+  },
+  {
+    "id": "listen_s2_17",
+    "section": "基本問答",
+    "dialogue": "Woman: How was your trip to the mountains last weekend?",
+    "question": "Which is the best response?",
+    "options": [
+      "(A) It was amazing. The air was so fresh.",
+      "(B) I go to school every weekday.",
+      "(C) The mountain is very tall and cold."
+    ],
+    "answer": 0,
+    "explanation": "問「上週末的山上旅行如何？」，(A) 「很棒，空氣很新鮮」是最自然的回應，故選 A。",
+    "optionsZh": [
+      "很棒，空氣非常新鮮。",
+      "我平日每天都上學。",
+      "那座山又高又冷。"
+    ]
+  },
+  {
+    "id": "listen_s2_18",
+    "section": "基本問答",
+    "dialogue": "Man: Could you help me carry this box upstairs?",
+    "question": "Which is the best response?",
+    "options": [
+      "(A) Sure, let me help you with that.",
+      "(B) The box is empty now.",
+      "(C) I don't like going upstairs."
+    ],
+    "answer": 0,
+    "explanation": "請求「可以幫我把這個箱子搬上樓嗎？」，(A) 「當然，讓我幫你」是禮貌合適的回應，故選 A。",
+    "optionsZh": [
+      "當然，讓我幫你。",
+      "這個箱子現在是空的。",
+      "我不喜歡上樓。"
+    ]
+  },
+  {
+    "id": "listen_s2_19",
+    "section": "基本問答",
+    "dialogue": "Woman: This soup tastes a little too salty for me.",
+    "question": "Which is the best response?",
+    "options": [
+      "(A) Sorry, I'll add some water to it.",
+      "(B) I don't like cold weather.",
+      "(C) The soup is still cooking on the stove."
+    ],
+    "answer": 0,
+    "explanation": "說「這湯對我來說有點太鹹了」，(A) 「抱歉，我加點水」是合理回應，故選 A。",
+    "optionsZh": [
+      "抱歉，我加點水進去。",
+      "我不喜歡冷天氣。",
+      "湯還在爐子上煮。"
+    ]
+  },
+  {
+    "id": "listen_s2_20",
+    "section": "基本問答",
+    "dialogue": "Man: I heard you got first place in the singing event!",
+    "question": "Which is the best response?",
+    "options": [
+      "(A) Thanks! I practiced really hard for it.",
+      "(B) I don't know how to sing at all.",
+      "(C) The event will start next month."
+    ],
+    "answer": 0,
+    "explanation": "說「聽說你在歌唱活動拿了第一名！」，(A) 「謝謝！我很努力練習」是自然的回應，故選 A。",
+    "optionsZh": [
+      "謝謝！我很努力練習。",
+      "我完全不會唱歌。",
+      "活動下個月才開始。"
+    ]
+  },
+  {
+    "id": "listen_s2_21",
+    "section": "基本問答",
+    "dialogue": "Woman: Why is the road so quiet this morning?",
+    "question": "Which is the best response?",
+    "options": [
+      "(A) Because it's a national holiday today.",
+      "(B) The road is usually very wide.",
+      "(C) I drove to work by car."
+    ],
+    "answer": 0,
+    "explanation": "問「為什麼今天早上路上這麼安靜？」，(A) 「因為今天是國定假日」直接解釋原因，故選 A。",
+    "optionsZh": [
+      "因為今天是國定假日。",
+      "這條路通常很寬。",
+      "我開車去上班。"
+    ]
+  },
+  {
+    "id": "listen_s2_22",
+    "section": "基本問答",
+    "dialogue": "Man: My computer stopped working this morning. Can you take a look?",
+    "question": "Which is the best response?",
+    "options": [
+      "(A) Sure, let me check what's wrong with it.",
+      "(B) I bought a new phone last week.",
+      "(C) Computers are very cheap now."
+    ],
+    "answer": 0,
+    "explanation": "問「我的電腦今早壞了，你可以看看嗎？」，(A) 「當然，讓我檢查一下」是最直接的回應，故選 A。",
+    "optionsZh": [
+      "當然，讓我檢查一下哪裡出問題。",
+      "我上週買了新手機。",
+      "現在電腦都很便宜。"
+    ]
+  },
+  {
+    "id": "listen_s2_23",
+    "section": "基本問答",
+    "dialogue": "Woman: Do you want to join our club after school?",
+    "question": "Which is the best response?",
+    "options": [
+      "(A) Sounds great! What does the club do?",
+      "(B) School ends at four every day.",
+      "(C) I forgot my homework at home."
+    ],
+    "answer": 0,
+    "explanation": "問「要不要放學後加入我們的社團？」，(A) 「聽起來不錯！社團做什麼？」是自然回應，故選 A。",
+    "optionsZh": [
+      "聽起來不錯！社團是做什麼的？",
+      "學校每天四點放學。",
+      "我把作業忘在家裡了。"
+    ]
+  },
+  {
+    "id": "listen_s2_24",
+    "section": "基本問答",
+    "dialogue": "Man: The line at the store is really long today.",
+    "question": "Which is the best response?",
+    "options": [
+      "(A) Yeah, let's come back later.",
+      "(B) The store is closed on Mondays.",
+      "(C) I like shopping online instead."
+    ],
+    "answer": 0,
+    "explanation": "說「今天店裡排隊排很長」，(A) 「對啊，我們晚點再來」是自然的建議，故選 A。",
+    "optionsZh": [
+      "對啊，我們晚點再來吧。",
+      "這家店星期一公休。",
+      "我比較喜歡網路購物。"
+    ]
+  },
+  {
+    "id": "listen_s2_25",
+    "section": "基本問答",
+    "dialogue": "Woman: Are you free this Friday evening?",
+    "question": "Which is the best response?",
+    "options": [
+      "(A) Yes, I don't have any plans yet.",
+      "(B) Friday is my favorite subject.",
+      "(C) I finished my homework already."
+    ],
+    "answer": 0,
+    "explanation": "問「你這週五晚上有空嗎？」，(A) 「有，我還沒有計畫」直接回答，故選 A。",
+    "optionsZh": [
+      "有，我還沒有安排任何計畫。",
+      "星期五是我最喜歡的科目。",
+      "我已經寫完作業了。"
+    ]
+  },
+  {
+    "id": "listen_s2_26",
+    "section": "基本問答",
+    "dialogue": "Man: This shirt is nice, but do you have it in a smaller size?",
+    "question": "Which is the best response?",
+    "options": [
+      "(A) Let me check in the back for you.",
+      "(B) The color is really popular this year.",
+      "(C) I bought this shirt last month."
+    ],
+    "answer": 0,
+    "explanation": "問「這件襯衫不錯，但有小一號的嗎？」，(A) 「我幫你到後面找找看」是店員合適回應，故選 A。",
+    "optionsZh": [
+      "我幫你到後面找找看。",
+      "這個顏色今年很受歡迎。",
+      "我上個月買了這件襯衫。"
+    ]
+  },
+  {
+    "id": "listen_s2_27",
+    "section": "基本問答",
+    "dialogue": "Woman: I'm worried about my science test tomorrow.",
+    "question": "Which is the best response?",
+    "options": [
+      "(A) Don't worry. I can help you study tonight.",
+      "(B) Science is my least favorite class.",
+      "(C) The test was easy last year."
+    ],
+    "answer": 0,
+    "explanation": "說「我很擔心明天的自然科考試」，(A) 「別擔心，我今晚可以幫你複習」是最合適的安慰，故選 A。",
+    "optionsZh": [
+      "別擔心，我今晚可以幫你複習。",
+      "自然科是我最不喜歡的科目。",
+      "去年的考試很簡單。"
+    ]
+  },
+  {
+    "id": "listen_s2_28",
+    "section": "基本問答",
+    "dialogue": "Man: The weather report says it might snow tonight.",
+    "question": "Which is the best response?",
+    "options": [
+      "(A) Really? I should wear a warmer coat then.",
+      "(B) It rained a lot last summer.",
+      "(C) I love swimming in the sea."
+    ],
+    "answer": 0,
+    "explanation": "說「氣象說今晚可能下雪」，(A) 「真的嗎？那我該穿暖一點的外套」是自然回應，故選 A。",
+    "optionsZh": [
+      "真的嗎？那我該穿暖一點的外套。",
+      "去年夏天下了很多雨。",
+      "我喜歡在海裡游泳。"
+    ]
+  },
+  {
+    "id": "listen_s2_29",
+    "section": "基本問答",
+    "dialogue": "Woman: Can you tell me how to get to the post office?",
+    "question": "Which is the best response?",
+    "options": [
+      "(A) Sure, go straight and turn left at the corner.",
+      "(B) I sent a letter yesterday.",
+      "(C) The office opens at nine in the morning."
+    ],
+    "answer": 0,
+    "explanation": "問「你能告訴我怎麼去郵局嗎？」，(A) 「當然，直走然後在轉角左轉」直接指路，故選 A。",
+    "optionsZh": [
+      "當然，直走然後在轉角左轉。",
+      "我昨天寄了一封信。",
+      "辦公室早上九點開門。"
+    ]
+  },
+  {
+    "id": "listen_s2_30",
+    "section": "基本問答",
+    "dialogue": "Man: My little sister broke my favorite cup by accident.",
+    "question": "Which is the best response?",
+    "options": [
+      "(A) That's okay, accidents happen sometimes.",
+      "(B) The cup is very heavy to carry.",
+      "(C) I washed all the cups this morning."
+    ],
+    "answer": 0,
+    "explanation": "說「我妹妹不小心打破了我最喜歡的杯子」，(A) 「沒關係，意外難免」是體諒的回應，故選 A。",
+    "optionsZh": [
+      "沒關係，意外難免發生。",
+      "這個杯子拿起來很重。",
+      "我今天早上洗了所有的杯子。"
+    ]
+  },
+  {
+    "id": "listen_s2_31",
+    "section": "基本問答",
+    "dialogue": "Woman: I can't decide between the red shoes and the blue ones.",
+    "question": "Which is the best response?",
+    "options": [
+      "(A) I think the blue ones match more of your clothes.",
+      "(B) These shoes are black in color.",
+      "(C) The store closes at nine tonight."
+    ],
+    "answer": 0,
+    "explanation": "說「我無法決定要紅鞋還是藍鞋」，(A) 「我覺得藍色比較搭你的衣服」是有幫助的建議，故選 A。",
+    "optionsZh": [
+      "我覺得藍色比較搭你的衣服。",
+      "這雙鞋是黑色的。",
+      "這家店今晚九點關門。"
+    ]
+  },
+  {
+    "id": "listen_s2_32",
+    "section": "基本問答",
+    "dialogue": "Man: I'm going to visit my grandmother this summer. Any advice for the trip?",
+    "question": "Which is the best response?",
+    "options": [
+      "(A) Bring some gifts and call before you arrive.",
+      "(B) My grandmother lives in a big city.",
+      "(C) Summer is the hottest season of the year."
+    ],
+    "answer": 0,
+    "explanation": "問「今年夏天要去看奶奶，有什麼建議嗎？」，(A) 「帶些禮物，到之前先打電話」是實用建議，故選 A。",
+    "optionsZh": [
+      "帶些禮物，到之前先打電話。",
+      "我奶奶住在大城市。",
+      "夏天是一年中最熱的季節。"
+    ]
+  },
+  {
+    "id": "listen_s3_11",
+    "section": "言談理解",
+    "dialogue": "Boy: Did you finish the science project yet?\nGirl: Not yet. I still need to write the report.\nBoy: Do you want to work on it together this weekend?\nGirl: That would be great. Let's meet at the library on Saturday.",
+    "question": "What will they do on Saturday?",
+    "options": [
+      "(A) Go to a science museum.",
+      "(B) Meet at the library to work on the project.",
+      "(C) Watch a movie together."
+    ],
+    "answer": 1,
+    "explanation": "兩人約好星期六在圖書館一起完成科展報告，故選 B。",
+    "optionsZh": [
+      "去科學博物館。",
+      "在圖書館一起做作業。",
+      "一起看電影。"
+    ]
+  },
+  {
+    "id": "listen_s3_12",
+    "section": "言談理解",
+    "dialogue": "Woman: Welcome to City Zoo. The elephant show starts at two o'clock and the bird show starts at three thirty. Please do not feed the animals. Maps are available at the front gate.",
+    "question": "Which statement about the zoo is correct?",
+    "options": [
+      "(A) The elephant show starts at three thirty.",
+      "(B) Visitors are allowed to feed the animals.",
+      "(C) Maps can be found at the front gate."
+    ],
+    "answer": 2,
+    "explanation": "廣播說「地圖在正門可以拿」，(C) 正確。大象秀是兩點（非三點半），且禁止餵食動物，故選 C。",
+    "optionsZh": [
+      "大象秀三點半開始。",
+      "遊客可以餵食動物。",
+      "地圖可以在正門拿到。"
+    ]
+  },
+  {
+    "id": "listen_s3_13",
+    "section": "言談理解",
+    "dialogue": "Man: Excuse me, is this seat taken?\nWoman: No, go ahead.\nMan: Thanks. Are you also waiting for the number twelve bus?\nWoman: Yes, but I heard it's running late today because of the rain.",
+    "question": "Why is the bus late today?",
+    "options": [
+      "(A) Because of a traffic accident.",
+      "(B) Because of the rain.",
+      "(C) Because the driver is sick."
+    ],
+    "answer": 1,
+    "explanation": "女士說公車因為下雨而延誤，故選 B。",
+    "optionsZh": [
+      "因為發生交通事故。",
+      "因為下雨。",
+      "因為司機生病了。"
+    ]
+  },
+  {
+    "id": "listen_s3_14",
+    "section": "言談理解",
+    "dialogue": "Girl: Mom, can I get a dog for my birthday?\nMom: A dog needs a lot of care every day. Are you ready to walk it every day?\nGirl: Yes, I promise I will take care of it.\nMom: Okay, let's talk to your father about it tonight.",
+    "question": "What does the mother ask the girl to think about?",
+    "options": [
+      "(A) The cost of buying a dog.",
+      "(B) Whether she can take care of a dog every day.",
+      "(C) Where the dog will sleep at night."
+    ],
+    "answer": 1,
+    "explanation": "媽媽提醒養狗是大責任，問女兒是否能每天照顧，故選 B。",
+    "optionsZh": [
+      "買狗的花費。",
+      "她是否能每天照顧狗。",
+      "狗晚上要睡哪裡。"
+    ]
+  },
+  {
+    "id": "listen_s3_15",
+    "section": "言談理解",
+    "dialogue": "Man: I heard the school trip was changed from the beach to the science museum.\nWoman: Really? Why did they change it?\nMan: The weather forecast says it will rain that day.\nWoman: That makes sense. The museum sounds interesting too.",
+    "question": "Why was the school trip changed?",
+    "options": [
+      "(A) The beach was too crowded.",
+      "(B) The museum ticket was cheaper.",
+      "(C) It is expected to rain on that day."
+    ],
+    "answer": 2,
+    "explanation": "因為預報那天會下雨，校外教學從海邊改成科學博物館，故選 C。",
+    "optionsZh": [
+      "海邊太擁擠。",
+      "博物館門票比較便宜。",
+      "那天預計會下雨。"
+    ]
+  },
+  {
+    "id": "listen_s3_16",
+    "section": "言談理解",
+    "dialogue": "Woman: This is a reminder that the school gate will be closed for repair from Monday to Wednesday next week. Students should use the side entrance near the gym during this time. We are sorry for any trouble this may cause.",
+    "question": "What should students do next week?",
+    "options": [
+      "(A) Enter through the side entrance near the gym.",
+      "(B) Stay home for three days.",
+      "(C) Bring their own tools to help with the repair."
+    ],
+    "answer": 0,
+    "explanation": "廣播說學生這段時間應改走體育館旁的側門，故選 A。",
+    "optionsZh": [
+      "改走體育館旁的側門進入。",
+      "在家待三天。",
+      "自備工具幫忙修理。"
+    ]
+  },
+  {
+    "id": "listen_s3_17",
+    "section": "言談理解",
+    "dialogue": "Boy: I can't open this jar. Can you help me?\nDad: Let me try. Hmm, it's really tight.\nBoy: Maybe we should run it under hot water first.\nDad: Good idea. That usually works.",
+    "question": "What will they do to open the jar?",
+    "options": [
+      "(A) Hit the jar with a spoon.",
+      "(B) Run the jar under hot water.",
+      "(C) Ask a neighbor for help."
+    ],
+    "answer": 1,
+    "explanation": "兩人決定先用熱水沖罐子再打開，故選 B。",
+    "optionsZh": [
+      "用湯匙敲罐子。",
+      "用熱水沖罐子。",
+      "請鄰居幫忙。"
+    ]
+  },
+  {
+    "id": "listen_s3_18",
+    "section": "言談理解",
+    "dialogue": "Woman: How do you like the new restaurant downtown?\nMan: The food is delicious, but the service is really slow.\nWoman: That's too bad. Did you have to wait long?\nMan: Almost an hour just to get our food.",
+    "question": "What does the man think about the restaurant?",
+    "options": [
+      "(A) Both the food and service are excellent.",
+      "(B) The food is good but the service is slow.",
+      "(C) The food is bad but the service is fast."
+    ],
+    "answer": 1,
+    "explanation": "男士說食物好吃，但服務很慢，等了將近一小時，故選 B。",
+    "optionsZh": [
+      "食物和服務都很棒。",
+      "食物好吃但服務很慢。",
+      "食物不好吃但服務很快。"
+    ]
+  },
+  {
+    "id": "listen_s3_19",
+    "section": "言談理解",
+    "dialogue": "Man: Did you remember to water the plants while I was away?\nWoman: Oh no, I completely forgot!\nMan: It's okay, most of them still look fine.\nWoman: I'll water them right now, and I'm really sorry.",
+    "question": "What happened while the man was away?",
+    "options": [
+      "(A) The woman watered the plants every day.",
+      "(B) The woman forgot to water the plants.",
+      "(C) All of the plants died."
+    ],
+    "answer": 1,
+    "explanation": "女士承認完全忘記澆花，故選 B。植物大多還好，並非全部枯死。",
+    "optionsZh": [
+      "女士每天都有澆花。",
+      "女士忘記澆花了。",
+      "植物全部枯死了。"
+    ]
+  },
+  {
+    "id": "listen_s3_20",
+    "section": "言談理解",
+    "dialogue": "Girl: I want to join the school singing group, but I'm afraid I'm not good enough.\nBoy: You have a great voice! You should just try.\nGirl: You really think so?\nBoy: Yes, they are choosing new members next Tuesday. I'll go with you.",
+    "question": "What does the boy encourage the girl to do?",
+    "options": [
+      "(A) Give up joining the singing group.",
+      "(B) Try to join the school singing group.",
+      "(C) Practice singing alone at home."
+    ],
+    "answer": 1,
+    "explanation": "男孩鼓勵女孩去試著加入學校歌唱團體，並陪她一起去，故選 B。",
+    "optionsZh": [
+      "放棄加入歌唱團體。",
+      "試著加入學校歌唱團體。",
+      "獨自在家練唱歌。"
+    ]
+  },
+  {
+    "id": "listen_s3_21",
+    "section": "言談理解",
+    "dialogue": "Man: Good afternoon. This train will arrive at Central Station in twenty minutes. Passengers going to the airport should change trains at the next stop. Thank you for riding with us.",
+    "question": "What should passengers going to the airport do?",
+    "options": [
+      "(A) Get off at Central Station.",
+      "(B) Stay on this train the whole way.",
+      "(C) Change trains at the next stop."
+    ],
+    "answer": 2,
+    "explanation": "廣播說要去機場的乘客應在下一站換車，故選 C。",
+    "optionsZh": [
+      "在中央車站下車。",
+      "全程留在這班列車上。",
+      "在下一站換車。"
+    ]
+  },
+  {
+    "id": "listen_s3_22",
+    "section": "言談理解",
+    "dialogue": "Woman: Your room is so messy! Can you clean it up before dinner?\nBoy: I will, Mom. I just need ten more minutes to finish my drawing.\nWoman: Okay, but please don't forget.\nBoy: I won't. I promise.",
+    "question": "What does the boy promise to do?",
+    "options": [
+      "(A) Finish his drawing after dinner.",
+      "(B) Clean his room before dinner.",
+      "(C) Help his mother cook dinner."
+    ],
+    "answer": 1,
+    "explanation": "媽媽要求晚餐前整理房間，男孩答應會做到，故選 B。",
+    "optionsZh": [
+      "晚餐後才完成他的畫。",
+      "在晚餐前整理房間。",
+      "幫媽媽煮晚餐。"
+    ]
+  },
+  {
+    "id": "listen_s3_23",
+    "section": "言談理解",
+    "dialogue": "Man: I'm thinking about growing some flowers in the garden.\nWoman: That's a great idea. What do you want to grow first?\nMan: Maybe roses. They're easy to grow, right?\nWoman: Yes, and they need a lot of light, so plant them near the fence.",
+    "question": "Where does the woman suggest planting the roses?",
+    "options": [
+      "(A) Near the fence.",
+      "(B) Inside the kitchen.",
+      "(C) Under a big tree."
+    ],
+    "answer": 0,
+    "explanation": "女士建議因為需要充足光線，把玫瑰種在圍籬旁邊，故選 A。",
+    "optionsZh": [
+      "種在圍籬旁邊。",
+      "種在廚房裡。",
+      "種在大樹下。"
+    ]
+  },
+  {
+    "id": "listen_s3_24",
+    "section": "言談理解",
+    "dialogue": "Girl: Are you coming to my birthday party next Friday?\nBoy: I'd love to, but I have a piano lesson that day.\nGirl: What time does your lesson end?\nBoy: Around six. I can come after that if it's okay.\nGirl: Sure, that's perfect!",
+    "question": "When will the boy arrive at the party?",
+    "options": [
+      "(A) He will not come at all.",
+      "(B) He will come right after his piano lesson.",
+      "(C) He will come before his piano lesson."
+    ],
+    "answer": 1,
+    "explanation": "男孩鋼琴課六點結束，之後就會去參加派對，故選 B。",
+    "optionsZh": [
+      "他完全不會出席。",
+      "他鋼琴課結束後馬上過去。",
+      "他會在鋼琴課之前先到。"
+    ]
+  },
+  {
+    "id": "listen_s3_25",
+    "section": "言談理解",
+    "dialogue": "Woman: Attention, students. Tomorrow's field trip will begin at eight in the morning at the main gate. Please bring your own water and lunch. Wear comfortable shoes since we will be walking a lot. The bus will leave without you if you are late.",
+    "question": "What should students do to prepare for the field trip?",
+    "options": [
+      "(A) Bring water, lunch, and wear comfortable shoes.",
+      "(B) Bring only a camera and nothing else.",
+      "(C) Arrive at the main gate at nine in the morning."
+    ],
+    "answer": 0,
+    "explanation": "廣播說學生應自備水和午餐，並穿舒適的鞋子，(A) 完全符合，故選 A。集合時間是八點（非九點）。",
+    "optionsZh": [
+      "自備水、午餐並穿舒適的鞋子。",
+      "只帶相機，其他都不用帶。",
+      "早上九點在校門集合。"
+    ]
   }
 ]
