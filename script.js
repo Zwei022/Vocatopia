@@ -663,6 +663,11 @@ function _closeAnySpecialOverlay() {
 
 let _lastBackPressAt = 0;
 function handleBack() {
+  // #8 情境式提示卡是疊在當前畫面上的輕量提示，不走「關閉後回首頁」那套邏輯
+  // （跟下面 _closeAnySpecialOverlay() 的其他項目不同，那些關閉後預期回首頁；
+  // 這裡使用者應該留在原本正在看的畫面，例如俄羅斯方塊/文法教學裡）。
+  if (document.getElementById('featureHintOverlay')) { _closeFeatureHint(); return; }
+
   if (_closeAnySpecialOverlay()) { goScreen('home'); return; }
 
   if (_modalStack.length) { closeModal(_modalStack[_modalStack.length - 1]); return; }
@@ -2874,6 +2879,7 @@ async function openDailyCat(cat) {
       const { questions } = await res.json();
       if (!questions?.length) throw new Error('無題目資料');
       _startDailyQuiz(questions, cat);
+      if (typeof showFeatureHint === 'function') showFeatureHint('dailyQuiz');
     } catch (err) {
       artList.style.display = '';
       artList.innerHTML = `
@@ -4311,6 +4317,7 @@ function openWordDetail(wordId) {
   _updateWdMarkBtn(w);
 
   document.getElementById('wordDetailOverlay').classList.add('show');
+  if (typeof showFeatureHint === 'function') showFeatureHint('wordLookup');
 }
 
 function closeWordDetail(e) {
@@ -4581,6 +4588,7 @@ function startFlashcard(deckId) {
   loadFlashcard(0);
   updateRecordsList();
   goScreen('flashcard');
+  if (typeof showFeatureHint === 'function') showFeatureHint('flashcard');
 }
 
 function loadFlashcard(idx) {
@@ -7951,6 +7959,95 @@ async function tutorialFinish() {
   if (typeof currentUser !== 'undefined' && currentUser && typeof authClient !== 'undefined') {
     try { await authClient.from('profiles').update({ tutorial_seen: true }).eq('id', currentUser.id); } catch { /* ignore */ }
   }
+}
+
+// ══════════════════════════════════════════════════════════════
+// #8 情境式首次引導提示（跟上面的全站教學輪播分開，各功能第一次進入時各自
+// 顯示一次，不用一次看完 9 張卡）。每個 key 各自存一個「已看過」旗標，
+// 只存本機（不像全站教學會同步伺服器，這種次要提示裝置各自看過一次即可）。
+// ══════════════════════════════════════════════════════════════
+const FEATURE_HINTS = {
+  flashcard: {
+    title: '單字卡功能',
+    points: [
+      '左右滑動或用下方按鈕切換上一張／下一張',
+      '點卡片可以翻面看英文或中文',
+      '答錯或標記不熟的單字會自動收進「不熟字卡」，方便之後複習',
+    ],
+  },
+  dailyQuiz: {
+    title: '每日題庫',
+    points: [
+      '每天凌晨 0 點（台灣時間）重新刷新一批新題目',
+      '交卷後詳解裡的英文單字都可以直接點擊查詢意思',
+    ],
+  },
+  wordLookup: {
+    title: '單字查詢',
+    points: [
+      '點喇叭圖示可以朗讀這個單字',
+      '點例句旁的喇叭可以朗讀整句例句',
+      '點「加入不熟字卡」可以把這個字加進複習清單',
+    ],
+  },
+  grammar: {
+    title: '文法教學',
+    points: [
+      '每個小節都有教學內容，看完後接著做隨堂測驗',
+      '測驗答對率要達到 100% 才算通過該小節',
+    ],
+  },
+  tetrisSolo: {
+    title: '單機模式',
+    points: [
+      '輕鬆練習用，重力速度全程固定不會變快',
+      '不會計入排行榜，也不會累計個人最高分紀錄',
+    ],
+  },
+  tetrisRanked: {
+    title: '積分模式',
+    points: [
+      '會計入排行榜與個人最高分紀錄',
+      '重力速度會隨時間慢慢加快',
+      '每累積 5000 分會遇到一次閱讀理解關卡，答錯的話左右兩排會被封鎖，填滿整排才能解鎖',
+    ],
+  },
+};
+
+function _hintSeenKey(key) { return 'voca_hint_' + key + '_' + (currentUser?.id || 'guest'); }
+function _hintSeen(key) { try { return localStorage.getItem(_hintSeenKey(key)) === '1'; } catch { return false; } }
+function _markHintSeen(key) { try { localStorage.setItem(_hintSeenKey(key), '1'); } catch { /* ignore */ } }
+
+// 只在該 key 第一次觸發時顯示；顯示的是輕量提示卡，不像上面的全站教學是整套輪播。
+// onClose：關閉時的回呼（例如俄羅斯方塊要在提示顯示期間暫停重力，關閉後才恢復）；
+// 已經看過、這次不會顯示時也會立刻同步呼叫一次，讓呼叫端不用另外判斷有沒有顯示。
+function showFeatureHint(key, onClose) {
+  const h = FEATURE_HINTS[key];
+  if (!h || _hintSeen(key)) { if (onClose) onClose(); return; }
+  _markHintSeen(key);
+
+  document.getElementById('featureHintOverlay')?.remove();
+  const ov = document.createElement('div');
+  ov.id = 'featureHintOverlay';
+  ov._onClose = onClose || null;
+  ov.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.6);z-index:9700;display:flex;align-items:flex-start;justify-content:center;padding:16px;padding-top:max(50px,calc(env(safe-area-inset-top) + 20px));overflow-y:auto';
+  ov.onclick = e => { if (e.target === ov) _closeFeatureHint(); };
+  ov.innerHTML = `
+    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:20px;padding:24px 22px;width:100%;max-width:320px;font-family:'Nunito',sans-serif;box-shadow:0 8px 40px rgba(75,56,42,.35)">
+      <div style="font-family:var(--font-display);font-weight:900;font-size:18px;color:var(--ink);margin-bottom:14px;text-align:center">${escHtml(h.title)}</div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:18px">
+        ${h.points.map(p => `<div style="display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--ink2);line-height:1.55"><span style="color:var(--orange2);font-weight:900">•</span><span>${escHtml(p)}</span></div>`).join('')}
+      </div>
+      <button onclick="_closeFeatureHint()" style="width:100%;padding:12px;background:var(--orange);border:none;border-radius:12px;color:#fff;font-weight:800;font-size:14px;cursor:pointer">知道了</button>
+    </div>`;
+  document.body.appendChild(ov);
+}
+function _closeFeatureHint() {
+  const ov = document.getElementById('featureHintOverlay');
+  if (!ov) return;
+  const cb = ov._onClose;
+  ov.remove();
+  if (cb) cb();
 }
 
 // ── 首頁：出戰角色欄 ──

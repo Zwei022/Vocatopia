@@ -117,6 +117,12 @@ function tetrisStart(mode) {
   ttRender();
   _ttSetGravity(ttGame.currentGravityMs);
   if (mode === 'ranked') _ttStartRankedRamp();
+  // #8 第一次進入該模式顯示提示卡時，暫停重力（用既有的 ttGame.paused，跟計時題
+  // 暫停遊戲是同一套機制），避免使用者還在看提示文字時方塊已經悄悄落下好幾格。
+  if (typeof showFeatureHint === 'function') {
+    ttGame.paused = true;
+    showFeatureHint(mode === 'ranked' ? 'tetrisRanked' : 'tetrisSolo', () => { if (ttGame) ttGame.paused = false; });
+  }
 
   // Phase 4：技能與計時題會在此啟動
   if (typeof ttInitSkill === 'function') ttInitSkill(ch);

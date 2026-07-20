@@ -83,6 +83,7 @@ function grammarStartChapter(n) {
   // #2 逐節解鎖：允許進入任何章節查看小節清單（含未解鎖的，顯示所需等級），不再整章擋在門外
   const ov = _gmOverlay();
   ov.style.display = 'flex';
+  if (typeof showFeatureHint === 'function') showFeatureHint('grammar');
   if (!ch) {
     ov.innerHTML = `
       <div class="gm-topbar">
