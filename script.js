@@ -5543,9 +5543,11 @@ function showProfile() {
 
   const overlay = document.createElement('div');
   overlay.id = 'profileOverlay';
-  // 卡片內容高、螢幕矮時卡片會頂到最上緣，右上角 ✕ 就會被狀態列/動態島擋住點不到，
-  // 上方留白要保底加上安全區域高度（比照全站其他畫面的 safe-area 處理方式）。
-  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px;padding-top:max(16px,env(safe-area-inset-top));overflow-y:auto';
+  // 卡片內容很高（等級條+4格統計+能力雷達圖+登出鈕），align-items:center 置中時，
+  // 只要卡片高度超過可視高度，捲動也無法把卡片頂端（含 ✕ 按鈕）捲進安全區域下方
+  // ——這是 flex 置中 + overflow 的已知問題。改成 flex-start 讓卡片永遠從安全區域
+  // 下緣開始往下排，多出的高度往下捲就好，✕ 按鈕保證不會被狀態列/動態島擋住。
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9000;display:flex;align-items:flex-start;justify-content:center;padding:16px;padding-top:max(50px,calc(env(safe-area-inset-top) + 20px));overflow-y:auto';
   overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
 
   overlay.innerHTML = `
