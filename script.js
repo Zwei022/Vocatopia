@@ -4574,9 +4574,12 @@ function startFlashcard(deckId) {
   if (addBtn) {
     addBtn.style.display = (['cap2000', 'daily'].includes(deckId)) ? 'none' : '';
   }
+  // #管理按鈕全面開放：不論是內建卡組（會考2000/每日/Unit1-32）或不熟字卡，
+  // 都能打開管理面板把單字加入自訂卡組；差別在 moveSelectedWords()／
+  // deleteSelectedWords() 內部依來源卡組類型分流處理（見該兩函式的說明）。
   const manageBtn = document.getElementById('fcManageBtn');
   if (manageBtn) {
-    manageBtn.style.display = ['cap2000', 'weak', 'daily'].includes(deckId) ? 'none' : '';
+    manageBtn.style.display = '';
   }
 
   // 切換卡組時關閉殘留的管理面板，避免跨卡組誤操作
@@ -6152,6 +6155,37 @@ document.addEventListener('visibilitychange', () => {
   }
 });
 
+// 只重置官方預設教材（會考2000／Unit1-32）涵蓋的單字，自訂卡組跟查詢生成的字不受影響。
+// 跟下面 confirmResetWordBank()（整個字庫全部重置）是兩個不同範圍的操作。
+function confirmResetDefaultDecks() {
+  if (!confirm('確定要重置會考預設單字卡（會考2000 / Unit1-32）的學習進度嗎？\n熟悉度標記與已學習/收藏紀錄會清空，自訂卡組不受影響，這個操作無法復原。')) return;
+
+  const targetIds = [];
+  WORDS.forEach(w => {
+    if (w.tags && UNIT_DECK_META.some(u => w.tags.includes('unit' + u.n))) {
+      w.st = 'new';
+      w._correctStreak = 0;
+      targetIds.push(w.id);
+      const idx = capturedWords.indexOf(w.word);
+      if (idx > -1) capturedWords.splice(idx, 1);
+    }
+  });
+
+  // 清掉會考2000／Unit1-32 各自在翻牌畫面的「已學習／收藏」本機紀錄
+  const deckIds = ['cap2000', ...UNIT_DECK_META.map(u => 'unit' + u.n)];
+  deckIds.forEach(id => {
+    localStorage.removeItem('voca_fc_learned_' + id);
+    localStorage.removeItem('voca_fc_fav_' + id);
+  });
+
+  if (typeof currentUser !== 'undefined' && currentUser && typeof authClient !== 'undefined' && targetIds.length) {
+    authClient.from('user_word_status').delete().eq('user_id', currentUser.id).in('word_id', targetIds);
+  }
+
+  updateChar();
+  showToast('✓ 會考預設單字卡已重置');
+}
+
 function confirmResetWordBank() {
   if (!confirm('確定要重置字庫嗎？\n所有單字學習狀態將歸零，這個操作無法復原。')) return;
   WORDS.forEach(w => { w.st = 'new'; w._correctStreak = 0; });
@@ -6533,56 +6567,64 @@ async function moveSelectedWords(targetDeckId, targetDeckName) {
 
   const sourceDeckId = fcCurrentDeckId;
 
-  // 內置卡組（cap2000, weak）無法轉移 - 保持唯讀
-  if (['cap2000', 'weak', 'daily'].includes(sourceDeckId)) {
-    showToast('❌ 內置卡組無法轉移');
-    return;
-  }
-
   const wordIds = Array.from(deleteWordState.selectedIds).map(id => parseInt(id) || id);
   const moveCount = wordIds.length;
 
   console.log('[moveSelectedWords] 準備轉移', { sourceDeckId, targetDeckId, wordIds: wordIds.length, moveCount });
 
   closeModal('moveWordsModal');
-  showToast('⏳ 轉移中...');
+  showToast('⏳ 處理中...');
 
   try {
-    const isSourceCustom = !['cap2000', 'weak', 'daily'].includes(sourceDeckId);
-    const isTargetCustom = !['cap2000', 'weak', 'daily'].includes(targetDeckId);
+    const isTargetCustom = !['cap2000', 'weak', 'daily'].includes(targetDeckId) && !/^unit\d+$/.test(targetDeckId);
 
-    // 無法轉移到內置卡組
+    // 無法轉移到內置卡組（目標一律只能是自訂卡組，跟原本規則相同）
     if (!isTargetCustom) {
       showToast('❌ 無法轉移到內置卡組');
       return;
     }
 
-    // 獲取要轉移的單字（僅從自定義卡組）
+    // 依來源卡組類型取得要轉移的單字：
+    // ・自訂卡組：真正的「轉移」，之後會把單字從來源卡組移除
+    // ・不熟字卡（weak）／內建教材（cap2000/daily/unit*）：這兩種來源本身不是可增減
+    //   的單字清單（weak 是狀態篩選出來的虛擬清單，cap2000/daily/unit* 是固定教材），
+    //   無法真的「移除」，只能把單字複製加入自訂卡組，來源本身內容不變。
     const movedWords = [];
+    const sourceCustomDeck = customDecks.find(d => d.id === sourceDeckId);
+    const sourceBuiltinDeck = BUILTIN_DECKS.find(d => d.id === sourceDeckId);
 
-    const sourceDeck = customDecks.find(d => d.id === sourceDeckId);
-    if (!sourceDeck) {
+    if (sourceCustomDeck) {
+      wordIds.forEach(id => {
+        if (sourceCustomDeck.words) {
+          const word = sourceCustomDeck.words.find(w => w.id === id);
+          if (word) movedWords.push({ ...word });
+        }
+      });
+      // 從源卡組移除（只有真正的自訂卡組來源才會這樣做）
+      sourceCustomDeck.wordIds = sourceCustomDeck.wordIds.filter(id => !wordIds.includes(id));
+      if (sourceCustomDeck.words) {
+        sourceCustomDeck.words = sourceCustomDeck.words.filter(w => !wordIds.includes(w.id));
+      }
+      console.log('[moveSelectedWords] 從自定義卡組轉移');
+    } else if (sourceBuiltinDeck) {
+      // cap2000／daily／unit1-32：固定教材，複製加入即可，來源不變
+      const sourceWords = sourceBuiltinDeck.getWords();
+      wordIds.forEach(id => {
+        const word = sourceWords.find(w => w.id === id);
+        if (word) movedWords.push({ ...word });
+      });
+      console.log('[moveSelectedWords] 從內建教材複製');
+    } else if (sourceDeckId === 'weak') {
+      const sourceWords = WORDS.filter(w => w.st === 'lrn' || capturedWords.includes(w.word));
+      wordIds.forEach(id => {
+        const word = sourceWords.find(w => w.id === id);
+        if (word) movedWords.push({ ...word });
+      });
+      console.log('[moveSelectedWords] 從不熟字卡複製');
+    } else {
       showToast('❌ 源卡組不存在');
       return;
     }
-
-    // 保存要轉移的單字
-    wordIds.forEach(id => {
-      if (sourceDeck.words) {
-        const word = sourceDeck.words.find(w => w.id === id);
-        if (word) {
-          movedWords.push({ ...word });
-        }
-      }
-    });
-
-    // 從源卡組移除
-    sourceDeck.wordIds = sourceDeck.wordIds.filter(id => !wordIds.includes(id));
-    if (sourceDeck.words) {
-      sourceDeck.words = sourceDeck.words.filter(w => !wordIds.includes(w.id));
-    }
-
-    console.log('[moveSelectedWords] 從自定義卡組轉移');
 
     // 添加到目標卡組
     const targetDeck = customDecks.find(d => d.id === targetDeckId);
@@ -6624,16 +6666,19 @@ async function moveSelectedWords(targetDeckId, targetDeckName) {
     // 後台更新 UI
     setTimeout(() => {
       try {
-        // 重新加載當前卡組
-        let updatedStudyWords = [];
-        const refreshDeck = customDecks.find(d => d.id === sourceDeckId);
-        if (refreshDeck && refreshDeck.wordIds && refreshDeck.wordIds.length > 0) {
-          updatedStudyWords = refreshDeck.wordIds
-            .map(id => refreshDeck.words.find(w => w.id === id))
-            .filter(Boolean);
+        // 只有來源是「真正的自訂卡組」時，內容才真的變動了（單字被移除），需要重新
+        // 從 customDecks 載入 STUDY_WORDS；來源是 weak／內建教材時，複製加入自訂卡組
+        // 不會影響來源本身內容，STUDY_WORDS 維持原樣即可，不用重新載入。
+        if (sourceCustomDeck) {
+          let updatedStudyWords = [];
+          const refreshDeck = customDecks.find(d => d.id === sourceDeckId);
+          if (refreshDeck && refreshDeck.wordIds && refreshDeck.wordIds.length > 0) {
+            updatedStudyWords = refreshDeck.wordIds
+              .map(id => refreshDeck.words.find(w => w.id === id))
+              .filter(Boolean);
+          }
+          STUDY_WORDS = updatedStudyWords.length > 0 ? updatedStudyWords : [EMPTY_WORD_TEMPLATE];
         }
-
-        STUDY_WORDS = updatedStudyWords.length > 0 ? updatedStudyWords : [EMPTY_WORD_TEMPLATE];
 
         // 更新字庫
         invalidateLibCache();
@@ -6657,7 +6702,7 @@ async function moveSelectedWords(targetDeckId, targetDeckName) {
       }
     }, 0);
 
-    showToast(`✓ 已將 ${moveCount} 個單字轉移到「${targetDeckName}」`);
+    showToast(`✓ 已將 ${moveCount} 個單字加入「${targetDeckName}」`);
     console.log('[moveSelectedWords] 轉移完成');
 
   } catch (error) {
@@ -6680,9 +6725,11 @@ async function deleteSelectedWords() {
     return;
   }
 
-  // 內置卡組（cap2000, weak）無法刪除 - 保持唯讀
-  if (['cap2000', 'weak', 'daily'].includes(fcCurrentDeckId)) {
-    showToast('❌ 內置卡組無法修改');
+  // 官方固定教材（會考2000／每日單字卡組／Unit1-32）是共用內容，沒有「從清單移除」
+  // 這種操作的實際意義，只能封鎖；想不再看到某個字的話，用「管理」把它加進自訂卡組即可。
+  const isFixedContentDeck = ['cap2000', 'daily'].includes(fcCurrentDeckId) || /^unit\d+$/.test(fcCurrentDeckId);
+  if (isFixedContentDeck) {
+    showToast('❌ 官方單字庫無法刪除單字，可先用「管理」加入自訂卡組');
     return;
   }
 
@@ -6701,38 +6748,49 @@ async function deleteSelectedWords() {
   showToast('⏳ 刪除中...');
 
   try {
-    const isCustomDeck = !['cap2000', 'weak', 'daily'].includes(deckId);
-
+    if (deckId === 'weak') {
+      // 不熟字卡是虛擬清單（依 w.st === 'lrn' 篩選出來），這裡的「刪除」實際上是把
+      // 選到的單字狀態改回 'new'（跟 toggleWordMark() 移出不熟字卡是同一套邏輯），
+      // 不是刪除單字本身。
+      wordIds.forEach(id => {
+        const w = _findWordById(id);
+        if (!w) return;
+        w.st = 'new';
+        w._correctStreak = 0;
+        const idx = capturedWords.indexOf(w.word);
+        if (idx > -1) capturedWords.splice(idx, 1);
+        if (typeof syncWordStatus !== 'undefined') syncWordStatus(w.id, w.st, 0);
+      });
+    } else {
       // 自定義卡組：調用後端 API 刪除
-      if (isCustomDeck) {
-        const response = await fetch('/api/words/delete', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            deck_id: deckId,
-            word_ids: wordIds
-          })
-        });
+      const response = await fetch('/api/words/delete', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          deck_id: deckId,
+          word_ids: wordIds
+        })
+      });
 
-        const result = await response.json();
+      const result = await response.json();
 
-        if (!result.success) {
-          showToast('❌ 刪除失敗：' + (result.error || '未知錯誤'));
-          return;
-        }
-
-        // 更新前端 customDecks
-        const deck = customDecks.find(d => d.id === deckId);
-        if (deck) {
-          deck.wordIds = deck.wordIds.filter(id => !wordIds.includes(id));
-          if (deck.words) {
-            deck.words = deck.words.filter(w => !wordIds.includes(w.id));
-          }
-          saveCustomDecks();
-        }
+      if (!result.success) {
+        showToast('❌ 刪除失敗：' + (result.error || '未知錯誤'));
+        return;
       }
 
-    // 內置卡組也在前端過濾 STUDY_WORDS
+      // 更新前端 customDecks
+      const deck = customDecks.find(d => d.id === deckId);
+      if (deck) {
+        deck.wordIds = deck.wordIds.filter(id => !wordIds.includes(id));
+        if (deck.words) {
+          deck.words = deck.words.filter(w => !wordIds.includes(w.id));
+        }
+        saveCustomDecks();
+      }
+    }
+
+    // 前端同步過濾目前顯示中的 STUDY_WORDS
     STUDY_WORDS = STUDY_WORDS.filter(w => !wordIds.includes(w.id));
 
     // 快速刷新當前頁面（不重新加載整個卡組）
@@ -7973,6 +8031,8 @@ const FEATURE_HINTS = {
       '左右滑動或用下方按鈕切換上一張／下一張',
       '點卡片可以翻面看英文或中文',
       '答錯或標記不熟的單字會自動收進「不熟字卡」，方便之後複習',
+      '每張卡組（含不熟字卡）都能點「管理」把單字加入自訂卡組或刪除',
+      '想重新開始的話，可以到設定裡「重置預設單字卡」清空會考2000/Unit1-32的學習進度',
     ],
   },
   dailyQuiz: {
