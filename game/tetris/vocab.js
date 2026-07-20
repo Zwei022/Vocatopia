@@ -93,6 +93,8 @@ function ttMakeSentenceQuestion() {
     options: shuffled.map(p => p.opt),
     answer: shuffled.findIndex(p => p.correct),
     optionsZh: rawZh ? shuffled.map(p => p.zh) : null,
+    explanation: q.explanation || '',
+    id: q.id || null,
   };
 }
 
@@ -133,5 +135,7 @@ async function ttMakeReadingQuestion() {
     options: shuffled.map(x => x.opt),
     answer: shuffled.findIndex(x => x.correct),
     optionsZh: rawZh ? shuffled.map(x => x.zh) : null,
+    explanation: q.explanation || '',
+    id: p.id || null,
   };
 }

@@ -181,6 +181,24 @@ function _ttQuizCountdownTick() {
   el.classList.toggle('low', leftSec <= 5);
 }
 
+// #14 俄羅斯方塊答錯自動歸檔到閱覽室「答錯題庫」（比照每日練習的 _qbankAdd 用法），
+// 分類跟每日練習分開（tt_grammar／tt_reading），不論單機或積分模式都會記錄；
+// 消行快問（單字選擇）不記錄，只有60秒英文選擇題跟閱讀理解關卡兩種。
+function _ttFileWrongToBank(cat, q) {
+  if (typeof _qbankAdd !== 'function' || typeof CAT_META === 'undefined' || !CAT_META[cat]) return;
+  const filed = {
+    question: q.prompt,
+    passage: q.passage || undefined,
+    options: q.options,
+    answer: q.answer,
+    optionsZh: q.optionsZh,
+    explanation: q.explanation || '',
+    id: q.id || null,
+  };
+  _qbankAdd('wrong', cat, filed);
+  if (typeof _updateBankCounts === 'function') _updateBankCounts('wrong');
+}
+
 function _ttTriggerTimedQuestion() {
   if (!ttGame || ttGame.gameOver) return;
   const q = ttMakeSentenceQuestion();
@@ -193,6 +211,7 @@ function _ttTriggerTimedQuestion() {
         _ttAddScore(TT_SENT_CORRECT);
         showTtFloat(`+${TT_SENT_CORRECT}`, true);
       } else {
+        _ttFileWrongToBank('tt_grammar', q);
         const over = ttGame.engine.addGarbageRow();
         showTtFloat('答錯！鎖一行', false);
         if (over) { ttRender(); ttEndGame(); return; }
@@ -226,6 +245,7 @@ async function _ttTriggerReadingQuiz() {
         _ttAddScore(TT_READING_CORRECT);
         showTtFloat(`+${TT_READING_CORRECT}`, true);
       } else {
+        _ttFileWrongToBank('tt_reading', q);
         ttGame.engine.lockSideWalls();
         showTtFloat('左右封鎖！填滿整排解鎖', false);
         showToast('📖 閱讀理解答錯，左右兩側整條封鎖，填滿一整排即可解鎖該行');

@@ -2476,6 +2476,15 @@ const CAT_META = {
   cloze:     { icon: '✏️', name: '克漏字' },
   listening: { icon: '🎧', name: '聽力' },
 };
+// #14 俄羅斯方塊來源的答錯題（跟每日練習的 vocab/phrase/grammar/reading 分開歸檔，
+// 不計入每日練習的每日題數/進度徽章，只是單純的錯題複習分類）。
+// tt_grammar：60秒計時題（消行快問單字選擇不算，見 quiz.js 的 _ttTriggerTimedQuestion）
+// tt_reading：積分模式閱讀理解關卡
+const CAT_META_TETRIS = {
+  tt_grammar: { icon: '🧱', name: '方塊文法' },
+  tt_reading: { icon: '🧱', name: '方塊短文' },
+};
+Object.assign(CAT_META, CAT_META_TETRIS);
 const BANK_LABELS = { wrong: '答錯題庫', saved: '收藏題庫' };
 
 // ── 題目銀行（答錯／收藏）localStorage 儲存 ───────────────────────────────
