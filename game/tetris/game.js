@@ -51,7 +51,7 @@ function tetrisStart(mode) {
   ov.innerHTML = `
     <div class="tt-topbar">
       <button class="tt-back" onclick="tetrisClose()">← 離開</button>
-      <div class="tt-topbar-title">${mode === 'ranked' ? '🏆 積分模式' : '🧘 單機模式'}</div>
+      <div class="tt-topbar-title">${mode === 'ranked' ? '積分模式' : '單機模式'}</div>
       <div class="tt-score-chip">分數 <b id="ttScore">0</b></div>
     </div>
 

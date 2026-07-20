@@ -8008,7 +8008,7 @@ function _ttSetSelectedMode(mode) {
 function _updateTetrisModeBtn() {
   const btn = document.querySelector('.hm-mode-btn .hm-mode-txt');
   if (!btn) return;
-  btn.textContent = _ttSelectedMode() === 'ranked' ? '🏆 積分模式' : '🧘 單機模式';
+  btn.textContent = _ttSelectedMode() === 'ranked' ? '積分模式' : '單機模式';
 }
 
 function openTetrisModePicker() {
@@ -8024,12 +8024,12 @@ function openTetrisModePicker() {
       <div style="font-family:var(--font-display);font-weight:900;font-size:19px;color:var(--ink)">切換遊戲模式</div>
       <button onclick="_ttSetSelectedMode('solo');document.getElementById('ttModePicker').remove();showToast('已切換為單機模式')"
         style="width:100%;text-align:left;padding:14px 16px;margin-top:16px;background:var(--card2);border:2px solid ${cur === 'solo' ? 'var(--orange)' : 'var(--line2)'};border-radius:14px;cursor:pointer">
-        <div style="font-weight:800;font-size:15px;color:var(--ink)">🧘 單機模式${cur === 'solo' ? '　✓ 目前選擇' : ''}</div>
+        <div style="font-weight:800;font-size:15px;color:var(--ink)">單機模式${cur === 'solo' ? '　✓ 目前選擇' : ''}</div>
         <div style="font-size:12px;color:var(--ink2);margin-top:2px">輕鬆練習，重力速度固定，不上排行榜、不計入個人最高分</div>
       </button>
       <button onclick="_ttSetSelectedMode('ranked');document.getElementById('ttModePicker').remove();showToast('已切換為積分模式')"
         style="width:100%;text-align:left;padding:14px 16px;margin-top:10px;background:var(--redsoft,#fdeee9);border:2px solid ${cur === 'ranked' ? 'var(--red)' : 'var(--line2)'};border-radius:14px;cursor:pointer">
-        <div style="font-weight:800;font-size:15px;color:var(--red2)">🏆 積分模式${cur === 'ranked' ? '　✓ 目前選擇' : ''}</div>
+        <div style="font-weight:800;font-size:15px;color:var(--red2)">積分模式${cur === 'ranked' ? '　✓ 目前選擇' : ''}</div>
         <div style="font-size:12px;color:var(--ink2);margin-top:2px">計入排行榜與最高分；重力會隨時間加快，每 5000 分會遇到閱讀理解關卡</div>
       </button>
     </div>`;
