@@ -23845,5 +23845,3029 @@
     "example_en": "The zookeepers feed the pandas fresh bamboo every morning.",
     "example_zh": "動物園管理員每天早上都會餵熊貓新鮮的竹子。",
     "done": true
+  },
+  "accompanying": {
+    "pos": "形容詞",
+    "phonetic": "/əˈkʌm.pə.ni.ɪŋ/",
+    "definition": "陪伴的；附隨的",
+    "example_en": "She read the accompanying instructions before using the machine.",
+    "example_zh": "她在使用機器前先閱讀附帶的說明。",
+    "done": true
+  },
+  "adequate": {
+    "pos": "形容詞",
+    "phonetic": "/ˈæd.ə.kwət/",
+    "definition": "足夠的；適當的",
+    "example_en": "We need adequate time to finish this science project.",
+    "example_zh": "我們需要足夠的時間完成這項科學專題。",
+    "done": true
+  },
+  "adjusting": {
+    "pos": "動詞",
+    "phonetic": "/əˈdʒʌs.tɪŋ/",
+    "definition": "調整；適應",
+    "example_en": "He spent a few minutes adjusting the height of his chair.",
+    "example_zh": "他花了幾分鐘調整椅子的高度。",
+    "done": true
+  },
+  "adjustment": {
+    "pos": "名詞",
+    "phonetic": "/əˈdʒʌst.mənt/",
+    "definition": "調整；調節",
+    "example_en": "The coach made a small adjustment to the team's schedule.",
+    "example_zh": "教練對球隊的行程做了一個小調整。",
+    "done": true
+  },
+  "adjustments": {
+    "pos": "名詞",
+    "phonetic": "/əˈdʒʌst.mənts/",
+    "definition": "調整；調節(複數)",
+    "example_en": "The engineers made several adjustments before the machine worked properly.",
+    "example_zh": "工程師們做了幾次調整,機器才正常運作。",
+    "done": true
+  },
+  "airy": {
+    "pos": "形容詞",
+    "phonetic": "/ˈeə.ri/",
+    "definition": "通風的；輕盈的",
+    "example_en": "Their new apartment has bright, airy rooms with large windows.",
+    "example_zh": "他們的新公寓有明亮通風的房間和大窗戶。",
+    "done": true
+  },
+  "alertness": {
+    "pos": "名詞",
+    "phonetic": "/əˈlɜːt.nəs/",
+    "definition": "警覺性；機警",
+    "example_en": "The guard's alertness helped him notice the strange noise right away.",
+    "example_zh": "警衛的警覺性讓他立刻注意到奇怪的聲音。",
+    "done": true
+  },
+  "anatomy": {
+    "pos": "名詞",
+    "phonetic": "/əˈnæt.ə.mi/",
+    "definition": "解剖學；身體結構",
+    "example_en": "The students studied human anatomy in their biology class.",
+    "example_zh": "學生們在生物課上學習人體解剖學。",
+    "done": true
+  },
+  "appliances": {
+    "pos": "名詞",
+    "phonetic": "/əˈplaɪ.ən.sɪz/",
+    "definition": "家電用品",
+    "example_en": "The kitchen was full of modern appliances like a blender and toaster.",
+    "example_zh": "廚房裡擺滿了果汁機和烤麵包機等現代家電。",
+    "done": true
+  },
+  "applications": {
+    "pos": "名詞",
+    "phonetic": "/ˌæp.lɪˈkeɪ.ʃənz/",
+    "definition": "應用；申請書",
+    "example_en": "The school received hundreds of applications for the summer program.",
+    "example_zh": "學校收到數百份暑期課程的申請書。",
+    "done": true
+  },
+  "approached": {
+    "pos": "動詞",
+    "phonetic": "/əˈproʊtʃt/",
+    "definition": "接近；著手處理",
+    "example_en": "A stray dog slowly approached the children in the park.",
+    "example_zh": "一隻流浪狗慢慢接近公園裡的孩子們。",
+    "done": true
+  },
+  "approaching": {
+    "pos": "動詞",
+    "phonetic": "/əˈproʊ.tʃɪŋ/",
+    "definition": "接近中的",
+    "example_en": "Everyone felt nervous about the approaching exam.",
+    "example_zh": "大家對於即將到來的考試感到緊張。",
+    "done": true
+  },
+  "approximately": {
+    "pos": "副詞",
+    "phonetic": "/əˈprɑːk.sə.mət.li/",
+    "definition": "大約；近乎",
+    "example_en": "The trip to the mountain took approximately two hours.",
+    "example_zh": "去山上的旅程大約花了兩個小時。",
+    "done": true
+  },
+  "architects": {
+    "pos": "名詞",
+    "phonetic": "/ˈɑːr.kə.tekts/",
+    "definition": "建築師",
+    "example_en": "The architects designed a library with a curved glass roof.",
+    "example_zh": "建築師們設計了一座有弧形玻璃屋頂的圖書館。",
+    "done": true
+  },
+  "assigned": {
+    "pos": "動詞",
+    "phonetic": "/əˈsaɪnd/",
+    "definition": "指派；分配",
+    "example_en": "Our teacher assigned each group a different research topic.",
+    "example_zh": "我們老師分配給每一組不同的研究主題。",
+    "done": true
+  },
+  "associated": {
+    "pos": "形容詞",
+    "phonetic": "/əˈsoʊ.si.eɪ.tɪd/",
+    "definition": "相關聯的",
+    "example_en": "Doctors warned about the health risks associated with too much sugar.",
+    "example_zh": "醫生警告攝取過多糖分相關的健康風險。",
+    "done": true
+  },
+  "auditioned": {
+    "pos": "動詞",
+    "phonetic": "/ɔːˈdɪʃ.ənd/",
+    "definition": "試鏡；試演",
+    "example_en": "She auditioned for the lead role in the school musical.",
+    "example_zh": "她試鏡爭取學校音樂劇的主角。",
+    "done": true
+  },
+  "balanced": {
+    "pos": "形容詞",
+    "phonetic": "/ˈbæl.ənst/",
+    "definition": "平衡的",
+    "example_en": "A balanced diet includes fruits, vegetables, and protein.",
+    "example_zh": "均衡的飲食包含水果、蔬菜和蛋白質。",
+    "done": true
+  },
+  "begged": {
+    "pos": "動詞",
+    "phonetic": "/beɡd/",
+    "definition": "懇求；乞求",
+    "example_en": "The little boy begged his mother to let him stay up late.",
+    "example_zh": "小男孩懇求媽媽讓他晚點睡。",
+    "done": true
+  },
+  "birdhouse": {
+    "pos": "名詞",
+    "phonetic": "/ˈbɜːrd.haʊs/",
+    "definition": "鳥屋",
+    "example_en": "My grandfather built a wooden birdhouse for the garden.",
+    "example_zh": "我爺爺為花園做了一個木製鳥屋。",
+    "done": true
+  },
+  "blindness": {
+    "pos": "名詞",
+    "phonetic": "/ˈblaɪnd.nəs/",
+    "definition": "失明",
+    "example_en": "The disease can eventually lead to complete blindness.",
+    "example_zh": "這種疾病最終可能導致完全失明。",
+    "done": true
+  },
+  "blob": {
+    "pos": "名詞",
+    "phonetic": "/blɑːb/",
+    "definition": "一團黏糊狀物",
+    "example_en": "A blob of paint dripped from the brush onto the floor.",
+    "example_zh": "一團顏料從畫筆上滴到地板上。",
+    "done": true
+  },
+  "blueprints": {
+    "pos": "名詞",
+    "phonetic": "/ˈbluː.prɪnts/",
+    "definition": "藍圖；設計圖",
+    "example_en": "The workers studied the blueprints before starting construction.",
+    "example_zh": "工人們在開工前研究了藍圖。",
+    "done": true
+  },
+  "blurry": {
+    "pos": "形容詞",
+    "phonetic": "/ˈblɜːr.i/",
+    "definition": "模糊的",
+    "example_en": "The old photo was too blurry to recognize anyone's face.",
+    "example_zh": "那張舊照片太模糊了,認不出任何人的臉。",
+    "done": true
+  },
+  "bounced": {
+    "pos": "動詞",
+    "phonetic": "/baʊnst/",
+    "definition": "彈跳",
+    "example_en": "The basketball bounced off the rim and rolled away.",
+    "example_zh": "籃球彈到籃框後滾走了。",
+    "done": true
+  },
+  "brightly": {
+    "pos": "副詞",
+    "phonetic": "/ˈbraɪt.li/",
+    "definition": "明亮地",
+    "example_en": "The stars shone brightly over the quiet campsite.",
+    "example_zh": "星星在安靜的營地上方明亮地閃耀。",
+    "done": true
+  },
+  "bustling": {
+    "pos": "形容詞",
+    "phonetic": "/ˈbʌs.lɪŋ/",
+    "definition": "熱鬧繁忙的",
+    "example_en": "The night market was bustling with vendors and hungry customers.",
+    "example_zh": "夜市裡擠滿了熱鬧的攤販和飢餓的顧客。",
+    "done": true
+  },
+  "caffeine": {
+    "pos": "名詞",
+    "phonetic": "/kæˈfiːn/",
+    "definition": "咖啡因",
+    "example_en": "Too much caffeine can make it hard to fall asleep.",
+    "example_zh": "攝取過多咖啡因會讓人難以入睡。",
+    "done": true
+  },
+  "calmness": {
+    "pos": "名詞",
+    "phonetic": "/ˈkɑːm.nəs/",
+    "definition": "平靜；鎮定",
+    "example_en": "The teacher's calmness helped the students relax before the test.",
+    "example_zh": "老師的鎮定讓學生們在考試前放鬆下來。",
+    "done": true
+  },
+  "cardiovascular": {
+    "pos": "形容詞",
+    "phonetic": "/ˌkɑːr.di.oʊˈvæs.kjə.lər/",
+    "definition": "心血管的",
+    "example_en": "Regular jogging is good for your cardiovascular health.",
+    "example_zh": "規律的慢跑對心血管健康有益。",
+    "done": true
+  },
+  "catheters": {
+    "pos": "名詞",
+    "phonetic": "/ˈkæθ.ə.tərz/",
+    "definition": "導管",
+    "example_en": "The nurse explained how the catheters were used in the hospital.",
+    "example_zh": "護理師解釋了醫院裡導管的用途。",
+    "done": true
+  },
+  "checkmate": {
+    "pos": "名詞",
+    "phonetic": "/ˈtʃek.meɪt/",
+    "definition": "將死（西洋棋）",
+    "example_en": "She smiled and announced checkmate after her final move.",
+    "example_zh": "她走完最後一步棋後微笑宣布將死。",
+    "done": true
+  },
+  "civilizations": {
+    "pos": "名詞",
+    "phonetic": "/ˌsɪv.əl.əˈzeɪ.ʃənz/",
+    "definition": "文明",
+    "example_en": "The museum displayed artifacts from several ancient civilizations.",
+    "example_zh": "博物館展示了幾個古文明的文物。",
+    "done": true
+  },
+  "cleanly": {
+    "pos": "副詞",
+    "phonetic": "/ˈkliːn.li/",
+    "definition": "乾淨俐落地",
+    "example_en": "The knife sliced cleanly through the ripe tomato.",
+    "example_zh": "刀子俐落地切過熟透的番茄。",
+    "done": true
+  },
+  "clues": {
+    "pos": "名詞",
+    "phonetic": "/kluːz/",
+    "definition": "線索",
+    "example_en": "Detectives searched the room for clues about the missing painting.",
+    "example_zh": "偵探們在房間裡搜尋關於失竊畫作的線索。",
+    "done": true
+  },
+  "coastal": {
+    "pos": "形容詞",
+    "phonetic": "/ˈkoʊ.stəl/",
+    "definition": "沿海的",
+    "example_en": "Coastal towns often depend on fishing and tourism.",
+    "example_zh": "沿海城鎮通常仰賴漁業和觀光業維生。",
+    "done": true
+  },
+  "coaxing": {
+    "pos": "動詞",
+    "phonetic": "/ˈkoʊk.sɪŋ/",
+    "definition": "哄勸；勸誘",
+    "example_en": "After some coaxing, the shy cat finally came out from under the bed.",
+    "example_zh": "經過一番哄勸,那隻害羞的貓終於從床底下出來了。",
+    "done": true
+  },
+  "collapsing": {
+    "pos": "動詞",
+    "phonetic": "/kəˈlæp.sɪŋ/",
+    "definition": "倒塌；崩潰",
+    "example_en": "Engineers rushed to fix the bridge before it started collapsing.",
+    "example_zh": "工程師們趕在橋樑開始倒塌前進行修復。",
+    "done": true
+  },
+  "comedies": {
+    "pos": "名詞",
+    "phonetic": "/ˈkɑː.mə.diz/",
+    "definition": "喜劇",
+    "example_en": "She prefers watching comedies over sad, serious movies.",
+    "example_zh": "比起悲傷嚴肅的電影,她更喜歡看喜劇。",
+    "done": true
+  },
+  "competing": {
+    "pos": "動詞",
+    "phonetic": "/kəmˈpiː.tɪŋ/",
+    "definition": "競爭",
+    "example_en": "Several schools are competing in the regional soccer tournament.",
+    "example_zh": "好幾所學校正在區域足球錦標賽中競爭。",
+    "done": true
+  },
+  "cone": {
+    "pos": "名詞",
+    "phonetic": "/koʊn/",
+    "definition": "圓錐體",
+    "example_en": "The teacher drew a cone on the whiteboard to explain the shape.",
+    "example_zh": "老師在白板上畫了一個圓錐體來說明這個形狀。",
+    "done": true
+  },
+  "cones": {
+    "pos": "名詞",
+    "phonetic": "/koʊnz/",
+    "definition": "圓錐體（複數）",
+    "example_en": "Orange traffic cones marked the edge of the construction site.",
+    "example_zh": "橘色的交通錐標示出工地的邊界。",
+    "done": true
+  },
+  "congestion": {
+    "pos": "名詞",
+    "phonetic": "/kənˈdʒes.tʃən/",
+    "definition": "壅塞；擁擠",
+    "example_en": "Traffic congestion in the city gets worse during rush hour.",
+    "example_zh": "市區的交通壅塞在尖峰時段變得更嚴重。",
+    "done": true
+  },
+  "conservationists": {
+    "pos": "名詞",
+    "phonetic": "/ˌkɑːn.sərˈveɪ.ʃən.ɪsts/",
+    "definition": "環境保育人士",
+    "example_en": "Conservationists are working to protect the forest from illegal logging.",
+    "example_zh": "環境保育人士正努力保護森林免受非法伐木侵害。",
+    "done": true
+  },
+  "contaminants": {
+    "pos": "名詞",
+    "phonetic": "/kənˈtæm.ə.nənts/",
+    "definition": "污染物",
+    "example_en": "The filter removes harmful contaminants from the drinking water.",
+    "example_zh": "這個過濾器能去除飲用水中的有害污染物。",
+    "done": true
+  },
+  "convinces": {
+    "pos": "動詞",
+    "phonetic": "/kənˈvɪn.sɪz/",
+    "definition": "說服",
+    "example_en": "Her calm explanation usually convinces even the most stubborn customers.",
+    "example_zh": "她冷靜的解釋通常能說服最固執的顧客。",
+    "done": true
+  },
+  "corrections": {
+    "pos": "名詞",
+    "phonetic": "/kəˈrek.ʃənz/",
+    "definition": "更正；修正",
+    "example_en": "The editor made several corrections to the student's essay.",
+    "example_zh": "編輯對這位學生的作文做了幾處修正。",
+    "done": true
+  },
+  "cramped": {
+    "pos": "形容詞",
+    "phonetic": "/kræmpt/",
+    "definition": "狹窄擁擠的",
+    "example_en": "Five people shared a cramped little apartment near the station.",
+    "example_zh": "五個人共用車站附近一間狹小擁擠的公寓。",
+    "done": true
+  },
+  "crawled": {
+    "pos": "動詞",
+    "phonetic": "/krɔːld/",
+    "definition": "爬行",
+    "example_en": "The baby crawled across the floor toward her toy.",
+    "example_zh": "嬰兒爬過地板去拿她的玩具。",
+    "done": true
+  },
+  "creeping": {
+    "pos": "動詞",
+    "phonetic": "/ˈkriː.pɪŋ/",
+    "definition": "緩慢移動的；悄悄前進的",
+    "example_en": "A cat was creeping slowly toward the sleeping bird.",
+    "example_zh": "一隻貓正緩緩地悄悄接近睡著的鳥。",
+    "done": true
+  },
+  "criticized": {
+    "pos": "動詞",
+    "phonetic": "/ˈkrɪt.ə.saɪzd/",
+    "definition": "批評",
+    "example_en": "The coach criticized the team for missing easy shots.",
+    "example_zh": "教練批評球隊沒把握住容易的射門機會。",
+    "done": true
+  },
+  "crouched": {
+    "pos": "動詞",
+    "phonetic": "/kraʊtʃt/",
+    "definition": "蹲下",
+    "example_en": "He crouched behind the bushes to watch the deer.",
+    "example_zh": "他蹲在灌木叢後面觀察那隻鹿。",
+    "done": true
+  },
+  "crucial": {
+    "pos": "形容詞",
+    "phonetic": "/ˈkruː.ʃəl/",
+    "definition": "關鍵的；至關重要的",
+    "example_en": "Getting enough sleep is crucial for staying healthy.",
+    "example_zh": "獲得充足的睡眠對維持健康至關重要。",
+    "done": true
+  },
+  "cupcakes": {
+    "pos": "名詞",
+    "phonetic": "/ˈkʌp.keɪks/",
+    "definition": "杯子蛋糕",
+    "example_en": "She baked chocolate cupcakes for her classmate's birthday.",
+    "example_zh": "她為同學的生日烤了巧克力杯子蛋糕。",
+    "done": true
+  },
+  "curled": {
+    "pos": "動詞",
+    "phonetic": "/kɜːrld/",
+    "definition": "捲曲",
+    "example_en": "The cat curled up on the warm blanket and fell asleep.",
+    "example_zh": "那隻貓蜷縮在溫暖的毯子上睡著了。",
+    "done": true
+  },
+  "cyclists": {
+    "pos": "名詞",
+    "phonetic": "/ˈsaɪ.klɪsts/",
+    "definition": "騎自行車的人",
+    "example_en": "The park has a special path just for cyclists.",
+    "example_zh": "這座公園有一條專門給自行車騎士使用的道路。",
+    "done": true
+  },
+  "debris": {
+    "pos": "名詞",
+    "phonetic": "/dəˈbriː/",
+    "definition": "碎片；殘骸",
+    "example_en": "Workers cleared the debris left by the storm.",
+    "example_zh": "工人們清理暴風雨留下的碎片殘骸。",
+    "done": true
+  },
+  "declared": {
+    "pos": "動詞",
+    "phonetic": "/dɪˈklerd/",
+    "definition": "宣布",
+    "example_en": "The principal declared a holiday because of the heavy snow.",
+    "example_zh": "校長因為大雪宣布放假。",
+    "done": true
+  },
+  "dedicated": {
+    "pos": "形容詞",
+    "phonetic": "/ˈded.ɪ.keɪ.tɪd/",
+    "definition": "全心投入的；奉獻的",
+    "example_en": "Our coach is a dedicated teacher who practices with us every day.",
+    "example_zh": "我們的教練是位全心投入的老師,每天都跟我們一起練習。",
+    "done": true
+  },
+  "dedication": {
+    "pos": "名詞",
+    "phonetic": "/ˌded.ɪˈkeɪ.ʃən/",
+    "definition": "奉獻；專注",
+    "example_en": "Her dedication to swimming earned her a place on the national team.",
+    "example_zh": "她對游泳的奉獻使她獲得國家代表隊的一席之地。",
+    "done": true
+  },
+  "deliberate": {
+    "pos": "形容詞",
+    "phonetic": "/dɪˈlɪb.ər.ət/",
+    "definition": "故意的；刻意的",
+    "example_en": "The referee said the foul was deliberate, not an accident.",
+    "example_zh": "裁判說這次犯規是故意的,不是意外。",
+    "done": true
+  },
+  "density": {
+    "pos": "名詞",
+    "phonetic": "/ˈden.sə.ti/",
+    "definition": "密度",
+    "example_en": "The city's population density is much higher than the countryside's.",
+    "example_zh": "這座城市的人口密度遠高於鄉村地區。",
+    "done": true
+  },
+  "development": {
+    "pos": "名詞",
+    "phonetic": "/dɪˈvel.əp.mənt/",
+    "definition": "發展；開發",
+    "example_en": "The company invested a lot of money in product development.",
+    "example_zh": "這家公司投入大量資金在產品開發上。",
+    "done": true
+  },
+  "diner": {
+    "pos": "名詞",
+    "phonetic": "/ˈdaɪ.nər/",
+    "definition": "小餐館；用餐者",
+    "example_en": "We stopped at a small diner for breakfast on our road trip.",
+    "example_zh": "我們在自駕旅行途中在一間小餐館停下吃早餐。",
+    "done": true
+  },
+  "disappointed": {
+    "pos": "形容詞",
+    "phonetic": "/ˌdɪs.əˈpɔɪn.tɪd/",
+    "definition": "失望的",
+    "example_en": "He felt disappointed when the concert was cancelled.",
+    "example_zh": "演唱會取消時他感到很失望。",
+    "done": true
+  },
+  "disappointing": {
+    "pos": "形容詞",
+    "phonetic": "/ˌdɪs.əˈpɔɪn.tɪŋ/",
+    "definition": "令人失望的",
+    "example_en": "The team's performance this season has been quite disappointing.",
+    "example_zh": "這支球隊本季的表現相當令人失望。",
+    "done": true
+  },
+  "discarding": {
+    "pos": "動詞",
+    "phonetic": "/dɪˈskɑːr.dɪŋ/",
+    "definition": "丟棄",
+    "example_en": "Instead of discarding old clothes, she donated them to charity.",
+    "example_zh": "她沒有丟棄舊衣服,而是捐給了慈善機構。",
+    "done": true
+  },
+  "discharges": {
+    "pos": "名詞",
+    "phonetic": "/ˈdɪs.tʃɑːr.dʒɪz/",
+    "definition": "排放物",
+    "example_en": "The factory's chemical discharges polluted the nearby river.",
+    "example_zh": "這家工廠排放的化學物質污染了附近的河流。",
+    "done": true
+  },
+  "discoveries": {
+    "pos": "名詞",
+    "phonetic": "/dɪˈskʌv.ər.iz/",
+    "definition": "發現",
+    "example_en": "Scientists announced two new discoveries about the ocean floor.",
+    "example_zh": "科學家宣布了兩項關於海底的新發現。",
+    "done": true
+  },
+  "discreetly": {
+    "pos": "副詞",
+    "phonetic": "/dɪˈskriːt.li/",
+    "definition": "謹慎地；不張揚地",
+    "example_en": "She discreetly reminded her friend about the stain on his shirt.",
+    "example_zh": "她不動聲色地提醒朋友襯衫上有污漬。",
+    "done": true
+  },
+  "dismissed": {
+    "pos": "動詞",
+    "phonetic": "/dɪsˈmɪst/",
+    "definition": "解散；駁回",
+    "example_en": "The teacher dismissed the class early because of the fire drill.",
+    "example_zh": "老師因為消防演習提早讓班級解散。",
+    "done": true
+  },
+  "dismissing": {
+    "pos": "動詞",
+    "phonetic": "/dɪsˈmɪs.ɪŋ/",
+    "definition": "不理會；駁回",
+    "example_en": "He kept dismissing his sister's warnings about the weather.",
+    "example_zh": "他一直不理會姐姐對天氣的警告。",
+    "done": true
+  },
+  "displaying": {
+    "pos": "動詞",
+    "phonetic": "/dɪˈspleɪ.ɪŋ/",
+    "definition": "展示",
+    "example_en": "The gallery is displaying paintings from local artists this month.",
+    "example_zh": "這間畫廊這個月正在展示當地藝術家的畫作。",
+    "done": true
+  },
+  "dissipate": {
+    "pos": "動詞",
+    "phonetic": "/ˈdɪs.ə.peɪt/",
+    "definition": "消散",
+    "example_en": "The morning fog began to dissipate as the sun rose.",
+    "example_zh": "隨著太陽升起,清晨的霧氣開始消散。",
+    "done": true
+  },
+  "distinctly": {
+    "pos": "副詞",
+    "phonetic": "/dɪˈstɪŋkt.li/",
+    "definition": "清楚地；明顯地",
+    "example_en": "I distinctly remember locking the door before we left.",
+    "example_zh": "我清楚記得我們離開前有鎖門。",
+    "done": true
+  },
+  "distraction": {
+    "pos": "名詞",
+    "phonetic": "/dɪˈstræk.ʃən/",
+    "definition": "分心之事",
+    "example_en": "Her phone was a constant distraction while she studied.",
+    "example_zh": "她讀書時手機一直是讓她分心的東西。",
+    "done": true
+  },
+  "doorknob": {
+    "pos": "名詞",
+    "phonetic": "/ˈdɔːr.nɑːb/",
+    "definition": "門把",
+    "example_en": "The old doorknob squeaked every time he turned it.",
+    "example_zh": "每次他轉動那個舊門把時都會發出吱吱聲。",
+    "done": true
+  },
+  "doorway": {
+    "pos": "名詞",
+    "phonetic": "/ˈdɔːr.weɪ/",
+    "definition": "門口",
+    "example_en": "She stood in the doorway, waving goodbye to her friends.",
+    "example_zh": "她站在門口,向朋友們揮手道別。",
+    "done": true
+  },
+  "downstream": {
+    "pos": "副詞",
+    "phonetic": "/ˌdaʊnˈstriːm/",
+    "definition": "順流而下地",
+    "example_en": "The canoe drifted downstream with the gentle current.",
+    "example_zh": "獨木舟隨著平緩的水流順流而下。",
+    "done": true
+  },
+  "drained": {
+    "pos": "形容詞",
+    "phonetic": "/dreɪnd/",
+    "definition": "排乾的；筋疲力盡的",
+    "example_en": "After the long hike, everyone felt completely drained.",
+    "example_zh": "長途健行之後,大家都感到筋疲力盡。",
+    "done": true
+  },
+  "dreaded": {
+    "pos": "形容詞",
+    "phonetic": "/ˈdred.ɪd/",
+    "definition": "令人畏懼的",
+    "example_en": "Students lined up outside the dreaded final exam room.",
+    "example_zh": "學生們在令人畏懼的期末考試教室外排隊。",
+    "done": true
+  },
+  "dribble": {
+    "pos": "動詞",
+    "phonetic": "/ˈdrɪb.əl/",
+    "definition": "運球；滴落",
+    "example_en": "He learned to dribble the basketball with both hands.",
+    "example_zh": "他學會用雙手運球。",
+    "done": true
+  },
+  "drifted": {
+    "pos": "動詞",
+    "phonetic": "/ˈdrɪf.tɪd/",
+    "definition": "漂流",
+    "example_en": "The small boat drifted slowly toward the shore.",
+    "example_zh": "小船緩緩漂向岸邊。",
+    "done": true
+  },
+  "ecological": {
+    "pos": "形容詞",
+    "phonetic": "/ˌiː.kəˈlɑː.dʒɪ.kəl/",
+    "definition": "生態的",
+    "example_en": "Cutting down the forest could cause serious ecological damage.",
+    "example_zh": "砍伐森林可能造成嚴重的生態破壞。",
+    "done": true
+  },
+  "editing": {
+    "pos": "名詞",
+    "phonetic": "/ˈed.ɪ.tɪŋ/",
+    "definition": "編輯",
+    "example_en": "She spent hours editing the video before uploading it.",
+    "example_zh": "她花了好幾個小時編輯這支影片才上傳。",
+    "done": true
+  },
+  "editor": {
+    "pos": "名詞",
+    "phonetic": "/ˈed.ɪ.tər/",
+    "definition": "編輯",
+    "example_en": "The magazine's editor chose the cover story herself.",
+    "example_zh": "那本雜誌的編輯親自選定了封面故事。",
+    "done": true
+  },
+  "editors": {
+    "pos": "名詞",
+    "phonetic": "/ˈed.ɪ.tərz/",
+    "definition": "編輯（複數）",
+    "example_en": "The newspaper's editors met every morning to plan the day's stories.",
+    "example_zh": "報社的編輯們每天早上開會規劃當天的報導。",
+    "done": true
+  },
+  "electronics": {
+    "pos": "名詞",
+    "phonetic": "/ɪˌlekˈtrɑː.nɪks/",
+    "definition": "電子產品；電子學",
+    "example_en": "The store sells a wide variety of electronics, from phones to speakers.",
+    "example_zh": "這家店販售各式各樣的電子產品,從手機到喇叭都有。",
+    "done": true
+  },
+  "electrons": {
+    "pos": "名詞",
+    "phonetic": "/ɪˈlek.trɑːnz/",
+    "definition": "電子",
+    "example_en": "The teacher explained how electrons move around an atom's nucleus.",
+    "example_zh": "老師解釋電子如何繞著原子核運動。",
+    "done": true
+  },
+  "elevation": {
+    "pos": "名詞",
+    "phonetic": "/ˌel.əˈveɪ.ʃən/",
+    "definition": "海拔；高度",
+    "example_en": "The village sits at a high elevation in the mountains.",
+    "example_zh": "這個村莊位於山區的高海拔地帶。",
+    "done": true
+  },
+  "emissions": {
+    "pos": "名詞",
+    "phonetic": "/ɪˈmɪʃ.ənz/",
+    "definition": "排放物",
+    "example_en": "The government set new rules to reduce car emissions.",
+    "example_zh": "政府訂定新規定以減少汽車廢氣排放。",
+    "done": true
+  },
+  "endlessly": {
+    "pos": "副詞",
+    "phonetic": "/ˈend.ləs.li/",
+    "definition": "無盡地",
+    "example_en": "The puppy chased its tail endlessly in the yard.",
+    "example_zh": "那隻小狗在院子裡沒完沒了地追著自己的尾巴。",
+    "done": true
+  },
+  "enrolled": {
+    "pos": "動詞",
+    "phonetic": "/ɪnˈroʊld/",
+    "definition": "註冊；入學",
+    "example_en": "She enrolled in an after-school art class last week.",
+    "example_zh": "她上週報名參加了課後美術班。",
+    "done": true
+  },
+  "environmentally": {
+    "pos": "副詞",
+    "phonetic": "/ɪnˌvaɪ.rənˈmen.təl.i/",
+    "definition": "在環境方面",
+    "example_en": "The company promised to make its products more environmentally friendly.",
+    "example_zh": "這家公司承諾讓產品更加環保。",
+    "done": true
+  },
+  "equator": {
+    "pos": "名詞",
+    "phonetic": "/ɪˈkweɪ.tər/",
+    "definition": "赤道",
+    "example_en": "Countries near the equator usually have hot, humid weather.",
+    "example_zh": "靠近赤道的國家通常氣候炎熱潮濕。",
+    "done": true
+  },
+  "erupting": {
+    "pos": "動詞",
+    "phonetic": "/ɪˈrʌp.tɪŋ/",
+    "definition": "爆發",
+    "example_en": "The volcano has been erupting slowly for the past week.",
+    "example_zh": "這座火山過去一週來一直緩緩噴發。",
+    "done": true
+  },
+  "erupts": {
+    "pos": "動詞",
+    "phonetic": "/ɪˈrʌpts/",
+    "definition": "爆發",
+    "example_en": "The crowd erupts in cheers whenever the home team scores.",
+    "example_zh": "每當主場球隊得分,群眾就爆出歡呼聲。",
+    "done": true
+  },
+  "established": {
+    "pos": "形容詞",
+    "phonetic": "/ɪˈstæb.lɪʃt/",
+    "definition": "已建立的；已確立的",
+    "example_en": "The school follows well-established rules about homework and attendance.",
+    "example_zh": "這所學校遵循關於作業和出席的既定規則。",
+    "done": true
+  },
+  "evacuate": {
+    "pos": "動詞",
+    "phonetic": "/ɪˈvæk.ju.eɪt/",
+    "definition": "撤離",
+    "example_en": "Residents were told to evacuate before the typhoon arrived.",
+    "example_zh": "居民被告知要在颱風來襲前撤離。",
+    "done": true
+  },
+  "evenly": {
+    "pos": "副詞",
+    "phonetic": "/ˈiː.vən.li/",
+    "definition": "均勻地",
+    "example_en": "Spread the sauce evenly across the pizza dough.",
+    "example_zh": "把醬料均勻地塗抹在披薩麵團上。",
+    "done": true
+  },
+  "evolutionary": {
+    "pos": "形容詞",
+    "phonetic": "/ˌev.əˈluː.ʃən.er.i/",
+    "definition": "進化的",
+    "example_en": "The exhibit explains the evolutionary history of birds.",
+    "example_zh": "這個展覽解說了鳥類的演化歷史。",
+    "done": true
+  },
+  "exchanged": {
+    "pos": "動詞",
+    "phonetic": "/ɪksˈtʃeɪndʒd/",
+    "definition": "交換",
+    "example_en": "The two pen pals exchanged letters for several years.",
+    "example_zh": "這兩位筆友交換書信好幾年了。",
+    "done": true
+  },
+  "excitedly": {
+    "pos": "副詞",
+    "phonetic": "/ɪkˈsaɪ.tɪd.li/",
+    "definition": "興奮地",
+    "example_en": "The kids excitedly opened their presents on Christmas morning.",
+    "example_zh": "孩子們在聖誕節早晨興奮地打開禮物。",
+    "done": true
+  },
+  "explosively": {
+    "pos": "副詞",
+    "phonetic": "/ɪkˈsploʊ.sɪv.li/",
+    "definition": "爆炸性地",
+    "example_en": "The chemical reaction happened explosively in the lab experiment.",
+    "example_zh": "這場化學反應在實驗中爆炸性地發生。",
+    "done": true
+  },
+  "farmland": {
+    "pos": "名詞",
+    "phonetic": "/ˈfɑːrm.lænd/",
+    "definition": "農地",
+    "example_en": "Most of the valley is covered with green farmland.",
+    "example_zh": "這片山谷大部分被綠色的農地覆蓋。",
+    "done": true
+  },
+  "feedback": {
+    "pos": "名詞",
+    "phonetic": "/ˈfiːd.bæk/",
+    "definition": "回饋意見",
+    "example_en": "The teacher gave helpful feedback on our essays.",
+    "example_zh": "老師對我們的作文給予了有幫助的回饋。",
+    "done": true
+  },
+  "fibers": {
+    "pos": "名詞",
+    "phonetic": "/ˈfaɪ.bərz/",
+    "definition": "纖維",
+    "example_en": "The blanket is made from soft cotton fibers.",
+    "example_zh": "這條毯子是用柔軟的棉纖維製成的。",
+    "done": true
+  },
+  "filtration": {
+    "pos": "名詞",
+    "phonetic": "/fɪlˈtreɪ.ʃən/",
+    "definition": "過濾",
+    "example_en": "The pool uses a special filtration system to keep the water clean.",
+    "example_zh": "這座泳池使用特殊的過濾系統來保持水質乾淨。",
+    "done": true
+  },
+  "flawlessly": {
+    "pos": "副詞",
+    "phonetic": "/ˈflɔː.ləs.li/",
+    "definition": "完美無瑕地",
+    "example_en": "The dancers performed the routine flawlessly on stage.",
+    "example_zh": "舞者們在舞台上完美無瑕地表演了這支舞。",
+    "done": true
+  },
+  "floating": {
+    "pos": "形容詞",
+    "phonetic": "/ˈfloʊ.tɪŋ/",
+    "definition": "漂浮的",
+    "example_en": "A floating leaf drifted slowly across the pond.",
+    "example_zh": "一片漂浮的葉子緩緩漂過池塘。",
+    "done": true
+  },
+  "fluffy": {
+    "pos": "形容詞",
+    "phonetic": "/ˈflʌf.i/",
+    "definition": "蓬鬆的",
+    "example_en": "The bakery's fluffy pancakes are famous in our town.",
+    "example_zh": "這家麵包店的鬆軟鬆餅在我們鎮上很有名。",
+    "done": true
+  },
+  "fluorescent": {
+    "pos": "形容詞",
+    "phonetic": "/flʊˈres.ənt/",
+    "definition": "螢光的",
+    "example_en": "The classroom is lit by bright fluorescent lights.",
+    "example_zh": "教室由明亮的日光燈照明。",
+    "done": true
+  },
+  "flyers": {
+    "pos": "名詞",
+    "phonetic": "/ˈflaɪ.ərz/",
+    "definition": "傳單",
+    "example_en": "Volunteers handed out flyers about the charity concert.",
+    "example_zh": "志工們發送關於慈善音樂會的傳單。",
+    "done": true
+  },
+  "follicle": {
+    "pos": "名詞",
+    "phonetic": "/ˈfɑː.lɪ.kəl/",
+    "definition": "毛囊",
+    "example_en": "Each hair follicle on your scalp grows a single strand of hair.",
+    "example_zh": "頭皮上的每個毛囊會長出一根頭髮。",
+    "done": true
+  },
+  "fondly": {
+    "pos": "副詞",
+    "phonetic": "/ˈfɑːnd.li/",
+    "definition": "深情地；懷念地",
+    "example_en": "Grandma often speaks fondly of her childhood in the countryside.",
+    "example_zh": "奶奶常常深情地談起她在鄉下的童年。",
+    "done": true
+  },
+  "fragrant": {
+    "pos": "形容詞",
+    "phonetic": "/ˈfreɪ.ɡrənt/",
+    "definition": "芳香的",
+    "example_en": "The garden was full of fragrant roses in early summer.",
+    "example_zh": "初夏時花園裡開滿了芬芳的玫瑰。",
+    "done": true
+  },
+  "frequently": {
+    "pos": "副詞",
+    "phonetic": "/ˈfriː.kwənt.li/",
+    "definition": "經常地",
+    "example_en": "She frequently visits her grandparents on the weekend.",
+    "example_zh": "她經常在週末去看望祖父母。",
+    "done": true
+  },
+  "friction": {
+    "pos": "名詞",
+    "phonetic": "/ˈfrɪk.ʃən/",
+    "definition": "摩擦",
+    "example_en": "Rubbing your hands together creates heat through friction.",
+    "example_zh": "搓手會透過摩擦產生熱量。",
+    "done": true
+  },
+  "friendliness": {
+    "pos": "名詞",
+    "phonetic": "/ˈfrend.li.nəs/",
+    "definition": "友善",
+    "example_en": "The staff's friendliness made the hotel feel like home.",
+    "example_zh": "員工的友善讓這家飯店感覺像家一樣。",
+    "done": true
+  },
+  "froze": {
+    "pos": "動詞",
+    "phonetic": "/froʊz/",
+    "definition": "結凍；愣住",
+    "example_en": "The pond froze solid during the coldest week of winter.",
+    "example_zh": "池塘在冬天最冷的一週完全結凍了。",
+    "done": true
+  },
+  "fumes": {
+    "pos": "名詞",
+    "phonetic": "/fjuːmz/",
+    "definition": "煙霧；廢氣",
+    "example_en": "The strong fumes from the paint made her cough.",
+    "example_zh": "油漆濃烈的煙霧讓她咳嗽。",
+    "done": true
+  },
+  "fundraiser": {
+    "pos": "名詞",
+    "phonetic": "/ˈfʌnd.reɪ.zər/",
+    "definition": "募款活動",
+    "example_en": "The school held a fundraiser to buy new library books.",
+    "example_zh": "學校舉辦了一場募款活動來購買新的圖書館書籍。",
+    "done": true
+  },
+  "fungal": {
+    "pos": "形容詞",
+    "phonetic": "/ˈfʌŋ.ɡəl/",
+    "definition": "真菌的",
+    "example_en": "The plant died from a fungal infection in its roots.",
+    "example_zh": "這株植物因根部的真菌感染而枯死。",
+    "done": true
+  },
+  "gasps": {
+    "pos": "名詞",
+    "phonetic": "/ɡæsps/",
+    "definition": "喘息聲；倒抽一口氣",
+    "example_en": "The audience let out gasps when the magician disappeared.",
+    "example_zh": "魔術師消失時,觀眾發出了驚呼聲。",
+    "done": true
+  },
+  "generally": {
+    "pos": "副詞",
+    "phonetic": "/ˈdʒen.ər.əl.i/",
+    "definition": "一般而言",
+    "example_en": "Generally, the weather here is warm and sunny in summer.",
+    "example_zh": "一般來說,這裡的夏天天氣溫暖晴朗。",
+    "done": true
+  },
+  "generic": {
+    "pos": "形容詞",
+    "phonetic": "/dʒəˈner.ɪk/",
+    "definition": "一般性的；無品牌的",
+    "example_en": "She bought the generic brand of medicine to save money.",
+    "example_zh": "她買了無品牌的學名藥來省錢。",
+    "done": true
+  },
+  "genetically": {
+    "pos": "副詞",
+    "phonetic": "/dʒəˈnet.ɪ.kli/",
+    "definition": "基因上；遺傳上",
+    "example_en": "Some crops are genetically modified to resist insects.",
+    "example_zh": "有些農作物經過基因改造以抵抗害蟲。",
+    "done": true
+  },
+  "geological": {
+    "pos": "形容詞",
+    "phonetic": "/ˌdʒiː.əˈlɑː.dʒɪ.kəl/",
+    "definition": "地質學的",
+    "example_en": "The canyon shows millions of years of geological history.",
+    "example_zh": "這座峽谷展現了數百萬年的地質歷史。",
+    "done": true
+  },
+  "glacial": {
+    "pos": "形容詞",
+    "phonetic": "/ˈɡleɪ.ʃəl/",
+    "definition": "冰河的",
+    "example_en": "The valley was formed by glacial movement long ago.",
+    "example_zh": "這座山谷是很久以前由冰河運動形成的。",
+    "done": true
+  },
+  "glacier": {
+    "pos": "名詞",
+    "phonetic": "/ˈɡleɪ.ʃər/",
+    "definition": "冰河",
+    "example_en": "The huge glacier has been slowly melting for decades.",
+    "example_zh": "這座巨大的冰河數十年來一直緩慢融化。",
+    "done": true
+  },
+  "gluten": {
+    "pos": "名詞",
+    "phonetic": "/ˈɡluː.tən/",
+    "definition": "麩質",
+    "example_en": "This bread is made without gluten for people with allergies.",
+    "example_zh": "這種麵包是為過敏人士製作的無麩質麵包。",
+    "done": true
+  },
+  "graciously": {
+    "pos": "副詞",
+    "phonetic": "/ˈɡreɪ.ʃəs.li/",
+    "definition": "親切有禮地",
+    "example_en": "The winner graciously thanked everyone who supported her.",
+    "example_zh": "得獎者親切有禮地感謝所有支持她的人。",
+    "done": true
+  },
+  "granted": {
+    "pos": "動詞",
+    "phonetic": "/ˈɡræn.tɪd/",
+    "definition": "授予；准許",
+    "example_en": "The school granted her permission to leave class early.",
+    "example_zh": "學校准許她提早離開課堂。",
+    "done": true
+  },
+  "grasslands": {
+    "pos": "名詞",
+    "phonetic": "/ˈɡræs.lændz/",
+    "definition": "草原",
+    "example_en": "Zebras and lions live together on the African grasslands.",
+    "example_zh": "斑馬和獅子一起生活在非洲的草原上。",
+    "done": true
+  },
+  "handsaw": {
+    "pos": "名詞",
+    "phonetic": "/ˈhænd.sɔː/",
+    "definition": "手鋸",
+    "example_en": "He used a handsaw to cut the branch into smaller pieces.",
+    "example_zh": "他用手鋸把樹枝切成較小的段。",
+    "done": true
+  },
+  "handwritten": {
+    "pos": "形容詞",
+    "phonetic": "/ˌhændˈrɪt.ən/",
+    "definition": "手寫的",
+    "example_en": "She kept a handwritten note from her best friend.",
+    "example_zh": "她保留了一張好朋友寫給她的手寫紙條。",
+    "done": true
+  },
+  "hardens": {
+    "pos": "動詞",
+    "phonetic": "/ˈhɑːr.dənz/",
+    "definition": "變硬",
+    "example_en": "The clay hardens after it is left in the sun for hours.",
+    "example_zh": "黏土在陽光下放置數小時後會變硬。",
+    "done": true
+  },
+  "harmless": {
+    "pos": "形容詞",
+    "phonetic": "/ˈhɑːrm.ləs/",
+    "definition": "無害的",
+    "example_en": "Most spiders in the garden are harmless to humans.",
+    "example_zh": "花園裡大部分的蜘蛛對人類無害。",
+    "done": true
+  },
+  "heartbeat": {
+    "pos": "名詞",
+    "phonetic": "/ˈhɑːrt.biːt/",
+    "definition": "心跳",
+    "example_en": "The doctor listened carefully to the baby's heartbeat.",
+    "example_zh": "醫生仔細聆聽嬰兒的心跳。",
+    "done": true
+  },
+  "hiker": {
+    "pos": "名詞",
+    "phonetic": "/ˈhaɪ.kər/",
+    "definition": "健行者",
+    "example_en": "The experienced hiker reached the summit before noon.",
+    "example_zh": "這位經驗豐富的健行者在中午前抵達山頂。",
+    "done": true
+  },
+  "hoops": {
+    "pos": "名詞",
+    "phonetic": "/huːps/",
+    "definition": "籃框；圈環",
+    "example_en": "The kids practiced shooting hoops after school.",
+    "example_zh": "孩子們放學後練習投籃。",
+    "done": true
+  },
+  "hopelessly": {
+    "pos": "副詞",
+    "phonetic": "/ˈhoʊp.ləs.li/",
+    "definition": "無望地",
+    "example_en": "The travelers were hopelessly lost in the unfamiliar city.",
+    "example_zh": "旅人們在陌生的城市裡迷路,完全找不到方向。",
+    "done": true
+  },
+  "horseback": {
+    "pos": "名詞",
+    "phonetic": "/ˈhɔːrs.bæk/",
+    "definition": "馬背；騎馬",
+    "example_en": "They went horseback riding along the beach at sunset.",
+    "example_zh": "他們在日落時分沿著海灘騎馬。",
+    "done": true
+  },
+  "households": {
+    "pos": "名詞",
+    "phonetic": "/ˈhaʊs.hoʊldz/",
+    "definition": "家庭；住戶",
+    "example_en": "Many households recycle paper and plastic every week.",
+    "example_zh": "許多家庭每週都會回收紙類和塑膠。",
+    "done": true
+  },
+  "hugging": {
+    "pos": "動詞",
+    "phonetic": "/ˈhʌɡ.ɪŋ/",
+    "definition": "擁抱",
+    "example_en": "The two sisters were hugging tightly at the airport.",
+    "example_zh": "這對姊妹在機場緊緊擁抱著。",
+    "done": true
+  },
+  "humpback": {
+    "pos": "名詞",
+    "phonetic": "/ˈhʌmp.bæk/",
+    "definition": "座頭鯨",
+    "example_en": "We saw a humpback whale leap out of the ocean.",
+    "example_zh": "我們看到一隻座頭鯨躍出海面。",
+    "done": true
+  },
+  "illustrations": {
+    "pos": "名詞",
+    "phonetic": "/ˌɪl.əˈstreɪ.ʃənz/",
+    "definition": "插圖",
+    "example_en": "The children's book is full of colorful illustrations.",
+    "example_zh": "這本童書充滿了色彩繽紛的插圖。",
+    "done": true
+  },
+  "imbalance": {
+    "pos": "名詞",
+    "phonetic": "/ɪmˈbæl.əns/",
+    "definition": "不平衡",
+    "example_en": "Too much homework can cause an imbalance between study and rest.",
+    "example_zh": "太多作業會造成讀書與休息之間的不平衡。",
+    "done": true
+  },
+  "imperfections": {
+    "pos": "名詞",
+    "phonetic": "/ˌɪm.pərˈfek.ʃənz/",
+    "definition": "缺陷；瑕疵",
+    "example_en": "The artist said the small imperfections made the pottery unique.",
+    "example_zh": "藝術家說那些小瑕疵讓陶器變得獨一無二。",
+    "done": true
+  },
+  "importantly": {
+    "pos": "副詞",
+    "phonetic": "/ɪmˈpɔːr.tənt.li/",
+    "definition": "重要地",
+    "example_en": "More importantly, the plan must be safe for everyone involved.",
+    "example_zh": "更重要的是,這項計畫必須對所有相關人員都安全。",
+    "done": true
+  },
+  "impurities": {
+    "pos": "名詞",
+    "phonetic": "/ɪmˈpjʊr.ə.tiz/",
+    "definition": "雜質",
+    "example_en": "The filter removes tiny impurities from the tap water.",
+    "example_zh": "這個過濾器能去除自來水中的微小雜質。",
+    "done": true
+  },
+  "incentives": {
+    "pos": "名詞",
+    "phonetic": "/ɪnˈsen.tɪvz/",
+    "definition": "誘因；獎勵",
+    "example_en": "The city offers incentives for families who recycle regularly.",
+    "example_zh": "這座城市為經常回收的家庭提供獎勵。",
+    "done": true
+  },
+  "incorrectly": {
+    "pos": "副詞",
+    "phonetic": "/ˌɪn.kəˈrekt.li/",
+    "definition": "不正確地",
+    "example_en": "He answered the last question incorrectly on the quiz.",
+    "example_zh": "他在小考的最後一題答錯了。",
+    "done": true
+  },
+  "increasingly": {
+    "pos": "副詞",
+    "phonetic": "/ɪnˈkriː.sɪŋ.li/",
+    "definition": "日益；越來越",
+    "example_en": "Solar panels are becoming increasingly common on rooftops.",
+    "example_zh": "太陽能板在屋頂上變得越來越常見。",
+    "done": true
+  },
+  "indefinitely": {
+    "pos": "副詞",
+    "phonetic": "/ɪnˈdef.ə.nət.li/",
+    "definition": "無限期地",
+    "example_en": "The game was postponed indefinitely due to the storm.",
+    "example_zh": "這場比賽因暴風雨而被無限期延後。",
+    "done": true
+  },
+  "infrastructure": {
+    "pos": "名詞",
+    "phonetic": "/ˈɪn.frəˌstrʌk.tʃər/",
+    "definition": "基礎設施",
+    "example_en": "The city needs better infrastructure, like roads and bridges.",
+    "example_zh": "這座城市需要更完善的基礎設施,例如道路和橋樑。",
+    "done": true
+  },
+  "inherited": {
+    "pos": "動詞",
+    "phonetic": "/ɪnˈher.ɪ.tɪd/",
+    "definition": "繼承",
+    "example_en": "She inherited her mother's love of painting.",
+    "example_zh": "她繼承了母親對繪畫的熱愛。",
+    "done": true
+  },
+  "instructed": {
+    "pos": "動詞",
+    "phonetic": "/ɪnˈstrʌk.tɪd/",
+    "definition": "指示；指導",
+    "example_en": "The lifeguard instructed everyone to leave the pool during the storm.",
+    "example_zh": "救生員指示大家在暴風雨期間離開泳池。",
+    "done": true
+  },
+  "instructing": {
+    "pos": "動詞",
+    "phonetic": "/ɪnˈstrʌk.tɪŋ/",
+    "definition": "指導；教導",
+    "example_en": "The coach spent the afternoon instructing new players on the rules.",
+    "example_zh": "教練花了整個下午向新球員說明規則。",
+    "done": true
+  },
+  "intended": {
+    "pos": "形容詞",
+    "phonetic": "/ɪnˈten.dɪd/",
+    "definition": "意圖的；預期的",
+    "example_en": "This lesson is intended for beginners who have never coded before.",
+    "example_zh": "這堂課是為從未寫過程式的初學者所設計的。",
+    "done": true
+  },
+  "intentionally": {
+    "pos": "副詞",
+    "phonetic": "/ɪnˈten.ʃən.əl.i/",
+    "definition": "故意地",
+    "example_en": "He intentionally left the last cookie for his little sister.",
+    "example_zh": "他故意留下最後一塊餅乾給妹妹。",
+    "done": true
+  },
+  "interconnected": {
+    "pos": "形容詞",
+    "phonetic": "/ˌɪn.tər.kəˈnek.tɪd/",
+    "definition": "互相連結的",
+    "example_en": "The city's parks are interconnected by a network of bike paths.",
+    "example_zh": "這座城市的公園透過自行車道網絡互相連結。",
+    "done": true
+  },
+  "internship": {
+    "pos": "名詞",
+    "phonetic": "/ˈɪn.tɜːrn.ʃɪp/",
+    "definition": "實習",
+    "example_en": "She applied for a summer internship at a local newspaper.",
+    "example_zh": "她申請了一份在當地報社的暑期實習。",
+    "done": true
+  },
+  "investment": {
+    "pos": "名詞",
+    "phonetic": "/ɪnˈvest.mənt/",
+    "definition": "投資",
+    "example_en": "Buying a good bicycle was a smart investment for her health.",
+    "example_zh": "買一輛好腳踏車對她的健康而言是明智的投資。",
+    "done": true
+  },
+  "jotting": {
+    "pos": "動詞",
+    "phonetic": "/ˈdʒɑː.tɪŋ/",
+    "definition": "匆匆記下",
+    "example_en": "She was jotting down ideas for her story in a small notebook.",
+    "example_zh": "她在小筆記本上匆匆記下故事的靈感。",
+    "done": true
+  },
+  "karate": {
+    "pos": "名詞",
+    "phonetic": "/kəˈrɑː.ti/",
+    "definition": "空手道",
+    "example_en": "He has practiced karate at the community center for three years.",
+    "example_zh": "他在社區中心練習空手道已經三年了。",
+    "done": true
+  },
+  "kennel": {
+    "pos": "名詞",
+    "phonetic": "/ˈken.əl/",
+    "definition": "狗屋；犬舍",
+    "example_en": "The dog waited patiently outside its kennel for dinner.",
+    "example_zh": "那隻狗耐心地在狗屋外等著吃晚餐。",
+    "done": true
+  },
+  "kennels": {
+    "pos": "名詞",
+    "phonetic": "/ˈken.əlz/",
+    "definition": "狗屋；犬舍（複數）",
+    "example_en": "The shelter has several kennels for dogs waiting to be adopted.",
+    "example_zh": "這間收容所有好幾間犬舍,收留等待被領養的狗。",
+    "done": true
+  },
+  "kneading": {
+    "pos": "動詞",
+    "phonetic": "/ˈniː.dɪŋ/",
+    "definition": "揉（麵團）",
+    "example_en": "Kneading the dough for ten minutes makes the bread softer.",
+    "example_zh": "揉麵團十分鐘能讓麵包更鬆軟。",
+    "done": true
+  },
+  "labels": {
+    "pos": "名詞",
+    "phonetic": "/ˈleɪ.bəlz/",
+    "definition": "標籤",
+    "example_en": "She checked the food labels before buying the snacks.",
+    "example_zh": "她在買零食前檢查了食品標籤。",
+    "done": true
+  },
+  "lamppost": {
+    "pos": "名詞",
+    "phonetic": "/ˈlæmp.poʊst/",
+    "definition": "路燈柱",
+    "example_en": "A cat sat quietly under the old lamppost.",
+    "example_zh": "一隻貓安靜地坐在那根舊路燈柱下。",
+    "done": true
+  },
+  "latitudes": {
+    "pos": "名詞",
+    "phonetic": "/ˈlæt.ə.tuːdz/",
+    "definition": "緯度",
+    "example_en": "Plants and animals differ greatly across different latitudes.",
+    "example_zh": "動植物在不同緯度之間差異很大。",
+    "done": true
+  },
+  "layers": {
+    "pos": "名詞",
+    "phonetic": "/ˈleɪ.ərz/",
+    "definition": "層",
+    "example_en": "The cake had three layers of chocolate and cream.",
+    "example_zh": "這個蛋糕有三層巧克力和奶油。",
+    "done": true
+  },
+  "littering": {
+    "pos": "動詞",
+    "phonetic": "/ˈlɪt.ər.ɪŋ/",
+    "definition": "亂丟垃圾",
+    "example_en": "Signs in the park warn visitors against littering.",
+    "example_zh": "公園裡的標示警告遊客不要亂丟垃圾。",
+    "done": true
+  },
+  "livable": {
+    "pos": "形容詞",
+    "phonetic": "/ˈlɪv.ə.bəl/",
+    "definition": "適合居住的",
+    "example_en": "The city was ranked as one of the most livable places in the country.",
+    "example_zh": "這座城市被評選為全國最適合居住的地方之一。",
+    "done": true
+  },
+  "lopsided": {
+    "pos": "形容詞",
+    "phonetic": "/ˌlɑːpˈsaɪ.dɪd/",
+    "definition": "不對稱的；偏向一邊的",
+    "example_en": "The homemade cake came out a little lopsided but still tasted great.",
+    "example_zh": "自製的蛋糕出爐時有點不對稱,但味道還是很棒。",
+    "done": true
+  },
+  "mammals": {
+    "pos": "名詞",
+    "phonetic": "/ˈmæm.əlz/",
+    "definition": "哺乳動物",
+    "example_en": "Whales and dolphins are mammals, not fish.",
+    "example_zh": "鯨魚和海豚是哺乳動物,不是魚類。",
+    "done": true
+  },
+  "mangrove": {
+    "pos": "名詞",
+    "phonetic": "/ˈmæŋ.ɡroʊv/",
+    "definition": "紅樹林",
+    "example_en": "The mangrove forest protects the coast from strong waves.",
+    "example_zh": "這片紅樹林保護海岸免受強浪侵襲。",
+    "done": true
+  },
+  "marshes": {
+    "pos": "名詞",
+    "phonetic": "/ˈmɑːr.ʃɪz/",
+    "definition": "沼澤",
+    "example_en": "Many birds build their nests in the quiet marshes.",
+    "example_zh": "許多鳥類在安靜的沼澤地築巢。",
+    "done": true
+  },
+  "measurable": {
+    "pos": "形容詞",
+    "phonetic": "/ˈmeʒ.ər.ə.bəl/",
+    "definition": "可測量的",
+    "example_en": "The new training plan led to measurable improvements in her speed.",
+    "example_zh": "這個新訓練計畫讓她的速度有了可測量的進步。",
+    "done": true
+  },
+  "melodies": {
+    "pos": "名詞",
+    "phonetic": "/ˈmel.ə.diz/",
+    "definition": "旋律",
+    "example_en": "The composer wrote simple, beautiful melodies for the piano.",
+    "example_zh": "這位作曲家為鋼琴譜寫了簡單優美的旋律。",
+    "done": true
+  },
+  "meltwater": {
+    "pos": "名詞",
+    "phonetic": "/ˈmelt.wɔː.tər/",
+    "definition": "融雪水",
+    "example_en": "The stream is fed by meltwater from the mountain snow.",
+    "example_zh": "這條溪流的水源來自山上融雪水。",
+    "done": true
+  },
+  "memorized": {
+    "pos": "動詞",
+    "phonetic": "/ˈmem.ə.raɪzd/",
+    "definition": "背誦；記住",
+    "example_en": "She memorized the entire poem for the school competition.",
+    "example_zh": "她為了學校比賽把整首詩都背下來了。",
+    "done": true
+  },
+  "meowing": {
+    "pos": "動詞",
+    "phonetic": "/miˈaʊ.ɪŋ/",
+    "definition": "喵喵叫",
+    "example_en": "The kitten kept meowing until someone gave it food.",
+    "example_zh": "那隻小貓一直喵喵叫,直到有人餵牠食物。",
+    "done": true
+  },
+  "merchants": {
+    "pos": "名詞",
+    "phonetic": "/ˈmɜːr.tʃənts/",
+    "definition": "商人",
+    "example_en": "Merchants sold spices and cloth along the old trade route.",
+    "example_zh": "商人們沿著古老的貿易路線販售香料和布料。",
+    "done": true
+  },
+  "messengers": {
+    "pos": "名詞",
+    "phonetic": "/ˈmes.ən.dʒərz/",
+    "definition": "信差",
+    "example_en": "In ancient times, messengers carried news between distant cities.",
+    "example_zh": "在古代,信差負責在遙遠的城市之間傳遞消息。",
+    "done": true
+  },
+  "midfielder": {
+    "pos": "名詞",
+    "phonetic": "/ˈmɪdˌfiːl.dər/",
+    "definition": "中場球員",
+    "example_en": "The midfielder passed the ball quickly to the striker.",
+    "example_zh": "這名中場球員迅速把球傳給前鋒。",
+    "done": true
+  },
+  "midmorning": {
+    "pos": "名詞",
+    "phonetic": "/ˌmɪdˈmɔːr.nɪŋ/",
+    "definition": "上午中段",
+    "example_en": "We usually have a small snack around midmorning.",
+    "example_zh": "我們通常在上午中段時吃點小零食。",
+    "done": true
+  },
+  "migrating": {
+    "pos": "動詞",
+    "phonetic": "/ˈmaɪ.ɡreɪ.tɪŋ/",
+    "definition": "遷徙",
+    "example_en": "Thousands of birds fly south every year while migrating.",
+    "example_zh": "每年都有數千隻鳥在遷徙時飛往南方。",
+    "done": true
+  },
+  "millimeters": {
+    "pos": "名詞",
+    "phonetic": "/ˈmɪl.əˌmiː.tərz/",
+    "definition": "毫米",
+    "example_en": "The screw is only a few millimeters wide.",
+    "example_zh": "這顆螺絲只有幾毫米寬。",
+    "done": true
+  },
+  "minerals": {
+    "pos": "名詞",
+    "phonetic": "/ˈmɪn.ər.əlz/",
+    "definition": "礦物質",
+    "example_en": "Green vegetables contain many important vitamins and minerals.",
+    "example_zh": "綠色蔬菜含有許多重要的維生素和礦物質。",
+    "done": true
+  },
+  "misleading": {
+    "pos": "形容詞",
+    "phonetic": "/mɪsˈliː.dɪŋ/",
+    "definition": "誤導的",
+    "example_en": "The advertisement's claims turned out to be misleading.",
+    "example_zh": "這則廣告的說法後來被證實有誤導性。",
+    "done": true
+  },
+  "mistaken": {
+    "pos": "形容詞",
+    "phonetic": "/mɪˈsteɪ.kən/",
+    "definition": "錯誤的；弄錯的",
+    "example_en": "I was mistaken about the time of the meeting.",
+    "example_zh": "我把會議的時間弄錯了。",
+    "done": true
+  },
+  "misty": {
+    "pos": "形容詞",
+    "phonetic": "/ˈmɪs.ti/",
+    "definition": "有薄霧的",
+    "example_en": "The mountain looked mysterious in the misty morning air.",
+    "example_zh": "在薄霧籠罩的早晨,這座山看起來神祕莫測。",
+    "done": true
+  },
+  "mixers": {
+    "pos": "名詞",
+    "phonetic": "/ˈmɪk.sərz/",
+    "definition": "攪拌器",
+    "example_en": "The bakery uses large mixers to make bread dough.",
+    "example_zh": "這間麵包店使用大型攪拌器來製作麵包麵團。",
+    "done": true
+  },
+  "mochi": {
+    "pos": "名詞",
+    "phonetic": "/ˈmoʊ.tʃi/",
+    "definition": "麻糬",
+    "example_en": "She bought a box of green tea mochi from the shop.",
+    "example_zh": "她從店裡買了一盒抹茶麻糬。",
+    "done": true
+  },
+  "molten": {
+    "pos": "形容詞",
+    "phonetic": "/ˈmoʊl.tən/",
+    "definition": "熔化的",
+    "example_en": "Molten lava slowly flowed down the side of the volcano.",
+    "example_zh": "熔岩緩緩沿著火山側面流下。",
+    "done": true
+  },
+  "murky": {
+    "pos": "形容詞",
+    "phonetic": "/ˈmɜːr.ki/",
+    "definition": "混濁的；陰暗的",
+    "example_en": "The pond's murky water made it hard to see the fish.",
+    "example_zh": "池塘混濁的水讓人很難看見裡面的魚。",
+    "done": true
+  },
+  "muscles": {
+    "pos": "名詞",
+    "phonetic": "/ˈmʌs.əlz/",
+    "definition": "肌肉",
+    "example_en": "Swimming helps build strong muscles in your arms and legs.",
+    "example_zh": "游泳有助於鍛鍊手臂和腿部的強壯肌肉。",
+    "done": true
+  },
+  "narrator": {
+    "pos": "名詞",
+    "phonetic": "/ˈnær.eɪ.tər/",
+    "definition": "敘述者",
+    "example_en": "The narrator's calm voice made the documentary easy to follow.",
+    "example_zh": "旁白平穩的聲音讓這部紀錄片容易理解。",
+    "done": true
+  },
+  "navigation": {
+    "pos": "名詞",
+    "phonetic": "/ˌnæv.əˈɡeɪ.ʃən/",
+    "definition": "導航",
+    "example_en": "The app's navigation feature helped us find the shortest route.",
+    "example_zh": "這個應用程式的導航功能幫我們找到了最短路線。",
+    "done": true
+  },
+  "negatively": {
+    "pos": "副詞",
+    "phonetic": "/ˈneɡ.ə.tɪv.li/",
+    "definition": "負面地",
+    "example_en": "Lack of sleep can affect students negatively in class.",
+    "example_zh": "睡眠不足會對學生在課堂上的表現產生負面影響。",
+    "done": true
+  },
+  "nervously": {
+    "pos": "副詞",
+    "phonetic": "/ˈnɜːr.vəs.li/",
+    "definition": "緊張地",
+    "example_en": "He nervously waited for his turn to give the speech.",
+    "example_zh": "他緊張地等待輪到自己上台演講。",
+    "done": true
+  },
+  "nook": {
+    "pos": "名詞",
+    "phonetic": "/nʊk/",
+    "definition": "角落；隱密處",
+    "example_en": "She found a cozy nook in the library to read her book.",
+    "example_zh": "她在圖書館找到一個舒適的角落看書。",
+    "done": true
+  },
+  "notecards": {
+    "pos": "名詞",
+    "phonetic": "/ˈnoʊt.kɑːrdz/",
+    "definition": "筆記卡",
+    "example_en": "He wrote his speech points on small notecards.",
+    "example_zh": "他把演講重點寫在小張的筆記卡上。",
+    "done": true
+  },
+  "nutrient": {
+    "pos": "名詞",
+    "phonetic": "/ˈnuː.tri.ənt/",
+    "definition": "營養素",
+    "example_en": "Spinach is a great source of iron and other nutrients.",
+    "example_zh": "菠菜是鐵質和其他營養素的絕佳來源。",
+    "done": true
+  },
+  "obesity": {
+    "pos": "名詞",
+    "phonetic": "/oʊˈbiː.sə.ti/",
+    "definition": "肥胖",
+    "example_en": "Doctors say regular exercise helps prevent obesity.",
+    "example_zh": "醫生表示規律運動有助於預防肥胖。",
+    "done": true
+  },
+  "observed": {
+    "pos": "動詞",
+    "phonetic": "/əbˈzɜːrvd/",
+    "definition": "觀察",
+    "example_en": "Scientists observed the whales for several weeks.",
+    "example_zh": "科學家們觀察了那些鯨魚好幾週。",
+    "done": true
+  },
+  "observers": {
+    "pos": "名詞",
+    "phonetic": "/əbˈzɜːr.vərz/",
+    "definition": "觀察者",
+    "example_en": "International observers watched the election closely.",
+    "example_zh": "國際觀察員密切關注這場選舉。",
+    "done": true
+  },
+  "observing": {
+    "pos": "動詞",
+    "phonetic": "/əbˈzɜːr.vɪŋ/",
+    "definition": "觀察",
+    "example_en": "The students spent an hour observing ants in the garden.",
+    "example_zh": "學生們花了一小時觀察花園裡的螞蟻。",
+    "done": true
+  },
+  "obsolete": {
+    "pos": "形容詞",
+    "phonetic": "/ˌɑːb.səˈliːt/",
+    "definition": "過時的",
+    "example_en": "Old phone booths have become obsolete since everyone has a cell phone.",
+    "example_zh": "自從人人都有手機後,舊式電話亭就變得過時了。",
+    "done": true
+  },
+  "occasionally": {
+    "pos": "副詞",
+    "phonetic": "/əˈkeɪ.ʒən.əl.i/",
+    "definition": "偶爾",
+    "example_en": "We occasionally eat out on Friday nights.",
+    "example_zh": "我們偶爾會在星期五晚上外出用餐。",
+    "done": true
+  },
+  "offstage": {
+    "pos": "副詞",
+    "phonetic": "/ˌɔːfˈsteɪdʒ/",
+    "definition": "舞台之外",
+    "example_en": "The actors waited offstage for their next scene.",
+    "example_zh": "演員們在後台等待下一幕的到來。",
+    "done": true
+  },
+  "ongoing": {
+    "pos": "形容詞",
+    "phonetic": "/ˈɑːnˌɡoʊ.ɪŋ/",
+    "definition": "持續進行的",
+    "example_en": "The school has an ongoing project to plant more trees.",
+    "example_zh": "這所學校有一項持續進行的植樹計畫。",
+    "done": true
+  },
+  "opportunities": {
+    "pos": "名詞",
+    "phonetic": "/ˌɑː.pərˈtuː.nə.tiz/",
+    "definition": "機會",
+    "example_en": "Studying abroad opened up many new opportunities for her.",
+    "example_zh": "出國留學為她開啟了許多新機會。",
+    "done": true
+  },
+  "organizers": {
+    "pos": "名詞",
+    "phonetic": "/ˈɔːr.ɡə.naɪ.zərz/",
+    "definition": "主辦者",
+    "example_en": "The event organizers worked hard to make the festival a success.",
+    "example_zh": "活動主辦者努力讓這場慶典圓滿成功。",
+    "done": true
+  },
+  "originally": {
+    "pos": "副詞",
+    "phonetic": "/əˈrɪdʒ.ə.nəl.i/",
+    "definition": "原本；最初",
+    "example_en": "The building was originally used as a train station.",
+    "example_zh": "這棟建築物原本是用作火車站。",
+    "done": true
+  },
+  "originating": {
+    "pos": "動詞",
+    "phonetic": "/əˈrɪdʒ.ə.neɪ.tɪŋ/",
+    "definition": "起源於",
+    "example_en": "The strange sound seemed to be originating from the basement.",
+    "example_zh": "那個奇怪的聲音似乎是從地下室發出的。",
+    "done": true
+  },
+  "outweighed": {
+    "pos": "動詞",
+    "phonetic": "/ˌaʊtˈweɪd/",
+    "definition": "比…更重要；勝過",
+    "example_en": "The benefits of the new plan outweighed its small risks.",
+    "example_zh": "這項新計畫的好處勝過它微小的風險。",
+    "done": true
+  },
+  "overgrown": {
+    "pos": "形容詞",
+    "phonetic": "/ˌoʊ.vərˈɡroʊn/",
+    "definition": "雜草叢生的",
+    "example_en": "The old garden was overgrown with weeds and vines.",
+    "example_zh": "那座老花園長滿了雜草和藤蔓。",
+    "done": true
+  },
+  "overhang": {
+    "pos": "名詞",
+    "phonetic": "/ˈoʊ.vər.hæŋ/",
+    "definition": "懸垂物；突出部分",
+    "example_en": "The hikers sheltered from the rain under a rocky overhang.",
+    "example_zh": "健行者們在一處岩石突出處躲雨。",
+    "done": true
+  },
+  "overlooked": {
+    "pos": "動詞",
+    "phonetic": "/ˌoʊ.vərˈlʊkt/",
+    "definition": "忽略",
+    "example_en": "The teacher overlooked a small mistake in his homework.",
+    "example_zh": "老師忽略了他作業裡的一個小錯誤。",
+    "done": true
+  },
+  "pancakes": {
+    "pos": "名詞",
+    "phonetic": "/ˈpæn.keɪks/",
+    "definition": "鬆餅",
+    "example_en": "We had pancakes with syrup for breakfast this morning.",
+    "example_zh": "我們今天早上吃了淋糖漿的鬆餅當早餐。",
+    "done": true
+  },
+  "particularly": {
+    "pos": "副詞",
+    "phonetic": "/pərˈtɪk.jə.lər.li/",
+    "definition": "特別地",
+    "example_en": "This dish is particularly popular during the winter season.",
+    "example_zh": "這道菜在冬季特別受歡迎。",
+    "done": true
+  },
+  "partway": {
+    "pos": "副詞",
+    "phonetic": "/ˌpɑːrtˈweɪ/",
+    "definition": "到一半；部分地",
+    "example_en": "We stopped partway up the mountain to rest.",
+    "example_zh": "我們爬到山的半路停下來休息。",
+    "done": true
+  },
+  "peaks": {
+    "pos": "名詞",
+    "phonetic": "/piːks/",
+    "definition": "山峰",
+    "example_en": "Snow covered the mountain peaks all winter long.",
+    "example_zh": "整個冬天,山峰都被雪覆蓋著。",
+    "done": true
+  },
+  "perceive": {
+    "pos": "動詞",
+    "phonetic": "/pərˈsiːv/",
+    "definition": "察覺；感知",
+    "example_en": "Dogs perceive smells much more strongly than humans do.",
+    "example_zh": "狗對氣味的感知比人類敏銳得多。",
+    "done": true
+  },
+  "performed": {
+    "pos": "動詞",
+    "phonetic": "/pərˈfɔːrmd/",
+    "definition": "表演；執行",
+    "example_en": "The band performed three new songs at the concert.",
+    "example_zh": "這個樂團在演唱會上表演了三首新歌。",
+    "done": true
+  },
+  "pesticides": {
+    "pos": "名詞",
+    "phonetic": "/ˈpes.tɪ.saɪdz/",
+    "definition": "殺蟲劑",
+    "example_en": "The farm avoids using pesticides to keep the vegetables organic.",
+    "example_zh": "這座農場避免使用殺蟲劑以保持蔬菜的有機品質。",
+    "done": true
+  },
+  "pests": {
+    "pos": "名詞",
+    "phonetic": "/pests/",
+    "definition": "害蟲",
+    "example_en": "Ladybugs help gardens by eating harmful pests.",
+    "example_zh": "瓢蟲藉由吃掉有害的害蟲來幫助花園。",
+    "done": true
+  },
+  "placement": {
+    "pos": "名詞",
+    "phonetic": "/ˈpleɪs.mənt/",
+    "definition": "安置；擺放位置",
+    "example_en": "The careful placement of the furniture made the room feel bigger.",
+    "example_zh": "家具的細心擺放讓房間感覺更寬敞。",
+    "done": true
+  },
+  "planners": {
+    "pos": "名詞",
+    "phonetic": "/ˈplæn.ərz/",
+    "definition": "規劃者",
+    "example_en": "City planners designed the new park with families in mind.",
+    "example_zh": "城市規劃者以家庭需求為考量設計了這座新公園。",
+    "done": true
+  },
+  "polar": {
+    "pos": "形容詞",
+    "phonetic": "/ˈpoʊ.lər/",
+    "definition": "極地的",
+    "example_en": "Polar bears are well adapted to the icy Arctic climate.",
+    "example_zh": "北極熊非常適應冰天雪地的北極氣候。",
+    "done": true
+  },
+  "pollutants": {
+    "pos": "名詞",
+    "phonetic": "/pəˈluː.tənts/",
+    "definition": "污染物",
+    "example_en": "Factories must reduce the pollutants they release into the air.",
+    "example_zh": "工廠必須減少排放到空氣中的污染物。",
+    "done": true
+  },
+  "porcelain": {
+    "pos": "名詞",
+    "phonetic": "/ˈpɔːr.sə.lɪn/",
+    "definition": "瓷器",
+    "example_en": "The museum displayed a collection of delicate porcelain vases.",
+    "example_zh": "博物館展示了一系列精緻的瓷花瓶。",
+    "done": true
+  },
+  "positively": {
+    "pos": "副詞",
+    "phonetic": "/ˈpɑː.zə.tɪv.li/",
+    "definition": "正面地",
+    "example_en": "Regular exercise positively affects both mood and health.",
+    "example_zh": "規律運動對情緒和健康都有正面影響。",
+    "done": true
+  },
+  "postal": {
+    "pos": "形容詞",
+    "phonetic": "/ˈpoʊ.stəl/",
+    "definition": "郵政的",
+    "example_en": "The package was delivered through the local postal service.",
+    "example_zh": "這個包裹是透過當地郵政服務送達的。",
+    "done": true
+  },
+  "potentially": {
+    "pos": "副詞",
+    "phonetic": "/pəˈten.ʃəl.i/",
+    "definition": "可能地",
+    "example_en": "The storm could potentially cause flooding in low areas.",
+    "example_zh": "這場暴風雨可能會在低窪地區造成淹水。",
+    "done": true
+  },
+  "poured": {
+    "pos": "動詞",
+    "phonetic": "/pɔːrd/",
+    "definition": "傾倒",
+    "example_en": "She poured a glass of orange juice for her brother.",
+    "example_zh": "她替弟弟倒了一杯柳橙汁。",
+    "done": true
+  },
+  "predictions": {
+    "pos": "名詞",
+    "phonetic": "/prɪˈdɪk.ʃənz/",
+    "definition": "預測",
+    "example_en": "Weather predictions for the weekend show heavy rain.",
+    "example_zh": "週末的天氣預測顯示會有大雨。",
+    "done": true
+  },
+  "preserving": {
+    "pos": "動詞",
+    "phonetic": "/prɪˈzɜːr.vɪŋ/",
+    "definition": "保存",
+    "example_en": "The museum focuses on preserving old photographs and letters.",
+    "example_zh": "這間博物館致力於保存舊照片和信件。",
+    "done": true
+  },
+  "professionally": {
+    "pos": "副詞",
+    "phonetic": "/prəˈfeʃ.ən.əl.i/",
+    "definition": "專業地",
+    "example_en": "The photos were taken professionally for the school yearbook.",
+    "example_zh": "這些照片是由專業人士為學校年鑑拍攝的。",
+    "done": true
+  },
+  "proposes": {
+    "pos": "動詞",
+    "phonetic": "/prəˈpoʊ.zɪz/",
+    "definition": "提議",
+    "example_en": "The mayor proposes building a new bike path downtown.",
+    "example_zh": "市長提議在市中心興建一條新的自行車道。",
+    "done": true
+  },
+  "props": {
+    "pos": "名詞",
+    "phonetic": "/prɑːps/",
+    "definition": "道具",
+    "example_en": "The drama club made all the props for the school play.",
+    "example_zh": "戲劇社為學校話劇製作了所有的道具。",
+    "done": true
+  },
+  "proteins": {
+    "pos": "名詞",
+    "phonetic": "/ˈproʊ.tiːnz/",
+    "definition": "蛋白質",
+    "example_en": "Eggs and beans are both good sources of proteins.",
+    "example_zh": "雞蛋和豆類都是良好的蛋白質來源。",
+    "done": true
+  },
+  "protested": {
+    "pos": "動詞",
+    "phonetic": "/prəˈtes.tɪd/",
+    "definition": "抗議",
+    "example_en": "Students protested against the new school rule.",
+    "example_zh": "學生們對學校的新規定提出抗議。",
+    "done": true
+  },
+  "proven": {
+    "pos": "形容詞",
+    "phonetic": "/ˈpruː.vən/",
+    "definition": "已證實的",
+    "example_en": "Exercise is a proven way to reduce stress.",
+    "example_zh": "運動是已被證實能減輕壓力的方法。",
+    "done": true
+  },
+  "psychologists": {
+    "pos": "名詞",
+    "phonetic": "/saɪˈkɑː.lə.dʒɪsts/",
+    "definition": "心理學家",
+    "example_en": "Psychologists study how emotions affect our behavior.",
+    "example_zh": "心理學家研究情緒如何影響我們的行為。",
+    "done": true
+  },
+  "pulp": {
+    "pos": "名詞",
+    "phonetic": "/pʌlp/",
+    "definition": "果肉；紙漿",
+    "example_en": "This orange juice still has some pulp in it.",
+    "example_zh": "這杯柳橙汁裡還有一些果肉。",
+    "done": true
+  },
+  "pulpy": {
+    "pos": "形容詞",
+    "phonetic": "/ˈpʌl.pi/",
+    "definition": "多果肉的",
+    "example_en": "The ripe mango was soft and pulpy inside.",
+    "example_zh": "熟透的芒果內部柔軟又多果肉。",
+    "done": true
+  },
+  "qualified": {
+    "pos": "形容詞",
+    "phonetic": "/ˈkwɑː.lə.faɪd/",
+    "definition": "合格的",
+    "example_en": "Only qualified swimmers were allowed in the deep pool.",
+    "example_zh": "只有合格的泳者才能進入深水池。",
+    "done": true
+  },
+  "random": {
+    "pos": "形容詞",
+    "phonetic": "/ˈræn.dəm/",
+    "definition": "隨機的",
+    "example_en": "The teacher picked a random student to answer the question.",
+    "example_zh": "老師隨機挑選一位學生回答問題。",
+    "done": true
+  },
+  "reacting": {
+    "pos": "動詞",
+    "phonetic": "/riˈæk.tɪŋ/",
+    "definition": "反應",
+    "example_en": "The audience was reacting loudly to the surprising ending.",
+    "example_zh": "觀眾對這個令人驚訝的結局反應熱烈。",
+    "done": true
+  },
+  "rechargeable": {
+    "pos": "形容詞",
+    "phonetic": "/ˌriːˈtʃɑːr.dʒə.bəl/",
+    "definition": "可充電的",
+    "example_en": "We switched to rechargeable batteries to save money and reduce waste.",
+    "example_zh": "我們改用可充電電池來省錢並減少浪費。",
+    "done": true
+  },
+  "redirect": {
+    "pos": "動詞",
+    "phonetic": "/ˌriː.dəˈrekt/",
+    "definition": "重新導向",
+    "example_en": "Workers had to redirect traffic because of the road repair.",
+    "example_zh": "由於道路維修,工人必須重新引導交通。",
+    "done": true
+  },
+  "refill": {
+    "pos": "動詞",
+    "phonetic": "/ˌriːˈfɪl/",
+    "definition": "再填滿",
+    "example_en": "Could you refill my water bottle before we leave?",
+    "example_zh": "我們出發前你可以幫我把水瓶裝滿嗎？",
+    "done": true
+  },
+  "refilling": {
+    "pos": "動詞",
+    "phonetic": "/ˌriːˈfɪl.ɪŋ/",
+    "definition": "再填滿",
+    "example_en": "The waiter kept refilling our glasses with tea.",
+    "example_zh": "服務生不斷幫我們把杯子倒滿茶。",
+    "done": true
+  },
+  "regions": {
+    "pos": "名詞",
+    "phonetic": "/ˈriː.dʒənz/",
+    "definition": "地區",
+    "example_en": "Rainfall varies greatly between different regions of the island.",
+    "example_zh": "這座島嶼不同地區的降雨量差異很大。",
+    "done": true
+  },
+  "regulating": {
+    "pos": "動詞",
+    "phonetic": "/ˈreɡ.jə.leɪ.tɪŋ/",
+    "definition": "調節；管制",
+    "example_en": "The government is regulating the use of plastic bags in stores.",
+    "example_zh": "政府正在管制商店使用塑膠袋。",
+    "done": true
+  },
+  "relays": {
+    "pos": "名詞",
+    "phonetic": "/ˈriː.leɪz/",
+    "definition": "接力賽",
+    "example_en": "Our class won two of the four relays at the sports day.",
+    "example_zh": "我們班在運動會的四場接力賽中贏了兩場。",
+    "done": true
+  },
+  "relevant": {
+    "pos": "形容詞",
+    "phonetic": "/ˈrel.ə.vənt/",
+    "definition": "相關的",
+    "example_en": "Make sure your essay stays relevant to the assigned topic.",
+    "example_zh": "請確保你的文章與指定主題保持相關。",
+    "done": true
+  },
+  "reliably": {
+    "pos": "副詞",
+    "phonetic": "/rɪˈlaɪ.ə.bli/",
+    "definition": "可靠地",
+    "example_en": "This old truck still runs reliably after twenty years.",
+    "example_zh": "這輛老卡車用了二十年後仍然運作可靠。",
+    "done": true
+  },
+  "relied": {
+    "pos": "動詞",
+    "phonetic": "/rɪˈlaɪd/",
+    "definition": "依賴",
+    "example_en": "Before phones, people relied on letters to communicate.",
+    "example_zh": "在電話發明以前,人們依靠書信來溝通。",
+    "done": true
+  },
+  "relying": {
+    "pos": "動詞",
+    "phonetic": "/rɪˈlaɪ.ɪŋ/",
+    "definition": "依賴",
+    "example_en": "She finished the project without relying on anyone's help.",
+    "example_zh": "她完成這項專題時沒有依賴任何人的幫助。",
+    "done": true
+  },
+  "remarkably": {
+    "pos": "副詞",
+    "phonetic": "/rɪˈmɑːr.kə.bli/",
+    "definition": "顯著地；非常",
+    "example_en": "The twins look remarkably similar to each other.",
+    "example_zh": "這對雙胞胎彼此長得非常相似。",
+    "done": true
+  },
+  "repeatedly": {
+    "pos": "副詞",
+    "phonetic": "/rɪˈpiː.tɪd.li/",
+    "definition": "反覆地",
+    "example_en": "He repeatedly checked his phone for a reply.",
+    "example_zh": "他反覆查看手機,等待回覆。",
+    "done": true
+  },
+  "replaying": {
+    "pos": "動詞",
+    "phonetic": "/riːˈpleɪ.ɪŋ/",
+    "definition": "重播",
+    "example_en": "The coach kept replaying the video to study the team's mistakes.",
+    "example_zh": "教練不斷重播影片來研究球隊的失誤。",
+    "done": true
+  },
+  "replicate": {
+    "pos": "動詞",
+    "phonetic": "/ˈrep.lə.keɪt/",
+    "definition": "複製",
+    "example_en": "Scientists tried to replicate the results of the experiment.",
+    "example_zh": "科學家們試圖複製這項實驗的結果。",
+    "done": true
+  },
+  "researchers": {
+    "pos": "名詞",
+    "phonetic": "/rɪˈsɜːr.tʃərz/",
+    "definition": "研究人員",
+    "example_en": "Researchers spent years studying the effects of climate change.",
+    "example_zh": "研究人員花了好幾年研究氣候變遷的影響。",
+    "done": true
+  },
+  "resented": {
+    "pos": "動詞",
+    "phonetic": "/rɪˈzen.tɪd/",
+    "definition": "憎恨；不滿",
+    "example_en": "He resented being told what to do all the time.",
+    "example_zh": "他很不滿一直被人指使該做什麼。",
+    "done": true
+  },
+  "residential": {
+    "pos": "形容詞",
+    "phonetic": "/ˌrez.əˈden.ʃəl/",
+    "definition": "住宅的",
+    "example_en": "The new mall was built far from the residential area.",
+    "example_zh": "這座新購物中心蓋在遠離住宅區的地方。",
+    "done": true
+  },
+  "resources": {
+    "pos": "名詞",
+    "phonetic": "/ˈriː.sɔːr.sɪz/",
+    "definition": "資源",
+    "example_en": "The library offers free resources for students doing research.",
+    "example_zh": "圖書館為做研究的學生提供免費資源。",
+    "done": true
+  },
+  "restlessness": {
+    "pos": "名詞",
+    "phonetic": "/ˈrest.ləs.nəs/",
+    "definition": "不安；焦躁",
+    "example_en": "A sense of restlessness kept him from sitting still.",
+    "example_zh": "一股不安的感覺讓他坐立難安。",
+    "done": true
+  },
+  "restored": {
+    "pos": "動詞",
+    "phonetic": "/rɪˈstɔːrd/",
+    "definition": "修復",
+    "example_en": "The old temple was carefully restored last year.",
+    "example_zh": "這座古老的廟宇去年被小心地修復了。",
+    "done": true
+  },
+  "restoring": {
+    "pos": "動詞",
+    "phonetic": "/rɪˈstɔːr.ɪŋ/",
+    "definition": "修復",
+    "example_en": "The team is restoring the abandoned park near the river.",
+    "example_zh": "這個團隊正在修復河邊那座荒廢的公園。",
+    "done": true
+  },
+  "reused": {
+    "pos": "動詞",
+    "phonetic": "/riːˈjuːzd/",
+    "definition": "再利用",
+    "example_en": "The glass jars were washed and reused for storing spices.",
+    "example_zh": "這些玻璃罐洗淨後被重複利用來存放香料。",
+    "done": true
+  },
+  "revealed": {
+    "pos": "動詞",
+    "phonetic": "/rɪˈviːld/",
+    "definition": "揭露",
+    "example_en": "The magician revealed the secret behind the trick.",
+    "example_zh": "魔術師揭露了這個把戲背後的秘密。",
+    "done": true
+  },
+  "reversing": {
+    "pos": "動詞",
+    "phonetic": "/rɪˈvɜːr.sɪŋ/",
+    "definition": "倒轉；反轉",
+    "example_en": "The truck was slowly reversing into the narrow driveway.",
+    "example_zh": "這輛卡車正緩緩倒車進入狹窄的車道。",
+    "done": true
+  },
+  "ridge": {
+    "pos": "名詞",
+    "phonetic": "/rɪdʒ/",
+    "definition": "山脊",
+    "example_en": "The trail follows a narrow ridge between two valleys.",
+    "example_zh": "這條步道沿著兩座山谷之間的狹窄山脊延伸。",
+    "done": true
+  },
+  "rivals": {
+    "pos": "名詞",
+    "phonetic": "/ˈraɪ.vəlz/",
+    "definition": "對手",
+    "example_en": "The two schools have been sports rivals for decades.",
+    "example_zh": "這兩所學校在體育競賽上已經是數十年的對手了。",
+    "done": true
+  },
+  "riverbank": {
+    "pos": "名詞",
+    "phonetic": "/ˈrɪv.ər.bæŋk/",
+    "definition": "河岸",
+    "example_en": "They set up their tent along the quiet riverbank.",
+    "example_zh": "他們在安靜的河岸邊搭起帳篷。",
+    "done": true
+  },
+  "roadside": {
+    "pos": "名詞",
+    "phonetic": "/ˈroʊd.saɪd/",
+    "definition": "路邊",
+    "example_en": "A small fruit stand stood by the roadside.",
+    "example_zh": "一個小水果攤位在路邊。",
+    "done": true
+  },
+  "rollers": {
+    "pos": "名詞",
+    "phonetic": "/ˈroʊ.lərz/",
+    "definition": "滾筒",
+    "example_en": "The painter used large rollers to cover the wall quickly.",
+    "example_zh": "油漆工使用大滾筒快速塗滿牆面。",
+    "done": true
+  },
+  "rotate": {
+    "pos": "動詞",
+    "phonetic": "/ˈroʊ.teɪt/",
+    "definition": "旋轉",
+    "example_en": "The Earth takes about 24 hours to rotate once.",
+    "example_zh": "地球自轉一圈大約需要24小時。",
+    "done": true
+  },
+  "rotating": {
+    "pos": "動詞",
+    "phonetic": "/ˈroʊ.teɪ.tɪŋ/",
+    "definition": "旋轉",
+    "example_en": "The fan kept rotating slowly to cool the whole room.",
+    "example_zh": "電風扇持續緩緩旋轉,讓整個房間變涼爽。",
+    "done": true
+  },
+  "rumbling": {
+    "pos": "動詞",
+    "phonetic": "/ˈrʌm.blɪŋ/",
+    "definition": "隆隆作響",
+    "example_en": "We heard thunder rumbling in the distance before the storm.",
+    "example_zh": "暴風雨來臨前,我們聽見遠處傳來隆隆雷聲。",
+    "done": true
+  },
+  "rural": {
+    "pos": "形容詞",
+    "phonetic": "/ˈrʊr.əl/",
+    "definition": "鄉村的",
+    "example_en": "He grew up in a small rural town surrounded by farms.",
+    "example_zh": "他在一個被農田環繞的鄉村小鎮長大。",
+    "done": true
+  },
+  "rusted": {
+    "pos": "形容詞",
+    "phonetic": "/ˈrʌs.tɪd/",
+    "definition": "生鏽的",
+    "example_en": "The old gate's hinges were completely rusted.",
+    "example_zh": "那扇老舊大門的鉸鏈已經完全生鏽了。",
+    "done": true
+  },
+  "safest": {
+    "pos": "形容詞",
+    "phonetic": "/ˈseɪ.fɪst/",
+    "definition": "最安全的",
+    "example_en": "Wearing a helmet is the safest choice when riding a bike.",
+    "example_zh": "騎腳踏車時戴安全帽是最安全的選擇。",
+    "done": true
+  },
+  "satellites": {
+    "pos": "名詞",
+    "phonetic": "/ˈsæt.əl.aɪts/",
+    "definition": "衛星",
+    "example_en": "Weather satellites help scientists track approaching storms.",
+    "example_zh": "氣象衛星幫助科學家追蹤即將來臨的暴風雨。",
+    "done": true
+  },
+  "savings": {
+    "pos": "名詞",
+    "phonetic": "/ˈseɪ.vɪŋz/",
+    "definition": "存款；儲蓄",
+    "example_en": "He used his savings to buy a new bicycle.",
+    "example_zh": "他用自己的存款買了一輛新腳踏車。",
+    "done": true
+  },
+  "scattered": {
+    "pos": "形容詞",
+    "phonetic": "/ˈskæt.ərd/",
+    "definition": "散落的",
+    "example_en": "Toys were scattered all over the living room floor.",
+    "example_zh": "玩具散落在客廳地板上到處都是。",
+    "done": true
+  },
+  "scolding": {
+    "pos": "動詞",
+    "phonetic": "/ˈskoʊl.dɪŋ/",
+    "definition": "責罵",
+    "example_en": "The mother was scolding her son for coming home late.",
+    "example_zh": "媽媽正在責罵兒子太晚回家。",
+    "done": true
+  },
+  "screeching": {
+    "pos": "動詞",
+    "phonetic": "/ˈskriː.tʃɪŋ/",
+    "definition": "尖聲刺耳作響",
+    "example_en": "The car came to a stop with tires screeching loudly.",
+    "example_zh": "這輛車在輪胎發出刺耳尖叫聲中停下來。",
+    "done": true
+  },
+  "scrimmages": {
+    "pos": "名詞",
+    "phonetic": "/ˈskrɪm.ɪ.dʒɪz/",
+    "definition": "對抗練習賽",
+    "example_en": "The team held two scrimmages before the real season began.",
+    "example_zh": "這支球隊在正式球季開始前舉行了兩場對抗練習賽。",
+    "done": true
+  },
+  "secured": {
+    "pos": "動詞",
+    "phonetic": "/sɪˈkjʊrd/",
+    "definition": "確保；固定",
+    "example_en": "He secured the ladder before climbing onto the roof.",
+    "example_zh": "他在爬上屋頂前先把梯子固定好。",
+    "done": true
+  },
+  "semifinals": {
+    "pos": "名詞",
+    "phonetic": "/ˌsem.iˈfaɪ.nəlz/",
+    "definition": "準決賽",
+    "example_en": "Our basketball team advanced to the semifinals this year.",
+    "example_zh": "我們的籃球隊今年晉級到準決賽。",
+    "done": true
+  },
+  "sensor": {
+    "pos": "名詞",
+    "phonetic": "/ˈsen.sər/",
+    "definition": "感測器",
+    "example_en": "A motion sensor turns on the light when someone enters the room.",
+    "example_zh": "動作感測器會在有人進入房間時自動開燈。",
+    "done": true
+  },
+  "severity": {
+    "pos": "名詞",
+    "phonetic": "/səˈver.ə.ti/",
+    "definition": "嚴重性",
+    "example_en": "Doctors were surprised by the severity of his injury.",
+    "example_zh": "醫生對他傷勢的嚴重程度感到驚訝。",
+    "done": true
+  },
+  "shadows": {
+    "pos": "名詞",
+    "phonetic": "/ˈʃæd.oʊz/",
+    "definition": "影子",
+    "example_en": "Long shadows stretched across the yard as the sun set.",
+    "example_zh": "太陽下山時,長長的影子橫跨過整個院子。",
+    "done": true
+  },
+  "shelves": {
+    "pos": "名詞",
+    "phonetic": "/ʃelvz/",
+    "definition": "架子",
+    "example_en": "The bookstore's shelves were filled with new novels.",
+    "example_zh": "書店的書架擺滿了新小說。",
+    "done": true
+  },
+  "shopkeepers": {
+    "pos": "名詞",
+    "phonetic": "/ˈʃɑːpˌkiː.pərz/",
+    "definition": "店主",
+    "example_en": "Local shopkeepers decorated their windows for the festival.",
+    "example_zh": "當地店主們為了慶典佈置了自家的櫥窗。",
+    "done": true
+  },
+  "sideways": {
+    "pos": "副詞",
+    "phonetic": "/ˈsaɪd.weɪz/",
+    "definition": "向側面地",
+    "example_en": "The crab moved sideways across the sand.",
+    "example_zh": "那隻螃蟹橫著身子在沙地上移動。",
+    "done": true
+  },
+  "significantly": {
+    "pos": "副詞",
+    "phonetic": "/sɪɡˈnɪf.ɪ.kənt.li/",
+    "definition": "顯著地",
+    "example_en": "Prices have risen significantly over the past year.",
+    "example_zh": "過去一年物價顯著上漲。",
+    "done": true
+  },
+  "simpler": {
+    "pos": "形容詞",
+    "phonetic": "/ˈsɪm.plər/",
+    "definition": "更簡單的",
+    "example_en": "Please explain the rule in a simpler way.",
+    "example_zh": "請用更簡單的方式解釋這條規則。",
+    "done": true
+  },
+  "situations": {
+    "pos": "名詞",
+    "phonetic": "/ˌsɪtʃ.uˈeɪ.ʃənz/",
+    "definition": "情況",
+    "example_en": "The training prepares soldiers for dangerous situations.",
+    "example_zh": "這項訓練讓士兵們為危險情況做好準備。",
+    "done": true
+  },
+  "slicker": {
+    "pos": "形容詞",
+    "phonetic": "/ˈslɪk.ər/",
+    "definition": "更光滑的；更靈巧的",
+    "example_en": "The new app has a slicker design than the old one.",
+    "example_zh": "這個新應用程式的設計比舊版更流暢俐落。",
+    "done": true
+  },
+  "sockets": {
+    "pos": "名詞",
+    "phonetic": "/ˈsɑː.kɪts/",
+    "definition": "插座",
+    "example_en": "There are not enough sockets to charge all our phones.",
+    "example_zh": "插座不夠用來為我們所有的手機充電。",
+    "done": true
+  },
+  "spans": {
+    "pos": "名詞",
+    "phonetic": "/spænz/",
+    "definition": "跨度；範圍",
+    "example_en": "The bridge spans nearly two kilometers across the bay.",
+    "example_zh": "這座橋跨越海灣將近兩公里。",
+    "done": true
+  },
+  "spark": {
+    "pos": "名詞",
+    "phonetic": "/spɑːrk/",
+    "definition": "火花",
+    "example_en": "A tiny spark from the wire started the fire.",
+    "example_zh": "電線發出的一點小火花引發了這場火災。",
+    "done": true
+  },
+  "sparked": {
+    "pos": "動詞",
+    "phonetic": "/spɑːrkt/",
+    "definition": "引發",
+    "example_en": "The documentary sparked her interest in ocean life.",
+    "example_zh": "這部紀錄片引發了她對海洋生物的興趣。",
+    "done": true
+  },
+  "sparring": {
+    "pos": "動詞",
+    "phonetic": "/ˈspɑːr.ɪŋ/",
+    "definition": "對打練習",
+    "example_en": "The boxers spent the morning sparring in the gym.",
+    "example_zh": "拳擊手們整個早上都在健身房裡進行對打練習。",
+    "done": true
+  },
+  "specialized": {
+    "pos": "形容詞",
+    "phonetic": "/ˈspeʃ.ə.laɪzd/",
+    "definition": "專門的",
+    "example_en": "The hospital has a specialized team for treating children.",
+    "example_zh": "這家醫院有一個專門治療兒童的團隊。",
+    "done": true
+  },
+  "splintering": {
+    "pos": "動詞",
+    "phonetic": "/ˈsplɪn.tər.ɪŋ/",
+    "definition": "裂成碎片",
+    "example_en": "The old wooden chair was splintering after years of use.",
+    "example_zh": "那張舊木椅用了多年後開始裂成碎片。",
+    "done": true
+  },
+  "sponges": {
+    "pos": "名詞",
+    "phonetic": "/ˈspʌn.dʒɪz/",
+    "definition": "海綿",
+    "example_en": "We used sponges to clean the classroom whiteboard.",
+    "example_zh": "我們用海綿清理教室的白板。",
+    "done": true
+  },
+  "standardized": {
+    "pos": "形容詞",
+    "phonetic": "/ˈstæn.dər.daɪzd/",
+    "definition": "標準化的",
+    "example_en": "All students took the same standardized test in May.",
+    "example_zh": "所有學生五月都參加了同一套標準化測驗。",
+    "done": true
+  },
+  "stigma": {
+    "pos": "名詞",
+    "phonetic": "/ˈstɪɡ.mə/",
+    "definition": "污名",
+    "example_en": "The campaign aims to remove the stigma around mental illness.",
+    "example_zh": "這項宣導活動旨在消除對精神疾病的污名。",
+    "done": true
+  },
+  "stimulants": {
+    "pos": "名詞",
+    "phonetic": "/ˈstɪm.jə.lənts/",
+    "definition": "興奮劑",
+    "example_en": "Doctors warned athletes about using stimulants before competitions.",
+    "example_zh": "醫生警告運動員在比賽前不要使用興奮劑。",
+    "done": true
+  },
+  "stimulating": {
+    "pos": "形容詞",
+    "phonetic": "/ˈstɪm.jə.leɪ.tɪŋ/",
+    "definition": "刺激的；激勵的",
+    "example_en": "The museum offers a stimulating experience for curious kids.",
+    "example_zh": "這間博物館為好奇的孩子們提供充滿啟發性的體驗。",
+    "done": true
+  },
+  "storytelling": {
+    "pos": "名詞",
+    "phonetic": "/ˈstɔːr.iˌtel.ɪŋ/",
+    "definition": "說故事",
+    "example_en": "The old man was known in the village for his storytelling.",
+    "example_zh": "這位老人在村子裡以說故事聞名。",
+    "done": true
+  },
+  "straightforward": {
+    "pos": "形容詞",
+    "phonetic": "/ˌstreɪtˈfɔːr.wərd/",
+    "definition": "直接的；簡單易懂的",
+    "example_en": "The instructions were straightforward, so the game was easy to set up.",
+    "example_zh": "說明書簡單易懂,所以這個遊戲很容易架設。",
+    "done": true
+  },
+  "strengthening": {
+    "pos": "動詞",
+    "phonetic": "/ˈstreŋ.θən.ɪŋ/",
+    "definition": "加強",
+    "example_en": "The two countries are strengthening their trade relationship.",
+    "example_zh": "這兩個國家正在加強彼此的貿易關係。",
+    "done": true
+  },
+  "strengths": {
+    "pos": "名詞",
+    "phonetic": "/streŋkθs/",
+    "definition": "優點；力量",
+    "example_en": "Teamwork is one of the biggest strengths of our club.",
+    "example_zh": "團隊合作是我們社團最大的優點之一。",
+    "done": true
+  },
+  "struck": {
+    "pos": "動詞",
+    "phonetic": "/strʌk/",
+    "definition": "打；擊中",
+    "example_en": "Lightning struck the old tree during the storm.",
+    "example_zh": "暴風雨期間閃電擊中了那棵老樹。",
+    "done": true
+  },
+  "substitute": {
+    "pos": "名詞",
+    "phonetic": "/ˈsʌb.stɪ.tuːt/",
+    "definition": "替代品",
+    "example_en": "You can use honey as a substitute for sugar in this recipe.",
+    "example_zh": "在這道食譜中,你可以用蜂蜜代替糖。",
+    "done": true
+  },
+  "sufficiently": {
+    "pos": "副詞",
+    "phonetic": "/səˈfɪʃ.ənt.li/",
+    "definition": "充分地",
+    "example_en": "Make sure the soup is sufficiently cooled before you drink it.",
+    "example_zh": "喝湯之前請確保湯已經充分放涼。",
+    "done": true
+  },
+  "suggestions": {
+    "pos": "名詞",
+    "phonetic": "/səˈdʒes.tʃənz/",
+    "definition": "建議",
+    "example_en": "The teacher welcomed suggestions for the class trip.",
+    "example_zh": "老師歡迎大家對班遊提出建議。",
+    "done": true
+  },
+  "supervised": {
+    "pos": "動詞",
+    "phonetic": "/ˈsuː.pər.vaɪzd/",
+    "definition": "監督",
+    "example_en": "A lifeguard supervised the children while they swam.",
+    "example_zh": "救生員在孩子們游泳時進行監督。",
+    "done": true
+  },
+  "supporters": {
+    "pos": "名詞",
+    "phonetic": "/səˈpɔːr.tərz/",
+    "definition": "支持者",
+    "example_en": "Thousands of supporters cheered for the team at the stadium.",
+    "example_zh": "數千名支持者在體育場為球隊歡呼。",
+    "done": true
+  },
+  "surplus": {
+    "pos": "名詞",
+    "phonetic": "/ˈsɜːr.pləs/",
+    "definition": "剩餘；過剩",
+    "example_en": "The farm donated its surplus vegetables to local families.",
+    "example_zh": "這座農場把剩餘的蔬菜捐給了當地家庭。",
+    "done": true
+  },
+  "surrendered": {
+    "pos": "動詞",
+    "phonetic": "/səˈren.dərd/",
+    "definition": "投降",
+    "example_en": "The tired team finally surrendered the lead in the last minute.",
+    "example_zh": "疲憊的球隊最終在最後一分鐘失去領先。",
+    "done": true
+  },
+  "sustainable": {
+    "pos": "形容詞",
+    "phonetic": "/səˈsteɪ.nə.bəl/",
+    "definition": "永續的",
+    "example_en": "The company switched to sustainable packaging made from recycled paper.",
+    "example_zh": "這家公司改用回收紙製成的永續包裝。",
+    "done": true
+  },
+  "swamps": {
+    "pos": "名詞",
+    "phonetic": "/swɑːmps/",
+    "definition": "沼澤",
+    "example_en": "Alligators are commonly found in the swamps of Florida.",
+    "example_zh": "鱷魚常見於佛羅里達州的沼澤地。",
+    "done": true
+  },
+  "tailored": {
+    "pos": "形容詞",
+    "phonetic": "/ˈteɪ.lərd/",
+    "definition": "量身訂做的",
+    "example_en": "The tutor created a lesson plan tailored to each student's needs.",
+    "example_zh": "家教老師為每位學生的需求量身打造了課程計畫。",
+    "done": true
+  },
+  "technically": {
+    "pos": "副詞",
+    "phonetic": "/ˈtek.nɪ.kli/",
+    "definition": "技術上；嚴格來說",
+    "example_en": "Technically, a tomato is a fruit, not a vegetable.",
+    "example_zh": "嚴格來說,番茄是水果,不是蔬菜。",
+    "done": true
+  },
+  "technicians": {
+    "pos": "名詞",
+    "phonetic": "/tekˈnɪʃ.ənz/",
+    "definition": "技術人員",
+    "example_en": "Technicians repaired the broken air conditioner within an hour.",
+    "example_zh": "技術人員在一小時內修好了損壞的冷氣機。",
+    "done": true
+  },
+  "temporarily": {
+    "pos": "副詞",
+    "phonetic": "/ˌtem.pəˈrer.ə.li/",
+    "definition": "暫時地",
+    "example_en": "The library is temporarily closed for renovation.",
+    "example_zh": "圖書館因裝修而暫時關閉。",
+    "done": true
+  },
+  "terrifying": {
+    "pos": "形容詞",
+    "phonetic": "/ˈter.ə.faɪ.ɪŋ/",
+    "definition": "令人恐懼的",
+    "example_en": "The roller coaster ride was thrilling but a little terrifying.",
+    "example_zh": "這趟雲霄飛車既刺激又有點令人恐懼。",
+    "done": true
+  },
+  "territories": {
+    "pos": "名詞",
+    "phonetic": "/ˈter.ə.tɔːr.iz/",
+    "definition": "領土",
+    "example_en": "The empire once controlled territories across three continents.",
+    "example_zh": "這個帝國曾經統治橫跨三大洲的領土。",
+    "done": true
+  },
+  "thinly": {
+    "pos": "副詞",
+    "phonetic": "/ˈθɪn.li/",
+    "definition": "薄薄地",
+    "example_en": "Slice the cucumber thinly before adding it to the salad.",
+    "example_zh": "把小黃瓜切薄片後再加入沙拉裡。",
+    "done": true
+  },
+  "thoughtless": {
+    "pos": "形容詞",
+    "phonetic": "/ˈθɔːt.ləs/",
+    "definition": "欠考慮的；不體貼的",
+    "example_en": "Leaving the door open in winter was a thoughtless mistake.",
+    "example_zh": "冬天讓門開著是個欠考慮的錯誤。",
+    "done": true
+  },
+  "threatens": {
+    "pos": "動詞",
+    "phonetic": "/ˈθret.ənz/",
+    "definition": "威脅",
+    "example_en": "Pollution threatens the survival of many ocean species.",
+    "example_zh": "污染威脅著許多海洋物種的生存。",
+    "done": true
+  },
+  "ticked": {
+    "pos": "動詞",
+    "phonetic": "/tɪkt/",
+    "definition": "滴答作響；打勾",
+    "example_en": "The clock on the wall ticked loudly through the quiet night.",
+    "example_zh": "牆上的時鐘在寂靜的夜裡發出響亮的滴答聲。",
+    "done": true
+  },
+  "tires": {
+    "pos": "名詞",
+    "phonetic": "/taɪərz/",
+    "definition": "輪胎",
+    "example_en": "He checked the tires before the long road trip.",
+    "example_zh": "他在長途自駕旅行前檢查了輪胎。",
+    "done": true
+  },
+  "traders": {
+    "pos": "名詞",
+    "phonetic": "/ˈtreɪ.dərz/",
+    "definition": "商人；交易者",
+    "example_en": "Traders once brought silk and tea along this old route.",
+    "example_zh": "商人們曾經沿著這條古道運送絲綢和茶葉。",
+    "done": true
+  },
+  "transporting": {
+    "pos": "動詞",
+    "phonetic": "/trænsˈpɔːr.tɪŋ/",
+    "definition": "運輸",
+    "example_en": "The truck is transporting fresh vegetables to the market.",
+    "example_zh": "這輛卡車正在運送新鮮蔬菜到市場。",
+    "done": true
+  },
+  "trays": {
+    "pos": "名詞",
+    "phonetic": "/treɪz/",
+    "definition": "托盤",
+    "example_en": "Students carried their lunch trays to the cafeteria tables.",
+    "example_zh": "學生們把午餐托盤端到自助餐廳的餐桌上。",
+    "done": true
+  },
+  "triggered": {
+    "pos": "動詞",
+    "phonetic": "/ˈtrɪɡ.ərd/",
+    "definition": "觸發",
+    "example_en": "The loud noise triggered the alarm in the empty building.",
+    "example_zh": "巨大的聲響觸發了空建築物裡的警報器。",
+    "done": true
+  },
+  "triple": {
+    "pos": "形容詞",
+    "phonetic": "/ˈtrɪp.əl/",
+    "definition": "三倍的",
+    "example_en": "The company's sales tripled after the new product launched.",
+    "example_zh": "新產品上市後,這家公司的銷售額增加了三倍。",
+    "done": true
+  },
+  "typically": {
+    "pos": "副詞",
+    "phonetic": "/ˈtɪp.ɪ.kli/",
+    "definition": "典型地",
+    "example_en": "Classes typically start at eight in the morning.",
+    "example_zh": "課程通常在早上八點開始。",
+    "done": true
+  },
+  "unbearably": {
+    "pos": "副詞",
+    "phonetic": "/ʌnˈber.ə.bli/",
+    "definition": "難以忍受地",
+    "example_en": "The gym was unbearably hot during the summer practice.",
+    "example_zh": "夏季練習時體育館熱得令人難以忍受。",
+    "done": true
+  },
+  "unchanging": {
+    "pos": "形容詞",
+    "phonetic": "/ʌnˈtʃeɪn.dʒɪŋ/",
+    "definition": "不變的",
+    "example_en": "The small village seemed unchanging over the past fifty years.",
+    "example_zh": "這個小村莊在過去五十年裡似乎沒有什麼改變。",
+    "done": true
+  },
+  "uncontrollably": {
+    "pos": "副詞",
+    "phonetic": "/ˌʌn.kənˈtroʊ.lə.bli/",
+    "definition": "無法控制地",
+    "example_en": "The class laughed uncontrollably at the teacher's joke.",
+    "example_zh": "全班因為老師的笑話而笑得無法克制。",
+    "done": true
+  },
+  "uncut": {
+    "pos": "形容詞",
+    "phonetic": "/ʌnˈkʌt/",
+    "definition": "未切割的",
+    "example_en": "The grass in the field was still uncut and tall.",
+    "example_zh": "田裡的草還沒被修剪,長得很高。",
+    "done": true
+  },
+  "underestimated": {
+    "pos": "動詞",
+    "phonetic": "/ˌʌn.dərˈes.tɪ.meɪ.tɪd/",
+    "definition": "低估",
+    "example_en": "The team underestimated how difficult the final match would be.",
+    "example_zh": "這支球隊低估了決賽的困難程度。",
+    "done": true
+  },
+  "undisturbed": {
+    "pos": "形容詞",
+    "phonetic": "/ˌʌn.dɪˈstɜːrbd/",
+    "definition": "未受打擾的",
+    "example_en": "The old letters had remained undisturbed in the attic for years.",
+    "example_zh": "這些舊信件多年來一直未受打擾地留在閣樓裡。",
+    "done": true
+  },
+  "undivided": {
+    "pos": "形容詞",
+    "phonetic": "/ˌʌn.dɪˈvaɪ.dɪd/",
+    "definition": "全神貫注的；未分割的",
+    "example_en": "The speaker asked the audience for their undivided attention.",
+    "example_zh": "講者請聽眾全神貫注地聆聽。",
+    "done": true
+  },
+  "uneven": {
+    "pos": "形容詞",
+    "phonetic": "/ʌnˈiː.vən/",
+    "definition": "不平坦的",
+    "example_en": "Watch your step on the uneven sidewalk near the park.",
+    "example_zh": "在公園附近不平坦的人行道上請小心腳步。",
+    "done": true
+  },
+  "unnoticed": {
+    "pos": "形容詞",
+    "phonetic": "/ʌnˈnoʊ.tɪst/",
+    "definition": "未被注意的",
+    "example_en": "The small mistake went unnoticed until the final review.",
+    "example_zh": "這個小錯誤直到最後審核時才被發現。",
+    "done": true
+  },
+  "unprepared": {
+    "pos": "形容詞",
+    "phonetic": "/ˌʌn.prɪˈperd/",
+    "definition": "沒準備好的",
+    "example_en": "The sudden question left him completely unprepared.",
+    "example_zh": "這個突如其來的問題讓他完全措手不及。",
+    "done": true
+  },
+  "unreasonable": {
+    "pos": "形容詞",
+    "phonetic": "/ʌnˈriː.zən.ə.bəl/",
+    "definition": "不合理的",
+    "example_en": "The coach's demands seemed unreasonable to the tired players.",
+    "example_zh": "教練的要求對疲憊的球員來說似乎不合理。",
+    "done": true
+  },
+  "unreliable": {
+    "pos": "形容詞",
+    "phonetic": "/ˌʌn.rɪˈlaɪ.ə.bəl/",
+    "definition": "不可靠的",
+    "example_en": "The old printer at school is unreliable and often jams.",
+    "example_zh": "學校那台舊印表機不可靠,經常卡紙。",
+    "done": true
+  },
+  "variations": {
+    "pos": "名詞",
+    "phonetic": "/ˌver.iˈeɪ.ʃənz/",
+    "definition": "變化",
+    "example_en": "There are many variations of this recipe across different countries.",
+    "example_zh": "這道食譜在不同國家有許多變化版本。",
+    "done": true
+  },
+  "vegetation": {
+    "pos": "名詞",
+    "phonetic": "/ˌvedʒ.əˈteɪ.ʃən/",
+    "definition": "植被",
+    "example_en": "Thick vegetation covered the sides of the mountain trail.",
+    "example_zh": "茂密的植被覆蓋著這條山路的兩側。",
+    "done": true
+  },
+  "vertebrae": {
+    "pos": "名詞",
+    "phonetic": "/ˈvɜːr.tə.breɪ/",
+    "definition": "脊椎骨",
+    "example_en": "The X-ray showed all of the patient's vertebrae clearly.",
+    "example_zh": "X光片清楚顯示了病人所有的脊椎骨。",
+    "done": true
+  },
+  "vividly": {
+    "pos": "副詞",
+    "phonetic": "/ˈvɪv.ɪd.li/",
+    "definition": "生動地",
+    "example_en": "She described the sunset so vividly that we could almost see it.",
+    "example_zh": "她生動地描述了那次日落,讓我們幾乎能想像出畫面。",
+    "done": true
+  },
+  "volcanic": {
+    "pos": "形容詞",
+    "phonetic": "/vɑːlˈkæn.ɪk/",
+    "definition": "火山的",
+    "example_en": "The island was formed by volcanic activity millions of years ago.",
+    "example_zh": "這座島嶼是數百萬年前由火山活動形成的。",
+    "done": true
+  },
+  "volcanoes": {
+    "pos": "名詞",
+    "phonetic": "/vɑːlˈkeɪ.noʊz/",
+    "definition": "火山",
+    "example_en": "Several active volcanoes are located along that coastline.",
+    "example_zh": "那片海岸線上有好幾座活火山。",
+    "done": true
+  },
+  "wavelengths": {
+    "pos": "名詞",
+    "phonetic": "/ˈweɪv.leŋkθs/",
+    "definition": "波長",
+    "example_en": "Different colors of light have different wavelengths.",
+    "example_zh": "不同顏色的光具有不同的波長。",
+    "done": true
+  },
+  "wetland": {
+    "pos": "名詞",
+    "phonetic": "/ˈwet.lænd/",
+    "definition": "濕地",
+    "example_en": "The nature reserve protects an important wetland for migrating birds.",
+    "example_zh": "這座自然保護區保護著一片對候鳥而言重要的濕地。",
+    "done": true
+  },
+  "wetlands": {
+    "pos": "名詞",
+    "phonetic": "/ˈwet.lændz/",
+    "definition": "濕地（複數）",
+    "example_en": "Wetlands play a key role in filtering water naturally.",
+    "example_zh": "濕地在自然過濾水質方面扮演關鍵角色。",
+    "done": true
+  },
+  "widely": {
+    "pos": "副詞",
+    "phonetic": "/ˈwaɪd.li/",
+    "definition": "廣泛地",
+    "example_en": "This vegetable is widely grown throughout the region.",
+    "example_zh": "這種蔬菜在這個地區被廣泛種植。",
+    "done": true
+  },
+  "widening": {
+    "pos": "動詞",
+    "phonetic": "/ˈwaɪd.ən.ɪŋ/",
+    "definition": "拓寬",
+    "example_en": "The city is widening the main road to reduce traffic jams.",
+    "example_zh": "這座城市正在拓寬主要道路以減少塞車。",
+    "done": true
+  },
+  "widespread": {
+    "pos": "形容詞",
+    "phonetic": "/ˈwaɪd.spred/",
+    "definition": "普遍的",
+    "example_en": "There was widespread support for the new recycling program.",
+    "example_zh": "這項新的回收計畫獲得了普遍支持。",
+    "done": true
+  },
+  "woken": {
+    "pos": "動詞",
+    "phonetic": "/ˈwoʊ.kən/",
+    "definition": "醒來",
+    "example_en": "She had been woken by the sound of thunder at midnight.",
+    "example_zh": "她在半夜被雷聲驚醒。",
+    "done": true
+  },
+  "workshop": {
+    "pos": "名詞",
+    "phonetic": "/ˈwɜːrk.ʃɑːp/",
+    "definition": "工作坊",
+    "example_en": "We joined a weekend workshop to learn pottery skills.",
+    "example_zh": "我們參加了一個週末的陶藝工作坊。",
+    "done": true
+  },
+  "workshops": {
+    "pos": "名詞",
+    "phonetic": "/ˈwɜːrk.ʃɑːps/",
+    "definition": "工作坊（複數）",
+    "example_en": "The community center offers free workshops on cooking and art.",
+    "example_zh": "社區中心提供免費的烹飪和藝術工作坊。",
+    "done": true
+  },
+  "wrappers": {
+    "pos": "名詞",
+    "phonetic": "/ˈræp.ərz/",
+    "definition": "包裝紙",
+    "example_en": "Please throw the candy wrappers in the trash can.",
+    "example_zh": "請把糖果包裝紙丟進垃圾桶。",
+    "done": true
   }
 }
