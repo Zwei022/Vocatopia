@@ -98,6 +98,13 @@ async function _loadProfile() {
   // 每次都補註冊一次。
   if (typeof initPushNotifications === 'function') initPushNotifications();
 
+  // RevenueCat 初始化：同理必須放在每次登入都會跑的地方，而不是只有
+  // _initUserAccount()（僅首次建立帳號才觸發）。否則回訪登入的使用者（含
+  // App Review 用既有帳號測試）RevenueCat SDK 永遠沒 configure 過，導致
+  // 按下訂閱時 getOfferings() 直接噴錯（Guideline 2.1(b) 被拒的根因）。
+  // initRevenueCat 內部用 _revenueCatInitialized 擋重複呼叫，可放心每次都呼叫。
+  if (typeof initRevenueCat === 'function') initRevenueCat(currentUser.id);
+
   // 將 profile 的角色屬性覆蓋 localStorage 的早期讀取值
   if (currentProfile && typeof STATS !== 'undefined') {
     STATS.str = currentProfile.str_stat ?? STATS.str;
@@ -125,7 +132,7 @@ async function _initUserAccount() {
     const { profile } = await res.json();
     currentProfile = profile;
     if (typeof refreshSubscriptionStatus === 'function') refreshSubscriptionStatus();
-    if (typeof initRevenueCat === 'function') initRevenueCat(currentUser.id);
+    // RevenueCat 初始化已移到 _loadProfile()（每次登入都會跑），這裡不再重複呼叫。
 
     // 遷移 localStorage 舊卡組到 Supabase（一次性）
     try {

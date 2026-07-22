@@ -810,6 +810,12 @@ async function startSubscriptionPurchase(planId) {
   }
   let offerings;
   try {
+    // 保險：正常登入流程 _loadProfile() 已會呼叫過 initRevenueCat，這裡是防
+    // 非同步時序競爭（例如登入後太快點訂閱按鈕）。initRevenueCat 內部有
+    // _revenueCatInitialized 擋重複 configure，可放心呼叫。
+    if (!_revenueCatInitialized && typeof initRevenueCat === 'function' && currentUser) {
+      await initRevenueCat(currentUser.id);
+    }
     offerings = await Purchases.getOfferings();
   } catch (e) {
     // 抓不到 offerings 通常代表 RevenueCat 後台的 Offering/Product 設定有問題，
