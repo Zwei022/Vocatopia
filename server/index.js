@@ -154,11 +154,11 @@ async function computeArenaOutcome(hostUserId, guestUserId, winnerIsHost /* true
   return out;
 }
 
-// PVP 名牌：回傳雙方顯示名稱與稱號（#13 稱號顯示於對戰名牌）
+// PVP 名牌：回傳雙方顯示名稱、稱號與頭像（#13 稱號顯示於對戰名牌；頭像見 AVATAR_IDS）
 function _roomPlayers(room) {
   return {
-    host:  { name: room.hostName  || '玩家', title: room.hostTitle  || '' },
-    guest: { name: room.guestName || '玩家', title: room.guestTitle || '' },
+    host:  { name: room.hostName  || '玩家', title: room.hostTitle  || '', avatarId: room.hostAvatarId  || null },
+    guest: { name: room.guestName || '玩家', title: room.guestTitle || '', avatarId: room.guestAvatarId || null },
   };
 }
 function shuffle(arr) {
@@ -487,9 +487,18 @@ setInterval(() => {
 // 自動配一個電腦對手頂上，UI 上完全比照真人顯示、不標示「電腦」，名稱從 BOT_NAMES
 // 隨機挑一個。電腦的 ELO 依對手當下 ELO 分階（±jitter），連動決定模擬準確率/反應速度，
 // 且照樣計入 ELO 輸贏——這樣才不會變成「配到電腦＝穩贏刷分」的捷徑。
-const QUICK_MATCH_BOT_TIMEOUT_MS = parseInt(process.env.QUICK_MATCH_BOT_TIMEOUT_MS, 10) || 8000;
-const matchQueue = { vocab: [], buzzer: [] }; // [{socket, clientId, userId, name, title, elo, botTimer}]
-const BOT_NAMES = ['小恩', '阿凱', '雨柔', '家豪', '宜蓁', '承翰', '思妤', '冠廷', '子萱', '柏宇', '品妍', '昱安'];
+const QUICK_MATCH_BOT_TIMEOUT_MS = parseInt(process.env.QUICK_MATCH_BOT_TIMEOUT_MS, 10) || 5000;
+const matchQueue = { vocab: [], buzzer: [] }; // [{socket, clientId, userId, name, title, avatarId, elo, botTimer}]
+// 中英文混合、放大池子，避免短時間內連續配到電腦時一直撞名（之前只有12個中文名很容易重複）
+const BOT_NAMES = [
+  '小恩', '阿凱', '雨柔', '家豪', '宜蓁', '承翰', '思妤', '冠廷', '子萱', '柏宇', '品妍', '昱安',
+  '詩涵', '柏睿', '芷晴', '奕辰', '珮瑜', '彥廷', '心妍', '致遠', '語彤', '哲瑋', '欣妍', '俊傑',
+  'Emma', 'Liam', 'Olivia', 'Noah', 'Ava', 'Ethan', 'Sophia', 'Mason', 'Isabella', 'Lucas',
+  'Mia', 'James', 'Chloe', 'Benjamin', 'Grace', 'Henry', 'Zoe', 'Daniel',
+];
+// 頭像素材沿用俄羅斯方塊角色圖（game/tetris/characters.js 的 TETRIS_CHARACTERS），
+// 該檔案是前端限定模組，後端這裡單純需要 id 清單來幫電腦隨機分配頭像，故另存一份 id。
+const AVATAR_IDS = ['onigiri', 'waffle', 'canele', 'sushi', 'lobster'];
 
 function _dequeue(mode, socketId) {
   const q = matchQueue[mode];
@@ -511,19 +520,20 @@ function _spawnBotEntry(humanElo) {
     elo: Math.max(600, humanElo + jitter),
     name: BOT_NAMES[Math.floor(Math.random() * BOT_NAMES.length)],
     title: '',
+    avatarId: AVATAR_IDS[Math.floor(Math.random() * AVATAR_IDS.length)],
   };
 }
 
-// a：一定是真人 queue entry（{socket, clientId, userId, name, title, elo}）
-// b：真人 entry 或 _spawnBotEntry() 產生的電腦 entry（{isBot:true, elo, name, title}）
+// a：一定是真人 queue entry（{socket, clientId, userId, name, title, avatarId, elo}）
+// b：真人 entry 或 _spawnBotEntry() 產生的電腦 entry（{isBot:true, elo, name, title, avatarId}）
 function _createQueuedRoom(mode, a, b) {
   const code = genRoomCode();
   rooms[code] = {
     host: a.socket.id, guest: b.isBot ? 'BOT' : b.socket.id,
     hostClientId: a.clientId, guestClientId: b.isBot ? null : b.clientId,
     hostUserId: a.userId, guestUserId: b.isBot ? null : b.userId,
-    hostName: a.name || '玩家', hostTitle: a.title || '',
-    guestName: b.name || '玩家', guestTitle: b.title || '',
+    hostName: a.name || '玩家', hostTitle: a.title || '', hostAvatarId: a.avatarId || null,
+    guestName: b.name || '玩家', guestTitle: b.title || '', guestAvatarId: b.avatarId || null,
     hostGraceTimer: null, guestGraceTimer: null,
     mode, state: 'lobby',
     questions: [], answers: {}, timer: null,
@@ -611,14 +621,14 @@ io.on('connection', (socket) => {
     });
   });
 
-  socket.on('create_room', ({ clientId, name, title, userId } = {}) => {
+  socket.on('create_room', ({ clientId, name, title, userId, avatarId } = {}) => {
     const code = genRoomCode();
     rooms[code] = {
       host: socket.id, guest: null,
       hostClientId: clientId || null, guestClientId: null,
       hostUserId: userId || null, guestUserId: null,
-      hostName: name || '玩家', hostTitle: title || '',
-      guestName: null, guestTitle: '',
+      hostName: name || '玩家', hostTitle: title || '', hostAvatarId: avatarId || null,
+      guestName: null, guestTitle: '', guestAvatarId: null,
       hostGraceTimer: null, guestGraceTimer: null,
       mode: 'vocab', state: 'lobby',
       questions: [], answers: {}, timer: null,
@@ -628,7 +638,7 @@ io.on('connection', (socket) => {
     socket.emit('room_created', { code });
   });
 
-  socket.on('join_room', ({ code, clientId, name, title, userId }) => {
+  socket.on('join_room', ({ code, clientId, name, title, userId, avatarId }) => {
     const room = rooms[code];
     if (!room)                   return socket.emit('room_error', { msg: '找不到房間，請確認房號' });
     if (room.state !== 'lobby')  return socket.emit('room_error', { msg: '對決已開始，無法加入' });
@@ -639,6 +649,7 @@ io.on('connection', (socket) => {
     room.guestUserId = userId || null;
     room.guestName = name || '玩家';
     room.guestTitle = title || '';
+    room.guestAvatarId = avatarId || null;
     socket.join(code);
     io.to(code).emit('room_ready', { code, mode: room.mode, players: _roomPlayers(room) });
   });
@@ -709,7 +720,7 @@ io.on('connection', (socket) => {
   socket.on('pvp_answer', ({ code, qIdx, choice }) => applyPvpAnswer(code, socket.id, qIdx, choice));
 
   // ── 快速配對 ──
-  socket.on('queue_join', async ({ mode, clientId, userId, name, title } = {}) => {
+  socket.on('queue_join', async ({ mode, clientId, userId, name, title, avatarId } = {}) => {
     if (mode !== 'vocab' && mode !== 'buzzer') return;
     _leaveAllQueues(socket.id); // 防止手滑連點造成同一人排進佇列兩次
 
@@ -728,10 +739,10 @@ io.on('connection', (socket) => {
       // 免得反而久候配不到人——這點等玩家基數上來後可以再加。
       const opponent = q.shift();
       clearTimeout(opponent.botTimer);
-      _createQueuedRoom(mode, opponent, { socket, clientId, userId, name, title, elo, isBot: false });
+      _createQueuedRoom(mode, opponent, { socket, clientId, userId, name, title, avatarId, elo, isBot: false });
       return;
     }
-    const entry = { socket, clientId, userId, name, title, elo };
+    const entry = { socket, clientId, userId, name, title, avatarId, elo };
     entry.botTimer = setTimeout(() => {
       const stillQueued = _dequeue(mode, socket.id);
       if (!stillQueued) return; // 這段等待期間已經被別人配走了

@@ -274,7 +274,7 @@
 
         <!-- 右上：排行榜 -->
         <div class="hm-board-card">
-          <div class="hm-board-head">🏆 排行榜</div>
+          <div class="hm-board-head">排行榜</div>
           <div class="hm-board-list" id="hmBoardList"><!-- renderLeaderboard() 填入 --></div>
         </div>
 
@@ -669,9 +669,9 @@
       <div class="room-code-big" id="roomCodeBig">— — —</div>
       <button class="copy-btn" onclick="copyRoom()">📋 複製房號</button>
       <div class="vs-row">
-        <div class="player-slot slot-ready"><div class="slot-name" id="meName">你</div><div class="slot-title" id="meTitle" style="display:none"></div><div class="slot-status ok">✓ 已就緒</div></div>
+        <div class="player-slot slot-ready"><div class="slot-avatar" id="meAvatar"></div><div class="slot-name" id="meName">你</div><div class="slot-title" id="meTitle" style="display:none"></div><div class="slot-status ok">✓ 已就緒</div></div>
         <div class="vs-label">VS</div>
-        <div class="player-slot" id="foeSlot"><div class="slot-name" id="foeName">等待中</div><div class="slot-title" id="foeTitle" style="display:none"></div><div class="slot-status wait-dots" id="foeStatus">⏳ …</div></div>
+        <div class="player-slot" id="foeSlot"><div class="slot-avatar" id="foeAvatar"></div><div class="slot-name" id="foeName">等待中</div><div class="slot-title" id="foeTitle" style="display:none"></div><div class="slot-status wait-dots" id="foeStatus">⏳ …</div></div>
       </div>
       <!-- 房主：選擇切磋模式 + 開始 -->
       <div id="hostModePanel" style="display:none;width:100%;flex-direction:column;gap:10px">
@@ -690,8 +690,8 @@
     <div id="arenaBattle">
       <button class="pvp-quit-btn" onclick="pvpQuitBattle()" aria-label="離開對局">✕</button>
       <div class="pvp-bars">
-        <div class="hp-row"><div class="hp-name you" id="hpNameYou">你</div><div class="hp-track"><div class="hp-fill hp-you" id="hpYou" style="width:4%"></div></div><div class="hp-score" id="scYou" style="color:var(--green3)">0/5</div></div>
-        <div class="hp-row" style="flex-direction:row-reverse"><div class="hp-name foe" id="hpNameFoe">對手</div><div class="hp-track"><div class="hp-fill hp-foe" id="hpFoe" style="width:4%;margin-left:auto"></div></div><div class="hp-score" id="scFoe" style="color:var(--wrong)">0/5</div></div>
+        <div class="hp-row"><div class="hp-avatar" id="hpAvatarYou"></div><div class="hp-name you" id="hpNameYou">你</div><div class="hp-track"><div class="hp-fill hp-you" id="hpYou" style="width:4%"></div></div><div class="hp-score" id="scYou" style="color:var(--green3)">0/5</div></div>
+        <div class="hp-row"><div class="hp-avatar" id="hpAvatarFoe"></div><div class="hp-name foe" id="hpNameFoe">對手</div><div class="hp-track"><div class="hp-fill hp-foe" id="hpFoe" style="width:4%"></div></div><div class="hp-score" id="scFoe" style="color:var(--wrong)">0/5</div></div>
       </div>
       <div class="pvp-q">
         <div class="pvp-timer" id="pvpTimer">0:30</div>
@@ -706,16 +706,16 @@
       <button class="pvp-quit-btn" onclick="pvpQuitBattle()" aria-label="離開對局">✕</button>
       <div class="bz-topbar">
         <div class="bz-avatar">
-          <div class="bz-avatar-circle">🙂</div>
-          <div class="bz-avatar-name">你</div>
+          <div class="bz-avatar-circle" id="bzAvatarYou">🙂</div>
+          <div class="bz-avatar-name" id="bzNameYou">你</div>
           <div class="bz-avatar-badge" id="bzYouBadge"></div>
         </div>
         <div class="bz-timer-ring" id="bzRing" style="--pct:100">
           <div class="bz-timer-num" id="bzTimerNum">10</div>
         </div>
         <div class="bz-avatar">
-          <div class="bz-avatar-circle">🙂</div>
-          <div class="bz-avatar-name">對手</div>
+          <div class="bz-avatar-circle" id="bzAvatarFoe">🙂</div>
+          <div class="bz-avatar-name" id="bzNameFoe">對手</div>
           <div class="bz-avatar-badge" id="bzFoeBadge"></div>
         </div>
       </div>

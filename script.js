@@ -978,7 +978,7 @@ async function renderArenaLeaderboard(mode) {
   try {
     const { data, error } = await authClient
       .from(mode === 'buzzer' ? 'arena_leaderboard_buzzer' : 'arena_leaderboard_vocab')
-      .select('id, username, arena_elo')
+      .select('id, username, avatar_id, arena_elo')
       .order('arena_elo', { ascending: false })
       .limit(20);
     if (error) throw error;
@@ -990,8 +990,11 @@ async function renderArenaLeaderboard(mode) {
       const rank = i + 1;
       const rankCls = rank <= 3 ? ` top${rank}` : '';
       const name = row.username || '玩家';
+      const avImg = (typeof avatarImgOf === 'function') ? avatarImgOf(row.avatar_id) : null;
+      const avStyle = avImg ? ` style="background-image:url('${avImg}')"` : '';
       return `<div class="hm-board-row" onclick="showUserProfile('${row.id}','${_escJs(name)}')">
         <span class="hm-board-rank${rankCls}">${rank}</span>
+        <span class="hm-board-avatar"${avStyle}></span>
         <span class="hm-board-name">${escHtml(name)}</span>
         <span class="hm-board-score">${row.arena_elo}</span>
       </div>`;
@@ -1284,12 +1287,13 @@ function getPvpSocket() {
   return pvpSocket;
 }
 
-// PVP 名牌：自己的顯示名稱與稱號（稱號傳文字，server 不需對照 ACHIEVEMENTS）
+// PVP 名牌：自己的顯示名稱、稱號與頭像（稱號傳文字，server 不需對照 ACHIEVEMENTS）
 function _pvpMe() {
   return {
-    name:   currentProfile?.username || '玩家',
-    title:  currentProfile?.title ? _acTitleName(currentProfile.title) : '',
-    userId: currentUser?.id || null, // 訪客模式沒有帳號，null 時伺服器結算會略過該方的排名/獎勵
+    name:     currentProfile?.username || '玩家',
+    title:    currentProfile?.title ? _acTitleName(currentProfile.title) : '',
+    userId:   currentUser?.id || null, // 訪客模式沒有帳號，null 時伺服器結算會略過該方的排名/獎勵
+    avatarId: typeof getAvatarId === 'function' ? getAvatarId() : null,
   };
 }
 
@@ -1806,21 +1810,43 @@ function _pvpSetFoeSlot(joined) {
   document.getElementById('foeSlot').classList.toggle('slot-ready', joined);
 }
 
-// #13 依 host/guest 身分把雙方名稱＋稱號套到等待房名牌與對戰畫面血條名
+// #13 依 host/guest 身分把雙方名稱＋稱號＋頭像套到等待房名牌與對戰畫面（血條/搶答頭像圈）
 function _pvpApplyNames(players) {
   if (!players || !pvpState) return;
   const me  = pvpState.isHost ? players.host : players.guest;
   const foe = pvpState.isHost ? players.guest : players.host;
   _pvpSlot('meName', 'meTitle', me);
   _pvpSlot('foeName', 'foeTitle', foe);
+  _pvpAvatarEl('meAvatar', me);
+  _pvpAvatarEl('foeAvatar', foe);
+  _pvpAvatarEl('hpAvatarYou', me);
+  _pvpAvatarEl('hpAvatarFoe', foe);
+  _pvpAvatarEl('bzAvatarYou', me, true);
+  _pvpAvatarEl('bzAvatarFoe', foe, true);
   const y = document.getElementById('hpNameYou'); if (y && me)  y.textContent = me.name;
   const f = document.getElementById('hpNameFoe'); if (f && foe) f.textContent = foe.name;
+  const by = document.getElementById('bzNameYou'); if (by && me)  by.textContent = me.name;
+  const bf = document.getElementById('bzNameFoe'); if (bf && foe) bf.textContent = foe.name;
 }
 function _pvpSlot(nameId, titleId, p) {
   if (!p) return;
   const n = document.getElementById(nameId); if (n && p.name) n.textContent = p.name;
   const t = document.getElementById(titleId);
   if (t) { t.textContent = p.title ? `🏷️ ${p.title}` : ''; t.style.display = p.title ? '' : 'none'; }
+}
+// 頭像渲染：有 avatarId 就換成角色圖片鋪滿圓框；isEmojiCircle=true（搶答模式圓圈原本是靜態
+// 🙂 emoji）沒有頭像時退回顯示 🙂，其餘情境（VS名牌/血條）沒有頭像就維持預設圓底不特別顯示文字
+function _pvpAvatarEl(elId, p, isEmojiCircle) {
+  const el = document.getElementById(elId);
+  if (!el || !p) return;
+  const img = (typeof avatarImgOf === 'function') ? avatarImgOf(p.avatarId) : null;
+  if (img) {
+    el.style.backgroundImage = `url('${img}')`;
+    if (isEmojiCircle) el.textContent = '';
+  } else {
+    el.style.backgroundImage = '';
+    if (isEmojiCircle) el.textContent = '🙂';
+  }
 }
 
 function _pvpSetBars(mine, foe, total) {
@@ -5746,7 +5772,7 @@ function showProfile() {
       <button onclick="document.getElementById('profileOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
 
       <div style="text-align:center;margin-bottom:16px">
-        <div style="font-size:40px;margin-bottom:6px">👤</div>
+        <div id="profileAvatarWrap" style="margin-bottom:6px">${_profileAvatarHtml()}</div>
         <div id="profileUsernameRow" style="display:flex;align-items:center;justify-content:center;gap:6px">
           <span id="profileUsernameText" style="font-weight:900;font-size:18px;color:var(--white)">${escHtml(currentProfile.username)}</span>
           <button onclick="startEditUsername()" title="修改使用者名稱" style="background:none;border:none;color:var(--green3);font-size:13px;cursor:pointer;padding:0 2px">✏️</button>
@@ -5805,6 +5831,60 @@ function showProfile() {
 
   document.body.appendChild(overlay);
   _refreshProfileRadar();
+}
+
+// ── 頭像（沿用角色收藏 owned_chars 當解鎖來源，見 characters.js getAvatarId/setAvatarId）──
+function _profileAvatarHtml() {
+  const img = (typeof avatarImgOf === 'function') ? avatarImgOf(typeof getAvatarId === 'function' ? getAvatarId() : null) : null;
+  return img
+    ? `<img src="${img}" alt="頭像" onclick="openAvatarPicker()" style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:2.5px solid var(--orange);cursor:pointer">`
+    : `<div onclick="openAvatarPicker()" style="width:64px;height:64px;border-radius:50%;background:var(--card2);border:2.5px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:30px;cursor:pointer;margin:0 auto">👤</div>`;
+}
+function _refreshProfileAvatarImg() {
+  const wrap = document.getElementById('profileAvatarWrap');
+  if (wrap) wrap.innerHTML = _profileAvatarHtml();
+}
+
+function openAvatarPicker() {
+  if (typeof TETRIS_CHARACTERS === 'undefined') return;
+  const owned = getOwnedChars();
+  const current = getAvatarId();
+  const overlay = document.createElement('div');
+  overlay.id = 'avatarPickerOverlay';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9300;display:flex;align-items:flex-start;justify-content:center;padding:16px;padding-top:max(50px,calc(env(safe-area-inset-top) + 20px));overflow-y:auto';
+  overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
+
+  const cards = Object.values(TETRIS_CHARACTERS).map(ch => {
+    const isOwned = owned.includes(ch.id);
+    const isCurrent = ch.id === current;
+    const tapAction = isOwned ? `_selectAvatar('${ch.id}')` : `showToast('🔒 尚未擁有・${_escJs(ch.acquireHint || '')}')`;
+    return `
+      <button class="coll-card rarity-${ch.rarity}${isOwned ? '' : ' locked'}${isCurrent ? ' deployed' : ''}" onclick="${tapAction}">
+        ${isCurrent ? '<span class="coll-deployed-tag">使用中</span>' : ''}
+        <div class="coll-card-imgwrap">
+          <img class="coll-card-img" src="${ch.img}" alt="${escHtml(ch.name)}">
+          ${isOwned ? '' : '<div class="coll-lock">🔒</div>'}
+        </div>
+        <div class="coll-card-name">${escHtml(ch.name)}${ch.nameEn ? ` <span class="coll-card-name-en">${escHtml(ch.nameEn)}</span>` : ''}</div>
+        <div class="coll-card-rarity">${RARITY_LABEL[ch.rarity] || ''}</div>
+      </button>`;
+  }).join('');
+
+  overlay.innerHTML = `
+    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:20px 16px 24px;width:100%;max-width:420px;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
+      <button onclick="document.getElementById('avatarPickerOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
+      <div style="text-align:center;font-family:var(--font-display);font-weight:900;font-size:18px;color:var(--ink);margin-bottom:4px">選擇頭像</div>
+      <div style="text-align:center;font-size:12px;color:var(--ink2);margin-bottom:14px">已擁有的角色才能設為頭像，尚未解鎖的會顯示暗色</div>
+      <div class="coll-grid" style="padding:0;overflow:visible">${cards}</div>
+    </div>`;
+  document.body.appendChild(overlay);
+}
+
+function _selectAvatar(id) {
+  if (!setAvatarId(id)) { showToast('尚未擁有這個角色，無法設為頭像'); return; }
+  document.getElementById('avatarPickerOverlay')?.remove();
+  _refreshProfileAvatarImg();
+  showToast('✓ 頭像已更新');
 }
 
 function copyFriendCode() {
@@ -6124,14 +6204,18 @@ async function showUserProfile(userId, fallbackName) {
   overlay.innerHTML = `<div style="background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:30px 20px;width:100%;max-width:320px;text-align:center;color:var(--gray);font-family:'Nunito',sans-serif">載入中…</div>`;
   document.body.appendChild(overlay);
 
-  const { data } = await authClient.from('profiles').select('username,xp,gold,streak,wins').eq('id', userId).maybeSingle();
+  const { data } = await authClient.from('profiles').select('username,xp,gold,streak,wins,avatar_id').eq('id', userId).maybeSingle();
   const p = data || { username: fallbackName || '玩家' };
+  const otherAvatarImg = (typeof avatarImgOf === 'function') ? avatarImgOf(p.avatar_id) : null;
+  const otherAvatarHtml = otherAvatarImg
+    ? `<img src="${otherAvatarImg}" alt="頭像" style="width:56px;height:56px;border-radius:50%;object-fit:cover;border:2.5px solid var(--line2)">`
+    : `<div style="width:56px;height:56px;border-radius:50%;background:var(--card2);border:2.5px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto">👤</div>`;
 
   overlay.innerHTML = `
     <div style="background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:24px 20px;width:100%;max-width:320px;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
       <button onclick="document.getElementById('userProfileOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
       <div style="text-align:center;margin-bottom:16px">
-        <div style="font-size:40px;margin-bottom:6px">👤</div>
+        <div style="margin-bottom:6px">${otherAvatarHtml}</div>
         <div style="font-weight:900;font-size:18px;color:var(--white)">${escHtml(p.username)}</div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">

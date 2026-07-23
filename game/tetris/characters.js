@@ -167,3 +167,43 @@ function restoreOwnedCharsFromServer(serverOwned, serverDeployed) {
 
   if (changed || !serverDeployed) _syncCharsToServer();
 }
+
+// ════════════════════════════════
+// 頭像（個人資料／競技場識別用）
+// 頭像素材與解鎖狀態直接沿用上面的角色收藏（owned_chars），不另開一套獨立經濟。
+// 「目前選哪隻角色當頭像」跟「俄羅斯方塊出戰角色」是兩件事，各自獨立存放。
+// ════════════════════════════════
+const LS_AVATAR_ID = 'voca_avatar_id';
+
+// 回傳目前選定的頭像角色 id；未選過、或選到的角色已不在擁有清單內（理論上不會發生，
+// 保險起見還是檢查）時回傳 null，由呼叫端自行 fallback 成預設圖示。
+function getAvatarId() {
+  const id = localStorage.getItem(LS_AVATAR_ID);
+  if (id && TETRIS_CHARACTERS[id] && getOwnedChars().includes(id)) return id;
+  return null;
+}
+function avatarImgOf(id) {
+  return (id && TETRIS_CHARACTERS[id]) ? TETRIS_CHARACTERS[id].img : null;
+}
+// 設定頭像：只能選已擁有的角色，回傳是否設定成功
+function setAvatarId(id) {
+  if (!TETRIS_CHARACTERS[id] || !getOwnedChars().includes(id)) return false;
+  localStorage.setItem(LS_AVATAR_ID, id);
+  _syncAvatarToServer();
+  return true;
+}
+function _syncAvatarToServer() {
+  if (typeof currentUser === 'undefined' || !currentUser || typeof authClient === 'undefined') return;
+  authClient
+    .from('profiles')
+    .update({ avatar_id: getAvatarId() })
+    .eq('id', currentUser.id)
+    .then(({ error }) => { if (error) console.warn('[_syncAvatarToServer] 同步失敗：', error.message); });
+}
+// 登入時從伺服器還原頭像選擇：伺服器有紀錄且該角色仍在（合併後的）擁有清單內就採用，
+// 由 auth.js 的 _loadProfile() 呼叫（跟 restoreOwnedCharsFromServer 同一批一起呼叫）。
+function restoreAvatarFromServer(serverAvatarId) {
+  if (serverAvatarId && TETRIS_CHARACTERS[serverAvatarId] && getOwnedChars().includes(serverAvatarId)) {
+    localStorage.setItem(LS_AVATAR_ID, serverAvatarId);
+  }
+}

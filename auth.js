@@ -92,6 +92,9 @@ async function _loadProfile() {
   if (currentProfile && typeof restoreOwnedCharsFromServer === 'function') {
     restoreOwnedCharsFromServer(currentProfile.owned_chars, currentProfile.deployed_char);
   }
+  if (currentProfile && typeof restoreAvatarFromServer === 'function') {
+    restoreAvatarFromServer(currentProfile.avatar_id);
+  }
 
   // 推播 token 註冊：刻意放在每次登入都會跑的 _loadProfile()（而不是只有
   // 首次登入的 _initUserAccount()），換裝置/重灌後這台裝置的 token 才會
