@@ -470,8 +470,7 @@ function goScreen(id, btn, _fromBack) {
     // 進入競技場一律回到大廳；若先前有未結束的房間則先退出
     pvpAbandonIfActive();
     pvpResetViews();
-    const eloEl = document.getElementById('arenaEloVal');
-    if (eloEl) eloEl.textContent = currentProfile?.arena_elo ?? (currentUser ? 1000 : '--');
+    renderArenaLeaderboard(arenaLbMode);
   }
   if (id === 'home') { updateHomeScreen(); }
   if (id === 'decks') { renderCollection(); }
@@ -965,39 +964,43 @@ function _pvpLeaveQueueIfAny() {
   if (pvpSocket && pvpSocket.connected) pvpSocket.emit('queue_leave', { mode: quickMatchMode });
 }
 
-// ── 競技場排行榜（依 ELO 排序，view 已在 arena_leaderboard 過濾至少 5 場才會出現）──
-function openArenaLeaderboard() {
-  openModal('arenaLbModal');
-  renderArenaLeaderboard();
+// ── 競技場排行榜：兩種模式各自獨立（arena_leaderboard_vocab／arena_leaderboard_buzzer，
+// 皆已在 view 內過濾至少 5 場才會出現），版面直接沿用首頁方塊排行榜的 .hm-board-* 樣式 ──
+let arenaLbMode = 'vocab';
+function selectArenaLbTab(mode) {
+  arenaLbMode = mode;
+  document.getElementById('lbTabVocab').classList.toggle('sel', mode === 'vocab');
+  document.getElementById('lbTabBuzzer').classList.toggle('sel', mode === 'buzzer');
+  renderArenaLeaderboard(mode);
 }
-async function renderArenaLeaderboard() {
+async function renderArenaLeaderboard(mode) {
   const listEl = document.getElementById('arenaLbList');
   if (!listEl || typeof authClient === 'undefined') return;
-  listEl.innerHTML = '<div class="arena-lb-empty">載入中⋯</div>';
+  listEl.innerHTML = '<div class="hm-board-empty">載入中…</div>';
   try {
     const { data, error } = await authClient
-      .from('arena_leaderboard')
-      .select('id, username, arena_elo, arena_wins, arena_losses, arena_draws')
+      .from(mode === 'buzzer' ? 'arena_leaderboard_buzzer' : 'arena_leaderboard_vocab')
+      .select('id, username, arena_elo')
       .order('arena_elo', { ascending: false })
-      .limit(10);
+      .limit(20);
     if (error) throw error;
     if (!data || data.length === 0) {
-      listEl.innerHTML = '<div class="arena-lb-empty">目前還沒有人打滿 5 場，快去搶頭香！</div>';
+      listEl.innerHTML = '<div class="hm-board-empty">還沒有人打滿 5 場<br>快來搶第一名！</div>';
       return;
     }
-    listEl.innerHTML = data.map((row, i) => `
-      <div class="arena-lb-row ${currentUser && row.id === currentUser.id ? 'me' : ''}">
-        <div class="arena-lb-rank">${i + 1}</div>
-        <div>
-          <div class="arena-lb-name">${row.username || '玩家'}</div>
-          <div class="arena-lb-record">${row.arena_wins}勝 ${row.arena_losses}敗 ${row.arena_draws}平</div>
-        </div>
-        <div class="arena-lb-elo">${row.arena_elo}</div>
-      </div>
-    `).join('');
+    listEl.innerHTML = data.map((row, i) => {
+      const rank = i + 1;
+      const rankCls = rank <= 3 ? ` top${rank}` : '';
+      const name = row.username || '玩家';
+      return `<div class="hm-board-row" onclick="showUserProfile('${row.id}','${_escJs(name)}')">
+        <span class="hm-board-rank${rankCls}">${rank}</span>
+        <span class="hm-board-name">${escHtml(name)}</span>
+        <span class="hm-board-score">${row.arena_elo}</span>
+      </div>`;
+    }).join('');
   } catch (e) {
     console.error('[Arena] 讀取排行榜失敗：', e?.message || e);
-    listEl.innerHTML = '<div class="arena-lb-empty">讀取排行榜失敗，稍後再試</div>';
+    listEl.innerHTML = '<div class="hm-board-empty">讀取排行榜失敗，稍後再試</div>';
   }
 }
 
@@ -1312,15 +1315,21 @@ async function _applyArenaOutcome(myOutcome) {
     rewardEl.style.display = 'flex';
   }
   try {
-    const { data, error } = await authClient.rpc('apply_arena_result', { p_elo_delta: elo, p_result: result });
+    const { data, error } = await authClient.rpc('apply_arena_result', {
+      p_elo_delta: elo, p_result: result, p_mode: myOutcome.mode === 'buzzer' ? 'buzzer' : 'vocab',
+    });
     if (error) throw error;
     const row = Array.isArray(data) ? data[0] : data;
     if (row && currentProfile) {
-      currentProfile.arena_elo    = row.arena_elo;
-      currentProfile.arena_wins   = row.arena_wins;
-      currentProfile.arena_losses = row.arena_losses;
-      currentProfile.arena_draws  = row.arena_draws;
-      currentProfile.wins         = row.wins;
+      currentProfile.arena_elo_vocab     = row.arena_elo_vocab;
+      currentProfile.arena_wins_vocab    = row.arena_wins_vocab;
+      currentProfile.arena_losses_vocab  = row.arena_losses_vocab;
+      currentProfile.arena_draws_vocab   = row.arena_draws_vocab;
+      currentProfile.arena_elo_buzzer    = row.arena_elo_buzzer;
+      currentProfile.arena_wins_buzzer   = row.arena_wins_buzzer;
+      currentProfile.arena_losses_buzzer = row.arena_losses_buzzer;
+      currentProfile.arena_draws_buzzer  = row.arena_draws_buzzer;
+      currentProfile.wins                = row.wins;
     }
   } catch (e) { console.error('[Arena] apply_arena_result 失敗（本局獎勵中金幣/經驗值已入帳，僅段位未同步）：', e?.message || e); }
 }

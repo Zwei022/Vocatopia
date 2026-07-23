@@ -128,24 +128,26 @@ function rewardForResult(result) {
 
 // 結算後幫雙方（有登入的）算 ELO 變動與獎勵，回傳供 battle_result 廣播使用。
 // 用 service-role client 直接讀 profiles，不透過使用者自己的 RLS 權限（伺服器是可信任來源）。
+// mode：兩種模式（單字對決/單字搶答）各自獨立的 ELO 段位，讀寫對應的 arena_elo_vocab／arena_elo_buzzer。
 // guestBotElo：對手是電腦補位時（見 _createQueuedRoom，電腦一律是 guest 側），電腦當局
 // 被分派到的 ELO——不能讓 eloOf(null) 退回預設值 1000，否則電腦強弱就跟真人的對戰體驗脫鉤。
-async function computeArenaOutcome(hostUserId, guestUserId, winnerIsHost /* true/false/null(平手) */, guestBotElo) {
+async function computeArenaOutcome(hostUserId, guestUserId, winnerIsHost /* true/false/null(平手) */, guestBotElo, mode) {
   const out = {};
   if (!hostUserId && !guestUserId) return out;
+  const eloCol = mode === 'buzzer' ? 'arena_elo_buzzer' : 'arena_elo_vocab';
   try {
     const ids = [hostUserId, guestUserId].filter(Boolean);
-    const { data, error } = await supabase.from('profiles').select('id, arena_elo').in('id', ids);
+    const { data, error } = await supabase.from('profiles').select(`id, ${eloCol}`).in('id', ids);
     if (error) throw error;
-    const eloOf = (uid) => data?.find(p => p.id === uid)?.arena_elo ?? 1000;
+    const eloOf = (uid) => data?.find(p => p.id === uid)?.[eloCol] ?? 1000;
     const hostElo = eloOf(hostUserId);
     const guestElo = (!guestUserId && guestBotElo) ? guestBotElo : eloOf(guestUserId);
     const hostScore  = winnerIsHost === null ? 0.5 : winnerIsHost ? 1 : 0;
     const guestScore = 1 - hostScore;
     const hostResult  = winnerIsHost === null ? 'draw' : winnerIsHost ? 'win' : 'loss';
     const guestResult = winnerIsHost === null ? 'draw' : winnerIsHost ? 'loss' : 'win';
-    if (hostUserId)  out.host  = { elo: eloDelta(hostElo, guestElo, hostScore),  result: hostResult,  reward: rewardForResult(hostResult) };
-    if (guestUserId) out.guest = { elo: eloDelta(guestElo, hostElo, guestScore), result: guestResult, reward: rewardForResult(guestResult) };
+    if (hostUserId)  out.host  = { elo: eloDelta(hostElo, guestElo, hostScore),  result: hostResult,  mode, reward: rewardForResult(hostResult) };
+    if (guestUserId) out.guest = { elo: eloDelta(guestElo, hostElo, guestScore), result: guestResult, mode, reward: rewardForResult(guestResult) };
   } catch (e) {
     console.error('[Arena] 計算 ELO 失敗（不影響對局本身，僅此局無獎勵）：', e.message);
   }
@@ -360,7 +362,7 @@ async function settleBuzzerBattle(code) {
   let winner = null, winnerIsHost = null;
   if (scores[room.host] > scores[room.guest])      { winner = room.host;  winnerIsHost = true; }
   else if (scores[room.guest] > scores[room.host]) { winner = room.guest; winnerIsHost = false; }
-  const outcome = await computeArenaOutcome(room.hostUserId, room.guestUserId, winnerIsHost, room.botElo);
+  const outcome = await computeArenaOutcome(room.hostUserId, room.guestUserId, winnerIsHost, room.botElo, room.mode);
   if (!rooms[code]) return; // 結算期間房間可能已被解散（極端情況：對手秒退）
   io.to(code).emit('battle_result', {
     scores, winner, total: room.questions.length,
@@ -382,7 +384,7 @@ async function settleBattle(code) {
   let winner = null, winnerIsHost = null;
   if (scores[room.host] > scores[room.guest])      { winner = room.host;  winnerIsHost = true; }
   else if (scores[room.guest] > scores[room.host]) { winner = room.guest; winnerIsHost = false; }
-  const outcome = await computeArenaOutcome(room.hostUserId, room.guestUserId, winnerIsHost, room.botElo);
+  const outcome = await computeArenaOutcome(room.hostUserId, room.guestUserId, winnerIsHost, room.botElo, room.mode);
   if (!rooms[code]) return; // 結算期間房間可能已被解散（極端情況：對手秒退）
   io.to(code).emit('battle_result', {
     scores, winner, total: room.questions.length,
@@ -713,9 +715,10 @@ io.on('connection', (socket) => {
 
     let elo = 1000;
     if (userId) {
+      const eloCol = mode === 'buzzer' ? 'arena_elo_buzzer' : 'arena_elo_vocab';
       try {
-        const { data } = await supabase.from('profiles').select('arena_elo').eq('id', userId).maybeSingle();
-        if (data?.arena_elo) elo = data.arena_elo;
+        const { data } = await supabase.from('profiles').select(eloCol).eq('id', userId).maybeSingle();
+        if (data?.[eloCol]) elo = data[eloCol];
       } catch (e) { console.error('[Arena] 查詢排隊者 ELO 失敗，改用預設值 1000：', e.message); }
     }
 

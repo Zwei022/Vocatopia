@@ -139,16 +139,6 @@
   </div>
 </div>
 
-<!-- ARENA LEADERBOARD MODAL -->
-<div class="modal-overlay" id="arenaLbModal" onclick="if(event.target===this)closeModal('arenaLbModal')">
-  <div class="modal-box">
-    <div class="modal-title">🏆 競技場排行榜</div>
-    <div class="arena-lb-note">至少打滿 5 場才會上榜</div>
-    <div class="arena-lb-list" id="arenaLbList"><!-- renderArenaLeaderboard() 填入 --></div>
-    <button class="modal-cancel" onclick="closeModal('arenaLbModal')">關閉</button>
-  </div>
-</div>
-
 <!-- UPGRADE MODAL -->
 <div class="modal-overlay" id="upgradeModal">
   <div class="modal-box upgrade-box">
@@ -649,7 +639,6 @@
     <div class="arena-head">
       <div class="arena-title">⚔ 競技場</div>
       <div class="arena-sub">下課隨時隨地，原地當場開尬</div>
-      <button class="arena-elo-badge" id="arenaEloBadge" onclick="openArenaLeaderboard()">📈 ELO <span id="arenaEloVal">--</span> ・ 🏆 排行榜</button>
     </div>
     <div id="arenaLobby">
       <div class="pvp-mode-label">快速配對</div>
@@ -661,6 +650,15 @@
       <div class="ab-divider">— OR 約朋友 —</div>
       <button class="arena-btn ab-join" onclick="createRoom()">➕ 建立對決房間</button>
       <button class="arena-btn ab-join" onclick="openModal('joinModal')">🔑 輸入房號加入</button>
+
+      <!-- 競技場排行榜：比照首頁方塊排行榜設計，兩個模式各自獨立排行 -->
+      <div class="arena-lb-card">
+        <div class="arena-lb-tabs">
+          <button class="arena-lb-tab sel" id="lbTabVocab" onclick="selectArenaLbTab('vocab')">📖 單字對決排行</button>
+          <button class="arena-lb-tab" id="lbTabBuzzer" onclick="selectArenaLbTab('buzzer')">⚡ 單字搶答排行</button>
+        </div>
+        <div class="hm-board-list arena-lb-scroll" id="arenaLbList"><!-- renderArenaLeaderboard() 填入 --></div>
+      </div>
     </div>
     <div id="quickMatchSearching" style="display:none">
       <div class="qm-spinner"></div>
