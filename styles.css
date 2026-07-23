@@ -214,6 +214,16 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .arena-head{padding:max(20px,env(safe-area-inset-top)) 20px 14px;text-align:center;flex-shrink:0}
 .arena-title{font-family:var(--font-display);font-weight:900;font-size:24px;letter-spacing:2px;color:var(--ink)}
 .arena-sub{font-size:12px;color:var(--ink2);margin-top:5px;letter-spacing:.5px;font-family:var(--font-ui)}
+.arena-elo-badge{margin-top:10px;background:var(--orasoft);border:1.5px solid var(--orange);border-radius:20px;padding:6px 16px;font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;color:var(--orange2,#B85E0A);cursor:pointer}
+.arena-lb-note{font-size:11px;color:var(--ink2);text-align:center;margin:-8px 0 12px}
+.arena-lb-list{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;max-height:46vh;overflow-y:auto}
+.arena-lb-row{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:var(--r2);border:1.5px solid var(--line2);background:var(--nav)}
+.arena-lb-row.me{border-color:var(--orange)!important;background:var(--orasoft)!important}
+.arena-lb-rank{font-family:var(--font-display);font-weight:900;font-size:14px;color:var(--ink2);width:24px;text-align:center;flex-shrink:0}
+.arena-lb-name{flex:1;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:var(--ink);word-break:break-word}
+.arena-lb-record{font-size:10.5px;color:var(--ink2)}
+.arena-lb-elo{font-family:var(--font-display);font-weight:900;font-size:14px;color:var(--red);flex-shrink:0}
+.arena-lb-empty{font-size:12.5px;color:var(--ink2);text-align:center;padding:20px 0}
 
 /* lobby */
 #arenaLobby{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 24px;gap:14px}
@@ -225,6 +235,13 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .ab-invite:active{box-shadow:0 1px 0 #C9761580}
 .ab-join{background:var(--nav);border:2px solid var(--orange)!important;color:var(--orange2);box-shadow:0 3px 0 rgba(245,146,30,.3)}
 .ab-divider{font-size:12px;color:var(--ink3);font-family:'Nunito',sans-serif;font-weight:700;letter-spacing:3px}
+
+/* 快速配對搜尋中 */
+#quickMatchSearching{flex:1;display:none;flex-direction:column;align-items:center;justify-content:center;padding:0 24px;gap:12px}
+.qm-spinner{width:52px;height:52px;border-radius:50%;border:5px solid var(--line2);border-top-color:var(--red);animation:qm-spin 0.9s linear infinite;margin-bottom:6px}
+@keyframes qm-spin{to{transform:rotate(360deg)}}
+.qm-searching-text{font-family:var(--font-display);font-weight:900;font-size:18px;color:var(--ink)}
+.qm-searching-sub{font-size:12px;color:var(--ink2);margin-bottom:10px}
 
 /* waiting room */
 #arenaWait{flex:1;display:none;flex-direction:column;align-items:center;justify-content:center;padding:0 24px;gap:16px}
@@ -315,6 +332,10 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .pvp-result-icon{font-size:72px}
 .pvp-result-title{font-family:var(--font-display);font-weight:900;font-size:34px;letter-spacing:2px}
 .pvp-result-score{font-size:15px;color:var(--ink2);font-family:'Nunito',sans-serif;font-weight:700;margin-bottom:10px}
+.pvp-result-reward{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.pvp-result-reward span{font-family:var(--font-display);font-weight:900;font-size:13px;padding:5px 12px;border-radius:20px;background:var(--orasoft);color:var(--orange2,#B85E0A);border:1.5px solid var(--orange)}
+.pvp-result-reward span.elo-up{background:var(--greensoft);color:var(--green2);border-color:var(--green)}
+.pvp-result-reward span.elo-down{background:#FCE4E1;color:var(--red);border-color:var(--red)}
 
 /* ════════════════════════════════
    SCREEN 4 — 閱覽室

@@ -470,6 +470,8 @@ function goScreen(id, btn, _fromBack) {
     // 進入競技場一律回到大廳；若先前有未結束的房間則先退出
     pvpAbandonIfActive();
     pvpResetViews();
+    const eloEl = document.getElementById('arenaEloVal');
+    if (eloEl) eloEl.textContent = currentProfile?.arena_elo ?? (currentUser ? 1000 : '--');
   }
   if (id === 'home') { updateHomeScreen(); }
   if (id === 'decks') { renderCollection(); }
@@ -918,6 +920,7 @@ function selectPvpMode(mode) {
 
 function pvpResetViews() {
   document.getElementById('arenaLobby').style.display  = 'flex';
+  document.getElementById('quickMatchSearching').style.display = 'none';
   document.getElementById('arenaWait').style.display   = 'none';
   document.getElementById('arenaBattle').style.display = 'none';
   document.getElementById('arenaBuzzerBattle').style.display = 'none';
@@ -929,12 +932,72 @@ function pvpResetViews() {
   pvpState = null;
   buzzerState = null;
   selectPvpMode('vocab');
+  _pvpLeaveQueueIfAny();
   roomCode = '';
 }
 
 function pvpAbandonIfActive() {
   if (roomCode && pvpSocket && pvpSocket.connected) {
     pvpSocket.emit('leave_room', { code: roomCode });
+  }
+}
+
+// ── 快速配對（找不到真人時伺服器會自動配電腦補位，前端不需要、也不會知道對手是不是電腦）──
+let quickMatchMode = 'vocab';
+function selectQuickMatchMode(mode) {
+  quickMatchMode = mode;
+  document.getElementById('qmChipVocab').classList.toggle('sel', mode === 'vocab');
+  document.getElementById('qmChipBuzzer').classList.toggle('sel', mode === 'buzzer');
+}
+function startQuickMatch() {
+  const s = getPvpSocket();
+  if (!s) return;
+  document.getElementById('arenaLobby').style.display = 'none';
+  document.getElementById('quickMatchSearching').style.display = 'flex';
+  s.emit('queue_join', { mode: quickMatchMode, clientId: pvpClientId, ..._pvpMe() });
+}
+function cancelQuickMatch() {
+  _pvpLeaveQueueIfAny();
+  document.getElementById('quickMatchSearching').style.display = 'none';
+  document.getElementById('arenaLobby').style.display = 'flex';
+}
+function _pvpLeaveQueueIfAny() {
+  if (pvpSocket && pvpSocket.connected) pvpSocket.emit('queue_leave', { mode: quickMatchMode });
+}
+
+// ── 競技場排行榜（依 ELO 排序，view 已在 arena_leaderboard 過濾至少 5 場才會出現）──
+function openArenaLeaderboard() {
+  openModal('arenaLbModal');
+  renderArenaLeaderboard();
+}
+async function renderArenaLeaderboard() {
+  const listEl = document.getElementById('arenaLbList');
+  if (!listEl || typeof authClient === 'undefined') return;
+  listEl.innerHTML = '<div class="arena-lb-empty">載入中⋯</div>';
+  try {
+    const { data, error } = await authClient
+      .from('arena_leaderboard')
+      .select('id, username, arena_elo, arena_wins, arena_losses, arena_draws')
+      .order('arena_elo', { ascending: false })
+      .limit(10);
+    if (error) throw error;
+    if (!data || data.length === 0) {
+      listEl.innerHTML = '<div class="arena-lb-empty">目前還沒有人打滿 5 場，快去搶頭香！</div>';
+      return;
+    }
+    listEl.innerHTML = data.map((row, i) => `
+      <div class="arena-lb-row ${currentUser && row.id === currentUser.id ? 'me' : ''}">
+        <div class="arena-lb-rank">${i + 1}</div>
+        <div>
+          <div class="arena-lb-name">${row.username || '玩家'}</div>
+          <div class="arena-lb-record">${row.arena_wins}勝 ${row.arena_losses}敗 ${row.arena_draws}平</div>
+        </div>
+        <div class="arena-lb-elo">${row.arena_elo}</div>
+      </div>
+    `).join('');
+  } catch (e) {
+    console.error('[Arena] 讀取排行榜失敗：', e?.message || e);
+    listEl.innerHTML = '<div class="arena-lb-empty">讀取排行榜失敗，稍後再試</div>';
   }
 }
 
@@ -1009,6 +1072,23 @@ function getPvpSocket() {
 
   pvpSocket.on('room_error', ({ msg }) => showToast(`⚠ ${msg}`));
 
+  // 快速配對成功（真人或電腦補位，前端無從分辨也不需要分辨）：
+  // 沿用既有的 arenaWait VS 畫面短暫展示對手名稱，伺服器會在 1.4 秒後自動開戰，不需要按「開始」
+  pvpSocket.on('queue_matched', ({ code, mode, players, youAreHost }) => {
+    roomCode = code;
+    hostSelectedMode = mode;
+    pvpState = { isHost: youAreHost, questions: [], qIdx: 0, done: false, timerInt: null };
+    document.getElementById('quickMatchSearching').style.display = 'none';
+    document.getElementById('arenaLobby').style.display = 'none';
+    document.getElementById('arenaWait').style.display  = 'flex';
+    document.getElementById('roomCodeBig').textContent = '快速配對';
+    document.getElementById('hostModePanel').style.display = 'none';
+    document.getElementById('guestWaitHint').style.display = 'block';
+    document.getElementById('guestWaitHint').textContent = '⚔ 配對成功！即將開始對決⋯';
+    _pvpSetFoeSlot(true);
+    if (players) { pvpState.players = players; _pvpApplyNames(players); }
+  });
+
   pvpSocket.on('battle_start', ({ questions, duration }) => {
     if (!pvpState) return;
     pvpState.mode = 'vocab';
@@ -1051,7 +1131,7 @@ function getPvpSocket() {
     _pvpSetBars(progress[myId] || 0, progress[foeId] || 0, pvpState.questions.length || 5);
   });
 
-  pvpSocket.on('battle_result', ({ scores, winner, total }) => {
+  pvpSocket.on('battle_result', ({ scores, winner, total, outcome }) => {
     if (!pvpState) return;
     if (pvpState.timerInt) clearInterval(pvpState.timerInt);
     if (buzzerState && buzzerState.countdownInt) clearInterval(buzzerState.countdownInt);
@@ -1062,7 +1142,7 @@ function getPvpSocket() {
     const iconEl  = document.getElementById('pvpResultIcon');
     const titleEl = document.getElementById('pvpResultTitle');
     if (winner === null)      { iconEl.textContent = '🤝'; titleEl.textContent = '平手！';  titleEl.style.color = 'var(--orange2)'; }
-    else if (winner === myId) { iconEl.textContent = '🏆'; titleEl.textContent = '勝利！';  titleEl.style.color = 'var(--green2)';  confetti(); _acOnPvpWin(); }
+    else if (winner === myId) { iconEl.textContent = '🏆'; titleEl.textContent = '勝利！';  titleEl.style.color = 'var(--green2)';  confetti(); }
     else                      { iconEl.textContent = '💀'; titleEl.textContent = '敗北⋯'; titleEl.style.color = 'var(--wrong)'; }
     document.getElementById('pvpResultScore').textContent = isBuzzer
       ? `你 ${mine} 分 ・ 對手 ${foe} 分`
@@ -1070,6 +1150,7 @@ function getPvpSocket() {
     document.getElementById('arenaBattle').style.display = 'none';
     document.getElementById('arenaBuzzerBattle').style.display = 'none';
     document.getElementById('arenaResult').style.display = 'flex';
+    _applyArenaOutcome(outcome && outcome[myId]);
     // #10 再來一場改雙方同意制：兩邊都顯示按鈕，任一方可請求，需雙方都按才開始
     pvpState.iWantRematch  = false;
     pvpState.foeWantsRematch = false;
@@ -1205,9 +1286,43 @@ function getPvpSocket() {
 // PVP 名牌：自己的顯示名稱與稱號（稱號傳文字，server 不需對照 ACHIEVEMENTS）
 function _pvpMe() {
   return {
-    name:  currentProfile?.username || '玩家',
-    title: currentProfile?.title ? _acTitleName(currentProfile.title) : '',
+    name:   currentProfile?.username || '玩家',
+    title:  currentProfile?.title ? _acTitleName(currentProfile.title) : '',
+    userId: currentUser?.id || null, // 訪客模式沒有帳號，null 時伺服器結算會略過該方的排名/獎勵
   };
+}
+
+// 對局結算後套用伺服器算好的 ELO/獎勵：金幣、經驗值走既有的 addGold()/awardXp()
+// （沿用其樂觀更新＋序列化同步機制），ELO／勝敗場數走專屬的 apply_arena_result RPC。
+// myOutcome 為 null 時代表訪客模式或伺服器計算失敗（見 server computeArenaOutcome），
+// 直接跳過、不顯示獎勵列即可，不影響對局本身已經跑完的事實。
+async function _applyArenaOutcome(myOutcome) {
+  const rewardEl = document.getElementById('pvpResultReward');
+  if (!myOutcome || !currentUser) { if (rewardEl) rewardEl.style.display = 'none'; return; }
+  const { elo, result, reward } = myOutcome;
+  if (reward?.gold) addGold(reward.gold);
+  if (reward?.xp)   awardXp(reward.xp, { source: 'arena' });
+  if (rewardEl) {
+    const eloClass = elo > 0 ? 'elo-up' : elo < 0 ? 'elo-down' : '';
+    rewardEl.innerHTML = [
+      reward?.gold ? `<span>🪙 +${reward.gold}</span>` : '',
+      reward?.xp   ? `<span>✨ +${reward.xp} EXP</span>` : '',
+      `<span class="${eloClass}">${elo >= 0 ? '📈' : '📉'} ELO ${elo >= 0 ? '+' : ''}${elo}</span>`,
+    ].filter(Boolean).join('');
+    rewardEl.style.display = 'flex';
+  }
+  try {
+    const { data, error } = await authClient.rpc('apply_arena_result', { p_elo_delta: elo, p_result: result });
+    if (error) throw error;
+    const row = Array.isArray(data) ? data[0] : data;
+    if (row && currentProfile) {
+      currentProfile.arena_elo    = row.arena_elo;
+      currentProfile.arena_wins   = row.arena_wins;
+      currentProfile.arena_losses = row.arena_losses;
+      currentProfile.arena_draws  = row.arena_draws;
+      currentProfile.wins         = row.wins;
+    }
+  } catch (e) { console.error('[Arena] apply_arena_result 失敗（本局獎勵中金幣/經驗值已入帳，僅段位未同步）：', e?.message || e); }
 }
 
 function createRoom() {
@@ -8501,7 +8616,6 @@ async function _acBump(field, delta) {
   currentProfile[field] = (currentProfile[field] || 0) + delta;
   try { await authClient.from('profiles').update({ [field]: currentProfile[field] }).eq('id', currentUser.id); } catch { /* ignore */ }
 }
-function _acOnPvpWin()      { _acBump('wins', 1); }
 function _acOnDailyAllDone(){ _acBump('daily_all_count', 1); }
 function _acOnGacha(count)  { _acBump('gacha_count', count || 1); }
 

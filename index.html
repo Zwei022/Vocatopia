@@ -139,6 +139,16 @@
   </div>
 </div>
 
+<!-- ARENA LEADERBOARD MODAL -->
+<div class="modal-overlay" id="arenaLbModal" onclick="if(event.target===this)closeModal('arenaLbModal')">
+  <div class="modal-box">
+    <div class="modal-title">🏆 競技場排行榜</div>
+    <div class="arena-lb-note">至少打滿 5 場才會上榜</div>
+    <div class="arena-lb-list" id="arenaLbList"><!-- renderArenaLeaderboard() 填入 --></div>
+    <button class="modal-cancel" onclick="closeModal('arenaLbModal')">關閉</button>
+  </div>
+</div>
+
 <!-- UPGRADE MODAL -->
 <div class="modal-overlay" id="upgradeModal">
   <div class="modal-box upgrade-box">
@@ -639,11 +649,24 @@
     <div class="arena-head">
       <div class="arena-title">⚔ 競技場</div>
       <div class="arena-sub">下課隨時隨地，原地當場開尬</div>
+      <button class="arena-elo-badge" id="arenaEloBadge" onclick="openArenaLeaderboard()">📈 ELO <span id="arenaEloVal">--</span> ・ 🏆 排行榜</button>
     </div>
     <div id="arenaLobby">
-      <button class="arena-btn ab-create" onclick="createRoom()">➕ 建立對決房間</button>
-      <div class="ab-divider">— OR —</div>
+      <div class="pvp-mode-label">快速配對</div>
+      <div class="pvp-mode-row">
+        <button class="pvp-mode-chip sel" id="qmChipVocab" onclick="selectQuickMatchMode('vocab')">📖 單字對決<span>5 題選擇</span></button>
+        <button class="pvp-mode-chip" id="qmChipBuzzer" onclick="selectQuickMatchMode('buzzer')">⚡ 單字搶答<span>7 題搶快</span></button>
+      </div>
+      <button class="arena-btn ab-create" onclick="startQuickMatch()">⚡ 快速配對</button>
+      <div class="ab-divider">— OR 約朋友 —</div>
+      <button class="arena-btn ab-join" onclick="createRoom()">➕ 建立對決房間</button>
       <button class="arena-btn ab-join" onclick="openModal('joinModal')">🔑 輸入房號加入</button>
+    </div>
+    <div id="quickMatchSearching" style="display:none">
+      <div class="qm-spinner"></div>
+      <div class="qm-searching-text">配對中⋯</div>
+      <div class="qm-searching-sub">正在尋找程度相近的對手</div>
+      <button class="arena-btn ab-leave" onclick="cancelQuickMatch()">取消配對</button>
     </div>
     <div id="arenaWait">
       <div style="font-size:12px;color:var(--gray);font-family:Nunito;font-weight:700;letter-spacing:2px;text-transform:uppercase">你的房號</div>
@@ -714,6 +737,7 @@
       <div class="pvp-result-icon" id="pvpResultIcon">🏆</div>
       <div class="pvp-result-title" id="pvpResultTitle">勝利！</div>
       <div class="pvp-result-score" id="pvpResultScore"></div>
+      <div class="pvp-result-reward" id="pvpResultReward" style="display:none"></div>
       <button class="arena-btn ab-create" id="pvpRematchBtn" style="max-width:280px;display:none" onclick="requestRematch()">🔁 再來一場</button>
       <div class="pvp-guest-hint" id="pvpRematchWaitHint" style="display:none">⚔️ 對方想再來一場！按「再來一場」同意</div>
       <button class="arena-btn ab-join" style="max-width:280px" onclick="backArena()">返回競技場</button>

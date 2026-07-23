@@ -110,6 +110,48 @@ function genRoomCode() {
   return String(Math.floor(100000 + Math.random() * 900000));
 }
 
+// ── 競技場排名／獎勵（ELO）──
+// 標準 Elo 公式：K 值取 24（比競技類遊戲常見的 32 略低，降低單場波動，
+// 對國中生使用者比較不會因為一場失常就大幅掉段）。
+const ARENA_ELO_K = 24;
+function eloDelta(myElo, foeElo, score /* 1=贏 0.5=平 0=輸 */) {
+  const expected = 1 / (1 + Math.pow(10, (foeElo - myElo) / 400));
+  return Math.round(ARENA_ELO_K * (score - expected));
+}
+
+// 依對戰結果算獎勵（未登入訪客沒有 userId，結算時會整段跳過，不影響對局本身）
+function rewardForResult(result) {
+  if (result === 'win')  return { gold: 30, xp: 20 };
+  if (result === 'draw') return { gold: 15, xp: 10 };
+  return { gold: 10, xp: 8 }; // loss：輸也給一點參與獎勵，避免小朋友覺得白打一場
+}
+
+// 結算後幫雙方（有登入的）算 ELO 變動與獎勵，回傳供 battle_result 廣播使用。
+// 用 service-role client 直接讀 profiles，不透過使用者自己的 RLS 權限（伺服器是可信任來源）。
+// guestBotElo：對手是電腦補位時（見 _createQueuedRoom，電腦一律是 guest 側），電腦當局
+// 被分派到的 ELO——不能讓 eloOf(null) 退回預設值 1000，否則電腦強弱就跟真人的對戰體驗脫鉤。
+async function computeArenaOutcome(hostUserId, guestUserId, winnerIsHost /* true/false/null(平手) */, guestBotElo) {
+  const out = {};
+  if (!hostUserId && !guestUserId) return out;
+  try {
+    const ids = [hostUserId, guestUserId].filter(Boolean);
+    const { data, error } = await supabase.from('profiles').select('id, arena_elo').in('id', ids);
+    if (error) throw error;
+    const eloOf = (uid) => data?.find(p => p.id === uid)?.arena_elo ?? 1000;
+    const hostElo = eloOf(hostUserId);
+    const guestElo = (!guestUserId && guestBotElo) ? guestBotElo : eloOf(guestUserId);
+    const hostScore  = winnerIsHost === null ? 0.5 : winnerIsHost ? 1 : 0;
+    const guestScore = 1 - hostScore;
+    const hostResult  = winnerIsHost === null ? 'draw' : winnerIsHost ? 'win' : 'loss';
+    const guestResult = winnerIsHost === null ? 'draw' : winnerIsHost ? 'loss' : 'win';
+    if (hostUserId)  out.host  = { elo: eloDelta(hostElo, guestElo, hostScore),  result: hostResult,  reward: rewardForResult(hostResult) };
+    if (guestUserId) out.guest = { elo: eloDelta(guestElo, hostElo, guestScore), result: guestResult, reward: rewardForResult(guestResult) };
+  } catch (e) {
+    console.error('[Arena] 計算 ELO 失敗（不影響對局本身，僅此局無獎勵）：', e.message);
+  }
+  return out;
+}
+
 // PVP 名牌：回傳雙方顯示名稱與稱號（#13 稱號顯示於對戰名牌）
 function _roomPlayers(room) {
   return {
@@ -214,6 +256,50 @@ function sendBuzzerQuestion(code) {
     duration: BUZZER_DURATION,
   });
   room.qTimer = setTimeout(() => finishBuzzerQuestion(code, qIdx), BUZZER_DURATION * 1000 + 500);
+  if (room.isBot) scheduleBotBuzzerAnswer(code, qIdx);
+}
+
+// ── 電腦補位對手的模擬作答（快速配對久候不到真人時使用）──
+// 準確率依電腦被分派到的 ELO（room.botElo，見 _spawnBotEntry）動態校準，
+// 反應延遲落在合理的人類反應時間範圍內，讓對局節奏看起來跟真人對戰一致。
+function _botAccuracy(botElo) {
+  return Math.min(0.92, Math.max(0.32, 0.5 + (botElo - 1000) / 1000));
+}
+function _botWrongChoice(opts, correctIdx) {
+  const wrongIdxs = opts.map((_, i) => i).filter(i => i !== correctIdx);
+  return wrongIdxs[Math.floor(Math.random() * wrongIdxs.length)];
+}
+// 單字對決：5 題各自安排一個時間點作答（房主/對手皆可能是電腦，此函式不分辨，只依 room.host/guest 判斷哪個 id 是 BOT）
+function scheduleBotVocabAnswers(code) {
+  const room = rooms[code];
+  if (!room || !room.isBot) return;
+  const botId = 'BOT'; // 電腦一律以固定的 'BOT' 假 id 存放於 room.host 或 room.guest（見 _createQueuedRoom）
+  const p = _botAccuracy(room.botElo);
+  room.questions.forEach((q, qIdx) => {
+    const delay = 2200 + qIdx * 3200 + Math.random() * 2600; // 錯開節奏，越後面題目稍微拖久一點
+    setTimeout(() => {
+      if (!rooms[code] || rooms[code].state !== 'playing') return;
+      const correct = Math.random() < p;
+      const choice = correct ? q.answer : _botWrongChoice(q.opts, q.answer);
+      applyPvpAnswer(code, botId, qIdx, choice);
+    }, delay);
+  });
+}
+// 單字搶答：每題出題當下各自排一次模擬作答
+function scheduleBotBuzzerAnswer(code, qIdx) {
+  const room = rooms[code];
+  if (!room || !room.isBot) return;
+  const botId = 'BOT'; // 電腦一律以固定的 'BOT' 假 id 存放於 room.host 或 room.guest（見 _createQueuedRoom）
+  const p = _botAccuracy(room.botElo);
+  const delay = 1200 + Math.random() * 6500; // BUZZER_DURATION=30s 內回答，比照真人反應時間分布
+  setTimeout(() => {
+    const r = rooms[code];
+    if (!r || r.state !== 'playing' || r.qIdx !== qIdx) return;
+    const q = r.questions[qIdx];
+    const correct = Math.random() < p;
+    const choice = correct ? q.answer : _botWrongChoice(q.opts, q.answer);
+    applyBuzzerAnswer(code, botId, qIdx, choice);
+  }, delay);
 }
 
 // 該題結束（雙方都已作答，或時間到）：雙方一起看到正解與最新總分，接著進下一題或結算
@@ -232,21 +318,59 @@ function finishBuzzerQuestion(code, qIdx) {
   }
 }
 
+// 單一答案套用邏輯，抽成獨立函式讓真人 socket 事件與電腦模擬作答（scheduleBotBuzzerAnswer）共用。
+// socketId 對真人來說就是 socket.id；對電腦來說是固定字串 'BOT'（見 _createQueuedRoom）——
+// io.to(socketId) 對一個沒人在監聽的假 id 單純不會送達給任何人，不需要另外特判。
+function applyBuzzerAnswer(code, socketId, qIdx, choice) {
+  const room = rooms[code];
+  if (!room || room.state !== 'playing' || room.mode !== 'buzzer') return;
+  if (qIdx !== room.qIdx) return;               // 該題已經結束，回應太慢
+  if (room.qAnswered[socketId]) return;          // 這題已經答過
+  const q = room.questions[qIdx];
+  const elapsed = Date.now() - room.qStartAt;
+  const correct = choice === q.answer;
+  let points = correct ? scoreForElapsed(elapsed) : 0;
+  if (qIdx === room.questions.length - 1) points *= 2;   // 最後一題雙倍
+  room.qAnswered[socketId] = true;
+  room.buzzerScores[socketId] = (room.buzzerScores[socketId] || 0) + points;
+  room.answers[socketId][qIdx] = { choice, correct, points };
+
+  io.to(socketId).emit('buzzer_result_self', {
+    qIdx, correct, points, correctIndex: q.answer,
+    myTotal: room.buzzerScores[socketId],
+  });
+  const foeId = socketId === room.host ? room.guest : room.host;
+  if (foeId) {
+    io.to(foeId).emit('buzzer_opponent_answered', {
+      qIdx, opponentTotal: room.buzzerScores[socketId],
+    });
+  }
+
+  if (room.qAnswered[room.host] && room.qAnswered[room.guest]) {
+    finishBuzzerQuestion(code, qIdx);
+  }
+}
+
 // 結算：總分高者勝，相同平手（跟現有單字對決模式一致）
-function settleBuzzerBattle(code) {
+async function settleBuzzerBattle(code) {
   const room = rooms[code];
   if (!room || room.state !== 'playing') return;
   room.state = 'done';
   const scores = { ...room.buzzerScores };
-  let winner = null;
-  if (scores[room.host] > scores[room.guest])      winner = room.host;
-  else if (scores[room.guest] > scores[room.host]) winner = room.guest;
-  io.to(code).emit('battle_result', { scores, winner, total: room.questions.length });
+  let winner = null, winnerIsHost = null;
+  if (scores[room.host] > scores[room.guest])      { winner = room.host;  winnerIsHost = true; }
+  else if (scores[room.guest] > scores[room.host]) { winner = room.guest; winnerIsHost = false; }
+  const outcome = await computeArenaOutcome(room.hostUserId, room.guestUserId, winnerIsHost, room.botElo);
+  if (!rooms[code]) return; // 結算期間房間可能已被解散（極端情況：對手秒退）
+  io.to(code).emit('battle_result', {
+    scores, winner, total: room.questions.length,
+    outcome: { [room.host]: outcome.host, [room.guest]: outcome.guest },
+  });
 }
 
 // 結算：答對數高者勝，相同平手。結算後房間不解散（保留給「再來一場」用），
 // 只有離開/斷線/逾時才會真正銷毀（見 dropFromRoom 與逾時清除）。
-function settleBattle(code) {
+async function settleBattle(code) {
   const room = rooms[code];
   if (!room || room.state !== 'playing') return;
   room.state = 'done';
@@ -255,10 +379,34 @@ function settleBattle(code) {
   for (const id of [room.host, room.guest]) {
     scores[id] = (room.answers[id] || []).filter(a => a && a.correct).length;
   }
-  let winner = null;
-  if (scores[room.host] > scores[room.guest])      winner = room.host;
-  else if (scores[room.guest] > scores[room.host]) winner = room.guest;
-  io.to(code).emit('battle_result', { scores, winner, total: room.questions.length });
+  let winner = null, winnerIsHost = null;
+  if (scores[room.host] > scores[room.guest])      { winner = room.host;  winnerIsHost = true; }
+  else if (scores[room.guest] > scores[room.host]) { winner = room.guest; winnerIsHost = false; }
+  const outcome = await computeArenaOutcome(room.hostUserId, room.guestUserId, winnerIsHost, room.botElo);
+  if (!rooms[code]) return; // 結算期間房間可能已被解散（極端情況：對手秒退）
+  io.to(code).emit('battle_result', {
+    scores, winner, total: room.questions.length,
+    outcome: { [room.host]: outcome.host, [room.guest]: outcome.guest },
+  });
+}
+
+// 單一答案套用邏輯，抽成獨立函式讓真人 socket 事件與電腦模擬作答（scheduleBotVocabAnswers）共用。
+function applyPvpAnswer(code, socketId, qIdx, choice) {
+  const room = rooms[code];
+  if (!room || room.state !== 'playing') return;
+  const arr = room.answers[socketId];
+  if (!arr || !Number.isInteger(qIdx) || qIdx < 0 || qIdx >= room.questions.length) return;
+  if (arr[qIdx] !== undefined) return;
+  arr[qIdx] = { choice, correct: choice === room.questions[qIdx].answer };
+  const progress = {};
+  for (const id of [room.host, room.guest]) {
+    progress[id] = (room.answers[id] || []).filter(a => a !== undefined).length;
+  }
+  io.to(code).emit('pvp_progress', { progress });
+  if (progress[room.host] >= room.questions.length &&
+      progress[room.guest] >= room.questions.length) {
+    settleBattle(code);
+  }
 }
 
 // 出題並開始一輪對局（start_battle 與 rematch 共用）
@@ -274,6 +422,7 @@ async function beginRound(code) {
   room.state     = 'playing';
   io.to(code).emit('battle_start', { mode: room.mode, questions, duration: PVP_DURATION });
   room.timer = setTimeout(() => settleBattle(code), PVP_DURATION * 1000 + 800);
+  if (room.isBot) scheduleBotVocabAnswers(code);
 }
 
 // 玩家離開/斷線：通知對手並解散房間
@@ -329,6 +478,66 @@ setInterval(() => {
     }
   }
 }, 10 * 60 * 1000);
+
+// ── 快速配對（含冷啟動電腦補位）──
+// 使用者按「快速配對」進佇列；若佇列裡已有人在等同一模式，立即配對成真人對戰。
+// 若排隊超過 QUICK_MATCH_BOT_TIMEOUT_MS 都配不到真人（常發生在使用者量還小的早期），
+// 自動配一個電腦對手頂上，UI 上完全比照真人顯示、不標示「電腦」，名稱從 BOT_NAMES
+// 隨機挑一個。電腦的 ELO 依對手當下 ELO 分階（±jitter），連動決定模擬準確率/反應速度，
+// 且照樣計入 ELO 輸贏——這樣才不會變成「配到電腦＝穩贏刷分」的捷徑。
+const QUICK_MATCH_BOT_TIMEOUT_MS = parseInt(process.env.QUICK_MATCH_BOT_TIMEOUT_MS, 10) || 8000;
+const matchQueue = { vocab: [], buzzer: [] }; // [{socket, clientId, userId, name, title, elo, botTimer}]
+const BOT_NAMES = ['小恩', '阿凱', '雨柔', '家豪', '宜蓁', '承翰', '思妤', '冠廷', '子萱', '柏宇', '品妍', '昱安'];
+
+function _dequeue(mode, socketId) {
+  const q = matchQueue[mode];
+  if (!q) return null;
+  const idx = q.findIndex(e => e.socket.id === socketId);
+  if (idx === -1) return null;
+  const [entry] = q.splice(idx, 1);
+  clearTimeout(entry.botTimer);
+  return entry;
+}
+function _leaveAllQueues(socketId) {
+  for (const mode of Object.keys(matchQueue)) _dequeue(mode, socketId);
+}
+
+function _spawnBotEntry(humanElo) {
+  const jitter = Math.round((Math.random() - 0.5) * 80); // ±40，讓電腦程度貼近但不完全等於對手
+  return {
+    isBot: true,
+    elo: Math.max(600, humanElo + jitter),
+    name: BOT_NAMES[Math.floor(Math.random() * BOT_NAMES.length)],
+    title: '',
+  };
+}
+
+// a：一定是真人 queue entry（{socket, clientId, userId, name, title, elo}）
+// b：真人 entry 或 _spawnBotEntry() 產生的電腦 entry（{isBot:true, elo, name, title}）
+function _createQueuedRoom(mode, a, b) {
+  const code = genRoomCode();
+  rooms[code] = {
+    host: a.socket.id, guest: b.isBot ? 'BOT' : b.socket.id,
+    hostClientId: a.clientId, guestClientId: b.isBot ? null : b.clientId,
+    hostUserId: a.userId, guestUserId: b.isBot ? null : b.userId,
+    hostName: a.name || '玩家', hostTitle: a.title || '',
+    guestName: b.name || '玩家', guestTitle: b.title || '',
+    hostGraceTimer: null, guestGraceTimer: null,
+    mode, state: 'lobby',
+    questions: [], answers: {}, timer: null,
+    isBot: !!b.isBot, botElo: b.isBot ? b.elo : null,
+    createdAt: Date.now(),
+  };
+  const room = rooms[code];
+  a.socket.join(code);
+  if (!b.isBot) b.socket.join(code);
+  io.to(a.socket.id).emit('queue_matched', { code, mode, players: _roomPlayers(room), youAreHost: true });
+  if (!b.isBot) io.to(b.socket.id).emit('queue_matched', { code, mode, players: _roomPlayers(room), youAreHost: false });
+  setTimeout(() => {
+    if (!rooms[code]) return; // 這 1.4 秒緩衝內任一方可能已經離開
+    if (mode === 'buzzer') beginBuzzerRound(code); else beginRound(code);
+  }, 1400);
+}
 
 // ── 好友上線狀態 / 邀請即時推播 ──
 // onlineUsers: userId(uuid) -> Set<socket.id>，同一個帳號可能同時開多個分頁/裝置
@@ -400,11 +609,12 @@ io.on('connection', (socket) => {
     });
   });
 
-  socket.on('create_room', ({ clientId, name, title } = {}) => {
+  socket.on('create_room', ({ clientId, name, title, userId } = {}) => {
     const code = genRoomCode();
     rooms[code] = {
       host: socket.id, guest: null,
       hostClientId: clientId || null, guestClientId: null,
+      hostUserId: userId || null, guestUserId: null,
       hostName: name || '玩家', hostTitle: title || '',
       guestName: null, guestTitle: '',
       hostGraceTimer: null, guestGraceTimer: null,
@@ -416,7 +626,7 @@ io.on('connection', (socket) => {
     socket.emit('room_created', { code });
   });
 
-  socket.on('join_room', ({ code, clientId, name, title }) => {
+  socket.on('join_room', ({ code, clientId, name, title, userId }) => {
     const room = rooms[code];
     if (!room)                   return socket.emit('room_error', { msg: '找不到房間，請確認房號' });
     if (room.state !== 'lobby')  return socket.emit('room_error', { msg: '對決已開始，無法加入' });
@@ -424,6 +634,7 @@ io.on('connection', (socket) => {
     if (room.host === socket.id) return socket.emit('room_error', { msg: '不能加入自己的房間' });
     room.guest = socket.id;
     room.guestClientId = clientId || null;
+    room.guestUserId = userId || null;
     room.guestName = name || '玩家';
     room.guestTitle = title || '';
     socket.join(code);
@@ -488,58 +699,53 @@ io.on('connection', (socket) => {
   });
 
   // 單字搶答收答案：每題只收第一次作答，本人立即知道正解，對手只看到分數變動
-  socket.on('buzzer_answer', ({ code, qIdx, choice }) => {
-    const room = rooms[code];
-    if (!room || room.state !== 'playing' || room.mode !== 'buzzer') return;
-    if (qIdx !== room.qIdx) return;               // 該題已經結束，回應太慢
-    if (room.qAnswered[socket.id]) return;        // 這題已經答過
-    const q = room.questions[qIdx];
-    const elapsed = Date.now() - room.qStartAt;
-    const correct = choice === q.answer;
-    let points = correct ? scoreForElapsed(elapsed) : 0;
-    if (qIdx === room.questions.length - 1) points *= 2;   // 最後一題雙倍
-    room.qAnswered[socket.id] = true;
-    room.buzzerScores[socket.id] = (room.buzzerScores[socket.id] || 0) + points;
-    room.answers[socket.id][qIdx] = { choice, correct, points };
-
-    socket.emit('buzzer_result_self', {
-      qIdx, correct, points, correctIndex: q.answer,
-      myTotal: room.buzzerScores[socket.id],
-    });
-    const foeId = socket.id === room.host ? room.guest : room.host;
-    if (foeId) {
-      io.to(foeId).emit('buzzer_opponent_answered', {
-        qIdx, opponentTotal: room.buzzerScores[socket.id],
-      });
-    }
-
-    if (room.qAnswered[room.host] && room.qAnswered[room.guest]) {
-      finishBuzzerQuestion(code, qIdx);
-    }
-  });
+  // （抽成 applyBuzzerAnswer 是因為電腦補位對手的模擬作答也要走同一套邏輯，見 scheduleBotBuzzerAnswer）
+  socket.on('buzzer_answer', ({ code, qIdx, choice }) => applyBuzzerAnswer(code, socket.id, qIdx, choice));
 
   // 收答案：每題只收第一次作答；雙方都答完 5 題立即結算
-  socket.on('pvp_answer', ({ code, qIdx, choice }) => {
-    const room = rooms[code];
-    if (!room || room.state !== 'playing') return;
-    const arr = room.answers[socket.id];
-    if (!arr || !Number.isInteger(qIdx) || qIdx < 0 || qIdx >= room.questions.length) return;
-    if (arr[qIdx] !== undefined) return;
-    arr[qIdx] = { choice, correct: choice === room.questions[qIdx].answer };
-    const progress = {};
-    for (const id of [room.host, room.guest]) {
-      progress[id] = (room.answers[id] || []).filter(a => a !== undefined).length;
+  // （抽成 applyPvpAnswer 原因同上，見 scheduleBotVocabAnswers）
+  socket.on('pvp_answer', ({ code, qIdx, choice }) => applyPvpAnswer(code, socket.id, qIdx, choice));
+
+  // ── 快速配對 ──
+  socket.on('queue_join', async ({ mode, clientId, userId, name, title } = {}) => {
+    if (mode !== 'vocab' && mode !== 'buzzer') return;
+    _leaveAllQueues(socket.id); // 防止手滑連點造成同一人排進佇列兩次
+
+    let elo = 1000;
+    if (userId) {
+      try {
+        const { data } = await supabase.from('profiles').select('arena_elo').eq('id', userId).maybeSingle();
+        if (data?.arena_elo) elo = data.arena_elo;
+      } catch (e) { console.error('[Arena] 查詢排隊者 ELO 失敗，改用預設值 1000：', e.message); }
     }
-    io.to(code).emit('pvp_progress', { progress });
-    if (progress[room.host] >= room.questions.length &&
-        progress[room.guest] >= room.questions.length) {
-      settleBattle(code);
+
+    const q = matchQueue[mode];
+    if (q.length > 0) {
+      // 佇列裡已有人在等：先進先出直接配對。使用者量還小，暫不做 ELO 相近優先，
+      // 免得反而久候配不到人——這點等玩家基數上來後可以再加。
+      const opponent = q.shift();
+      clearTimeout(opponent.botTimer);
+      _createQueuedRoom(mode, opponent, { socket, clientId, userId, name, title, elo, isBot: false });
+      return;
     }
+    const entry = { socket, clientId, userId, name, title, elo };
+    entry.botTimer = setTimeout(() => {
+      const stillQueued = _dequeue(mode, socket.id);
+      if (!stillQueued) return; // 這段等待期間已經被別人配走了
+      _createQueuedRoom(mode, stillQueued, _spawnBotEntry(elo));
+    }, QUICK_MATCH_BOT_TIMEOUT_MS);
+    q.push(entry);
+    socket.emit('queue_waiting', { mode });
+  });
+
+  socket.on('queue_leave', ({ mode } = {}) => {
+    if (mode) _dequeue(mode, socket.id); else _leaveAllQueues(socket.id);
   });
 
   socket.on('leave_room', ({ code }) => dropFromRoom(socket, code));
 
   socket.on('disconnect', () => {
+    _leaveAllQueues(socket.id);
     for (const code of Object.keys(rooms)) scheduleRoomTeardown(socket, code);
     const uid = socket.data.userId;
     if (uid && onlineUsers.has(uid)) {
