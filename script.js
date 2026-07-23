@@ -1293,21 +1293,24 @@ function _pvpMe() {
   };
 }
 
-// 對局結算後套用伺服器算好的 ELO/獎勵：金幣、經驗值走既有的 addGold()/awardXp()
-// （沿用其樂觀更新＋序列化同步機制），ELO／勝敗場數走專屬的 apply_arena_result RPC。
+// 對局結算後套用伺服器算好的 ELO/獎勵：經驗值走既有的 awardXp()（沿用其樂觀更新＋序列化
+// 同步機制），金幣走 _grantCappedArenaTetrisGold()（跟首頁俄羅斯方塊共用每日 250 上限），
+// ELO／勝敗場數走專屬的 apply_arena_result RPC。
 // myOutcome 為 null 時代表訪客模式或伺服器計算失敗（見 server computeArenaOutcome），
 // 直接跳過、不顯示獎勵列即可，不影響對局本身已經跑完的事實。
 async function _applyArenaOutcome(myOutcome) {
   const rewardEl = document.getElementById('pvpResultReward');
   if (!myOutcome || !currentUser) { if (rewardEl) rewardEl.style.display = 'none'; return; }
   const { elo, result, reward } = myOutcome;
-  if (reward?.gold) addGold(reward.gold);
-  if (reward?.xp)   awardXp(reward.xp, { source: 'arena' });
+  const goldGiven = reward?.gold ? _grantCappedArenaTetrisGold(reward.gold) : 0;
+  if (reward?.xp) awardXp(reward.xp, { source: 'arena' });
   if (rewardEl) {
     const eloClass = elo > 0 ? 'elo-up' : elo < 0 ? 'elo-down' : '';
+    const goldChip = goldGiven ? `<span>🪙 +${goldGiven}</span>`
+      : reward?.gold ? `<span>🪙 今日金幣額度已滿</span>` : '';
     rewardEl.innerHTML = [
-      reward?.gold ? `<span>🪙 +${reward.gold}</span>` : '',
-      reward?.xp   ? `<span>✨ +${reward.xp} EXP</span>` : '',
+      goldChip,
+      reward?.xp ? `<span>✨ +${reward.xp} EXP</span>` : '',
       `<span class="${eloClass}">${elo >= 0 ? '📈' : '📉'} ELO ${elo >= 0 ? '+' : ''}${elo}</span>`,
     ].filter(Boolean).join('');
     rewardEl.style.display = 'flex';
@@ -7423,6 +7426,12 @@ const XP_TETRIS_GAME_CAP = 40;        // 單場 XP 上限
 const XP_TETRIS_GAMES_PER_DAY = 5;    // 每日前 N 場才給 XP（防刷）
 const XP_DAILY_CAP = 360;             // 每日 XP 天花板（防刷）
 
+// 首頁俄羅斯方塊 + 競技場配對：金幣共用同一個每日上限（防刷）
+const ARENA_TETRIS_GOLD_DAILY_CAP = 250;
+const GOLD_PER_TETRIS_BASE = 8;       // 俄羅斯方塊每場基礎金幣
+const GOLD_PER_TETRIS_LINE10 = 2;     // 每消 10 行加成
+const GOLD_TETRIS_GAME_CAP = 20;      // 單場金幣上限（跟 XP 一樣只算前 XP_TETRIS_GAMES_PER_DAY 場）
+
 // 累積到「達到」Lv.L 所需的總 XP（Lv.1 = 0）。closed form。
 function xpForLevel(level) {
   const n = Math.max(0, level - 1);   // 需要幾次升級才到 level
@@ -7450,6 +7459,22 @@ function unlockedGrammarSections(level) {
 function _xpDayKey() { return 'voca_xp_day_' + new Date().toLocaleDateString('en-CA'); }
 function _xpEarnedToday() { return parseInt(localStorage.getItem(_xpDayKey()) || '0', 10) || 0; }
 function _addXpEarnedToday(n) { try { localStorage.setItem(_xpDayKey(), String(_xpEarnedToday() + n)); } catch { /* ignore */ } }
+
+// 俄羅斯方塊 + 競技場配對共用的每日金幣上限追蹤。兩邊都呼叫 _grantCappedArenaTetrisGold()
+// 領金幣，額度共用同一個池子，額度用完當天再玩/再打也不會再加（不影響經驗值／勝負判定本身）。
+function _arenaTetrisGoldKey() { return 'voca_gold_arena_tetris_' + new Date().toLocaleDateString('en-CA'); }
+function _arenaTetrisGoldEarnedToday() { return parseInt(localStorage.getItem(_arenaTetrisGoldKey()) || '0', 10) || 0; }
+// 回傳實際發出的金幣（可能因額度不足被砍到比 amount 小、甚至 0）
+function _grantCappedArenaTetrisGold(amount) {
+  if (!amount || amount <= 0) return 0;
+  const earned = _arenaTetrisGoldEarnedToday();
+  const room = ARENA_TETRIS_GOLD_DAILY_CAP - earned;
+  if (room <= 0) return 0;
+  const give = Math.min(amount, room);
+  try { localStorage.setItem(_arenaTetrisGoldKey(), String(earned + give)); } catch { /* ignore */ }
+  addGold(give);
+  return give;
+}
 
 let _xpSyncChain = Promise.resolve();
 // 加經驗值。opts.ignoreCap=true 時不受每日上限（新手任務一次性獎勵用）。
@@ -7479,7 +7504,8 @@ async function awardXp(amount, opts = {}) {
   });
 }
 
-// 俄羅斯方塊一場結束給 XP（每日前 XP_TETRIS_GAMES_PER_DAY 場才給，防刷）。
+// 俄羅斯方塊一場結束給 XP + 金幣（每日前 XP_TETRIS_GAMES_PER_DAY 場才給，防刷；
+// 金幣另外還受 _grantCappedArenaTetrisGold() 的每日共用上限節流，見該函式註解）。
 function _xpTetrisKey() { return 'voca_xp_tetris_' + new Date().toLocaleDateString('en-CA'); }
 function awardTetrisXp(lines) {
   if (!currentUser) return;
@@ -7490,6 +7516,8 @@ function awardTetrisXp(lines) {
   try { localStorage.setItem(key, String(played + 1)); } catch { /* ignore */ }
   const xp = Math.min(XP_TETRIS_GAME_CAP, XP_PER_TETRIS_BASE + Math.floor((lines || 0) / 10) * XP_PER_TETRIS_LINE10);
   awardXp(xp, { source: 'tetris' });
+  const gold = Math.min(GOLD_TETRIS_GAME_CAP, GOLD_PER_TETRIS_BASE + Math.floor((lines || 0) / 10) * GOLD_PER_TETRIS_LINE10);
+  _grantCappedArenaTetrisGold(gold);
   if (typeof _questBumpTetrisLines === 'function') _questBumpTetrisLines(lines || 0);   // #14 主線任務：單局最高消行數
 }
 
