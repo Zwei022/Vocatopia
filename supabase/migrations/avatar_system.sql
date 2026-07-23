@@ -7,9 +7,12 @@
 alter table public.profiles
   add column if not exists avatar_id text;
 
--- 競技場排行榜要一併顯示頭像，重建這兩個 view 補上 avatar_id 欄位
--- （這兩個 view 本來就是 arena_ranking.sql 建的，這裡是加欄位重建，不影響既有資料）
-create or replace view public.arena_leaderboard_vocab as
+-- 競技場排行榜要一併顯示頭像。Postgres 的 CREATE OR REPLACE VIEW 不允許在既有欄位中間
+-- 插入新欄位（只能在最後面加），所以這裡改成先 DROP 再重建，執行後需要重新 GRANT。
+drop view if exists public.arena_leaderboard_vocab;
+drop view if exists public.arena_leaderboard_buzzer;
+
+create view public.arena_leaderboard_vocab as
   select id, username, avatar_id, arena_elo_vocab as arena_elo,
          arena_wins_vocab as arena_wins, arena_losses_vocab as arena_losses, arena_draws_vocab as arena_draws,
          (arena_wins_vocab + arena_losses_vocab + arena_draws_vocab) as arena_matches
@@ -17,7 +20,7 @@ create or replace view public.arena_leaderboard_vocab as
    where (arena_wins_vocab + arena_losses_vocab + arena_draws_vocab) >= 5
    order by arena_elo_vocab desc;
 
-create or replace view public.arena_leaderboard_buzzer as
+create view public.arena_leaderboard_buzzer as
   select id, username, avatar_id, arena_elo_buzzer as arena_elo,
          arena_wins_buzzer as arena_wins, arena_losses_buzzer as arena_losses, arena_draws_buzzer as arena_draws,
          (arena_wins_buzzer + arena_losses_buzzer + arena_draws_buzzer) as arena_matches
