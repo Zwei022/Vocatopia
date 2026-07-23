@@ -142,27 +142,50 @@
 <!-- UPGRADE MODAL -->
 <div class="modal-overlay" id="upgradeModal">
   <div class="modal-box upgrade-box">
-    <div class="modal-title">👑 解鎖完整備考力量</div>
-    <div class="upgrade-tiers" id="upgradeTiers">
-      <div class="tier highlight">
-        <div class="tier-name">💳 月付方案</div>
-        <div class="tier-price" id="upgradeMonthlyPrice">$190 <span>/ 月</span></div>
-        <div class="tier-features">文法教學全解鎖（第4章起）・模擬試題全解鎖・每日練習六科無上限</div>
-        <button class="modal-confirm" onclick="startSubscriptionPurchase('monthly')">選擇月付</button>
-      </div>
-      <div class="tier">
-        <div class="tier-name">🏆 季付方案 ⭐ 最划算</div>
-        <div class="tier-price">$490 <span>/ 3個月</span></div>
-        <div class="tier-features">內容同月付方案・平均每月約 $163，比月付省 14%</div>
-        <button class="modal-confirm" onclick="startSubscriptionPurchase('quarterly')">選擇季付</button>
-      </div>
-    </div>
-    <div style="font-size:11px;color:var(--ink3,#C3B49E);text-align:center;margin-top:10px;line-height:1.6">
-      訂閱將自動續訂，可隨時到 <span id="storeLabelSub">App Store</span> 訂閱管理頁面取消。<br>
-      <a href="/privacy.html" target="_blank" style="color:var(--ink2,#94826F);text-decoration:underline">隱私權政策</a>
+    <div class="upgrade-crown">👑</div>
+    <div class="modal-title">解鎖完整備考力量</div>
 
-      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" style="color:var(--ink2,#94826F);text-decoration:underline">使用條款</a>
+    <!-- 尚未訂閱：方案選擇畫面 -->
+    <div id="upgradePurchaseView">
+      <div class="upgrade-subtitle">升級進階會員，備考資源全部解鎖</div>
+      <div class="upgrade-features">
+        <div class="upgrade-feat">文法教學全解鎖（第4章起）</div>
+        <div class="upgrade-feat">歷屆會考模擬試題全解鎖</div>
+        <div class="upgrade-feat">每日練習六科無上限</div>
+      </div>
+      <div class="upgrade-tiers" id="upgradeTiers">
+        <button class="tier highlight" onclick="startSubscriptionPurchase('monthly')">
+          <div class="tier-top">
+            <span class="tier-name">月付方案</span>
+          </div>
+          <div class="tier-price" id="upgradeMonthlyPrice">$190 <span>/ 月</span></div>
+        </button>
+        <button class="tier" onclick="startSubscriptionPurchase('quarterly')">
+          <div class="tier-top">
+            <span class="tier-name">季付方案</span>
+            <span class="tier-badge">省 14%</span>
+          </div>
+          <div class="tier-price">$490 <span>/ 3個月</span></div>
+          <div class="tier-sub">平均每月約 $163</div>
+        </button>
+      </div>
+      <button class="upgrade-restore-btn" onclick="restorePurchases()">恢復先前購買</button>
+      <div class="upgrade-legal">
+        訂閱將自動續訂，可隨時到 <span id="storeLabelSub">App Store</span> 訂閱管理頁面取消。<br>
+        <a href="/privacy.html" target="_blank">隱私權政策</a>
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">使用條款</a>
+      </div>
     </div>
+
+    <!-- 已訂閱：會員狀態畫面 -->
+    <div id="upgradeActiveView" style="display:none">
+      <div class="upgrade-active-badge">✓ 進階會員已生效</div>
+      <div class="upgrade-active-note">
+        感謝你的訂閱！所有備考資源皆已解鎖。<br>
+        如需取消或變更方案，請到 <span id="storeLabelSub2">App Store</span> 訂閱管理頁面操作。
+      </div>
+    </div>
+
     <button class="modal-cancel" onclick="closeModal('upgradeModal')">稍後再說</button>
   </div>
 </div>

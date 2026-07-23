@@ -626,7 +626,7 @@ let _modalStack = [];
 function openModal(id)  {
   document.getElementById(id).classList.add('show');
   if (!_modalStack.includes(id)) _modalStack.push(id);
-  if (id === 'upgradeModal') _refreshUpgradeModalPricing();
+  if (id === 'upgradeModal') { _refreshUpgradeModalPricing(); _refreshUpgradeModalState(); }
 }
 function closeModal(id) {
   document.getElementById(id).classList.remove('show');
@@ -731,6 +731,16 @@ function _refreshUpgradeModalPricing() {
   } else {
     priceEl.innerHTML = `$190 <span>/ 月</span>`;
   }
+}
+
+// 已是進階會員時，upgradeModal 改顯示會員狀態而非重複購買方案（避免已訂閱用戶被要求再訂閱一次）
+function _refreshUpgradeModalState() {
+  const purchaseView = document.getElementById('upgradePurchaseView');
+  const activeView = document.getElementById('upgradeActiveView');
+  if (!purchaseView || !activeView) return;
+  const premium = typeof _isPremium === 'function' && _isPremium();
+  purchaseView.style.display = premium ? 'none' : '';
+  activeView.style.display = premium ? '' : 'none';
 }
 
 // RevenueCat 商品代碼對應（需與 Google Play Console / App Store Connect 建立的訂閱商品 ID 一致）
@@ -849,6 +859,36 @@ async function startSubscriptionPurchase(planId) {
     // 印出完整錯誤（code/message），下次審核卡住才查得出真正原因，不要只看到同一句「稍後再試」
     console.error('[startSubscriptionPurchase] purchasePackage 失敗：', e?.code, e?.message, e);
     showToast(`訂閱未完成：${e?.message || '請稍後再試'}`);
+  }
+}
+
+// Apple Guideline 3.1.2 要求自動續訂訂閱畫面須提供「恢復購買」入口，
+// 讓換裝置／重灌 App 的既有訂閱用戶能重新解鎖，不需要被要求再訂閱一次。
+async function restorePurchases() {
+  if (!currentUser) {
+    showToast('請先登入才能恢復購買喔');
+    return;
+  }
+  const Purchases = window.Capacitor?.Plugins?.Purchases;
+  if (!window.Capacitor?.isNativePlatform?.() || !Purchases) {
+    showToast('請在 Vocatopia App 內使用此功能');
+    return;
+  }
+  try {
+    if (!_revenueCatInitialized && typeof initRevenueCat === 'function' && currentUser) {
+      await initRevenueCat(currentUser.id);
+    }
+    await Purchases.restorePurchases();
+    if (typeof refreshSubscriptionStatus === 'function') await refreshSubscriptionStatus();
+    if (_isPremium()) {
+      showToast('🎉 已恢復訂閱！');
+      if (typeof _refreshUpgradeModalState === 'function') _refreshUpgradeModalState();
+    } else {
+      showToast('查無可恢復的訂閱紀錄');
+    }
+  } catch (e) {
+    console.error('[restorePurchases] 失敗：', e?.code, e?.message, e);
+    showToast(`恢復購買失敗：${e?.message || '請稍後再試'}`);
   }
 }
 
@@ -6130,7 +6170,7 @@ function _bgmSync() {
 function _applyStoreLabels() {
   const isAndroid = !!(window.Capacitor?.isNativePlatform?.() && window.Capacitor.getPlatform() === 'android');
   const label = isAndroid ? 'App Store／Google Play' : 'App Store';
-  ['storeLabelSub', 'storeLabelDel'].forEach(id => {
+  ['storeLabelSub', 'storeLabelSub2', 'storeLabelDel'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.textContent = label;
   });
