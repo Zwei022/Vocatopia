@@ -1311,7 +1311,7 @@ async function _applyArenaOutcome(myOutcome) {
     rewardEl.innerHTML = [
       goldChip,
       reward?.xp ? `<span>✨ +${reward.xp} EXP</span>` : '',
-      `<span class="${eloClass}">${elo >= 0 ? '📈' : '📉'} ELO ${elo >= 0 ? '+' : ''}${elo}</span>`,
+      `<span class="${eloClass}">${elo >= 0 ? '📈' : '📉'} 得分 ${elo >= 0 ? '+' : ''}${elo}</span>`,
     ].filter(Boolean).join('');
     rewardEl.style.display = 'flex';
   }
