@@ -31,13 +31,17 @@
     border-radius:16px; padding:28px 24px; margin-bottom:20px;
   }
   h2{ color:var(--red); font-size:19px; margin-top:0; }
+  h3{ color:var(--ink); font-size:15px; margin:16px 0 6px; }
   ul{ padding-left:20px; }
   li{ margin-bottom:8px; }
   .updated{ color:var(--ink2); font-size:13px; text-align:center; margin-bottom:24px; }
+  .note{ background:#FDEFD9; border:1.5px solid #F5921E; border-radius:10px; padding:10px 14px; font-size:13px; color:var(--ink2); margin-top:10px; }
   a{ color:var(--green); }
   table{ width:100%; border-collapse:collapse; margin:12px 0; }
   th,td{ text-align:left; padding:8px; border-bottom:1px solid var(--line2); font-size:14px; }
   th{ color:var(--ink2); font-weight:600; }
+  nav.toc{ font-size:13px; }
+  nav.toc a{ display:block; padding:4px 0; }
 </style>
 </head>
 <body>
@@ -46,14 +50,32 @@
   <p>Vocatopia 單字烏托邦</p>
 </header>
 <main>
-  <p class="updated">最後更新日期：2026 年 7 月 8 日</p>
+  <p class="updated">最後更新日期：2026 年 7 月 23 日</p>
 
   <div class="card">
-    <h2>1. 前言</h2>
-    <p>Vocatopia（以下稱「本服務」）是一款協助台灣國中生準備會考英語科的學習應用程式，提供單字卡、閱讀測驗、聽力練習、文法教學及競技場對戰等功能。我們重視使用者的隱私，本政策說明我們蒐集哪些資料、如何使用，以及使用者擁有的權利。</p>
+    <h2>目錄</h2>
+    <nav class="toc">
+      <a href="#intro">1. 前言</a>
+      <a href="#collect">2. 我們蒐集的資料</a>
+      <a href="#store">3. 資料如何儲存與保護</a>
+      <a href="#thirdparty">4. 第三方服務</a>
+      <a href="#ads">5. 廣告與個人化追蹤</a>
+      <a href="#iap">6. 應用程式內購買與虛擬遊戲幣</a>
+      <a href="#kids">7. 兒童與青少年隱私</a>
+      <a href="#rights">8. 使用者的權利</a>
+      <a href="#retention">9. 資料保留與跨境傳輸</a>
+      <a href="#changes">10. 政策異動</a>
+      <a href="#contact">11. 聯絡我們</a>
+    </nav>
   </div>
 
-  <div class="card">
+  <div class="card" id="intro">
+    <h2>1. 前言</h2>
+    <p>Vocatopia（以下稱「本服務」）是一款協助台灣國中生準備會考英語科的學習應用程式，提供單字卡、閱讀測驗、聽力練習、文法教學、競技場對戰及遊戲化學習（塔防、俄羅斯方塊等）功能。本政策說明我們蒐集哪些資料、如何使用、可能導入的廣告與付費機制，以及使用者擁有的權利。</p>
+    <div class="note">本政策同時涵蓋部分<strong>規劃中但尚未上線</strong>的功能（廣告、虛擬遊戲幣儲值），以事先揭露我們預計如何處理相關資料。若您在對應功能正式上線前使用本服務，該部分條款尚不適用；功能上線時我們會更新本頁面上方的「最後更新日期」。</p>
+  </div>
+
+  <div class="card" id="collect">
     <h2>2. 我們蒐集的資料</h2>
     <table>
       <tr><th>資料類型</th><th>用途</th></tr>
@@ -61,50 +83,106 @@
       <tr><td>學習進度、答題紀錄、收藏題目</td><td>提供個人化學習記錄、排行榜功能</td></tr>
       <tr><td>金幣、角色、卡組等遊戲化資料</td><td>提供遊戲化學習體驗（塔防、競技場）</td></tr>
       <tr><td>裝置與連線資訊（如 IP、連線狀態）</td><td>維持競技場即時對戰（Socket.io）連線穩定</td></tr>
+      <tr><td>推播通知裝置權杖（token）</td><td>發送學習提醒、活動通知（僅限開啟推播權限的使用者）</td></tr>
+      <tr><td>訂閱／購買交易紀錄（商品 ID、購買時間、交易編號）</td><td>核發訂閱權限與虛擬遊戲幣、處理購買問題</td></tr>
+      <tr><td>（規劃中）廣告識別碼／裝置廣告設定</td><td>顯示廣告、避免重複顯示同一則廣告（詳見第 5 節）</td></tr>
     </table>
-    <p>我們<strong>不會</strong>主動蒐集使用者的姓名、地址、電話等額外個人資料，除非使用者於「個人資料」頁面自願填寫。</p>
+    <p>我們<strong>不會</strong>主動蒐集使用者的姓名、地址、電話等額外個人資料，除非使用者於「個人資料」頁面自願填寫。我們<strong>不會</strong>要求或儲存使用者的信用卡卡號、銀行帳戶等完整金流資料——所有付款皆由 Apple App Store／Google Play／RevenueCat 直接處理（詳見第 6 節）。</p>
   </div>
 
-  <div class="card">
+  <div class="card" id="store">
     <h2>3. 資料如何儲存與保護</h2>
     <ul>
       <li>使用者帳號與學習資料儲存於 <strong>Supabase</strong>（第三方雲端資料庫服務），並透過 HTTPS 加密傳輸。</li>
       <li>密碼經過雜湊加密處理，任何人員（包含開發者）皆無法檢視使用者原始密碼。</li>
-      <li>我們不會將使用者個人資料出售、出租或提供給第三方廣告商。</li>
+      <li>我們不會將使用者個人資料出售、出租給第三方廣告商。若日後導入廣告（見第 5 節），也僅透過廣告聯播網之標準機制運作，本服務不會另外把您的帳號資料交給廣告商。</li>
+      <li>我們會依產業標準做法（存取權限控管、加密傳輸）保護資料，但沒有任何系統能保證絕對安全；若發生資料外洩事件，我們會依法通知受影響使用者及主管機關。</li>
     </ul>
   </div>
 
-  <div class="card">
-    <h2>4. 使用者的權利</h2>
+  <div class="card" id="thirdparty">
+    <h2>4. 第三方服務</h2>
+    <p>本服務使用以下第三方服務協助運作，各自受其自身隱私權政策規範：</p>
+    <table>
+      <tr><th>服務</th><th>用途</th></tr>
+      <tr><td>Supabase</td><td>帳號、學習資料與遊戲化資料的資料庫服務</td></tr>
+      <tr><td>Railway</td><td>伺服器與 API 託管服務</td></tr>
+      <tr><td>RevenueCat</td><td>訂閱與應用程式內購買（IAP）的交易管理，串接 Apple App Store／Google Play 金流</td></tr>
+      <tr><td>Firebase Cloud Messaging（FCM）</td><td>行動裝置推播通知</td></tr>
+      <tr><td>（規劃中）廣告聯播網，如 Google AdMob 等</td><td>於免費使用情境下顯示廣告，詳見第 5 節；正式導入前會更新本表並列出實際採用的服務名稱</td></tr>
+    </table>
+  </div>
+
+  <div class="card" id="ads">
+    <h2>5. 廣告與個人化追蹤</h2>
+    <p>本服務目前<strong>尚未</strong>顯示任何廣告。我們正評估未來導入廣告作為免費使用者的部分營運模式，若正式導入，將遵循以下原則：</p>
+    <ul>
+      <li><strong>13 歲以下或無法確認年齡的使用者</strong>：僅顯示非個人化（情境式）廣告，不會依照使用者行為、興趣做個人化投放，也不會蒐集用於跨 App／跨網站追蹤的廣告識別碼。</li>
+      <li><strong>其他使用者（如已知為國中生年齡以上、或未來開放給非目標族群使用）</strong>：若顯示個人化廣告，iOS 使用者可透過蘋果「App 追蹤透明度」（ATT）機制選擇是否允許追蹤，Android 使用者可於系統「廣告設定」中選擇停用個人化廣告或重設廣告 ID。</li>
+      <li>付費訂閱使用者（詳見訂閱方案）可享<strong>無廣告</strong>體驗。</li>
+      <li>正式導入廣告聯播網時，我們會在此更新實際採用的廣告服務名稱、蒐集的資料項目，並同步更新 App Store／Google Play 的隱私權「營養標籤」（Privacy Nutrition Label／Data Safety）。</li>
+    </ul>
+  </div>
+
+  <div class="card" id="iap">
+    <h2>6. 應用程式內購買與虛擬遊戲幣</h2>
+    <p>本服務提供付費訂閱方案（解鎖進階學習內容），並規劃導入<strong>虛擬遊戲幣儲值</strong>（如金幣、鑽石等消耗型虛擬商品，用於角色養成、卡包抽取等遊戲化功能）。相關規則如下：</p>
+    <h3>6.1 付款處理</h3>
+    <ul>
+      <li>所有實際金流交易（信用卡、Apple ID／Google 帳戶付款方式）皆由 <strong>Apple App Store</strong>／<strong>Google Play</strong> 直接處理，本服務與開發者<strong>不會</strong>接觸或儲存您的付款卡號等敏感金流資訊。</li>
+      <li>訂閱與虛擬遊戲幣購買透過 RevenueCat 串接上述官方金流，我們僅取得交易編號、商品 ID、購買時間等紀錄，用於核發對應的訂閱權限或遊戲幣數量、以及協助處理購買爭議。</li>
+    </ul>
+    <h3>6.2 虛擬遊戲幣性質</h3>
+    <ul>
+      <li>遊戲幣、鑽石等虛擬商品僅可於 Vocatopia 服務內使用，<strong>不具有任何實際貨幣價值</strong>，不得兌換為現金、不得轉讓予其他使用者或帳號，亦不得於本服務外交易。</li>
+      <li>帳號一經刪除，該帳號內尚未使用的虛擬遊戲幣將一併清除，恕不另行折抵或退還。</li>
+    </ul>
+    <h3>6.3 退款</h3>
+    <ul>
+      <li>訂閱與虛擬遊戲幣購買之退款申請，請依 <a href="https://support.apple.com/zh-tw/HT204084" target="_blank">Apple 退款政策</a>或 <a href="https://support.google.com/googleplay/answer/2479637" target="_blank">Google Play 退款政策</a>向對應商店提出，本服務無法直接代為退款。</li>
+    </ul>
+    <h3>6.4 未成年人購買提醒</h3>
+    <p>本服務主要使用族群為國中生。若使用者為未成年人，建議由家長／監護人協助設定裝置的「購買密碼」或「螢幕使用時間／家長監護」功能，避免未經同意的購買行為。開發者不對未經監護人同意所產生之購買負擔負責，但仍會協助使用者依上述官方管道申請退款。</p>
+  </div>
+
+  <div class="card" id="kids">
+    <h2>7. 兒童與青少年隱私</h2>
+    <ul>
+      <li>本服務主要使用族群為國中生（約 12–15 歲）。我們不會要求未成年使用者提供超出必要範圍的個人資料。</li>
+      <li>如第 5 節所述，對於 13 歲以下或無法確認年齡的使用者，我們僅顯示非個人化廣告，不進行行為追蹤。</li>
+      <li>我們建議家長協助未成年子女建立帳號、留意帳號使用情形及應用程式內購買行為。</li>
+      <li>若家長或監護人發現未成年子女在未經同意的情況下提供了個人資料，請透過第 11 節聯絡我們，我們將協助刪除相關資料。</li>
+    </ul>
+  </div>
+
+  <div class="card" id="rights">
+    <h2>8. 使用者的權利</h2>
     <ul>
       <li>使用者可隨時於 App 內「個人資料」頁面查看、修改自己的資料。</li>
-      <li>使用者可來信要求刪除帳號及其所有相關資料，我們將於合理時間內處理完成。</li>
+      <li>使用者可來信要求刪除帳號及其所有相關資料，我們將於合理時間內處理完成；App 內亦提供「刪除帳號」功能可自助操作。</li>
+      <li>使用者可要求查詢我們持有的個人資料副本，或要求更正錯誤資料。</li>
       <li>訪客模式（不登入）使用時，資料僅暫存於裝置本機，不會上傳至伺服器。</li>
+      <li>若導入個人化廣告，使用者可依第 5 節說明之方式（ATT／廣告設定）選擇退出個人化廣告投放。</li>
     </ul>
   </div>
 
-  <div class="card">
-    <h2>5. 兒童與青少年隱私</h2>
-    <p>本服務主要使用族群為國中生（約 12–15 歲）。我們不會要求未成年使用者提供超出必要範圍的個人資料，並建議家長協助未成年子女建立帳號、留意帳號使用情形。</p>
-  </div>
-
-  <div class="card">
-    <h2>6. 第三方服務</h2>
-    <p>本服務使用以下第三方服務協助運作，各自受其自身隱私權政策規範：</p>
+  <div class="card" id="retention">
+    <h2>9. 資料保留與跨境傳輸</h2>
     <ul>
-      <li>Supabase（帳號與資料庫服務）</li>
-      <li>Railway（伺服器託管服務）</li>
+      <li>帳號使用期間，我們會持續保留您的學習資料以維持服務功能；帳號刪除後，個人資料將於合理期間內（通常 30 日內）自伺服器清除，備份中的殘留資料也會於備份週期內清除。</li>
+      <li>訂閱／購買交易紀錄可能因財務、稅務或防詐需求，保留較長期間（通常不超過 5 年），此期間僅用於前述目的，不做其他用途使用。</li>
+      <li>本服務使用的第三方服務（Supabase、Railway、RevenueCat、Firebase 等）伺服器可能位於台灣以外地區，您的資料可能因此傳輸至境外處理，我們會選用具備合理資料保護標準的服務商。</li>
     </ul>
   </div>
 
-  <div class="card">
-    <h2>7. 政策異動</h2>
-    <p>本隱私權政策可能因應功能更新而調整，異動後將更新本頁面上方之「最後更新日期」。建議使用者定期查閱。</p>
+  <div class="card" id="changes">
+    <h2>10. 政策異動</h2>
+    <p>本隱私權政策可能因應功能更新（如正式導入廣告或虛擬遊戲幣儲值）而調整，異動後將更新本頁面上方之「最後更新日期」。重大變更（如新增資料蒐集項目）我們會盡力透過 App 內通知使用者。建議使用者定期查閱本頁面。</p>
   </div>
 
-  <div class="card">
-    <h2>8. 聯絡我們</h2>
-    <p>若您對本隱私權政策有任何疑問，或希望行使前述權利（查詢、更正、刪除個人資料），請透過以下信箱與我們聯絡：</p>
+  <div class="card" id="contact">
+    <h2>11. 聯絡我們</h2>
+    <p>若您對本隱私權政策有任何疑問，或希望行使前述權利（查詢、更正、刪除個人資料、申訴購買問題），請透過以下信箱與我們聯絡：</p>
     <p><a href="mailto:vocatopia.app@gmail.com">vocatopia.app@gmail.com</a></p>
   </div>
 </main>
