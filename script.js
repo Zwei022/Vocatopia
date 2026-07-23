@@ -949,7 +949,7 @@ function selectQuickMatchMode(mode) {
   document.getElementById('qmChipBuzzer').classList.toggle('sel', mode === 'buzzer');
   // 排行榜跟著這裡選的模式連動，不用另外點擊切換
   const headEl = document.getElementById('arenaLbHead');
-  if (headEl) headEl.textContent = mode === 'buzzer' ? '🏆 單字搶答排行榜' : '🏆 單字對決排行榜';
+  if (headEl) headEl.textContent = mode === 'buzzer' ? '單字搶答排行榜' : '單字對決排行榜';
   renderArenaLeaderboard(mode);
 }
 function startQuickMatch() {

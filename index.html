@@ -644,14 +644,14 @@
       <!-- 競技場排行榜：比照首頁方塊排行榜設計，跟著下方「快速配對」選的模式連動，
            不用另外點擊切換——選單字對決就看單字對決排行、選單字搶答就看單字搶答排行 -->
       <div class="arena-lb-card">
-        <div class="arena-lb-head" id="arenaLbHead">🏆 單字對決排行榜</div>
+        <div class="arena-lb-head" id="arenaLbHead">單字對決排行榜</div>
         <div class="hm-board-list arena-lb-scroll" id="arenaLbList"><!-- renderArenaLeaderboard() 填入 --></div>
       </div>
 
       <div class="pvp-mode-label">快速配對</div>
       <div class="pvp-mode-row">
-        <button class="pvp-mode-chip sel" id="qmChipVocab" onclick="selectQuickMatchMode('vocab')">📖 單字對決<span>5 題選擇</span></button>
-        <button class="pvp-mode-chip" id="qmChipBuzzer" onclick="selectQuickMatchMode('buzzer')">⚡ 單字搶答<span>7 題搶快</span></button>
+        <button class="pvp-mode-chip sel" id="qmChipVocab" onclick="selectQuickMatchMode('vocab')">單字對決<span>5 題選擇</span></button>
+        <button class="pvp-mode-chip" id="qmChipBuzzer" onclick="selectQuickMatchMode('buzzer')">單字搶答<span>7 題搶快</span></button>
       </div>
       <button class="arena-btn ab-create" onclick="startQuickMatch()">⚡ 快速配對</button>
       <div class="ab-divider">— OR 約朋友 —</div>
@@ -677,8 +677,8 @@
       <div id="hostModePanel" style="display:none;width:100%;flex-direction:column;gap:10px">
         <div class="pvp-mode-label">選擇切磋模式</div>
         <div class="pvp-mode-row">
-          <button class="pvp-mode-chip sel" id="modeChipVocab" onclick="selectPvpMode('vocab')">📖 單字對決<span>5 題選擇</span></button>
-          <button class="pvp-mode-chip" id="modeChipBuzzer" onclick="selectPvpMode('buzzer')">⚡ 單字搶答<span>7 題搶快</span></button>
+          <button class="pvp-mode-chip sel" id="modeChipVocab" onclick="selectPvpMode('vocab')">單字對決<span>5 題選擇</span></button>
+          <button class="pvp-mode-chip" id="modeChipBuzzer" onclick="selectPvpMode('buzzer')">單字搶答<span>7 題搶快</span></button>
         </div>
         <button class="arena-btn ab-create" id="pvpStartBtn" disabled onclick="hostStartBattle()">等待對手加入⋯</button>
         <button class="arena-btn ab-invite" id="pvpInviteBtn" onclick="openInviteFriends()">👥 邀請好友</button>
