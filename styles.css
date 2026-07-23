@@ -215,10 +215,8 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .arena-title{font-family:var(--font-display);font-weight:900;font-size:24px;letter-spacing:2px;color:var(--ink)}
 .arena-sub{font-size:12px;color:var(--ink2);margin-top:5px;letter-spacing:.5px;font-family:var(--font-ui)}
 /* 競技場排行榜卡片：直接參照首頁方塊排行榜（.hm-board-*）設計，行的樣式完全共用 */
-.arena-lb-card{width:100%;margin-top:4px;background:var(--card);border:2.5px solid var(--line);border-radius:var(--r3);padding:12px 12px 8px;box-shadow:0 4px 0 rgba(122,92,67,.2)}
-.arena-lb-tabs{display:flex;gap:6px;margin-bottom:8px}
-.arena-lb-tab{flex:1;padding:8px 4px;border-radius:10px;border:1.5px solid var(--line2);background:var(--nav);font-family:'Nunito',sans-serif;font-weight:800;font-size:11.5px;color:var(--ink2);cursor:pointer}
-.arena-lb-tab.sel{background:var(--orasoft);border-color:var(--orange);color:var(--orange2,#B85E0A)}
+.arena-lb-card{width:100%;background:var(--card);border:2.5px solid var(--line);border-radius:var(--r3);padding:12px 12px 8px;box-shadow:0 4px 0 rgba(122,92,67,.2)}
+.arena-lb-head{font-family:var(--font-display);font-weight:900;font-size:14px;color:var(--ink);margin-bottom:8px;transition:opacity .15s}
 .arena-lb-scroll{max-height:200px;overflow-y:auto}
 
 /* lobby */

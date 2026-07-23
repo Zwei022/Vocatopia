@@ -470,7 +470,7 @@ function goScreen(id, btn, _fromBack) {
     // 進入競技場一律回到大廳；若先前有未結束的房間則先退出
     pvpAbandonIfActive();
     pvpResetViews();
-    renderArenaLeaderboard(arenaLbMode);
+    renderArenaLeaderboard(quickMatchMode);
   }
   if (id === 'home') { updateHomeScreen(); }
   if (id === 'decks') { renderCollection(); }
@@ -947,6 +947,10 @@ function selectQuickMatchMode(mode) {
   quickMatchMode = mode;
   document.getElementById('qmChipVocab').classList.toggle('sel', mode === 'vocab');
   document.getElementById('qmChipBuzzer').classList.toggle('sel', mode === 'buzzer');
+  // 排行榜跟著這裡選的模式連動，不用另外點擊切換
+  const headEl = document.getElementById('arenaLbHead');
+  if (headEl) headEl.textContent = mode === 'buzzer' ? '🏆 單字搶答排行榜' : '🏆 單字對決排行榜';
+  renderArenaLeaderboard(mode);
 }
 function startQuickMatch() {
   const s = getPvpSocket();
@@ -965,14 +969,8 @@ function _pvpLeaveQueueIfAny() {
 }
 
 // ── 競技場排行榜：兩種模式各自獨立（arena_leaderboard_vocab／arena_leaderboard_buzzer，
-// 皆已在 view 內過濾至少 5 場才會出現），版面直接沿用首頁方塊排行榜的 .hm-board-* 樣式 ──
-let arenaLbMode = 'vocab';
-function selectArenaLbTab(mode) {
-  arenaLbMode = mode;
-  document.getElementById('lbTabVocab').classList.toggle('sel', mode === 'vocab');
-  document.getElementById('lbTabBuzzer').classList.toggle('sel', mode === 'buzzer');
-  renderArenaLeaderboard(mode);
-}
+// 皆已在 view 內過濾至少 5 場才會出現），版面直接沿用首頁方塊排行榜的 .hm-board-* 樣式。
+// 不另外設定切換入口，直接跟著 selectQuickMatchMode() 選的模式連動 ──
 async function renderArenaLeaderboard(mode) {
   const listEl = document.getElementById('arenaLbList');
   if (!listEl || typeof authClient === 'undefined') return;
