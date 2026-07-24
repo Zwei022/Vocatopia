@@ -796,6 +796,21 @@ cron.schedule('5 16 * * *', async () => {
   }
 });
 
+// ── 競技場週結算 CRON（台灣時間每週一 00:05 = UTC 週日 16:05）──
+// 各段位（青銅~傳奇）前20名依本週積分排名發金幣，發完後把本週積分歸零重新開始。
+// 實際排名/發獎/歸零邏輯都在 Postgres 的 settle_arena_week() 一支函式內原子完成
+// （見 supabase/migrations/arena_weekly_tiers.sql），這裡只是定時觸發＋記錄結果。
+cron.schedule('5 16 * * 0', async () => {
+  console.log('\n[Cron] 競技場週結算觸發');
+  try {
+    const { data, error } = await supabase.rpc('settle_arena_week');
+    if (error) throw error;
+    console.log(`[Cron] 競技場週結算完成，共發放 ${data?.length || 0} 筆獎勵`);
+  } catch (err) {
+    console.error('[Cron] 競技場週結算失敗：', err.message);
+  }
+});
+
 // 啟動時若今日尚無文章則自動補生成
 (async () => {
   const today = new Date().toISOString().split('T')[0];

@@ -948,8 +948,6 @@ function selectQuickMatchMode(mode) {
   document.getElementById('qmChipVocab').classList.toggle('sel', mode === 'vocab');
   document.getElementById('qmChipBuzzer').classList.toggle('sel', mode === 'buzzer');
   // 排行榜跟著這裡選的模式連動，不用另外點擊切換
-  const headEl = document.getElementById('arenaLbHead');
-  if (headEl) headEl.textContent = mode === 'buzzer' ? '單字搶答排行榜' : '單字對決排行榜';
   renderArenaLeaderboard(mode);
 }
 function startQuickMatch() {
@@ -968,25 +966,55 @@ function _pvpLeaveQueueIfAny() {
   if (pvpSocket && pvpSocket.connected) pvpSocket.emit('queue_leave', { mode: quickMatchMode });
 }
 
-// ── 競技場排行榜：兩種模式各自獨立（arena_leaderboard_vocab／arena_leaderboard_buzzer，
-// 皆已在 view 內過濾至少 5 場才會出現），版面直接沿用首頁方塊排行榜的 .hm-board-* 樣式。
+// ── 競技場段位（依永久 ELO 即時計算，不另存欄位；門檻需與 supabase/migrations/
+// arena_weekly_tiers.sql 的 CASE 條件保持一致，調整時兩邊都要改）──
+const ARENA_TIERS = [
+  { id: 'bronze',       name: '青銅', min: 0 },
+  { id: 'silver',       name: '白銀', min: 900 },
+  { id: 'gold',         name: '黃金', min: 1000 },
+  { id: 'platinum',     name: '白金', min: 1100 },
+  { id: 'diamond',      name: '鑽石', min: 1200 },
+  { id: 'transcendent', name: '超凡', min: 1350 },
+  { id: 'mythic',       name: '神話', min: 1500 },
+  { id: 'legendary',    name: '傳奇', min: 1700 },
+];
+function tierOfElo(elo) {
+  let t = ARENA_TIERS[0];
+  for (const tier of ARENA_TIERS) { if ((elo ?? 1000) >= tier.min) t = tier; }
+  return t;
+}
+
+// ── 競技場排行榜：兩種模式各自獨立（arena_leaderboard_vocab／arena_leaderboard_buzzer），
+// 預設只顯示「你目前所在段位」內、依本週積分排名的前20名——不是全站排名，避免新手一打開
+// 就看到遙不可及的全站第一名。版面沿用首頁方塊排行榜的 .hm-board-* 樣式。每週一 00:05
+// （台灣時間）由伺服器結算一次：各段位前20名依名次發金幣，發完本週積分歸零重新開始。
 // 不另外設定切換入口，直接跟著 selectQuickMatchMode() 選的模式連動 ──
 async function renderArenaLeaderboard(mode) {
   const listEl = document.getElementById('arenaLbList');
+  const headEl = document.getElementById('arenaLbHead');
   if (!listEl || typeof authClient === 'undefined') return;
+
+  const myElo = mode === 'buzzer' ? currentProfile?.arena_elo_buzzer : currentProfile?.arena_elo_vocab;
+  const myTier = tierOfElo(myElo);
+  if (headEl) {
+    headEl.innerHTML = `${mode === 'buzzer' ? '單字搶答' : '單字對決'}排行榜・${myTier.name}段
+      <span class="arena-lb-hint">本段位前20名，每週一結算發金幣</span>`;
+  }
+
   listEl.innerHTML = '<div class="hm-board-empty">載入中…</div>';
   try {
     const { data, error } = await authClient
       .from(mode === 'buzzer' ? 'arena_leaderboard_buzzer' : 'arena_leaderboard_vocab')
-      .select('id, username, avatar_id, arena_elo')
-      .order('arena_elo', { ascending: false })
+      .select('id, username, avatar_id, weekly_score')
+      .eq('tier', myTier.id)
+      .order('weekly_score', { ascending: false })
       .limit(20);
     if (error) throw error;
-    if (!data || data.length === 0) {
-      listEl.innerHTML = '<div class="hm-board-empty">還沒有人打滿 5 場<br>快來搶第一名！</div>';
+    if (!data || data.length === 0 || data.every(r => !r.weekly_score)) {
+      listEl.innerHTML = `<div class="hm-board-empty">${escHtml(myTier.name)}段本週還沒有人得分<br>快來搶第一名！</div>`;
       return;
     }
-    listEl.innerHTML = data.map((row, i) => {
+    listEl.innerHTML = data.filter(r => r.weekly_score > 0).map((row, i) => {
       const rank = i + 1;
       const rankCls = rank <= 3 ? ` top${rank}` : '';
       const name = row.username || '玩家';
@@ -996,7 +1024,7 @@ async function renderArenaLeaderboard(mode) {
         <span class="hm-board-rank${rankCls}">${rank}</span>
         <span class="hm-board-avatar"${avStyle}></span>
         <span class="hm-board-name">${escHtml(name)}</span>
-        <span class="hm-board-score">${row.arena_elo}</span>
+        <span class="hm-board-score">${row.weekly_score}</span>
       </div>`;
     }).join('');
   } catch (e) {
@@ -1326,15 +1354,17 @@ async function _applyArenaOutcome(myOutcome) {
     if (error) throw error;
     const row = Array.isArray(data) ? data[0] : data;
     if (row && currentProfile) {
-      currentProfile.arena_elo_vocab     = row.arena_elo_vocab;
-      currentProfile.arena_wins_vocab    = row.arena_wins_vocab;
-      currentProfile.arena_losses_vocab  = row.arena_losses_vocab;
-      currentProfile.arena_draws_vocab   = row.arena_draws_vocab;
-      currentProfile.arena_elo_buzzer    = row.arena_elo_buzzer;
-      currentProfile.arena_wins_buzzer   = row.arena_wins_buzzer;
-      currentProfile.arena_losses_buzzer = row.arena_losses_buzzer;
-      currentProfile.arena_draws_buzzer  = row.arena_draws_buzzer;
-      currentProfile.wins                = row.wins;
+      currentProfile.arena_elo_vocab           = row.arena_elo_vocab;
+      currentProfile.arena_wins_vocab          = row.arena_wins_vocab;
+      currentProfile.arena_losses_vocab        = row.arena_losses_vocab;
+      currentProfile.arena_draws_vocab         = row.arena_draws_vocab;
+      currentProfile.arena_weekly_score_vocab  = row.arena_weekly_score_vocab;
+      currentProfile.arena_elo_buzzer          = row.arena_elo_buzzer;
+      currentProfile.arena_wins_buzzer         = row.arena_wins_buzzer;
+      currentProfile.arena_losses_buzzer       = row.arena_losses_buzzer;
+      currentProfile.arena_draws_buzzer        = row.arena_draws_buzzer;
+      currentProfile.arena_weekly_score_buzzer = row.arena_weekly_score_buzzer;
+      currentProfile.wins                      = row.wins;
     }
   } catch (e) { console.error('[Arena] apply_arena_result 失敗（本局獎勵中金幣/經驗值已入帳，僅段位未同步）：', e?.message || e); }
 }
