@@ -173,7 +173,9 @@ begin
       returning %3$L, w.tier_name, w.rnk, w.id, w.gold_awarded
     $f$, elo_col, score_col, m);
 
-    execute format('update public.profiles set %I = 0', score_col);
+    -- Supabase 的 Postgres 預設擋掉沒有 WHERE 子句的 UPDATE（safe update 保護），
+    -- 用 where true 滿足語法要求，實際效果仍是全體歸零。
+    execute format('update public.profiles set %I = 0 where true', score_col);
   end loop;
 end;
 $$;
