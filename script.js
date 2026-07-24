@@ -968,6 +968,9 @@ function _pvpLeaveQueueIfAny() {
 
 // ── 競技場段位（依永久 ELO 即時計算，不另存欄位；門檻需與 supabase/migrations/
 // arena_weekly_tiers.sql 的 CASE 條件保持一致，調整時兩邊都要改）──
+// 新玩家起始 ELO 800（青銅段），跟 server/index.js 的 ARENA_DEFAULT_ELO 與
+// supabase/migrations/arena_start_bronze.sql 的欄位預設值保持一致。
+const ARENA_DEFAULT_ELO = 800;
 const ARENA_TIERS = [
   { id: 'bronze',       name: '青銅', min: 0 },
   { id: 'silver',       name: '白銀', min: 900 },
@@ -979,7 +982,7 @@ const ARENA_TIERS = [
 ];
 function tierOfElo(elo) {
   let t = ARENA_TIERS[0];
-  for (const tier of ARENA_TIERS) { if ((elo ?? 1000) >= tier.min) t = tier; }
+  for (const tier of ARENA_TIERS) { if ((elo ?? ARENA_DEFAULT_ELO) >= tier.min) t = tier; }
   return t;
 }
 
@@ -8435,20 +8438,46 @@ function renderDeployedChar() {
 }
 
 // ── 首頁：排行榜（前20高分）──
+// 俄羅斯方塊排行榜段位：跟競技場的 ELO 段位「分開設計」，門檻完全不同（方塊是累積分數，
+// 不是 ELO 尺度），需與 supabase/migrations/tetris_tiers.sql 的 CASE 條件保持一致。
+const TETRIS_TIERS = [
+  { id: 'bronze',    name: '青銅', min: 0 },
+  { id: 'silver',    name: '白銀', min: 500 },
+  { id: 'gold',      name: '黃金', min: 1500 },
+  { id: 'platinum',  name: '白金', min: 4000 },
+  { id: 'diamond',   name: '鑽石', min: 10000 },
+  { id: 'mythic',    name: '神話', min: 25000 },
+  { id: 'legendary', name: '傳奇', min: 50000 },
+];
+function tierOfTetrisScore(score) {
+  let t = TETRIS_TIERS[0];
+  for (const tier of TETRIS_TIERS) { if ((score || 0) >= tier.min) t = tier; }
+  return t;
+}
+
+// 排行榜預設只顯示「玩家目前所在段位」內的排名，理由跟競技場排行榜一樣：
+// 只顯示全站前20名的話，離榜首太遠會喪失爭取心。用本機快取的最高分（LS_TETRIS_BEST，
+// 訪客/登入皆會更新，見 game/tetris/game.js）判斷自己在哪個段位，不用額外打一次 API。
 async function renderLeaderboard() {
   const list = document.getElementById('hmBoardList');
+  const headEl = document.getElementById('hmBoardHead');
   if (!list) return;
+
+  let myBest = 0;
+  try { myBest = parseInt(localStorage.getItem('voca_tetris_best') || '0', 10) || 0; } catch { /* ignore */ }
+  const myTier = tierOfTetrisScore(myBest);
+  if (headEl) headEl.textContent = `排行榜・${myTier.name}段`;
+
   list.innerHTML = `<div class="hm-board-empty">載入中…</div>`;
 
   let rows = [];
   console.time('[perf] renderLeaderboard');
   try {
     if (typeof authClient !== 'undefined') {
-      // 即時 join profiles 拿最新暱稱，不用 tetris_scores 自己存的 username 快照
-      // （快照會在玩家改名後就跟排行榜對不上，見 2026-07-11 回報）
       const { data } = await authClient
-        .from('tetris_scores')
-        .select('user_id, best_score, profiles(username)')
+        .from('tetris_leaderboard')
+        .select('id, username, avatar_id, best_score')
+        .eq('tier', myTier.id)
         .order('best_score', { ascending: false })
         .limit(20);
       rows = data || [];
@@ -8458,15 +8487,18 @@ async function renderLeaderboard() {
   }
 
   if (!rows.length) {
-    list.innerHTML = `<div class="hm-board-empty">還沒有紀錄<br>快來搶第一名！</div>`;
+    list.innerHTML = `<div class="hm-board-empty">${escHtml(myTier.name)}段還沒有紀錄<br>快來搶第一名！</div>`;
     return;
   }
   list.innerHTML = rows.map((r, i) => {
     const rank = i + 1;
     const rankCls = rank <= 3 ? ` top${rank}` : '';
-    const name = r.profiles?.username || '玩家';
-    return `<div class="hm-board-row" onclick="showUserProfile('${r.user_id}','${_escJs(name)}')">
+    const name = r.username || '玩家';
+    const avImg = (typeof avatarImgOf === 'function') ? avatarImgOf(r.avatar_id) : null;
+    const avStyle = avImg ? ` style="background-image:url('${avImg}')"` : '';
+    return `<div class="hm-board-row" onclick="showUserProfile('${r.id}','${_escJs(name)}')">
       <span class="hm-board-rank${rankCls}">${rank}</span>
+      <span class="hm-board-avatar"${avStyle}></span>
       <span class="hm-board-name">${escHtml(name)}</span>
       <span class="hm-board-score">${(r.best_score || 0).toLocaleString()}</span>
     </div>`;

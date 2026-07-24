@@ -113,7 +113,10 @@ function genRoomCode() {
 // ── 競技場排名／獎勵（ELO）──
 // 標準 Elo 公式：K 值取 24（比競技類遊戲常見的 32 略低，降低單場波動，
 // 對國中生使用者比較不會因為一場失常就大幅掉段）。
+// 新玩家起始 ELO：800（落在青銅段，<900），跟前端 script.js 的 ARENA_DEFAULT_ELO
+// 與 supabase/migrations/arena_start_bronze.sql 的欄位預設值保持一致。
 const ARENA_ELO_K = 24;
+const ARENA_DEFAULT_ELO = 800;
 function eloDelta(myElo, foeElo, score /* 1=贏 0.5=平 0=輸 */) {
   const expected = 1 / (1 + Math.pow(10, (foeElo - myElo) / 400));
   return Math.round(ARENA_ELO_K * (score - expected));
@@ -130,7 +133,7 @@ function rewardForResult(result) {
 // 用 service-role client 直接讀 profiles，不透過使用者自己的 RLS 權限（伺服器是可信任來源）。
 // mode：兩種模式（單字對決/單字搶答）各自獨立的 ELO 段位，讀寫對應的 arena_elo_vocab／arena_elo_buzzer。
 // guestBotElo：對手是電腦補位時（見 _createQueuedRoom，電腦一律是 guest 側），電腦當局
-// 被分派到的 ELO——不能讓 eloOf(null) 退回預設值 1000，否則電腦強弱就跟真人的對戰體驗脫鉤。
+// 被分派到的 ELO——不能讓 eloOf(null) 退回預設值，否則電腦強弱就跟真人的對戰體驗脫鉤。
 async function computeArenaOutcome(hostUserId, guestUserId, winnerIsHost /* true/false/null(平手) */, guestBotElo, mode) {
   const out = {};
   if (!hostUserId && !guestUserId) return out;
@@ -139,7 +142,7 @@ async function computeArenaOutcome(hostUserId, guestUserId, winnerIsHost /* true
     const ids = [hostUserId, guestUserId].filter(Boolean);
     const { data, error } = await supabase.from('profiles').select(`id, ${eloCol}`).in('id', ids);
     if (error) throw error;
-    const eloOf = (uid) => data?.find(p => p.id === uid)?.[eloCol] ?? 1000;
+    const eloOf = (uid) => data?.find(p => p.id === uid)?.[eloCol] ?? ARENA_DEFAULT_ELO;
     const hostElo = eloOf(hostUserId);
     const guestElo = (!guestUserId && guestBotElo) ? guestBotElo : eloOf(guestUserId);
     const hostScore  = winnerIsHost === null ? 0.5 : winnerIsHost ? 1 : 0;
@@ -724,7 +727,7 @@ io.on('connection', (socket) => {
     if (mode !== 'vocab' && mode !== 'buzzer') return;
     _leaveAllQueues(socket.id); // 防止手滑連點造成同一人排進佇列兩次
 
-    let elo = 1000;
+    let elo = ARENA_DEFAULT_ELO;
     if (userId) {
       const eloCol = mode === 'buzzer' ? 'arena_elo_buzzer' : 'arena_elo_vocab';
       try {
