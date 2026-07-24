@@ -867,13 +867,24 @@ async function startSubscriptionPurchase(planId) {
     return;
   }
 
-  const pkg = offerings?.current?.availablePackages?.find(
-    p => p.storeProduct.identifier === SUBSCRIPTION_PRODUCT_IDS[planId]
-  );
+  let pkg;
+  try {
+    // @revenuecat/purchases-capacitor v13 的 PurchasesPackage 型別裡，商品欄位叫
+    // `product`，不是 `storeProduct`（舊版 SDK 用過的欄位名稱）。抓錯欄位會直接
+    // 對 undefined 取 .identifier 丟出例外，且發生在 try/catch 外，會讓整個購買
+    // 流程沒有任何提示地中斷（畫面上看起來像點了完全沒反應）。
+    pkg = offerings?.current?.availablePackages?.find(
+      p => p.product.identifier === SUBSCRIPTION_PRODUCT_IDS[planId]
+    );
+  } catch (e) {
+    console.error('[startSubscriptionPurchase] 解析 offerings 失敗：', e);
+    showToast('讀取訂閱方案時發生錯誤，請稍後再試');
+    return;
+  }
   if (!pkg) {
     console.error('[startSubscriptionPurchase] 找不到對應商品', {
       planId, wantedProductId: SUBSCRIPTION_PRODUCT_IDS[planId],
-      availableIds: offerings?.current?.availablePackages?.map(p => p.storeProduct.identifier),
+      availableIds: offerings?.current?.availablePackages?.map(p => p.product?.identifier),
     });
     showToast('目前無法取得此方案，請稍後再試');
     return;
