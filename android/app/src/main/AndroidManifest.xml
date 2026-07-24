@@ -41,4 +41,6 @@
     <!-- Permissions -->
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Android 13 (API 33) 起，沒有這個宣告 requestPermissions() 不會跳系統通知授權視窗 -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 </manifest>

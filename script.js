@@ -771,10 +771,31 @@ async function initRevenueCat(supabaseUserId) {
 }
 
 // ── 推播通知（FCM，只有原生 App 環境才會動作，網頁瀏覽器沒有這個 plugin）──
+// 權限詢問視窗要在第一次打開 App 就出現（見下方 DOMContentLoaded），不能只綁在登入後
+// 才觸發的 _loadProfile()——訪客模式下、還沒登入前也該看到系統授權彈窗。但 token 註冊
+// 到伺服器需要登入身分：用 _pushToken 快取「訪客身分時就已經拿到的 token」，_pushInitialized
+// 擋掉重複跳權限視窗/重複註冊 addListener，登入後 _loadProfile() 再呼叫一次這個函式時，
+// 會走下面的「已初始化過，補送快取 token」分支，不會因為訪客時就 register 過而永遠漏送。
 let _pushInitialized = false;
+let _pushToken = null;
+async function _registerPushToken(token) {
+  const authToken = typeof getAuthToken === 'function' ? await getAuthToken() : null;
+  if (!authToken || !token) return; // 未登入時先不送（訪客模式沒有帳號可綁定）
+  try {
+    await fetch('/api/push/register', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${authToken}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token, platform: window.Capacitor.getPlatform() }),
+    });
+  } catch (e) { console.warn('[initPushNotifications] 註冊 token 失敗：', e); }
+}
 async function initPushNotifications() {
   const Push = window.Capacitor?.Plugins?.PushNotifications;
-  if (!window.Capacitor?.isNativePlatform?.() || !Push || _pushInitialized) return;
+  if (!window.Capacitor?.isNativePlatform?.() || !Push) return;
+  if (_pushInitialized) {
+    if (_pushToken) await _registerPushToken(_pushToken); // 補送訪客時期就拿到、當時沒能送出的 token
+    return;
+  }
   _pushInitialized = true;
 
   try {
@@ -785,15 +806,8 @@ async function initPushNotifications() {
     if (perm.receive !== 'granted') return; // 使用者拒絕授權，不用勉強註冊
 
     Push.addListener('registration', async ({ value: token }) => {
-      const authToken = typeof getAuthToken === 'function' ? await getAuthToken() : null;
-      if (!authToken || !token) return; // 未登入時先不送（訪客模式沒有帳號可綁定）
-      try {
-        await fetch('/api/push/register', {
-          method: 'POST',
-          headers: { Authorization: `Bearer ${authToken}`, 'Content-Type': 'application/json' },
-          body: JSON.stringify({ token, platform: window.Capacitor.getPlatform() }),
-        });
-      } catch (e) { console.warn('[initPushNotifications] 註冊 token 失敗：', e); }
+      _pushToken = token;
+      await _registerPushToken(token);
     });
 
     Push.addListener('registrationError', err => console.warn('[initPushNotifications] 註冊失敗：', err));
@@ -805,6 +819,10 @@ async function initPushNotifications() {
     await Push.register();
   } catch (e) { console.warn('[initPushNotifications] 初始化失敗：', e); }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof initPushNotifications === 'function') initPushNotifications();
+});
 
 async function startSubscriptionPurchase(planId) {
   if (!currentUser) {
