@@ -10,7 +10,7 @@ alter table public.profiles
   add column if not exists arena_weekly_score_buzzer  int not null default 0;
 
 -- 段位門檻（跟前端 script.js 的 ARENA_TIERS 常數需保持一致，之後要調整兩邊都要改）：
--- 青銅 <900／白銀 900+／黃金 1000+／白金 1100+／鑽石 1200+／超凡 1350+／神話 1500+／傳奇 1700+
+-- 青銅 <900／白銀 900+／黃金 1000+／白金 1100+／鑽石 1200+／神話 1500+／傳奇 1700+
 
 -- apply_arena_result 改成連本週積分一起更新，需先 drop 再重建（改變了 RETURNS TABLE 結構，
 -- Postgres 的 CREATE OR REPLACE FUNCTION 不允許直接改回傳型別）。
@@ -86,7 +86,6 @@ create view public.arena_leaderboard_vocab as
          case
            when arena_elo_vocab >= 1700 then 'legendary'
            when arena_elo_vocab >= 1500 then 'mythic'
-           when arena_elo_vocab >= 1350 then 'transcendent'
            when arena_elo_vocab >= 1200 then 'diamond'
            when arena_elo_vocab >= 1100 then 'platinum'
            when arena_elo_vocab >= 1000 then 'gold'
@@ -104,7 +103,6 @@ create view public.arena_leaderboard_buzzer as
          case
            when arena_elo_buzzer >= 1700 then 'legendary'
            when arena_elo_buzzer >= 1500 then 'mythic'
-           when arena_elo_buzzer >= 1350 then 'transcendent'
            when arena_elo_buzzer >= 1200 then 'diamond'
            when arena_elo_buzzer >= 1100 then 'platinum'
            when arena_elo_buzzer >= 1000 then 'gold'
@@ -141,7 +139,6 @@ begin
                case
                  when p.%1$I >= 1700 then 'legendary'
                  when p.%1$I >= 1500 then 'mythic'
-                 when p.%1$I >= 1350 then 'transcendent'
                  when p.%1$I >= 1200 then 'diamond'
                  when p.%1$I >= 1100 then 'platinum'
                  when p.%1$I >= 1000 then 'gold'
@@ -152,7 +149,6 @@ begin
                  partition by case
                    when p.%1$I >= 1700 then 'legendary'
                    when p.%1$I >= 1500 then 'mythic'
-                   when p.%1$I >= 1350 then 'transcendent'
                    when p.%1$I >= 1200 then 'diamond'
                    when p.%1$I >= 1100 then 'platinum'
                    when p.%1$I >= 1000 then 'gold'

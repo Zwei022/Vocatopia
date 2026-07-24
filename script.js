@@ -974,7 +974,6 @@ const ARENA_TIERS = [
   { id: 'gold',         name: '黃金', min: 1000 },
   { id: 'platinum',     name: '白金', min: 1100 },
   { id: 'diamond',      name: '鑽石', min: 1200 },
-  { id: 'transcendent', name: '超凡', min: 1350 },
   { id: 'mythic',       name: '神話', min: 1500 },
   { id: 'legendary',    name: '傳奇', min: 1700 },
 ];
