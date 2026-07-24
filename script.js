@@ -994,13 +994,14 @@ function tierOfElo(elo) {
 async function renderArenaLeaderboard(mode) {
   const listEl = document.getElementById('arenaLbList');
   const headEl = document.getElementById('arenaLbHead');
+  const tierFootEl = document.getElementById('arenaLbTierFoot');
   if (!listEl || typeof authClient === 'undefined') return;
 
   const myElo = mode === 'buzzer' ? currentProfile?.arena_elo_buzzer : currentProfile?.arena_elo_vocab;
   const myTier = tierOfElo(myElo);
-  if (headEl) {
-    headEl.innerHTML = `${mode === 'buzzer' ? '單字搶答' : '單字對決'}排行榜・${myTier.name}段
-      <span class="arena-lb-hint">本段位前20名，每週一結算發金幣</span>`;
+  if (headEl) headEl.textContent = mode === 'buzzer' ? '單字搶答排行榜' : '單字對決排行榜';
+  if (tierFootEl) {
+    tierFootEl.innerHTML = `${escHtml(myTier.name)}段<span class="arena-lb-hint">本段位前20名，每週一結算發金幣</span>`;
   }
 
   listEl.innerHTML = '<div class="hm-board-empty">載入中…</div>';
@@ -8461,12 +8462,14 @@ function tierOfTetrisScore(score) {
 async function renderLeaderboard() {
   const list = document.getElementById('hmBoardList');
   const headEl = document.getElementById('hmBoardHead');
+  const tierFootEl = document.getElementById('hmBoardTierFoot');
   if (!list) return;
 
   let myBest = 0;
   try { myBest = parseInt(localStorage.getItem('voca_tetris_best') || '0', 10) || 0; } catch { /* ignore */ }
   const myTier = tierOfTetrisScore(myBest);
-  if (headEl) headEl.textContent = `排行榜・${myTier.name}段`;
+  if (headEl) headEl.textContent = '排行榜';
+  if (tierFootEl) tierFootEl.textContent = `${myTier.name}段`;
 
   list.innerHTML = `<div class="hm-board-empty">載入中…</div>`;
 
