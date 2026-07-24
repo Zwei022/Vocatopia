@@ -999,6 +999,26 @@
 
       <div class="sett-section">
         <div class="sett-label">推播通知</div>
+        <label class="sett-toggle-row">
+          <span>每日打卡提醒</span>
+          <input type="checkbox" id="pushPrefStreak" onchange="savePushPrefs()">
+        </label>
+        <label class="sett-toggle-row">
+          <span>好友與對戰邀請</span>
+          <input type="checkbox" id="pushPrefSocial" onchange="savePushPrefs()">
+        </label>
+        <label class="sett-toggle-row">
+          <span>競技場週結算</span>
+          <input type="checkbox" id="pushPrefArena" onchange="savePushPrefs()">
+        </label>
+        <label class="sett-toggle-row">
+          <span>回訪提醒</span>
+          <input type="checkbox" id="pushPrefWinback" onchange="savePushPrefs()">
+        </label>
+        <label class="sett-toggle-row">
+          <span>訂閱到期提醒</span>
+          <input type="checkbox" id="pushPrefSubscription" onchange="savePushPrefs()">
+        </label>
         <button class="sett-item-btn" id="pushTestBtn" onclick="sendTestPush()">🔔 發送測試通知給我</button>
       </div>
 

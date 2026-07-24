@@ -9,6 +9,27 @@ const compression = require('compression');
 const rateLimit = require('express-rate-limit');
 const supabase = require('./db/supabase');
 const { generateAndSave } = require('./scripts/generate_daily_articles');
+const { sendPushToUsers } = require('./lib/push');
+
+// 通知偏好判斷：push_prefs 的 key 不存在時視為開啟（預設 true），只有明確設成
+// false 才算關閉。跟前端設定頁的「通知設定」toggle 對應。
+function _pushAllowed(prefs, category) {
+  return !(prefs && prefs[category] === false);
+}
+
+// 對戰邀請即時 socket 送不到（對方離線，或在線但沒有分頁回應 ack）時的推播備援
+async function _pushGameInvite(toUserId, fromUsername, mode) {
+  if (!toUserId) return;
+  try {
+    const { data } = await supabase.from('profiles').select('push_prefs').eq('id', toUserId).maybeSingle();
+    if (!_pushAllowed(data?.push_prefs, 'social')) return;
+    await sendPushToUsers(supabase, [toUserId], {
+      title: '對戰邀請',
+      body: `${fromUsername} 邀請你來一場${mode === 'buzzer' ? '單字搶答' : '單字對決'}`,
+      data: { type: 'game_invite' },
+    });
+  } catch (e) { console.error('[_pushGameInvite] 推播失敗：', e.message); }
+}
 
 // 單一未捕捉錯誤不應該讓整個 process（含所有 Socket.io 記憶體內房間狀態）當掉。
 // 只記錄並存活，不靜默吞掉（fail loud in logs，但不 crash）。
@@ -572,10 +593,24 @@ io.on('connection', (socket) => {
     cb({ online });
   });
 
-  socket.on('send_friend_request', ({ toUserId, fromUserId, fromUsername }) => {
+  // 對方在線就走即時 socket；不在線才用推播補上（避免同一個人兩邊都收到通知）
+  socket.on('send_friend_request', async ({ toUserId, fromUserId, fromUsername }) => {
     const targets = onlineUsers.get(toUserId);
-    if (!targets) return;
-    for (const sid of targets) io.to(sid).emit('friend_request_incoming', { fromUserId, fromUsername });
+    if (targets && targets.size > 0) {
+      for (const sid of targets) io.to(sid).emit('friend_request_incoming', { fromUserId, fromUsername });
+      return;
+    }
+    if (!toUserId) return;
+    try {
+      const { data } = await supabase.from('profiles').select('push_prefs').eq('id', toUserId).maybeSingle();
+      if (_pushAllowed(data?.push_prefs, 'social')) {
+        await sendPushToUsers(supabase, [toUserId], {
+          title: '新的好友邀請',
+          body: `${fromUsername} 想加你為好友`,
+          data: { type: 'friend_request' },
+        });
+      }
+    } catch (e) { console.error('[send_friend_request] 推播失敗：', e.message); }
   });
 
   socket.on('friend_request_response', ({ toUserId, fromUsername, accepted }) => {
@@ -610,6 +645,7 @@ io.on('connection', (socket) => {
     const targets = onlineUsers.get(toUserId);
     if (!targets || targets.size === 0) {
       if (typeof cb === 'function') cb({ delivered: false });
+      _pushGameInvite(toUserId, fromUsername, mode);
       return;
     }
     const payload = { code, fromUsername, mode };
@@ -621,6 +657,9 @@ io.on('connection', (socket) => {
     Promise.all(acks).then(results => {
       const delivered = results.some(ok => ok);
       if (typeof cb === 'function') cb({ delivered });
+      // 對方在 onlineUsers 名單裡，但所有分頁的即時彈窗都沒回應 ack（例如 App 在
+      // 背景、WebSocket 還沒被伺服器判定斷線但畫面其實收不到）——一樣補推播
+      if (!delivered) _pushGameInvite(toUserId, fromUsername, mode);
     });
   });
 
@@ -803,14 +842,113 @@ cron.schedule('5 16 * * *', async () => {
 // 各段位（青銅~傳奇）前20名依本週積分排名發金幣，發完後把本週積分歸零重新開始。
 // 實際排名/發獎/歸零邏輯都在 Postgres 的 settle_arena_week() 一支函式內原子完成
 // （見 supabase/migrations/arena_weekly_tiers.sql），這裡只是定時觸發＋記錄結果。
+const ARENA_TIER_NAMES = {
+  bronze: '青銅', silver: '白銀', gold: '黃金', platinum: '白金',
+  diamond: '鑽石', mythic: '神話', legendary: '傳奇',
+};
 cron.schedule('5 16 * * 0', async () => {
   console.log('\n[Cron] 競技場週結算觸發');
   try {
     const { data, error } = await supabase.rpc('settle_arena_week');
     if (error) throw error;
     console.log(`[Cron] 競技場週結算完成，共發放 ${data?.length || 0} 筆獎勵`);
+
+    // 逐一通知得獎者（各自名次/段位/金幣不同，不能用同一則文案批次發送）
+    if (data && data.length) {
+      const userIds = [...new Set(data.map(r => r.user_id))];
+      const { data: prefRows } = await supabase.from('profiles').select('id, push_prefs').in('id', userIds);
+      const prefsOf = (uid) => prefRows?.find(p => p.id === uid)?.push_prefs;
+      for (const row of data) {
+        if (!_pushAllowed(prefsOf(row.user_id), 'arena')) continue;
+        const tierName = ARENA_TIER_NAMES[row.tier] || row.tier;
+        const modeName = row.mode === 'buzzer' ? '單字搶答' : '單字對決';
+        await sendPushToUsers(supabase, [row.user_id], {
+          title: '🏆 競技場週結算',
+          body: `${modeName}${tierName}段第 ${row.rnk} 名！獲得 ${row.gold_awarded} 金幣`,
+          data: { type: 'arena_weekly_result', mode: row.mode, tier: row.tier, rnk: row.rnk },
+        });
+      }
+    }
   } catch (err) {
     console.error('[Cron] 競技場週結算失敗：', err.message);
+  }
+});
+
+// ── 每日打卡提醒 CRON（台灣時間每天 21:00 = UTC 13:00）──
+// 傍晚時段提醒還沒打卡的使用者，避免連續紀錄中斷（比照多鄰國的連續紀錄提醒）。
+cron.schedule('0 13 * * *', async () => {
+  console.log('\n[Cron] 每日打卡提醒觸發');
+  try {
+    const todayTaipei = new Date(Date.now() + 8 * 60 * 60 * 1000).toISOString().split('T')[0];
+    const { data: rows, error } = await supabase
+      .from('profiles')
+      .select('id, streak, push_prefs')
+      .or(`last_checkin.is.null,last_checkin.lt.${todayTaipei}`);
+    if (error) throw error;
+    const targets = (rows || []).filter(r => _pushAllowed(r.push_prefs, 'streak')).map(r => r.id);
+    if (!targets.length) { console.log('[Cron] 打卡提醒：今天沒有符合條件的使用者'); return; }
+    const result = await sendPushToUsers(supabase, targets, {
+      title: '🔥 今天還沒打卡喔',
+      body: '別讓連續紀錄中斷了，花一分鐘完成今天的學習吧！',
+      data: { type: 'streak_reminder' },
+    });
+    console.log(`[Cron] 打卡提醒完成，對象 ${targets.length} 人，成功送達 ${result.sent}`);
+  } catch (err) {
+    console.error('[Cron] 打卡提醒失敗：', err.message);
+  }
+});
+
+// ── 回訪提醒 CRON（台灣時間每天 10:00 = UTC 02:00）──
+// 超過3天沒開App的使用者發一次提醒，最多一週發一次（避免對長期不活躍使用者狂發）。
+cron.schedule('0 2 * * *', async () => {
+  console.log('\n[Cron] 回訪提醒觸發');
+  try {
+    const now = Date.now();
+    const threeDaysAgo = new Date(now - 3 * 24 * 60 * 60 * 1000).toISOString();
+    const sevenDaysAgo = new Date(now - 7 * 24 * 60 * 60 * 1000).toISOString();
+    const { data: rows, error } = await supabase
+      .from('profiles')
+      .select('id, push_prefs')
+      .lt('last_active_at', threeDaysAgo)
+      .or(`last_winback_sent_at.is.null,last_winback_sent_at.lt.${sevenDaysAgo}`);
+    if (error) throw error;
+    const targets = (rows || []).filter(r => _pushAllowed(r.push_prefs, 'winback')).map(r => r.id);
+    if (!targets.length) { console.log('[Cron] 回訪提醒：今天沒有符合條件的使用者'); return; }
+    const result = await sendPushToUsers(supabase, targets, {
+      title: '好久不見 👋',
+      body: '你的單字們有點想你了，回來看看今天有什麼新內容吧！',
+      data: { type: 'winback' },
+    });
+    await supabase.from('profiles').update({ last_winback_sent_at: new Date().toISOString() }).in('id', targets);
+    console.log(`[Cron] 回訪提醒完成，對象 ${targets.length} 人，成功送達 ${result.sent}`);
+  } catch (err) {
+    console.error('[Cron] 回訪提醒失敗：', err.message);
+  }
+});
+
+// ── 訂閱到期提醒 CRON（台灣時間每天 09:00 = UTC 01:00）──
+// 到期日剛好落在「3天後」的當天觸發一次，日期比對本身就避免了重複發送。
+cron.schedule('0 1 * * *', async () => {
+  console.log('\n[Cron] 訂閱到期提醒觸發');
+  try {
+    const target = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+    const { data: rows, error } = await supabase
+      .from('subscriptions')
+      .select('user_id, expires_at, profiles!inner(push_prefs)')
+      .eq('is_premium', true)
+      .gte('expires_at', `${target}T00:00:00Z`)
+      .lt('expires_at', `${target}T23:59:59Z`);
+    if (error) throw error;
+    const targets = (rows || []).filter(r => _pushAllowed(r.profiles?.push_prefs, 'subscription')).map(r => r.user_id);
+    if (!targets.length) { console.log('[Cron] 訂閱到期提醒：今天沒有符合條件的使用者'); return; }
+    const result = await sendPushToUsers(supabase, targets, {
+      title: '訂閱即將到期',
+      body: '你的 Vocatopia 進階會員 3 天後到期，記得確認訂閱狀態喔',
+      data: { type: 'subscription_expiry' },
+    });
+    console.log(`[Cron] 訂閱到期提醒完成，對象 ${targets.length} 人，成功送達 ${result.sent}`);
+  } catch (err) {
+    console.error('[Cron] 訂閱到期提醒失敗：', err.message);
   }
 });
 

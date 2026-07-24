@@ -6322,7 +6322,38 @@ function showSettings() {
     btn.classList.toggle('active', btn.textContent === '會考');
   });
 
+  // 還原推播通知偏好（key 不存在時預設開啟，跟伺服器端 _pushAllowed() 判斷邏輯一致）
+  const prefs = currentProfile?.push_prefs || {};
+  const pushToggleIds = { streak: 'pushPrefStreak', social: 'pushPrefSocial', arena: 'pushPrefArena', winback: 'pushPrefWinback', subscription: 'pushPrefSubscription' };
+  Object.entries(pushToggleIds).forEach(([key, id]) => {
+    const el = document.getElementById(id);
+    if (el) el.checked = prefs[key] !== false;
+  });
+
   document.getElementById('settingsPanel').classList.add('open');
+}
+
+// 推播通知偏好：儲存到 profiles.push_prefs（jsonb），伺服器端各個 cron 觸發點
+// 發送前都會檢查這裡的設定，key 不存在時視為開啟。
+async function savePushPrefs() {
+  if (typeof currentUser === 'undefined' || !currentUser || typeof authClient === 'undefined') {
+    showToast('請先登入才能設定通知偏好');
+    return;
+  }
+  const pushToggleIds = { streak: 'pushPrefStreak', social: 'pushPrefSocial', arena: 'pushPrefArena', winback: 'pushPrefWinback', subscription: 'pushPrefSubscription' };
+  const prefs = {};
+  Object.entries(pushToggleIds).forEach(([key, id]) => {
+    const el = document.getElementById(id);
+    if (el) prefs[key] = el.checked;
+  });
+  if (currentProfile) currentProfile.push_prefs = prefs; // 樂觀更新，下次開設定頁不用等網路
+  try {
+    const { error } = await authClient.from('profiles').update({ push_prefs: prefs }).eq('id', currentUser.id);
+    if (error) throw error;
+  } catch (e) {
+    console.error('[savePushPrefs] 儲存失敗：', e.message);
+    showToast('⚠ 通知偏好儲存失敗，請檢查網路連線');
+  }
 }
 
 function closeSettings() {

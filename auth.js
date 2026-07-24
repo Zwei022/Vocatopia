@@ -96,6 +96,13 @@ async function _loadProfile() {
     restoreAvatarFromServer(currentProfile.avatar_id);
   }
 
+  // 記錄最後活躍時間，供伺服器判斷「好幾天沒開 App」的回訪推播提醒對象用。
+  // fire-and-forget，不擋主流程，失敗也不影響登入本身。
+  authClient.from('profiles').update({ last_active_at: new Date().toISOString() })
+    .eq('id', currentUser.id).then(({ error }) => {
+      if (error) console.warn('[_loadProfile] 更新 last_active_at 失敗：', error.message);
+    });
+
   // 推播 token 註冊：刻意放在每次登入都會跑的 _loadProfile()（而不是只有
   // 首次登入的 _initUserAccount()），換裝置/重灌後這台裝置的 token 才會
   // 每次都補註冊一次。
