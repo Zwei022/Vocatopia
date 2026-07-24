@@ -684,9 +684,8 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .upgrade-feat::before{content:'✓';flex-shrink:0;width:16px;height:16px;border-radius:50%;background:var(--greensoft);color:var(--green2);font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center}
 
 .upgrade-tiers{display:flex;flex-direction:column;gap:10px;margin-bottom:16px;text-align:left}
-.tier{width:100%;padding:14px 16px;border-radius:var(--r2);border:2px solid var(--line2);background:var(--nav);cursor:pointer;text-align:left;font-family:inherit;transition:transform .12s}
-.tier:active{transform:scale(.98)}
-.tier.highlight{border-color:var(--orange)!important;background:var(--orasoft)!important}
+.tier{width:100%;padding:14px 16px;border-radius:var(--r2);border:2px solid var(--line2);background:var(--nav);cursor:pointer;text-align:left;font-family:inherit;transition:transform .12s,border-color .12s,background .12s}
+.tier:active{transform:scale(.98);border-color:var(--orange);background:var(--orasoft)}
 .tier-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:3px}
 .tier-name{font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;color:var(--ink)}
 .tier-badge{font-family:var(--font-display);font-weight:900;font-size:10px;color:#fff;background:var(--red);padding:3px 8px;border-radius:20px;letter-spacing:.3px}
