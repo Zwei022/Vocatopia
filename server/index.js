@@ -17,6 +17,33 @@ function _pushAllowed(prefs, category) {
   return !(prefs && prefs[category] === false);
 }
 
+// 文案隨機池：同一類通知（尤其每日打卡/回訪提醒這種會重複發送很多次的）固定用同一句話
+// 太無聊，每次發送時隨機挑一則，同一天所有收件人看到的還是同一句（不逐人各挑一句，
+// 避免把一次 multicast 拆成多次個別發送、徒增成本），但一天換一天內容會不一樣。
+function _pickRandom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+const STREAK_REMINDER_MESSAGES = [
+  { title: '🔥 今天還沒打卡喔',   body: '別讓連續紀錄中斷了，花一分鐘完成今天的學習吧！' },
+  { title: '😳 連續紀錄快熄滅了', body: '只要打開 App 花幾分鐘，今天的連續紀錄就保住了！' },
+  { title: '📚 該複習單字囉',     body: '今天的份還沒開始，現在動手還來得及！' },
+  { title: '⏰ 時間不多了',       body: '距離今天結束前，記得完成打卡別讓連續紀錄斷掉' },
+  { title: '🧠 大腦在等你',       body: '每天累積一點點，會考單字量就是這樣練出來的' },
+  { title: '🌙 睡前最後提醒',     body: '今天還沒打卡，花幾分鐘複習再睡吧' },
+  { title: '💪 堅持才有效果',     body: '你已經累積了好幾天，別讓今天成為例外' },
+];
+
+const WINBACK_MESSAGES = [
+  { title: '好久不見 👋',       body: '你的單字們有點想你了，回來看看今天有什麼新內容吧！' },
+  { title: '📖 好久沒打開了',   body: '會考準備不能斷，回來繼續累積實力吧！' },
+  { title: '🎯 進度別落下太多', body: '好幾天沒登入了，快回來看看累積了多少新內容' },
+  { title: '🪙 有獎勵在等你',   body: '好幾天沒登入，快回來看看有什麼新功能跟獎勵' },
+  { title: '😢 我們有點想你了', body: '好久不見，回來陪 Vocatopia 練英文吧' },
+];
+
+const ARENA_RESULT_TITLES  = ['🏆 競技場週結算', '📊 本週戰績出爐', '🎉 週排名結果公布'];
+const FRIEND_REQUEST_TITLES = ['新的好友邀請', '有人想加你好友', '好友邀請通知'];
+const GAME_INVITE_TITLES    = ['對戰邀請', '有人想跟你單挑', '競技場邀請上門'];
+
 // 對戰邀請即時 socket 送不到（對方離線，或在線但沒有分頁回應 ack）時的推播備援
 async function _pushGameInvite(toUserId, fromUsername, mode) {
   if (!toUserId) return;
@@ -24,7 +51,7 @@ async function _pushGameInvite(toUserId, fromUsername, mode) {
     const { data } = await supabase.from('profiles').select('push_prefs').eq('id', toUserId).maybeSingle();
     if (!_pushAllowed(data?.push_prefs, 'social')) return;
     await sendPushToUsers(supabase, [toUserId], {
-      title: '對戰邀請',
+      title: _pickRandom(GAME_INVITE_TITLES),
       body: `${fromUsername} 邀請你來一場${mode === 'buzzer' ? '單字搶答' : '單字對決'}`,
       data: { type: 'game_invite' },
     });
@@ -605,7 +632,7 @@ io.on('connection', (socket) => {
       const { data } = await supabase.from('profiles').select('push_prefs').eq('id', toUserId).maybeSingle();
       if (_pushAllowed(data?.push_prefs, 'social')) {
         await sendPushToUsers(supabase, [toUserId], {
-          title: '新的好友邀請',
+          title: _pickRandom(FRIEND_REQUEST_TITLES),
           body: `${fromUsername} 想加你為好友`,
           data: { type: 'friend_request' },
         });
@@ -863,7 +890,7 @@ cron.schedule('5 16 * * 0', async () => {
         const tierName = ARENA_TIER_NAMES[row.tier] || row.tier;
         const modeName = row.mode === 'buzzer' ? '單字搶答' : '單字對決';
         await sendPushToUsers(supabase, [row.user_id], {
-          title: '🏆 競技場週結算',
+          title: _pickRandom(ARENA_RESULT_TITLES),
           body: `${modeName}${tierName}段第 ${row.rnk} 名！獲得 ${row.gold_awarded} 金幣`,
           data: { type: 'arena_weekly_result', mode: row.mode, tier: row.tier, rnk: row.rnk },
         });
@@ -887,9 +914,10 @@ cron.schedule('0 13 * * *', async () => {
     if (error) throw error;
     const targets = (rows || []).filter(r => _pushAllowed(r.push_prefs, 'streak')).map(r => r.id);
     if (!targets.length) { console.log('[Cron] 打卡提醒：今天沒有符合條件的使用者'); return; }
+    const msg = _pickRandom(STREAK_REMINDER_MESSAGES);
     const result = await sendPushToUsers(supabase, targets, {
-      title: '🔥 今天還沒打卡喔',
-      body: '別讓連續紀錄中斷了，花一分鐘完成今天的學習吧！',
+      title: msg.title,
+      body: msg.body,
       data: { type: 'streak_reminder' },
     });
     console.log(`[Cron] 打卡提醒完成，對象 ${targets.length} 人，成功送達 ${result.sent}`);
@@ -914,9 +942,10 @@ cron.schedule('0 2 * * *', async () => {
     if (error) throw error;
     const targets = (rows || []).filter(r => _pushAllowed(r.push_prefs, 'winback')).map(r => r.id);
     if (!targets.length) { console.log('[Cron] 回訪提醒：今天沒有符合條件的使用者'); return; }
+    const msg = _pickRandom(WINBACK_MESSAGES);
     const result = await sendPushToUsers(supabase, targets, {
-      title: '好久不見 👋',
-      body: '你的單字們有點想你了，回來看看今天有什麼新內容吧！',
+      title: msg.title,
+      body: msg.body,
       data: { type: 'winback' },
     });
     await supabase.from('profiles').update({ last_winback_sent_at: new Date().toISOString() }).in('id', targets);
