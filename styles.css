@@ -216,9 +216,9 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .arena-sub{font-size:12px;color:var(--ink2);margin-top:5px;letter-spacing:.5px;font-family:var(--font-ui)}
 /* 競技場排行榜卡片：直接參照首頁方塊排行榜（.hm-board-*）設計，行的樣式完全共用 */
 .arena-lb-card{width:100%;background:var(--card);border:2.5px solid var(--line);border-radius:var(--r3);padding:12px 12px 8px;box-shadow:0 4px 0 rgba(122,92,67,.2)}
-.arena-lb-head{font-family:var(--font-display);font-weight:700;font-size:14px;color:var(--ink);margin-bottom:8px;transition:opacity .15s}
-.arena-lb-hint{font-family:'Nunito',sans-serif;font-weight:700;font-size:10px;color:var(--ink2);display:block;margin-top:2px}
-.arena-lb-tier-foot{text-align:center;margin-top:10px;font-family:var(--font-display);font-weight:700;font-size:13px;color:var(--orange2,#B85E0A)}
+.arena-lb-head{font-family:var(--font-zh);font-weight:400;font-size:14px;color:var(--ink);margin-bottom:8px;transition:opacity .15s}
+.arena-lb-hint{font-family:var(--font-zh);font-weight:400;font-size:10px;color:var(--ink2);display:block;margin-top:2px}
+.arena-lb-tier-foot{text-align:center;margin-top:10px;font-family:var(--font-zh);font-weight:500;font-size:13px;color:var(--orange2,#B85E0A)}
 .arena-lb-scroll{max-height:200px;overflow-y:auto}
 
 /* lobby */
@@ -1949,8 +1949,8 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 
 /* 右上：排行榜 */
 .hm-board-card{width:100%;height:100%;min-height:0;min-width:0;display:flex;flex-direction:column;background:var(--card);border:2.5px solid var(--line);border-radius:var(--r3);padding:10px 12px;box-shadow:0 4px 0 rgba(122,92,67,.2)}
-.hm-board-head{font-family:var(--font-display);font-weight:700;font-size:14px;color:var(--ink);margin-bottom:8px;flex-shrink:0}
-.hm-board-tier-foot{text-align:center;margin-top:6px;flex-shrink:0;font-family:var(--font-display);font-weight:700;font-size:12px;color:var(--orange2,#B85E0A)}
+.hm-board-head{font-family:var(--font-zh);font-weight:400;font-size:14px;color:var(--ink);margin-bottom:8px;flex-shrink:0}
+.hm-board-tier-foot{text-align:center;margin-top:6px;flex-shrink:0;font-family:var(--font-zh);font-weight:500;font-size:12px;color:var(--orange2,#B85E0A)}
 .hm-board-list{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:4px;min-height:0}
 .hm-board-list::-webkit-scrollbar{width:0}
 .hm-board-row{display:flex;align-items:center;gap:6px;font-family:'Nunito',sans-serif;font-size:12px;color:var(--ink);padding:3px 2px;cursor:pointer;border-radius:6px;transition:background .1s}
