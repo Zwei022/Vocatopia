@@ -156,7 +156,7 @@ begin
                    else 'bronze'
                  end
                  order by p.%2$I desc
-               ) as rnk
+               )::int as rnk
           from public.profiles p
          where p.%2$I > 0
       ),
