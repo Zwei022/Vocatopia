@@ -824,6 +824,16 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof initPushNotifications === 'function') initPushNotifications();
 });
 
+// 原生 Purchases 外掛偶爾會安靜卡住（promise 永遠不 resolve 也不 reject），
+// 例如 Apple 那邊商品資料還在同步中。包一層逾時，逾時就主動丟出錯誤，
+// 讓使用者至少看得到明確訊息，而不是點了按鈕後畫面像當機一樣沒反應。
+function _withTimeout(promise, ms, label) {
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => setTimeout(() => reject(new Error(`${label} 逾時（${ms / 1000} 秒內無回應）`)), ms)),
+  ]);
+}
+
 async function startSubscriptionPurchase(planId) {
   if (!currentUser) {
     closeModal('upgradeModal');
@@ -845,12 +855,15 @@ async function startSubscriptionPurchase(planId) {
     if (!_revenueCatInitialized && typeof initRevenueCat === 'function' && currentUser) {
       await initRevenueCat(currentUser.id);
     }
-    offerings = await Purchases.getOfferings();
+    offerings = await _withTimeout(Purchases.getOfferings(), 15000, '讀取訂閱方案');
   } catch (e) {
     // 抓不到 offerings 通常代表 RevenueCat 後台的 Offering/Product 設定有問題，
     // 或 App Store Connect 的付費 App 合約沒簽——不是單純網路問題，印出完整錯誤方便查。
     console.error('[startSubscriptionPurchase] getOfferings 失敗：', e);
-    showToast('無法取得訂閱方案，請確認 App Store Connect 付費 App 合約是否已簽署');
+    const timedOut = /逾時/.test(e?.message || '');
+    showToast(timedOut
+      ? '讀取訂閱方案逾時，請確認網路連線，若剛更新過商品設定請稍後再試'
+      : '無法取得訂閱方案，請確認 App Store Connect 付費 App 合約是否已簽署');
     return;
   }
 
@@ -867,7 +880,7 @@ async function startSubscriptionPurchase(planId) {
   }
 
   try {
-    await Purchases.purchasePackage({ aPackage: pkg });
+    await _withTimeout(Purchases.purchasePackage({ aPackage: pkg }), 30000, '購買');
     // 購買成功後 RevenueCat 會觸發 webhook 更新後端 subscriptions 表，
     // 這裡主動 refetch 一次讓 UI 立即反映最新狀態（webhook 可能有數秒延遲）。
     closeModal('upgradeModal');
@@ -897,7 +910,7 @@ async function restorePurchases() {
     if (!_revenueCatInitialized && typeof initRevenueCat === 'function' && currentUser) {
       await initRevenueCat(currentUser.id);
     }
-    await Purchases.restorePurchases();
+    await _withTimeout(Purchases.restorePurchases(), 15000, '恢復購買');
     if (typeof refreshSubscriptionStatus === 'function') await refreshSubscriptionStatus();
     if (_isPremium()) {
       showToast('🎉 已恢復訂閱！');
