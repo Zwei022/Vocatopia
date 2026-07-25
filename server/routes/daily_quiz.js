@@ -3,6 +3,8 @@ const router  = express.Router();
 const path    = require('path');
 const fs      = require('fs');
 const { isPremiumUser } = require('../lib/subscription');
+const { getUserId } = require('../lib/auth');
+const supabase = require('../db/supabase');
 
 const DATA_DIR   = path.resolve(__dirname, '../data');
 
@@ -84,6 +86,19 @@ router.get('/:type', async (req, res) => {
   }
 
   res.json({ type, date: new Date().toISOString().split('T')[0], questions: daily, premium, unlimited });
+
+  // 題庫消耗量追蹤（見 #16）：不擋回應，寫入失敗也不影響使用者體驗，純粹之後分析用。
+  getUserId(req).then(userId => {
+    supabase.from('question_bank_usage').insert({
+      user_id: userId,
+      type,
+      mode: unlimited ? 'unlimited' : 'daily',
+      question_count: daily.length,
+      is_premium: premium,
+    }).then(({ error }) => {
+      if (error) console.warn('[question_bank_usage] 寫入失敗：', error.message);
+    });
+  }).catch(() => {});
 });
 
 module.exports = router;
