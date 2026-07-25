@@ -13,12 +13,18 @@ function _ttShuffle(arr) {
   return a;
 }
 
-// 只取「有乾淨中文釋義」的單字，避免選項過長或空白
+// 出題難度模式：目前只有會考（cap_2000），未來若要加「多益模式」等，改這個常數
+// 即可切換 Tetris 出題的字庫來源，不用改下面的抽字邏輯。
+const TT_EXAM_MODE_TAG = 'cap_2000';
+
+// 只取「符合目前出題難度模式、且有乾淨中文釋義」的單字，避免抽到 WORDS 裡其他來源
+// （例如 hs7000 高中延伸字庫）的超綱字，也避免選項過長或空白。
 function _ttWordPool() {
   if (typeof WORDS === 'undefined') return [];
   return WORDS.filter(w => {
     const zh = (w.definition_zh || '').trim();
-    return w.word && zh && zh.length <= 12 && !/\s{2,}/.test(w.word);
+    return w.word && zh && zh.length <= 12 && !/\s{2,}/.test(w.word)
+      && Array.isArray(w.tags) && w.tags.includes(TT_EXAM_MODE_TAG);
   });
 }
 

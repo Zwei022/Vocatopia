@@ -148,6 +148,9 @@ const ROOM_TTL     = 60 * 60 * 1000; // 房間 1 小時自動過期
 const PVP_DURATION = 30;             // 對決限時（秒）
 const PVP_QCOUNT   = 5;              // 題數
 const vocabFallback = require('./data/question_bank_vocab.json');
+// 出題難度模式：目前只有會考（cap_2000），未來若要加「多益模式」等，
+// 在這裡切換成對應的 tag 即可讓 PVP／Tetris 全站一起換題庫，不用改別的地方。
+const EXAM_MODE_TAG = 'cap_2000';
 
 // ── 單字搶答（buzzer）：雙方同題同步、伺服器時間計分、逐題進行 ──
 const BUZZER_QCOUNT   = 7;   // 題數
@@ -227,16 +230,14 @@ async function buildVocabQuestions() {
     if (_wordCount === null) {
       const { count } = await supabase.from('words')
         .select('id', { count: 'exact', head: true })
-        .not('tags', 'cs', '{user_lookup}')
-        .not('tags', 'cs', '{user_custom}');
+        .contains('tags', [EXAM_MODE_TAG]);
       _wordCount = count || 0;
     }
     if (_wordCount < 40) throw new Error('字庫字數不足');
     const offset = Math.floor(Math.random() * (_wordCount - 40));
     const { data, error } = await supabase.from('words')
       .select('word, pos, definition_zh')
-      .not('tags', 'cs', '{user_lookup}')
-      .not('tags', 'cs', '{user_custom}')
+      .contains('tags', [EXAM_MODE_TAG])
       .order('word', { ascending: true })
       .range(offset, offset + 39);
     if (error || !data) throw new Error(error ? error.message : '查無資料');
