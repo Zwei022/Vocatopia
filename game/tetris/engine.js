@@ -29,6 +29,9 @@ const TT_PIECES = {
 };
 const TT_TYPES = Object.keys(TT_PIECES);
 
+// #14 閱讀理解關卡答錯懲罰：左右兩排各鎖幾格（從最底部往上算）
+const TT_SIDE_LOCK_ROWS = 6;
+
 // 矩陣順時針旋轉 90 度
 function ttRotateMatrix(m) {
   const N = m.length, M = m[0].length;
@@ -225,12 +228,12 @@ function ttCreateEngine(cols = 8, rows = 16) {
     return { moved: false, locked: true, cleared, gameOver: !ok, bombed: false };
   }
 
-  // #14 積分模式閱讀理解關卡答錯懲罰：左右兩排（第 0 欄與最後一欄）從最上到最下整條鎖成牆。
+  // #14 積分模式閱讀理解關卡答錯懲罰：左右兩排（第 0 欄與最後一欄）從最底部往上鎖 TT_SIDE_LOCK_ROWS 格。
   // 跟 addGarbageRow 的灰色 'g' 不同——'w' 沒有排進 clearLines() 的排除清單，
   // 所以哪一整排（含牆格）被填滿，那一排照常消除，牆格跟著一起消失（= 該行解鎖）；
   // 其他還沒填滿的行牆格則維持鎖住。
   function lockSideWalls() {
-    for (let r = 0; r < rows; r++) {
+    for (let r = rows - TT_SIDE_LOCK_ROWS; r < rows; r++) {
       board[r][0] = 'w';
       board[r][cols - 1] = 'w';
     }

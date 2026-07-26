@@ -130,14 +130,15 @@ const e11 = ttCreateEngine(8, 16);
 e11.setNextType('M1'); e11.markNextAsBomb(); e11.spawn();
 ok('cannot hold a bomb-marked piece', e11.hold() === false);
 
-// #14 積分模式閱讀理解懲罰：lockSideWalls() 把左右兩排整條鎖成牆 'w'
+// #14 積分模式閱讀理解懲罰：lockSideWalls() 把左右兩排底部 TT_SIDE_LOCK_ROWS(6) 格鎖成牆 'w'
 const e12 = ttCreateEngine(8, 16);
 e12.lockSideWalls();
-ok('lockSideWalls locks entire left column', e12.board.every(row => row[0] === 'w'));
-ok('lockSideWalls locks entire right column', e12.board.every(row => row[7] === 'w'));
+ok('lockSideWalls locks bottom 6 rows of left column', e12.board.slice(10, 16).every(row => row[0] === 'w'));
+ok('lockSideWalls locks bottom 6 rows of right column', e12.board.slice(10, 16).every(row => row[7] === 'w'));
+ok('lockSideWalls leaves top rows untouched', e12.board.slice(0, 10).every(row => row[0] === null && row[7] === null));
 ok('lockSideWalls leaves middle columns untouched', e12.board.every(row => row.slice(1, 7).every(c => c === null)));
 // 牆格會擋住方塊碰撞（跟一般已鎖定方塊一樣，不能穿過）
-ok('wall cell blocks collision', e12.collides({ matrix: [[1]], row: 0, col: 0 }) === true);
+ok('wall cell blocks collision', e12.collides({ matrix: [[1]], row: 15, col: 0 }) === true);
 // 跟懲罰灰列 'g' 不同：'w' 不在 clearLines() 的排除清單裡，
 // 整排（含牆格）填滿就照常消除，牆格跟著一起消失 = 該行解鎖
 for (let c = 1; c < 7; c++) e12.board[15][c] = 'i';

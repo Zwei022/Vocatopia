@@ -18,7 +18,7 @@ const TT_COMBO_CAP  = 2.0;
 
 // #14 積分模式閱讀理解關卡（每 5000 分觸發一次，只有 ttGame.mode==='ranked' 才會出現）
 const TT_READING_STEP    = 5000;
-const TT_READING_SECONDS = 40;
+const TT_READING_SECONDS = 120;
 const TT_READING_CORRECT = 300;
 
 function _ttEscHtml(s) {
@@ -248,7 +248,7 @@ async function _ttTriggerReadingQuiz() {
         _ttFileWrongToBank('tt_reading', q);
         ttGame.engine.lockSideWalls();
         showTtFloat('左右封鎖！填滿整排解鎖', false);
-        showToast('📖 閱讀理解答錯，左右兩側整條封鎖，填滿一整排即可解鎖該行');
+        showToast('📖 閱讀理解答錯，左右兩側各鎖底部 6 格，填滿一整排即可解鎖該行');
       }
       ttRender();
     },
