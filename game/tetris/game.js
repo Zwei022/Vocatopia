@@ -13,9 +13,10 @@ const TT_SOFTDROP_MS = 55;    // 長按加速下降速度
 
 // #14 模式拆分：單機（solo，不上榜不計最高分，難度固定）／積分（ranked，上榜、算最高分、
 // 重力隨時間漸快、每 5000 分有閱讀理解關卡）。規則其餘完全相同。
-const TT_RANKED_RAMP_MS    = 20000; // 積分模式每隔多久重力加快一次
-const TT_RANKED_RAMP_STEP  = 40;    // 每次加快多少毫秒
-const TT_RANKED_RAMP_FLOOR = 200;   // 最快不低於這個值
+const TT_RANKED_RAMP_MS       = 20000; // 積分模式每隔多久重力加快一次
+const TT_RANKED_RAMP_STEP     = 40;    // 每次加快多少毫秒
+const TT_RANKED_RAMP_FLOOR    = 200;   // 最快不低於這個值
+const TT_RANKED_RAMP_SCORE_MIN = 7500; // 積分模式分數達到此門檻後才開始加速
 
 // 消行計分表
 const TT_LINE_SCORE = { 1: 100, 2: 300, 3: 500, 4: 800 };
@@ -116,7 +117,8 @@ function tetrisStart(mode) {
 
   ttRender();
   _ttSetGravity(ttGame.currentGravityMs);
-  if (mode === 'ranked') _ttStartRankedRamp();
+  // 積分模式的加速不再一開局就啟動，改由 _ttAddScore 在分數達到
+  // TT_RANKED_RAMP_SCORE_MIN 時才觸發 _ttStartRankedRamp()
   // #8 第一次進入該模式顯示提示卡時，暫停重力（用既有的 ttGame.paused，跟計時題
   // 暫停遊戲是同一套機制），避免使用者還在看提示文字時方塊已經悄悄落下好幾格。
   if (typeof showFeatureHint === 'function') {
@@ -141,10 +143,14 @@ function _ttStartRankedRamp() {
 }
 
 // 集中處理分數變動：統一下限保護（不會變負數），並在積分模式檢查是否觸發閱讀理解關卡
+// 與是否該開始重力加速（分數達 TT_RANKED_RAMP_SCORE_MIN 才啟動）
 function _ttAddScore(n) {
   if (!ttGame) return;
   ttGame.score += n;
   if (ttGame.score < 0) ttGame.score = 0;
+  if (ttGame.mode === 'ranked' && !ttGame.rankedRampInt && ttGame.score >= TT_RANKED_RAMP_SCORE_MIN) {
+    _ttStartRankedRamp();
+  }
   if (typeof _ttCheckReadingGate === 'function') _ttCheckReadingGate();
 }
 
