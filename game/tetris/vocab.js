@@ -119,8 +119,10 @@ async function ttLoadReadingBank() {
       pool = data.filter(p => p && p.passage && Array.isArray(p.questions) && p.questions.length);
     }
   } catch { /* 載入失敗不影響其他題型 */ }
-  _ttReadingBank = pool;
-  return _ttReadingBank;
+  // 只在成功拿到題庫時快取；載入失敗（暫時性網路問題）不快取空陣列，
+  // 否則之後每次觸發閱讀理解關卡都會直接用空題庫、永遠不再重試 fetch。
+  if (pool.length) _ttReadingBank = pool;
+  return pool;
 }
 
 // 回傳 { kind:'reading', passage, prompt(題目), options[4], answer, optionsZh }

@@ -237,7 +237,13 @@ function _ttCheckReadingGate() {
 async function _ttTriggerReadingQuiz() {
   if (!ttGame || ttGame.gameOver) return;
   const q = await ttMakeReadingQuestion();
-  if (!q || !ttGame || ttGame.gameOver) return;   // 載入期間遊戲可能已結束/離開
+  if (!ttGame || ttGame.gameOver) return;   // 載入期間遊戲可能已結束/離開
+  if (!q) {
+    // 題庫載入失敗或暫時為空：把門檻退回去，下次分數變動時重新嘗試，
+    // 避免這一關卡因為一次性的載入失敗就永久跳過
+    ttGame.nextReadingThreshold -= TT_READING_STEP;
+    return;
+  }
   ttShowQuiz({
     q, seconds: TT_READING_SECONDS, timed: false,
     onResolve: (correct) => {
