@@ -15,153 +15,343 @@
         {
           "n": 1,
           "stem": "Jenny is a very ＿＿＿ girl. She always shares her lunch with classmates who forget theirs.",
-          "options": ["generous", "nervous", "careless", "silent"],
-          "answer": 0,
-          "optionsZh": ["慷慨的", "緊張的", "粗心的", "沉默的"],
-          "explanation": "願意主動分享午餐給同學代表她是 generous（慷慨的）的人，故選 (A)。"
+          "options": [
+            "nervous",
+            "careless",
+            "generous",
+            "silent"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "緊張的",
+            "粗心的",
+            "慷慨的",
+            "沉默的"
+          ],
+          "explanation": "願意主動分享午餐給同學代表她是 generous（慷慨的）的人，故選 (C)。"
         },
         {
           "n": 2,
           "stem": "The road was covered with ＿＿＿ after the truck's tire suddenly broke apart.",
-          "options": ["sand", "metal", "glass", "wood"],
-          "answer": 2,
-          "optionsZh": ["沙子", "金屬", "玻璃", "木頭"],
-          "explanation": "輪胎爆裂多半會噴出碎片，與路面覆蓋物最相關的是 glass（玻璃碎片），故選 (C)。"
+          "options": [
+            "glass",
+            "metal",
+            "wood",
+            "sand"
+          ],
+          "answer": 0,
+          "optionsZh": [
+            "玻璃",
+            "金屬",
+            "木頭",
+            "沙子"
+          ],
+          "explanation": "輪胎爆裂多半會噴出碎片，與路面覆蓋物最相關的是 glass（玻璃碎片），故選 (A)。"
         },
         {
           "n": 3,
           "stem": "After traveling to ten countries, Mark gained a lot of ＿＿＿ about different cultures.",
-          "options": ["experience", "weather", "traffic", "medicine"],
+          "options": [
+            "experience",
+            "medicine",
+            "weather",
+            "traffic"
+          ],
           "answer": 0,
-          "optionsZh": ["經驗", "天氣", "交通", "藥物"],
+          "optionsZh": [
+            "經驗",
+            "藥物",
+            "天氣",
+            "交通"
+          ],
           "explanation": "旅行十個國家會累積許多 experience（經驗），故選 (A)。"
         },
         {
           "n": 4,
           "stem": "Ken usually ＿＿＿ the dishes right after dinner, so the kitchen never stays messy.",
-          "options": ["wash", "washes", "washing", "to wash"],
-          "answer": 1,
-          "optionsZh": ["（原形）", "（第三人稱單數現在式，正確）", "（現在分詞）", "（不定詞）"],
+          "options": [
+            "washes",
+            "washing",
+            "wash",
+            "to wash"
+          ],
+          "answer": 0,
+          "optionsZh": [
+            "（第三人稱單數現在式，正確）",
+            "（現在分詞）",
+            "（原形）",
+            "（不定詞）"
+          ],
           "explanation": "主詞 Ken 為第三人稱單數，usually 表習慣性動作用現在簡單式，動詞需加 -es，故選 washes。"
         },
         {
           "n": 5,
           "stem": "A: ＿＿＿ your parents at home right now? B: No, they are still at work.",
-          "options": ["Do", "Is", "Are", "Does"],
-          "answer": 2,
-          "optionsZh": ["（助動詞 do）", "（be 動詞單數）", "（be 動詞複數，正確）", "（助動詞 does）"],
-          "explanation": "主詞 your parents 為複數，且回答用 they are，故問句用 Are，選 (C)。"
+          "options": [
+            "Does",
+            "Are",
+            "Do",
+            "Is"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "（助動詞 does）",
+            "（be 動詞複數，正確）",
+            "（助動詞 do）",
+            "（be 動詞單數）"
+          ],
+          "explanation": "主詞 your parents 為複數，且回答用 they are，故問句用 Are，選 (B)。"
         },
         {
           "n": 6,
           "stem": "Turn off the stove now, or the soup ＿＿＿ too salty in a few minutes.",
-          "options": ["becomes", "became", "will become", "has become"],
-          "answer": 2,
-          "optionsZh": ["（現在式）", "（過去式）", "（未來式，正確）", "（現在完成式）"],
+          "options": [
+            "has become",
+            "will become",
+            "becomes",
+            "became"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "（現在完成式）",
+            "（未來式，正確）",
+            "（現在式）",
+            "（過去式）"
+          ],
           "explanation": "in a few minutes 表未來的時間點，故用未來式 will become。"
         },
         {
           "n": 7,
           "stem": "Of all the runners in the race, Amy was the ＿＿＿, so she won first place easily.",
-          "options": ["fast", "faster", "fastest", "as fast"],
-          "answer": 2,
-          "optionsZh": ["（原級）", "（比較級）", "（最高級，正確）", "（同級）"],
+          "options": [
+            "fast",
+            "as fast",
+            "faster",
+            "fastest"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "（原級）",
+            "（同級）",
+            "（比較級）",
+            "（最高級，正確）"
+          ],
           "explanation": "of all the runners 表在一個範圍中比較所有人，且前面有 the，須用最高級 fastest。"
         },
         {
           "n": 8,
           "stem": "I forgot my umbrella today. Could you ＿＿＿ me yours until tomorrow morning?",
-          "options": ["borrow", "lend", "return", "cost"],
-          "answer": 1,
-          "optionsZh": ["借入（跟別人借）", "借出（給別人）", "歸還", "花費"],
+          "options": [
+            "cost",
+            "return",
+            "borrow",
+            "lend"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "花費",
+            "歸還",
+            "借入（跟別人借）",
+            "借出（給別人）"
+          ],
           "explanation": "「借某人某物」是 lend somebody something；borrow 是向別人借入，方向相反，故選 lend。"
         },
         {
           "n": 9,
           "stem": "Paul missed the school bus this morning ＿＿＿ he forgot to set his alarm clock last night.",
-          "options": ["so", "but", "because", "or"],
-          "answer": 2,
-          "optionsZh": ["所以", "但是", "因為", "或者"],
+          "options": [
+            "so",
+            "because",
+            "or",
+            "but"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "所以",
+            "因為",
+            "或者",
+            "但是"
+          ],
           "explanation": "前句是「錯過校車」的結果，後句是原因（忘記設鬧鐘），須用 because 引導原因子句。"
         },
         {
           "n": 10,
           "stem": "The man ＿＿＿ is fixing the roof next door used to be my father's classmate.",
-          "options": ["which", "who", "what", "whose"],
-          "answer": 1,
-          "optionsZh": ["（指物）", "（指人的關係代名詞，正確）", "（先行詞不明）", "（所有格）"],
+          "options": [
+            "which",
+            "what",
+            "who",
+            "whose"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "（指物）",
+            "（先行詞不明）",
+            "（指人的關係代名詞，正確）",
+            "（所有格）"
+          ],
           "explanation": "先行詞 the man 是人，且在子句中當主詞，須用關係代名詞 who。"
         },
         {
           "n": 11,
           "stem": "This bridge ＿＿＿ over one hundred years ago, but it still looks strong today.",
-          "options": ["builds", "built", "was built", "is building"],
-          "answer": 2,
-          "optionsZh": ["（現在式）", "（過去式主動）", "（過去式被動，正確）", "（現在進行式）"],
+          "options": [
+            "built",
+            "was built",
+            "builds",
+            "is building"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "（過去式主動）",
+            "（過去式被動，正確）",
+            "（現在式）",
+            "（現在進行式）"
+          ],
           "explanation": "橋是「被建造」的，且 over one hundred years ago 表過去，須用過去被動 was built。"
         },
         {
           "n": 12,
           "stem": "The children finished ＿＿＿ their toys before their mother came home from the market.",
-          "options": ["put away", "to put away", "putting away", "put away to"],
-          "answer": 2,
-          "optionsZh": ["（原形）", "（不定詞）", "（動名詞，正確）", "（不成立）"],
+          "options": [
+            "putting away",
+            "put away",
+            "put away to",
+            "to put away"
+          ],
+          "answer": 0,
+          "optionsZh": [
+            "（動名詞，正確）",
+            "（原形）",
+            "（不成立）",
+            "（不定詞）"
+          ],
           "explanation": "finish 後面接動名詞（V-ing），故選 putting away。"
         },
         {
           "n": 13,
           "stem": "Don't give up on your dream. If you keep trying, you ＿＿＿ succeed one day.",
-          "options": ["must", "should", "can", "need"],
-          "answer": 2,
-          "optionsZh": ["必須", "應該", "能夠（有可能）", "需要"],
+          "options": [
+            "should",
+            "must",
+            "need",
+            "can"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "應該",
+            "必須",
+            "需要",
+            "能夠（有可能）"
+          ],
           "explanation": "「持續努力就有可能成功」，表達能力或可能性，用 can 最合語意。"
         },
         {
           "n": 14,
           "stem": "This is the third time this week I ＿＿＿ my key at school, and my mother is getting upset.",
-          "options": ["leave", "left", "have left", "will leave"],
+          "options": [
+            "leave",
+            "left",
+            "have left",
+            "will leave"
+          ],
           "answer": 2,
-          "optionsZh": ["（現在式）", "（過去式）", "（現在完成式，正確）", "（未來式）"],
+          "optionsZh": [
+            "（現在式）",
+            "（過去式）",
+            "（現在完成式，正確）",
+            "（未來式）"
+          ],
           "explanation": "「This is the + 序數 + time + 主詞」後面常接現在完成式，表達到目前為止發生的次數，故用 have left。"
         },
         {
           "n": 15,
           "stem": "The speech was so ＿＿＿ that the whole audience laughed out loud again and again.",
-          "options": ["boring", "amusing", "frightening", "confusing"],
-          "answer": 1,
-          "optionsZh": ["無聊的", "有趣好笑的", "令人害怕的", "令人困惑的"],
-          "explanation": "全場觀眾一直大笑，代表演講很 amusing（有趣好笑的），故選 (B)。"
+          "options": [
+            "frightening",
+            "confusing",
+            "boring",
+            "amusing"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "令人害怕的",
+            "令人困惑的",
+            "無聊的",
+            "有趣好笑的"
+          ],
+          "explanation": "全場觀眾一直大笑，代表演講很 amusing（有趣好笑的），故選 (D)。"
         },
         {
           "n": 16,
           "stem": "You had better ＿＿＿ your homework before the TV show starts, or you will forget it.",
-          "options": ["finish", "to finish", "finishing", "finished"],
-          "answer": 0,
-          "optionsZh": ["（原形，正確）", "（不定詞）", "（動名詞）", "（過去式）"],
+          "options": [
+            "to finish",
+            "finish",
+            "finished",
+            "finishing"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "（不定詞）",
+            "（原形，正確）",
+            "（過去式）",
+            "（動名詞）"
+          ],
           "explanation": "had better 後面固定接原形動詞，故選 finish。"
         },
         {
           "n": 17,
           "stem": "The coach told the players ＿＿＿ extra water before the long race began.",
-          "options": ["drink", "drinking", "to drink", "drunk"],
-          "answer": 2,
-          "optionsZh": ["（原形）", "（動名詞）", "（不定詞，正確）", "（過去分詞）"],
+          "options": [
+            "to drink",
+            "drinking",
+            "drunk",
+            "drink"
+          ],
+          "answer": 0,
+          "optionsZh": [
+            "（不定詞，正確）",
+            "（動名詞）",
+            "（過去分詞）",
+            "（原形）"
+          ],
           "explanation": "tell somebody to do something，故須用不定詞 to drink。"
         },
         {
           "n": 18,
           "stem": "Neither the manager nor her assistants ＿＿＿ available to answer questions this afternoon.",
-          "options": ["is", "are", "was", "has"],
-          "answer": 1,
-          "optionsZh": ["（單數）", "（複數，正確）", "（過去單數）", "（完成式）"],
+          "options": [
+            "are",
+            "is",
+            "was",
+            "has"
+          ],
+          "answer": 0,
+          "optionsZh": [
+            "（複數，正確）",
+            "（單數）",
+            "（過去單數）",
+            "（完成式）"
+          ],
           "explanation": "neither A nor B 的動詞須與「最接近的主詞」一致，這裡最近是 her assistants（複數），故用 are。"
         },
         {
           "n": 19,
           "stem": "The earlier you leave for the airport, the ＿＿＿ trouble you will have finding a parking spot.",
-          "options": ["little", "less", "least", "few"],
-          "answer": 1,
-          "optionsZh": ["（原級）", "（比較級，正確）", "（最高級）", "（原級，用於可數名詞）"],
+          "options": [
+            "few",
+            "little",
+            "less",
+            "least"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "（原級，用於可數名詞）",
+            "（原級）",
+            "（比較級，正確）",
+            "（最高級）"
+          ],
           "explanation": "「the + 比較級..., the + 比較級...」句型，兩邊都須用比較級，且 trouble 為不可數名詞，故用 less。"
         }
       ]
@@ -180,18 +370,38 @@
             {
               "n": 20,
               "stem": "Nick has a Student Card. His book is due in 2 days, and no one else has reserved it. Can he renew it, and for how long?",
-              "options": ["No, because someone has already reserved the book.", "Yes, he can renew it once for 14 more days.", "Yes, he can renew it once for 30 more days.", "No, because he can only renew within 3 days before the due date."],
-              "answer": 1,
-              "optionsZh": ["不行，因為已經有人預約這本書。", "可以，他能續借一次，再借14天。", "可以，他能續借一次，再借30天。", "不行，因為只能在到期前3天內申請續借。"],
-              "explanation": "他的書2天後到期，符合「到期前3天內」的規定，且無人預約，故可續借；由於他是 Student Card，續借長度須與原借期相同，即14天，故選 (B)。選項 (D) 的理由描述錯誤，因為他其實正好符合3天內的條件。"
+              "options": [
+                "Yes, he can renew it once for 14 more days.",
+                "Yes, he can renew it once for 30 more days.",
+                "No, because he can only renew within 3 days before the due date.",
+                "No, because someone has already reserved the book."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "可以，他能續借一次，再借14天。",
+                "可以，他能續借一次，再借30天。",
+                "不行，因為只能在到期前3天內申請續借。",
+                "不行，因為已經有人預約這本書。"
+              ],
+              "explanation": "他的書2天後到期，符合「到期前3天內」的規定，且無人預約，故可續借；由於他是 Student Card，續借長度須與原借期相同，即14天，故選 (A)。選項 (C) 的理由描述錯誤，因為他其實正好符合3天內的條件。"
             },
             {
               "n": 21,
               "stem": "Owen is a Gold Member. He returned a book 6 days late, and the return date was July 15. How much did he need to pay?",
-              "options": ["$15.", "$30.", "$50.", "$60."],
-              "answer": 1,
-              "optionsZh": ["15元。", "30元。", "50元。", "60元。"],
-              "explanation": "逾期費為每本每天 $5，6天共 $30，未達每本上限 $50。雖然 Owen 是 Gold Member，平常有五折優惠，但 7月15日屬於暑期閱讀季（7/1–7/31），該優惠當月不適用，所以他須付全額 $30，故選 (B)。此題須同時比對「逾期費計算規則」與「暑期例外規則」兩項規定才能算出正確答案。"
+              "options": [
+                "$30.",
+                "$15.",
+                "$50.",
+                "$60."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "30元。",
+                "15元。",
+                "50元。",
+                "60元。"
+              ],
+              "explanation": "逾期費為每本每天 $5，6天共 $30，未達每本上限 $50。雖然 Owen 是 Gold Member，平常有五折優惠，但 7月15日屬於暑期閱讀季（7/1–7/31），該優惠當月不適用，所以他須付全額 $30，故選 (A)。此題須同時比對「逾期費計算規則」與「暑期例外規則」兩項規定才能算出正確答案。"
             }
           ]
         },
@@ -204,26 +414,56 @@
             {
               "n": 22,
               "stem": "How did Ivy feel when the bakery first got busy that morning?",
-              "options": ["Bored and sleepy.", "Overwhelmed by the noise and orders.", "Angry at her manager.", "Confident and relaxed."],
-              "answer": 1,
-              "optionsZh": ["無聊又想睡。", "被吵雜聲與訂單淹沒。", "對經理生氣。", "自信又放鬆。"],
-              "explanation": "文中提到 she felt completely overwhelmed by the noise, the orders, and the smell of fresh bread，故選 (B)。"
+              "options": [
+                "Confident and relaxed.",
+                "Angry at her manager.",
+                "Bored and sleepy.",
+                "Overwhelmed by the noise and orders."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "自信又放鬆。",
+                "對經理生氣。",
+                "無聊又想睡。",
+                "被吵雜聲與訂單淹沒。"
+              ],
+              "explanation": "文中提到 she felt completely overwhelmed by the noise, the orders, and the smell of fresh bread，故選 (D)。"
             },
             {
               "n": 23,
               "stem": "Why did Ivy have to handle a customer's order by herself?",
-              "options": ["Mr. Chen went home early.", "Mr. Chen had to deal with burnt rolls in the kitchen.", "The customer refused to wait for Mr. Chen.", "Mr. Chen wanted to test her on purpose."],
-              "answer": 1,
-              "optionsZh": ["陳先生提早回家了。", "陳先生必須到廚房處理烤焦的麵包捲。", "顧客不肯等陳先生。", "陳先生是故意要考驗她。"],
-              "explanation": "文中提到 Mr. Chen suddenly had to step into the kitchen to help with a burnt batch of rolls，故選 (B)。"
+              "options": [
+                "Mr. Chen went home early.",
+                "The customer refused to wait for Mr. Chen.",
+                "Mr. Chen wanted to test her on purpose.",
+                "Mr. Chen had to deal with burnt rolls in the kitchen."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "陳先生提早回家了。",
+                "顧客不肯等陳先生。",
+                "陳先生是故意要考驗她。",
+                "陳先生必須到廚房處理烤焦的麵包捲。"
+              ],
+              "explanation": "文中提到 Mr. Chen suddenly had to step into the kitchen to help with a burnt batch of rolls，故選 (D)。"
             },
             {
               "n": 24,
               "stem": "What did Ivy learn from her first day at work?",
-              "options": ["Being nervous means a person will fail.", "Feeling nervous does not mean she will fail.", "She should never work in a bakery again.", "Customers are always impatient."],
-              "answer": 1,
-              "optionsZh": ["緊張就代表會失敗。", "感到緊張不代表她會失敗。", "她再也不該在麵包店工作。", "顧客總是沒耐心。"],
-              "explanation": "文末提到 feeling nervous on the first day did not mean she would fail，故選 (B)。"
+              "options": [
+                "Customers are always impatient.",
+                "Being nervous means a person will fail.",
+                "Feeling nervous does not mean she will fail.",
+                "She should never work in a bakery again."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "顧客總是沒耐心。",
+                "緊張就代表會失敗。",
+                "感到緊張不代表她會失敗。",
+                "她再也不該在麵包店工作。"
+              ],
+              "explanation": "文末提到 feeling nervous on the first day did not mean she would fail，故選 (C)。"
             }
           ]
         },
@@ -236,58 +476,118 @@
             {
               "n": 25,
               "stem": "What is the reading mainly about?",
-              "options": ["Why farmers grow crops near mountains.", "How volcanoes form and why they behave differently.", "How to measure the temperature of rock.", "The history of famous mountains around the world."],
-              "answer": 1,
-              "optionsZh": ["為何農夫在山邊種植作物。", "火山如何形成以及為何行為不同。", "如何測量岩石的溫度。", "世界知名山脈的歷史。"],
-              "explanation": "全文說明岩漿如何形成火山、以及火山噴發方式為何不同，主旨為 (B)。"
+              "options": [
+                "How to measure the temperature of rock.",
+                "The history of famous mountains around the world.",
+                "How volcanoes form and why they behave differently.",
+                "Why farmers grow crops near mountains."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "如何測量岩石的溫度。",
+                "世界知名山脈的歷史。",
+                "火山如何形成以及為何行為不同。",
+                "為何農夫在山邊種植作物。"
+              ],
+              "explanation": "全文說明岩漿如何形成火山、以及火山噴發方式為何不同，主旨為 (C)。"
             },
             {
               "n": 26,
               "stem": "According to the reading, why do some volcanoes explode violently instead of releasing lava gently?",
-              "options": ["Their magma is thick and full of trapped gas.", "They are located near the ocean.", "Scientists cause them to explode.", "They contain no magma at all."],
-              "answer": 0,
-              "optionsZh": ["它們的岩漿濃稠且含有困住的氣體。", "它們位於海洋附近。", "科學家使它們爆炸。", "它們完全不含岩漿。"],
-              "explanation": "文中提到 Thick, gas-filled magma cannot escape easily, so pressure keeps building until it erupts suddenly，故選 (A)。"
+              "options": [
+                "They contain no magma at all.",
+                "Scientists cause them to explode.",
+                "Their magma is thick and full of trapped gas.",
+                "They are located near the ocean."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "它們完全不含岩漿。",
+                "科學家使它們爆炸。",
+                "它們的岩漿濃稠且含有困住的氣體。",
+                "它們位於海洋附近。"
+              ],
+              "explanation": "文中提到 Thick, gas-filled magma cannot escape easily, so pressure keeps building until it erupts suddenly，故選 (C)。"
             },
             {
               "n": 27,
               "stem": "What can we learn about the land near a volcano after an eruption?",
-              "options": ["It becomes too dangerous for anyone to visit.", "It stays exactly the same as before.", "It can eventually become very fertile soil.", "It turns into solid glass immediately."],
-              "answer": 2,
-              "optionsZh": ["變得太危險而無人能造訪。", "和之前完全一樣。", "最終可能變成非常肥沃的土壤。", "立刻變成堅硬的玻璃。"],
-              "explanation": "文中提到 cooled lava breaks down into extremely fertile soil，故選 (C)。"
+              "options": [
+                "It stays exactly the same as before.",
+                "It becomes too dangerous for anyone to visit.",
+                "It turns into solid glass immediately.",
+                "It can eventually become very fertile soil."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "和之前完全一樣。",
+                "變得太危險而無人能造訪。",
+                "立刻變成堅硬的玻璃。",
+                "最終可能變成非常肥沃的土壤。"
+              ],
+              "explanation": "文中提到 cooled lava breaks down into extremely fertile soil，故選 (D)。"
             }
           ]
         },
         {
           "range": "28–30",
-          "passageType": "social",
-          "title": "Should Emma Adopt a Puppy? — A Social Media Thread",
-          "passage": "Emma Chen: I've been thinking about adopting a puppy from the animal shelter near my apartment. I work full-time, and I'm honestly worried I won't have enough time or energy for a young dog. Has anyone here adopted a puppy while working a full-time job? I would love to hear your experiences before I make a decision! 🐶\n\nDaniel Lin: I adopted my puppy two years ago, and it was hard the first few weeks. Luckily, I work from home most days, so I could take him out every few hours. If your schedule allows for breaks, it gets much easier after the first month.\n\nPriya Patel: Before you adopt, maybe try fostering a dog for a few weeks first? Many shelters let you foster before you commit. That way, you can see if a puppy really fits into your daily life without making a permanent decision right away.\n\nMarcus Reyes: I want to be honest with you. I worked twelve-hour days when I got my first puppy, and it was exhausting for both of us. He was alone too much, and I felt terrible about it. Please think carefully before deciding, and consider your actual work hours, not just your good intentions.\n\nSofia Almeida: I don't really agree with all this worrying! As long as you love your pet, everything else will work out fine. Dogs are more flexible than people think. Just adopt him already!\n\nEmma Chen: Thank you all so much for sharing your experiences! After reading your comments, I think I'll foster a dog first before deciding for sure. That feels like the safest way to start.",
+          "passageType": "narrative",
+          "title": "The Substitute Teacher",
+          "passage": "When Ms. Adams announced she would be away for two weeks, the class groaned, expecting a boring substitute who would only assign endless worksheets. Instead, a young teacher named Mr. Diaz walked in on Monday morning, carrying a guitar and a box full of strange objects, and explained that he wanted to teach grammar through songs instead of textbook drills, while several students exchanged doubtful glances, unsure whether this unusual method would actually work for something as dull as grammar. During the first lesson, Mr. Diaz turned tricky verb tenses into short, memorable tunes that somehow stuck in everyone's memory almost instantly. By Wednesday afternoon, even the quietest students were humming the songs during lunch without even noticing they were doing it. Lucas, who usually struggled with grammar tests, found himself remembering rules he had forgotten for months without any extra studying at home. He mentioned this to Mr. Diaz, who smiled and said that music simply gave the brain another way to hold onto information. When Ms. Adams finally returned, she was astonished to hear the whole class singing grammar rules instead of complaining about them as usual. She asked Mr. Diaz to leave his song sheets behind before he left for his next school assignment, since nobody had ever expected grammar class to feel this entertaining before he arrived. From that point on, whenever the class faced a difficult grammar topic, someone would suggest turning it into a song immediately.",
           "questions": [
             {
               "n": 28,
-              "stem": "What is Emma mainly asking about in her original post?",
-              "options": ["Whether she should adopt an older dog instead of a puppy.", "Whether she will have enough time and energy for a puppy while working full-time.", "Whether the animal shelter charges a fee for adoption.", "Whether her apartment allows pets at all."],
-              "answer": 1,
-              "optionsZh": ["她是否該領養成犬而非幼犬。", "她全職工作是否還有足夠的時間與精力照顧幼犬。", "動物收容所是否收取領養費用。", "她的公寓是否允許養寵物。"],
-              "explanation": "Emma 在原po中提到 I work full-time, and I'm honestly worried I won't have enough time or energy for a young dog，她主要是想知道全職工作是否還能照顧好幼犬，故選 (B)。"
+              "stem": "How did the class first react to Mr. Diaz's teaching method?",
+              "options": [
+                "They were doubtful that it would actually work.",
+                "They asked to switch to a different substitute.",
+                "They immediately refused to try it.",
+                "They complained to Ms. Adams about it."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "他們懷疑這個方法真的有用嗎。",
+                "他們要求換一位不同的代課老師。",
+                "他們立刻拒絕嘗試這個方法。",
+                "他們向 Adams 老師抱怨這件事。"
+              ],
+              "explanation": "文中提到 several students exchanged doubtful glances, unsure whether this unusual method would actually work，故選 (A)。"
             },
             {
               "n": 29,
-              "stem": "Based on his comment, which of the following posts would Marcus most likely write himself?",
-              "options": ["\"Just adopted a kitten today! So excited, no worries at all!\"", "\"I worked twelve-hour days when I got my first puppy, and it was exhausting for both of us. Please think carefully before deciding.\"", "\"Fostering is a great first step if you're not sure yet.\"", "\"As long as you love your pet, everything else will work out fine.\""],
-              "answer": 1,
-              "optionsZh": ["「我今天剛領養了一隻小貓！好興奮，完全不擔心！」", "「我第一次養幼犬時每天工作十二小時，我們兩個都累壞了。請仔細考慮清楚再做決定。」", "「如果還不確定，先寄養是很好的第一步。」", "「只要你愛你的寵物，其他一切都會順利的。」"],
-              "explanation": "Marcus 在留言中分享自己因長工時而讓幼犬獨自在家、事後感到內疚的經驗，並提醒 Emma 要謹慎考慮實際工時，語氣務實且帶有告誡意味，與選項 (B) 的內容和語氣最相符，故選 (B)。選項 (A) 語氣過於輕鬆興奮，符合 Sofia 而非 Marcus；(C) 是 Priya 建議的寄養方案；(D) 是 Sofia「愛能克服一切」的樂觀主張，皆與 Marcus 謹慎務實的立場不符。"
+              "stem": "What surprised Lucas about Mr. Diaz's song method?",
+              "options": [
+                "He remembered grammar rules without extra studying.",
+                "He was allowed to skip all future tests.",
+                "He was chosen to write his own song.",
+                "He no longer needed to attend grammar class."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "他不用額外複習就記住了文法規則。",
+                "他以後所有考試都可以不用考。",
+                "他被選中自己創作一首歌。",
+                "他再也不用去上文法課了。"
+              ],
+              "explanation": "文中提到 Lucas...found himself remembering rules he had forgotten for months without any extra studying at home，故選 (A)。"
             },
             {
               "n": 30,
-              "stem": "According to the comments, which of the following is NOT mentioned?",
-              "options": ["Someone suggests hiring a professional dog trainer.", "Someone recommends fostering a dog before adopting.", "Someone says working from home makes taking care of a puppy easier.", "Someone regrets getting a puppy while working long hours."],
-              "answer": 0,
-              "optionsZh": ["有人建議聘請專業訓犬師。", "有人建議在領養前先試著寄養。", "有人說在家工作讓照顧幼犬變得比較容易。", "有人後悔在長工時的情況下養了幼犬。"],
-              "explanation": "留言串中 Priya 建議 fostering（(B) 有提到）、Daniel 提到 work from home 讓照顧幼犬較容易（(C) 有提到）、Marcus 提到自己長工時養幼犬感到後悔（(D) 有提到），但整串留言中沒有任何人提到聘請專業訓犬師，故選 (A)。"
+              "stem": "What did Ms. Adams do when she returned from her two weeks away?",
+              "options": [
+                "She reported Mr. Diaz to the principal.",
+                "She gave the class a surprise grammar test.",
+                "She canceled Mr. Diaz's teaching method immediately.",
+                "She asked Mr. Diaz to leave his song sheets behind."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "她向校長舉報 Diaz 老師。",
+                "她給全班一場突擊文法考試。",
+                "她立刻取消 Diaz 老師的教學方法。",
+                "她請 Diaz 老師把歌詞講義留下來。"
+              ],
+              "explanation": "文中提到 She asked Mr. Diaz to leave his song sheets behind before he left for his next school assignment，故選 (D)。"
             }
           ]
         },
@@ -300,34 +600,74 @@
             {
               "n": 31,
               "stem": "How did ancient people in Central America first use cacao beans?",
-              "options": ["They planted them as decorations.", "They made a bitter drink with them.", "They used them to build houses.", "They sold them only to children."],
+              "options": [
+                "They used them to build houses.",
+                "They made a bitter drink with them.",
+                "They sold them only to children.",
+                "They planted them as decorations."
+              ],
               "answer": 1,
-              "optionsZh": ["他們把可可豆種來當裝飾。", "他們用可可豆做成苦味飲料。", "他們用可可豆蓋房子。", "他們只賣給小孩。"],
+              "optionsZh": [
+                "他們用可可豆蓋房子。",
+                "他們用可可豆做成苦味飲料。",
+                "他們只賣給小孩。",
+                "他們把可可豆種來當裝飾。"
+              ],
               "explanation": "文中提到古人 ground the beans into a bitter paste and mixed it with water... to make a strong drink，故選 (B)。"
             },
             {
               "n": 32,
               "stem": "According to the reading, why was cacao especially valuable in ancient times?",
-              "options": ["It was used as a kind of money.", "It could cure all diseases.", "It grew only once every hundred years.", "It was found only in Europe."],
-              "answer": 0,
-              "optionsZh": ["它被當成一種貨幣使用。", "它能治百病。", "每一百年才生長一次。", "只在歐洲才找得到。"],
-              "explanation": "文中提到 cacao beans... were even used as a form of money，故選 (A)。"
+              "options": [
+                "It could cure all diseases.",
+                "It grew only once every hundred years.",
+                "It was used as a kind of money.",
+                "It was found only in Europe."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "它能治百病。",
+                "每一百年才生長一次。",
+                "它被當成一種貨幣使用。",
+                "只在歐洲才找得到。"
+              ],
+              "explanation": "文中提到 cacao beans... were even used as a form of money，故選 (C)。"
             },
             {
               "n": 33,
               "stem": "What happened after Europeans began adding sugar and milk to cacao?",
-              "options": ["It immediately became cheap for everyone.", "It became popular among wealthy families.", "People stopped drinking it completely.", "It was banned by the government."],
-              "answer": 1,
-              "optionsZh": ["立刻變得人人買得起。", "在富裕家庭間變得流行。", "人們完全不再喝了。", "被政府禁止。"],
-              "explanation": "文中提到 This new, sweeter version quickly became fashionable among wealthy families，故選 (B)。"
+              "options": [
+                "It immediately became cheap for everyone.",
+                "People stopped drinking it completely.",
+                "It became popular among wealthy families.",
+                "It was banned by the government."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "立刻變得人人買得起。",
+                "人們完全不再喝了。",
+                "在富裕家庭間變得流行。",
+                "被政府禁止。"
+              ],
+              "explanation": "文中提到 This new, sweeter version quickly became fashionable among wealthy families，故選 (C)。"
             },
             {
               "n": 34,
               "stem": "What is the writer's main purpose in this passage?",
-              "options": ["To explain how to make chocolate at home.", "To show that chocolate was once rare and meaningful, not just a common snack.", "To warn readers not to eat too much chocolate.", "To compare chocolate prices in different countries today."],
-              "answer": 1,
-              "optionsZh": ["說明如何在家自製巧克力。", "說明巧克力曾經是珍貴且富有意義的，而非只是普通零食。", "警告讀者別吃太多巧克力。", "比較現今各國巧克力的價格。"],
-              "explanation": "文末強調如今普遍的巧克力，過去曾承載重大的文化與精神意義，主旨為 (B)。"
+              "options": [
+                "To explain how to make chocolate at home.",
+                "To warn readers not to eat too much chocolate.",
+                "To show that chocolate was once rare and meaningful, not just a common snack.",
+                "To compare chocolate prices in different countries today."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "說明如何在家自製巧克力。",
+                "警告讀者別吃太多巧克力。",
+                "說明巧克力曾經是珍貴且富有意義的，而非只是普通零食。",
+                "比較現今各國巧克力的價格。"
+              ],
+              "explanation": "文末強調如今普遍的巧克力，過去曾承載重大的文化與精神意義，主旨為 (C)。"
             }
           ]
         },
@@ -340,42 +680,92 @@
             {
               "n": 35,
               "stem": "According to Writer A, why do many students feel tired in the morning at school?",
-              "options": ["They stay up late playing video games.", "Their biological clock naturally makes them sleep and wake later.", "The classrooms are too cold in the morning.", "They do not like their teachers."],
+              "options": [
+                "The classrooms are too cold in the morning.",
+                "Their biological clock naturally makes them sleep and wake later.",
+                "They do not like their teachers.",
+                "They stay up late playing video games."
+              ],
               "answer": 1,
-              "optionsZh": ["他們熬夜打電動。", "他們的生理時鐘讓他們自然較晚睡、較晚醒。", "早上教室太冷。", "他們不喜歡老師。"],
+              "optionsZh": [
+                "早上教室太冷。",
+                "他們的生理時鐘讓他們自然較晚睡、較晚醒。",
+                "他們不喜歡老師。",
+                "他們熬夜打電動。"
+              ],
               "explanation": "Writer A 指出 teenagers' bodies naturally want to sleep later and wake up later... goes directly against their biological clock，故選 (B)。"
             },
             {
               "n": 36,
               "stem": "According to Writer B, what problem would a later school start time cause for many families?",
-              "options": ["It would make school lunches more expensive.", "It would create difficulty with morning transportation and childcare.", "It would force schools to hire more teachers.", "It would make students forget their homework."],
+              "options": [
+                "It would force schools to hire more teachers.",
+                "It would create difficulty with morning transportation and childcare.",
+                "It would make school lunches more expensive.",
+                "It would make students forget their homework."
+              ],
               "answer": 1,
-              "optionsZh": ["讓學校午餐變貴。", "造成早晨交通與托育安排的困難。", "迫使學校聘請更多老師。", "讓學生忘記寫作業。"],
+              "optionsZh": [
+                "迫使學校聘請更多老師。",
+                "造成早晨交通與托育安排的困難。",
+                "讓學校午餐變貴。",
+                "讓學生忘記寫作業。"
+              ],
               "explanation": "Writer B 指出 families would face serious difficulty arranging morning transportation and childcare，故選 (B)。"
             },
             {
               "n": 37,
               "stem": "What solution does Writer B suggest instead of changing the school schedule?",
-              "options": ["Building more schools nearby.", "Setting an earlier bedtime and limiting screen time.", "Ending all after-school clubs.", "Giving students less homework."],
-              "answer": 1,
-              "optionsZh": ["在附近蓋更多學校。", "提早就寢時間並限制螢幕使用時間。", "取消所有社團活動。", "減少學生作業。"],
-              "explanation": "Writer B 建議 schools could simply encourage students to set an earlier bedtime and limit screen time before sleeping，故選 (B)。"
+              "options": [
+                "Giving students less homework.",
+                "Building more schools nearby.",
+                "Setting an earlier bedtime and limiting screen time.",
+                "Ending all after-school clubs."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "減少學生作業。",
+                "在附近蓋更多學校。",
+                "提早就寢時間並限制螢幕使用時間。",
+                "取消所有社團活動。"
+              ],
+              "explanation": "Writer B 建議 schools could simply encourage students to set an earlier bedtime and limit screen time before sleeping，故選 (C)。"
             },
             {
               "n": 38,
               "stem": "What do both writers agree on, even though they reach different conclusions?",
-              "options": ["Students' evening rest and schedules matter to their well-being.", "Schools should be closed on weekends.", "Homework should be removed completely.", "Parents should not be involved in school decisions."],
-              "answer": 0,
-              "optionsZh": ["學生晚間的休息與作息與其身心健康有關。", "學校週末應該停課。", "作業應該完全取消。", "家長不該參與學校決策。"],
-              "explanation": "Writer A 關心學生因缺乏休息而疲憊、成績受影響；Writer B 也提到晚間休息時間的重要性，兩人都同意作息安排與學生身心健康相關，僅結論不同，故選 (A)。"
+              "options": [
+                "Parents should not be involved in school decisions.",
+                "Students' evening rest and schedules matter to their well-being.",
+                "Schools should be closed on weekends.",
+                "Homework should be removed completely."
+              ],
+              "answer": 1,
+              "optionsZh": [
+                "家長不該參與學校決策。",
+                "學生晚間的休息與作息與其身心健康有關。",
+                "學校週末應該停課。",
+                "作業應該完全取消。"
+              ],
+              "explanation": "Writer A 關心學生因缺乏休息而疲憊、成績受影響；Writer B 也提到晚間休息時間的重要性，兩人都同意作息安排與學生身心健康相關，僅結論不同，故選 (B)。"
             },
             {
               "n": 39,
               "stem": "Which sentence would Writer B most likely agree with?",
-              "options": ["A later start time might create new problems for families.", "Teenagers do not need extra sleep at all.", "Parents' morning schedules do not matter.", "After-school activities are not important to students."],
-              "answer": 0,
-              "optionsZh": ["延後上課時間可能為家庭帶來新的問題。", "青少年完全不需要額外的睡眠。", "家長的早晨行程不重要。", "課後活動對學生不重要。"],
-              "explanation": "Writer B 全文論點是延後上課會對家庭造成新的困擾（交通、托育、課後活動），與 (A) 一致。"
+              "options": [
+                "Teenagers do not need extra sleep at all.",
+                "Parents' morning schedules do not matter.",
+                "After-school activities are not important to students.",
+                "A later start time might create new problems for families."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "青少年完全不需要額外的睡眠。",
+                "家長的早晨行程不重要。",
+                "課後活動對學生不重要。",
+                "延後上課時間可能為家庭帶來新的問題。"
+              ],
+              "explanation": "Writer B 全文論點是延後上課會對家庭造成新的困擾（交通、托育、課後活動），與 (D) 一致。"
             }
           ]
         },
@@ -388,34 +778,74 @@
             {
               "n": 40,
               "stem": "選出第 40 格最適合的答案。",
-              "options": ["Although", "Because", "So", "If"],
+              "options": [
+                "Although",
+                "So",
+                "If",
+                "Because"
+              ],
               "answer": 0,
-              "optionsZh": ["雖然（表對比讓步）", "因為", "所以", "如果"],
+              "optionsZh": [
+                "雖然（表對比讓步）",
+                "所以",
+                "如果",
+                "因為"
+              ],
               "explanation": "前後為讓步關係「舞步不完美」但「仍持續練習不放棄」，用 Although（雖然）連接最合適。"
             },
             {
               "n": 41,
               "stem": "選出第 41 格最適合的答案。",
-              "options": ["has", "have", "had", "having"],
-              "answer": 2,
-              "optionsZh": ["（現在式）", "（現在式複數）", "（過去式，正確）", "（動名詞）"],
+              "options": [
+                "have",
+                "had",
+                "has",
+                "having"
+              ],
+              "answer": 1,
+              "optionsZh": [
+                "（現在式複數）",
+                "（過去式，正確）",
+                "（現在式）",
+                "（動名詞）"
+              ],
               "explanation": "全文為過去式敘述，此處與 got sick 為同一過去時間點的連續動作，須用過去式 had（had to 的省略需搭配 to，故此處以 had 表過去式），故選 had。"
             },
             {
               "n": 42,
               "stem": "選出第 42 格最適合的答案。",
-              "options": ["Therefore", "However", "Similarly", "Finally"],
-              "answer": 1,
-              "optionsZh": ["因此", "然而（表轉折，正確）", "同樣地", "最後"],
+              "options": [
+                "Therefore",
+                "Finally",
+                "Similarly",
+                "However"
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "因此",
+                "最後",
+                "同樣地",
+                "然而（表轉折，正確）"
+              ],
               "explanation": "前句「雙腿發抖」與後句「恐懼消失」語意轉折相反，須用 However（然而）連接。"
             },
             {
               "n": 43,
               "stem": "選出第 43 格最適合的答案。",
-              "options": ["courage", "silence", "weakness", "distance"],
-              "answer": 0,
-              "optionsZh": ["勇氣", "沉默", "軟弱", "距離"],
-              "explanation": "全文描述 Mia 克服恐懼、獨自完成表演，最終發現自己擁有的是 courage（勇氣），故選 (A)。"
+              "options": [
+                "silence",
+                "courage",
+                "distance",
+                "weakness"
+              ],
+              "answer": 1,
+              "optionsZh": [
+                "沉默",
+                "勇氣",
+                "距離",
+                "軟弱"
+              ],
+              "explanation": "全文描述 Mia 克服恐懼、獨自完成表演，最終發現自己擁有的是 courage（勇氣），故選 (B)。"
             }
           ]
         }

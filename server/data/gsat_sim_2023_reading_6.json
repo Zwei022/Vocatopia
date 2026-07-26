@@ -15,153 +15,343 @@
         {
           "n": 1,
           "stem": "The weather report says it will be very ＿＿＿ tomorrow, so you should bring an umbrella with you.",
-          "options": ["sunny", "rainy", "dry", "clear"],
-          "answer": 1,
-          "optionsZh": ["晴朗的", "多雨的", "乾燥的", "晴朗無雲的"],
-          "explanation": "需要帶雨傘表示天氣是 rainy（多雨的），故選 (B)。"
+          "options": [
+            "dry",
+            "sunny",
+            "rainy",
+            "clear"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "乾燥的",
+            "晴朗的",
+            "多雨的",
+            "晴朗無雲的"
+          ],
+          "explanation": "需要帶雨傘表示天氣是 rainy（多雨的），故選 (C)。"
         },
         {
           "n": 2,
           "stem": "Jack was so ＿＿＿ after running ten kilometers that he could barely stand up.",
-          "options": ["excited", "exhausted", "nervous", "curious"],
-          "answer": 1,
-          "optionsZh": ["興奮的", "精疲力盡的", "緊張的", "好奇的"],
-          "explanation": "跑完十公里後幾乎站不起來，表示非常 exhausted（精疲力盡的），故選 (B)。"
+          "options": [
+            "nervous",
+            "curious",
+            "exhausted",
+            "excited"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "緊張的",
+            "好奇的",
+            "精疲力盡的",
+            "興奮的"
+          ],
+          "explanation": "跑完十公里後幾乎站不起來，表示非常 exhausted（精疲力盡的），故選 (C)。"
         },
         {
           "n": 3,
           "stem": "This medicine may help with your headache, but it also has some side ＿＿＿, such as feeling sleepy.",
-          "options": ["effects", "reasons", "prices", "shapes"],
-          "answer": 0,
-          "optionsZh": ["效果／副作用", "原因", "價格", "形狀"],
-          "explanation": "藥物的「副作用」為 side effects，故選 (A)。"
+          "options": [
+            "shapes",
+            "prices",
+            "reasons",
+            "effects"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "形狀",
+            "價格",
+            "原因",
+            "效果／副作用"
+          ],
+          "explanation": "藥物的「副作用」為 side effects，故選 (D)。"
         },
         {
           "n": 4,
           "stem": "My uncle usually ＿＿＿ to the office by bike, even when it is a little cold outside.",
-          "options": ["drive", "drives", "driving", "to drive"],
-          "answer": 1,
-          "optionsZh": ["（原形）", "（第三人稱單數現在式，正確）", "（現在分詞）", "（不定詞）"],
+          "options": [
+            "drives",
+            "to drive",
+            "driving",
+            "drive"
+          ],
+          "answer": 0,
+          "optionsZh": [
+            "（第三人稱單數現在式，正確）",
+            "（不定詞）",
+            "（現在分詞）",
+            "（原形）"
+          ],
           "explanation": "主詞 my uncle 為第三人稱單數，usually 表習慣用現在簡單式，動詞需加 -s／-es，drive 改為 drives。"
         },
         {
           "n": 5,
           "stem": "A: ＿＿＿ your parents at home right now? B: No, they are still at work.",
-          "options": ["Do", "Does", "Are", "Is"],
-          "answer": 2,
-          "optionsZh": ["（助動詞 do）", "（助動詞 does）", "（be 動詞複數，正確）", "（be 動詞單數）"],
-          "explanation": "回答用 No, they are，表示問句用 be 動詞；主詞 your parents 為複數，用 Are，故選 (C)。"
+          "options": [
+            "Does",
+            "Are",
+            "Is",
+            "Do"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "（助動詞 does）",
+            "（be 動詞複數，正確）",
+            "（be 動詞單數）",
+            "（助動詞 do）"
+          ],
+          "explanation": "回答用 No, they are，表示問句用 be 動詞；主詞 your parents 為複數，用 Are，故選 (B)。"
         },
         {
           "n": 6,
           "stem": "Don't touch the pot now; it ＿＿＿ still very hot from the stove.",
-          "options": ["is", "was", "will be", "has been"],
-          "answer": 0,
-          "optionsZh": ["（現在式，正確）", "（過去式）", "（未來式）", "（現在完成式）"],
-          "explanation": "now 表示現在的狀態，用現在簡單式 is，故選 (A)。"
+          "options": [
+            "has been",
+            "is",
+            "will be",
+            "was"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "（現在完成式）",
+            "（現在式，正確）",
+            "（未來式）",
+            "（過去式）"
+          ],
+          "explanation": "now 表示現在的狀態，用現在簡單式 is，故選 (B)。"
         },
         {
           "n": 7,
           "stem": "Of all the singers in the contest, Amy has the ＿＿＿ voice; everyone agrees no one can sing better than her.",
-          "options": ["good", "better", "best", "as good"],
-          "answer": 2,
-          "optionsZh": ["（原級）", "（比較級）", "（最高級，正確）", "（同級）"],
-          "explanation": "Of all the singers 表示在一個範圍中做比較，且無人能唱得比她好，用最高級 best，故選 (C)。"
+          "options": [
+            "as good",
+            "better",
+            "good",
+            "best"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "（同級）",
+            "（比較級）",
+            "（原級）",
+            "（最高級，正確）"
+          ],
+          "explanation": "Of all the singers 表示在一個範圍中做比較，且無人能唱得比她好，用最高級 best，故選 (D)。"
         },
         {
           "n": 8,
           "stem": "I forgot my dictionary today. Could you ＿＿＿ me yours for the class?",
-          "options": ["lend", "borrow", "return", "cost"],
-          "answer": 0,
-          "optionsZh": ["借出（給別人）", "借入（跟別人）", "歸還", "花費"],
-          "explanation": "「借某人某物」用 lend somebody something；borrow 方向相反（向別人借），故選 (A)。"
+          "options": [
+            "borrow",
+            "cost",
+            "return",
+            "lend"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "借入（跟別人）",
+            "花費",
+            "歸還",
+            "借出（給別人）"
+          ],
+          "explanation": "「借某人某物」用 lend somebody something；borrow 方向相反（向別人借），故選 (D)。"
         },
         {
           "n": 9,
           "stem": "Mia couldn't fall asleep last night ＿＿＿ she was worried about her math test the next morning.",
-          "options": ["so", "but", "because", "or"],
-          "answer": 2,
-          "optionsZh": ["所以", "但是", "因為", "或者"],
-          "explanation": "前句是「睡不著」的結果，後句是原因（擔心考試），用 because 引導原因子句，故選 (C)。"
+          "options": [
+            "so",
+            "because",
+            "or",
+            "but"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "所以",
+            "因為",
+            "或者",
+            "但是"
+          ],
+          "explanation": "前句是「睡不著」的結果，後句是原因（擔心考試），用 because 引導原因子句，故選 (B)。"
         },
         {
           "n": 10,
           "stem": "The man ＿＿＿ car was parked outside the store came back and drove away quickly.",
-          "options": ["who", "which", "whose", "what"],
-          "answer": 2,
-          "optionsZh": ["（指人當主詞）", "（指物）", "（所有格，正確）", "（先行詞不明）"],
-          "explanation": "空格後接 car，表示「那個人的車」，需用所有格關係代名詞 whose，故選 (C)。"
+          "options": [
+            "whose",
+            "which",
+            "who",
+            "what"
+          ],
+          "answer": 0,
+          "optionsZh": [
+            "（所有格，正確）",
+            "（指物）",
+            "（指人當主詞）",
+            "（先行詞不明）"
+          ],
+          "explanation": "空格後接 car，表示「那個人的車」，需用所有格關係代名詞 whose，故選 (A)。"
         },
         {
           "n": 11,
           "stem": "This bridge ＿＿＿ over one hundred years ago, but it is still strong enough for cars today.",
-          "options": ["builds", "built", "was built", "is building"],
-          "answer": 2,
-          "optionsZh": ["（現在式主動）", "（過去式主動）", "（過去式被動，正確）", "（現在進行式）"],
-          "explanation": "橋是「被建造」的，且 over one hundred years ago 為過去，用過去被動 was built，故選 (C)。"
+          "options": [
+            "was built",
+            "is building",
+            "builds",
+            "built"
+          ],
+          "answer": 0,
+          "optionsZh": [
+            "（過去式被動，正確）",
+            "（現在進行式）",
+            "（現在式主動）",
+            "（過去式主動）"
+          ],
+          "explanation": "橋是「被建造」的，且 over one hundred years ago 為過去，用過去被動 was built，故選 (A)。"
         },
         {
           "n": 12,
           "stem": "The children kept ＿＿＿ in the rain even after their mother called them to come inside.",
-          "options": ["play", "to play", "playing", "played"],
-          "answer": 2,
-          "optionsZh": ["（原形）", "（不定詞）", "（動名詞，正確）", "（過去式）"],
-          "explanation": "keep 後面接動名詞（V-ing），表示持續做某動作，故選 (C)。"
+          "options": [
+            "played",
+            "playing",
+            "play",
+            "to play"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "（過去式）",
+            "（動名詞，正確）",
+            "（原形）",
+            "（不定詞）"
+          ],
+          "explanation": "keep 後面接動名詞（V-ing），表示持續做某動作，故選 (B)。"
         },
         {
           "n": 13,
           "stem": "You don't have to bring your own lunch tomorrow; the school ＿＿＿ provide meals for everyone.",
-          "options": ["should", "will", "must", "can't"],
-          "answer": 1,
-          "optionsZh": ["應該", "將會（未來式，正確）", "必須", "不能"],
-          "explanation": "tomorrow 表未來，且句意是「明天學校會提供餐點」，用 will 表示未來動作最合適，故選 (B)。"
+          "options": [
+            "can't",
+            "must",
+            "should",
+            "will"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "不能",
+            "必須",
+            "應該",
+            "將會（未來式，正確）"
+          ],
+          "explanation": "tomorrow 表未來，且句意是「明天學校會提供餐點」，用 will 表示未來動作最合適，故選 (D)。"
         },
         {
           "n": 14,
           "stem": "This is the third time Ken ＿＿＿ his phone at school this month, so his mother is very upset.",
-          "options": ["loses", "lost", "has lost", "will lose"],
+          "options": [
+            "will lose",
+            "loses",
+            "has lost",
+            "lost"
+          ],
           "answer": 2,
-          "optionsZh": ["（現在式）", "（過去式）", "（現在完成式，正確）", "（未來式）"],
+          "optionsZh": [
+            "（未來式）",
+            "（現在式）",
+            "（現在完成式，正確）",
+            "（過去式）"
+          ],
           "explanation": "「This is the + 序數 + time + 主詞」後常接現在完成式，表示到目前為止發生的次數，故用 has lost。"
         },
         {
           "n": 15,
           "stem": "The haunted house was so ＿＿＿ that several kids screamed and refused to go any farther.",
-          "options": ["exciting", "frightening", "relaxing", "amusing"],
-          "answer": 1,
-          "optionsZh": ["刺激的", "令人害怕的", "令人放鬆的", "有趣的"],
-          "explanation": "小孩尖叫並拒絕再往前走，表示鬼屋很 frightening（令人害怕的），故選 (B)。"
+          "options": [
+            "relaxing",
+            "amusing",
+            "exciting",
+            "frightening"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "令人放鬆的",
+            "有趣的",
+            "刺激的",
+            "令人害怕的"
+          ],
+          "explanation": "小孩尖叫並拒絕再往前走，表示鬼屋很 frightening（令人害怕的），故選 (D)。"
         },
         {
           "n": 16,
           "stem": "You had better ＿＿＿ that email before you send it, or you might make an embarrassing mistake.",
-          "options": ["check", "to check", "checking", "checked"],
-          "answer": 0,
-          "optionsZh": ["（原形，正確）", "（不定詞）", "（動名詞）", "（過去式）"],
+          "options": [
+            "to check",
+            "checked",
+            "check",
+            "checking"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "（不定詞）",
+            "（過去式）",
+            "（原形，正確）",
+            "（動名詞）"
+          ],
           "explanation": "had better 後面固定接原形動詞，故選 check。"
         },
         {
           "n": 17,
           "stem": "The coach expected every player ＿＿＿ on time for practice, no matter how tired they were.",
-          "options": ["arrive", "arriving", "to arrive", "arrived"],
+          "options": [
+            "arrive",
+            "arrived",
+            "to arrive",
+            "arriving"
+          ],
           "answer": 2,
-          "optionsZh": ["（原形）", "（動名詞）", "（不定詞，正確）", "（過去式）"],
+          "optionsZh": [
+            "（原形）",
+            "（過去式）",
+            "（不定詞，正確）",
+            "（動名詞）"
+          ],
           "explanation": "expect somebody to do something，故用不定詞 to arrive，故選 (C)。"
         },
         {
           "n": 18,
           "stem": "Neither the teacher nor the students ＿＿＿ satisfied with the noisy classroom on the first floor.",
-          "options": ["is", "are", "was", "has"],
+          "options": [
+            "is",
+            "are",
+            "has",
+            "was"
+          ],
           "answer": 1,
-          "optionsZh": ["（單數）", "（複數，正確）", "（過去單數）", "（完成式）"],
+          "optionsZh": [
+            "（單數）",
+            "（複數，正確）",
+            "（完成式）",
+            "（過去單數）"
+          ],
           "explanation": "neither A nor B 的動詞與「最接近的主詞」一致，此處最接近的是 the students（複數），故用 are，故選 (B)。"
         },
         {
           "n": 19,
           "stem": "The harder the wind blew, the ＿＿＿ it became for the sailors to control the small boat.",
-          "options": ["hard", "hardly", "harder", "hardest"],
-          "answer": 2,
-          "optionsZh": ["（原級形容詞）", "（幾乎不，副詞）", "（比較級，正確）", "（最高級）"],
+          "options": [
+            "harder",
+            "hardest",
+            "hard",
+            "hardly"
+          ],
+          "answer": 0,
+          "optionsZh": [
+            "（比較級，正確）",
+            "（最高級）",
+            "（原級形容詞）",
+            "（幾乎不，副詞）"
+          ],
           "explanation": "「the 比較級..., the 比較級...」句型，前後都需用比較級，故選 harder。"
         }
       ]
@@ -180,18 +370,38 @@
             {
               "n": 20,
               "stem": "Amy joined the Basic Plan 20 days ago. She now wants to upgrade to the Premium Plan and also pay for a full year in advance. Based on the gym's rules, which statement is correct?",
-              "options": ["She can get both the 15% upgrade discount and the 10% yearly discount at the same time.", "She can only choose one of the two discounts, because they cannot be combined.", "She cannot get any discount because more than 10 days have already passed.", "She can only get the yearly discount because the upgrade window has already closed."],
-              "answer": 1,
-              "optionsZh": ["她可以同時獲得15%升級優惠與10%年繳優惠。", "她只能二選一，因為兩項優惠不能合併使用。", "她無法獲得任何優惠，因為已經超過10天。", "她只能拿到年繳優惠，因為升級期限已過。"],
-              "explanation": "Amy 加入僅20天，仍在30天升級優惠期限內，符合15%升級折扣資格；同時規則明確寫出年繳10%優惠不能與升級優惠合併，因此她必須二選一，需同時比對「30天期限規則」與「不可合併規則」才能判斷，故選 (B)。"
+              "options": [
+                "She cannot get any discount because more than 10 days have already passed.",
+                "She can get both the 15% upgrade discount and the 10% yearly discount at the same time.",
+                "She can only get the yearly discount because the upgrade window has already closed.",
+                "She can only choose one of the two discounts, because they cannot be combined."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "她無法獲得任何優惠，因為已經超過10天。",
+                "她可以同時獲得15%升級優惠與10%年繳優惠。",
+                "她只能拿到年繳優惠，因為升級期限已過。",
+                "她只能二選一，因為兩項優惠不能合併使用。"
+              ],
+              "explanation": "Amy 加入僅20天，仍在30天升級優惠期限內，符合15%升級折扣資格；同時規則明確寫出年繳10%優惠不能與升級優惠合併，因此她必須二選一，需同時比對「30天期限規則」與「不可合併規則」才能判斷，故選 (D)。"
             },
             {
               "n": 21,
               "stem": "Ben can only exercise after 7:00 p.m. on weekdays, but he is free all day on Saturdays, and the gym is closed on Sundays. Which class or classes can Ben attend?",
-              "options": ["Only Spin, on Tuesday and Thursday.", "Only Yoga, on Monday and Wednesday.", "Both Yoga on weekdays and Boxing on Saturday.", "Only Boxing, on Friday and Saturday."],
-              "answer": 2,
-              "optionsZh": ["只能上Spin，週二和週四。", "只能上Yoga，週一和週三。", "平日的Yoga和週六的Boxing都能上。", "只能上Boxing，週五和週六。"],
-              "explanation": "Ben 平日只有晚上7點後有空：Yoga 為晚上7:00–8:00（可上）；Spin 為6:30–7:30，開始時他還沒下班（不能上）；Boxing 週五5:00–6:00他還在忙（不能上），但週六他整天有空，週六的Boxing可以上，需同時比對「平日時間限制」、「各課程確切時段」與「週六全天有空」三項規則才能得出答案，故選 (C)。"
+              "options": [
+                "Only Spin, on Tuesday and Thursday.",
+                "Both Yoga on weekdays and Boxing on Saturday.",
+                "Only Yoga, on Monday and Wednesday.",
+                "Only Boxing, on Friday and Saturday."
+              ],
+              "answer": 1,
+              "optionsZh": [
+                "只能上Spin，週二和週四。",
+                "平日的Yoga和週六的Boxing都能上。",
+                "只能上Yoga，週一和週三。",
+                "只能上Boxing，週五和週六。"
+              ],
+              "explanation": "Ben 平日只有晚上7點後有空：Yoga 為晚上7:00–8:00（可上）；Spin 為6:30–7:30，開始時他還沒下班（不能上）；Boxing 週五5:00–6:00他還在忙（不能上），但週六他整天有空，週六的Boxing可以上，需同時比對「平日時間限制」、「各課程確切時段」與「週六全天有空」三項規則才能得出答案，故選 (B)。"
             }
           ]
         },
@@ -204,25 +414,55 @@
             {
               "n": 22,
               "stem": "Why did Lily decide to stop and help the man instead of walking past him?",
-              "options": ["He called out her name loudly.", "His troubled expression made her stop.", "A police officer asked her to help.", "She recognized him as her neighbor."],
-              "answer": 1,
-              "optionsZh": ["他大聲叫出她的名字。", "他困擾的表情讓她停下腳步。", "警察要求她幫忙。", "她認出他是鄰居。"],
-              "explanation": "文中 his troubled expression made her stop instead，故選 (B)。"
+              "options": [
+                "She recognized him as her neighbor.",
+                "A police officer asked her to help.",
+                "His troubled expression made her stop.",
+                "He called out her name loudly."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "她認出他是鄰居。",
+                "警察要求她幫忙。",
+                "他困擾的表情讓她停下腳步。",
+                "他大聲叫出她的名字。"
+              ],
+              "explanation": "文中 his troubled expression made her stop instead，故選 (C)。"
             },
             {
               "n": 23,
               "stem": "Why didn't Lily simply give the man directions instead of walking with him?",
-              "options": ["She did not know the way herself.", "The station was far from where they were standing.", "The man could not walk very fast.", "She wanted to practice her English."],
-              "answer": 1,
-              "optionsZh": ["她自己也不認識路。", "車站離他們站的地方很遠。", "那位男子走路很慢。", "她想練習英文。"],
-              "explanation": "文中提到車站 was actually on the far side of town，光指方向不夠，故選 (B)。"
+              "options": [
+                "The station was far from where they were standing.",
+                "She wanted to practice her English.",
+                "She did not know the way herself.",
+                "The man could not walk very fast."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "車站離他們站的地方很遠。",
+                "她想練習英文。",
+                "她自己也不認識路。",
+                "那位男子走路很慢。"
+              ],
+              "explanation": "文中提到車站 was actually on the far side of town，光指方向不夠，故選 (A)。"
             },
             {
               "n": 24,
               "stem": "What can we infer about how Lily felt at the end of the story?",
-              "options": ["She regretted losing an hour of her time.", "She felt that helping him was worth more than the time she lost.", "She was angry that the man never thanked her.", "She wished she had never stopped to help."],
+              "options": [
+                "She wished she had never stopped to help.",
+                "She felt that helping him was worth more than the time she lost.",
+                "She was angry that the man never thanked her.",
+                "She regretted losing an hour of her time."
+              ],
               "answer": 1,
-              "optionsZh": ["她後悔失去一小時。", "她覺得幫助他比失去的時間更有價值。", "她生氣男子從未道謝。", "她希望自己沒有停下幫忙。"],
+              "optionsZh": [
+                "她希望自己沒有停下幫忙。",
+                "她覺得幫助他比失去的時間更有價值。",
+                "她生氣男子從未道謝。",
+                "她後悔失去一小時。"
+              ],
               "explanation": "文末 she felt certain she had gained something far more valuable than time，表示她認為此舉值得，故選 (B)。"
             }
           ]
@@ -236,66 +476,136 @@
             {
               "n": 25,
               "stem": "What is the reading mainly about?",
-              "options": ["How birds build their nests.", "The reasons why some animals migrate.", "How whales communicate with each other.", "Why some insects disappear in winter."],
-              "answer": 1,
-              "optionsZh": ["鳥類如何築巢。", "某些動物遷徙的原因。", "鯨魚如何溝通。", "為何昆蟲在冬天消失。"],
-              "explanation": "全文說明動物遷徙的多項原因，主旨為 (B)。"
+              "options": [
+                "How birds build their nests.",
+                "How whales communicate with each other.",
+                "The reasons why some animals migrate.",
+                "Why some insects disappear in winter."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "鳥類如何築巢。",
+                "鯨魚如何溝通。",
+                "某些動物遷徙的原因。",
+                "為何昆蟲在冬天消失。"
+              ],
+              "explanation": "全文說明動物遷徙的多項原因，主旨為 (C)。"
             },
             {
               "n": 26,
               "stem": "According to the reading, why do many birds fly south in winter?",
-              "options": ["To find warmer nests to sleep in.", "Because food becomes scarce at home.", "Because other birds tell them to leave.", "To avoid meeting other kinds of birds."],
-              "answer": 1,
-              "optionsZh": ["為了找較溫暖的巢。", "因為家鄉的食物變得稀少。", "因為其他鳥叫牠們離開。", "為了避開其他種類的鳥。"],
-              "explanation": "文中 When winter arrives and insects disappear, many birds fly south to places where food is still plentiful，故選 (B)。"
+              "options": [
+                "Because food becomes scarce at home.",
+                "To avoid meeting other kinds of birds.",
+                "Because other birds tell them to leave.",
+                "To find warmer nests to sleep in."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "因為家鄉的食物變得稀少。",
+                "為了避開其他種類的鳥。",
+                "因為其他鳥叫牠們離開。",
+                "為了找較溫暖的巢。"
+              ],
+              "explanation": "文中 When winter arrives and insects disappear, many birds fly south to places where food is still plentiful，故選 (A)。"
             },
             {
               "n": 27,
               "stem": "According to the reading, what role does weather play in migration?",
-              "options": ["It has almost no effect on migration.", "It helps animals stay in comfortable conditions by moving with the seasons.", "It only affects animals living near the ocean.", "It makes animals migrate less often."],
-              "answer": 1,
-              "optionsZh": ["對遷徙幾乎沒有影響。", "幫助動物藉由隨季節移動維持舒適的環境。", "只影響住在海邊的動物。", "使動物較少遷徙。"],
-              "explanation": "文中 By moving with the seasons, animals can always stay in weather that suits their bodies best，故選 (B)。"
+              "options": [
+                "It has almost no effect on migration.",
+                "It only affects animals living near the ocean.",
+                "It makes animals migrate less often.",
+                "It helps animals stay in comfortable conditions by moving with the seasons."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "對遷徙幾乎沒有影響。",
+                "只影響住在海邊的動物。",
+                "使動物較少遷徙。",
+                "幫助動物藉由隨季節移動維持舒適的環境。"
+              ],
+              "explanation": "文中 By moving with the seasons, animals can always stay in weather that suits their bodies best，故選 (D)。"
             },
             {
               "n": 28,
               "stem": "What do scientists find most amazing about migrating animals?",
-              "options": ["How far the animals can travel in one day.", "How the animals find their way without a map.", "How many babies the animals can raise.", "How loudly the animals can call to each other."],
-              "answer": 1,
-              "optionsZh": ["動物一天能走多遠。", "動物如何在沒有地圖的情況下找到方向。", "動物能養育多少幼獸。", "動物彼此呼喚的聲音有多大。"],
-              "explanation": "文中 What amazes scientists most is how these animals find their way without a map，故選 (B)。"
+              "options": [
+                "How loudly the animals can call to each other.",
+                "How far the animals can travel in one day.",
+                "How the animals find their way without a map.",
+                "How many babies the animals can raise."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "動物彼此呼喚的聲音有多大。",
+                "動物一天能走多遠。",
+                "動物如何在沒有地圖的情況下找到方向。",
+                "動物能養育多少幼獸。"
+              ],
+              "explanation": "文中 What amazes scientists most is how these animals find their way without a map，故選 (C)。"
             }
           ]
         },
         {
           "range": "29–31",
-          "passageType": "letters",
-          "title": "Letters After the Silence",
-          "passage": "Dear Kevin,\n\nI keep thinking about the night in the hospital waiting room, and it made me realize how silly our three years of silence really were. It all started with that small argument over the shared computer, and neither of us was willing to say sorry first. I still remember how quiet our dinners became after that, and how Mom and Dad pretended not to notice.\n\nLove,\nGrace\n\n---\n\nDear Grace,\n\nI'm glad you wrote first, because I never knew how to bring it up either. Honestly, I missed talking to you long before Grandma got sick. When she was in the hospital, I was so scared that I forgot I was even supposed to be angry with you. That's why I reached over and held your hand in the waiting room — I just needed someone to be scared with me.\n\nLove,\nKevin\n\n---\n\nDear Kevin,\n\nI'm glad you did that. Sitting there together, I finally understood that our fight over the computer wasn't worth three years of silence. When Grandma finally recovered and we drove home together, I remember you quietly admitting that you had missed me, and I told you I felt exactly the same way. Neither of us ever brought up who was right about the computer again; it just didn't matter anymore.\n\nLove,\nGrace\n\n---\n\nDear Grace,\n\nYou're right, it doesn't matter at all now. I think the biggest lesson for me is that being scared together in that waiting room taught us something arguing never could. We still argue sometimes, like all siblings do, but now whenever things get tense, one of us brings up that night, and we end up laughing instead of fighting. I'm really glad Grandma is okay, and I'm even more glad we finally talked again.\n\nLove,\nKevin",
+          "passageType": "narrative",
+          "title": "The Broken Promise",
+          "passage": "Nathan promised his little sister, Ella, that he would take her to the amusement park on Saturday, right after his final exam ended. All week, Ella talked about nothing else. She drew pictures of roller coasters and practiced which rides she wanted to try first. On Friday night, Nathan's best friend suddenly invited him to a last-minute soccer match happening at the exact same time. Nathan felt torn between two things he genuinely wanted to do that weekend. He almost texted Ella to cancel, telling himself that she would probably forget about it within a few days. Before sending the message, though, he noticed her drawings still taped proudly to the refrigerator door. Something about her careful crayon lines made him pause and consider his decision again. He called his friend instead. He calmly explained that a promise to his sister mattered more than one soccer match. His friend sounded disappointed but understood right away, saying he would simply save Nathan a seat next time. On Saturday morning, Ella woke up bursting with excitement, completely unaware of what Nathan had almost done to her. They spent the whole afternoon riding roller coasters together, and Ella laughed louder than Nathan had heard in months. That night, exhausted but happy, Nathan realized that keeping small promises to the people who trust you often matters more than any single afternoon of fun.",
           "questions": [
             {
               "n": 29,
-              "stem": "According to the letters, what caused the long silence between Grace and Kevin?",
-              "options": ["An argument about a shared computer.", "A fight about their grandmother's medicine.", "A disagreement about their parents' rules.", "A quarrel about a school project."],
-              "answer": 0,
-              "optionsZh": ["關於共用電腦的爭吵。", "關於祖母藥物的爭吵。", "關於父母規定的爭執。", "關於學校作業的爭吵。"],
-              "explanation": "Grace 在第一封信中提到 It all started with that small argument over the shared computer，故選 (A)。"
+              "stem": "What promise did Nathan make to Ella at the beginning of the story?",
+              "options": [
+                "To help her with her homework every day.",
+                "To teach her how to play soccer.",
+                "To take her to the amusement park on Saturday.",
+                "To buy her a new bicycle."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "每天幫她寫作業。",
+                "教她怎麼踢足球。",
+                "星期六帶她去遊樂園。",
+                "買一台新腳踏車給她。"
+              ],
+              "explanation": "文章開頭提到 Nathan promised his little sister, Ella, that he would take her to the amusement park on Saturday，故選 (C)。"
             },
             {
               "n": 30,
-              "stem": "Based on the exchange of letters, what event finally brought Grace and Kevin close again?",
-              "options": ["Their grandmother's illness and hospital stay.", "A trip they took together with friends.", "A letter their parents wrote to them.", "A prize Kevin won at school."],
-              "answer": 0,
-              "optionsZh": ["祖母生病住院。", "與朋友一起的旅行。", "父母寫給他們的信。", "凱文在學校贏得的獎項。"],
-              "explanation": "Kevin 的信中提到 When she was in the hospital, I was so scared that I forgot I was even supposed to be angry with you，說明祖母生病住院是兩人和好的關鍵事件，需對照兩封信的敘述順序才能確認，故選 (A)。"
+              "stem": "What made Nathan change his mind about canceling on Ella?",
+              "options": [
+                "He found out the soccer match was canceled.",
+                "His friend told him he had to go to the match.",
+                "Their parents reminded him about the promise.",
+                "He saw her drawings taped to the refrigerator door."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "他發現足球比賽被取消了。",
+                "他朋友要求他一定要去比賽。",
+                "父母提醒他答應過的事。",
+                "他看見貼在冰箱門上的畫。"
+              ],
+              "explanation": "文中提到 he noticed her drawings still taped proudly to the refrigerator door...made him pause and consider his decision again，故選 (D)。"
             },
             {
               "n": 31,
-              "stem": "Which of the following is NOT mentioned in the letters?",
-              "options": ["Grace and Kevin argued over a shared computer.", "Kevin held Grace's hand in the hospital waiting room.", "Grace and Kevin wrote a letter of apology to their grandmother.", "Kevin admitted that he had missed talking to Grace."],
+              "stem": "What did Nathan realize by the end of the story?",
+              "options": [
+                "Ella would have forgotten about the promise anyway.",
+                "He should never make plans with his friends again.",
+                "Keeping small promises to people who trust you matters a lot.",
+                "Soccer matches are more important than family time."
+              ],
               "answer": 2,
-              "optionsZh": ["Grace 和 Kevin 曾因共用電腦而吵架。", "Kevin 在醫院等候室握住了 Grace 的手。", "Grace 和 Kevin 曾寫一封道歉信給祖母。", "Kevin 承認他很想念和 Grace 說話。"],
-              "explanation": "四封信中提到了共用電腦的爭吵（A）、Kevin 在等候室握手（B）、Kevin 承認想念 Grace（D），但全文從未提到兩人寫信向祖母道歉，需逐封信比對四個選項才能確認何者未被提及，故選 (C)。"
+              "optionsZh": [
+                "反正 Ella 早就會忘記這個承諾。",
+                "他以後再也不該跟朋友約時間。",
+                "對信任你的人遵守小小的承諾非常重要。",
+                "足球比賽比家人時間更重要。"
+              ],
+              "explanation": "文末提到 Nathan realized that keeping small promises to the people who trust you often matters more than any single afternoon of fun，故選 (C)。"
             }
           ]
         },
@@ -308,25 +618,55 @@
             {
               "n": 32,
               "stem": "What makes glass special compared to some plastics, according to the reading?",
-              "options": ["It can be recycled endlessly without losing quality.", "It is much cheaper to produce than plastic.", "It never needs to be sorted by color.", "It cannot be melted at high temperatures."],
+              "options": [
+                "It can be recycled endlessly without losing quality.",
+                "It is much cheaper to produce than plastic.",
+                "It never needs to be sorted by color.",
+                "It cannot be melted at high temperatures."
+              ],
               "answer": 0,
-              "optionsZh": ["能無限次回收而不失去品質。", "生產成本比塑膠便宜許多。", "完全不需要依顏色分類。", "無法在高溫下熔化。"],
+              "optionsZh": [
+                "能無限次回收而不失去品質。",
+                "生產成本比塑膠便宜許多。",
+                "完全不需要依顏色分類。",
+                "無法在高溫下熔化。"
+              ],
               "explanation": "文中 glass may be the easiest to recycle again and again without ever losing its quality，故選 (A)。"
             },
             {
               "n": 33,
               "stem": "According to the reading, why does recycling glass save energy?",
-              "options": ["Cullet melts at a lower temperature than raw material.", "Glass factories use less electricity than plastic factories.", "Recycled glass does not need to be melted at all.", "Workers can recycle glass without any machines."],
-              "answer": 0,
-              "optionsZh": ["碎玻璃熔化溫度比原始材料低。", "玻璃工廠用電比塑膠工廠少。", "回收玻璃完全不需要熔化。", "工人不需機器就能回收玻璃。"],
-              "explanation": "文中 Because cullet melts at a lower temperature than raw sand and other natural materials, factories...burn less fuel，故選 (A)。"
+              "options": [
+                "Recycled glass does not need to be melted at all.",
+                "Workers can recycle glass without any machines.",
+                "Glass factories use less electricity than plastic factories.",
+                "Cullet melts at a lower temperature than raw material."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "回收玻璃完全不需要熔化。",
+                "工人不需機器就能回收玻璃。",
+                "玻璃工廠用電比塑膠工廠少。",
+                "碎玻璃熔化溫度比原始材料低。"
+              ],
+              "explanation": "文中 Because cullet melts at a lower temperature than raw sand and other natural materials, factories...burn less fuel，故選 (D)。"
             },
             {
               "n": 34,
               "stem": "According to the reading, why does so much glass still end up in landfills?",
-              "options": ["People are unsure which items count as recyclable.", "Landfills pay people to throw glass away.", "Glass cannot be transported to recycling centers.", "Most cities have banned glass recycling."],
+              "options": [
+                "People are unsure which items count as recyclable.",
+                "Landfills pay people to throw glass away.",
+                "Most cities have banned glass recycling.",
+                "Glass cannot be transported to recycling centers."
+              ],
               "answer": 0,
-              "optionsZh": ["人們不確定哪些物品算可回收。", "垃圾掩埋場付錢請人丟玻璃。", "玻璃無法運送到回收中心。", "多數城市已禁止玻璃回收。"],
+              "optionsZh": [
+                "人們不確定哪些物品算可回收。",
+                "垃圾掩埋場付錢請人丟玻璃。",
+                "多數城市已禁止玻璃回收。",
+                "玻璃無法運送到回收中心。"
+              ],
               "explanation": "文末 mainly because people are unsure which items actually count as recyclable，故選 (A)。"
             }
           ]
@@ -340,42 +680,92 @@
             {
               "n": 35,
               "stem": "According to Writer A, what determines whether social media is good or bad for teenagers?",
-              "options": ["How much money teenagers spend on it.", "How teenagers are guided to use it.", "How many followers teenagers have.", "How new the social media app is."],
-              "answer": 1,
-              "optionsZh": ["青少年在上面花多少錢。", "青少年被如何引導使用它。", "青少年有多少追蹤者。", "社群媒體軟體有多新。"],
-              "explanation": "Writer A 認為 social media is simply a tool，關鍵在 how young people are taught to use it，故選 (B)。"
+              "options": [
+                "How teenagers are guided to use it.",
+                "How many followers teenagers have.",
+                "How much money teenagers spend on it.",
+                "How new the social media app is."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "青少年被如何引導使用它。",
+                "青少年有多少追蹤者。",
+                "青少年在上面花多少錢。",
+                "社群媒體軟體有多新。"
+              ],
+              "explanation": "Writer A 認為 social media is simply a tool，關鍵在 how young people are taught to use it，故選 (A)。"
             },
             {
               "n": 36,
               "stem": "According to Writer B, what can happen when teens compare themselves to others' edited photos?",
-              "options": ["Their confidence can be quietly damaged.", "Their grades improve quickly.", "Their friendships become stronger.", "Their sleep gets much better."],
-              "answer": 0,
-              "optionsZh": ["自信心可能被悄悄損害。", "成績快速進步。", "友誼變得更堅固。", "睡眠品質大幅改善。"],
-              "explanation": "文中 Comparing themselves to the carefully edited photos of other people's lives can quietly damage a teenager's confidence，故選 (A)。"
+              "options": [
+                "Their friendships become stronger.",
+                "Their confidence can be quietly damaged.",
+                "Their sleep gets much better.",
+                "Their grades improve quickly."
+              ],
+              "answer": 1,
+              "optionsZh": [
+                "友誼變得更堅固。",
+                "自信心可能被悄悄損害。",
+                "睡眠品質大幅改善。",
+                "成績快速進步。"
+              ],
+              "explanation": "文中 Comparing themselves to the carefully edited photos of other people's lives can quietly damage a teenager's confidence，故選 (B)。"
             },
             {
               "n": 37,
               "stem": "According to Writer B, what is different about an embarrassing mistake made online compared to one made offline?",
-              "options": ["The online mistake is usually forgotten faster.", "The online mistake can spread rapidly and follow a person for years.", "The offline mistake always causes more damage.", "The offline mistake spreads faster among friends."],
-              "answer": 1,
-              "optionsZh": ["線上的錯誤通常更快被遺忘。", "線上的錯誤可能迅速散播並跟隨一個人多年。", "線下的錯誤總是造成更大傷害。", "線下的錯誤在朋友間傳得更快。"],
-              "explanation": "文中 it can spread rapidly and follow a person for years, unlike a mistake made offline that is usually forgotten，故選 (B)。"
+              "options": [
+                "The online mistake can spread rapidly and follow a person for years.",
+                "The online mistake is usually forgotten faster.",
+                "The offline mistake spreads faster among friends.",
+                "The offline mistake always causes more damage."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "線上的錯誤可能迅速散播並跟隨一個人多年。",
+                "線上的錯誤通常更快被遺忘。",
+                "線下的錯誤在朋友間傳得更快。",
+                "線下的錯誤總是造成更大傷害。"
+              ],
+              "explanation": "文中 it can spread rapidly and follow a person for years, unlike a mistake made offline that is usually forgotten，故選 (A)。"
             },
             {
               "n": 38,
               "stem": "What do both writers seem to agree on?",
-              "options": ["Social media has almost no effect on teenagers.", "Social media use is closely related to teenagers' well-being.", "Teenagers should stop using phones completely.", "Parents should never talk about social media with their kids."],
+              "options": [
+                "Parents should never talk about social media with their kids.",
+                "Social media use is closely related to teenagers' well-being.",
+                "Social media has almost no effect on teenagers.",
+                "Teenagers should stop using phones completely."
+              ],
               "answer": 1,
-              "optionsZh": ["社群媒體對青少年幾乎沒有影響。", "使用社群媒體與青少年的身心健康密切相關。", "青少年應完全停止使用手機。", "父母不該與孩子談論社群媒體。"],
+              "optionsZh": [
+                "父母不該與孩子談論社群媒體。",
+                "使用社群媒體與青少年的身心健康密切相關。",
+                "社群媒體對青少年幾乎沒有影響。",
+                "青少年應完全停止使用手機。"
+              ],
               "explanation": "兩位作者都在討論社群媒體對青少年心理與生活的影響，共同點是使用它與青少年身心健康密切相關，故選 (B)。"
             },
             {
               "n": 39,
               "stem": "Which sentence would Writer B most likely agree with?",
-              "options": ["Teenagers should wait until they are older before using social media freely.", "Social media should be required in every classroom.", "Teenagers never need any guidance from adults.", "Notifications help teenagers sleep more peacefully."],
-              "answer": 0,
-              "optionsZh": ["青少年應等年紀更大後再自由使用社群媒體。", "每間教室都該強制使用社群媒體。", "青少年完全不需要大人的引導。", "通知能幫助青少年睡得更安穩。"],
-              "explanation": "Writer B 主張 teenagers should wait until they are older and more emotionally prepared，與 (A) 一致。"
+              "options": [
+                "Teenagers never need any guidance from adults.",
+                "Teenagers should wait until they are older before using social media freely.",
+                "Social media should be required in every classroom.",
+                "Notifications help teenagers sleep more peacefully."
+              ],
+              "answer": 1,
+              "optionsZh": [
+                "青少年完全不需要大人的引導。",
+                "青少年應等年紀更大後再自由使用社群媒體。",
+                "每間教室都該強制使用社群媒體。",
+                "通知能幫助青少年睡得更安穩。"
+              ],
+              "explanation": "Writer B 主張 teenagers should wait until they are older and more emotionally prepared，與 (B) 一致。"
             }
           ]
         },
@@ -388,34 +778,74 @@
             {
               "n": 40,
               "stem": "選出第 40 格最適合的答案。",
-              "options": ["seemed", "seeming", "seen", "sees"],
-              "answer": 0,
-              "optionsZh": ["（過去式，正確）", "（現在分詞）", "（過去分詞）", "（第三人稱單數現在式）"],
-              "explanation": "全文以過去式敘述，「it seemed like...」表示當時看起來如此，用過去式 seemed，故選 (A)。"
+              "options": [
+                "sees",
+                "seemed",
+                "seeming",
+                "seen"
+              ],
+              "answer": 1,
+              "optionsZh": [
+                "（第三人稱單數現在式）",
+                "（過去式，正確）",
+                "（現在分詞）",
+                "（過去分詞）"
+              ],
+              "explanation": "全文以過去式敘述，「it seemed like...」表示當時看起來如此，用過去式 seemed，故選 (B)。"
             },
             {
               "n": 41,
               "stem": "選出第 41 格最適合的答案。",
-              "options": ["Although", "Because", "So", "Unless"],
-              "answer": 0,
-              "optionsZh": ["雖然（正確）", "因為", "所以", "除非"],
-              "explanation": "「他前一晚檢查過同個地方，卻還是漏掉了」為對比語意，用 Although（雖然）連接最合適，故選 (A)。"
+              "options": [
+                "Because",
+                "So",
+                "Although",
+                "Unless"
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "因為",
+                "所以",
+                "雖然（正確）",
+                "除非"
+              ],
+              "explanation": "「他前一晚檢查過同個地方，卻還是漏掉了」為對比語意，用 Although（雖然）連接最合適，故選 (C)。"
             },
             {
               "n": 42,
               "stem": "選出第 42 格最適合的答案。",
-              "options": ["smooth", "smoothly", "slow", "slower"],
-              "answer": 1,
-              "optionsZh": ["（形容詞）", "（副詞，正確）", "（形容詞）", "（比較級）"],
-              "explanation": "空格修飾動詞 turn（轉動），需用副詞 smoothly（平順地），故選 (B)。"
+              "options": [
+                "slow",
+                "smooth",
+                "slower",
+                "smoothly"
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "（形容詞）",
+                "（形容詞）",
+                "（比較級）",
+                "（副詞，正確）"
+              ],
+              "explanation": "空格修飾動詞 turn（轉動），需用副詞 smoothly（平順地），故選 (D)。"
             },
             {
               "n": 43,
               "stem": "選出第 43 格最適合的答案。",
-              "options": ["clear", "clearly", "clearer", "clearest"],
-              "answer": 1,
-              "optionsZh": ["（形容詞）", "（副詞，正確）", "（比較級）", "（最高級）"],
-              "explanation": "空格修飾動詞 explained（解說），需用副詞 clearly（清楚地），故選 (B)。"
+              "options": [
+                "clearly",
+                "clearer",
+                "clearest",
+                "clear"
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "（副詞，正確）",
+                "（比較級）",
+                "（最高級）",
+                "（形容詞）"
+              ],
+              "explanation": "空格修飾動詞 explained（解說），需用副詞 clearly（清楚地），故選 (A)。"
             }
           ]
         }

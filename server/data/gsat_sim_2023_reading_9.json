@@ -15,153 +15,343 @@
         {
           "n": 1,
           "stem": "The library is very ＿＿＿, so please don't talk loudly inside.",
-          "options": ["quiet", "noisy", "funny", "crowded"],
-          "answer": 0,
-          "optionsZh": ["安靜的", "吵鬧的", "好笑的", "擁擠的"],
-          "explanation": "圖書館要求不能大聲說話，代表環境是 quiet（安靜的），故選 (A)。"
+          "options": [
+            "noisy",
+            "quiet",
+            "funny",
+            "crowded"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "吵鬧的",
+            "安靜的",
+            "好笑的",
+            "擁擠的"
+          ],
+          "explanation": "圖書館要求不能大聲說話，代表環境是 quiet（安靜的），故選 (B)。"
         },
         {
           "n": 2,
           "stem": "My father works at a hospital. He is a ＿＿＿ who takes care of sick people.",
-          "options": ["doctor", "teacher", "driver", "farmer"],
-          "answer": 0,
-          "optionsZh": ["醫生", "老師", "司機", "農夫"],
-          "explanation": "在醫院照顧病人的人是 doctor（醫生），故選 (A)。"
+          "options": [
+            "farmer",
+            "doctor",
+            "driver",
+            "teacher"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "農夫",
+            "醫生",
+            "司機",
+            "老師"
+          ],
+          "explanation": "在醫院照顧病人的人是 doctor（醫生），故選 (B)。"
         },
         {
           "n": 3,
           "stem": "Amy ＿＿＿ to school by bike every morning.",
-          "options": ["go", "goes", "going", "went"],
+          "options": [
+            "went",
+            "goes",
+            "go",
+            "going"
+          ],
           "answer": 1,
-          "optionsZh": ["（原形）", "（第三人稱單數現在式，正確）", "（現在分詞）", "（過去式）"],
+          "optionsZh": [
+            "（過去式）",
+            "（第三人稱單數現在式，正確）",
+            "（原形）",
+            "（現在分詞）"
+          ],
           "explanation": "主詞 Amy 為第三人稱單數，every morning 表習慣用現在簡單式，動詞加 -es，故選 goes。"
         },
         {
           "n": 4,
           "stem": "Look at those dark clouds. It ＿＿＿ rain soon.",
-          "options": ["rain", "rains", "will rain", "rained"],
-          "answer": 2,
-          "optionsZh": ["（原形）", "（現在式）", "（未來式，正確）", "（過去式）"],
+          "options": [
+            "rain",
+            "rains",
+            "rained",
+            "will rain"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "（原形）",
+            "（現在式）",
+            "（過去式）",
+            "（未來式，正確）"
+          ],
           "explanation": "soon（很快）表未來，看到烏雲判斷即將下雨，故用未來式 will rain。"
         },
         {
           "n": 5,
           "stem": "This bag is ＿＿＿ than that one, so I will buy this one instead.",
-          "options": ["heavy", "heavier", "heaviest", "more heavy"],
-          "answer": 1,
-          "optionsZh": ["（原級）", "（比較級，正確）", "（最高級）", "（誤用）"],
-          "explanation": "than 前後兩個物品比較，用比較級 heavier，故選 (B)。"
+          "options": [
+            "heavier",
+            "heavy",
+            "heaviest",
+            "more heavy"
+          ],
+          "answer": 0,
+          "optionsZh": [
+            "（比較級，正確）",
+            "（原級）",
+            "（最高級）",
+            "（誤用）"
+          ],
+          "explanation": "than 前後兩個物品比較，用比較級 heavier，故選 (A)。"
         },
         {
           "n": 6,
           "stem": "Mount Jade is the ＿＿＿ mountain in Taiwan.",
-          "options": ["high", "higher", "highest", "most high"],
+          "options": [
+            "higher",
+            "high",
+            "highest",
+            "most high"
+          ],
           "answer": 2,
-          "optionsZh": ["（原級）", "（比較級）", "（最高級，正確）", "（誤用）"],
+          "optionsZh": [
+            "（比較級）",
+            "（原級）",
+            "（最高級，正確）",
+            "（誤用）"
+          ],
           "explanation": "in Taiwan 表在一個範圍中，且前面有 the，用最高級 highest。"
         },
         {
           "n": 7,
           "stem": "The window ＿＿＿ by the strong wind last night.",
-          "options": ["break", "broke", "was broken", "breaking"],
-          "answer": 2,
-          "optionsZh": ["（原形）", "（過去式主動）", "（過去式被動，正確）", "（現在分詞）"],
+          "options": [
+            "was broken",
+            "breaking",
+            "broke",
+            "break"
+          ],
+          "answer": 0,
+          "optionsZh": [
+            "（過去式被動，正確）",
+            "（現在分詞）",
+            "（過去式主動）",
+            "（原形）"
+          ],
           "explanation": "窗戶是「被風吹破」的，且 last night 為過去，用過去被動 was broken。"
         },
         {
           "n": 8,
           "stem": "The man ＿＿＿ is standing at the door is my uncle.",
-          "options": ["who", "which", "whose", "what"],
-          "answer": 0,
-          "optionsZh": ["（指人的關係代名詞，正確）", "（指物）", "（所有格）", "（先行詞不明）"],
+          "options": [
+            "what",
+            "which",
+            "whose",
+            "who"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "（先行詞不明）",
+            "（指物）",
+            "（所有格）",
+            "（指人的關係代名詞，正確）"
+          ],
           "explanation": "先行詞 the man 是人，且在子句中當主詞，用關係代名詞 who。"
         },
         {
           "n": 9,
           "stem": "This is the book ＿＿＿ I borrowed from the library last week.",
-          "options": ["who", "which", "whose", "whom"],
-          "answer": 1,
-          "optionsZh": ["（指人）", "（指物，正確）", "（所有格）", "（指人受格）"],
+          "options": [
+            "whom",
+            "whose",
+            "which",
+            "who"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "（指人受格）",
+            "（所有格）",
+            "（指物，正確）",
+            "（指人）"
+          ],
           "explanation": "先行詞 the book 是物，在子句中當受詞，用關係代名詞 which。"
         },
         {
           "n": 10,
           "stem": "I ＿＿＿ my homework already, so I can watch TV now.",
-          "options": ["finish", "finished", "have finished", "will finish"],
-          "answer": 2,
-          "optionsZh": ["（原形）", "（過去式）", "（現在完成式，正確）", "（未來式）"],
+          "options": [
+            "finish",
+            "finished",
+            "will finish",
+            "have finished"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "（原形）",
+            "（過去式）",
+            "（未來式）",
+            "（現在完成式，正確）"
+          ],
           "explanation": "already 常搭配現在完成式，表示到現在已完成的動作，故用 have finished。"
         },
         {
           "n": 11,
           "stem": "It is important ＿＿＿ enough water every day.",
-          "options": ["drink", "drinking", "to drink", "drunk"],
-          "answer": 2,
-          "optionsZh": ["（原形）", "（動名詞）", "（不定詞，正確）", "（過去分詞）"],
+          "options": [
+            "drink",
+            "to drink",
+            "drinking",
+            "drunk"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "（原形）",
+            "（不定詞，正確）",
+            "（動名詞）",
+            "（過去分詞）"
+          ],
           "explanation": "It is + 形容詞 + to V 的句型中，用不定詞 to drink。"
         },
         {
           "n": 12,
           "stem": "Thank you for ＿＿＿ me with my heavy bags this morning.",
-          "options": ["help", "helped", "helping", "to help"],
-          "answer": 2,
-          "optionsZh": ["（原形）", "（過去式）", "（動名詞，正確）", "（不定詞）"],
+          "options": [
+            "helped",
+            "to help",
+            "help",
+            "helping"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "（過去式）",
+            "（不定詞）",
+            "（原形）",
+            "（動名詞，正確）"
+          ],
           "explanation": "介系詞 for 後面要接動名詞，故選 helping。"
         },
         {
           "n": 13,
           "stem": "You ＿＿＿ wear a seatbelt in the car. It's the law.",
-          "options": ["can", "may", "must", "would"],
-          "answer": 2,
-          "optionsZh": ["能夠", "可以", "必須", "將會"],
+          "options": [
+            "must",
+            "may",
+            "would",
+            "can"
+          ],
+          "answer": 0,
+          "optionsZh": [
+            "必須",
+            "可以",
+            "將會",
+            "能夠"
+          ],
           "explanation": "「這是法律規定」表示強制性，用 must（必須）最合語意。"
         },
         {
           "n": 14,
           "stem": "＿＿＿ it was raining heavily, they still went hiking in the mountains.",
-          "options": ["Although", "Because", "So", "If"],
-          "answer": 0,
-          "optionsZh": ["雖然（正確）", "因為", "所以", "如果"],
+          "options": [
+            "So",
+            "Although",
+            "Because",
+            "If"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "所以",
+            "雖然（正確）",
+            "因為",
+            "如果"
+          ],
           "explanation": "前後語意相反（下大雨／仍去健行），用 Although 表讓步。"
         },
         {
           "n": 15,
           "stem": "If it ＿＿＿ tomorrow, we will cancel the picnic.",
-          "options": ["rain", "rains", "rained", "raining"],
+          "options": [
+            "raining",
+            "rains",
+            "rained",
+            "rain"
+          ],
           "answer": 1,
-          "optionsZh": ["（原形）", "（現在式，正確）", "（過去式）", "（現在分詞）"],
+          "optionsZh": [
+            "（現在分詞）",
+            "（現在式，正確）",
+            "（過去式）",
+            "（原形）"
+          ],
           "explanation": "表可能發生的條件句，if 子句用現在式代替未來，故選 rains。"
         },
         {
           "n": 16,
           "stem": "My grandfather ＿＿＿ smoke, but he quit ten years ago.",
-          "options": ["use to", "used to", "is used to", "was used"],
-          "answer": 1,
-          "optionsZh": ["（誤用）", "過去習慣如此（正確）", "習慣於（現在）", "被使用"],
+          "options": [
+            "use to",
+            "was used",
+            "used to",
+            "is used to"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "（誤用）",
+            "被使用",
+            "過去習慣如此（正確）",
+            "習慣於（現在）"
+          ],
           "explanation": "used to + 原形動詞，表示過去的習慣，現在已不做，故選 used to。"
         },
         {
           "n": 17,
           "stem": "The soup smells ＿＿＿, so everyone wants to try some of it.",
-          "options": ["delicious", "terrible", "boring", "dangerous"],
+          "options": [
+            "delicious",
+            "dangerous",
+            "terrible",
+            "boring"
+          ],
           "answer": 0,
-          "optionsZh": ["美味的", "糟糕的", "無聊的", "危險的"],
+          "optionsZh": [
+            "美味的",
+            "危險的",
+            "糟糕的",
+            "無聊的"
+          ],
           "explanation": "大家都想嚐嚐看，代表味道聞起來 delicious（美味的），故選 (A)。"
         },
         {
           "n": 18,
           "stem": "The tea was ＿＿＿ hot to drink right away, so we had to wait.",
-          "options": ["too", "so", "very", "such"],
-          "answer": 0,
-          "optionsZh": ["太（正確，too...to 句型）", "如此（需接 that）", "非常", "如此（需接名詞）"],
+          "options": [
+            "very",
+            "such",
+            "too",
+            "so"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "非常",
+            "如此（需接名詞）",
+            "太（正確，too...to 句型）",
+            "如此（需接 that）"
+          ],
           "explanation": "too + 形容詞 + to V，表示「太…以致於不能…」，故選 too。"
         },
         {
           "n": 19,
           "stem": "She said that she ＿＿＿ tired after the long trip.",
-          "options": ["is", "was", "be", "being"],
+          "options": [
+            "is",
+            "was",
+            "be",
+            "being"
+          ],
           "answer": 1,
-          "optionsZh": ["（現在式）", "（過去式，正確）", "（原形）", "（現在分詞）"],
+          "optionsZh": [
+            "（現在式）",
+            "（過去式，正確）",
+            "（原形）",
+            "（現在分詞）"
+          ],
           "explanation": "主要子句動詞 said 為過去式，依時態一致原則，子句也用過去式 was。"
         }
       ]
@@ -180,18 +370,38 @@
             {
               "n": 20,
               "stem": "Mary takes a Zone A bus to school, then transfers to another bus within 20 minutes to reach her club. How much does she pay in total for both rides?",
-              "options": ["$25.", "$35.", "$40.", "$50."],
-              "answer": 1,
-              "optionsZh": ["25元。", "35元。", "40元。", "50元。"],
-              "explanation": "Zone A 單程 $25，20 分鐘內轉乘第二段車只需 $10，總共 $25＋$10＝$35，故選 (B)。"
+              "options": [
+                "$35.",
+                "$25.",
+                "$40.",
+                "$50."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "35元。",
+                "25元。",
+                "40元。",
+                "50元。"
+              ],
+              "explanation": "Zone A 單程 $25，20 分鐘內轉乘第二段車只需 $10，總共 $25＋$10＝$35，故選 (A)。"
             },
             {
               "n": 21,
               "stem": "Tom is 16 years old. He buys a Zone B monthly pass on the 3rd of the month. How much does he need to pay?",
-              "options": ["$1,190.", "$1,275.", "$1,400.", "$1,500."],
-              "answer": 0,
-              "optionsZh": ["1190元。", "1275元。", "1400元。", "1500元。"],
-              "explanation": "3 號購買符合「5 號前」的早鳥優惠，Zone B 月票 $1,500 先減 $100 為 $1,400；Tom 未滿 18 歲，再享學生 85 折：$1,400 × 0.85 ＝ $1,190，需同時比對早鳥規則與學生折扣兩項規則，故選 (A)。"
+              "options": [
+                "$1,500.",
+                "$1,275.",
+                "$1,400.",
+                "$1,190."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "1500元。",
+                "1275元。",
+                "1400元。",
+                "1190元。"
+              ],
+              "explanation": "3 號購買符合「5 號前」的早鳥優惠，Zone B 月票 $1,500 先減 $100 為 $1,400；Tom 未滿 18 歲，再享學生 85 折：$1,400 × 0.85 ＝ $1,190，需同時比對早鳥規則與學生折扣兩項規則，故選 (D)。"
             }
           ]
         },
@@ -204,26 +414,56 @@
             {
               "n": 22,
               "stem": "Why did Mia and Leo go into the wooden shed?",
-              "options": ["They wanted to fix their bikes.", "They needed a place to hide from the storm.", "They were meeting their parents there.", "They wanted to find some farm tools."],
-              "answer": 1,
-              "optionsZh": ["他們想修理腳踏車。", "他們需要一個躲雨的地方。", "他們要在那裡跟父母碰面。", "他們想找農具。"],
-              "explanation": "文中提到 Mia remembered a small wooden shed... they pedaled as fast as they could through the storm，可知是為了躲雨，故選 (B)。"
+              "options": [
+                "They wanted to fix their bikes.",
+                "They were meeting their parents there.",
+                "They needed a place to hide from the storm.",
+                "They wanted to find some farm tools."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "他們想修理腳踏車。",
+                "他們要在那裡跟父母碰面。",
+                "他們需要一個躲雨的地方。",
+                "他們想找農具。"
+              ],
+              "explanation": "文中提到 Mia remembered a small wooden shed... they pedaled as fast as they could through the storm，可知是為了躲雨，故選 (C)。"
             },
             {
               "n": 23,
               "stem": "How did Leo feel while they were waiting inside the shed?",
-              "options": ["He was bored and wanted to leave.", "He felt hungry and tired.", "He was worried at first, but then felt better.", "He was angry at his sister."],
+              "options": [
+                "He felt hungry and tired.",
+                "He was angry at his sister.",
+                "He was worried at first, but then felt better.",
+                "He was bored and wanted to leave."
+              ],
               "answer": 2,
-              "optionsZh": ["他覺得無聊想離開。", "他覺得又餓又累。", "他一開始擔心，後來感覺好多了。", "他對姊姊生氣。"],
+              "optionsZh": [
+                "他覺得又餓又累。",
+                "他對姊姊生氣。",
+                "他一開始擔心，後來感覺好多了。",
+                "他覺得無聊想離開。"
+              ],
               "explanation": "文中 Leo asked nervously if their parents would be worried，之後 their fear turned into something almost exciting，顯示情緒從擔心轉為好一點，故選 (C)。"
             },
             {
               "n": 24,
               "stem": "What can we say about Mia and Leo at the end of the story?",
-              "options": ["They were angry that their bikes got wet.", "They felt proud that they had faced the storm together.", "They decided never to ride bikes again.", "They were disappointed with the whole trip."],
-              "answer": 1,
-              "optionsZh": ["他們對腳踏車淋濕感到生氣。", "他們為一起面對暴風雨感到驕傲。", "他們決定再也不騎腳踏車。", "他們對這趟旅程感到失望。"],
-              "explanation": "文末 soaked but happy, feeling proud that they had faced the storm together，故選 (B)。"
+              "options": [
+                "They felt proud that they had faced the storm together.",
+                "They decided never to ride bikes again.",
+                "They were angry that their bikes got wet.",
+                "They were disappointed with the whole trip."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "他們為一起面對暴風雨感到驕傲。",
+                "他們決定再也不騎腳踏車。",
+                "他們對腳踏車淋濕感到生氣。",
+                "他們對這趟旅程感到失望。"
+              ],
+              "explanation": "文末 soaked but happy, feeling proud that they had faced the storm together，故選 (A)。"
             }
           ]
         },
@@ -236,66 +476,136 @@
             {
               "n": 25,
               "stem": "What is the reading mainly about?",
-              "options": ["How bats build their nests.", "How bats use sound to find their way and hunt.", "Why bats only come out in winter.", "How to keep bats away from houses."],
-              "answer": 1,
-              "optionsZh": ["蝙蝠如何築巢。", "蝙蝠如何用聲音辨位與捕食。", "為何蝙蝠只在冬天出現。", "如何讓蝙蝠遠離房屋。"],
-              "explanation": "全文說明蝙蝠如何靠聲音（回聲定位）辨別方向與獵物，主旨為 (B)。"
+              "options": [
+                "Why bats only come out in winter.",
+                "How to keep bats away from houses.",
+                "How bats build their nests.",
+                "How bats use sound to find their way and hunt."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "為何蝙蝠只在冬天出現。",
+                "如何讓蝙蝠遠離房屋。",
+                "蝙蝠如何築巢。",
+                "蝙蝠如何用聲音辨位與捕食。"
+              ],
+              "explanation": "全文說明蝙蝠如何靠聲音（回聲定位）辨別方向與獵物，主旨為 (D)。"
             },
             {
               "n": 26,
               "stem": "According to the reading, how does a bat figure out where an insect is?",
-              "options": ["By smelling the insect in the air.", "By feeling the wind change direction.", "By listening to the echo of its own sounds.", "By watching the insect's shadow on the ground."],
-              "answer": 2,
-              "optionsZh": ["靠聞空氣中的氣味。", "靠感覺風向改變。", "靠聽自己發出聲音的回聲。", "靠看地上昆蟲的影子。"],
-              "explanation": "文中 By listening carefully to these echoes, a bat can figure out exactly where an object is，故選 (C)。"
+              "options": [
+                "By smelling the insect in the air.",
+                "By listening to the echo of its own sounds.",
+                "By watching the insect's shadow on the ground.",
+                "By feeling the wind change direction."
+              ],
+              "answer": 1,
+              "optionsZh": [
+                "靠聞空氣中的氣味。",
+                "靠聽自己發出聲音的回聲。",
+                "靠看地上昆蟲的影子。",
+                "靠感覺風向改變。"
+              ],
+              "explanation": "文中 By listening carefully to these echoes, a bat can figure out exactly where an object is，故選 (B)。"
             },
             {
               "n": 27,
               "stem": "How do some moths try to escape being caught by bats?",
-              "options": ["They hide inside flowers.", "They fly in a confusing zigzag pattern.", "They make loud sounds to scare bats.", "They stay completely still in the air."],
-              "answer": 1,
-              "optionsZh": ["躲進花朵裡。", "以令人困惑的鋸齒狀路線飛行。", "發出巨大聲音嚇跑蝙蝠。", "在空中完全靜止不動。"],
-              "explanation": "文中 will suddenly drop out of the air or fly in a confusing zigzag pattern to escape being caught，故選 (B)。"
+              "options": [
+                "They fly in a confusing zigzag pattern.",
+                "They hide inside flowers.",
+                "They make loud sounds to scare bats.",
+                "They stay completely still in the air."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "以令人困惑的鋸齒狀路線飛行。",
+                "躲進花朵裡。",
+                "發出巨大聲音嚇跑蝙蝠。",
+                "在空中完全靜止不動。"
+              ],
+              "explanation": "文中 will suddenly drop out of the air or fly in a confusing zigzag pattern to escape being caught，故選 (A)。"
             },
             {
               "n": 28,
               "stem": "According to the reading, what has echolocation inspired engineers to create?",
-              "options": ["Faster bicycles for city streets.", "Devices for blind people and sonar systems for ships.", "New kinds of musical instruments.", "Machines that grow food faster."],
-              "answer": 1,
-              "optionsZh": ["城市街道用的更快腳踏車。", "幫助盲人的裝置與船隻用的聲納系統。", "新型樂器。", "讓食物長得更快的機器。"],
-              "explanation": "文中 Devices that help blind people move around safely, as well as underwater sonar systems used by ships, were both inspired by the same basic idea，故選 (B)。"
+              "options": [
+                "New kinds of musical instruments.",
+                "Faster bicycles for city streets.",
+                "Devices for blind people and sonar systems for ships.",
+                "Machines that grow food faster."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "新型樂器。",
+                "城市街道用的更快腳踏車。",
+                "幫助盲人的裝置與船隻用的聲納系統。",
+                "讓食物長得更快的機器。"
+              ],
+              "explanation": "文中 Devices that help blind people move around safely, as well as underwater sonar systems used by ships, were both inspired by the same basic idea，故選 (C)。"
             }
           ]
         },
         {
           "range": "29–31",
-          "passageType": "letters",
-          "title": "Making Up with Jake (書信往返)",
-          "passage": "Dear Jake,\n\nI'm really sorry about what happened on the school trip. I said some unkind things when you forgot to save me a seat on the bus, and I've regretted it ever since. Lunchtime has felt so quiet without you these past two weeks, and I miss trading snacks and talking about video games with you. I know I was too stubborn to say sorry sooner. Can we please talk soon?\n\nYour friend,\nSam\n\n---\n\nDear Sam,\n\nI got your note in my locker today, and honestly, I felt a huge relief reading it. I've been sitting alone by the library every lunch, feeling just as terrible about the whole thing. I never meant to forget your seat — I was talking to the new kid and lost track of time. I should have explained that right away instead of staying silent for two weeks. Let's meet after school tomorrow.\n\nYour friend,\nJake\n\n---\n\nDear Jake,\n\nThat sounds great. I'll wait for you outside the library at three o'clock. I already told my mom I'd probably be a little late for dinner because we have a lot of video games to catch up on! I promise not to get angry so quickly next time, even over something as small as a bus seat.\n\nYour friend,\nSam\n\n---\n\nDear Sam,\n\nDeal. I'll bring the snacks this time, and we can plan our seats on the bus for the next trip together so this never happens again. Thanks for being brave enough to write first. Real friends can say sorry even when it's hard.\n\nYour friend,\nJake",
+          "passageType": "narrative",
+          "title": "The Talent Show Understudy",
+          "passage": "Bella had practiced her violin solo for months, hoping to finally perform at the school talent show without freezing up like she had last year. Two days before the event, her friend Wendy was supposed to sing right after her. Wendy suddenly lost her voice to a bad cold. The teacher in charge asked if anyone could fill the empty time spot on such short notice. Bella hesitated, since sharing the stage twice felt far more terrifying than playing just once. Still, she remembered how disappointed Wendy looked backstage, worried about letting the whole class down that evening. Bella offered to learn Wendy's simple dance routine instead, even though she had never performed one publicly before. They spent every free period that week practicing quietly behind the gym. They corrected small mistakes together patiently. Bella's legs ached by Thursday, but she refused to give up before the actual performance. On the night of the show, Bella played her violin solo first, her hands trembling only slightly before the music steadied her nerves completely. Later, she returned to perform the borrowed dance routine, glancing occasionally at Wendy, who mouthed the steps silently from the front row. The audience cheered loudly for both performances, unaware of how much last-minute effort had gone into the second one. Afterward, Wendy hugged Bella tightly backstage, admitting she would never forget such genuine kindness during a stressful week.",
           "questions": [
             {
               "n": 29,
-              "stem": "How did Sam apologize to Jake first?",
-              "options": ["He called Jake on the phone.", "He left a note in Jake's locker.", "He asked the teacher to talk to Jake.", "He waited for Jake outside the school gate."],
-              "answer": 1,
-              "optionsZh": ["他打電話給 Jake。", "他在 Jake 的置物櫃留了一張紙條。", "他請老師去跟 Jake 談。", "他在校門口等 Jake。"],
-              "explanation": "在 Jake 回信中提到 I got your note in my locker today，可推知 Sam 是先把信留在 Jake 的置物櫃裡，故選 (B)，須對照第二封信才能確認第一封信的傳遞方式。"
+              "stem": "Why did the teacher need someone to fill Wendy's time spot?",
+              "options": [
+                "Wendy was not allowed to perform twice.",
+                "Wendy decided not to join the talent show at all.",
+                "Wendy suddenly lost her voice to a bad cold.",
+                "Wendy forgot to practice her song in time."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "Wendy 不被允許表演兩次。",
+                "Wendy 決定完全不參加才藝表演了。",
+                "Wendy 突然因重感冒而失聲了。",
+                "Wendy 忘記提前練習她的歌了。"
+              ],
+              "explanation": "文中提到 Wendy suddenly lost her voice to a bad cold，導致原本的表演時段空了出來，故選 (C)。"
             },
             {
               "n": 30,
-              "stem": "Why did Jake forget to save Sam a seat on the bus?",
-              "options": ["He fell asleep on the bus.", "He was talking to the new kid and lost track of time.", "He got on a different bus by mistake.", "He was still angry with Sam that morning."],
+              "stem": "Why did Bella hesitate before agreeing to help Wendy?",
+              "options": [
+                "She had never met Wendy before that day.",
+                "Performing on stage twice felt more terrifying than once.",
+                "She did not think Wendy deserved her help.",
+                "She was told by the teacher not to get involved."
+              ],
               "answer": 1,
-              "optionsZh": ["他在公車上睡著了。", "他在跟新同學說話，忘了時間。", "他不小心搭錯了公車。", "他那天早上還在生 Sam 的氣。"],
-              "explanation": "Jake 在信中解釋 I was talking to the new kid and lost track of time，故選 (B)。"
+              "optionsZh": [
+                "她那天之前根本不認識 Wendy。",
+                "在台上表演兩次比只表演一次更令人害怕。",
+                "她認為 Wendy 不值得她幫忙。",
+                "老師告訴她不要插手這件事。"
+              ],
+              "explanation": "文中提到 Bella hesitated, since sharing the stage twice felt far more terrifying than playing just once，故選 (B)。"
             },
             {
               "n": 31,
-              "stem": "What do Sam and Jake plan to do to keep this problem from happening again?",
-              "options": ["Never ride the school bus together again.", "Ask the teacher to assign seats for everyone.", "Plan their bus seats together before the next trip.", "Stop going on any future school trips."],
-              "answer": 2,
-              "optionsZh": ["再也不一起搭校車。", "請老師幫全班安排座位。", "在下次校外教學前先一起規劃公車座位。", "以後不再參加校外教學。"],
-              "explanation": "Jake 在最後一封信中提到 we can plan our seats on the bus for the next trip together so this never happens again，故選 (C)。"
+              "stem": "What did Bella and Wendy do to prepare for the borrowed dance routine?",
+              "options": [
+                "They hired a professional dance teacher to help them.",
+                "They practiced quietly behind the gym during free periods.",
+                "They watched online videos the night before the show.",
+                "They asked another classmate to perform it instead."
+              ],
+              "answer": 1,
+              "optionsZh": [
+                "他們請了專業舞蹈老師來教。",
+                "他們利用空堂時間在體育館後面安靜練習。",
+                "他們在表演前一晚看網路影片自學。",
+                "他們請另一位同學代替表演。"
+              ],
+              "explanation": "文中提到 They spent every free period that week practicing quietly behind the gym，故選 (B)。"
             }
           ]
         },
@@ -308,26 +618,56 @@
             {
               "n": 32,
               "stem": "What was life like before the printing press was invented?",
-              "options": ["Books were cheap and easy to find.", "Books were rare because they had to be copied by hand.", "Everyone in the town could read easily.", "Books were only written in one language."],
-              "answer": 1,
-              "optionsZh": ["書本便宜又容易取得。", "書本很稀少，因為要用手抄寫。", "鎮上每個人都能輕易閱讀。", "書本只用一種語言寫成。"],
-              "explanation": "文中 someone had to write out every single page by hand... books were extremely rare and expensive，故選 (B)。"
+              "options": [
+                "Books were only written in one language.",
+                "Books were cheap and easy to find.",
+                "Everyone in the town could read easily.",
+                "Books were rare because they had to be copied by hand."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "書本只用一種語言寫成。",
+                "書本便宜又容易取得。",
+                "鎮上每個人都能輕易閱讀。",
+                "書本很稀少，因為要用手抄寫。"
+              ],
+              "explanation": "文中 someone had to write out every single page by hand... books were extremely rare and expensive，故選 (D)。"
             },
             {
               "n": 33,
               "stem": "What happened to the price of books after the printing press spread?",
-              "options": ["It became much higher than before.", "It stayed exactly the same.", "It dropped low enough for ordinary families to afford.", "It was no longer measured in money."],
-              "answer": 2,
-              "optionsZh": ["變得比以前更高。", "完全沒有改變。", "降到一般家庭也負擔得起。", "不再用金錢衡量。"],
-              "explanation": "文中 the price of books dropped so low that ordinary families could finally afford to buy them，故選 (C)。"
+              "options": [
+                "It was no longer measured in money.",
+                "It became much higher than before.",
+                "It stayed exactly the same.",
+                "It dropped low enough for ordinary families to afford."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "不再用金錢衡量。",
+                "變得比以前更高。",
+                "完全沒有改變。",
+                "降到一般家庭也負擔得起。"
+              ],
+              "explanation": "文中 the price of books dropped so low that ordinary families could finally afford to buy them，故選 (D)。"
             },
             {
               "n": 34,
               "stem": "Which of the following is NOT mentioned in the reading?",
-              "options": ["Books used to take months or even years to copy by hand.", "The printing press used small metal letters that could be arranged and reused.", "The inventor of the printing press was rewarded with a large amount of gold by the king.", "The price of books dropped low enough for ordinary families to afford them."],
+              "options": [
+                "Books used to take months or even years to copy by hand.",
+                "The price of books dropped low enough for ordinary families to afford them.",
+                "The inventor of the printing press was rewarded with a large amount of gold by the king.",
+                "The printing press used small metal letters that could be arranged and reused."
+              ],
               "answer": 2,
-              "optionsZh": ["書本以前要花好幾個月甚至好幾年手抄。", "印刷機使用可排列、重複使用的小型金屬活字。", "印刷機發明者獲得國王賞賜大量黃金。", "書本價格降到一般家庭也負擔得起。"],
-              "explanation": "文中提到手抄費時（(A) 有提及）、活字可排列重複使用（(B) 有提及）、書價下降到一般家庭可負擔（(D) 有提及），但全文完全沒有提到發明者受到國王賞賜黃金一事，屬於選項中未在文章出現的內容，故選 (C)。"
+              "optionsZh": [
+                "書本以前要花好幾個月甚至好幾年手抄。",
+                "書本價格降到一般家庭也負擔得起。",
+                "印刷機發明者獲得國王賞賜大量黃金。",
+                "印刷機使用可排列、重複使用的小型金屬活字。"
+              ],
+              "explanation": "文中提到手抄費時（(A) 有提及）、活字可排列重複使用（(D) 有提及）、書價下降到一般家庭可負擔（(B) 有提及），但全文完全沒有提到發明者受到國王賞賜黃金一事，屬於選項中未在文章出現的內容，故選 (C)。"
             }
           ]
         },
@@ -340,42 +680,92 @@
             {
               "n": 35,
               "stem": "According to Writer A, why is a small amount of weekend homework helpful?",
-              "options": ["It helps important lessons stay in students' memory.", "It gives teachers less work to do.", "It makes weekends feel shorter.", "It stops students from playing outside."],
+              "options": [
+                "It helps important lessons stay in students' memory.",
+                "It stops students from playing outside.",
+                "It makes weekends feel shorter.",
+                "It gives teachers less work to do."
+              ],
               "answer": 0,
-              "optionsZh": ["幫助重要的課程內容留在記憶中。", "讓老師的工作變少。", "讓週末感覺變短。", "阻止學生到戶外玩。"],
+              "optionsZh": [
+                "幫助重要的課程內容留在記憶中。",
+                "阻止學生到戶外玩。",
+                "讓週末感覺變短。",
+                "讓老師的工作變少。"
+              ],
               "explanation": "Writer A 說 a short weekend review helps important lessons stay in our memory instead of fading away，故選 (A)。"
             },
             {
               "n": 36,
               "stem": "What kind of weekend homework does Writer A suggest?",
-              "options": ["Several hours of new material every day.", "A light workload, such as thirty minutes of review a day.", "No homework at all on weekends.", "Only tests, with no review."],
-              "answer": 1,
-              "optionsZh": ["每天好幾個小時的新內容。", "輕量作業，如每天三十分鐘複習。", "週末完全沒有作業。", "只有考試，沒有複習。"],
-              "explanation": "文中 A light workload, such as thirty minutes of review each day, is not too demanding，故選 (B)。"
+              "options": [
+                "No homework at all on weekends.",
+                "Only tests, with no review.",
+                "A light workload, such as thirty minutes of review a day.",
+                "Several hours of new material every day."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "週末完全沒有作業。",
+                "只有考試，沒有複習。",
+                "輕量作業，如每天三十分鐘複習。",
+                "每天好幾個小時的新內容。"
+              ],
+              "explanation": "文中 A light workload, such as thirty minutes of review each day, is not too demanding，故選 (C)。"
             },
             {
               "n": 37,
               "stem": "According to Writer B, what do growing children need on weekends?",
-              "options": ["More tests to check their progress.", "Enough sleep, exercise, and family time.", "Extra homework to stay busy.", "A stricter school schedule."],
-              "answer": 1,
-              "optionsZh": ["更多考試來檢視進度。", "足夠的睡眠、運動與家庭時間。", "額外作業讓自己忙碌。", "更嚴格的課表。"],
-              "explanation": "文中 Growing children need enough sleep, exercise, and family time in order to stay healthy，故選 (B)。"
+              "options": [
+                "Extra homework to stay busy.",
+                "More tests to check their progress.",
+                "A stricter school schedule.",
+                "Enough sleep, exercise, and family time."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "額外作業讓自己忙碌。",
+                "更多考試來檢視進度。",
+                "更嚴格的課表。",
+                "足夠的睡眠、運動與家庭時間。"
+              ],
+              "explanation": "文中 Growing children need enough sleep, exercise, and family time in order to stay healthy，故選 (D)。"
             },
             {
               "n": 38,
               "stem": "What do both writers agree on?",
-              "options": ["Homework has nothing to do with how well students learn.", "Weekend time is connected to how students perform at school.", "Students should attend school seven days a week.", "Teachers should stop giving any homework forever."],
-              "answer": 1,
-              "optionsZh": ["作業和學生學得好不好毫無關係。", "週末時間與學生在校表現有關。", "學生應該一週上七天課。", "老師應該永遠不再出作業。"],
-              "explanation": "兩位作者都在討論週末的安排（複習或休息）如何影響學生接下來一週的學習表現，故選 (B)。"
+              "options": [
+                "Weekend time is connected to how students perform at school.",
+                "Homework has nothing to do with how well students learn.",
+                "Teachers should stop giving any homework forever.",
+                "Students should attend school seven days a week."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "週末時間與學生在校表現有關。",
+                "作業和學生學得好不好毫無關係。",
+                "老師應該永遠不再出作業。",
+                "學生應該一週上七天課。"
+              ],
+              "explanation": "兩位作者都在討論週末的安排（複習或休息）如何影響學生接下來一週的學習表現，故選 (A)。"
             },
             {
               "n": 39,
               "stem": "Which sentence would Writer B most likely agree with?",
-              "options": ["A completely homework-free weekend helps students recover and do better later.", "Students should do homework every hour of the weekend.", "Teachers should give more tests instead of homework.", "Reading on paper is always better than on a screen."],
-              "answer": 0,
-              "optionsZh": ["完全沒有作業的週末能幫助學生恢復並在之後表現更好。", "學生應該整個週末每小時都寫作業。", "老師應該多出考試而非作業。", "紙本閱讀永遠比螢幕閱讀好。"],
-              "explanation": "Writer B 主張 students who rest properly on weekends actually perform better，且提倡 A completely homework-free weekend，與 (A) 一致。"
+              "options": [
+                "Students should do homework every hour of the weekend.",
+                "Reading on paper is always better than on a screen.",
+                "Teachers should give more tests instead of homework.",
+                "A completely homework-free weekend helps students recover and do better later."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "學生應該整個週末每小時都寫作業。",
+                "紙本閱讀永遠比螢幕閱讀好。",
+                "老師應該多出考試而非作業。",
+                "完全沒有作業的週末能幫助學生恢復並在之後表現更好。"
+              ],
+              "explanation": "Writer B 主張 students who rest properly on weekends actually perform better，且提倡 A completely homework-free weekend，與 (D) 一致。"
             }
           ]
         },
@@ -388,33 +778,73 @@
             {
               "n": 40,
               "stem": "選出第 40 格最適合的答案。",
-              "options": ["had never", "has never", "was never", "did never"],
-              "answer": 0,
-              "optionsZh": ["過去完成式否定（正確）", "現在完成式否定", "be 動詞過去式否定", "誤用"],
+              "options": [
+                "has never",
+                "had never",
+                "was never",
+                "did never"
+              ],
+              "answer": 1,
+              "optionsZh": [
+                "現在完成式否定",
+                "過去完成式否定（正確）",
+                "be 動詞過去式否定",
+                "誤用"
+              ],
               "explanation": "以「今年終於決定參加」的過去時間點為基準，「之前從未參加過比賽」是更早發生的狀態，用過去完成式 had never entered。"
             },
             {
               "n": 41,
               "stem": "選出第 41 格最適合的答案。",
-              "options": ["handed", "borrowed", "threw", "sold"],
-              "answer": 0,
-              "optionsZh": ["遞交（正確）", "借（入）", "丟", "賣"],
-              "explanation": "比賽當天把畫作交給評審，語意最合適的動詞是 handed（遞交），故選 (A)。"
+              "options": [
+                "borrowed",
+                "sold",
+                "handed",
+                "threw"
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "借（入）",
+                "賣",
+                "遞交（正確）",
+                "丟"
+              ],
+              "explanation": "比賽當天把畫作交給評審，語意最合適的動詞是 handed（遞交），故選 (C)。"
             },
             {
               "n": 42,
               "stem": "選出第 42 格最適合的答案。",
-              "options": ["quietly", "loudly", "angrily", "rudely"],
+              "options": [
+                "quietly",
+                "rudely",
+                "angrily",
+                "loudly"
+              ],
               "answer": 0,
-              "optionsZh": ["安靜地（正確）", "大聲地", "生氣地", "無禮地"],
+              "optionsZh": [
+                "安靜地（正確）",
+                "無禮地",
+                "生氣地",
+                "大聲地"
+              ],
               "explanation": "Ken 是在心裡默默地告訴自己輸了也沒關係，故用 quietly（安靜地）。"
             },
             {
               "n": 43,
               "stem": "選出第 43 格最適合的答案。",
-              "options": ["When", "Because", "So", "If"],
+              "options": [
+                "When",
+                "So",
+                "If",
+                "Because"
+              ],
               "answer": 0,
-              "optionsZh": ["當…的時候（正確）", "因為", "所以", "如果"],
+              "optionsZh": [
+                "當…的時候（正確）",
+                "所以",
+                "如果",
+                "因為"
+              ],
               "explanation": "「當他的名字被叫到得第三名時，他幾乎不敢相信」，表示時間點的連接詞用 When 最合適。"
             }
           ]

@@ -15,153 +15,343 @@
         {
           "n": 1,
           "stem": "The library is very ＿＿＿. You must not talk loudly inside.",
-          "options": ["quiet", "noisy", "funny", "heavy"],
+          "options": [
+            "quiet",
+            "funny",
+            "heavy",
+            "noisy"
+          ],
           "answer": 0,
-          "optionsZh": ["安靜的", "吵鬧的", "好笑的", "重的"],
+          "optionsZh": [
+            "安靜的",
+            "好笑的",
+            "重的",
+            "吵鬧的"
+          ],
           "explanation": "圖書館規定不可大聲說話，故選 quiet（安靜的）。"
         },
         {
           "n": 2,
           "stem": "After the long hike, everyone felt very ＿＿＿ and drank a lot of water.",
-          "options": ["thirsty", "delicious", "careful", "generous"],
-          "answer": 0,
-          "optionsZh": ["口渴的", "美味的", "小心的", "慷慨的"],
-          "explanation": "長途健行後大量喝水，代表感到 thirsty（口渴的），故選 (A)。"
+          "options": [
+            "generous",
+            "thirsty",
+            "delicious",
+            "careful"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "慷慨的",
+            "口渴的",
+            "美味的",
+            "小心的"
+          ],
+          "explanation": "長途健行後大量喝水，代表感到 thirsty（口渴的），故選 (B)。"
         },
         {
           "n": 3,
           "stem": "Nurses take care of patients and give them ＿＿＿ when they are sick.",
-          "options": ["medicine", "furniture", "direction", "silence"],
-          "answer": 0,
-          "optionsZh": ["藥", "家具", "方向", "寂靜"],
-          "explanation": "生病時護理師會給病人 medicine（藥），故選 (A)。"
+          "options": [
+            "direction",
+            "silence",
+            "medicine",
+            "furniture"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "方向",
+            "寂靜",
+            "藥",
+            "家具"
+          ],
+          "explanation": "生病時護理師會給病人 medicine（藥），故選 (C)。"
         },
         {
           "n": 4,
           "stem": "My sister ＿＿＿ to the gym every morning before school.",
-          "options": ["go", "goes", "going", "to go"],
-          "answer": 1,
-          "optionsZh": ["（原形）", "（第三人稱單數現在式，正確）", "（現在分詞）", "（不定詞）"],
+          "options": [
+            "going",
+            "to go",
+            "go",
+            "goes"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "（現在分詞）",
+            "（不定詞）",
+            "（原形）",
+            "（第三人稱單數現在式，正確）"
+          ],
           "explanation": "主詞 my sister 為第三人稱單數，every morning 表習慣用現在簡單式，動詞加 -es，故選 goes。"
         },
         {
           "n": 5,
           "stem": "A: ＿＿＿ your parents at home now? B: No, they are still at work.",
-          "options": ["Do", "Are", "Is", "Does"],
-          "answer": 1,
-          "optionsZh": ["（助動詞 do）", "（be 動詞，正確）", "（be 動詞單數）", "（助動詞 does）"],
-          "explanation": "回答用 No, they are，可知問句用 be 動詞；主詞 your parents 為複數，搭配 Are，故選 (B)。"
+          "options": [
+            "Do",
+            "Is",
+            "Are",
+            "Does"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "（助動詞 do）",
+            "（be 動詞單數）",
+            "（be 動詞，正確）",
+            "（助動詞 does）"
+          ],
+          "explanation": "回答用 No, they are，可知問句用 be 動詞；主詞 your parents 為複數，搭配 Are，故選 (C)。"
         },
         {
           "n": 6,
           "stem": "Look at those dark clouds. It ＿＿＿ rain soon.",
-          "options": ["rains", "rained", "will rain", "has rained"],
+          "options": [
+            "has rained",
+            "rained",
+            "will rain",
+            "rains"
+          ],
           "answer": 2,
-          "optionsZh": ["（現在式）", "（過去式）", "（未來式，正確）", "（現在完成式）"],
+          "optionsZh": [
+            "（現在完成式）",
+            "（過去式）",
+            "（未來式，正確）",
+            "（現在式）"
+          ],
           "explanation": "soon（很快）表未來的預測，故用未來式 will rain。"
         },
         {
           "n": 7,
           "stem": "Of all the students in our class, Tom is the ＿＿＿ runner.",
-          "options": ["fast", "faster", "fastest", "as fast"],
+          "options": [
+            "fast",
+            "as fast",
+            "fastest",
+            "faster"
+          ],
           "answer": 2,
-          "optionsZh": ["（原級）", "（比較級）", "（最高級，正確）", "（同級）"],
+          "optionsZh": [
+            "（原級）",
+            "（同級）",
+            "（最高級，正確）",
+            "（比較級）"
+          ],
           "explanation": "of all the students 表在全班範圍中比較，且前面有 the，用最高級 fastest。"
         },
         {
           "n": 8,
           "stem": "Could you ＿＿＿ me your dictionary for a while? I forgot mine at home.",
-          "options": ["lend", "borrow", "rent", "keep"],
-          "answer": 0,
-          "optionsZh": ["借出（給別人）", "借入（跟別人借）", "租用", "保留"],
+          "options": [
+            "rent",
+            "borrow",
+            "lend",
+            "keep"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "租用",
+            "借入（跟別人借）",
+            "借出（給別人）",
+            "保留"
+          ],
           "explanation": "「借某人某物給我」是 lend somebody something；borrow 是向別人借，方向相反，故選 lend。"
         },
         {
           "n": 9,
           "stem": "Amy studied hard ＿＿＿ she wanted to pass the exam.",
-          "options": ["so", "but", "because", "or"],
-          "answer": 2,
-          "optionsZh": ["所以", "但是", "因為", "或者"],
+          "options": [
+            "or",
+            "but",
+            "so",
+            "because"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "或者",
+            "但是",
+            "所以",
+            "因為"
+          ],
           "explanation": "前句是「努力讀書」的結果，後句是原因（想通過考試），故用 because 引導原因。"
         },
         {
           "n": 10,
           "stem": "The man ＿＿＿ is standing by the gate is our new coach.",
-          "options": ["who", "which", "what", "whose"],
-          "answer": 0,
-          "optionsZh": ["（指人的關係代名詞，正確）", "（指物）", "（先行詞不明）", "（所有格）"],
+          "options": [
+            "which",
+            "who",
+            "what",
+            "whose"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "（指物）",
+            "（指人的關係代名詞，正確）",
+            "（先行詞不明）",
+            "（所有格）"
+          ],
           "explanation": "先行詞 the man 是人，且在子句中當主詞，用關係代名詞 who。"
         },
         {
           "n": 11,
           "stem": "This bridge ＿＿＿ over one hundred years ago.",
-          "options": ["built", "was built", "builds", "is building"],
-          "answer": 1,
-          "optionsZh": ["（過去式主動）", "（過去式被動，正確）", "（現在式）", "（現在進行式）"],
+          "options": [
+            "built",
+            "is building",
+            "was built",
+            "builds"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "（過去式主動）",
+            "（現在進行式）",
+            "（過去式被動，正確）",
+            "（現在式）"
+          ],
           "explanation": "橋是「被建造」的，且 over one hundred years ago 為過去，用過去被動 was built。"
         },
         {
           "n": 12,
           "stem": "David finished ＿＿＿ his room before his friends arrived.",
-          "options": ["clean", "to clean", "cleaning", "cleaned"],
-          "answer": 2,
-          "optionsZh": ["（原形）", "（不定詞）", "（動名詞，正確）", "（過去式）"],
+          "options": [
+            "to clean",
+            "cleaning",
+            "clean",
+            "cleaned"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "（不定詞）",
+            "（動名詞，正確）",
+            "（原形）",
+            "（過去式）"
+          ],
           "explanation": "finish 後面接動名詞（V-ing），故選 cleaning。"
         },
         {
           "n": 13,
           "stem": "As long as you keep practicing, you ＿＿＿ improve quickly.",
-          "options": ["should", "can", "must", "need"],
-          "answer": 1,
-          "optionsZh": ["應該", "能夠（有能力）", "必須", "需要"],
+          "options": [
+            "can",
+            "need",
+            "should",
+            "must"
+          ],
+          "answer": 0,
+          "optionsZh": [
+            "能夠（有能力）",
+            "需要",
+            "應該",
+            "必須"
+          ],
           "explanation": "「只要持續練習就能進步」，表示有能力做到，用 can（能夠）最合語意。"
         },
         {
           "n": 14,
           "stem": "This is the first time I ＿＿＿ such a beautiful beach.",
-          "options": ["see", "saw", "have seen", "will see"],
-          "answer": 2,
-          "optionsZh": ["（現在式）", "（過去式）", "（現在完成式，正確）", "（未來式）"],
+          "options": [
+            "have seen",
+            "will see",
+            "see",
+            "saw"
+          ],
+          "answer": 0,
+          "optionsZh": [
+            "（現在完成式，正確）",
+            "（未來式）",
+            "（現在式）",
+            "（過去式）"
+          ],
           "explanation": "「This is the first time + 主詞」後面常接現在完成式，表達到目前為止第一次，故用 have seen。"
         },
         {
           "n": 15,
           "stem": "The ending of the movie was so ＿＿＿ that many people cried.",
-          "options": ["moving", "boring", "noisy", "cheap"],
-          "answer": 0,
-          "optionsZh": ["感人的", "無聊的", "吵鬧的", "便宜的"],
-          "explanation": "結局讓許多人哭泣，代表電影很 moving（感人的），故選 (A)。"
+          "options": [
+            "boring",
+            "noisy",
+            "cheap",
+            "moving"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "無聊的",
+            "吵鬧的",
+            "便宜的",
+            "感人的"
+          ],
+          "explanation": "結局讓許多人哭泣，代表電影很 moving（感人的），故選 (D)。"
         },
         {
           "n": 16,
           "stem": "You had better ＿＿＿ an umbrella; it looks like rain.",
-          "options": ["take", "to take", "taking", "took"],
-          "answer": 0,
-          "optionsZh": ["（原形，正確）", "（不定詞）", "（動名詞）", "（過去式）"],
+          "options": [
+            "to take",
+            "take",
+            "taking",
+            "took"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "（不定詞）",
+            "（原形，正確）",
+            "（動名詞）",
+            "（過去式）"
+          ],
           "explanation": "had better 後面固定接原形動詞，故選 take。"
         },
         {
           "n": 17,
           "stem": "The coach asked the players ＿＿＿ harder before the game.",
-          "options": ["practice", "practicing", "to practice", "practiced"],
+          "options": [
+            "practiced",
+            "practicing",
+            "to practice",
+            "practice"
+          ],
           "answer": 2,
-          "optionsZh": ["（原形）", "（動名詞）", "（不定詞，正確）", "（過去式）"],
+          "optionsZh": [
+            "（過去式）",
+            "（動名詞）",
+            "（不定詞，正確）",
+            "（原形）"
+          ],
           "explanation": "ask somebody to do something，故用不定詞 to practice。"
         },
         {
           "n": 18,
           "stem": "Neither the teacher nor the students ＿＿＿ ready for the fire drill.",
-          "options": ["was", "were", "is", "has"],
+          "options": [
+            "is",
+            "were",
+            "was",
+            "has"
+          ],
           "answer": 1,
-          "optionsZh": ["（單數）", "（複數，正確）", "（現在單數）", "（完成式）"],
+          "optionsZh": [
+            "（現在單數）",
+            "（複數，正確）",
+            "（單數）",
+            "（完成式）"
+          ],
           "explanation": "neither A nor B 的動詞跟「最接近的主詞」一致，這裡最近是 the students（複數），故用 were。"
         },
         {
           "n": 19,
           "stem": "The earlier you leave, the ＿＿＿ you will arrive.",
-          "options": ["soon", "sooner", "soonest", "most soon"],
-          "answer": 1,
-          "optionsZh": ["（原級副詞）", "（比較級，正確）", "（最高級）", "（誤用形式）"],
+          "options": [
+            "most soon",
+            "soonest",
+            "soon",
+            "sooner"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "（誤用形式）",
+            "（最高級）",
+            "（原級副詞）",
+            "（比較級，正確）"
+          ],
           "explanation": "「the + 比較級... the + 比較級...」句型，兩邊都用比較級，故用 sooner。"
         }
       ]
@@ -180,50 +370,100 @@
             {
               "n": 20,
               "stem": "The Lin family made a reservation for dinner on Mid-Autumn Festival. Their estimated meal cost was $2,000, and they also brought in a birthday cake to celebrate. How much did they need to pay in total?",
-              "options": ["$2,150.", "$2,200.", "$2,350.", "$2,500."],
-              "answer": 2,
-              "optionsZh": ["2,150元。", "2,200元。", "2,350元。", "2,500元。"],
-              "explanation": "餐費 $2,000 ＋中秋節 10% 加收服務費（$200）＋蛋糕的桌面佈置費 $150 ＝ $2,350，故選 (C)。"
+              "options": [
+                "$2,500.",
+                "$2,350.",
+                "$2,150.",
+                "$2,200."
+              ],
+              "answer": 1,
+              "optionsZh": [
+                "2,500元。",
+                "2,350元。",
+                "2,150元。",
+                "2,200元。"
+              ],
+              "explanation": "餐費 $2,000 ＋中秋節 10% 加收服務費（$200）＋蛋糕的桌面佈置費 $150 ＝ $2,350，故選 (B)。"
             },
             {
               "n": 21,
               "stem": "The Wu family reserved a table for this year's Dragon Boat Festival, with an estimated meal cost of $3,000. Two days before the reservation, they called to cancel it because of a schedule conflict. Based on the policy above, how much do they need to pay?",
-              "options": ["$0.", "$900.", "$3,300.", "$3,450."],
-              "answer": 0,
-              "optionsZh": ["0元。", "900元。", "3,300元。", "3,450元。"],
-              "explanation": "取消時間為訂位前兩天，超過 24 小時，屬於免費取消；由於他們並未真正用餐，「特殊節日加收10%」與「蛋糕佈置費」皆不適用，需同時比對取消規則與特殊節日加收規則兩項才能判斷最終金額為 $0，故選 (A)。"
+              "options": [
+                "$3,300.",
+                "$0.",
+                "$900.",
+                "$3,450."
+              ],
+              "answer": 1,
+              "optionsZh": [
+                "3,300元。",
+                "0元。",
+                "900元。",
+                "3,450元。"
+              ],
+              "explanation": "取消時間為訂位前兩天，超過 24 小時，屬於免費取消；由於他們並未真正用餐，「特殊節日加收10%」與「蛋糕佈置費」皆不適用，需同時比對取消規則與特殊節日加收規則兩項才能判斷最終金額為 $0，故選 (B)。"
             }
           ]
         },
         {
           "range": "22–24",
-          "passageType": "socialMedia",
-          "title": "Beach Cleanup This Saturday — Class Group Post",
-          "passage": "Emma Chen (Class Representative)\nHi everyone! Our class beach cleanup is happening this Saturday at Sunrise Beach. We'll meet at the school gate at 8:30 a.m. and take the school bus together. Please wear old clothes, and bring gloves if you have a pair at home — the school will provide extra bags for the trash. If it rains that morning, we'll move the cleanup to the following Saturday instead. Please let me know in the comments if you can come!\n\n  Liam Park: Count me in! Should we also bring our own water bottles, or will the school hand those out too?\n\n  Sophie Wu: I'm really sorry, but I can't make it this Saturday because I have a piano exam that morning. If the date gets moved because of rain, I'd love to join next time!\n\n  Noah Lin: I don't own any gloves, but since Emma said extra bags and gloves will be provided at the beach, I'll just show up without worrying about it.\n\n  Grace Ho: Does anyone know if we should bring sunscreen? Sunrise Beach gets really hot by mid-morning, even before summer starts.\n\n  Ryan Tsai: Since my home is only a five-minute drive from Sunrise Beach, I'll just meet everyone there directly instead of getting on the school bus. See you all at 8:30!",
+          "passageType": "narrative",
+          "title": "The Rainy Day Delivery",
+          "passage": "Maggie worked part-time at her uncle's small flower shop every weekend, mostly arranging flowers and answering the phone. One Saturday, a heavy storm rolled into town just as an important delivery needed to reach the hospital across the city. Her uncle had hurt his ankle that morning and could not drive through the flooded streets safely. Maggie stared nervously at her bicycle, wondering if she was brave enough to attempt the delivery completely alone. The flowers were meant for an elderly patient who was turning ninety years old that afternoon, and canceling felt impossible to Maggie. She wrapped the flowers carefully in plastic and pulled on her raincoat. Then she pedaled straight into the wind and rain. Halfway there, her bicycle chain slipped off, forcing her to walk the rest of the way while pushing the bike through deep water. Her shoes were soaked through long before she even reached the main road near downtown. When she finally reached the hospital room, she was soaked from head to toe. The elderly woman's face lit up with surprised delight anyway. She said the flowers meant even more to her, knowing someone had struggled through the storm just to deliver them safely. Maggie returned home shivering but strangely proud of herself. Her uncle later told her that determination like hers was exactly why customers trusted their small shop so much. From then on, Maggie never underestimated how much a simple delivery could brighten someone's entire day.",
           "questions": [
             {
               "n": 22,
-              "stem": "According to the discussion, which of the following is NOT mentioned?",
-              "options": ["The meeting time and place for the cleanup.", "What will happen if it rains that morning.", "The price of renting cleaning equipment for the beach.", "Whether gloves will be provided at the beach."],
+              "stem": "Why couldn't Maggie's uncle make the flower delivery himself?",
+              "options": [
+                "He did not know how to ride a bicycle.",
+                "He had already left for a business trip.",
+                "He had hurt his ankle that morning.",
+                "He was busy serving other customers."
+              ],
               "answer": 2,
-              "optionsZh": ["清灘的集合時間與地點。", "如果那天早上下雨會怎麼處理。", "在海灘租用清潔器材的價格。", "海灘現場是否會提供手套。"],
-              "explanation": "貼文與留言中提到了集合時間地點（8:30 a.m. at the school gate）、下雨的應變方式（move the cleanup to the following Saturday）、以及是否提供手套（gloves will be provided），但全篇從未提到任何「租用清潔器材的價格」，故選 (C)。"
+              "optionsZh": [
+                "他根本不會騎腳踏車。",
+                "他已經出差去了。",
+                "他那天早上扭傷了腳踝。",
+                "他正忙著招呼其他客人。"
+              ],
+              "explanation": "文中提到 Her uncle had hurt his ankle that morning and could not drive through the flooded streets safely，故選 (C)。"
             },
             {
               "n": 23,
-              "stem": "Why can't Sophie Wu join the cleanup this Saturday?",
-              "options": ["She does not like going to the beach.", "She has a piano exam that morning.", "She already went to the beach last weekend.", "She is waiting for the school bus schedule."],
-              "answer": 1,
-              "optionsZh": ["她不喜歡去海邊。", "她那天早上有鋼琴考試。", "她上週末已經去過海邊了。", "她在等校車的時刻表。"],
-              "explanation": "Sophie Wu 留言提到 I can't make it this Saturday because I have a piano exam that morning，故選 (B)。"
+              "stem": "What happened to Maggie on her way to the hospital?",
+              "options": [
+                "Her bicycle chain slipped off in the rain.",
+                "She dropped the flowers into the water.",
+                "A stranger offered to drive her there instead.",
+                "She got lost in an unfamiliar neighborhood."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "她的腳踏車鏈條在雨中脫落了。",
+                "她把花掉進了水窪裡。",
+                "有陌生人提出要開車載她去。",
+                "她在陌生的社區裡迷路了。"
+              ],
+              "explanation": "文中提到 her bicycle chain slipped off, forcing her to walk the rest of the way while pushing the bike through deep water，故選 (A)。"
             },
             {
               "n": 24,
-              "stem": "Which of the following comments would most likely have been posted by Ryan Tsai?",
-              "options": ["\"I'll take the school bus with everyone else since my house is far from the beach.\"", "\"Since my home is only a five-minute drive from Sunrise Beach, I'll just meet you all there instead of getting on the bus.\"", "\"I won't be able to join because I have a piano exam that morning.\"", "\"I don't have gloves, so I'll ask my mom if she has some at home.\""],
-              "answer": 1,
-              "optionsZh": ["「我會跟大家一起坐校車，因為我家離海邊很遠。」", "「因為我家開車到日出海灘只要五分鐘，我會直接在那裡跟大家會合，不搭校車。」", "「我沒辦法參加，因為那天早上我有鋼琴考試。」", "「我沒有手套，所以我會問我媽媽家裡有沒有。」"],
-              "explanation": "Ryan Tsai 的留言表示他家離海灘很近、會直接開車過去會合而不搭校車（Since my home is only a five-minute drive from Sunrise Beach, I'll just meet everyone there directly instead of getting on the school bus），與選項 (B) 內容一致，其餘選項分別符合另一位留言者（校車較遠者、Sophie、Noah）的情境，故選 (B)。"
+              "stem": "Why did the flowers mean even more to the elderly woman?",
+              "options": [
+                "They were delivered exactly on time by a driver.",
+                "They matched the color of her birthday dress.",
+                "They were the most expensive flowers in the shop.",
+                "Someone had struggled through the storm to deliver them."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "花是由司機準時送達的。",
+                "花的顏色剛好搭配她的生日禮服。",
+                "它們是店裡最貴的一束花。",
+                "有人冒著暴風雨辛苦地把花送來。"
+              ],
+              "explanation": "文中提到 the flowers meant even more to her, knowing someone had struggled through the storm just to deliver them safely，故選 (D)。"
             }
           ]
         },
@@ -236,26 +476,56 @@
             {
               "n": 25,
               "stem": "What is the reading mainly about?",
-              "options": ["How ships are built to sail safely.", "How the moon causes tides in the ocean.", "Why the sun is hotter than the moon.", "How fishers choose which fish to catch."],
-              "answer": 1,
-              "optionsZh": ["船隻如何建造以安全航行。", "月亮如何造成海洋的潮汐。", "為何太陽比月亮熱。", "漁夫如何選擇捕捉的魚種。"],
-              "explanation": "全文說明月亮的引力如何造成潮汐現象，主旨為 (B)。"
+              "options": [
+                "Why the sun is hotter than the moon.",
+                "How ships are built to sail safely.",
+                "How fishers choose which fish to catch.",
+                "How the moon causes tides in the ocean."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "為何太陽比月亮熱。",
+                "船隻如何建造以安全航行。",
+                "漁夫如何選擇捕捉的魚種。",
+                "月亮如何造成海洋的潮汐。"
+              ],
+              "explanation": "全文說明月亮的引力如何造成潮汐現象，主旨為 (D)。"
             },
             {
               "n": 26,
               "stem": "According to the reading, what causes a low tide?",
-              "options": ["Strong wind blowing across the ocean.", "The water level dropping between the two bulges.", "The sun moving closer to the Earth.", "Ships taking water out of the sea."],
-              "answer": 1,
-              "optionsZh": ["強風吹過海面。", "水位在兩處隆起之間下降。", "太陽靠近地球。", "船隻把海水帶走。"],
-              "explanation": "文中 Between these two bulges, the water level drops, forming a low tide，故選 (B)。"
+              "options": [
+                "The sun moving closer to the Earth.",
+                "Ships taking water out of the sea.",
+                "The water level dropping between the two bulges.",
+                "Strong wind blowing across the ocean."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "太陽靠近地球。",
+                "船隻把海水帶走。",
+                "水位在兩處隆起之間下降。",
+                "強風吹過海面。"
+              ],
+              "explanation": "文中 Between these two bulges, the water level drops, forming a low tide，故選 (C)。"
             },
             {
               "n": 27,
               "stem": "What are \"spring tides\"?",
-              "options": ["Tides that only happen in the spring season.", "Extra-high and extra-low tides when the sun, moon, and Earth line up.", "Small waves near the beach in warm weather.", "Tides that are caused only by the sun."],
-              "answer": 1,
-              "optionsZh": ["只發生在春季的潮汐。", "當太陽、月亮、地球排成一直線時的特大潮汐。", "溫暖天氣時海邊的小浪。", "只由太陽造成的潮汐。"],
-              "explanation": "文中 when the sun, the moon, and the Earth line up in a straight line, their pulls combine, producing extra-high and extra-low tides known as spring tides，故選 (B)。"
+              "options": [
+                "Small waves near the beach in warm weather.",
+                "Tides that only happen in the spring season.",
+                "Tides that are caused only by the sun.",
+                "Extra-high and extra-low tides when the sun, moon, and Earth line up."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "溫暖天氣時海邊的小浪。",
+                "只發生在春季的潮汐。",
+                "只由太陽造成的潮汐。",
+                "當太陽、月亮、地球排成一直線時的特大潮汐。"
+              ],
+              "explanation": "文中 when the sun, the moon, and the Earth line up in a straight line, their pulls combine, producing extra-high and extra-low tides known as spring tides，故選 (D)。"
             }
           ]
         },
@@ -268,26 +538,56 @@
             {
               "n": 28,
               "stem": "Why wasn't the writer allowed in the kitchen before the age of ten?",
-              "options": ["The kitchen was too small for two people.", "The parents thought it was too dangerous.", "The writer disliked cooking at that time.", "There was no food to cook at home."],
+              "options": [
+                "The kitchen was too small for two people.",
+                "The parents thought it was too dangerous.",
+                "There was no food to cook at home.",
+                "The writer disliked cooking at that time."
+              ],
               "answer": 1,
-              "optionsZh": ["廚房太小容納不下兩人。", "父母認為太危險。", "作者當時不喜歡做飯。", "家裡沒有食材可煮。"],
+              "optionsZh": [
+                "廚房太小容納不下兩人。",
+                "父母認為太危險。",
+                "家裡沒有食材可煮。",
+                "作者當時不喜歡做飯。"
+              ],
               "explanation": "文中 she had always told me the kitchen was too dangerous for someone my age，故選 (B)。"
             },
             {
               "n": 29,
               "stem": "What mistake did the writer make while cooking the soup?",
-              "options": ["Forgetting to turn off the stove.", "Adding far too much salt.", "Cutting the carrots too big.", "Cooking the soup for too short a time."],
+              "options": [
+                "Forgetting to turn off the stove.",
+                "Adding far too much salt.",
+                "Cooking the soup for too short a time.",
+                "Cutting the carrots too big."
+              ],
               "answer": 1,
-              "optionsZh": ["忘記關瓦斯爐。", "加了太多鹽。", "紅蘿蔔切得太大塊。", "湯煮的時間太短。"],
+              "optionsZh": [
+                "忘記關瓦斯爐。",
+                "加了太多鹽。",
+                "湯煮的時間太短。",
+                "紅蘿蔔切得太大塊。"
+              ],
               "explanation": "文中 I accidentally added far too much salt，故選 (B)。"
             },
             {
               "n": 30,
               "stem": "How did the writer's parents react to the mistake?",
-              "options": ["They got angry and stopped cooking.", "They laughed and said every cook makes mistakes.", "They asked the writer to leave the kitchen.", "They threw the soup away immediately."],
-              "answer": 1,
-              "optionsZh": ["他們生氣並停止煮飯。", "他們笑著說每位廚師都會犯錯。", "他們要作者離開廚房。", "他們立刻把湯倒掉。"],
-              "explanation": "文中 they both laughed and told me that every cook ruins a dish at least once，故選 (B)。"
+              "options": [
+                "They laughed and said every cook makes mistakes.",
+                "They asked the writer to leave the kitchen.",
+                "They got angry and stopped cooking.",
+                "They threw the soup away immediately."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "他們笑著說每位廚師都會犯錯。",
+                "他們要作者離開廚房。",
+                "他們生氣並停止煮飯。",
+                "他們立刻把湯倒掉。"
+              ],
+              "explanation": "文中 they both laughed and told me that every cook ruins a dish at least once，故選 (A)。"
             }
           ]
         },
@@ -300,34 +600,74 @@
             {
               "n": 31,
               "stem": "What was Bell trying to do in the 1870s?",
-              "options": ["Build a faster letter delivery system.", "Send the human voice through electrical wires.", "Create a machine that could write letters.", "Design a new kind of clothing material."],
+              "options": [
+                "Build a faster letter delivery system.",
+                "Send the human voice through electrical wires.",
+                "Design a new kind of clothing material.",
+                "Create a machine that could write letters."
+              ],
               "answer": 1,
-              "optionsZh": ["建立更快的送信系統。", "透過電線傳送人聲。", "發明能寫信的機器。", "設計新的衣料。"],
+              "optionsZh": [
+                "建立更快的送信系統。",
+                "透過電線傳送人聲。",
+                "設計新的衣料。",
+                "發明能寫信的機器。"
+              ],
               "explanation": "文中 became fascinated with the idea of sending the human voice through electrical wires，故選 (B)。"
             },
             {
               "n": 32,
               "stem": "According to the reading, how did Bell make his first successful call?",
-              "options": ["He planned a careful public demonstration.", "He spilled acid and called for help by accident.", "He wrote down instructions for his assistant.", "He tested the machine in a quiet laboratory alone."],
-              "answer": 1,
-              "optionsZh": ["他事先規劃了公開展示。", "他不小心灑到酸液並呼叫求救。", "他寫下指示給助手。", "他獨自在安靜的實驗室測試。"],
-              "explanation": "文中 he spilled some acid on his clothes and called out to his assistant... That accidental call is often remembered as the first successful telephone conversation，故選 (B)。"
+              "options": [
+                "He wrote down instructions for his assistant.",
+                "He planned a careful public demonstration.",
+                "He tested the machine in a quiet laboratory alone.",
+                "He spilled acid and called for help by accident."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "他寫下指示給助手。",
+                "他事先規劃了公開展示。",
+                "他獨自在安靜的實驗室測試。",
+                "他不小心灑到酸液並呼叫求救。"
+              ],
+              "explanation": "文中 he spilled some acid on his clothes and called out to his assistant... That accidental call is often remembered as the first successful telephone conversation，故選 (D)。"
             },
             {
               "n": 33,
               "stem": "Why could only wealthy families afford a telephone at first?",
-              "options": ["The government did not allow poor families to use it.", "Installing the wires was costly and complicated.", "Telephones were considered dangerous machines.", "Only cities near the sea had telephone service."],
+              "options": [
+                "Only cities near the sea had telephone service.",
+                "Installing the wires was costly and complicated.",
+                "Telephones were considered dangerous machines.",
+                "The government did not allow poor families to use it."
+              ],
               "answer": 1,
-              "optionsZh": ["政府不允許窮困家庭使用。", "架設電線既昂貴又複雜。", "電話被認為是危險的機器。", "只有靠海的城市有電話服務。"],
+              "optionsZh": [
+                "只有靠海的城市有電話服務。",
+                "架設電線既昂貴又複雜。",
+                "電話被認為是危險的機器。",
+                "政府不允許窮困家庭使用。"
+              ],
               "explanation": "文中 since installing the wires was costly and complicated，故選 (B)。"
             },
             {
               "n": 34,
               "stem": "What does the reading say has stayed the same about telephones over time?",
-              "options": ["The price has always stayed very high.", "The basic idea of turning sound into signals.", "Only wealthy people use them today.", "They can only be used indoors."],
-              "answer": 1,
-              "optionsZh": ["價格一直維持很高。", "把聲音轉為訊號傳送的基本原理。", "現在仍只有有錢人使用。", "只能在室內使用。"],
-              "explanation": "文末 the basic idea remains the same: turning sound into signals that travel instantly across great distances，故選 (B)。"
+              "options": [
+                "The basic idea of turning sound into signals.",
+                "The price has always stayed very high.",
+                "Only wealthy people use them today.",
+                "They can only be used indoors."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "把聲音轉為訊號傳送的基本原理。",
+                "價格一直維持很高。",
+                "現在仍只有有錢人使用。",
+                "只能在室內使用。"
+              ],
+              "explanation": "文末 the basic idea remains the same: turning sound into signals that travel instantly across great distances，故選 (A)。"
             }
           ]
         },
@@ -340,42 +680,92 @@
             {
               "n": 35,
               "stem": "What does Writer A think pets can teach students?",
-              "options": ["How to draw and paint well.", "Patience and responsibility.", "How to run faster in gym class.", "How to cook simple meals."],
-              "answer": 1,
-              "optionsZh": ["如何畫畫。", "耐心與責任感。", "體育課如何跑更快。", "如何煮簡單的餐點。"],
-              "explanation": "Writer A 提到 Taking care of an animal teaches patience and responsibility，故選 (B)。"
+              "options": [
+                "Patience and responsibility.",
+                "How to run faster in gym class.",
+                "How to draw and paint well.",
+                "How to cook simple meals."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "耐心與責任感。",
+                "體育課如何跑更快。",
+                "如何畫畫。",
+                "如何煮簡單的餐點。"
+              ],
+              "explanation": "Writer A 提到 Taking care of an animal teaches patience and responsibility，故選 (A)。"
             },
             {
               "n": 36,
               "stem": "According to Writer B, why can pets be dangerous around groups of students?",
-              "options": ["They eat too much school food.", "They can behave unpredictably and might bite or scratch.", "They make too much noise during tests.", "They are too expensive to keep healthy."],
-              "answer": 1,
-              "optionsZh": ["牠們吃掉太多學校食物。", "牠們行為難以預測，可能咬人或抓傷人。", "考試時牠們發出太多噪音。", "維持牠們的健康太昂貴。"],
-              "explanation": "Writer B 提到 Animals can also behave unpredictably... might bite or scratch someone without warning，故選 (B)。"
+              "options": [
+                "They are too expensive to keep healthy.",
+                "They eat too much school food.",
+                "They make too much noise during tests.",
+                "They can behave unpredictably and might bite or scratch."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "維持牠們的健康太昂貴。",
+                "牠們吃掉太多學校食物。",
+                "考試時牠們發出太多噪音。",
+                "牠們行為難以預測，可能咬人或抓傷人。"
+              ],
+              "explanation": "Writer B 提到 Animals can also behave unpredictably... might bite or scratch someone without warning，故選 (D)。"
             },
             {
               "n": 37,
               "stem": "What does Writer B suggest as a calmer alternative?",
-              "options": ["Letting every classroom keep a dog.", "Caring for a classroom plant or a supervised pet in the counseling office.", "Allowing pets only during exams.", "Building a new zoo next to the school."],
-              "answer": 1,
-              "optionsZh": ["讓每間教室都養狗。", "照顧教室植物，或由專人監督在輔導室設置固定寵物。", "只在考試期間允許帶寵物。", "在學校旁蓋一座新動物園。"],
-              "explanation": "Writer B 提出 caring for a classroom plant or keeping a fixed pet only in the counseling office, supervised by trained staff 作為替代方案，故選 (B)。"
+              "options": [
+                "Caring for a classroom plant or a supervised pet in the counseling office.",
+                "Building a new zoo next to the school.",
+                "Letting every classroom keep a dog.",
+                "Allowing pets only during exams."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "照顧教室植物，或由專人監督在輔導室設置固定寵物。",
+                "在學校旁蓋一座新動物園。",
+                "讓每間教室都養狗。",
+                "只在考試期間允許帶寵物。"
+              ],
+              "explanation": "Writer B 提出 caring for a classroom plant or keeping a fixed pet only in the counseling office, supervised by trained staff 作為替代方案，故選 (A)。"
             },
             {
               "n": 38,
               "stem": "What do both writers agree on?",
-              "options": ["Pets should never be near a school.", "If pets are present at school, rules or supervision are needed.", "Students should not have any pets at home.", "Teachers should bring their pets every day."],
-              "answer": 1,
-              "optionsZh": ["寵物永遠不該靠近學校。", "若寵物出現在學校，就需要規則或監督。", "學生在家也不該養寵物。", "老師應該每天帶寵物來。"],
-              "explanation": "Writer A 主張需要 clear rules（如疫苗規定），Writer B 主張需 supervised by trained staff，兩人都同意若有寵物在校就需要規範或監督，故選 (B)。"
+              "options": [
+                "If pets are present at school, rules or supervision are needed.",
+                "Pets should never be near a school.",
+                "Teachers should bring their pets every day.",
+                "Students should not have any pets at home."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "若寵物出現在學校，就需要規則或監督。",
+                "寵物永遠不該靠近學校。",
+                "老師應該每天帶寵物來。",
+                "學生在家也不該養寵物。"
+              ],
+              "explanation": "Writer A 主張需要 clear rules（如疫苗規定），Writer B 主張需 supervised by trained staff，兩人都同意若有寵物在校就需要規範或監督，故選 (A)。"
             },
             {
               "n": 39,
               "stem": "Which sentence would Writer B most likely agree with?",
-              "options": ["Pets always make students smarter.", "Animals in classrooms can make it hard for students to concentrate.", "Every student should own a pet.", "Reading is less important than caring for animals."],
-              "answer": 1,
-              "optionsZh": ["寵物總是讓學生更聰明。", "教室裡的動物會讓學生難以專心。", "每個學生都該養寵物。", "閱讀比照顧動物更不重要。"],
-              "explanation": "Writer B 提到 once an animal enters the classroom, it becomes nearly impossible for students to focus on the lesson，與 (B) 一致。"
+              "options": [
+                "Animals in classrooms can make it hard for students to concentrate.",
+                "Every student should own a pet.",
+                "Reading is less important than caring for animals.",
+                "Pets always make students smarter."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "教室裡的動物會讓學生難以專心。",
+                "每個學生都該養寵物。",
+                "閱讀比照顧動物更不重要。",
+                "寵物總是讓學生更聰明。"
+              ],
+              "explanation": "Writer B 提到 once an animal enters the classroom, it becomes nearly impossible for students to focus on the lesson，與 (A) 一致。"
             }
           ]
         },
@@ -388,33 +778,73 @@
             {
               "n": 40,
               "stem": "選出第 40 格最適合的答案。",
-              "options": ["Although", "Because", "So", "If"],
-              "answer": 0,
-              "optionsZh": ["雖然（對比，正確）", "因為", "所以", "如果"],
+              "options": [
+                "So",
+                "If",
+                "Although",
+                "Because"
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "所以",
+                "如果",
+                "雖然（對比，正確）",
+                "因為"
+              ],
               "explanation": "前後為對比關係：「雖然後台感到緊張，但他提醒自己犯錯是學習的一部分」，用 Although 連接對比子句最合適。"
             },
             {
               "n": 41,
               "stem": "選出第 41 格最適合的答案。",
-              "options": ["are shaking", "were shaking", "had shaken", "would shake"],
-              "answer": 1,
-              "optionsZh": ["（現在進行式）", "（過去進行式，正確）", "（過去完成式）", "（未來式的過去）"],
+              "options": [
+                "were shaking",
+                "had shaken",
+                "would shake",
+                "are shaking"
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "（過去進行式，正確）",
+                "（過去完成式）",
+                "（未來式的過去）",
+                "（現在進行式）"
+              ],
               "explanation": "描述「彈奏當下」手正在發抖，屬於過去某時間點正在發生的動作，用過去進行式 were shaking。"
             },
             {
               "n": 42,
               "stem": "選出第 42 格最適合的答案。",
-              "options": ["Suddenly", "Slowly", "Sadly", "Rarely"],
-              "answer": 1,
-              "optionsZh": ["突然地", "慢慢地（正確）", "難過地", "很少地"],
+              "options": [
+                "Sadly",
+                "Suddenly",
+                "Rarely",
+                "Slowly"
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "難過地",
+                "突然地",
+                "很少地",
+                "慢慢地（正確）"
+              ],
               "explanation": "前文提到他深呼吸並持續彈奏，節奏是「慢慢地」恢復的，故選 Slowly。"
             },
             {
               "n": 43,
               "stem": "選出第 43 格最適合的答案。",
-              "options": ["best", "worst", "loudest", "fastest"],
-              "answer": 0,
-              "optionsZh": ["最好的（正確）", "最糟的", "最吵的", "最快的"],
+              "options": [
+                "worst",
+                "fastest",
+                "best",
+                "loudest"
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "最糟的",
+                "最快的",
+                "最好的（正確）",
+                "最吵的"
+              ],
               "explanation": "全文寓意是「面對舞台上的恐懼，而非逃避,才是成長為音樂家最好的方式」，故用 best。"
             }
           ]

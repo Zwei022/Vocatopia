@@ -15,153 +15,343 @@
         {
           "n": 1,
           "stem": "Amy is very ＿＿＿. She always finishes her work before the deadline and never makes mistakes.",
-          "options": ["careful", "careless", "foolish", "noisy"],
-          "answer": 0,
-          "optionsZh": ["細心的", "粗心的", "愚蠢的", "吵鬧的"],
+          "options": [
+            "careless",
+            "foolish",
+            "careful",
+            "noisy"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "粗心的",
+            "愚蠢的",
+            "細心的",
+            "吵鬧的"
+          ],
           "explanation": "準時完成工作且不犯錯代表做事細心，故選 careful（細心的）。"
         },
         {
           "n": 2,
           "stem": "The library is very quiet, so please keep your voice ＿＿＿ when you talk to your friends there.",
-          "options": ["loud", "low", "high", "strong"],
-          "answer": 1,
-          "optionsZh": ["大聲的", "小聲的", "高的", "強壯的"],
-          "explanation": "圖書館需要安靜，說話要 keep your voice low（放低音量），故選 (B)。"
+          "options": [
+            "strong",
+            "high",
+            "low",
+            "loud"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "強壯的",
+            "高的",
+            "小聲的",
+            "大聲的"
+          ],
+          "explanation": "圖書館需要安靜，說話要 keep your voice low（放低音量），故選 (C)。"
         },
         {
           "n": 3,
           "stem": "This math problem is too difficult for me. Can you give me a ＿＿＿ before I give up?",
-          "options": ["hint", "noise", "weather", "trouble"],
-          "answer": 0,
-          "optionsZh": ["提示", "噪音", "天氣", "麻煩"],
-          "explanation": "解不出數學題時需要的是 hint（提示），其餘選項與解題無關，故選 (A)。"
+          "options": [
+            "noise",
+            "weather",
+            "trouble",
+            "hint"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "噪音",
+            "天氣",
+            "麻煩",
+            "提示"
+          ],
+          "explanation": "解不出數學題時需要的是 hint（提示），其餘選項與解題無關，故選 (D)。"
         },
         {
           "n": 4,
           "stem": "Tom ＿＿＿ breakfast at seven every morning before he goes to school.",
-          "options": ["eat", "eats", "eating", "ate"],
-          "answer": 1,
-          "optionsZh": ["（原形）", "（第三人稱單數現在式，正確）", "（現在分詞）", "（過去式）"],
+          "options": [
+            "eat",
+            "ate",
+            "eating",
+            "eats"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "（原形）",
+            "（過去式）",
+            "（現在分詞）",
+            "（第三人稱單數現在式，正確）"
+          ],
           "explanation": "主詞 Tom 為第三人稱單數，every morning 表習慣性動作，用現在簡單式加 -s，故選 eats。"
         },
         {
           "n": 5,
           "stem": "A: ＿＿＿ your parents at home now? B: No, they are both at work.",
-          "options": ["Is", "Are", "Do", "Does"],
+          "options": [
+            "Does",
+            "Are",
+            "Do",
+            "Is"
+          ],
           "answer": 1,
-          "optionsZh": ["（be 動詞單數）", "（be 動詞複數，正確）", "（助動詞 do）", "（助動詞 does）"],
+          "optionsZh": [
+            "（助動詞 does）",
+            "（be 動詞複數，正確）",
+            "（助動詞 do）",
+            "（be 動詞單數）"
+          ],
           "explanation": "回答用 they are，可知問句用 be 動詞；主詞 your parents 為複數，故選 Are。"
         },
         {
           "n": 6,
           "stem": "Look at those dark clouds in the sky. It ＿＿＿ rain very soon.",
-          "options": ["rain", "rains", "is going to", "rained"],
-          "answer": 2,
-          "optionsZh": ["（原形）", "（現在式）", "（近未來，正確）", "（過去式）"],
-          "explanation": "看到烏雲這個徵兆表示即將發生的事，用 be going to 表近未來，故選 (C)。"
+          "options": [
+            "rains",
+            "is going to",
+            "rained",
+            "rain"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "（現在式）",
+            "（近未來，正確）",
+            "（過去式）",
+            "（原形）"
+          ],
+          "explanation": "看到烏雲這個徵兆表示即將發生的事，用 be going to 表近未來，故選 (B)。"
         },
         {
           "n": 7,
           "stem": "Of the three paintings on the wall, this one is the ＿＿＿ beautiful, in my opinion.",
-          "options": ["more", "most", "much", "very"],
-          "answer": 1,
-          "optionsZh": ["（比較級）", "（最高級，正確）", "（修飾比較級）", "（修飾原級）"],
-          "explanation": "of the three 表在三者以上的範圍中做比較，須用最高級 the most beautiful，故選 (B)。"
+          "options": [
+            "most",
+            "much",
+            "more",
+            "very"
+          ],
+          "answer": 0,
+          "optionsZh": [
+            "（最高級，正確）",
+            "（修飾比較級）",
+            "（比較級）",
+            "（修飾原級）"
+          ],
+          "explanation": "of the three 表在三者以上的範圍中做比較，須用最高級 the most beautiful，故選 (A)。"
         },
         {
           "n": 8,
           "stem": "I forgot to bring a pen today. Could you ＿＿＿ me yours for the test, please?",
-          "options": ["lend", "borrow", "keep", "return"],
+          "options": [
+            "lend",
+            "return",
+            "borrow",
+            "keep"
+          ],
           "answer": 0,
-          "optionsZh": ["借出（給別人）", "借入（跟別人借）", "保留", "歸還"],
+          "optionsZh": [
+            "借出（給別人）",
+            "歸還",
+            "借入（跟別人借）",
+            "保留"
+          ],
           "explanation": "「借某人某物」用 lend somebody something；borrow 是「向他人借」，方向相反，故選 lend。"
         },
         {
           "n": 9,
           "stem": "Ellen was extremely nervous ＿＿＿ she had never given a speech in public before.",
-          "options": ["so", "but", "because", "or"],
-          "answer": 2,
-          "optionsZh": ["所以", "但是", "因為", "或者"],
+          "options": [
+            "so",
+            "because",
+            "but",
+            "or"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "所以",
+            "因為",
+            "但是",
+            "或者"
+          ],
           "explanation": "後句「從未在公開場合演講過」是前句「緊張」的原因，故用 because 引導原因子句。"
         },
         {
           "n": 10,
           "stem": "The man ＿＿＿ car was stolen last night reported the case to the police early this morning.",
-          "options": ["who", "which", "whose", "whom"],
-          "answer": 2,
-          "optionsZh": ["（指人主格）", "（指物）", "（所有格，正確）", "（指人受格）"],
-          "explanation": "空格後接名詞 car，且表示「他的車」，須用所有格關係代名詞 whose，故選 (C)。"
+          "options": [
+            "whom",
+            "who",
+            "which",
+            "whose"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "（指人受格）",
+            "（指人主格）",
+            "（指物）",
+            "（所有格，正確）"
+          ],
+          "explanation": "空格後接名詞 car，且表示「他的車」，須用所有格關係代名詞 whose，故選 (D)。"
         },
         {
           "n": 11,
           "stem": "This old stone bridge ＿＿＿ over a hundred years ago, and it is still standing strong today.",
-          "options": ["builds", "built", "was built", "is building"],
-          "answer": 2,
-          "optionsZh": ["（現在式主動）", "（過去式主動）", "（過去式被動，正確）", "（現在進行式）"],
-          "explanation": "橋是「被建造」的，且 a hundred years ago 表過去，須用過去被動 was built，故選 (C)。"
+          "options": [
+            "is building",
+            "was built",
+            "builds",
+            "built"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "（現在進行式）",
+            "（過去式被動，正確）",
+            "（現在式主動）",
+            "（過去式主動）"
+          ],
+          "explanation": "橋是「被建造」的，且 a hundred years ago 表過去，須用過去被動 was built，故選 (B)。"
         },
         {
           "n": 12,
           "stem": "My little sister is still afraid of ＿＿＿ alone in the dark, so she always keeps a small light on.",
-          "options": ["stay", "to stay", "staying", "stayed"],
-          "answer": 2,
-          "optionsZh": ["（原形）", "（不定詞）", "（動名詞，正確）", "（過去式）"],
+          "options": [
+            "stayed",
+            "staying",
+            "to stay",
+            "stay"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "（過去式）",
+            "（動名詞，正確）",
+            "（不定詞）",
+            "（原形）"
+          ],
           "explanation": "be afraid of 為介系詞片語，後面須接動名詞（V-ing），故選 staying。"
         },
         {
           "n": 13,
           "stem": "You ＿＿＿ finish this report by Friday; the manager needs it for an important meeting.",
-          "options": ["might", "must", "could", "would"],
+          "options": [
+            "could",
+            "must",
+            "would",
+            "might"
+          ],
           "answer": 1,
-          "optionsZh": ["或許", "必須（正確）", "可能", "將會"],
+          "optionsZh": [
+            "可能",
+            "必須（正確）",
+            "將會",
+            "或許"
+          ],
           "explanation": "經理需要這份報告開會，語意上表達強烈的義務，故用 must（必須）。"
         },
         {
           "n": 14,
           "stem": "By the time we arrived at the station, the last train ＿＿＿ already.",
-          "options": ["leaves", "left", "has left", "had left"],
-          "answer": 3,
-          "optionsZh": ["（現在式）", "（過去式）", "（現在完成式）", "（過去完成式，正確）"],
+          "options": [
+            "left",
+            "had left",
+            "leaves",
+            "has left"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "（過去式）",
+            "（過去完成式，正確）",
+            "（現在式）",
+            "（現在完成式）"
+          ],
           "explanation": "by the time + 過去式子句，表在過去某時間點之前已完成的動作，須用過去完成式 had left。"
         },
         {
           "n": 15,
           "stem": "The haunted house at the fair was so ＿＿＿ that several visitors screamed and ran back outside.",
-          "options": ["boring", "frightening", "comfortable", "delicious"],
-          "answer": 1,
-          "optionsZh": ["無聊的", "令人害怕的", "舒適的", "美味的"],
-          "explanation": "遊客因害怕而尖叫逃出，代表鬼屋很 frightening（令人害怕的），故選 (B)。"
+          "options": [
+            "delicious",
+            "comfortable",
+            "frightening",
+            "boring"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "美味的",
+            "舒適的",
+            "令人害怕的",
+            "無聊的"
+          ],
+          "explanation": "遊客因害怕而尖叫逃出，代表鬼屋很 frightening（令人害怕的），故選 (C)。"
         },
         {
           "n": 16,
           "stem": "You had better ＿＿＿ an umbrella with you; the weather report says it will rain later this afternoon.",
-          "options": ["bring", "to bring", "bringing", "brought"],
+          "options": [
+            "bring",
+            "to bring",
+            "brought",
+            "bringing"
+          ],
           "answer": 0,
-          "optionsZh": ["（原形，正確）", "（不定詞）", "（動名詞）", "（過去式）"],
+          "optionsZh": [
+            "（原形，正確）",
+            "（不定詞）",
+            "（過去式）",
+            "（動名詞）"
+          ],
           "explanation": "had better 後面固定接原形動詞，故選 bring。"
         },
         {
           "n": 17,
           "stem": "The coach told the players ＿＿＿ harder if they really wanted to win the championship this year.",
-          "options": ["practice", "practicing", "to practice", "practiced"],
-          "answer": 2,
-          "optionsZh": ["（原形）", "（動名詞）", "（不定詞，正確）", "（過去式）"],
-          "explanation": "tell somebody to do something 為固定句型，須用不定詞 to practice，故選 (C)。"
+          "options": [
+            "practice",
+            "to practice",
+            "practicing",
+            "practiced"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "（原形）",
+            "（不定詞，正確）",
+            "（動名詞）",
+            "（過去式）"
+          ],
+          "explanation": "tell somebody to do something 為固定句型，須用不定詞 to practice，故選 (B)。"
         },
         {
           "n": 18,
           "stem": "Neither the teacher nor the students ＿＿＿ ready for the sudden fire drill this morning.",
-          "options": ["was", "were", "is", "has"],
-          "answer": 1,
-          "optionsZh": ["（過去單數）", "（過去複數，正確）", "（現在單數）", "（完成式）"],
+          "options": [
+            "is",
+            "was",
+            "were",
+            "has"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "（現在單數）",
+            "（過去單數）",
+            "（過去複數，正確）",
+            "（完成式）"
+          ],
           "explanation": "neither A nor B 的動詞須與最接近的主詞一致，此處最近為 the students（複數），故用過去式 were。"
         },
         {
           "n": 19,
           "stem": "The harder you work on your studies now, the ＿＿＿ chance you will have of passing the exam.",
-          "options": ["good", "well", "better", "best"],
-          "answer": 2,
-          "optionsZh": ["（原級形容詞）", "（副詞）", "（比較級，正確）", "（最高級）"],
+          "options": [
+            "best",
+            "well",
+            "good",
+            "better"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "（最高級）",
+            "（副詞）",
+            "（原級形容詞）",
+            "（比較級，正確）"
+          ],
           "explanation": "「the + 比較級, the + 比較級」句型，兩邊皆用比較級，故選 better。"
         }
       ]
@@ -180,50 +370,100 @@
             {
               "n": 20,
               "stem": "The Chen family, two parents and two children (ages 9 and 6), bought tickets together at the counter using the Family Package. How much did they pay in total?",
-              "options": ["$1,200.", "$1,350.", "$1,500.", "$1,700."],
-              "answer": 1,
-              "optionsZh": ["1,200元。", "1,350元。", "1,500元。", "1,700元。"],
-              "explanation": "兩張成人票 $500×2＝$1,000；兩張兒童票半價 $175×2＝$350；總計 $1,000＋$350＝$1,350，故選 (B)。"
+              "options": [
+                "$1,350.",
+                "$1,700.",
+                "$1,500.",
+                "$1,200."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "1,350元。",
+                "1,700元。",
+                "1,500元。",
+                "1,200元。"
+              ],
+              "explanation": "兩張成人票 $500×2＝$1,000；兩張兒童票半價 $175×2＝$350；總計 $1,000＋$350＝$1,350，故選 (A)。"
             },
             {
               "n": 21,
               "stem": "Lily is 145 cm tall. She wants to ride the Thunder Coaster by herself, without any adult beside her. Based on the rules above, can she do this?",
-              "options": ["Yes, because she is taller than 140 cm.", "No, because she must ride with an adult until she is 150 cm tall.", "No, because the ride is closed to children.", "Yes, because there is no height limit for this ride."],
-              "answer": 1,
-              "optionsZh": ["可以，因為她高於140公分。", "不行，因為未滿150公分前須有大人陪同。", "不行，因為這項設施禁止兒童搭乘。", "可以，因為此設施沒有身高限制。"],
-              "explanation": "規則需同時比對兩項：她身高145公分符合「至少140公分」的基本門檻，但同時落在「140–150公分須與大人同行」的範圍內，故不能單獨搭乘，選 (B)。"
+              "options": [
+                "No, because she must ride with an adult until she is 150 cm tall.",
+                "Yes, because she is taller than 140 cm.",
+                "No, because the ride is closed to children.",
+                "Yes, because there is no height limit for this ride."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "不行，因為未滿150公分前須有大人陪同。",
+                "可以，因為她高於140公分。",
+                "不行，因為這項設施禁止兒童搭乘。",
+                "可以，因為此設施沒有身高限制。"
+              ],
+              "explanation": "規則需同時比對兩項：她身高145公分符合「至少140公分」的基本門檻，但同時落在「140–150公分須與大人同行」的範圍內，故不能單獨搭乘，選 (A)。"
             }
           ]
         },
         {
           "range": "22–24",
-          "passageType": "dialogue",
+          "passageType": "narrative",
           "title": "The Woman Next Door",
           "passage": "Amy: Hey Ben, do you know old Mrs. Lin? She lives right next door to me.\nBen: You mean the woman who never says hello to anyone? Most kids on our street think she's kind of unfriendly, maybe even a little scary.\nAmy: That's what everyone believes, but nobody has ever knocked on her door to find out. Nobody really tried.\nBen: So why are you smiling when you talk about her now?\nAmy: Well, one winter afternoon I saw her struggling to carry a heavy bag of rice up the icy steps to her house. I ran over without thinking and offered to help.\nBen: What happened after that?\nAmy: She looked surprised at first, but then she quietly thanked me and invited me in for a cup of tea. Her small house was full of old photographs, and it smelled like warm ginger tea.\nBen: Did she tell you anything about herself?\nAmy: Yes. She said her husband had passed away five years earlier, and her children now live far away in another city. She eats dinner alone every night, but she never once complains about it.\nBen: That sounds really lonely.\nAmy: Exactly. So after that day, I started stopping by once a week just to chat or bring her some fruit from our garden. She even taught me how to fold paper cranes and told me stories about her youth.\nBen: I guess she just needed someone to notice her.\nAmy: That's exactly it. The woman everyone called unfriendly was actually just lonely, quietly waiting for someone to care.",
           "questions": [
             {
               "n": 22,
               "stem": "Why did other kids never knock on Mrs. Lin's door?",
-              "options": ["She had asked them not to visit.", "They thought she was unfriendly.", "Her house had no doorbell.", "Their parents told them not to."],
-              "answer": 1,
-              "optionsZh": ["她要求他們別來拜訪。", "他們認為她不友善。", "她家沒有門鈴。", "父母叫他們別去。"],
-              "explanation": "Ben 說 kids on our street think she's kind of unfriendly, maybe even a little scary，故選 (B)。"
+              "options": [
+                "She had asked them not to visit.",
+                "Her house had no doorbell.",
+                "They thought she was unfriendly.",
+                "Their parents told them not to."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "她要求他們別來拜訪。",
+                "她家沒有門鈴。",
+                "他們認為她不友善。",
+                "父母叫他們別去。"
+              ],
+              "explanation": "Ben 說 kids on our street think she's kind of unfriendly, maybe even a little scary，故選 (C)。"
             },
             {
               "n": 23,
               "stem": "What does the dialogue suggest Mrs. Lin was really feeling?",
-              "options": ["Angry at her neighbors.", "Proud of living alone.", "Lonely and wanting company.", "Afraid of children."],
-              "answer": 2,
-              "optionsZh": ["對鄰居生氣。", "以獨居為榮。", "孤單且渴望陪伴。", "害怕小孩。"],
-              "explanation": "Amy 最後指出她其實只是 lonely, quietly waiting for someone to care，故選 (C)。"
+              "options": [
+                "Lonely and wanting company.",
+                "Angry at her neighbors.",
+                "Afraid of children.",
+                "Proud of living alone."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "孤單且渴望陪伴。",
+                "對鄰居生氣。",
+                "害怕小孩。",
+                "以獨居為榮。"
+              ],
+              "explanation": "Amy 最後指出她其實只是 lonely, quietly waiting for someone to care，故選 (A)。"
             },
             {
               "n": 24,
               "stem": "According to the dialogue, which of the following is NOT mentioned?",
-              "options": ["Mrs. Lin's husband died five years ago.", "Amy helped Mrs. Lin carry a bag of rice.", "Mrs. Lin taught Amy how to fold paper cranes.", "Mrs. Lin's children visit her every weekend."],
-              "answer": 3,
-              "optionsZh": ["林太太的先生五年前過世了。", "艾咪幫林太太搬了一袋米。", "林太太教艾咪摺紙鶴。", "林太太的孩子每週都會來看她。"],
-              "explanation": "對話中提到林太太的孩子 live far away in another city（住在遙遠的城市），並未提到孩子每週來看她，反而與此矛盾，故選 (D)。"
+              "options": [
+                "Mrs. Lin taught Amy how to fold paper cranes.",
+                "Mrs. Lin's husband died five years ago.",
+                "Mrs. Lin's children visit her every weekend.",
+                "Amy helped Mrs. Lin carry a bag of rice."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "林太太教艾咪摺紙鶴。",
+                "林太太的先生五年前過世了。",
+                "林太太的孩子每週都會來看她。",
+                "艾咪幫林太太搬了一袋米。"
+              ],
+              "explanation": "對話中提到林太太的孩子 live far away in another city（住在遙遠的城市），並未提到孩子每週來看她，反而與此矛盾，故選 (C)。"
             }
           ]
         },
@@ -236,26 +476,56 @@
             {
               "n": 25,
               "stem": "What causes a raindrop to split sunlight into different colors?",
-              "options": ["The raindrop bends and separates the light.", "The raindrop reflects light back to the sun.", "The wind mixes the colors together.", "The clouds create colors on their own."],
-              "answer": 0,
-              "optionsZh": ["水滴使光線彎折並分散。", "水滴把光反射回太陽。", "風把顏色混在一起。", "雲自己產生顏色。"],
-              "explanation": "文中 it bends slightly and splits into different colors，故選 (A)。"
+              "options": [
+                "The clouds create colors on their own.",
+                "The raindrop reflects light back to the sun.",
+                "The wind mixes the colors together.",
+                "The raindrop bends and separates the light."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "雲自己產生顏色。",
+                "水滴把光反射回太陽。",
+                "風把顏色混在一起。",
+                "水滴使光線彎折並分散。"
+              ],
+              "explanation": "文中 it bends slightly and splits into different colors，故選 (D)。"
             },
             {
               "n": 26,
               "stem": "Why must a person stand with their back to the sun to see a rainbow?",
-              "options": ["So the sun will not hurt their eyes.", "So the light can reach their eyes at the correct angle.", "So the raindrops will not fall on them.", "So the sky looks darker behind them."],
-              "answer": 1,
-              "optionsZh": ["才不會被太陽刺傷眼睛。", "光才能以正確角度到達眼睛。", "才不會被雨滴淋到。", "背後的天空才會顯得較暗。"],
-              "explanation": "文中 otherwise, the angle will not be right for the colors to reach your eyes，故選 (B)。"
+              "options": [
+                "So the sun will not hurt their eyes.",
+                "So the raindrops will not fall on them.",
+                "So the light can reach their eyes at the correct angle.",
+                "So the sky looks darker behind them."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "才不會被太陽刺傷眼睛。",
+                "才不會被雨滴淋到。",
+                "光才能以正確角度到達眼睛。",
+                "背後的天空才會顯得較暗。"
+              ],
+              "explanation": "文中 otherwise, the angle will not be right for the colors to reach your eyes，故選 (C)。"
             },
             {
               "n": 27,
               "stem": "What does the reading say about how people see rainbows?",
-              "options": ["Everyone sees the exact same rainbow.", "Each person actually sees a slightly different rainbow.", "Only certain people can see rainbows.", "Rainbows look different depending on the season."],
-              "answer": 1,
-              "optionsZh": ["每個人看到的彩虹完全相同。", "每個人看到的彩虹其實略有不同。", "只有特定的人看得到彩虹。", "彩虹會因季節而不同。"],
-              "explanation": "文末 no two people ever see the exact same rainbow，故選 (B)。"
+              "options": [
+                "Rainbows look different depending on the season.",
+                "Only certain people can see rainbows.",
+                "Each person actually sees a slightly different rainbow.",
+                "Everyone sees the exact same rainbow."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "彩虹會因季節而不同。",
+                "只有特定的人看得到彩虹。",
+                "每個人看到的彩虹其實略有不同。",
+                "每個人看到的彩虹完全相同。"
+              ],
+              "explanation": "文末 no two people ever see the exact same rainbow，故選 (C)。"
             }
           ]
         },
@@ -268,26 +538,56 @@
             {
               "n": 28,
               "stem": "How did Jason usually react to activities involving heights?",
-              "options": ["He enjoyed them more than his classmates.", "He avoided them whenever possible.", "He was forced to join by his teacher.", "He never noticed the height at all."],
-              "answer": 1,
-              "optionsZh": ["他比同學更喜歡這些活動。", "他總是盡量避開。", "他被老師強迫參加。", "他從未注意到高度。"],
-              "explanation": "文中 Jason always found an excuse to stay safely on the ground，故選 (B)。"
+              "options": [
+                "He never noticed the height at all.",
+                "He was forced to join by his teacher.",
+                "He enjoyed them more than his classmates.",
+                "He avoided them whenever possible."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "他從未注意到高度。",
+                "他被老師強迫參加。",
+                "他比同學更喜歡這些活動。",
+                "他總是盡量避開。"
+              ],
+              "explanation": "文中 Jason always found an excuse to stay safely on the ground，故選 (D)。"
             },
             {
               "n": 29,
               "stem": "What did Amy do to help Jason on the rope course?",
-              "options": ["She carried him across the bridge.", "She told the teacher to cancel the activity.", "She encouraged him with calm words.", "She climbed the ladder for him."],
+              "options": [
+                "She climbed the ladder for him.",
+                "She carried him across the bridge.",
+                "She encouraged him with calm words.",
+                "She told the teacher to cancel the activity."
+              ],
               "answer": 2,
-              "optionsZh": ["她背著他過橋。", "她請老師取消活動。", "她用平靜的話語鼓勵他。", "她替他爬梯子。"],
+              "optionsZh": [
+                "她替他爬梯子。",
+                "她背著他過橋。",
+                "她用平靜的話語鼓勵他。",
+                "她請老師取消活動。"
+              ],
               "explanation": "文中 Amy kept talking to him calmly from below, reminding him to breathe，故選 (C)。"
             },
             {
               "n": 30,
               "stem": "What did Jason realize after finishing the rope course?",
-              "options": ["He would never be afraid again.", "Fear did not have to control his decisions.", "Heights were not dangerous at all.", "He should try even higher platforms next time."],
-              "answer": 1,
-              "optionsZh": ["他再也不會害怕。", "恐懼不必主宰他的決定。", "高處一點也不危險。", "他下次該挑戰更高的平台。"],
-              "explanation": "文末 he understood that fear did not have to control every decision he made，故選 (B)。"
+              "options": [
+                "Fear did not have to control his decisions.",
+                "Heights were not dangerous at all.",
+                "He should try even higher platforms next time.",
+                "He would never be afraid again."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "恐懼不必主宰他的決定。",
+                "高處一點也不危險。",
+                "他下次該挑戰更高的平台。",
+                "他再也不會害怕。"
+              ],
+              "explanation": "文末 he understood that fear did not have to control every decision he made，故選 (A)。"
             }
           ]
         },
@@ -300,33 +600,73 @@
             {
               "n": 31,
               "stem": "What was different about the earliest version of the bicycle?",
-              "options": ["It had two chains connecting the wheels.", "It had no pedals, so riders pushed the ground with their feet.", "It could only be ridden by children.", "It had rubber tires filled with air."],
+              "options": [
+                "It had two chains connecting the wheels.",
+                "It had no pedals, so riders pushed the ground with their feet.",
+                "It could only be ridden by children.",
+                "It had rubber tires filled with air."
+              ],
               "answer": 1,
-              "optionsZh": ["它有兩條鏈條連接輪子。", "它沒有踏板，靠雙腳踩地前進。", "它只能給小孩騎。", "它裝有充氣的橡膠輪胎。"],
+              "optionsZh": [
+                "它有兩條鏈條連接輪子。",
+                "它沒有踏板，靠雙腳踩地前進。",
+                "它只能給小孩騎。",
+                "它裝有充氣的橡膠輪胎。"
+              ],
               "explanation": "文中 had no pedals at all... pushed the ground with their feet，故選 (B)。"
             },
             {
               "n": 32,
               "stem": "Why did inventors make the front wheel of early pedal bicycles bigger?",
-              "options": ["To make the bicycle look more colorful.", "To let the bicycle travel farther with each pedal turn.", "To make the bicycle easier to carry.", "To reduce the price of the bicycle."],
-              "answer": 1,
-              "optionsZh": ["讓腳踏車看起來更多彩。", "讓每踩一圈就能騎得更遠。", "讓腳踏車更容易搬運。", "降低腳踏車的價格。"],
-              "explanation": "文中 to allow the bicycle to travel farther with each turn of the pedal，故選 (B)。"
+              "options": [
+                "To reduce the price of the bicycle.",
+                "To make the bicycle look more colorful.",
+                "To make the bicycle easier to carry.",
+                "To let the bicycle travel farther with each pedal turn."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "降低腳踏車的價格。",
+                "讓腳踏車看起來更多彩。",
+                "讓腳踏車更容易搬運。",
+                "讓每踩一圈就能騎得更遠。"
+              ],
+              "explanation": "文中 to allow the bicycle to travel farther with each turn of the pedal，故選 (D)。"
             },
             {
               "n": 33,
               "stem": "What problem did the high-wheeled bicycle cause?",
-              "options": ["It was too heavy to move.", "It could not be pedaled at all.", "It was dangerous because riders sat very high up.", "It had no seat for the rider."],
-              "answer": 2,
-              "optionsZh": ["太重而無法移動。", "完全無法用踏板騎乘。", "因騎士坐得很高而十分危險。", "沒有座位可坐。"],
-              "explanation": "文中 riders sat so high above the ground that falls often caused serious injuries，故選 (C)。"
+              "options": [
+                "It could not be pedaled at all.",
+                "It was too heavy to move.",
+                "It had no seat for the rider.",
+                "It was dangerous because riders sat very high up."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "完全無法用踏板騎乘。",
+                "太重而無法移動。",
+                "沒有座位可坐。",
+                "因騎士坐得很高而十分危險。"
+              ],
+              "explanation": "文中 riders sat so high above the ground that falls often caused serious injuries，故選 (D)。"
             },
             {
               "n": 34,
               "stem": "What change made the bicycle more stable?",
-              "options": ["Adding a chain to connect the pedals to the rear wheel.", "Making both wheels bigger.", "Removing the pedals completely.", "Adding a second seat."],
+              "options": [
+                "Adding a chain to connect the pedals to the rear wheel.",
+                "Removing the pedals completely.",
+                "Adding a second seat.",
+                "Making both wheels bigger."
+              ],
               "answer": 0,
-              "optionsZh": ["加裝鏈條把踏板連到後輪。", "把兩個輪子都做大。", "完全移除踏板。", "加裝第二個座位。"],
+              "optionsZh": [
+                "加裝鏈條把踏板連到後輪。",
+                "完全移除踏板。",
+                "加裝第二個座位。",
+                "把兩個輪子都做大。"
+              ],
               "explanation": "文中 a chain that connected the pedals to the rear wheel... making the bicycle far more stable，故選 (A)。"
             }
           ]
@@ -340,42 +680,92 @@
             {
               "n": 35,
               "stem": "What does Writer A think about students having part-time jobs?",
-              "options": ["They should never be allowed at all.", "They can teach students things classrooms cannot.", "They are only good for earning money.", "They should replace school completely."],
-              "answer": 1,
-              "optionsZh": ["應該完全禁止。", "能教導課堂學不到的事。", "只是為了賺錢。", "應該取代學校教育。"],
-              "explanation": "Writer A 開頭即說 part-time jobs can teach students things that classrooms cannot，故選 (B)。"
+              "options": [
+                "They can teach students things classrooms cannot.",
+                "They are only good for earning money.",
+                "They should never be allowed at all.",
+                "They should replace school completely."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "能教導課堂學不到的事。",
+                "只是為了賺錢。",
+                "應該完全禁止。",
+                "應該取代學校教育。"
+              ],
+              "explanation": "Writer A 開頭即說 part-time jobs can teach students things that classrooms cannot，故選 (A)。"
             },
             {
               "n": 36,
               "stem": "According to Writer B, what problem can a part-time job cause for students?",
-              "options": ["It can hurt their grades over time.", "It makes them too strong physically.", "It makes school clubs disappear.", "It gives them too much free time."],
-              "answer": 0,
-              "optionsZh": ["長期下來可能傷害成績。", "讓他們體力變得太好。", "讓社團活動消失。", "讓他們有太多空閒時間。"],
-              "explanation": "Writer B 提到 which can quietly hurt a student's grades over an entire semester，故選 (A)。"
+              "options": [
+                "It gives them too much free time.",
+                "It makes them too strong physically.",
+                "It makes school clubs disappear.",
+                "It can hurt their grades over time."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "讓他們有太多空閒時間。",
+                "讓他們體力變得太好。",
+                "讓社團活動消失。",
+                "長期下來可能傷害成績。"
+              ],
+              "explanation": "Writer B 提到 which can quietly hurt a student's grades over an entire semester，故選 (D)。"
             },
             {
               "n": 37,
               "stem": "What does Writer B suggest students do instead of taking a part-time job?",
-              "options": ["Join school clubs or do volunteer work.", "Ask their parents for more money.", "Sleep more instead of studying.", "Wait until they fail a class."],
+              "options": [
+                "Join school clubs or do volunteer work.",
+                "Ask their parents for more money.",
+                "Sleep more instead of studying.",
+                "Wait until they fail a class."
+              ],
               "answer": 0,
-              "optionsZh": ["參加社團或當志工。", "向父母要更多零用錢。", "多睡覺而不讀書。", "等到被當才行動。"],
+              "optionsZh": [
+                "參加社團或當志工。",
+                "向父母要更多零用錢。",
+                "多睡覺而不讀書。",
+                "等到被當才行動。"
+              ],
               "explanation": "文中 school clubs and volunteer work can teach similar lessons without taking pay from the hours meant for study，故選 (A)。"
             },
             {
               "n": 38,
               "stem": "What do both writers agree on?",
-              "options": ["Phones should be banned at school.", "Part-time jobs are related to how students grow and learn.", "Students should never take any jobs.", "Grades do not matter at all."],
-              "answer": 1,
-              "optionsZh": ["學校應禁用手機。", "打工和學生的成長學習有關。", "學生永遠不該打工。", "成績一點都不重要。"],
-              "explanation": "兩位作者都圍繞打工對學生「成長與學習」的影響來論述，是兩人共同的討論核心，故選 (B)。"
+              "options": [
+                "Phones should be banned at school.",
+                "Students should never take any jobs.",
+                "Part-time jobs are related to how students grow and learn.",
+                "Grades do not matter at all."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "學校應禁用手機。",
+                "學生永遠不該打工。",
+                "打工和學生的成長學習有關。",
+                "成績一點都不重要。"
+              ],
+              "explanation": "兩位作者都圍繞打工對學生「成長與學習」的影響來論述，是兩人共同的討論核心，故選 (C)。"
             },
             {
               "n": 39,
               "stem": "Which sentence would Writer A most likely agree with?",
-              "options": ["A few hours of work each week can build confidence.", "Students should work full-time instead of studying.", "Study time is never affected by jobs.", "Only adults should be allowed to earn money."],
-              "answer": 0,
-              "optionsZh": ["每週幾小時的打工能建立自信。", "學生應該全職工作而非讀書。", "打工完全不影響讀書時間。", "只有大人才能賺錢。"],
-              "explanation": "Writer A 主張 a few hours a week, done responsibly, can make a student more mature and independent，與 (A) 一致。"
+              "options": [
+                "Only adults should be allowed to earn money.",
+                "Students should work full-time instead of studying.",
+                "A few hours of work each week can build confidence.",
+                "Study time is never affected by jobs."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "只有大人才能賺錢。",
+                "學生應該全職工作而非讀書。",
+                "每週幾小時的打工能建立自信。",
+                "打工完全不影響讀書時間。"
+              ],
+              "explanation": "Writer A 主張 a few hours a week, done responsibly, can make a student more mature and independent，與 (C) 一致。"
             }
           ]
         },
@@ -388,33 +778,73 @@
             {
               "n": 40,
               "stem": "選出第 40 格最適合的答案。",
-              "options": ["While", "Because", "So", "If"],
-              "answer": 0,
-              "optionsZh": ["當…的時候（對比）", "因為", "所以", "如果"],
+              "options": [
+                "So",
+                "While",
+                "If",
+                "Because"
+              ],
+              "answer": 1,
+              "optionsZh": [
+                "所以",
+                "當…的時候（對比）",
+                "如果",
+                "因為"
+              ],
               "explanation": "前後語意對比「她獨自坐著」與「大家都在說笑」，用 While（然而／當…時）連接對比子句最合適。"
             },
             {
               "n": 41,
               "stem": "選出第 41 格最適合的答案。",
-              "options": ["is", "will be", "had been", "is being"],
-              "answer": 2,
-              "optionsZh": ["（現在式）", "（未來式）", "（過去完成式，正確）", "（現在進行被動）"],
+              "options": [
+                "is",
+                "had been",
+                "will be",
+                "is being"
+              ],
+              "answer": 1,
+              "optionsZh": [
+                "（現在式）",
+                "（過去完成式，正確）",
+                "（未來式）",
+                "（現在進行被動）"
+              ],
               "explanation": "以過去（was surprised）為基準點，「多年來一直害羞」是更早且持續的狀態，須用過去完成式 had been。"
             },
             {
               "n": 42,
               "stem": "選出第 42 格最適合的答案。",
-              "options": ["Suddenly", "Finally", "Rarely", "Hardly"],
-              "answer": 1,
-              "optionsZh": ["突然地", "終於，最後", "很少地", "幾乎不"],
+              "options": [
+                "Finally",
+                "Suddenly",
+                "Rarely",
+                "Hardly"
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "終於，最後",
+                "突然地",
+                "很少地",
+                "幾乎不"
+              ],
               "explanation": "承接前文「一整週都膩在一起」，到了最後一晚「終於」互相承諾寫信，故選 Finally。"
             },
             {
               "n": 43,
               "stem": "選出第 43 格最適合的答案。",
-              "options": ["best", "worst", "strangest", "shortest"],
-              "answer": 0,
-              "optionsZh": ["最好的", "最糟的", "最奇怪的", "最短的"],
+              "options": [
+                "strangest",
+                "shortest",
+                "worst",
+                "best"
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "最奇怪的",
+                "最短的",
+                "最糟的",
+                "最好的"
+              ],
               "explanation": "全文寓意是 Sara 教會 Mia 營隊中「最好的」一課，故選 best。"
             }
           ]

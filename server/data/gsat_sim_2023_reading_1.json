@@ -15,153 +15,343 @@
         {
           "n": 1,
           "stem": "My brother is very ＿＿＿. He helps me carry the heavy boxes to my room every day.",
-          "options": ["strong", "quiet", "late", "afraid"],
-          "answer": 0,
-          "optionsZh": ["強壯的", "安靜的", "遲的", "害怕的"],
+          "options": [
+            "quiet",
+            "strong",
+            "afraid",
+            "late"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "安靜的",
+            "強壯的",
+            "害怕的",
+            "遲的"
+          ],
           "explanation": "能幫忙搬重箱子代表力氣大，故選 strong（強壯的）。"
         },
         {
           "n": 2,
           "stem": "It is raining hard outside. Please take an ＿＿＿ with you before you leave.",
-          "options": ["apple", "umbrella", "answer", "island"],
-          "answer": 1,
-          "optionsZh": ["蘋果", "雨傘", "答案", "島嶼"],
+          "options": [
+            "island",
+            "answer",
+            "apple",
+            "umbrella"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "島嶼",
+            "答案",
+            "蘋果",
+            "雨傘"
+          ],
           "explanation": "下大雨要帶的是 umbrella（雨傘），其餘與下雨無關。"
         },
         {
           "n": 3,
           "stem": "Sam reads many books about space, so he has a lot of ＿＿＿ about the stars and the moon.",
-          "options": ["weather", "knowledge", "money", "trouble"],
-          "answer": 1,
-          "optionsZh": ["天氣", "知識", "金錢", "麻煩"],
-          "explanation": "讀很多書就會擁有相關的 knowledge（知識），故選 (B)。"
+          "options": [
+            "knowledge",
+            "money",
+            "weather",
+            "trouble"
+          ],
+          "answer": 0,
+          "optionsZh": [
+            "知識",
+            "金錢",
+            "天氣",
+            "麻煩"
+          ],
+          "explanation": "讀很多書就會擁有相關的 knowledge（知識），故選 (A)。"
         },
         {
           "n": 4,
           "stem": "Lisa ＿＿＿ her homework before dinner every day, so she can play after she eats.",
-          "options": ["finish", "finishes", "finishing", "to finish"],
-          "answer": 1,
-          "optionsZh": ["（原形）", "（第三人稱單數現在式，正確）", "（現在分詞）", "（不定詞）"],
+          "options": [
+            "finish",
+            "to finish",
+            "finishing",
+            "finishes"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "（原形）",
+            "（不定詞）",
+            "（現在分詞）",
+            "（第三人稱單數現在式，正確）"
+          ],
           "explanation": "主詞 Lisa 為第三人稱單數，every day 表習慣用現在簡單式，動詞加 -es，故選 finishes。"
         },
         {
           "n": 5,
           "stem": "A: ＿＿＿ you free this Saturday? B: Yes, I am. Let's go to the movies.",
-          "options": ["Do", "Are", "Is", "Does"],
-          "answer": 1,
-          "optionsZh": ["（助動詞 do）", "（be 動詞，正確）", "（be 動詞單數）", "（助動詞 does）"],
-          "explanation": "回答用 Yes, I am，可知問句用 be 動詞；主詞 you 搭配 Are，故選 (B)。"
+          "options": [
+            "Do",
+            "Is",
+            "Are",
+            "Does"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "（助動詞 do）",
+            "（be 動詞單數）",
+            "（be 動詞，正確）",
+            "（助動詞 does）"
+          ],
+          "explanation": "回答用 Yes, I am，可知問句用 be 動詞；主詞 you 搭配 Are，故選 (C)。"
         },
         {
           "n": 6,
           "stem": "The soup is too hot. Please wait for a few minutes, and it ＿＿＿ cooler soon.",
-          "options": ["is", "was", "will be", "has been"],
+          "options": [
+            "was",
+            "has been",
+            "will be",
+            "is"
+          ],
           "answer": 2,
-          "optionsZh": ["（現在式）", "（過去式）", "（未來式，正確）", "（現在完成式）"],
+          "optionsZh": [
+            "（過去式）",
+            "（現在完成式）",
+            "（未來式，正確）",
+            "（現在式）"
+          ],
           "explanation": "soon（很快）表未來，故用未來式 will be。"
         },
         {
           "n": 7,
           "stem": "My grandmother is the ＿＿＿ person in my family. She is over ninety years old.",
-          "options": ["old", "older", "oldest", "as old"],
+          "options": [
+            "as old",
+            "older",
+            "oldest",
+            "old"
+          ],
           "answer": 2,
-          "optionsZh": ["（原級）", "（比較級）", "（最高級，正確）", "（同級）"],
+          "optionsZh": [
+            "（同級）",
+            "（比較級）",
+            "（最高級，正確）",
+            "（原級）"
+          ],
           "explanation": "in my family 表在一個範圍中，且前面有 the，用最高級 oldest。"
         },
         {
           "n": 8,
           "stem": "I don't have much money with me now. Could you ＿＿＿ me some, please?",
-          "options": ["lend", "borrow", "buy", "cost"],
-          "answer": 0,
-          "optionsZh": ["借出（給別人）", "借入（跟別人）", "購買", "花費"],
+          "options": [
+            "borrow",
+            "lend",
+            "cost",
+            "buy"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "借入（跟別人）",
+            "借出（給別人）",
+            "花費",
+            "購買"
+          ],
           "explanation": "「借某人某物」是 lend somebody something；borrow 是向別人借，方向相反，故選 lend。"
         },
         {
           "n": 9,
           "stem": "Kevin was tired ＿＿＿ he stayed up late last night to finish his report.",
-          "options": ["so", "but", "because", "or"],
-          "answer": 2,
-          "optionsZh": ["所以", "但是", "因為", "或者"],
+          "options": [
+            "but",
+            "because",
+            "so",
+            "or"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "但是",
+            "因為",
+            "所以",
+            "或者"
+          ],
           "explanation": "前句是「累」的結果，後句是原因（熬夜），故用 because 引導原因。"
         },
         {
           "n": 10,
           "stem": "The girl ＿＿＿ is standing near the door is my new classmate.",
-          "options": ["who", "which", "what", "whose"],
-          "answer": 0,
-          "optionsZh": ["（指人的關係代名詞，正確）", "（指物）", "（先行詞不明）", "（所有格）"],
+          "options": [
+            "what",
+            "whose",
+            "which",
+            "who"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "（先行詞不明）",
+            "（所有格）",
+            "（指物）",
+            "（指人的關係代名詞，正確）"
+          ],
           "explanation": "先行詞 the girl 是人，且在子句中當主詞，用關係代名詞 who。"
         },
         {
           "n": 11,
           "stem": "These pictures ＿＿＿ by my sister last summer. She is really good at taking photos.",
-          "options": ["take", "took", "were taken", "are taking"],
-          "answer": 2,
-          "optionsZh": ["（原形）", "（過去式主動）", "（過去式被動，正確）", "（現在進行式）"],
+          "options": [
+            "are taking",
+            "were taken",
+            "took",
+            "take"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "（現在進行式）",
+            "（過去式被動，正確）",
+            "（過去式主動）",
+            "（原形）"
+          ],
           "explanation": "照片是「被拍」的，且 last summer 為過去，用過去被動 were taken。"
         },
         {
           "n": 12,
           "stem": "We enjoyed ＿＿＿ by the lake, so we sat there and talked for a whole afternoon.",
-          "options": ["sit", "to sit", "sitting", "sat"],
-          "answer": 2,
-          "optionsZh": ["（原形）", "（不定詞）", "（動名詞，正確）", "（過去式）"],
+          "options": [
+            "to sit",
+            "sitting",
+            "sit",
+            "sat"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "（不定詞）",
+            "（動名詞，正確）",
+            "（原形）",
+            "（過去式）"
+          ],
           "explanation": "enjoy 後面接動名詞（V-ing），故選 sitting。"
         },
         {
           "n": 13,
           "stem": "Don't worry about the test. As long as you study hard, you ＿＿＿ do well.",
-          "options": ["should", "can", "must", "need"],
-          "answer": 1,
-          "optionsZh": ["應該", "能夠（有能力）", "必須", "需要"],
+          "options": [
+            "can",
+            "need",
+            "must",
+            "should"
+          ],
+          "answer": 0,
+          "optionsZh": [
+            "能夠（有能力）",
+            "需要",
+            "必須",
+            "應該"
+          ],
           "explanation": "「只要努力就能考好」，表示有能力做到，用 can（能夠）最合語意。"
         },
         {
           "n": 14,
           "stem": "This is the first time I ＿＿＿ Japanese food. It tastes much better than I thought.",
-          "options": ["try", "tried", "have tried", "will try"],
-          "answer": 2,
-          "optionsZh": ["（現在式）", "（過去式）", "（現在完成式，正確）", "（未來式）"],
+          "options": [
+            "have tried",
+            "tried",
+            "will try",
+            "try"
+          ],
+          "answer": 0,
+          "optionsZh": [
+            "（現在完成式，正確）",
+            "（過去式）",
+            "（未來式）",
+            "（現在式）"
+          ],
           "explanation": "「This is the first time + 主詞」後面常接現在完成式，表達到目前為止第一次，故用 have tried。"
         },
         {
           "n": 15,
           "stem": "The movie was so ＿＿＿ that some people fell asleep before it ended.",
-          "options": ["exciting", "boring", "surprising", "moving"],
-          "answer": 1,
-          "optionsZh": ["刺激的", "無聊的", "令人驚訝的", "感人的"],
-          "explanation": "有人看到睡著，代表電影很 boring（無聊），故選 (B)。"
+          "options": [
+            "surprising",
+            "moving",
+            "boring",
+            "exciting"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "令人驚訝的",
+            "感人的",
+            "無聊的",
+            "刺激的"
+          ],
+          "explanation": "有人看到睡著，代表電影很 boring（無聊），故選 (C)。"
         },
         {
           "n": 16,
           "stem": "You had better ＿＿＿ now, or you will miss the last train home.",
-          "options": ["leave", "to leave", "leaving", "left"],
-          "answer": 0,
-          "optionsZh": ["（原形，正確）", "（不定詞）", "（動名詞）", "（過去式）"],
+          "options": [
+            "left",
+            "to leave",
+            "leave",
+            "leaving"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "（過去式）",
+            "（不定詞）",
+            "（原形，正確）",
+            "（動名詞）"
+          ],
           "explanation": "had better 後面固定接原形動詞，故選 leave。"
         },
         {
           "n": 17,
           "stem": "My father asked me ＿＿＿ the window because it was getting cold in the room.",
-          "options": ["close", "closing", "to close", "closed"],
-          "answer": 2,
-          "optionsZh": ["（原形）", "（動名詞）", "（不定詞，正確）", "（過去式）"],
+          "options": [
+            "closing",
+            "closed",
+            "close",
+            "to close"
+          ],
+          "answer": 3,
+          "optionsZh": [
+            "（動名詞）",
+            "（過去式）",
+            "（原形）",
+            "（不定詞，正確）"
+          ],
           "explanation": "ask somebody to do something，故用不定詞 to close。"
         },
         {
           "n": 18,
           "stem": "Neither Tom nor his brothers ＿＿＿ interested in playing baseball on weekends.",
-          "options": ["is", "are", "was", "has"],
-          "answer": 1,
-          "optionsZh": ["（單數）", "（複數，正確）", "（過去單數）", "（完成式）"],
+          "options": [
+            "has",
+            "was",
+            "are",
+            "is"
+          ],
+          "answer": 2,
+          "optionsZh": [
+            "（完成式）",
+            "（過去單數）",
+            "（複數，正確）",
+            "（單數）"
+          ],
           "explanation": "neither A nor B 的動詞跟「最接近的主詞」一致，這裡最近是 his brothers（複數），故用 are。"
         },
         {
           "n": 19,
           "stem": "The more you practice speaking English, the ＿＿＿ you will become at it.",
-          "options": ["good", "well", "better", "best"],
-          "answer": 2,
-          "optionsZh": ["（原級形容詞）", "（副詞）", "（比較級，正確）", "（最高級）"],
+          "options": [
+            "best",
+            "better",
+            "well",
+            "good"
+          ],
+          "answer": 1,
+          "optionsZh": [
+            "（最高級）",
+            "（比較級，正確）",
+            "（副詞）",
+            "（原級形容詞）"
+          ],
           "explanation": "「the more... the more...」句型，兩邊都用比較級，故用 better。"
         }
       ]
@@ -180,18 +370,38 @@
             {
               "n": 20,
               "stem": "Wendy ordered one medium pizza with two extra toppings and one drink for her family. How much did she need to pay?",
-              "options": ["$220.", "$250.", "$270.", "$290."],
+              "options": [
+                "$290.",
+                "$250.",
+                "$270.",
+                "$220."
+              ],
               "answer": 1,
-              "optionsZh": ["220元。", "250元。", "270元。", "290元。"],
+              "optionsZh": [
+                "290元。",
+                "250元。",
+                "270元。",
+                "220元。"
+              ],
               "explanation": "中披薩 $180 ＋ 兩份加料各 $20（共 $40）＋ 飲料 $30 ＝ $250，故選 (B)。"
             },
             {
               "n": 21,
               "stem": "This month's first Sunday falls on July 5. Which of the following is a time Ben can have his pizza delivered?",
-              "options": ["1:30 pm, July 5.", "6:00 pm, Monday.", "7:30 pm, Wednesday.", "9:00 pm, Saturday."],
-              "answer": 2,
-              "optionsZh": ["7月5日下午1:30。", "週一晚上6:00。", "週三晚上7:30。", "週六晚上9:00。"],
-              "explanation": "外送時間為週二至週日 11:00–14:00 與 17:00–20:00；週一公休，每月第一個週日也公休。7/5 是當月第一個週日（公休）；週一公休；週六 21:00 已超過打烊的 20:00；只有週三 19:30 同時符合「非公休日」與「營業時段」，故選 (C)。"
+              "options": [
+                "1:30 pm, July 5.",
+                "6:00 pm, Monday.",
+                "9:00 pm, Saturday.",
+                "7:30 pm, Wednesday."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "7月5日下午1:30。",
+                "週一晚上6:00。",
+                "週六晚上9:00。",
+                "週三晚上7:30。"
+              ],
+              "explanation": "外送時間為週二至週日 11:00–14:00 與 17:00–20:00；週一公休，每月第一個週日也公休。7/5 是當月第一個週日（公休）；週一公休；週六 21:00 已超過打烊的 20:00；只有週三 19:30 同時符合「非公休日」與「營業時段」，故選 (D)。"
             }
           ]
         },
@@ -204,18 +414,38 @@
             {
               "n": 22,
               "stem": "Why did David decide not to keep the money?",
-              "options": ["The wallet had no money in it.", "The photo of the girl made him stop.", "A police officer was watching him.", "His teacher told him to return it."],
-              "answer": 1,
-              "optionsZh": ["皮夾裡沒有錢。", "女孩的照片讓他停手。", "有警察在看著他。", "老師叫他歸還。"],
-              "explanation": "文中 the smiling face in the photo made him stop，故選 (B)。"
+              "options": [
+                "His teacher told him to return it.",
+                "The wallet had no money in it.",
+                "The photo of the girl made him stop.",
+                "A police officer was watching him."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "老師叫他歸還。",
+                "皮夾裡沒有錢。",
+                "女孩的照片讓他停手。",
+                "有警察在看著他。"
+              ],
+              "explanation": "文中 the smiling face in the photo made him stop，故選 (C)。"
             },
             {
               "n": 23,
               "stem": "What does David most likely mean when he says \"I only did what was right\"?",
-              "options": ["He wanted the woman to pay him more.", "He thought returning the wallet was the correct thing to do.", "He was not sure whose wallet it was.", "He felt sorry for taking the money."],
-              "answer": 1,
-              "optionsZh": ["他想要女士付更多錢。", "他認為歸還皮夾是正確的事。", "他不確定皮夾是誰的。", "他為拿錢感到抱歉。"],
-              "explanation": "他拒絕收錢並說「只是做對的事」，表示他認為歸還是應該做的正確行為，故選 (B)。"
+              "options": [
+                "He wanted the woman to pay him more.",
+                "He was not sure whose wallet it was.",
+                "He thought returning the wallet was the correct thing to do.",
+                "He felt sorry for taking the money."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "他想要女士付更多錢。",
+                "他不確定皮夾是誰的。",
+                "他認為歸還皮夾是正確的事。",
+                "他為拿錢感到抱歉。"
+              ],
+              "explanation": "他拒絕收錢並說「只是做對的事」，表示他認為歸還是應該做的正確行為，故選 (C)。"
             }
           ]
         },
@@ -228,50 +458,100 @@
             {
               "n": 24,
               "stem": "What is the reading mainly about?",
-              "options": ["How trees make food in winter.", "Why leaves are different sizes.", "The reason leaves change color and fall.", "How to grow a tree in your garden."],
-              "answer": 2,
-              "optionsZh": ["樹木如何在冬天製造食物。", "為何葉子大小不同。", "葉子變色與掉落的原因。", "如何在花園種樹。"],
-              "explanation": "全文解釋葉子為何變色、掉落，主旨為 (C)。"
+              "options": [
+                "How to grow a tree in your garden.",
+                "Why leaves are different sizes.",
+                "How trees make food in winter.",
+                "The reason leaves change color and fall."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "如何在花園種樹。",
+                "為何葉子大小不同。",
+                "樹木如何在冬天製造食物。",
+                "葉子變色與掉落的原因。"
+              ],
+              "explanation": "全文解釋葉子為何變色、掉落，主旨為 (D)。"
             },
             {
               "n": 25,
               "stem": "According to the reading, why do the other colors appear in fall?",
-              "options": ["Because someone paints the leaves.", "Because the green pigment fades away.", "Because the leaves grow bigger.", "Because it rains more often."],
-              "answer": 1,
-              "optionsZh": ["因為有人替葉子上色。", "因為綠色素褪去。", "因為葉子長得更大。", "因為下雨更頻繁。"],
-              "explanation": "文中 the green pigment begins to break down and fade... colors that were always there but hidden can finally be seen，故選 (B)。"
+              "options": [
+                "Because the green pigment fades away.",
+                "Because the leaves grow bigger.",
+                "Because someone paints the leaves.",
+                "Because it rains more often."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "因為綠色素褪去。",
+                "因為葉子長得更大。",
+                "因為有人替葉子上色。",
+                "因為下雨更頻繁。"
+              ],
+              "explanation": "文中 the green pigment begins to break down and fade... colors that were always there but hidden can finally be seen，故選 (A)。"
             },
             {
               "n": 26,
               "stem": "Which of the following is NOT mentioned in the reading?",
-              "options": ["Warm, sunny days followed by cool, dry nights can make colors brighter.", "The tree slowly stops making food as the weather turns cold.", "Falling leaves help the tree save water for winter.", "Some trees can keep their bright colors all through the winter."],
-              "answer": 3,
-              "optionsZh": ["溫暖晴天接著涼爽乾燥的夜晚會讓顏色更鮮豔。", "天氣變冷時樹木會逐漸停止製造食物。", "落葉能幫助樹木在冬天保留水分。", "有些樹能整個冬天都保持鮮豔的顏色。"],
-              "explanation": "文章提到（A）warm, sunny days followed by cool, dry nights 使顏色更鮮豔、（B）the tree slowly stops making food... the air turns cold、（C）it helps the tree save water，皆有提及；但全文從未提到有樹能整個冬天保持鮮豔顏色，反而說葉子最終會落下，故 (D) 未被提及，為正確答案。"
+              "options": [
+                "Some trees can keep their bright colors all through the winter.",
+                "Warm, sunny days followed by cool, dry nights can make colors brighter.",
+                "Falling leaves help the tree save water for winter.",
+                "The tree slowly stops making food as the weather turns cold."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "有些樹能整個冬天都保持鮮豔的顏色。",
+                "溫暖晴天接著涼爽乾燥的夜晚會讓顏色更鮮豔。",
+                "落葉能幫助樹木在冬天保留水分。",
+                "天氣變冷時樹木會逐漸停止製造食物。"
+              ],
+              "explanation": "文章提到（A）warm, sunny days followed by cool, dry nights 使顏色更鮮豔、（B）the tree slowly stops making food... the air turns cold、（C）it helps the tree save water，皆有提及；但全文從未提到有樹能整個冬天保持鮮豔顏色，反而說葉子最終會落下，故 (A) 未被提及，為正確答案。"
             }
           ]
         },
         {
           "range": "27–28",
-          "passageType": "dialogue",
+          "passageType": "narrative",
           "title": "A Weekend Job?",
           "passage": "Amy: Ben, guess what — my parents said I could get a weekend job! Mr. Lin at the corner bakery needs someone to help on Saturday mornings, and I really want to save up for a new camera.\n\nBen: That sounds exciting, but are you sure it won't affect your grades? You already stay up late finishing homework some nights.\n\nAmy: I thought about that, too. The job is only four hours every Saturday, so it shouldn't take too much time away from studying. Mr. Lin also said the pay is pretty good for students.\n\nBen: Still, it's a big change. Maybe you should try it for one month first and see how you feel before deciding to continue for the whole year.\n\nAmy: That's actually a smart idea. I'll ask my parents if we can set a rule — if my grades drop, I'll stop working right away.\n\nBen: That sounds fair. And if it goes well, maybe I'll ask my own parents about finding a small job, too. It could be a good way to learn how to manage both time and money.\n\nAmy: Exactly! It's not just about the money. I think it will teach us both to be more responsible.",
           "questions": [
             {
               "n": 27,
               "stem": "What does Ben suggest Amy do before deciding to work for the whole year?",
-              "options": ["Quit the idea completely.", "Ask her parents for more pocket money.", "Try the job for one month first.", "Work every day instead of only Saturdays."],
-              "answer": 2,
-              "optionsZh": ["完全放棄這個想法。", "向父母要更多零用錢。", "先試做一個月。", "改成每天工作而非只有週六。"],
-              "explanation": "Ben 說 \"try it for one month first and see how you feel\"，建議先試一個月再決定，故選 (C)。"
+              "options": [
+                "Work every day instead of only Saturdays.",
+                "Ask her parents for more pocket money.",
+                "Quit the idea completely.",
+                "Try the job for one month first."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "改成每天工作而非只有週六。",
+                "向父母要更多零用錢。",
+                "完全放棄這個想法。",
+                "先試做一個月。"
+              ],
+              "explanation": "Ben 說 \"try it for one month first and see how you feel\"，建議先試一個月再決定，故選 (D)。"
             },
             {
               "n": 28,
               "stem": "In Ben's last message, what does the underlined word \"It\" most likely refer to?",
-              "options": ["Managing time and money.", "Having a small job like Amy's.", "The camera Amy wants to buy.", "Working at the bakery on Saturdays only."],
-              "answer": 1,
-              "optionsZh": ["管理時間和金錢。", "像 Amy 一樣打工。", "Amy 想買的相機。", "只在週六在麵包店工作。"],
-              "explanation": "Ben 說如果 Amy 打工進行順利，他也想找份小工作（finding a small job），接著說 It could be a good way to learn..., It 指的是「打工」這件事，故選 (B)。"
+              "options": [
+                "Having a small job like Amy's.",
+                "Managing time and money.",
+                "Working at the bakery on Saturdays only.",
+                "The camera Amy wants to buy."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "像 Amy 一樣打工。",
+                "管理時間和金錢。",
+                "只在週六在麵包店工作。",
+                "Amy 想買的相機。"
+              ],
+              "explanation": "Ben 說如果 Amy 打工進行順利，他也想找份小工作（finding a small job），接著說 It could be a good way to learn..., It 指的是「打工」這件事，故選 (A)。"
             }
           ]
         },
@@ -284,26 +564,56 @@
             {
               "n": 29,
               "stem": "What is a \"siesta\"?",
-              "options": ["A special kind of lunch.", "An afternoon rest.", "A summer festival.", "A morning market."],
+              "options": [
+                "A special kind of lunch.",
+                "An afternoon rest.",
+                "A summer festival.",
+                "A morning market."
+              ],
               "answer": 1,
-              "optionsZh": ["一種特別的午餐。", "午後的休息。", "夏季慶典。", "早晨市場。"],
+              "optionsZh": [
+                "一種特別的午餐。",
+                "午後的休息。",
+                "夏季慶典。",
+                "早晨市場。"
+              ],
               "explanation": "文中 This quiet rest is called a siesta，指午後休息，故選 (B)。"
             },
             {
               "n": 30,
               "stem": "According to the reading, why did people start taking a siesta in the past?",
-              "options": ["The afternoon was too hot to work well.", "They did not have enough food.", "The government made a new rule.", "There were too many festivals."],
+              "options": [
+                "The afternoon was too hot to work well.",
+                "There were too many festivals.",
+                "The government made a new rule.",
+                "They did not have enough food."
+              ],
               "answer": 0,
-              "optionsZh": ["下午太熱不利工作。", "他們沒有足夠食物。", "政府訂了新規定。", "慶典太多。"],
+              "optionsZh": [
+                "下午太熱不利工作。",
+                "慶典太多。",
+                "政府訂了新規定。",
+                "他們沒有足夠食物。"
+              ],
               "explanation": "文中 The afternoon was simply too hot to work well，故選 (A)。"
             },
             {
               "n": 31,
               "stem": "What does the reading suggest about the siesta today?",
-              "options": ["Everyone in the city still takes it.", "It has completely disappeared.", "It is less common in big companies.", "It now happens in the morning."],
-              "answer": 2,
-              "optionsZh": ["城市裡每個人仍午休。", "它已完全消失。", "在大公司較少見。", "現在改在早上。"],
-              "explanation": "文中 Many big companies stay open all day, and younger workers often skip the rest，表示大公司較少午休，故選 (C)。"
+              "options": [
+                "It is less common in big companies.",
+                "Everyone in the city still takes it.",
+                "It now happens in the morning.",
+                "It has completely disappeared."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "在大公司較少見。",
+                "城市裡每個人仍午休。",
+                "現在改在早上。",
+                "它已完全消失。"
+              ],
+              "explanation": "文中 Many big companies stay open all day, and younger workers often skip the rest，表示大公司較少午休，故選 (A)。"
             }
           ]
         },
@@ -316,26 +626,56 @@
             {
               "n": 32,
               "stem": "Where do the artists get the material for their art?",
-              "options": ["They buy it from a store.", "They collect trash from streets and beaches.", "They cut down trees in the park.", "They ask the town to give them money."],
-              "answer": 1,
-              "optionsZh": ["他們向商店購買。", "他們從街道與海灘收集垃圾。", "他們砍公園的樹。", "他們向鎮上要錢。"],
-              "explanation": "文中 the artists collect trash from the streets and beaches，故選 (B)。"
+              "options": [
+                "They collect trash from streets and beaches.",
+                "They ask the town to give them money.",
+                "They buy it from a store.",
+                "They cut down trees in the park."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "他們從街道與海灘收集垃圾。",
+                "他們向鎮上要錢。",
+                "他們向商店購買。",
+                "他們砍公園的樹。"
+              ],
+              "explanation": "文中 the artists collect trash from the streets and beaches，故選 (A)。"
             },
             {
               "n": 33,
               "stem": "What was the huge fish made of?",
-              "options": ["Thousands of bottle caps.", "Old newspapers.", "Pieces of wood.", "Colorful glass."],
-              "answer": 0,
-              "optionsZh": ["數千個瓶蓋。", "舊報紙。", "木片。", "彩色玻璃。"],
-              "explanation": "文中 made a huge fish out of thousands of bottle caps，故選 (A)。"
+              "options": [
+                "Colorful glass.",
+                "Pieces of wood.",
+                "Thousands of bottle caps.",
+                "Old newspapers."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "彩色玻璃。",
+                "木片。",
+                "數千個瓶蓋。",
+                "舊報紙。"
+              ],
+              "explanation": "文中 made a huge fish out of thousands of bottle caps，故選 (C)。"
             },
             {
               "n": 34,
               "stem": "What do the artists most want people to do?",
-              "options": ["Buy more art from them.", "Move to their small town.", "Think about how much they throw away.", "Learn how to catch fish."],
-              "answer": 2,
-              "optionsZh": ["向他們買更多藝術品。", "搬到他們的小鎮。", "思考自己丟掉多少東西。", "學習如何捕魚。"],
-              "explanation": "文末藝術家希望人們思考自己丟棄了多少、垃圾去了哪裡，故選 (C)。"
+              "options": [
+                "Think about how much they throw away.",
+                "Buy more art from them.",
+                "Move to their small town.",
+                "Learn how to catch fish."
+              ],
+              "answer": 0,
+              "optionsZh": [
+                "思考自己丟掉多少東西。",
+                "向他們買更多藝術品。",
+                "搬到他們的小鎮。",
+                "學習如何捕魚。"
+              ],
+              "explanation": "文末藝術家希望人們思考自己丟棄了多少、垃圾去了哪裡，故選 (A)。"
             }
           ]
         },
@@ -348,42 +688,92 @@
             {
               "n": 35,
               "stem": "What does Writer A think about phones at school?",
-              "options": ["They should not be allowed at all.", "They are only good for playing games.", "They can be a helpful tool for learning.", "They should be used only by teachers."],
-              "answer": 2,
-              "optionsZh": ["完全不該被允許。", "只適合玩遊戲。", "可以是有用的學習工具。", "只有老師能用。"],
-              "explanation": "Writer A 認為手機能查字、找資料、看新聞，是 helpful tool，故選 (C)。"
+              "options": [
+                "They are only good for playing games.",
+                "They should be used only by teachers.",
+                "They should not be allowed at all.",
+                "They can be a helpful tool for learning."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "只適合玩遊戲。",
+                "只有老師能用。",
+                "完全不該被允許。",
+                "可以是有用的學習工具。"
+              ],
+              "explanation": "Writer A 認為手機能查字、找資料、看新聞，是 helpful tool，故選 (D)。"
             },
             {
               "n": 36,
               "stem": "According to Writer B, what problem do phones cause in class?",
-              "options": ["They make the room too hot.", "They make everyone lose their focus.", "They are too expensive for students.", "They break down very easily."],
-              "answer": 1,
-              "optionsZh": ["讓教室太熱。", "讓大家分心。", "對學生太貴。", "很容易壞。"],
-              "explanation": "Writer B 說 everyone loses their focus and finds it hard to concentrate again，故選 (B)。"
+              "options": [
+                "They make the room too hot.",
+                "They are too expensive for students.",
+                "They make everyone lose their focus.",
+                "They break down very easily."
+              ],
+              "answer": 2,
+              "optionsZh": [
+                "讓教室太熱。",
+                "對學生太貴。",
+                "讓大家分心。",
+                "很容易壞。"
+              ],
+              "explanation": "Writer B 說 everyone loses their focus and finds it hard to concentrate again，故選 (C)。"
             },
             {
               "n": 37,
               "stem": "What does Writer B say about reading on a screen?",
-              "options": ["Students read faster on a screen.", "Students remember less than on paper.", "Screens are better for the eyes.", "Screens help students think deeply."],
-              "answer": 1,
-              "optionsZh": ["在螢幕上讀得更快。", "比紙本記得更少。", "螢幕對眼睛較好。", "螢幕幫助深入思考。"],
-              "explanation": "文中 students remember less when they read on a screen than on paper，故選 (B)。"
+              "options": [
+                "Screens help students think deeply.",
+                "Students read faster on a screen.",
+                "Screens are better for the eyes.",
+                "Students remember less than on paper."
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "螢幕幫助深入思考。",
+                "在螢幕上讀得更快。",
+                "螢幕對眼睛較好。",
+                "比紙本記得更少。"
+              ],
+              "explanation": "文中 students remember less when they read on a screen than on paper，故選 (D)。"
             },
             {
               "n": 38,
               "stem": "What do both writers agree on?",
-              "options": ["Phones can never be useful.", "Students should throw away their phones.", "Phones are related to how students learn.", "Teachers should also stop using phones."],
+              "options": [
+                "Phones can never be useful.",
+                "Teachers should also stop using phones.",
+                "Phones are related to how students learn.",
+                "Students should throw away their phones."
+              ],
               "answer": 2,
-              "optionsZh": ["手機永遠無用。", "學生應丟掉手機。", "手機和學生的學習有關。", "老師也該停用手機。"],
+              "optionsZh": [
+                "手機永遠無用。",
+                "老師也該停用手機。",
+                "手機和學生的學習有關。",
+                "學生應丟掉手機。"
+              ],
               "explanation": "兩位作者都在討論手機對「學習」的影響（有用/有害），共同點是手機與學習有關，故選 (C)。"
             },
             {
               "n": 39,
               "stem": "Which sentence would Writer A most likely agree with?",
-              "options": ["Schools should teach students to use phones wisely.", "Phones should be kept in the office all day.", "Students should never call their parents.", "Reading on paper is always better."],
-              "answer": 0,
-              "optionsZh": ["學校應教學生聰明用手機。", "手機該整天放在辦公室。", "學生永遠不該打給父母。", "紙本閱讀永遠較好。"],
-              "explanation": "Writer A 主張 teach how to use phones in a smart way，與 (A) 一致。"
+              "options": [
+                "Students should never call their parents.",
+                "Schools should teach students to use phones wisely.",
+                "Reading on paper is always better.",
+                "Phones should be kept in the office all day."
+              ],
+              "answer": 1,
+              "optionsZh": [
+                "學生永遠不該打給父母。",
+                "學校應教學生聰明用手機。",
+                "紙本閱讀永遠較好。",
+                "手機該整天放在辦公室。"
+              ],
+              "explanation": "Writer A 主張 teach how to use phones in a smart way，與 (B) 一致。"
             }
           ]
         },
@@ -396,33 +786,73 @@
             {
               "n": 40,
               "stem": "選出第 40 格最適合的答案。",
-              "options": ["While", "Because", "So", "If"],
-              "answer": 0,
-              "optionsZh": ["當…的時候（對比）", "因為", "所以", "如果"],
+              "options": [
+                "If",
+                "While",
+                "So",
+                "Because"
+              ],
+              "answer": 1,
+              "optionsZh": [
+                "如果",
+                "當…的時候（對比）",
+                "所以",
+                "因為"
+              ],
               "explanation": "前後對比「其他狗在跳、這隻卻安靜坐著」，用 While（當…時／然而）連接對比子句最合適。"
             },
             {
               "n": 41,
               "stem": "選出第 41 格最適合的答案。",
-              "options": ["is", "will be", "had been", "is being"],
-              "answer": 2,
-              "optionsZh": ["（現在式）", "（未來式）", "（過去完成式，正確）", "（現在進行被動）"],
+              "options": [
+                "will be",
+                "had been",
+                "is being",
+                "is"
+              ],
+              "answer": 1,
+              "optionsZh": [
+                "（未來式）",
+                "（過去完成式，正確）",
+                "（現在進行被動）",
+                "（現在式）"
+              ],
               "explanation": "以過去（told）為基準點，狗「在收容所待了將近一年」是更早且持續到那時的狀態，用過去完成式 had been。"
             },
             {
               "n": 42,
               "stem": "選出第 42 格最適合的答案。",
-              "options": ["Suddenly", "Slowly", "Luckily", "Sadly"],
-              "answer": 1,
-              "optionsZh": ["突然地", "慢慢地", "幸運地", "難過地"],
+              "options": [
+                "Suddenly",
+                "Luckily",
+                "Sadly",
+                "Slowly"
+              ],
+              "answer": 3,
+              "optionsZh": [
+                "突然地",
+                "幸運地",
+                "難過地",
+                "慢慢地"
+              ],
               "explanation": "前文 Emma 每天耐心陪伴，Coco 是「慢慢地」開始信任她，故選 Slowly。"
             },
             {
               "n": 43,
               "stem": "選出第 43 格最適合的答案。",
-              "options": ["best", "worst", "loudest", "fastest"],
+              "options": [
+                "best",
+                "fastest",
+                "loudest",
+                "worst"
+              ],
               "answer": 0,
-              "optionsZh": ["最好的", "最糟的", "最吵的", "最快的"],
+              "optionsZh": [
+                "最好的",
+                "最快的",
+                "最吵的",
+                "最糟的"
+              ],
               "explanation": "全文寓意是「最好的朋友有時正是最需要我們的」，故用 best。"
             }
           ]
