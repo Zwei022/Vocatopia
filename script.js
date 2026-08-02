@@ -750,10 +750,8 @@ const SUBSCRIPTION_PRODUCT_IDS = {
   quarterly: 'vocatopia_quarterly',
 };
 
-// TODO: Android 那組 Public SDK Key 等 Google Play 那邊的 App 在 RevenueCat 建立好後再補上
-// （見 https://app.revenuecat.com/ → Project settings → API keys）
 const REVENUECAT_API_KEYS = {
-  android: 'REPLACE_WITH_REVENUECAT_ANDROID_PUBLIC_KEY',
+  android: 'goog_fktavkGWPfsVgHxSsesdHbawvKv',
   ios:     'appl_ZgkudoqfeoskaKWhNiUUvYpTtbR',
 };
 
