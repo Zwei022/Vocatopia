@@ -9143,13 +9143,13 @@ function showGachaPackOpen(results) {
     <div class="gp2-wrap" id="gp2Wrap">
       <div class="gp2-pack">
         <div class="gp2-body">
-          <div class="gp2-art"><img src="public/images/characters/lobster.webp" alt=""></div>
+          <div class="gp2-art"><img src="public/images/characters/lobster.webp" alt="" draggable="false"></div>
           <div class="gp2-crimp bottom"></div>
         </div>
         <div class="gp2-top">
           <div class="gp2-crimp top"></div>
           <div class="gp2-header">
-            <img src="public/images/app_icon_transparent.webp" alt="">
+            <img src="public/images/app_icon_transparent.webp" alt="" draggable="false">
             <span class="gp2-title">Vocatopia</span>
             <span class="gp2-badge">V1</span>
           </div>
@@ -9190,8 +9190,10 @@ function showGachaPackOpen(results) {
     window.removeEventListener('pointermove', onMove);
     window.removeEventListener('pointerup', onUp);
   };
+  wrap.addEventListener('dragstart', e => e.preventDefault());
   wrap.addEventListener('pointerdown', e => {
     if (opened) return;
+    e.preventDefault();
     startX = e.clientX;
     window.addEventListener('pointermove', onMove);
     window.addEventListener('pointerup', onUp);

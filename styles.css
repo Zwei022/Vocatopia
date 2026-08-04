@@ -2082,6 +2082,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 /* ── 抽卡開包 v2：鋁箔補充包 + 逐張滑動揭曉（參照 TCG Pocket 開包節奏） ── */
 .gacha-pack-stage{position:fixed;inset:0;background:linear-gradient(180deg,#DCE8F2,#EEF4F8);z-index:9150;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .gp2-wrap{position:relative;width:230px;height:388px;touch-action:none;user-select:none;-webkit-user-select:none}
+.gp2-wrap img{-webkit-user-drag:none;user-drag:none;pointer-events:none;-webkit-touch-callout:none}
 .gp2-pack{position:absolute;inset:0;filter:drop-shadow(0 18px 26px rgba(60,80,110,.35))}
 .gp2-body{position:absolute;inset:0;border-radius:10px;overflow:hidden;background:#fff}
 /* 滿版主視覺（封口以下）：暖色漸層 + 角色圖 + 左上角光斑 */
