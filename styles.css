@@ -2080,22 +2080,29 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .shop-draw-cost{font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:var(--ink2)}
 
 /* ── 抽卡開包 v2：鋁箔補充包 + 逐張滑動揭曉（參照 TCG Pocket 開包節奏） ── */
-.gacha-pack-stage{position:fixed;inset:0;background:linear-gradient(180deg,#DCE8F2,#EEF4F8);z-index:9150;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.gp2-wrap{position:relative;width:230px;height:388px;touch-action:none;user-select:none;-webkit-user-select:none}
+.gacha-pack-stage{position:fixed;inset:0;background:linear-gradient(180deg,#DCE8F2,#EEF4F8);z-index:9150;display:flex;align-items:center;justify-content:center;overflow:hidden;perspective:1000px}
+.gp2-wrap{position:relative;width:230px;height:388px;touch-action:none;user-select:none;-webkit-user-select:none;transform-style:preserve-3d}
 .gp2-wrap img{-webkit-user-drag:none;user-drag:none;pointer-events:none;-webkit-touch-callout:none}
-.gp2-pack{position:absolute;inset:0;filter:drop-shadow(0 18px 26px rgba(60,80,110,.35))}
+/* 靜置時輕微3D傾斜+緩慢晃動，讓包裝看起來是懸浮的實體而非貼圖 */
+.gp2-pack{position:absolute;inset:0;filter:drop-shadow(0 18px 26px rgba(60,80,110,.35));transform-style:preserve-3d;transform-origin:center bottom;
+  animation:gp2Idle 4.6s ease-in-out infinite alternate}
+@keyframes gp2Idle{0%{transform:rotateY(-7deg) rotateX(3deg) translateY(0)}100%{transform:rotateY(5deg) rotateX(-2deg) translateY(-4px)}}
 .gp2-body{position:absolute;inset:0;border-radius:10px;overflow:hidden;background:#fff}
 /* 滿版主視覺（封口以下）：暖色漸層 + 角色圖 + 左上角光斑 */
 .gp2-art{position:absolute;left:0;right:0;top:18%;bottom:0;background:linear-gradient(200deg,#FFD98A,var(--orange) 55%,#D94F2B);display:flex;align-items:center;justify-content:center;overflow:hidden}
 .gp2-art img{width:86%;height:86%;object-fit:contain;filter:drop-shadow(0 6px 10px rgba(90,40,0,.35))}
 .gp2-art::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 18%,rgba(255,255,255,.35),transparent 55%)}
+/* 圓柱鋁箔明暗：兩側收暗、中央留亮，製造包裝有弧度厚度的錯覺 */
+.gp2-body::after{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;
+  background:linear-gradient(90deg,rgba(20,20,30,.4) 0%,transparent 16%,transparent 84%,rgba(20,20,30,.32) 100%)}
 /* 上下壓紋封邊：模擬鋁箔包的鋸齒壓合 */
 .gp2-crimp{position:absolute;left:0;right:0;height:12px;z-index:4;background:repeating-linear-gradient(90deg,#EDE6D8 0 7px,#CFC8B8 7px 14px)}
 .gp2-crimp.top{top:0;border-radius:10px 10px 0 0}
 .gp2-crimp.bottom{bottom:0;border-radius:0 0 10px 10px;background:repeating-linear-gradient(90deg,#F0B97A 0 7px,#D98F4A 7px 14px)}
 /* 頭部條帶（撕開時整塊飛走）：壓紋 + 品牌區 + 系列徽章 */
-.gp2-top{position:absolute;top:0;left:0;right:0;height:18%;z-index:5;will-change:transform}
+.gp2-top{position:absolute;top:0;left:0;right:0;height:18%;z-index:5;will-change:transform;transform-origin:50% 100%}
 .gp2-header{position:absolute;top:12px;left:0;right:0;bottom:0;background:linear-gradient(160deg,var(--orange),var(--orange2));display:flex;align-items:center;justify-content:center;gap:7px;border-radius:0}
+.gp2-header::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,20,30,.35) 0%,transparent 16%,transparent 84%,rgba(20,20,30,.28) 100%)}
 .gp2-header img{width:32px;height:32px;object-fit:contain;filter:drop-shadow(0 2px 3px rgba(0,0,0,.3))}
 .gp2-title{font-family:var(--font-display);font-weight:900;font-size:17px;color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.18)}
 .gp2-badge{position:absolute;top:15px;right:9px;background:rgba(43,30,20,.8);color:#fff;font-weight:900;font-size:10px;padding:2px 7px;border-radius:6px;font-family:'Nunito',sans-serif}
@@ -2110,19 +2117,42 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .gp2-reflection{position:absolute;top:calc(100% + 8px);left:0;right:0;height:52%;transform:scaleY(-1);border-radius:10px;overflow:hidden;opacity:.2;pointer-events:none;transition:opacity .3s;
   -webkit-mask-image:linear-gradient(180deg,transparent 35%,#000);mask-image:linear-gradient(180deg,transparent 35%,#000)}
 .gp2-reflection .gp2-body{position:absolute;inset:0}
-/* 第二片小碎片：撕開後延遲飛出，跟頭部條帶走不同拋物線（不對稱更有真實感） */
+/* 撕開瞬間的鋸齒裂口殘影：留在包體新切口處，比乾淨直線更有「被扯開」的痕跡 */
+.gp2-rip{position:absolute;top:calc(18% - 7px);left:0;right:0;height:16px;z-index:6;opacity:0;pointer-events:none;
+  background:linear-gradient(#fff,#fff);
+  clip-path:polygon(0% 40%,4% 60%,8% 35%,13% 65%,18% 30%,23% 58%,29% 38%,34% 62%,40% 32%,46% 60%,52% 36%,58% 64%,64% 34%,70% 58%,76% 40%,82% 62%,88% 36%,94% 60%,100% 42%,100% 100%,0% 100%)}
+/* 撕裂衝擊閃光：畫面正中一次白色爆閃，加重「破壞」瞬間的力度 */
+.gp2-flash{position:absolute;top:16%;left:50%;width:10px;height:10px;margin-left:-5px;z-index:20;border-radius:50%;opacity:0;pointer-events:none;
+  background:radial-gradient(circle,#fff 0%,rgba(255,255,255,.6) 40%,transparent 72%)}
+/* 兩片碎屑：大小/角度/延遲都不同，避免對稱感 */
 .gp2-frag{position:absolute;top:5%;right:20%;width:56px;height:20px;border-radius:5px;z-index:9;opacity:0;pointer-events:none;background:linear-gradient(160deg,var(--orange),var(--orange2))}
+.gp2-frag2{position:absolute;top:8%;left:24%;width:30px;height:13px;border-radius:4px;z-index:9;opacity:0;pointer-events:none;background:linear-gradient(160deg,#EDE6D8,#CFC8B8)}
 .gp2-hint{position:absolute;left:50%;bottom:-54px;transform:translateX(-50%);white-space:nowrap;color:#5B6B7A;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;text-align:center;pointer-events:none}
 .gacha-pack-hint-arrow{display:inline-block;margin-left:4px;animation:gachaSwipeHint 1.2s ease-in-out infinite}
 @keyframes gachaSwipeHint{0%,100%{transform:translateX(0)}50%{transform:translateX(10px)}}
-/* 撕開序列：頭部條帶右上飛出 → 小碎片延遲更高弧度飛出 → 包體下墜退場 */
-.gp2-wrap.torn .gp2-top{animation:gp2FlyA .62s cubic-bezier(.3,-.15,.7,1) forwards}
-@keyframes gp2FlyA{35%{transform:translate(55%,-80%) rotate(13deg);opacity:1}100%{transform:translate(150%,-230%) rotate(32deg);opacity:0}}
-.gp2-wrap.torn .gp2-frag{animation:gp2FlyB .72s .12s cubic-bezier(.25,-.25,.75,1) forwards}
+
+/* 撕開序列：白光爆閃+短暫震動 → 頭部條帶帶扭曲抖動甩飛出 → 兩片碎屑分次不對稱飛出 → 包體晃動下墜退場 */
+.gp2-wrap.torn{animation:gp2Shake .3s ease-out}
+@keyframes gp2Shake{10%{transform:translate(-4px,1px)}25%{transform:translate(4px,-2px)}40%{transform:translate(-3px,2px)}55%{transform:translate(3px,-1px)}70%{transform:translate(-2px,1px)}100%{transform:translate(0,0)}}
+.gp2-wrap.torn .gp2-flash{animation:gp2Flash .3s ease-out forwards}
+@keyframes gp2Flash{0%{opacity:0;transform:scale(1)}25%{opacity:1;transform:scale(38)}100%{opacity:0;transform:scale(46)}}
+.gp2-wrap.torn .gp2-rip{animation:gp2Rip .5s ease-out forwards}
+@keyframes gp2Rip{0%{opacity:0}15%{opacity:1}70%{opacity:.85}100%{opacity:0;transform:translateY(3px)}}
+.gp2-wrap.torn .gp2-top{animation:gp2FlyA .68s cubic-bezier(.3,-.15,.7,1) forwards}
+@keyframes gp2FlyA{
+  0%{transform:translate(0,0) rotate(0) skew(0,0) scale(1);opacity:1}
+  18%{transform:translate(14%,-6%) rotate(-4deg) skew(-4deg,1deg) scale(1.02,.94);opacity:1}
+  35%{transform:translate(55%,-80%) rotate(13deg) skew(6deg,-2deg) scale(.96,1.05);opacity:1}
+  65%{transform:translate(100%,-160%) rotate(24deg) skew(-3deg,1deg) scale(1.03,.97);opacity:.9}
+  100%{transform:translate(150%,-230%) rotate(34deg) skew(2deg,0);opacity:0}
+}
+.gp2-wrap.torn .gp2-frag{animation:gp2FlyB .72s .1s cubic-bezier(.25,-.25,.75,1) forwards}
 @keyframes gp2FlyB{0%{opacity:1;transform:translate(0,0) rotate(0)}100%{opacity:0;transform:translate(230%,-460%) rotate(-72deg)}}
+.gp2-wrap.torn .gp2-frag2{animation:gp2FlyC .58s .2s cubic-bezier(.25,-.25,.75,1) forwards}
+@keyframes gp2FlyC{0%{opacity:1;transform:translate(0,0) rotate(0)}100%{opacity:0;transform:translate(-170%,-300%) rotate(96deg)}}
 .gp2-wrap.torn .gp2-tearline,.gp2-wrap.torn .gp2-slit{opacity:0}
-.gp2-wrap.torn .gp2-pack{animation:gp2Drop .55s .24s cubic-bezier(.5,0,.8,.5) forwards}
-@keyframes gp2Drop{100%{transform:translateY(58%) scale(.92);opacity:0}}
+.gp2-wrap.torn .gp2-pack{animation:gp2Drop .6s .26s cubic-bezier(.5,0,.8,.5) forwards}
+@keyframes gp2Drop{0%{transform:rotateY(5deg) rotateX(-2deg)}30%{transform:rotateY(-9deg) rotateX(4deg) translateY(6%);opacity:1}100%{transform:rotateY(4deg) rotateX(-2deg) translateY(60%) scale(.9);opacity:0}}
 .gp2-wrap.torn .gp2-reflection{opacity:0}
 
 /* ── 逐張滑動揭曉舞台 ── */

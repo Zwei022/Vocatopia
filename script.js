@@ -9156,7 +9156,10 @@ function showGachaPackOpen(results) {
         </div>
         <div class="gp2-tearline"></div>
         <div class="gp2-slit" id="gp2Slit"></div>
+        <div class="gp2-rip"></div>
+        <div class="gp2-flash"></div>
         <div class="gp2-frag"></div>
+        <div class="gp2-frag2"></div>
         <div class="gp2-sheen"></div>
       </div>
       <div class="gp2-reflection"></div>
@@ -9208,7 +9211,7 @@ function showGachaPackOpen(results) {
     setTimeout(() => {
       stage.remove();
       _gachaStartReveal(results);
-    }, 760);
+    }, 900);
   }
 }
 
