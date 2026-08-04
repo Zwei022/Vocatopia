@@ -8770,21 +8770,21 @@ function switchCollTab(tab) {
     if (grid) grid.style.display = '';
     if (achv) achv.style.display = 'none';
     if (quest) quest.style.display = 'none';
-    if (title) title.textContent = '🃏 角色收藏';
+    if (title) title.innerHTML = '<img class="title-ico" src="public/images/icons/favorites.png" alt="">角色收藏';
     if (sub) sub.textContent = '選擇一名角色出戰，牠的技能會在對戰中登場';
     renderCharCollection();
   } else if (tab === 'quest') {
     if (grid) grid.style.display = 'none';
     if (achv) achv.style.display = 'none';
     if (quest) quest.style.display = '';
-    if (title) title.textContent = '📜 任務';
+    if (title) title.innerHTML = '<img class="title-ico" src="public/images/icons/favorites.png" alt="">任務';
     if (sub) sub.textContent = '完成主線與支線任務，領取金幣與經驗值獎勵';
     renderQuestList();
   } else {
     if (grid) grid.style.display = 'none';
     if (achv) achv.style.display = '';
     if (quest) quest.style.display = 'none';
-    if (title) title.textContent = '🏆 成就';
+    if (title) title.innerHTML = '<img class="title-ico" src="public/images/icons/favorites.png" alt="">成就';
     if (sub) sub.textContent = '達成條件解鎖成就，領金幣並可設為稱號';
     renderAchievements();
   }
