@@ -9182,8 +9182,10 @@ function showGachaPackOpen(results) {
     const x = (e.touches ? e.touches[0].clientX : e.clientX);
     const dx = Math.max(0, x - startX);
     const p = Math.min(dx / THRESHOLD, 1);
-    // 頭部條帶跟手位移+微傾，白色裂縫沿撕裂線隨進度拉開
-    top.style.transform = `translateX(${p * 26}px) skewY(${(-p * 2.5).toFixed(2)}deg)`;
+    // 撕紙手感：左邊固定當軸心、右邊被掀開旋轉——不是整片平移。
+    // 用 p^1.35 當阻力曲線：前段轉得慢（紙還連著、有阻力），接近門檻時陡然加速（快撕斷的脆裂感）
+    const ease = Math.pow(p, 1.35);
+    top.style.transform = `rotate(${(-ease * 26).toFixed(2)}deg) translateX(${(ease * 10).toFixed(1)}px)`;
     slit.style.width = (p * 100) + '%';
     if (dx >= THRESHOLD) openPack();
   };
