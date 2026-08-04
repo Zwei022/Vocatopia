@@ -7908,7 +7908,7 @@ async function claimQuest(id) {
   if (mi > 0 && !_qMainAvailable(mi)) { showToast('請先完成前一關主線任務'); return; }
   if (q.cur() < q.goal) { showToast('還沒達成喔'); return; }
   try {
-    const { data, error } = await authClient.rpc('claim_quest', { p_id: id, p_gold: q.gold, p_xp: q.xp });
+    const { data, error } = await authClient.rpc('claim_quest', { p_id: id });
     if (error) throw error;
     if (data) {
       currentProfile.quests_claimed = [...(currentProfile.quests_claimed || []), id];
@@ -8841,7 +8841,7 @@ async function claimAchievement(id) {
   if (!a || !_acUnlocked(a) || _acClaimed(id)) return;
   if (!currentUser) { showToast('登入後才能領取成就獎勵'); return; }
   try {
-    const { data, error } = await authClient.rpc('claim_achievement', { p_id: id, p_reward: a.reward });
+    const { data, error } = await authClient.rpc('claim_achievement', { p_id: id });
     if (error) throw error;
     currentProfile.achievements_claimed = [...(currentProfile.achievements_claimed || []), id];
     if (typeof data === 'number') {
