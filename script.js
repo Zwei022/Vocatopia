@@ -9210,9 +9210,22 @@ function showGachaPackOpen(results) {
     if (typeof SFX !== 'undefined') SFX.gachaGlow(null); // 撕開瞬間音效
     setTimeout(() => {
       stage.remove();
-      _gachaStartReveal(results);
+      _gachaBuildup(results);
     }, 900);
   }
+}
+
+// 拆包→逐張揭曉之間的「集氣」過場：黑幕短暫壓暗、畫面中央光點匯聚爆開，
+// 銜接卡包破口位置與下一階段第一張卡「長出來」的起點，避免兩段動畫感覺是硬接的。
+function _gachaBuildup(results) {
+  const s = document.createElement('div');
+  s.className = 'gp3-buildup';
+  s.innerHTML = '<div class="gp3-spark"></div>';
+  document.body.appendChild(s);
+  setTimeout(() => {
+    s.remove();
+    _gachaStartReveal(results);
+  }, 480);
 }
 
 // 逐張滑動揭曉：卡片堆疊在畫面中央，左右滑（或點一下）送走目前這張、揭曉下一張。
@@ -9332,7 +9345,7 @@ function _gachaStartReveal(results) {
   layer();
   const first = cards[0];
   if (first) first.classList.add('enter');
-  setTimeout(() => { if (first) first.classList.remove('enter'); announce(); }, 500);
+  setTimeout(() => { if (first) first.classList.remove('enter'); announce(); }, 420);
 }
 
 // 開封總覽：所有卡攤開成網格（此時都已在揭曉舞台看過，直接顯示正面）

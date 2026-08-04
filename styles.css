@@ -2155,6 +2155,15 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 @keyframes gp2Drop{0%{transform:rotateY(5deg) rotateX(-2deg)}30%{transform:rotateY(-9deg) rotateX(4deg) translateY(6%);opacity:1}100%{transform:rotateY(4deg) rotateX(-2deg) translateY(60%) scale(.9);opacity:0}}
 .gp2-wrap.torn .gp2-reflection{opacity:0}
 
+/* 撕開後→逐張揭曉之間的「集氣」停頓：黑幕短暫壓暗+畫面中央光點匯聚爆開，
+   銜接卡包破口位置與下一階段卡片浮現的起點，避免兩段動畫感覺是硬接的 */
+.gp3-buildup{position:fixed;inset:0;z-index:9155;display:flex;align-items:center;justify-content:center;pointer-events:none;
+  animation:gp3Bg .48s ease-out forwards}
+@keyframes gp3Bg{0%{background:rgba(20,24,34,0)}35%{background:rgba(20,24,34,.6)}100%{background:rgba(20,24,34,0)}}
+.gp3-spark{width:10px;height:10px;border-radius:50%;background:radial-gradient(circle,#fff 0%,rgba(255,255,255,.75) 45%,transparent 76%);
+  animation:gp3Spark .48s cubic-bezier(.2,.9,.3,1) forwards}
+@keyframes gp3Spark{0%{transform:scale(1);opacity:.35}60%{transform:scale(8);opacity:1}100%{transform:scale(16);opacity:0}}
+
 /* ── 逐張滑動揭曉舞台 ── */
 .gr2-stage{position:fixed;inset:0;z-index:9160;overflow:hidden;background:linear-gradient(180deg,#DCE8F2,#EEF4F8);touch-action:none;user-select:none;-webkit-user-select:none}
 .gr2-tint{position:absolute;inset:0;opacity:0;transition:opacity .55s;pointer-events:none}
@@ -2166,8 +2175,9 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .gr2-card.under{transform:scale(.92) translateY(14px)}
 .gr2-card.under2{transform:scale(.86) translateY(26px);opacity:.65}
 .gr2-card.gr2-hide{opacity:0}
-.gr2-card.enter{animation:gr2Rise .5s cubic-bezier(.3,1.15,.5,1)}
-@keyframes gr2Rise{0%{transform:translateY(72vh) scale(.9)}100%{transform:none}}
+/* 第一張卡從集氣光點的位置「長出來」，跟舞台切換前的爆閃點是同一個螢幕座標，做出一鏡到底的錯覺 */
+.gr2-card.enter{animation:gr2Grow .42s cubic-bezier(.3,1.05,.4,1)}
+@keyframes gr2Grow{0%{transform:scale(.06);opacity:0}45%{opacity:1}100%{transform:scale(1);opacity:1}}
 .gr2-card.flyout{transition:transform .3s ease-in,opacity .3s ease-in;pointer-events:none}
 /* 稀有卡揭曉：光暈爆發一次後保持餘光（顏色由 inline --burstc 決定） */
 .gr2-card.burst .gr2-face{animation:gr2Burst .85s ease-out}
