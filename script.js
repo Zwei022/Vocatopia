@@ -9113,83 +9113,26 @@ function _gachaResultCardBack(r) {
   </div>`;
 }
 
-// 依角色稀有度決定「還沒翻牌前」卡片常駐的邊緣微光強度：
-// 銘謝惠顧/普通/稀有無光、史詩(可麗露)紫光、神話(壽司)粉紅光、傳奇(龍蝦)金光最盛
-function _gachaGlowClass(r) {
-  if (r.isConsolation || !r.charId) return 'amb-none';
-  const ch = TETRIS_CHARACTERS[r.charId];
-  if (!ch) return 'amb-none';
-  if (ch.rarity === 'epic') return 'amb-epic';
-  if (ch.rarity === 'mythic') return 'amb-mythic';
-  if (ch.rarity === 'legendary') return 'amb-legendary';
-  return 'amb-none';
-}
-
 // 依稀有度決定翻牌音效對應的 rarity key
 function _gachaRarityKey(r) {
   if (r.isConsolation || !r.charId) return null;
   return TETRIS_CHARACTERS[r.charId]?.rarity || null;
 }
 
-// 單次點擊直接翻牌（拆包動畫已經提供懸念，不再需要「先點亮光環再點翻牌」兩段式）。
-// moveToTray：手動一張一張點開時，翻完要移到旁邊的檢視區，避免擋住還沒翻的疊牌；
-// 一鍵翻開時傳 false，改在全部翻完後把整疊牌一起攤開（_gachaSpreadStack）。
-function _gachaTapFlip(el, moveToTray = true) {
-  if (el.dataset.flipped === '1') return;
-  el.dataset.flipped = '1';
-  el.classList.add('flipped');
-  if (typeof SFX !== 'undefined') SFX.gachaReveal(el.dataset.isnew === '1');
-  if (moveToTray) setTimeout(() => _gachaMoveToTray(el), 600);
-}
+// 稀有卡揭曉時的舞台背景漸層與光暈色（epic 紫 / mythic 粉 / legendary 金）
+const GACHA_STAGE_TINT = {
+  epic:      'linear-gradient(180deg,#CDB4F7,#ECDFFF)',
+  mythic:    'linear-gradient(180deg,#F6A8CD,#FFE0EF)',
+  legendary: 'linear-gradient(180deg,#F6CF6E,#FDEEC3)'
+};
+const GACHA_BURST_COLOR = {
+  epic:      'rgba(165,110,255,.65)',
+  mythic:    'rgba(255,122,182,.7)',
+  legendary: 'rgba(240,180,41,.8)'
+};
 
-// 把手動翻開的單張卡從疊牌移到下方檢視區（拿掉絕對定位的疊牌座標，改成一般排列）
-function _gachaMoveToTray(el) {
-  const stack = el.closest('.gacha-stack');
-  if (!stack) return; // 單抽沒有疊牌可移
-  let tray = stack.parentElement.querySelector('.gacha-tray');
-  if (!tray) {
-    tray = document.createElement('div');
-    tray.className = 'gacha-tray';
-    stack.insertAdjacentElement('afterend', tray);
-  }
-  el.style.top = '';
-  el.style.zIndex = '';
-  tray.appendChild(el);
-}
-
-// 一鍵翻開：把還沒翻的卡依序（小延遲）全部翻開，翻完後把整疊牌攤開成不重疊的網格
-function _gachaRevealAll(btn) {
-  const stack = btn.closest('.gacha-pack-results')?.querySelector('.gacha-stack, .gacha-single');
-  if (!stack) return;
-  const cards = [...stack.querySelectorAll('.gacha-flip-card')].filter(el => el.dataset.flipped !== '1');
-  cards.forEach((el, i) => setTimeout(() => _gachaTapFlip(el, false), i * 140));
-  btn.disabled = true;
-  btn.textContent = '翻開中…';
-  setTimeout(() => {
-    _gachaSpreadStack(stack);
-    btn.style.display = 'none';
-  }, cards.length * 140 + 650);
-}
-
-// 把整疊牌從堆疊狀態攤開成不重疊的網格排列
-function _gachaSpreadStack(stack) {
-  if (!stack.classList.contains('gacha-stack')) return; // 單抽本來就沒有堆疊
-  stack.classList.add('spread');
-  stack.style.height = '';
-  [...stack.children].forEach(el => { el.style.top = ''; el.style.zIndex = ''; });
-}
-
-function _gachaCardMarkup(r, i, styleExtra, width = 176) {
-  return `
-    <div class="gacha-flip-card ${_gachaGlowClass(r)}" style="width:${width}px${styleExtra ? ';' + styleExtra : ''}" data-idx="${i}" data-flipped="0" data-isnew="${r.isNew ? '1' : '0'}" onclick="_gachaTapFlip(this)">
-      <div class="gacha-flip-inner">
-        <div class="gacha-flip-front pack-back"><img src="public/images/app_icon_transparent.webp" alt="Vocatopia"></div>
-        <div class="gacha-flip-back">${_gachaResultCardBack(r)}</div>
-      </div>
-    </div>`;
-}
-
-// 拆卡包序列：跳出卡包 → 引導向右滑開 → 拖過門檻觸發撕開 → 退去外包裝 → 揭曉卡片（單抽1張／十連10張疊牌)
+// 拆卡包序列 v2（參照 TCG Pocket）：鋁箔補充包 → 沿封口滑動撕開（裂縫跟手擴大）→
+// 頭部條帶+小碎片不對稱拋物線飛出 → 包體退場 → 逐張滑動揭曉
 function showGachaPackOpen(results) {
   const stage = document.createElement('div');
   stage.id = 'gachaPackStage';
@@ -9197,29 +9140,53 @@ function showGachaPackOpen(results) {
   if (typeof SFX !== 'undefined') SFX.gachaDraw();
 
   stage.innerHTML = `
-    <div class="gacha-pack-wrap" id="gachaPackWrap">
-      <div class="gacha-pack">
-        <div class="gacha-pack-logo"><img src="public/images/app_icon_transparent.webp" alt="Vocatopia"></div>
+    <div class="gp2-wrap" id="gp2Wrap">
+      <div class="gp2-pack">
+        <div class="gp2-body">
+          <div class="gp2-art"><img src="public/images/characters/lobster.webp" alt=""></div>
+          <div class="gp2-crimp bottom"></div>
+        </div>
+        <div class="gp2-top">
+          <div class="gp2-crimp top"></div>
+          <div class="gp2-header">
+            <img src="public/images/app_icon_transparent.webp" alt="">
+            <span class="gp2-title">Vocatopia</span>
+            <span class="gp2-badge">V1</span>
+          </div>
+        </div>
+        <div class="gp2-tearline"></div>
+        <div class="gp2-slit" id="gp2Slit"></div>
+        <div class="gp2-frag"></div>
+        <div class="gp2-sheen"></div>
       </div>
-      <div class="gacha-pack-flap"></div>
-      <div class="gacha-pack-hint">向右滑開拆封<span class="gacha-pack-hint-arrow">👉</span></div>
+      <div class="gp2-reflection"></div>
+      <div class="gp2-hint">沿封口向右滑動撕開<span class="gacha-pack-hint-arrow">👉</span></div>
     </div>`;
   document.body.appendChild(stage);
 
-  const wrap = stage.querySelector('#gachaPackWrap');
-  let startX = null, dx = 0, opened = false;
-  const THRESHOLD = 90;
+  // 倒影只複製包體（頭部在倒影裡本來就會被漸層遮罩淡掉，省掉重複 id 的問題）
+  const refl = stage.querySelector('.gp2-reflection');
+  refl.innerHTML = stage.querySelector('.gp2-body').outerHTML;
+
+  const wrap = stage.querySelector('#gp2Wrap');
+  const top  = stage.querySelector('.gp2-top');
+  const slit = stage.querySelector('#gp2Slit');
+  let startX = null, opened = false;
+  const THRESHOLD = 110;
 
   const onMove = e => {
     if (startX === null || opened) return;
     const x = (e.touches ? e.touches[0].clientX : e.clientX);
-    dx = Math.max(0, x - startX);
-    wrap.style.transform = `translateX(${Math.min(dx, THRESHOLD * 1.4)}px) rotate(${Math.min(dx * 0.06, 8)}deg)`;
+    const dx = Math.max(0, x - startX);
+    const p = Math.min(dx / THRESHOLD, 1);
+    // 頭部條帶跟手位移+微傾，白色裂縫沿撕裂線隨進度拉開
+    top.style.transform = `translateX(${p * 26}px) skewY(${(-p * 2.5).toFixed(2)}deg)`;
+    slit.style.width = (p * 100) + '%';
     if (dx >= THRESHOLD) openPack();
   };
   const onUp = () => {
     startX = null;
-    if (!opened) wrap.style.transform = '';
+    if (!opened) { top.style.transform = ''; slit.style.width = '0'; }
     window.removeEventListener('pointermove', onMove);
     window.removeEventListener('pointerup', onUp);
   };
@@ -9233,38 +9200,155 @@ function showGachaPackOpen(results) {
   function openPack() {
     if (opened) return;
     opened = true;
-    wrap.style.transform = '';
-    wrap.classList.add('tearing');
-    if (typeof SFX !== 'undefined') SFX.gachaGlow(null); // 撕開瞬間的音效（沿用既有音色）
+    top.style.transform = '';
+    wrap.classList.add('torn');
+    if (typeof SFX !== 'undefined') SFX.gachaGlow(null); // 撕開瞬間音效
     setTimeout(() => {
       stage.remove();
-      _showGachaPackResults(results);
-    }, 480);
+      _gachaStartReveal(results);
+    }, 760);
   }
 }
 
+// 逐張滑動揭曉：卡片堆疊在畫面中央，左右滑（或點一下）送走目前這張、揭曉下一張。
+// 揭曉瞬間才觸發稀有度演出（背景變色+光暈爆發+NEW徽章），避免像舊版常駐光暈提前爆雷。
+function _gachaStartReveal(results) {
+  const stage = document.createElement('div');
+  stage.id = 'gachaRevealStage';
+  stage.className = 'gr2-stage';
+
+  const cardsHtml = results.map((r, i) => {
+    const rar = _gachaRarityKey(r);
+    const burst = GACHA_BURST_COLOR[rar] || '';
+    return `<div class="gr2-card" data-idx="${i}" data-isnew="${r.isNew ? '1' : '0'}" data-rarity="${rar || ''}"${burst ? ` style="--burstc:${burst}"` : ''}>
+      ${r.isNew ? '<div class="gr2-new">NEW</div>' : ''}
+      <div class="gr2-face">${_gachaResultCardBack(r)}</div>
+    </div>`;
+  }).join('');
+
+  stage.innerHTML = `
+    <div class="gr2-tint"></div>
+    <div class="gr2-count">1 / ${results.length}</div>
+    <div class="gr2-stack">${cardsHtml}</div>
+    <div class="gr2-hint">左右滑動看下一張</div>
+    <button class="gr2-skip">快轉</button>`;
+  document.body.appendChild(stage);
+
+  const tint  = stage.querySelector('.gr2-tint');
+  const count = stage.querySelector('.gr2-count');
+  const stack = stage.querySelector('.gr2-stack');
+  const cards = [...stack.querySelectorAll('.gr2-card')];
+  let cur = 0, finished = false;
+
+  // 依目前進度整理堆疊：頂牌全尺寸、下一張微縮、再下一張更縮，其餘藏起
+  function layer() {
+    cards.forEach((el, i) => {
+      if (i < cur) return; // 已滑走
+      el.classList.remove('under', 'under2', 'gr2-hide');
+      if (i === cur)      el.style.zIndex = 30;
+      else if (i === cur + 1) { el.classList.add('under');  el.style.zIndex = 29; }
+      else if (i === cur + 2) { el.classList.add('under2'); el.style.zIndex = 28; }
+      else                { el.classList.add('gr2-hide');   el.style.zIndex = 27; }
+    });
+  }
+
+  // 頂牌揭曉演出：背景染色、光暈爆發、NEW 彈出、音效
+  function announce() {
+    const el = cards[cur];
+    if (!el) return;
+    const rar = el.dataset.rarity;
+    if (GACHA_STAGE_TINT[rar]) {
+      tint.style.background = GACHA_STAGE_TINT[rar];
+      tint.style.opacity = 1;
+    } else {
+      tint.style.opacity = 0;
+    }
+    if (GACHA_BURST_COLOR[rar]) el.classList.add('burst', 'lit');
+    if (el.dataset.isnew === '1') el.classList.add('shownew');
+    count.textContent = `${cur + 1} / ${results.length}`;
+    if (typeof SFX !== 'undefined') {
+      SFX.gachaReveal(el.dataset.isnew === '1');
+      if (GACHA_BURST_COLOR[rar]) SFX.gachaGlow(rar);
+    }
+  }
+
+  function finish() {
+    if (finished) return;
+    finished = true;
+    stage.remove();
+    _showGachaPackResults(results);
+  }
+
+  // 頂牌飛出 → 下一張揭曉；最後一張滑走後進總覽
+  function advance(dir) {
+    const el = cards[cur];
+    if (!el) { finish(); return; }
+    el.classList.add('flyout');
+    el.style.transform = `translateX(${dir > 0 ? '120vw' : '-120vw'}) rotate(${dir > 0 ? 26 : -26}deg)`;
+    cur++;
+    if (cur >= cards.length) { setTimeout(finish, 300); return; }
+    setTimeout(() => { layer(); announce(); }, 120);
+  }
+
+  // 拖曳跟手 + 放開判定（超過門檻順勢送走，否則彈回）；幾乎沒移動視為點擊 → 直接送走
+  let dragX = null, moved = 0;
+  const SWIPE_COMMIT = 70;
+  const onMove = e => {
+    if (dragX === null || finished) return;
+    const x = (e.touches ? e.touches[0].clientX : e.clientX);
+    moved = x - dragX;
+    const el = cards[cur];
+    if (el) {
+      el.style.transition = 'none';
+      el.style.transform = `translateX(${moved}px) rotate(${(moved * 0.06).toFixed(2)}deg)`;
+    }
+  };
+  const onUp = () => {
+    const el = cards[cur];
+    if (el && !finished) {
+      el.style.transition = '';
+      if (Math.abs(moved) >= SWIPE_COMMIT) advance(moved > 0 ? 1 : -1);
+      else if (Math.abs(moved) < 6) advance(-1);   // 視為點擊：往左送走
+      else el.style.transform = '';                 // 未過門檻：彈回
+    }
+    dragX = null; moved = 0;
+    window.removeEventListener('pointermove', onMove);
+    window.removeEventListener('pointerup', onUp);
+  };
+  stack.addEventListener('pointerdown', e => {
+    if (finished) return;
+    dragX = e.clientX; moved = 0;
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerup', onUp);
+  });
+  stage.querySelector('.gr2-skip').addEventListener('click', finish);
+
+  // 第一張從包口位置升起入場，就定位後才觸發揭曉演出
+  layer();
+  const first = cards[0];
+  if (first) first.classList.add('enter');
+  setTimeout(() => { if (first) first.classList.remove('enter'); announce(); }, 500);
+}
+
+// 開封總覽：所有卡攤開成網格（此時都已在揭曉舞台看過，直接顯示正面）
 function _showGachaPackResults(results) {
   const overlay = document.createElement('div');
   overlay.id = 'gachaResultOverlay';
   overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.6);z-index:9100;display:flex;align-items:flex-start;justify-content:center;padding:16px;padding-top:max(50px,calc(env(safe-area-inset-top) + 20px));overflow-y:auto';
   overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
 
-  const isSingle = results.length === 1;
-  const cardsHtml = isSingle
-    ? `<div class="gacha-single">${_gachaCardMarkup(results[0], 0, '', 240)}</div>`
-    : `<div class="gacha-stack" style="height:${236 + (results.length - 1) * 16}px">
-        ${results.map((r, i) => _gachaCardMarkup(r, i, `top:${(results.length - 1 - i) * 16}px;z-index:${i + 1}`)).join('')}
-      </div>`;
-  const allBtn = isSingle ? '' : `<button onclick="_gachaRevealAll(this)" style="margin-top:14px;width:100%;padding:12px;border:none;border-radius:12px;font-family:var(--font-display);font-weight:900;font-size:14px;color:#fff;background:var(--red);box-shadow:0 4px 0 var(--red2);cursor:pointer">一鍵翻開</button>`;
-  const modalWidth = isSingle ? 300 : 400;
+  const cardsHtml = results.map(r => `
+    <div style="width:130px;position:relative">
+      ${r.isNew ? '<div class="gr2-new" style="transform:scale(1);top:-9px;left:-6px;font-size:11px;padding:3px 10px">NEW</div>' : ''}
+      ${_gachaResultCardBack(r)}
+    </div>`).join('');
 
   overlay.innerHTML = `
-    <div class="gacha-pack-results" style="background:var(--card);border:2.5px solid var(--line);border-radius:18px;padding:26px 18px;width:100%;max-width:${modalWidth}px;max-height:85vh;overflow-y:auto;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
+    <div class="gacha-pack-results" style="background:var(--card);border:2.5px solid var(--line);border-radius:18px;padding:26px 18px;width:100%;max-width:400px;max-height:85vh;overflow-y:auto;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
       <button onclick="document.getElementById('gachaResultOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
-      <div style="font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--ink);margin-bottom:8px;line-height:1.4;text-align:center">抽卡結果</div>
-      <div style="font-size:12px;color:var(--ink3);margin-bottom:16px;line-height:1.5;text-align:center">點卡片翻開，邊緣發光代表稀有度更高</div>
-      <div style="display:flex;justify-content:center">${cardsHtml}</div>
-      ${allBtn}
+      <div style="font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--ink);margin-bottom:16px;line-height:1.4;text-align:center">開封結果</div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">${cardsHtml}</div>
+      <button onclick="document.getElementById('gachaResultOverlay').remove()" style="margin-top:18px;width:100%;padding:12px;border:none;border-radius:12px;font-family:var(--font-display);font-weight:900;font-size:14px;color:#fff;background:var(--orange);box-shadow:0 4px 0 var(--orange2);cursor:pointer">完成</button>
     </div>`;
   document.body.appendChild(overlay);
 }
