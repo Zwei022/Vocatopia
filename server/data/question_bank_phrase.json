@@ -26,7 +26,7 @@
       "(C) in",
       "(D) of"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "表示在某個定點用介系詞 at。at the bus stop 指在公車站等車，故選 at。",
     "phrase_type": "preposition",
     "id": "phrase_1",
@@ -515,7 +515,7 @@
       "(C) clean out",
       "(D) clean up"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "晚餐前要把房間「整理乾淨」，故選 clean up。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_26",
@@ -656,7 +656,7 @@
       "(C) depend for",
       "(D) depend at"
     ],
-    "answer": 3,
+    "answer": 0,
     "explanation": "是否去健行「取決於」天氣，故選 depend on。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_33",
@@ -676,7 +676,7 @@
       "(C) belong for",
       "(D) belong at"
     ],
-    "answer": 1,
+    "answer": 0,
     "explanation": "這台舊腳踏車以前「屬於」爺爺，故選 belong to。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_34",
@@ -696,7 +696,7 @@
       "(C) agree to",
       "(D) agree with"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "表達不「同意」對方的意見，故選 agree with。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_35",
@@ -1298,7 +1298,7 @@
       "(C) came up with",
       "(D) came up against"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "新經理很快就「遭遇」員工強烈的抵制，故選 came up against。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_65",
@@ -1478,7 +1478,7 @@
       "(C) count up",
       "(D) count out"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "遇到困難時總能「依靠」最好的朋友，故選 count on。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_74",
@@ -1498,7 +1498,7 @@
       "(C) deal with",
       "(D) deal in"
     ],
-    "answer": 3,
+    "answer": 2,
     "explanation": "「應付」難搞的顧客並不容易，故選 deal with。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_75",
@@ -1598,7 +1598,7 @@
       "(C) account to",
       "(D) account for"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "塞車可以部分「解釋」他為何遲到，故選 account for。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_80",
@@ -1619,7 +1619,7 @@
       "(C) came up with",
       "(D) came along with"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "Jenny 今天請假在家是因為她「染上」重感冒，故選 came down with。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_81",
@@ -1639,7 +1639,7 @@
       "(C) do away with",
       "(D) do over with"
     ],
-    "answer": 3,
+    "answer": 2,
     "explanation": "新經理決定完全「廢除」舊有沒效率的制度，故選 do away with。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_82",
@@ -1879,7 +1879,7 @@
       "(C) back off",
       "(D) back out"
     ],
-    "answer": 1,
+    "answer": 0,
     "explanation": "應該隨時「備份」重要檔案以防電腦當機，故選 back up。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_94",
@@ -1899,7 +1899,7 @@
       "(C) brush over on",
       "(D) brush aside on"
     ],
-    "answer": 1,
+    "answer": 0,
     "explanation": "去法國前想「複習」法文，故選 brush up on。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_95",
@@ -2240,7 +2240,7 @@
       "(C) broke into",
       "(D) broke down"
     ],
-    "answer": 1,
+    "answer": 3,
     "explanation": "break down 指（車輛、機器）故障。車子在高速公路上故障，故選 broke down；break up 是分手、break into 是闖入。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -2259,7 +2259,7 @@
       "(C) bring up",
       "(D) bring back"
     ],
-    "answer": 1,
+    "answer": 2,
     "explanation": "bring up 指提起、提出話題。她不想在餐桌上提起錢的話題，故選 bring up；bring back 是帶回、恢復。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -2316,7 +2316,7 @@
       "(C) check up",
       "(D) check in"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "check in 指辦理入住。太早到飯店，三點才能辦理入住，故選 check in；check out 是退房。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -2335,7 +2335,7 @@
       "(C) close off",
       "(D) close up"
     ],
-    "answer": 2,
+    "answer": 0,
     "explanation": "close down 指（店家）歇業、關閉。老書店經營四十年後歇業，故選 close down；close up 是打烊。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -2373,7 +2373,7 @@
       "(C) cut in",
       "(D) cut down on"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "cut down on 指減少。醫生要他減少糖分攝取以維持健康，故選 cut down on；cut off 是切斷。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -3475,7 +3475,7 @@
       "(C) catch up with",
       "(D) catch up on"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "catch up on 指補做落後的事。假期終於有時間補足睡眠，故選 catch up on；catch up with 是趕上某人。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -3494,7 +3494,7 @@
       "(C) catch on with",
       "(D) catch up on"
     ],
-    "answer": 2,
+    "answer": 0,
     "explanation": "catch up with 指（在消息或進度上）趕上某人。離開多年後花時間才跟老同學敘舊、跟上近況，故選 catch up with。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -3532,7 +3532,7 @@
       "(C) counting on",
       "(D) counting down"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "count down 指倒數。下課鈴響前全班開始倒數最後十秒，故選 counting down；count on 是依靠。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -3551,7 +3551,7 @@
       "(C) deal on",
       "(D) deal for"
     ],
-    "answer": 3,
+    "answer": 0,
     "explanation": "deal with 指應付、處理。應付嚴格苛刻的顧客並不容易，故選 deal with；deal in 是經營、買賣。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -3570,7 +3570,7 @@
       "(C) back out",
       "(D) back off"
     ],
-    "answer": 1,
+    "answer": 0,
     "explanation": "back up 指備份。應隨時備份重要檔案以防筆電故障，故選 back up；back down 是讓步、放棄。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -3589,7 +3589,7 @@
       "(C) back off",
       "(D) back down"
     ],
-    "answer": 1,
+    "answer": 3,
     "explanation": "back down 指讓步、退讓。激烈爭吵後他最終讓步並道歉，故選 back down；back up 是備份。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -3646,7 +3646,7 @@
       "(C) brush up on",
       "(D) brush off on"
     ],
-    "answer": 1,
+    "answer": 2,
     "explanation": "brush up on 指複習、加強。面試前想加強自己的簡報技巧，故選 brush up on。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4292,7 +4292,7 @@
       "(C) came along with",
       "(D) came up with"
     ],
-    "answer": 2,
+    "answer": 0,
     "explanation": "come down with 指染上（疾病）。Tommy 今天請假在家是因為染上重感冒，故選 came down with。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4311,7 +4311,7 @@
       "(C) do away with",
       "(D) do out with"
     ],
-    "answer": 3,
+    "answer": 2,
     "explanation": "do away with 指廢除、擺脫。學校決定完全廢除過時的服儀規定，故選 do away with。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4368,7 +4368,7 @@
       "(C) come into",
       "(D) come along"
     ],
-    "answer": 2,
+    "answer": 0,
     "explanation": "come across 指偶然遇見（或發現）。沒約好卻在圖書館外巧遇，故選 came across；come into 是進入。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4425,7 +4425,7 @@
       "(C) blew away",
       "(D) blew out"
     ],
-    "answer": 1,
+    "answer": 2,
     "explanation": "blow away 指被風吹走。露營時暴風差點把帳篷吹走，故選 blew away；blow out 是吹熄。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4444,7 +4444,7 @@
       "(C) blow away",
       "(D) blow off"
     ],
-    "answer": 1,
+    "answer": 0,
     "explanation": "blow out 指吹熄。離開房間前記得吹熄蠟燭，故選 blow out；blow up 是爆炸。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4463,7 +4463,7 @@
       "(C) broke into",
       "(D) broke out"
     ],
-    "answer": 1,
+    "answer": 0,
     "explanation": "break down 指損壞、倒塌。老舊的橋在數十年使用後終於損壞，故選 broke down；break out 是爆發。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4596,7 +4596,7 @@
       "(C) put on",
       "(D) hand in"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "clean out 指徹底清空。客人來之前要徹底清空儲藏室，故選 clean out；clean up 是整理乾淨。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4615,7 +4615,7 @@
       "(C) depend on",
       "(D) depend to"
     ],
-    "answer": 3,
+    "answer": 2,
     "explanation": "depend on 指取決於。野餐是否舉行完全取決於天氣，故選 depend on。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4634,7 +4634,7 @@
       "(C) agree at",
       "(D) agree on"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "agree with 指同意（某人的看法或做法）。表達不同意在沒告知任何人的情況下退隊的決定，故選 agree with。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4653,7 +4653,7 @@
       "(C) belong with",
       "(D) belong to"
     ],
-    "answer": 1,
+    "answer": 3,
     "explanation": "belong to 指屬於。這個古董鐘一百年前屬於我的曾祖母，故選 belong to。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4691,7 +4691,7 @@
       "(C) deal on",
       "(D) deal for"
     ],
-    "answer": 3,
+    "answer": 0,
     "explanation": "deal with 指應付、處理。漲價後店主必須應付數十位憤怒的顧客，故選 deal with。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4710,7 +4710,7 @@
       "(C) came out with",
       "(D) came up against"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "come up against 指遭遇（阻力、反對）。公司新標誌在網路上遭遇不少批評，故選 came up against。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4900,7 +4900,7 @@
       "(C) count out on",
       "(D) count down on"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "count on 指依靠。心情不好時總能依靠奶奶讓你好過一些，故選 count on。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -4957,7 +4957,7 @@
       "(C) at any rate",
       "(D) at any cost"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "at any rate 指無論如何。不確定她是否會同意，但無論如何該先問她，故選 at any rate。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -5052,7 +5052,7 @@
       "(C) in the blink of an eye",
       "(D) at the drop of a hat"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "at the drop of a hat 指動不動就。表弟動不動就難過，幾乎任何小事都能讓他哭，故選 at the drop of a hat。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -5204,7 +5204,7 @@
       "(C) At all costs",
       "(D) Against all odds"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "against all odds 指儘管困難重重。實力較弱的隊伍儘管困難重重最終贏得冠軍，故選 Against all odds。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -5223,7 +5223,7 @@
       "(C) Now and then",
       "(D) Off and on"
     ],
-    "answer": 1,
+    "answer": 0,
     "explanation": "by and large 指整體而言。整體而言博物館的新展覽獲得大多正面評價，故選 By and large。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -5318,7 +5318,7 @@
       "(C) at once",
       "(D) at a time"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "at once 指立刻。救生員要求大家立刻離開泳池，故選 at once。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -5451,7 +5451,7 @@
       "(C) As to",
       "(D) According to"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "according to 指根據。根據氣象報告，這週末颱風將侵襲該島，故選 According to。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -5546,7 +5546,7 @@
       "(C) In case",
       "(D) By the way"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "all in all 指總的來說。總的來說，今年的科展對我們學校是一大成功，故選 All in all。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -5850,7 +5850,7 @@
       "(C) so far",
       "(D) all the same"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "all the same 指儘管如此、仍然。他忘詞了，儘管如此仍設法繼續演下去，故選 all the same。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -5888,7 +5888,7 @@
       "(C) So far",
       "(D) All the same"
     ],
-    "answer": 1,
+    "answer": 0,
     "explanation": "by all means 指當然可以。回應對方可以借用計算機，故選 By all means。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -5926,7 +5926,7 @@
       "(C) At the same time",
       "(D) On the other hand"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "at the same time 此處指同時、話雖如此。同時這確實是個困難的決定，理解你猶豫的原因，故選 At the same time。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -5983,7 +5983,7 @@
       "(C) At the same time",
       "(D) In other words"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "as far as I know 指據我所知。據我所知新同學還沒交到朋友，但才過一週，故選 As far as I know。",
     "phrase_type": "expression",
     "optionsZh": [

@@ -102,7 +102,7 @@
       "(C) departed",
       "(D) returned"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "arrive 指抵達。公車比平常晚到站，故選 arrived；depart 是出發，語意相反。",
     "pos": "動詞",
     "id": "vocab_5",
@@ -340,7 +340,7 @@
       "(C) dictionary",
       "(D) calendar"
     ],
-    "answer": 3,
+    "answer": 2,
     "explanation": "dictionary 指字典。查詢不懂的單字要用字典，故選 dictionary。",
     "pos": "名詞",
     "id": "vocab_17",
@@ -466,7 +466,7 @@
       "(C) paint",
       "(D) fix"
     ],
-    "answer": 1,
+    "answer": 0,
     "explanation": "break 指打破。洗杯子時要小心避免打破，故選 break。",
     "pos": "動詞",
     "id": "vocab_23",
@@ -487,7 +487,7 @@
       "(C) closet",
       "(D) backpack"
     ],
-    "answer": 1,
+    "answer": 3,
     "explanation": "backpack 指背包。把書和便當放進背包準備上學，故選 backpack。",
     "pos": "名詞",
     "id": "vocab_24",
@@ -508,7 +508,7 @@
       "(C) stop",
       "(D) begin"
     ],
-    "answer": 1,
+    "answer": 3,
     "explanation": "begin 指開始。電影七點要開始了必須趕快，故選 begin；end 結束語意相反。",
     "pos": "動詞",
     "id": "vocab_25",
@@ -592,7 +592,7 @@
       "(C) peaceful",
       "(D) silent"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "crowded 指擁擠的。夜市人多到幾乎無法移動，故選 crowded；peaceful、silent 皆與擁擠情境相反。",
     "pos": "形容詞",
     "id": "vocab_29",
@@ -634,7 +634,7 @@
       "(C) delicious",
       "(D) spicy"
     ],
-    "answer": 3,
+    "answer": 2,
     "explanation": "delicious 指美味的。大家都要求再吃一塊，暗示蛋糕非常好吃，故選 delicious。",
     "pos": "形容詞",
     "id": "vocab_31",
@@ -781,7 +781,7 @@
       "(C) heavy",
       "(D) hard"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "comfortable 指舒適的。坐在上面總是不小心睡著，暗示沙發很舒適，故選 comfortable。",
     "pos": "形容詞",
     "id": "vocab_38",
@@ -844,7 +844,7 @@
       "(C) sell",
       "(D) throw away"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "collect 指收集。當作興趣收集各國郵票，故選 collect。",
     "pos": "動詞",
     "id": "vocab_41",
@@ -865,7 +865,7 @@
       "(C) noisy",
       "(D) dangerous"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "convenient 指方便的。住在捷運站附近對上班族來說很方便，故選 convenient。",
     "pos": "形容詞",
     "id": "vocab_42",
@@ -949,7 +949,7 @@
       "(C) accompany",
       "(D) follow"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "accompany 指陪同。妹妹怕黑，所以決定晚上陪她去廁所，故選 accompany。",
     "pos": "動詞",
     "id": "vocab_46",
@@ -970,7 +970,7 @@
       "(C) confident",
       "(D) anxious"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "anxious 指焦慮的。班機延誤數小時使乘客越來越焦慮，故選 anxious。",
     "pos": "形容詞",
     "id": "vocab_47",
@@ -991,7 +991,7 @@
       "(C) reach",
       "(D) pursue"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "achieve 指達成。訓練一整年終於達成奧運夢想，故選 achieve。",
     "pos": "動詞",
     "id": "vocab_48",
@@ -1117,7 +1117,7 @@
       "(C) avoid",
       "(D) enter"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "avoid 指避免。道路施工，駕駛被告知尖峰時間要避開該區域，故選 avoid。",
     "pos": "動詞",
     "id": "vocab_54",
@@ -1138,7 +1138,7 @@
       "(C) ashamed",
       "(D) confident"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "confident 指有自信的。雖是第一次參加演講比賽，Mia 站上台看起來很有自信，故選 confident。",
     "pos": "形容詞",
     "id": "vocab_55",
@@ -1243,7 +1243,7 @@
       "(C) admire",
       "(D) blame"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "admire 指欽佩。老師總是耐心幫助學生，因此許多學生欽佩她，故選 admire。",
     "pos": "動詞",
     "id": "vocab_60",
@@ -1348,7 +1348,7 @@
       "(C) apparently",
       "(D) probably"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "apparently 指據說、顯然。經理又遲到了，據說他的車在高速公路上拋錨，故選 apparently。",
     "pos": "副詞",
     "id": "vocab_65",
@@ -1390,7 +1390,7 @@
       "(C) come across",
       "(D) come over"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "come up with 指想出。設計團隊整週都在設法想出包裝新方案，故選 come up with。",
     "pos": "片語動詞",
     "id": "vocab_67",
@@ -1474,7 +1474,7 @@
       "(C) hardly",
       "(D) possibly"
     ],
-    "answer": 3,
+    "answer": 0,
     "explanation": "definitely 指確定地。雖然計畫尚未定案，經理仍表示活動下個月一定會舉行，故選 definitely。",
     "pos": "副詞",
     "id": "vocab_71",
@@ -1516,7 +1516,7 @@
       "(C) carry over",
       "(D) carry out"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "carry out 指執行。開新店前公司需要先執行詳細的市場調查，故選 carry out。",
     "pos": "片語動詞",
     "id": "vocab_73",
@@ -1621,7 +1621,7 @@
       "(C) selfish",
       "(D) careless"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "considerate 指體貼的。體貼的室友總會在別人睡覺時放低音量，故選 considerate。",
     "pos": "形容詞",
     "id": "vocab_78",
@@ -1642,7 +1642,7 @@
       "(C) break up",
       "(D) break in"
     ],
-    "answer": 1,
+    "answer": 0,
     "explanation": "break down 指故障。前往機場途中車子突然故障，只好叫計程車，故選 break down。",
     "pos": "片語動詞",
     "id": "vocab_79",
@@ -1663,7 +1663,7 @@
       "(C) call on",
       "(D) carry out"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "call off 指取消。暴風警報剛發布，主辦單位擔心安全便決定取消戶外演唱會，故選 call off。",
     "pos": "片語動詞",
     "id": "vocab_80",
@@ -1705,7 +1705,7 @@
       "(C) demonstrate",
       "(D) imagine"
     ],
-    "answer": 3,
+    "answer": 2,
     "explanation": "demonstrate 指證明。理論當初聽起來很怪，但後來的實驗證明它是對的，故選 demonstrate。",
     "pos": "動詞",
     "id": "vocab_82",
@@ -1852,7 +1852,7 @@
       "(C) go along",
       "(D) come across"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "come across 指偶然發現。整理祖母多年未動的閣樓時，她偶然發現一疊手寫信件，故選 come across。",
     "pos": "片語動詞",
     "id": "vocab_89",
@@ -1894,7 +1894,7 @@
       "(C) complain",
       "(D) compensate"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "compensate 指補償。航空公司無預警取消班機導致乘客錯過重要行程，公司同意以票券補償，故選 compensate。",
     "pos": "動詞",
     "id": "vocab_91",
@@ -2062,7 +2062,7 @@
       "(C) keep in touch with",
       "(D) put up with"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "come to terms with 指接受(難以接受的事實)。離婚近兩年後，她才終於開始接受舊生活真正結束的事實，故選 come to terms with。",
     "pos": "片語動詞",
     "id": "vocab_99",
@@ -2083,7 +2083,7 @@
       "(C) at the expense of",
       "(D) in spite of"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "at the expense of 指以...為代價。年輕主管為了升遷每晚加班，常以健康與家庭時間為代價，故選 at the expense of。",
     "pos": "介系詞片語",
     "id": "vocab_100",
@@ -2104,7 +2104,7 @@
       "(C) a piece of cake",
       "(D) a blessing in disguise"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "a blessing in disguise 指因禍得福。失業當時看似災難，卻促使他開始夢想已久的事業，故選 a blessing in disguise。",
     "pos": "慣用語",
     "id": "vocab_101",
@@ -2167,7 +2167,7 @@
       "(C) bite the bullet",
       "(D) break the ice"
     ],
-    "answer": 1,
+    "answer": 2,
     "explanation": "bite the bullet 指咬緊牙關面對。雖然害怕看牙醫，他終於決定硬著頭皮預約已拖延數月的看診，故選 bite the bullet。",
     "pos": "慣用語",
     "id": "vocab_104",
@@ -2293,7 +2293,7 @@
       "(C) cut in line",
       "(D) cut corners"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "cut corners 指偷工減料。承包商為了趕在期限前完工開始偷工減料，之後造成嚴重的安全問題，故選 cut corners。",
     "pos": "慣用語",
     "id": "vocab_110",
@@ -2335,7 +2335,7 @@
       "(C) apologize",
       "(D) argue"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "apologize 指道歉。不小心踩到別人的腳應該道歉，故選 apologize；complain 抱怨語意不符。",
     "pos": "動詞",
     "id": "vocab_112",
@@ -2354,7 +2354,7 @@
       "(C) appreciate",
       "(D) doubt"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "appreciate 指感激。他人幫忙寫功課應心懷感激，故選 appreciate。",
     "pos": "動詞",
     "id": "vocab_113",
@@ -2392,7 +2392,7 @@
       "(C) refuse",
       "(D) attend"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "attend 指出席。學生每週一早上都必須出席週會，故選 attend。",
     "pos": "動詞",
     "id": "vocab_115",
@@ -2411,7 +2411,7 @@
       "(C) cancel",
       "(D) celebrate"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "celebrate 指慶祝。全家聚在一起慶祝爺爺八十歲生日，故選 celebrate。",
     "pos": "動詞",
     "id": "vocab_116",
@@ -2430,7 +2430,7 @@
       "(C) apologize",
       "(D) praise"
     ],
-    "answer": 2,
+    "answer": 0,
     "explanation": "complain 指抱怨。上菜等超過一小時，顧客開始大聲抱怨，故選 complain。",
     "pos": "動詞",
     "id": "vocab_117",
@@ -2449,7 +2449,7 @@
       "(C) produces",
       "(D) needs"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "contain 指含有。果汁含糖量高，不宜喝太多，故選 contains。",
     "pos": "動詞",
     "id": "vocab_118",
@@ -2487,7 +2487,7 @@
       "(C) express",
       "(D) control"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "control 指控制。生氣時應控制脾氣而非對人吼叫，故選 control。",
     "pos": "動詞",
     "id": "vocab_120",
@@ -2506,7 +2506,7 @@
       "(C) catch",
       "(D) cause"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "cure 指治癒。醫生努力研發新藥治癒疾病，故選 cure。",
     "pos": "動詞",
     "id": "vocab_121",
@@ -2525,7 +2525,7 @@
       "(C) built",
       "(D) protected"
     ],
-    "answer": 3,
+    "answer": 1,
     "explanation": "damage 指損害。強烈風暴損毀了沿海許多房屋，故選 damaged。",
     "pos": "動詞",
     "id": "vocab_122",
@@ -2544,7 +2544,7 @@
       "(C) hide",
       "(D) clean"
     ],
-    "answer": 3,
+    "answer": 0,
     "explanation": "decorate 指裝飾。十二月家家戶戶用彩燈和裝飾品裝飾房子，故選 decorate。",
     "pos": "動詞",
     "id": "vocab_123",
@@ -2582,7 +2582,7 @@
       "(C) deliver",
       "(D) buy"
     ],
-    "answer": 3,
+    "answer": 2,
     "explanation": "deliver 指遞送。公司承諾三天內遞送包裹，故選 deliver。",
     "pos": "動詞",
     "id": "vocab_125",
@@ -2601,7 +2601,7 @@
       "(C) hide",
       "(D) forget"
     ],
-    "answer": 3,
+    "answer": 1,
     "explanation": "describe 指描述。向警察描述小偷的外貌，故選 describe。",
     "pos": "動詞",
     "id": "vocab_126",
@@ -2620,7 +2620,7 @@
       "(C) develop",
       "(D) reject"
     ],
-    "answer": 3,
+    "answer": 2,
     "explanation": "develop 指開發。科學家嘗試開發更便宜的乾淨能源生產方式，故選 develop。",
     "pos": "動詞",
     "id": "vocab_127",
@@ -2696,7 +2696,7 @@
       "(C) collect",
       "(D) join"
     ],
-    "answer": 3,
+    "answer": 1,
     "explanation": "divide 指分成。老師決定將班級分成四小組進行專案，故選 divide。",
     "pos": "動詞",
     "id": "vocab_131",
@@ -3532,7 +3532,7 @@
       "(C) greet",
       "(D) attack"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "attack 指攻擊。陌生人試圖攻擊主人，小狗因此大聲吠叫，故選 attack。",
     "pos": "動詞",
     "id": "vocab_175",
@@ -3570,7 +3570,7 @@
       "(C) advantage",
       "(D) appearance"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "accident 指意外事故。高速公路上的意外事故造成今早長長的塞車，故選 accident。",
     "pos": "名詞",
     "id": "vocab_177",
@@ -3646,7 +3646,7 @@
       "(C) article",
       "(D) advertisement"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "article 指文章。今早在報紙上讀到一篇關於海洋污染的有趣文章，故選 article。",
     "pos": "名詞",
     "id": "vocab_181",
@@ -3684,7 +3684,7 @@
       "(C) heart",
       "(D) arm"
     ],
-    "answer": 1,
+    "answer": 0,
     "explanation": "brain 指大腦。每天讀書對大腦是很好的運動，故選 brain。",
     "pos": "名詞",
     "id": "vocab_183",
@@ -3703,7 +3703,7 @@
       "(C) hobby",
       "(D) career"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "career 指職業生涯。大學畢業後她展開護理師的職業生涯，故選 career。",
     "pos": "名詞",
     "id": "vocab_184",
@@ -3722,7 +3722,7 @@
       "(C) change",
       "(D) choice"
     ],
-    "answer": 2,
+    "answer": 0,
     "explanation": "chance 指機會。這趟日本行可能是親眼看櫻花的唯一機會，故選 chance。",
     "pos": "名詞",
     "id": "vocab_185",
@@ -3741,7 +3741,7 @@
       "(C) actor",
       "(D) artist"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "character 指角色。電影主角是拯救村莊的勇敢女孩，故選 character。",
     "pos": "名詞",
     "id": "vocab_186",
@@ -3760,7 +3760,7 @@
       "(C) guest",
       "(D) customer"
     ],
-    "answer": 2,
+    "answer": 0,
     "explanation": "citizen 指公民。身為好公民應遵守國家的法律，故選 citizen。",
     "pos": "名詞",
     "id": "vocab_187",
@@ -3798,7 +3798,7 @@
       "(C) contact",
       "(D) command"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "comment 指評語。老師在作文上寫了簡短評語說明該改進之處，故選 comment。",
     "pos": "名詞",
     "id": "vocab_189",
@@ -3817,7 +3817,7 @@
       "(C) opinion",
       "(D) conversation"
     ],
-    "answer": 2,
+    "answer": 0,
     "explanation": "conflict 指衝突。兩位鄰居因院子間籬笆位置起了衝突，故選 conflict。",
     "pos": "名詞",
     "id": "vocab_190",
@@ -3836,7 +3836,7 @@
       "(C) fear",
       "(D) courage"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "courage 指勇氣。在全校面前演講需要很大的勇氣，故選 courage。",
     "pos": "名詞",
     "id": "vocab_191",
@@ -3855,7 +3855,7 @@
       "(C) mistake",
       "(D) accident"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "crime 指犯罪。偷別人的錢是嚴重的犯罪行為，故選 crime。",
     "pos": "名詞",
     "id": "vocab_192",
@@ -3874,7 +3874,7 @@
       "(C) progress",
       "(D) advantage"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "crisis 指危機。公司失去最大客戶後面臨財務危機，故選 crisis。",
     "pos": "名詞",
     "id": "vocab_193",
@@ -3893,7 +3893,7 @@
       "(C) climate",
       "(D) custom"
     ],
-    "answer": 2,
+    "answer": 0,
     "explanation": "culture 指文化。到不同國家旅行有助於了解他人的文化，故選 culture。",
     "pos": "名詞",
     "id": "vocab_194",
@@ -3912,7 +3912,7 @@
       "(C) course",
       "(D) cost"
     ],
-    "answer": 2,
+    "answer": 0,
     "explanation": "custom 指習俗。進屋前脫鞋在台灣是常見習俗，故選 custom。",
     "pos": "名詞",
     "id": "vocab_195",
@@ -3931,7 +3931,7 @@
       "(C) interview",
       "(D) conversation"
     ],
-    "answer": 3,
+    "answer": 1,
     "explanation": "debate 指辯論。班上針對是否該穿制服舉行辯論，故選 debate。",
     "pos": "名詞",
     "id": "vocab_196",
@@ -3950,7 +3950,7 @@
       "(C) level",
       "(D) class"
     ],
-    "answer": 3,
+    "answer": 0,
     "explanation": "degree 指學位。她去年從大學取得生物學學位，故選 degree。",
     "pos": "名詞",
     "id": "vocab_197",
@@ -3969,7 +3969,7 @@
       "(C) doubt",
       "(D) fear"
     ],
-    "answer": 3,
+    "answer": 0,
     "explanation": "desire 指渴望。想成為醫生的強烈渴望驅使他努力讀書，故選 desire。",
     "pos": "名詞",
     "id": "vocab_198",
@@ -3988,7 +3988,7 @@
       "(C) distance",
       "(D) area"
     ],
-    "answer": 3,
+    "answer": 2,
     "explanation": "distance 指距離。兩城市間的距離約兩百公里，故選 distance。",
     "pos": "名詞",
     "id": "vocab_199",
@@ -4007,7 +4007,7 @@
       "(C) favor",
       "(D) habit"
     ],
-    "answer": 3,
+    "answer": 1,
     "explanation": "duty 指職責。確保員工遵守安全規則是經理的職責，故選 duty。",
     "pos": "名詞",
     "id": "vocab_200",
@@ -5261,7 +5261,7 @@
       "(C) careless",
       "(D) active"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "active 指活躍的。祖父仍很活躍，每週末都去健行，故選 active。",
     "pos": "形容詞",
     "id": "vocab_266",
@@ -5280,7 +5280,7 @@
       "(C) recent",
       "(D) ancient"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "ancient 指古代的。博物館展示許多數千年前使用的古老工具，故選 ancient；modern 現代的語意相反。",
     "pos": "形容詞",
     "id": "vocab_267",
@@ -5318,7 +5318,7 @@
       "(C) aware",
       "(D) careful"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "aware 指知道、意識到的。她沒意識到手機從包包掉出來了，故選 aware。",
     "pos": "形容詞",
     "id": "vocab_269",
@@ -5337,7 +5337,7 @@
       "(C) selfish",
       "(D) brave"
     ],
-    "answer": 1,
+    "answer": 3,
     "explanation": "brave 指勇敢的。男孩跳入河中救溺水的狗是很勇敢的行為，故選 brave。",
     "pos": "形容詞",
     "id": "vocab_270",
@@ -5375,7 +5375,7 @@
       "(C) worried",
       "(D) nervous"
     ],
-    "answer": 2,
+    "answer": 0,
     "explanation": "calm 指冷靜的。即使消防演習期間，老師仍保持冷靜帶學生到戶外，故選 calm。",
     "pos": "形容詞",
     "id": "vocab_272",
@@ -5394,7 +5394,7 @@
       "(C) polite",
       "(D) careful"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "careless 指粗心的。整晚沒鎖門是粗心的行為，故選 careless；careful 小心的語意相反。",
     "pos": "形容詞",
     "id": "vocab_273",
@@ -5413,7 +5413,7 @@
       "(C) valuable",
       "(D) expensive"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "cheap 指便宜的。夜市賣許多便宜卻美味的小吃，故選 cheap；expensive 昂貴語意相反。",
     "pos": "形容詞",
     "id": "vocab_274",
@@ -5432,7 +5432,7 @@
       "(C) foolish",
       "(D) careless"
     ],
-    "answer": 2,
+    "answer": 0,
     "explanation": "clever 指聰明的。這隻聰明的狐狸不用爬樹就找到方法拿到葡萄，故選 clever。",
     "pos": "形容詞",
     "id": "vocab_275",
@@ -5470,7 +5470,7 @@
       "(C) formal",
       "(D) empty"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "complete 指完成的。工程已完成，新圖書館下週開幕，故選 complete。",
     "pos": "形容詞",
     "id": "vocab_277",
@@ -5489,7 +5489,7 @@
       "(C) dangerous",
       "(D) calm"
     ],
-    "answer": 3,
+    "answer": 2,
     "explanation": "dangerous 指危險的。獨自在深海游泳很危險，故選 dangerous；safe 安全語意相反。",
     "pos": "形容詞",
     "id": "vocab_278",
@@ -5527,7 +5527,7 @@
       "(C) lazy",
       "(D) rude"
     ],
-    "answer": 3,
+    "answer": 1,
     "explanation": "diligent 指勤奮的。身為勤奮的學生，Mary 總是先完成作業才玩遊戲，故選 diligent。",
     "pos": "形容詞",
     "id": "vocab_280",
