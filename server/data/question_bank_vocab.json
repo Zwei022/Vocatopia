@@ -102,7 +102,7 @@
       "(C) arrived",
       "(D) escaped"
     ],
-    "answer": 2,
+    "answer": 0,
     "explanation": "arrive 指抵達。公車比平常晚到站，故選 arrived；depart 是出發，語意相反。",
     "pos": "動詞",
     "id": "vocab_5",
@@ -114,7 +114,7 @@
     ]
   },
   {
-    "sentence": "The hotel room was very _____ ; we could hear every word from the people next door.",
+    "sentence": "The hotel room was very _____; we could hear every word from the people next door.",
     "options": [
       "(A) silent",
       "(B) clean",

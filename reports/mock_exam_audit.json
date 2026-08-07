@@ -1,0 +1,57 @@
+{
+  "auditDate": "2026-08-07",
+  "scope": {
+    "pattern": "server/data/gsat_sim_2023_reading_*.json",
+    "files": 10,
+    "questions": 430,
+    "excluded": ["daily question banks", "words"]
+  },
+  "result": "content_pass_spec_changes_required",
+  "checks": {
+    "jsonParse": { "status": "pass", "failures": 0 },
+    "schema": { "status": "pass", "failures": 0 },
+    "numbering": { "status": "pass", "failures": 0 },
+    "answerIndex": { "status": "pass", "failures": 0 },
+    "fourOptions": { "status": "pass", "failures": 0 },
+    "optionsZhAlignment": { "status": "pass", "failures": 0 },
+    "explanationsPresent": { "status": "pass", "failures": 0 },
+    "clozeMarkers": { "status": "pass", "failures": 0 },
+    "exactDuplicateQuestions": { "status": "pass", "failures": 0 },
+    "exactDuplicatePassages": { "status": "pass", "failures": 0 },
+    "uniqueCorrectAnswer": { "status": "pass", "confirmedIssues": 0 },
+    "passageEvidence": { "status": "pass", "confirmedIssues": 0 },
+    "ambiguity": { "status": "pass", "confirmedIssues": 0 },
+    "passageLength": { "status": "fail", "targetWords": [230, 245], "failures": 20 },
+    "setStructureConsistency": { "status": "warning", "failures": 1 }
+  },
+  "answerDistributionPerFile": [11, 11, 11, 10],
+  "issues": [
+    { "file": "gsat_sim_2023_reading_1.json", "range": "22-23", "type": "passage_length", "words": 249, "title": "The Lost Wallet" },
+    { "file": "gsat_sim_2023_reading_1.json", "range": "24-26", "type": "passage_length", "words": 203, "title": "Why Do Leaves Change Color?" },
+    { "file": "gsat_sim_2023_reading_1.json", "range": "27-28", "type": "passage_length", "words": 202, "title": "A Weekend Job?" },
+    { "file": "gsat_sim_2023_reading_2.json", "range": "28-30", "type": "passage_length", "words": 223, "title": "An Old Friend Returns" },
+    { "file": "gsat_sim_2023_reading_2.json", "range": "31-34", "type": "passage_length", "words": 220, "title": "The Story of Paper" },
+    { "file": "gsat_sim_2023_reading_3.json", "range": "31-34", "type": "passage_length", "words": 229, "title": "The Surprising History of the Umbrella" },
+    { "file": "gsat_sim_2023_reading_4.json", "range": "22-24", "type": "passage_length", "words": 224, "title": "A Night on the Mountain Trail" },
+    { "file": "gsat_sim_2023_reading_4.json", "range": "25-27", "type": "passage_length", "words": 221, "title": "How Are Bridges Built?" },
+    { "file": "gsat_sim_2023_reading_4.json", "range": "28-30", "type": "passage_length", "words": 182, "title": "A Talk Before the Concert" },
+    { "file": "gsat_sim_2023_reading_4.json", "range": "31-34", "type": "passage_length", "words": 224, "title": "Beneath the Surface: The Secret Life of Coral Reefs" },
+    { "file": "gsat_sim_2023_reading_5.json", "range": "22-24", "type": "passage_length", "words": 252, "title": "First Day at the Bakery" },
+    { "file": "gsat_sim_2023_reading_5.json", "range": "25-27", "type": "passage_length", "words": 221, "title": "How Volcanoes Form" },
+    { "file": "gsat_sim_2023_reading_5.json", "range": "31-34", "type": "passage_length", "words": 223, "title": "A Sweet History: The Story of Chocolate" },
+    { "file": "gsat_sim_2023_reading_6.json", "range": "25-28", "type": "passage_length", "words": 218, "title": "Why Do Some Animals Travel So Far?" },
+    { "file": "gsat_sim_2023_reading_7.json", "range": "22-24", "type": "passage_length", "words": 263, "title": "The Woman Next Door" },
+    { "file": "gsat_sim_2023_reading_7.json", "range": "25-27", "type": "passage_length", "words": 229, "title": "How Does a Rainbow Form?" },
+    { "file": "gsat_sim_2023_reading_7.json", "range": "28-30", "type": "passage_length", "words": 225, "title": "Looking Down Without Fear" },
+    { "file": "gsat_sim_2023_reading_8.json", "range": "28-30", "type": "passage_length", "words": 227, "title": "My First Real Meal" },
+    { "file": "gsat_sim_2023_reading_10.json", "range": "25-27", "type": "passage_length", "words": 223, "title": "Why Is the Sky Blue?" },
+    { "file": "gsat_sim_2023_reading_10.json", "range": "28-30", "type": "passage_length", "words": 292, "title": "Finding My Way: A Conversation on the First Day" },
+    { "file": "gsat_sim_2023_reading_1.json", "type": "structure_consistency", "actualPassages": 8, "expectedPassages": 7, "detail": "Contains three informational passages; sets 2-10 contain two." }
+  ],
+  "falsePositivesReviewed": [
+    { "file": "gsat_sim_2023_reading_4.json", "question": 21, "answer": 3, "status": "correct" },
+    { "file": "gsat_sim_2023_reading_9.json", "question": 34, "answer": 2, "status": "correct" },
+    { "file": "gsat_sim_2023_reading_10.json", "question": 20, "answer": 1, "status": "correct" },
+    { "file": "gsat_sim_2023_reading_10.json", "question": 21, "answer": 0, "status": "correct" }
+  ]
+}

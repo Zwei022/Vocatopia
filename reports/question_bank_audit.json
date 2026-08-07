@@ -1,0 +1,264 @@
+{
+  "generatedAt": "2026-08-07T07:12:03.171Z",
+  "scope": [
+    "question_bank_cloze.json",
+    "question_bank_grammar.json",
+    "question_bank_listening.json",
+    "question_bank_phrase.json",
+    "question_bank_reading.json",
+    "question_bank_vocab.json",
+    "question_bank_vocab_practice.json"
+  ],
+  "stats": {
+    "question_bank_cloze.json": {
+      "records": 81,
+      "units": 341,
+      "answers": {
+        "A": 96,
+        "B": 91,
+        "C": 75,
+        "D": 79
+      },
+      "types": {},
+      "answerPercent": {
+        "A": 28.2,
+        "B": 26.7,
+        "C": 22,
+        "D": 23.2
+      }
+    },
+    "question_bank_grammar.json": {
+      "records": 312,
+      "units": 312,
+      "answers": {
+        "A": 74,
+        "B": 86,
+        "C": 75,
+        "D": 77
+      },
+      "types": {},
+      "answerPercent": {
+        "A": 23.7,
+        "B": 27.6,
+        "C": 24,
+        "D": 24.7
+      }
+    },
+    "question_bank_listening.json": {
+      "records": 80,
+      "units": 80,
+      "answers": {
+        "A": 19,
+        "B": 26,
+        "C": 35,
+        "D": 0
+      },
+      "types": {},
+      "answerPercent": {
+        "A": 23.8,
+        "B": 32.5,
+        "C": 43.8,
+        "D": 0
+      }
+    },
+    "question_bank_phrase.json": {
+      "records": 312,
+      "units": 312,
+      "answers": {
+        "A": 66,
+        "B": 71,
+        "C": 92,
+        "D": 83
+      },
+      "types": {},
+      "answerPercent": {
+        "A": 21.2,
+        "B": 22.8,
+        "C": 29.5,
+        "D": 26.6
+      }
+    },
+    "question_bank_reading.json": {
+      "records": 92,
+      "units": 275,
+      "answers": {
+        "A": 74,
+        "B": 60,
+        "C": 69,
+        "D": 72
+      },
+      "types": {},
+      "answerPercent": {
+        "A": 26.9,
+        "B": 21.8,
+        "C": 25.1,
+        "D": 26.2
+      }
+    },
+    "question_bank_vocab.json": {
+      "records": 12,
+      "units": 12,
+      "answers": {
+        "A": 6,
+        "B": 1,
+        "C": 2,
+        "D": 3
+      },
+      "types": {},
+      "answerPercent": {
+        "A": 50,
+        "B": 8.3,
+        "C": 16.7,
+        "D": 25
+      }
+    },
+    "question_bank_vocab_practice.json": {
+      "records": 312,
+      "units": 312,
+      "answers": {
+        "A": 83,
+        "B": 58,
+        "C": 97,
+        "D": 74
+      },
+      "types": {},
+      "answerPercent": {
+        "A": 26.6,
+        "B": 18.6,
+        "C": 31.1,
+        "D": 23.7
+      }
+    }
+  },
+  "counts": {
+    "warning": 14
+  },
+  "findings": [
+    {
+      "file": "question_bank_listening.json",
+      "id": null,
+      "location": "file",
+      "severity": "warning",
+      "code": "ANSWER_DISTRIBUTION",
+      "message": "C 答案占 43.8%，偏離理想值 33.3% 超過 10%",
+      "evidence": null
+    },
+    {
+      "file": "question_bank_vocab_practice.json",
+      "id": "vocab_0",
+      "location": "[0]",
+      "severity": "warning",
+      "code": "CROSS_FILE_DUPLICATE",
+      "message": "題目與 question_bank_vocab.json / vocab_0 重複；若兩份題庫會同時抽題，使用者可能遇到重題",
+      "evidence": null
+    },
+    {
+      "file": "question_bank_vocab_practice.json",
+      "id": "vocab_1",
+      "location": "[1]",
+      "severity": "warning",
+      "code": "CROSS_FILE_DUPLICATE",
+      "message": "題目與 question_bank_vocab.json / vocab_1 重複；若兩份題庫會同時抽題，使用者可能遇到重題",
+      "evidence": null
+    },
+    {
+      "file": "question_bank_vocab_practice.json",
+      "id": "vocab_2",
+      "location": "[2]",
+      "severity": "warning",
+      "code": "CROSS_FILE_DUPLICATE",
+      "message": "題目與 question_bank_vocab.json / vocab_2 重複；若兩份題庫會同時抽題，使用者可能遇到重題",
+      "evidence": null
+    },
+    {
+      "file": "question_bank_vocab_practice.json",
+      "id": "vocab_3",
+      "location": "[3]",
+      "severity": "warning",
+      "code": "CROSS_FILE_DUPLICATE",
+      "message": "題目與 question_bank_vocab.json / vocab_3 重複；若兩份題庫會同時抽題，使用者可能遇到重題",
+      "evidence": null
+    },
+    {
+      "file": "question_bank_vocab_practice.json",
+      "id": "vocab_4",
+      "location": "[4]",
+      "severity": "warning",
+      "code": "CROSS_FILE_DUPLICATE",
+      "message": "題目與 question_bank_vocab.json / vocab_4 重複；若兩份題庫會同時抽題，使用者可能遇到重題",
+      "evidence": null
+    },
+    {
+      "file": "question_bank_vocab_practice.json",
+      "id": "vocab_5",
+      "location": "[5]",
+      "severity": "warning",
+      "code": "CROSS_FILE_DUPLICATE",
+      "message": "題目與 question_bank_vocab.json / vocab_5 重複；若兩份題庫會同時抽題，使用者可能遇到重題",
+      "evidence": null
+    },
+    {
+      "file": "question_bank_vocab_practice.json",
+      "id": "vocab_6",
+      "location": "[6]",
+      "severity": "warning",
+      "code": "CROSS_FILE_DUPLICATE",
+      "message": "題目與 question_bank_vocab.json / vocab_6 重複；若兩份題庫會同時抽題，使用者可能遇到重題",
+      "evidence": null
+    },
+    {
+      "file": "question_bank_vocab_practice.json",
+      "id": "vocab_7",
+      "location": "[7]",
+      "severity": "warning",
+      "code": "CROSS_FILE_DUPLICATE",
+      "message": "題目與 question_bank_vocab.json / vocab_7 重複；若兩份題庫會同時抽題，使用者可能遇到重題",
+      "evidence": null
+    },
+    {
+      "file": "question_bank_vocab_practice.json",
+      "id": "vocab_8",
+      "location": "[8]",
+      "severity": "warning",
+      "code": "CROSS_FILE_DUPLICATE",
+      "message": "題目與 question_bank_vocab.json / vocab_8 重複；若兩份題庫會同時抽題，使用者可能遇到重題",
+      "evidence": null
+    },
+    {
+      "file": "question_bank_vocab_practice.json",
+      "id": "vocab_9",
+      "location": "[9]",
+      "severity": "warning",
+      "code": "CROSS_FILE_DUPLICATE",
+      "message": "題目與 question_bank_vocab.json / vocab_9 重複；若兩份題庫會同時抽題，使用者可能遇到重題",
+      "evidence": null
+    },
+    {
+      "file": "question_bank_vocab_practice.json",
+      "id": "vocab_10",
+      "location": "[10]",
+      "severity": "warning",
+      "code": "CROSS_FILE_DUPLICATE",
+      "message": "題目與 question_bank_vocab.json / vocab_10 重複；若兩份題庫會同時抽題，使用者可能遇到重題",
+      "evidence": null
+    },
+    {
+      "file": "question_bank_vocab_practice.json",
+      "id": "vocab_11",
+      "location": "[11]",
+      "severity": "warning",
+      "code": "CROSS_FILE_DUPLICATE",
+      "message": "題目與 question_bank_vocab.json / vocab_11 重複；若兩份題庫會同時抽題，使用者可能遇到重題",
+      "evidence": null
+    },
+    {
+      "file": "question_bank_vocab_practice.json",
+      "id": null,
+      "location": "file",
+      "severity": "warning",
+      "code": "ANSWER_STREAK",
+      "message": "相同答案最長連續 12 題（建議少於 8 題）",
+      "evidence": null
+    }
+  ]
+}

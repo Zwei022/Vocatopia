@@ -108,8 +108,9 @@ function ttAnswerQuiz(idx) {
     const quizEl = document.getElementById('ttQuiz');
     if (quizEl) { quizEl.style.display = 'none'; quizEl.innerHTML = ''; }
     if (typeof quiz.onResolve === 'function') quiz.onResolve(correct);
-    // 恢復遊戲（若 onResolve 未觸發結束）
-    if (ttGame && !ttGame.gameOver) {
+    // 恢復遊戲（若 onResolve 未觸發結束，也沒有緊接著彈出新題目——例如閱讀理解
+    // 關卡結束後會直接接續60秒英文選擇題，這種情況要維持暫停，讓新題目接手）
+    if (ttGame && !ttGame.gameOver && !(ttGame.quiz && ttGame.quiz.active)) {
       ttGame.paused = false;
       _ttSetGravity(ttGame.softDropping ? TT_SOFTDROP_MS : ttGame.currentGravityMs);
     }
@@ -236,12 +237,17 @@ function _ttCheckReadingGate() {
 
 async function _ttTriggerReadingQuiz() {
   if (!ttGame || ttGame.gameOver) return;
+  // 閱讀理解關卡優先權最高：提前佔用暫停狀態，避免載入題目的空檔被60秒計時題
+  // 或消行快問搶先跳出——搶到的話 ttShowQuiz() 的守門條件會讓這次閱讀測驗
+  // 悄悄被吃掉（門檻已經往前推進到下一關，卻沒有真的跳出視窗）。
+  ttGame.paused = true;
   const q = await ttMakeReadingQuestion();
   if (!ttGame || ttGame.gameOver) return;   // 載入期間遊戲可能已結束/離開
   if (!q) {
     // 題庫載入失敗或暫時為空：把門檻退回去，下次分數變動時重新嘗試，
-    // 避免這一關卡因為一次性的載入失敗就永久跳過
+    // 避免這一關卡因為一次性的載入失敗就永久跳過；同時解除搶佔的暫停狀態。
     ttGame.nextReadingThreshold -= TT_READING_STEP;
+    ttGame.paused = false;
     return;
   }
   ttShowQuiz({
@@ -257,6 +263,12 @@ async function _ttTriggerReadingQuiz() {
         showToast('📖 閱讀理解答錯，左右兩側各鎖底部 6 格，填滿一整排即可解鎖該行');
       }
       ttRender();
+      // 閱讀測驗插隊搶走了這次60秒計時題的時機，結束後直接接續一題計時題補回來，
+      // 並重新起算下一輪倒數，避免緊接著又立刻再跳一次。
+      if (ttGame && !ttGame.gameOver) {
+        ttGame.nextQuizRemainingMs = TT_TIMED_PERIOD;
+        _ttTriggerTimedQuestion();
+      }
     },
   });
 }
@@ -285,7 +297,7 @@ function _ttSealedSkillMaybeUnseal(correct) {
 //   bonusSeconds — 飯糰/龍蝦(舊)：只能在英文選擇題（計時題）進行中手動施放，+N秒
 //   comboShield  — 鬆餅：被動技能，消行單字題答錯時自動觸發，無法手動施放
 //   choosePiece  — 可麗露：隨時可手動施放，跳出方塊表格指定下一個方塊，用後封印
-//   bombPiece    — 壽司：隨時可手動施放，下一個方塊變成壽司炸彈，鎖定時炸開 9×9 範圍，用後封印
+//   bombPiece    — 壽司：隨時可手動施放，下一個方塊變成壽司炸彈，鎖定時炸開 3×3 範圍，用後封印
 //   clearBottom  — 龍蝦：隨時可手動施放，直接清空棋盤最底 2 行（不管是否被鎖住），用後封印
 function ttInitSkill(ch) {
   if (!ttGame) return;
@@ -436,7 +448,7 @@ function ttChoosePiece(type) {
   showToast(`${ttGame.skillChar.skill.icon} 已指定下一個方塊，技能封印中`);
 }
 
-// ── 壽司：下一個方塊變成壽司炸彈（強制為單格方塊，鎖定時炸開 9×9 範圍） ──
+// ── 壽司：下一個方塊變成壽司炸彈（強制為單格方塊，鎖定時炸開 3×3 範圍） ──
 function _ttCastBombPiece() {
   if (!ttGame || !ttGame.engine) return;
   ttGame.engine.setNextType('M1');

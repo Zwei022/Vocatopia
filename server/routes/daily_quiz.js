@@ -5,6 +5,7 @@ const fs      = require('fs');
 const { isPremiumUser } = require('../lib/subscription');
 const { getUserId } = require('../lib/auth');
 const supabase = require('../db/supabase');
+const { taipeiDateString, taipeiDateSeed } = require('../lib/date');
 
 const DATA_DIR   = path.resolve(__dirname, '../data');
 
@@ -58,7 +59,7 @@ router.get('/:type', async (req, res) => {
   // 每日測驗（預設）一律截成日配額，付費會員也一樣 → 進度永遠顯示 1/5，不洩漏題庫總數。
   const unlimited = req.query.unlimited === '1' && premium;
   // 無限題庫每次都要不同的隨機序，不用固定日期種子；每日測驗維持日期種子（同一天同一份）。
-  const today = new Date().toISOString().split('T')[0].replace(/-/g, '');
+  const today = taipeiDateSeed();
   const seed  = unlimited
     ? ((Math.random() * 0xffffffff) >>> 0)
     : parseInt(today) + type.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
@@ -85,7 +86,7 @@ router.get('/:type', async (req, res) => {
     daily = seededShuffle(questions, seed).slice(0, dailySize);
   }
 
-  res.json({ type, date: new Date().toISOString().split('T')[0], questions: daily, premium, unlimited });
+  res.json({ type, date: taipeiDateString(), questions: daily, premium, unlimited });
 
   // 題庫消耗量追蹤（見 #16）：不擋回應，寫入失敗也不影響使用者體驗，純粹之後分析用。
   getUserId(req).then(userId => {

@@ -2,11 +2,15 @@ const express  = require('express');
 const router   = express.Router();
 const supabase = require('../db/supabase');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
+const { getUserId } = require('../lib/auth');
 
 const WORD_COLUMNS = 'id, word, pos, definition, definition_zh, phonetic, example_en, example_zh, tags, level, frequency_rank';
 
-// GET /api/words?limit=20&offset=0&tag=cap_2000
-// 主字庫列表：排除使用者查詢/自建的字（user_lookup / user_custom），維持會考 2000 字純淨
+// GET /api/words?limit=20&offset=0&tag=unit5
+// 主字庫列表：只認 gsat_core 標籤（會考 Unit1~32 涵蓋的 2376 字），維持會考字庫純淨。
+// 2026-08-07 訂正：原本用「排除 user_lookup/user_custom」的黑名單邏輯，題庫生成流程
+// 附帶寫入的大量非核心字（例如 question_bank_2026_07_b3 這類批次標籤）沒被排除到，
+// 導致這裡實際撈出 7,427 筆而非預期的~2,000字。改成白名單只認 gsat_core 才會乾淨。
 router.get('/', async (req, res) => {
   const limit  = Math.min(parseInt(req.query.limit)  || 20, 2000);
   const offset = parseInt(req.query.offset) || 0;
@@ -15,8 +19,7 @@ router.get('/', async (req, res) => {
   let query = supabase
     .from('words')
     .select(WORD_COLUMNS)
-    .not('tags', 'cs', '{user_lookup}')
-    .not('tags', 'cs', '{user_custom}')
+    .contains('tags', ['gsat_core'])
     .order('word', { ascending: true })
     .range(offset, offset + limit - 1);
 
@@ -33,6 +36,8 @@ router.get('/', async (req, res) => {
 // 2. 未命中 → Gemini 生成字典級資料（原創改寫的中英定義 + 中英例句）
 // 3. 寫回 words 表（tags: user_lookup），下一位使用者直接調用
 router.get('/search', async (req, res) => {
+  const userId = await getUserId(req);
+  if (!userId) return res.status(401).json({ success: false, error: '請先登入' });
   const raw = (req.query.query || '').trim().toLowerCase();
   if (!raw) return res.status(400).json({ success: false, error: '請提供查詢單字' });
   if (!/^[a-z][a-z' -]{0,40}$/.test(raw)) {
@@ -44,6 +49,7 @@ router.get('/search', async (req, res) => {
     .from('words')
     .select(WORD_COLUMNS)
     .ilike('word', raw)
+    .or(`owner_id.is.null,owner_id.eq.${userId}`)
     .limit(1);
   if (qErr) return res.status(500).json({ success: false, error: qErr.message });
   if (hit && hit.length) {
@@ -52,7 +58,7 @@ router.get('/search', async (req, res) => {
 
   // 1.5) 字尾還原：查詢字若是動詞變化/複數/比較級（如 accepted/activities），
   // 先試著比對字庫裡可能已有的原形，命中就直接回傳，不需要多耗一次 Gemini 額度
-  const lemmaHit = await _findByLemma(raw);
+  const lemmaHit = await _findByLemma(raw, userId);
   if (lemmaHit) return res.json({ success: true, source: 'cache-lemma', data: lemmaHit });
 
   // 2) Gemini 生成（字典查詢 + 版權改寫，一次完成）
@@ -85,6 +91,7 @@ router.get('/search', async (req, res) => {
     example_zh: entry.example_zh,
     tags: ['user_lookup'],
     level: 1,
+    owner_id: userId,
   };
   const { data: saved, error: insErr } = await supabase
     .from('words').insert([row]).select(WORD_COLUMNS);
@@ -112,11 +119,12 @@ function _lemmaCandidates(w) {
   if (w.endsWith('ly') && w.length > 4) c.push(w.slice(0, -2));
   return c;
 }
-async function _findByLemma(raw) {
+async function _findByLemma(raw, userId) {
   const candidates = _lemmaCandidates(raw);
   if (!candidates.length) return null;
   const { data } = await supabase
-    .from('words').select(WORD_COLUMNS).in('word', candidates).limit(1);
+    .from('words').select(WORD_COLUMNS).in('word', candidates)
+    .or(`owner_id.is.null,owner_id.eq.${userId}`).limit(1);
   return (data && data[0]) || null;
 }
 
@@ -153,6 +161,8 @@ Rules: definitions and examples must be entirely original wording (no copying fr
 // POST /api/words/add  body: { deck_id, word, definition, ... }
 // 字已存在（含 2000 字與快取字）→ 回傳現有 id；不存在（手動模式）→ 插入 user_custom
 router.post('/add', async (req, res) => {
+  const userId = await getUserId(req);
+  if (!userId) return res.status(401).json({ success: false, error: '請先登入' });
   const { deck_id, word, ...fields } = req.body || {};
   if (!deck_id) return res.status(400).json({ success: false, error: 'deck_id 為必填' });
   if (!word || !word.trim()) return res.status(400).json({ success: false, error: 'word 為必填' });
@@ -160,10 +170,20 @@ router.post('/add', async (req, res) => {
   const key = word.trim();
 
   // 已存在 → 直接回傳現有 id（快速模式查詢結果必然已在表中）
+  const isDefaultDeck = deck_id === 'cap2000' || /^unit(?:[1-9]|[12][0-9]|3[0-2])$/.test(deck_id);
+  if (!isDefaultDeck) {
+    const { data: deck, error: deckErr } = await supabase
+      .from('custom_decks').select('id').eq('id', deck_id).eq('user_id', userId).maybeSingle();
+    if (deckErr) return res.status(500).json({ success: false, error: deckErr.message });
+    if (!deck) return res.status(403).json({ success: false, error: '無權限編輯此卡組' });
+  }
+
   const { data: existing, error: qErr } = await supabase
-    .from('words').select('id').ilike('word', key).limit(1);
+    .from('words').select('id').ilike('word', key).or(`owner_id.is.null,owner_id.eq.${userId}`).limit(1);
   if (qErr) return res.status(500).json({ success: false, error: qErr.message });
   if (existing && existing.length) {
+    if (isDefaultDeck) await supabase.from('user_default_deck_additions')
+      .upsert({ user_id: userId, deck_id, word_id: existing[0].id });
     return res.json({ success: true, wordId: existing[0].id, existed: true });
   }
 
@@ -178,10 +198,16 @@ router.post('/add', async (req, res) => {
     example_zh: fields.example_zh || '',
     tags: ['user_custom'],
     level: 1,
+    owner_id: userId,
   };
   const { data: saved, error: insErr } = await supabase
     .from('words').insert([row]).select('id');
   if (insErr) return res.status(500).json({ success: false, error: insErr.message });
+  if (isDefaultDeck) {
+    const { error: mapErr } = await supabase.from('user_default_deck_additions')
+      .insert({ user_id: userId, deck_id, word_id: saved[0].id });
+    if (mapErr) return res.status(500).json({ success: false, error: mapErr.message });
+  }
   res.json({ success: true, wordId: saved[0].id, existed: false });
 });
 
@@ -192,12 +218,15 @@ router.post('/add', async (req, res) => {
 // WORDS 陣列永遠查不到，畫面就會卡在「【加載中】」的佔位字，且沒有任何重試
 // 機制能修好——這支路由專門補這個洞：直接用 id 精準查表，不受標籤過濾影響。
 router.post('/by-ids', async (req, res) => {
+  const userId = await getUserId(req);
+  if (!userId) return res.status(401).json({ error: '請先登入' });
   const ids = Array.isArray(req.body?.ids) ? req.body.ids.filter(id => Number.isInteger(id)) : [];
   if (!ids.length) return res.json([]);
   const { data, error } = await supabase
     .from('words')
     .select(WORD_COLUMNS)
-    .in('id', ids);
+    .in('id', ids)
+    .or(`owner_id.is.null,owner_id.eq.${userId}`);
   if (error) return res.status(500).json({ error: error.message });
   res.json(data);
 });
@@ -219,33 +248,13 @@ router.get('/count', async (req, res) => {
 // DELETE /api/words/delete/:word
 // 刪除指定單字（by word text）
 router.delete('/delete/:word', async (req, res) => {
-  const word = req.params.word;
-
-  const { error } = await supabase
-    .from('words')
-    .delete()
-    .eq('word', word);
-
-  if (error) return res.status(500).json({ error: error.message });
-  res.json({ success: true, deleted_word: word });
+  res.status(410).json({ error: '此公開刪除 API 已停用' });
 });
 
 // POST /api/words/restore
 // 恢復被刪除的單字（插入新紀錄）
 router.post('/restore', async (req, res) => {
-  const wordData = req.body;
-
-  if (!wordData.word) {
-    return res.status(400).json({ error: 'word field is required' });
-  }
-
-  const { data, error } = await supabase
-    .from('words')
-    .insert([wordData])
-    .select();
-
-  if (error) return res.status(500).json({ error: error.message });
-  res.json({ success: true, restored_word: wordData.word, data });
+  res.status(410).json({ error: '此公開還原 API 已停用' });
 });
 
 // ── 從卡組移除單字 ────────────────────────────────────────────────

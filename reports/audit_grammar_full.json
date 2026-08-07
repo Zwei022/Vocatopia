@@ -1,0 +1,83 @@
+{
+  "generatedAt": "2026-08-07T07:19:04.148Z",
+  "chapters": 20,
+  "answerUnits": 1402,
+  "batches": 15,
+  "counts": {
+    "高": 6,
+    "中": 4,
+    "低": 0
+  },
+  "issues": [
+    {
+      "loc": "$.6.subLessons[0].quiz.cloze.blanks[1]",
+      "type": "答案錯誤／optionsZh 與答案矛盾",
+      "found": "題幹為 There ___ a lot of food...；answer=3 指向 (D) are，但詳解與 optionsZh 均判定 (B) is",
+      "suggestion": "將 answer 改為 1（0-based，選項 B: is）；food 為不可數名詞，There is a lot of food",
+      "severity": "高"
+    },
+    {
+      "loc": "$.9.subLessons[2].quiz.mc[0]",
+      "type": "重複題目",
+      "found": "she sings ___ than her sister.",
+      "suggestion": "與 $.8.subLessons[1].quiz.mc[1] 重複；確認是否刻意複習",
+      "severity": "中"
+    },
+    {
+      "loc": "$.14.subLessons[2].quiz.mc[3]",
+      "type": "重複題目",
+      "found": "dave: have you ever ___ the movie titanic? chris: yes, i've seen it once.",
+      "suggestion": "與 $.14.subLessons[1].quiz.mc[8] 重複；確認是否刻意複習",
+      "severity": "中"
+    },
+    {
+      "loc": "$.15.subLessons[3].quiz.mc[9]",
+      "type": "重複題目",
+      "found": "which sentence is correct?",
+      "suggestion": "與 $.15.subLessons[0].quiz.mc[9] 重複；確認是否刻意複習",
+      "severity": "中"
+    },
+    {
+      "loc": "$.17.subLessons[1].quiz.mc[3]",
+      "type": "重複選項",
+      "found": "[\"(A) Because\",\"(B) Since\",\"(C) Because\",\"(D) Because\"]",
+      "suggestion": "每個選項應互異，並讓正解文字實際存在",
+      "severity": "高"
+    },
+    {
+      "loc": "$.1.subLessons[0].teaching.explanation",
+      "type": "錯誤文法規則",
+      "found": "宣稱 because／since 等附屬連接詞前後子句時態基本上要一致",
+      "suggestion": "時態由各動作實際時間關係決定；because／since 本身不要求同時態",
+      "severity": "高"
+    },
+    {
+      "loc": "$.1.subLessons[1].teaching.explanation",
+      "type": "錯誤文法規則",
+      "found": "把 lose、decide 列為不能使用進行式的狀態動詞",
+      "suggestion": "兩者可用進行式，例如 I am losing hope / We are deciding what to do",
+      "severity": "高"
+    },
+    {
+      "loc": "$.2.subLessons[0].teaching.explanation",
+      "type": "錯誤文法規則",
+      "found": "宣稱 buy、open、arrive、finish 等瞬間動作沒有進行式，且 while 子句一定用進行式",
+      "suggestion": "這些動詞可用進行式；while 也可接一般式，應依語意判斷",
+      "severity": "高"
+    },
+    {
+      "loc": "$.1.subLessons[1].teaching.explanation",
+      "type": "過度絕對化",
+      "found": "宣稱 before long 只指向未來",
+      "suggestion": "before long 可搭配過去或未來，表示「不久之後」",
+      "severity": "中"
+    },
+    {
+      "loc": "$.15.subLessons[1].teaching.explanation",
+      "type": "錯誤／高風險規則",
+      "found": "把 I said 與 I think／I believe 一併說成附加問句依受詞子句",
+      "suggestion": "轉移附加問句主要適用第一人稱現在式 think/believe/suppose；I said 通常不照搬",
+      "severity": "高"
+    }
+  ]
+}

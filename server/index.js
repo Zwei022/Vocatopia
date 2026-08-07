@@ -10,6 +10,7 @@ const rateLimit = require('express-rate-limit');
 const supabase = require('./db/supabase');
 const { generateAndSave } = require('./scripts/generate_daily_articles');
 const { sendPushToUsers } = require('./lib/push');
+const { taipeiDateString } = require('./lib/date');
 
 // 通知偏好判斷：push_prefs 的 key 不存在時視為開啟（預設 true），只有明確設成
 // false 才算關閉。跟前端設定頁的「通知設定」toggle 對應。
@@ -69,7 +70,11 @@ process.on('unhandledRejection', (err) => {
 
 const app    = express();
 const server = http.createServer(app);
-const io     = new Server(server, { cors: { origin: '*' } });
+const allowedOrigins = (process.env.ALLOWED_ORIGINS || '')
+  .split(',').map(v => v.trim()).filter(Boolean);
+const io     = new Server(server, {
+  cors: { origin: allowedOrigins.length ? allowedOrigins : false },
+});
 
 // 多實例（水平擴展）時，Socket.io 預設的房間/連線狀態只存在單一 process 記憶體內，
 // 不同 instance 之間互不相通（同房間兩人可能被路由到不同 instance，永遠配對不到）。
@@ -91,8 +96,8 @@ if (process.env.REDIS_URL) {
 const PORT = process.env.PORT || 3000;
 
 app.use(compression());
-app.use(cors());
-app.use(express.json());
+app.use(cors({ origin: allowedOrigins.length ? allowedOrigins : false }));
+app.use(express.json({ limit: '256kb' }));
 
 // 健康檢查：Railway / 任何負載平衡器判斷這個 instance 是否存活
 app.get('/health', (req, res) => res.status(200).json({ ok: true }));
@@ -124,7 +129,22 @@ app.use('/public/audio/words', (req, res, next) => {
   next();
 });
 
-app.use(express.static(path.join(__dirname, '..')));
+const APP_ROOT = path.join(__dirname, '..');
+app.use('/public', express.static(path.join(APP_ROOT, 'public')));
+app.use('/game',   express.static(path.join(APP_ROOT, 'game')));
+app.use('/fonts',  express.static(path.join(APP_ROOT, 'fonts')));
+app.use('/icons',  express.static(path.join(APP_ROOT, 'icons')));
+for (const file of ['styles.css', 'script.js', 'auth.js', 'manifest.json', 'sw.js', 'privacy.html', 'delete-account.html']) {
+  app.get(`/${file}`, (_req, res) => res.sendFile(path.join(APP_ROOT, file)));
+}
+// 歷屆試題是公開教材，但不公開 server/data 內其他維運檔案。
+app.get('/server/data/:filename', (req, res) => {
+  if (!/^gsat_exam_20\d{2}_(reading|listening)\.json$/.test(req.params.filename) &&
+      req.params.filename !== 'tetris_reading_bank.json') {
+    return res.status(404).end();
+  }
+  res.sendFile(path.join(__dirname, 'data', req.params.filename));
+});
 
 // ── API ROUTES ──
 app.use('/api/user',            require('./routes/user'));
@@ -200,8 +220,18 @@ async function computeArenaOutcome(hostUserId, guestUserId, winnerIsHost /* true
     const guestScore = 1 - hostScore;
     const hostResult  = winnerIsHost === null ? 'draw' : winnerIsHost ? 'win' : 'loss';
     const guestResult = winnerIsHost === null ? 'draw' : winnerIsHost ? 'loss' : 'win';
-    if (hostUserId)  out.host  = { elo: eloDelta(hostElo, guestElo, hostScore),  result: hostResult,  mode, reward: rewardForResult(hostResult) };
-    if (guestUserId) out.guest = { elo: eloDelta(guestElo, hostElo, guestScore), result: guestResult, mode, reward: rewardForResult(guestResult) };
+    async function settle(userId, delta, result) {
+      if (!userId) return undefined;
+      const reward = rewardForResult(result);
+      const { data: profile, error: settleError } = await supabase.rpc('settle_arena_player', {
+        p_user_id: userId, p_elo_delta: delta, p_result: result, p_mode: mode,
+        p_gold: reward.gold, p_xp: reward.xp,
+      });
+      if (settleError) throw settleError;
+      return { elo: delta, result, mode, reward, profile };
+    }
+    out.host = await settle(hostUserId, eloDelta(hostElo, guestElo, hostScore), hostResult);
+    out.guest = await settle(guestUserId, eloDelta(guestElo, hostElo, guestScore), guestResult);
   } catch (e) {
     console.error('[Arena] 計算 ELO 失敗（不影響對局本身，僅此局無獎勵）：', e.message);
   }
@@ -608,11 +638,15 @@ function _createQueuedRoom(mode, a, b) {
 const onlineUsers = new Map();
 
 io.on('connection', (socket) => {
-  socket.on('identify', ({ userId }) => {
-    if (!userId) return;
+  socket.on('identify', async ({ token } = {}, cb) => {
+    if (!token) return typeof cb === 'function' && cb({ ok: false });
+    const { data: { user }, error } = await supabase.auth.getUser(token);
+    if (error || !user) return typeof cb === 'function' && cb({ ok: false });
+    const userId = user.id;
     socket.data.userId = userId;
     if (!onlineUsers.has(userId)) onlineUsers.set(userId, new Set());
     onlineUsers.get(userId).add(socket.id);
+    if (typeof cb === 'function') cb({ ok: true });
   });
 
   socket.on('check_online', ({ userIds }, cb) => {
@@ -622,7 +656,9 @@ io.on('connection', (socket) => {
   });
 
   // 對方在線就走即時 socket；不在線才用推播補上（避免同一個人兩邊都收到通知）
-  socket.on('send_friend_request', async ({ toUserId, fromUserId, fromUsername }) => {
+  socket.on('send_friend_request', async ({ toUserId, fromUsername }) => {
+    const fromUserId = socket.data.userId;
+    if (!fromUserId) return;
     const targets = onlineUsers.get(toUserId);
     if (targets && targets.size > 0) {
       for (const sid of targets) io.to(sid).emit('friend_request_incoming', { fromUserId, fromUsername });
@@ -691,7 +727,8 @@ io.on('connection', (socket) => {
     });
   });
 
-  socket.on('create_room', ({ clientId, name, title, userId, avatarId } = {}) => {
+  socket.on('create_room', ({ clientId, name, title, avatarId } = {}) => {
+    const userId = socket.data.userId || null;
     const code = genRoomCode();
     rooms[code] = {
       host: socket.id, guest: null,
@@ -708,7 +745,8 @@ io.on('connection', (socket) => {
     socket.emit('room_created', { code });
   });
 
-  socket.on('join_room', ({ code, clientId, name, title, userId, avatarId }) => {
+  socket.on('join_room', ({ code, clientId, name, title, avatarId }) => {
+    const userId = socket.data.userId || null;
     const room = rooms[code];
     if (!room)                   return socket.emit('room_error', { msg: '找不到房間，請確認房號' });
     if (room.state !== 'lobby')  return socket.emit('room_error', { msg: '對決已開始，無法加入' });
@@ -790,7 +828,8 @@ io.on('connection', (socket) => {
   socket.on('pvp_answer', ({ code, qIdx, choice }) => applyPvpAnswer(code, socket.id, qIdx, choice));
 
   // ── 快速配對 ──
-  socket.on('queue_join', async ({ mode, clientId, userId, name, title, avatarId } = {}) => {
+  socket.on('queue_join', async ({ mode, clientId, name, title, avatarId } = {}) => {
+    const userId = socket.data.userId || null;
     if (mode !== 'vocab' && mode !== 'buzzer') return;
     _leaveAllQueues(socket.id); // 防止手滑連點造成同一人排進佇列兩次
 
@@ -857,7 +896,7 @@ cron.schedule('*/4 * * * *', async () => {
 
 // ── 每日文章 CRON（台灣時間 00:05 = UTC 16:05）──
 cron.schedule('5 16 * * *', async () => {
-  const today = new Date().toISOString().split('T')[0];
+  const today = taipeiDateString();
   console.log(`\n[Cron] 每日文章排程觸發 ${today}`);
   try {
     await generateAndSave(today);
@@ -984,7 +1023,7 @@ cron.schedule('0 1 * * *', async () => {
 
 // 啟動時若今日尚無文章則自動補生成
 (async () => {
-  const today = new Date().toISOString().split('T')[0];
+  const today = taipeiDateString();
   const { count } = await supabase
     .from('daily_articles')
     .select('id', { count: 'exact', head: true })

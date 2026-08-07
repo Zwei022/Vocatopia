@@ -4,6 +4,24 @@
 // 需在 script.js 之前載入，讓首頁渲染時就能讀到。
 // ════════════════════════════════
 
+// 角色成長系統（美食風味露升級，設計中，逐角色確認後才補資料）：
+// 收藏頁角色卡底下顯示星級（0★~5★），點開詳細頁看目前星級效果。0★＝未升級的
+// 基礎狀態，對應 skill 物件本身的數值；growth[star-1] 描述「升到這顆星做了什麼」：
+//   - overrides：直接調整現有 skill 欄位數值（引擎已支援，升級後真的會生效）
+//   - passive：額外獲得的全域被動（目前引擎未支援被動系統，先存資料不生效，
+//     只有直接改 skill 既有欄位的 overrides 才會真的在遊戲裡起作用）
+// 風味露/金幣成本表全角色一致（金幣依稀有度倍率拉開），角色技能設計則逐隻
+// 個別確認——只有確認定案的角色才會有 growth 欄位，其餘先維持只有 skill 基礎值。
+const GROWTH_COST_DEW  = [6, 10, 16, 24, 36];        // 各星級所需風味露（1★~5★，全角色一致）
+const GROWTH_COST_GOLD = [50, 80, 150, 250, 400];    // 各星級基礎金幣（乘稀有度倍率才是實際扣款）
+const GROWTH_GOLD_MULT = { common: 1, rare: 1.5, epic: 2, mythic: 3, legendary: 5 };
+
+// 查某角色升到 star（1~5）所需金幣（已套稀有度倍率，四捨五入到整數）
+function charGrowthGoldCost(rarity, star) {
+  const mult = GROWTH_GOLD_MULT[rarity] ?? 1;
+  return Math.round(GROWTH_COST_GOLD[star - 1] * mult);
+}
+
 const TETRIS_CHARACTERS = {
   onigiri: {
     id: 'onigiri',
@@ -18,9 +36,45 @@ const TETRIS_CHARACTERS = {
       type: 'bonusSeconds',
       name: '從容一刻',
       icon: '⏱️',
-      desc: '只能用在英文選擇題：施放後，當前這題 +10 秒作答時間。使用後需等下一輪英文選擇題結束才能再次施放。',
-      bonusSeconds: 10,
+      desc: '只能用在英文選擇題：施放後，當前這題 +5 秒作答時間。使用後需等下一輪英文選擇題結束才能再次施放（3★後移除此限制）。',
+      bonusSeconds: 5,
+      cooldownRounds: 1,   // 0★基礎狀態：用後需冷卻一輪；3★之後 overrides 會把這個蓋成 0
     },
+    growth: [
+      { star: 1, desc: '+5秒 → +7秒', overrides: { bonusSeconds: 7 } },
+      { star: 2, desc: '+7秒 → +10秒', overrides: { bonusSeconds: 10 } },
+      { star: 3, desc: '拿掉冷卻限制，改成每一輪都能使用', overrides: { cooldownRounds: 0 } },
+      { star: 4, desc: '+10秒 → +15秒', overrides: { bonusSeconds: 15 } },
+      { star: 5, desc: '+15秒 → +20秒；額外獲得被動：每答對一題英文選擇題，俄羅斯方塊遊戲分數額外 +100', overrides: { bonusSeconds: 20 }, passive: { tetrisScorePerCorrect: 100 } },
+    ],
+  },
+  dumpling: {
+    id: 'dumpling',
+    name: '韭菜水餃',
+    nameEn: 'chive dumpling',
+    img: 'public/images/characters/dumpling.webp',
+    cardImg: 'public/images/characters/dumpling.webp',
+    rarity: 'common',
+    acquireHint: '帳號預設擁有',
+    desc: '皮薄餡多的水餃小姐，個性溫和不慌不忙，就算咬破一點皮，湯汁也捨不得浪費。',
+    // ⚠️ bonusSecondsWord 是全新技能類型：只能用在消行快問（單字選擇題，限時7秒），
+    // 目前 quiz.js 的 ttShowQuiz() 只有 timed=true（計時題）才會顯示技能按鈕，
+    // 消行快問完全沒有技能掛勾點，需要先擴充引擎才會真正在遊戲裡生效。
+    skill: {
+      type: 'bonusSecondsWord',
+      name: '細嚼慢嚥',
+      icon: '🥟',
+      desc: '只能用在消行快問（單字選擇題）：施放後，當前這題 +2 秒作答時間。使用後需等下一輪消行快問結束才能再次施放（3★後有機率免冷卻）。',
+      bonusSeconds: 2,
+      cooldownRounds: 1,
+    },
+    growth: [
+      { star: 1, desc: '+2秒 → +3秒', overrides: { bonusSeconds: 3 } },
+      { star: 2, desc: '+3秒 → +4秒', overrides: { bonusSeconds: 4 } },
+      { star: 3, desc: '追加效果：每次消行單字題答對，有 50% 機率讓技能直接免冷卻，下一題可再次施放' },
+      { star: 4, desc: '+4秒 → +5秒', overrides: { bonusSeconds: 5 } },
+      { star: 5, desc: '覺醒被動：施放後若這題答對，連勝加乘額外 +0.1（例如原本×1.2變成×1.3）' },
+    ],
   },
   waffle: {
     id: 'waffle',
@@ -92,12 +146,13 @@ const TETRIS_CHARACTERS = {
 };
 
 // 預設擁有的角色（之後可從商店/抽卡擴充）
-const DEFAULT_OWNED_CHARS = ['onigiri'];
+const DEFAULT_OWNED_CHARS = ['onigiri', 'dumpling'];
 
 // localStorage keys
 const LS_OWNED_CHARS    = 'voca_owned_chars';    // 已擁有角色 id 陣列
 const LS_DEPLOYED_CHAR  = 'voca_deployed_char';  // 出戰中的角色 id
 const LS_TETRIS_BEST    = 'voca_tetris_best';     // 本機最高分（未登入時的暫存）
+const LS_FLAVOR_DEW     = 'voca_flavor_dew';      // 美食風味露持有量（未登入時的暫存）
 
 function getOwnedChars() {
   try {
@@ -149,6 +204,29 @@ function _syncCharsToServer() {
     .then(({ error }) => { if (error) console.warn('[_syncCharsToServer] 同步失敗：', error.message); });
 }
 
+// 俄羅斯方塊對戰最高分跨裝置同步：voca_tetris_best 只是「訪客暫存 + 避免
+// 每次要顯示都多打一次API的本機快取」，換裝置登入或清過瀏覽器資料時本機
+// 會是空的或過時的舊值，害遊戲結束彈窗顯示錯的「最佳」分數、甚至誤判成
+// 新紀錄。取本機與伺服器（tetris_scores.best_score）兩者較大值寫回本機。
+// 由 auth.js 的 _loadProfile() 呼叫。
+async function restoreTetrisBestFromServer() {
+  if (typeof currentUser === 'undefined' || !currentUser || typeof authClient === 'undefined') return;
+  try {
+    const { data, error } = await authClient
+      .from('tetris_scores')
+      .select('best_score')
+      .eq('user_id', currentUser.id)
+      .maybeSingle();
+    if (error) { console.warn('[restoreTetrisBestFromServer] 讀取失敗：', error.message); return; }
+    const serverBest = data?.best_score || 0;
+    let localBest = 0;
+    try { localBest = parseInt(localStorage.getItem(LS_TETRIS_BEST) || '0', 10) || 0; } catch { /* ignore */ }
+    if (serverBest > localBest) localStorage.setItem(LS_TETRIS_BEST, String(serverBest));
+  } catch (err) {
+    console.warn('[restoreTetrisBestFromServer] 例外：', err?.message || err);
+  }
+}
+
 // 登入時從伺服器還原角色收藏：跟本機收藏取聯集（本機可能有伺服器還
 // 沒同步到的最新抽卡結果，伺服器可能有其他裝置抽到但這台還沒有的角色），
 // 合併後寫回本機，並且如果合併後有新增內容就補寫回伺服器，確保下次在
@@ -166,6 +244,58 @@ function restoreOwnedCharsFromServer(serverOwned, serverDeployed) {
   }
 
   if (changed || !serverDeployed) _syncCharsToServer();
+}
+
+// ════════════════════════════════
+// 角色成長系統素材：美食風味露
+// 抽卡「銘謝惠顧」80%機率掉落（見 gacha.js），用來升級角色（Lv.0→Lv.5）。
+// 存取模式比照 script.js 的 getGold()/addGold()：登入時以 currentProfile 為準、
+// 樂觀更新畫面後背景用原子 RPC 同步（避免多裝置同時操作互相覆蓋覆寫成整值）；
+// 未登入（訪客模式）純本機 localStorage。角色升級本身（扣素材+加等級）的 RPC
+// 留到角色頁面 UI 階段一起做，這裡只提供風味露的加減。
+// ════════════════════════════════
+function getFlavorDew() {
+  if (typeof currentProfile !== 'undefined' && currentProfile) {
+    return currentProfile.flavor_dew ?? 0;
+  }
+  return parseInt(localStorage.getItem(LS_FLAVOR_DEW) || '0');
+}
+
+function addFlavorDew(amount) {
+  let next;
+  if (typeof currentProfile !== 'undefined' && currentProfile) {
+    next = (currentProfile.flavor_dew || 0) + amount;
+    currentProfile.flavor_dew = next;
+    _syncFlavorDewAtomic(amount);
+  } else {
+    next = parseInt(localStorage.getItem(LS_FLAVOR_DEW) || '0') + amount;
+    localStorage.setItem(LS_FLAVOR_DEW, next);
+  }
+  return next;
+}
+
+let _dewSyncPending = 0;
+let _dewSyncChain = Promise.resolve();
+function _syncFlavorDewAtomic(delta) {
+  _dewSyncPending++;
+  _dewSyncChain = _dewSyncChain.then(() => _doDewRpc(delta));
+  return _dewSyncChain;
+}
+
+async function _doDewRpc(delta) {
+  if (typeof currentUser === 'undefined' || !currentUser || typeof authClient === 'undefined') { _dewSyncPending--; return; }
+  try {
+    const { data, error } = await authClient.rpc('increment_flavor_dew', { p_delta: delta });
+    if (error) throw error;
+    // 只有序列中最後一筆 RPC 回傳時才用權威值校正，避免連續操作時中間值互相覆蓋（比照 _doGoldRpc）
+    if (typeof data === 'number' && currentProfile && _dewSyncPending <= 1) {
+      currentProfile.flavor_dew = data;
+    }
+  } catch (e) {
+    console.warn('[_doDewRpc] 風味露同步失敗：', e.message);
+  } finally {
+    _dewSyncPending--;
+  }
 }
 
 // ════════════════════════════════

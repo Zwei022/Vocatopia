@@ -399,12 +399,90 @@ const UNIT_DECK_META = [
   { n: 32, name: '其他動詞',                emoji: '🏃' },
 ];
 
+// 官方單字本體全體共用；使用者從預設卡組「刪除」時只記錄個人隱藏清單。
+// 未登入訪客以 localStorage 保存，登入帳戶則以 Supabase 為準並可跨裝置同步。
+let hiddenDefaultWordIds = new Set();
+let defaultDeckAddedIds = new Map();
+const HIDDEN_DEFAULT_WORDS_KEY = 'voca_hidden_default_words';
+
+function _isDefaultWordVisible(word) {
+  return word && !hiddenDefaultWordIds.has(Number(word.id));
+}
+
+async function loadHiddenDefaultWords() {
+  if (typeof currentUser !== 'undefined' && currentUser && typeof authClient !== 'undefined') {
+    const { data, error } = await authClient
+      .from('user_default_deck_hidden_words')
+      .select('word_id')
+      .eq('user_id', currentUser.id);
+    if (error) throw new Error(`載入預設卡組設定失敗：${error.message}`);
+    hiddenDefaultWordIds = new Set((data || []).map(row => Number(row.word_id)));
+    return;
+  }
+  try {
+    hiddenDefaultWordIds = new Set(
+      (JSON.parse(localStorage.getItem(HIDDEN_DEFAULT_WORDS_KEY) || '[]') || []).map(Number)
+    );
+  } catch {
+    hiddenDefaultWordIds = new Set();
+  }
+}
+
+async function hideDefaultWords(wordIds) {
+  const ids = [...new Set(wordIds.map(Number).filter(Number.isInteger))];
+  if (!ids.length) return;
+  if (typeof currentUser !== 'undefined' && currentUser && typeof authClient !== 'undefined') {
+    const { error } = await authClient.from('user_default_deck_hidden_words').upsert(
+      ids.map(wordId => ({ user_id: currentUser.id, word_id: wordId })),
+      { onConflict: 'user_id,word_id' }
+    );
+    if (error) throw error;
+  } else {
+    ids.forEach(id => hiddenDefaultWordIds.add(id));
+    localStorage.setItem(HIDDEN_DEFAULT_WORDS_KEY, JSON.stringify([...hiddenDefaultWordIds]));
+  }
+  ids.forEach(id => hiddenDefaultWordIds.add(id));
+}
+
+async function restoreDefaultWords() {
+  if (typeof currentUser !== 'undefined' && currentUser && typeof authClient !== 'undefined') {
+    const { error } = await authClient.from('user_default_deck_hidden_words')
+      .delete().eq('user_id', currentUser.id);
+    if (error) throw error;
+    const { error: additionsError } = await authClient.from('user_default_deck_additions')
+      .delete().eq('user_id', currentUser.id);
+    if (additionsError) throw additionsError;
+  } else {
+    localStorage.removeItem(HIDDEN_DEFAULT_WORDS_KEY);
+  }
+  hiddenDefaultWordIds.clear();
+  defaultDeckAddedIds.clear();
+}
+
+async function loadDefaultDeckAdditions() {
+  if (!currentUser || !authClient) return;
+  const { data, error } = await authClient.from('user_default_deck_additions')
+    .select('deck_id,word_id').eq('user_id', currentUser.id);
+  if (error) throw new Error(`載入預設卡組新增字失敗：${error.message}`);
+  defaultDeckAddedIds.clear();
+  for (const row of data || []) {
+    if (!defaultDeckAddedIds.has(row.deck_id)) defaultDeckAddedIds.set(row.deck_id, new Set());
+    defaultDeckAddedIds.get(row.deck_id).add(Number(row.word_id));
+  }
+  const missing = [...new Set((data || []).map(row => Number(row.word_id)))].filter(id => !WORDS.some(w => Number(w.id) === id));
+  if (!missing.length) return;
+  const token = (await authClient.auth.getSession()).data.session?.access_token || '';
+  const response = await fetch('/api/words/by-ids', { method:'POST', headers:{'Content-Type':'application/json',Authorization:`Bearer ${token}`}, body:JSON.stringify({ids:missing}) });
+  if (!response.ok) throw new Error('無法載入預設卡組新增字');
+  for (const row of await response.json()) WORDS.push(normalizeWord(row));
+}
+
 const BUILTIN_DECKS = [
   {
     id: 'cap2000', name: '會考總複習(Unit1-32)', emoji: '📚',
     cls: 'deck-cap2000',
     // 只收錄已分類進 Unit1-32 主題的字，不包含未分類/查詢生成等其他來源的字
-    getWords: () => WORDS.filter(w => w.tags && UNIT_DECK_META.some(u => w.tags.includes('unit' + u.n))),
+    getWords: () => WORDS.filter(w => _isDefaultWordVisible(w) && ((w.tags && UNIT_DECK_META.some(u => w.tags.includes('unit' + u.n))) || defaultDeckAddedIds.get('cap2000')?.has(Number(w.id)))),
   },
   {
     id: 'weak', name: '不熟字卡', emoji: '🔥',
@@ -425,7 +503,7 @@ const BUILTIN_DECKS = [
     name: `Unit${u.n} ${u.name}`,
     emoji: u.emoji,
     cls: 'deck-cap2000',
-    getWords: () => WORDS.filter(w => w.tags && w.tags.includes('unit' + u.n)),
+    getWords: () => WORDS.filter(w => _isDefaultWordVisible(w) && ((w.tags && w.tags.includes('unit' + u.n)) || defaultDeckAddedIds.get('unit' + u.n)?.has(Number(w.id)))),
   })),
 ];
 
@@ -542,8 +620,9 @@ function revealCard() {
 function rate(hit) {
   if (!revealed) return;
   const w = STUDY_WORDS[curIdx];
+  let earnedXp;
   if (hit) {
-    combo++; xp += combo >= 3 ? 35 : 20;
+    combo++; earnedXp = combo >= 3 ? 35 : 20; xp += earnedXp;
     showFb('掌握！', true);
     if (combo >= 3) {
       document.getElementById('comboTxt').textContent = `COMBO ×${combo}`;
@@ -555,7 +634,7 @@ function rate(hit) {
     w.st = 'ok';
     w._correctStreak = (w._correctStreak || 0) + 1;
   } else {
-    combo = 0; xp += 5;
+    combo = 0; earnedXp = 5; xp += earnedXp;
     showFb('再努力！', false);
     document.getElementById('phone').classList.add('shake');
     setTimeout(() => document.getElementById('phone').classList.remove('shake'), 400);
@@ -564,7 +643,7 @@ function rate(hit) {
     w._correctStreak = 0;
   }
   if (typeof syncWordStatus !== 'undefined') syncWordStatus(w.id, w.st, w._correctStreak || 0);
-  if (typeof syncXP !== 'undefined') syncXP(xp);
+  if (typeof syncXP !== 'undefined') syncXP(earnedXp);
   document.getElementById('comboNum').textContent = combo;
   const pct = Math.min(xp / 1000 * 100, 100);
   document.getElementById('xpBar').style.width = pct + '%';
@@ -1368,21 +1447,24 @@ function _pvpMe() {
   };
 }
 
-// 對局結算後套用伺服器算好的 ELO/獎勵：經驗值走既有的 awardXp()（沿用其樂觀更新＋序列化
-// 同步機制），金幣走 _grantCappedArenaTetrisGold()（跟首頁俄羅斯方塊共用每日 250 上限），
-// ELO／勝敗場數走專屬的 apply_arena_result RPC。
+// 對局結算與獎勵全部由伺服器一次寫入；前端只顯示伺服器回傳的權威 profile。
 // myOutcome 為 null 時代表訪客模式或伺服器計算失敗（見 server computeArenaOutcome），
 // 直接跳過、不顯示獎勵列即可，不影響對局本身已經跑完的事實。
 async function _applyArenaOutcome(myOutcome) {
   const rewardEl = document.getElementById('pvpResultReward');
   if (!myOutcome || !currentUser) { if (rewardEl) rewardEl.style.display = 'none'; return; }
   const { elo, result, reward } = myOutcome;
-  const goldGiven = reward?.gold ? _grantCappedArenaTetrisGold(reward.gold) : 0;
-  if (reward?.xp) awardXp(reward.xp, { source: 'arena' });
+  const goldGiven = reward?.gold || 0;
+  if (myOutcome.profile && currentProfile) {
+    Object.assign(currentProfile, myOutcome.profile);
+    _updateXpDisplay();
+    const goldEl = document.getElementById('hGold');
+    if (goldEl) goldEl.textContent = (currentProfile.gold || 0).toLocaleString();
+  }
   if (rewardEl) {
     const eloClass = elo > 0 ? 'elo-up' : elo < 0 ? 'elo-down' : '';
     const goldChip = goldGiven ? `<span>🪙 +${goldGiven}</span>`
-      : reward?.gold ? `<span>🪙 今日金幣額度已滿</span>` : '';
+      : '';
     rewardEl.innerHTML = [
       goldChip,
       reward?.xp ? `<span>✨ +${reward.xp} EXP</span>` : '',
@@ -1390,26 +1472,6 @@ async function _applyArenaOutcome(myOutcome) {
     ].filter(Boolean).join('');
     rewardEl.style.display = 'flex';
   }
-  try {
-    const { data, error } = await authClient.rpc('apply_arena_result', {
-      p_elo_delta: elo, p_result: result, p_mode: myOutcome.mode === 'buzzer' ? 'buzzer' : 'vocab',
-    });
-    if (error) throw error;
-    const row = Array.isArray(data) ? data[0] : data;
-    if (row && currentProfile) {
-      currentProfile.arena_elo_vocab           = row.arena_elo_vocab;
-      currentProfile.arena_wins_vocab          = row.arena_wins_vocab;
-      currentProfile.arena_losses_vocab        = row.arena_losses_vocab;
-      currentProfile.arena_draws_vocab         = row.arena_draws_vocab;
-      currentProfile.arena_weekly_score_vocab  = row.arena_weekly_score_vocab;
-      currentProfile.arena_elo_buzzer          = row.arena_elo_buzzer;
-      currentProfile.arena_wins_buzzer         = row.arena_wins_buzzer;
-      currentProfile.arena_losses_buzzer       = row.arena_losses_buzzer;
-      currentProfile.arena_draws_buzzer        = row.arena_draws_buzzer;
-      currentProfile.arena_weekly_score_buzzer = row.arena_weekly_score_buzzer;
-      currentProfile.wins                      = row.wins;
-    }
-  } catch (e) { console.error('[Arena] apply_arena_result 失敗（本局獎勵中金幣/經驗值已入帳，僅段位未同步）：', e?.message || e); }
 }
 
 function createRoom() {
@@ -3885,7 +3947,8 @@ async function lookupWord(word, el) {
   if (el) el.classList.add('w-loading');
   _openWordDetailLoading(word);
   try {
-    const res  = await fetch(`/api/words/search?query=${encodeURIComponent(word)}`);
+    const token = authClient ? (await authClient.auth.getSession()).data.session?.access_token || '' : '';
+    const res  = await fetch(`/api/words/search?query=${encodeURIComponent(word)}`, { headers: { Authorization: `Bearer ${token}` } });
     const data = await res.json();
     if (el) el.classList.remove('w-loading');
     if (!data.success) { closeWordDetail(); showToast(`⚠ ${data.error || `找不到「${word}」`}`); return; }
@@ -4032,7 +4095,10 @@ async function _ensureCustomDeckWordsLoaded() {
   try {
     const res = await fetch('/api/words/by-ids', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        ...(authClient ? { Authorization: `Bearer ${(await authClient.auth.getSession()).data.session?.access_token || ''}` } : {}),
+      },
       body: JSON.stringify({ ids: [...missing] }),
     });
     if (!res.ok) return;
@@ -4681,11 +4747,12 @@ setTimeout(() => { _alsSetProgress(100); _alsHide(); }, 8000);
     _alsSetProgress(20);
 
     _alsSetHint('載入單字卡組…');
-    await loadCustomDecks();
+    await Promise.all([loadCustomDecks(), loadHiddenDefaultWords()]);
     _alsSetProgress(35);
 
     _alsSetHint('載入單字庫…');
     await Promise.all([loadWords(), loadArticles(), loadDailyArticles()]);
+    await loadDefaultDeckAdditions();
     _alsSetProgress(60);
 
     // 自訂卡組裡可能含有不屬於核心 2000 字的單字（快速查詢/手動新增），
@@ -6047,11 +6114,13 @@ let friendsTab = 'list'; // 'list' | 'add'
 let _friendOnlineIds = new Set();
 
 // 把目前這個瀏覽器分頁的帳號告訴 server，讓其他人可以查到「這個帳號現在在線上」
-function _identifySocket() {
+async function _identifySocket() {
   if (!currentUser) return;
   const sock = getPvpSocket();
   if (!sock) return;
-  sock.emit('identify', { userId: currentUser.id });
+  const token = typeof getAuthToken === 'function' ? await getAuthToken() : null;
+  if (!token) return;
+  sock.emit('identify', { token });
   sock.off('friend_request_incoming', _onFriendRequestIncoming);
   sock.on('friend_request_incoming', _onFriendRequestIncoming);
   sock.off('friend_request_responded', _onFriendRequestResponded);
@@ -6516,7 +6585,7 @@ document.addEventListener('visibilitychange', () => {
 
 // 只重置官方預設教材（會考2000／Unit1-32）涵蓋的單字，自訂卡組跟查詢生成的字不受影響。
 // 跟下面 confirmResetWordBank()（整個字庫全部重置）是兩個不同範圍的操作。
-function confirmResetDefaultDecks() {
+async function confirmResetDefaultDecks() {
   if (!confirm('確定要重置會考預設單字卡（會考2000 / Unit1-32）的學習進度嗎？\n熟悉度標記與已學習/收藏紀錄會清空，自訂卡組不受影響，這個操作無法復原。')) return;
 
   const targetIds = [];
@@ -6537,12 +6606,21 @@ function confirmResetDefaultDecks() {
     localStorage.removeItem('voca_fc_fav_' + id);
   });
 
-  if (typeof currentUser !== 'undefined' && currentUser && typeof authClient !== 'undefined' && targetIds.length) {
-    authClient.from('user_word_status').delete().eq('user_id', currentUser.id).in('word_id', targetIds);
+  try {
+    await restoreDefaultWords();
+    if (typeof currentUser !== 'undefined' && currentUser && typeof authClient !== 'undefined' && targetIds.length) {
+      const { error } = await authClient.from('user_word_status').delete()
+        .eq('user_id', currentUser.id).in('word_id', targetIds);
+      if (error) throw error;
+    }
+    invalidateLibCache();
+    renderLib();
+    updateChar();
+    showToast('✓ 會考預設單字卡與學習進度已恢復');
+  } catch (error) {
+    console.error('[confirmResetDefaultDecks] 重置失敗：', error);
+    showToast('❌ 重置失敗，請稍後再試');
   }
-
-  updateChar();
-  showToast('✓ 會考預設單字卡已重置');
 }
 
 function confirmResetWordBank() {
@@ -7084,11 +7162,10 @@ async function deleteSelectedWords() {
     return;
   }
 
-  // 官方固定教材（會考2000／每日單字卡組／Unit1-32）是共用內容，沒有「從清單移除」
-  // 這種操作的實際意義，只能封鎖；想不再看到某個字的話，用「管理」把它加進自訂卡組即可。
-  const isFixedContentDeck = ['cap2000', 'daily'].includes(fcCurrentDeckId) || /^unit\d+$/.test(fcCurrentDeckId);
-  if (isFixedContentDeck) {
-    showToast('❌ 官方單字庫無法刪除單字，可先用「管理」加入自訂卡組');
+  // 官方教材共用同一份 words；刪除只加入目前帳戶的隱藏清單，不動官方資料。
+  const isFixedContentDeck = fcCurrentDeckId === 'cap2000' || /^unit\d+$/.test(fcCurrentDeckId);
+  if (fcCurrentDeckId === 'daily') {
+    showToast('每日單字卡會每天自動更新，無法手動刪除');
     return;
   }
 
@@ -7107,7 +7184,9 @@ async function deleteSelectedWords() {
   showToast('⏳ 刪除中...');
 
   try {
-    if (deckId === 'weak') {
+    if (isFixedContentDeck) {
+      await hideDefaultWords(wordIds);
+    } else if (deckId === 'weak') {
       // 不熟字卡是虛擬清單（依 w.st === 'lrn' 篩選出來），這裡的「刪除」實際上是把
       // 選到的單字狀態改回 'new'（跟 toggleWordMark() 移出不熟字卡是同一套邏輯），
       // 不是刪除單字本身。
@@ -7121,31 +7200,14 @@ async function deleteSelectedWords() {
         if (typeof syncWordStatus !== 'undefined') syncWordStatus(w.id, w.st, 0);
       });
     } else {
-      // 自定義卡組：調用後端 API 刪除
-      const response = await fetch('/api/words/delete', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          deck_id: deckId,
-          word_ids: wordIds
-        })
-      });
-
-      const result = await response.json();
-
-      if (!result.success) {
-        showToast('❌ 刪除失敗：' + (result.error || '未知錯誤'));
-        return;
-      }
-
-      // 更新前端 customDecks
+      // 自訂卡組的內容由 custom_decks RLS 保護，直接更新自己的卡組即可。
       const deck = customDecks.find(d => d.id === deckId);
       if (deck) {
         deck.wordIds = deck.wordIds.filter(id => !wordIds.includes(id));
         if (deck.words) {
           deck.words = deck.words.filter(w => !wordIds.includes(w.id));
         }
-        saveCustomDecks();
+        await saveCustomDecks();
       }
     }
 
@@ -7287,7 +7349,8 @@ async function searchWordFromCambridge() {
   document.getElementById('awmQuickError').style.display = 'none';
 
   try {
-    const response = await fetch(`/api/words/search?query=${encodeURIComponent(query)}`);
+    const token = authClient ? (await authClient.auth.getSession()).data.session?.access_token || '' : '';
+    const response = await fetch(`/api/words/search?query=${encodeURIComponent(query)}`, { headers: { Authorization: `Bearer ${token}` } });
     const data = await response.json();
 
     document.getElementById('awmQuickLoading').style.display = 'none';
@@ -7404,7 +7467,10 @@ async function submitAddWord() {
   try {
     const response = await fetch('/api/words/add', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        ...(authClient ? { Authorization: `Bearer ${(await authClient.auth.getSession()).data.session?.access_token || ''}` } : {}),
+      },
       body: JSON.stringify({
         deck_id: addWordState.currentDeckId,
         ...wordData
@@ -7476,6 +7542,14 @@ async function submitAddWord() {
 
             saveCustomDecks();
             console.log('[submitAddWord] ✓ 已更新自定義卡組:', customDeck);
+          }
+        } else if (result.wordId) {
+          if (!defaultDeckAddedIds.has(addWordState.currentDeckId)) {
+            defaultDeckAddedIds.set(addWordState.currentDeckId, new Set());
+          }
+          defaultDeckAddedIds.get(addWordState.currentDeckId).add(Number(result.wordId));
+          if (!WORDS.some(w => Number(w.id) === Number(result.wordId))) {
+            WORDS.push(normalizeWord({ id: result.wordId, ...wordData, tags: ['user_custom'] }));
           }
         }
 
@@ -9006,7 +9080,7 @@ function openGachaHistory() {
   const rows = history.length ? history.map(h => {
     const time = new Date(h.t).toLocaleString('zh-TW', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' });
     let label, color;
-    if (h.isConsolation || !h.charId) { label = `${h.tier}（+🪙${h.gold}）`; color = 'var(--ink3)'; }
+    if (h.isConsolation || !h.charId) { label = `${h.tier}（+🧪${h.flavorDew}風味露）`; color = 'var(--ink3)'; }
     else {
       const ch = (typeof TETRIS_CHARACTERS !== 'undefined') ? TETRIS_CHARACTERS[h.charId] : null;
       const name = ch ? ch.name : h.charId;
@@ -9031,10 +9105,10 @@ function openGachaHistory() {
 function _gachaEntryRow(entry) {
   if (entry.isConsolation || !entry.charId) {
     return `<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(122,92,67,.12)">
-      <div style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:20px">🪙</div>
+      <div style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:20px">🧪</div>
       <div style="flex:1">
         <div style="font-weight:800;font-size:13px;color:var(--ink)">${entry.tier}</div>
-        <div style="font-size:11px;color:var(--ink3)">獲得 🪙${entry.gold} 金幣（不產生角色）</div>
+        <div style="font-size:11px;color:var(--ink3)">獲得 🧪${entry.flavorDew} 美食風味露（不產生角色，可用來升級角色）</div>
       </div>
       <div style="font-weight:900;font-size:14px;color:var(--orange2)">${(entry.rate*100).toFixed(0)}%</div>
     </div>`;
@@ -9093,10 +9167,10 @@ function _gachaResultCardBack(r) {
   if (r.isConsolation || !r.charId) {
     return `<div style="display:flex;flex-direction:column;align-items:center;gap:6px;width:100%">
       <div class="coll-card rarity-common" style="width:100%;pointer-events:none">
-        <div class="coll-card-imgwrap" style="font-size:56px">🪙</div>
+        <div class="coll-card-imgwrap" style="font-size:56px">🧪</div>
         <div class="coll-card-name" style="font-size:15px">${escHtml(r.tier)}</div>
       </div>
-      <div style="font-size:13px;font-weight:800;border-radius:10px;padding:3px 9px;background:var(--ink3);color:#fff">+${r.gold}🪙</div>
+      <div style="font-size:13px;font-weight:800;border-radius:10px;padding:3px 9px;background:var(--ink3);color:#fff">+${r.flavorDew}🧪風味露</div>
     </div>`;
   }
   const ch = TETRIS_CHARACTERS[r.charId];

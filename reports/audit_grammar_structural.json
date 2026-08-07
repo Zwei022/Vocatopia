@@ -1,0 +1,71 @@
+{
+  "generatedAt": "2026-08-07T07:14:22.935Z",
+  "chapters": 20,
+  "answerUnits": 1402,
+  "issueCount": 9,
+  "issues": [
+    {
+      "locator": "$.9.subLessons[2].quiz.mc[0]",
+      "type": "重複題目",
+      "severity": "中",
+      "found": "she sings ___ than her sister.",
+      "suggestion": "與 $.8.subLessons[1].quiz.mc[1] 重複；確認是否刻意複習"
+    },
+    {
+      "locator": "$.14.subLessons[2].quiz.mc[3]",
+      "type": "重複題目",
+      "severity": "中",
+      "found": "dave: have you ever ___ the movie titanic? chris: yes, i've seen it once.",
+      "suggestion": "與 $.14.subLessons[1].quiz.mc[8] 重複；確認是否刻意複習"
+    },
+    {
+      "locator": "$.15.subLessons[3].quiz.mc[9]",
+      "type": "重複題目",
+      "severity": "中",
+      "found": "which sentence is correct?",
+      "suggestion": "與 $.15.subLessons[0].quiz.mc[9] 重複；確認是否刻意複習"
+    },
+    {
+      "locator": "$.17.subLessons[1].quiz.mc[3]",
+      "type": "重複選項",
+      "severity": "高",
+      "found": "[\"(A) Because\",\"(B) Since\",\"(C) Because\",\"(D) Because\"]",
+      "suggestion": "所有選項須互不相同，且正解文字必須真的存在"
+    },
+    {
+      "locator": "$.1.subLessons[0].teaching.explanation",
+      "type": "錯誤文法規則",
+      "severity": "高",
+      "found": "宣稱 because／since 等附屬連接詞前後子句時態基本上要一致",
+      "suggestion": "時態應由每個動作的實際時間關係決定；because 本身不要求兩子句同時態"
+    },
+    {
+      "locator": "$.1.subLessons[1].teaching.explanation",
+      "type": "錯誤文法規則",
+      "severity": "高",
+      "found": "把 lose、decide 列為不能使用進行式的狀態動詞",
+      "suggestion": "兩者可用進行式，例如 I am losing hope / We are deciding what to do"
+    },
+    {
+      "locator": "$.2.subLessons[0].teaching.explanation",
+      "type": "錯誤文法規則",
+      "severity": "高",
+      "found": "宣稱 buy、open、arrive、finish 等瞬間動作天生沒有進行式，且 while 子句一定用進行式",
+      "suggestion": "這些動詞可用進行式；while 也能接一般式，應依語意判斷"
+    },
+    {
+      "locator": "$.1.subLessons[1].teaching.explanation",
+      "type": "過度絕對化",
+      "severity": "中",
+      "found": "宣稱 before long 只指向未來",
+      "suggestion": "before long 可搭配過去或未來，表示「不久之後」"
+    },
+    {
+      "locator": "$.15.subLessons[1].teaching.explanation",
+      "type": "錯誤／高風險規則",
+      "severity": "高",
+      "found": "把 I said 與 I think／I believe 一併說成附加問句要依受詞子句",
+      "suggestion": "轉移附加問句主要適用第一人稱現在式的 think/believe/suppose 等；I said 通常不照搬"
+    }
+  ]
+}

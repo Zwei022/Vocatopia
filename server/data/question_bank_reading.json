@@ -32,7 +32,7 @@
           "(C) By bringing a friend to the library",
           "(D) By reading 5 books and writing a note about each"
         ],
-        "answer": 3,
+        "answer": 2,
         "explanation": "Finish all 5（讀 5 本並各寫短文）才能拿到免費電影票，選 C；帶朋友是得到書籤，不是電影票。",
         "optionsZh": [
           "在 6 月 30 日前報名",
@@ -59,7 +59,7 @@
           "(C) To complain about the cold weather",
           "(D) To thank Anna for the card and say she looks forward to the visit"
         ],
-        "answer": 3,
+        "answer": 1,
         "explanation": "信中先感謝生日卡，又說期待下個月相見、一起烤餅乾，主要目的為感謝並表達期待，選 B。",
         "optionsZh": [
           "教 Anna 怎麼做科展",
@@ -248,7 +248,7 @@
           "(C) Creates",
           "(D) Organizes"
         ],
-        "answer": 3,
+        "answer": 1,
         "explanation": "後面用 like cleaning a messy room（像整理凌亂的房間）作比喻，可推知 sorts through 意為「整理」，選 B。",
         "optionsZh": [
           "全部丟掉",
@@ -275,7 +275,7 @@
           "(C) 8:30 a.m.",
           "(D) 8:00 a.m."
         ],
-        "answer": 3,
+        "answer": 0,
         "explanation": "8:00 在校門口集合、8:30 巴士就開（別遲到），所以最晚 8:00 必須到，選 A。",
         "optionsZh": [
           "下午 4:00",
@@ -338,7 +338,7 @@
           "(C) He invented a new type of honey",
           "(D) He discovered how bees communicate through dance"
         ],
-        "answer": 3,
+        "answer": 1,
         "explanation": "第三段說他花了多年觀察蜜蜂、弄懂牠們的舞蹈語言，因此在 1973 年獲諾貝爾獎，選 B。",
         "optionsZh": [
           "他找到拯救蜜蜂的方法",
@@ -356,7 +356,7 @@
           "(C) We should eat less honey to protect bees",
           "(D) Bees should be kept as pets"
         ],
-        "answer": 1,
+        "answer": 2,
         "explanation": "末段說蜜蜂幫助植物結種、若蜜蜂消失許多蔬果也會消失，暗示保護蜜蜂就是保護糧食，選 C。",
         "optionsZh": [
           "蜜蜂可以在沒有花的情況下存活",
@@ -563,7 +563,7 @@
           "(C) Jazz music is more popular than other types of music",
           "(D) Children should spend more time in the countryside"
         ],
-        "answer": 0,
+        "answer": 1,
         "explanation": "故事透過廣播機連接祖孫兩代、讓 Sam 每年回訪直到廣播沉默，主旨是簡單的事物可以拉近人心並留下深刻回憶，選 B。",
         "optionsZh": [
           "簡單的事物能拉近人心並留下長久回憶",
@@ -3156,7 +3156,7 @@
           "(C) Warm temperatures help yeast work faster",
           "(D) It stops the dough from getting moldy"
         ],
-        "answer": 2,
+        "answer": 0,
         "explanation": "文中說 Warm temperatures help yeast work faster，故麵包師常把麵團放在溫暖處，選 A。",
         "optionsZh": [
           "幫助麵粉變白",

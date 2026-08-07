@@ -1,0 +1,1864 @@
+# Vocatopia 單字資料庫全面審查報告
+
+> 審查範圍：`target_2000_words.json` 與 `supabase/words_cache.json`。本報告只讀取原始資料；未覆寫任何資料檔。產生時間：2026-08-07T07:16:53.346Z
+
+## 方法與覆蓋
+
+1. 先以程式檢查 JSON、必要欄位、目標／快取集合差異、重複字頭、done、IPA 外框、中文字形、詞性格式與例句字頭命中。
+2. 再把 1,994 個目標字依原順序切成 20 批（第 1–19 批各 100 筆，第 20 批 94 筆），逐批複核字義、詞性、中英例句對應及字頭合理性。
+3. 額外的 1,320 筆快取資料只做集合與結構辨識，**未宣稱完成逐筆人工語意複核**；因為它們不屬於本次權威目標字表。
+4. 詞形檢查包含常見規則變化與不規則變化。程式候選再經語意複核，避免把 admitted、became、children 等正確詞形誤報。
+
+批次覆蓋：批次 1：1–100（已複核）；批次 2：101–200（已複核）；批次 3：201–300（已複核）；批次 4：301–400（已複核）；批次 5：401–500（已複核）；批次 6：501–600（已複核）；批次 7：601–700（已複核）；批次 8：701–800（已複核）；批次 9：801–900（已複核）；批次 10：901–1000（已複核）；批次 11：1001–1100（已複核）；批次 12：1101–1200（已複核）；批次 13：1201–1300（已複核）；批次 14：1301–1400（已複核）；批次 15：1401–1500（已複核）；批次 16：1501–1600（已複核）；批次 17：1601–1700（已複核）；批次 18：1701–1800（已複核）；批次 19：1801–1900（已複核）；批次 20：1901–1994（已複核）。
+
+## 摘要
+
+| 項目 | 結果 |
+|---|---:|
+| 目標字筆數／唯一字頭 | 1,994／1,994 |
+| 目標字缺字 | 0 |
+| 快取總筆數 | 3,314 |
+| 非目標額外快取字 | 1,320 |
+| done 非 true | 0 |
+| 缺少 phonetic | 141 |
+| IPA 使用方括號而非 / / | 4 |
+| definition 不是繁體中文 | 292 |
+| 已確認嚴重語意錯置 | 4 |
+| 高／中／低嚴重度問題筆數 | 6／456／1320 |
+
+## 已確認會誤導學生的問題
+
+| 字頭 | 問題類型 | 錯誤內容 | 建議修正 | 嚴重度 |
+|---|---|---|---|---|
+| `chinese new year 農曆新年(n)` | 字義／例句／詞性錯置 | 字頭混入中文與詞性標記，內容卻是 choice（選擇）的資料。 | 字頭改為 Chinese New Year；詞性名詞；中譯「農曆新年／春節」，並換成相關中英例句。 | 高 |
+| `christmas eve` | 字義／例句／詞性錯置 | 詞性為形容詞，定義與例句實際是 plump（胖嘟嘟的）。 | 詞性改名詞；中譯「聖誕夜／平安夜」，並換成 Christmas Eve 例句。 | 高 |
+| `class leader` | 字義／例句／詞性錯置 | 定義與例句實際是 masterpiece（傑作）。 | 中譯改為「班長」，並換成 class leader 例句。 | 高 |
+| `rome` | 字義／例句／詞性錯置 | 定義與例句實際是 roof（屋頂）。 | 中譯改為「羅馬」，並換成 Rome 例句。 | 高 |
+| `ld` | 拼字／字頭格式 | 無法辨識為標準英文單字或常用縮寫。 | 回查權威目標字表來源，確認是否誤植；未確認前停用。 | 高 |
+| `running nose` | 拼字／字頭格式 | 搭配錯誤；標準說法是 runny nose。 | 改為 runny nose。 | 高 |
+| `pingpong` | 拼字／字頭格式 | 非主流標準拼法。 | 改為 ping-pong 或 table tennis。 | 中 |
+| `over-weight` | 拼字／字頭格式 | 一般字頭拼法錯誤。 | 改為 overweight。 | 中 |
+| `under-weight` | 拼字／字頭格式 | 一般字頭拼法錯誤。 | 改為 underweight。 | 中 |
+| `table cloth` | 拼字／字頭格式 | 現代標準字頭通常合寫。 | 改為 tablecloth。 | 中 |
+| `baby sitter` | 拼字／字頭格式 | 現代標準字頭通常合寫。 | 改為 babysitter。 | 中 |
+| `milk shake` | 拼字／字頭格式 | 常見標準字頭通常合寫。 | 改為 milkshake。 | 中 |
+| `soy-sauce` | 拼字／字頭格式 | 一般不加連字號。 | 改為 soy sauce。 | 中 |
+| `teacher's day` | 拼字／字頭格式 | 節日名稱所有格通常使用複數所有格。 | 改為 Teachers' Day。 | 中 |
+| `both xxx and` | 拼字／字頭格式 | xxx 是版面占位符，不應存在正式字頭。 | 改為 both ... and ...。 | 中 |
+| `either xxx or` | 拼字／字頭格式 | xxx 是版面占位符，不應存在正式字頭。 | 改為 either ... or ...。 | 中 |
+| `neither xxx nor` | 拼字／字頭格式 | xxx 是版面占位符，不應存在正式字頭。 | 改為 neither ... nor ...。 | 中 |
+
+## 中文字形問題
+
+| 字頭 | 問題類型 | 錯誤內容 | 建議修正 | 嚴重度 |
+|---|---|---|---|---|
+| `crime` | 簡體字／日文漢字變體 | definition、definition_zh 使用「爲」。 | 改為台灣繁體「為」。 | 中 |
+| `embarrass` | 簡體字／日文漢字變體 | definition、definition_zh 使用「爲」。 | 改為台灣繁體「為」。 | 中 |
+| `sincere` | 簡體字／日文漢字變體 | definition、definition_zh 使用「爲」。 | 改為台灣繁體「為」。 | 中 |
+| `poor` | 簡體字／日文漢字變體 | definition、definition_zh 使用簡體「据」。 | 依語意改為「拮据」中的繁體「據」。 | 中 |
+
+註：程式初篩曾命中「公里」的「里」與「王后」的「后」，但在台灣繁體語境均為正確用字，已排除，不列為錯誤。
+
+## 詞性欄位問題
+
+| 字頭 | 問題類型 | 錯誤內容 | 建議修正 | 嚴重度 |
+|---|---|---|---|---|
+| `hey` | 詞性格式 | interjection | 感嘆詞 | 中 |
+| `oh-oh` | 詞性格式 | interjection | 感嘆詞 | 中 |
+| `uh-uh` | 詞性格式 | interjection | 感嘆詞 | 中 |
+| `ma'am` | 詞性格式 | 稱呼語 | 名詞（稱呼語可保留在說明，不宜作為非標準 pos 值） | 中 |
+
+## IPA 問題
+
+### 缺少 phonetic（141 筆，中）
+
+錯誤內容均為空字串；建議依一致的英式或美式發音來源補上以 `/ /` 包住的標準 IPA。多字詞也不可因為是片語、地名或專名就留空。
+
+- `a lot of`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `air conditioner`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `airline`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `alarm clock`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `as if`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `as soon as`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `asia`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `asian`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `australia`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `australian`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `baby sitter`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `bicycle riding`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `both xxx and`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `britain`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `british`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `bus stop`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `canada`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `canadian`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `cd`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `cd player`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `cheerleader`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `chinese new year 農曆新年(n)`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `christmas eve`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `class leader`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `computer game`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `contact lens`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `credit card`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `culture center`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `earrings`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `either xxx or`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `england`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `englishman`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `europe`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `european`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `even if`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `exercising`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `expensive fruit`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `extra large`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `family name`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `fast food`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `fire station`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `first grade`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `first name`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `flat tire`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `flower shop`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `foggy`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `food restaurant`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `france`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `germany`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `get in`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `get off`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `get on`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `given name`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `good looking`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `granddaughter`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `grow up`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `haircut`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `hairdresser`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `homesick`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `hong kong`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `in back of`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `in front of`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `instant noodle`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `italy`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `japanese`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `kaohsiung`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `korea`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `korean`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `ktv`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `lantern festival`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `last name`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `ld`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `london`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `los angeles`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `lunch box`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `marker`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `men's room`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `michael jackson`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `microwave oven`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `mid-autumn`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `milk shake`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `neither xxx nor`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `new year's day`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `new york`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `next to`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `nice looking`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `over-weight`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `overpass`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `paris`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `parking lot`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `pencil box`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `philippines`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `pingpong`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `police officer`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `police station`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `pop music`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `primary school`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `reading test`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `roller skating`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `rome`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `rubber band`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `running nose`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `russia`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `russian`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `salesman`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `san francisco`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `schoolmate`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `second grade`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `singapore`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `social science`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `soft drink`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `softball`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `sore throat`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `soy-sauce`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `stamp collecting`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `stationery store`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `swimsuit`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `table cloth`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `table tennis`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `tableware`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `taichung`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `tainan`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `taipei`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `taiwanese`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `tape recorder`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `teacher's day`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `tokyo`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `traffic jam`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `traffic light`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `traffic lights`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `traffic sign`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `under-weight`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `underpass`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `valentine's day`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `vcr`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `walkman`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `washing machine`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `women's room`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `youth day`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `convenience store`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+- `t-shirt`：`phonetic: ""` → 補上經權威字典核對的 IPA。
+
+### IPA 外框錯誤（4 筆，中）
+
+- `better`：目前 `[ˈbeɾə]` → 改為以 `/ /` 包住；並統一專案採用的音位／語音標記粒度。
+- `children`：目前 `[ˈt͡ʃʊld̠ɹ̠ ̝ʷən]` → 改為以 `/ /` 包住；並統一專案採用的音位／語音標記粒度。
+- `typewriter`：目前 `[ˈtaɪpˌɹaɪtə(ɹ)]` → 改為以 `/ /` 包住；並統一專案採用的音位／語音標記粒度。
+- `uh-uh`：目前 `[ˈ(ʔ)ʌ̃˧.ʔʌ̃˩]` → 改為以 `/ /` 包住；並統一專案採用的音位／語音標記粒度。
+
+## definition 欄位語言不符（292 筆，中）
+
+這些字的 `definition_zh` 有繁中，但 `definition` 是英文；不符合本次「definition／definition_zh 均為繁體中文」的驗收條件。建議讓兩欄都使用繁體中文，或正式改 schema，另設 `definition_en` 存英文，避免同一欄混用語言。
+
+- `ability`：`definition` = "Suitableness."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "能力；才能；勝任能力"。
+- `achieve`：`definition` = "To succeed in something, now especially in academic performance."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（尤指經過努力）完成；達到；實現"。
+- `addition`：`definition` = "The act of adding anything."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "加法；添加；增加；補充"。
+- `adjective`：`definition` = "(grammar) A word that modifies a noun or describes a noun’s referent."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（語法）修飾或描述名詞的詞；形容詞"。
+- `admit`：`definition` = "To allow to enter; to grant entrance (to), whether into a place, into the mind, or into consideration"；建議搬至 `definition_en`，並將 `definition` 改為繁中 "允許進入；接納；承認"。
+- `adopt`：`definition` = "To take by choice into relationship (a child, heir, friend, citizen, etc.)"；建議搬至 `definition_en`，並將 `definition` 改為繁中 "領養；採納；採取；接受"。
+- `advance`：`definition` = "A forward move; improvement or progression."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "進步；進展；前進；發展"。
+- `advantage`：`definition` = "Any condition, circumstance, opportunity or means, particularly favorable to success, or to any desired end."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "優勢；優點；有利條件；好處"。
+- `adverb`：`definition` = "(grammar) A word that modifies a verb, adjective, other adverbs, or various other types of words, phrases, or clauses."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（語法）修飾動詞或形容詞的詞；副詞"。
+- `affair`：`definition` = "(often in the plural) Something which is done or is to be done; business of any kind, commercial, professional, or public."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "事務；事情；需要處理的事項"。
+- `aid`：`definition` = "Help; assistance; succor, relief."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "幫助；援助；協助"。
+- `aids`：`definition` = "Help; assistance; succor, relief."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "援助；幫助；支持（複數或第三人稱）"。
+- `aircraft`：`definition` = "A vehicle capable of atmospheric flight due to interaction with the air, such as buoyancy or lift"；建議搬至 `definition_en`，並將 `definition` 改為繁中 "飛機；航空器"。
+- `airline`：`definition` = "A company that flies airplanes to transport people and goods."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "航空公司"。
+- `airmail`：`definition` = "The system of conveying mail using aircraft."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "航空郵件；空運郵件"。
+- `alarm clock`：`definition` = "A clock with an alarm that can be set to sound at a determined time."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "鬧鐘；帶有警報的時鐘"。
+- `alley`：`definition` = "A narrow street or passageway, especially one through the middle of a block giving access to the rear of lots or buildings."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "小巷；狹窄的街道或通道"。
+- `alphabet`：`definition` = "The set of letters used when writing in a language."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "字母表；字母系統"。
+- `amount`：`definition` = "The total, aggregate or sum of material (not applicable to discrete numbers or units or items in standard English)."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（材料的）總量；總數"。
+- `anyway`：`definition` = "Regardless; anyhow."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "不管怎樣；反正；儘管如此"。
+- `appearance`：`definition` = "The act of appearing or coming into sight; the act of becoming visible to the eye."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（某人或某事物的）出現；顯現"。
+- `apply`：`definition` = "To lay or place; to put (one thing to another)"；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（將某物）放置或塗抹於；應用"。
+- `arrest`：`definition` = "A check, stop, an act or instance of arresting something."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（警察對某人的）逮捕；拘禁"。
+- `article`：`definition` = "A piece of nonfictional writing such as a story, report, opinion piece, or entry in a newspaper, magazine, journal, dictionary, encyclopedia, etc."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（報紙或雜誌等中的）文章；報導"。
+- `as if`：`definition` = "As though; in a manner suggesting."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "彷彿；好像；仿佛"。
+- `as well as`：`definition` = "In addition to; further to."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "除了…之外；同時；以及"。
+- `attend`：`definition` = "To listen to (something or someone); to pay attention to; regard; heed."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "注意；聆聽；關注"。
+- `audience`：`definition` = "A group of people within hearing; specifically, a large gathering of people listening to or watching a performance, speech, etc."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "觀眾；聽眾；觀看或聆聽表演的人群"。
+- `auxiliary`：`definition` = "A person or group that acts in an auxiliary manner."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "輔助的；支援的；副的"。
+- `awake`：`definition` = "Not asleep; conscious."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "醒著的；清醒的；未入睡的"。
+- `aware`：`definition` = "Vigilant or on one's guard against danger or difficulty."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "意識到的；察覺的；警覺的"。
+- `backward`：`definition` = "The state behind or past."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "向後的；往後的；反向的"。
+- `banker`：`definition` = "One who conducts the business of banking; one who, individually, or as a member of a company, keeps an establishment for the deposit or loan of money, or for traffic in money, bills of exchange, etc."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（銀行工作者）銀行家；銀行職員"。
+- `bar`：`definition` = "A solid, more or less rigid object of metal or wood with a uniform cross-section smaller than its length."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（堅硬物體）金屬棒；木棒；條狀物"。
+- `basis`：`definition` = "A physical base or foundation."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（事物的基礎）基礎；基底；根據"。
+- `beautifully`：`definition` = "In a beautiful manner."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "漂亮地；優美地；迷人地"。
+- `best`：`definition` = "The supreme effort one can make, or has made."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（最高的努力或成就）最好的；最優的；盡力"。
+- `better`：`definition` = "An entity, usually animate, deemed superior to another; one who has a claim to precedence; a superior."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（較優越的人）更優秀的人；超越者"。
+- `bit`：`definition` = "A piece of metal placed in a horse's mouth and connected to the reins to direct the animal."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（馬的控制裝置）馬銜；嚼子；銜鐵"。
+- `blouse`：`definition` = "A shirt, typically loose and reaching from the neck to the waist."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "女襯衫；寬鬆上衣；襯衣"。
+- `board`：`definition` = "A relatively long, wide and thin piece of any material, usually wood or similar, often for use in construction or furniture-making."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（長形）木板；板材"。
+- `boyfriend`：`definition` = "A male partner in an unmarried romantic relationship."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "男朋友；（未婚戀愛關係中的）異性伴侶"。
+- `burger`：`definition` = "A hamburger."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "漢堡（漢堡包）；漢堡肉餅"。
+- `bus stop`：`definition` = "A place where public transport buses stop to allow passengers to board or leave."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "公車站；公車站牌"。
+- `cabinet`：`definition` = "A storage closet either separate from, or built into, a wall."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（廚房或衣櫃的）櫃子；儲物櫃"。
+- `camping`：`definition` = "To live in a tent or similar temporary accommodation."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "露營；野營；在帳篷中住宿"。
+- `career`：`definition` = "One's calling in life; a person's occupation; one's profession."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "職業；終身事業；人生的工作"。
+- `carefully`：`definition` = "Sorrowfully."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "小心地；謹慎地；注意細節地"。
+- `certainly`：`definition` = "In a way which is certain; with certainty."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "確實地；無疑地；肯定地"。
+- `chairman`：`definition` = "A person presiding over a meeting."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "主席；會議或組織的領導人"。
+- `chapter`：`definition` = "(authorship) One of the main sections into which the text of a book is divided."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "章；章節；書籍的主要部分"。
+- `cheerleader`：`definition` = "A person, usually a young, attractive female, who encourages applause and cheers at a sports event, and wearing a specially-designed uniform in the official colors of the team he/she cheers for."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "啦啦隊員；運動比賽中帶領歡呼的人"。
+- `childhood`：`definition` = "The state of being a child."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "童年；兒童時期；幼年"。
+- `children`：`definition` = "A person who has not yet reached adulthood, whether natural (puberty), cultural (initiation), or legal (majority)"；建議搬至 `definition_en`，並將 `definition` 改為繁中 "小孩；兒童；未達成年的人"。
+- `citizen`：`definition` = "A resident of a city or town, especially one with legally-recognized rights or duties."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "城市或城鎮居民；公民；有法律權利的人"。
+- `classical`：`definition` = "One that is classical in some way; for example, a classical economist."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "古典類型的；古典派的；遵循古典風格的"。
+- `climbing`：`definition` = "To ascend; rise; to go up."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "攀登；往上爬；上升"。
+- `cloth`：`definition` = "A woven fabric such as used in dressing, decorating, cleaning or other practical use."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "布料；織物；衣著或裝飾用材料"。
+- `clothing`：`definition` = "To adorn or cover with clothing; to dress; to supply clothes or clothing."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "穿衣；提供衣物；用衣物覆蓋"。
+- `comfortably`：`definition` = "In a comfortable manner."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "舒適地；舒服地；自在地"。
+- `computer game`：`definition` = "An electronic game, especially a game played using a general-purpose computer (as opposed to a game console)."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "在電腦上玩的遊戲"。
+- `confirm`：`definition` = "To strengthen; to make firm or resolute."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "使確定；加強"。
+- `connective`：`definition` = "That which connects."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "連接的事物；連接詞"。
+- `contact lens`：`definition` = "A thin lens, made of flexible or rigid plastic, that is placed directly on to the eye to correct vision, used as an alternative to spectacles, or, if coloured, to change one's eye color cosmetically."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "戴在眼睛上矯正視力的薄透鏡"。
+- `contain`：`definition` = "To hold inside."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "包含；裡面有"。
+- `cookies`：`definition` = "A small, flat, baked good which is either crisp or soft but firm."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "小的扁平烤製甜點；餅乾"。
+- `cooking`：`definition` = "To prepare (food) for eating by heating it, often by combining it with other ingredients."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "用熱加工食物；烹飪"。
+- `countryside`：`definition` = "A rural area, or the rural part of a larger area."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "鄉村地區；農村"。
+- `county`：`definition` = "The land ruled by a count or a countess."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "伯爵或女伯爵統治的地區；郡"。
+- `credit card`：`definition` = "A plastic card, usually with a magnetic strip or an embedded microchip, connected to a credit account and used to buy goods or services."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "與信用帳戶連結、用來購買商品的塑膠卡；信用卡"。
+- `crisis`：`definition` = "A crucial or decisive point or situation; a turning point."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "關鍵時刻；危急關頭；轉折點"。
+- `crowd`：`definition` = "A group of people congregated or collected into a close body without order."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "聚集在一起的許多人；人群"。
+- `crowded`：`definition` = "To press forward; to advance by pushing."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "人很多的；擁擠的；滿是人的"。
+- `daily`：`definition` = "Something that is produced, consumed, used, or done every day."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "每天發生或進行的；日常的"。
+- `dancing`：`definition` = "To move with rhythmic steps or movements, especially in time to music."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "隨著音樂節奏跳舞；舞蹈"。
+- `debt`：`definition` = "An action, state of mind, or object one has an obligation to perform for another, adopt toward another, or give to another."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "欠別人的錢；債務；借款"。
+- `deer`：`definition` = "A wild animal with long legs; males often have antlers."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "鹿"。
+- `delay`：`definition` = "A period of time before an event occurs; the act of delaying; procrastination; lingering inactivity."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "延遲；耽擱；推遲"。
+- `democracy`：`definition` = "Rule by the people, especially as a form of government; either directly or through elected representatives (representative democracy)."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "人民統治；民主制度；民主政治"。
+- `democratic`：`definition` = "Pertaining to democracy; favoring democracy, or constructed upon the principle of government by the people."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "民主的；以人民統治為基礎的；具民主精神的"。
+- `donkey`：`definition` = "An animal related to a horse, often used to carry things."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "驢子"。
+- `drawing`：`definition` = "To move or develop something."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "素描；繪畫；拉動；吸引"。
+- `dresser`：`definition` = "An item of kitchen furniture, like a cabinet with shelves, for storing crockery or utensils."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "餐具櫥；廚房儲物傢俱；有層架的食器櫃"。
+- `drinks`：`definition` = "To consume (a liquid) through the mouth."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "飲；喝；飲用（液體）"。
+- `drugstore`：`definition` = "A pharmacy; a retail store, the main product of which is medications (usually both prescription and non-prescription), along with first aid and other similar products."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "藥房；藥店；銷售藥物和保健用品的店鋪"。
+- `eagle`：`definition` = "A large, strong bird with excellent eyesight."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "老鷹；鷹"。
+- `earrings`：`definition` = "A piece of jewelry worn on the ear."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "耳環；耳飾；戴在耳朵上的飾品"。
+- `easter`：`definition` = "Eastern."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "東方的；東邊的；來自東方的"。
+- `eat`：`definition` = "To put food in your mouth and swallow it."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "吃"。
+- `effective`：`definition` = "A soldier fit for duty"；建議搬至 `definition_en`，並將 `definition` 改為繁中 "適合執勤的；能夠履職的；可用的（士兵）"。
+- `eighteenth`：`definition` = "The person or thing in the eighteenth position."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "第十八個；第十八位的人或物"。
+- `election`：`definition` = "A process of choosing a leader, members of parliament, councillors or other representatives by popular vote."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "選舉；投票選出領導人或代表的過程"。
+- `electricity`：`definition` = "Originally, a property of amber and certain other nonconducting substances to attract lightweight material when rubbed, or the cause of this property; now understood to be a phenomenon caused by the distribution and movement of charged subatomic particles and their interaction with the electromagnetic field."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "電；電能；驅動燈和機器的能源"。
+- `element`：`definition` = "One of the simplest or essential parts or principles of which anything consists, or upon which the constitution or fundamental powers of anything are based."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "元素；基本組成部分；要素"。
+- `eleventh`：`definition` = "The person or thing in the eleventh position."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "第十一；第11個；排在第11位的"。
+- `encourage`：`definition` = "To mentally support; to motivate, give courage, hope or spirit."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "鼓勵；激勵；給予勇氣和信心"。
+- `entire`：`definition` = "The whole of something; the entirety."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "整個的；完整的；全部的"。
+- `even if`：`definition` = "Regardless of whether; irrespective of (something happening or being the case)."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "即使；縱然；不管"。
+- `everywhere`：`definition` = "In or to all locations under discussion."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "到處；四面八方；各個地方"。
+- `examine`：`definition` = "To observe or inspect carefully or critically"；建議搬至 `definition_en`，並將 `definition` 改為繁中 "仔細檢查；細心觀察；審視"。
+- `exercising`：`definition` = "To exert for the sake of training or improvement; to practice in order to develop."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "運動；鍛鍊；做體育活動"。
+- `extra large`：`definition` = "Very large."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "特大號的；超大的；非常大的"。
+- `failure`：`definition` = "State or condition of not meeting a desirable or intended objective, opposite of success."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "失敗；失利；未能成功"。
+- `family name`：`definition` = "A surname."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "姓氏；家族的姓；代代相傳的姓"。
+- `fashionable`：`definition` = "A fashionable person; a fop"；建議搬至 `definition_en`，並將 `definition` 改為繁中 "時尚的；流行的；入時的"。
+- `fast food`：`definition` = "Food that is served quickly, often standardized and pre-prepared."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "快速提供的；預先準備好的食物"。
+- `favor`：`definition` = "A kind or helpful deed; an instance of voluntarily assisting (someone)."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "幫助；幫忙的行為"。
+- `feather`：`definition` = "A branching, hair-like structure that grows on the bodies of birds, used for flight, swimming, protection and display."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "鳥類身上的羽毛；用於飛行和保溫"。
+- `fellow`：`definition` = "A colleague or partner."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "同事；夥伴；同學"。
+- `field`：`definition` = "A land area free of woodland, cities, and towns; open country."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "田地；草地；開放的鄉村地區"。
+- `fifteenth`：`definition` = "The person or thing in the fifteenth position."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "第十五個；位於第十五位的事物或人物"。
+- `figure`：`definition` = "A drawing or diagram conveying information."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "圖表；圖形；圖解"。
+- `fire station`：`definition` = "The building where firefighters and fire trucks/fire engines are housed when not answering an alarm."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "消防局；消防人員和消防車停放的建築物"。
+- `firm`：`definition` = "A business partnership; the name under which it trades."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（商業）公司；商行；事務所"。
+- `first grade`：`definition` = "The first year of grade school, the period in school that comes after kindergarten and before second grade. Children usually begin first grade at age six."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "小學教育階段的第一年；幼兒園之後開始的正式學年"。
+- `first name`：`definition` = "The first element of a full name in cultures that place the given name first."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "人名中排在最前面的名字；(某些文化中的)名字而非姓氏"。
+- `fishing`：`definition` = "The act of catching fish."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "捕魚；用釣竿或漁網抓魚的活動"。
+- `flat`：`definition` = "An area of level ground."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "平坦的；沒有高低起伏的地面或區域"。
+- `flow`：`definition` = "A movement in people or things with a particular way in large numbers or amounts"；建議搬至 `definition_en`，並將 `definition` 改為繁中 "流動；(液體、人或物品的)連續移動"。
+- `foggy`：`definition` = "Obscured by mist or fog; unclear; hazy"；建議搬至 `definition_en`，並將 `definition` 改為繁中 "被霧或薄霧籠罩的；能見度低的；朦朧不清的"。
+- `forward`：`definition` = "One of the eight players (comprising two props, one hooker, two locks, two flankers and one number eight, collectively known as the pack) whose primary task is to gain and maintain possession of the ball (compare back)."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（橄欖球）前鋒球員；主要職責是爭奪並保持球權的球員"。
+- `fourteenth`：`definition` = "The person or thing in the fourteenth position."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "位於序列中第十四位的人或物"。
+- `freezer`：`definition` = "An appliance or room used to store food or other perishable items at temperatures below 0° Celsius (32° Fahrenheit)."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "保存食物於低溫的機器或空間"。
+- `freezing`：`definition` = "Especially of a liquid, to become solid due to low temperature."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "因溫度很低而變成冰或固體"。
+- `german`：`definition` = "A near relative."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "與自己有血緣關係的親屬"。
+- `get in`：`definition` = "To get into or inside something, literally or figuratively."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "進入或移入某個地方"。
+- `get off`：`definition` = "To move from being on top of (something) to not being on top of it."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "從某物上下來或離開"。
+- `get on`：`definition` = "To board or mount (something), especially a vehicle."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "登上或進入交通工具"。
+- `girlfriend`：`definition` = "A female partner in an unmarried romantic relationship."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "與某人有浪漫關係但未婚的女性"。
+- `given name`：`definition` = "A first name, a name chosen for a child, usually by the child's parents; a forename."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "父母為新生兒選擇的名字；名字（不是姓氏）"。
+- `glasses`：`definition` = "Lenses in a frame worn to help a person see."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "眼鏡"。
+- `gloves`：`definition` = "An item of clothing other than a mitten, covering all or part of the hand and fingers, but usually allowing independent movement of the fingers."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "遮蓋手和手指的衣物；手套（每個手指有獨立的空間）"。
+- `grand`：`definition` = "(plural \"grand\") A thousand of some unit of currency, such as dollars or pounds. (Compare G.)"；建議搬至 `definition_en`，並將 `definition` 改為繁中 "一千元（指美元、英鎊等貨幣）"。
+- `granddaughter`：`definition` = "The daughter of someone's child."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "兒子或女兒的女兒；孫女"。
+- `grapefruit`：`definition` = "The tree of the species Citrus paradisi, a hybrid of pomelo (Citrus maxima) and sweet orange."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "黃色的柑橘類水果；葡萄柚；味道酸澀"。
+- `grow up`：`definition` = "To mature and become an adult."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "長大；成熟；變成大人"。
+- `haircut`：`definition` = "The act of cutting of the hair, often done professionally by a barber, hair stylist, or beautician."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "剪頭髮；理髮；頭髮被剪後的樣子"。
+- `hairdresser`：`definition` = "A person who cuts or styles hair as an occupation or profession."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "以剪頭髮或設計髮型為職業的人；理髮師"。
+- `hey`：`definition` = "An exclamation to get attention."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "用來吸引注意力的感嘆詞；嘿"。
+- `hiking`：`definition` = "To take a long walk for pleasure or exercise."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "為了休閒或運動的長途步行；登山健行"。
+- `hippopotamus`：`definition` = "A large, semi-aquatic, herbivorous (plant-eating) African mammal (Hippopotamus amphibius)"；建議搬至 `definition_en`，並將 `definition` 改為繁中 "大型半水生食草動物，生活在非洲的河流和湖泊中；河馬"。
+- `homesick`：`definition` = "(with for) missing one's home and family very much when away; nostalgic"；建議搬至 `definition_en`，並將 `definition` 改為繁中 "遠離家鄉時思念家人和家園的；想家的"。
+- `in front of`：`definition` = "At or near the front part of (something)."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "在某人或某物的前面；在...的正前方"。
+- `indefinite`：`definition` = "(grammar) A word or phrase that designates an unspecified or unidentified person or thing or group of persons or things."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（文法）指代不特定或未確定的人或事物；不明確的"。
+- `industry`：`definition` = "An area of business that produces goods or provides services."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "工業；產業；行業"。
+- `japan`：`definition` = "A country in East Asia made up of many islands."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "日本"。
+- `jar`：`definition` = "An earthenware container, either with two or no handles, for holding oil, water, wine, etc., or used for burial."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "玻璃或陶土製的容器；罐子"。
+- `jogging`：`definition` = "The action of the verb to jog."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "慢跑；緩慢奔跑作為運動"。
+- `kangaroo`：`definition` = "A member of the Macropodidae family of large marsupials with strong hind legs for hopping, native to Australia."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "澳洲有袋動物；後腿強壯能跳躍的大型動物"。
+- `kitty`：`definition` = "A kitten or young cat."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "小貓；年幼的貓"。
+- `koala`：`definition` = "A tree-dwelling marsupial, Phascolarctos cinereus, that resembles a small bear with a broad head, large ears and sharp claws, mainly found in eastern Australia."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "澳洲樹棲動物；毛茸茸身體圓胖的有袋動物"。
+- `lane`：`definition` = "(used in street names) A road, street, or similar thoroughfare."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "狹窄的道路；小巷；街道"。
+- `last name`：`definition` = "One's family name; surname."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "姓氏；家族名字；姓"。
+- `length`：`definition` = "The distance measured along the longest dimension of an object."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "長度；物體從一端到另一端的距離"。
+- `location`：`definition` = "A particular point or place in physical space."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "地點；位置；特定的地方"。
+- `loss`：`definition` = "The result of no longer possessing an object, a function, or a characteristic due to external causes or misplacement."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "喪失；失去；不再擁有某物"。
+- `lunch box`：`definition` = "A container for transporting meals, especially lunch."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "便當盒；盛裝飯菜以便攜帶的容器"。
+- `lychee`：`definition` = "The Chinese tropical fruit tree Litchi chinensis, of the soapberry family."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "荔枝；甜蜜多汁的熱帶水果，有粗糙的殼"。
+- `ma'am`：`definition` = "A polite way to address a woman."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "女士；太太；小姐（對女性的禮貌稱呼）"。
+- `mandarin`：`definition` = "The standard form of Chinese spoken in Taiwan and China."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "國語；華語；普通話"。
+- `marker`：`definition` = "A pen with a thick tip used for writing or drawing."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "麥克筆；簽字筆；白板筆"。
+- `measurement`：`definition` = "The act of measuring something or the result obtained."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "測量；尺寸；測量結果"。
+- `melon`：`definition` = "A large, round fruit with sweet, juicy flesh."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "瓜；甜瓜"。
+- `men's room`：`definition` = "A lavatory intended for use by men, often including urinals in addition to toilets."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "男廁所；男性使用的洗手間或盥洗室"。
+- `michael jackson`：`definition` = "An American singer and dancer known around the world as the King of Pop."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "麥可・傑克森；美國歌手與舞者，被稱為「流行樂之王」"。
+- `milk shake`：`definition` = "A thick beverage consisting of milk and ice cream mixed together, often with fruit, chocolate, or other flavoring."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "牛奶和冰淇淋混合製成的冷飲；奶昔"。
+- `mosquito`：`definition` = "A small flying insect that bites people and animals."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "蚊子"。
+- `necktie`：`definition` = "A strip of cloth worn around the neck and tied in the front. See also bowtie."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "領帶；繞在脖子上並在前面打結的布料"。
+- `next to`：`definition` = "Beside, alongside, by, adjacent to, or near."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "在…的旁邊；靠近；相鄰"。
+- `nineteenth`：`definition` = "The person or thing in the nineteenth position."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "第19個；第十九位；序數第19"。
+- `ninetieth`：`definition` = "The person or thing in the ninetieth position."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "第90個；第九十位；序數第90"。
+- `noodles`：`definition` = "(usually in the plural) a string or strip of pasta"；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（通常用複數）長條形的麵食；麵條"。
+- `northern`：`definition` = "An inhabitant of the northern regions."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "北方人；來自北方地區的人"。
+- `occupation`：`definition` = "An activity or task with which one occupies oneself; usually specifically the productive activity, service, trade, or craft for which one is regularly paid; a job."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "職業；工作；職務；佔領"。
+- `occur`：`definition` = "To happen or take place."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "發生；出現；想到；被發現"。
+- `official`：`definition` = "An office holder invested with powers and authorities."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "官員；高級公務員；負責人；權威人士"。
+- `oh`：`definition` = "An utterance of oh; a spoken expression of surprise, acknowledgement, etc."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "哦；呀；啊（表示驚訝、明白、高興或疼痛）"。
+- `oh-oh`：`definition` = "An exclamation of error, concern, or awareness of a problem."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "呃呀；哎呀（表示出錯或發現問題）"。
+- `oops`：`definition` = "A minor mistake or unforseen difficulty."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "哎呀；糟糕（表示輕微錯誤或出了點問題）"。
+- `operation`：`definition` = "The method by which a device performs its function."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "操作；運作；運行；手術；營運"。
+- `organize`：`definition` = "To arrange in working order."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "整理；安排；組織"。
+- `out of`：`definition` = "Expressing motion away, literal or figurative; opposed to into."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（表示方向）從...出來；離開"。
+- `outer space`：`definition` = "Region outside explored space."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "地球大氣層外的宇宙；太空"。
+- `overpass`：`definition` = "A section of a road or path that crosses over an obstacle, especially another road, railway, etc."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "跨越的道路或橋樑；立交橋"。
+- `parking lot`：`definition` = "An open area, generally paved, where automobiles may be left when not in use."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "停放汽車的露天場地；停車場"。
+- `pear`：`definition` = "A sweet fruit that is narrow at the top and wide at the bottom."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "梨子"。
+- `pencil box`：`definition` = "A container for stationery such as pencils, pens, rubber, correction fluid, etc."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "存放鉛筆和文具的盒子；文具盒"。
+- `pencil case`：`definition` = "An object purposed to contain different stationery like pencil, rubber, correction fluid, etc."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "存放筆類和文具的軟布袋；筆袋"。
+- `photograph`：`definition` = "A picture created by projecting an image onto a photosensitive surface such as a chemically treated plate or film, CCD receptor, etc."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "照片；用相機或攝影設備拍攝的影像"。
+- `photographer`：`definition` = "One who takes photographs, typically as an occupation."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "攝影師；以拍攝照片為職業的人"。
+- `plastic`：`definition` = "A synthetic, solid, hydrocarbon-based polymer, whether thermoplastic or thermosetting."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "塑膠；人造的輕硬材料"。
+- `pleased`：`definition` = "To make happy or satisfy; to give pleasure to."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "高興的；滿意的；開心的"。
+- `pleasure`：`definition` = "A state of being pleased or contented; gratification."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "愉快；享受；滿足感"。
+- `poem`：`definition` = "A piece of writing arranged in lines, often using rhythm or rhyme."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "詩；詩歌"。
+- `police officer`：`definition` = "A peace officer and member of a police force, i.e. policeman or policewoman."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "警察；執法部門的成員，維持公共安全"。
+- `police station`：`definition` = "A building serving as the headquarters of a branch of the police force, and sometimes as a temporary place of confinement for offenders."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "警察局；警察工作的總部或辦公地點"。
+- `policeman`：`definition` = "One who enforces."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "男警察；執行警務維持秩序的男性"。
+- `pop music`：`definition` = "Music intended for or accepted by a wide audience, usually with a commercial basis and distinguished from other genres such as classical music and folk music."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "流行音樂；廣受大眾歡迎的音樂類型"。
+- `possessive`：`definition` = "(grammar) The possessive case."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（文法）擁有格；所有格"。
+- `preposition`：`definition` = "(grammar, strict sense) Any of a class of non-inflecting words typically employed to connect a following noun or a pronoun, in an adjectival or adverbial sense, with some other word: a particle used with a noun or pronoun (in English always in the objective case) to make a phrase limiting some other word."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（文法）前置詞；介詞"。
+- `press`：`definition` = "A device used to apply pressure to an item."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "按壓機；壓力機"。
+- `primary school`：`definition` = "The first formal, obligatory school. Usually begins with nursery school or first grade and ends at fifth or sixth grade."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "小學；初級學校"。
+- `printer`：`definition` = "One who makes prints."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "印刷工人；排版工人"。
+- `prisoner`：`definition` = "A person incarcerated in a prison, while on trial or serving a sentence."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "囚犯；獄中人"。
+- `product`：`definition` = "A commodity offered for sale."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "商品；產品"。
+- `pronoun`：`definition` = "(grammar) A type of noun that refers anaphorically to another noun or noun phrase, but which cannot ordinarily be preceded by a determiner and rarely takes an attributive adjective. English examples include I, you, him, who, me, my, each other."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（文法）代名詞；代詞"。
+- `quickly`：`definition` = "Rapidly; with speed; fast."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "迅速地；快速地"。
+- `raincoat`：`definition` = "A waterproof coat to be worn in the rain."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "雨衣；防水外套"。
+- `rapid`：`definition` = "(often in the plural) a rough section of a river or stream which is difficult to navigate due to the swift and turbulent motion of the water."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（河流中）激流；急流；湍急的河段"。
+- `reading`：`definition` = "To look at and interpret letters or other information that is written."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "閱讀；讀；理解文字"。
+- `recent`：`definition` = "Having happened a short while ago."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "最近的；近期的；新近發生的"。
+- `reflexive`：`definition` = "That reflects, or redirects back to the source."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "反身的；自指的；回應性的"。
+- `roller skating`：`definition` = "Skating on roller skates"；建議搬至 `definition_en`，並將 `definition` 改為繁中 "滑輪溜冰；穿著滑冰鞋活動"。
+- `rubber band`：`definition` = "An elastic band made of rubber."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "橡皮筋；橡膠圈；彈性橡皮筋"。
+- `running`：`definition` = "To move swiftly."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "跑步；奔跑；快速移動"。
+- `sailing`：`definition` = "To be impelled or driven forward by the action of wind upon sails, as a ship on water; to be impelled on a body of water by steam or other power."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "航海；乘帆船行駛；駕船航行"。
+- `salesman`：`definition` = "A man whose job it is to sell things, either in a shop/store or elsewhere."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "銷售員；推銷員；男性售貨員"。
+- `satisfied`：`definition` = "To do enough for; to meet the needs of; to fulfill the wishes or requirements of."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "感到滿意的；滿足的；心滿意足"。
+- `scared`：`definition` = "To frighten, terrify, startle, especially in a minor way."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "害怕的；受驚的；感到恐懼"。
+- `schoolmate`：`definition` = "A person who was a fellow attendee at one's school."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "同學；校友；同班同學"。
+- `secondary`：`definition` = "Any flight feather attached to the ulna (forearm) of a bird."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "鳥類翅膀上的飛羽（位於前臂骨附近）"。
+- `separate`：`definition` = "(usually in the plural) Anything that is sold by itself, especially an article of clothing."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "單獨出售的物品；尤其指衣服"。
+- `seventeenth`：`definition` = "One of seventeen equal parts of a whole."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "整體分成十七等份中的一份"。
+- `shoes`：`definition` = "A protective covering for the foot, with a bottom part composed of thick leather or plastic sole and often a thicker heel, and a softer upper part made of leather or synthetic material. Shoes generally do not extend above the ankle, as opposed to boots, which do."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "覆蓋腳部的保護用鞋類；通常包括鞋底和柔軟鞋面，不超過腳踝"。
+- `shopping`：`definition` = "To visit stores or shops to browse or explore merchandise, especially with the intention of buying such merchandise."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "去商店或賣場瀏覽或購買商品"。
+- `shot`：`definition` = "To launch a projectile."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "用力發射或投擲物體"。
+- `singing`：`definition` = "To produce musical or harmonious sounds with one’s voice."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "用聲音發出音樂或悅耳的聲音；唱歌"。
+- `sixteenth`：`definition` = "One of sixteen equal parts of a whole."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "整體分成十六等份中的一份"。
+- `skating`：`definition` = "To move along a surface (ice or ground) using skates."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "穿著溜冰鞋在冰面或光滑地面上滑行"。
+- `skiing`：`definition` = "To move on skis"；建議搬至 `definition_en`，並將 `definition` 改為繁中 "在雪地上以滑雪板滑行的運動"。
+- `sneaky`：`definition` = "Any device used for covert surveillance."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "暗地進行的；秘密進行的；隱瞞的"。
+- `snowman`：`definition` = "A humanoid figure made with large snowballs stacked on each other. Human traits like a face and arms may be fashioned with sticks (arms), a carrot (nose), and stones or coal (eyes, mouth)."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "用滾成球狀的雪堆疊而成的人形"。
+- `social science`：`definition` = "A branch of science that studies the society and human behavior in it, including anthropology, communication studies, criminology, economics, geography, history, political science, psychology, social studies, and sociology."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "研究社會及人類行為的學科"。
+- `softball`：`definition` = "A game similar to baseball but played with a larger and softer ball which can be thrown overhand or underhand."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "類似棒球但使用較大較軟球的運動"。
+- `sore throat`：`definition` = "Any inflammation of the pharynx that causes soreness."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "喉嚨發炎疼痛的症狀"。
+- `sort`：`definition` = "A general type."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "類型；種類；品種"。
+- `southern`：`definition` = "Someone from one of the states which seceded in 1861 and briefly formed the Confederate States of America, or, more broadly, from some neighboring states as well (but excluding geographically-southerly states like Arizona); compare the South."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "南部的；來自南方的；向南的"。
+- `spread`：`definition` = "The act of spreading."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "傳播；蔓延；塗抹的動作或過程"。
+- `stairs`：`definition` = "A single step in a staircase."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "樓梯；一組台階"。
+- `stamp collecting`：`definition` = "The hobby of collecting and displaying postage stamps and related items."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "集郵；收集和展示郵票的愛好"。
+- `standard`：`definition` = "A principle or example or measure used for comparison."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "標準；衡量或比較的準則"。
+- `stick`：`definition` = "An elongated piece of wood or similar material, typically put to some use, for example as a wand or baton."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "木棍；樹枝；細長的木制物品"。
+- `stomachache`：`definition` = "A pain in the stomach."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "胃痛；肚子痛"。
+- `stormy`：`definition` = "Of or pertaining to storms."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "暴風雨的；有大風和雨的"。
+- `struggle`：`definition` = "A contortion of the body in an attempt to escape or to perform a difficult task."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "掙扎；奮力；克服困難的努力"。
+- `submarine`：`definition` = "A boat that can go underwater."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "潛水艇；在水下航行的艦船"。
+- `successfully`：`definition` = "In a successful manner; with success; without failing."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "成功地；順利地；圓滿地"。
+- `such`：`definition` = "Something being indicated that is similar to something else."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "這樣的人或物；類似的東西"。
+- `suddenly`：`definition` = "Happening quickly and with little or no warning; in a sudden manner."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "突然地；毫無預警地；出人意料地"。
+- `suitcase`：`definition` = "A large (usually rectangular) piece of luggage used for carrying clothes, and sometimes suits, when travelling."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "行李箱；手提箱"。
+- `surfing`：`definition` = "To ride a wave, usually on a surfboard."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "衝浪；在浪上滑行"。
+- `swimming`：`definition` = "The act or art of sustaining and propelling the body in water."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "游泳；在水中游動的運動"。
+- `swimsuit`：`definition` = "A garment worn for swimming."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "游泳衣；泳裝"。
+- `table tennis`：`definition` = "A game or sport (similar to tennis) that involves the hitting of a light plastic ball across a table (fashioned like a mini tennis court) by racquets (a.k.a. paddles, a.k.a bats in Britain)"；建議搬至 `definition_en`，並將 `definition` 改為繁中 "桌球；乒乓球"。
+- `tableware`：`definition` = "The cutlery, crockery and glassware used in setting a table for a meal."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "餐具；用於進餐的盤子、杯子和刀叉"。
+- `tape recorder`：`definition` = "(sound engineering) An electromechanical device use to record and play back sound, etc."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "用磁帶記錄和播放聲音的裝置；錄音機"。
+- `throughout`：`definition` = "Completely through, right the way through."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "貫穿整個；在...的始終；到處"。
+- `thus`：`definition` = "(manner) In this way or manner."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "（以這種方式）因此；所以；這樣"。
+- `tour`：`definition` = "A journey through a particular building, estate, country, etc."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "參觀有趣地方的旅行；導覽；遊覽"。
+- `traffic jam`：`definition` = "A situation in which road traffic accumulates until it is stationary or very slow."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "交通堵塞；車流停滯的情況"。
+- `traffic light`：`definition` = "A signalling device positioned at a road intersection or pedestrian crossing to indicate when it may be safe to drive, ride or walk, using a universal colour code."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "紅綠燈；交通控制信號"。
+- `traffic lights`：`definition` = "A signalling device positioned at a road intersection or pedestrian crossing to indicate when it may be safe to drive, ride or walk, using a universal colour code."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "紅綠燈；交通管制裝置"。
+- `traffic sign`：`definition` = "A sign for the control of traffic or the information of drivers."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "交通標誌；道路警告牌"。
+- `twelfth`：`definition` = "One of twelve equal parts of a whole."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "十二分之一；第十二部分"。
+- `twentieth`：`definition` = "A person or thing in the twentieth position."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "第二十個；排在第二十位"。
+- `typewriter`：`definition` = "A device, at least partially mechanical, used to print text by pressing keys that cause type to be impressed through an inked ribbon onto paper."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "打字機；機械式文字列印機"。
+- `uh-uh`：`definition` = "No"；建議搬至 `definition_en`，並將 `definition` 改為繁中 "不；不是；否定回應"。
+- `underlie`：`definition` = "To lie in a position directly beneath."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "位於...之下；構成...的基礎"。
+- `underpass`：`definition` = "A passage that crosses a road, railroad or similar obstacle in a tunnel underneath it."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "地下通道；位於道路或鐵路下方的隧道"。
+- `unfriendly`：`definition` = "An enemy."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "不友善的；帶有敵意的；不親切的"。
+- `unit`：`definition` = "A particular, minute unit of mass, defined differently for different substances, but so that varying substances of the same general type have the property that one international unit of the one has the same effect on the human body as one international unit of the other."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "單位；單個物體；構成整體的個別部分"。
+- `upon`：`definition` = "Being the target of an action."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "在...之上；位於...的表面；一旦...時"。
+- `used`：`definition` = "To utilize or employ."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "使用；利用；運用"。
+- `verb`：`definition` = "(grammar) A word that indicates an action, event, or state."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "動詞；表示動作、事件或狀態的詞"。
+- `vinegar`：`definition` = "A sour liquid used to add flavor to food."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "醋"。
+- `voter`：`definition` = "Someone who votes."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "投票的人；選民"。
+- `walkman`：`definition` = "A portable personal audio cassette player with headphones."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "便攜式音樂播放器；隨身聽"。
+- `washing machine`：`definition` = "A machine, usually automatic, which washes clothes, etc."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "洗衣機；自動洗衣設備"。
+- `western`：`definition` = "A film, or some other dramatic work, set in, the historic (c. 1850-1910) American West (west of the Mississippi river) focusing on conflict between whites and Indians, lawmen and outlaws, ranchers and farmers, or industry (railroads, mining) and agriculture."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "西部片；以美國西部為背景的電影或故事"。
+- `whale`：`definition` = "A very large sea mammal."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "鯨魚"。
+- `whatever`：`definition` = "Unexceptional or unimportant; blah."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "無所謂的；不重要的；平凡的"。
+- `whom`：`definition` = "(interrogative) What person or people; which person or people."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "誰（用作賓語）；哪個人（疑問形式）"。
+- `willing`：`definition` = "To wish, desire."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "願意；期望；想要"。
+- `within`：`definition` = "In the context of which the present document or ruling is made."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "在...之內的；內部的"。
+- `wooden`：`definition` = "Made of wood."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "木製的；由木頭製成的"。
+- `woods`：`definition` = "The substance making up the central part of the trunk and branches of a tree. Used as a material for construction, to manufacture various items, etc. or as fuel."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "樹木的木質部分；建築及製造的原料；燃料"。
+- `worried`：`definition` = "Thinking about unpleasant things that have happened or that might happen; feeling afraid and unhappy."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "因害怕或想起不好的事而感到不安；煩惱的"。
+- `wow`：`definition` = "Anything exceptionally surprising, unbelievable, outstanding, etc."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "令人驚嘆的事物；令人印象深刻的事情"。
+- `yucky`：`definition` = "Of something highly offensive; causing aversion or disgust."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "令人厭惡的；令人感到噁心的；很糟糕的"。
+- `zebra`：`definition` = "Any of three species of genus Equus: E. grevyi, E. quagga, or E. zebra, all with black and white stripes and native to Africa."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "非洲產的野生動物，外形似馬，身上有黑白相間的條紋"。
+- `convenience store`：`definition` = "A small shop open for long hours that sells everyday items."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "便利商店"。
+- `t-shirt`：`definition` = "A simple shirt with short sleeves and no collar."；建議搬至 `definition_en`，並將 `definition` 改為繁中 "T恤"。
+
+## 例句檢查
+
+- 已確認 1,994 個目標字都有 `example_en` 與 `example_zh`。
+- 規則／不規則詞形候選經複核後，admit→admitted、become→became、big→bigger、children→child、clothing→clothe、lay→laid、nod→nodded、occur→occurred、rub→rubbed、shake→shook、shoot→shot、throw→threw 等均屬可接受詞形，不列錯。
+- 真正不相符者是前述 `chinese new year 農曆新年(n)`、`christmas eve`、`class leader`、`rome` 四筆；其英文例句與中譯彼此相符，但整組內容放錯字頭，因此仍屬高嚴重度。
+- `officer` 與 `police officer` 共用同一句例句，語意皆成立；這是內容重複，不是翻譯錯誤，列低嚴重度，建議日後改寫其中一句以增加學習變化。
+
+## 目標字與快取集合差異
+
+目標 1,994 字全部存在，沒有缺字或目標字重複。快取另有 1,320 個不在權威目標字表的 key。這不一定代表內容錯誤，但若 App 把整份 cache 當成「核心 2,000 字」載入，就會多載，因此列低嚴重度。建議載入時嚴格以 target 清單過濾，或將額外資料移至獨立擴充字庫。
+
+<details><summary>展開 1,320 個額外快取字頭</summary>
+
+- `sandwich`
+- `saturday`
+- `sauce`
+- `save`
+- `say`
+- `scare`
+- `scenery`
+- `school`
+- `scooter`
+- `sea`
+- `season`
+- `seat`
+- `second`
+- `see`
+- `seldom`
+- `self`
+- `sell`
+- `send`
+- `sentence`
+- `september`
+- `serious`
+- `settle`
+- `seven`
+- `seventeen`
+- `seventy`
+- `several`
+- `shall`
+- `shape`
+- `share`
+- `sheep`
+- `shell`
+- `ship`
+- `shirt`
+- `shoe`
+- `shop`
+- `short`
+- `should`
+- `shoulder`
+- `show`
+- `shy`
+- `sick`
+- `side`
+- `sidewalk`
+- `silk`
+- `simple`
+- `since`
+- `sing`
+- `singer`
+- `sir`
+- `sister`
+- `sit`
+- `sitter`
+- `six`
+- `sixteen`
+- `sixty`
+- `size`
+- `skirt`
+- `sky`
+- `sleep`
+- `slow`
+- `small`
+- `smart`
+- `smell`
+- `smile`
+- `smoke`
+- `snack`
+- `snake`
+- `snow`
+- `so`
+- `sock`
+- `sofa`
+- `some`
+- `someone`
+- `something`
+- `sometimes`
+- `somewhere`
+- `son`
+- `song`
+- `soon`
+- `sore`
+- `sorry`
+- `sound`
+- `soup`
+- `source`
+- `south`
+- `soy`
+- `space`
+- `speak`
+- `special`
+- `spell`
+- `spend`
+- `spoon`
+- `spring`
+- `square`
+- `stair`
+- `stand`
+- `star`
+- `start`
+- `station`
+- `stay`
+- `steak`
+- `still`
+- `stomach`
+- `stop`
+- `store`
+- `story`
+- `strange`
+- `stranger`
+- `street`
+- `strong`
+- `student`
+- `study`
+- `stupid`
+- `successful`
+- `sugar`
+- `summer`
+- `sun`
+- `sunday`
+- `sunny`
+- `super`
+- `supermarket`
+- `supply`
+- `sure`
+- `surprise`
+- `surprised`
+- `sweater`
+- `sweet`
+- `swim`
+- `system`
+- `table`
+- `take`
+- `tale`
+- `talent`
+- `talk`
+- `tall`
+- `tape`
+- `taste`
+- `taxi`
+- `tea`
+- `teach`
+- `teacher`
+- `team`
+- `teenager`
+- `telephone`
+- `television`
+- `tell`
+- `ten`
+- `tennis`
+- `test`
+- `than`
+- `thank`
+- `that`
+- `theater`
+- `then`
+- `there`
+- `these`
+- `thief`
+- `thin`
+- `thing`
+- `think`
+- `third`
+- `thirsty`
+- `thirteen`
+- `thirty`
+- `this`
+- `those`
+- `though`
+- `thought`
+- `thousand`
+- `three`
+- `throat`
+- `thursday`
+- `ticket`
+- `tiger`
+- `time`
+- `tired`
+- `to`
+- `today`
+- `together`
+- `tomato`
+- `tomorrow`
+- `tonight`
+- `too`
+- `tooth`
+- `touch`
+- `towel`
+- `town`
+- `toy`
+- `traffic`
+- `train`
+- `trap`
+- `trash`
+- `travel`
+- `treasure`
+- `treat`
+- `tree`
+- `triangle`
+- `trick`
+- `trip`
+- `trouble`
+- `trousers`
+- `truck`
+- `true`
+- `trust`
+- `truth`
+- `try`
+- `tube`
+- `tuesday`
+- `tunnel`
+- `turn`
+- `twelve`
+- `twenty`
+- `two`
+- `typhoon`
+- `umbrella`
+- `uncle`
+- `under`
+- `underline`
+- `understand`
+- `unhappy`
+- `uniform`
+- `until`
+- `up`
+- `upper`
+- `use`
+- `useful`
+- `user`
+- `usually`
+- `vacation`
+- `vegetable`
+- `vendor`
+- `very`
+- `video`
+- `visit`
+- `voice`
+- `wait`
+- `waiter`
+- `waitress`
+- `wake`
+- `walk`
+- `wall`
+- `want`
+- `warm`
+- `wash`
+- `watch`
+- `water`
+- `way`
+- `weak`
+- `weapon`
+- `wear`
+- `weather`
+- `wednesday`
+- `week`
+- `weekend`
+- `welcome`
+- `well`
+- `west`
+- `wet`
+- `what`
+- `when`
+- `where`
+- `whether`
+- `which`
+- `white`
+- `who`
+- `whose`
+- `why`
+- `wife`
+- `will`
+- `win`
+- `wind`
+- `window`
+- `windy`
+- `winter`
+- `wire`
+- `wise`
+- `wish`
+- `with`
+- `without`
+- `woman`
+- `wonderful`
+- `wool`
+- `word`
+- `work`
+- `worker`
+- `world`
+- `worm`
+- `worry`
+- `write`
+- `writer`
+- `wrong`
+- `year`
+- `yellow`
+- `yes`
+- `yesterday`
+- `yet`
+- `young`
+- `zoo`
+- `absolutely`
+- `according`
+- `account`
+- `afford`
+- `allergy`
+- `although`
+- `amazing`
+- `antique`
+- `anytime`
+- `apart`
+- `app`
+- `argument`
+- `aside`
+- `assembly`
+- `athletes`
+- `attic`
+- `award`
+- `barely`
+- `became`
+- `bike`
+- `blink`
+- `blossoms`
+- `bookstore`
+- `bully`
+- `calculator`
+- `campsite`
+- `championship`
+- `charity`
+- `chef`
+- `cherry`
+- `chores`
+- `cleanliness`
+- `clearly`
+- `climbers`
+- `cloudy`
+- `code`
+- `completely`
+- `concert`
+- `conditioner`
+- `contest`
+- `contrary`
+- `coworkers`
+- `creative`
+- `criticism`
+- `crook`
+- `cross`
+- `crossed`
+- `currently`
+- `decades`
+- `defend`
+- `delivery`
+- `demanding`
+- `despite`
+- `detail`
+- `details`
+- `differently`
+- `disagreement`
+- `disease`
+- `displays`
+- `disturbing`
+- `document`
+- `doing`
+- `drill`
+- `dripping`
+- `drowning`
+- `due`
+- `dynasty`
+- `earthquake`
+- `easily`
+- `eightieth`
+- `elegant`
+- `elementary`
+- `employee`
+- `endings`
+- `erase`
+- `essay`
+- `essays`
+- `eventually`
+- `everyone`
+- `everything`
+- `exactly`
+- `exception`
+- `exhibit`
+- `exhibits`
+- `expectations`
+- `experiment`
+- `explanation`
+- `extent`
+- `extremely`
+- `fabric`
+- `fierce`
+- `files`
+- `financial`
+- `floral`
+- `fluently`
+- `forecast`
+- `fridge`
+- `friendship`
+- `funding`
+- `generation`
+- `generations`
+- `global`
+- `goalkeeper`
+- `goodbye`
+- `grab`
+- `graduated`
+- `graduating`
+- `graduation`
+- `grammar`
+- `grandchildren`
+- `grandma`
+- `grandparents`
+- `greatly`
+- `halfway`
+- `hallway`
+- `handmade`
+- `happiness`
+- `hardworking`
+- `harvest`
+- `heard`
+- `heavily`
+- `hesitant`
+- `hikers`
+- `homeless`
+- `hook`
+- `illness`
+- `indoors`
+- `instantly`
+- `instead`
+- `instructions`
+- `intern`
+- `issues`
+- `kindly`
+- `laptop`
+- `laughter`
+- `led`
+- `librarian`
+- `lifeguard`
+- `likelihood`
+- `logo`
+- `loudly`
+- `luckily`
+- `managed`
+- `math`
+- `meantime`
+- `midday`
+- `mild`
+- `mom`
+- `monthly`
+- `mostly`
+- `mount`
+- `much`
+- `muddy`
+- `musical`
+- `needless`
+- `neighborhood`
+- `nicer`
+- `nicest`
+- `nick`
+- `nobody`
+- `normal`
+- `nowhere`
+- `odds`
+- `online`
+- `opposed`
+- `ornaments`
+- `outdated`
+- `outdoor`
+- `overtime`
+- `owing`
+- `paperwork`
+- `partly`
+- `per`
+- `performing`
+- `permanent`
+- `permission`
+- `person`
+- `personality`
+- `personally`
+- `phone`
+- `podcasts`
+- `politely`
+- `possibility`
+- `postman`
+- `postponed`
+- `presentation`
+- `quietly`
+- `rarely`
+- `rate`
+- `recipe`
+- `reduce`
+- `regularly`
+- `relationships`
+- `relaxing`
+- `relieved`
+- `remained`
+- `rescue`
+- `reserve`
+- `retrospect`
+- `rid`
+- `runners`
+- `sadness`
+- `safely`
+- `sake`
+- `schoolwork`
+- `shelter`
+- `skip`
+- `skipping`
+- `slipped`
+- `slowly`
+- `smartphone`
+- `snowstorm`
+- `spill`
+- `spite`
+- `spot`
+- `stock`
+- `stole`
+- `stolen`
+- `storage`
+- `stress`
+- `stressful`
+- `strict`
+- `summarize`
+- `summit`
+- `sunrise`
+- `sunset`
+- `surgery`
+- `teammate`
+- `temper`
+- `tend`
+- `texted`
+- `thunderstorm`
+- `tourism`
+- `tourists`
+- `translate`
+- `tricky`
+- `truly`
+- `tv`
+- `twins`
+- `uncomfortable`
+- `underdog`
+- `unkind`
+- `unless`
+- `unlocked`
+- `upset`
+- `upsetting`
+- `victims`
+- `virtue`
+- `volume`
+- `volunteers`
+- `worse`
+- `worst`
+- `zone`
+- `grandpa`
+- `mayor`
+- `abandoned`
+- `accidentally`
+- `acknowledged`
+- `activate`
+- `activist`
+- `adjusted`
+- `allergic`
+- `amazes`
+- `amused`
+- `ancestors`
+- `announced`
+- `annoyed`
+- `applauded`
+- `archaeologists`
+- `assured`
+- `attached`
+- `bakers`
+- `beeping`
+- `bent`
+- `bleaching`
+- `blessings`
+- `blogger`
+- `blushes`
+- `blushing`
+- `boredom`
+- `bred`
+- `breeding`
+- `briefly`
+- `brightened`
+- `broth`
+- `bubbles`
+- `buds`
+- `bumps`
+- `bushes`
+- `calmly`
+- `candlelight`
+- `carotenoids`
+- `carriages`
+- `challenges`
+- `charger`
+- `chatting`
+- `cheeks`
+- `chewy`
+- `chlorophyll`
+- `circadian`
+- `citywide`
+- `closely`
+- `clutter`
+- `colonies`
+- `combined`
+- `combining`
+- `commonly`
+- `compounds`
+- `concentrating`
+- `concentration`
+- `confirmation`
+- `constantly`
+- `convinced`
+- `coordinator`
+- `copper`
+- `costumes`
+- `cracks`
+- `crookedly`
+- `crops`
+- `crushed`
+- `decorations`
+- `defensively`
+- `delighted`
+- `demonstrated`
+- `denser`
+- `desperately`
+- `determined`
+- `devastated`
+- `devices`
+- `dimensional`
+- `dioxide`
+- `directly`
+- `disasters`
+- `discouraged`
+- `disturbed`
+- `dormant`
+- `dramatically`
+- `dreading`
+- `drip`
+- `dusk`
+- `echoes`
+- `echoing`
+- `ecosystems`
+- `efficiently`
+- `embarrassment`
+- `enclosures`
+- `entertaining`
+- `entirely`
+- `eruption`
+- `evolved`
+- `exhausting`
+- `expires`
+- `exploded`
+- `explodes`
+- `explorers`
+- `exposed`
+- `eyelids`
+- `faded`
+- `fades`
+- `falsely`
+- `fascinated`
+- `fed`
+- `fermentation`
+- `firecracker`
+- `firework`
+- `fireworks`
+- `fishermen`
+- `flickered`
+- `flopped`
+- `flopping`
+- `footprint`
+- `fragments`
+- `frames`
+- `frantically`
+- `frustrated`
+- `frustrating`
+- `fungus`
+- `genes`
+- `gently`
+- `genuinely`
+- `gills`
+- `giver`
+- `goggles`
+- `goosebumps`
+- `graffiti`
+- `graphs`
+- `graves`
+- `gravestones`
+- `grinning`
+- `groaned`
+- `groggy`
+- `hardships`
+- `helplessly`
+- `herbs`
+- `hesitated`
+- `hesitation`
+- `hillside`
+- `homemade`
+- `honestly`
+- `hotline`
+- `hugged`
+- `humblest`
+- `humming`
+- `improvement`
+- `inconvenience`
+- `incredibly`
+- `intimidating`
+- `invest`
+- `investing`
+- `involved`
+- `involves`
+- `knots`
+- `laces`
+- `larger`
+- `lateness`
+- `laziness`
+- `leash`
+- `leftover`
+- `lifestyle`
+- `limestone`
+- `lit`
+- `located`
+- `lungs`
+- `magically`
+- `maple`
+- `marine`
+- `matures`
+- `meant`
+- `melted`
+- `memorizing`
+- `mentioned`
+- `midsummer`
+- `midway`
+- `mistakenly`
+- `moldy`
+- `molecules`
+- `motors`
+- `mumbles`
+- `myth`
+- `neatly`
+- `nerves`
+- `nervousness`
+- `newfound`
+- `nicknames`
+- `nightstand`
+- `nighttime`
+- `nocturnal`
+- `normally`
+- `noticeably`
+- `nutrients`
+- `obstacles`
+- `opponents`
+- `outages`
+- `outgoing`
+- `overall`
+- `overfishing`
+- `overjoyed`
+- `overwhelming`
+- `packets`
+- `paddle`
+- `paddled`
+- `paddling`
+- `panicked`
+- `panicking`
+- `parrotfish`
+- `participation`
+- `particles`
+- `pastries`
+- `pathway`
+- `paws`
+- `pedaled`
+- `pedals`
+- `pedestrians`
+- `peeked`
+- `perked`
+- `pheromones`
+- `physically`
+- `pollinate`
+- `poorly`
+- `pottery`
+- `pouches`
+- `precisely`
+- `predators`
+- `previously`
+- `procrastination`
+- `properly`
+- `published`
+- `puffs`
+- `rainforests`
+- `rapidly`
+- `reasonably`
+- `reassured`
+- `recess`
+- `recharge`
+- `rechecked`
+- `recital`
+- `recyclable`
+- `reddish`
+- `reflex`
+- `refreshed`
+- `relaxed`
+- `removing`
+- `renewals`
+- `reorganizing`
+- `replaced`
+- `replaces`
+- `represented`
+- `residents`
+- `responsibly`
+- `responsive`
+- `retired`
+- `reusable`
+- `reveals`
+- `reversed`
+- `riddles`
+- `roaring`
+- `robotics`
+- `roosters`
+- `sank`
+- `scarier`
+- `scavenger`
+- `scent`
+- `scissors`
+- `screws`
+- `seafloor`
+- `secretly`
+- `seedlings`
+- `series`
+- `seriously`
+- `shades`
+- `shakier`
+- `shaky`
+- `shortening`
+- `shown`
+- `showtime`
+- `shyly`
+- `siblings`
+- `slightly`
+- `smoothly`
+- `sourdough`
+- `specifically`
+- `splattered`
+- `spooky`
+- `sprang`
+- `spraying`
+- `squeaky`
+- `starters`
+- `steadily`
+- `stillness`
+- `storefront`
+- `strands`
+- `strangely`
+- `strategies`
+- `stray`
+- `streetlight`
+- `streetlights`
+- `stretching`
+- `strontium`
+- `stuck`
+- `stung`
+- `stunned`
+- `submitted`
+- `substances`
+- `subtle`
+- `superhero`
+- `supposed`
+- `surfboard`
+- `surprisingly`
+- `surrounded`
+- `surrounding`
+- `suspected`
+- `switching`
+- `symbolize`
+- `symbolized`
+- `symbolizes`
+- `tangled`
+- `tangling`
+- `tangy`
+- `teahouse`
+- `teasing`
+- `tectonic`
+- `tenth`
+- `texture`
+- `thankfully`
+- `thoughtfully`
+- `threatening`
+- `threats`
+- `thrilled`
+- `transform`
+- `trembled`
+- `trustworthy`
+- `tucked`
+- `twisted`
+- `unavailable`
+- `uncontrollable`
+- `underneath`
+- `unexpected`
+- `unfairly`
+- `unfamiliar`
+- `unfold`
+- `unfolded`
+- `unfortunately`
+- `unimportant`
+- `unnatural`
+- `unrealistic`
+- `unsafe`
+- `unsure`
+- `unsurprised`
+- `unused`
+- `unwanted`
+- `update`
+- `updates`
+- `upright`
+- `upside`
+- `uselessly`
+- `variety`
+- `vehicles`
+- `vessels`
+- `villagers`
+- `violently`
+- `vivid`
+- `wag`
+- `wagged`
+- `wagging`
+- `wags`
+- `wandered`
+- `wandering`
+- `warmly`
+- `websites`
+- `weeds`
+- `weedy`
+- `wildlife`
+- `wiping`
+- `wobbled`
+- `wobbles`
+- `wobbly`
+- `woke`
+- `workdays`
+- `worldwide`
+- `wrapped`
+- `wrinkled`
+- `zippers`
+- `zongzi`
+- `zookeepers`
+- `accompanying`
+- `adequate`
+- `adjusting`
+- `adjustment`
+- `adjustments`
+- `airy`
+- `alertness`
+- `anatomy`
+- `appliances`
+- `applications`
+- `approached`
+- `approaching`
+- `approximately`
+- `architects`
+- `assigned`
+- `associated`
+- `auditioned`
+- `balanced`
+- `begged`
+- `birdhouse`
+- `blindness`
+- `blob`
+- `blueprints`
+- `blurry`
+- `bounced`
+- `brightly`
+- `bustling`
+- `caffeine`
+- `calmness`
+- `cardiovascular`
+- `catheters`
+- `checkmate`
+- `civilizations`
+- `cleanly`
+- `clues`
+- `coastal`
+- `coaxing`
+- `collapsing`
+- `comedies`
+- `competing`
+- `cone`
+- `cones`
+- `congestion`
+- `conservationists`
+- `contaminants`
+- `convinces`
+- `corrections`
+- `cramped`
+- `crawled`
+- `creeping`
+- `criticized`
+- `crouched`
+- `crucial`
+- `cupcakes`
+- `curled`
+- `cyclists`
+- `debris`
+- `declared`
+- `dedicated`
+- `dedication`
+- `deliberate`
+- `density`
+- `development`
+- `diner`
+- `disappointed`
+- `disappointing`
+- `discarding`
+- `discharges`
+- `discoveries`
+- `discreetly`
+- `dismissed`
+- `dismissing`
+- `displaying`
+- `dissipate`
+- `distinctly`
+- `distraction`
+- `doorknob`
+- `doorway`
+- `downstream`
+- `drained`
+- `dreaded`
+- `dribble`
+- `drifted`
+- `ecological`
+- `editing`
+- `editor`
+- `editors`
+- `electronics`
+- `electrons`
+- `elevation`
+- `emissions`
+- `endlessly`
+- `enrolled`
+- `environmentally`
+- `equator`
+- `erupting`
+- `erupts`
+- `established`
+- `evacuate`
+- `evenly`
+- `evolutionary`
+- `exchanged`
+- `excitedly`
+- `explosively`
+- `farmland`
+- `feedback`
+- `fibers`
+- `filtration`
+- `flawlessly`
+- `floating`
+- `fluffy`
+- `fluorescent`
+- `flyers`
+- `follicle`
+- `fondly`
+- `fragrant`
+- `frequently`
+- `friction`
+- `friendliness`
+- `froze`
+- `fumes`
+- `fundraiser`
+- `fungal`
+- `gasps`
+- `generally`
+- `generic`
+- `genetically`
+- `geological`
+- `glacial`
+- `glacier`
+- `gluten`
+- `graciously`
+- `granted`
+- `grasslands`
+- `handsaw`
+- `handwritten`
+- `hardens`
+- `harmless`
+- `heartbeat`
+- `hiker`
+- `hoops`
+- `hopelessly`
+- `horseback`
+- `households`
+- `hugging`
+- `humpback`
+- `illustrations`
+- `imbalance`
+- `imperfections`
+- `importantly`
+- `impurities`
+- `incentives`
+- `incorrectly`
+- `increasingly`
+- `indefinitely`
+- `infrastructure`
+- `inherited`
+- `instructed`
+- `instructing`
+- `intended`
+- `intentionally`
+- `interconnected`
+- `internship`
+- `investment`
+- `jotting`
+- `karate`
+- `kennel`
+- `kennels`
+- `kneading`
+- `labels`
+- `lamppost`
+- `latitudes`
+- `layers`
+- `littering`
+- `livable`
+- `lopsided`
+- `mammals`
+- `mangrove`
+- `marshes`
+- `measurable`
+- `melodies`
+- `meltwater`
+- `memorized`
+- `meowing`
+- `merchants`
+- `messengers`
+- `midfielder`
+- `midmorning`
+- `migrating`
+- `millimeters`
+- `minerals`
+- `misleading`
+- `mistaken`
+- `misty`
+- `mixers`
+- `mochi`
+- `molten`
+- `murky`
+- `muscles`
+- `narrator`
+- `navigation`
+- `negatively`
+- `nervously`
+- `nook`
+- `notecards`
+- `nutrient`
+- `obesity`
+- `observed`
+- `observers`
+- `observing`
+- `obsolete`
+- `occasionally`
+- `offstage`
+- `ongoing`
+- `opportunities`
+- `organizers`
+- `originally`
+- `originating`
+- `outweighed`
+- `overgrown`
+- `overhang`
+- `overlooked`
+- `pancakes`
+- `particularly`
+- `partway`
+- `peaks`
+- `perceive`
+- `performed`
+- `pesticides`
+- `pests`
+- `placement`
+- `planners`
+- `polar`
+- `pollutants`
+- `porcelain`
+- `positively`
+- `postal`
+- `potentially`
+- `poured`
+- `predictions`
+- `preserving`
+- `professionally`
+- `proposes`
+- `props`
+- `proteins`
+- `protested`
+- `proven`
+- `psychologists`
+- `pulp`
+- `pulpy`
+- `qualified`
+- `random`
+- `reacting`
+- `rechargeable`
+- `redirect`
+- `refill`
+- `refilling`
+- `regions`
+- `regulating`
+- `relays`
+- `relevant`
+- `reliably`
+- `relied`
+- `relying`
+- `remarkably`
+- `repeatedly`
+- `replaying`
+- `replicate`
+- `researchers`
+- `resented`
+- `residential`
+- `resources`
+- `restlessness`
+- `restored`
+- `restoring`
+- `reused`
+- `revealed`
+- `reversing`
+- `ridge`
+- `rivals`
+- `riverbank`
+- `roadside`
+- `rollers`
+- `rotate`
+- `rotating`
+- `rumbling`
+- `rural`
+- `rusted`
+- `safest`
+- `satellites`
+- `savings`
+- `scattered`
+- `scolding`
+- `screeching`
+- `scrimmages`
+- `secured`
+- `semifinals`
+- `sensor`
+- `severity`
+- `shadows`
+- `shelves`
+- `shopkeepers`
+- `sideways`
+- `significantly`
+- `simpler`
+- `situations`
+- `slicker`
+- `sockets`
+- `spans`
+- `spark`
+- `sparked`
+- `sparring`
+- `specialized`
+- `splintering`
+- `sponges`
+- `standardized`
+- `stigma`
+- `stimulants`
+- `stimulating`
+- `storytelling`
+- `straightforward`
+- `strengthening`
+- `strengths`
+- `struck`
+- `substitute`
+- `sufficiently`
+- `suggestions`
+- `supervised`
+- `supporters`
+- `surplus`
+- `surrendered`
+- `sustainable`
+- `swamps`
+- `tailored`
+- `technically`
+- `technicians`
+- `temporarily`
+- `terrifying`
+- `territories`
+- `thinly`
+- `thoughtless`
+- `threatens`
+- `ticked`
+- `tires`
+- `traders`
+- `transporting`
+- `trays`
+- `triggered`
+- `triple`
+- `typically`
+- `unbearably`
+- `unchanging`
+- `uncontrollably`
+- `uncut`
+- `underestimated`
+- `undisturbed`
+- `undivided`
+- `uneven`
+- `unnoticed`
+- `unprepared`
+- `unreasonable`
+- `unreliable`
+- `variations`
+- `vegetation`
+- `vertebrae`
+- `vividly`
+- `volcanic`
+- `volcanoes`
+- `wavelengths`
+- `wetland`
+- `wetlands`
+- `widely`
+- `widening`
+- `widespread`
+- `woken`
+- `workshop`
+- `workshops`
+- `wrappers`
+
+</details>
+
+## 方法限制
+
+- 本審查能確認離線兩個 JSON 的狀態，不能證明線上 Supabase 資料與快取完全相同。
+- IPA 缺漏可客觀確認；但要替 141 筆填入唯一正確 IPA，必須先指定英式或美式發音標準，兩者可能都合法。
+- 額外 1,320 筆不是目標核心字，本輪未做完整逐筆語意人工複核，不能對其翻譯品質作 100% 保證。
+- 對 1,994 個目標字已完成結構檢查與分批語意複核；仍建議實際修正後再跑一次回歸稽核，因修正字頭可能造成 target 與 cache key 同步問題。

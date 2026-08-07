@@ -26,7 +26,7 @@
       "(C) in",
       "(D) of"
     ],
-    "answer": 1,
+    "answer": 0,
     "explanation": "表示在某個定點用介系詞 at。at the bus stop 指在公車站等車，故選 at。",
     "phrase_type": "preposition",
     "id": "phrase_1",
@@ -38,7 +38,7 @@
     ]
   },
   {
-    "sentence": "Don't be too hard on yourself; everyone makes mistakes _____ .",
+    "sentence": "Don't be too hard on yourself; everyone makes mistakes _____.",
     "options": [
       "(A) on time",
       "(B) at least",
@@ -95,7 +95,7 @@
     ]
   },
   {
-    "sentence": "The test had a few tricky parts, but _____ , I think I did pretty well.",
+    "sentence": "The test had a few tricky parts, but _____, I think I did pretty well.",
     "options": [
       "(A) in a hurry",
       "(B) on the whole",
@@ -171,7 +171,7 @@
     ]
   },
   {
-    "sentence": "Our team will never _____ , even when we are losing by a lot.",
+    "sentence": "Our team will never _____, even when we are losing by a lot.",
     "options": [
       "(A) give back",
       "(B) give up",
@@ -515,7 +515,7 @@
       "(C) clean out",
       "(D) clean up"
     ],
-    "answer": 3,
+    "answer": 2,
     "explanation": "晚餐前要把房間「整理乾淨」，故選 clean up。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_26",
@@ -656,7 +656,7 @@
       "(C) depend for",
       "(D) depend at"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "是否去健行「取決於」天氣，故選 depend on。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_33",
@@ -676,7 +676,7 @@
       "(C) belong for",
       "(D) belong at"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "這台舊腳踏車以前「屬於」爺爺，故選 belong to。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_34",
@@ -696,7 +696,7 @@
       "(C) agree to",
       "(D) agree with"
     ],
-    "answer": 3,
+    "answer": 0,
     "explanation": "表達不「同意」對方的意見，故選 agree with。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_35",
@@ -1050,7 +1050,7 @@
     "difficulty": 3
   },
   {
-    "sentence": "The flight arrived exactly _____ , which surprised everyone.",
+    "sentence": "The flight arrived exactly _____, which surprised everyone.",
     "options": [
       "(A) by time",
       "(B) at time",
@@ -1090,7 +1090,7 @@
     "difficulty": 3
   },
   {
-    "sentence": "The manager asked the workers to stop the machine _____ .",
+    "sentence": "The manager asked the workers to stop the machine _____.",
     "options": [
       "(A) at a time",
       "(B) at times",
@@ -1230,7 +1230,7 @@
     "difficulty": 3
   },
   {
-    "sentence": "You need to book your train ticket at least a week _____ .",
+    "sentence": "You need to book your train ticket at least a week _____.",
     "options": [
       "(A) in advance",
       "(B) in ahead",
@@ -1298,7 +1298,7 @@
       "(C) came up with",
       "(D) came up against"
     ],
-    "answer": 3,
+    "answer": 2,
     "explanation": "新經理很快就「遭遇」員工強烈的抵制，故選 came up against。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_65",
@@ -1351,7 +1351,7 @@
     "difficulty": 4
   },
   {
-    "sentence": "_____ , students in this school perform very well in English.",
+    "sentence": "_____, students in this school perform very well in English.",
     "options": [
       "(A) In particular",
       "(B) In general",
@@ -1411,7 +1411,7 @@
     "difficulty": 4
   },
   {
-    "sentence": "He isn't lazy at all; _____ , he works harder than anyone else.",
+    "sentence": "He isn't lazy at all; _____, he works harder than anyone else.",
     "options": [
       "(A) on and on",
       "(B) on purpose",
@@ -1478,7 +1478,7 @@
       "(C) count up",
       "(D) count out"
     ],
-    "answer": 1,
+    "answer": 2,
     "explanation": "遇到困難時總能「依靠」最好的朋友，故選 count on。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_74",
@@ -1498,7 +1498,7 @@
       "(C) deal with",
       "(D) deal in"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "「應付」難搞的顧客並不容易，故選 deal with。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_75",
@@ -1598,7 +1598,7 @@
       "(C) account to",
       "(D) account for"
     ],
-    "answer": 3,
+    "answer": 0,
     "explanation": "塞車可以部分「解釋」他為何遲到，故選 account for。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_80",
@@ -1619,7 +1619,7 @@
       "(C) came up with",
       "(D) came along with"
     ],
-    "answer": 1,
+    "answer": 2,
     "explanation": "Jenny 今天請假在家是因為她「染上」重感冒，故選 came down with。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_81",
@@ -1639,7 +1639,7 @@
       "(C) do away with",
       "(D) do over with"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "新經理決定完全「廢除」舊有沒效率的制度，故選 do away with。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_82",
@@ -1752,7 +1752,7 @@
     "difficulty": 5
   },
   {
-    "sentence": "Eating healthy food may seem boring now, but it pays off _____ .",
+    "sentence": "Eating healthy food may seem boring now, but it pays off _____.",
     "options": [
       "(A) in the meantime",
       "(B) in the long run",
@@ -1772,7 +1772,7 @@
     "difficulty": 5
   },
   {
-    "sentence": "I'm not sure if he will come, but _____ , we should prepare enough food.",
+    "sentence": "I'm not sure if he will come, but _____, we should prepare enough food.",
     "options": [
       "(A) at any time",
       "(B) at any moment",
@@ -1792,7 +1792,7 @@
     "difficulty": 5
   },
   {
-    "sentence": "We don't have a permanent office yet, so we are working from home _____ .",
+    "sentence": "We don't have a permanent office yet, so we are working from home _____.",
     "options": [
       "(A) for good",
       "(B) for the time being",
@@ -1812,7 +1812,7 @@
     "difficulty": 5
   },
   {
-    "sentence": "_____ , I should have listened to my parents' advice about the investment.",
+    "sentence": "_____, I should have listened to my parents' advice about the investment.",
     "options": [
       "(A) In advance",
       "(B) In progress",
@@ -1879,7 +1879,7 @@
       "(C) back off",
       "(D) back out"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "應該隨時「備份」重要檔案以防電腦當機，故選 back up。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_94",
@@ -1899,7 +1899,7 @@
       "(C) brush over on",
       "(D) brush aside on"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "去法國前想「複習」法文，故選 brush up on。",
     "phrase_type": "phrasal_verb",
     "id": "phrase_95",
@@ -1933,7 +1933,7 @@
     "vocab_tier": "T4-T5"
   },
   {
-    "sentence": "_____ , the small team managed to win the national championship.",
+    "sentence": "_____, the small team managed to win the national championship.",
     "options": [
       "(A) At all costs",
       "(B) By all means",
@@ -1953,7 +1953,7 @@
     "difficulty": 6
   },
   {
-    "sentence": "_____ , the new policy has been well received by the public.",
+    "sentence": "_____, the new policy has been well received by the public.",
     "options": [
       "(A) By the way",
       "(B) Off and on",
@@ -1993,7 +1993,7 @@
     "difficulty": 6
   },
   {
-    "sentence": "_____ , the students were thrilled when the exam was canceled.",
+    "sentence": "_____, the students were thrilled when the exam was canceled.",
     "options": [
       "(A) Rather than say",
       "(B) Not to say",
@@ -2013,7 +2013,7 @@
     "difficulty": 6
   },
   {
-    "sentence": "He goes jogging every morning _____ .",
+    "sentence": "He goes jogging every morning _____.",
     "options": [
       "(A) by hook or by crook",
       "(B) through thick and thin",
@@ -2033,7 +2033,7 @@
     "difficulty": 6
   },
   {
-    "sentence": "Your application has been received, and you will hear from us _____ .",
+    "sentence": "Your application has been received, and you will hear from us _____.",
     "options": [
       "(A) in due course",
       "(B) in the long run",
@@ -2053,7 +2053,7 @@
     "difficulty": 6
   },
   {
-    "sentence": "My little brother cries _____ ; the smallest thing can upset him.",
+    "sentence": "My little brother cries _____; the smallest thing can upset him.",
     "options": [
       "(A) once in a blue moon",
       "(B) out of the blue",
@@ -2093,7 +2093,7 @@
     "difficulty": 6
   },
   {
-    "sentence": "The accident happened _____ ; no one had time to react.",
+    "sentence": "The accident happened _____; no one had time to react.",
     "options": [
       "(A) in the blink of an eye",
       "(B) by and large",
@@ -2113,7 +2113,7 @@
     "difficulty": 6
   },
   {
-    "sentence": "A loyal friend will stand by you _____ .",
+    "sentence": "A loyal friend will stand by you _____.",
     "options": [
       "(A) through thick and thin",
       "(B) for the sake of",
@@ -2133,7 +2133,7 @@
     "difficulty": 6
   },
   {
-    "sentence": "After being cheated once, he never trusted strangers again; _____ , as they say.",
+    "sentence": "After being cheated once, he never trusted strangers again; _____, as they say.",
     "options": [
       "(A) once and for all",
       "(B) once upon a time",
@@ -2213,7 +2213,7 @@
     "difficulty": 6
   },
   {
-    "sentence": "_____ , the project is complete; only a final review remains.",
+    "sentence": "_____, the project is complete; only a final review remains.",
     "options": [
       "(A) On the grounds that",
       "(B) By virtue of",
@@ -2240,7 +2240,7 @@
       "(C) broke into",
       "(D) broke down"
     ],
-    "answer": 3,
+    "answer": 1,
     "explanation": "break down 指（車輛、機器）故障。車子在高速公路上故障，故選 broke down；break up 是分手、break into 是闖入。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -2259,7 +2259,7 @@
       "(C) bring up",
       "(D) bring back"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "bring up 指提起、提出話題。她不想在餐桌上提起錢的話題，故選 bring up；bring back 是帶回、恢復。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -2316,7 +2316,7 @@
       "(C) check up",
       "(D) check in"
     ],
-    "answer": 3,
+    "answer": 2,
     "explanation": "check in 指辦理入住。太早到飯店，三點才能辦理入住，故選 check in；check out 是退房。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -2335,7 +2335,7 @@
       "(C) close off",
       "(D) close up"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "close down 指（店家）歇業、關閉。老書店經營四十年後歇業，故選 close down；close up 是打烊。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -2373,7 +2373,7 @@
       "(C) cut in",
       "(D) cut down on"
     ],
-    "answer": 3,
+    "answer": 2,
     "explanation": "cut down on 指減少。醫生要他減少糖分攝取以維持健康，故選 cut down on；cut off 是切斷。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -2518,7 +2518,7 @@
     "id": "phrase_126"
   },
   {
-    "sentence": "\"Can I ask you something personal?\" \"Sure, _____ .\"",
+    "sentence": "\"Can I ask you something personal?\" \"Sure, _____.\"",
     "options": [
       "(A) go along",
       "(B) go off",
@@ -2632,7 +2632,7 @@
     "id": "phrase_132"
   },
   {
-    "sentence": "The two friends had a big fight last week, but they quickly _____ .",
+    "sentence": "The two friends had a big fight last week, but they quickly _____.",
     "options": [
       "(A) made up for it",
       "(B) made out",
@@ -2651,7 +2651,7 @@
     "id": "phrase_133"
   },
   {
-    "sentence": "It's time to stop thinking about the past mistake and _____ .",
+    "sentence": "It's time to stop thinking about the past mistake and _____.",
     "options": [
       "(A) move on",
       "(B) move away",
@@ -2670,7 +2670,7 @@
     "id": "phrase_134"
   },
   {
-    "sentence": "The room was so hot and crowded that one of the students almost _____ .",
+    "sentence": "The room was so hot and crowded that one of the students almost _____.",
     "options": [
       "(A) passed on",
       "(B) passed away",
@@ -2746,7 +2746,7 @@
     "id": "phrase_138"
   },
   {
-    "sentence": "He promised to come to the party, but in the end he never _____ .",
+    "sentence": "He promised to come to the party, but in the end he never _____.",
     "options": [
       "(A) showed off",
       "(B) showed around",
@@ -3475,7 +3475,7 @@
       "(C) catch up with",
       "(D) catch up on"
     ],
-    "answer": 3,
+    "answer": 2,
     "explanation": "catch up on 指補做落後的事。假期終於有時間補足睡眠，故選 catch up on；catch up with 是趕上某人。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -3494,7 +3494,7 @@
       "(C) catch on with",
       "(D) catch up on"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "catch up with 指（在消息或進度上）趕上某人。離開多年後花時間才跟老同學敘舊、跟上近況，故選 catch up with。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -3532,7 +3532,7 @@
       "(C) counting on",
       "(D) counting down"
     ],
-    "answer": 3,
+    "answer": 2,
     "explanation": "count down 指倒數。下課鈴響前全班開始倒數最後十秒，故選 counting down；count on 是依靠。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -3551,7 +3551,7 @@
       "(C) deal on",
       "(D) deal for"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "deal with 指應付、處理。應付嚴格苛刻的顧客並不容易，故選 deal with；deal in 是經營、買賣。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -3570,7 +3570,7 @@
       "(C) back out",
       "(D) back off"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "back up 指備份。應隨時備份重要檔案以防筆電故障，故選 back up；back down 是讓步、放棄。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -3589,7 +3589,7 @@
       "(C) back off",
       "(D) back down"
     ],
-    "answer": 3,
+    "answer": 1,
     "explanation": "back down 指讓步、退讓。激烈爭吵後他最終讓步並道歉，故選 back down；back up 是備份。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -3646,7 +3646,7 @@
       "(C) brush up on",
       "(D) brush off on"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "brush up on 指複習、加強。面試前想加強自己的簡報技巧，故選 brush up on。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4292,7 +4292,7 @@
       "(C) came along with",
       "(D) came up with"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "come down with 指染上（疾病）。Tommy 今天請假在家是因為染上重感冒，故選 came down with。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4311,7 +4311,7 @@
       "(C) do away with",
       "(D) do out with"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "do away with 指廢除、擺脫。學校決定完全廢除過時的服儀規定，故選 do away with。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4368,7 +4368,7 @@
       "(C) come into",
       "(D) come along"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "come across 指偶然遇見（或發現）。沒約好卻在圖書館外巧遇，故選 came across；come into 是進入。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4425,7 +4425,7 @@
       "(C) blew away",
       "(D) blew out"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "blow away 指被風吹走。露營時暴風差點把帳篷吹走，故選 blew away；blow out 是吹熄。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4444,7 +4444,7 @@
       "(C) blow away",
       "(D) blow off"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "blow out 指吹熄。離開房間前記得吹熄蠟燭，故選 blow out；blow up 是爆炸。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4463,7 +4463,7 @@
       "(C) broke into",
       "(D) broke out"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "break down 指損壞、倒塌。老舊的橋在數十年使用後終於損壞，故選 broke down；break out 是爆發。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4596,7 +4596,7 @@
       "(C) put on",
       "(D) hand in"
     ],
-    "answer": 1,
+    "answer": 2,
     "explanation": "clean out 指徹底清空。客人來之前要徹底清空儲藏室，故選 clean out；clean up 是整理乾淨。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4615,7 +4615,7 @@
       "(C) depend on",
       "(D) depend to"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "depend on 指取決於。野餐是否舉行完全取決於天氣，故選 depend on。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4634,7 +4634,7 @@
       "(C) agree at",
       "(D) agree on"
     ],
-    "answer": 1,
+    "answer": 0,
     "explanation": "agree with 指同意（某人的看法或做法）。表達不同意在沒告知任何人的情況下退隊的決定，故選 agree with。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4653,7 +4653,7 @@
       "(C) belong with",
       "(D) belong to"
     ],
-    "answer": 3,
+    "answer": 1,
     "explanation": "belong to 指屬於。這個古董鐘一百年前屬於我的曾祖母，故選 belong to。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4691,7 +4691,7 @@
       "(C) deal on",
       "(D) deal for"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "deal with 指應付、處理。漲價後店主必須應付數十位憤怒的顧客，故選 deal with。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4710,7 +4710,7 @@
       "(C) came out with",
       "(D) came up against"
     ],
-    "answer": 3,
+    "answer": 2,
     "explanation": "come up against 指遭遇（阻力、反對）。公司新標誌在網路上遭遇不少批評，故選 came up against。",
     "phrase_type": "phrasal_verb",
     "optionsZh": [
@@ -4779,7 +4779,7 @@
     "id": "phrase_245"
   },
   {
-    "sentence": "He isn't shy at all; _____ , he loves talking to strangers.",
+    "sentence": "He isn't shy at all; _____, he loves talking to strangers.",
     "options": [
       "(A) on the contrary",
       "(B) on and on",
@@ -4836,7 +4836,7 @@
     "id": "phrase_248"
   },
   {
-    "sentence": "_____ , students who read every day tend to write better essays.",
+    "sentence": "_____, students who read every day tend to write better essays.",
     "options": [
       "(A) In particular",
       "(B) In detail",
@@ -4900,7 +4900,7 @@
       "(C) count out on",
       "(D) count down on"
     ],
-    "answer": 1,
+    "answer": 2,
     "explanation": "count on 指依靠。心情不好時總能依靠奶奶讓你好過一些，故選 count on。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -4931,7 +4931,7 @@
     "id": "phrase_253"
   },
   {
-    "sentence": "Eating too much fast food may seem fine now, but it hurts your health _____ .",
+    "sentence": "Eating too much fast food may seem fine now, but it hurts your health _____.",
     "options": [
       "(A) in the meantime",
       "(B) in due time",
@@ -4950,14 +4950,14 @@
     "id": "phrase_254"
   },
   {
-    "sentence": "I'm not sure she'll agree, but _____ , we should ask her first.",
+    "sentence": "I'm not sure she'll agree, but _____, we should ask her first.",
     "options": [
       "(A) at any moment",
       "(B) at any time",
       "(C) at any rate",
       "(D) at any cost"
     ],
-    "answer": 2,
+    "answer": 0,
     "explanation": "at any rate 指無論如何。不確定她是否會同意，但無論如何該先問她，故選 at any rate。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -4969,7 +4969,7 @@
     "id": "phrase_255"
   },
   {
-    "sentence": "We haven't found a permanent apartment yet, so we're staying with relatives _____ .",
+    "sentence": "We haven't found a permanent apartment yet, so we're staying with relatives _____.",
     "options": [
       "(A) for sure",
       "(B) for good",
@@ -4988,7 +4988,7 @@
     "id": "phrase_256"
   },
   {
-    "sentence": "_____ , I really should have saved more money during college.",
+    "sentence": "_____, I really should have saved more money during college.",
     "options": [
       "(A) In retrospect",
       "(B) In addition",
@@ -5007,7 +5007,7 @@
     "id": "phrase_257"
   },
   {
-    "sentence": "The team trains every single day, _____ , even during holidays.",
+    "sentence": "The team trains every single day, _____, even during holidays.",
     "options": [
       "(A) by hook or by crook",
       "(B) once in a blue moon",
@@ -5026,7 +5026,7 @@
     "id": "phrase_258"
   },
   {
-    "sentence": "We sent in the paperwork, and you should hear the results _____ .",
+    "sentence": "We sent in the paperwork, and you should hear the results _____.",
     "options": [
       "(A) in the long run",
       "(B) in no time",
@@ -5045,14 +5045,14 @@
     "id": "phrase_259"
   },
   {
-    "sentence": "My little cousin gets upset _____ ; almost anything can make him cry.",
+    "sentence": "My little cousin gets upset _____; almost anything can make him cry.",
     "options": [
       "(A) out of the blue",
       "(B) once in a blue moon",
       "(C) in the blink of an eye",
       "(D) at the drop of a hat"
     ],
-    "answer": 3,
+    "answer": 0,
     "explanation": "at the drop of a hat 指動不動就。表弟動不動就難過，幾乎任何小事都能讓他哭，故選 at the drop of a hat。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -5083,7 +5083,7 @@
     "id": "phrase_261"
   },
   {
-    "sentence": "A good teammate will support you _____ , win or lose.",
+    "sentence": "A good teammate will support you _____, win or lose.",
     "options": [
       "(A) come rain or shine",
       "(B) by and large",
@@ -5178,7 +5178,7 @@
     "id": "phrase_266"
   },
   {
-    "sentence": "_____ , everyone was relieved when the storm finally passed.",
+    "sentence": "_____, everyone was relieved when the storm finally passed.",
     "options": [
       "(A) Rather than say",
       "(B) Instead of saying",
@@ -5197,14 +5197,14 @@
     "id": "phrase_267"
   },
   {
-    "sentence": "_____ , the underdog team ended up winning the championship.",
+    "sentence": "_____, the underdog team ended up winning the championship.",
     "options": [
       "(A) By all means",
       "(B) In all likelihood",
       "(C) At all costs",
       "(D) Against all odds"
     ],
-    "answer": 3,
+    "answer": 0,
     "explanation": "against all odds 指儘管困難重重。實力較弱的隊伍儘管困難重重最終贏得冠軍，故選 Against all odds。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -5216,14 +5216,14 @@
     "id": "phrase_268"
   },
   {
-    "sentence": "_____ , the museum's new exhibit has received mostly positive reviews.",
+    "sentence": "_____, the museum's new exhibit has received mostly positive reviews.",
     "options": [
       "(A) By and large",
       "(B) By the way",
       "(C) Now and then",
       "(D) Off and on"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "by and large 指整體而言。整體而言博物館的新展覽獲得大多正面評價，故選 By and large。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -5254,7 +5254,7 @@
     "id": "phrase_270"
   },
   {
-    "sentence": "I didn't spill the juice _____ ; my hand just slipped.",
+    "sentence": "I didn't spill the juice _____; my hand just slipped.",
     "options": [
       "(A) on time",
       "(B) in time",
@@ -5273,7 +5273,7 @@
     "id": "phrase_271"
   },
   {
-    "sentence": "The bus arrived exactly _____ , which was a nice surprise for everyone.",
+    "sentence": "The bus arrived exactly _____, which was a nice surprise for everyone.",
     "options": [
       "(A) in time",
       "(B) at time",
@@ -5311,14 +5311,14 @@
     "id": "phrase_273"
   },
   {
-    "sentence": "The lifeguard told everyone to leave the pool _____ .",
+    "sentence": "The lifeguard told everyone to leave the pool _____.",
     "options": [
       "(A) in once",
       "(B) at times",
       "(C) at once",
       "(D) at a time"
     ],
-    "answer": 2,
+    "answer": 0,
     "explanation": "at once 指立刻。救生員要求大家立刻離開泳池，故選 at once。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -5330,7 +5330,7 @@
     "id": "phrase_274"
   },
   {
-    "sentence": "You should reserve a table at that popular restaurant several days _____ .",
+    "sentence": "You should reserve a table at that popular restaurant several days _____.",
     "options": [
       "(A) in advance",
       "(B) ahead of",
@@ -5451,7 +5451,7 @@
       "(C) As to",
       "(D) According to"
     ],
-    "answer": 3,
+    "answer": 0,
     "explanation": "according to 指根據。根據氣象報告，這週末颱風將侵襲該島，故選 According to。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -5501,7 +5501,7 @@
     "id": "phrase_283"
   },
   {
-    "sentence": "_____ , I'd like to thank everyone who helped organize this event.",
+    "sentence": "_____, I'd like to thank everyone who helped organize this event.",
     "options": [
       "(A) At first",
       "(B) In case",
@@ -5520,7 +5520,7 @@
     "id": "phrase_284"
   },
   {
-    "sentence": "_____ , I want to remind everyone about tomorrow's early meeting time.",
+    "sentence": "_____, I want to remind everyone about tomorrow's early meeting time.",
     "options": [
       "(A) In case",
       "(B) Last but not least",
@@ -5539,14 +5539,14 @@
     "id": "phrase_285"
   },
   {
-    "sentence": "_____ , this year's science fair was a great success for our school.",
+    "sentence": "_____, this year's science fair was a great success for our school.",
     "options": [
       "(A) At once",
       "(B) All in all",
       "(C) In case",
       "(D) By the way"
     ],
-    "answer": 1,
+    "answer": 0,
     "explanation": "all in all 指總的來說。總的來說，今年的科展對我們學校是一大成功，故選 All in all。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -5558,7 +5558,7 @@
     "id": "phrase_286"
   },
   {
-    "sentence": "_____ , I think the movie's ending could have been better.",
+    "sentence": "_____, I think the movie's ending could have been better.",
     "options": [
       "(A) On time",
       "(B) In case",
@@ -5577,7 +5577,7 @@
     "id": "phrase_287"
   },
   {
-    "sentence": "This shirt is currently _____ , so you might have to order a different color.",
+    "sentence": "This shirt is currently _____, so you might have to order a different color.",
     "options": [
       "(A) out of order",
       "(B) in a hurry",
@@ -5596,7 +5596,7 @@
     "id": "phrase_288"
   },
   {
-    "sentence": "My phone's map app is always _____ , so I never get lost driving.",
+    "sentence": "My phone's map app is always _____, so I never get lost driving.",
     "options": [
       "(A) out of order",
       "(B) up to date",
@@ -5634,7 +5634,7 @@
     "id": "phrase_290"
   },
   {
-    "sentence": "The twins always walk to school _____ , holding hands the whole way.",
+    "sentence": "The twins always walk to school _____, holding hands the whole way.",
     "options": [
       "(A) little by little",
       "(B) step by step",
@@ -5672,7 +5672,7 @@
     "id": "phrase_292"
   },
   {
-    "sentence": "The two runners crossed the finish line _____ , almost at the same second.",
+    "sentence": "The two runners crossed the finish line _____, almost at the same second.",
     "options": [
       "(A) hand in hand",
       "(B) step by step",
@@ -5843,14 +5843,14 @@
     "id": "phrase_301"
   },
   {
-    "sentence": "He forgot his lines during the play, but he managed to keep going _____ .",
+    "sentence": "He forgot his lines during the play, but he managed to keep going _____.",
     "options": [
       "(A) hand in hand",
       "(B) once and for all",
       "(C) so far",
       "(D) all the same"
     ],
-    "answer": 3,
+    "answer": 0,
     "explanation": "all the same 指儘管如此、仍然。他忘詞了，儘管如此仍設法繼續演下去，故選 all the same。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -5862,7 +5862,7 @@
     "id": "phrase_302"
   },
   {
-    "sentence": "_____ , I don't think we should cancel the trip just because of a small chance of rain.",
+    "sentence": "_____, I don't think we should cancel the trip just because of a small chance of rain.",
     "options": [
       "(A) At all costs",
       "(B) All the same",
@@ -5881,14 +5881,14 @@
     "id": "phrase_303"
   },
   {
-    "sentence": "\"May I use your calculator?\" \"_____ , here it is.\"",
+    "sentence": "\"May I use your calculator?\" \"_____, here it is.\"",
     "options": [
       "(A) By all means",
       "(B) At all costs",
       "(C) So far",
       "(D) All the same"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "by all means 指當然可以。回應對方可以借用計算機，故選 By all means。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -5900,7 +5900,7 @@
     "id": "phrase_304"
   },
   {
-    "sentence": "The soldiers were ordered to defend the bridge _____ .",
+    "sentence": "The soldiers were ordered to defend the bridge _____.",
     "options": [
       "(A) at all costs",
       "(B) more or less",
@@ -5919,14 +5919,14 @@
     "id": "phrase_305"
   },
   {
-    "sentence": "_____ , it's a difficult decision, and I understand why you're hesitant.",
+    "sentence": "_____, it's a difficult decision, and I understand why you're hesitant.",
     "options": [
       "(A) In other words",
       "(B) As far as I know",
       "(C) At the same time",
       "(D) On the other hand"
     ],
-    "answer": 2,
+    "answer": 0,
     "explanation": "at the same time 此處指同時、話雖如此。同時這確實是個困難的決定，理解你猶豫的原因，故選 At the same time。",
     "phrase_type": "expression",
     "optionsZh": [
@@ -5938,7 +5938,7 @@
     "id": "phrase_306"
   },
   {
-    "sentence": "I like the beach in summer; my sister, _____ , prefers the mountains.",
+    "sentence": "I like the beach in summer; my sister, _____, prefers the mountains.",
     "options": [
       "(A) on the other hand",
       "(B) as far as I know",
@@ -5957,7 +5957,7 @@
     "id": "phrase_307"
   },
   {
-    "sentence": "He said he was \"taking a short break,\" _____ , he quit the job.",
+    "sentence": "He said he was \"taking a short break,\" _____, he quit the job.",
     "options": [
       "(A) on the other hand",
       "(B) in other words",
@@ -5976,14 +5976,14 @@
     "id": "phrase_308"
   },
   {
-    "sentence": "_____ , the new student hasn't made any friends yet, but it's only been a week.",
+    "sentence": "_____, the new student hasn't made any friends yet, but it's only been a week.",
     "options": [
       "(A) On the other hand",
       "(B) As far as I know",
       "(C) At the same time",
       "(D) In other words"
     ],
-    "answer": 1,
+    "answer": 0,
     "explanation": "as far as I know 指據我所知。據我所知新同學還沒交到朋友，但才過一週，故選 As far as I know。",
     "phrase_type": "expression",
     "optionsZh": [

@@ -96,6 +96,12 @@ async function _loadProfile() {
     restoreAvatarFromServer(currentProfile.avatar_id);
   }
 
+  // 俄羅斯方塊最高分跨裝置同步：換裝置/清過本機資料時，避免遊戲結束彈窗
+  // 顯示過時的本機快取分數、誤判成新紀錄（詳見 game/tetris/characters.js）。
+  if (typeof restoreTetrisBestFromServer === 'function') {
+    await restoreTetrisBestFromServer();
+  }
+
   // 記錄最後活躍時間，供伺服器判斷「好幾天沒開 App」的回訪推播提醒對象用。
   // fire-and-forget，不擋主流程，失敗也不影響登入本身。
   authClient.from('profiles').update({ last_active_at: new Date().toISOString() })
@@ -617,11 +623,10 @@ async function loadUserWordStatus() {
   }
 }
 
-async function syncXP(newXp) {
+async function syncXP(delta) {
   if (!currentUser) return;
-  await authClient.from('profiles')
-    .update({ xp: newXp })
-    .eq('id', currentUser.id);
+  const { error } = await authClient.rpc('add_xp', { p_delta: delta });
+  if (error) console.warn('[syncXP] XP 同步失敗：', error.message);
 }
 
 async function syncStats(str, int_, fai) {

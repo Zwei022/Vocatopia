@@ -16,8 +16,8 @@ const GACHA_POOL = {
     { charId: 'sushi',   tier: '二獎', rate: 0.04, dupRefund: 400 },
     { charId: 'canele',  tier: '三獎', rate: 0.15, dupRefund: 150 },
   ],
-  // 沒抽中角色時的金幣安慰獎（不產生任何角色）
-  consolation: { tier: '銘謝惠顧', rate: 0.80, gold: 30 },
+  // 沒抽中角色時的安慰獎：美食風味露（角色成長系統素材，不產生任何角色）
+  consolation: { tier: '銘謝惠顧', rate: 0.80, flavorDew: 1 },
   // 保底（pity）：連續多少抽沒中對應等級以上，下一抽強制觸發
   pityLegendary: 100,  // 100 抽保底必中傳奇
   pityMythicPlus: 50,  // 50 抽保底必中神話以上（傳奇也算數）
@@ -95,16 +95,16 @@ function _gachaRollOneWithPity(pity) {
 
 // 執行一次抽卡（count 次），回傳結果陣列：
 // 中獎：{ charId, tier, isNew, refund, isConsolation:false }
-// 未中獎：{ charId:null, tier, isNew:false, refund:0, isConsolation:true, gold }
-// 呼叫端負責先檢查/扣除金幣（本函式不處理金幣支出，只處理抽獎結果 + 角色持有 + 重複/安慰獎金幣 + 保底計數）
+// 未中獎：{ charId:null, tier, isNew:false, refund:0, isConsolation:true, flavorDew }
+// 呼叫端負責先檢查/扣除金幣（本函式不處理金幣支出，只處理抽獎結果 + 角色持有 + 重複退幣/安慰獎風味露 + 保底計數）
 function drawGacha(count) {
   const pity = _gachaLoadPity();
   const results = [];
   for (let i = 0; i < count; i++) {
     const entry = _gachaRollOneWithPity(pity);
     if (entry.isConsolation) {
-      addGold(entry.gold);
-      results.push({ charId: null, tier: entry.tier, isNew: false, refund: 0, isConsolation: true, gold: entry.gold });
+      addFlavorDew(entry.flavorDew);
+      results.push({ charId: null, tier: entry.tier, isNew: false, refund: 0, isConsolation: true, flavorDew: entry.flavorDew });
       continue;
     }
     const isNew = addOwnedChar(entry.charId);
@@ -119,7 +119,7 @@ function drawGacha(count) {
     t: Date.now(),
     charId: r.charId, tier: r.tier,
     isNew: r.isNew, isConsolation: r.isConsolation,
-    gold: r.gold || 0, refund: r.refund || 0,
+    flavorDew: r.flavorDew || 0, refund: r.refund || 0,
   })));
   return results;
 }
