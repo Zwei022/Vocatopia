@@ -60,6 +60,11 @@
   border-radius: 3px;
   background: rgba(122,92,67,.06);
 }
+/* 影子預覽（Hard Drop 落點）：只畫外框，不填色，隨方塊移動/旋轉即時重算 */
+.tt-cell.tt-cell-ghost {
+  border: 2px solid rgba(75,56,42,.4);
+  background: rgba(75,56,42,.08);
+}
 
 /* 立體方塊色：上左亮、下右暗，中央本色 */
 .tt-cell.fill-i, .tt-next-cell.fill-i { background: #46C7DA; }

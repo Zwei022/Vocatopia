@@ -112,7 +112,7 @@ function ttAnswerQuiz(idx) {
     // 關卡結束後會直接接續60秒英文選擇題，這種情況要維持暫停，讓新題目接手）
     if (ttGame && !ttGame.gameOver && !(ttGame.quiz && ttGame.quiz.active)) {
       ttGame.paused = false;
-      _ttSetGravity(ttGame.softDropping ? TT_SOFTDROP_MS : ttGame.currentGravityMs);
+      _ttSetGravity(ttGame.currentGravityMs);
     }
   }, 850);
 }

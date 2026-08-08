@@ -274,6 +274,22 @@ function ttCreateEngine(cols = 8, rows = 16) {
       }
       return view;
     },
+    // 影子預覽：目前這顆方塊如果現在硬降，最終會落在哪裡（不移動、不鎖定，純
+    // 計算，供 UI 畫半透明外框用，並隨著移動/旋轉即時重算）。piece 不存在時
+    // 回傳空陣列。
+    ghostCells() {
+      if (!active) return [];
+      let off = 0;
+      while (!collides(active, off + 1, 0)) off++;
+      const cells = [];
+      for (let i = 0; i < active.matrix.length; i++)
+        for (let j = 0; j < active.matrix[i].length; j++) {
+          if (!active.matrix[i][j]) continue;
+          const r = active.row + off + i, c = active.col + j;
+          if (r >= 0 && r < rows && c >= 0 && c < cols) cells.push({ r, c });
+        }
+      return cells;
+    },
   };
 }
 

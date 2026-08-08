@@ -9,7 +9,7 @@
 const TT_COLS = 8;
 const TT_ROWS = 16;
 const TT_GRAVITY_MS  = 700;   // 一般下降速度
-const TT_SOFTDROP_MS = 55;    // 長按加速下降速度
+const TT_HARDDROP_SCORE_PER_CELL = 2; // 硬降計分：瞬間下墜的每一格額外加分
 
 // #14 模式拆分：單機（solo，不上榜不計最高分，難度固定）／積分（ranked，上榜、算最高分、
 // 重力隨分數漸快、每 5000 分有閱讀理解關卡）。規則其餘完全相同。
@@ -44,7 +44,6 @@ function tetrisStart(mode) {
     nextReadingThreshold: TT_READING_STEP,
     paused: false,
     gameOver: false,
-    softDropping: false,
   };
 
   const ch = (typeof getDeployedChar === 'function') ? getDeployedChar() : null;
@@ -96,7 +95,7 @@ function tetrisStart(mode) {
       <button class="tt-ctrl tt-ctrl-side" id="ttBtnLeft" aria-label="左移">◀</button>
       <div class="tt-ctrl-circle" id="ttBtnCircle">
         <button class="tt-ctrl-half tt-ctrl-half-top" id="ttBtnRotate" aria-label="旋轉">↻</button>
-        <button class="tt-ctrl-half tt-ctrl-half-bottom" id="ttBtnDrop" aria-label="加速降落">▼</button>
+        <button class="tt-ctrl-half tt-ctrl-half-bottom" id="ttBtnDrop" aria-label="瞬間下墜">▼</button>
       </div>
       <button class="tt-ctrl tt-ctrl-side" id="ttBtnRight" aria-label="右移">▶</button>
     </div>
@@ -147,7 +146,7 @@ function _ttUpdateRankedGravity() {
   ms = Math.round(ms);
   if (ms === ttGame.currentGravityMs) return;
   ttGame.currentGravityMs = ms;
-  if (!ttGame.paused && !ttGame.softDropping) _ttSetGravity(ms);
+  if (!ttGame.paused) _ttSetGravity(ms);
 }
 
 // 集中處理分數變動：統一下限保護（不會變負數），並在積分模式檢查是否觸發閱讀理解關卡
@@ -211,12 +210,16 @@ function _ttResizeBoard() {
 function ttRender() {
   if (!ttGame) return;
   const view = ttGame.engine.render();
+  const ghost = ttGame.engine.ghostCells();
   const cells = document.getElementById('ttBoard').children;
   for (let r = 0; r < TT_ROWS; r++) {
     for (let c = 0; c < TT_COLS; c++) {
       const cell = cells[r * TT_COLS + c];
       const color = view[r][c];
-      cell.className = 'tt-cell' + (color ? ' fill-' + color : '');
+      let cls = 'tt-cell' + (color ? ' fill-' + color : '');
+      // 影子只畫在還沒被目前這顆方塊本身佔用的格子上，避免跟真正的方塊顏色疊在一起
+      if (!color && ghost.some(g => g.r === r && g.c === c)) cls += ' tt-cell-ghost';
+      cell.className = cls;
     }
   }
   document.getElementById('ttScore').textContent = ttGame.score.toLocaleString();
@@ -282,7 +285,6 @@ function _ttSetGravity(ms) {
 function _ttGravityStep() {
   if (!ttGame || ttGame.paused || ttGame.gameOver) return;
   const ev = ttGame.engine.tick();
-  if (ev.moved && ttGame.softDropping) _ttAddScore(1); // 軟降加分
   if (ev.bombed) {
     if (typeof SFX !== 'undefined') SFX.bomb();
     if (typeof ttOnBombExplode === 'function') ttOnBombExplode(ev.bombedCount);
@@ -312,15 +314,27 @@ function _ttRotate() {
   if (!ttGame || ttGame.paused || ttGame.gameOver) return;
   if (ttGame.engine.rotate()) { ttRender(); if (typeof SFX !== 'undefined') SFX.rotate(); }
 }
-function _ttStartSoftDrop() {
+// 硬降：目前這顆方塊直接瞬間落到底部鎖定（正統俄羅斯方塊的「Hard Drop」），
+// 不是加速下降。連續呼叫 tick() 直到它不再往下移動為止，那一次 tick 的
+// 鎖定／消行／炸彈／game over 事件跟一般重力下墜共用同一套處理邏輯。
+function _ttHardDrop() {
   if (!ttGame || ttGame.paused || ttGame.gameOver) return;
-  ttGame.softDropping = true;
-  _ttSetGravity(TT_SOFTDROP_MS);
-}
-function _ttStopSoftDrop() {
-  if (!ttGame) return;
-  ttGame.softDropping = false;
-  _ttSetGravity(ttGame.currentGravityMs);
+  let cells = 0;
+  let ev;
+  do {
+    ev = ttGame.engine.tick();
+    if (ev.moved) cells++;
+  } while (ev.moved);
+  if (cells > 0) _ttAddScore(cells * TT_HARDDROP_SCORE_PER_CELL);
+  if (typeof SFX !== 'undefined') SFX.lock();
+  if (ev.bombed) {
+    if (typeof SFX !== 'undefined') SFX.bomb();
+    if (typeof ttOnBombExplode === 'function') ttOnBombExplode(ev.bombedCount);
+  } else if (ev.locked && ev.cleared > 0) {
+    ttOnLineClear(ev.cleared);
+  }
+  if (ev.gameOver) { ttRender(); ttEndGame(); return; }
+  ttRender();
 }
 
 function _ttBindControls() {
@@ -333,29 +347,18 @@ function _ttBindControls() {
   _ttBindRepeat(left, () => _ttMove(-1));
   _ttBindRepeat(right, () => _ttMove(1));
 
-  // 圓形按鈕分上下兩瓣：上半＝旋轉（按下立即觸發一次），下半＝按住加速降落、放開恢復正常重力
+  // 圓形按鈕分上下兩瓣：上半＝旋轉、下半＝硬降（瞬間落底），都是按下立即觸發一次
   rotateBtn.addEventListener('pointerdown', (e) => {
     e.preventDefault();
     try { rotateBtn.setPointerCapture(e.pointerId); } catch { /* 不支援就算了 */ }
     _ttRotate();
   });
 
-  let dropPressed = false;
-  const dropDown = (e) => {
+  dropBtn.addEventListener('pointerdown', (e) => {
     e.preventDefault();
-    if (!ttGame || dropPressed) return;
-    dropPressed = true;
     try { dropBtn.setPointerCapture(e.pointerId); } catch { /* 不支援就算了 */ }
-    _ttStartSoftDrop();
-  };
-  const dropFinish = () => {
-    if (!dropPressed) return;
-    dropPressed = false;
-    _ttStopSoftDrop();
-  };
-  dropBtn.addEventListener('pointerdown', dropDown);
-  dropBtn.addEventListener('pointerup', (e) => { e.preventDefault(); dropFinish(); });
-  dropBtn.addEventListener('pointercancel', dropFinish);
+    _ttHardDrop();
+  });
 
   // 鍵盤（桌面測試/遊玩）
   ttGame._keyHandler = (e) => {
@@ -364,16 +367,12 @@ function _ttBindControls() {
     else if (e.key === 'ArrowRight') { _ttMove(1); e.preventDefault(); }
     else if (e.key === 'ArrowUp' || e.key === ' ') { _ttRotate(); e.preventDefault(); }
     else if (e.key === 'ArrowDown') {
-      if (!ttGame.softDropping) _ttStartSoftDrop();
+      if (!e.repeat) _ttHardDrop(); // 忽略長按產生的重複 keydown，一次按下只硬降一次
       e.preventDefault();
     }
     else if (e.key === 'c' || e.key === 'C' || e.key === 'Shift') { ttUseHold(); e.preventDefault(); }
   };
-  ttGame._keyUpHandler = (e) => {
-    if (e.key === 'ArrowDown' && ttGame && ttGame.softDropping) _ttStopSoftDrop();
-  };
   document.addEventListener('keydown', ttGame._keyHandler);
-  document.addEventListener('keyup', ttGame._keyUpHandler);
 }
 
 // 點一下觸發一次；按住 260ms 後每 90ms 連發（左右移動用）
@@ -403,7 +402,6 @@ function ttEndGame() {
   clearInterval(ttGame.gravityInt);
   if (typeof ttStopTimedCycle === 'function') ttStopTimedCycle();
   document.removeEventListener('keydown', ttGame._keyHandler);
-  document.removeEventListener('keyup', ttGame._keyUpHandler);
 
   const finalScore = ttGame.score;
   const finalLines = ttGame.lines;
