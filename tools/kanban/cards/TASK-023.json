@@ -1,0 +1,22 @@
+{
+  "id": "TASK-023",
+  "title": "卡組管理",
+  "content": "自訂卡組建立/刪除/命名/emoji。loadCustomDecks / saveCustomDecks 由前端直連 Supabase custom_decks 資料表（非透過 server/routes 的後端 API）。",
+  "stage": "done",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-08",
+  "epic": "單字卡系統",
+  "userStory": "卡組管理",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 1,
+  "readiness": {},
+  "gates": {},
+  "links": {},
+  "refs": ["index.html:42-58", "index.html:757-777", "script.js:4238", "script.js:4264", "script.js:4133", "supabase/migration_account_init.sql:14-30"],
+  "evidence": { "commands": [], "findings": ["confirmNewDeck/deleteDeck/renderDecks 完整流程存在", "custom_decks 表已建立，前端直連同步"], "residual": "" },
+  "comments": []
+}

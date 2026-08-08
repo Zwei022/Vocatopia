@@ -1,0 +1,35 @@
+{
+  "id": "TASK-002",
+  "title": "Tetris PvP 對戰",
+  "content": "game/tetris/（engine.js/game.js/quiz.js/vocab.js/sfx.js/characters.js/gacha.js），含單元測試 engine.test.js（47/47 通過）。server/index.js 用 Socket.io 實作房間制對戰（create_room/join_room/start_battle/buzzer_answer/pvp_answer/queue_join）。單機/積分雙模式已拆分，段位系統見 tetris_tiers.sql。",
+  "stage": "done",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-08",
+  "epic": "Tetris PvP 對戰",
+  "userStory": "Tetris PvP 對戰",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 2,
+  "readiness": {},
+  "gates": {},
+  "links": {},
+  "refs": [
+    "game/tetris/engine.js",
+    "game/tetris/engine.test.js",
+    "supabase/migrations/tetris_tiers.sql"
+  ],
+  "evidence": {
+    "commands": [
+      "node --test game/tetris/engine.test.js"
+    ],
+    "findings": [
+      "47/47 單元測試通過",
+      "Socket.io 房間制事件齊全"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

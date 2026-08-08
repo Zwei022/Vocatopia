@@ -1,0 +1,31 @@
+{
+  "id": "TASK-009",
+  "title": "每日文章 / 精選題目",
+  "content": "server/routes/articles.js、daily_articles.js、server/scripts/generate_daily_articles.js（被 server/index.js 用 node-cron 排程呼叫 generateAndSave）。index.html #reading 有 rtabCurated（精選題目）分頁。",
+  "stage": "done",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-08",
+  "epic": "每日文章 / 精選題目",
+  "userStory": "每日文章 / 精選題目",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 8,
+  "readiness": {},
+  "gates": {},
+  "links": {},
+  "refs": [
+    "server/scripts/generate_daily_articles.js",
+    "server/routes/daily_articles.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "node-cron 排程每日產生文章已上線"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

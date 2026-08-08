@@ -1,0 +1,30 @@
+{
+  "id": "TASK-003",
+  "title": "競技場排位",
+  "content": "index.html #arena 畫面（含房號 UI）。DB 遷移：arena_start_bronze.sql（起始段位）、arena_weekly_tiers.sql（週段位）、arena_ranking.sql（排名）均已落地。",
+  "stage": "done",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-08",
+  "epic": "競技場排位",
+  "userStory": "競技場排位",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 3,
+  "readiness": {},
+  "gates": {},
+  "links": {},
+  "refs": [
+    "supabase/migrations/arena_ranking.sql"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "三份 DB 遷移檔（起始段位/週段位/排名）均存在"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

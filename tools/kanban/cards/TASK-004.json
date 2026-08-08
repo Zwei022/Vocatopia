@@ -1,0 +1,32 @@
+{
+  "id": "TASK-004",
+  "title": "角色系統 / Gacha",
+  "content": "game/tetris/characters.js（339 行）+ gacha.js（135 行，含 pool/rate 機率設定）。index.html #shop 有 shopPoolPreview。DB：character_growth_foundation.sql、avatar_system.sql。",
+  "stage": "done",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-08",
+  "epic": "角色系統 / Gacha",
+  "userStory": "角色系統 / Gacha",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 4,
+  "readiness": {},
+  "gates": {},
+  "links": {},
+  "refs": [
+    "game/tetris/gacha.js",
+    "supabase/migrations/character_growth_foundation.sql"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "gacha.js 機率設定存在",
+      "角色成長/頭像系統已落地 DB"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

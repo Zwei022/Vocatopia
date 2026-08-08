@@ -1,0 +1,33 @@
+{
+  "id": "TASK-008",
+  "title": "修正 GSAT 題庫 133 題答案錯誤（高優先）",
+  "content": "AUDIT_REPORT.md（2026-08-07 唯讀審查，3108 行）指出六份題庫中 133 題 answer 疑似指向語意錯誤選項，報告列為最高優先處理項目。FIX_REPORT.md 已修正聽力逐字稿、模擬文章篇幅、部分文法錯誤，但這 133 題答案錯誤未被列為已處理，需要追查是否仍待修。",
+  "stage": "backlog",
+  "risk": "high",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": true,
+  "createdAt": "2026-08-08",
+  "epic": "GSAT 題庫",
+  "userStory": "GSAT 題庫",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 1,
+  "readiness": {},
+  "gates": {},
+  "links": {},
+  "refs": [
+    "AUDIT_REPORT.md",
+    "FIX_REPORT.md",
+    "reports/audit_question_banks.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "AUDIT_REPORT.md 列為最高優先處理順序第 1 項",
+      "FIX_REPORT.md 未列出此項已修復"
+    ],
+    "residual": "需重新跑 reports/audit_question_banks.js 或人工逐題核對確認實際待修數量"
+  },
+  "comments": []
+}

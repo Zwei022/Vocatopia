@@ -1,0 +1,22 @@
+{
+  "id": "TASK-021",
+  "title": "已學習／收藏標記（正名自「學習紀錄」）",
+  "content": "已學習/未學習/收藏三分頁清單，依 fcMarked（熟悉）/fcFavorites（收藏）即時篩選顯示。不含時間戳、不含歷史趨勢、不含統計圖表——命名「學習紀錄」容易誤導成有歷史追蹤，實際只是即時標記清單。",
+  "stage": "done",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-08",
+  "epic": "單字卡系統",
+  "userStory": "已學習／收藏標記",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 1,
+  "readiness": {},
+  "gates": {},
+  "links": {},
+  "refs": ["index.html:536-579", "script.js:6751-6803", "script.js:5425", "script.js:5444"],
+  "evidence": { "commands": [], "findings": ["updateRecordsList 即時篩選邏輯存在", "fcSetFamiliar/fcToggleMark 判定函式存在"], "residual": "純 localStorage（voca_fc_learned_{deckId}/voca_fc_fav_{deckId}），不跨裝置同步；真正的歷史追蹤是技術債，見 TASK-022" },
+  "comments": []
+}

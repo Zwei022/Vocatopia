@@ -1,0 +1,30 @@
+{
+  "id": "TASK-011",
+  "title": "訂閱 / IAP",
+  "content": "server/routes/subscription.js 實作 GET /api/user/subscription-status 與 POST /api/webhooks/revenuecat（驗證 REVENUECAT_WEBHOOK_SECRET）。index.html 有 #upgradePurchaseView / #upgradeActiveView。程式碼註解證實已因 App Store Guideline 3.1.1 退件並修正（移除測試兌換碼繞過付費機制）。",
+  "stage": "done",
+  "risk": "medium",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-08",
+  "epic": "訂閱 / IAP",
+  "userStory": "訂閱 / IAP",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 10,
+  "readiness": {},
+  "gates": {},
+  "links": {},
+  "refs": [
+    "server/routes/subscription.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "已因 Guideline 3.1.1 退件並修正合規問題（程式碼內註解佐證）"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

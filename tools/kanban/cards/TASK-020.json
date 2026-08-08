@@ -1,0 +1,22 @@
+{
+  "id": "TASK-020",
+  "title": "測驗功能（中譯英／英譯中雙模式）",
+  "content": "10 題隨機四選一，提供「題目中文選英文」與「題目英文選中文」兩種方向。答錯即時顯示正解，結算頁可直接收藏答錯字。與 game/grammar.js 的文法測驗是不同功能，不要混算。",
+  "stage": "done",
+  "risk": "medium",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-08",
+  "epic": "單字卡系統",
+  "userStory": "測驗功能",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 1,
+  "readiness": {},
+  "gates": {},
+  "links": {},
+  "refs": ["index.html:472-475", "index.html:1094-1132", "script.js:5505-5609"],
+  "evidence": { "commands": [], "findings": ["openFcQuizMode/startFcQuiz/_fcqRenderQuestion/fcqAnswer/_fcqFinish 完整流程存在", "index.html:1106-1107 兩種出題方向選單"], "residual": "測驗成績只是即時結算畫面，不寫入任何資料表或 localStorage，沒有歷史紀錄，見 TASK-025" },
+  "comments": []
+}

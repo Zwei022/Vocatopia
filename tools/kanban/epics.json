@@ -1,0 +1,121 @@
+{
+  "epics": [
+    {
+      "name": "單字卡系統",
+      "definition": "Flashcard 核心模組。共用 STUDY_WORDS/fcCurrentDeckId 狀態，底下有多種呈現/練習模式。2026-08-08 深挖拆解，其餘模組尚未做到這個細度。",
+      "stories": [
+        { "name": "學習模式（翻牌／滑動）", "definition": "單字卡呈現的兩種基本形式，含自動播放與左右滑動熟悉判定。" },
+        { "name": "配對功能", "definition": "翻牌配對遊戲，英文單字↔中文定義，含計時與最佳紀錄。" },
+        { "name": "測驗功能", "definition": "10 題隨機四選一，含中譯英／英譯中兩種方向。" },
+        { "name": "已學習／收藏標記", "definition": "已學習/未學習/收藏三分頁篩選清單（正名自「學習紀錄」，目前不含歷史趨勢）。" },
+        { "name": "卡組管理", "definition": "自訂卡組建立/刪除/命名/emoji，前端直連 Supabase custom_decks。" },
+        { "name": "單字管理", "definition": "單字新增/刪除/搜尋/搬移，走 server/routes/words.js API。" }
+      ]
+    },
+    {
+      "name": "Tetris PvP 對戰",
+      "definition": "俄羅斯方塊子系統，含單機/積分雙模式、Socket.io 房間制對戰。",
+      "stories": [
+        { "name": "Tetris PvP 對戰", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+      ]
+    },
+    {
+      "name": "競技場排位",
+      "definition": "Arena 段位與排名系統。",
+      "stories": [
+        { "name": "競技場排位", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+      ]
+    },
+    {
+      "name": "角色系統 / Gacha",
+      "definition": "角色成長、頭像、抽卡池與機率設定。",
+      "stories": [
+        { "name": "角色系統 / Gacha", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+      ]
+    },
+    {
+      "name": "成就系統",
+      "definition": "成就領取與防重複領取邏輯。",
+      "stories": [
+        { "name": "成就系統", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+      ]
+    },
+    {
+      "name": "任務系統 / 每日簽到",
+      "definition": "每日任務、簽到獎勵。",
+      "stories": [
+        { "name": "任務系統 / 每日簽到", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+      ]
+    },
+    {
+      "name": "GSAT 題庫",
+      "definition": "閱讀、克漏字、聽力、文法、單字選擇六大題庫，含歷屆真題與模擬題。",
+      "stories": [
+        { "name": "GSAT 題庫", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+      ]
+    },
+    {
+      "name": "每日文章 / 精選題目",
+      "definition": "每日自動產生文章與精選題目排程。",
+      "stories": [
+        { "name": "每日文章 / 精選題目", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+      ]
+    },
+    {
+      "name": "好友 / 社交",
+      "definition": "好友邀請、對戰邀請、線上狀態。",
+      "stories": [
+        { "name": "好友 / 社交", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+      ]
+    },
+    {
+      "name": "訂閱 / IAP",
+      "definition": "RevenueCat 訂閱與內購，含 App Store 合規修正。",
+      "stories": [
+        { "name": "訂閱 / IAP", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+      ]
+    },
+    {
+      "name": "推播通知",
+      "definition": "Push notification 排程與觸發。",
+      "stories": [
+        { "name": "推播通知", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+      ]
+    },
+    {
+      "name": "TTS 語音",
+      "definition": "文字轉語音朗讀。",
+      "stories": [
+        { "name": "TTS 語音", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+      ]
+    },
+    {
+      "name": "使用者認證",
+      "definition": "登入、Apple Sign-In、刪除帳號。",
+      "stories": [
+        { "name": "使用者認證", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+      ]
+    },
+    {
+      "name": "意見回饋",
+      "definition": "使用者回饋收集。",
+      "stories": [
+        { "name": "意見回饋", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+      ]
+    },
+    {
+      "name": "Android 上架",
+      "definition": "Android release 簽名建置與 Play Console 發布。",
+      "stories": [
+        { "name": "Android 上架", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+      ]
+    },
+    {
+      "name": "iOS 上架",
+      "definition": "iOS release 簽名、封存、App Store 送審。",
+      "stories": [
+        { "name": "iOS 上架", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+      ]
+    }
+  ]
+}

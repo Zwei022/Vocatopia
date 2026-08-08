@@ -1,0 +1,55 @@
+{
+  "id": "TASK-017",
+  "title": "iOS 上架：確認 release 簽名 / archive / 送審流程",
+  "content": "ios/App/App.xcodeproj 存在，可在 Xcode 開啟，但沒找到 .xcarchive、fastlane 設定、或 .mobileprovision/.p12 簽名檔案，只有 ios/App/debug.xcconfig（debug 設定，非 release）。appstore_screenshots/ 已備妥上架截圖素材，顯示流程有在推進，但 build/signing 階段尚未看到完成證據，比 Android 落後。",
+  "stage": "backlog",
+  "risk": "medium",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": true,
+  "createdAt": "2026-08-08",
+  "epic": "iOS 上架",
+  "userStory": "iOS 上架",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 3,
+  "readiness": {
+    "problem_clear": false,
+    "non_goals_clear": false,
+    "acceptance_testable": false,
+    "files_known": false,
+    "scope_defined": false,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "ios/App/App.xcodeproj",
+    "ios/App/debug.xcconfig",
+    "appstore_screenshots/"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "只找到 debug.xcconfig，沒有 release 簽名/archive 痕跡",
+      "appstore_screenshots/ 已準備好，顯示流程有在推進"
+    ],
+    "residual": "需人工確認實際 Xcode 專案裡的 signing team/provisioning profile 設定，以及是否已在 App Store Connect 建立過 App 記錄"
+  },
+  "comments": []
+}

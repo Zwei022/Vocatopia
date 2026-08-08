@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server/index.js",
     "dev": "nodemon server/index.js",
-    "test": "node --test game/tetris/engine.test.js server/lib/date.test.js && node reports/audit_question_banks.js"
+    "test": "node --test game/tetris/engine.test.js server/lib/date.test.js && node reports/audit_question_banks.js",
+    "kanban": "node tools/kanban/server.mjs"
   },
   "keywords": [],
   "author": "",

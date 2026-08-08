@@ -1,0 +1,22 @@
+{
+  "id": "TASK-019",
+  "title": "配對功能",
+  "content": "翻牌配對遊戲：英文單字 ↔ 中文定義（目前只有這一種配對玩法，沒有「單字-例句」等其他變體）。完整計時、最佳紀錄、與支線任務系統連動（_questBumpMatchBest）。",
+  "stage": "done",
+  "risk": "medium",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-08",
+  "epic": "單字卡系統",
+  "userStory": "配對功能",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 1,
+  "readiness": {},
+  "gates": {},
+  "links": {},
+  "refs": ["index.html:476-479", "index.html:1057-1093", "script.js:5624-5745"],
+  "evidence": { "commands": [], "findings": ["openMatchReady/startMatchCountdown/_startMatchGame/matchTileClick/_finishMatchGame 完整流程存在", "已掛勾任務系統 _questBumpMatchBest"], "residual": "最佳紀錄只存 localStorage（voca_match_best_{deckId}），未寫回 Supabase，換裝置會遺失，見 TASK-025" },
+  "comments": []
+}
