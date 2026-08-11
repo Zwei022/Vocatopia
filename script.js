@@ -5978,8 +5978,8 @@ function showProfile() {
 function _profileAvatarHtml() {
   const img = (typeof avatarImgOf === 'function') ? avatarImgOf(typeof getAvatarId === 'function' ? getAvatarId() : null) : null;
   return img
-    ? `<img src="${img}" alt="頭像" onclick="openAvatarPicker()" style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:2.5px solid var(--orange);cursor:pointer">`
-    : `<div onclick="openAvatarPicker()" style="width:64px;height:64px;border-radius:50%;background:var(--card2);border:2.5px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:30px;cursor:pointer;margin:0 auto">👤</div>`;
+    ? `<img src="${img}" alt="頭像" onclick="openAvatarPicker()" style="width:128px;height:128px;border-radius:50%;object-fit:cover;border:5px solid var(--orange);cursor:pointer">`
+    : `<div onclick="openAvatarPicker()" style="width:128px;height:128px;border-radius:50%;background:var(--card2);border:5px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:60px;cursor:pointer;margin:0 auto">👤</div>`;
 }
 function _refreshProfileAvatarImg() {
   const wrap = document.getElementById('profileAvatarWrap');
