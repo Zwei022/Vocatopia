@@ -82,6 +82,11 @@ const SFX = {
   move()     { if (_sfxEnabled()) _sfxTone(220, .04, { type: 'square', volume: .08 }); },
   rotate()   { if (_sfxEnabled()) _sfxTone(440, .05, { type: 'square', volume: .1 }); },
   lock()     { if (_sfxEnabled()) _sfxTone(180, .07, { type: 'triangle', volume: .12 }); },
+  hardDrop() {
+    if (!_sfxEnabled()) return;
+    _sfxTone(140, .08, { type: 'sawtooth', volume: .18, sweepTo: 45 }); // 瞬間下墜的下滑音
+    _sfxNoise(.06, { volume: .16, filterFreq: 700, delay: .06 }); // 落地悶響
+  },
   lineClear(n) {
     if (!_sfxEnabled()) return;
     const notes = [523, 659, 784, 1046];

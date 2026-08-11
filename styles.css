@@ -2047,12 +2047,16 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .coll-card-name{font-family:var(--font-display);font-weight:900;font-size:13px;color:var(--ink);text-align:center;line-height:1.2}
 .coll-card-name-en{font-family:'Nunito',sans-serif;font-weight:700;font-size:10px;font-style:italic;color:var(--orange2);white-space:nowrap}
 .coll-card-rarity{font-family:'Nunito',sans-serif;font-size:10px;font-weight:700;color:var(--ink3);margin-top:1px}
+.coll-card-star{color:var(--orange2,#B85E0A);letter-spacing:.5px}
 
 /* ── 商店：常駐卡池 ── */
 .shop-head{display:flex;align-items:center;justify-content:space-between;padding:max(18px,env(safe-area-inset-top)) 20px 4px}
 .shop-title{font-family:var(--font-display);font-weight:900;font-size:20px;color:var(--ink)}
 .shop-gold{font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:var(--orange2);background:rgba(245,146,30,.1);border:1.5px solid rgba(245,146,30,.3);border-radius:20px;padding:5px 12px}
 .shop-body{flex:1;overflow-y:auto;padding:12px 20px 24px}
+.shop-pool-tabs{display:flex;gap:8px;margin-bottom:10px}
+.shop-pool-tab{flex:1;border:2px solid var(--line);background:var(--card);color:var(--ink2);font-family:var(--font-display);font-weight:800;font-size:13px;padding:9px 0;border-radius:var(--r2,12px);cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.shop-pool-tab.active{background:var(--red);border-color:var(--red);color:#fff}
 .shop-pool-card{background:var(--card);border:2.5px solid var(--line);border-radius:var(--r3);padding:16px;box-shadow:0 4px 0 rgba(122,92,67,.2)}
 .shop-pool-name{font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--ink)}
 .shop-pool-sub{font-size:12px;color:var(--ink2);margin-top:2px;margin-bottom:12px}

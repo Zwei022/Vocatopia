@@ -28,10 +28,10 @@ const TETRIS_CHARACTERS = {
     name: '海苔飯糰',
     nameEn: 'rice ball',
     img: 'public/images/characters/onigiri.webp',
-    cardImg: 'public/images/characters/onigiri.webp', // TODO: 換成新版動漫萌少女擬人卡面圖（試畫中）
+    cardImg: 'public/images/characters/onigiri.webp',
     rarity: 'common',            // common / rare / epic / mythic / legendary（收藏卡框顏色用）
     acquireHint: '帳號預設擁有',
-    desc: '香噴噴的海苔飯糰戰士，臨危不亂，總能為自己多爭取一點思考的時間。',
+    desc: '捏得紮實的海苔飯糰新兵，話不多，但每次都準時出現在你需要冷靜的那一刻。',
     skill: {
       type: 'bonusSeconds',
       name: '從容一刻',
@@ -56,7 +56,7 @@ const TETRIS_CHARACTERS = {
     cardImg: 'public/images/characters/dumpling.webp',
     rarity: 'common',
     acquireHint: '帳號預設擁有',
-    desc: '皮薄餡多的水餃小姐，個性溫和不慌不忙，就算咬破一點皮，湯汁也捨不得浪費。',
+    desc: '手工現包的水餃，皮薄餡多卻從不搶快，寧可多咬幾口，也要把每個單字嚼透。',
     // ⚠️ bonusSecondsWord 是全新技能類型：只能用在消行快問（單字選擇題，限時7秒），
     // 目前 quiz.js 的 ttShowQuiz() 只有 timed=true（計時題）才會顯示技能按鈕，
     // 消行快問完全沒有技能掛勾點，需要先擴充引擎才會真正在遊戲裡生效。
@@ -81,67 +81,254 @@ const TETRIS_CHARACTERS = {
     name: '楓糖鬆餅',
     nameEn: 'waffle',
     img: 'public/images/characters/waffle.webp',
-    cardImg: 'public/images/characters/waffle.webp', // TODO: 換成新版動漫萌少女擬人卡面圖
+    cardImg: 'public/images/characters/waffle.webp',
     rarity: 'rare',
     acquireHint: '完成一篇歷屆會考試題，正確率達 70% 以上即可解鎖',
-    desc: '格紋外皮裹著滿滿奶油蜂蜜的暖心鬆餅，圍著格紋領巾，總能溫暖地陪你撐過一次失手。',
+    desc: '格紋鬆餅裹著融化奶油，個性像它的糖漿一樣黏人，答錯了也會軟軟地接住你。',
     skill: {
       type: 'comboShield',
       name: '暖心護盾',
       icon: '🧇',
       desc: '被動技能：消行單字題答錯時自動觸發，抵擋這次連勝中斷（連勝倍率不會被重置）。每局限用 1 次。',
+      usesPerGame: 1,
+      offsetPenalty: false, // 0★：觸發時原本要扣的分數照扣；1★之後才連帶抵銷
     },
+    growth: [
+      { star: 1, desc: '觸發時連帶抵銷這題原本要扣的 -30 分', overrides: { offsetPenalty: true } },
+      { star: 2, desc: '每局可用次數 1 → 2 次', overrides: { usesPerGame: 2 } },
+      { star: 3, desc: '質變：觸發時連勝額外 +1（視同答對）' },
+      { star: 4, desc: '每局可用次數 2 → 3 次', overrides: { usesPerGame: 3 } },
+      { star: 5, desc: '覺醒被動：每答對 5 題自動恢復 1 次使用次數', passive: { recoverEvery: 5 } },
+    ],
   },
   canele: {
     id: 'canele',
     name: '蘭姆可麗露',
     nameEn: 'canelé',
     img: 'public/images/characters/canele.webp',
-    cardImg: 'public/images/characters/canele.webp', // TODO: 換成新版動漫萌少女擬人卡面圖
+    cardImg: 'public/images/characters/canele.webp',
     rarity: 'epic',
     acquireHint: '商店常駐卡池抽卡取得（三獎，機率 15%）',
-    desc: '外酥內軟的貴族甜點，圍著針織圍巾、踩著毛襪，總能提前替下一步鋪好路。',
+    desc: '外皮焦脆、內裡濕潤的法式甜點貴族，做事前總愛先在心裡排好接下來三步棋。',
     skill: {
       type: 'choosePiece',
       name: '焦糖布局',
       icon: '🍮',
       desc: '施放後可從方塊表格中點選，指定下一個出現的方塊。使用後技能封印，需連續答對 2 題英文選擇題（60秒計時題）才能解除封印再次使用。',
       unsealStreak: 2,
+      previewCount: 1, // 0★：一次只能指定下一顆
     },
+    growth: [
+      { star: 1, desc: '解封門檻 2 → 1 題', overrides: { unsealStreak: 1 } },
+      { star: 2, desc: '施放時同時指定「下一顆＋下下一顆」兩個方塊', overrides: { previewCount: 2 } },
+      { star: 3, desc: '質變：封印期間也能看到接下來 2 顆方塊預覽（不用等解封）' },
+      { star: 4, desc: '解封後可連續指定兩次才會重新封印', overrides: { consecutiveUses: 2 } },
+      { star: 5, desc: '覺醒被動：封印中每答對一題有 25% 機率提前解封', passive: { earlyUnsealChance: 0.25 } },
+    ],
   },
   sushi: {
     id: 'sushi',
     name: '鮭魚壽司',
     nameEn: 'sushi',
     img: 'public/images/characters/sushi.webp',
-    cardImg: 'public/images/characters/sushi.webp', // TODO: 換成新版動漫萌少女擬人卡面圖
+    cardImg: 'public/images/characters/sushi.webp',
     rarity: 'mythic',
     acquireHint: '商店常駐卡池抽卡取得（二獎，機率 4%，50抽保底必中神話以上）',
-    desc: '職人手捏的鮭魚握壽司，戴著櫻花毛帽，一身職人氣魄，出手就是一顆震撼彈。',
+    desc: '職人現捏的鮭魚握壽司，出手俐落像刀工一樣精準，一次出招就是滿場喝采。',
     skill: {
       type: 'bombPiece',
       name: '壽司炸彈',
       icon: '🍣',
       desc: '施放後，下一個方塊將變成壽司炸彈（單格特殊方塊），落地鎖定時炸開 3×3 範圍，範圍內方塊全部消除。使用後技能封印，需連續答對 2 題英文選擇題（60秒計時題）才能解除封印再次使用。',
       unsealStreak: 2,
+      fixedScore: 400,
     },
+    growth: [
+      { star: 1, desc: '解封門檻 2 → 1 題', overrides: { unsealStreak: 1 } },
+      { star: 2, desc: '固定分數 400 → 550', overrides: { fixedScore: 550 } },
+      { star: 3, desc: '質變：炸彈落地時，額外讓消行單字題連勝 +1' },
+      { star: 4, desc: '固定分數 550 → 700', overrides: { fixedScore: 700 } },
+      { star: 5, desc: '覺醒被動：每局第一次施放時，爆炸範圍自動擴大一階（3×3 → 5×5）', passive: { firstCastRadiusBoost: true } },
+    ],
   },
   lobster: {
     id: 'lobster',
     name: '焗烤龍蝦',
     nameEn: 'lobster',
     img: 'public/images/characters/lobster.webp',
-    cardImg: 'public/images/characters/lobster.webp', // TODO: 換成新版動漫萌少女擬人卡面圖
+    cardImg: 'public/images/characters/lobster.webp',
     rarity: 'legendary',
     acquireHint: '商店常駐卡池抽卡取得（特獎，機率 1%，100抽保底必中傳奇）',
-    desc: '披著針織毛衣、圍著毛線圍巾的宴席王者，巨螯一舉，就能把整個底盤清空。',
+    desc: '宴席桌上的焗烤主角，龍蝦鉗一開一合，什麼樣的殘局到牠手上都能重新收拾。',
     skill: {
       type: 'clearBottom',
       name: '王者清盤',
       icon: '🦞',
       desc: '施放後直接清空棋盤最底 2 行，無論該行是否已被鎖住（含懲罰的灰色行）。使用後技能封印，需連續答對 3 題英文選擇題（60秒計時題）才能解除封印再次使用。',
       unsealStreak: 3,
+      clearRows: 2, // _ttCastClearBottom() 已改讀這個欄位，4★升級後真的會清 3 行
     },
+    growth: [
+      { star: 1, desc: '解封門檻 3 → 2 題', overrides: { unsealStreak: 2 } },
+      { star: 2, desc: '解封門檻 2 → 1 題', overrides: { unsealStreak: 1 } },
+      { star: 3, desc: '質變：清空時額外讓連勝 +2' },
+      { star: 4, desc: '清空行數 2 → 3 行（引擎目前寫死 2 行，需擴充才會生效）', overrides: { clearRows: 3 } },
+      { star: 5, desc: '覺醒被動：每局開局自動附贈 1 次免費施放機會（不消耗封印狀態）', passive: { freeFirstCast: true } },
+    ],
+  },
+  uni: {
+    id: 'uni',
+    name: '海膽軍艦',
+    nameEn: 'uni gunkan',
+    img: 'public/images/characters/uni.webp',
+    cardImg: 'public/images/characters/uni.webp',
+    rarity: 'mythic',
+    acquireHint: '商店限時卡池抽卡取得（二獎，機率 4%，50抽保底必中神話以上）',
+    desc: '產季限定的頂級海膽，賣相嬌貴、脾氣卻很穩，總在你快撐不住的瞬間悄悄補位。與鮭魚壽司同屬「海鮮職人系列」。',
+    skill: {
+      type: 'autoShield',
+      name: '軍艦護盾',
+      icon: '🍱',
+      desc: '被動技能：本局第一次疊到快觸頂時自動觸發，清空最底 3 行，每局限用 1 次，無需封印。',
+      clearRows: 3,
+      usesPerGame: 1,
+      triggerMarginRows: 0, // 0★：堆疊到頂端才觸發；4★之後提前到距頂 3 行就觸發
+    },
+    growth: [
+      { star: 1, desc: '清空行數 3 → 4 行', overrides: { clearRows: 4 } },
+      { star: 2, desc: '每局可觸發次數 1 → 2 次', overrides: { usesPerGame: 2 } },
+      { star: 3, desc: '質變：觸發時額外讓連勝 +2' },
+      { star: 4, desc: '觸發判定提前：board 堆疊到距離頂端還剩 3 行就會觸發，容錯空間更大', overrides: { triggerMarginRows: 3 } },
+      { star: 5, desc: '覺醒被動：觸發後，本局剩餘時間分數獲取額外 +10%', passive: { postTriggerScoreBonusPct: 10 } },
+    ],
+  },
+  bluefin: {
+    id: 'bluefin',
+    name: '黑鮪魚刺身',
+    nameEn: 'bluefin tuna sashimi',
+    img: 'public/images/characters/bluefin.webp',
+    cardImg: 'public/images/characters/bluefin.webp',
+    rarity: 'legendary',
+    acquireHint: '商店限時卡池抽卡取得（特獎，機率 1%，100抽保底必中傳奇）',
+    desc: '師傅一刀落下才切得出的大トロ切片，油脂布滿紋理，出招時整條直線都會讓開。',
+    // 2026-08-06 Notion 定案：技術上比照壽司炸彈的封印/解封架構，engine.js 需仿
+    // markNextAsBomb/explodeBomb 新增 markNextAsColumnClear/explodeColumns（尚未寫入 code）。
+    skill: {
+      type: 'columnClearPiece',
+      name: '鮪魚魚雷',
+      icon: '🐟',
+      desc: '施放後，下一個方塊變成鮪魚魚雷（沿用引擎既有雙格骨牌形狀，橫置兩格）。落地鎖定時，清空該方塊所在的兩個直排（整欄由上到下全清，不影響其他欄位）。使用後技能封印，需連續答對 3 題英文選擇題（30秒計時題）解除封印。',
+      unsealStreak: 3,
+      columns: 2, // 0★：清兩欄；4★之後擴大為三欄（形狀改三格橫條 I3）
+      bonusScore: 0, // 0★：無額外固定分；3★之後 overrides 蓋成 300
+    },
+    growth: [
+      { star: 1, desc: '解封門檻 3 → 2 題', overrides: { unsealStreak: 2 } },
+      { star: 2, desc: '解封門檻 2 → 1 題', overrides: { unsealStreak: 1 } },
+      { star: 3, desc: '質變：清空兩直排時，固定額外 +300 分', overrides: { bonusScore: 300 } },
+      { star: 4, desc: '清除範圍從兩欄擴大為三欄（形狀由雙格骨牌升級成三格橫條）', overrides: { columns: 3 } },
+      { star: 5, desc: '覺醒被動：每局開局自動附贈 1 次免費施放機會（不消耗封印狀態）', passive: { freeFirstCast: true } },
+    ],
+  },
+  mochi: {
+    id: 'mochi',
+    name: '花生麻糬',
+    nameEn: 'peanut mochi',
+    img: 'public/images/characters/mochi.webp',
+    cardImg: 'public/images/characters/mochi.webp',
+    rarity: 'rare',
+    acquireHint: '競技場獲勝 20 次解鎖',
+    desc: '剛搗好的花生麻糬，外表軟綿綿，被壓扁了也能咻地彈回原本的圓潤模樣。',
+    skill: {
+      type: 'streakShield',
+      name: 'Q彈護體',
+      icon: '🍡',
+      desc: '被動技能，全程生效：連續答對 5 題觸發一次「彈力反彈」，抵銷下一次即將發生的懲罰（灰色列生成或側牆鎖定），彈開後里程碑重新計算。',
+      milestone: 5,
+    },
+    growth: [
+      { star: 1, desc: '里程碑 5 題 → 4 題', overrides: { milestone: 4 } },
+      { star: 2, desc: '里程碑 4 題 → 3 題', overrides: { milestone: 3 } },
+      { star: 3, desc: '質變：觸發彈開時，額外獲得 +50 分' },
+      { star: 4, desc: '里程碑 3 題 → 2 題', overrides: { milestone: 2 } },
+      { star: 5, desc: '覺醒被動：觸發彈開時，有 20% 機率不消耗（里程碑不歸零，直接朝下一次累積）', passive: { noConsumeChance: 0.2 } },
+    ],
+  },
+  millefeuille: {
+    id: 'millefeuille',
+    name: '奶油千層蛋糕',
+    nameEn: 'cream mille-feuille',
+    img: 'public/images/characters/millefeuille.webp',
+    cardImg: 'public/images/characters/millefeuille.webp',
+    rarity: 'epic',
+    acquireHint: '商店常駐卡池抽卡取得（三獎，機率 15%）',
+    desc: '一層酥皮疊一層卡士達的千層小姐，凡事講求鋪陳，蓄力愈久、關鍵一擊愈扎實。',
+    skill: {
+      type: 'chargeStack',
+      name: '千層疊運',
+      icon: '🍰',
+      desc: '施放後進入蓄力狀態，之後每答對一題英文選擇題疊加 1 層（最高 5 層），答錯則疊層全歸零。玩家可隨時手動「開動」，依當下疊層數清空棋盤最底 N 行，但無法清除已被懲罰鎖住的格子（灰色列/側牆鎖定格）。每局限使用 2 次，觸發後蓄力歸零並封印，需連對 2 題才能重新開始蓄力。',
+      maxStack: 5,
+      usesPerGame: 2,
+      unsealStreak: 2,
+      failResetAll: true, // 0★：答錯疊層全歸零；2★之後改成只扣1層
+    },
+    growth: [
+      { star: 1, desc: '疊層上限 5 → 6 層', overrides: { maxStack: 6 } },
+      { star: 2, desc: '質變：答錯不再全歸零，改成只扣 1 層', overrides: { failResetAll: false } },
+      { star: 3, desc: '質變：疊到滿層時自動額外 +300 分' },
+      { star: 4, desc: '疊層上限 6 → 8 層', overrides: { maxStack: 8 } },
+      { star: 5, desc: '覺醒被動：每局第一次觸發時，額外視為多疊 2 層計算', passive: { firstCastBonusStack: 2 } },
+    ],
+  },
+  foiegras: {
+    id: 'foiegras',
+    name: '香煎鵝肝',
+    nameEn: 'pan-seared foie gras',
+    img: 'public/images/characters/foiegras.webp',
+    cardImg: 'public/images/characters/foiegras.webp',
+    rarity: 'legendary',
+    acquireHint: '俄羅斯方塊單局最高分達 15000 解鎖',
+    desc: '整份菜單裡最壓軸的一道，煎到恰到好處的外酥內滑，出場自帶加成的氣場。',
+    skill: {
+      type: 'lineScoreBonus',
+      name: '頂級饗宴',
+      icon: '🥩',
+      desc: '被動技能，全程生效，不需施放不需封印：每消一行（不論任何方式）額外 +5% 分數加成。',
+      bonusPct: 5,
+    },
+    growth: [
+      { star: 1, desc: '加成 +5% → +8%', overrides: { bonusPct: 8 } },
+      { star: 2, desc: '加成 +8% → +12%', overrides: { bonusPct: 12 } },
+      { star: 3, desc: '質變：連續兩次操作都有消行時，本次加成翻倍' },
+      { star: 4, desc: '加成 +12% → +16%', overrides: { bonusPct: 16 } },
+      { star: 5, desc: '覺醒被動：單局分數達成 20000 分後，之後本局所有分數獲取直接雙倍計算（取代百分比堆疊）', passive: { doubleAfterScore: 20000 } },
+    ],
+  },
+  honore: {
+    id: 'honore',
+    name: '聖多諾黑',
+    nameEn: 'saint-honoré',
+    img: 'public/images/characters/honore.webp',
+    cardImg: 'public/images/characters/honore.webp',
+    rarity: 'legendary',
+    acquireHint: '商店常駐卡池抽卡取得（特獎，機率 1%，100抽保底必中傳奇）',
+    desc: '泡芙、焦糖與鮮奶油疊成的法式甜點之王，是烏托邦送給每位新朋友的見面禮，答錯了也不會讓你難堪太久。',
+    skill: {
+      type: 'streakSoftFail',
+      name: '開幕獻禮',
+      icon: '🎂',
+      desc: '被動技能，全程生效，不需施放不需封印：消行單字題答錯時連勝倍率不直接歸零，改成打對折（÷2）。',
+      penaltyScore: 30,       // 0★：答錯照舊扣 30 分；星級提升逐步降低
+      streakRetainRatio: 0.5, // 0★：連勝打對折
+    },
+    growth: [
+      { star: 1, desc: '答錯扣分 -30 → -20', overrides: { penaltyScore: 20 } },
+      { star: 2, desc: '連勝對折 → 改為打七折（保留70%）', overrides: { streakRetainRatio: 0.7 } },
+      { star: 3, desc: '質變：閱讀理解關卡答錯的側牆鎖定行數變成只鎖一半' },
+      { star: 4, desc: '答錯扣分 -20 → -10', overrides: { penaltyScore: 10 } },
+      { star: 5, desc: '覺醒被動：連勝永遠不會因答錯而降低（完全免疫連勝損失，僅分數仍會扣）', passive: { streakImmune: true } },
+    ],
   },
 };
 
@@ -296,6 +483,101 @@ async function _doDewRpc(delta) {
   } finally {
     _dewSyncPending--;
   }
+}
+
+// ════════════════════════════════
+// 角色升星（花風味露+金幣把角色從 Lv.0 升到 Lv.5）
+// 登入時走 upgrade_character RPC（見 supabase/migrations/character_upgrade_rpc.sql），
+// 一次性驗證兩筆餘額並原子扣款+加星級，不能用 addFlavorDew/addGold 分開呼叫湊
+// （那兩支各自 floor 在 0，餘額不夠時只會扣到 0 而不是拒絕，等於能少花錢升級）。
+// 訪客模式純本機：升級前手動檢查餘額夠不夠，狀態存 LS_CHAR_LEVELS。
+// ════════════════════════════════
+const LS_CHAR_LEVELS = 'voca_char_levels';
+
+function _loadLocalCharLevels() {
+  try { return JSON.parse(localStorage.getItem(LS_CHAR_LEVELS) || '{}') || {}; }
+  catch { return {}; }
+}
+
+// 目前星級（0~5）
+function getCharStar(charId) {
+  if (typeof currentProfile !== 'undefined' && currentProfile) {
+    return currentProfile.char_levels?.[charId] ?? 0;
+  }
+  return _loadLocalCharLevels()[charId] ?? 0;
+}
+
+// 升到下一星所需風味露/金幣（角色已滿 5★ 時回傳 null）
+function nextUpgradeCost(charId) {
+  const ch = TETRIS_CHARACTERS[charId];
+  if (!ch) return null;
+  const star = getCharStar(charId);
+  if (star >= 5) return null;
+  const nextStar = star + 1;
+  return {
+    star: nextStar,
+    dew: GROWTH_COST_DEW[nextStar - 1],
+    gold: charGrowthGoldCost(ch.rarity, nextStar),
+  };
+}
+
+// 執行升星。回傳 { ok:true, star } 或 { ok:false, reason }
+async function upgradeCharacter(charId) {
+  const cost = nextUpgradeCost(charId);
+  if (!cost) return { ok: false, reason: '已達最高星級' };
+
+  if (typeof currentUser !== 'undefined' && currentUser && typeof authClient !== 'undefined') {
+    try {
+      const { data, error } = await authClient.rpc('upgrade_character', {
+        p_char_id: charId, p_dew_cost: cost.dew, p_gold_cost: cost.gold,
+      });
+      if (error) throw error;
+      if (currentProfile) {
+        currentProfile.char_levels = { ...(currentProfile.char_levels || {}), [charId]: data.star };
+        currentProfile.flavor_dew = data.flavor_dew;
+        currentProfile.gold = data.gold;
+      }
+      return { ok: true, star: data.star };
+    } catch (e) {
+      return { ok: false, reason: e.message?.includes('風味露') ? '美食風味露不足' : (e.message?.includes('金幣') ? '金幣不足' : '升級失敗，請稍後再試') };
+    }
+  }
+
+  // 訪客模式：純本機扣款
+  const dew = getFlavorDew();
+  const gold = (typeof getGold === 'function') ? getGold() : 0;
+  if (dew < cost.dew) return { ok: false, reason: '美食風味露不足' };
+  if (gold < cost.gold) return { ok: false, reason: '金幣不足' };
+  addFlavorDew(-cost.dew);
+  if (typeof addGold === 'function') addGold(-cost.gold);
+  const levels = _loadLocalCharLevels();
+  levels[charId] = cost.star;
+  localStorage.setItem(LS_CHAR_LEVELS, JSON.stringify(levels));
+  return { ok: true, star: cost.star };
+}
+
+// 依目前星級套用 growth[] 的 overrides，回傳「實際生效」的技能物件（不改動原始資料）
+function effectiveSkill(charId) {
+  const ch = TETRIS_CHARACTERS[charId];
+  if (!ch) return null;
+  const star = getCharStar(charId);
+  let skill = { ...ch.skill };
+  (ch.growth || []).forEach(g => {
+    if (g.star <= star && g.overrides) skill = { ...skill, ...g.overrides };
+  });
+  return skill;
+}
+
+// 依目前星級合併 growth[].passive 欄位（累加所有 <= 目前星級的 passive object），
+// 用來讀「覺醒被動」（通常是5★）之類的額外效果。跟 effectiveSkill 是同一套資料來源，
+// 差在 effectiveSkill 處理 overrides（改 skill 既有欄位），這個處理 passive（全新欄位）。
+function activePassives(charId) {
+  const ch = TETRIS_CHARACTERS[charId];
+  if (!ch) return {};
+  const star = getCharStar(charId);
+  let out = {};
+  (ch.growth || []).forEach(g => { if (g.star <= star && g.passive) out = { ...out, ...g.passive }; });
+  return out;
 }
 
 // ════════════════════════════════

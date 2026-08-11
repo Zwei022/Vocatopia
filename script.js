@@ -1305,6 +1305,7 @@ function getPvpSocket() {
     document.getElementById('arenaBuzzerBattle').style.display = 'none';
     document.getElementById('arenaResult').style.display = 'flex';
     _applyArenaOutcome(outcome && outcome[myId]);
+    renderArenaLeaderboard(pvpState.mode); // 對局結束就重抓排行榜，避免 ELO 已結算但畫面停在舊排名
     // #10 再來一場改雙方同意制：兩邊都顯示按鈕，任一方可請求，需雙方都按才開始
     pvpState.iWantRematch  = false;
     pvpState.foeWantsRematch = false;
@@ -8108,7 +8109,6 @@ function renderQuestList() {
       : (ready ? `<button class="achv-claim" onclick="claimQuest('${q.id}')">領取 +${q.gold}🪙</button>` : `<span class="achv-locked-tag">🔒</span>`);
     html += `
       <div class="achv-card${ready && !claimed ? ' unlocked' : ''}">
-        <div class="achv-ico">📜</div>
         <div class="achv-main">
           <div class="achv-name">${escHtml(q.name)}</div>
           <div class="achv-bar"><div class="achv-bar-fill" style="width:${pct}%"></div></div>
@@ -8799,7 +8799,6 @@ function showTitleInfo(id) {
   ov.onclick = e => { if (e.target === ov) closeTitleInfo(); };
   ov.innerHTML = `
     <div class="unl-picker-box" style="max-width:340px">
-      <div style="font-size:44px;line-height:1;margin-bottom:6px">${a.icon}</div>
       <div class="unl-picker-title">「${escHtml(a.title)}」</div>
       <div class="unl-picker-desc" style="margin-bottom:14px">${escHtml(a.name)}</div>
       <div style="text-align:left;background:var(--goldsoft,#fff8e8);border:1.5px solid var(--gold,#f0c040);border-radius:12px;padding:12px 14px;margin-bottom:12px">
@@ -8896,7 +8895,6 @@ function renderAchievements() {
       else                           action = `<span class="achv-locked-tag">🔒</span>`;
       html += `
         <div class="achv-card${unlocked ? ' unlocked' : ''}">
-          <div class="achv-ico" style="cursor:pointer" onclick="showTitleInfo('${a.id}')">${a.icon}</div>
           <div class="achv-main" style="cursor:pointer" onclick="showTitleInfo('${a.id}')">
             <div class="achv-name">${escHtml(a.name)}<span class="achv-titletag">「${escHtml(a.title)}」</span></div>
             <div class="achv-bar"><div class="achv-bar-fill" style="width:${pct}%"></div></div>
@@ -8970,7 +8968,7 @@ function renderCharCollection() {
           ${isOwned ? '' : '<div class="coll-lock">🔒</div>'}
         </div>
         <div class="coll-card-name">${escHtml(ch.name)}${ch.nameEn ? ` <span class="coll-card-name-en">${escHtml(ch.nameEn)}</span>` : ''}</div>
-        <div class="coll-card-rarity">${RARITY_LABEL[ch.rarity] || ''}</div>
+        <div class="coll-card-rarity">${RARITY_LABEL[ch.rarity] || ''}${isOwned && typeof getCharStar === 'function' && getCharStar(ch.id) > 0 ? ` <span class="coll-card-star">${'★'.repeat(getCharStar(ch.id))}</span>` : ''}</div>
       </button>`;
   }).join('');
 }
@@ -9020,14 +9018,82 @@ function openCharDetail(id) {
           </div>
           <div style="background:rgba(43,30,20,.55);border-radius:0 0 10px 10px;padding:10px 12px 12px">
             <div style="font-size:12px;color:rgba(255,255,255,.92);line-height:1.55;margin-bottom:8px">${escHtml(ch.desc)}</div>
-            <div style="font-weight:900;font-size:12px;color:#fff;margin-bottom:2px">${ch.skill.icon} ${escHtml(ch.skill.name)}</div>
+            <div style="font-weight:900;font-size:12px;color:#fff;margin-bottom:2px">${escHtml(ch.skill.name)}</div>
             <div style="font-size:11px;color:rgba(255,255,255,.85);line-height:1.5">${escHtml(ch.skill.desc)}</div>
           </div>
         </div>
       </div>
+      ${isOwned ? _charGrowthBlockHtml(ch) : ''}
       <div style="margin-top:12px">${footer}</div>
     </div>`;
   document.body.appendChild(overlay);
+}
+
+// 角色詳情彈窗裡的星級成長區塊：目前星級 + 下一星內容預覽 + 升星按鈕。
+// 只有已擁有的角色才顯示（未擁有連基礎技能都用不到，成長更無從談起）。
+function _charGrowthBlockHtml(ch) {
+  if (typeof getCharStar !== 'function') return '';
+  const star = getCharStar(ch.id);
+  const stars = '★'.repeat(star) + '☆'.repeat(5 - star);
+  const growth = ch.growth || [];
+  const nextEntry = growth.find(g => g.star === star + 1);
+  const cost = (typeof nextUpgradeCost === 'function') ? nextUpgradeCost(ch.id) : null;
+
+  const nextBlock = (star >= 5)
+    ? `<div style="font-size:12px;color:var(--green2);font-weight:800;text-align:center;padding:8px 0">🎉 已達最高星級</div>`
+    : `<div style="background:rgba(122,92,67,.08);border-radius:10px;padding:10px 12px;margin-top:8px">
+        <div style="font-size:11px;font-weight:800;color:var(--ink3);margin-bottom:3px">下一星（${star + 1}★）</div>
+        <div style="font-size:12px;color:var(--ink2);line-height:1.5;margin-bottom:8px">${escHtml(nextEntry ? nextEntry.desc : '效果尚未定案')}</div>
+        <button onclick="openUpgradeConfirm('${ch.id}')"
+          style="width:100%;padding:10px;border:none;border-radius:10px;font-family:var(--font-display);font-weight:900;font-size:13px;color:#fff;background:var(--orange2,#B85E0A);cursor:pointer">
+          升星 🧪${cost ? cost.dew : 0} ・ 🪙${cost ? cost.gold : 0}
+        </button>
+      </div>`;
+
+  return `<div style="margin-top:10px;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:12px 14px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline">
+        <span style="font-size:12px;font-weight:800;color:var(--ink3)">角色成長</span>
+        <span style="font-size:15px;color:var(--orange2,#B85E0A);letter-spacing:1px">${stars}</span>
+      </div>
+      ${nextBlock}
+    </div>`;
+}
+
+// 升星確認彈窗：顯示花費，確認後才真的呼叫 upgradeCharacter()
+function openUpgradeConfirm(charId) {
+  const ch = TETRIS_CHARACTERS[charId];
+  const cost = (typeof nextUpgradeCost === 'function') ? nextUpgradeCost(charId) : null;
+  if (!ch || !cost) return;
+  const overlay = document.createElement('div');
+  overlay.id = 'upgradeConfirmOverlay';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9500;display:flex;align-items:center;justify-content:center;padding:20px';
+  overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
+  overlay.innerHTML = `
+    <div style="background:var(--card);border:2.5px solid var(--line);border-radius:18px;padding:22px 20px;width:100%;max-width:300px;font-family:'Nunito',sans-serif;text-align:center;box-shadow:0 8px 40px rgba(75,56,42,.3)">
+      <div style="font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--ink);margin-bottom:6px">升級 ${escHtml(ch.name)} 到 ${cost.star}★？</div>
+      <div style="font-size:13px;color:var(--ink2);margin-bottom:16px">消耗　🧪 ${cost.dew} 風味露　・　🪙 ${cost.gold} 金幣</div>
+      <div style="display:flex;gap:8px">
+        <button onclick="document.getElementById('upgradeConfirmOverlay').remove()"
+          style="flex:1;padding:11px;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink2);font-weight:800;font-size:13px;cursor:pointer">取消</button>
+        <button id="upgradeConfirmBtn" onclick="doUpgradeCharacter('${charId}')"
+          style="flex:1;padding:11px;border:none;border-radius:10px;background:var(--red);color:#fff;font-weight:800;font-size:13px;cursor:pointer">確定升星</button>
+      </div>
+    </div>`;
+  document.body.appendChild(overlay);
+}
+
+async function doUpgradeCharacter(charId) {
+  const btn = document.getElementById('upgradeConfirmBtn');
+  if (btn) { btn.disabled = true; btn.textContent = '處理中…'; }
+  const result = await upgradeCharacter(charId);
+  document.getElementById('upgradeConfirmOverlay')?.remove();
+  if (result.ok) {
+    showToast(`✓ 升級成功！${TETRIS_CHARACTERS[charId]?.name || ''} 現在是 ${result.star}★`);
+    document.getElementById('charDetailOverlay')?.remove();
+    openCharDetail(charId);
+  } else {
+    showToast(`⚠ ${result.reason || '升級失敗'}`);
+  }
 }
 
 function deployChar(id) {
@@ -9042,12 +9108,30 @@ function deployChar(id) {
 // ══════════════════════════════════════════════════════════════
 // 商店 / 常駐卡池抽卡
 // ══════════════════════════════════════════════════════════════
+// 商店分頁切換（常駐/限時卡池），由 shop-pool-tab 按鈕呼叫
+function switchShopPool(poolId) {
+  if (typeof switchGachaPool !== 'function') return;
+  switchGachaPool(poolId);
+  document.querySelectorAll('.shop-pool-tab').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.pool === poolId);
+  });
+  renderShop();
+}
+
 function renderShop() {
   const goldEl = document.getElementById('shopGold');
   if (goldEl) goldEl.textContent = getGold().toLocaleString();
 
   const preview = document.getElementById('shopPoolPreview');
   if (!preview || typeof GACHA_POOL === 'undefined') return;
+
+  const nameEl = document.getElementById('shopPoolName');
+  const subEl = document.getElementById('shopPoolSub');
+  if (nameEl) nameEl.textContent = GACHA_POOL.name;
+  if (subEl) {
+    const names = GACHA_POOL.entries.map(e => TETRIS_CHARACTERS[e.charId]?.name || e.charId);
+    subEl.textContent = `${names.join('・')}，槓龜也有美食風味露安慰獎（${GACHA_POOL.pityMythicPlus}抽保底神話、${GACHA_POOL.pityLegendary}抽保底傳奇）`;
+  }
   preview.innerHTML = GACHA_POOL.entries.map(entry => {
     const ch = TETRIS_CHARACTERS[entry.charId];
     if (!ch) return '';
@@ -9136,7 +9220,7 @@ function openGachaRates() {
   overlay.innerHTML = `
     <div style="background:var(--card);border:2.5px solid var(--line);border-radius:18px;padding:22px 20px;width:100%;max-width:340px;font-family:'Nunito',sans-serif;position:relative;box-shadow:0 8px 40px rgba(75,56,42,.3)">
       <button onclick="document.getElementById('gachaRateOverlay').remove()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:18px;cursor:pointer">✕</button>
-      <div style="font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--ink);margin-bottom:12px">常駐卡池機率</div>
+      <div style="font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--ink);margin-bottom:12px">${escHtml(GACHA_POOL.name)}機率</div>
       ${rows}
       <div style="margin-top:14px;background:rgba(240,180,41,.12);border:1.5px solid rgba(240,180,41,.35);border-radius:12px;padding:12px">
         <div style="font-weight:800;font-size:12px;color:var(--ink);margin-bottom:6px">🛡️ 保底機制</div>

@@ -61,6 +61,8 @@ function ttCreateEngine(cols = 8, rows = 16) {
   let active = null;       // { type, color, matrix, row, col, isBomb }
   let nextType = bag.next();
   let pendingBomb = false; // 壽司技能：下一次 spawn() 出來的方塊要標記為炸彈
+  let pendingBombRadius = 1; // 壽司5★被動：第一次施放爆炸範圍擴大
+  let pendingColumnClear = false; // 黑鮪魚技能：下一次 spawn() 出來的方塊要標記為魚雷（整欄清除）
   let holdType = null;     // 保留欄位目前存放的方塊種類（null＝空）
   let holdLocked = false;  // 同一顆方塊落下期間只能保留/交換一次，鎖定後才能再用
 
@@ -93,8 +95,14 @@ function ttCreateEngine(cols = 8, rows = 16) {
     active = makePiece(nextType);
     if (pendingBomb) {
       active.isBomb = true;
+      active.bombRadius = pendingBombRadius;
       active.color = 'bomb'; // 渲染用特殊顏色，跟同形狀的一般方塊做出區別
       pendingBomb = false;
+      pendingBombRadius = 1;
+    } else if (pendingColumnClear) {
+      active.isColumnClear = true;
+      active.color = 'colclear';
+      pendingColumnClear = false;
     }
     nextType = bag.next();
     return !collides(active);
@@ -105,9 +113,15 @@ function ttCreateEngine(cols = 8, rows = 16) {
     if (TT_PIECES[type]) nextType = type;
   }
 
-  // 標記下一次 spawn() 的方塊為壽司炸彈（壽司技能用）
-  function markNextAsBomb() {
+  // 標記下一次 spawn() 的方塊為壽司炸彈（壽司技能用），radius 預設 1（3×3）
+  function markNextAsBomb(radius = 1) {
     pendingBomb = true;
+    pendingBombRadius = radius;
+  }
+
+  // 標記下一次 spawn() 的方塊為黑鮪魚魚雷（columnClearPiece 技能用）
+  function markNextAsColumnClear() {
+    pendingColumnClear = true;
   }
 
   // 保留/交換目前方塊：
@@ -178,15 +192,32 @@ function ttCreateEngine(cols = 8, rows = 16) {
   // 壽司炸彈爆炸：以方塊鎖定位置為中心炸開 3×3 範圍（超出棋盤邊界的部分自動裁切）。
   // 範圍內不論是否為一般方塊或懲罰灰色列都會被清除，不像 clearLines() 只認整列填滿。
   // 回傳實際被清掉的格數（給計分用）。
-  const TT_BOMB_RADIUS = 1; // 3x3：中心 ±1
+  const TT_BOMB_RADIUS = 1; // 3x3：中心 ±1（預設值，sushi 5★被動可擴大到 2＝5×5）
   function explodeBomb() {
+    const radius = active.bombRadius || TT_BOMB_RADIUS;
     const midRow = active.row + Math.floor(active.matrix.length / 2);
     const midCol = active.col + Math.floor(active.matrix[0].length / 2);
     let count = 0;
-    for (let r = midRow - TT_BOMB_RADIUS; r <= midRow + TT_BOMB_RADIUS; r++) {
+    for (let r = midRow - radius; r <= midRow + radius; r++) {
       if (r < 0 || r >= rows) continue;
-      for (let c = midCol - TT_BOMB_RADIUS; c <= midCol + TT_BOMB_RADIUS; c++) {
+      for (let c = midCol - radius; c <= midCol + radius; c++) {
         if (c < 0 || c >= cols) continue;
+        if (board[r][c]) count++;
+        board[r][c] = null;
+      }
+    }
+    active = null;
+    return count;
+  }
+
+  // 黑鮪魚魚雷：清空方塊落地時所在的直排（依方塊寬度決定清幾欄），從上到下整欄清除。
+  // 回傳實際被清掉的格數（給計分用）。
+  function explodeColumns() {
+    const startCol = active.col;
+    const width = active.matrix[0].length;
+    let count = 0;
+    for (let c = startCol; c < startCol + width && c < cols; c++) {
+      for (let r = 0; r < rows; r++) {
         if (board[r][c]) count++;
         board[r][c] = null;
       }
@@ -220,6 +251,12 @@ function ttCreateEngine(cols = 8, rows = 16) {
       const ok = spawn();
       holdLocked = false; // 這顆方塊已經落定，下一顆可以再保留/交換
       return { moved: false, locked: true, cleared: 0, gameOver: !ok, bombed: true, bombedCount };
+    }
+    if (active.isColumnClear) {
+      const columnClearedCount = explodeColumns();
+      const ok = spawn();
+      holdLocked = false;
+      return { moved: false, locked: true, cleared: 0, gameOver: !ok, bombed: false, columnCleared: true, columnClearedCount };
     }
     lockPiece();
     const cleared = clearLines();
@@ -257,10 +294,11 @@ function ttCreateEngine(cols = 8, rows = 16) {
     get active() { return active; },
     get nextType() { return nextType; },
     get pendingBomb() { return pendingBomb; },
+    get pendingColumnClear() { return pendingColumnClear; },
     get holdType() { return holdType; },
     get holdLocked() { return holdLocked; },
     spawn, move, rotate, tick, clearLines, addGarbageRow, lockSideWalls, collides, setNextType,
-    markNextAsBomb, clearBottomRows, hold,
+    markNextAsBomb, markNextAsColumnClear, clearBottomRows, hold,
     // 給渲染用：回傳「棋盤 + 當前落下方塊」合併後的畫面（不改動 board）
     render() {
       const view = board.map(row => [...row]);

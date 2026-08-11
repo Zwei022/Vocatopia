@@ -4,53 +4,79 @@
 // addOwnedChar）。需在 characters.js 之後、script.js 之前載入。
 // ════════════════════════════════
 
-const GACHA_POOL = {
-  id: 'standing_pool_v1',
-  name: '常駐卡池',
-  costSingle: 120,
-  costTen: 1000,
-  // entries.rate 總和 + consolation.rate 須為 1（100%）；tier 純顯示用文字。
-  // 飯糰帳號預設就有、鬆餅改走其他獎勵管道發放，兩者都不放進卡池抽獎。
-  entries: [
-    { charId: 'lobster', tier: '特獎', rate: 0.01, dupRefund: 800 },
-    { charId: 'sushi',   tier: '二獎', rate: 0.04, dupRefund: 400 },
-    { charId: 'canele',  tier: '三獎', rate: 0.15, dupRefund: 150 },
-  ],
-  // 沒抽中角色時的安慰獎：美食風味露（角色成長系統素材，不產生任何角色）
-  consolation: { tier: '銘謝惠顧', rate: 0.80, flavorDew: 1 },
-  // 保底（pity）：連續多少抽沒中對應等級以上，下一抽強制觸發
-  pityLegendary: 100,  // 100 抽保底必中傳奇
-  pityMythicPlus: 50,  // 50 抽保底必中神話以上（傳奇也算數）
+// 2026-08-10 拆成常駐/限時兩個獨立卡池（Notion「VOCATOPIA角色總覽」第五節定案）：
+// 各卡池的機率/角色/保底/抽獎紀錄互相獨立，靠 GACHA_POOLS[poolId].id 當 localStorage key 字首區隔。
+// GACHA_POOL 保留當作「目前選取中的卡池」這個可變指標，商店 UI 切換分頁時呼叫 switchGachaPool()
+// 重新指向，這樣 script.js 原本一大堆直接讀 GACHA_POOL.xxx 的地方完全不用改。
+const GACHA_POOLS = {
+  standing: {
+    id: 'standing',
+    name: '常駐卡池',
+    costSingle: 120,
+    costTen: 1000,
+    // entries.rate 總和 + consolation.rate 須為 1（100%）；tier 純顯示用文字。
+    // 飯糰/水餃帳號預設就有，鬆餅/花生麻糬/焗烤龍蝦/香煎鵝肝改走其他獎勵管道發放，都不進卡池。
+    entries: [
+      { charId: 'honore',       tier: '特獎', rate: 0.01, dupRefund: 800 },
+      { charId: 'canele',       tier: '二獎', rate: 0.04, dupRefund: 400 },
+      { charId: 'millefeuille', tier: '三獎', rate: 0.15, dupRefund: 150 },
+    ],
+    consolation: { tier: '銘謝惠顧', rate: 0.80, flavorDew: 1 },
+    pityLegendary: 100,
+    pityMythicPlus: 50,
+  },
+  limited: {
+    id: 'limited',
+    name: '限時卡池',
+    costSingle: 120,
+    costTen: 1000,
+    entries: [
+      { charId: 'bluefin', tier: '特獎', rate: 0.01, dupRefund: 800 },
+      { charId: 'uni',     tier: '二獎', rate: 0.04, dupRefund: 400 },
+      { charId: 'sushi',   tier: '三獎', rate: 0.15, dupRefund: 150 },
+    ],
+    consolation: { tier: '銘謝惠顧', rate: 0.80, flavorDew: 1 },
+    pityLegendary: 100,
+    pityMythicPlus: 50,
+  },
 };
 
-const LS_GACHA_PITY = 'voca_gacha_pity';
-const LS_GACHA_HISTORY = 'voca_gacha_history';
-const GACHA_HISTORY_MAX = 100;   // 只保留最近 100 筆抽獎紀錄
+let GACHA_POOL = GACHA_POOLS.standing; // 目前選取中的卡池，switchGachaPool() 會重新指向
+
+// 切換目前選取的卡池（商店分頁按鈕呼叫），回傳新卡池物件供 UI 立即取用
+function switchGachaPool(poolId) {
+  if (!GACHA_POOLS[poolId]) return GACHA_POOL;
+  GACHA_POOL = GACHA_POOLS[poolId];
+  return GACHA_POOL;
+}
+function getCurrentGachaPoolId() { return GACHA_POOL.id; }
+
+const GACHA_HISTORY_MAX = 100;   // 只保留最近 100 筆抽獎紀錄（各卡池各自 100 筆）
 
 function _gachaLoadHistory() {
-  try { return JSON.parse(localStorage.getItem(LS_GACHA_HISTORY) || '[]') || []; }
+  try { return JSON.parse(localStorage.getItem('voca_gacha_history_' + GACHA_POOL.id) || '[]') || []; }
   catch { return []; }
 }
-// 給 UI 顯示抽獎紀錄用（最新在前）
+// 給 UI 顯示抽獎紀錄用（最新在前，目前選取中的卡池）
 function getGachaHistory() { return _gachaLoadHistory(); }
 function _gachaPushHistory(entries) {
   const merged = entries.concat(_gachaLoadHistory()).slice(0, GACHA_HISTORY_MAX);
-  try { localStorage.setItem(LS_GACHA_HISTORY, JSON.stringify(merged)); } catch { /* ignore */ }
+  try { localStorage.setItem('voca_gacha_history_' + GACHA_POOL.id, JSON.stringify(merged)); } catch { /* ignore */ }
 }
 
 function _gachaLoadPity() {
   try {
-    const p = JSON.parse(localStorage.getItem(LS_GACHA_PITY) || 'null');
+    const p = JSON.parse(localStorage.getItem('voca_gacha_pity_' + GACHA_POOL.id) || 'null');
     if (p && typeof p.sinceLegendary === 'number' && typeof p.sinceMythicPlus === 'number') return p;
   } catch { /* 用預設 */ }
   return { sinceLegendary: 0, sinceMythicPlus: 0 };
 }
 
 function _gachaSavePity(pity) {
-  localStorage.setItem(LS_GACHA_PITY, JSON.stringify(pity));
+  localStorage.setItem('voca_gacha_pity_' + GACHA_POOL.id, JSON.stringify(pity));
 }
 
-// 給 UI 顯示目前保底進度用
+// 給 UI 顯示目前保底進度用（目前選取中的卡池）
 function getGachaPity() {
   return _gachaLoadPity();
 }

@@ -31,6 +31,12 @@ function tetrisStart(mode) {
   if (!ov) return;
   mode = (mode === 'ranked') ? 'ranked' : 'solo';
 
+  // ponytail: 手機 WebView（Capacitor iOS/Android）常見坑——Web Audio API 的 AudioContext
+  // 預設是 suspended，只有在「使用者手勢的呼叫堆疊內」呼叫 resume() 才保證被允許解鎖。
+  // 之後遊戲中方塊落地/消行等音效是由計時器（重力下墜）觸發，不算使用者手勢，
+  // 若第一次解鎖沒在這裡（按下開始按鈕，確定是手勢內）做，之後整場可能都聽不到音效。
+  if (typeof _sfxGetCtx === 'function') _sfxGetCtx();
+
   const engine = ttCreateEngine(TT_COLS, TT_ROWS);
   engine.spawn();
 
@@ -153,6 +159,14 @@ function _ttUpdateRankedGravity() {
 // 與是否該依最新分數更新重力速度
 function _ttAddScore(n) {
   if (!ttGame) return;
+  // foiegras 5★覺醒：單局分數達門檻後，之後所有分數獲取直接雙倍
+  if (n > 0 && ttGame.skill?.type === 'lineScoreBonus' && ttGame.passives?.doubleAfterScore && ttGame.score >= ttGame.passives.doubleAfterScore) {
+    n *= 2;
+  }
+  // uni 5★覺醒：軍艦護盾觸發後，本局剩餘時間分數獲取額外加成
+  if (n > 0 && ttGame.autoShieldTriggeredBonus && ttGame.passives?.postTriggerScoreBonusPct) {
+    n = Math.round(n * (1 + ttGame.passives.postTriggerScoreBonusPct / 100));
+  }
   ttGame.score += n;
   if (ttGame.score < 0) ttGame.score = 0;
   _ttUpdateRankedGravity();
@@ -175,6 +189,9 @@ async function tetrisClose() {
   // #14 單機模式（g.mode !== 'ranked'）一律不送分、不計最高分。
   if (g && !g.gameOver && g.score > 0) {
     try { await ttSubmitScore(g.score, g.mode); } catch { /* 送分失敗不影響關閉 */ }
+  } else if (g && g._submitPromise) {
+    // 正常 game over 那條路的送分是 fire-and-forget（見 ttEndGame），這裡等它真的寫完再刷排行榜
+    try { await g._submitPromise; } catch { /* 送分失敗不影響關閉 */ }
   }
   // #8 一場結束回首頁就即時刷新排行榜（不再等下次首頁整體重繪才更新）
   if (typeof renderLeaderboard === 'function') renderLeaderboard();
@@ -288,11 +305,16 @@ function _ttGravityStep() {
   if (ev.bombed) {
     if (typeof SFX !== 'undefined') SFX.bomb();
     if (typeof ttOnBombExplode === 'function') ttOnBombExplode(ev.bombedCount);
+  } else if (ev.columnCleared) {
+    if (typeof SFX !== 'undefined') SFX.bomb();
+    if (typeof ttOnColumnClear === 'function') ttOnColumnClear(ev.columnClearedCount);
   } else if (ev.locked && ev.cleared > 0) {
     ttOnLineClear(ev.cleared);
   } else if (ev.locked) {
     if (typeof SFX !== 'undefined') SFX.lock();
+    ttGame.lastClearHadLines = false;
   }
+  if (ev.locked) _ttCheckAutoShield(ev);
   if (ev.gameOver) { ttRender(); ttEndGame(); return; }
   ttRender();
 }
@@ -300,9 +322,42 @@ function _ttGravityStep() {
 // 消行事件：基礎加分（Phase 3 會在此觸發單字快問）
 function ttOnLineClear(n) {
   ttGame.lines += n;
-  _ttAddScore(TT_LINE_SCORE[n] || n * 100);
+  let score = TT_LINE_SCORE[n] || n * 100;
+  // foiegras（香煎鵝肝）被動：每消一行額外 +bonusPct% 分數加成，3★質變：連續兩次操作都有消行時本次加成翻倍
+  if (ttGame.skill?.type === 'lineScoreBonus') {
+    let pct = ttGame.skill.bonusPct || 0;
+    if (getCharStar(ttGame.skillChar.id) >= 3 && ttGame.lastClearHadLines) pct *= 2;
+    score = Math.round(score * (1 + pct / 100));
+    ttGame.lastClearHadLines = true;
+  } else {
+    ttGame.lastClearHadLines = false;
+  }
+  _ttAddScore(score);
   if (typeof SFX !== 'undefined') SFX.lineClear(n);
   if (typeof ttTriggerWordQuiz === 'function') ttTriggerWordQuiz(n);
+}
+
+// uni（海膽軍艦）autoShield：堆疊逼近頂端（或本次鎖定已判定 gameOver）時自動清空底部救場，每局限用 N 次
+function _ttCheckAutoShield(ev) {
+  if (!ttGame || !ttGame.skill || ttGame.skill.type !== 'autoShield') return false;
+  const used = ttGame.autoShieldUsed || 0;
+  const max = ttGame.skill.usesPerGame || 1;
+  if (used >= max) return false;
+  const margin = ttGame.skill.triggerMarginRows || 0;
+  const rows = ttGame.engine.rows;
+  const board = ttGame.engine.board;
+  let topRow = rows;
+  for (let r = 0; r < rows; r++) { if (board[r].some(c => c)) { topRow = r; break; } }
+  if (!ev.gameOver && topRow > margin) return false; // 還沒逼近觸發線，且沒有立即 game over 危機
+  ttGame.engine.clearBottomRows(ttGame.skill.clearRows || 3);
+  ttGame.autoShieldUsed = used + 1;
+  ttGame.autoShieldTriggeredBonus = true;
+  if (typeof SFX !== 'undefined') SFX.clearBottom();
+  if (typeof showTtFloat === 'function') showTtFloat('🍱 軍艦護盾發動！', true);
+  if (typeof showToast === 'function') showToast('軍艦護盾自動觸發，清空底部');
+  if (typeof _ttUpdateSkillBtn === 'function') _ttUpdateSkillBtn();
+  if (ev.gameOver && !ttGame.engine.collides(ttGame.engine.active)) ev.gameOver = false; // 救回一命
+  return true;
 }
 
 // ── 輸入：三按鈕 + 鍵盤（桌面測試用） ──
@@ -326,13 +381,19 @@ function _ttHardDrop() {
     if (ev.moved) cells++;
   } while (ev.moved);
   if (cells > 0) _ttAddScore(cells * TT_HARDDROP_SCORE_PER_CELL);
-  if (typeof SFX !== 'undefined') SFX.lock();
+  if (typeof SFX !== 'undefined') SFX.hardDrop();
   if (ev.bombed) {
     if (typeof SFX !== 'undefined') SFX.bomb();
     if (typeof ttOnBombExplode === 'function') ttOnBombExplode(ev.bombedCount);
+  } else if (ev.columnCleared) {
+    if (typeof SFX !== 'undefined') SFX.bomb();
+    if (typeof ttOnColumnClear === 'function') ttOnColumnClear(ev.columnClearedCount);
   } else if (ev.locked && ev.cleared > 0) {
     ttOnLineClear(ev.cleared);
+  } else if (ev.locked) {
+    ttGame.lastClearHadLines = false;
   }
+  if (ev.locked) _ttCheckAutoShield(ev);
   if (ev.gameOver) { ttRender(); ttEndGame(); return; }
   ttRender();
 }
@@ -414,8 +475,10 @@ function ttEndGame() {
   const isNewBest = isRanked && finalScore > prevBest;
   if (typeof SFX !== 'undefined') isNewBest ? SFX.newRecord() : SFX.gameOver();
 
-  // 上傳排行榜（只有積分模式；未登入只存本機、不上榜）
-  ttSubmitScore(finalScore, mode);
+  // 上傳排行榜（只有積分模式；未登入只存本機、不上榜）。不 await 是為了不卡遊戲結束畫面顯示，
+  // 但保留 promise 讓 tetrisClose() 之後能等它寫完再刷新排行榜，不然玩家秒點「返回首頁」
+  // 會看到還沒寫進資料庫的舊排行榜（分數延遲上榜的根因）。
+  ttGame._submitPromise = ttSubmitScore(finalScore, mode);
   // #2 一場結束給經驗值（每日前 5 場、有防刷上限，兩種模式都給）
   if (typeof awardTetrisXp === 'function') awardTetrisXp(finalLines);
 
