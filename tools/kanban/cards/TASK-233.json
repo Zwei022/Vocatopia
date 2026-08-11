@@ -1,0 +1,57 @@
+{
+  "id": "TASK-233",
+  "title": "SFX 回饋音效（俄羅斯方塊）",
+  "content": "game/tetris/sfx.js，方塊消行/答對單字等動作的音效回饋。",
+  "stage": "verify",
+  "risk": "medium",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "音效 / 背景音樂",
+  "userStory": "SFX 回饋音效（俄羅斯方塊）",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 233,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": false,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": false,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "game/tetris/sfx.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 使用者回報：方塊遊戲中沒有音效回饋",
+      "2026-08-10 查了 sfx.js/game.js/index.html：SFX 物件定義正確、腳本載入順序正確、move/rotate/lock/lineClear/bomb/gameOver 等時機都有正確呼叫 SFX.xxx()，_sfxEnabled()/_sfxVolumeScale() 邏輯也正確——沒找到明確的邏輯錯誤",
+      "2026-08-10 最可疑的是 Capacitor iOS/Android WebView 的 AudioContext 自動播放限制：AudioContext 預設 suspended，只有在「使用者手勢的呼叫堆疊內」呼叫 resume() 才保證解鎖成功；原本的 _sfxGetCtx() 只在第一次要播音效時才嘗試 resume，但那個時機（方塊落地是計時器觸發，不是手勢）可能已經太晚",
+      "2026-08-10 已修：在 tetrisStart() 開頭（按下開始按鈕，確定在使用者手勢內）先呼叫 _sfxGetCtx() 預先解鎖 AudioContext",
+      "2026-08-10 使用者指定要的兩個音效：消行（SFX.lineClear，本來就有接在 ttOnLineClear() 裡）、快速下降（原本硬降 _ttHardDrop() 只是重用普通鎖定音 SFX.lock()，聽起來像沒反應）",
+      "2026-08-10 已加：sfx.js 新增 SFX.hardDrop()（下滑音+落地悶響，跟一般鎖定音明顯不同），_ttHardDrop() 改呼叫這個新音效"
+    ],
+    "residual": "已加上手勢內解鎖，但這是 ponytail: 已知天花板的猜測性修法——沒有實機（尤其 iOS）測試無法 100% 確認是否就是唯一根因，若修完還是沒聲音要回頭查 Capacitor 的 audio session 設定"
+  },
+  "comments": []
+}

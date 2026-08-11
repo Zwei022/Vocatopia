@@ -1,0 +1,53 @@
+{
+  "id": "TASK-120",
+  "title": "搬移單字",
+  "content": "words_cache.json 共 3314 筆，扣掉目標 1994 核心字後，還有約 1320 筆非核心字混在快取裡。AUDIT_REPORT.md 提出但未定案是否要移出或另建分類。屬於需要人工決策的資料治理項目，非 bug。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "單字卡系統",
+  "userStory": "單字管理",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 120,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "AUDIT_REPORT.md"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「單字管理」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：搬移單字前端邏輯 moveSelectedWords（script.js:6998-7150）完整，來源依卡組類型（自訂/內建/weak）分流處理正確。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

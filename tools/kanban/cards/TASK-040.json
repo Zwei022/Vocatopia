@@ -1,0 +1,52 @@
+{
+  "id": "TASK-040",
+  "title": "頭像系統",
+  "content": "沿用角色收藏作為頭像解鎖來源，與出戰角色脫鉤獨立選擇。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "角色系統 / Gacha",
+  "userStory": "頭像系統",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 40,
+  "readiness": {
+    "problem_clear": false,
+    "non_goals_clear": false,
+    "acceptance_testable": false,
+    "files_known": false,
+    "scope_defined": false,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "supabase/migrations/avatar_system.sql"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：前後端頭像系統銜接完整（avatarImgOf/getAvatarId/setAvatarId 與 profiles.avatar_id、arena_leaderboard 視圖一致）。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

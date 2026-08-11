@@ -157,11 +157,29 @@
   .epic-head { padding: 16px 20px 14px; display: flex; flex-direction: column; gap: 8px; }
   .epic-title-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
   .epic-name { font-size: 15.5px; font-weight: 700; }
-  .epic-name-btn { cursor: pointer; background: none; border: none; padding: 0; font: inherit; color: inherit; text-align: left; }
+  .epic-name-btn { cursor: pointer; background: none; border: none; padding: 0; font-family: inherit; color: inherit; text-align: left; }
   .epic-name-btn:hover { text-decoration: underline; color: var(--accent); }
+  .story-name-btn { cursor: pointer; background: none; border: none; padding: 0; font-family: inherit; color: inherit; text-align: left; }
+  .story-name-btn:hover { text-decoration: underline; color: var(--accent); }
   .board-filter-bar { display: flex; align-items: center; gap: 12px; padding: 10px 16px; margin-bottom: 12px; background: var(--surface-sunken); border-radius: 10px; font-size: 13px; }
   .board-filter-bar button { border: none; background: var(--ink); color: #fff; padding: 5px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; }
   .board-filter-bar button:hover { opacity: .85; }
+
+  /* ── 看板分頁三層導覽：麵包屑 + 選單卡片 ── */
+  .board-breadcrumb { display: none; align-items: center; gap: 6px; padding: 14px 20px 0; font-size: 13px; color: var(--ink-dim); }
+  .board-breadcrumb button { border: none; background: none; color: var(--accent); font-weight: 600; padding: 2px 4px; cursor: pointer; }
+  .board-breadcrumb button:hover { text-decoration: underline; }
+  .crumb-sep { color: var(--ink-faint); }
+  .crumb-current { font-weight: 700; color: var(--ink); }
+  .picker-card {
+    display: block; width: 100%; text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+    padding: 10px 12px; cursor: pointer; box-shadow: var(--shadow-card); transition: box-shadow .15s ease, transform .15s ease;
+  }
+  .picker-card:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-1px); border-color: var(--accent); }
+  .picker-card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 4px; }
+  .picker-card-name { font-size: 13px; font-weight: 700; }
+  .picker-card-frac { font-size: 11.5px; font-weight: 700; color: var(--accent); flex-shrink: 0; }
+  .picker-card-def { font-size: 11.5px; color: var(--ink-dim); line-height: 1.45; margin-bottom: 8px; }
   .epic-frac { font-size: 13px; font-weight: 700; color: var(--accent); flex-shrink: 0; }
   .epic-def { font-size: 12.5px; color: var(--ink-dim); line-height: 1.55; max-width: 80ch; }
   .epic-body { padding: 4px 20px 18px; display: flex; flex-direction: column; gap: 16px; }
@@ -200,13 +218,14 @@
 
 <main>
   <section id="view-board" class="view is-active">
-    <div id="board-filter-bar" class="board-filter-bar" style="display:none">
-      <span>篩選中：<strong id="board-filter-label"></strong></span>
-      <button type="button" id="board-filter-clear">清除篩選，顯示全部</button>
-    </div>
-    <div class="lanes" id="lanes"></div>
+    <div id="board-breadcrumb" class="board-breadcrumb"></div>
+    <div id="board-content"></div>
   </section>
   <section id="view-roadmap" class="view">
+    <div id="roadmap-filter-bar" class="board-filter-bar" style="display:none">
+      <span>只顯示模組：<strong id="roadmap-filter-label"></strong></span>
+      <button type="button" id="roadmap-filter-clear">回到全部模組</button>
+    </div>
     <div class="roadmap" id="roadmap"></div>
   </section>
 </main>
@@ -235,7 +254,10 @@
   var EPICS = [];
   var openId = null;
   var currentView = "board";
+  var boardFilterTab = null; // 非 null 時，看板分頁只顯示屬於該 App 分頁（首頁/閱覽室/商店/競技場/收藏...）的 Epic
   var boardFilterEpic = null; // 非 null 時，看板分頁只顯示該 Epic 底下的卡片（從藍圖分頁點 Epic 標題進來）
+  var boardFilterStory = null; // 非 null 時，看板分頁進一步只顯示該 User Story 底下的卡片（從藍圖分頁點 Story 標題進來）
+  var roadmapFilterEpic = null; // 非 null 時，藍圖分頁只顯示這一個 Epic（從總控台深連結 ?epic=xxx 進來，或手動點「回到全部模組」清除）
 
   function stageIndex(id) { for (var i = 0; i < STAGES.length; i++) if (STAGES[i].id === id) return i; return -1; }
   function getTicket(id) { return TICKETS.filter(function (x) { return x.id === id; })[0]; }
@@ -243,6 +265,13 @@
     return TICKETS.filter(function (x) {
       if (x.stage !== id) return false;
       if (boardFilterEpic && x.epic !== boardFilterEpic) return false;
+      if (boardFilterStory === "__orphan__") {
+        var epicDef = EPICS.filter(function (e) { return e.name === boardFilterEpic; })[0];
+        var known = epicDef ? epicDef.stories.map(function (s) { return s.name; }) : [];
+        if (known.indexOf(x.userStory) !== -1) return false;
+      } else if (boardFilterStory && x.userStory !== boardFilterStory) {
+        return false;
+      }
       return true;
     }).sort(function (a, b) { return a.order - b.order; });
   }
@@ -335,26 +364,159 @@
     );
   }
 
-  function renderLanes() {
-    document.getElementById("lanes").innerHTML = STAGES.map(laneHtml).join("");
-    updateFilterBar();
+  /* ── 看板分頁：三層導覽（主要功能 → 子功能 → 六車道任務板），
+        第一、二層一樣套用 Backlog/Blocked/Ready/Implementing/Verify/Done 六欄，
+        每個模組/子功能依「整體進度」歸到對應欄位 ── */
+
+  function pickerTileHtml(opts) {
+    // opts: { label, def, done, total, action } action 是點擊時要設的 data 屬性字串
+    return (
+      '<button type="button" class="picker-card" ' + opts.action + '>' +
+      '<div class="picker-card-head"><span class="picker-card-name">' + escapeHtml(opts.label) + "</span>" +
+      '<span class="picker-card-frac tabular">' + opts.done + " / " + opts.total + "</span></div>" +
+      (opts.def ? '<p class="picker-card-def">' + escapeHtml(opts.def) + "</p>" : "") +
+      '<div class="progress-bar"><span style="width:' + pct(opts.done, opts.total) + '%"></span></div>' +
+      "</button>"
+    );
   }
 
-  function updateFilterBar() {
-    var bar = document.getElementById("board-filter-bar");
-    var label = document.getElementById("board-filter-label");
-    if (boardFilterEpic) {
-      label.textContent = boardFilterEpic;
-      bar.style.display = "flex";
-    } else {
-      bar.style.display = "none";
+  function overallStage(tasks) {
+    // 一個模組/子功能底下可能有很多張卡，各自進度不一，取「整體進度」代表：
+    // 沒有卡片 → backlog；有任何一張 blocked → blocked（最需要注意，優先顯示）；
+    // 全部 done → done；否則取最落後的那張卡的 stage（模組要等最慢的那張卡才算真的完成）。
+    if (!tasks.length) return "backlog";
+    if (tasks.some(function (t) { return t.stage === "blocked"; })) return "blocked";
+    if (tasks.every(function (t) { return t.stage === "done"; })) return "done";
+    var notDone = tasks.filter(function (t) { return t.stage !== "done"; });
+    var minIdx = Math.min.apply(null, notDone.map(function (t) { return stageIndex(t.stage); }));
+    return STAGES[minIdx].id;
+  }
+
+  function pickerLaneHtml(stage, items) {
+    var sorted = items.slice().sort(function (a, b) { return pct(a.done, a.total) - pct(b.done, b.total); });
+    var body = sorted.length ? sorted.map(pickerTileHtml).join("") : '<div class="lane-empty">— 沒有卡片 —</div>';
+    return (
+      '<div class="lane" style="border-top: 3px solid ' + stage.color + '">' +
+      '<div class="lane-head"><div class="lane-title-row"><span class="lane-title">' + stage.label + "</span>" +
+      '<span class="lane-gauge tabular">' + items.length + "</span></div></div>" +
+      '<div class="lane-body">' + body + "</div></div>"
+    );
+  }
+
+  function groupIntoLanes(items) {
+    return '<div class="lanes">' + STAGES.map(function (stage) {
+      return pickerLaneHtml(stage, items.filter(function (i) { return i.overallStage === stage.id; }));
+    }).join("") + "</div>";
+  }
+
+  function epicsForTab(tabName) {
+    return EPICS.filter(function (e) { return (e.tabs || []).indexOf(tabName) !== -1; });
+  }
+
+  function tabList() {
+    // 依 EPICS 出現順序收集不重複的 tab 名稱清單（epics.json 裡每個 epic.tabs 是陣列，可能屬於多個分頁）
+    var seen = [], names = [];
+    EPICS.forEach(function (epic) {
+      (epic.tabs || []).forEach(function (t) {
+        if (seen.indexOf(t) === -1) { seen.push(t); names.push(t); }
+      });
+    });
+    return names;
+  }
+
+  function tabPickerHtml() {
+    if (!EPICS.length) {
+      return '<p class="no-tasks">尚無 Epic，先到「藍圖」分頁的說明或請 AI 用 project-kickoff 幫你拆解專案。</p>';
     }
+    var tabs = tabList();
+    if (!tabs.length) {
+      return '<p class="no-tasks">Epic 都還沒標記所屬 App 分頁（epics.json 裡的 tabs 欄位），先補上再來看這一層。</p>';
+    }
+    var items = tabs.map(function (tabName) {
+      var epicNames = epicsForTab(tabName).map(function (e) { return e.name; });
+      var tasks = TICKETS.filter(function (t) { return epicNames.indexOf(t.epic) !== -1; });
+      var done = tasks.filter(function (t) { return t.stage === "done"; }).length;
+      return {
+        label: tabName, def: epicNames.length + " 個功能模組", done: done, total: tasks.length,
+        overallStage: overallStage(tasks), action: 'data-pick-tab="' + escapeHtml(tabName) + '"'
+      };
+    });
+    return groupIntoLanes(items);
   }
 
-  function applyBoardFilter(epicName) {
+  function epicPickerHtml(tabName) {
+    var scoped = tabName ? epicsForTab(tabName) : EPICS;
+    if (!scoped.length) {
+      return '<p class="no-tasks">這個分頁底下還沒有 Epic。</p>';
+    }
+    var items = scoped.map(function (epic) {
+      var tasks = TICKETS.filter(function (t) { return t.epic === epic.name; });
+      var done = tasks.filter(function (t) { return t.stage === "done"; }).length;
+      return {
+        label: epic.name, def: epic.definition, done: done, total: tasks.length,
+        overallStage: overallStage(tasks), action: 'data-pick-epic="' + escapeHtml(epic.name) + '"'
+      };
+    });
+    return groupIntoLanes(items);
+  }
+
+  function storyPickerHtml(epicName) {
+    var epicDef = EPICS.filter(function (e) { return e.name === epicName; })[0];
+    if (!epicDef) return '<p class="no-tasks">找不到這個 Epic。</p>';
+    var knownStoryNames = (epicDef.stories || []).map(function (s) { return s.name; });
+    var items = (epicDef.stories || []).map(function (story) {
+      var tasks = TICKETS.filter(function (t) { return t.epic === epicName && t.userStory === story.name; });
+      var done = tasks.filter(function (t) { return t.stage === "done"; }).length;
+      return {
+        label: story.name, def: story.definition, done: done, total: tasks.length,
+        overallStage: overallStage(tasks),
+        action: 'data-pick-epic="' + escapeHtml(epicName) + '" data-pick-story="' + escapeHtml(story.name) + '"'
+      };
+    });
+    var orphanTasks = TICKETS.filter(function (t) { return t.epic === epicName && knownStoryNames.indexOf(t.userStory) === -1; });
+    if (orphanTasks.length) {
+      var doneOrphan = orphanTasks.filter(function (t) { return t.stage === "done"; }).length;
+      items.push({
+        label: "（未分類任務）", def: "屬於這個 Epic，但還沒指定 User Story。", done: doneOrphan, total: orphanTasks.length,
+        overallStage: overallStage(orphanTasks),
+        action: 'data-pick-epic="' + escapeHtml(epicName) + '" data-pick-story="__orphan__"'
+      });
+    }
+    return groupIntoLanes(items);
+  }
+
+  function renderBoard() {
+    var content = document.getElementById("board-content");
+    if (!boardFilterTab) {
+      content.innerHTML = tabPickerHtml();
+    } else if (!boardFilterEpic) {
+      content.innerHTML = epicPickerHtml(boardFilterTab);
+    } else if (!boardFilterStory) {
+      content.innerHTML = storyPickerHtml(boardFilterEpic);
+    } else {
+      content.innerHTML = '<div class="lanes" id="lanes">' + STAGES.map(laneHtml).join("") + "</div>";
+    }
+    renderBreadcrumb();
+  }
+
+  function renderBreadcrumb() {
+    var bar = document.getElementById("board-breadcrumb");
+    var parts = ['<button type="button" data-crumb="root">分頁</button>'];
+    if (boardFilterTab) parts.push('<span class="crumb-sep">›</span><button type="button" data-crumb="tab">' + escapeHtml(boardFilterTab) + "</button>");
+    if (boardFilterEpic) parts.push('<span class="crumb-sep">›</span><button type="button" data-crumb="epic">' + escapeHtml(boardFilterEpic) + "</button>");
+    if (boardFilterStory) parts.push('<span class="crumb-sep">›</span><span class="crumb-current">' + escapeHtml(boardFilterStory === "__orphan__" ? "（未分類任務）" : boardFilterStory) + "</span>");
+    if (!boardFilterTab) { bar.style.display = "none"; return; }
+    bar.style.display = "flex";
+    bar.innerHTML = parts.join("");
+  }
+
+  function applyBoardFilter(epicName, storyName) {
+    var epicDef = EPICS.filter(function (e) { return e.name === epicName; })[0];
+    boardFilterTab = (epicDef && epicDef.tabs && epicDef.tabs.length) ? epicDef.tabs[0] : null;
     boardFilterEpic = epicName;
+    boardFilterStory = storyName || null;
     switchView("board");
-    renderLanes();
+    renderBoard();
   }
 
   /* ── render: roadmap ── */
@@ -387,7 +549,7 @@
       : '<p class="no-tasks">尚無任務卡。</p>';
     return (
       '<div class="story-block">' +
-      '<div class="story-head"><span class="story-name">' + escapeHtml(story.name) + "</span>" +
+      '<div class="story-head"><button type="button" class="story-name story-name-btn" data-filter-epic="' + escapeHtml(epicName) + '" data-filter-story="' + escapeHtml(story.name) + '">' + escapeHtml(story.name) + "</button>" +
       '<span class="story-frac tabular">' + doneCount + " / " + tasks.length + " 完成 · " + pct(doneCount, tasks.length) + "%</span></div>" +
       '<p class="story-def">' + escapeHtml(story.definition || "") + "</p>" +
       '<div class="progress-bar story-progress"><span style="width:' + pct(doneCount, tasks.length) + '%"></span></div>' +
@@ -419,14 +581,25 @@
   }
 
   function renderRoadmap() {
-    document.getElementById("roadmap").innerHTML = EPICS.length
-      ? EPICS.map(epicCardHtml).join("")
-      : '<p class="no-tasks">尚無 Epic。開始新專案時，先跟 Claude／Codex 說明這個專案要做什麼，' +
-        '走一遍 spec-interrogation → implementation-plan 流程，把功能模組（Epic）、用戶需求（User Story）' +
-        '寫進 <span class="mono">tools/kanban/epics.json</span>，任務卡再透過看板分頁的「+ 新增卡片」建立並指定 Epic / User Story。</p>';
+    var list = roadmapFilterEpic ? EPICS.filter(function (e) { return e.name === roadmapFilterEpic; }) : EPICS;
+    var bar = document.getElementById("roadmap-filter-bar");
+    var label = document.getElementById("roadmap-filter-label");
+    if (roadmapFilterEpic) {
+      label.textContent = roadmapFilterEpic;
+      bar.style.display = "flex";
+    } else {
+      bar.style.display = "none";
+    }
+    document.getElementById("roadmap").innerHTML = list.length
+      ? list.map(epicCardHtml).join("")
+      : (roadmapFilterEpic
+          ? '<p class="no-tasks">找不到 Epic「' + escapeHtml(roadmapFilterEpic) + '」，可能已被改名或刪除。</p>'
+          : '<p class="no-tasks">尚無 Epic。開始新專案時，先跟 Claude／Codex 說明這個專案要做什麼，' +
+            '走一遍 spec-interrogation → implementation-plan 流程，把功能模組（Epic）、用戶需求（User Story）' +
+            '寫進 <span class="mono">tools/kanban/epics.json</span>，任務卡再透過看板分頁的「+ 新增卡片」建立並指定 Epic / User Story。</p>');
   }
 
-  function renderAll() { renderLanes(); renderRoadmap(); }
+  function renderAll() { renderBoard(); renderRoadmap(); }
 
   function switchView(v) {
     currentView = v;
@@ -590,9 +763,36 @@
     if (viewTab) { switchView(viewTab.dataset.view); return; }
 
     var epicBtn = e.target.closest("[data-filter-epic]");
-    if (epicBtn) { applyBoardFilter(epicBtn.dataset.filterEpic); return; }
+    if (epicBtn) { applyBoardFilter(epicBtn.dataset.filterEpic, epicBtn.dataset.filterStory); return; }
 
-    if (e.target.closest("#board-filter-clear")) { boardFilterEpic = null; renderLanes(); return; }
+    var pickTab = e.target.closest("[data-pick-tab]");
+    if (pickTab) {
+      boardFilterTab = pickTab.dataset.pickTab;
+      boardFilterEpic = null;
+      boardFilterStory = null;
+      renderBoard();
+      return;
+    }
+
+    var pickCard = e.target.closest("[data-pick-epic]");
+    if (pickCard) {
+      boardFilterEpic = pickCard.dataset.pickEpic;
+      boardFilterStory = pickCard.dataset.pickStory || null;
+      renderBoard();
+      return;
+    }
+
+    var crumb = e.target.closest("[data-crumb]");
+    if (crumb) {
+      if (crumb.dataset.crumb === "root") { boardFilterTab = null; boardFilterEpic = null; boardFilterStory = null; }
+      else if (crumb.dataset.crumb === "tab") { boardFilterEpic = null; boardFilterStory = null; }
+      else if (crumb.dataset.crumb === "epic") { boardFilterStory = null; }
+      renderBoard();
+      return;
+    }
+
+    var roadmapClear = e.target.closest("#roadmap-filter-clear");
+    if (roadmapClear) { roadmapFilterEpic = null; renderRoadmap(); return; }
 
     var addBtn = e.target.closest("[data-add-to]");
     if (addBtn) {
@@ -660,6 +860,19 @@
     if (e.key === "Escape" && !document.getElementById("modal-overlay").hidden) closeModal();
   });
 
-  loadAll().then(renderAll).catch(function (err) { showToast("讀取失敗：" + err.message, true); });
+  loadAll().then(function () {
+    renderAll();
+    // 深連結入口：從總控台點分頁/模組進度條進來時帶 ?tab=xxx 或 ?epic=xxx，直接跳到看板分頁對應層級
+    var params = new URLSearchParams(location.search);
+    var tabParam = params.get("tab");
+    var epicParam = params.get("epic");
+    if (tabParam) {
+      boardFilterTab = tabParam;
+      switchView("board");
+      renderBoard();
+    } else if (epicParam) {
+      applyBoardFilter(epicParam);
+    }
+  }).catch(function (err) { showToast("讀取失敗：" + err.message, true); });
 })();
 </script>

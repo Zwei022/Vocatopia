@@ -1,0 +1,53 @@
+{
+  "id": "TASK-100",
+  "title": "線上狀態偵測（check_online）",
+  "content": "server/index.js Socket.io 事件含 send_friend_request、friend_request_response、game_invite、check_online（線上狀態查詢）。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "好友 / 社交",
+  "userStory": "好友邀請與線上狀態",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 100,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/index.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「好友邀請與線上狀態」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：check_online 事件（server/index.js:652-656）以 onlineUsers Map 判斷在線，identify 事件建立/清理正確（含 disconnect 清理，server/index.js:870-878）。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

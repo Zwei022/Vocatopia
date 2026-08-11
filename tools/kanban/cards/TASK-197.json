@@ -1,0 +1,53 @@
+{
+  "id": "TASK-197",
+  "title": "未解鎖隱藏內容",
+  "content": "依使用者等級（XP反推）逐小節解鎖，未解鎖僅回傳標題不洩漏內容/測驗題，付費會員全解鎖。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "文法教學",
+  "userStory": "章節解鎖機制",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 197,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/routes/grammar.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「章節解鎖機制」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：未解鎖內容只回 id/title/locked，不含 teaching/測驗題（routes/grammar.js:47-48），符合隱藏要求。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

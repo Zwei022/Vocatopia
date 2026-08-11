@@ -2,119 +2,511 @@
   "epics": [
     {
       "name": "單字卡系統",
-      "definition": "Flashcard 核心模組。共用 STUDY_WORDS/fcCurrentDeckId 狀態，底下有多種呈現/練習模式。2026-08-08 深挖拆解，其餘模組尚未做到這個細度。",
+      "definition": "Flashcard 核心模組。共用 STUDY_WORDS/fcCurrentDeckId 狀態，底下有多種呈現/練習模式。2026-08-08 深挖拆解，2026-08-10 補上查詢與同步兩個子功能。",
       "stories": [
-        { "name": "學習模式（翻牌／滑動）", "definition": "單字卡呈現的兩種基本形式，含自動播放與左右滑動熟悉判定。" },
-        { "name": "配對功能", "definition": "翻牌配對遊戲，英文單字↔中文定義，含計時與最佳紀錄。" },
-        { "name": "測驗功能", "definition": "10 題隨機四選一，含中譯英／英譯中兩種方向。" },
-        { "name": "已學習／收藏標記", "definition": "已學習/未學習/收藏三分頁篩選清單（正名自「學習紀錄」，目前不含歷史趨勢）。" },
-        { "name": "卡組管理", "definition": "自訂卡組建立/刪除/命名/emoji，前端直連 Supabase custom_decks。" },
-        { "name": "單字管理", "definition": "單字新增/刪除/搜尋/搬移，走 server/routes/words.js API。" }
+        {
+          "name": "學習模式（翻牌／滑動）",
+          "definition": "單字卡呈現的兩種基本形式，含自動播放與左右滑動熟悉判定。"
+        },
+        {
+          "name": "配對功能",
+          "definition": "翻牌配對遊戲，英文單字↔中文定義，含計時與最佳紀錄。"
+        },
+        {
+          "name": "測驗功能",
+          "definition": "10 題隨機四選一，含中譯英／英譯中兩種方向。"
+        },
+        {
+          "name": "已學習／收藏標記",
+          "definition": "已學習/未學習/收藏三分頁篩選清單（正名自「學習紀錄」，目前不含歷史趨勢）。"
+        },
+        {
+          "name": "卡組管理",
+          "definition": "自訂卡組建立/刪除/命名/emoji，前端直連 Supabase custom_decks。"
+        },
+        {
+          "name": "單字管理",
+          "definition": "單字新增/刪除/搜尋/搬移，走 server/routes/words.js API。"
+        },
+        {
+          "name": "快速查詢與字典生成",
+          "definition": "GET /api/words/search，共享快取未命中時呼叫 Gemini 即時生成原創字典級資料並寫回，含字尾還原比對省額度。"
+        },
+        {
+          "name": "跨裝置卡組同步",
+          "definition": "官方卡組單字隱藏（不刪除原資料）+ 每日單字卡組跨裝置同步狀態。"
+        }
+      ],
+      "tabs": [
+        "首頁",
+        "收藏"
+      ]
+    },
+    {
+      "name": "使用者認證",
+      "definition": "登入方式、帳號生命週期管理，含 Apple/Google 上架政策強制要求的自助刪帳號。",
+      "stories": [
+        {
+          "name": "Email／密碼登入註冊",
+          "definition": "signUp/signInWithPassword，含忘記密碼／重設密碼。"
+        },
+        {
+          "name": "OAuth 第三方登入",
+          "definition": "Google／Apple OAuth，含 App 原生殼 OAuth callback 監聽（自訂 URL scheme）。"
+        },
+        {
+          "name": "Apple 原生登入",
+          "definition": "iOS 專用 @capacitor-community/apple-sign-in，繞過網頁 OAuth。"
+        },
+        {
+          "name": "訪客模式",
+          "definition": "未登入可用部分功能，登入態靠 getUserId 判斷。"
+        },
+        {
+          "name": "帳號初始化",
+          "definition": "POST /api/user/init，冪等式設定初始 gold/屬性值。"
+        },
+        {
+          "name": "帳號自助刪除",
+          "definition": "DELETE /api/user/account，符合 Apple/Google 政策，CASCADE 刪除關聯資料，delete-account.html 獨立頁面。"
+        }
+      ],
+      "tabs": [
+        "登入 / 帳號"
       ]
     },
     {
       "name": "Tetris PvP 對戰",
       "definition": "俄羅斯方塊子系統，含單機/積分雙模式、Socket.io 房間制對戰。",
       "stories": [
-        { "name": "Tetris PvP 對戰", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+        {
+          "name": "遊戲引擎與單機／積分雙模式",
+          "definition": "game/tetris/engine.js 核心引擎（含單元測試 47/47 通過），消行 + 答對單字題加分機制。"
+        },
+        {
+          "name": "對戰排行榜與段位",
+          "definition": "tetris_scores 表 + 依實際分數分佈訂級距的段位制，跟 Arena ELO 分開設計。"
+        }
+      ],
+      "tabs": [
+        "首頁"
       ]
     },
     {
       "name": "競技場排位",
-      "definition": "Arena 段位與排名系統。",
+      "definition": "Arena 段位與排名系統，Socket.io 主要邏輯在 server/index.js。",
       "stories": [
-        { "name": "競技場排位", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+        {
+          "name": "房間制對戰（單字對決／搶答）",
+          "definition": "建房/加入房，vocab 5題限時30秒、buzzer 7題依伺服器收題時間分級計分（防作弊），斷線重連緩衝、房間逾時清除。"
+        },
+        {
+          "name": "快速配對與機器人補位",
+          "definition": "找不到真人 5 秒後自動配電腦，ELO 動態校準機器人準確率/反應延遲，勝負照樣計入 ELO。"
+        },
+        {
+          "name": "ELO 分數與段位制",
+          "definition": "K=24，新玩家起始 800／青銅段，兩模式各自獨立 ELO 欄位，青銅到傳奇七段。"
+        },
+        {
+          "name": "每週結算",
+          "definition": "Cron 每週一 00:05 呼叫 settle_arena_week() RPC 原子結算並發獎金幣、本週積分歸零。"
+        },
+        {
+          "name": "好友對戰邀請",
+          "definition": "game_invite，含 ack 逾時偵測 + 收件夾補償 + 推播備援，好友上線狀態即時偵測。"
+        },
+        {
+          "name": "排行榜即時更新",
+          "definition": "renderArenaLeaderboard() 顯示段位排行榜。2026-08-10 檢查發現：對局結束（battle_result）後前端沒有重新呼叫這個函式，只有進場/切模式才會重抓，畫面不會馬上反映剛結算的 ELO（後端 settle_arena_player RPC 其實是對局結束當下就同步寫入）。"
+        }
+      ],
+      "tabs": [
+        "競技場"
       ]
     },
     {
       "name": "角色系統 / Gacha",
       "definition": "角色成長、頭像、抽卡池與機率設定。",
       "stories": [
-        { "name": "角色系統 / Gacha", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+        {
+          "name": "抽卡機制",
+          "definition": "常駐卡池單抽 120 金幣／十連 1000 金幣，機率分層（特獎1%/二獎4%/三獎15%/銘謝惠顧80%），保底機制（100抽保底傳奇、50抽保底神話以上）。"
+        },
+        {
+          "name": "角色收藏與出戰",
+          "definition": "owned_chars 跨裝置同步收藏，deployed_char 首頁出戰角色欄。"
+        },
+        {
+          "name": "角色成長系統",
+          "definition": "角色等級 Lv.0~5 + 美食風味露原子加減 RPC。地基已建，升級 UI 階段待補。"
+        },
+        {
+          "name": "頭像系統",
+          "definition": "沿用角色收藏作為頭像解鎖來源，與出戰角色脫鉤獨立選擇。"
+        },
+        {
+          "name": "角色技能遊戲機制",
+          "definition": "12隻角色的技能實際在遊戲裡生效的機制（engine.js/quiz.js/game.js），成長星級加成透過 effectiveSkill()/activePassives() 套用。"
+        }
+      ],
+      "tabs": [
+        "首頁",
+        "商店"
       ]
     },
     {
       "name": "成就系統",
       "definition": "成就領取與防重複領取邏輯。",
       "stories": [
-        { "name": "成就系統", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+        {
+          "name": "成就推導與稱號",
+          "definition": "多由現有數據即時推導（等級/連續天數/掌握字數/角色數/文法解鎖/俄方最高分），額外累計每日六科全解次數、抽卡總次數；稱號於對戰名牌顯示。"
+        },
+        {
+          "name": "領獎 RPC",
+          "definition": "claim_achievement 原子領取，achievements_claimed jsonb 防重複領取。"
+        }
+      ],
+      "tabs": [
+        "收藏"
       ]
     },
     {
-      "name": "任務系統 / 每日簽到",
-      "definition": "每日任務、簽到獎勵。",
+      "name": "任務系統",
+      "definition": "主線／支線任務與新手引導，領獎走原子 RPC。",
       "stories": [
-        { "name": "任務系統 / 每日簽到", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+        {
+          "name": "主線／支線任務",
+          "definition": "主線任務 id 固定不可變更、支線無序不重置、新手引導任務；首頁任務卡 + 收藏頁完整清單分頁。"
+        },
+        {
+          "name": "領獎 RPC",
+          "definition": "claim_quest 原子領取防重複，2026 修復過獎勵金額被竄改的漏洞，改成後端設定表核對。"
+        }
+      ],
+      "tabs": [
+        "首頁",
+        "收藏"
       ]
     },
     {
-      "name": "GSAT 題庫",
-      "definition": "閱讀、克漏字、聽力、文法、單字選擇六大題庫，含歷屆真題與模擬題。",
+      "name": "每日打卡 / 連續紀錄",
+      "definition": "每日登入連續天數與簽到獎勵，跟任務系統資料表分開（daily_checkin / checkin_reward）。",
       "stories": [
-        { "name": "GSAT 題庫", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+        {
+          "name": "連續打卡與簽到獎勵",
+          "definition": "依台灣時區日期判定換日，簽到獎勵金幣表，首頁簽到按鈕。"
+        },
+        {
+          "name": "打卡提醒推播",
+          "definition": "Cron 每日 21:00 篩選今天未打卡使用者發送提醒。"
+        }
+      ],
+      "tabs": [
+        "首頁"
+      ]
+    },
+    {
+      "name": "每日練習題庫（六科）",
+      "definition": "閱讀/克漏字/單字/片語/文法/聽力每日練習，依日期做種子隨機，跟「GSAT 歷屆會考」是不同系統。",
+      "stories": [
+        {
+          "name": "六大題庫資料與 API 基礎建設",
+          "definition": "server/data/question_bank_*.json + daily_quiz.js，同日全使用者相同種子隨機、每日固定配額（閱讀/克漏字3題，其餘5題）。"
+        },
+        {
+          "name": "付費會員無限題庫",
+          "definition": "訂閱使用者不截斷、每次不同隨機序，另有題庫消耗量追蹤表供後續擴充參考。"
+        },
+        {
+          "name": "答錯題庫／收藏題庫",
+          "definition": "前端 localStorage 管理答錯與收藏題目，跨六科共用函數。"
+        },
+        {
+          "name": "題庫品質稽核與修正",
+          "definition": "2026-08-07 審查發現六份題庫 133 題 answer 疑似指向錯誤選項，已修復聽力逐字稿/模擬文章篇幅/部分文法錯誤，133 題答案問題待追查確認是否已處理完。"
+        }
+      ],
+      "tabs": [
+        "閱覽室"
+      ]
+    },
+    {
+      "name": "GSAT 歷屆會考 / 模擬試題",
+      "definition": "閱覽室（Reading Room）歷屆真題與付費模擬試題，跟「每日練習題庫」是不同資料與不同作答流程。",
+      "stories": [
+        {
+          "name": "歷屆真題（2023-2026）",
+          "definition": "閱讀/聽力歷屆真題，公開免費，靜態 JSON。"
+        },
+        {
+          "name": "模擬試題（付費解鎖）",
+          "definition": "gsat_sim 系列，需付費訂閱解鎖，isPremiumUser 檢查。"
+        },
+        {
+          "name": "全卷作答引擎",
+          "definition": "一次性作答＋批改，閱覽室分頁架構（歷屆列表、閱讀庫）。"
+        }
+      ],
+      "tabs": [
+        "閱覽室"
+      ]
+    },
+    {
+      "name": "聽力系統",
+      "definition": "聽力對話音檔動態生成與播放引擎，跟「單字發音 TTS」使用不同的 TTS 管線（Kokoro vs Google Cloud）。",
+      "stories": [
+        {
+          "name": "聽力音檔動態生成",
+          "definition": "本機快取→Supabase Storage快取→都沒有才呼叫本機 Kokoro TTS（正式站 Railway 無 Python 環境，僅開發環境可即時生成），多角色語音映射 VOICE_MAP。"
+        },
+        {
+          "name": "聽力播放引擎",
+          "definition": "連續播放、倒數3秒開始，預生成音檔用 HTMLAudioElement 播放。"
+        }
+      ],
+      "tabs": [
+        "閱覽室"
+      ]
+    },
+    {
+      "name": "文法教學",
+      "definition": "章節/小節式文法課程，依等級逐步解鎖。",
+      "stories": [
+        {
+          "name": "章節解鎖機制",
+          "definition": "依使用者等級（XP反推）逐小節解鎖，未解鎖僅回傳標題不洩漏內容/測驗題，付費會員全解鎖。"
+        },
+        {
+          "name": "課程內容",
+          "definition": "章節層級鎖頭顯示邏輯，grammar_lessons.json 課程資料。"
+        }
+      ],
+      "tabs": [
+        "閱覽室"
       ]
     },
     {
       "name": "每日文章 / 精選題目",
       "definition": "每日自動產生文章與精選題目排程。",
       "stories": [
-        { "name": "每日文章 / 精選題目", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+        {
+          "name": "固定文章庫與每日自動生成",
+          "definition": "articles 表 + Cron 台灣時間每日00:05呼叫 generateAndSave()，當日文章不足5篇自動補生成（啟動時亦檢查補足）。"
+        },
+        {
+          "name": "文章題目與閱讀進度",
+          "definition": "article_questions 隨附題目 + daily_article_progress 進度追蹤，前端長圖自動分割/文字圖片放大 Lightbox。"
+        }
+      ],
+      "tabs": [
+        "閱覽室"
       ]
     },
     {
       "name": "好友 / 社交",
-      "definition": "好友邀請、對戰邀請、線上狀態。",
+      "definition": "好友邀請、對戰邀請、線上狀態，含系統補償收件夾。",
       "stories": [
-        { "name": "好友 / 社交", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+        {
+          "name": "好友邀請與線上狀態",
+          "definition": "send_friend_request/friend_request_response 即時 socket，離線走推播，check_online 線上狀態偵測。"
+        },
+        {
+          "name": "收件夾 / 系統補償",
+          "definition": "系統補償訊息、對戰邀請記錄，確保即時推播沒接到時事後仍可補領。"
+        },
+        {
+          "name": "檢視他人個人資料",
+          "definition": "唯讀版個人資料檢視。"
+        }
+      ],
+      "tabs": [
+        "競技場",
+        "首頁"
       ]
     },
     {
       "name": "訂閱 / IAP",
       "definition": "RevenueCat 訂閱與內購，含 App Store 合規修正。",
       "stories": [
-        { "name": "訂閱 / IAP", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+        {
+          "name": "RevenueCat Webhook 與權限判斷",
+          "definition": "POST /api/webhooks/revenuecat（Bearer token驗證）+ isPremiumUser 貫穿題庫無限模式/文法全解/模擬試題解鎖。"
+        },
+        {
+          "name": "訂閱到期提醒",
+          "definition": "Cron 每日09:00，到期前3天觸發一次推播。"
+        },
+        {
+          "name": "App Store 合規修正",
+          "definition": "因 Guideline 3.1.1 移除內部測試兌換碼機制，僅能靠 App Store 內購解鎖。"
+        }
+      ],
+      "tabs": [
+        "首頁"
       ]
     },
     {
       "name": "推播通知",
-      "definition": "Push notification 排程與觸發。",
+      "definition": "Push notification 排程與觸發，Firebase Admin SDK 整合。",
       "stories": [
-        { "name": "推播通知", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+        {
+          "name": "FCM Token 註冊與偏好設定",
+          "definition": "POST /api/push/register（一使用者可多裝置）+ 依類別可個別關閉推播偏好（streak/winback/subscription/arena/social）。"
+        },
+        {
+          "name": "自動推播情境",
+          "definition": "每日打卡提醒/回訪提醒winback（超過3天未活躍，最多一週一次）/訂閱到期提醒/競技場週結算通知/好友對戰邀請即時推播。"
+        }
+      ],
+      "tabs": [
+        "系統 / 背景服務"
       ]
     },
     {
-      "name": "TTS 語音",
-      "definition": "文字轉語音朗讀。",
+      "name": "單字發音 TTS",
+      "definition": "單字卡朗讀語音，跟「聽力系統」的對話音檔是不同管線（Google Cloud TTS vs Kokoro）。",
       "stories": [
-        { "name": "TTS 語音", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+        {
+          "name": "三層快取朗讀",
+          "definition": "本地磁碟→Supabase Storage bucket（word-audio）→Google Cloud TTS即時生成並永久寫回快取，失敗降級 Web Speech API。"
+        }
+      ],
+      "tabs": [
+        "收藏"
       ]
     },
     {
-      "name": "使用者認證",
-      "definition": "登入、Apple Sign-In、刪除帳號。",
+      "name": "音效 / 背景音樂",
+      "definition": "全站背景音樂播放與音量控制，跟聽力/單字發音的語音 TTS 是不同系統。",
       "stories": [
-        { "name": "使用者認證", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+        {
+          "name": "背景音樂播放與 Ducking",
+          "definition": "script.js 內 _bgmDuckStart/_bgmDuckEnd，語音朗讀/聽力播放時自動降低 BGM 音量，播完恢復。"
+        },
+        {
+          "name": "音量調整（設定面板）",
+          "definition": "設定面板 sfxVolume/bgmVolume 拉桿，saveSoundSettings() 儲存音量偏好。2026-08-10 使用者回報無法使用。"
+        },
+        {
+          "name": "SFX 回饋音效（俄羅斯方塊）",
+          "definition": "game/tetris/sfx.js，方塊消行/答對單字等動作的音效回饋。2026-08-10 使用者回報方塊遊戲中沒有音效回饋。"
+        }
+      ],
+      "tabs": [
+        "首頁"
       ]
     },
     {
       "name": "意見回饋",
       "definition": "使用者回饋收集。",
       "stories": [
-        { "name": "意見回饋", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+        {
+          "name": "意見回饋",
+          "definition": "POST /api/feedback（2000字上限），帳號刪除後意見保留（ON DELETE SET NULL）供產品參考。"
+        }
+      ],
+      "tabs": [
+        "首頁"
+      ]
+    },
+    {
+      "name": "商店 / 遊戲經濟",
+      "definition": "金幣系統與敏感欄位鎖權，2026 修復過越權漏洞。",
+      "stories": [
+        {
+          "name": "商店頁",
+          "definition": "renderShop 商店介面。"
+        },
+        {
+          "name": "金幣原子 RPC 與欄位鎖權",
+          "definition": "increment_gold 原子RPC（修復過任何登入使用者可幫自己/他人任意增減金幣的漏洞），harden_player_economy revoke 前端直接寫入權限，其餘一律走 RPC。"
+        }
+      ],
+      "tabs": [
+        "商店"
+      ]
+    },
+    {
+      "name": "經驗值 / 等級 / 屬性系統",
+      "definition": "XP、等級曲線與角色三維屬性。",
+      "stories": [
+        {
+          "name": "XP 原子加值與等級曲線",
+          "definition": "add_xp 原子RPC避免多來源同時加XP競態，levelFromXp 由XP曲線反推等級。"
+        },
+        {
+          "name": "角色屬性面板",
+          "definition": "STR/INT/FAI 三維屬性，首頁 PIXEL CHARACTER 屬性面板。"
+        }
+      ],
+      "tabs": [
+        "首頁"
+      ]
+    },
+    {
+      "name": "首頁 / 導覽",
+      "definition": "首頁狀態總覽與螢幕導覽邏輯。",
+      "stories": [
+        {
+          "name": "首頁狀態總覽",
+          "definition": "NAV導覽、角色出戰欄、排行榜前20、任務卡、簽到按鈕，個人資料 Modal，學科統計。"
+        },
+        {
+          "name": "首次引導教學",
+          "definition": "跨裝置同步是否看過新手引導（migration_tutorial_seen）。"
+        }
+      ],
+      "tabs": [
+        "首頁"
+      ]
+    },
+    {
+      "name": "基礎設施 / 排程任務",
+      "definition": "Cron 排程、連線保溫、水平擴展與維運防護，非使用者直接可見但支撐全站穩定。",
+      "stories": [
+        {
+          "name": "Cron 排程總覽",
+          "definition": "連線保溫ping(每4分鐘)、每日文章生成、競技場週結算、打卡/回訪/訂閱到期提醒，各自對應台灣時區時間。"
+        },
+        {
+          "name": "水平擴展與防護",
+          "definition": "Socket.io Redis adapter 多實例擴展、全站/單字查詢分級 rate limiting、全站未捕捉例外處理、/health 健康檢查。"
+        },
+        {
+          "name": "資料維運腳本",
+          "definition": "server/scripts/ 下每日文章批次生成、單字資料匯入建置、例句/定義重新生成、題庫難度校準等一次性或排程內容管線工具。"
+        }
+      ],
+      "tabs": [
+        "系統 / 背景服務"
       ]
     },
     {
       "name": "Android 上架",
       "definition": "Android release 簽名建置與 Play Console 發布。",
       "stories": [
-        { "name": "Android 上架", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+        {
+          "name": "Android 上架",
+          "definition": "正式簽名 keystore 已存在，已有 release bundle 產出，達可上傳 Play Console 狀態。"
+        }
+      ],
+      "tabs": [
+        "系統 / 背景服務"
       ]
     },
     {
       "name": "iOS 上架",
       "definition": "iOS release 簽名、封存、App Store 送審。",
       "stories": [
-        { "name": "iOS 上架", "definition": "尚未做深度拆解，維持單一粒度追蹤。" }
+        {
+          "name": "iOS release 簽名與送審",
+          "definition": "Xcode 專案可開啟，但缺 .xcarchive/fastlane/簽名檔案，只有 debug 設定，比 Android 進度落後；appstore_screenshots 素材已備妥。"
+        }
+      ],
+      "tabs": [
+        "系統 / 背景服務"
       ]
     }
   ]

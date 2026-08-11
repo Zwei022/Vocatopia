@@ -1,0 +1,54 @@
+{
+  "id": "TASK-188",
+  "title": "閱覽室分頁架構",
+  "content": "一次性作答＋批改，閱覽室分頁架構（歷屆列表、閱讀庫）。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "GSAT 歷屆會考 / 模擬試題",
+  "userStory": "全卷作答引擎",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 188,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "index.html",
+    "server/routes/mock_exam.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「全卷作答引擎」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：index.html:757-765 閱覽室4分頁（單字卡/字庫/文法教學/精選題目）switchReadTab 結構完整存在。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

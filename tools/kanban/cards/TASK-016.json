@@ -2,7 +2,7 @@
   "id": "TASK-016",
   "title": "Android 上架",
   "content": "android/vocatopia-release.keystore（正式簽名檔已存在）、android/app/build.gradle。已有實際 build 產出：android/app/build/outputs/bundle/release/app-release.aab，代表至少完成過一次 release 簽名建置，已到可上傳 Play Console 的狀態。",
-  "stage": "done",
+  "stage": "verify",
   "risk": "medium",
   "owner": "",
   "agent": "",
@@ -12,7 +12,7 @@
   "userStory": "Android 上架",
   "track": "n/a",
   "dependsOn": [],
-  "order": 15,
+  "order": 16,
   "readiness": {},
   "gates": {},
   "links": {},
@@ -23,9 +23,9 @@
   "evidence": {
     "commands": [],
     "findings": [
-      "release 簽名 AAB 已產出，代表建置流程走通"
+      "2026-08-10 使用者回報：內部測試已通過，尚未正式上架 Play Console"
     ],
-    "residual": "未確認此 AAB 是否為 Play Console 目前上架的最新版本"
+    "residual": "未正式上架，待送正式發布"
   },
   "comments": []
 }

@@ -1,0 +1,53 @@
+{
+  "id": "TASK-221",
+  "title": "打卡／回訪／訂閱到期提醒排程",
+  "content": "連線保溫ping(每4分鐘)、每日文章生成、競技場週結算、打卡/回訪/訂閱到期提醒，各自對應台灣時區時間。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "基礎設施 / 排程任務",
+  "userStory": "Cron 排程總覽",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 221,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/index.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「Cron 排程總覽」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：server/index.js:946/971/1000 打卡/回訪/訂閱提醒三個 cron 皆存在且邏輯合理。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

@@ -1,0 +1,54 @@
+{
+  "id": "TASK-192",
+  "title": "VOICE_MAP 角色語音映射",
+  "content": "本機快取→Supabase Storage快取→都沒有才呼叫本機 Kokoro TTS（正式站 Railway 無 Python 環境，僅開發環境可即時生成），多角色語音映射 VOICE_MAP。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "聽力系統",
+  "userStory": "聽力音檔動態生成",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 192,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/routes/listening_audio.js",
+    "scripts/tts_generate.py"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「聽力音檔動態生成」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：VOICE_MAP 角色語音映射（listening_audio.js:29-42）與 Python 端 KOKORO_VOICE 對應一致。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

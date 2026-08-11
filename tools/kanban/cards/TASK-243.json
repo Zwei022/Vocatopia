@@ -1,0 +1,59 @@
+{
+  "id": "TASK-243",
+  "title": "mochi 花生麻糬技能（streakShield）",
+  "content": "角色技能 mochi(streakShield) 遊戲內生效機制",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-11",
+  "epic": "角色系統 / Gacha",
+  "userStory": "角色技能遊戲機制",
+  "track": "n/a",
+  "dependsOn": [],
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "comments": [],
+  "order": 243,
+  "refs": [
+    "game/tetris/characters.js",
+    "game/tetris/quiz.js"
+  ],
+  "evidence": {
+    "commands": [
+      "node --check game/tetris/characters.js",
+      "node --check game/tetris/engine.js",
+      "node --check game/tetris/game.js",
+      "node --check game/tetris/quiz.js",
+      "npm test (engine.test.js 47/47 通過)"
+    ],
+    "findings": [
+      "2026-08-11 mochi(streakShield) 已完整實作，含 noConsumeChance/星3+50分。node --check 通過，既有47項 engine.test.js 測試全過。"
+    ],
+    "residual": ""
+  }
+}

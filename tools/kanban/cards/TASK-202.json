@@ -1,0 +1,53 @@
+{
+  "id": "TASK-202",
+  "title": "閱讀進度追蹤",
+  "content": "article_questions 隨附題目 + daily_article_progress 進度追蹤，前端長圖自動分割/文字圖片放大 Lightbox。",
+  "stage": "backlog",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "每日文章 / 精選題目",
+  "userStory": "文章題目與閱讀進度",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 202,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/routes/articles.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「文章題目與閱讀進度」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查發現：全專案 grep「progress」僅在 server/routes/user.js:43 出現一次，且只是刪除帳號時提及 daily_article_progress 表名的註解，articles.js 與 script.js 均無任何讀寫閱讀進度的實際程式碼，功能未實作。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

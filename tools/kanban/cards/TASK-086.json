@@ -1,0 +1,54 @@
+{
+  "id": "TASK-086",
+  "title": "claim_quest RPC",
+  "content": "index.html #decks collTabQuest 分頁。quest_system.sql 定義 claim_quest(p_id, p_gold, p_xp) RPC（quests_claimed 防重複領取）。checkin_reward.sql / daily_checkin.sql 支援每日簽到（openCheckinScreen()）。",
+  "stage": "done",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "任務系統",
+  "userStory": "領獎 RPC",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 86,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "supabase/migrations/quest_system.sql",
+    "supabase/migrations/daily_checkin.sql"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「領獎 RPC」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-10 使用者回報：任務系統正常"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

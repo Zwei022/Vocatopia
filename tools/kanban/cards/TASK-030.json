@@ -1,0 +1,52 @@
+{
+  "id": "TASK-030",
+  "title": "Apple 原生登入",
+  "content": "iOS 專用 @capacitor-community/apple-sign-in，繞過網頁 OAuth。",
+  "stage": "verify",
+  "risk": "medium",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "使用者認證",
+  "userStory": "Apple 原生登入",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 30,
+  "readiness": {
+    "problem_clear": false,
+    "non_goals_clear": false,
+    "acceptance_testable": false,
+    "files_known": false,
+    "scope_defined": false,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "auth.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：auth.js 的 signInWithAppleNative() 完整實作原生 Apple 登入（nonce/hash、Capacitor 外掛偵測、取消例外處理），邏輯合理。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

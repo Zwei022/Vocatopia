@@ -1,0 +1,52 @@
+{
+  "id": "TASK-060",
+  "title": "商店頁",
+  "content": "renderShop 商店介面。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "商店 / 遊戲經濟",
+  "userStory": "商店頁",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 60,
+  "readiness": {
+    "problem_clear": false,
+    "non_goals_clear": false,
+    "acceptance_testable": false,
+    "files_known": false,
+    "scope_defined": false,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "index.html"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：renderShop() 存在，index.html 商店 DOM 容器齊全。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

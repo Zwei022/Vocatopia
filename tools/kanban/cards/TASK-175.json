@@ -1,0 +1,54 @@
+{
+  "id": "TASK-175",
+  "title": "成就推導邏輯",
+  "content": "多由現有數據即時推導（等級/連續天數/掌握字數/角色數/文法解鎖/俄方最高分），額外累計每日六科全解次數、抽卡總次數；稱號於對戰名牌顯示。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "成就系統",
+  "userStory": "成就推導與稱號",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 175,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "script.js",
+    "supabase/migrations/achievements.sql"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「成就推導與稱號」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：ACHIEVEMENTS 陣列（script.js:8742-8771）+ _ac* 系列推導函式（等級/連續天數/掌握字數/角色數/文法/俄方最高分）完整對應。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

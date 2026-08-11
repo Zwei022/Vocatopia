@@ -1,0 +1,53 @@
+{
+  "id": "TASK-152",
+  "title": "Google OAuth 登入",
+  "content": "Google／Apple OAuth，含 App 原生殼 OAuth callback 監聽（自訂 URL scheme）。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "使用者認證",
+  "userStory": "OAuth 第三方登入",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 152,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "auth.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「OAuth 第三方登入」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：auth.js signInWithOAuth('google') 網頁版/App 內嵌瀏覽器兩分支完整。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

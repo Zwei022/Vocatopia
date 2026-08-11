@@ -1,0 +1,53 @@
+{
+  "id": "TASK-110",
+  "title": "Google Cloud TTS 生成",
+  "content": "server/routes/tts.js（102 行）。package.json 有 @google-cloud/text-to-speech。listening-question-generator skill 提到本機 Kokoro TTS 為主要方案、Web Speech API 為 fallback（此點來自 skill 說明，非本次檔案審查佐證）。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "單字發音 TTS",
+  "userStory": "三層快取朗讀",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 110,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/routes/tts.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「三層快取朗讀」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：Google Cloud TTS 即時生成（tts.js:75-99）含寫回快取與錯誤處理，完整。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

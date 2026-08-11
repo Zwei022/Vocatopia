@@ -1,0 +1,54 @@
+{
+  "id": "TASK-103",
+  "title": "打卡提醒推播",
+  "content": "server/routes/push.js、server/lib/push.js、supabase/migrations/push_notification_triggers.sql。package.json 有 @capacitor/push-notifications、firebase-admin。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "推播通知",
+  "userStory": "自動推播情境",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 103,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/routes/push.js",
+    "supabase/migrations/push_notification_triggers.sql"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「自動推播情境」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：server/index.js 打卡提醒 cron（0 13 * * *）+ push_notification_triggers.sql 的 push_prefs 欄位邏輯完整。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

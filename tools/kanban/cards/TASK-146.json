@@ -1,0 +1,54 @@
+{
+  "id": "TASK-146",
+  "title": "官方卡組單字隱藏",
+  "content": "官方卡組單字隱藏（不刪除原資料）+ 每日單字卡組跨裝置同步狀態。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "單字卡系統",
+  "userStory": "跨裝置卡組同步",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 146,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "supabase/migration_daily_deck.sql",
+    "supabase/user_default_deck_hidden_words.sql"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「跨裝置卡組同步」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：官方卡組單字隱藏：migration_daily_deck.sql（每日卡組同步）+ user_default_deck_hidden_words 表（實際位於 supabase/migrations/ 而非卡片 refs 寫的 supabase/ 根目錄，僅路徑標註誤差）+ hideDefaultWords/restoreDefaultWords（script.js:415-455）邏輯完整。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

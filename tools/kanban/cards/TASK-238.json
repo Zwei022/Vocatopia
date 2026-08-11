@@ -1,0 +1,59 @@
+{
+  "id": "TASK-238",
+  "title": "canele 蘭姆可麗露技能（choosePiece）",
+  "content": "角色技能 canele(choosePiece) 遊戲內生效機制",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-11",
+  "epic": "角色系統 / Gacha",
+  "userStory": "角色技能遊戲機制",
+  "track": "n/a",
+  "dependsOn": [],
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "comments": [],
+  "order": 238,
+  "refs": [
+    "game/tetris/characters.js",
+    "game/tetris/quiz.js"
+  ],
+  "evidence": {
+    "commands": [
+      "node --check game/tetris/characters.js",
+      "node --check game/tetris/engine.js",
+      "node --check game/tetris/game.js",
+      "node --check game/tetris/quiz.js",
+      "npm test (engine.test.js 47/47 通過)"
+    ],
+    "findings": [
+      "2026-08-11 canele(choosePiece) 已完整實作，含 consecutiveUses/earlyUnsealChance。node --check 通過，既有47項 engine.test.js 測試全過。"
+    ],
+    "residual": "留白：星3「封印中預覽2顆」UI 功能未做。"
+  }
+}

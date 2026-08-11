@@ -1,0 +1,52 @@
+{
+  "id": "TASK-247",
+  "title": "題庫消耗量追蹤（question_bank_usage）",
+  "content": "daily_quiz.js 回應後背景寫入 question_bank_usage 表（user_id/type/mode/is_premium/question_count），供後續分析使用，看板原本沒有對應卡片。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-11",
+  "epic": "每日練習題庫（六科）",
+  "userStory": "付費會員無限題庫",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 247,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/routes/daily_quiz.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-11 QA 掃描期間發現實際存在但看板漏掉的功能：daily_quiz.js:91-102 在回應後（不擋回應）背景寫入 question_bank_usage 表記錄 user_id/type/mode/question_count/is_premium，寫入失敗只 console.warn 不影響使用者體驗。程式碼審查邏輯完整，未實機驗證資料表確實累積資料。"
+    ],
+    "residual": "supabase/migrations/question_bank_usage.sql 確認資料表 migration 存在，但未實機驗證線上是否已套用、資料是否確實累積。"
+  },
+  "comments": []
+}

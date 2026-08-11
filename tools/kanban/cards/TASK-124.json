@@ -1,0 +1,55 @@
+{
+  "id": "TASK-124",
+  "title": "中譯英方向",
+  "content": "10 題隨機四選一，提供「題目中文選英文」與「題目英文選中文」兩種方向。答錯即時顯示正解，結算頁可直接收藏答錯字。與 game/grammar.js 的文法測驗是不同功能，不要混算。",
+  "stage": "verify",
+  "risk": "medium",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "單字卡系統",
+  "userStory": "測驗功能",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 124,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "index.html:472-475",
+    "index.html:1094-1132",
+    "script.js:5505-5609"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「測驗功能」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：中譯英方向 startFcQuiz('zh') 分支（script.js:5538,5540）正確渲染中文題幹配英文選項。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

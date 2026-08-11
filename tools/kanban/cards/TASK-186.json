@@ -1,0 +1,54 @@
+{
+  "id": "TASK-186",
+  "title": "一次性作答邏輯",
+  "content": "一次性作答＋批改，閱覽室分頁架構（歷屆列表、閱讀庫）。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "GSAT 歷屆會考 / 模擬試題",
+  "userStory": "全卷作答引擎",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 186,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "index.html",
+    "server/routes/mock_exam.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「全卷作答引擎」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：script.js:2391,2423 gsatExam.submitted 旗標阻擋交卷後繼續作答與重複交卷，一次性邏輯正確（邏輯在 script.js 非 mock_exam.js，refs 的 mock_exam.js 本身只是靜態檔案伺服器不含此邏輯）。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

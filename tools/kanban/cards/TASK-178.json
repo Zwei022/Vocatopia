@@ -1,0 +1,54 @@
+{
+  "id": "TASK-178",
+  "title": "支線任務",
+  "content": "主線任務 id 固定不可變更、支線無序不重置、新手引導任務；首頁任務卡 + 收藏頁完整清單分頁。",
+  "stage": "done",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "任務系統",
+  "userStory": "主線／支線任務",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 178,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "script.js",
+    "supabase/migrations/quest_system.sql"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「主線／支線任務」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-10 使用者回報：任務系統正常"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

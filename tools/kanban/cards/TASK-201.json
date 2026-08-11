@@ -1,0 +1,53 @@
+{
+  "id": "TASK-201",
+  "title": "文章隨附題目",
+  "content": "article_questions 隨附題目 + daily_article_progress 進度追蹤，前端長圖自動分割/文字圖片放大 Lightbox。",
+  "stage": "backlog",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "每日文章 / 精選題目",
+  "userStory": "文章題目與閱讀進度",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 201,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/routes/articles.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「文章題目與閱讀進度」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查發現：server/routes/articles.js 全文（28行）僅回傳 articles 表（id/title/content/emoji/tag/locked/year），無任何 questions 關聯查詢；supabase/schema.sql:47-55 articles 表結構本身也無 questions 欄位或 article_questions 關聯表。「文章隨附題目」在 refs 指定的 articles.js 這條資料流中未實作（注意：daily_articles.js 另有 article_questions 表是不同資料流，與本卡指定的 articles.js 無關，不能互相取代）。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

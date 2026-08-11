@@ -1,0 +1,53 @@
+{
+  "id": "TASK-231",
+  "title": "Ducking（語音播放時自動降低音量）",
+  "content": "script.js 內 _bgmDuckStart/_bgmDuckEnd，語音朗讀/聽力播放時自動降低 BGM 音量，播完恢復。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "音效 / 背景音樂",
+  "userStory": "背景音樂播放與 Ducking",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 231,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "script.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「背景音樂播放與 Ducking」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：Ducking（_bgmDuckStart/_bgmDuckEnd）在所有語音播放路徑（聽力題、TTS、朗讀）皆正確配對呼叫，含逾時保險機制。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

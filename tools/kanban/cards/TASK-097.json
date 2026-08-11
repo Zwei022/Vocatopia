@@ -1,0 +1,54 @@
+{
+  "id": "TASK-097",
+  "title": "Cron 每日 00:05 自動生成",
+  "content": "server/routes/articles.js、daily_articles.js、server/scripts/generate_daily_articles.js（被 server/index.js 用 node-cron 排程呼叫 generateAndSave）。index.html #reading 有 rtabCurated（精選題目）分頁。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "每日文章 / 精選題目",
+  "userStory": "固定文章庫與每日自動生成",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 97,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/scripts/generate_daily_articles.js",
+    "server/routes/daily_articles.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「固定文章庫與每日自動生成」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：server/index.js:898 cron.schedule('5 16 * * *')＝台灣00:05正確觸發 generateAndSave。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

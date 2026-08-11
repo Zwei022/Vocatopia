@@ -1,0 +1,53 @@
+{
+  "id": "TASK-229",
+  "title": "題庫難度校準腳本",
+  "content": "server/scripts/ 下每日文章批次生成、單字資料匯入建置、例句/定義重新生成、題庫難度校準等一次性或排程內容管線工具。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "基礎設施 / 排程任務",
+  "userStory": "資料維運腳本",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 229,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/scripts/"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「資料維運腳本」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：server/scripts/check_exam_vocab.js（校準相關）與 calibrate.js 存在。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

@@ -1,0 +1,52 @@
+{
+  "id": "TASK-065",
+  "title": "首次引導教學",
+  "content": "跨裝置同步是否看過新手引導（migration_tutorial_seen）。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "首頁 / 導覽",
+  "userStory": "首次引導教學",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 65,
+  "readiness": {
+    "problem_clear": false,
+    "non_goals_clear": false,
+    "acceptance_testable": false,
+    "files_known": false,
+    "scope_defined": false,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "supabase/migration_tutorial_seen.sql"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：tutorial_seen 欄位、script.js 讀寫、closeTutorial 更新 profile 邏輯一致。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

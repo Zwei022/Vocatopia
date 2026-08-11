@@ -1,0 +1,53 @@
+{
+  "id": "TASK-170",
+  "title": "角色收藏（owned_chars）",
+  "content": "owned_chars 跨裝置同步收藏，deployed_char 首頁出戰角色欄。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "角色系統 / Gacha",
+  "userStory": "角色收藏與出戰",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 170,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "game/tetris/characters.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「角色收藏與出戰」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 審查 getOwnedChars()/addOwnedChar()/restoreOwnedCharsFromServer() 邏輯：本機 localStorage 為即時真相來源、背景同步寫回 Supabase profiles.owned_chars/deployed_char，登入時與伺服器資料取聯集合併不會遺失任一裝置的抽卡結果，失敗只是靜默 warn 不影響本機結果。邏輯完整無明顯 bug，未實機測試多裝置同步情境。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

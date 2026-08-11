@@ -1,0 +1,52 @@
+{
+  "id": "TASK-045",
+  "title": "付費會員無限題庫",
+  "content": "訂閱使用者不截斷、每次不同隨機序，另有題庫消耗量追蹤表供後續擴充參考。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "每日練習題庫（六科）",
+  "userStory": "付費會員無限題庫",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 45,
+  "readiness": {
+    "problem_clear": false,
+    "non_goals_clear": false,
+    "acceptance_testable": false,
+    "files_known": false,
+    "scope_defined": false,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/routes/daily_quiz.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：daily_quiz.js:57-60 用 isPremiumUser+query unlimited=1 正確做付費解鎖無限題庫。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

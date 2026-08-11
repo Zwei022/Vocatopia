@@ -1,0 +1,53 @@
+{
+  "id": "TASK-101",
+  "title": "RevenueCat webhook 接收",
+  "content": "server/routes/subscription.js 實作 GET /api/user/subscription-status 與 POST /api/webhooks/revenuecat（驗證 REVENUECAT_WEBHOOK_SECRET）。index.html 有 #upgradePurchaseView / #upgradeActiveView。程式碼註解證實已因 App Store Guideline 3.1.1 退件並修正（移除測試兌換碼繞過付費機制）。",
+  "stage": "verify",
+  "risk": "medium",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "訂閱 / IAP",
+  "userStory": "RevenueCat Webhook 與權限判斷",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 101,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/routes/subscription.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「RevenueCat Webhook 與權限判斷」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：server/routes/subscription.js POST /api/webhooks/revenuecat 有 Bearer secret 驗證、事件類型分派（GRANTS/REVOKES）完整。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

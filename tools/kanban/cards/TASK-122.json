@@ -1,0 +1,55 @@
+{
+  "id": "TASK-122",
+  "title": "計時與最佳紀錄",
+  "content": "翻牌配對遊戲：英文單字 ↔ 中文定義（目前只有這一種配對玩法，沒有「單字-例句」等其他變體）。完整計時、最佳紀錄、與支線任務系統連動（_questBumpMatchBest）。",
+  "stage": "verify",
+  "risk": "medium",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "單字卡系統",
+  "userStory": "配對功能",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 122,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "index.html:476-479",
+    "index.html:1057-1093",
+    "script.js:5624-5745"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「配對功能」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：計時與最佳紀錄邏輯在 _finishMatchGame（script.js:5719-5744），localStorage 存取正確，含新紀錄比較。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

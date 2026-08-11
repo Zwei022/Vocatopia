@@ -1,0 +1,56 @@
+{
+  "id": "TASK-073",
+  "title": "只學習收藏篩選開關",
+  "content": "單字卡呈現的兩種基本形式：翻牌模式與 fcSwipe 滑動版，共用 STUDY_WORDS / fcCurrentDeckId 狀態。滑動版含自動播放（fcToggleAutoplay）與左右滑動熟悉判定。另有「只學習收藏」跨模式篩選開關（fcSettings.onlyFav）。GET /api/words/search 支援快取未命中時呼叫 Gemini 生成並寫回 words 表。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "單字卡系統",
+  "userStory": "學習模式（翻牌／滑動）",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 73,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "index.html:464-467",
+    "index.html:580-634",
+    "script.js:4804-4839",
+    "server/routes/words.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「學習模式（翻牌／滑動）」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：只學習收藏開關 fcSettings.onlyFav 全程貫穿 fcViewList/updateRecordsList/showFcSettings（script.js:4805-4821,5758-5786,6756），持久化正常。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

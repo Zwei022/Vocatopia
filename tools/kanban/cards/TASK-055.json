@@ -1,0 +1,52 @@
+{
+  "id": "TASK-055",
+  "title": "收件夾 / 系統補償",
+  "content": "系統補償訊息、對戰邀請記錄，確保即時推播沒接到時事後仍可補領。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "好友 / 社交",
+  "userStory": "收件夾 / 系統補償",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 55,
+  "readiness": {
+    "problem_clear": false,
+    "non_goals_clear": false,
+    "acceptance_testable": false,
+    "files_known": false,
+    "scope_defined": false,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "supabase/migration_inbox.sql"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：inbox 資料表（migration_inbox.sql）+ script.js _inboxItemHtml 對 type='system' 顯示領取按鈕，claimInboxGold 條件式 update 防連點重複發放。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

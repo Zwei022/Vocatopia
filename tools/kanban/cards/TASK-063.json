@@ -1,0 +1,52 @@
+{
+  "id": "TASK-063",
+  "title": "角色屬性面板",
+  "content": "STR/INT/FAI 三維屬性，首頁 PIXEL CHARACTER 屬性面板。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "經驗值 / 等級 / 屬性系統",
+  "userStory": "角色屬性面板",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 63,
+  "readiness": {
+    "problem_clear": false,
+    "non_goals_clear": false,
+    "acceptance_testable": false,
+    "files_known": false,
+    "scope_defined": false,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "script.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：script.js 角色屬性面板讀寫 str_stat/int_stat/fai_stat 對應 harden_player_economy 白名單欄位。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

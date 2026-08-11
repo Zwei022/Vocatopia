@@ -1,0 +1,55 @@
+{
+  "id": "TASK-095",
+  "title": "文法錯誤修正",
+  "content": "AUDIT_REPORT.md（2026-08-07 唯讀審查，3108 行）指出六份題庫中 133 題 answer 疑似指向語意錯誤選項，報告列為最高優先處理項目。FIX_REPORT.md 已修正聽力逐字稿、模擬文章篇幅、部分文法錯誤，但這 133 題答案錯誤未被列為已處理，需要追查是否仍待修。",
+  "stage": "verify",
+  "risk": "high",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "每日練習題庫（六科）",
+  "userStory": "題庫品質稽核與修正",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 95,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "AUDIT_REPORT.md",
+    "FIX_REPORT.md",
+    "reports/audit_question_banks.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「題庫品質稽核與修正」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：FIX_REPORT.md 第46-54行記載文法教學15項問題（含2個作答單元、13項教學規則）已修正完成。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

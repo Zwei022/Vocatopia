@@ -1,0 +1,54 @@
+{
+  "id": "TASK-181",
+  "title": "簽到獎勵金幣表",
+  "content": "依台灣時區日期判定換日，簽到獎勵金幣表，首頁簽到按鈕。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "每日打卡 / 連續紀錄",
+  "userStory": "連續打卡與簽到獎勵",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 181,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "supabase/migrations/daily_checkin.sql",
+    "supabase/checkin_reward.sql"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「連續打卡與簽到獎勵」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：checkin_reward_config 表 + daily_checkin() 內以 reward_day=((streak-1)%7)+1 查表發金幣（checkin_reward.sql:77-91），前端 script.js:1791 呼叫一致。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

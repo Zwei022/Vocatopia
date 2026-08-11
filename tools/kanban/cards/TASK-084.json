@@ -1,0 +1,53 @@
+{
+  "id": "TASK-084",
+  "title": "claim_achievement RPC",
+  "content": "index.html #decks collTabAchv 分頁。achievements.sql 定義 claim_achievement(p_id, p_reward) RPC，用 achievements_claimed jsonb 防重複領獎。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "成就系統",
+  "userStory": "領獎 RPC",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 84,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "supabase/migrations/achievements.sql"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「領獎 RPC」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：claim_achievement RPC（achievements.sql:15-31）原子更新+防重複。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

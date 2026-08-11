@@ -1,0 +1,52 @@
+{
+  "id": "TASK-056",
+  "title": "檢視他人個人資料",
+  "content": "唯讀版個人資料檢視。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "好友 / 社交",
+  "userStory": "檢視他人個人資料",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 56,
+  "readiness": {
+    "problem_clear": false,
+    "non_goals_clear": false,
+    "acceptance_testable": false,
+    "files_known": false,
+    "scope_defined": false,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "script.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：showUserProfile()（script.js:6342-6379）唯讀顯示 username/xp/streak/wins，無任何編輯操作。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

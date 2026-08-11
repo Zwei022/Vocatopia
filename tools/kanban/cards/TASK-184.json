@@ -1,0 +1,54 @@
+{
+  "id": "TASK-184",
+  "title": "模擬試題資料（gsat_sim）",
+  "content": "gsat_sim 系列，需付費訂閱解鎖，isPremiumUser 檢查。",
+  "stage": "verify",
+  "risk": "medium",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "GSAT 歷屆會考 / 模擬試題",
+  "userStory": "模擬試題（付費解鎖）",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 184,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/data/gsat_sim_01.json",
+    "server/routes/mock_exam.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「模擬試題（付費解鎖）」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：實際檔名為 server/data/gsat_sim_2023_reading_1~10.json（非卡片原 refs 寫的 gsat_sim_01.json，refs路徑已過時），但 script.js:2108-2117 正確引用對應檔名，mock_exam.js 可正常提供，功能存在。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

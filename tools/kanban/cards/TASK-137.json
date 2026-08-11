@@ -1,0 +1,57 @@
+{
+  "id": "TASK-137",
+  "title": "刪除單字",
+  "content": "單字新增/刪除/搜尋/搬移到其他卡組。走 server/routes/words.js 完整 CRUD API（非前端直連資料庫，跟卡組管理的資料流不同）。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "單字卡系統",
+  "userStory": "單字管理",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 137,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "index.html:541-558",
+    "script.js:6813",
+    "script.js:7153",
+    "script.js:6997",
+    "server/routes/words.js:163-264"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「單字管理」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：刪除單字同上，完整。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

@@ -1,0 +1,53 @@
+{
+  "id": "TASK-206",
+  "title": "推播偏好設定（分類開關）",
+  "content": "POST /api/push/register（一使用者可多裝置）+ 依類別可個別關閉推播偏好（streak/winback/subscription/arena/social）。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "推播通知",
+  "userStory": "FCM Token 註冊與偏好設定",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 206,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/routes/push.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「FCM Token 註冊與偏好設定」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：偏好開關實際寫在前端 script.js（savePushPrefs() 直接寫 profiles.push_prefs），伺服器 _pushAllowed() 讀取同一欄位判斷，兩端一致；push.js 本身無獨立 REST route 屬合理設計（走 Supabase RLS 直寫）。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

@@ -1,0 +1,56 @@
+{
+  "id": "TASK-232",
+  "title": "音量調整（設定面板）",
+  "content": "設定面板 sfxVolume/bgmVolume 拉桿，saveSoundSettings() 儲存音量偏好。",
+  "stage": "blocked",
+  "risk": "medium",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "音效 / 背景音樂",
+  "userStory": "音量調整（設定面板）",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 232,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": false,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": false,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "index.html",
+    "script.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 使用者回報：設定面板音量調整無法使用",
+      "2026-08-10 查了 index.html #sfxVolume/#bgmVolume 的 oninput 綁定、saveSoundSettings()、_bgmSync()、sfx.js 的 _sfxVolumeScale()：程式邏輯全部正確——slider 值有存進 voca_settings，BGM 的 audio.volume 每次都重新賦值，SFX 每次播放前也都即時讀最新音量，沒找到程式碼層級的錯誤",
+      "2026-08-10 無法單靠讀程式碼判斷「無法使用」實際指的是什麼現象（滑桿拖不動？拖了沒存？存了但音量沒變化？），需要更具體的重現方式才能繼續查",
+      "2026-08-11 程式碼審查未發現明確 bug：HTML 拉桿 id（sfxVolume/bgmVolume/sfxToggle/bgmToggle）與 script.js 的 saveSoundSettings()/showSettings() 完全對應，無重複 id、無漏 await，.sett-vol-row.disabled{pointer-events:none} 是預期設計（SFX/BGM 關閉時鎖住對應音量條）。需要使用者提供「無法使用」的具體現象才能縮小範圍：(1) 設定面板打不開、(2) 拉桿完全拖不動、(3) 拖動後數字沒變、(4) 有變但實際音量沒改變（例如手機瀏覽器 audio.volume 被系統音量鍵覆蓋）。建議請使用者附瀏覽器 Console 錯誤或錄影重現。"
+    ],
+    "residual": "程式碼審查沒找到問題，卡在需要使用者補充：滑桿本身能不能拖動、拖動後有沒有變化、是哪個裝置/瀏覽器（尤其 iOS App 內建 WebView 較常出現 range input 觸控失靈的狀況）"
+  },
+  "comments": []
+}

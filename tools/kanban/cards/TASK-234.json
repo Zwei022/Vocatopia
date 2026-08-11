@@ -1,0 +1,54 @@
+{
+  "id": "TASK-234",
+  "title": "排行榜即時更新",
+  "content": "renderArenaLeaderboard() 顯示段位排行榜。對局結束（battle_result）後前端沒有重新呼叫這個函式，只有進場/切模式才會重抓，畫面不會馬上反映剛結算的 ELO。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "競技場排位",
+  "userStory": "排行榜即時更新",
+  "track": "frontend",
+  "dependsOn": [],
+  "order": 234,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": true,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "script.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 使用者詢問是否有跟 Tetris 一樣的問題，複查 script.js：pvpSocket.on('battle_result', ...) 的處理裡沒有呼叫 renderArenaLeaderboard()，只有 selectQuickMatchMode() 和進場時會呼叫",
+      "後端 computeArenaOutcome() → settle_arena_player RPC 是對局結束當下同步 await 完成，ELO 資料本身沒有延遲，純粹是前端沒重新抓排行榜",
+      "2026-08-10 已修：battle_result 事件處理內補上 renderArenaLeaderboard(pvpState.mode) 呼叫"
+    ],
+    "residual": "已在 script.js battle_result 處理裡補呼叫 renderArenaLeaderboard(pvpState.mode)，還沒有實機測試確認排行榜真的即時更新"
+  },
+  "comments": []
+}

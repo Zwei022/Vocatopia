@@ -1,0 +1,53 @@
+{
+  "id": "TASK-057",
+  "title": "訂閱到期提醒",
+  "content": "Cron 每日09:00，到期前3天觸發一次推播。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "訂閱 / IAP",
+  "userStory": "訂閱到期提醒",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 57,
+  "readiness": {
+    "problem_clear": false,
+    "non_goals_clear": false,
+    "acceptance_testable": false,
+    "files_known": false,
+    "scope_defined": false,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/index.js",
+    "server/lib/push.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：server/index.js 訂閱到期提醒 cron（0 1 * * *）查詢 3 天後到期訂閱並呼叫 sendPushToUsers（server/lib/push.js），邏輯合理。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

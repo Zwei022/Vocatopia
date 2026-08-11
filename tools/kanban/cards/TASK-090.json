@@ -1,0 +1,55 @@
+{
+  "id": "TASK-090",
+  "title": "同日全使用者種子隨機",
+  "content": "server/data/ 下六大題庫 question_bank_{vocab,phrase,reading,cloze,grammar,listening}.json，含 2023–2026 歷屆真題與 10 篇模擬閱讀。對應 API：daily_quiz.js、mock_exam.js、listening_audio.js、tts.js。index.html #library 有克漏字/聽力錯題與收藏分類 UI。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "每日練習題庫（六科）",
+  "userStory": "六大題庫資料與 API 基礎建設",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 90,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/data/",
+    "server/routes/daily_quiz.js",
+    "server/routes/mock_exam.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「六大題庫資料與 API 基礎建設」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：daily_quiz.js:62-65 seed=taipeiDateSeed()+type字元和，不含 user_id，確保同日全使用者同題序。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

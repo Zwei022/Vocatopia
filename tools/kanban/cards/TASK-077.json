@@ -1,0 +1,55 @@
+{
+  "id": "TASK-077",
+  "title": "答對單字題加分",
+  "content": "game/tetris/（engine.js/game.js/quiz.js/vocab.js/sfx.js/characters.js/gacha.js），含單元測試 engine.test.js（47/47 通過）。server/index.js 用 Socket.io 實作房間制對戰（create_room/join_room/start_battle/buzzer_answer/pvp_answer/queue_join）。單機/積分雙模式已拆分，段位系統見 tetris_tiers.sql。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "Tetris PvP 對戰",
+  "userStory": "遊戲引擎與單機／積分雙模式",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 77,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "game/tetris/engine.js",
+    "game/tetris/engine.test.js",
+    "supabase/migrations/tetris_tiers.sql"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「遊戲引擎與單機／積分雙模式」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：quiz.js 多處 _ttAddScore(TT_SENT_CORRECT/TT_READING_CORRECT/...) 答對加分邏輯存在。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

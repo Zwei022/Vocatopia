@@ -1,0 +1,53 @@
+{
+  "id": "TASK-141",
+  "title": "計時與最佳紀錄",
+  "content": "配對最佳紀錄只存 localStorage（voca_match_best_{deckId}），換裝置或清快取會遺失；測驗成績只在結算頁即時顯示，不寫入任何資料表或 localStorage，完全沒有歷史。若要做真正的學習成效追蹤，這兩塊都要補上雲端持久化，可以跟 TASK-022 的 user_word_status 串接一起規劃。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "單字卡系統",
+  "userStory": "配對功能",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 141,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "script.js:5724-5735"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「配對功能」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：計時與最佳紀錄邏輯完整，同配對遊戲一起實作。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

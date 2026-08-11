@@ -1,0 +1,57 @@
+{
+  "id": "TASK-213",
+  "title": "排行榜前 20",
+  "content": "NAV導覽、角色出戰欄、排行榜前20、任務卡、簽到按鈕，個人資料 Modal，學科統計。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "首頁 / 導覽",
+  "userStory": "首頁狀態總覽",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 213,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "index.html",
+    "script.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「首頁狀態總覽」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-10 使用者回報：排行榜字體樣式沒有統一，黃金段文字會被誤套粗體",
+      "2026-08-10 查了 styles.css .hm-board-tier-foot（font-weight:500，統一套用，不分段位）跟 script.js renderLeaderboard() 裡 tierFootEl.textContent = 純文字賦值，沒有 <b>/<strong>/inline style，也沒有針對 tier.id==='gold' 的特殊分支——CSS／JS 都是所有段位共用同一套樣式，沒找到會讓黃金段特別加粗的程式碼",
+      "2026-08-10 懷疑不是程式邏輯問題，而是 --font-zh（Noto Sans TC 或後續換上的 Yozai）的「黃」「金」這兩個字剛好落在字重較重的字碗，或裝置字型 fallback 造成的視覺誤差，純看程式碼判斷不出來",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：renderLeaderboard/renderArenaLeaderboard 函式存在且對應 DOM 容器齊全。"
+    ],
+    "residual": "程式碼審查沒找到差異化樣式，需要使用者提供截圖或指出是哪個排行榜（首頁方塊排行榜／競技場排行榜）、哪個裝置瀏覽器，才能確認是字型渲染問題還是我漏看了某段動態樣式"
+  },
+  "comments": []
+}

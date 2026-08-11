@@ -1,0 +1,53 @@
+{
+  "id": "TASK-204",
+  "title": "文字／圖片 Lightbox",
+  "content": "article_questions 隨附題目 + daily_article_progress 進度追蹤，前端長圖自動分割/文字圖片放大 Lightbox。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "每日文章 / 精選題目",
+  "userStory": "文章題目與閱讀進度",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 204,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/routes/articles.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「文章題目與閱讀進度」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：script.js:9560-9594 openTxtLightbox/openLightbox/closeLightbox（文字+圖片）及ESC鍵關閉、事件委派點擊圖片皆完整，index.html:1208-1222有對應DOM。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

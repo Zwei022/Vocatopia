@@ -1,0 +1,55 @@
+{
+  "id": "TASK-208",
+  "title": "敏感欄位鎖權（harden_player_economy）",
+  "content": "increment_gold 原子RPC（修復過任何登入使用者可幫自己/他人任意增減金幣的漏洞），harden_player_economy revoke 前端直接寫入權限，其餘一律走 RPC。",
+  "stage": "verify",
+  "risk": "medium",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "商店 / 遊戲經濟",
+  "userStory": "金幣原子 RPC 與欄位鎖權",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 208,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "supabase/migrations/harden_player_economy.sql",
+    "supabase/migration_atomic_gold.sql",
+    "supabase/fix_increment_gold_auth.sql"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「金幣原子 RPC 與欄位鎖權」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：harden_player_economy.sql 正確收回 authenticated 的 update 權限並白名單化允許欄位。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

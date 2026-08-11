@@ -1,0 +1,56 @@
+{
+  "id": "TASK-128",
+  "title": "三分頁篩選清單",
+  "content": "已學習/未學習/收藏三分頁清單，依 fcMarked（熟悉）/fcFavorites（收藏）即時篩選顯示。不含時間戳、不含歷史趨勢、不含統計圖表——命名「學習紀錄」容易誤導成有歷史追蹤，實際只是即時標記清單。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "單字卡系統",
+  "userStory": "已學習／收藏標記",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 128,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "index.html:536-579",
+    "script.js:6751-6803",
+    "script.js:5425",
+    "script.js:5444"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「已學習／收藏標記」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：三分頁篩選 switchRecordTab/updateRecordsList（script.js:6752-6803）邏輯完整，含效能簽章優化。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

@@ -1,0 +1,53 @@
+{
+  "id": "TASK-145",
+  "title": "字尾還原比對省額度",
+  "content": "GET /api/words/search，共享快取未命中時呼叫 Gemini 即時生成原創字典級資料並寫回，含字尾還原比對省額度。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "單字卡系統",
+  "userStory": "快速查詢與字典生成",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 145,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/routes/words.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「快速查詢與字典生成」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：字尾還原比對省額度 _lemmaCandidates/_findByLemma（words.js:105-129）規則合理，邏輯完整。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

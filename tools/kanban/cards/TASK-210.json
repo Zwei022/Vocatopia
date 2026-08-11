@@ -1,0 +1,54 @@
+{
+  "id": "TASK-210",
+  "title": "等級曲線計算（levelFromXp）",
+  "content": "add_xp 原子RPC避免多來源同時加XP競態，levelFromXp 由XP曲線反推等級。",
+  "stage": "backlog",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "經驗值 / 等級 / 屬性系統",
+  "userStory": "XP 原子加值與等級曲線",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 210,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/lib/xp.js",
+    "supabase/migrations/add_xp.sql"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「XP 原子加值與等級曲線」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查發現 BUG：server/lib/xp.js:3 的 XP_STEP=7 與 script.js:7680 的 XP_STEP=9 不一致（script.js 註解明確寫著因任務系統上線已從7調整為9，但 server/lib/xp.js 沒有同步更新）。此常數被 server/routes/grammar.js:8,31 的 levelFromXp/unlockedGrammarSections 使用，會導致伺服器端判斷的等級/文法解鎖章節數與前端顯示的等級不一致，需修復 server/lib/xp.js 的 XP_STEP 同步為 9。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

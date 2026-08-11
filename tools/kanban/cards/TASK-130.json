@@ -1,0 +1,55 @@
+{
+  "id": "TASK-130",
+  "title": "收藏標記",
+  "content": "Supabase 已有 user_word_status 表（schema.sql:31-44，欄位含 status/correct_streak/next_review_at，明顯是為間隔重複學習設計的），但前端從未寫入這張表，只有在刪除帳號/重置流程執行 DELETE（script.js:6612, 6630）。目前「已學習/收藏標記」只是本地清單，沒有真正的學習歷史、正確率趨勢或間隔複習排程——後端有為此設計資料表，但從未真正串接，是半殘設計。",
+  "stage": "verify",
+  "risk": "medium",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "單字卡系統",
+  "userStory": "已學習／收藏標記",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 130,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "supabase/schema.sql:31-44",
+    "script.js:6612",
+    "script.js:6630"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「已學習／收藏標記」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：收藏標記機制與同分頁功能共用同套 fcFavorites/localStorage，邏輯一致完整。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

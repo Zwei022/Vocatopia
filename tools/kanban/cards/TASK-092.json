@@ -1,0 +1,55 @@
+{
+  "id": "TASK-092",
+  "title": "133 題答案疑似錯誤稽核",
+  "content": "AUDIT_REPORT.md（2026-08-07 唯讀審查，3108 行）指出六份題庫中 133 題 answer 疑似指向語意錯誤選項，報告列為最高優先處理項目。FIX_REPORT.md 已修正聽力逐字稿、模擬文章篇幅、部分文法錯誤，但這 133 題答案錯誤未被列為已處理，需要追查是否仍待修。",
+  "stage": "backlog",
+  "risk": "high",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "每日練習題庫（六科）",
+  "userStory": "題庫品質稽核與修正",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 92,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "AUDIT_REPORT.md",
+    "FIX_REPORT.md",
+    "reports/audit_question_banks.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「題庫品質稽核與修正」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查發現：FIX_REPORT.md 全文（96行）僅修復單字/IPA/definition/文法/聽力逐字稿/模擬文章篇幅6類，完全沒有「133題答案錯誤」章節；第92-95行明確記載 question_bank_vocab_practice.json、question_bank_phrase.json、question_bank_reading.json 三份題庫 SHA-256 修正前後一致（未被觸碰）。AUDIT_REPORT.md 標記為最高優先的133題答案疑似指向錯誤選項問題，仍未修復，維持 backlog 且應提高優先度。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

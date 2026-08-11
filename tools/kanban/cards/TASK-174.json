@@ -1,0 +1,53 @@
+{
+  "id": "TASK-174",
+  "title": "升級 UI（待補）",
+  "content": "角色等級 Lv.0~5 + 美食風味露原子加減 RPC。地基已建，升級 UI 階段待補。",
+  "stage": "done",
+  "risk": "medium",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "角色系統 / Gacha",
+  "userStory": "角色成長系統",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 174,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "supabase/migrations/character_growth_foundation.sql"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「角色成長系統」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 supabase/migrations/character_upgrade_rpc.sql 已由使用者在 Supabase SQL Editor 手動執行過（人工確認），升級 UI 已補齊，upgradeCharacter() 呼叫 upgrade_character RPC 一次性驗證扣款+加星級，訪客模式本機扣款邏輯亦完整。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

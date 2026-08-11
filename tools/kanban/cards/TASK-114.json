@@ -1,0 +1,54 @@
+{
+  "id": "TASK-114",
+  "title": "delete-account.html 獨立頁面",
+  "content": "根目錄 auth.js、server/lib/auth.js（getUserId）、server/routes/user.js。package.json 有 @supabase/supabase-js、@capacitor-community/apple-sign-in。delete-account.html 獨立刪帳號頁面（Apple/Google 上架強制要求）。",
+  "stage": "verify",
+  "risk": "medium",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "使用者認證",
+  "userStory": "帳號自助刪除",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 114,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/lib/auth.js",
+    "delete-account.html"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「帳號自助刪除」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：delete-account.html 為獨立靜態頁面，內容完整（刪除步驟、資料處理表、Android/iOS 動態標籤切換），符合 App Store 審查要求的公開說明頁。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

@@ -1,0 +1,56 @@
+{
+  "id": "TASK-154",
+  "title": "對戰排行榜",
+  "content": "tetris_scores 表 + 依實際分數分佈訂級距的段位制，跟 Arena ELO 分開設計。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "Tetris PvP 對戰",
+  "userStory": "對戰排行榜與段位",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 154,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "supabase/migrations/tetris_tiers.sql",
+    "supabase/migration_reset_tetris_scores.sql"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「對戰排行榜與段位」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-10 測試人員回報：完成對局後分數不會馬上登入到排行榜，應該要即時更新",
+      "2026-08-10 查到根因：game/tetris/game.js 的 ttEndGame() 呼叫 ttSubmitScore() 沒有 await（fire-and-forget），玩家點「返回首頁」時 tetrisClose() 因為 g.gameOver 已是 true，跳過等待送分，直接呼叫 renderLeaderboard()，可能在分數還沒寫進資料庫前就先刷新，讀到舊排行榜",
+      "2026-08-10 已修：ttEndGame() 把 ttSubmitScore() 的 promise 存到 ttGame._submitPromise，tetrisClose() 在 !g.gameOver 分支外新增 else if 等這個 promise 完成後才呼叫 renderLeaderboard()"
+    ],
+    "residual": "已修但還沒有實機測試確認排行榜真的即時更新"
+  },
+  "comments": []
+}

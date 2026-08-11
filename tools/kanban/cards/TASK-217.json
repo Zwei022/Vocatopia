@@ -1,0 +1,54 @@
+{
+  "id": "TASK-217",
+  "title": "學科統計",
+  "content": "NAV導覽、角色出戰欄、排行榜前20、任務卡、簽到按鈕，個人資料 Modal，學科統計。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "首頁 / 導覽",
+  "userStory": "首頁狀態總覽",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 217,
+  "readiness": {
+    "problem_clear": true,
+    "non_goals_clear": true,
+    "acceptance_testable": false,
+    "files_known": true,
+    "scope_defined": true,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "index.html",
+    "script.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-10 從「首頁狀態總覽」拆分成更細粒度卡片，方便單一子功能異常時可獨立標記",
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：_trackSubjectStats/_SCAT_ORDER 與雷達圖渲染串接正常。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}

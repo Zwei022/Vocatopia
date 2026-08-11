@@ -1,0 +1,52 @@
+{
+  "id": "TASK-032",
+  "title": "帳號初始化",
+  "content": "POST /api/user/init，冪等式設定初始 gold/屬性值。",
+  "stage": "verify",
+  "risk": "low",
+  "owner": "",
+  "agent": "",
+  "approvalRequired": false,
+  "createdAt": "2026-08-10",
+  "epic": "使用者認證",
+  "userStory": "帳號初始化",
+  "track": "n/a",
+  "dependsOn": [],
+  "order": 32,
+  "readiness": {
+    "problem_clear": false,
+    "non_goals_clear": false,
+    "acceptance_testable": false,
+    "files_known": false,
+    "scope_defined": false,
+    "verification_contract": false,
+    "human_approval_recorded": false
+  },
+  "gates": {
+    "product": false,
+    "ui": false,
+    "architecture": false,
+    "security": false,
+    "test": false,
+    "code_review": false
+  },
+  "links": {
+    "featureSpec": "",
+    "screenSpec": "",
+    "mockupDecision": "",
+    "taskCard": "",
+    "verificationReport": "",
+    "pr": ""
+  },
+  "refs": [
+    "server/routes/user.js"
+  ],
+  "evidence": {
+    "commands": [],
+    "findings": [
+      "2026-08-11 程式碼審查（QA掃描，非實機測試）：server/routes/user.js POST /api/user/init 冪等初始化完整（檢查 profile 是否存在、initialized 旗標防重複執行）。"
+    ],
+    "residual": ""
+  },
+  "comments": []
+}
