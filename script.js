@@ -8708,6 +8708,7 @@ function startTetris() {
 // 角色收藏系統（皇室戰爭風卡片牆）
 // ══════════════════════════════════════════════════════════════
 const RARITY_LABEL = { common: '普通', rare: '稀有', epic: '史詩', mythic: '神話', legendary: '傳奇' };
+const RARITY_ORDER = { legendary: 0, mythic: 1, epic: 2, rare: 3, common: 4 };
 // 稀有度對應色（跟 styles.css 的 .coll-card.rarity-* 邊框色保持同一份規範，卡牌彈窗共用同一色票）
 const RARITY_COLOR = { common: 'var(--line2)', rare: '#5B9BD5', epic: '#A56EFF', mythic: '#FF7AB6', legendary: '#F0B429' };
 
@@ -8956,7 +8957,13 @@ function renderCharCollection() {
   const owned = getOwnedChars();
   const deployedId = getDeployedCharId();
 
-  grid.innerHTML = Object.values(TETRIS_CHARACTERS).map(ch => {
+  const sorted = Object.values(TETRIS_CHARACTERS).sort((a, b) => {
+    const ownedDiff = owned.includes(b.id) - owned.includes(a.id);
+    if (ownedDiff) return ownedDiff;
+    return (RARITY_ORDER[a.rarity] ?? 9) - (RARITY_ORDER[b.rarity] ?? 9);
+  });
+
+  grid.innerHTML = sorted.map(ch => {
     const isOwned = owned.includes(ch.id);
     const isDeployed = ch.id === deployedId;
     return `
