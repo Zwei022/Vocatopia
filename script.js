@@ -8708,7 +8708,7 @@ function startTetris() {
 // 角色收藏系統（皇室戰爭風卡片牆）
 // ══════════════════════════════════════════════════════════════
 const RARITY_LABEL = { common: '普通', rare: '稀有', epic: '史詩', mythic: '神話', legendary: '傳奇' };
-const RARITY_ORDER = { legendary: 0, mythic: 1, epic: 2, rare: 3, common: 4 };
+const RARITY_ORDER = { common: 0, rare: 1, epic: 2, mythic: 3, legendary: 4 };
 // 稀有度對應色（跟 styles.css 的 .coll-card.rarity-* 邊框色保持同一份規範，卡牌彈窗共用同一色票）
 const RARITY_COLOR = { common: 'var(--line2)', rare: '#5B9BD5', epic: '#A56EFF', mythic: '#FF7AB6', legendary: '#F0B429' };
 
