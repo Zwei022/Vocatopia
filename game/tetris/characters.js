@@ -29,6 +29,7 @@ const TETRIS_CHARACTERS = {
     nameEn: 'rice ball',
     img: 'public/images/characters/onigiri.webp',
     cardImg: 'public/images/characters/onigiri.webp',
+    avatarImg: 'public/images/avatars/onigiri.webp',
     rarity: 'common',            // common / rare / epic / mythic / legendary（收藏卡框顏色用）
     acquireHint: '帳號預設擁有',
     desc: '捏得紮實的海苔飯糰新兵，話不多，但每次都準時出現在你需要冷靜的那一刻。',
@@ -54,6 +55,7 @@ const TETRIS_CHARACTERS = {
     nameEn: 'chive dumpling',
     img: 'public/images/characters/dumpling.webp',
     cardImg: 'public/images/characters/dumpling.webp',
+    avatarImg: 'public/images/avatars/dumpling.webp',
     rarity: 'common',
     acquireHint: '帳號預設擁有',
     desc: '手工現包的水餃，皮薄餡多卻從不搶快，寧可多咬幾口，也要把每個單字嚼透。',
@@ -82,6 +84,7 @@ const TETRIS_CHARACTERS = {
     nameEn: 'waffle',
     img: 'public/images/characters/waffle.webp',
     cardImg: 'public/images/characters/waffle.webp',
+    avatarImg: 'public/images/avatars/waffle.webp',
     rarity: 'rare',
     acquireHint: '完成一篇歷屆會考試題，正確率達 70% 以上即可解鎖',
     desc: '格紋鬆餅裹著融化奶油，個性像它的糖漿一樣黏人，答錯了也會軟軟地接住你。',
@@ -107,6 +110,7 @@ const TETRIS_CHARACTERS = {
     nameEn: 'canelé',
     img: 'public/images/characters/canele.webp',
     cardImg: 'public/images/characters/canele.webp',
+    avatarImg: 'public/images/avatars/canele.webp',
     rarity: 'epic',
     acquireHint: '商店常駐卡池抽卡取得（三獎，機率 15%）',
     desc: '外皮焦脆、內裡濕潤的法式甜點貴族，做事前總愛先在心裡排好接下來三步棋。',
@@ -132,6 +136,7 @@ const TETRIS_CHARACTERS = {
     nameEn: 'sushi',
     img: 'public/images/characters/sushi.webp',
     cardImg: 'public/images/characters/sushi.webp',
+    avatarImg: 'public/images/avatars/sushi.webp',
     rarity: 'mythic',
     acquireHint: '商店常駐卡池抽卡取得（二獎，機率 4%，50抽保底必中神話以上）',
     desc: '職人現捏的鮭魚握壽司，出手俐落像刀工一樣精準，一次出招就是滿場喝采。',
@@ -182,6 +187,7 @@ const TETRIS_CHARACTERS = {
     nameEn: 'uni gunkan',
     img: 'public/images/characters/uni.webp',
     cardImg: 'public/images/characters/uni.webp',
+    avatarImg: 'public/images/avatars/uni.webp',
     rarity: 'mythic',
     acquireHint: '商店限時卡池抽卡取得（二獎，機率 4%，50抽保底必中神話以上）',
     desc: '產季限定的頂級海膽，賣相嬌貴、脾氣卻很穩，總在你快撐不住的瞬間悄悄補位。與鮭魚壽司同屬「海鮮職人系列」。',
@@ -208,6 +214,7 @@ const TETRIS_CHARACTERS = {
     nameEn: 'bluefin tuna sashimi',
     img: 'public/images/characters/bluefin.webp',
     cardImg: 'public/images/characters/bluefin.webp',
+    avatarImg: 'public/images/avatars/bluefin.webp',
     rarity: 'legendary',
     acquireHint: '商店限時卡池抽卡取得（特獎，機率 1%，100抽保底必中傳奇）',
     desc: '師傅一刀落下才切得出的大トロ切片，油脂布滿紋理，出招時整條直線都會讓開。',
@@ -236,6 +243,7 @@ const TETRIS_CHARACTERS = {
     nameEn: 'peanut mochi',
     img: 'public/images/characters/mochi.webp',
     cardImg: 'public/images/characters/mochi.webp',
+    avatarImg: 'public/images/avatars/mochi.webp',
     rarity: 'rare',
     acquireHint: '競技場獲勝 20 次解鎖',
     desc: '剛搗好的花生麻糬，外表軟綿綿，被壓扁了也能咻地彈回原本的圓潤模樣。',
@@ -260,6 +268,7 @@ const TETRIS_CHARACTERS = {
     nameEn: 'cream mille-feuille',
     img: 'public/images/characters/millefeuille.webp',
     cardImg: 'public/images/characters/millefeuille.webp',
+    avatarImg: 'public/images/avatars/millefeuille.webp',
     rarity: 'epic',
     acquireHint: '商店常駐卡池抽卡取得（三獎，機率 15%）',
     desc: '一層酥皮疊一層卡士達的千層小姐，凡事講求鋪陳，蓄力愈久、關鍵一擊愈扎實。',
@@ -287,6 +296,7 @@ const TETRIS_CHARACTERS = {
     nameEn: 'pan-seared foie gras',
     img: 'public/images/characters/foiegras.webp',
     cardImg: 'public/images/characters/foiegras.webp',
+    avatarImg: 'public/images/avatars/foiegras.webp',
     rarity: 'legendary',
     acquireHint: '俄羅斯方塊單局最高分達 15000 解鎖',
     desc: '整份菜單裡最壓軸的一道，煎到恰到好處的外酥內滑，出場自帶加成的氣場。',
@@ -591,15 +601,15 @@ const LS_AVATAR_ID = 'voca_avatar_id';
 // 保險起見還是檢查）時回傳 null，由呼叫端自行 fallback 成預設圖示。
 function getAvatarId() {
   const id = localStorage.getItem(LS_AVATAR_ID);
-  if (id && TETRIS_CHARACTERS[id] && getOwnedChars().includes(id)) return id;
+  if (id && TETRIS_CHARACTERS[id]?.avatarImg && getOwnedChars().includes(id)) return id;
   return null;
 }
 function avatarImgOf(id) {
-  return (id && TETRIS_CHARACTERS[id]) ? TETRIS_CHARACTERS[id].img : null;
+  return (id && TETRIS_CHARACTERS[id]) ? (TETRIS_CHARACTERS[id].avatarImg || null) : null;
 }
 // 設定頭像：只能選已擁有的角色，回傳是否設定成功
 function setAvatarId(id) {
-  if (!TETRIS_CHARACTERS[id] || !getOwnedChars().includes(id)) return false;
+  if (!TETRIS_CHARACTERS[id]?.avatarImg || !getOwnedChars().includes(id)) return false;
   localStorage.setItem(LS_AVATAR_ID, id);
   _syncAvatarToServer();
   return true;
@@ -615,7 +625,7 @@ function _syncAvatarToServer() {
 // 登入時從伺服器還原頭像選擇：伺服器有紀錄且該角色仍在（合併後的）擁有清單內就採用，
 // 由 auth.js 的 _loadProfile() 呼叫（跟 restoreOwnedCharsFromServer 同一批一起呼叫）。
 function restoreAvatarFromServer(serverAvatarId) {
-  if (serverAvatarId && TETRIS_CHARACTERS[serverAvatarId] && getOwnedChars().includes(serverAvatarId)) {
+  if (serverAvatarId && TETRIS_CHARACTERS[serverAvatarId]?.avatarImg && getOwnedChars().includes(serverAvatarId)) {
     localStorage.setItem(LS_AVATAR_ID, serverAvatarId);
   }
 }

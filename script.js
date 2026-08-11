@@ -5995,7 +5995,7 @@ function openAvatarPicker() {
   overlay.style.cssText = 'position:fixed;inset:0;background:rgba(75,56,42,.55);z-index:9300;display:flex;align-items:flex-start;justify-content:center;padding:16px;padding-top:max(50px,calc(env(safe-area-inset-top) + 20px));overflow-y:auto';
   overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
 
-  const cards = Object.values(TETRIS_CHARACTERS).map(ch => {
+  const cards = Object.values(TETRIS_CHARACTERS).filter(ch => ch.avatarImg).map(ch => {
     const isOwned = owned.includes(ch.id);
     const isCurrent = ch.id === current;
     const tapAction = isOwned ? `_selectAvatar('${ch.id}')` : `showToast('🔒 尚未擁有・${_escJs(ch.acquireHint || '')}')`;
@@ -6003,7 +6003,7 @@ function openAvatarPicker() {
       <button class="coll-card rarity-${ch.rarity}${isOwned ? '' : ' locked'}${isCurrent ? ' deployed' : ''}" onclick="${tapAction}">
         ${isCurrent ? '<span class="coll-deployed-tag">使用中</span>' : ''}
         <div class="coll-card-imgwrap">
-          <img class="coll-card-img" src="${ch.img}" alt="${escHtml(ch.name)}">
+          <img class="coll-card-img" src="${ch.avatarImg}" alt="${escHtml(ch.name)}">
           ${isOwned ? '' : '<div class="coll-lock">🔒</div>'}
         </div>
         <div class="coll-card-name">${escHtml(ch.name)}${ch.nameEn ? ` <span class="coll-card-name-en">${escHtml(ch.nameEn)}</span>` : ''}</div>
