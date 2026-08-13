@@ -51,6 +51,8 @@ function ttShowQuiz(opts) {
   // 按鈕內部依技能類型自己判斷該不該渲染（見 _ttSkillQuizButtonHtml）
   const skillHtml = (!isReading && (timed || isWord)) ? _ttSkillQuizButtonHtml() : '';
   const tag = isReading ? '📖 閱讀理解' : (isWord ? '⚡ 消行快問' : '⏰ 計時挑戰');
+  // 遊戲中閱讀理解一律不可點字查詢（單字選擇/英文選擇同理）；點字查詢只在答錯後
+  // 跳轉到閱覽室「方塊短文」錯題頁才開放，見 _ttFileWrongToBank('tt_reading', q)
   const passageHtml = isReading ? `<div class="ttq-passage">${_ttEscHtml(q.passage)}</div>` : '';
 
   quizEl.innerHTML = `

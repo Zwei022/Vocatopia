@@ -13,18 +13,20 @@ function _ttShuffle(arr) {
   return a;
 }
 
-// 出題難度模式：目前只有會考（cap_2000），未來若要加「多益模式」等，改這個常數
-// 即可切換 Tetris 出題的字庫來源，不用改下面的抽字邏輯。
-const TT_EXAM_MODE_TAG = 'cap_2000';
+// 出題難度模式：目前只有會考。舊版用獨立的 cap_2000 標籤篩字，跟閱覽室單字卡組
+// 「會考總複習(Unit1-32)」實際收錄的字脫節（cap_2000 標籤字庫未經同一套審核流程，
+// 測試人員回報過選項偶爾有問題）。改成直接複用該卡組的 getWords()，兩邊永遠同一份字庫。
+const TT_EXAM_MODE_TAG = 'cap_2000'; // 找不到卡組定義時的退回篩選條件
 
-// 只取「符合目前出題難度模式、且有乾淨中文釋義」的單字，避免抽到 WORDS 裡其他來源
-// （例如 hs7000 高中延伸字庫）的超綱字，也避免選項過長或空白。
+// 只取「符合目前出題難度模式、且有乾淨中文釋義」的單字，避免抽到超綱字或選項過長/空白。
 function _ttWordPool() {
   if (typeof WORDS === 'undefined') return [];
-  return WORDS.filter(w => {
+  const deckWords = (typeof BUILTIN_DECKS !== 'undefined')
+    ? (BUILTIN_DECKS.find(d => d.id === 'cap2000')?.getWords() || [])
+    : WORDS.filter(w => Array.isArray(w.tags) && w.tags.includes(TT_EXAM_MODE_TAG));
+  return deckWords.filter(w => {
     const zh = (w.definition_zh || '').trim();
-    return w.word && zh && zh.length <= 12 && !/\s{2,}/.test(w.word)
-      && Array.isArray(w.tags) && w.tags.includes(TT_EXAM_MODE_TAG);
+    return w.word && zh && zh.length <= 12 && !/\s{2,}/.test(w.word);
   });
 }
 
