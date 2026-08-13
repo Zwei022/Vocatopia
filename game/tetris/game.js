@@ -510,6 +510,7 @@ function ttEndGame() {
   const finalLines = ttGame.lines;
   const mode = ttGame.mode;
   const isRanked = mode === 'ranked';
+  if (typeof logEvent === 'function') logEvent('tetris_game_over', { mode, score: finalScore, lines: finalLines });
 
   // 本機最高分比較（決定是否顯示「新紀錄」）；#14 單機模式不計入最高分，不比較、不顯示新紀錄
   let prevBest = 0;

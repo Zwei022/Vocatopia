@@ -185,6 +185,7 @@ function drawGacha(count) {
   }
   _gachaSavePity(pity);
   if (typeof _acOnGacha === 'function') _acOnGacha(count);   // #13 成就：抽卡次數累計
+  if (typeof logEvent === 'function') logEvent('gacha_pull', { count, pool: GACHA_POOL.id });
   // 記錄抽獎紀錄（最新在前）：時間 + 抽到什麼
   _gachaPushHistory(results.map(r => ({
     t: Date.now(),

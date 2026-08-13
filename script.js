@@ -554,6 +554,7 @@ function goScreen(id, btn, _fromBack) {
   if (id === 'decks') { renderCollection(); }
   if (id === 'shop') { renderShop(); }
   closeWordPopup();
+  if (!_fromBack) logEvent('screen_view', { screen: id });
 }
 
 // ── PIXEL CHAR ──
@@ -1789,6 +1790,29 @@ async function _pollInbox(silent) {
   }
 }
 
+// ── 自建行為記錄（events 表）────────────────────────────────────
+// 純粹寫入，不影響任何遊戲流程：失敗就默默吞掉，絕不能因為記錄失敗擋到使用者操作。
+// game/tetris/*.js 裡也會呼叫這個函式（全域 script 標籤共用 window scope）。
+function logEvent(eventType, metadata) {
+  if (!currentUser || typeof authClient === 'undefined' || !authClient) return;
+  authClient.from('events').insert({
+    user_id: currentUser.id,
+    event_type: eventType,
+    metadata: metadata || {},
+  }).then(({ error }) => {
+    if (error) console.warn('[logEvent] 記錄失敗：', eventType, error.message);
+  });
+}
+
+// 更新 profiles.last_active_at，回訪提醒 cron（server/index.js）靠這個欄位判斷
+// 「幾天沒開 App」。每次 App 啟動時打一次即可，不必每個畫面切換都寫。
+function _touchActivity() {
+  if (!currentUser || typeof authClient === 'undefined' || !authClient) return;
+  authClient.from('profiles').update({ last_active_at: new Date().toISOString() })
+    .eq('id', currentUser.id)
+    .then(({ error }) => { if (error) console.warn('[touchActivity] 更新失敗：', error.message); });
+}
+
 // ── #1/#4 每日登入連續天數 ──────────────────────────────────────
 // 登入後呼叫伺服器端原子 RPC daily_checkin（以台灣時區判定當天，00:00 換日）。
 // 回傳 { streak, changed, isFirst }。第一次登入只顯示 1、不慶祝；連勝≥2 才跳恭喜畫面。
@@ -1815,6 +1839,7 @@ async function _dailyCheckin() {
     const el = document.getElementById('hGold');
     if (el) el.textContent = res.gold.toLocaleString();
   }
+  if (res.changed) logEvent('checkin', { streak: res.streak, freeze_used: !!res.freeze_used });
   if (res.freeze_used) {
     showToast(`🛡️ 保護道具幫你保住了連續紀錄！剩下 ${res.streak_freeze} 個`);
   } else if (res.changed && res.streak >= 2) {
@@ -4773,7 +4798,12 @@ setTimeout(() => { _alsSetProgress(100); _alsHide(); }, 8000);
     _alsSetHint('登入驗證中…');
     const loggedIn = (typeof initAuth !== 'undefined') ? await initAuth() : false;
     if (!loggedIn && typeof showAuthOverlay !== 'undefined') showAuthOverlay();
-    if (loggedIn && currentUser) { _identifySocket(); _checkIncomingFriendRequests(); }
+    if (loggedIn && currentUser) {
+      _identifySocket();
+      _checkIncomingFriendRequests();
+      _touchActivity();
+      logEvent('app_open', {});
+    }
     _alsSetProgress(20);
 
     _alsSetHint('載入單字卡組…');
