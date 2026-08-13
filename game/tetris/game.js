@@ -350,22 +350,39 @@ function _ttGravityStep() {
   ttRender();
 }
 
-// 震動回饋：iOS WebView 不支援 Vibration API 會靜默無效，Android 才有感覺。
-// ponytail: 用 navigator.vibrate（跟站內其他震動回饋同一套），沒有接 Capacitor Haptics 原生震動
+// 震動回饋：iOS 的 WKWebView（App 內）跟 Safari 完全不支援 Web Vibration API（navigator.vibrate
+// 呼叫了也是靜默無效，不是бug，是平台本身沒實作這支 API），只有 Android WebView/瀏覽器才吃這套。
+// 改用 Capacitor 官方 Haptics 外掛（原生震動），iOS/Android 都走原生 API 真的會震；
+// 沒有 Capacitor 環境（純網頁版）才退回 navigator.vibrate 當 best-effort。
 // 開關跟音效共用同一份 voca_settings（設定頁「震動」），_loadSettingsData() 是 script.js 的全域函式，
 // 同一頁面共用 window scope，跟其他跨檔案呼叫（showToast/SFX）同一套模式。
 function _ttHapticsEnabled() {
   return typeof _loadSettingsData === 'function' ? _loadSettingsData().haptics !== false : true;
 }
-function _ttVibrate(pattern) {
-  if (typeof navigator === 'undefined' || !navigator.vibrate || !_ttHapticsEnabled()) return;
-  navigator.vibrate(pattern);
+// Capacitor Haptics 外掛需要 npx cap sync + 原生重新編譯才會出現在 window.Capacitor.Plugins，
+// 純改網頁端程式碼、沒有重新出 App build 的話，iOS/Android App 仍然是舊版原生殼，摸不到這支外掛。
+function _ttNativeHaptics() {
+  return (typeof window !== 'undefined' && window.Capacitor?.isNativePlatform?.())
+    ? window.Capacitor?.Plugins?.Haptics
+    : null;
 }
 
 // 消行震動回饋：力道隨消行數遞增（1~4行）
-const TT_CLEAR_VIBRATE = { 1: 25, 2: 45, 3: 70, 4: [40, 30, 90] }; // 4行(Tetris)用短停頓後重擊營造爽感
+const TT_CLEAR_IMPACT   = { 1: 'LIGHT', 2: 'MEDIUM', 3: 'MEDIUM', 4: 'HEAVY' }; // Capacitor 原生
+const TT_CLEAR_VIBRATE  = { 1: 25, 2: 45, 3: 70, 4: [40, 30, 90] };             // navigator.vibrate 退回用
 function _ttVibrateForClear(n) {
-  _ttVibrate(TT_CLEAR_VIBRATE[n] || TT_CLEAR_VIBRATE[4]);
+  if (!_ttHapticsEnabled()) return;
+  const haptics = _ttNativeHaptics();
+  if (haptics) { haptics.impact({ style: TT_CLEAR_IMPACT[n] || TT_CLEAR_IMPACT[4] }); return; }
+  if (typeof navigator !== 'undefined' && navigator.vibrate) navigator.vibrate(TT_CLEAR_VIBRATE[n] || TT_CLEAR_VIBRATE[4]);
+}
+
+// 懲罰震動（底部鎖行／側邊直列鎖共用）：原生走 notification(Warning)，網頁版退回固定震動樣式
+function _ttVibratePenalty() {
+  if (!_ttHapticsEnabled()) return;
+  const haptics = _ttNativeHaptics();
+  if (haptics) { haptics.notification({ type: 'WARNING' }); return; }
+  if (typeof navigator !== 'undefined' && navigator.vibrate) navigator.vibrate([60, 40, 60]);
 }
 
 // 消行事件：基礎加分（Phase 3 會在此觸發單字快問）
