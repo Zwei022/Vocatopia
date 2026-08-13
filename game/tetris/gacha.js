@@ -74,11 +74,56 @@ function _gachaLoadPity() {
 
 function _gachaSavePity(pity) {
   localStorage.setItem('voca_gacha_pity_' + GACHA_POOL.id, JSON.stringify(pity));
+  _syncGachaPityToServer();
 }
 
 // 給 UI 顯示目前保底進度用（目前選取中的卡池）
 function getGachaPity() {
   return _gachaLoadPity();
+}
+
+// 保底進度跨裝置同步：本機 localStorage 仍是即時真相來源（抽卡當下不等網路），
+// 這裡只是背景把「所有卡池」目前的保底進度整包寫回 Supabase profiles.gacha_pity，
+// 失敗就算了，不影響已經完成的抽卡結果（比照 _syncCharsToServer 的做法）。
+function _syncGachaPityToServer() {
+  if (typeof currentUser === 'undefined' || !currentUser || typeof authClient === 'undefined') return;
+  const all = {};
+  Object.keys(GACHA_POOLS).forEach(poolId => {
+    try {
+      const p = JSON.parse(localStorage.getItem('voca_gacha_pity_' + poolId) || 'null');
+      if (p && typeof p.sinceLegendary === 'number' && typeof p.sinceMythicPlus === 'number') all[poolId] = p;
+    } catch { /* 跳過壞掉的本機資料 */ }
+  });
+  if (typeof currentProfile !== 'undefined' && currentProfile) currentProfile.gacha_pity = all;
+  authClient
+    .from('profiles')
+    .update({ gacha_pity: all })
+    .eq('id', currentUser.id)
+    .then(({ error }) => { if (error) console.warn('[_syncGachaPityToServer] 同步失敗：', error.message); });
+}
+
+// 登入時從伺服器還原保底進度：逐卡池取本機與伺服器「較大值」合併寫回本機
+// （保底次數只會單調上升、中獎才歸零，取較大值不會讓玩家的保底進度變差）。
+// 由 auth.js 的 _loadProfile() 呼叫。
+function restoreGachaPityFromServer(serverPity) {
+  if (!serverPity || typeof serverPity !== 'object') return;
+  let changed = false;
+  Object.keys(GACHA_POOLS).forEach(poolId => {
+    const sp = serverPity[poolId];
+    if (!sp || typeof sp.sinceLegendary !== 'number' || typeof sp.sinceMythicPlus !== 'number') return;
+    let lp;
+    try { lp = JSON.parse(localStorage.getItem('voca_gacha_pity_' + poolId) || 'null'); } catch { lp = null; }
+    if (!lp || typeof lp.sinceLegendary !== 'number') lp = { sinceLegendary: 0, sinceMythicPlus: 0 };
+    const merged = {
+      sinceLegendary: Math.max(lp.sinceLegendary, sp.sinceLegendary),
+      sinceMythicPlus: Math.max(lp.sinceMythicPlus, sp.sinceMythicPlus),
+    };
+    if (merged.sinceLegendary !== lp.sinceLegendary || merged.sinceMythicPlus !== lp.sinceMythicPlus) {
+      localStorage.setItem('voca_gacha_pity_' + poolId, JSON.stringify(merged));
+      changed = true;
+    }
+  });
+  if (changed && typeof currentProfile !== 'undefined' && currentProfile) _syncGachaPityToServer();
 }
 
 function _gachaEntryRarity(entry) {

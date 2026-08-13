@@ -350,8 +350,17 @@ function _ttGravityStep() {
   ttRender();
 }
 
+// 消行震動回饋：力道隨消行數遞增（1~4行），iOS WebView 不支援 Vibration API 會靜默無效
+// ponytail: 用 navigator.vibrate（跟站內其他震動回饋同一套），沒有接 Capacitor Haptics 原生震動
+const TT_CLEAR_VIBRATE = { 1: 25, 2: 45, 3: 70, 4: [40, 30, 90] }; // 4行(Tetris)用短停頓後重擊營造爽感
+function _ttVibrateForClear(n) {
+  if (typeof navigator === 'undefined' || !navigator.vibrate) return;
+  navigator.vibrate(TT_CLEAR_VIBRATE[n] || TT_CLEAR_VIBRATE[4]);
+}
+
 // 消行事件：基礎加分（Phase 3 會在此觸發單字快問）
 function ttOnLineClear(n) {
+  _ttVibrateForClear(n);
   ttGame.lines += n;
   let score = TT_LINE_SCORE[n] || n * 100;
   // foiegras（香煎鵝肝）被動：每消一行額外 +bonusPct% 分數加成，3★質變：連續兩次操作都有消行時本次加成翻倍

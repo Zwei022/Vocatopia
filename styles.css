@@ -1991,8 +1991,10 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 
 /* ── 角色收藏（皇室戰爭風卡片牆） ── */
 .coll-head{padding:max(20px,env(safe-area-inset-top)) 20px 12px;flex-shrink:0}
+.coll-head-row{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
 .coll-title{font-family:var(--font-display);font-weight:900;font-size:22px;color:var(--ink)}
 .coll-sub{font-family:'Nunito',sans-serif;font-size:12px;color:var(--ink2);margin-top:4px}
+.coll-dew-chip{flex-shrink:0;background:var(--card2);border:1.5px solid var(--line2);border-radius:20px;padding:5px 12px;font-size:13px;font-weight:800;color:var(--ink);font-family:'Nunito',sans-serif;display:flex;align-items:center;gap:4px;white-space:nowrap}
 .coll-grid{flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:4px 20px 24px;align-content:start}
 .coll-grid .coll-card{min-width:0}
 

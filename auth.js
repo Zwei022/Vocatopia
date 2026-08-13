@@ -95,6 +95,18 @@ async function _loadProfile() {
   if (currentProfile && typeof restoreAvatarFromServer === 'function') {
     restoreAvatarFromServer(currentProfile.avatar_id);
   }
+  // 抽卡保底進度跨裝置同步：換裝置登入時，用伺服器存的保底次數補回本機。
+  if (currentProfile && typeof restoreGachaPityFromServer === 'function') {
+    restoreGachaPityFromServer(currentProfile.gacha_pity);
+  }
+  // 文法進度跨裝置同步：換裝置登入時，用伺服器存的小節星等補回本機。
+  if (currentProfile && typeof restoreGrammarProgressFromServer === 'function') {
+    restoreGrammarProgressFromServer(currentProfile.grammar_progress);
+  }
+  // 單字卡熟悉度/收藏跨裝置同步：換裝置登入時，跟本機取聯集合併補回。
+  if (currentProfile && typeof restoreFcMarksFromServer === 'function') {
+    restoreFcMarksFromServer(currentProfile.fc_marks);
+  }
 
   // 俄羅斯方塊最高分跨裝置同步：換裝置/清過本機資料時，避免遊戲結束彈窗
   // 顯示過時的本機快取分數、誤判成新紀錄（詳見 game/tetris/characters.js）。

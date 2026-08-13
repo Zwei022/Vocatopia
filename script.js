@@ -2207,6 +2207,10 @@ function _gxEsc(s) {
 function _gxPassageHtml(t) {
   return String(t == null ? '' : t).split(/\n\n+/).map(p => '<p>' + wrapWordsHtml(p) + '</p>').join('');
 }
+// 交卷前的純文字版（不可點字查詢），交卷後 gsatSubmit() 會用 _gxPassageHtml() 升級成可點版本
+function _gxPassagePlainHtml(t) {
+  return String(t == null ? '' : t).split(/\n\n+/).map(p => '<p>' + _gxEsc(p) + '</p>').join('');
+}
 function _gxPlaceholder(year, exam) {
   return `
     <div class="gsat-placeholder">
@@ -2317,6 +2321,7 @@ function _normalizeGsatData(data) {
 function _renderGsatExam(data, bodyEl, idprefix) {
   const qmap = {};
   let total = 0;
+  const passageTexts = []; // 依渲染順序收集原始文章文字，交卷後 gsatSubmit() 用來升級 .gx-passage 為可點字版本
   // 計分列：固定於捲動區「外」，避免蓋住題目圖片
   const barHTML = `
     <div class="gsat-scorebar" id="gxBar">
@@ -2352,7 +2357,8 @@ function _renderGsatExam(data, bodyEl, idprefix) {
       sec.passages.forEach(p => {
         const cat = p.passageType === 'cloze' ? 'cloze' : 'reading';
         const pimg = p.image ? `<img class="gx-img gx-pimg" src="${p.image}" alt="" onload="splitIfTall(this)">` : '';
-        const ptxt = p.passage ? `<div class="gx-passage gx-passage-zoom" onclick="openTxtLightbox(this,'${_gxEsc(p.title)}')">${_gxPassageHtml(p.passage)}</div>` : '';
+        const ptxt = p.passage ? `<div class="gx-passage gx-passage-zoom" onclick="openTxtLightbox(this,'${_gxEsc(p.title)}')">${_gxPassagePlainHtml(p.passage)}</div>` : '';
+        if (p.passage) passageTexts.push(p.passage);
         const cap  = p.caption ? `<div class="gx-cap">${_gxEsc(p.caption)}</div>` : '';
         let qhtml = '';
         p.questions.forEach(q => {
@@ -2392,7 +2398,7 @@ function _renderGsatExam(data, bodyEl, idprefix) {
   gsatExam = {
     idprefix, qmap, total, answers: {}, submitted: false,
     remain: (data.durationMin || 60) * 60, timerId: null, bodyEl,
-    countdownTimer: null, seqPlaying: false, seqIndex: -1,
+    countdownTimer: null, seqPlaying: false, seqIndex: -1, passageTexts,
   };
   _gsatRenderTimer();
   _gsatUpdateProgress();
@@ -2442,6 +2448,12 @@ function gsatSubmit(auto) {
   if (typeof _questBumpGsat === 'function') _questBumpGsat();   // #14 支線任務：歷屆會考題庫完成計數
   clearInterval(gsatExam.timerId);
   _gsatStopAudio();   // 交卷即停止連續播放與所有音檔
+
+  // 交卷後文章也升級成可點字查詢（跟選項一致，之前這裡漏了門檻）
+  const passageEls = gsatExam.bodyEl.querySelectorAll('.gx-passage');
+  (gsatExam.passageTexts || []).forEach((text, i) => {
+    if (passageEls[i]) passageEls[i].innerHTML = _gxPassageHtml(text);
+  });
 
   let correct = 0;
   Object.keys(gsatExam.qmap).forEach(qn => {
@@ -3621,7 +3633,8 @@ function _renderGroupQuestion(q) {
 
   const items     = _groupItems(q);
   const titleHtml = q.title   ? `<div class="quiz-q-title">${escHtml(q.title)}</div>` : '';
-  const passageHtml = q.passage ? `<div class="quiz-passage">${wrapWordsHtml(q.passage)}</div>` : '';
+  // 送出答案前文章不可點字查詢（跟選項一致），submitGroup() 揭曉後才升級成 wrapWordsHtml
+  const passageHtml = q.passage ? `<div class="quiz-passage" id="quizPassage">${escHtml(q.passage)}</div>` : '';
   const intro = q.blanks ? `<div class="quiz-q-text">請依短文選出每一格最適合的答案</div>` : '';
   document.getElementById('quizQ').innerHTML = titleHtml + passageHtml + intro;
 
@@ -3692,6 +3705,9 @@ function submitGroup() {
     });
 
     document.getElementById('quizOpts').classList.add('revealed');  // 送出後顯示選項中譯
+    // 送出後文章也升級成可點字查詢（跟選項一致，之前這裡漏了門檻）
+    const passageEl = document.getElementById('quizPassage');
+    if (passageEl && q.passage) passageEl.innerHTML = wrapWordsHtml(q.passage);
 
     const total    = items.length;
     const allRight = correct === total;
@@ -4850,6 +4866,64 @@ function _fcLoadMarks() {
 function _fcSaveMarks() {
   localStorage.setItem(_fcMarksKey('learned'), JSON.stringify([...fcMarked]));
   localStorage.setItem(_fcMarksKey('fav'), JSON.stringify([...fcFavorites]));
+  _syncFcMarksToServer();
+}
+
+// 單字卡熟悉度/收藏跨裝置同步：翻卡標記很頻繁，debounce 800ms 避免每點一次就打一次 API，
+// 本機 localStorage 仍是即時真相來源。整包掃描所有卡組的 voca_fc_learned_*/voca_fc_fav_*
+// 寫回 Supabase profiles.fc_marks（格式 {deckId:{learned:[...],fav:[...]}}）。
+let _fcSyncTimer = null;
+function _syncFcMarksToServer() {
+  if (typeof currentUser === 'undefined' || !currentUser || typeof authClient === 'undefined') return;
+  clearTimeout(_fcSyncTimer);
+  _fcSyncTimer = setTimeout(() => {
+    const all = {};
+    try {
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (!k) continue;
+        const mLearned = k.match(/^voca_fc_learned_(.+)$/);
+        const mFav = k.match(/^voca_fc_fav_(.+)$/);
+        const deckId = (mLearned && mLearned[1]) || (mFav && mFav[1]);
+        if (!deckId) continue;
+        if (!all[deckId]) {
+          all[deckId] = {
+            learned: JSON.parse(localStorage.getItem('voca_fc_learned_' + deckId) || '[]'),
+            fav: JSON.parse(localStorage.getItem('voca_fc_fav_' + deckId) || '[]'),
+          };
+        }
+      }
+    } catch { /* ignore */ }
+    if (currentProfile) currentProfile.fc_marks = all;
+    authClient
+      .from('profiles')
+      .update({ fc_marks: all })
+      .eq('id', currentUser.id)
+      .then(({ error }) => { if (error) console.warn('[_syncFcMarksToServer] 同步失敗：', error.message); });
+  }, 800);
+}
+
+// 登入時從伺服器還原熟悉度/收藏：逐卡組跟本機取聯集合併（不會因為換裝置而遺失任一邊的標記）。
+// 由 auth.js 的 _loadProfile() 呼叫。
+function restoreFcMarksFromServer(serverMarks) {
+  if (!serverMarks || typeof serverMarks !== 'object') return;
+  let changed = false;
+  Object.keys(serverMarks).forEach(deckId => {
+    ['learned', 'fav'].forEach(kind => {
+      const serverIds = serverMarks[deckId]?.[kind];
+      if (!Array.isArray(serverIds) || !serverIds.length) return;
+      const key = `voca_fc_${kind}_${deckId}`;
+      let local;
+      try { local = JSON.parse(localStorage.getItem(key) || '[]'); } catch { local = []; }
+      const merged = Array.from(new Set([...local, ...serverIds]));
+      if (merged.length !== local.length) {
+        localStorage.setItem(key, JSON.stringify(merged));
+        changed = true;
+      }
+    });
+  });
+  // 不在這裡即時重載 fcMarked/fcFavorites：startFlashcard() 進卡組時一定會呼叫
+  // _fcLoadMarks() 重新讀 localStorage，屆時自然會讀到這裡合併後的最新結果。
 }
 
 function startFlashcard(deckId) {
@@ -8967,6 +9041,8 @@ function _acOnGacha(count)  { _acBump('gacha_count', count || 1); }
 function renderCharCollection() {
   const grid = document.getElementById('collGrid');
   if (!grid || typeof TETRIS_CHARACTERS === 'undefined') return;
+  const dewEl = document.getElementById('collDewCount');
+  if (dewEl && typeof getFlavorDew === 'function') dewEl.textContent = getFlavorDew().toLocaleString();
   const owned = getOwnedChars();
   const deployedId = getDeployedCharId();
 
@@ -9009,7 +9085,7 @@ function openCharDetail(id) {
         style="width:100%;padding:14px;border:none;border-radius:12px;font-family:var(--font-display);font-weight:900;font-size:16px;cursor:${isDeployed ? 'default' : 'pointer'};color:#fff;background:${isDeployed ? 'var(--ink3)' : 'var(--red)'};box-shadow:${isDeployed ? 'none' : '0 4px 0 var(--red2)'}">
         ${isDeployed ? '✓ 出戰中' : '出戰'}
       </button>`
-    : `<div style="background:rgba(122,92,67,.1);border:1.5px dashed var(--line2);border-radius:12px;padding:12px;text-align:center">
+    : `<div style="background:var(--card);border:2px solid var(--line);border-radius:12px;padding:12px;text-align:center">
         <div style="font-size:12px;font-weight:800;color:var(--ink3);margin-bottom:4px">🔒 如何獲得</div>
         <div style="font-size:13px;color:var(--ink2);line-height:1.5">${escHtml(ch.acquireHint || '尚未開放取得方式')}</div>
       </div>`;

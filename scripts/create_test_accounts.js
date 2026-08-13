@@ -7,7 +7,12 @@ const path = require('path');
 
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
 
-const ALL_CHARS = ['onigiri', 'waffle', 'canele', 'sushi', 'lobster'];
+// 需跟 game/tetris/characters.js 的 TETRIS_CHARACTERS 鍵值同步；新增角色時記得一併補進來
+const ALL_CHARS = [
+  'onigiri', 'dumpling', 'waffle', 'canele', 'sushi',
+  'lobster', 'uni', 'bluefin', 'mochi', 'millefeuille',
+  'foiegras', 'honore',
+];
 const PASSWORD = 'Test1234!';
 const COUNT = 10;
 const OUT_FILE = path.join(__dirname, '..', 'test_accounts.json');
@@ -78,7 +83,7 @@ async function createOne(index) {
         created_at: new Date().toISOString(),
         password_note: '10 組帳號共用同一組密碼',
         password: PASSWORD,
-        state: '角色全開（owned_chars 全部 5 種）、金幣 1,000,000、subscriptions.is_premium=true（全內容解鎖至 2099-12-31）',
+        state: `角色全開（owned_chars 全部 ${ALL_CHARS.length} 種）、金幣 1,000,000、subscriptions.is_premium=true（全內容解鎖至 2099-12-31）`,
         accounts: results,
       },
       null,

@@ -40,6 +40,36 @@ function _gmLoadProgress() {
 }
 function _gmSaveProgress(p) {
   localStorage.setItem(GM_PROGRESS_KEY, JSON.stringify(p));
+  _syncGrammarProgressToServer(p);
+}
+
+// 文法進度跨裝置同步：本機 localStorage 仍是即時真相來源，這裡背景把整包進度
+// 寫回 Supabase profiles.grammar_progress，失敗就算了（比照 _syncCharsToServer）。
+function _syncGrammarProgressToServer(p) {
+  if (typeof currentUser === 'undefined' || !currentUser || typeof authClient === 'undefined') return;
+  if (typeof currentProfile !== 'undefined' && currentProfile) currentProfile.grammar_progress = p;
+  authClient
+    .from('profiles')
+    .update({ grammar_progress: p })
+    .eq('id', currentUser.id)
+    .then(({ error }) => { if (error) console.warn('[_syncGrammarProgressToServer] 同步失敗：', error.message); });
+}
+
+// 登入時從伺服器還原文法進度：逐小節取本機與伺服器「較高星等」合併寫回本機
+// （星等只會因為測到更高分而上升，取較大值不會讓玩家進度變差）。由 auth.js 的 _loadProfile() 呼叫。
+function restoreGrammarProgressFromServer(serverProgress) {
+  if (!serverProgress || typeof serverProgress !== 'object') return;
+  const local = _gmLoadProgress();
+  let changed = false;
+  Object.keys(serverProgress).forEach(subId => {
+    const sStars = serverProgress[subId]?.stars || 0;
+    const lStars = local[subId]?.stars || 0;
+    if (sStars > lStars) { local[subId] = { ...serverProgress[subId] }; changed = true; }
+  });
+  if (changed) {
+    localStorage.setItem(GM_PROGRESS_KEY, JSON.stringify(local));
+    _syncGrammarProgressToServer(local);
+  }
 }
 function _gmSubStars(subId) {
   const p = _gmLoadProgress();
