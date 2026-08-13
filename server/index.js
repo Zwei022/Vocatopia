@@ -33,6 +33,14 @@ const STREAK_REMINDER_MESSAGES = [
   { title: '💪 堅持才有效果',     body: '你已經累積了好幾天，別讓今天成為例外' },
 ];
 
+// 手上還有保護道具（streak_freeze）時，即使今天忘了打卡也不會斷，文案語氣放軟一點；
+// 反之沒有道具可用時，語氣更急迫地強調「今天斷了就真的歸零」。
+const STREAK_URGENT_MESSAGES = [
+  { title: '⚠️ 保護道具已經用完了', body: '今天沒打卡的話連續紀錄會直接歸零，記得抽空完成！' },
+  { title: '🚨 連續紀錄真的要斷了', body: '手上沒有保護道具了，今天不打卡明天就要從 1 天重新開始' },
+  { title: '😨 最後機會', body: '沒有保護道具可以救了，趕快打開 App 完成今天的打卡' },
+];
+
 const WINBACK_MESSAGES = [
   { title: '好久不見 👋',       body: '你的單字們有點想你了，回來看看今天有什麼新內容吧！' },
   { title: '📖 好久沒打開了',   body: '會考準備不能斷，回來繼續累積實力吧！' },
@@ -949,18 +957,34 @@ cron.schedule('0 13 * * *', async () => {
     const todayTaipei = new Date(Date.now() + 8 * 60 * 60 * 1000).toISOString().split('T')[0];
     const { data: rows, error } = await supabase
       .from('profiles')
-      .select('id, streak, push_prefs')
+      .select('id, streak, streak_freeze, push_prefs')
       .or(`last_checkin.is.null,last_checkin.lt.${todayTaipei}`);
     if (error) throw error;
-    const targets = (rows || []).filter(r => _pushAllowed(r.push_prefs, 'streak')).map(r => r.id);
+    const targets = (rows || []).filter(r => _pushAllowed(r.push_prefs, 'streak'));
     if (!targets.length) { console.log('[Cron] 打卡提醒：今天沒有符合條件的使用者'); return; }
-    const msg = _pickRandom(STREAK_REMINDER_MESSAGES);
-    const result = await sendPushToUsers(supabase, targets, {
-      title: msg.title,
-      body: msg.body,
-      data: { type: 'streak_reminder' },
-    });
-    console.log(`[Cron] 打卡提醒完成，對象 ${targets.length} 人，成功送達 ${result.sent}`);
+    // 沒有保護道具的人用更急迫的文案分開發送，兩批各自隨機挑一句（同一批內文案一致）
+    const noFreeze = targets.filter(r => !r.streak_freeze).map(r => r.id);
+    const hasFreeze = targets.filter(r => r.streak_freeze > 0).map(r => r.id);
+    let sent = 0;
+    if (noFreeze.length) {
+      const msg = _pickRandom(STREAK_URGENT_MESSAGES);
+      const result = await sendPushToUsers(supabase, noFreeze, {
+        title: msg.title,
+        body: msg.body,
+        data: { type: 'streak_reminder_urgent' },
+      });
+      sent += result.sent;
+    }
+    if (hasFreeze.length) {
+      const msg = _pickRandom(STREAK_REMINDER_MESSAGES);
+      const result = await sendPushToUsers(supabase, hasFreeze, {
+        title: msg.title,
+        body: msg.body,
+        data: { type: 'streak_reminder' },
+      });
+      sent += result.sent;
+    }
+    console.log(`[Cron] 打卡提醒完成，對象 ${targets.length} 人，成功送達 ${sent}`);
   } catch (err) {
     console.error('[Cron] 打卡提醒失敗：', err.message);
   }

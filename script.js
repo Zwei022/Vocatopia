@@ -1020,6 +1020,10 @@ async function refreshSubscriptionStatus() {
     if (!res.ok) return;
     const status = await res.json();
     window.currentSubscription = status;
+    // 首次訂閱贈送角色「焗烤龍蝦」（addOwnedChar 已擁有時回傳 false，不會重複發放）
+    if (status.is_premium && typeof addOwnedChar === 'function' && addOwnedChar('lobster')) {
+      showToast('🦞 感謝訂閱 Vocatopia！獲得限定角色「焗烤龍蝦」！', 4000);
+    }
     // 文法教學資料含 locked 標記，訂閱狀態變化後重新抓一次讓畫面同步
     if (typeof _gmLoadData === 'function') _gmLoadData();
     // #5(b) 訂閱狀態（非同步）回來後，若正在每日練習頁，刷新無限題庫入口鎖定狀態
@@ -1461,6 +1465,10 @@ async function _applyArenaOutcome(myOutcome) {
     _updateXpDisplay();
     const goldEl = document.getElementById('hGold');
     if (goldEl) goldEl.textContent = (currentProfile.gold || 0).toLocaleString();
+    // 競技場累計獲勝 20 次解鎖角色「花生麻糬」
+    if (currentProfile.wins >= 20 && typeof addOwnedChar === 'function' && addOwnedChar('mochi')) {
+      showToast('🍡 恭喜競技場累計獲勝滿 20 次！獲得角色「花生麻糬」！', 4000);
+    }
   }
   if (rewardEl) {
     const eloClass = elo > 0 ? 'elo-up' : elo < 0 ? 'elo-down' : '';
@@ -1799,6 +1807,7 @@ async function _dailyCheckin() {
   if (currentProfile) {
     currentProfile.streak = res.streak;       // 更新本地連續天數（個人檔案會顯示）
     currentProfile.last_checkin = res.today;  // 供簽到月曆判斷今天是否已領取
+    if (typeof res.streak_freeze === 'number') currentProfile.streak_freeze = res.streak_freeze;
   }
   if (res.changed && typeof res.gold === 'number' && currentProfile) {
     // 簽到獎勵金幣已由 daily_checkin RPC 原子入帳，這裡只同步權威值，不再呼叫 addGold（避免重複入帳）
@@ -1806,7 +1815,11 @@ async function _dailyCheckin() {
     const el = document.getElementById('hGold');
     if (el) el.textContent = res.gold.toLocaleString();
   }
-  if (res.changed && res.streak >= 2) _showStreakCelebration(res.streak, res.reward_amount);
+  if (res.freeze_used) {
+    showToast(`🛡️ 保護道具幫你保住了連續紀錄！剩下 ${res.streak_freeze} 個`);
+  } else if (res.changed && res.streak >= 2) {
+    _showStreakCelebration(res.streak, res.reward_amount);
+  }
 }
 
 function _showStreakCelebration(streak, rewardAmount) {
@@ -5950,7 +5963,7 @@ function showProfile() {
         </div>
         <div style="background:rgba(122,92,67,.08);border-radius:10px;padding:10px;text-align:center">
           <div style="font-size:18px;font-weight:900;color:#ff7043">${currentProfile.streak||0}</div>
-          <div style="font-size:11px;color:var(--gray)">🔥 連續天數</div>
+          <div style="font-size:11px;color:var(--gray)">🔥 連續天數${currentProfile.streak_freeze ? ` <span style="color:#4fc3f7">🛡️×${currentProfile.streak_freeze}</span>` : ''}</div>
         </div>
         <div style="background:rgba(122,92,67,.08);border-radius:10px;padding:10px;text-align:center">
           <div style="font-size:18px;font-weight:900;color:var(--white)">${mastered}<span style="font-size:11px;font-weight:400;color:var(--gray)">/${total}</span></div>
