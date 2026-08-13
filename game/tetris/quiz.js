@@ -328,9 +328,11 @@ async function _ttTriggerReadingQuiz() {
         if (_ttStreakShieldConsume()) {
           showToast('🍡 Q彈護體發動！這次懲罰被彈開');
         } else {
-          ttGame.engine.lockSideWalls();
+          // 3★質變（honore）：側牆鎖定行數減半
+          const lockRows = ttGame.passives?.sideLockRows || undefined;
+          ttGame.engine.lockSideWalls(lockRows);
           showTtFloat('左右封鎖！填滿整排解鎖', false);
-          showToast('📖 閱讀理解答錯，左右兩側各鎖底部 6 格，填滿一整排即可解鎖該行');
+          showToast(`📖 閱讀理解答錯，左右兩側各鎖底部 ${lockRows || 6} 格，填滿一整排即可解鎖該行`);
         }
         _ttStreakShieldTrack(false);
       }
@@ -544,11 +546,17 @@ function _ttSkillQuizButtonHtml() {
     </button>`;
 }
 
-// ── 可麗露：選擇下一個方塊 ──
-function ttOpenPiecePicker() {
+// ── 可麗露：選擇下一個方塊（2★起：先選下一顆，再選下下顆，兩步驟） ──
+function ttOpenPiecePicker(step = 1) {
   if (!ttGame || !ttGame.engine) return;
   const el = document.getElementById('ttPiecePicker');
   if (!el) return;
+  ttGame._piecePickStep = step;
+  const twoStep = (ttGame.skill.previewCount || 1) >= 2;
+  const title = !twoStep ? '🍮 選擇下一個方塊'
+    : step === 1 ? '🍮 選擇下一個方塊（1/2）' : '🍮 選擇下下一個方塊（2/2）';
+  // 第二步驟強制選完才能跳出，不給關閉按鈕（避免選了第一顆又反悔取消，變成沒收技能次數就白改到 nextType）
+  const closeBtn = (twoStep && step === 2) ? '' : '<button class="ttpp-close" onclick="ttClosePiecePicker()">✕</button>';
   const tiles = TT_TYPES.map(type => {
     const def = TT_PIECES[type];
     const rows = def.matrix.length, cols = def.matrix[0].length;
@@ -563,8 +571,8 @@ function ttOpenPiecePicker() {
   el.innerHTML = `
     <div class="ttpp-card">
       <div class="ttpp-head">
-        <span class="ttpp-title">🍮 選擇下一個方塊</span>
-        <button class="ttpp-close" onclick="ttClosePiecePicker()">✕</button>
+        <span class="ttpp-title">${title}</span>
+        ${closeBtn}
       </div>
       <div class="ttpp-tiles">${tiles}</div>
     </div>`;
@@ -578,15 +586,25 @@ function ttClosePiecePicker() {
 
 function ttChoosePiece(type) {
   if (!ttGame || !ttGame.skillChar) return;
-  ttGame.engine.setNextType(type);
+  const step = ttGame._piecePickStep || 1;
+  const twoStep = (ttGame.skill.previewCount || 1) >= 2;
+  if (step === 1) ttGame.engine.setNextType(type);
+  else ttGame.engine.setQueuedType(type);
+  if (twoStep && step === 1) {
+    // 第一顆選完先不消耗技能次數/封印，緊接著跳出第二步選下下顆
+    ttClosePiecePicker();
+    ttOpenPiecePicker(2);
+    return;
+  }
   _ttConsumeSealedUse();
   ttClosePiecePicker();
   _ttRenderNext();
   _ttUpdateSkillBtn();
   if (typeof SFX !== 'undefined') SFX.skillCast();
+  const what = twoStep ? '接下來兩個方塊' : '下一個方塊';
   showToast(ttGame.skillSealed
-    ? `${ttGame.skill.icon} 已指定下一個方塊，技能封印中`
-    : `${ttGame.skill.icon} 已指定下一個方塊，還可再連續施放 ${ttGame.skillUsesLeft} 次`);
+    ? `${ttGame.skill.icon} 已指定${what}，技能封印中`
+    : `${ttGame.skill.icon} 已指定${what}，還可再連續施放 ${ttGame.skillUsesLeft} 次`);
 }
 
 // ── 壽司：下一個方塊變成壽司炸彈（強制為單格方塊，鎖定時炸開 3×3 範圍） ──
@@ -608,6 +626,8 @@ function _ttCastBombPiece() {
 function ttOnBombExplode(bombedCount) {
   const gained = 400;
   _ttAddScore(gained);
+  // 3★質變：炸彈落地時，額外讓消行單字題連勝 +N
+  if (ttGame.passives?.streakBonusOnTrigger) ttGame.wordStreak = (ttGame.wordStreak || 0) + ttGame.passives.streakBonusOnTrigger;
   showTtFloat(`💥 炸開 ${bombedCount} 格！+${gained}`, true);
 }
 
@@ -616,6 +636,8 @@ function _ttCastClearBottom() {
   if (!ttGame || !ttGame.engine) return;
   const rows = ttGame.skill.clearRows || 2;
   ttGame.engine.clearBottomRows(rows);
+  // 3★質變：清空時額外讓連勝 +N
+  if (ttGame.passives?.streakBonusOnTrigger) ttGame.wordStreak = (ttGame.wordStreak || 0) + ttGame.passives.streakBonusOnTrigger;
   // 5★覺醒被動：本局開局自動附贈 1 次免費施放（不消耗封印狀態）
   if (ttGame.passives?.freeFirstCast && !ttGame.firstCastDone) {
     ttGame.firstCastDone = true;

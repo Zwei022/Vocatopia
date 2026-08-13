@@ -151,7 +151,7 @@ const TETRIS_CHARACTERS = {
     growth: [
       { star: 1, desc: '解封門檻 2 → 1 題', overrides: { unsealStreak: 1 } },
       { star: 2, desc: '固定分數 400 → 550', overrides: { fixedScore: 550 } },
-      { star: 3, desc: '質變：炸彈落地時，額外讓消行單字題連勝 +1' },
+      { star: 3, desc: '質變：炸彈落地時，額外讓消行單字題連勝 +1', passive: { streakBonusOnTrigger: 1 } },
       { star: 4, desc: '固定分數 550 → 700', overrides: { fixedScore: 700 } },
       { star: 5, desc: '覺醒被動：每局第一次施放時，爆炸範圍自動擴大一階（3×3 → 5×5）', passive: { firstCastRadiusBoost: true } },
     ],
@@ -163,7 +163,7 @@ const TETRIS_CHARACTERS = {
     img: 'public/images/characters/lobster.webp',
     cardImg: 'public/images/characters/lobster.webp',
     rarity: 'legendary',
-    acquireHint: '商店常駐卡池抽卡取得（特獎，機率 1%，100抽保底必中傳奇）',
+    acquireHint: '首次訂閱贈送（限定角色，不進任何卡池）',
     desc: '宴席桌上的焗烤主角，龍蝦鉗一開一合，什麼樣的殘局到牠手上都能重新收拾。',
     skill: {
       type: 'clearBottom',
@@ -176,7 +176,7 @@ const TETRIS_CHARACTERS = {
     growth: [
       { star: 1, desc: '解封門檻 3 → 2 題', overrides: { unsealStreak: 2 } },
       { star: 2, desc: '解封門檻 2 → 1 題', overrides: { unsealStreak: 1 } },
-      { star: 3, desc: '質變：清空時額外讓連勝 +2' },
+      { star: 3, desc: '質變：清空時額外讓連勝 +2', passive: { streakBonusOnTrigger: 2 } },
       { star: 4, desc: '清空行數 2 → 3 行（引擎目前寫死 2 行，需擴充才會生效）', overrides: { clearRows: 3 } },
       { star: 5, desc: '覺醒被動：每局開局自動附贈 1 次免費施放機會（不消耗封印狀態）', passive: { freeFirstCast: true } },
     ],
@@ -203,7 +203,7 @@ const TETRIS_CHARACTERS = {
     growth: [
       { star: 1, desc: '清空行數 3 → 4 行', overrides: { clearRows: 4 } },
       { star: 2, desc: '每局可觸發次數 1 → 2 次', overrides: { usesPerGame: 2 } },
-      { star: 3, desc: '質變：觸發時額外讓連勝 +2' },
+      { star: 3, desc: '質變：觸發時額外讓連勝 +2', passive: { streakBonusOnTrigger: 2 } },
       { star: 4, desc: '觸發判定提前：board 堆疊到距離頂端還剩 3 行就會觸發，容錯空間更大', overrides: { triggerMarginRows: 3 } },
       { star: 5, desc: '覺醒被動：觸發後，本局剩餘時間分數獲取額外 +10%', passive: { postTriggerScoreBonusPct: 10 } },
     ],
@@ -335,7 +335,7 @@ const TETRIS_CHARACTERS = {
     growth: [
       { star: 1, desc: '答錯扣分 -30 → -20', overrides: { penaltyScore: 20 } },
       { star: 2, desc: '連勝對折 → 改為打七折（保留70%）', overrides: { streakRetainRatio: 0.7 } },
-      { star: 3, desc: '質變：閱讀理解關卡答錯的側牆鎖定行數變成只鎖一半' },
+      { star: 3, desc: '質變：閱讀理解關卡答錯的側牆鎖定行數變成只鎖一半', passive: { sideLockRows: 3 } },
       { star: 4, desc: '答錯扣分 -20 → -10', overrides: { penaltyScore: 10 } },
       { star: 5, desc: '覺醒被動：連勝永遠不會因答錯而降低（完全免疫連勝損失，僅分數仍會扣）', passive: { streakImmune: true } },
     ],

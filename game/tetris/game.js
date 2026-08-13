@@ -56,7 +56,10 @@ function tetrisStart(mode) {
 
   ov.innerHTML = `
     <div class="tt-topbar">
-      <button class="tt-back" onclick="tetrisClose()">← 離開</button>
+      <div class="tt-topbar-left">
+        <button class="tt-back" onclick="tetrisClose()">← 離開</button>
+        ${mode === 'solo' ? '<button class="tt-pause-btn" onclick="ttPauseGame()" aria-label="暫停">⏸</button>' : ''}
+      </div>
       <div class="tt-topbar-title">${mode === 'ranked' ? '積分模式' : '單機模式'}</div>
       <div class="tt-score-chip">分數 <b id="ttScore">0</b></div>
     </div>
@@ -111,6 +114,18 @@ function tetrisStart(mode) {
 
     <!-- 可麗露技能：選擇下一個方塊 -->
     <div class="tt-piece-picker" id="ttPiecePicker" style="display:none"></div>
+
+    <!-- 單機模式暫停選單 -->
+    <div class="tt-pause" id="ttPauseOverlay" style="display:none">
+      <div class="tt-pause-box">
+        <div class="tt-pause-icon">⏸</div>
+        <div class="tt-pause-title">遊戲暫停</div>
+        <div class="tt-pause-btns">
+          <button class="tt-pause-resume" onclick="ttResumeGame()">▶ 繼續</button>
+          <button class="tt-pause-exit" onclick="tetrisClose()">✕ 退出</button>
+        </div>
+      </div>
+    </div>
   `;
 
   ov.style.display = 'flex';
@@ -171,6 +186,22 @@ function _ttAddScore(n) {
   if (ttGame.score < 0) ttGame.score = 0;
   _ttUpdateRankedGravity();
   if (typeof _ttCheckReadingGate === 'function') _ttCheckReadingGate();
+}
+
+// 單機模式暫停：沿用 ttGame.paused（重力/操作/計時題都已讀這個旗標），跳出繼續／退出選單
+function ttPauseGame() {
+  if (!ttGame || ttGame.gameOver || ttGame.mode !== 'solo') return;
+  ttGame.paused = true;
+  const el = document.getElementById('ttPauseOverlay');
+  if (el) el.style.display = 'flex';
+  if (typeof SFX !== 'undefined') SFX.skillCast();
+}
+
+function ttResumeGame() {
+  if (!ttGame) return;
+  ttGame.paused = false;
+  const el = document.getElementById('ttPauseOverlay');
+  if (el) el.style.display = 'none';
 }
 
 async function tetrisClose() {
@@ -352,6 +383,8 @@ function _ttCheckAutoShield(ev) {
   ttGame.engine.clearBottomRows(ttGame.skill.clearRows || 3);
   ttGame.autoShieldUsed = used + 1;
   ttGame.autoShieldTriggeredBonus = true;
+  // 3★質變：觸發時額外讓消行單字題連勝 +N
+  if (ttGame.passives?.streakBonusOnTrigger) ttGame.wordStreak = (ttGame.wordStreak || 0) + ttGame.passives.streakBonusOnTrigger;
   if (typeof SFX !== 'undefined') SFX.clearBottom();
   if (typeof showTtFloat === 'function') showTtFloat('🍱 軍艦護盾發動！', true);
   if (typeof showToast === 'function') showToast('軍艦護盾自動觸發，清空底部');
@@ -481,6 +514,10 @@ function ttEndGame() {
   ttGame._submitPromise = ttSubmitScore(finalScore, mode);
   // #2 一場結束給經驗值（每日前 5 場、有防刷上限，兩種模式都給）
   if (typeof awardTetrisXp === 'function') awardTetrisXp(finalLines);
+  // 單局最高分達 15000 解鎖角色「香煎鵝肝」
+  if (finalScore >= 15000 && typeof addOwnedChar === 'function' && addOwnedChar('foiegras')) {
+    if (typeof showToast === 'function') showToast('🥩 恭喜單局突破 15000 分！獲得角色「香煎鵝肝」！', 4000);
+  }
 
   const ov = _ttOverlay();
   const panel = document.createElement('div');

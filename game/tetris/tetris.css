@@ -16,10 +16,16 @@
   padding: max(14px,env(safe-area-inset-top)) 16px 14px; background: var(--header);
   border-bottom: 2px solid var(--line); flex-shrink: 0;
 }
+.tt-topbar-left { display: flex; align-items: center; gap: 8px; }
 .tt-back {
   border: 2px solid var(--line); background: var(--card);
   color: var(--ink); font-weight: 700; font-size: 14px;
   padding: 6px 12px; border-radius: var(--r); cursor: pointer;
+}
+.tt-pause-btn {
+  border: 2px solid var(--line); background: var(--card);
+  color: var(--ink); font-size: 14px; line-height: 1;
+  padding: 6px 10px; border-radius: var(--r); cursor: pointer;
 }
 .tt-topbar-title { font-weight: 900; font-size: 16px; color: var(--ink); }
 .tt-score-chip {
@@ -219,6 +225,29 @@
   cursor: pointer; box-shadow: 0 4px 0 var(--red2);
 }
 .tt-go-back {
+  padding: 12px; background: none; border: 1.5px solid var(--line2); border-radius: 12px;
+  color: var(--ink2); font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 14px; cursor: pointer;
+}
+
+/* ── 單機模式暫停選單 ── */
+.tt-pause {
+  position: absolute; inset: 0; z-index: 30; background: rgba(75,56,42,.6);
+  display: flex; align-items: center; justify-content: center; padding: 24px;
+}
+.tt-pause-box {
+  background: var(--card); border: 2.5px solid var(--line); border-radius: 18px;
+  padding: 28px 24px; text-align: center; width: 100%; max-width: 300px;
+  box-shadow: 0 8px 40px rgba(75,56,42,.35);
+}
+.tt-pause-icon { font-size: 40px; }
+.tt-pause-title { font-family: var(--font-display); font-weight: 900; font-size: 20px; color: var(--ink); margin: 8px 0 20px; }
+.tt-pause-btns { display: flex; flex-direction: column; gap: 10px; }
+.tt-pause-resume {
+  padding: 14px; background: var(--red); border: none; border-radius: 12px;
+  color: #fff; font-family: var(--font-display); font-weight: 900; font-size: 16px;
+  cursor: pointer; box-shadow: 0 4px 0 var(--red2);
+}
+.tt-pause-exit {
   padding: 12px; background: none; border: 1.5px solid var(--line2); border-radius: 12px;
   color: var(--ink2); font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 14px; cursor: pointer;
 }

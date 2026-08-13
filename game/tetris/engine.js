@@ -60,6 +60,7 @@ function ttCreateEngine(cols = 8, rows = 16) {
   const bag = ttCreateBag();
   let active = null;       // { type, color, matrix, row, col, isBomb }
   let nextType = bag.next();
+  let queuedType = null; // 可麗露2★：指定「下下一個」方塊，spawn() 補位 nextType 時優先讀這裡
   let pendingBomb = false; // 壽司技能：下一次 spawn() 出來的方塊要標記為炸彈
   let pendingBombRadius = 1; // 壽司5★被動：第一次施放爆炸範圍擴大
   let pendingColumnClear = false; // 黑鮪魚技能：下一次 spawn() 出來的方塊要標記為魚雷（整欄清除）
@@ -104,13 +105,19 @@ function ttCreateEngine(cols = 8, rows = 16) {
       active.color = 'colclear';
       pendingColumnClear = false;
     }
-    nextType = bag.next();
+    if (queuedType) { nextType = queuedType; queuedType = null; }
+    else { nextType = bag.next(); }
     return !collides(active);
   }
 
   // 指定「下一個」方塊（可麗露/壽司技能用），直接覆蓋 7-bag 原本排定的結果
   function setNextType(type) {
     if (TT_PIECES[type]) nextType = type;
+  }
+
+  // 指定「下下一個」方塊（可麗露2★技能用），下次 spawn() 補位 nextType 時採用這個而非隨機抽袋
+  function setQueuedType(type) {
+    if (TT_PIECES[type]) queuedType = type;
   }
 
   // 標記下一次 spawn() 的方塊為壽司炸彈（壽司技能用），radius 預設 1（3×3）
@@ -269,8 +276,9 @@ function ttCreateEngine(cols = 8, rows = 16) {
   // 跟 addGarbageRow 的灰色 'g' 不同——'w' 沒有排進 clearLines() 的排除清單，
   // 所以哪一整排（含牆格）被填滿，那一排照常消除，牆格跟著一起消失（= 該行解鎖）；
   // 其他還沒填滿的行牆格則維持鎖住。
-  function lockSideWalls() {
-    for (let r = rows - TT_SIDE_LOCK_ROWS; r < rows; r++) {
+  function lockSideWalls(n) {
+    n = n || TT_SIDE_LOCK_ROWS;
+    for (let r = rows - n; r < rows; r++) {
       board[r][0] = 'w';
       board[r][cols - 1] = 'w';
     }
@@ -298,7 +306,7 @@ function ttCreateEngine(cols = 8, rows = 16) {
     get holdType() { return holdType; },
     get holdLocked() { return holdLocked; },
     spawn, move, rotate, tick, clearLines, addGarbageRow, lockSideWalls, collides, setNextType,
-    markNextAsBomb, markNextAsColumnClear, clearBottomRows, hold,
+    setQueuedType, markNextAsBomb, markNextAsColumnClear, clearBottomRows, hold,
     // 給渲染用：回傳「棋盤 + 當前落下方塊」合併後的畫面（不改動 board）
     render() {
       const view = board.map(row => [...row]);
