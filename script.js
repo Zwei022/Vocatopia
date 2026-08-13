@@ -2732,6 +2732,15 @@ function switchCuratedSub(sub) {
 function switchReadTab(tab) {
   readTab = tab;
 
+  // 切分頁若剛好有聽力測驗正在播放中途被蓋掉（沒走 closeQuiz/showQuizResult
+  // 那兩個正常退出路徑），一樣要停止播放並把整場 duck 的 BGM 放回來，
+  // 不然背景音樂會卡在停播狀態直到 10 分鐘保險逾時才恢復。
+  if (quizState && quizState.context === 'listening') {
+    _stopListening();
+    _bgmDuckEnd(quizState.wasBgmPlaying);
+    quizState.wasBgmPlaying = false;
+  }
+
   ['Deck', 'Grammar', 'Lessons', 'Curated'].forEach(t =>
     document.getElementById('rtab' + t).classList.toggle('active', tab === t.toLowerCase())
   );
@@ -3298,6 +3307,13 @@ function _startDailyQuiz(questions, context, opts = {}) {
 
   quizState = { questions: normalized, idx: 0, score: 0, context, unlimited: !!opts.unlimited };
 
+  // 聽力模式：整個測驗過程（進場～離場，含每題間切換）BGM 全程停播，
+  // 不是每題各自 duck 再恢復——避免題與題之間 BGM 又插播進來。
+  // maxMs 給大安全逾時，避免使用者離開頁面/切到背景等極端情況卡死暫停狀態。
+  if (context === 'listening') {
+    quizState.wasBgmPlaying = _bgmDuckStart(600000);
+  }
+
   // 隱藏整個每日練習容器與文章列表，避免上方殘留空白與重複的返回按鈕
   document.getElementById('artList').style.display = 'none';
   document.getElementById('dailyList').classList.remove('show');
@@ -3530,12 +3546,11 @@ async function _listenStart() {
   }).join('');
 
   // 播放兩遍，每個 await 後都檢查是否已被取消（答題/下一題/關閉）
-  let wasBgmPlaying = false;
+  // BGM 停播是整場測驗級別的（見 _startDailyQuiz），這裡不再逐題 duck/resume。
   try {
     const url = await _generateListeningAudio(q.dialogue);
     if (playId !== _listenPlayId) return;
     if (_listenAudio) { _listenAudio.pause(); _listenAudio = null; }
-    wasBgmPlaying = _bgmDuckStart();
     await _playAudioUrl(url);
     if (playId !== _listenPlayId) return;  // 第一遍結束後：已答題？直接停
     await new Promise(r => setTimeout(r, 700));
@@ -3546,8 +3561,6 @@ async function _listenStart() {
       console.warn('[listening] TTS 失敗，fallback:', err.message);
       _playFallback(q.dialogue);
     }
-  } finally {
-    _bgmDuckEnd(wasBgmPlaying);
   }
 }
 
@@ -3888,6 +3901,10 @@ function nextQuestion() {
 
 function showQuizResult() {
   _stopListening();
+  if (quizState.context === 'listening') {
+    _bgmDuckEnd(quizState.wasBgmPlaying);
+    quizState.wasBgmPlaying = false;
+  }
   const { score, questions } = quizState;
   const total = questions.length;
   const pct   = score / total;
@@ -3919,6 +3936,10 @@ function _restoreFromQuiz() {
 
 function closeQuiz() {
   _stopListening();
+  if (quizState.context === 'listening') {
+    _bgmDuckEnd(quizState.wasBgmPlaying);
+    quizState.wasBgmPlaying = false;
+  }
   document.getElementById('quizPanel').classList.remove('show');
   document.getElementById('quizPanel').classList.add('hidden');
   _restoreFromQuiz();
