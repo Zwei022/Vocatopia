@@ -268,6 +268,7 @@ function _ttTriggerTimedQuestion() {
           showToast('🍡 Q彈護體發動！這次懲罰被彈開');
         } else {
           const over = ttGame.engine.addGarbageRow();
+          if (typeof _ttVibrate === 'function') _ttVibrate([60, 40, 60]); // 底部鎖行懲罰震動
           showTtFloat('答錯！鎖一行', false);
           if (over) { ttRender(); ttEndGame(); return; }
         }
@@ -333,6 +334,7 @@ async function _ttTriggerReadingQuiz() {
           // 3★質變（honore）：側牆鎖定行數減半
           const lockRows = ttGame.passives?.sideLockRows || undefined;
           ttGame.engine.lockSideWalls(lockRows);
+          if (typeof _ttVibrate === 'function') _ttVibrate([60, 40, 60]); // 側邊直列鎖懲罰震動
           showTtFloat('左右封鎖！填滿整排解鎖', false);
           showToast(`📖 閱讀理解答錯，左右兩側各鎖底部 ${lockRows || 6} 格，填滿一整排即可解鎖該行`);
         }

@@ -350,12 +350,22 @@ function _ttGravityStep() {
   ttRender();
 }
 
-// 消行震動回饋：力道隨消行數遞增（1~4行），iOS WebView 不支援 Vibration API 會靜默無效
+// 震動回饋：iOS WebView 不支援 Vibration API 會靜默無效，Android 才有感覺。
 // ponytail: 用 navigator.vibrate（跟站內其他震動回饋同一套），沒有接 Capacitor Haptics 原生震動
+// 開關跟音效共用同一份 voca_settings（設定頁「震動」），_loadSettingsData() 是 script.js 的全域函式，
+// 同一頁面共用 window scope，跟其他跨檔案呼叫（showToast/SFX）同一套模式。
+function _ttHapticsEnabled() {
+  return typeof _loadSettingsData === 'function' ? _loadSettingsData().haptics !== false : true;
+}
+function _ttVibrate(pattern) {
+  if (typeof navigator === 'undefined' || !navigator.vibrate || !_ttHapticsEnabled()) return;
+  navigator.vibrate(pattern);
+}
+
+// 消行震動回饋：力道隨消行數遞增（1~4行）
 const TT_CLEAR_VIBRATE = { 1: 25, 2: 45, 3: 70, 4: [40, 30, 90] }; // 4行(Tetris)用短停頓後重擊營造爽感
 function _ttVibrateForClear(n) {
-  if (typeof navigator === 'undefined' || !navigator.vibrate) return;
-  navigator.vibrate(TT_CLEAR_VIBRATE[n] || TT_CLEAR_VIBRATE[4]);
+  _ttVibrate(TT_CLEAR_VIBRATE[n] || TT_CLEAR_VIBRATE[4]);
 }
 
 // 消行事件：基礎加分（Phase 3 會在此觸發單字快問）

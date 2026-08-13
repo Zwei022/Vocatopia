@@ -969,6 +969,10 @@
           <input type="range" id="bgmVolume" min="0" max="100" value="35" oninput="saveSoundSettings()">
           <span class="sett-vol-num" id="bgmVolumeNum">35</span>
         </div>
+        <label class="sett-toggle-row">
+          <span>震動回饋</span>
+          <input type="checkbox" id="hapticsToggle" onchange="saveSoundSettings()">
+        </label>
       </div>
 
       <div class="sett-section">

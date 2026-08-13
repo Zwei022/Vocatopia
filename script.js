@@ -6503,8 +6503,10 @@ function showSettings() {
   // 還原 toggles
   const sfx = document.getElementById('sfxToggle');
   const bgm = document.getElementById('bgmToggle');
+  const haptics = document.getElementById('hapticsToggle');
   if (sfx) sfx.checked = s.sfx !== false;
   if (bgm) bgm.checked = s.bgm !== false;
+  if (haptics) haptics.checked = s.haptics !== false;
 
   // 還原音量滑桿
   const sfxVol = s.sfxVolume ?? 100;
@@ -6595,9 +6597,10 @@ function setDailyGoal(n, btn) {
 function saveSoundSettings() {
   const sfx = document.getElementById('sfxToggle')?.checked ?? true;
   const bgm = document.getElementById('bgmToggle')?.checked ?? false;
+  const haptics = document.getElementById('hapticsToggle')?.checked ?? true;
   const sfxVolume = parseInt(document.getElementById('sfxVolume')?.value ?? '100', 10);
   const bgmVolume = parseInt(document.getElementById('bgmVolume')?.value ?? '35', 10);
-  _saveSettingsData({ sfx, bgm, sfxVolume, bgmVolume });
+  _saveSettingsData({ sfx, bgm, haptics, sfxVolume, bgmVolume });
 
   document.getElementById('sfxVolumeNum').textContent = sfxVolume;
   document.getElementById('bgmVolumeNum').textContent = bgmVolume;
