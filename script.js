@@ -4522,6 +4522,7 @@ function speak(w, el) {
           speechSynthesis.speak(u);
         } else {
           _spkClearPlaying(el);
+          showToast('❌ 此裝置不支援語音朗讀');
         }
       }
     })
@@ -4572,6 +4573,7 @@ function speakSentence(kind, key, fallbackText, el) {
         speechSynthesis.speak(u);
       } else {
         _spkClearPlaying(el);
+        showToast('❌ 此裝置不支援語音朗讀');
       }
     });
 }
@@ -7579,6 +7581,24 @@ async function submitAddWord() {
     return;
   }
 
+  // ===== 單字數量限制：每個卡組最多 2500 個 =====
+  // 這裡只是即時 UX 提示，避免白跑一趟網路；真正的上限保證在後端
+  // POST /api/words/add 做（見 server/routes/words.js），前端判斷可被繞過。
+  {
+    const isCustomDeck = !['cap2000', 'weak', 'daily'].includes(addWordState.currentDeckId);
+    const deck = customDecks.find(d => d.id === addWordState.currentDeckId) ||
+                 BUILTIN_DECKS.find(d => d.id === addWordState.currentDeckId);
+    if (deck) {
+      const currentCount = isCustomDeck
+        ? (deck.wordIds ? deck.wordIds.length : 0)
+        : (deck.getWords ? deck.getWords().length : 0);
+      if (currentCount >= 2500) {
+        showToast('❌ 此卡組已達上限 2500 個單字');
+        return;
+      }
+    }
+  }
+
   console.log('[submitAddWord] 提交資料:', {
     deck_id: addWordState.currentDeckId,
     ...wordData
@@ -7602,25 +7622,7 @@ async function submitAddWord() {
     console.log('[submitAddWord] 後端回應:', result);
 
     if (result.success) {
-      // ===== 單字數量限制：每個卡組最多 2500 個 =====
       const isCustomDeck = !['cap2000', 'weak', 'daily'].includes(addWordState.currentDeckId);
-      const deck = customDecks.find(d => d.id === addWordState.currentDeckId) ||
-                   BUILTIN_DECKS.find(d => d.id === addWordState.currentDeckId);
-
-      if (deck) {
-        let currentCount = 0;
-        if (isCustomDeck) {
-          currentCount = deck.wordIds ? deck.wordIds.length : 0;
-        } else {
-          // 內置卡組
-          currentCount = deck.getWords ? deck.getWords().length : 0;
-        }
-
-        if (currentCount >= 2500) {
-          showToast('❌ 此卡組已達上限 2500 個單字');
-          return;
-        }
-      }
 
       showToast('✓ 單字已加入卡組');
 

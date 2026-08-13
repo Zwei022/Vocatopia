@@ -168,14 +168,27 @@ router.post('/add', async (req, res) => {
   if (!word || !word.trim()) return res.status(400).json({ success: false, error: 'word 為必填' });
 
   const key = word.trim();
+  const DECK_WORD_LIMIT = 2500;
 
   // 已存在 → 直接回傳現有 id（快速模式查詢結果必然已在表中）
+  // 每卡組單字數上限：權威判斷放在後端，前端的即時檢查只是 UX 優化，不可只靠前端擋
   const isDefaultDeck = deck_id === 'cap2000' || /^unit(?:[1-9]|[12][0-9]|3[0-2])$/.test(deck_id);
   if (!isDefaultDeck) {
     const { data: deck, error: deckErr } = await supabase
-      .from('custom_decks').select('id').eq('id', deck_id).eq('user_id', userId).maybeSingle();
+      .from('custom_decks').select('id, word_ids').eq('id', deck_id).eq('user_id', userId).maybeSingle();
     if (deckErr) return res.status(500).json({ success: false, error: deckErr.message });
     if (!deck) return res.status(403).json({ success: false, error: '無權限編輯此卡組' });
+    if ((deck.word_ids || []).length >= DECK_WORD_LIMIT) {
+      return res.status(403).json({ success: false, error: `此卡組已達上限 ${DECK_WORD_LIMIT} 個單字` });
+    }
+  } else {
+    const { count, error: cntErr } = await supabase
+      .from('user_default_deck_additions').select('*', { count: 'exact', head: true })
+      .eq('user_id', userId).eq('deck_id', deck_id);
+    if (cntErr) return res.status(500).json({ success: false, error: cntErr.message });
+    if ((count || 0) >= DECK_WORD_LIMIT) {
+      return res.status(403).json({ success: false, error: `此卡組已達上限 ${DECK_WORD_LIMIT} 個單字` });
+    }
   }
 
   const { data: existing, error: qErr } = await supabase

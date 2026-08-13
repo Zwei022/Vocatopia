@@ -5,7 +5,9 @@ Kokoro 只載入一次，後續每個字 1-2 秒內生成
 啟動方式：
   python scripts/tts_server.py
 
-Express /api/tts/ 會轉發到 http://localhost:5001/tts/:word
+⚠️ 2026-08：正式站 server/routes/tts.js 的 /api/tts 並未轉發到這支本機
+Kokoro server，是直接呼叫 Google Cloud TTS（本機磁碟/Supabase 快取 → GCP
+即時生成並寫回快取）。這支腳本目前是離線批次補音檔用的工具，不在線上請求鏈路上。
 """
 import sys, io, re
 from pathlib import Path
