@@ -951,8 +951,12 @@ async function startSubscriptionPurchase(planId) {
     // `product`，不是 `storeProduct`（舊版 SDK 用過的欄位名稱）。抓錯欄位會直接
     // 對 undefined 取 .identifier 丟出例外，且發生在 try/catch 外，會讓整個購買
     // 流程沒有任何提示地中斷（畫面上看起來像點了完全沒反應）。
+    // Android（Google Play Base Plan）回傳的 product.identifier 會是
+    // "vocatopia_monthly:monthly-base" 這種「商品ID:基本方案ID」格式，
+    // iOS 則單純是 "vocatopia_monthly"，用完全相等比對在 Android 上永遠比不中。
+    const wantedId = SUBSCRIPTION_PRODUCT_IDS[planId];
     pkg = offerings?.current?.availablePackages?.find(
-      p => p.product.identifier === SUBSCRIPTION_PRODUCT_IDS[planId]
+      p => p.product.identifier === wantedId || p.product.identifier.startsWith(wantedId + ':')
     );
   } catch (e) {
     console.error('[startSubscriptionPurchase] 解析 offerings 失敗：', e);
