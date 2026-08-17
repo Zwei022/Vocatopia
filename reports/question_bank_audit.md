@@ -1,10 +1,10 @@
 # Vocatopia 題庫逐項稽核報告
 
-產生時間：2026-08-07T07:12:03.171Z
+產生時間：2026-08-17T02:19:01.844Z
 
 ## 範圍與方法
 
-本次只檢查 `server/data/question_bank_*.json` 共 7 份檔案、1644 個作答單元；未檢查模擬試題與 words 翻譯，也未修改任何題庫。
+本次只檢查 `server/data/question_bank_*.json` 共 7 份檔案、1764 個作答單元；未檢查模擬試題與 words 翻譯，也未修改任何題庫。
 每個作答單元均檢查 schema、選項數、answer 索引、選項標籤、optionsZh 數量、詳解與答案字母一致性；另檢查題幹重複、選項重複、克漏字編號、答案分布、連續答案與英文標點空格。
 
 ## 最高優先結論
@@ -21,20 +21,20 @@
 |---|---:|---:|---:|---:|---:|---:|
 | question_bank_cloze.json | 81 | 341 | 96 (28.2%) | 91 (26.7%) | 75 (22%) | 79 (23.2%) |
 | question_bank_grammar.json | 312 | 312 | 74 (23.7%) | 86 (27.6%) | 75 (24%) | 77 (24.7%) |
-| question_bank_listening.json | 80 | 80 | 19 (23.8%) | 26 (32.5%) | 35 (43.8%) | 0 (0%) |
-| question_bank_phrase.json | 312 | 312 | 66 (21.2%) | 71 (22.8%) | 92 (29.5%) | 83 (26.6%) |
-| question_bank_reading.json | 92 | 275 | 74 (26.9%) | 60 (21.8%) | 69 (25.1%) | 72 (26.2%) |
+| question_bank_listening.json | 200 | 200 | 59 (29.5%) | 65 (32.5%) | 76 (38%) | 0 (0%) |
+| question_bank_phrase.json | 312 | 312 | 68 (21.8%) | 65 (20.8%) | 87 (27.9%) | 92 (29.5%) |
+| question_bank_reading.json | 92 | 275 | 73 (26.5%) | 57 (20.7%) | 68 (24.7%) | 77 (28%) |
 | question_bank_vocab.json | 12 | 12 | 6 (50%) | 1 (8.3%) | 2 (16.7%) | 3 (25%) |
-| question_bank_vocab_practice.json | 312 | 312 | 83 (26.6%) | 58 (18.6%) | 97 (31.1%) | 74 (23.7%) |
+| question_bank_vocab_practice.json | 312 | 312 | 80 (25.6%) | 77 (24.7%) | 80 (25.6%) | 75 (24%) |
 
 ## 發現摘要
 
 - Error：0
-- Warning：14
+- Warning：13
 
 ## 詳細發現
 
-- **WARNING · ANSWER_DISTRIBUTION** — `question_bank_listening.json` / `-` / `file`：C 答案占 43.8%，偏離理想值 33.3% 超過 10%
+- **WARNING · ANSWER_STREAK** — `question_bank_listening.json` / `-` / `file`：相同答案最長連續 13 題（建議少於 8 題）
 - **WARNING · CROSS_FILE_DUPLICATE** — `question_bank_vocab_practice.json` / `vocab_0` / `[0]`：題目與 question_bank_vocab.json / vocab_0 重複；若兩份題庫會同時抽題，使用者可能遇到重題
 - **WARNING · CROSS_FILE_DUPLICATE** — `question_bank_vocab_practice.json` / `vocab_1` / `[1]`：題目與 question_bank_vocab.json / vocab_1 重複；若兩份題庫會同時抽題，使用者可能遇到重題
 - **WARNING · CROSS_FILE_DUPLICATE** — `question_bank_vocab_practice.json` / `vocab_2` / `[2]`：題目與 question_bank_vocab.json / vocab_2 重複；若兩份題庫會同時抽題，使用者可能遇到重題
@@ -47,7 +47,6 @@
 - **WARNING · CROSS_FILE_DUPLICATE** — `question_bank_vocab_practice.json` / `vocab_9` / `[9]`：題目與 question_bank_vocab.json / vocab_9 重複；若兩份題庫會同時抽題，使用者可能遇到重題
 - **WARNING · CROSS_FILE_DUPLICATE** — `question_bank_vocab_practice.json` / `vocab_10` / `[10]`：題目與 question_bank_vocab.json / vocab_10 重複；若兩份題庫會同時抽題，使用者可能遇到重題
 - **WARNING · CROSS_FILE_DUPLICATE** — `question_bank_vocab_practice.json` / `vocab_11` / `[11]`：題目與 question_bank_vocab.json / vocab_11 重複；若兩份題庫會同時抽題，使用者可能遇到重題
-- **WARNING · ANSWER_STREAK** — `question_bank_vocab_practice.json` / `-` / `file`：相同答案最長連續 12 題（建議少於 8 題）
 
 ## 判讀限制
 

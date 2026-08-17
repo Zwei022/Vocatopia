@@ -39,3 +39,8 @@ ios_signing/
 public/audio/words/
 public/audio/sentences/
 cache/listening/
+
+# graphify 知識圖譜與本機參考資料夾：純本機查詢/研究用，非專案內容，體積大不進 git
+graphify-out/
+單字參考/
+英文文法參考/

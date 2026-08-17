@@ -42,7 +42,7 @@ function checkOptionSet(file, id, loc, obj, expectedCount) {
   if (typeof obj.explanation !== 'string' || !obj.explanation.trim()) add(file,id,loc,'error','EMPTY_EXPLANATION','缺少繁體中文詳解');
   else if (Number.isInteger(obj.answer)) {
     const claimed = [];
-    for (const re of [/故選\s*\(?([A-D])\)?/gi,/(?<!不)(?:所以|因此)選\s*\(?([A-D])\)?/gi,/(?<!不)選\s*\(?([A-D])\)?(?=[，。；;])/gi,/答案(?:為|是|應為)?\s*\(?([A-D])\)?/gi,/正確(?:答案|選項)(?:為|是)?\s*\(?([A-D])\)?/gi]) {
+    for (const re of [/故選\s*\(?([A-D])\)?(?![A-Za-z])/g,/(?<!不)(?:所以|因此)選\s*\(?([A-D])\)?(?![A-Za-z])/g,/(?<!不)選\s*\(?([A-D])\)?(?=[，。；;])/g,/答案(?:為|是|應為)?\s*\(?([A-D])\)?(?![A-Za-z])/g,/正確(?:答案|選項)(?:為|是)?\s*\(?([A-D])\)?(?![A-Za-z])/g]) {
       let m; while ((m=re.exec(obj.explanation))) claimed.push(m[1].toUpperCase());
     }
     const wrong=[...new Set(claimed.filter(x=>x!==answerLetter(obj.answer)))];
@@ -129,3 +129,7 @@ else for(const f of findings) lines.push(`- **${f.severity.toUpperCase()} · ${f
 lines.push('','## 判讀限制','','- 「唯一正解」與題意歧義屬語意判斷；自動規則只能找出重複選項、索引／詳解矛盾及部分高風險候選。','- `optionsZh` 可驗證數量與位置，但逐字翻譯是否精準仍需人工逐題比對。','- 因此「100% 正確率」只能作為校對目標，不能在仍有未修正 Error 或未人工覆核時保證。','');
 fs.writeFileSync(path.join(__dirname,'question_bank_audit.md'),lines.join('\n'));
 console.log(JSON.stringify({files:files.length,stats,counts:summary.counts,findings:findings.length},null,2));
+if (summary.counts.error) {
+  console.error(`題庫稽核發現 ${summary.counts.error} 筆 error，詳見 reports/question_bank_audit.md`);
+  process.exit(1);
+}
