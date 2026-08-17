@@ -508,6 +508,21 @@ async function logoutUser() {
   await authClient.auth.signOut();
   currentUser    = null;
   currentProfile = null;
+  // 角色收藏／出戰角色是裝置本機快取（見 game/tetris/characters.js 的
+  // restoreOwnedCharsFromServer），登入時會跟伺服器資料取聯集後寫回伺服器。
+  // 不清掉的話，同一裝置換登入下一個帳號時，上一個帳號解鎖的角色會被誤
+  // 合併進新帳號、還永久寫回新帳號的伺服器紀錄，造成角色收藏跨帳號污染。
+  if (typeof LS_OWNED_CHARS === 'string') localStorage.removeItem(LS_OWNED_CHARS);
+  if (typeof LS_DEPLOYED_CHAR === 'string') localStorage.removeItem(LS_DEPLOYED_CHAR);
+  // 抽獎紀錄／保底進度（見 game/tetris/gacha.js）同樣是不分帳號的裝置本機快取，
+  // 保底進度回復邏輯又是取「本機與伺服器較大值」，同一台裝置換帳號登入會把
+  // 上一個帳號的保底進度污染到新帳號，一併清掉。
+  if (typeof GACHA_POOLS === 'object') {
+    Object.keys(GACHA_POOLS).forEach(poolId => {
+      localStorage.removeItem('voca_gacha_history_' + poolId);
+      localStorage.removeItem('voca_gacha_pity_' + poolId);
+    });
+  }
   _updateHeaderUI();
   if (typeof _stopInboxPolling === 'function') _stopInboxPolling();   // #9 登出停止 inbox 輪詢
   if (typeof _refreshInboxBadge === 'function') _refreshInboxBadge();
