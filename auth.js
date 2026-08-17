@@ -133,6 +133,12 @@ async function _loadProfile() {
   // initRevenueCat 內部用 _revenueCatInitialized 擋重複呼叫，可放心每次都呼叫。
   if (typeof initRevenueCat === 'function') initRevenueCat(currentUser.id);
 
+  // 訂閱狀態：同理必須放在每次登入都會跑的地方，不能只在 _initUserAccount()
+  // （僅首次建立帳號才觸發）裡呼叫——不然回訪登入的付費會員 window.currentSubscription
+  // 永遠不會被填值，無限題庫/文法解鎖等所有靠 _isPremium() 判斷的功能都會誤判成未訂閱，
+  // 直到使用者剛好觸發一次購買或「恢復購買」才會補上。
+  if (typeof refreshSubscriptionStatus === 'function') refreshSubscriptionStatus();
+
   // 將 profile 的角色屬性覆蓋 localStorage 的早期讀取值
   if (currentProfile && typeof STATS !== 'undefined') {
     STATS.str = currentProfile.str_stat ?? STATS.str;
@@ -159,7 +165,7 @@ async function _initUserAccount() {
     if (!res.ok) return;
     const { profile } = await res.json();
     currentProfile = profile;
-    if (typeof refreshSubscriptionStatus === 'function') refreshSubscriptionStatus();
+    // refreshSubscriptionStatus() 已移到 _loadProfile()（每次登入都會跑），這裡不再重複呼叫。
     // RevenueCat 初始化已移到 _loadProfile()（每次登入都會跑），這裡不再重複呼叫。
 
     // 遷移 localStorage 舊卡組到 Supabase（一次性）
