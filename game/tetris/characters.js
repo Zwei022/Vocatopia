@@ -190,7 +190,7 @@ const TETRIS_CHARACTERS = {
     avatarImg: 'public/images/avatars/uni.webp',
     rarity: 'mythic',
     acquireHint: '商店限時卡池抽卡取得（二獎，機率 4%，50抽保底必中神話以上）',
-    desc: '產季限定的頂級海膽，賣相嬌貴、脾氣卻很穩，總在你快撐不住的瞬間悄悄補位。與鮭魚壽司同屬「海鮮職人系列」。',
+    desc: '產季限定的頂級海膽，賣相嬌貴、脾氣卻很穩，總在你快撐不住的瞬間悄悄補位。',
     skill: {
       type: 'autoShield',
       name: '軍艦護盾',
@@ -217,7 +217,7 @@ const TETRIS_CHARACTERS = {
     avatarImg: 'public/images/avatars/bluefin.webp',
     rarity: 'legendary',
     acquireHint: '商店限時卡池抽卡取得（特獎，機率 1%，100抽保底必中傳奇）',
-    desc: '師傅一刀落下才切得出的大トロ切片，油脂布滿紋理，出招時整條直線都會讓開。',
+    desc: '師傅一刀落下才切得出的大腹肉切片，油脂布滿紋理，出招時整條直線都會讓開。',
     // 2026-08-06 Notion 定案：技術上比照壽司炸彈的封印/解封架構，engine.js 需仿
     // markNextAsBomb/explodeBomb 新增 markNextAsColumnClear/explodeColumns（尚未寫入 code）。
     skill: {
