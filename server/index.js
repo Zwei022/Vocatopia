@@ -41,6 +41,12 @@ const STREAK_URGENT_MESSAGES = [
   { title: '😨 最後機會', body: '沒有保護道具可以救了，趕快打開 App 完成今天的打卡' },
 ];
 
+const DAILY_PROGRESS_MESSAGES = [
+  { title: '📝 今天還有科目沒做完', body: '六科每日練習只完成一部分，回來把剩下的做完拿獎勵吧！' },
+  { title: '🎯 差一點就全勤了',     body: '今天的每日練習還沒全部完成，趁現在補完拿全勤獎勵！' },
+  { title: '⏳ 全勤獎勵在等你',     body: '今天已經開始練習了，回來完成剩下的科目吧！' },
+];
+
 const WINBACK_MESSAGES = [
   { title: '好久不見 👋',       body: '你的單字們有點想你了，回來看看今天有什麼新內容吧！' },
   { title: '📖 好久沒打開了',   body: '會考準備不能斷，回來繼續累積實力吧！' },
@@ -987,6 +993,50 @@ cron.schedule('0 13 * * *', async () => {
     console.log(`[Cron] 打卡提醒完成，對象 ${targets.length} 人，成功送達 ${sent}`);
   } catch (err) {
     console.error('[Cron] 打卡提醒失敗：', err.message);
+  }
+});
+
+// ── 每日練習未全科完成提醒 CRON（台灣時間每天 20:00 = UTC 12:00）──
+// 比 21:00 的打卡提醒早一小時，給已經開始練習、但六科沒做完的人一次機會補完再收硬提醒。
+// 完成度直接從 events 表的 daily_practice_complete 事件算（見 script.js showQuizResult()），
+// 不用額外維護一張進度表；同一天只跑這支 cron 一次，天然就不會重複發送。
+const DAILY_PRACTICE_CATEGORIES = ['vocab', 'phrase', 'grammar', 'cloze', 'reading', 'listening'];
+cron.schedule('0 12 * * *', async () => {
+  console.log('\n[Cron] 每日練習未全科完成提醒觸發');
+  try {
+    const todayTaipei = taipeiDateString();
+    const dayStartUtc = new Date(`${todayTaipei}T00:00:00+08:00`).toISOString();
+    const { data: rows, error } = await supabase
+      .from('events')
+      .select('user_id, metadata')
+      .eq('event_type', 'daily_practice_complete')
+      .gte('created_at', dayStartUtc);
+    if (error) throw error;
+
+    const catsByUser = {};
+    for (const r of rows || []) {
+      const cat = r.metadata?.category;
+      if (!cat) continue;
+      (catsByUser[r.user_id] ||= new Set()).add(cat);
+    }
+    const partialIds = Object.entries(catsByUser)
+      .filter(([, cats]) => cats.size < DAILY_PRACTICE_CATEGORIES.length)
+      .map(([userId]) => userId);
+    if (!partialIds.length) { console.log('[Cron] 未全科完成提醒：今天沒有符合條件的使用者'); return; }
+
+    const { data: prefRows } = await supabase.from('profiles').select('id, push_prefs').in('id', partialIds);
+    const targets = partialIds.filter(uid => _pushAllowed(prefRows?.find(p => p.id === uid)?.push_prefs, 'streak'));
+    if (!targets.length) { console.log('[Cron] 未全科完成提醒：對象都關閉了通知'); return; }
+
+    const msg = _pickRandom(DAILY_PROGRESS_MESSAGES);
+    const result = await sendPushToUsers(supabase, targets, {
+      title: msg.title,
+      body: msg.body,
+      data: { type: 'daily_progress_reminder' },
+    });
+    console.log(`[Cron] 未全科完成提醒完成，對象 ${targets.length} 人，成功送達 ${result.sent}`);
+  } catch (err) {
+    console.error('[Cron] 未全科完成提醒失敗：', err.message);
   }
 });
 
