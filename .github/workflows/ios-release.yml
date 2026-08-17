@@ -126,11 +126,21 @@ jobs:
           IPA_PATH=$(find "$RUNNER_TEMP/export" -name "*.ipa" | head -1)
           echo "上傳檔案：$IPA_PATH"
 
+          # altool 即使驗證失敗（例如版本號衝突、pre-release train 關閉）也常常回傳 exit code 0，
+          # set -e 攔不住這種情況，必須額外檢查輸出內容裡有沒有 "UPLOAD FAILED" 字樣才能真的偵測到失敗。
+          set +e
           xcrun altool --upload-app \
             -f "$IPA_PATH" \
             -t ios \
             --apiKey "$ASC_API_KEY_ID" \
-            --apiIssuer "$ASC_ISSUER_ID"
+            --apiIssuer "$ASC_ISSUER_ID" 2>&1 | tee "$RUNNER_TEMP/altool_output.log"
+          ALTOOL_EXIT=${PIPESTATUS[0]}
+          set -e
+
+          if [ "$ALTOOL_EXIT" -ne 0 ] || grep -q "UPLOAD FAILED" "$RUNNER_TEMP/altool_output.log"; then
+            echo "::error::上傳到 App Store Connect 失敗，請看上方 altool 輸出的詳細錯誤訊息"
+            exit 1
+          fi
 
       - name: 上傳 .ipa 當 artifact（備份用，方便除錯）
         if: always()
