@@ -3923,6 +3923,8 @@ function showQuizResult() {
   STATS.int++;
   saveStats();
   updateChar();
+
+  logEvent('daily_practice_complete', { category: quizState.context, score, total, unlimited: !!quizState.unlimited });
 }
 
 function _restoreFromQuiz() {
@@ -8142,6 +8144,7 @@ async function claimQuest(id) {
         if (afterLv > beforeLv) _onLevelUp(beforeLv, afterLv);
       }
       showToast(`🎉 ${q.name}完成！+${q.gold} 🪙 +${q.xp} XP`, 3000);
+      logEvent('quest_claim', { id, is_main: mi >= 0 });
     } else {
       showToast('此任務已於其他裝置領取過');
     }
@@ -8610,11 +8613,12 @@ function tutorialNext() {
   _tutorialRender();
 }
 
-function tutorialSkip() { tutorialFinish(); }
+function tutorialSkip() { tutorialFinish(true); }
 
-async function tutorialFinish() {
+async function tutorialFinish(skipped) {
   document.getElementById('tutorialOverlay')?.classList.add('hidden');
   _tutorialMarkSeenLocal();
+  logEvent('onboarding_complete', { skipped: !!skipped, last_slide: _tutorialIdx, total_slides: TUTORIAL_SLIDES.length });
   if (typeof currentUser !== 'undefined' && currentUser && typeof authClient !== 'undefined') {
     try { await authClient.from('profiles').update({ tutorial_seen: true }).eq('id', currentUser.id); } catch { /* ignore */ }
   }
