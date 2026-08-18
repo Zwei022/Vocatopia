@@ -298,7 +298,7 @@ const TETRIS_CHARACTERS = {
     cardImg: 'public/images/characters/foiegras.webp',
     avatarImg: 'public/images/avatars/foiegras.webp',
     rarity: 'legendary',
-    acquireHint: '俄羅斯方塊單局最高分達 15000 解鎖',
+    acquireHint: '即將上線',
     desc: '整份菜單裡最壓軸的一道，煎到恰到好處的外酥內滑，出場自帶加成的氣場。',
     skill: {
       type: 'lineScoreBonus',

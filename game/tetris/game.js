@@ -551,10 +551,7 @@ function ttEndGame() {
   ttGame._submitPromise = ttSubmitScore(finalScore, mode);
   // #2 一場結束給經驗值（每日前 5 場、有防刷上限，兩種模式都給）
   if (typeof awardTetrisXp === 'function') awardTetrisXp(finalLines);
-  // 單局最高分達 15000 解鎖角色「香煎鵝肝」
-  if (finalScore >= 15000 && typeof addOwnedChar === 'function' && addOwnedChar('foiegras')) {
-    if (typeof showToast === 'function') showToast('🥩 恭喜單局突破 15000 分！獲得角色「香煎鵝肝」！', 4000);
-  }
+  // 「香煎鵝肝」改為首儲贈送角色，分數解鎖流程先停用（避免測試者達標卻拿不到而回報 bug）
 
   const ov = _ttOverlay();
   const panel = document.createElement('div');
