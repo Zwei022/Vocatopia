@@ -5816,5 +5816,2188 @@
         "questionType": "inference"
       }
     ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_92",
+    "passageType": "practical",
+    "title": "Talent Show Sign-Up Sheet (報名表)",
+    "passage": "GREEN HILL MIDDLE SCHOOL — Spring Talent Show\nWant to show off your talent? Sign up below!\n• Acts can be singing, dancing, magic, or comedy\n• Each act must be 3 minutes or shorter\n• Sign-up sheet is outside the music room\n• Deadline: Friday, April 10\n• Rehearsal: April 17, 4:00 p.m. in the auditorium\n• Show date: April 24, 6:00 p.m.\nNote: Students must bring their own music on a USB drive. The school cannot provide costumes or props, so please prepare your own.",
+    "difficulty": 2,
+    "questions": [
+      {
+        "question": "What must a student bring if their act needs music?",
+        "options": [
+          "(A) A costume",
+          "(B) A microphone",
+          "(C) A CD player",
+          "(D) A USB drive with the music"
+        ],
+        "answer": 3,
+        "explanation": "公告最後說明學生須自備 USB 隨身碟裝載音樂，故選 D；學校不提供服裝或道具，也沒提到 CD player。",
+        "optionsZh": [
+          "一套服裝",
+          "麥克風",
+          "CD 播放器",
+          "裝有音樂的 USB 隨身碟"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "According to the sign-up sheet, which of the following is TRUE?",
+        "options": [
+          "(A) The school will provide costumes for every act",
+          "(B) Acts can be as long as they want",
+          "(C) The show is on April 24 at 6:00 p.m.",
+          "(D) Sign-up closes on April 17"
+        ],
+        "answer": 2,
+        "explanation": "公告寫明 Show date: April 24, 6:00 p.m.，故選 C；報名截止是 4/10，服裝需自備，表演限3分鐘以內。",
+        "optionsZh": [
+          "學校會為每個節目提供服裝",
+          "節目長度不限",
+          "表演在 4 月 24 日晚上 6 點舉行",
+          "報名在 4 月 17 日截止"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_93",
+    "passageType": "practical",
+    "title": "New E-Book Service at the Library (公告)",
+    "passage": "GREEN HILL PUBLIC LIBRARY — Free E-Books Now Available!\nStarting this month, library members can borrow e-books on their phones or tablets.\nHow it works:\n1. Download the \"ReadNow\" app.\n2. Log in with your library card number.\n3. Choose a book and borrow it for up to 14 days.\n4. The book will disappear automatically when the time is up — no late fees!\nYou can borrow up to 5 e-books at a time. If a book is popular, you may need to wait on a list. New members can sign up at the front desk to get a library card the same day.",
+    "difficulty": 2,
+    "questions": [
+      {
+        "question": "What happens when the 14-day borrowing period ends?",
+        "options": [
+          "(A) The reader must pay a late fee",
+          "(B) The book is deleted automatically",
+          "(C) The library calls the reader",
+          "(D) The app stops working"
+        ],
+        "answer": 1,
+        "explanation": "公告說明時間到了書會自動消失，且沒有逾期費用，故選 B。",
+        "optionsZh": [
+          "讀者必須繳交逾期費",
+          "書會自動消失",
+          "圖書館會打電話給讀者",
+          "應用程式會停止運作"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "How many e-books can a member borrow at the same time?",
+        "options": [
+          "(A) 14",
+          "(B) 1",
+          "(C) Up to 5",
+          "(D) As many as they want"
+        ],
+        "answer": 2,
+        "explanation": "公告寫 You can borrow up to 5 e-books at a time，故選 C。",
+        "optionsZh": [
+          "14 本",
+          "1 本",
+          "最多 5 本",
+          "想借多少就借多少"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_94",
+    "passageType": "practical",
+    "title": "Night Market Cooking Contest Flyer (傳單)",
+    "passage": "RIVERSIDE NIGHT MARKET — Home Cook Contest!\nDo you love cooking? Show us your best dish!\n★ Anyone aged 16 or older can join\n★ Bring your own dish already cooked — no cooking stations on-site\n★ Judges will taste each dish and pick the top 3\n★ 1st place wins NT$3,000 and a free stall for one month\n★ Registration is free, but only the first 30 people can join\nSign up online before August 5. Winners will be announced on stage at 8:00 p.m. on contest day. Come support your neighbors and taste amazing food!",
+    "difficulty": 2,
+    "questions": [
+      {
+        "question": "What does the first place winner receive?",
+        "options": [
+          "(A) NT$3,000 and a free stall for a month",
+          "(B) A cooking class",
+          "(C) A trophy only",
+          "(D) Free food for a year"
+        ],
+        "answer": 0,
+        "explanation": "傳單寫 1st place wins NT$3,000 and a free stall for one month，故選 A。",
+        "optionsZh": [
+          "新台幣3,000元及一個月免費攤位",
+          "烹飪課程",
+          "只有獎盃",
+          "一年份免費食物"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What must contestants do before the contest?",
+        "options": [
+          "(A) Cook their dish at the market",
+          "(B) Pay a registration fee",
+          "(C) Sign up online before August 5",
+          "(D) Bring their own cooking stove"
+        ],
+        "answer": 2,
+        "explanation": "傳單提到需在 8 月 5 日前上網報名，且報名免費、料理需已煮好帶來，現場沒有烹飪區，故選 C。",
+        "optionsZh": [
+          "在市集現場烹煮料理",
+          "繳交報名費",
+          "在 8 月 5 日前上網報名",
+          "自備烹飪爐具"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_95",
+    "passageType": "practical",
+    "title": "Central Station Renovation Notice (公告)",
+    "passage": "CENTRAL TRAIN STATION — Renovation Notice\nFrom September 1 to November 30, the west entrance will be closed for repair work. Passengers must use the east entrance instead.\n• Elevators near the west entrance will not be available during this time.\n• Please use the stairs or the elevator near the east entrance.\n• Ticket machines will still work as usual.\n• The station will be noisy from 9:00 a.m. to 5:00 p.m. on weekdays.\nWe are sorry for any trouble this may cause. Thank you for your patience while we make the station better for everyone.",
+    "difficulty": 2,
+    "questions": [
+      {
+        "question": "What should passengers do during the renovation?",
+        "options": [
+          "(A) Buy tickets from a staff member",
+          "(B) Avoid the station completely",
+          "(C) Wait until December to travel",
+          "(D) Use the east entrance instead of the west one"
+        ],
+        "answer": 3,
+        "explanation": "公告指出西側入口關閉整修，旅客須改走東側入口，故選 D；售票機仍可正常使用。",
+        "optionsZh": [
+          "向站務人員買票",
+          "完全避開這個車站",
+          "等到12月再搭車",
+          "改走東側入口而非西側"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "When is the station expected to be noisy?",
+        "options": [
+          "(A) Only on weekends",
+          "(B) After 5:00 p.m.",
+          "(C) All day, every day",
+          "(D) 9:00 a.m. to 5:00 p.m. on weekdays"
+        ],
+        "answer": 3,
+        "explanation": "公告寫平日上午9點到下午5點會較吵，故選 D。",
+        "optionsZh": [
+          "只有週末",
+          "下午5點之後",
+          "每天整天",
+          "平日上午9點到下午5點"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_96",
+    "passageType": "practical",
+    "title": "Summer Camp Packing List (清單)",
+    "passage": "SUNRISE SUMMER CAMP — What to Bring\nWelcome, campers! Please pack the following items before you arrive:\n✔ Sleeping bag and pillow\n✔ Sunscreen and a hat\n✔ Comfortable shoes for hiking\n✔ A water bottle\n✔ Clothes for 5 days (rain jacket included)\nDo NOT bring:\n✘ Cell phones or tablets\n✘ Snacks with peanuts (some campers have allergies)\n✘ Valuable items like jewelry\nEach camper should label their bags with their name. If you forget something, please ask a camp leader — we may have extra supplies. Have a fun and safe week!",
+    "difficulty": 1,
+    "questions": [
+      {
+        "question": "Why can't campers bring snacks with peanuts?",
+        "options": [
+          "(A) Peanuts attract insects",
+          "(B) Some campers are allergic to peanuts",
+          "(C) The camp has plenty of snacks already",
+          "(D) Peanuts are too expensive"
+        ],
+        "answer": 1,
+        "explanation": "清單說明部分營員對花生過敏，故選 B。",
+        "optionsZh": [
+          "花生會吸引昆蟲",
+          "有些營員對花生過敏",
+          "營區已經有很多零食",
+          "花生太貴"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What should campers do with their bags?",
+        "options": [
+          "(A) Leave them at home",
+          "(B) Give them to a camp leader",
+          "(C) Put a label with their name on them",
+          "(D) Pack them with a friend's bag"
+        ],
+        "answer": 2,
+        "explanation": "清單提醒每位營員應在自己的行李上貼上姓名標籤，故選 C。",
+        "optionsZh": [
+          "把包包留在家裡",
+          "交給營隊領隊",
+          "在包包上貼上姓名標籤",
+          "和朋友一起打包"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_97",
+    "passageType": "practical",
+    "title": "Pet Adoption Day Announcement (公告)",
+    "passage": "SUNNY PAWS SHELTER — Adoption Day!\nSaturday, June 14, 10:00 a.m. – 4:00 p.m.\nMeet over 20 dogs and cats looking for a loving home!\n• Adoption fee: NT$500 (includes first vaccine)\n• Bring a photo ID to apply\n• Children under 12 must come with a parent\n• Free pet food samples for every adopter\nIf you cannot adopt but still want to help, we also need volunteers to walk dogs and clean cages. Contact the shelter office to sign up. Every animal deserves a chance at a happy life — come meet your new best friend!",
+    "difficulty": 1,
+    "questions": [
+      {
+        "question": "What does the adoption fee include?",
+        "options": [
+          "(A) A dog leash",
+          "(B) Free training classes",
+          "(C) A year of free pet food",
+          "(D) The first vaccine"
+        ],
+        "answer": 3,
+        "explanation": "公告寫 Adoption fee: NT$500 (includes first vaccine)，故選 D。",
+        "optionsZh": [
+          "狗牽繩",
+          "免費訓練課程",
+          "一年份免費飼料",
+          "第一劑疫苗"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "How can someone help without adopting a pet?",
+        "options": [
+          "(A) By donating money only",
+          "(B) By becoming a volunteer",
+          "(C) By buying pet food samples",
+          "(D) By bringing a photo ID"
+        ],
+        "answer": 1,
+        "explanation": "公告提到無法領養者也能擔任志工遛狗、清潔籠舍，故選 B。",
+        "optionsZh": [
+          "只捐錢",
+          "成為志工",
+          "購買飼料樣品",
+          "攜帶身分證件"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_98",
+    "passageType": "practical",
+    "title": "Coffee Shop Loyalty Card Rules (集點卡規則)",
+    "passage": "BEAN THERE COFFEE — Loyalty Card\nBuy 9 drinks, get the 10th one FREE!\nHow it works:\n1. Ask for a stamp every time you buy a drink.\n2. Collect 9 stamps to get a free drink of any size.\n3. The card must be used within 6 months of the first stamp.\n4. Only one stamp per visit, even if you buy more than one drink.\n5. Lost cards cannot be replaced, so keep yours safe!\nThis offer cannot be combined with other discounts. Show your card to the cashier before you pay. Thank you for being a loyal customer!",
+    "difficulty": 2,
+    "questions": [
+      {
+        "question": "How many stamps does a customer get if they buy 3 drinks in one visit?",
+        "options": [
+          "(A) 9",
+          "(B) 0",
+          "(C) 3",
+          "(D) 1"
+        ],
+        "answer": 3,
+        "explanation": "規則寫明每次到店只能蓋一個章，即使買多杯也一樣，故選 D。",
+        "optionsZh": [
+          "9 個",
+          "0 個",
+          "3 個",
+          "1 個"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What happens if a customer loses their loyalty card?",
+        "options": [
+          "(A) They can get a new one for free",
+          "(B) They can still use their discount",
+          "(C) The card cannot be replaced",
+          "(D) The shop will mail a new card"
+        ],
+        "answer": 2,
+        "explanation": "規則第 5 點寫遺失的卡片無法補發，故選 C。",
+        "optionsZh": [
+          "可以免費換新卡",
+          "仍可使用折扣",
+          "卡片無法補發",
+          "店家會寄新卡"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_99",
+    "passageType": "narrative",
+    "title": "The Missing Homework (故事)",
+    "passage": "Ethan searched his backpack three times, but his math homework was gone. He remembered finishing it at the kitchen table the night before, right next to his little brother's crayons. His stomach twisted as he pictured Mr. Lin marking a zero next to his name.\nOn the bus, Ethan suddenly remembered something. His brother loved to draw on any paper he could find. Could he have used the homework as drawing paper?\nAs soon as Ethan got home that afternoon, he ran to his brother's room. There, taped proudly to the wall, was his math homework — covered in drawings of dinosaurs. His brother beamed, \"I made it pretty!\"\nEthan couldn't stay angry for long. He redid the homework that night, then gave his brother a blank notebook just for drawing. From then on, dinosaurs stayed far away from Ethan's schoolwork.",
+    "difficulty": 2,
+    "questions": [
+      {
+        "question": "What happened to Ethan's math homework?",
+        "options": [
+          "(A) His brother drew dinosaurs on it",
+          "(B) He left it on the bus",
+          "(C) Mr. Lin took it early",
+          "(D) It fell out of his backpack"
+        ],
+        "answer": 0,
+        "explanation": "文中揭曉弟弟把作業拿去畫了恐龍並貼在牆上，故選 A。",
+        "optionsZh": [
+          "弟弟在上面畫了恐龍",
+          "他把作業留在公車上",
+          "Mr. Lin 提早收走了",
+          "作業從背包裡掉出來"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What did Ethan do after finding his homework?",
+        "options": [
+          "(A) He threw the homework away",
+          "(B) He redid it and gave his brother a notebook",
+          "(C) He told the teacher his brother lied",
+          "(D) He stopped talking to his brother"
+        ],
+        "answer": 1,
+        "explanation": "文末說 Ethan 重寫作業並送弟弟一本空白筆記本供畫畫用，故選 B。",
+        "optionsZh": [
+          "把作業丟掉",
+          "重寫作業並送弟弟一本筆記本",
+          "跟老師說弟弟說謊",
+          "不再跟弟弟說話"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_100",
+    "passageType": "narrative",
+    "title": "A Day at Grandma's Bakery (故事)",
+    "passage": "Every Saturday, Mia helped her grandmother at the small bakery downtown. At first, she only watched from a stool, too afraid to touch the hot ovens or the delicate pastry dough.\nOne Saturday, a large order came in for a birthday party, and Grandma's hands were full. \"Mia, can you shape these cookies?\" she asked. Mia's heart raced, but she rolled up her sleeves and got to work.\nHer first few cookies were lopsided, but Grandma just laughed kindly and showed her a trick with the rolling pin. By the end of the morning, Mia had shaped forty cookies, each one a little better than the last.\nWhen the customer picked up the order and praised the cookies, Grandma winked at Mia. \"Some of those were yours, you know.\" Mia walked home that day feeling proud, already planning what she would bake next weekend.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "Why was Mia afraid to help at first?",
+        "options": [
+          "(A) She did not like sweets",
+          "(B) Grandma never let her near the oven",
+          "(C) She was afraid of the hot ovens and dough",
+          "(D) She had never been to the bakery before"
+        ],
+        "answer": 2,
+        "explanation": "文中說她一開始 too afraid to touch the hot ovens or the delicate pastry dough，故選 C。",
+        "optionsZh": [
+          "她不喜歡甜食",
+          "奶奶從不讓她靠近烤箱",
+          "她害怕滾燙的烤箱和麵團",
+          "她從未去過那間麵包店"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "How did Mia feel by the end of the story?",
+        "options": [
+          "(A) Proud of what she had made",
+          "(B) Angry at her grandmother",
+          "(C) Bored with baking",
+          "(D) Worried about next weekend"
+        ],
+        "answer": 0,
+        "explanation": "結尾她驕傲地走回家，並期待下週再烘焙，故選 A。",
+        "optionsZh": [
+          "為自己的成果感到驕傲",
+          "對奶奶生氣",
+          "對烘焙感到無聊",
+          "擔心下週末的事"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What can we learn from the story?",
+        "options": [
+          "(A) Grandma did not like Mia's cookies",
+          "(B) The bakery closed early that day",
+          "(C) Baking cookies is easy for beginners",
+          "(D) Practicing a new skill can build confidence"
+        ],
+        "answer": 3,
+        "explanation": "Mia 從害怕到能獨立塑形40個餅乾並獲得肯定，說明練習新技能能建立信心，故選 D。",
+        "optionsZh": [
+          "奶奶不喜歡 Mia 做的餅乾",
+          "麵包店那天提早打烊",
+          "對初學者來說做餅乾很簡單",
+          "練習新技能能建立信心"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_101",
+    "passageType": "narrative",
+    "title": "The New Kid on the Basketball Team (故事)",
+    "passage": "When Jayden moved to a new school in October, he joined the basketball team hoping to make friends. But during his first practice, he missed almost every shot while the other players watched.\n\"Don't worry about it,\" said Coach Reyes. \"Everyone starts somewhere.\" Still, Jayden felt like giving up.\nThat night, his older sister found him practicing free throws alone in the driveway under the streetlight. She joined him, and they practiced together every evening for two weeks.\nAt the next game, Jayden's hands were shaking as he stepped up for a free throw. The ball rolled around the rim... and dropped in. His teammates cheered louder than he expected. It wasn't a perfect game, but for the first time, Jayden felt like he truly belonged on the team.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "Why did Jayden practice in the driveway at night?",
+        "options": [
+          "(A) His sister invited him after finding him practicing alone",
+          "(B) The gym was closed for repairs",
+          "(C) Coach Reyes told him to practice at home",
+          "(D) He wanted to avoid his teammates"
+        ],
+        "answer": 0,
+        "explanation": "姊姊發現他獨自在車道練習後加入陪練，兩人連續練了兩週，故選 A。",
+        "optionsZh": [
+          "姊姊發現他獨自練習後加入陪練",
+          "體育館整修暫時關閉",
+          "教練要他在家練習",
+          "他想避開隊友"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "How did Jayden most likely feel after making the free throw at the game?",
+        "options": [
+          "(A) Embarrassed",
+          "(B) A sense of belonging",
+          "(C) Angry at his teammates",
+          "(D) Bored with basketball"
+        ],
+        "answer": 1,
+        "explanation": "文末寫他第一次真正感覺自己屬於這個球隊，故選 B。",
+        "optionsZh": [
+          "尷尬",
+          "一種歸屬感",
+          "對隊友生氣",
+          "對籃球感到厭倦"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_102",
+    "passageType": "narrative",
+    "title": "Lost in the Night Market (故事)",
+    "passage": "Six-year-old Tina was holding her mother's hand tightly in the crowded night market, but when she stopped to look at a stall selling cotton candy, her mother's hand was suddenly gone. Tina spun around, but she could only see strangers.\nHer heart pounded, and tears filled her eyes. Then she remembered what her mother had taught her: if you get lost, find someone wearing a uniform. She spotted a police officer standing near the fruit stalls and walked straight to him.\n\"I can't find my mom,\" Tina said, trying not to cry. The officer knelt down, spoke to her gently, and used his radio to announce her description over the market's speakers.\nTwo minutes later, Tina's mother came running, breathless with worry. She hugged Tina tightly. \"You did exactly the right thing,\" she said, wiping her own tears away.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What did Tina do when she realized she was lost?",
+        "options": [
+          "(A) She ran through the market looking for her mother",
+          "(B) She sat down and waited quietly",
+          "(C) She found a police officer for help",
+          "(D) She called her mother's phone"
+        ],
+        "answer": 2,
+        "explanation": "她想起媽媽教過她要找穿制服的人，於是走向一位警察，故選 C。",
+        "optionsZh": [
+          "她跑遍市場找媽媽",
+          "她坐下來安靜等待",
+          "她找警察幫忙",
+          "她打電話給媽媽"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What can we learn from this story?",
+        "options": [
+          "(A) Police officers cannot help lost children",
+          "(B) Tina's mother was careless",
+          "(C) Night markets are too dangerous for children",
+          "(D) Knowing what to do when lost can help keep you safe"
+        ],
+        "answer": 3,
+        "explanation": "故事透過 Tina 冷靜求助警察並成功與媽媽團聚，說明事先知道走失時該怎麼做很重要，故選 D。",
+        "optionsZh": [
+          "警察無法幫助走失的孩童",
+          "Tina 的媽媽很粗心",
+          "夜市對孩童來說太危險",
+          "知道走失時該怎麼做能保護自己"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_103",
+    "passageType": "narrative",
+    "title": "The Class Election (故事)",
+    "passage": "Sophie wanted to run for class president, but she was sure quiet, careful Daniel would never consider it too. When the sign-up sheet went up, she was shocked to see his name written right below hers.\nAt first, Sophie felt competitive, even a little annoyed. But as the election week went on, she noticed Daniel wasn't trying to make big promises like free snacks. Instead, he suggested a weekly suggestion box so students could share real ideas.\nOn election day, Daniel won by a narrow number of votes. Sophie was disappointed, but she walked up to him after class. \"That suggestion box idea was really smart,\" she said. \"Can I help you set it up?\"\nDaniel smiled, surprised. Together, they built the box that week, and Sophie realized that losing an election didn't mean losing a chance to make a difference.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "How did Sophie feel when she first saw Daniel's name on the sign-up sheet?",
+        "options": [
+          "(A) Proud of him",
+          "(B) Competitive and a little annoyed",
+          "(C) Relieved she had help",
+          "(D) Completely unbothered"
+        ],
+        "answer": 1,
+        "explanation": "文中直接寫她 felt competitive, even a little annoyed，故選 B。",
+        "optionsZh": [
+          "為他感到驕傲",
+          "帶點競爭心與惱怒",
+          "鬆一口氣有人幫忙",
+          "完全不在意"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What did Sophie do after losing the election?",
+        "options": [
+          "(A) She asked for a re-vote",
+          "(B) She ran again the next week",
+          "(C) She stopped talking to Daniel",
+          "(D) She asked to help build the suggestion box"
+        ],
+        "answer": 3,
+        "explanation": "她主動稱讚 Daniel 的點子並提議一起建置意見箱，故選 D。",
+        "optionsZh": [
+          "要求重新投票",
+          "隔週再度參選",
+          "不再跟 Daniel 說話",
+          "主動提議幫忙做意見箱"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does the story mainly suggest?",
+        "options": [
+          "(A) Class elections are unfair",
+          "(B) Big promises always win elections",
+          "(C) Losing doesn't mean you can't still make a difference",
+          "(D) Sophie was a better leader than Daniel"
+        ],
+        "answer": 2,
+        "explanation": "結尾點出 Sophie 意識到落選不代表無法做出貢獻，故選 C。",
+        "optionsZh": [
+          "班級選舉不公平",
+          "誇大的承諾總能贏得選舉",
+          "落選不代表無法做出貢獻",
+          "Sophie 比 Daniel 更會領導"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_104",
+    "passageType": "narrative",
+    "title": "My First Time Cooking Dinner (故事)",
+    "passage": "When Mom got stuck at work late one evening, she called and asked Leo to start dinner. Leo, who had never cooked anything besides toast, panicked and stared at the recipe book.\nHe chose the simplest recipe: fried rice. He chopped the vegetables unevenly, and the rice stuck to the pan more than once. Smoke set off the kitchen alarm, and Leo had to open every window in a hurry.\nBy the time Mom got home, the kitchen smelled a little smoky, but there was a plate of slightly burnt, slightly delicious fried rice waiting on the table. Mom took one bite and smiled. \"This might be the best thing I've eaten all week,\" she said, only half joking.\nLeo grinned. It wasn't perfect, but he had made dinner all by himself, and that felt like a real accomplishment.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "Why did the kitchen alarm go off?",
+        "options": [
+          "(A) Someone opened the front door",
+          "(B) The smoke from cooking set it off",
+          "(C) Leo pressed the wrong button",
+          "(D) Mom came home early"
+        ],
+        "answer": 1,
+        "explanation": "煮飯過程冒煙，觸動了廚房警報器，故選 B。",
+        "optionsZh": [
+          "有人打開前門",
+          "煮飯的煙霧觸發了警報器",
+          "Leo 按錯按鈕",
+          "媽媽提早回家"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "How did Leo feel after making dinner?",
+        "options": [
+          "(A) Embarrassed about the smoke",
+          "(B) Disappointed with the taste",
+          "(C) A sense of accomplishment",
+          "(D) Too tired to eat"
+        ],
+        "answer": 2,
+        "explanation": "結尾說他覺得自己親手完成晚餐是一種真正的成就感，故選 C。",
+        "optionsZh": [
+          "因為冒煙感到丟臉",
+          "對味道感到失望",
+          "有一種成就感",
+          "太累而吃不下"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_105",
+    "passageType": "narrative",
+    "title": "The Broken Bicycle Chain (故事)",
+    "passage": "Halfway through his ride to school, Marcus heard a loud clank, and his bicycle chain fell off. He was going to be late, and worse, his hands were already covered in bike grease.\nA man walking his dog stopped and asked if he needed help. Marcus explained his problem, a little embarrassed. The man knelt down without hesitation and showed Marcus exactly how to put the chain back on the gears.\n\"Always carry a small cloth for moments like this,\" the man said, laughing as Marcus wiped his hands. Marcus thanked him and pedaled off quickly, making it to school just as the bell rang.\nThat afternoon, Marcus bought a small cloth and a mini repair kit for his backpack. He never wanted to be caught unprepared again, and he was grateful a stranger had taken the time to help him.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What problem did Marcus have on his way to school?",
+        "options": [
+          "(A) He forgot his backpack",
+          "(B) He missed the bus",
+          "(C) He got a flat tire",
+          "(D) His bicycle chain fell off"
+        ],
+        "answer": 3,
+        "explanation": "文中寫他的腳踏車鏈條掉了，故選 D。",
+        "optionsZh": [
+          "忘記帶背包",
+          "沒趕上公車",
+          "輪胎爆胎",
+          "腳踏車鏈條掉了"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What did Marcus do after school that day?",
+        "options": [
+          "(A) He bought a cloth and a repair kit",
+          "(B) He stopped riding his bicycle to school",
+          "(C) He complained to his parents",
+          "(D) He looked for the man who helped him"
+        ],
+        "answer": 0,
+        "explanation": "結尾寫他買了小布巾和迷你修理工具，避免再次措手不及，故選 A。",
+        "optionsZh": [
+          "買了布巾和修理工具",
+          "不再騎腳踏車上學",
+          "向父母抱怨",
+          "去找幫助他的那位陌生人"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_106",
+    "passageType": "narrative",
+    "title": "A Letter From My Pen Pal (故事)",
+    "passage": "Chloe had been writing letters to Amara, a pen pal in Kenya, for almost a year. Every few weeks, a new envelope with colorful stamps would arrive, full of stories about Amara's school and her small garden of tomatoes.\nOne letter arrived with sad news: a heavy storm had destroyed most of the tomato plants Amara had worked on for months. Chloe felt terrible for her friend, even though they had never met in person.\nThat weekend, Chloe searched online and found tomato seeds that could survive in Kenya's climate. She mailed a small package with the seeds and a card that said, \"Let's grow a new garden together, even from far away.\"\nMonths later, a photo arrived — Amara standing proudly beside a row of green tomato plants. Chloe realized that even across oceans, kindness could help something new grow.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "What sad news did Amara share in her letter?",
+        "options": [
+          "(A) She was moving away",
+          "(B) Her school was closing",
+          "(C) A storm destroyed her tomato plants",
+          "(D) She had lost Chloe's address"
+        ],
+        "answer": 2,
+        "explanation": "信中提到一場暴風雨摧毀了她大部分的番茄植株，故選 C。",
+        "optionsZh": [
+          "她要搬家了",
+          "她的學校要關閉了",
+          "暴風雨摧毀了她的番茄植株",
+          "她弄丟了 Chloe 的地址"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What did Chloe do to help Amara?",
+        "options": [
+          "(A) She visited Amara in Kenya",
+          "(B) She sent tomato seeds suited to Kenya's climate",
+          "(C) She sent money for a new garden",
+          "(D) She wrote to Amara's school"
+        ],
+        "answer": 1,
+        "explanation": "Chloe 找到能適應肯亞氣候的番茄種子並寄過去，故選 B。",
+        "optionsZh": [
+          "親自去肯亞拜訪 Amara",
+          "寄出適合肯亞氣候的番茄種子",
+          "寄錢資助新花園",
+          "寫信給 Amara 的學校"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does the story mainly suggest?",
+        "options": [
+          "(A) Growing tomatoes is difficult in any climate",
+          "(B) Pen pal letters are old-fashioned",
+          "(C) Kindness can connect people even across long distances",
+          "(D) Amara should have given up on gardening"
+        ],
+        "answer": 2,
+        "explanation": "結尾點出即使遠隔重洋，善意也能幫助新事物成長，主旨是善意能跨越距離連結人心，故選 C。",
+        "optionsZh": [
+          "在任何氣候種番茄都很困難",
+          "筆友書信已經過時",
+          "善意能跨越遙遠的距離連結人心",
+          "Amara 應該放棄種植"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_107",
+    "passageType": "narrative",
+    "title": "The Science Fair Disaster (故事)",
+    "passage": "Two hours before the science fair, Priya's volcano model — built with baking soda and vinegar to demonstrate a chemical reaction — collapsed after her little cousin bumped the table. Clay, wire, and red-dyed vinegar spilled everywhere.\nPriya wanted to cry, but her father suggested something simple: instead of hiding the mess, explain it. \"Show them what went wrong and what you learned,\" he said.\nAt the fair, Priya set up a small poster titled \"When Experiments Fail,\" describing exactly what had happened and why a stronger base would have prevented the collapse. Judges were impressed that she understood the science behind the failure, not just the finished project.\nShe didn't win first place, but she received a special award for \"Best Explanation of Results.\" Priya learned that even a ruined project could still teach something valuable.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "Why did Priya's volcano model collapse?",
+        "options": [
+          "(A) She used the wrong chemicals",
+          "(B) The judges knocked it over",
+          "(C) It rained during the fair",
+          "(D) Her little cousin bumped the table"
+        ],
+        "answer": 3,
+        "explanation": "文中寫她的小表弟撞到桌子，模型因此倒塌，故選 D。",
+        "optionsZh": [
+          "她用錯了化學藥品",
+          "評審把它撞倒了",
+          "科展當天下雨",
+          "她的小表弟撞到桌子"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What award did Priya receive?",
+        "options": [
+          "(A) First place",
+          "(B) Best Explanation of Results",
+          "(C) No award at all",
+          "(D) Most Creative Design"
+        ],
+        "answer": 1,
+        "explanation": "文中寫她獲得「最佳結果說明」特別獎，故選 B。",
+        "optionsZh": [
+          "第一名",
+          "最佳結果說明獎",
+          "沒有得獎",
+          "最具創意設計獎"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_108",
+    "passageType": "narrative",
+    "title": "Waiting for the School Bus in the Rain (故事)",
+    "passage": "It rained so hard that morning that Noah's umbrella turned inside out twice before he even reached the bus stop. By the time the bus finally arrived, ten minutes late, he was soaked from head to toe.\nInside, his classmate Ivy noticed him shivering and offered half of her towel from her gym bag. \"You look like you fell in a lake,\" she joked, and Noah couldn't help but laugh despite his cold, wet socks.\nThey talked the rest of the ride, something they had never really done before even though they had been in the same class for two years. By the time they reached school, Noah felt warmer, and not just because of the towel.\nFrom that rainy morning on, Noah and Ivy started saving seats for each other on the bus, rain or shine.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What did Ivy do to help Noah?",
+        "options": [
+          "(A) She called his parents",
+          "(B) She gave him dry socks",
+          "(C) She gave him her umbrella",
+          "(D) She shared half of her towel"
+        ],
+        "answer": 3,
+        "explanation": "Ivy 把體育袋裡毛巾分一半給 Noah，故選 D。",
+        "optionsZh": [
+          "打電話給他父母",
+          "給他一雙乾的襪子",
+          "把雨傘給他",
+          "分他一半的毛巾"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What changed after that rainy morning?",
+        "options": [
+          "(A) Noah stopped taking the bus",
+          "(B) Noah and Ivy became closer friends",
+          "(C) Ivy transferred to another school",
+          "(D) The bus schedule changed"
+        ],
+        "answer": 1,
+        "explanation": "結尾寫兩人自此開始互相留位置，無論晴雨，說明他們變得更要好，故選 B。",
+        "optionsZh": [
+          "Noah 不再搭公車",
+          "Noah 和 Ivy 成為更要好的朋友",
+          "Ivy 轉學了",
+          "公車時刻表改變了"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_109",
+    "passageType": "narrative",
+    "title": "The Day the Internet Went Down (故事)",
+    "passage": "When the internet went out across the whole neighborhood for two days, twelve-year-old Ryan felt like his entire world had stopped. No games, no videos, nothing to do, he thought.\nBored out of his mind by the second afternoon, he wandered into the garage and found an old chessboard that belonged to his grandfather. His younger sister, equally bored, agreed to play, even though neither of them remembered all the rules.\nThey looked up rules from an old rulebook tucked inside the box and played three games in a row, laughing at their own mistakes. Their parents joined for a fourth game after dinner, and the whole family stayed at the table long after the game ended, just talking.\nWhen the internet came back on the third day, Ryan surprised himself by feeling a little disappointed. The chessboard stayed on the living room table from then on.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "What did Ryan and his sister do while the internet was out?",
+        "options": [
+          "(A) They went to a friend's house",
+          "(B) They cleaned the garage",
+          "(C) They read comic books",
+          "(D) They found an old chessboard and played"
+        ],
+        "answer": 3,
+        "explanation": "他們在車庫找到爺爺的舊西洋棋盤並開始下棋，故選 D。",
+        "optionsZh": [
+          "去朋友家玩",
+          "打掃車庫",
+          "看漫畫書",
+          "找到舊西洋棋盤並下棋"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "How did Ryan feel when the internet came back?",
+        "options": [
+          "(A) Excited to go online again",
+          "(B) Angry at his family",
+          "(C) A little disappointed",
+          "(D) Completely indifferent"
+        ],
+        "answer": 2,
+        "explanation": "文末寫他意外感到有點失落，說明他其實享受這段沒有網路的時光，故選 C。",
+        "optionsZh": [
+          "很興奮能再次上網",
+          "對家人生氣",
+          "有點失落",
+          "完全無感"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What does this story mainly suggest?",
+        "options": [
+          "(A) The internet is more important than family time",
+          "(B) Time away from screens can bring a family closer",
+          "(C) Chess is a boring game for children",
+          "(D) Ryan's grandfather taught him to play chess"
+        ],
+        "answer": 1,
+        "explanation": "全家因斷網而聚在一起下棋聊天，最後棋盤留在客廳，主旨為遠離螢幕的時間能拉近家人距離，故選 B。",
+        "optionsZh": [
+          "網路比家庭時光更重要",
+          "遠離螢幕的時間能拉近家人距離",
+          "西洋棋對孩子來說很無聊",
+          "Ryan 的爺爺教他下棋"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_110",
+    "passageType": "informational",
+    "title": "Why Do We Yawn? (說明文)",
+    "passage": "Almost everyone yawns, and it can happen when you're tired, bored, or even just because someone near you yawned first. Scientists have studied yawning for years, but the exact reason we do it is still not fully certain.\nOne popular idea is that yawning helps cool down the brain. When your brain gets a little too warm, opening your mouth wide and taking in air may help lower its temperature slightly, keeping it working well.\nAnother interesting fact is that yawning is often contagious. Studies show that people are more likely to yawn after watching someone else yawn, especially if that person is a close friend or family member. Some researchers believe this may be linked to empathy, our ability to understand and share the feelings of others.\nSo the next time you catch a yawn from a friend, remember, science still hasn't solved the mystery completely, but it might just mean you two are closely connected.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What is one popular idea about why we yawn?",
+        "options": [
+          "(A) It helps cool down the brain",
+          "(B) It helps us breathe faster",
+          "(C) It happens only when we sleep",
+          "(D) It makes our eyes stronger"
+        ],
+        "answer": 0,
+        "explanation": "文中提到打呵欠可能有助於降低大腦溫度，故選 A。",
+        "optionsZh": [
+          "有助於降低大腦溫度",
+          "幫助我們呼吸更快",
+          "只在睡覺時才會發生",
+          "讓眼睛變得更強壯"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why might yawning be contagious?",
+        "options": [
+          "(A) It only happens between strangers",
+          "(B) It is caused by cold weather",
+          "(C) It is caused by loud noises",
+          "(D) It may be linked to empathy"
+        ],
+        "answer": 3,
+        "explanation": "文中提到打呵欠的傳染性可能與同理心（empathy）有關，故選 D。",
+        "optionsZh": [
+          "只發生在陌生人之間",
+          "是由寒冷天氣引起的",
+          "是由巨大噪音引起的",
+          "可能與同理心有關"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What is the main idea of this passage?",
+        "options": [
+          "(A) Yawning is bad for your health",
+          "(B) Only tired people yawn",
+          "(C) The exact cause of yawning is still not fully known",
+          "(D) Yawning always means someone is bored"
+        ],
+        "answer": 2,
+        "explanation": "文章開頭與結尾都強調科學家至今仍未完全確定打呵欠的原因，故選 C。",
+        "optionsZh": [
+          "打呵欠對健康有害",
+          "只有疲累的人才會打呵欠",
+          "打呵欠的確切原因至今仍未完全確定",
+          "打呵欠總是代表某人感到無聊"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_111",
+    "passageType": "informational",
+    "title": "The History of Chopsticks (說明文)",
+    "passage": "Chopsticks have been used for thousands of years and remain a common eating tool across much of Asia today. Early chopsticks were likely used for cooking, not eating, helping people stir pots or pick up hot food without touching it directly.\nOver time, chopsticks became the main way to eat, partly because food was often cut into small pieces before cooking, making a knife at the table unnecessary. This cooking style shaped how meals were served and eaten for generations.\nChopsticks are made from many materials, including bamboo, wood, metal, and even plastic. In some cultures, chopstick length and shape carry meaning; longer, thicker chopsticks were once used for serving shared dishes, while shorter ones were for personal use.\nToday, chopsticks remain a symbol of tradition, and learning to use them is often one of the first cultural skills visitors try to pick up.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What were early chopsticks likely used for?",
+        "options": [
+          "(A) Eating soup only",
+          "(B) Cutting meat",
+          "(C) Cooking, such as stirring pots",
+          "(D) Decorating tables"
+        ],
+        "answer": 2,
+        "explanation": "文中提到早期筷子可能用於烹飪，例如攪拌鍋內食物，故選 C。",
+        "optionsZh": [
+          "只用來喝湯",
+          "切肉",
+          "烹飪，例如攪拌鍋內食物",
+          "裝飾餐桌"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why did a table knife become unnecessary in many meals?",
+        "options": [
+          "(A) Because knives were too expensive",
+          "(B) Because food was often cut into small pieces before cooking",
+          "(C) Because chopsticks could cut food",
+          "(D) Because people preferred eating with their hands"
+        ],
+        "answer": 1,
+        "explanation": "文中說明因為食物在烹煮前已切成小塊，餐桌上就不需要刀子，故選 B。",
+        "optionsZh": [
+          "因為刀子太貴",
+          "因為食物在烹煮前已切成小塊",
+          "因為筷子可以切食物",
+          "因為人們偏好用手吃飯"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What can we infer about longer, thicker chopsticks?",
+        "options": [
+          "(A) They were used only by children",
+          "(B) They were less common than short ones",
+          "(C) They were used for serving shared dishes",
+          "(D) They were made only of plastic"
+        ],
+        "answer": 2,
+        "explanation": "文中提到較長較粗的筷子曾用於夾取共食的菜餚，故選 C。",
+        "optionsZh": [
+          "只給小孩使用",
+          "比短筷子少見",
+          "用於夾取共食的菜餚",
+          "只用塑膠製成"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_112",
+    "passageType": "informational",
+    "title": "How Bees Make Honey (說明文)",
+    "passage": "Honey begins its journey inside a flower. Worker bees fly from flower to flower, collecting a sweet liquid called nectar using a long, tube-shaped tongue. Each trip, a bee may visit dozens of flowers before returning to the hive.\nOnce back at the hive, the bee passes the nectar to another worker bee through its mouth. This process happens several times, and each time, special substances inside the bees' bodies slowly change the nectar's chemistry.\nThe bees then store the partly finished honey in wax cells and fan it with their wings. This fanning action removes extra water from the nectar, thickening it into the honey we recognize. Finally, the bees seal each cell with a thin layer of wax to keep the honey fresh and safe until it is needed.\nMaking just one jar of honey can require thousands of flower visits, showing how much teamwork goes into every drop.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What do bees use to collect nectar?",
+        "options": [
+          "(A) A tube-shaped tongue",
+          "(B) Their front legs",
+          "(C) A special net",
+          "(D) Their wings"
+        ],
+        "answer": 0,
+        "explanation": "文中說蜜蜂用長長的管狀舌頭採集花蜜，故選 A。",
+        "optionsZh": [
+          "管狀的舌頭",
+          "牠們的前腳",
+          "特殊的網子",
+          "牠們的翅膀"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why do bees fan the nectar with their wings?",
+        "options": [
+          "(A) To attract more bees",
+          "(B) To clean the wax cells",
+          "(C) To cool down the hive",
+          "(D) To remove extra water and thicken it"
+        ],
+        "answer": 3,
+        "explanation": "文中說搧動翅膀能去除多餘水分，使花蜜變濃稠成蜂蜜，故選 D。",
+        "optionsZh": [
+          "為了吸引更多蜜蜂",
+          "為了清潔蜂蠟巢室",
+          "為了讓蜂巢降溫",
+          "去除多餘水分並使其變濃稠"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does the passage mainly explain?",
+        "options": [
+          "(A) Why bees sting people",
+          "(B) How bees choose their queen",
+          "(C) The steps bees take to turn nectar into honey",
+          "(D) Why honey is expensive"
+        ],
+        "answer": 2,
+        "explanation": "全文依序說明蜜蜂如何採集花蜜、傳遞、搧翅濃縮並封存成蜂蜜的過程，故選 C。",
+        "optionsZh": [
+          "蜜蜂為何螫人",
+          "蜜蜂如何選出蜂后",
+          "蜜蜂將花蜜製成蜂蜜的步驟",
+          "蜂蜜為何昂貴"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_113",
+    "passageType": "informational",
+    "title": "The Science of Rainbows (說明文)",
+    "passage": "A rainbow appears when sunlight passes through raindrops in the air. As light enters a raindrop, it bends and splits into different colors, much like light passing through a glass prism.\nEach color of light bends by a slightly different amount, which is why we see a clear pattern of colors instead of plain white light. Red bends the least, so it appears on the outer edge of the rainbow, while violet bends the most and appears on the inner edge.\nRainbows usually appear opposite the sun, which is why you often need to have the sun behind you to see one clearly. This also explains why rainbows are more common right after a rain shower, when both sunlight and raindrops are present at the same time.\nAlthough a rainbow looks like it has a fixed location, it is actually created by light and water at a specific angle, so no two people ever see the exact same rainbow.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "Why do we see different colors in a rainbow instead of white light?",
+        "options": [
+          "(A) Each color bends by a slightly different amount",
+          "(B) Raindrops only reflect certain colors",
+          "(C) The sun only produces colored light after rain",
+          "(D) Clouds filter out white light"
+        ],
+        "answer": 0,
+        "explanation": "文中說明各顏色的光彎曲程度不同，因此呈現出色彩分明的圖案，故選 A。",
+        "optionsZh": [
+          "每種顏色的光彎曲程度略有不同",
+          "雨滴只反射特定顏色",
+          "太陽只在雨後產生彩色光",
+          "雲層過濾掉了白光"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Where does red usually appear in a rainbow?",
+        "options": [
+          "(A) In the center",
+          "(B) On the outer edge",
+          "(C) On the inner edge",
+          "(D) It does not appear at all"
+        ],
+        "answer": 1,
+        "explanation": "文中提到紅色彎曲最少，出現在彩虹的外緣，故選 B。",
+        "optionsZh": [
+          "在正中央",
+          "在外緣",
+          "在內緣",
+          "根本不會出現"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What can we infer from the passage?",
+        "options": [
+          "(A) Rainbows can be touched and moved",
+          "(B) Everyone standing together sees the exact same rainbow",
+          "(C) A rainbow's appearance depends on the viewer's position and angle",
+          "(D) Rainbows only appear at night"
+        ],
+        "answer": 2,
+        "explanation": "文末提到彩虹是由特定角度的光與水共同形成，因此沒有兩個人看到完全相同的彩虹，說明位置角度影響觀察結果，故選 C。",
+        "optionsZh": [
+          "彩虹可以被觸摸或移動",
+          "站在一起的人看到的彩虹完全相同",
+          "彩虹的樣貌取決於觀看者的位置與角度",
+          "彩虹只在夜晚出現"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_114",
+    "passageType": "informational",
+    "title": "Why Do Volcanoes Erupt? (說明文)",
+    "passage": "Deep beneath the earth's surface, extreme heat melts rock into a thick liquid called magma. Because magma is lighter than the solid rock around it, it slowly rises toward the surface through cracks and weak points in the earth's crust.\nAs magma moves upward, pressure builds up, similar to shaking a bottle of soda before opening it. When the pressure becomes too great, the magma forces its way out through an opening called a volcano, and we call this event an eruption.\nOnce magma reaches the surface, it is called lava. Some eruptions are calm, with lava flowing slowly down the mountainside, while others are explosive, throwing ash, gas, and rock high into the sky.\nScientists study volcanoes closely, watching for small earthquakes and changes in gas levels, because these signs can often warn of an eruption days or even weeks before it happens.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "Why does magma rise toward the earth's surface?",
+        "options": [
+          "(A) Because it is lighter than the solid rock around it",
+          "(B) Because volcanoes pull it upward",
+          "(C) Because earthquakes push it up",
+          "(D) Because it is colder than the surrounding rock"
+        ],
+        "answer": 0,
+        "explanation": "文中說明岩漿比周圍固態岩石輕，因此會緩慢上升，故選 A。",
+        "optionsZh": [
+          "因為它比周圍的固態岩石輕",
+          "因為火山把它往上吸",
+          "因為地震把它推上去",
+          "因為它比周圍岩石冷"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What do scientists watch for to predict an eruption?",
+        "options": [
+          "(A) The temperature of nearby rivers",
+          "(B) The number of tourists visiting",
+          "(C) The color of the sky",
+          "(D) Small earthquakes and changes in gas levels"
+        ],
+        "answer": 3,
+        "explanation": "文末說科學家觀察小型地震與氣體濃度變化以預測噴發，故選 D。",
+        "optionsZh": [
+          "附近河流的溫度",
+          "遊客的數量",
+          "天空的顏色",
+          "小型地震與氣體濃度變化"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What is magma called once it reaches the surface?",
+        "options": [
+          "(A) Ash",
+          "(B) Crust",
+          "(C) Lava",
+          "(D) Steam"
+        ],
+        "answer": 2,
+        "explanation": "文中明確說明岩漿到達地表後稱為熔岩（lava），故選 C。",
+        "optionsZh": [
+          "火山灰",
+          "地殼",
+          "熔岩",
+          "蒸氣"
+        ],
+        "questionType": "vocabulary"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_115",
+    "passageType": "informational",
+    "title": "The Invention of the Bicycle (說明文)",
+    "passage": "The earliest bicycles looked very different from the ones we ride today. In the early 1800s, an inventor created a wooden machine with two wheels but no pedals, so riders had to push it forward with their feet, much like walking while sitting down.\nOver the following decades, inventors kept improving the design. Pedals were eventually added directly to the front wheel, which made riding faster but also harder to balance, especially with the very large front wheels used at the time.\nBy the late 1800s, a safer design appeared with two wheels of equal size and a chain connecting the pedals to the back wheel. This new design was much easier to ride and balance, and it quickly became popular with both men and women.\nBicycles gave many people new freedom to travel farther and faster than ever before, and they remain one of the most efficient forms of transportation ever invented.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "How did riders move the earliest bicycles forward?",
+        "options": [
+          "(A) By pushing with their feet",
+          "(B) By pedaling with their hands",
+          "(C) By using a small motor",
+          "(D) By pulling a rope"
+        ],
+        "answer": 0,
+        "explanation": "文中說最早的腳踏車沒有踏板，須用腳推地前進，故選 A。",
+        "optionsZh": [
+          "用腳推地前進",
+          "用手轉動踏板",
+          "使用小型馬達",
+          "拉繩子前進"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why was the large front-wheel design harder to ride?",
+        "options": [
+          "(A) It had no wheels at all",
+          "(B) It was harder to balance",
+          "(C) It could not go fast",
+          "(D) It had no pedals"
+        ],
+        "answer": 1,
+        "explanation": "文中提到踏板直接裝在前輪讓車速變快，但也因大前輪較難保持平衡，故選 B。",
+        "optionsZh": [
+          "它完全沒有輪子",
+          "它比較難保持平衡",
+          "它無法騎快",
+          "它沒有踏板"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What made the late-1800s design safer and easier to ride?",
+        "options": [
+          "(A) Two equal-sized wheels and a chain to the back wheel",
+          "(B) A motor added to the frame",
+          "(C) Three wheels instead of two",
+          "(D) No pedals at all"
+        ],
+        "answer": 0,
+        "explanation": "文中說明新設計採用大小相同的兩輪，並用鏈條連接踏板與後輪，因此更容易騎乘與平衡，故選 A。",
+        "optionsZh": [
+          "大小相同的兩個輪子及連接後輪的鏈條",
+          "車架上加裝馬達",
+          "三個輪子而非兩個",
+          "完全沒有踏板"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_116",
+    "passageType": "informational",
+    "title": "How Do Birds Know Where to Fly? (說明文)",
+    "passage": "Every year, many birds travel thousands of kilometers between their summer and winter homes, a journey known as migration. Scientists have long wondered how birds manage to find their way without a map.\nResearch shows that birds use several tools to navigate. Some species can sense the earth's magnetic field, almost like carrying a built-in compass inside their bodies. Others use the position of the sun during the day or the stars at night to stay on course.\nBirds also rely on landmarks they remember, such as coastlines, rivers, and mountain ranges, especially on routes they have flown before. Young birds flying for the first time often follow older, experienced birds to learn the path.\nDespite decades of research, scientists still do not fully understand how birds combine all these signals so precisely, making bird migration one of nature's most impressive mysteries.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "How do some birds sense direction, according to the passage?",
+        "options": [
+          "(A) By sensing the earth's magnetic field",
+          "(B) By listening for other birds' calls only",
+          "(C) By following ocean currents",
+          "(D) By using radio signals"
+        ],
+        "answer": 0,
+        "explanation": "文中提到部分鳥類能感知地球磁場，如同體內自帶指南針，故選 A。",
+        "optionsZh": [
+          "感知地球磁場",
+          "只靠聽其他鳥類的叫聲",
+          "跟隨海流",
+          "使用無線電訊號"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "How do young birds often learn migration routes?",
+        "options": [
+          "(A) By staying in one place",
+          "(B) By using the earth's magnetic field only",
+          "(C) By reading maps",
+          "(D) By following older, experienced birds"
+        ],
+        "answer": 3,
+        "explanation": "文中提到第一次遷徙的幼鳥常跟隨經驗豐富的成鳥學習路徑，故選 D。",
+        "optionsZh": [
+          "留在原地不動",
+          "只依靠地球磁場",
+          "閱讀地圖",
+          "跟隨經驗豐富的成鳥"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What is the main idea of this passage?",
+        "options": [
+          "(A) Bird migration is no longer a mystery to scientists",
+          "(B) Birds use several combined methods to navigate long journeys",
+          "(C) All birds migrate the exact same distance",
+          "(D) Birds cannot migrate without a map"
+        ],
+        "answer": 1,
+        "explanation": "全文說明鳥類結合磁場感知、日月星辰及地標記憶等多種方式導航，故選 B。",
+        "optionsZh": [
+          "鳥類遷徙對科學家來說已不再是謎",
+          "鳥類結合多種方法來導航長途旅程",
+          "所有鳥類遷徙的距離完全相同",
+          "沒有地圖鳥類就無法遷徙"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_117",
+    "passageType": "informational",
+    "title": "The Story of Chocolate (說明文)",
+    "passage": "Chocolate begins its life as a bitter seed inside a fruit called a cacao pod, grown mostly in warm regions near the equator. Farmers cut the pods open and remove the seeds, which are then left to ferment for several days.\nFermentation changes the seeds' flavor, reducing bitterness and creating the deep taste we associate with chocolate. After fermenting, the seeds are dried under the sun and later roasted, a step that brings out even more flavor.\nOnce roasted, the seeds are ground into a thick paste. Sugar and sometimes milk are added to this paste, and the mixture is processed until smooth before being shaped into bars or other treats.\nWhat surprises many people is that early civilizations in Central America drank chocolate as a bitter, unsweetened beverage rather than eating it as candy, a tradition very different from how most of the world enjoys chocolate today.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "What does fermentation do to cacao seeds?",
+        "options": [
+          "(A) It reduces bitterness and creates a deeper flavor",
+          "(B) It turns the seeds into sugar",
+          "(C) It removes all flavor from the seeds",
+          "(D) It makes the seeds grow larger"
+        ],
+        "answer": 0,
+        "explanation": "文中說明發酵能減少苦味並產生深層風味，故選 A。",
+        "optionsZh": [
+          "減少苦味並產生更深層的風味",
+          "把種子變成糖",
+          "去除種子所有的味道",
+          "讓種子變大"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "How did early civilizations in Central America enjoy chocolate?",
+        "options": [
+          "(A) As a dessert topping",
+          "(B) As a dried snack",
+          "(C) As a sweet candy bar",
+          "(D) As a bitter, unsweetened drink"
+        ],
+        "answer": 3,
+        "explanation": "文末提到早期中美洲文明將可可作為未加糖的苦味飲料飲用，故選 D。",
+        "optionsZh": [
+          "甜點的配料",
+          "曬乾的零食",
+          "甜的巧克力棒",
+          "苦味且未加糖的飲品"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What is this passage mainly about?",
+        "options": [
+          "(A) The health benefits of chocolate",
+          "(B) Why chocolate is expensive",
+          "(C) The steps involved in turning cacao seeds into chocolate",
+          "(D) The best countries to grow cacao"
+        ],
+        "answer": 2,
+        "explanation": "全文依序說明可可豆從發酵、烘烤、研磨到成品的製程，故選 C。",
+        "optionsZh": [
+          "巧克力的健康益處",
+          "巧克力為何昂貴",
+          "可可豆變成巧克力的製作步驟",
+          "最適合種植可可的國家"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_118",
+    "passageType": "informational",
+    "title": "Why Is the Sky Blue? (說明文)",
+    "passage": "Sunlight looks white, but it is actually made of many colors mixed together. When sunlight enters the earth's atmosphere, it collides with tiny gas particles in the air, and this causes the light to scatter in different directions.\nBlue light has a shorter wavelength than most other colors, which means it scatters much more easily than colors like red or orange. Because blue light spreads across the entire sky, our eyes see the sky as blue during most of the day.\nAt sunrise and sunset, the sunlight has to pass through much more of the atmosphere to reach our eyes. This extra distance scatters away most of the blue light before it arrives, leaving behind the reds and oranges that color the sky at those times.\nInterestingly, on the moon, where there is no atmosphere to scatter light, the sky always appears black, even during the daytime.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "Why does blue light scatter more than red light?",
+        "options": [
+          "(A) Blue light has a shorter wavelength",
+          "(B) Blue light is heavier than red light",
+          "(C) Blue light travels slower than red light",
+          "(D) Blue light is brighter than red light"
+        ],
+        "answer": 0,
+        "explanation": "文中說明藍光波長較短，因此更容易散射，故選 A。",
+        "optionsZh": [
+          "藍光的波長較短",
+          "藍光比紅光重",
+          "藍光的移動速度比紅光慢",
+          "藍光比紅光亮"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why does the sky turn red or orange at sunset?",
+        "options": [
+          "(A) Because the sun is closer to earth at that time",
+          "(B) Because most blue light is scattered away before reaching our eyes",
+          "(C) Because clouds change color at night",
+          "(D) Because the atmosphere disappears at sunset"
+        ],
+        "answer": 1,
+        "explanation": "日落時陽光需經過更長的大氣路徑，藍光大多被散射掉，只剩紅橙色光抵達，故選 B。",
+        "optionsZh": [
+          "因為那時太陽離地球較近",
+          "因為多數藍光在抵達眼睛前已被散射掉",
+          "因為雲朵在夜間會變色",
+          "因為大氣層在日落時消失了"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "Why does the sky on the moon always appear black?",
+        "options": [
+          "(A) The moon has no atmosphere to scatter light",
+          "(B) The moon is too far from the sun",
+          "(C) The moon has too much dust in the air",
+          "(D) The moon only receives red light"
+        ],
+        "answer": 0,
+        "explanation": "文末提到月球沒有大氣層可以散射光線，因此天空總是呈現黑色，故選 A。",
+        "optionsZh": [
+          "月球沒有大氣層可以散射光線",
+          "月球離太陽太遠",
+          "月球空氣中有太多灰塵",
+          "月球只接收到紅光"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_119",
+    "passageType": "informational",
+    "title": "The Secret Life of Ants (說明文)",
+    "passage": "A single ant may seem tiny and unimportant, but an entire ant colony behaves almost like one large, organized team. Each ant has a specific role, such as gathering food, caring for eggs, or defending the nest, and colonies can include thousands of members working together.\nAnts communicate mainly through chemical trails called pheromones. When an ant finds food, it leaves a scented trail on its way back to the nest, and other ants follow this trail to reach the food quickly and efficiently.\nSome ant colonies even practice a kind of farming, protecting small insects called aphids in exchange for a sweet liquid the aphids produce. Other species grow their own fungus underground for food, carefully tending it much like farmers tend crops.\nScientists studying ant behavior often find surprising similarities to human society, from division of labor to complex methods of cooperation between thousands of individuals.",
+    "difficulty": 5,
+    "questions": [
+      {
+        "question": "How do ants mainly communicate with each other?",
+        "options": [
+          "(A) Through chemical trails called pheromones",
+          "(B) Through sound signals",
+          "(C) Through body movements only",
+          "(D) Through changing color"
+        ],
+        "answer": 0,
+        "explanation": "文中說明螞蟻主要透過名為費洛蒙的化學路徑溝通，故選 A。",
+        "optionsZh": [
+          "透過名為費洛蒙的化學路徑",
+          "透過聲音訊號",
+          "只透過肢體動作",
+          "透過改變顏色"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What do some ant colonies get from aphids?",
+        "options": [
+          "(A) A sweet liquid",
+          "(B) Extra eggs",
+          "(C) A place to build a new nest",
+          "(D) Protection from predators"
+        ],
+        "answer": 0,
+        "explanation": "文中提到某些蟻群保護蚜蟲以換取牠們產生的甜液，故選 A。",
+        "optionsZh": [
+          "甜的液體",
+          "額外的蟲卵",
+          "築新巢的地方",
+          "來自掠食者的保護"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does the passage mainly suggest about ant colonies?",
+        "options": [
+          "(A) They are highly organized and cooperate much like human society",
+          "(B) They are dangerous to other insects",
+          "(C) They cannot survive without human help",
+          "(D) They only communicate through sound"
+        ],
+        "answer": 0,
+        "explanation": "全文強調蟻群分工合作、精密組織，並提到與人類社會有相似之處，故選 A。",
+        "optionsZh": [
+          "高度組織化，合作方式類似人類社會",
+          "對其他昆蟲具有危險性",
+          "沒有人類幫助就無法生存",
+          "只透過聲音溝通"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_120",
+    "passageType": "informational",
+    "title": "How Do Plants Grow Without Soil? (說明文)",
+    "passage": "Most people assume plants need soil to grow, but a farming method called hydroponics proves otherwise. In hydroponic systems, plant roots grow directly in water mixed with nutrients instead of soil.\nSoil normally supplies plants with nutrients and support, but hydroponics provides these nutrients directly through the water, and the plant is often held up by a simple frame or floating tray. Because roots have constant access to nutrients, hydroponic plants can sometimes grow faster than plants grown in soil.\nThis method also uses significantly less water than traditional farming because the water can be reused instead of soaking into the ground and evaporating. For this reason, hydroponics is becoming popular in cities and dry regions where farmland or water is limited.\nWhile hydroponic systems require careful monitoring of nutrient levels, many farmers believe the benefits make it a promising choice for the future of food production.",
+    "difficulty": 5,
+    "questions": [
+      {
+        "question": "In hydroponic systems, how do plants receive nutrients?",
+        "options": [
+          "(A) Directly through water mixed with nutrients",
+          "(B) From sunlight alone",
+          "(C) From soil placed around the roots",
+          "(D) From fertilizer sprayed on the leaves"
+        ],
+        "answer": 0,
+        "explanation": "文中說明水耕系統中植物根部直接從混合養分的水中吸收養分，故選 A。",
+        "optionsZh": [
+          "直接從混合養分的水中吸收",
+          "只靠陽光",
+          "從根部周圍的土壤",
+          "從噴灑在葉片上的肥料"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why does hydroponics use less water than traditional farming?",
+        "options": [
+          "(A) Because hydroponic farms are always smaller",
+          "(B) Because it never rains where hydroponics is used",
+          "(C) Because plants do not need much water to grow",
+          "(D) Because the water can be reused instead of soaking into the ground"
+        ],
+        "answer": 3,
+        "explanation": "文中提到水耕的水可重複利用，而非滲入土壤蒸發流失，故選 D。",
+        "optionsZh": [
+          "因為水耕農場總是比較小",
+          "因為使用水耕的地方從不下雨",
+          "因為植物生長不太需要水",
+          "因為水可以重複利用而非滲入土壤流失"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "Why is hydroponics becoming popular in cities and dry regions?",
+        "options": [
+          "(A) It requires more farmland than traditional farming",
+          "(B) Farmland and water are often limited in these areas",
+          "(C) It does not require any monitoring",
+          "(D) It only works in cold climates"
+        ],
+        "answer": 1,
+        "explanation": "文中提到都市和乾燥地區的農地與水資源有限，因此水耕越來越受歡迎，故選 B。",
+        "optionsZh": [
+          "它比傳統農業需要更多農地",
+          "這些地區的農地與水資源往往有限",
+          "它完全不需要監控",
+          "它只適用於寒冷氣候"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_121",
+    "passageType": "informational",
+    "title": "The History of the Telephone (說明文)",
+    "passage": "Before the telephone existed, sending a message across long distances often took days or even weeks, depending on how far it had to travel. In 1876, an inventor successfully transmitted the human voice through a wire for the first time, a moment that changed communication forever.\nEarly telephones required an operator to manually connect calls by plugging wires into a switchboard, since there was no automatic way to connect two numbers directly. Making a long-distance call could take several minutes just to get connected.\nOver the next century, telephones evolved rapidly. Automatic switching systems replaced human operators, and phones eventually became small enough to carry in a pocket, freeing people from the need to stay near a wall-mounted device.\nToday, most people carry a phone that can do far more than make calls, yet the basic idea remains the same as it was in 1876: sending a voice across distance, instantly.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "What did early telephone operators have to do to connect calls?",
+        "options": [
+          "(A) Manually plug wires into a switchboard",
+          "(B) Press a single automatic button",
+          "(C) Send a written message first",
+          "(D) Wait for the caller to arrive in person"
+        ],
+        "answer": 0,
+        "explanation": "文中說明早期接線生須手動將電線插入交換機才能接通電話，故選 A。",
+        "optionsZh": [
+          "手動將電線插入交換機",
+          "按一個自動按鈕",
+          "先寄出書面訊息",
+          "等待來電者親自到場"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What eventually replaced human telephone operators?",
+        "options": [
+          "(A) Automatic switching systems",
+          "(B) Written letters",
+          "(C) Radio broadcasts",
+          "(D) Telegraph machines"
+        ],
+        "answer": 0,
+        "explanation": "文中提到自動交換系統後來取代了人工接線生，故選 A。",
+        "optionsZh": [
+          "自動交換系統",
+          "書信",
+          "廣播",
+          "電報機"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What is the main idea of this passage?",
+        "options": [
+          "(A) The telephone has changed a lot, but its basic purpose stayed the same",
+          "(B) Phones today are used mainly for texting",
+          "(C) Long-distance calls are no longer possible",
+          "(D) The first telephone call happened in the 1900s"
+        ],
+        "answer": 0,
+        "explanation": "全文說明電話從1876年至今經歷許多演變，但傳送聲音跨越距離的基本概念不變，故選 A。",
+        "optionsZh": [
+          "電話經歷許多改變，但基本目的維持不變",
+          "現今的電話主要用於傳簡訊",
+          "長途電話已不再可行",
+          "第一通電話發生在1900年代"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_122",
+    "passageType": "dual",
+    "title": "Should Students Have Part-Time Jobs? — Two Views (雙方觀點)",
+    "passage": "■ Article 1: Writer A\nI believe high school students should be allowed to work part-time jobs. A part-time job teaches responsibility that no classroom can fully provide. Students learn to manage their own money, show up on time, and work well with people of different ages. These are skills that textbooks simply cannot teach as effectively as real experience.\nOf course, grades should always come first, so students should only work a few hours a week during the school term. But with careful planning, a part-time job can actually make students more organized, not less, because they must learn to balance their time wisely.\n\n■ Article 2: Writer B\nWhile I understand the appeal, I think part-time jobs are too risky for most high school students. Teenagers are already dealing with heavy homework loads, exams, and extracurricular activities. Adding a job on top of that often leads to exhaustion, and tired students cannot focus well in class.\nInstead of working for money, I believe students should spend their limited free time on things that support long-term growth, such as reading, sports, or volunteering. There will be plenty of time to work after graduation. Right now, students' main job should be learning.",
+    "difficulty": 5,
+    "questions": [
+      {
+        "question": "What does Writer A believe part-time jobs teach students?",
+        "options": [
+          "(A) How to avoid schoolwork",
+          "(B) How to spend money quickly",
+          "(C) Nothing that school cannot already teach",
+          "(D) Responsibility and time management"
+        ],
+        "answer": 3,
+        "explanation": "Writer A 認為打工能教會學生責任感與時間管理，是課本無法完全提供的技能，故選 D。",
+        "optionsZh": [
+          "如何逃避課業",
+          "如何快速花錢",
+          "沒有學校教不到的東西",
+          "責任感與時間管理"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "According to Writer B, what should students do with their free time instead of working?",
+        "options": [
+          "(A) Watch more television",
+          "(B) Take on even more part-time jobs",
+          "(C) Sleep as much as possible",
+          "(D) Focus on things like reading, sports, or volunteering"
+        ],
+        "answer": 3,
+        "explanation": "Writer B 建議把有限的時間用於閱讀、運動或志工等支持長期成長的活動，故選 D。",
+        "optionsZh": [
+          "看更多電視",
+          "接更多打工",
+          "盡量多睡覺",
+          "專注於閱讀、運動或志工等活動"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What do both writers agree on?",
+        "options": [
+          "(A) Part-time jobs should be banned completely",
+          "(B) Students' schoolwork or learning matters a great deal",
+          "(C) Money is more important than grades",
+          "(D) Working after school is always harmful"
+        ],
+        "answer": 1,
+        "explanation": "Writer A 強調成績應優先，Writer B 強調學生現階段主要工作是學習，兩人都認同課業/學習的重要性，故選 B。",
+        "optionsZh": [
+          "打工應該被完全禁止",
+          "學生的課業或學習非常重要",
+          "金錢比成績更重要",
+          "放學後打工總是有害的"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What is Writer B mainly concerned about?",
+        "options": [
+          "(A) Students spending too much money",
+          "(B) Students becoming too independent",
+          "(C) Working leading to exhaustion and poor focus in class",
+          "(D) Employers treating students unfairly"
+        ],
+        "answer": 2,
+        "explanation": "Writer B 主要擔心加上打工會導致疲憊，使學生在課堂上無法專心，故選 C。",
+        "optionsZh": [
+          "學生花太多錢",
+          "學生變得太獨立",
+          "打工導致疲憊、上課難以專心",
+          "雇主不公平對待學生"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "How does Writer A respond to the concern that jobs take too much time?",
+        "options": [
+          "(A) By ignoring the issue completely",
+          "(B) By saying jobs should replace school entirely",
+          "(C) By saying students should quit school",
+          "(D) By suggesting students work only a few hours a week and prioritize grades"
+        ],
+        "answer": 3,
+        "explanation": "Writer A 提到成績應優先，學期間只需每週工作幾小時，透過妥善規劃仍可兼顧，故選 D。",
+        "optionsZh": [
+          "完全不理會這個問題",
+          "建議打工完全取代上學",
+          "建議學生乾脆休學",
+          "建議每週只工作幾小時並以成績為優先"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_123",
+    "passageType": "dual",
+    "title": "Is Homeschooling Better Than Traditional School? — Two Views (雙方觀點)",
+    "passage": "■ Article 1: Writer A\nHomeschooling gives children the freedom to learn at their own pace, something a traditional classroom rarely allows. A student who understands math quickly can move ahead, while one who needs more time with reading can slow down without feeling embarrassed in front of classmates.\nParents can also design lessons around a child's interests, making learning feel more personal and engaging. Many homeschooled students join local sports teams or community groups, so they still have chances to make friends and develop social skills outside the traditional classroom setting.\n\n■ Article 2: Writer B\nI disagree that homeschooling is generally better. Traditional schools offer something homeschooling struggles to replace: daily interaction with a wide variety of classmates, teachers, and situations. Learning to work with people you didn't choose is an important life skill.\nSchools also provide access to science labs, sports facilities, and trained teachers in every subject, resources most families cannot easily recreate at home. For most students, the structure and social environment of a traditional school better prepares them for the real world.",
+    "difficulty": 5,
+    "questions": [
+      {
+        "question": "According to Writer A, what is one benefit of homeschooling?",
+        "options": [
+          "(A) Students never need to study math",
+          "(B) Children can learn at their own pace",
+          "(C) Parents no longer need to work",
+          "(D) Students avoid making any friends"
+        ],
+        "answer": 1,
+        "explanation": "Writer A 提到在家自學能讓孩子依自己的步調學習，故選 B。",
+        "optionsZh": [
+          "學生完全不需要學數學",
+          "父母不再需要工作",
+          "孩子可以依自己的步調學習",
+          "學生完全不需交朋友"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does Writer B think traditional schools offer that is hard to replace at home?",
+        "options": [
+          "(A) Daily interaction with many different classmates and teachers",
+          "(B) Free lunch every day",
+          "(C) Complete freedom to skip classes",
+          "(D) A shorter school day"
+        ],
+        "answer": 0,
+        "explanation": "Writer B 指出傳統學校提供每天與各種同學、老師互動的機會，這是在家自學難以取代的，故選 A。",
+        "optionsZh": [
+          "每天與眾多不同同學及老師互動",
+          "每天免費午餐",
+          "完全自由地翹課",
+          "更短的上課時間"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What do both writers seem to agree matters for a child's development?",
+        "options": [
+          "(A) Social interaction and life skills",
+          "(B) Avoiding all forms of testing",
+          "(C) Learning only from parents",
+          "(D) Staying at home as much as possible"
+        ],
+        "answer": 0,
+        "explanation": "Writer A 提到透過社團活動維持社交，Writer B 強調人際互動的重要性，兩者都認同社交與生活技能對孩子發展重要，故選 A。",
+        "optionsZh": [
+          "社交互動與生活技能",
+          "避免所有形式的測驗",
+          "只跟父母學習",
+          "盡量待在家裡"
+        ],
+        "questionType": "inference"
+      },
+      {
+        "question": "What resources does Writer B mention that schools provide?",
+        "options": [
+          "(A) Unlimited holidays",
+          "(B) Private tutors for every student",
+          "(C) Free transportation only",
+          "(D) Science labs, sports facilities, and trained teachers"
+        ],
+        "answer": 3,
+        "explanation": "Writer B 提到學校提供科學實驗室、運動設施及各科受過訓練的教師，故選 D。",
+        "optionsZh": [
+          "無限的假期",
+          "每位學生都有私人家教",
+          "只有免費交通",
+          "科學實驗室、運動設施及受過訓練的教師"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What is Writer A's main argument in favor of homeschooling?",
+        "options": [
+          "(A) It is always cheaper than school",
+          "(B) It allows personalized, self-paced learning",
+          "(C) It requires no parental effort",
+          "(D) It guarantees better grades"
+        ],
+        "answer": 1,
+        "explanation": "Writer A 的核心論點是在家自學能依孩子興趣與步調個人化學習，故選 B。",
+        "optionsZh": [
+          "永遠比上學便宜",
+          "能提供個人化、依步調學習",
+          "完全不需要父母的付出",
+          "保證成績更好"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_124",
+    "passageType": "chat",
+    "title": "Study Group Chat (對話)",
+    "passage": "",
+    "caption": "【讀書小組群組】\nMei: Hey guys, are we still meeting at the library tomorrow to study for the science test?\nJordan: I can't make it in the morning, my dentist appointment got moved. Can we meet at 2 p.m. instead?\nMei: 2 p.m. works for me! What about you, Ben?\nBen: I have a family thing at 2, but I could join around 3:30.\nMei: Okay, let's start at 2 with whoever's there, and Ben can join later.\nJordan: Sounds good. Should we bring our notes from Chapter 5 too, not just Chapter 6?\nMei: Good idea, the test might cover both chapters.\nBen: I'll bring snacks then, since I'll be a bit late anyway!",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "Why does Jordan want to change the meeting time?",
+        "options": [
+          "(A) He is not feeling well",
+          "(B) The library is closed in the morning",
+          "(C) He has a science test at that time",
+          "(D) His dentist appointment was moved"
+        ],
+        "answer": 3,
+        "explanation": "Jordan 說牙醫預約時間被改到別的時段，所以無法早上到，故選 D。",
+        "optionsZh": [
+          "他身體不舒服",
+          "圖書館早上不開門",
+          "他那個時間有科學考試",
+          "他的牙醫預約被改時間了"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What can we know about Ben from the chat?",
+        "options": [
+          "(A) He will not join the study group at all",
+          "(B) He will arrive later and bring snacks",
+          "(C) He wants to change the location",
+          "(D) He has already finished studying"
+        ],
+        "answer": 1,
+        "explanation": "Ben 表示 3:30 才能加入，並主動說要帶零食，故選 B。",
+        "optionsZh": [
+          "他完全不會加入讀書會",
+          "他會晚點到並帶零食",
+          "他想更改地點",
+          "他已經讀完了"
+        ],
+        "questionType": "inference"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_125",
+    "passageType": "chat",
+    "title": "Planning a Class Reunion (對話)",
+    "passage": "",
+    "caption": "【國中同學群組】\nYuki: It's been five years since graduation! Should we plan a small reunion this summer?\nAlex: Definitely! Do we know how many people would actually come?\nYuki: I already asked around, at least 15 people said yes so far.\nAlex: Nice! Should we book a restaurant, or just meet at the old school park?\nSam: I vote for the park, it's free and we used to hang out there all the time anyway.\nYuki: True, and it would feel more like old times. Let's do the park, then maybe grab food nearby after.\nAlex: Sounds perfect. I'll make a poster with the date once we pick one.\nSam: Let's aim for the last Saturday of July, most people are free then.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "Why does Sam prefer meeting at the park?",
+        "options": [
+          "(A) It has better food options",
+          "(B) It is the only place available",
+          "(C) It is closer to Sam's house",
+          "(D) It is free and holds memories from the past"
+        ],
+        "answer": 3,
+        "explanation": "Sam 說公園免費，而且大家以前常在那裡聚，故選 D。",
+        "optionsZh": [
+          "食物選擇比較好",
+          "只有那裡有空位",
+          "離 Sam 家比較近",
+          "免費而且有過去的回憶"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does Alex plan to do once a date is chosen?",
+        "options": [
+          "(A) Book a restaurant",
+          "(B) Call every classmate",
+          "(C) Make a poster with the date",
+          "(D) Cancel the reunion"
+        ],
+        "answer": 2,
+        "explanation": "Alex 表示日期確定後會做一張含日期的海報，故選 C。",
+        "optionsZh": [
+          "訂餐廳",
+          "打電話給每位同學",
+          "做一張含日期的海報",
+          "取消聚會"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_126",
+    "passageType": "comics",
+    "title": "The Careless Cyclist (四格漫畫)",
+    "passage": "",
+    "caption": "第一格：一個男孩騎著腳踏車，一邊聽音樂一邊滑手機，完全沒注意前方。\n第二格：路邊有一個標示「注意坑洞」的告示牌，但男孩根本沒看到。\n第三格：男孩的腳踏車前輪掉進坑洞，整個人飛了出去，手機也摔到地上。\n第四格：男孩狼狽地站起來，撿起摔壞的手機，旁邊的路人搖搖頭，指著告示牌，男孩不好意思地低下頭。",
+    "difficulty": 2,
+    "questions": [
+      {
+        "question": "Why did the boy fall off his bicycle?",
+        "options": [
+          "(A) A dog ran in front of him",
+          "(B) He was not paying attention while looking at his phone",
+          "(C) His bicycle chain broke",
+          "(D) It was raining and the road was slippery"
+        ],
+        "answer": 1,
+        "explanation": "漫畫顯示男孩邊聽音樂邊滑手機，完全沒注意前方，因此沒看到坑洞，故選 B。",
+        "optionsZh": [
+          "一隻狗跑到他前面",
+          "他滑手機沒有注意前方",
+          "腳踏車鏈條斷了",
+          "下雨導致路面濕滑"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What does the sign in the second panel warn about?",
+        "options": [
+          "(A) A pothole",
+          "(B) A speed limit",
+          "(C) No bicycles allowed",
+          "(D) A school zone"
+        ],
+        "answer": 0,
+        "explanation": "第二格路邊告示牌寫著「注意坑洞」，故選 A。",
+        "optionsZh": [
+          "坑洞",
+          "速限",
+          "禁止腳踏車",
+          "學校區域"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What do the comics mainly suggest?",
+        "options": [
+          "(A) Paying attention while riding a bike is important for safety",
+          "(B) Phones should never be allowed on the street",
+          "(C) Bicycles are dangerous vehicles",
+          "(D) Road signs are usually unnecessary"
+        ],
+        "answer": 0,
+        "explanation": "漫畫透過男孩因分心而摔車、路人指著告示牌的畫面，傳達騎車時應專心注意安全的訊息，故選 A。",
+        "optionsZh": [
+          "騎腳踏車時保持專注對安全很重要",
+          "街上完全不該使用手機",
+          "腳踏車是危險的交通工具",
+          "路標通常沒有必要"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_127",
+    "passageType": "practical",
+    "title": "School Library Overdue Book Reminder (提醒通知)",
+    "passage": "GREEN HILL SCHOOL LIBRARY — Overdue Book Reminder\nDear Student,\nOur records show you still have the following book checked out:\n• Title: Mysteries of the Deep Sea\n• Due date: Last Friday\n• Days overdue: 4\nPlease return this book to the library desk as soon as possible. A small fine of NT$2 per day will be added starting from day 5 of being overdue. If the book is lost, you will need to pay for a replacement copy.\nIf you have already returned this book, please ignore this notice, it may have been sent before our records were updated. Thank you for helping us keep books available for everyone!",
+    "difficulty": 1,
+    "questions": [
+      {
+        "question": "When will a fine start being added to this book?",
+        "options": [
+          "(A) Starting from day 5 of being overdue",
+          "(B) Starting from the due date",
+          "(C) Only if the book is lost",
+          "(D) After one full month"
+        ],
+        "answer": 0,
+        "explanation": "通知寫明從逾期第5天開始每天加收新台幣2元罰款，故選 A。",
+        "optionsZh": [
+          "從逾期第5天開始",
+          "從到期日當天開始",
+          "只有書遺失才會收費",
+          "滿一個月後才開始"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What should a student do if they already returned the book?",
+        "options": [
+          "(A) Pay the fine anyway",
+          "(B) Call the library immediately",
+          "(C) Ignore the notice",
+          "(D) Bring a receipt to the office"
+        ],
+        "answer": 2,
+        "explanation": "通知說明若已歸還可忽略此通知，因記錄可能尚未更新，故選 C。",
+        "optionsZh": [
+          "還是要繳罰款",
+          "立刻打電話給圖書館",
+          "忽略這則通知",
+          "帶收據到辦公室"
+        ],
+        "questionType": "detail"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_128",
+    "passageType": "narrative",
+    "title": "The Lemonade Stand Lesson (故事)",
+    "passage": "Every summer, Ruby set up a lemonade stand outside her house, but this year, a new stand appeared just two houses down, run by a boy from her class named Theo. Ruby felt worried; what if he took all her customers?\nAt first, Ruby tried lowering her prices to compete, but she barely made any money that way. Frustrated, she almost gave up on the whole idea.\nThen her older brother suggested something different: instead of competing, why not team up? Ruby brought her fresh-squeezed lemonade, and Theo added cookies he had baked with his grandmother. Together, they set up one bigger, more exciting stand.\nCustomers loved having both treats in one place, and by the end of summer, Ruby and Theo had earned more money together than either of them ever had alone. Ruby learned that working with someone can sometimes be better than competing against them.",
+    "difficulty": 3,
+    "questions": [
+      {
+        "question": "Why did Ruby feel worried at the beginning of the story?",
+        "options": [
+          "(A) She thought Theo would take her customers",
+          "(B) She ran out of lemons",
+          "(C) Her stand broke down",
+          "(D) Her brother stopped helping her"
+        ],
+        "answer": 0,
+        "explanation": "Ruby 擔心新開的攤位會搶走她的客人，故選 A。",
+        "optionsZh": [
+          "她認為 Theo 會搶走她的客人",
+          "她的檸檬用完了",
+          "她的攤位壞掉了",
+          "哥哥不再幫她"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What did Ruby and Theo decide to do together?",
+        "options": [
+          "(A) Close both of their stands",
+          "(B) Combine their stands into one bigger stand",
+          "(C) Compete to see who earned more",
+          "(D) Move to a different street"
+        ],
+        "answer": 1,
+        "explanation": "兩人決定合併成一個更大、更吸引人的攤位，故選 B。",
+        "optionsZh": [
+          "把兩個攤位都收掉",
+          "合併成一個更大的攤位",
+          "比賽看誰賺得多",
+          "搬到別條街"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "What is the main lesson of this story?",
+        "options": [
+          "(A) Lowering prices always attracts more customers",
+          "(B) Working together can be better than competing",
+          "(C) Selling cookies is more profitable than lemonade",
+          "(D) Ruby should have kept her stand alone"
+        ],
+        "answer": 1,
+        "explanation": "結尾點出 Ruby 學到合作有時比競爭更好，故選 B。",
+        "optionsZh": [
+          "降價總能吸引更多客人",
+          "合作有時比競爭更好",
+          "賣餅乾比賣檸檬水更賺",
+          "Ruby 應該堅持獨自經營攤位"
+        ],
+        "questionType": "main_idea"
+      }
+    ]
+  },
+  {
+    "type": "reading",
+    "id": "reading_129",
+    "passageType": "informational",
+    "title": "How Do Submarines Float and Sink? (說明文)",
+    "passage": "A submarine can float on the surface of the ocean or dive deep underwater, and the secret lies in special tanks built into its body called ballast tanks. These tanks can be filled with either air or water, depending on what the submarine needs to do.\nWhen the ballast tanks are filled with air, the submarine is lighter than the surrounding water, so it floats. To dive, the crew opens valves that let seawater flood into the tanks, making the submarine heavier than the water around it, causing it to sink.\nTo rise back to the surface, compressed air stored in tanks is pushed into the ballast tanks, forcing the water back out. This makes the submarine lighter again, and it slowly rises upward.\nBy carefully controlling the amount of air and water inside these tanks, a submarine can stay at almost any depth, floating perfectly still between the surface and the ocean floor.",
+    "difficulty": 4,
+    "questions": [
+      {
+        "question": "What happens when a submarine's ballast tanks are filled with air?",
+        "options": [
+          "(A) The submarine sinks quickly",
+          "(B) The submarine floats",
+          "(C) The submarine stops moving",
+          "(D) The submarine's engine turns off"
+        ],
+        "answer": 1,
+        "explanation": "文中說明壓艙艙注滿空氣時，潛水艇比周圍海水輕，因此會浮起，故選 B。",
+        "optionsZh": [
+          "潛水艇迅速下沉",
+          "潛水艇會浮起",
+          "潛水艇停止移動",
+          "潛水艇引擎關閉"
+        ],
+        "questionType": "detail"
+      },
+      {
+        "question": "How does a submarine rise back to the surface?",
+        "options": [
+          "(A) By opening a door on top",
+          "(B) By turning off its engines",
+          "(C) By pushing compressed air into the tanks to force water out",
+          "(D) By waiting for ocean currents to push it up"
+        ],
+        "answer": 2,
+        "explanation": "文中提到利用儲存的壓縮空氣推入壓艙艙將水擠出，使潛艇變輕上浮，故選 C。",
+        "optionsZh": [
+          "打開頂部的艙門",
+          "關閉引擎",
+          "將壓縮空氣推入壓艙艙把水擠出",
+          "等待洋流把它推上去"
+        ],
+        "questionType": "detail"
+      }
+    ]
   }
 ]

@@ -7150,5 +7150,2214 @@
         "testPoint": "connective"
       }
     ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_81",
+    "title": "A Trip to the Zoo",
+    "passage": "Last Sunday, my family went to the zoo. __(1)__ we arrived, we saw a big elephant near the gate. My little sister was very __(2)__ and wanted to take a picture with it. We also watched the monkeys play in the trees. At noon, we ate lunch under a tree and talked about the animals we __(3)__. It was a fun day for all of us.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "__(1)__ we arrived, we saw a big elephant near the gate.",
+        "options": [
+          "(A) But",
+          "(B) Although",
+          "(C) When",
+          "(D) So"
+        ],
+        "answer": 2,
+        "explanation": "抵達動物園後就看到大象，前後是時間先後關係，用 When（當...時）連接兩個動作最合理，其餘連接詞語意不合。",
+        "optionsZh": [
+          "但是",
+          "雖然",
+          "當...時",
+          "所以"
+        ],
+        "testPoint": "connective"
+      },
+      {
+        "n": 2,
+        "stem": "My little sister was very __(2)__ and wanted to take a picture with it.",
+        "options": [
+          "(A) bored",
+          "(B) excited",
+          "(C) angry",
+          "(D) tired"
+        ],
+        "answer": 1,
+        "explanation": "妹妹想跟大象拍照，顯示她很興奮 excited，與後面「想拍照」的行為呼應，其餘情緒選項不合語境。",
+        "optionsZh": [
+          "無聊的",
+          "興奮的",
+          "生氣的",
+          "疲倦的"
+        ],
+        "testPoint": "vocabulary"
+      },
+      {
+        "n": 3,
+        "stem": "At noon, we ate lunch under a tree and talked about the animals we __(3)__.",
+        "options": [
+          "(A) saw",
+          "(B) see",
+          "(C) seeing",
+          "(D) will see"
+        ],
+        "answer": 0,
+        "explanation": "整篇皆為過去式敘述（went, saw, ate, talked），談論的是「已經看過」的動物，須用過去式 saw，前後時態一致。",
+        "optionsZh": [
+          "看到（過去式）",
+          "看（現在式）",
+          "看（現在分詞）",
+          "將看到"
+        ],
+        "testPoint": "tense"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_82",
+    "title": "My New Bicycle",
+    "passage": "On my birthday, my father gave me a new bicycle. I was very __(1)__ and rode it around the park every day. At first, I could not balance well, so I fell down a few times. My father __(2)__ me how to ride safely, and I practiced every afternoon. Now I can ride much better than before, and I __(3)__ ride to school with my friends.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "I was very __(1)__ and rode it around the park every day.",
+        "options": [
+          "(A) angry",
+          "(B) sad",
+          "(C) worried",
+          "(D) happy"
+        ],
+        "answer": 3,
+        "explanation": "收到新腳踏車並天天去公園騎，最符合的心情是開心 happy，其餘負面情緒選項與後續行為不符。",
+        "optionsZh": [
+          "生氣的",
+          "傷心的",
+          "擔心的",
+          "開心的"
+        ],
+        "testPoint": "vocabulary"
+      },
+      {
+        "n": 2,
+        "stem": "My father __(2)__ me how to ride safely, and I practiced every afternoon.",
+        "options": [
+          "(A) teaches",
+          "(B) teach",
+          "(C) teaching",
+          "(D) taught"
+        ],
+        "answer": 3,
+        "explanation": "整段是過去式敘述（gave, rode, fell），教我騎車的動作也發生在過去，須用過去式 taught。",
+        "optionsZh": [
+          "教（現在式）",
+          "教（原形）",
+          "教（現在分詞）",
+          "教導（過去式）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 3,
+        "stem": "Now I can ride much better than before, and I __(3)__ ride to school with my friends.",
+        "options": [
+          "(A) never",
+          "(B) seldom",
+          "(C) often",
+          "(D) hardly"
+        ],
+        "answer": 2,
+        "explanation": "現在騎得比較好了，所以「經常」和朋友一起騎車上學，用 often 呼應正面轉變，其餘皆為否定頻率副詞，語意矛盾。",
+        "optionsZh": [
+          "從不",
+          "很少",
+          "經常",
+          "幾乎不"
+        ],
+        "testPoint": "adverb"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_83",
+    "title": "The School Library Sale",
+    "passage": "Every spring, my school holds a book sale in the library. Students can buy used books __(1)__ a very low price. Last week, I found an interesting storybook and bought it for ten dollars. My teacher said the money from the sale __(2)__ used to buy new books for the library. I felt __(3)__ that my small choice could help other students read more in the future.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "Students can buy used books __(1)__ a very low price.",
+        "options": [
+          "(A) at",
+          "(B) in",
+          "(C) on",
+          "(D) for"
+        ],
+        "answer": 0,
+        "explanation": "表示「以某個價格」購買，固定用介系詞 at + 價格，例如 at a low price，其餘介系詞不符合此用法。",
+        "optionsZh": [
+          "在（價格）",
+          "在...裡",
+          "在...上",
+          "為了"
+        ],
+        "testPoint": "preposition"
+      },
+      {
+        "n": 2,
+        "stem": "My teacher said the money from the sale __(2)__ used to buy new books for the library.",
+        "options": [
+          "(A) are",
+          "(B) is",
+          "(C) was",
+          "(D) were"
+        ],
+        "answer": 1,
+        "explanation": "主詞 money 為不可數單數，須用單數現在式 is（此處描述固定用途，非單一過去事件），其餘皆為數或時態錯誤。",
+        "optionsZh": [
+          "是（複數現在）",
+          "是（單數現在）",
+          "是（過去單數）",
+          "是（過去複數）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 3,
+        "stem": "I felt __(3)__ that my small choice could help other students read more in the future.",
+        "options": [
+          "(A) angry",
+          "(B) proud",
+          "(C) bored",
+          "(D) tired"
+        ],
+        "answer": 1,
+        "explanation": "自己的十元能幫助其他同學看更多書，會感到驕傲 proud，其餘負面或不相關情緒與語境不合。",
+        "optionsZh": [
+          "生氣的",
+          "驕傲的",
+          "無聊的",
+          "疲倦的"
+        ],
+        "testPoint": "vocabulary"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_84",
+    "title": "A Cold Winter Morning",
+    "passage": "One cold winter morning, I woke up and saw snow outside my window for the first time. I was so excited that I __(1)__ out of bed and ran to tell my brother. We put on our coats quickly __(2)__ we could play in the snow before school. __(3)__ making a small snowman, we both had red noses and cold hands, but we felt very happy.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "I was so excited that I __(1)__ out of bed and ran to tell my brother.",
+        "options": [
+          "(A) jump",
+          "(B) jumping",
+          "(C) jumped",
+          "(D) jumps"
+        ],
+        "answer": 2,
+        "explanation": "整篇為過去式敘述（woke up, saw, ran），起床跳下床的動作也發生在過去，須用過去式 jumped。",
+        "optionsZh": [
+          "跳（原形）",
+          "跳（現在分詞）",
+          "跳（過去式）",
+          "跳（現在式三單）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 2,
+        "stem": "We put on our coats quickly __(2)__ we could play in the snow before school.",
+        "options": [
+          "(A) so that",
+          "(B) because",
+          "(C) but",
+          "(D) or"
+        ],
+        "answer": 0,
+        "explanation": "「快速穿上外套」是為了達成「能在上學前玩雪」的目的，須用表目的的連接詞 so that（以便）。",
+        "optionsZh": [
+          "以便",
+          "因為",
+          "但是",
+          "或者"
+        ],
+        "testPoint": "connective"
+      },
+      {
+        "n": 3,
+        "stem": "__(3)__ making a small snowman, we both had red noses and cold hands, but we felt very happy.",
+        "options": [
+          "(A) Before",
+          "(B) During",
+          "(C) Since",
+          "(D) After"
+        ],
+        "answer": 3,
+        "explanation": "紅鼻子、冷手是「堆完雪人之後」的結果，須用 After（在...之後）表示動作先後順序。",
+        "optionsZh": [
+          "在...之前",
+          "在...期間",
+          "自從",
+          "在...之後"
+        ],
+        "testPoint": "connective"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_85",
+    "title": "The Art of Making Tofu",
+    "passage": "Tofu is a common food in Taiwan, but not many people know how it is made. First, soybeans are soaked in water __(1)__ they become soft. Then the beans are ground into a smooth liquid and boiled. Workers add a special liquid to the mixture, __(2)__ turns it into soft white blocks.\nMy grandmother has made tofu by hand for over thirty years. She says the process __(3)__ patience, because each step must be done carefully. When I visited her shop last summer, I watched her press the tofu into square shapes and cut it neatly. She told me that fresh tofu __(4)__ tastes much better than the kind sold in plastic packages at supermarkets.\nAfter learning how much work goes into a single block of tofu, I never look at this simple food the same way again.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "First, soybeans are soaked in water __(1)__ they become soft.",
+        "options": [
+          "(A) until",
+          "(B) if",
+          "(C) though",
+          "(D) unless"
+        ],
+        "answer": 0,
+        "explanation": "黃豆持續浸泡「直到」變軟為止，須用 until 表示動作進行到某個時間點才結束，其餘連接詞語意不合。",
+        "optionsZh": [
+          "直到",
+          "如果",
+          "雖然",
+          "除非"
+        ],
+        "testPoint": "connective"
+      },
+      {
+        "n": 2,
+        "stem": "Workers add a special liquid to the mixture, __(2)__ turns it into soft white blocks.",
+        "options": [
+          "(A) who",
+          "(B) what",
+          "(C) which",
+          "(D) where"
+        ],
+        "answer": 2,
+        "explanation": "先行詞是「加入的液體造成的動作」，指物用關係代名詞 which，且此處為非限定用法，補充說明前句結果。",
+        "optionsZh": [
+          "誰",
+          "什麼",
+          "哪一個（關代）",
+          "哪裡"
+        ],
+        "testPoint": "pronoun"
+      },
+      {
+        "n": 3,
+        "stem": "She says the process __(3)__ patience, because each step must be done carefully.",
+        "options": [
+          "(A) forgets",
+          "(B) avoids",
+          "(C) wastes",
+          "(D) requires"
+        ],
+        "answer": 3,
+        "explanation": "後句說明「每個步驟都要小心進行」，可推知這個過程「需要」耐心，用 requires，其餘動詞語意不合。",
+        "optionsZh": [
+          "忘記",
+          "避免",
+          "浪費",
+          "需要"
+        ],
+        "testPoint": "vocabulary"
+      },
+      {
+        "n": 4,
+        "stem": "She told me that fresh tofu __(4)__ tastes much better than the kind sold in plastic packages at supermarkets.",
+        "options": [
+          "(A) hardly",
+          "(B) really",
+          "(C) seldom",
+          "(D) never"
+        ],
+        "answer": 1,
+        "explanation": "此句強調新鮮豆腐「真的」比包裝豆腐好吃，用 really 加強語氣，其餘三個皆為否定頻率副詞，與正面比較矛盾。",
+        "optionsZh": [
+          "幾乎不",
+          "真的",
+          "很少",
+          "從不"
+        ],
+        "testPoint": "adverb"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_86",
+    "title": "My Cousin's Wedding",
+    "passage": "Last month, I attended my cousin's wedding for the first time. Everyone in my family was excited, __(1)__ the wedding was held in a beautiful garden. My cousin wore a long white dress and looked very beautiful. During the ceremony, her father __(2)__ her hand and walked her to the stage.\nAfter the ceremony, all the guests enjoyed a big dinner together. My grandmother told me that weddings in the past were much simpler than they are today, __(3)__ people usually held them at home. I realized that traditions can change a lot over time, but the happiness of the couple __(4)__ stays the same.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "Everyone in my family was excited, __(1)__ the wedding was held in a beautiful garden.",
+        "options": [
+          "(A) although",
+          "(B) unless",
+          "(C) because",
+          "(D) or"
+        ],
+        "answer": 2,
+        "explanation": "「大家都很興奮」的原因是「婚禮辦在美麗的花園裡」，須用表原因的 because，其餘連接詞語意不合。",
+        "optionsZh": [
+          "雖然",
+          "除非",
+          "因為",
+          "或者"
+        ],
+        "testPoint": "connective"
+      },
+      {
+        "n": 2,
+        "stem": "During the ceremony, her father __(2)__ her hand and walked her to the stage.",
+        "options": [
+          "(A) held",
+          "(B) holds",
+          "(C) holding",
+          "(D) hold"
+        ],
+        "answer": 0,
+        "explanation": "整段以過去式敘述婚禮過程（attended, was held, wore），牽手的動作同樣發生在過去，須用過去式 held。",
+        "optionsZh": [
+          "握（過去式）",
+          "握（現在式）",
+          "握（現在分詞）",
+          "握（原形）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 3,
+        "stem": "My grandmother told me that weddings in the past were much simpler than they are today, __(3)__ people usually held them at home.",
+        "options": [
+          "(A) but",
+          "(B) or",
+          "(C) if",
+          "(D) when"
+        ],
+        "answer": 3,
+        "explanation": "「以前的婚禮比較簡單」與「以前人們通常在家裡辦婚禮」是同一時期的補充說明，用關係副詞 when 表示「那個時候」最連貫。",
+        "optionsZh": [
+          "但是",
+          "或者",
+          "如果",
+          "當...的時候"
+        ],
+        "testPoint": "pronoun"
+      },
+      {
+        "n": 4,
+        "stem": "I realized that traditions can change a lot over time, but the happiness of the couple __(4)__ stays the same.",
+        "options": [
+          "(A) hardly",
+          "(B) still",
+          "(C) never",
+          "(D) rarely"
+        ],
+        "answer": 1,
+        "explanation": "雖然傳統會隨時間改變，但新人的幸福感「仍然」不變，用 still 呼應轉折語氣 but，其餘皆為否定頻率副詞，語意矛盾。",
+        "optionsZh": [
+          "幾乎不",
+          "仍然",
+          "從不",
+          "很少"
+        ],
+        "testPoint": "adverb"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_87",
+    "title": "The Night I Learned to Cook Rice",
+    "passage": "When I was twelve, my mother went on a business trip, __(1)__ I had to cook dinner for myself. I decided to make rice, but I had never done it before. I put the rice and water in the pot and __(2)__ on the stove, feeling confident.\nAfter twenty minutes, I opened the lid and found that the rice was still hard and wet. I called my mother, __(3)__ was staying in a hotel far away. She patiently explained that I had used too little water and turned the heat too high. I tried again, this time following her advice carefully. The second pot of rice __(4)__ out perfectly, soft and fluffy.\nThat night, I learned that cooking rice can __(5)__ be harder than it looks, even for a simple dish. Now, cooking rice is one of the few dishes I can make without looking at a recipe.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "When I was twelve, my mother went on a business trip, __(1)__ I had to cook dinner for myself.",
+        "options": [
+          "(A) so",
+          "(B) but",
+          "(C) or",
+          "(D) although"
+        ],
+        "answer": 0,
+        "explanation": "「媽媽出差」導致「我必須自己煮晚餐」，是因果關係，須用表結果的 so，其餘連接詞語意不合。",
+        "optionsZh": [
+          "所以",
+          "但是",
+          "或者",
+          "雖然"
+        ],
+        "testPoint": "connective"
+      },
+      {
+        "n": 2,
+        "stem": "I put the rice and water in the pot and __(2)__ on the stove, feeling confident.",
+        "options": [
+          "(A) turn",
+          "(B) turning",
+          "(C) turned",
+          "(D) turns"
+        ],
+        "answer": 2,
+        "explanation": "整段以過去式敘述（put, opened, called），與 put 並列的動作也須用過去式 turned，前後動詞時態一致。",
+        "optionsZh": [
+          "打開（原形）",
+          "打開（現在分詞）",
+          "打開（過去式）",
+          "打開（現在式）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 3,
+        "stem": "I called my mother, __(3)__ was staying in a hotel far away.",
+        "options": [
+          "(A) which",
+          "(B) what",
+          "(C) whose",
+          "(D) who"
+        ],
+        "answer": 3,
+        "explanation": "先行詞是「媽媽」這個人，指人須用關係代名詞 who 作主格，補充說明媽媽當時人在遠方旅館。",
+        "optionsZh": [
+          "哪一個",
+          "什麼",
+          "誰的",
+          "誰（關代）"
+        ],
+        "testPoint": "pronoun"
+      },
+      {
+        "n": 4,
+        "stem": "The second pot of rice __(4)__ out perfectly, soft and fluffy.",
+        "options": [
+          "(A) looked",
+          "(B) came",
+          "(C) felt",
+          "(D) became"
+        ],
+        "answer": 1,
+        "explanation": "片語 come out 表示「結果呈現出」某種狀態，第二次煮飯的結果是「完美地呈現」，須用 came out，其餘動詞與 out 搭配不自然。",
+        "optionsZh": [
+          "看起來",
+          "結果是（came out）",
+          "感覺",
+          "變成"
+        ],
+        "testPoint": "vocabulary"
+      },
+      {
+        "n": 5,
+        "stem": "That night, I learned that cooking rice can __(5)__ be harder than it looks, even for a simple dish.",
+        "options": [
+          "(A) never",
+          "(B) seldom",
+          "(C) sometimes",
+          "(D) hardly"
+        ],
+        "answer": 2,
+        "explanation": "煮飯這件小事「有時候」會比看起來困難，用 sometimes 最符合作者從失敗中學到的體悟，其餘皆為否定頻率副詞，語意矛盾。",
+        "optionsZh": [
+          "從不",
+          "很少",
+          "有時",
+          "幾乎不"
+        ],
+        "testPoint": "adverb"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_88",
+    "title": "Why Cats Purr",
+    "passage": "Many people believe that cats only purr __(1)__ they are happy, but scientists have found that this is not the whole story. Cats also purr when they are hurt, scared, or even dying. Researchers think that purring might help cats __(2)__ themselves in several ways.\nThe sound of purring is made by fast movements in a cat's throat, which __(3)__ even when the cat is sleeping. Some scientists believe that the vibration from purring can help heal bones and muscles, __(4)__ is why injured cats often purr more than healthy ones.\nAlthough scientists still do not fully understand every reason behind purring, it is __(5)__ clear that this soft sound is more than just a sign of happiness. It may actually be a natural way for cats to take care of their own bodies.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "Many people believe that cats only purr __(1)__ they are happy, but scientists have found that this is not the whole story.",
+        "options": [
+          "(A) although",
+          "(B) unless",
+          "(C) before",
+          "(D) when"
+        ],
+        "answer": 3,
+        "explanation": "一般人認為貓咪「在開心的時候」才會呼嚕，用時間連接詞 when 表示條件發生的時機，其餘連接詞語意不合。",
+        "optionsZh": [
+          "雖然",
+          "除非",
+          "在...之前",
+          "當...的時候"
+        ],
+        "testPoint": "connective"
+      },
+      {
+        "n": 2,
+        "stem": "Researchers think that purring might help cats __(2)__ themselves in several ways.",
+        "options": [
+          "(A) hide",
+          "(B) heal",
+          "(C) waste",
+          "(D) blame"
+        ],
+        "answer": 1,
+        "explanation": "後文提到呼嚕聲能幫助療癒骨頭和肌肉，可推知此處是「療癒」自己 heal，其餘動詞語意不合。",
+        "optionsZh": [
+          "隱藏",
+          "療癒",
+          "浪費",
+          "責怪"
+        ],
+        "testPoint": "vocabulary"
+      },
+      {
+        "n": 3,
+        "stem": "The sound of purring is made by fast movements in a cat's throat, which __(3)__ even when the cat is sleeping.",
+        "options": [
+          "(A) happen",
+          "(B) happened",
+          "(C) happening",
+          "(D) will happen"
+        ],
+        "answer": 0,
+        "explanation": "此句在描述一個科學事實（喉嚨快速運動的現象），一般現在式用來陳述恆常事實，須用 happen。",
+        "optionsZh": [
+          "發生（現在式）",
+          "發生（過去式）",
+          "發生（現在分詞）",
+          "將發生"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 4,
+        "stem": "Some scientists believe that the vibration from purring can help heal bones and muscles, __(4)__ is why injured cats often purr more than healthy ones.",
+        "options": [
+          "(A) who",
+          "(B) what",
+          "(C) which",
+          "(D) that"
+        ],
+        "answer": 2,
+        "explanation": "先行詞是前面整句「震動能幫助療癒骨頭肌肉」這件事，指事物且為非限定用法，須用 which 承接。",
+        "optionsZh": [
+          "誰",
+          "什麼",
+          "哪一個（關代）",
+          "那個"
+        ],
+        "testPoint": "pronoun"
+      },
+      {
+        "n": 5,
+        "stem": "Although scientists still do not fully understand every reason behind purring, it is __(5)__ clear that this soft sound is more than just a sign of happiness.",
+        "options": [
+          "(A) hardly",
+          "(B) still",
+          "(C) never",
+          "(D) seldom"
+        ],
+        "answer": 1,
+        "explanation": "雖然科學家還不完全了解原因，但呼嚕聲不只是開心的表現這件事「仍然」清楚，用 still 呼應轉折語氣，其餘皆為否定頻率副詞，語意矛盾。",
+        "optionsZh": [
+          "幾乎不",
+          "仍然",
+          "從不",
+          "很少"
+        ],
+        "testPoint": "adverb"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_89",
+    "title": "The Boy Who Loved Maps",
+    "passage": "Ever since he was young, Tomas had loved maps more than any toy. He kept dozens of old maps under his bed, __(1)__ he studied every night by flashlight. His parents thought it was just a passing hobby, but Tomas dreamed of becoming an explorer someday.\nWhen Tomas turned fourteen, his school announced a national map-drawing contest. He decided to enter, __(2)__ it meant spending his weekends measuring streets and drawing careful lines instead of playing games with friends. Some classmates laughed at him, saying that maps were boring and old-fashioned.\nTomas ignored them and kept working. Months later, his detailed map of the old town __(3)__ first prize, and his teacher praised his patience in front of the whole school. That day, Tomas realized that a quiet passion that __(4)__ seems unusual to others can eventually lead to something remarkable.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "He kept dozens of old maps under his bed, __(1)__ he studied every night by flashlight.",
+        "options": [
+          "(A) which",
+          "(B) who",
+          "(C) what",
+          "(D) where"
+        ],
+        "answer": 0,
+        "explanation": "先行詞是「舊地圖」這件事物，指物須用關係代名詞 which，補充說明他每晚都在研讀這些地圖。",
+        "optionsZh": [
+          "哪一個（關代）",
+          "誰",
+          "什麼",
+          "哪裡"
+        ],
+        "testPoint": "pronoun"
+      },
+      {
+        "n": 2,
+        "stem": "He decided to enter, __(2)__ it meant spending his weekends measuring streets and drawing careful lines instead of playing games with friends.",
+        "options": [
+          "(A) because",
+          "(B) so",
+          "(C) unless",
+          "(D) even though"
+        ],
+        "answer": 3,
+        "explanation": "參加比賽意味著犧牲週末玩樂時間，但他仍決定參加，是讓步關係，須用 even though（儘管）。",
+        "optionsZh": [
+          "因為",
+          "所以",
+          "除非",
+          "儘管"
+        ],
+        "testPoint": "connective"
+      },
+      {
+        "n": 3,
+        "stem": "Months later, his detailed map of the old town __(3)__ first prize, and his teacher praised his patience in front of the whole school.",
+        "options": [
+          "(A) wins",
+          "(B) winning",
+          "(C) win",
+          "(D) won"
+        ],
+        "answer": 3,
+        "explanation": "整篇以過去式敘述 Tomas 的故事（decided, kept working），得獎的動作也發生在過去，須用過去式 won。",
+        "optionsZh": [
+          "贏（現在式）",
+          "贏（現在分詞）",
+          "贏（原形）",
+          "贏得（過去式）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 4,
+        "stem": "That day, Tomas realized that a quiet passion that __(4)__ seems unusual to others can eventually lead to something remarkable.",
+        "options": [
+          "(A) hardly",
+          "(B) still",
+          "(C) never",
+          "(D) seldom"
+        ],
+        "answer": 1,
+        "explanation": "即使在他人眼中「仍然」顯得不尋常，這份熱情最終還是帶來成就，用 still 表示轉折後的持續狀態，其餘皆為否定頻率副詞，語意不合。",
+        "optionsZh": [
+          "幾乎不",
+          "仍然",
+          "從不",
+          "很少"
+        ],
+        "testPoint": "adverb"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_90",
+    "title": "The Story of Paper",
+    "passage": "Paper is something people use every day, but few think about __(1)__ it was invented. About two thousand years ago, a man in ancient China named Cai Lun found a way to make thin sheets from tree bark, cloth, and old fishing nets. Before his invention, people wrote on heavy materials like bamboo strips or expensive silk, which __(2)__ difficult to carry and copy.\nCai Lun's method spread slowly along trade routes, and it __(3)__ hundreds of years to reach Europe. Once paper became widely available, more people were able to read and share ideas, which helped education grow across many countries.\nToday, paper is used for far more than writing. It __(4)__ into boxes, tissues, and even furniture. Although digital screens have replaced paper for many tasks, this simple invention __(5)__ shapes the way people record and share information.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "Paper is something people use every day, but few think about __(1)__ it was invented.",
+        "options": [
+          "(A) how",
+          "(B) why",
+          "(C) when",
+          "(D) what"
+        ],
+        "answer": 0,
+        "explanation": "後文說明的是造紙的「方法」（用樹皮、布、漁網製作薄片），所以此處問的是「如何」被發明，用 how。",
+        "optionsZh": [
+          "如何",
+          "為什麼",
+          "何時",
+          "什麼"
+        ],
+        "testPoint": "pronoun"
+      },
+      {
+        "n": 2,
+        "stem": "Before his invention, people wrote on heavy materials like bamboo strips or expensive silk, which __(2)__ difficult to carry and copy.",
+        "options": [
+          "(A) was",
+          "(B) is",
+          "(C) were",
+          "(D) are"
+        ],
+        "answer": 2,
+        "explanation": "先行詞 bamboo strips or expensive silk 為複數概念，且描述過去情況，須用過去式複數 were。",
+        "optionsZh": [
+          "是（單數過去）",
+          "是（現在單數）",
+          "是（複數過去）",
+          "是（複數現在）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 3,
+        "stem": "Cai Lun's method spread slowly along trade routes, and it __(3)__ hundreds of years to reach Europe.",
+        "options": [
+          "(A) takes",
+          "(B) taking",
+          "(C) take",
+          "(D) took"
+        ],
+        "answer": 3,
+        "explanation": "整段以過去式敘述造紙術的傳播歷史（spread），傳到歐洲花費時間的動作也發生在過去，須用過去式 took。",
+        "optionsZh": [
+          "花費（現在式）",
+          "花費（現在分詞）",
+          "花費（原形）",
+          "花費（過去式）"
+        ],
+        "testPoint": "vocabulary"
+      },
+      {
+        "n": 4,
+        "stem": "Today, paper is used for far more than writing. It __(4)__ into boxes, tissues, and even furniture.",
+        "options": [
+          "(A) turns",
+          "(B) looks",
+          "(C) sounds",
+          "(D) seems"
+        ],
+        "answer": 0,
+        "explanation": "片語 turn into 表示「轉變成」，紙張被製成各種產品，須用 turns，其餘動詞無法自然接 into 表示轉變結果。",
+        "optionsZh": [
+          "轉變成",
+          "看起來像",
+          "聽起來像",
+          "似乎"
+        ],
+        "testPoint": "vocabulary"
+      },
+      {
+        "n": 5,
+        "stem": "Although digital screens have replaced paper for many tasks, this simple invention __(5)__ shapes the way people record and share information.",
+        "options": [
+          "(A) hardly",
+          "(B) still",
+          "(C) never",
+          "(D) rarely"
+        ],
+        "answer": 1,
+        "explanation": "雖然數位螢幕取代了紙張的許多功能，但紙張「仍然」影響人們記錄與分享資訊的方式，用 still 呼應轉折語氣，其餘皆為否定頻率副詞。",
+        "optionsZh": [
+          "幾乎不",
+          "仍然",
+          "從不",
+          "很少"
+        ],
+        "testPoint": "adverb"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_91",
+    "title": "The Secret Life of Earthworms",
+    "passage": "Most people think earthworms are just simple creatures living underground, but they actually play an important role __(1)__ keeping soil healthy. As earthworms move through the ground, they create small tunnels that let air and water reach plant roots more easily.\nEarthworms also eat dead leaves and other rotting material, __(2)__ they turn into rich waste that acts like natural fertilizer. Farmers have known for centuries that soil full of earthworms usually grows stronger crops than soil without them.\nInterestingly, earthworms have no eyes or ears, but their skin __(3)__ sense light and vibrations in the ground. This helps them avoid danger and find their way through the soil. Scientists say that a single earthworm can __(4)__ hundreds of babies in its short lifetime, which explains why they are found almost everywhere.\nAlthough earthworms are small and often ignored, their quiet work under our feet __(5)__ keeps the soil alive and productive.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "They actually play an important role __(1)__ keeping soil healthy.",
+        "options": [
+          "(A) at",
+          "(B) on",
+          "(C) in",
+          "(D) by"
+        ],
+        "answer": 2,
+        "explanation": "固定用法 play a role in + N/V-ing，表示「在...方面扮演角色」，須用介系詞 in，其餘介系詞不符合此固定搭配。",
+        "optionsZh": [
+          "在（時間點）",
+          "在...上",
+          "在（方面）",
+          "藉由"
+        ],
+        "testPoint": "preposition"
+      },
+      {
+        "n": 2,
+        "stem": "Earthworms also eat dead leaves and other rotting material, __(2)__ they turn into rich waste that acts like natural fertilizer.",
+        "options": [
+          "(A) which",
+          "(B) what",
+          "(C) where",
+          "(D) who"
+        ],
+        "answer": 2,
+        "explanation": "此處表示「在蚯蚓體內」這個過程發生的地方，用關係副詞 where 承接前面「蚯蚓吃掉落葉」的場景最連貫。",
+        "optionsZh": [
+          "哪一個",
+          "什麼",
+          "在那裡（關係副詞）",
+          "誰"
+        ],
+        "testPoint": "pronoun"
+      },
+      {
+        "n": 3,
+        "stem": "Interestingly, earthworms have no eyes or ears, but their skin __(3)__ sense light and vibrations in the ground.",
+        "options": [
+          "(A) must",
+          "(B) should",
+          "(C) may",
+          "(D) can"
+        ],
+        "answer": 3,
+        "explanation": "雖然沒有眼睛耳朵，但皮膚「能夠」感知光線與震動，表達能力用助動詞 can，其餘助動詞語意不合（必須/應該/也許）。",
+        "optionsZh": [
+          "必須",
+          "應該",
+          "也許",
+          "能夠"
+        ],
+        "testPoint": "vocabulary"
+      },
+      {
+        "n": 4,
+        "stem": "Scientists say that a single earthworm can __(4)__ hundreds of babies in its short lifetime, which explains why they are found almost everywhere.",
+        "options": [
+          "(A) produce",
+          "(B) produces",
+          "(C) produced",
+          "(D) producing"
+        ],
+        "answer": 0,
+        "explanation": "助動詞 can 之後須接原形動詞，故用 produce，其餘為錯誤的動詞變化形式。",
+        "optionsZh": [
+          "生產（原形）",
+          "生產（現在式）",
+          "生產（過去式）",
+          "生產（現在分詞）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 5,
+        "stem": "Although earthworms are small and often ignored, their quiet work under our feet __(5)__ keeps the soil alive and productive.",
+        "options": [
+          "(A) hardly",
+          "(B) truly",
+          "(C) never",
+          "(D) seldom"
+        ],
+        "answer": 1,
+        "explanation": "儘管蚯蚓渺小又常被忽略，牠們的默默付出卻「真正」讓土壤保持健康，用 truly 加強語氣，其餘皆為否定頻率副詞。",
+        "optionsZh": [
+          "幾乎不",
+          "真正地",
+          "從不",
+          "很少"
+        ],
+        "testPoint": "adverb"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_92",
+    "title": "A Promise Kept",
+    "passage": "When I was ten, my best friend Wei moved to another city, and we promised __(1)__ write letters to each other every month. At first, I sent long letters full of news about school and friends, and Wei always replied within a week.\nAs the years passed, we both got busier with homework and after-school activities, __(2)__ our letters became shorter and less frequent. Last year, I almost forgot about our promise until I found an old letter from Wei buried in a drawer.\nFeeling guilty, I decided to write a long letter that night, __(3)__ everything that had happened in the past few years. A month later, I received a thick envelope from Wei, filled with pages of stories and photos. Reading it, I realized that a promise, even one made by two children, __(4)__ mean something years later.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "We promised __(1)__ write letters to each other every month.",
+        "options": [
+          "(A) to",
+          "(B) for",
+          "(C) that",
+          "(D) of"
+        ],
+        "answer": 0,
+        "explanation": "promise 後接不定詞 to V 表示「答應要做某事」，固定用法為 promise to V，其餘介系詞或代名詞不符合此文法結構。",
+        "optionsZh": [
+          "去（不定詞）",
+          "為了",
+          "那個",
+          "的"
+        ],
+        "testPoint": "preposition"
+      },
+      {
+        "n": 2,
+        "stem": "We both got busier with homework and after-school activities, __(2)__ our letters became shorter and less frequent.",
+        "options": [
+          "(A) but",
+          "(B) so",
+          "(C) or",
+          "(D) although"
+        ],
+        "answer": 1,
+        "explanation": "「變得更忙」導致「信變短變少」，是因果關係，須用表結果的連接詞 so，其餘連接詞語意不合。",
+        "optionsZh": [
+          "但是",
+          "所以",
+          "或者",
+          "雖然"
+        ],
+        "testPoint": "connective"
+      },
+      {
+        "n": 3,
+        "stem": "I decided to write a long letter that night, __(3)__ everything that had happened in the past few years.",
+        "options": [
+          "(A) forgetting",
+          "(B) hiding",
+          "(C) wasting",
+          "(D) describing"
+        ],
+        "answer": 3,
+        "explanation": "寫一封長信的目的是要「描述」這幾年發生的事情，用 describing，其餘動詞語意不合。",
+        "optionsZh": [
+          "忘記",
+          "隱藏",
+          "浪費",
+          "描述"
+        ],
+        "testPoint": "vocabulary"
+      },
+      {
+        "n": 4,
+        "stem": "I realized that a promise, even one made by two children, __(4)__ mean something years later.",
+        "options": [
+          "(A) will never",
+          "(B) must not",
+          "(C) can still",
+          "(D) should never"
+        ],
+        "answer": 2,
+        "explanation": "多年後收到回信，證明兒時的承諾「仍然可以」有意義，用 can still 呼應故事的正面結局，其餘皆為否定語意，與結局矛盾。",
+        "optionsZh": [
+          "將永不",
+          "一定不",
+          "仍然可以",
+          "應該永不"
+        ],
+        "testPoint": "adverb"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_93",
+    "title": "The Custom of Tea Pouring",
+    "passage": "In many Chinese families, pouring tea for elders is more than just a polite habit — it is a way __(1)__ showing respect. During family gatherings, younger family members often pour tea for their grandparents and parents before drinking any themselves.\nThe custom also appears during weddings, __(2)__ the bride and groom serve tea to both sets of parents as a sign of gratitude and the beginning of a new family bond. Guests who receive the tea usually give a small red envelope in return.\nMy grandmother once told me that when I was very young, I __(3)__ tea on her sleeve while trying to pour it carefully. Instead of getting angry, she laughed and said that a clumsy effort made with sincerity __(4)__ than a perfect gesture without feeling.\nEven today, whenever I pour tea for my family, I remember her words and try to pour __(5)__, thinking about the meaning behind such a simple action.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "It is a way __(1)__ showing respect.",
+        "options": [
+          "(A) for",
+          "(B) to",
+          "(C) in",
+          "(D) of"
+        ],
+        "answer": 3,
+        "explanation": "固定用法 a way of + V-ing，表示「一種...的方式」，須用介系詞 of，其餘介系詞不符合此固定搭配。",
+        "optionsZh": [
+          "為了",
+          "去",
+          "在...裡",
+          "...的"
+        ],
+        "testPoint": "preposition"
+      },
+      {
+        "n": 2,
+        "stem": "The custom also appears during weddings, __(2)__ the bride and groom serve tea to both sets of parents as a sign of gratitude.",
+        "options": [
+          "(A) where",
+          "(B) which",
+          "(C) what",
+          "(D) who"
+        ],
+        "answer": 0,
+        "explanation": "先行詞是「婚禮」這個場合，用關係副詞 where 表示「在那個場合」新人向雙方父母敬茶，語意最連貫。",
+        "optionsZh": [
+          "在那裡（關係副詞）",
+          "哪一個",
+          "什麼",
+          "誰"
+        ],
+        "testPoint": "pronoun"
+      },
+      {
+        "n": 3,
+        "stem": "My grandmother once told me that when I was very young, I __(3)__ tea on her sleeve while trying to pour it carefully.",
+        "options": [
+          "(A) spill",
+          "(B) spilled",
+          "(C) spilling",
+          "(D) spills"
+        ],
+        "answer": 1,
+        "explanation": "整句描述小時候發生的事情（when I was very young），須用過去式 spilled，與 told 的時態呼應。",
+        "optionsZh": [
+          "灑（原形）",
+          "灑（過去式）",
+          "灑（現在分詞）",
+          "灑（現在式）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 4,
+        "stem": "She laughed and said that a clumsy effort made with sincerity __(4)__ than a perfect gesture without feeling.",
+        "options": [
+          "(A) costs less",
+          "(B) looks worse",
+          "(C) means more",
+          "(D) sounds strange"
+        ],
+        "answer": 2,
+        "explanation": "奶奶要表達的是「真誠的笨拙比毫無感情的完美更有意義」，須用 means more（意義更重大），其餘選項語意不合此正面轉折。",
+        "optionsZh": [
+          "花費較少",
+          "看起來較差",
+          "意義更重大",
+          "聽起來奇怪"
+        ],
+        "testPoint": "vocabulary"
+      },
+      {
+        "n": 5,
+        "stem": "I remember her words and try to pour __(5)__, thinking about the meaning behind such a simple action.",
+        "options": [
+          "(A) carefully",
+          "(B) quickly",
+          "(C) loudly",
+          "(D) roughly"
+        ],
+        "answer": 0,
+        "explanation": "想著倒茶背後的意義，動作自然是「小心地」進行，用 carefully，其餘副詞語意不合此情境。",
+        "optionsZh": [
+          "小心地",
+          "快速地",
+          "大聲地",
+          "粗魯地"
+        ],
+        "testPoint": "adverb"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_94",
+    "title": "The Weight of a Backpack",
+    "passage": "Every morning, millions of students around the world walk to school carrying backpacks that are far heavier than they should be. Doctors warn that a backpack __(1)__ more than ten percent of a student's body weight can cause back pain and poor posture over time.\nMany students say they have no choice, __(2)__ they need to bring textbooks, notebooks, and other supplies for several subjects each day. Some schools have tried to solve this problem by providing lockers or promoting digital textbooks, __(3)__ allows students to carry fewer heavy books at once.\nExperts also suggest that families should choose backpacks with wide, padded straps and a supportive back panel, which can __(4)__ the weight more evenly across the shoulders. Parents are encouraged to check their children's backpacks regularly and remove anything unnecessary, such as old worksheets or unused equipment.\nAlthough schools cannot completely eliminate the need for books, __(5)__ small changes, such as offering more storage space, could make a real difference in students' comfort and health. Until then, many students will __(6)__ continue to carry more weight on their backs than doctors recommend.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "Doctors warn that a backpack __(1)__ more than ten percent of a student's body weight can cause back pain and poor posture over time.",
+        "options": [
+          "(A) weighs",
+          "(B) weigh",
+          "(C) weighed",
+          "(D) weighing"
+        ],
+        "answer": 3,
+        "explanation": "此處是分詞片語修飾 backpack，表示「重達...的書包」，須用現在分詞 weighing，作形容詞子句的省略形式。",
+        "optionsZh": [
+          "重（現在式）",
+          "重（原形）",
+          "重（過去式）",
+          "重達（分詞）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 2,
+        "stem": "Many students say they have no choice, __(2)__ they need to bring textbooks, notebooks, and other supplies for several subjects each day.",
+        "options": [
+          "(A) although",
+          "(B) because",
+          "(C) unless",
+          "(D) so"
+        ],
+        "answer": 1,
+        "explanation": "「沒有選擇」的原因是「每天要帶好幾科的課本用品」，須用表原因的連接詞 because，其餘連接詞語意不合。",
+        "optionsZh": [
+          "雖然",
+          "因為",
+          "除非",
+          "所以"
+        ],
+        "testPoint": "connective"
+      },
+      {
+        "n": 3,
+        "stem": "Some schools have tried to solve this problem by providing lockers or promoting digital textbooks, __(3)__ allows students to carry fewer heavy books at once.",
+        "options": [
+          "(A) who",
+          "(B) what",
+          "(C) which",
+          "(D) where"
+        ],
+        "answer": 2,
+        "explanation": "先行詞是前句「提供置物櫃或推廣電子課本」這件事，指事物且為非限定用法，須用 which 承接。",
+        "optionsZh": [
+          "誰",
+          "什麼",
+          "哪一個（關代）",
+          "哪裡"
+        ],
+        "testPoint": "pronoun"
+      },
+      {
+        "n": 4,
+        "stem": "Families should choose backpacks with wide, padded straps and a supportive back panel, which can __(4)__ the weight more evenly across the shoulders.",
+        "options": [
+          "(A) waste",
+          "(B) hide",
+          "(C) block",
+          "(D) spread"
+        ],
+        "answer": 3,
+        "explanation": "有襯墊的背帶和支撐背板能把重量更平均地「分散」到肩膀上，用 spread，其餘動詞語意不合。",
+        "optionsZh": [
+          "浪費",
+          "隱藏",
+          "阻擋",
+          "分散"
+        ],
+        "testPoint": "vocabulary"
+      },
+      {
+        "n": 5,
+        "stem": "Although schools cannot completely eliminate the need for books, __(5)__ small changes, such as offering more storage space, could make a real difference in students' comfort and health.",
+        "options": [
+          "(A) never",
+          "(B) even",
+          "(C) hardly",
+          "(D) seldom"
+        ],
+        "answer": 1,
+        "explanation": "即使是「小小的」改變，也可能帶來實質幫助，用 even 強調「即便只是」小改變也有意義，其餘皆為否定頻率副詞。",
+        "optionsZh": [
+          "從不",
+          "甚至",
+          "幾乎不",
+          "很少"
+        ],
+        "testPoint": "adverb"
+      },
+      {
+        "n": 6,
+        "stem": "Until then, many students will __(6)__ continue to carry more weight on their backs than doctors recommend.",
+        "options": [
+          "(A) probably",
+          "(B) never",
+          "(C) rarely",
+          "(D) hardly"
+        ],
+        "answer": 0,
+        "explanation": "在問題解決之前，學生「可能」還是會繼續背過重的書包，用 probably 表示合理推測，其餘皆為否定頻率副詞，與段落結論語氣不符。",
+        "optionsZh": [
+          "可能",
+          "從不",
+          "很少",
+          "幾乎不"
+        ],
+        "testPoint": "adverb"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_95",
+    "title": "How Coffee Came to Taiwan",
+    "passage": "Although coffee shops seem to be everywhere in Taiwan today, coffee __(1)__ actually a fairly recent addition to the island's food culture compared to tea, which has been grown here for centuries. Records suggest that coffee plants were first brought to Taiwan during the period of Japanese rule in the early twentieth century, __(2)__ farmers experimented with growing beans in the mountains of central Taiwan.\nFor decades, coffee remained a small, mostly forgotten crop, __(3)__ tea continued to dominate both farms and local drinking habits. It was not until the past twenty years that Taiwanese coffee began attracting real attention, as farmers improved their growing methods and roasters focused on quality rather than quantity.\nToday, coffee grown in areas like Yunlin and Chiayi has even won international awards, a fact that __(4)__ many visitors who assume that Taiwan is only famous for its tea. Local cafes now proudly serve beans grown just a few hours away, connecting customers directly to the mountains where the coffee was picked.\nThis shift shows that a crop once seen as a minor experiment has __(5)__ become a genuine source of local pride. As more young farmers return to family land to grow coffee, the industry __(6)__ likely to keep growing in the years ahead.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "Coffee __(1)__ actually a fairly recent addition to the island's food culture compared to tea, which has been grown here for centuries.",
+        "options": [
+          "(A) is",
+          "(B) are",
+          "(C) was",
+          "(D) were"
+        ],
+        "answer": 2,
+        "explanation": "此句在比較咖啡（近代才出現）與茶（種植數百年）的歷史，描述的是過去到現在的相對狀態，搭配全文歷史敘述脈絡，須用過去式 was。",
+        "optionsZh": [
+          "是（現在單）",
+          "是（現在複）",
+          "是（過去單）",
+          "是（過去複）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 2,
+        "stem": "Coffee plants were first brought to Taiwan during the period of Japanese rule in the early twentieth century, __(2)__ farmers experimented with growing beans in the mountains of central Taiwan.",
+        "options": [
+          "(A) when",
+          "(B) which",
+          "(C) who",
+          "(D) what"
+        ],
+        "answer": 0,
+        "explanation": "先行詞是「日治時期」這段時間，須用關係副詞 when 表示「那段時期」農民開始嘗試種植咖啡豆。",
+        "optionsZh": [
+          "當...時（關係副詞）",
+          "哪一個",
+          "誰",
+          "什麼"
+        ],
+        "testPoint": "pronoun"
+      },
+      {
+        "n": 3,
+        "stem": "For decades, coffee remained a small, mostly forgotten crop, __(3)__ tea continued to dominate both farms and local drinking habits.",
+        "options": [
+          "(A) because",
+          "(B) while",
+          "(C) so",
+          "(D) unless"
+        ],
+        "answer": 1,
+        "explanation": "咖啡是小眾作物「同時」茶仍主導農地與飲茶習慣，是對比並存的關係，須用 while（然而/同時），其餘連接詞語意不合。",
+        "optionsZh": [
+          "因為",
+          "然而（同時）",
+          "所以",
+          "除非"
+        ],
+        "testPoint": "connective"
+      },
+      {
+        "n": 4,
+        "stem": "Coffee grown in areas like Yunlin and Chiayi has even won international awards, a fact that __(4)__ many visitors who assume that Taiwan is only famous for its tea.",
+        "options": [
+          "(A) bores",
+          "(B) confuses",
+          "(C) surprises",
+          "(D) annoys"
+        ],
+        "answer": 2,
+        "explanation": "台灣咖啡得國際獎項這件事會讓「以為台灣只以茶聞名」的旅客感到「驚訝」，用 surprises，其餘動詞語意不合。",
+        "optionsZh": [
+          "使無聊",
+          "使困惑",
+          "使驚訝",
+          "使惱怒"
+        ],
+        "testPoint": "vocabulary"
+      },
+      {
+        "n": 5,
+        "stem": "This shift shows that a crop once seen as a minor experiment has __(5)__ become a genuine source of local pride.",
+        "options": [
+          "(A) never",
+          "(B) hardly",
+          "(C) seldom",
+          "(D) finally"
+        ],
+        "answer": 3,
+        "explanation": "曾經是小實驗的作物「終於」成為在地驕傲的來源，用 finally 表示歷經長時間後的成果，其餘皆為否定頻率副詞，與正面結論矛盾。",
+        "optionsZh": [
+          "從不",
+          "幾乎不",
+          "很少",
+          "終於"
+        ],
+        "testPoint": "adverb"
+      },
+      {
+        "n": 6,
+        "stem": "As more young farmers return to family land to grow coffee, the industry __(6)__ likely to keep growing in the years ahead.",
+        "options": [
+          "(A) was",
+          "(B) were",
+          "(C) are",
+          "(D) is"
+        ],
+        "answer": 3,
+        "explanation": "主詞 the industry 為單數，描述現在及未來趨勢的可能性，須用現在式單數 is（is likely to）。",
+        "optionsZh": [
+          "是（過去單）",
+          "是（過去複）",
+          "是（現在複）",
+          "是（現在單）"
+        ],
+        "testPoint": "tense"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_96",
+    "title": "The Silence After the Storm",
+    "passage": "The typhoon hit our coastal town harder than anyone expected, and by the time it passed, the streets __(1)__ covered with broken branches and fallen signs. My family spent the whole morning clearing debris from our front yard, working quietly since the power was still out.\nWhat struck me most was not the damage itself, but the strange silence that followed. Normally noisy streets, __(2)__ vendors shouted and scooters roared, were completely still. Neighbors who rarely spoke to each other __(3)__ out to help clear a fallen tree blocking the main road, working side by side without being asked.\nAn elderly man who lived alone next door told me that he __(4)__ seen people work together like this since a storm many years ago, when the whole neighborhood had rebuilt a collapsed roof together. Listening to him, I realized that disasters, __(5)__ terrible, sometimes reveal a kindness that ordinary days rarely show.\nBy evening, as the sun began to set over the wet streets, our neighborhood __(6)__ felt more connected than it had in years, even though everyone was exhausted.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "By the time it passed, the streets __(1)__ covered with broken branches and fallen signs.",
+        "options": [
+          "(A) were",
+          "(B) are",
+          "(C) was",
+          "(D) is"
+        ],
+        "answer": 0,
+        "explanation": "主詞 the streets 為複數，且事件發生在過去（颱風過後），須用過去式複數 were。",
+        "optionsZh": [
+          "是（過去複）",
+          "是（現在複）",
+          "是（過去單）",
+          "是（現在單）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 2,
+        "stem": "Normally noisy streets, __(2)__ vendors shouted and scooters roared, were completely still.",
+        "options": [
+          "(A) which",
+          "(B) who",
+          "(C) where",
+          "(D) what"
+        ],
+        "answer": 2,
+        "explanation": "先行詞是「街道」這個地點，須用關係副詞 where 表示「在那裡」攤販叫賣、機車呼嘯，補充說明平常熱鬧的街道。",
+        "optionsZh": [
+          "哪一個",
+          "誰",
+          "在那裡（關係副詞）",
+          "什麼"
+        ],
+        "testPoint": "pronoun"
+      },
+      {
+        "n": 3,
+        "stem": "Neighbors who rarely spoke to each other __(3)__ out to help clear a fallen tree blocking the main road.",
+        "options": [
+          "(A) hesitated",
+          "(B) rushed",
+          "(C) refused",
+          "(D) forgot"
+        ],
+        "answer": 1,
+        "explanation": "平時不常說話的鄰居們卻「衝出來」一起幫忙清倒下的樹，用 rushed 呼應下文「不待人邀請就並肩工作」，其餘動詞語意矛盾。",
+        "optionsZh": [
+          "猶豫",
+          "衝出",
+          "拒絕",
+          "忘記"
+        ],
+        "testPoint": "vocabulary"
+      },
+      {
+        "n": 4,
+        "stem": "An elderly man who lived alone next door told me that he __(4)__ seen people work together like this since a storm many years ago.",
+        "options": [
+          "(A) has",
+          "(B) had",
+          "(C) was",
+          "(D) is"
+        ],
+        "answer": 1,
+        "explanation": "此句為過去完成式，表示「在多年前那場颱風之後，直到現在這次事件之前」都沒再見過這種景象，須用 had seen。",
+        "optionsZh": [
+          "已經（現在完成）",
+          "曾經（過去完成）",
+          "是（過去）",
+          "是（現在）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 5,
+        "stem": "Disasters, __(5)__ terrible, sometimes reveal a kindness that ordinary days rarely show.",
+        "options": [
+          "(A) however",
+          "(B) because",
+          "(C) so",
+          "(D) if"
+        ],
+        "answer": 0,
+        "explanation": "however + 形容詞表示「無論多麼...」，however terrible 意指「無論災難多可怕」，仍能顯露善意，其餘連接詞語意不合。",
+        "optionsZh": [
+          "無論多麼",
+          "因為",
+          "所以",
+          "如果"
+        ],
+        "testPoint": "connective"
+      },
+      {
+        "n": 6,
+        "stem": "Our neighborhood __(6)__ felt more connected than it had in years, even though everyone was exhausted.",
+        "options": [
+          "(A) never",
+          "(B) hardly",
+          "(C) somehow",
+          "(D) seldom"
+        ],
+        "answer": 2,
+        "explanation": "儘管大家都筋疲力盡，社區卻「不知怎麼地」感覺比過去幾年更緊密，用 somehow 表達難以言喻的轉變，其餘皆為否定頻率副詞。",
+        "optionsZh": [
+          "從不",
+          "幾乎不",
+          "不知怎麼地",
+          "很少"
+        ],
+        "testPoint": "adverb"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_97",
+    "title": "Why Onions Make Us Cry",
+    "passage": "Cutting an onion is a simple kitchen task, yet it often ends with tears streaming down a cook's face. Scientists explain that onions release a chemical __(1)__ mixes with the moisture in our eyes, creating a mild irritant similar to a very weak acid.\nWhen this irritant touches the surface of the eye, the nerve endings __(2)__ send a signal to the brain that something is wrong, and the brain responds by producing tears to wash the chemical away.\nInterestingly, the chemical is not released until the onion's cells __(3)__ broken, which is why cutting causes far more tears than simply peeling an onion. Some cooks try to reduce this effect by chilling onions before cutting them, which __(4)__ down the chemical reaction, or by cutting them under running water, which washes the gas away before it reaches the eyes.\nAlthough the tears feel unpleasant, they __(5)__ serve an important purpose: protecting the eyes from a substance the body recognizes as harmful. Understanding this small piece of kitchen chemistry can make an everyday task feel a little more fascinating, __(6)__ turns a simple chore into a tiny science lesson.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "Scientists explain that onions release a chemical __(1)__ mixes with the moisture in our eyes.",
+        "options": [
+          "(A) who",
+          "(B) what",
+          "(C) that",
+          "(D) where"
+        ],
+        "answer": 2,
+        "explanation": "先行詞是「化學物質」，指物且為限定用法，用關係代名詞 that 作主格最自然，其餘選項不符合此文法角色。",
+        "optionsZh": [
+          "誰",
+          "什麼",
+          "那個（關代）",
+          "哪裡"
+        ],
+        "testPoint": "pronoun"
+      },
+      {
+        "n": 2,
+        "stem": "When this irritant touches the surface of the eye, the nerve endings __(2)__ send a signal to the brain that something is wrong.",
+        "options": [
+          "(A) hardly",
+          "(B) never",
+          "(C) seldom",
+          "(D) immediately"
+        ],
+        "answer": 3,
+        "explanation": "刺激物一接觸眼睛表面，神經末梢就「立刻」傳送訊號給大腦，用 immediately 呼應快速反應的科學說明，其餘皆為否定頻率副詞，語意矛盾。",
+        "optionsZh": [
+          "幾乎不",
+          "從不",
+          "很少",
+          "立刻"
+        ],
+        "testPoint": "adverb"
+      },
+      {
+        "n": 3,
+        "stem": "The chemical is not released until the onion's cells __(3)__ broken.",
+        "options": [
+          "(A) are",
+          "(B) is",
+          "(C) was",
+          "(D) were"
+        ],
+        "answer": 0,
+        "explanation": "主詞 cells 為複數，且此句描述一般科學事實，須用現在式複數 are。",
+        "optionsZh": [
+          "是（現在複）",
+          "是（現在單）",
+          "是（過去單）",
+          "是（過去複）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 4,
+        "stem": "Some cooks try to reduce this effect by chilling onions before cutting them, which __(4)__ down the chemical reaction.",
+        "options": [
+          "(A) speeds",
+          "(B) slows",
+          "(C) stops",
+          "(D) starts"
+        ],
+        "answer": 1,
+        "explanation": "冷藏洋蔥的作用是「減緩」化學反應，因此流淚也會減少，用 slows down，其餘動詞語意與後文「減少流淚效果」不合。",
+        "optionsZh": [
+          "加速",
+          "減緩",
+          "停止",
+          "開始"
+        ],
+        "testPoint": "vocabulary"
+      },
+      {
+        "n": 5,
+        "stem": "Although the tears feel unpleasant, they __(5)__ serve an important purpose: protecting the eyes from a substance the body recognizes as harmful.",
+        "options": [
+          "(A) actually",
+          "(B) never",
+          "(C) hardly",
+          "(D) seldom"
+        ],
+        "answer": 0,
+        "explanation": "雖然流淚讓人不舒服，但眼淚「實際上」發揮了保護眼睛的重要作用，用 actually 表示出乎意料的事實，其餘皆為否定頻率副詞。",
+        "optionsZh": [
+          "實際上",
+          "從不",
+          "幾乎不",
+          "很少"
+        ],
+        "testPoint": "adverb"
+      },
+      {
+        "n": 6,
+        "stem": "Understanding this small piece of kitchen chemistry can make an everyday task feel a little more fascinating, __(6)__ turns a simple chore into a tiny science lesson.",
+        "options": [
+          "(A) who",
+          "(B) which",
+          "(C) where",
+          "(D) what"
+        ],
+        "answer": 1,
+        "explanation": "先行詞是前句「理解廚房化學知識能讓日常任務變得更有趣」這件事，指事物須用關係代名詞 which 承接補充說明。",
+        "optionsZh": [
+          "誰",
+          "哪一個（關代）",
+          "哪裡",
+          "什麼"
+        ],
+        "testPoint": "pronoun"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_98",
+    "title": "The Forgotten Language of My Grandmother",
+    "passage": "My grandmother grew up speaking Taiwanese as her first language, but by the time I was born, most conversations in our house __(1)__ conducted in Mandarin. It was not until I was in middle school that I realized how much of her original language had quietly disappeared from our daily life.\nOne afternoon, I asked her to teach me a few phrases, __(2)__ she seemed both surprised and delighted. As she spoke, I noticed that certain words carried feelings and images that Mandarin translations could never fully capture, __(3)__ made me wonder how much meaning gets lost when a language fades.\nShe explained that during her school years, students __(4)__ punished for speaking Taiwanese in class, which pushed many of her generation to speak Mandarin instead, even at home. Listening to her story, I began to understand that language loss is rarely a simple choice; it is often shaped by policies and pressures far beyond a single family's control.\nSince that conversation, I have tried to write down the phrases she teaches me, __(5)__ small the effort might seem. I do not know if I will ever speak Taiwanese fluently, but I have come to believe that even a few remembered words __(6)__ keep a piece of my grandmother's world alive.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "By the time I was born, most conversations in our house __(1)__ conducted in Mandarin.",
+        "options": [
+          "(A) were",
+          "(B) are",
+          "(C) was",
+          "(D) is"
+        ],
+        "answer": 0,
+        "explanation": "主詞 conversations 為複數，且描述作者出生前後家中已經如此的過去狀態，須用過去式複數 were。",
+        "optionsZh": [
+          "是（過去複）",
+          "是（現在複）",
+          "是（過去單）",
+          "是（現在單）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 2,
+        "stem": "I asked her to teach me a few phrases, __(2)__ she seemed both surprised and delighted.",
+        "options": [
+          "(A) but",
+          "(B) and",
+          "(C) or",
+          "(D) so"
+        ],
+        "answer": 1,
+        "explanation": "「請她教我幾句話」與「她感到驚訝又開心」是兩個並列發生的反應，須用對等連接詞 and，其餘連接詞語意不合。",
+        "optionsZh": [
+          "但是",
+          "而且",
+          "或者",
+          "所以"
+        ],
+        "testPoint": "connective"
+      },
+      {
+        "n": 3,
+        "stem": "Certain words carried feelings and images that Mandarin translations could never fully capture, __(3)__ made me wonder how much meaning gets lost when a language fades.",
+        "options": [
+          "(A) who",
+          "(B) what",
+          "(C) which",
+          "(D) where"
+        ],
+        "answer": 2,
+        "explanation": "先行詞是前句「某些詞語承載的情感與意象無法被翻譯完全捕捉」這件事，指事物且為非限定用法，須用 which。",
+        "optionsZh": [
+          "誰",
+          "什麼",
+          "哪一個（關代）",
+          "哪裡"
+        ],
+        "testPoint": "pronoun"
+      },
+      {
+        "n": 4,
+        "stem": "She explained that during her school years, students __(4)__ punished for speaking Taiwanese in class.",
+        "options": [
+          "(A) are",
+          "(B) is",
+          "(C) was",
+          "(D) were"
+        ],
+        "answer": 3,
+        "explanation": "主詞 students 為複數，且描述奶奶求學時期的過去事件，須用過去式複數 were（被動語態 were punished）。",
+        "optionsZh": [
+          "是（現在複）",
+          "是（現在單）",
+          "是（過去單）",
+          "是（過去複）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 5,
+        "stem": "I have tried to write down the phrases she teaches me, __(5)__ small the effort might seem.",
+        "options": [
+          "(A) because",
+          "(B) so",
+          "(C) however",
+          "(D) unless"
+        ],
+        "answer": 2,
+        "explanation": "however + 形容詞表示「無論多麼...」，however small 意指「無論這份努力多麼微小」，作者仍持續紀錄，其餘連接詞語意不合。",
+        "optionsZh": [
+          "因為",
+          "所以",
+          "無論多麼",
+          "除非"
+        ],
+        "testPoint": "connective"
+      },
+      {
+        "n": 6,
+        "stem": "I have come to believe that even a few remembered words __(6)__ keep a piece of my grandmother's world alive.",
+        "options": [
+          "(A) must",
+          "(B) can",
+          "(C) should",
+          "(D) will"
+        ],
+        "answer": 1,
+        "explanation": "作者相信「即使只是幾個記得的詞語」也「能夠」保留奶奶的一部分世界，表達可能性用 can，其餘助動詞語氣過強或不合語境。",
+        "optionsZh": [
+          "必須",
+          "能夠",
+          "應該",
+          "將會"
+        ],
+        "testPoint": "vocabulary"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_99",
+    "title": "The Cost of Convenience",
+    "passage": "Modern life offers countless conveniences that previous generations could hardly imagine, from same-day deliveries to food that __(1)__ ready in minutes. Yet many people are beginning to question whether this constant convenience comes with hidden costs that are not immediately visible.\nPackaging is one clear example. Products __(2)__ once sold loose or in reusable containers now often arrive wrapped in layers of plastic designed purely for speed and ease, most of which ends up in landfills within days. Environmental researchers argue that convenience culture has quietly trained consumers to value speed over sustainability.\nThere is also a social cost worth considering. As more errands can be completed without ever speaking to another person, __(3)__ face-to-face interactions in daily life have gradually decreased, and some researchers worry that this trend could weaken community ties over time.\nNone of this means convenience is inherently bad; after all, it __(4)__ saved enormous amounts of time and effort for busy families. But recognizing what is quietly given up in exchange for speed is __(5)__ worth the effort, especially as new technologies promise to make daily life even more automatic. Perhaps the real challenge is learning to enjoy convenience __(6)__ losing sight of what it slowly replaces.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "From same-day deliveries to food that __(1)__ ready in minutes.",
+        "options": [
+          "(A) arrives",
+          "(B) travels",
+          "(C) waits",
+          "(D) escapes"
+        ],
+        "answer": 0,
+        "explanation": "外送食品幾分鐘內「送達」現成狀態，用 arrives 呼應 same-day deliveries 的主題，其餘動詞語意不合。",
+        "optionsZh": [
+          "送達",
+          "旅行",
+          "等待",
+          "逃跑"
+        ],
+        "testPoint": "vocabulary"
+      },
+      {
+        "n": 2,
+        "stem": "Products __(2)__ once sold loose or in reusable containers now often arrive wrapped in layers of plastic.",
+        "options": [
+          "(A) who",
+          "(B) what",
+          "(C) that",
+          "(D) where"
+        ],
+        "answer": 2,
+        "explanation": "先行詞是「產品」，指物且為限定用法，須用關係代名詞 that，補充說明這些產品以前是怎麼銷售的。",
+        "optionsZh": [
+          "誰",
+          "什麼",
+          "那個（關代）",
+          "哪裡"
+        ],
+        "testPoint": "pronoun"
+      },
+      {
+        "n": 3,
+        "stem": "As more errands can be completed without ever speaking to another person, __(3)__ face-to-face interactions in daily life have gradually decreased.",
+        "options": [
+          "(A) everyday",
+          "(B) rare",
+          "(C) foreign",
+          "(D) sudden"
+        ],
+        "answer": 0,
+        "explanation": "此處指「日常的」面對面互動逐漸減少，用 everyday 修飾 interactions，其餘形容詞語意不合此語境。",
+        "optionsZh": [
+          "日常的",
+          "罕見的",
+          "外國的",
+          "突然的"
+        ],
+        "testPoint": "vocabulary"
+      },
+      {
+        "n": 4,
+        "stem": "None of this means convenience is inherently bad; after all, it __(4)__ saved enormous amounts of time and effort for busy families.",
+        "options": [
+          "(A) is",
+          "(B) has",
+          "(C) was",
+          "(D) had"
+        ],
+        "answer": 1,
+        "explanation": "此句為現在完成式，強調便利性「一直以來」為忙碌家庭節省時間，須用 has saved，與段落整體現在觀點呼應。",
+        "optionsZh": [
+          "是（現在）",
+          "已經（現在完成）",
+          "是（過去）",
+          "曾經（過去完成）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 5,
+        "stem": "Recognizing what is quietly given up in exchange for speed is __(5)__ worth the effort, especially as new technologies promise to make daily life even more automatic.",
+        "options": [
+          "(A) hardly",
+          "(B) never",
+          "(C) seldom",
+          "(D) still"
+        ],
+        "answer": 3,
+        "explanation": "即使便利科技不斷發展，思考背後代價「仍然」值得，用 still 呼應轉折語氣 But，其餘皆為否定頻率副詞，語意矛盾。",
+        "optionsZh": [
+          "幾乎不",
+          "從不",
+          "很少",
+          "仍然"
+        ],
+        "testPoint": "adverb"
+      },
+      {
+        "n": 6,
+        "stem": "Perhaps the real challenge is learning to enjoy convenience __(6)__ losing sight of what it slowly replaces.",
+        "options": [
+          "(A) despite",
+          "(B) unless",
+          "(C) without",
+          "(D) besides"
+        ],
+        "answer": 2,
+        "explanation": "真正的挑戰是享受便利「而不」忘記它悄悄取代的事物，須用 without + V-ing 表示「不...的情況下」，其餘介系詞語意不合。",
+        "optionsZh": [
+          "儘管",
+          "除非",
+          "而不",
+          "除了"
+        ],
+        "testPoint": "preposition"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_100",
+    "title": "How Memory Works",
+    "passage": "Every time you recall a childhood memory, your brain is not simply replaying a fixed recording; __(1)__, it is reconstructing the event using fragments stored across different regions of the brain. This is why two people who witnessed the same event can later remember it quite differently, __(2)__ each has unintentionally filled in gaps with assumptions or later information.\nShort-term memories usually last only a few seconds unless the brain decides they __(3)__ worth keeping, at which point a process called consolidation gradually transfers them into long-term storage, often during sleep. Researchers have found that memories connected to strong emotions are more likely to be consolidated, __(4)__ explains why embarrassing or frightening moments often stay vivid for years while ordinary days blur together.\nInterestingly, each time a memory is recalled, it becomes briefly unstable and __(5)__ be slightly altered before being stored again, a process known as reconsolidation. This means that memories are not perfectly preserved files but living records that __(6)__ change slightly every time they are revisited.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "Your brain is not simply replaying a fixed recording; __(1)__, it is reconstructing the event using fragments stored across different regions of the brain.",
+        "options": [
+          "(A) however",
+          "(B) therefore",
+          "(C) besides",
+          "(D) instead"
+        ],
+        "answer": 3,
+        "explanation": "前半句否定「單純重播」，後半句提出真正的解釋「重新建構」，須用 instead（而是）表示替代說法，其餘轉折語意不合。",
+        "optionsZh": [
+          "然而",
+          "因此",
+          "此外",
+          "而是"
+        ],
+        "testPoint": "connective"
+      },
+      {
+        "n": 2,
+        "stem": "Two people who witnessed the same event can later remember it quite differently, __(2)__ each has unintentionally filled in gaps with assumptions or later information.",
+        "options": [
+          "(A) although",
+          "(B) because",
+          "(C) unless",
+          "(D) so"
+        ],
+        "answer": 1,
+        "explanation": "「記憶不同」的原因是「各自不自覺地用假設或後來的資訊填補空缺」，須用表原因的 because，其餘連接詞語意不合。",
+        "optionsZh": [
+          "雖然",
+          "因為",
+          "除非",
+          "所以"
+        ],
+        "testPoint": "connective"
+      },
+      {
+        "n": 3,
+        "stem": "Short-term memories usually last only a few seconds unless the brain decides they __(3)__ worth keeping.",
+        "options": [
+          "(A) are",
+          "(B) were",
+          "(C) was",
+          "(D) is"
+        ],
+        "answer": 0,
+        "explanation": "主詞 they（指 memories）為複數，且描述一般認知科學事實，須用現在式複數 are。",
+        "optionsZh": [
+          "是（現在複）",
+          "是（過去複）",
+          "是（過去單）",
+          "是（現在單）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 4,
+        "stem": "Memories connected to strong emotions are more likely to be consolidated, __(4)__ explains why embarrassing or frightening moments often stay vivid for years.",
+        "options": [
+          "(A) who",
+          "(B) which",
+          "(C) what",
+          "(D) where"
+        ],
+        "answer": 1,
+        "explanation": "先行詞是前句「情緒強烈的記憶更容易被鞏固」這件事，指事物且為非限定用法，須用 which 承接。",
+        "optionsZh": [
+          "誰",
+          "哪一個（關代）",
+          "什麼",
+          "哪裡"
+        ],
+        "testPoint": "pronoun"
+      },
+      {
+        "n": 5,
+        "stem": "Each time a memory is recalled, it becomes briefly unstable and __(5)__ be slightly altered before being stored again.",
+        "options": [
+          "(A) must",
+          "(B) should",
+          "(C) will",
+          "(D) can"
+        ],
+        "answer": 3,
+        "explanation": "記憶在不穩定狀態下「可能」被稍微改變，表達可能性用 can，其餘助動詞語氣過於肯定或不合語境。",
+        "optionsZh": [
+          "必須",
+          "應該",
+          "將會",
+          "可能"
+        ],
+        "testPoint": "vocabulary"
+      },
+      {
+        "n": 6,
+        "stem": "Memories are not perfectly preserved files but living records that __(6)__ change slightly every time they are revisited.",
+        "options": [
+          "(A) constantly",
+          "(B) never",
+          "(C) hardly",
+          "(D) seldom"
+        ],
+        "answer": 0,
+        "explanation": "記憶被形容為「活的紀錄」，每次被喚起都會「不斷地」稍微改變，用 constantly，其餘皆為否定頻率副詞，與「活的紀錄」概念矛盾。",
+        "optionsZh": [
+          "不斷地",
+          "從不",
+          "幾乎不",
+          "很少"
+        ],
+        "testPoint": "adverb"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_101",
+    "title": "The Ethics of Zoos",
+    "passage": "Zoos have long presented themselves as places where families can enjoy nature and children can learn about animals they might never otherwise see. In recent years, however, more people __(1)__ questioning whether keeping wild animals in enclosures, however spacious, can ever truly meet their natural needs.\nSupporters argue that modern zoos play an important role in conservation, __(2)__ some endangered species have been saved from extinction through carefully managed breeding programs. Without such efforts, they claim, certain animals might already be gone from the wild entirely.\nCritics counter that many enclosures, __(3)__ improved compared to decades ago, still fail to provide the space and complexity that animals would experience in the wild, leading to stress behaviors that rarely appear in natural habitats.\nBetween these two positions lies a growing number of zoos __(4)__ are shifting their focus toward rescue and rehabilitation rather than display, keeping only animals that cannot survive if released. Whether this compromise satisfies either side remains uncertain, but it suggests that the debate over zoos __(5)__ likely to continue as public expectations keep changing.\nUltimately, the question may not be whether zoos should exist, but __(6)__ they can evolve quickly enough to match a public that increasingly expects animal welfare to come before entertainment.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "In recent years, however, more people __(1)__ questioning whether keeping wild animals in enclosures, however spacious, can ever truly meet their natural needs.",
+        "options": [
+          "(A) is",
+          "(B) was",
+          "(C) are",
+          "(D) were"
+        ],
+        "answer": 2,
+        "explanation": "主詞 more people 為複數，且描述近年來持續發生的現在趨勢，須用現在式複數 are。",
+        "optionsZh": [
+          "是（現在單）",
+          "是（過去單）",
+          "是（現在複）",
+          "是（過去複）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 2,
+        "stem": "Supporters argue that modern zoos play an important role in conservation, __(2)__ some endangered species have been saved from extinction through carefully managed breeding programs.",
+        "options": [
+          "(A) although",
+          "(B) since",
+          "(C) unless",
+          "(D) or"
+        ],
+        "answer": 1,
+        "explanation": "支持者的論點是「因為透過人工繁殖計畫拯救了瀕危物種」，須用表原因的 since（因為），其餘連接詞語意不合。",
+        "optionsZh": [
+          "雖然",
+          "因為",
+          "除非",
+          "或者"
+        ],
+        "testPoint": "connective"
+      },
+      {
+        "n": 3,
+        "stem": "Critics counter that many enclosures, __(3)__ improved compared to decades ago, still fail to provide the space and complexity that animals would experience in the wild.",
+        "options": [
+          "(A) although",
+          "(B) because",
+          "(C) so",
+          "(D) if"
+        ],
+        "answer": 0,
+        "explanation": "「雖然」比幾十年前進步，但圍欄仍無法提供足夠空間，是讓步關係，須用 although，其餘連接詞語意不合。",
+        "optionsZh": [
+          "雖然",
+          "因為",
+          "所以",
+          "如果"
+        ],
+        "testPoint": "connective"
+      },
+      {
+        "n": 4,
+        "stem": "Between these two positions lies a growing number of zoos __(4)__ are shifting their focus toward rescue and rehabilitation rather than display.",
+        "options": [
+          "(A) who",
+          "(B) which",
+          "(C) what",
+          "(D) that"
+        ],
+        "answer": 3,
+        "explanation": "先行詞是「動物園」，指事物且為限定用法，用關係代名詞 that 作主格最自然，補充說明這些動物園正轉向救援與復健。",
+        "optionsZh": [
+          "誰",
+          "哪一個（關代）",
+          "什麼",
+          "那個（關代）"
+        ],
+        "testPoint": "pronoun"
+      },
+      {
+        "n": 5,
+        "stem": "It suggests that the debate over zoos __(5)__ likely to continue as public expectations keep changing.",
+        "options": [
+          "(A) sounds",
+          "(B) looks",
+          "(C) seems",
+          "(D) feels"
+        ],
+        "answer": 2,
+        "explanation": "此處指爭論「似乎」會隨著大眾期待改變而持續下去，用 seems likely to，其餘動詞與 likely to 的搭配不自然。",
+        "optionsZh": [
+          "聽起來",
+          "看起來",
+          "似乎",
+          "感覺起來"
+        ],
+        "testPoint": "vocabulary"
+      },
+      {
+        "n": 6,
+        "stem": "Ultimately, the question may not be whether zoos should exist, but __(6)__ they can evolve quickly enough to match a public that increasingly expects animal welfare to come before entertainment.",
+        "options": [
+          "(A) if",
+          "(B) that",
+          "(C) whether",
+          "(D) because"
+        ],
+        "answer": 2,
+        "explanation": "與前句 whether zoos should exist 對應，形成 not A but B 的平行結構，須再次用 whether 引導名詞子句，其餘選項無法構成此平行結構。",
+        "optionsZh": [
+          "如果",
+          "那個",
+          "是否",
+          "因為"
+        ],
+        "testPoint": "connective"
+      }
+    ]
+  },
+  {
+    "type": "cloze",
+    "id": "cloze_102",
+    "title": "A Stranger on the Train",
+    "passage": "I was riding the train home late one evening when an elderly man sat down across from me, holding a small paper bag tightly against his chest. He looked nervous, __(1)__ he kept glancing at the door every time the train stopped.\nAfter a few minutes, he asked if I could tell him when we reached a certain station, explaining that his eyesight __(2)__ good enough anymore to read the small signs. I agreed, and we ended up talking for the rest of the ride. He told me the bag contained a gift for his granddaughter, __(3)__ he had not seen in over a year because she lived far away for work.\nAs the train approached his stop, he thanked me and said that most young people these days seem too busy with their phones to notice someone who needs a little help, __(4)__ my attention had made his evening better. I told him it was no trouble at all, though privately I felt a small pang of guilt, remembering how often I __(5)__ ignored people around me while scrolling through my own phone.\nLong after he stepped off the train, I found myself thinking about how a short conversation with a stranger __(6)__ change the way someone sees an entire ordinary day.",
+    "blanks": [
+      {
+        "n": 1,
+        "stem": "He looked nervous, __(1)__ he kept glancing at the door every time the train stopped.",
+        "options": [
+          "(A) but",
+          "(B) or",
+          "(C) so",
+          "(D) and"
+        ],
+        "answer": 3,
+        "explanation": "「看起來緊張」與「一直瞄向門口」是兩個並列描寫，須用對等連接詞 and，其餘連接詞語意不合。",
+        "optionsZh": [
+          "但是",
+          "或者",
+          "所以",
+          "而且"
+        ],
+        "testPoint": "connective"
+      },
+      {
+        "n": 2,
+        "stem": "He explained that his eyesight __(2)__ good enough anymore to read the small signs.",
+        "options": [
+          "(A) is",
+          "(B) were",
+          "(C) was",
+          "(D) are"
+        ],
+        "answer": 2,
+        "explanation": "主詞 eyesight 為單數，且描述當下對話中他的過去/現在狀態，配合整段過去式敘述，須用過去式單數 was。",
+        "optionsZh": [
+          "是（現在單）",
+          "是（過去複）",
+          "是（過去單）",
+          "是（現在複）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 3,
+        "stem": "He told me the bag contained a gift for his granddaughter, __(3)__ he had not seen in over a year.",
+        "options": [
+          "(A) who",
+          "(B) which",
+          "(C) whom",
+          "(D) whose"
+        ],
+        "answer": 2,
+        "explanation": "先行詞是「孫女」這個人，且在關係子句中作受詞（seen 的受詞），指人受格須用 whom，其餘選項文法角色不符。",
+        "optionsZh": [
+          "誰（主格）",
+          "哪一個",
+          "誰（受格）",
+          "誰的"
+        ],
+        "testPoint": "pronoun"
+      },
+      {
+        "n": 4,
+        "stem": "Most young people these days seem too busy with their phones to notice someone who needs a little help, __(4)__ my attention had made his evening better.",
+        "options": [
+          "(A) but",
+          "(B) so",
+          "(C) or",
+          "(D) although"
+        ],
+        "answer": 1,
+        "explanation": "「大家都太忙滑手機」導致「我的關注讓他很感動」形成對比後的結果，須用表結果的 so，其餘連接詞語意不合。",
+        "optionsZh": [
+          "但是",
+          "所以",
+          "或者",
+          "雖然"
+        ],
+        "testPoint": "connective"
+      },
+      {
+        "n": 5,
+        "stem": "I felt a small pang of guilt, remembering how often I __(5)__ ignored people around me while scrolling through my own phone.",
+        "options": [
+          "(A) had",
+          "(B) have",
+          "(C) was",
+          "(D) am"
+        ],
+        "answer": 0,
+        "explanation": "此句為過去完成式，表示「在這次對話之前」，作者過去經常忽略身邊的人，須用 had ignored。",
+        "optionsZh": [
+          "已經（過去完成）",
+          "已經（現在完成）",
+          "是（過去）",
+          "是（現在）"
+        ],
+        "testPoint": "tense"
+      },
+      {
+        "n": 6,
+        "stem": "I found myself thinking about how a short conversation with a stranger __(6)__ change the way someone sees an entire ordinary day.",
+        "options": [
+          "(A) must",
+          "(B) should",
+          "(C) will",
+          "(D) could"
+        ],
+        "answer": 3,
+        "explanation": "與陌生人的短暫對話「可能」改變一個人看待平凡一天的方式，表達可能性用 could，其餘助動詞語氣過於肯定或不合語境。",
+        "optionsZh": [
+          "必須",
+          "應該",
+          "將會",
+          "可能"
+        ],
+        "testPoint": "vocabulary"
+      }
+    ]
   }
 ]

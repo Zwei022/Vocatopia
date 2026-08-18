@@ -6126,5 +6126,1905 @@
       "突然地",
       "已經"
     ]
+  },
+  {
+    "sentence": "After breaking the window, Tom finally _____ that he did it and apologized to his neighbor.",
+    "options": [
+      "(A) deny",
+      "(B) ignore",
+      "(C) admit",
+      "(D) forget"
+    ],
+    "answer": 2,
+    "explanation": "admit 指承認。湯姆打破窗戶後終於承認並道歉，故選admit；deny為否認，語意相反。",
+    "pos": "動詞",
+    "id": "vocab_312",
+    "optionsZh": [
+      "否認",
+      "忽略",
+      "承認",
+      "忘記"
+    ]
+  },
+  {
+    "sentence": "The family decided to _____ a stray dog and gave it a warm home.",
+    "options": [
+      "(A) adopt",
+      "(B) sell",
+      "(C) catch",
+      "(D) feed"
+    ],
+    "answer": 0,
+    "explanation": "adopt 指收養。這家人決定收養一隻流浪狗並給牠溫暖的家，故選adopt；sell、catch、feed皆不符合「給予永久照顧」的語意。",
+    "pos": "動詞",
+    "id": "vocab_313",
+    "optionsZh": [
+      "收養",
+      "賣掉",
+      "抓住",
+      "餵食"
+    ]
+  },
+  {
+    "sentence": "The doctor _____ him to drink more water and get enough sleep every night.",
+    "options": [
+      "(A) order",
+      "(B) blame",
+      "(C) doubt",
+      "(D) advise"
+    ],
+    "answer": 3,
+    "explanation": "advise 指建議、勸告。醫生「建議」他多喝水並睡眠充足，故選advise；order語氣過強帶命令，與醫囑口吻不符。",
+    "pos": "動詞",
+    "id": "vocab_314",
+    "optionsZh": [
+      "命令",
+      "責怪",
+      "懷疑",
+      "建議"
+    ]
+  },
+  {
+    "sentence": "Not getting enough sleep can badly _____ your health and your mood.",
+    "options": [
+      "(A) copy",
+      "(B) replace",
+      "(C) affect",
+      "(D) follow"
+    ],
+    "answer": 2,
+    "explanation": "affect 指影響。睡眠不足會嚴重影響健康與情緒，故選affect；replace為取代，語意不符。",
+    "pos": "動詞",
+    "id": "vocab_315",
+    "optionsZh": [
+      "模仿",
+      "取代",
+      "影響",
+      "跟隨"
+    ]
+  },
+  {
+    "sentence": "My parents _____ me to stay out until nine on weekends.",
+    "options": [
+      "(A) force",
+      "(B) warn",
+      "(C) remind",
+      "(D) allow"
+    ],
+    "answer": 3,
+    "explanation": "allow 指允許。父母「允許」我週末可以在外待到九點，故選allow；force為強迫，語意相反。",
+    "pos": "動詞",
+    "id": "vocab_316",
+    "optionsZh": [
+      "強迫",
+      "警告",
+      "提醒",
+      "允許"
+    ]
+  },
+  {
+    "sentence": "A rainbow suddenly _____ in the sky after the rain stopped.",
+    "options": [
+      "(A) disappear",
+      "(B) escape",
+      "(C) appear",
+      "(D) hide"
+    ],
+    "answer": 2,
+    "explanation": "appear 指出現。雨停後彩虹突然出現在天空中，故選appear；disappear為消失，語意相反。",
+    "pos": "動詞",
+    "id": "vocab_317",
+    "optionsZh": [
+      "消失",
+      "逃跑",
+      "出現",
+      "躲藏"
+    ]
+  },
+  {
+    "sentence": "She spent an hour trying to _____ the flowers nicely in the vase.",
+    "options": [
+      "(A) waste",
+      "(B) arrange",
+      "(C) break",
+      "(D) ignore"
+    ],
+    "answer": 1,
+    "explanation": "arrange 指安排、佈置。她花一小時把花好好地擺放在花瓶裡，故選arrange。",
+    "pos": "動詞",
+    "id": "vocab_318",
+    "optionsZh": [
+      "浪費",
+      "安排",
+      "打破",
+      "忽略"
+    ]
+  },
+  {
+    "sentence": "The police finally managed to _____ the thief near the train station.",
+    "options": [
+      "(A) chase",
+      "(B) warn",
+      "(C) blame",
+      "(D) arrest"
+    ],
+    "answer": 3,
+    "explanation": "arrest 指逮捕。警方最終在火車站附近逮捕了小偷，故選arrest。",
+    "pos": "動詞",
+    "id": "vocab_319",
+    "optionsZh": [
+      "追趕",
+      "警告",
+      "責怪",
+      "逮捕"
+    ]
+  },
+  {
+    "sentence": "Since the lights were off, I _____ that nobody was home.",
+    "options": [
+      "(A) doubt",
+      "(B) assume",
+      "(C) deny",
+      "(D) forget"
+    ],
+    "answer": 1,
+    "explanation": "assume 指假設、認為。因為燈是關的，我便「認為」沒人在家，故選assume。",
+    "pos": "動詞",
+    "id": "vocab_320",
+    "optionsZh": [
+      "懷疑",
+      "認為",
+      "否認",
+      "忘記"
+    ]
+  },
+  {
+    "sentence": "The dog began to _____ loudly when a stranger walked past the gate.",
+    "options": [
+      "(A) bark",
+      "(B) sing",
+      "(C) cry",
+      "(D) jump"
+    ],
+    "answer": 0,
+    "explanation": "bark 指(狗)吠叫。陌生人經過大門時狗開始大聲吠叫，故選bark。",
+    "pos": "動詞",
+    "id": "vocab_321",
+    "optionsZh": [
+      "吠叫",
+      "唱歌",
+      "哭泣",
+      "跳"
+    ]
+  },
+  {
+    "sentence": "The children were told to _____ well during the school trip.",
+    "options": [
+      "(A) behave",
+      "(B) dress",
+      "(C) speak",
+      "(D) travel"
+    ],
+    "answer": 0,
+    "explanation": "behave 指表現、行為舉止。孩子們被告知校外教學期間要表現良好，故選behave。",
+    "pos": "動詞",
+    "id": "vocab_322",
+    "optionsZh": [
+      "表現",
+      "穿著",
+      "說話",
+      "旅行"
+    ]
+  },
+  {
+    "sentence": "This old bicycle used to _____ to my grandfather many years ago.",
+    "options": [
+      "(A) point",
+      "(B) belong",
+      "(C) lead",
+      "(D) escape"
+    ],
+    "answer": 1,
+    "explanation": "belong to 指屬於。這台舊腳踏車以前是屬於我爺爺的，故選belong。",
+    "pos": "動詞",
+    "id": "vocab_323",
+    "optionsZh": [
+      "指向",
+      "屬於",
+      "帶領",
+      "逃離"
+    ]
+  },
+  {
+    "sentence": "A cold wind began to _____ through the open window last night.",
+    "options": [
+      "(A) shake",
+      "(B) push",
+      "(C) blow",
+      "(D) pull"
+    ],
+    "answer": 2,
+    "explanation": "blow 指吹（風）。昨晚冷風開始從打開的窗戶吹進來，故選blow。",
+    "pos": "動詞",
+    "id": "vocab_324",
+    "optionsZh": [
+      "搖晃",
+      "推",
+      "吹",
+      "拉"
+    ]
+  },
+  {
+    "sentence": "Please don't _____ your sister while she is doing her homework.",
+    "options": [
+      "(A) help",
+      "(B) thank",
+      "(C) praise",
+      "(D) bother"
+    ],
+    "answer": 3,
+    "explanation": "bother 指打擾。請不要在姊姊寫作業時打擾她，故選bother。",
+    "pos": "動詞",
+    "id": "vocab_325",
+    "optionsZh": [
+      "幫助",
+      "感謝",
+      "稱讚",
+      "打擾"
+    ]
+  },
+  {
+    "sentence": "The red balloon suddenly _____ with a loud bang at the party.",
+    "options": [
+      "(A) burst",
+      "(B) float",
+      "(C) melt",
+      "(D) shine"
+    ],
+    "answer": 0,
+    "explanation": "burst 指爆裂。派對上紅氣球突然「碰」一聲爆裂，故選burst。",
+    "pos": "動詞",
+    "id": "vocab_326",
+    "optionsZh": [
+      "爆裂",
+      "漂浮",
+      "融化",
+      "發光"
+    ]
+  },
+  {
+    "sentence": "Because of the heavy rain, the outdoor concert had to be _____.",
+    "options": [
+      "(A) cancel",
+      "(B) continue",
+      "(C) repeat",
+      "(D) extend"
+    ],
+    "answer": 0,
+    "explanation": "cancel 指取消。因為大雨，戶外演唱會必須取消，故選cancel。",
+    "pos": "動詞",
+    "id": "vocab_327",
+    "optionsZh": [
+      "取消",
+      "繼續",
+      "重複",
+      "延長"
+    ]
+  },
+  {
+    "sentence": "The little dog loves to _____ the ball across the yard.",
+    "options": [
+      "(A) hide",
+      "(B) avoid",
+      "(C) chase",
+      "(D) greet"
+    ],
+    "answer": 2,
+    "explanation": "chase 指追逐。小狗喜歡在院子裡追球，故選chase。",
+    "pos": "動詞",
+    "id": "vocab_328",
+    "optionsZh": [
+      "躲藏",
+      "避開",
+      "追逐",
+      "打招呼"
+    ]
+  },
+  {
+    "sentence": "The teacher caught two students trying to _____ during the math test.",
+    "options": [
+      "(A) study",
+      "(B) cheat",
+      "(C) teach",
+      "(D) guess"
+    ],
+    "answer": 1,
+    "explanation": "cheat 指作弊。老師抓到兩名學生在數學考試中作弊，故選cheat。",
+    "pos": "動詞",
+    "id": "vocab_329",
+    "optionsZh": [
+      "讀書",
+      "作弊",
+      "教導",
+      "猜測"
+    ]
+  },
+  {
+    "sentence": "The man on TV _____ that his medicine could cure any illness.",
+    "options": [
+      "(A) forget",
+      "(B) claim",
+      "(C) doubt",
+      "(D) refuse"
+    ],
+    "answer": 1,
+    "explanation": "claim 指聲稱。電視上的男子聲稱他的藥能治百病，故選claim。",
+    "pos": "動詞",
+    "id": "vocab_330",
+    "optionsZh": [
+      "忘記",
+      "聲稱",
+      "懷疑",
+      "拒絕"
+    ]
+  },
+  {
+    "sentence": "Please call the restaurant to _____ our reservation for tonight.",
+    "options": [
+      "(A) cancel",
+      "(B) confirm",
+      "(C) forget",
+      "(D) doubt"
+    ],
+    "answer": 1,
+    "explanation": "confirm 指確認。請打電話給餐廳確認今晚的訂位，故選confirm。",
+    "pos": "動詞",
+    "id": "vocab_331",
+    "optionsZh": [
+      "取消",
+      "確認",
+      "忘記",
+      "懷疑"
+    ]
+  },
+  {
+    "sentence": "The complicated map only _____ the tourists even more.",
+    "options": [
+      "(A) please",
+      "(B) confuse",
+      "(C) relax",
+      "(D) satisfy"
+    ],
+    "answer": 1,
+    "explanation": "confuse 指使困惑。複雜的地圖只讓遊客更加困惑，故選confuse。",
+    "pos": "動詞",
+    "id": "vocab_332",
+    "optionsZh": [
+      "使高興",
+      "使困惑",
+      "使放鬆",
+      "使滿足"
+    ]
+  },
+  {
+    "sentence": "We should _____ all the options before making a final decision.",
+    "options": [
+      "(A) forget",
+      "(B) consider",
+      "(C) refuse",
+      "(D) ignore"
+    ],
+    "answer": 1,
+    "explanation": "consider 指考慮。做最終決定前我們應該考慮所有選項，故選consider。",
+    "pos": "動詞",
+    "id": "vocab_333",
+    "optionsZh": [
+      "忘記",
+      "考慮",
+      "拒絕",
+      "忽略"
+    ]
+  },
+  {
+    "sentence": "This box _____ old photos and letters from my grandmother.",
+    "options": [
+      "(A) replace",
+      "(B) cover",
+      "(C) remove",
+      "(D) contain"
+    ],
+    "answer": 3,
+    "explanation": "contain 指包含、裝有。這個盒子裝有我祖母的舊照片和信件，故選contain。",
+    "pos": "動詞",
+    "id": "vocab_334",
+    "optionsZh": [
+      "取代",
+      "覆蓋",
+      "移除",
+      "包含"
+    ]
+  },
+  {
+    "sentence": "He began to _____ badly after catching a cold last week.",
+    "options": [
+      "(A) cough",
+      "(B) cry",
+      "(C) laugh",
+      "(D) shout"
+    ],
+    "answer": 0,
+    "explanation": "cough 指咳嗽。他上週感冒後開始嚴重咳嗽，故選cough。",
+    "pos": "動詞",
+    "id": "vocab_335",
+    "optionsZh": [
+      "咳嗽",
+      "哭泣",
+      "大笑",
+      "喊叫"
+    ]
+  },
+  {
+    "sentence": "Always look both ways before you _____ the busy street.",
+    "options": [
+      "(A) cross",
+      "(B) enter",
+      "(C) leave",
+      "(D) climb"
+    ],
+    "answer": 0,
+    "explanation": "cross 指穿越。過馬路前務必看左右兩邊，故選cross。",
+    "pos": "動詞",
+    "id": "vocab_336",
+    "optionsZh": [
+      "穿越",
+      "進入",
+      "離開",
+      "攀爬"
+    ]
+  },
+  {
+    "sentence": "The strong typhoon _____ many trees and roofs in the village.",
+    "options": [
+      "(A) fix",
+      "(B) damage",
+      "(C) protect",
+      "(D) clean"
+    ],
+    "answer": 1,
+    "explanation": "damage 指損害、破壞。強颱破壞了村裡許多樹木與屋頂，故選damage。",
+    "pos": "動詞",
+    "id": "vocab_337",
+    "optionsZh": [
+      "修理",
+      "損害",
+      "保護",
+      "清潔"
+    ]
+  },
+  {
+    "sentence": "Heavy snow may _____ our flight to New York this afternoon.",
+    "options": [
+      "(A) delay",
+      "(B) speed",
+      "(C) finish",
+      "(D) start"
+    ],
+    "answer": 0,
+    "explanation": "delay 指延誤、延遲。大雪可能使我們今天下午飛紐約的班機延誤，故選delay。",
+    "pos": "動詞",
+    "id": "vocab_338",
+    "optionsZh": [
+      "延誤",
+      "加速",
+      "完成",
+      "開始"
+    ]
+  },
+  {
+    "sentence": "The boy kept trying to _____ that he had eaten all the cookies.",
+    "options": [
+      "(A) admit",
+      "(B) deny",
+      "(C) explain",
+      "(D) accept"
+    ],
+    "answer": 1,
+    "explanation": "deny 指否認。男孩一直想否認自己吃光了餅乾，故選deny；admit為承認，語意相反。",
+    "pos": "動詞",
+    "id": "vocab_339",
+    "optionsZh": [
+      "承認",
+      "否認",
+      "解釋",
+      "接受"
+    ]
+  },
+  {
+    "sentence": "Young children usually _____ their parents for food and safety.",
+    "options": [
+      "(A) agree with",
+      "(B) argue with",
+      "(C) depend on",
+      "(D) compete with"
+    ],
+    "answer": 2,
+    "explanation": "depend on 指依賴。幼童通常依賴父母提供食物與安全，故選depend on。",
+    "pos": "動詞",
+    "id": "vocab_340",
+    "optionsZh": [
+      "同意",
+      "爭論",
+      "依賴",
+      "競爭"
+    ]
+  },
+  {
+    "sentence": "The new machine can _____ even a small amount of smoke in the room.",
+    "options": [
+      "(A) repair",
+      "(B) create",
+      "(C) waste",
+      "(D) detect"
+    ],
+    "answer": 3,
+    "explanation": "detect 指偵測、察覺。這台新機器能偵測到房間裡即使微量的煙，故選detect。",
+    "pos": "動詞",
+    "id": "vocab_341",
+    "optionsZh": [
+      "修理",
+      "創造",
+      "浪費",
+      "察覺"
+    ]
+  },
+  {
+    "sentence": "The test results will help doctors _____ the best treatment for him.",
+    "options": [
+      "(A) guess",
+      "(B) doubt",
+      "(C) forget",
+      "(D) determine"
+    ],
+    "answer": 3,
+    "explanation": "determine 指決定、判定。檢驗結果將幫助醫生判定最適合他的治療方式，故選determine。",
+    "pos": "動詞",
+    "id": "vocab_342",
+    "optionsZh": [
+      "猜測",
+      "懷疑",
+      "忘記",
+      "決定"
+    ]
+  },
+  {
+    "sentence": "Scientists recently _____ a new kind of fish deep in the ocean.",
+    "options": [
+      "(A) lose",
+      "(B) discover",
+      "(C) hide",
+      "(D) forget"
+    ],
+    "answer": 1,
+    "explanation": "discover 指發現。科學家最近在深海發現一種新魚類，故選discover。",
+    "pos": "動詞",
+    "id": "vocab_343",
+    "optionsZh": [
+      "遺失",
+      "發現",
+      "隱藏",
+      "忘記"
+    ]
+  },
+  {
+    "sentence": "Falling down in front of the whole class really _____ him.",
+    "options": [
+      "(A) please",
+      "(B) comfort",
+      "(C) embarrass",
+      "(D) satisfy"
+    ],
+    "answer": 2,
+    "explanation": "embarrass 指使尷尬。在全班面前跌倒讓他非常尷尬，故選embarrass。",
+    "pos": "動詞",
+    "id": "vocab_344",
+    "optionsZh": [
+      "使高興",
+      "安慰",
+      "使尷尬",
+      "使滿足"
+    ]
+  },
+  {
+    "sentence": "The coach kept trying to _____ the importance of teamwork.",
+    "options": [
+      "(A) forget",
+      "(B) doubt",
+      "(C) emphasize",
+      "(D) hide"
+    ],
+    "answer": 2,
+    "explanation": "emphasize 指強調。教練不斷強調團隊合作的重要性，故選emphasize。",
+    "pos": "動詞",
+    "id": "vocab_345",
+    "optionsZh": [
+      "忘記",
+      "懷疑",
+      "強調",
+      "隱藏"
+    ]
+  },
+  {
+    "sentence": "The doctor will _____ your arm carefully to see if it is broken.",
+    "options": [
+      "(A) ignore",
+      "(B) examine",
+      "(C) waste",
+      "(D) guess"
+    ],
+    "answer": 1,
+    "explanation": "examine 指仔細檢查。醫生會仔細檢查你的手臂是否骨折，故選examine。",
+    "pos": "動詞",
+    "id": "vocab_346",
+    "optionsZh": [
+      "忽略",
+      "仔細檢查",
+      "浪費",
+      "猜測"
+    ]
+  },
+  {
+    "sentence": "The news about the coming trip to Japan really _____ all the students.",
+    "options": [
+      "(A) excite",
+      "(B) bore",
+      "(C) tire",
+      "(D) worry"
+    ],
+    "answer": 0,
+    "explanation": "excite 指使興奮。即將去日本旅行的消息讓所有學生非常興奮，故選excite。",
+    "pos": "動詞",
+    "id": "vocab_347",
+    "optionsZh": [
+      "使興奮",
+      "使無聊",
+      "使疲累",
+      "使擔心"
+    ]
+  },
+  {
+    "sentence": "If you don't study harder, you might _____ the math exam.",
+    "options": [
+      "(A) pass",
+      "(B) win",
+      "(C) enjoy",
+      "(D) fail"
+    ],
+    "answer": 3,
+    "explanation": "fail 指不及格、失敗。若不更用功唸書，數學考試可能不及格，故選fail；pass為通過，語意相反。",
+    "pos": "動詞",
+    "id": "vocab_348",
+    "optionsZh": [
+      "通過",
+      "贏得",
+      "享受",
+      "不及格"
+    ]
+  },
+  {
+    "sentence": "Every morning, my little brother likes to _____ the fish in the pond.",
+    "options": [
+      "(A) wash",
+      "(B) catch",
+      "(C) feed",
+      "(D) sell"
+    ],
+    "answer": 2,
+    "explanation": "feed 指餵食。弟弟每天早上喜歡餵池塘裡的魚，故選feed。",
+    "pos": "動詞",
+    "id": "vocab_349",
+    "optionsZh": [
+      "清洗",
+      "抓",
+      "餵食",
+      "賣"
+    ]
+  },
+  {
+    "sentence": "My father spent the whole afternoon trying to _____ the broken bike.",
+    "options": [
+      "(A) break",
+      "(B) waste",
+      "(C) lose",
+      "(D) fix"
+    ],
+    "answer": 3,
+    "explanation": "fix 指修理。爸爸花了整個下午想修好壞掉的腳踏車，故選fix；break為弄壞，語意相反。",
+    "pos": "動詞",
+    "id": "vocab_350",
+    "optionsZh": [
+      "弄壞",
+      "浪費",
+      "遺失",
+      "修理"
+    ]
+  },
+  {
+    "sentence": "You need to _____ your homework instead of watching TV.",
+    "options": [
+      "(A) give up",
+      "(B) worry about",
+      "(C) complain about",
+      "(D) focus on"
+    ],
+    "answer": 3,
+    "explanation": "focus on 指專注於。你應該專注於功課而不是看電視，故選focus on。",
+    "pos": "動詞",
+    "id": "vocab_351",
+    "optionsZh": [
+      "放棄",
+      "擔心",
+      "抱怨",
+      "專注於"
+    ]
+  },
+  {
+    "sentence": "Many young children are _____ of the dark and need a night light.",
+    "options": [
+      "(A) afraid",
+      "(B) proud",
+      "(C) angry",
+      "(D) tired"
+    ],
+    "answer": 0,
+    "explanation": "afraid 指害怕的。許多幼童害怕黑暗，需要一盞小夜燈，故選afraid。",
+    "pos": "形容詞",
+    "id": "vocab_352",
+    "optionsZh": [
+      "害怕的",
+      "驕傲的",
+      "生氣的",
+      "疲累的"
+    ]
+  },
+  {
+    "sentence": "The twin sisters look so _____ that even their teacher gets confused.",
+    "options": [
+      "(A) alike",
+      "(B) different",
+      "(C) separate",
+      "(D) opposite"
+    ],
+    "answer": 0,
+    "explanation": "alike 指相似的。雙胞胎姐妹長得非常相似，連老師都會搞混，故選alike。",
+    "pos": "形容詞",
+    "id": "vocab_353",
+    "optionsZh": [
+      "相似的",
+      "不同的",
+      "分開的",
+      "相反的"
+    ]
+  },
+  {
+    "sentence": "The baby fell _____ in his mother's arms during the long car ride.",
+    "options": [
+      "(A) asleep",
+      "(B) awake",
+      "(C) worried",
+      "(D) hungry"
+    ],
+    "answer": 0,
+    "explanation": "asleep 指睡著的。寶寶在長途車程中在媽媽懷裡睡著了，故選asleep；awake為清醒的，語意相反。",
+    "pos": "形容詞",
+    "id": "vocab_354",
+    "optionsZh": [
+      "睡著的",
+      "清醒的",
+      "擔心的",
+      "飢餓的"
+    ]
+  },
+  {
+    "sentence": "This kind of coffee tastes too _____ for me without any sugar.",
+    "options": [
+      "(A) sweet",
+      "(B) salty",
+      "(C) bitter",
+      "(D) sour"
+    ],
+    "answer": 2,
+    "explanation": "bitter 指苦的。這款咖啡不加糖對我來說太苦了，故選bitter。",
+    "pos": "形容詞",
+    "id": "vocab_355",
+    "optionsZh": [
+      "甜的",
+      "鹹的",
+      "苦的",
+      "酸的"
+    ]
+  },
+  {
+    "sentence": "The students felt _____ during the long, boring lecture.",
+    "options": [
+      "(A) excited",
+      "(B) satisfied",
+      "(C) bored",
+      "(D) relaxed"
+    ],
+    "answer": 2,
+    "explanation": "bored 指感到無聊的。學生們在冗長無趣的講課中感到無聊，故選bored。",
+    "pos": "形容詞",
+    "id": "vocab_356",
+    "optionsZh": [
+      "興奮的",
+      "滿足的",
+      "感到無聊的",
+      "放鬆的"
+    ]
+  },
+  {
+    "sentence": "I found the movie so _____ that I almost fell asleep in the theater.",
+    "options": [
+      "(A) boring",
+      "(B) exciting",
+      "(C) interesting",
+      "(D) amazing"
+    ],
+    "answer": 0,
+    "explanation": "boring 指無聊的。我覺得這部電影太無聊，差點在戲院睡著，故選boring。",
+    "pos": "形容詞",
+    "id": "vocab_357",
+    "optionsZh": [
+      "無聊的",
+      "刺激的",
+      "有趣的",
+      "驚人的"
+    ]
+  },
+  {
+    "sentence": "The teacher gave a _____ explanation before the test began.",
+    "options": [
+      "(A) long",
+      "(B) brief",
+      "(C) deep",
+      "(D) wide"
+    ],
+    "answer": 1,
+    "explanation": "brief 指簡短的。老師在考試開始前做了簡短的說明，故選brief；long為長的，語意相反。",
+    "pos": "形容詞",
+    "id": "vocab_358",
+    "optionsZh": [
+      "長的",
+      "簡短的",
+      "深的",
+      "寬的"
+    ]
+  },
+  {
+    "sentence": "The baby's _____ cheeks made everyone want to hug him.",
+    "options": [
+      "(A) chubby",
+      "(B) skinny",
+      "(C) tall",
+      "(D) strong"
+    ],
+    "answer": 0,
+    "explanation": "chubby 指圓潤微胖的。寶寶圓嘟嘟的臉頰讓大家都想抱抱他，故選chubby。",
+    "pos": "形容詞",
+    "id": "vocab_359",
+    "optionsZh": [
+      "圓潤微胖的",
+      "瘦的",
+      "高的",
+      "強壯的"
+    ]
+  },
+  {
+    "sentence": "This old song is a _____ that people still love after fifty years.",
+    "options": [
+      "(A) modern",
+      "(B) ordinary",
+      "(C) strange",
+      "(D) classic"
+    ],
+    "answer": 3,
+    "explanation": "classic 指經典的。這首老歌是首經典曲目，五十年後人們依然喜愛，故選classic。",
+    "pos": "形容詞",
+    "id": "vocab_360",
+    "optionsZh": [
+      "現代的",
+      "普通的",
+      "奇怪的",
+      "經典的"
+    ]
+  },
+  {
+    "sentence": "My mother was very _____ when I didn't come home before dark.",
+    "options": [
+      "(A) pleased",
+      "(B) proud",
+      "(C) concerned",
+      "(D) calm"
+    ],
+    "answer": 2,
+    "explanation": "concerned 指擔心的。我天黑前沒回家，媽媽非常擔心，故選concerned。",
+    "pos": "形容詞",
+    "id": "vocab_361",
+    "optionsZh": [
+      "高興的",
+      "驕傲的",
+      "擔心的",
+      "冷靜的"
+    ]
+  },
+  {
+    "sentence": "The little boy was _____ about how the old clock worked inside.",
+    "options": [
+      "(A) careless",
+      "(B) lazy",
+      "(C) shy",
+      "(D) curious"
+    ],
+    "answer": 3,
+    "explanation": "curious 指好奇的。小男孩對舊時鐘內部如何運作感到好奇，故選curious。",
+    "pos": "形容詞",
+    "id": "vocab_362",
+    "optionsZh": [
+      "粗心的",
+      "懶惰的",
+      "害羞的",
+      "好奇的"
+    ]
+  },
+  {
+    "sentence": "After riding the roller coaster three times, she felt _____ and sat down.",
+    "options": [
+      "(A) hungry",
+      "(B) sleepy",
+      "(C) dizzy",
+      "(D) thirsty"
+    ],
+    "answer": 2,
+    "explanation": "dizzy 指頭暈的。連坐三次雲霄飛車後她感到頭暈便坐了下來，故選dizzy。",
+    "pos": "形容詞",
+    "id": "vocab_363",
+    "optionsZh": [
+      "飢餓的",
+      "想睡的",
+      "頭暈的",
+      "口渴的"
+    ]
+  },
+  {
+    "sentence": "I'm still _____ about whether his story is really true.",
+    "options": [
+      "(A) certain",
+      "(B) hopeful",
+      "(C) doubtful",
+      "(D) thankful"
+    ],
+    "answer": 2,
+    "explanation": "doubtful 指懷疑的。我仍然懷疑他的故事是否為真，故選doubtful；certain為確定的，語意相反。",
+    "pos": "形容詞",
+    "id": "vocab_364",
+    "optionsZh": [
+      "確定的",
+      "充滿希望的",
+      "懷疑的",
+      "感激的"
+    ]
+  },
+  {
+    "sentence": "It was really _____ of me to leave my umbrella on the bus again.",
+    "options": [
+      "(A) dumb",
+      "(B) clever",
+      "(C) careful",
+      "(D) honest"
+    ],
+    "answer": 0,
+    "explanation": "dumb 指愚蠢的（口語）。我又把傘忘在公車上真的很蠢，故選dumb。",
+    "pos": "形容詞",
+    "id": "vocab_365",
+    "optionsZh": [
+      "愚蠢的",
+      "聰明的",
+      "小心的",
+      "誠實的"
+    ]
+  },
+  {
+    "sentence": "Even after a full day of hiking, the kids were still very _____.",
+    "options": [
+      "(A) exhausted",
+      "(B) energetic",
+      "(C) calm",
+      "(D) quiet"
+    ],
+    "answer": 1,
+    "explanation": "energetic 指精力充沛的。健行一整天後孩子們依然精力充沛，故選energetic。",
+    "pos": "形容詞",
+    "id": "vocab_366",
+    "optionsZh": [
+      "精疲力竭的",
+      "精力充沛的",
+      "冷靜的",
+      "安靜的"
+    ]
+  },
+  {
+    "sentence": "In the story, the _____ witch tried to trap the children in her house.",
+    "options": [
+      "(A) kind",
+      "(B) gentle",
+      "(C) honest",
+      "(D) evil"
+    ],
+    "answer": 3,
+    "explanation": "evil 指邪惡的。故事中邪惡的女巫試圖把孩子們困在她家裡，故選evil；kind為仁慈的，語意相反。",
+    "pos": "形容詞",
+    "id": "vocab_367",
+    "optionsZh": [
+      "仁慈的",
+      "溫和的",
+      "誠實的",
+      "邪惡的"
+    ]
+  },
+  {
+    "sentence": "The teacher tried to be _____ and gave every student the same amount of time to speak.",
+    "options": [
+      "(A) strict",
+      "(B) cruel",
+      "(C) harsh",
+      "(D) fair"
+    ],
+    "answer": 3,
+    "explanation": "fair 指公平的。老師努力做到公平，給每位學生相同的發言時間，故選fair。",
+    "pos": "形容詞",
+    "id": "vocab_368",
+    "optionsZh": [
+      "嚴格的",
+      "殘忍的",
+      "嚴厲的",
+      "公平的"
+    ]
+  },
+  {
+    "sentence": "The answer he gave in class turned out to be completely _____.",
+    "options": [
+      "(A) true",
+      "(B) false",
+      "(C) correct",
+      "(D) real"
+    ],
+    "answer": 1,
+    "explanation": "false 指錯誤的、不實的。他在課堂上給的答案結果完全是錯的，故選false；true為真實的，語意相反。",
+    "pos": "形容詞",
+    "id": "vocab_369",
+    "optionsZh": [
+      "真實的",
+      "錯誤的",
+      "正確的",
+      "真的"
+    ]
+  },
+  {
+    "sentence": "They went to a _____ restaurant to celebrate their parents' anniversary.",
+    "options": [
+      "(A) simple",
+      "(B) plain",
+      "(C) cheap",
+      "(D) fancy"
+    ],
+    "answer": 3,
+    "explanation": "fancy 指高級、花俏的。他們去了一家高級餐廳慶祝父母的結婚紀念日，故選fancy。",
+    "pos": "形容詞",
+    "id": "vocab_370",
+    "optionsZh": [
+      "簡單的",
+      "樸素的",
+      "便宜的",
+      "高級的"
+    ]
+  },
+  {
+    "sentence": "My cousin always wears the most _____ clothes in our family.",
+    "options": [
+      "(A) fashionable",
+      "(B) old-fashioned",
+      "(C) plain",
+      "(D) dirty"
+    ],
+    "answer": 0,
+    "explanation": "fashionable 指時髦的。我表姊在我們家族中總是穿得最時髦，故選fashionable。",
+    "pos": "形容詞",
+    "id": "vocab_371",
+    "optionsZh": [
+      "時髦的",
+      "過時的",
+      "樸素的",
+      "髒的"
+    ]
+  },
+  {
+    "sentence": "Learning a _____ language can open many doors in the future.",
+    "options": [
+      "(A) local",
+      "(B) native",
+      "(C) familiar",
+      "(D) foreign"
+    ],
+    "answer": 3,
+    "explanation": "foreign 指外國的。學習外國語言未來能開啟許多機會，故選foreign。",
+    "pos": "形容詞",
+    "id": "vocab_372",
+    "optionsZh": [
+      "當地的",
+      "本國的",
+      "熟悉的",
+      "外國的"
+    ]
+  },
+  {
+    "sentence": "To be _____ with you, I don't think this plan will work at all.",
+    "options": [
+      "(A) shy",
+      "(B) quiet",
+      "(C) frank",
+      "(D) careless"
+    ],
+    "answer": 2,
+    "explanation": "frank 指坦率的。坦白說，我認為這個計畫根本行不通，故選frank。",
+    "pos": "形容詞",
+    "id": "vocab_373",
+    "optionsZh": [
+      "害羞的",
+      "安靜的",
+      "坦率的",
+      "粗心的"
+    ]
+  },
+  {
+    "sentence": "The _____ man refused to share even a small piece of his cake.",
+    "options": [
+      "(A) greedy",
+      "(B) generous",
+      "(C) honest",
+      "(D) humble"
+    ],
+    "answer": 0,
+    "explanation": "greedy 指貪心的。這個貪心的男人連一小塊蛋糕都不肯分享，故選greedy；generous為慷慨的，語意相反。",
+    "pos": "形容詞",
+    "id": "vocab_374",
+    "optionsZh": [
+      "貪心的",
+      "慷慨的",
+      "誠實的",
+      "謙虛的"
+    ]
+  },
+  {
+    "sentence": "Everyone in the class agrees that the new student is very _____.",
+    "options": [
+      "(A) handsome",
+      "(B) ugly",
+      "(C) lazy",
+      "(D) rude"
+    ],
+    "answer": 0,
+    "explanation": "handsome 指英俊的。全班同學都認為新來的男同學很英俊，故選handsome。",
+    "pos": "形容詞",
+    "id": "vocab_375",
+    "optionsZh": [
+      "英俊的",
+      "醜的",
+      "懶惰的",
+      "粗魯的"
+    ]
+  },
+  {
+    "sentence": "Our English teacher is very _____ and often makes the whole class laugh.",
+    "options": [
+      "(A) serious",
+      "(B) boring",
+      "(C) humorous",
+      "(D) strict"
+    ],
+    "answer": 2,
+    "explanation": "humorous 指幽默的。我們的英文老師很幽默，常常逗得全班大笑，故選humorous。",
+    "pos": "形容詞",
+    "id": "vocab_376",
+    "optionsZh": [
+      "嚴肅的",
+      "無聊的",
+      "幽默的",
+      "嚴格的"
+    ]
+  },
+  {
+    "sentence": "He seemed completely _____ of the new rules at his new job.",
+    "options": [
+      "(A) ignorant",
+      "(B) wise",
+      "(C) careful",
+      "(D) honest"
+    ],
+    "answer": 0,
+    "explanation": "ignorant 指無知的、不了解的。他對新工作的新規定似乎完全不了解，故選ignorant。",
+    "pos": "形容詞",
+    "id": "vocab_377",
+    "optionsZh": [
+      "無知的",
+      "明智的",
+      "小心的",
+      "誠實的"
+    ]
+  },
+  {
+    "sentence": "The children in the art class came up with some very _____ drawings.",
+    "options": [
+      "(A) boring",
+      "(B) careless",
+      "(C) lazy",
+      "(D) imaginative"
+    ],
+    "answer": 3,
+    "explanation": "imaginative 指有想像力的。美術課上的孩子們畫出了非常有想像力的圖畫，故選imaginative。",
+    "pos": "形容詞",
+    "id": "vocab_378",
+    "optionsZh": [
+      "無聊的",
+      "粗心的",
+      "懶惰的",
+      "有想像力的"
+    ]
+  },
+  {
+    "sentence": "It seemed _____ for the small team to win against such strong players.",
+    "options": [
+      "(A) impossible",
+      "(B) possible",
+      "(C) easy",
+      "(D) common"
+    ],
+    "answer": 0,
+    "explanation": "impossible 指不可能的。小隊要贏過這麼強的對手似乎不可能，故選impossible；possible為可能的，語意相反。",
+    "pos": "形容詞",
+    "id": "vocab_379",
+    "optionsZh": [
+      "不可能的",
+      "可能的",
+      "容易的",
+      "常見的"
+    ]
+  },
+  {
+    "sentence": "She felt a little _____ when her sister got a new bike for her birthday.",
+    "options": [
+      "(A) jealous",
+      "(B) proud",
+      "(C) thankful",
+      "(D) calm"
+    ],
+    "answer": 0,
+    "explanation": "jealous 指嫉妒的。妹妹生日得到新腳踏車時她感到有點嫉妒，故選jealous。",
+    "pos": "形容詞",
+    "id": "vocab_380",
+    "optionsZh": [
+      "嫉妒的",
+      "驕傲的",
+      "感激的",
+      "冷靜的"
+    ]
+  },
+  {
+    "sentence": "Being too _____ to study, he failed the history test again.",
+    "options": [
+      "(A) active",
+      "(B) diligent",
+      "(C) energetic",
+      "(D) lazy"
+    ],
+    "answer": 3,
+    "explanation": "lazy 指懶惰的。因為太懶惰不肯讀書，他歷史又不及格了，故選lazy。",
+    "pos": "形容詞",
+    "id": "vocab_381",
+    "optionsZh": [
+      "積極的",
+      "勤奮的",
+      "精力充沛的",
+      "懶惰的"
+    ]
+  },
+  {
+    "sentence": "Being tall gives him a big _____ in basketball games.",
+    "options": [
+      "(A) disadvantage",
+      "(B) weakness",
+      "(C) mistake",
+      "(D) advantage"
+    ],
+    "answer": 3,
+    "explanation": "advantage 指優點、優勢。身高高讓他在籃球賽中占很大優勢，故選advantage；disadvantage為缺點，語意相反。",
+    "pos": "名詞",
+    "id": "vocab_382",
+    "optionsZh": [
+      "缺點",
+      "弱點",
+      "錯誤",
+      "優勢"
+    ]
+  },
+  {
+    "sentence": "Her main _____ this year is to improve her English speaking skills.",
+    "options": [
+      "(A) mistake",
+      "(B) rule",
+      "(C) habit",
+      "(D) aim"
+    ],
+    "answer": 3,
+    "explanation": "aim 指目標。她今年主要的目標是加強英語口說能力，故選aim。",
+    "pos": "名詞",
+    "id": "vocab_383",
+    "optionsZh": [
+      "錯誤",
+      "規則",
+      "習慣",
+      "目標"
+    ]
+  },
+  {
+    "sentence": "After the accident, someone quickly called an _____ for the injured man.",
+    "options": [
+      "(A) taxi",
+      "(B) bus",
+      "(C) truck",
+      "(D) ambulance"
+    ],
+    "answer": 3,
+    "explanation": "ambulance 指救護車。意外發生後有人立刻叫救護車送傷者就醫，故選ambulance。",
+    "pos": "名詞",
+    "id": "vocab_384",
+    "optionsZh": [
+      "計程車",
+      "公車",
+      "卡車",
+      "救護車"
+    ]
+  },
+  {
+    "sentence": "My uncle just moved into a small _____ near the city center.",
+    "options": [
+      "(A) hotel",
+      "(B) school",
+      "(C) factory",
+      "(D) apartment"
+    ],
+    "answer": 3,
+    "explanation": "apartment 指公寓。我叔叔剛搬進市中心附近的小公寓，故選apartment。",
+    "pos": "名詞",
+    "id": "vocab_385",
+    "optionsZh": [
+      "飯店",
+      "學校",
+      "工廠",
+      "公寓"
+    ]
+  },
+  {
+    "sentence": "His grandfather served in the _____ for more than twenty years.",
+    "options": [
+      "(A) family",
+      "(B) army",
+      "(C) class",
+      "(D) club"
+    ],
+    "answer": 1,
+    "explanation": "army 指軍隊。他的祖父在軍隊服役超過二十年，故選army。",
+    "pos": "名詞",
+    "id": "vocab_386",
+    "optionsZh": [
+      "家庭",
+      "軍隊",
+      "班級",
+      "社團"
+    ]
+  },
+  {
+    "sentence": "Please pay _____ to the teacher when she explains the new grammar rule.",
+    "options": [
+      "(A) memory",
+      "(B) energy",
+      "(C) attention",
+      "(D) patience"
+    ],
+    "answer": 2,
+    "explanation": "attention 指注意力。老師解釋新文法規則時請大家注意聽，故選attention（pay attention 專心）。",
+    "pos": "名詞",
+    "id": "vocab_387",
+    "optionsZh": [
+      "記憶",
+      "精力",
+      "注意力",
+      "耐心"
+    ]
+  },
+  {
+    "sentence": "We often sit on the _____ to watch the sunset after dinner.",
+    "options": [
+      "(A) kitchen",
+      "(B) basement",
+      "(C) garage",
+      "(D) balcony"
+    ],
+    "answer": 3,
+    "explanation": "balcony 指陽台。我們晚餐後常坐在陽台看夕陽，故選balcony。",
+    "pos": "名詞",
+    "id": "vocab_388",
+    "optionsZh": [
+      "廚房",
+      "地下室",
+      "車庫",
+      "陽台"
+    ]
+  },
+  {
+    "sentence": "My father's _____ gave the whole team two extra days off this month.",
+    "options": [
+      "(A) guest",
+      "(B) customer",
+      "(C) boss",
+      "(D) stranger"
+    ],
+    "answer": 2,
+    "explanation": "boss 指老闆、上司。我爸爸的老闆這個月給全隊多放兩天假，故選boss。",
+    "pos": "名詞",
+    "id": "vocab_389",
+    "optionsZh": [
+      "客人",
+      "顧客",
+      "老闆",
+      "陌生人"
+    ]
+  },
+  {
+    "sentence": "The bird built its nest on a thick _____ near the top of the tree.",
+    "options": [
+      "(A) root",
+      "(B) branch",
+      "(C) leaf",
+      "(D) seed"
+    ],
+    "answer": 1,
+    "explanation": "branch 指樹枝。鳥兒把巢築在樹頂附近一根粗樹枝上，故選branch。",
+    "pos": "名詞",
+    "id": "vocab_390",
+    "optionsZh": [
+      "樹根",
+      "樹枝",
+      "樹葉",
+      "種子"
+    ]
+  },
+  {
+    "sentence": "As the _____ of the club, he had to lead every weekly meeting.",
+    "options": [
+      "(A) member",
+      "(B) visitor",
+      "(C) chairman",
+      "(D) worker"
+    ],
+    "answer": 2,
+    "explanation": "chairman 指主席。身為社團主席，他必須主持每週的例會，故選chairman。",
+    "pos": "名詞",
+    "id": "vocab_391",
+    "optionsZh": [
+      "成員",
+      "訪客",
+      "主席",
+      "工人"
+    ]
+  },
+  {
+    "sentence": "After living in Canada for years, she finally got Canadian _____.",
+    "options": [
+      "(A) friendship",
+      "(B) citizenship",
+      "(C) ownership",
+      "(D) membership"
+    ],
+    "answer": 1,
+    "explanation": "citizenship 指公民身分、國籍。她在加拿大住了多年後終於取得加拿大國籍，故選citizenship。",
+    "pos": "名詞",
+    "id": "vocab_392",
+    "optionsZh": [
+      "友誼",
+      "公民身分",
+      "所有權",
+      "會員資格"
+    ]
+  },
+  {
+    "sentence": "The old dog has been his loyal _____ for over ten years.",
+    "options": [
+      "(A) stranger",
+      "(B) companion",
+      "(C) enemy",
+      "(D) visitor"
+    ],
+    "answer": 1,
+    "explanation": "companion 指同伴、夥伴。這隻老狗十多年來一直是他忠實的夥伴，故選companion。",
+    "pos": "名詞",
+    "id": "vocab_393",
+    "optionsZh": [
+      "陌生人",
+      "同伴",
+      "敵人",
+      "訪客"
+    ]
+  },
+  {
+    "sentence": "The sudden change of plans caused a lot of _____ among the students.",
+    "options": [
+      "(A) comfort",
+      "(B) confusion",
+      "(C) pleasure",
+      "(D) patience"
+    ],
+    "answer": 1,
+    "explanation": "confusion 指困惑、混亂。計畫突然改變讓學生們感到十分困惑，故選confusion。",
+    "pos": "名詞",
+    "id": "vocab_394",
+    "optionsZh": [
+      "安慰",
+      "困惑",
+      "樂趣",
+      "耐心"
+    ]
+  },
+  {
+    "sentence": "The strange sound in the attic filled the children with _____.",
+    "options": [
+      "(A) patience",
+      "(B) curiosity",
+      "(C) honesty",
+      "(D) laziness"
+    ],
+    "answer": 1,
+    "explanation": "curiosity 指好奇心。閣樓傳出的怪聲讓孩子們充滿好奇心，故選curiosity。",
+    "pos": "名詞",
+    "id": "vocab_395",
+    "optionsZh": [
+      "耐心",
+      "好奇心",
+      "誠實",
+      "懶惰"
+    ]
+  },
+  {
+    "sentence": "It took him five years to pay off all his _____ after starting the business.",
+    "options": [
+      "(A) gift",
+      "(B) prize",
+      "(C) debt",
+      "(D) salary"
+    ],
+    "answer": 2,
+    "explanation": "debt 指債務。他創業後花了五年才還清所有債務，故選debt。",
+    "pos": "名詞",
+    "id": "vocab_396",
+    "optionsZh": [
+      "禮物",
+      "獎品",
+      "債務",
+      "薪水"
+    ]
+  },
+  {
+    "sentence": "I thought the test would be hard, but it was _____ quite easy.",
+    "options": [
+      "(A) probably",
+      "(B) actually",
+      "(C) hardly",
+      "(D) rarely"
+    ],
+    "answer": 1,
+    "explanation": "actually 指事實上、其實。我以為考試會很難，但其實相當簡單，故選actually。",
+    "pos": "副詞",
+    "id": "vocab_397",
+    "optionsZh": [
+      "可能",
+      "事實上",
+      "幾乎不",
+      "很少"
+    ]
+  },
+  {
+    "sentence": "Look _____! There is a big rock in the middle of the road.",
+    "options": [
+      "(A) behind",
+      "(B) ahead",
+      "(C) below",
+      "(D) beside"
+    ],
+    "answer": 1,
+    "explanation": "ahead 指在前方。前方有顆大石頭擋在路中間，故選ahead。",
+    "pos": "副詞",
+    "id": "vocab_398",
+    "optionsZh": [
+      "在後面",
+      "在前方",
+      "在下方",
+      "在旁邊"
+    ]
+  },
+  {
+    "sentence": "The teacher asked each student to read the paragraph _____ in class.",
+    "options": [
+      "(A) silently",
+      "(B) aloud",
+      "(C) secretly",
+      "(D) slowly"
+    ],
+    "answer": 1,
+    "explanation": "aloud 指出聲地朗讀。老師要求每位學生在課堂上大聲朗讀該段落，故選aloud。",
+    "pos": "副詞",
+    "id": "vocab_399",
+    "optionsZh": [
+      "安靜地",
+      "出聲地",
+      "秘密地",
+      "緩慢地"
+    ]
+  },
+  {
+    "sentence": "The bill for our dinner came to five hundred dollars _____.",
+    "options": [
+      "(A) partly",
+      "(B) hardly",
+      "(C) rarely",
+      "(D) altogether"
+    ],
+    "answer": 3,
+    "explanation": "altogether 指總共、完全地。我們晚餐的帳單總共五百元，故選altogether。",
+    "pos": "副詞",
+    "id": "vocab_400",
+    "optionsZh": [
+      "部分地",
+      "幾乎不",
+      "很少",
+      "總共"
+    ]
+  },
+  {
+    "sentence": "The crab moved _____ instead of moving straight ahead.",
+    "options": [
+      "(A) backward",
+      "(B) forward",
+      "(C) upward",
+      "(D) sideways"
+    ],
+    "answer": 0,
+    "explanation": "backward 指向後地。螃蟹是向後移動而非直向前進，故選backward；forward為向前，語意相反。",
+    "pos": "副詞",
+    "id": "vocab_401",
+    "optionsZh": [
+      "向後地",
+      "向前地",
+      "向上地",
+      "側面地"
+    ]
+  },
+  {
+    "sentence": "After the long trip, he was so tired that he could _____ keep his eyes open.",
+    "options": [
+      "(A) always",
+      "(B) usually",
+      "(C) hardly",
+      "(D) often"
+    ],
+    "answer": 2,
+    "explanation": "hardly 指幾乎不。長途旅行後他累到幾乎張不開眼睛，故選hardly。",
+    "pos": "副詞",
+    "id": "vocab_402",
+    "optionsZh": [
+      "總是",
+      "通常",
+      "幾乎不",
+      "經常"
+    ]
+  },
+  {
+    "sentence": "Have you been sleeping well _____? You look really tired these days.",
+    "options": [
+      "(A) soon",
+      "(B) once",
+      "(C) lately",
+      "(D) forever"
+    ],
+    "answer": 2,
+    "explanation": "lately 指最近。你最近有睡好嗎？這幾天看起來很累，故選lately。",
+    "pos": "副詞",
+    "id": "vocab_403",
+    "optionsZh": [
+      "不久後",
+      "曾經",
+      "最近",
+      "永遠"
+    ]
+  },
+  {
+    "sentence": "The math homework tonight is _____ difficult, so I need more time.",
+    "options": [
+      "(A) hardly",
+      "(B) quite",
+      "(C) never",
+      "(D) seldom"
+    ],
+    "answer": 1,
+    "explanation": "quite 指相當。今晚的數學作業相當困難，所以我需要更多時間，故選quite。",
+    "pos": "副詞",
+    "id": "vocab_404",
+    "optionsZh": [
+      "幾乎不",
+      "相當",
+      "從不",
+      "很少"
+    ]
+  },
+  {
+    "sentence": "I would _____ stay home and read a book than go to the noisy party.",
+    "options": [
+      "(A) rather",
+      "(B) hardly",
+      "(C) never",
+      "(D) seldom"
+    ],
+    "answer": 0,
+    "explanation": "rather 指寧可。我寧可待在家看書，也不想去吵鬧的派對，故選rather（would rather 寧可）。",
+    "pos": "副詞",
+    "id": "vocab_405",
+    "optionsZh": [
+      "寧可",
+      "幾乎不",
+      "從不",
+      "很少"
+    ]
+  },
+  {
+    "sentence": "Because he lives so far away, he _____ visits his grandparents.",
+    "options": [
+      "(A) always",
+      "(B) usually",
+      "(C) seldom",
+      "(D) often"
+    ],
+    "answer": 2,
+    "explanation": "seldom 指很少。因為住得很遠，他很少去看祖父母，故選seldom。",
+    "pos": "副詞",
+    "id": "vocab_406",
+    "optionsZh": [
+      "總是",
+      "通常",
+      "很少",
+      "經常"
+    ]
+  },
+  {
+    "sentence": "We _____ go to the night market on Friday evenings after dinner.",
+    "options": [
+      "(A) usually",
+      "(B) never",
+      "(C) rarely",
+      "(D) hardly"
+    ],
+    "answer": 0,
+    "explanation": "usually 指通常。我們通常在週五晚餐後去逛夜市，故選usually。",
+    "pos": "副詞",
+    "id": "vocab_407",
+    "optionsZh": [
+      "通常",
+      "從不",
+      "很少",
+      "幾乎不"
+    ]
+  },
+  {
+    "sentence": "After waiting for three hours, the bus _____ arrived at the station.",
+    "options": [
+      "(A) suddenly",
+      "(B) immediately",
+      "(C) occasionally",
+      "(D) finally"
+    ],
+    "answer": 3,
+    "explanation": "finally 指終於、最後。等了三小時後公車終於到站，故選finally。",
+    "pos": "副詞",
+    "id": "vocab_408",
+    "optionsZh": [
+      "突然",
+      "立刻",
+      "偶爾",
+      "終於"
+    ]
+  },
+  {
+    "sentence": "She prefers to travel _____ so she can plan her own schedule.",
+    "options": [
+      "(A) together",
+      "(B) happily",
+      "(C) alone",
+      "(D) quickly"
+    ],
+    "answer": 2,
+    "explanation": "alone 指獨自地。她喜歡獨自旅行，這樣可以自己安排行程，故選alone。",
+    "pos": "副詞",
+    "id": "vocab_409",
+    "optionsZh": [
+      "一起",
+      "開心地",
+      "獨自地",
+      "快速地"
+    ]
+  },
+  {
+    "sentence": "_____, we still have enough time to visit the museum before it closes.",
+    "options": [
+      "(A) besides",
+      "(B) instead",
+      "(C) however",
+      "(D) though"
+    ],
+    "answer": 0,
+    "explanation": "besides 指此外，用於補充理由。此外，我們還有足夠時間在博物館關門前參觀，故選besides。",
+    "pos": "副詞",
+    "id": "vocab_410",
+    "optionsZh": [
+      "此外",
+      "反而",
+      "然而",
+      "雖然"
+    ]
+  },
+  {
+    "sentence": "My sister plans to study _____ in Australia after she graduates.",
+    "options": [
+      "(A) nearby",
+      "(B) indoors",
+      "(C) abroad",
+      "(D) outdoors"
+    ],
+    "answer": 2,
+    "explanation": "abroad 指在國外。姊姊畢業後計畫到澳洲留學，故選abroad。",
+    "pos": "副詞",
+    "id": "vocab_411",
+    "optionsZh": [
+      "在附近",
+      "在室內",
+      "在國外",
+      "在戶外"
+    ]
   }
 ]
