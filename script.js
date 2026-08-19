@@ -9454,17 +9454,22 @@ const GACHA_BURST_COLOR = {
 
 // 拆卡包序列 v2（參照 TCG Pocket）：鋁箔補充包 → 沿封口滑動撕開（裂縫跟手擴大）→
 // 頭部條帶+小碎片不對稱拋物線飛出 → 包體退場 → 逐張滑動揭曉
-// 卡包封面插畫（每次隨機挑一張，增加開包新鮮感）：整張圖同時當 .gp2-header／.gp2-art
-// 的背景，兩者共用同一個 background-size，只用 background-position 上下錯開，撕開時
-// 頭部條帶飛走看起來就像從同一張圖上被撕下一小塊，而不是兩張不相干的圖硬接
-const GACHA_PACK_COVERS = ['public/images/icons/gacha_pack_1.webp', 'public/images/icons/gacha_pack_2.webp'];
+// 卡包封面插畫：依目前抽的卡池對應固定一張圖（不是隨機），整張圖同時當 .gp2-header／
+// .gp2-art 的背景，兩者共用同一個 background-size，只用 background-position 上下錯開，
+// 撕開時頭部條帶飛走看起來就像從同一張圖上被撕下一小塊，而不是兩張不相干的圖硬接。
+// standing（常駐卡池：聖多諾黑/可麗露/千層蛋糕，甜點角色）→ gacha_pack_1（甜點主題）
+// limited（限時卡池：黑鮪魚/海膽/壽司，海鮮角色）→ gacha_pack_2（海鮮/和風主題）
+const GACHA_PACK_COVER_BY_POOL = {
+  standing: 'public/images/icons/gacha_pack_1.webp',
+  limited: 'public/images/icons/gacha_pack_2.webp',
+};
 function showGachaPackOpen(results) {
   const stage = document.createElement('div');
   stage.id = 'gachaPackStage';
   stage.className = 'gacha-pack-stage';
   if (typeof SFX !== 'undefined') SFX.gachaDraw();
 
-  const cover = GACHA_PACK_COVERS[Math.floor(Math.random() * GACHA_PACK_COVERS.length)];
+  const cover = GACHA_PACK_COVER_BY_POOL[GACHA_POOL?.id] || GACHA_PACK_COVER_BY_POOL.standing;
 
   stage.innerHTML = `
     <div class="gp2-wrap" id="gp2Wrap">
