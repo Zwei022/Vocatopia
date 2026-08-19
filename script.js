@@ -9454,26 +9454,28 @@ const GACHA_BURST_COLOR = {
 
 // 拆卡包序列 v2（參照 TCG Pocket）：鋁箔補充包 → 沿封口滑動撕開（裂縫跟手擴大）→
 // 頭部條帶+小碎片不對稱拋物線飛出 → 包體退場 → 逐張滑動揭曉
+// 卡包封面插畫（每次隨機挑一張，增加開包新鮮感）：整張圖同時當 .gp2-header／.gp2-art
+// 的背景，兩者共用同一個 background-size，只用 background-position 上下錯開，撕開時
+// 頭部條帶飛走看起來就像從同一張圖上被撕下一小塊，而不是兩張不相干的圖硬接
+const GACHA_PACK_COVERS = ['public/images/icons/gacha_pack_1.webp', 'public/images/icons/gacha_pack_2.webp'];
 function showGachaPackOpen(results) {
   const stage = document.createElement('div');
   stage.id = 'gachaPackStage';
   stage.className = 'gacha-pack-stage';
   if (typeof SFX !== 'undefined') SFX.gachaDraw();
 
+  const cover = GACHA_PACK_COVERS[Math.floor(Math.random() * GACHA_PACK_COVERS.length)];
+
   stage.innerHTML = `
     <div class="gp2-wrap" id="gp2Wrap">
       <div class="gp2-pack">
         <div class="gp2-body">
-          <div class="gp2-art"><img src="public/images/characters/lobster.webp" alt="" draggable="false"></div>
+          <div class="gp2-art" style="background-image:url('${cover}');background-size:230px 388px;background-position:0 -70px"></div>
           <div class="gp2-crimp bottom"></div>
         </div>
         <div class="gp2-top">
           <div class="gp2-crimp top"></div>
-          <div class="gp2-header">
-            <img src="public/images/app_icon_transparent.webp" alt="" draggable="false">
-            <span class="gp2-title">Vocatopia</span>
-            <span class="gp2-badge">V1</span>
-          </div>
+          <div class="gp2-header" style="background-image:url('${cover}');background-size:230px 388px;background-position:0 0"></div>
         </div>
         <div class="gp2-tearline"></div>
         <div class="gp2-slit" id="gp2Slit"></div>
