@@ -15,7 +15,7 @@ const TT_HARDDROP_SCORE_PER_CELL = 2; // 硬降計分：瞬間下墜的每一格
 // 重力隨分數漸快、每 5000 分有閱讀理解關卡）。規則其餘完全相同。
 // 重力速度改成直接跟分數線性內插（不再是每隔幾秒定時加快）：
 // 分數 <= MIN 維持一般速度，MIN~MAX 之間線性變快，>= MAX 封頂在最快速度。
-const TT_RANKED_RAMP_FLOOR     = 200;   // 最快不低於這個值
+const TT_RANKED_RAMP_FLOOR     = 300;   // 最快不低於這個值（測試回饋15000分後太快，200→300ms放寬）
 const TT_RANKED_RAMP_SCORE_MIN = 7500;  // 積分模式分數達到此門檻才開始加速
 const TT_RANKED_RAMP_SCORE_MAX = 15000; // 達到此分數時重力達到最快
 
@@ -419,11 +419,13 @@ function _ttCheckAutoShield(ev) {
   ttGame.engine.clearBottomRows(ttGame.skill.clearRows || 3);
   ttGame.autoShieldUsed = used + 1;
   ttGame.autoShieldTriggeredBonus = true;
+  // 觸發時直接給分（測試回饋跟壽司的主動技能比起來太弱，追加固定分數獎勵）
+  if (ttGame.skill.triggerScore) _ttAddScore(ttGame.skill.triggerScore);
   // 3★質變：觸發時額外讓消行單字題連勝 +N
   if (ttGame.passives?.streakBonusOnTrigger) ttGame.wordStreak = (ttGame.wordStreak || 0) + ttGame.passives.streakBonusOnTrigger;
   if (typeof SFX !== 'undefined') SFX.clearBottom();
-  if (typeof showTtFloat === 'function') showTtFloat('🍱 軍艦護盾發動！', true);
-  if (typeof showToast === 'function') showToast('軍艦護盾自動觸發，清空底部');
+  if (typeof showTtFloat === 'function') showTtFloat(`🍱 軍艦護盾發動！+${ttGame.skill.triggerScore || 0}`, true);
+  if (typeof showToast === 'function') showToast('軍艦護盾自動觸發，清空底部並獲得分數');
   if (typeof _ttUpdateSkillBtn === 'function') _ttUpdateSkillBtn();
   if (ev.gameOver && !ttGame.engine.collides(ttGame.engine.active)) ev.gameOver = false; // 救回一命
   return true;

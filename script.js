@@ -8734,7 +8734,7 @@ function renderDeployedChar() {
     return;
   }
   body.innerHTML = `
-    <img class="hm-char-img" src="${ch.img}" alt="${escHtml(ch.name)}">
+    <img class="hm-char-img" src="${ch.deployImg || ch.img}" alt="${escHtml(ch.name)}">
     <div class="hm-char-name">${escHtml(ch.name)}</div>
     ${ch.nameEn ? `<div class="hm-char-name-en">${escHtml(ch.nameEn)}</div>` : ''}`;
 }
