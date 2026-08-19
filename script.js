@@ -9189,6 +9189,9 @@ function openCharDetail(id) {
   document.body.appendChild(overlay);
 }
 
+// 美食風味露圖示（取代原本的 🧪 emoji），inline 用於文字/按鈕中間，比照 emoji 對齊方式
+const DEW_ICON = '<img src="public/images/icons/flavor_dew.webp" alt="" style="height:1em;width:1em;object-fit:contain;vertical-align:-0.15em">';
+
 // 角色詳情彈窗裡的星級成長區塊：目前星級 + 下一星內容預覽 + 升星按鈕。
 // 只有已擁有的角色才顯示（未擁有連基礎技能都用不到，成長更無從談起）。
 function _charGrowthBlockHtml(ch) {
@@ -9206,7 +9209,7 @@ function _charGrowthBlockHtml(ch) {
         <div style="font-size:12px;color:var(--ink2);line-height:1.5;margin-bottom:8px">${escHtml(nextEntry ? nextEntry.desc : '效果尚未定案')}</div>
         <button onclick="openUpgradeConfirm('${ch.id}')"
           style="width:100%;padding:10px;border:none;border-radius:10px;font-family:var(--font-display);font-weight:900;font-size:13px;color:#fff;background:var(--orange2,#B85E0A);cursor:pointer">
-          升星 🧪${cost ? cost.dew : 0} ・ 🪙${cost ? cost.gold : 0}
+          升星 ${DEW_ICON}${cost ? cost.dew : 0} ・ 🪙${cost ? cost.gold : 0}
         </button>
       </div>`;
 
@@ -9231,7 +9234,7 @@ function openUpgradeConfirm(charId) {
   overlay.innerHTML = `
     <div style="background:var(--card);border:2.5px solid var(--line);border-radius:18px;padding:22px 20px;width:100%;max-width:300px;font-family:'Nunito',sans-serif;text-align:center;box-shadow:0 8px 40px rgba(75,56,42,.3)">
       <div style="font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--ink);margin-bottom:6px">升級 ${escHtml(ch.name)} 到 ${cost.star}★？</div>
-      <div style="font-size:13px;color:var(--ink2);margin-bottom:16px">消耗　🧪 ${cost.dew} 風味露　・　🪙 ${cost.gold} 金幣</div>
+      <div style="font-size:13px;color:var(--ink2);margin-bottom:16px">消耗　${DEW_ICON} ${cost.dew} 風味露　・　🪙 ${cost.gold} 金幣</div>
       <div style="display:flex;gap:8px">
         <button onclick="document.getElementById('upgradeConfirmOverlay').remove()"
           style="flex:1;padding:11px;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink2);font-weight:800;font-size:13px;cursor:pointer">取消</button>
@@ -9324,7 +9327,7 @@ function openGachaHistory() {
   const rows = history.length ? history.map(h => {
     const time = new Date(h.t).toLocaleString('zh-TW', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' });
     let label, color;
-    if (h.isConsolation || !h.charId) { label = `${h.tier}（+🧪${h.flavorDew}風味露）`; color = 'var(--ink3)'; }
+    if (h.isConsolation || !h.charId) { label = `${h.tier}（+${DEW_ICON}${h.flavorDew}風味露）`; color = 'var(--ink3)'; }
     else {
       const ch = (typeof TETRIS_CHARACTERS !== 'undefined') ? TETRIS_CHARACTERS[h.charId] : null;
       const name = ch ? ch.name : h.charId;
@@ -9349,10 +9352,10 @@ function openGachaHistory() {
 function _gachaEntryRow(entry) {
   if (entry.isConsolation || !entry.charId) {
     return `<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(122,92,67,.12)">
-      <div style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:20px">🧪</div>
+      <div style="width:36px;height:36px;display:flex;align-items:center;justify-content:center"><img src="public/images/icons/flavor_dew.webp" alt="" style="width:28px;height:28px;object-fit:contain"></div>
       <div style="flex:1">
         <div style="font-weight:800;font-size:13px;color:var(--ink)">${entry.tier}</div>
-        <div style="font-size:11px;color:var(--ink3)">獲得 🧪${entry.flavorDew} 美食風味露（不產生角色，可用來升級角色）</div>
+        <div style="font-size:11px;color:var(--ink3)">獲得 ${DEW_ICON}${entry.flavorDew} 美食風味露（不產生角色，可用來升級角色）</div>
       </div>
       <div style="font-weight:900;font-size:14px;color:var(--orange2)">${(entry.rate*100).toFixed(0)}%</div>
     </div>`;
@@ -9411,10 +9414,10 @@ function _gachaResultCardBack(r) {
   if (r.isConsolation || !r.charId) {
     return `<div style="display:flex;flex-direction:column;align-items:center;gap:6px;width:100%">
       <div class="coll-card rarity-common" style="width:100%;pointer-events:none">
-        <div class="coll-card-imgwrap" style="font-size:56px">🧪</div>
+        <div class="coll-card-imgwrap" style="display:flex;align-items:center;justify-content:center"><img src="public/images/icons/flavor_dew.webp" alt="" style="width:56px;height:56px;object-fit:contain"></div>
         <div class="coll-card-name" style="font-size:15px">${escHtml(r.tier)}</div>
       </div>
-      <div style="font-size:13px;font-weight:800;border-radius:10px;padding:3px 9px;background:var(--ink3);color:#fff">+${r.flavorDew}🧪風味露</div>
+      <div style="font-size:13px;font-weight:800;border-radius:10px;padding:3px 9px;background:var(--ink3);color:#fff">+${r.flavorDew}${DEW_ICON}風味露</div>
     </div>`;
   }
   const ch = TETRIS_CHARACTERS[r.charId];
