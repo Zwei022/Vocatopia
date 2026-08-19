@@ -9414,7 +9414,7 @@ function _gachaResultCardBack(r) {
   if (r.isConsolation || !r.charId) {
     return `<div style="display:flex;flex-direction:column;align-items:center;gap:6px;width:100%">
       <div class="coll-card rarity-common" style="width:100%;pointer-events:none">
-        <div class="coll-card-imgwrap" style="display:flex;align-items:center;justify-content:center"><img src="public/images/icons/flavor_dew.webp" alt="" style="width:56px;height:56px;object-fit:contain"></div>
+        <div class="coll-card-imgwrap"><img class="coll-card-img" src="public/images/icons/flavor_dew_card.webp" alt="${escHtml(r.tier)}"></div>
         <div class="coll-card-name" style="font-size:15px">${escHtml(r.tier)}</div>
       </div>
       <div style="font-size:13px;font-weight:800;border-radius:10px;padding:3px 9px;background:var(--ink3);color:#fff">+${r.flavorDew}${DEW_ICON}風味露</div>
