@@ -2104,9 +2104,9 @@ body{font-family:'Noto Sans TC',sans-serif;color:var(--ink);display:flex;justify
 .gp2-body::after{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;
   background:linear-gradient(90deg,rgba(20,20,30,.4) 0%,transparent 16%,transparent 84%,rgba(20,20,30,.32) 100%)}
 /* 上下壓紋封邊：模擬鋁箔包的鋸齒壓合 */
-.gp2-crimp{position:absolute;left:0;right:0;height:12px;z-index:4;background:repeating-linear-gradient(90deg,#EDE6D8 0 7px,#CFC8B8 7px 14px)}
-.gp2-crimp.top{top:0;border-radius:10px 10px 0 0}
-.gp2-crimp.bottom{bottom:0;border-radius:0 0 10px 10px;background:repeating-linear-gradient(90deg,#F0B97A 0 7px,#D98F4A 7px 14px)}
+/* 自訂卡包插畫已經自帶鋸齒撕口紋理，不再需要 CSS 疊加的假封邊條（原本會在圖片邊緣
+   多疊一條淺色條紋，變成不協調的雙重邊框，因此隱藏，元素保留避免 JS 找不到節點） */
+.gp2-crimp{display:none}
 /* 頭部條帶（撕開時整塊飛走）：壓紋 + 品牌區 + 系列徽章。
    transform-origin 設在左下角：拖曳時用「左邊固定、右邊被掀開」的鉸鏈旋轉，
    模擬手撕零食包裝的動作，而不是整片被推著平移 */
