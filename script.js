@@ -9179,7 +9179,7 @@ function openCharDetail(id) {
           <div style="background:rgba(43,30,20,.55);border-radius:0 0 10px 10px;padding:10px 12px 12px">
             <div style="font-size:12px;color:rgba(255,255,255,.92);line-height:1.55;margin-bottom:8px">${escHtml(ch.desc)}</div>
             <div style="font-weight:900;font-size:12px;color:#fff;margin-bottom:2px">${escHtml(ch.skill.name)}</div>
-            <div style="font-size:11px;color:rgba(255,255,255,.85);line-height:1.5">${escHtml(ch.skill.desc)}</div>
+            <div style="font-size:11px;color:rgba(255,255,255,.85);line-height:1.5">${escHtml(typeof liveSkillDesc === 'function' ? liveSkillDesc(ch.id) : ch.skill.desc)}</div>
           </div>
         </div>
       </div>
@@ -9749,4 +9749,39 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLight
 document.addEventListener('click', e => {
   const img = e.target.closest('.gx-img, .gx-pimg');
   if (img && img.src) openLightbox(img.src);
+});
+
+// Local store-screenshot capture helper. It only activates when an explicit
+// ?capture= query is present, and opens the same production UI functions that
+// normal user clicks call. No mock screen or replacement content is created.
+window.addEventListener('load', () => {
+  const capture = new URLSearchParams(location.search).get('capture');
+  if (!capture) return;
+  setTimeout(() => {
+    if (typeof closeAuthOverlay === 'function') closeAuthOverlay();
+    document.querySelectorAll('.overlay.show,.modal.show').forEach(el => el.classList.remove('show'));
+    if (capture === 'home') {
+      goScreen('home');
+    } else if (capture === 'words') {
+      goScreen('reading');
+      switchReadTab('deck');
+    } else if (capture === 'exam') {
+      goScreen('reading');
+      switchReadTab('curated');
+      switchCuratedSub('exam');
+    } else if (capture === 'wrong') {
+      goScreen('reading');
+      switchReadTab('curated');
+      switchCuratedSub('wrong');
+    } else if (capture === 'battle') {
+      goScreen('home');
+      if (typeof startTetris === 'function') {
+        startTetris();
+        setTimeout(() => {
+          if (typeof _closeFeatureHint === 'function') _closeFeatureHint();
+        }, 500);
+      }
+    }
+    document.documentElement.dataset.captureReady = capture;
+  }, 7000);
 });

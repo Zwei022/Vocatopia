@@ -38,7 +38,7 @@ const TETRIS_CHARACTERS = {
       type: 'bonusSeconds',
       name: '從容一刻',
       icon: '⏱️',
-      desc: '只能用在英文選擇題：施放後，當前這題 +5 秒作答時間。使用後需等下一輪英文選擇題結束才能再次施放（3★後移除此限制）。',
+      desc: '只能用在英文選擇題：施放後，當前這題 +{bonusSeconds} 秒作答時間。使用後需等下一輪英文選擇題結束才能再次施放（3★後移除此限制）。',
       bonusSeconds: 5,
       cooldownRounds: 1,   // 0★基礎狀態：用後需冷卻一輪；3★之後 overrides 會把這個蓋成 0
     },
@@ -68,7 +68,7 @@ const TETRIS_CHARACTERS = {
       type: 'bonusSecondsWord',
       name: '細嚼慢嚥',
       icon: '🥟',
-      desc: '只能用在消行快問（單字選擇題）：施放後，當前這題 +2 秒作答時間。使用後需等下一輪消行快問結束才能再次施放（3★後有機率免冷卻）。',
+      desc: '只能用在消行快問（單字選擇題）：施放後，當前這題 +{bonusSeconds} 秒作答時間。使用後需等下一輪消行快問結束才能再次施放（3★後有機率免冷卻）。',
       bonusSeconds: 2,
       cooldownRounds: 1,
     },
@@ -95,7 +95,7 @@ const TETRIS_CHARACTERS = {
       type: 'comboShield',
       name: '暖心護盾',
       icon: '🧇',
-      desc: '被動技能：消行單字題答錯時自動觸發，抵擋這次連勝中斷（連勝倍率不會被重置）。每局限用 1 次。',
+      desc: '被動技能：消行單字題答錯時自動觸發，抵擋這次連勝中斷（連勝倍率不會被重置）。每局限用 {usesPerGame} 次。',
       usesPerGame: 1,
       offsetPenalty: false, // 0★：觸發時原本要扣的分數照扣；1★之後才連帶抵銷
     },
@@ -122,7 +122,7 @@ const TETRIS_CHARACTERS = {
       type: 'choosePiece',
       name: '焦糖布局',
       icon: '🍮',
-      desc: '施放後可從方塊表格中點選，指定下一個出現的方塊。使用後技能封印，需連續答對 2 題英文選擇題（60秒計時題）才能解除封印再次使用。',
+      desc: '施放後可從方塊表格中點選，指定接下來 {previewCount} 個出現的方塊。使用後技能封印，需連續答對 {unsealStreak} 題英文選擇題（60秒計時題）才能解除封印再次使用。',
       unsealStreak: 2,
       previewCount: 1, // 0★：一次只能指定下一顆
     },
@@ -149,7 +149,7 @@ const TETRIS_CHARACTERS = {
       type: 'bombPiece',
       name: '壽司炸彈',
       icon: '🍣',
-      desc: '施放後，下一個方塊將變成壽司炸彈（單格特殊方塊），落地鎖定時炸開 3×3 範圍，範圍內方塊全部消除。使用後技能封印，需連續答對 2 題英文選擇題（60秒計時題）才能解除封印再次使用。',
+      desc: '施放後，下一個方塊將變成壽司炸彈（單格特殊方塊），落地鎖定時炸開 3×3 範圍，範圍內方塊全部消除並直接獲得 {fixedScore} 分。使用後技能封印，需連續答對 {unsealStreak} 題英文選擇題（60秒計時題）才能解除封印再次使用。',
       unsealStreak: 2,
       fixedScore: 400,
     },
@@ -176,7 +176,7 @@ const TETRIS_CHARACTERS = {
       type: 'clearBottom',
       name: '王者清盤',
       icon: '🦞',
-      desc: '施放後直接清空棋盤最底 2 行，無論該行是否已被鎖住（含懲罰的灰色行）。使用後技能封印，需連續答對 3 題英文選擇題（60秒計時題）才能解除封印再次使用。',
+      desc: '施放後直接清空棋盤最底 {clearRows} 行，無論該行是否已被鎖住（含懲罰的灰色行）。使用後技能封印，需連續答對 {unsealStreak} 題英文選擇題（60秒計時題）才能解除封印再次使用。',
       unsealStreak: 3,
       clearRows: 2, // _ttCastClearBottom() 已改讀這個欄位，4★升級後真的會清 3 行
     },
@@ -203,7 +203,7 @@ const TETRIS_CHARACTERS = {
       type: 'autoShield',
       name: '軍艦護盾',
       icon: '🍱',
-      desc: '被動技能：堆疊快觸頂時自動觸發，清空最底 3 行並直接獲得 300 分，每局限用 2 次，無需封印。',
+      desc: '被動技能：堆疊快觸頂時自動觸發，清空最底 {clearRows} 行並直接獲得 {triggerScore} 分，每局限用 {usesPerGame} 次，無需封印。',
       clearRows: 3,
       usesPerGame: 2,
       triggerScore: 300, // 測試回饋比壽司的主動技能弱很多，追加觸發即得分，並把base次數1→2次
@@ -234,7 +234,7 @@ const TETRIS_CHARACTERS = {
       type: 'columnClearPiece',
       name: '鮪魚魚雷',
       icon: '🐟',
-      desc: '施放後，下一個方塊變成鮪魚魚雷（沿用引擎既有雙格骨牌形狀，橫置兩格）。落地鎖定時，清空該方塊所在的兩個直排（整欄由上到下全清，不影響其他欄位）。使用後技能封印，需連續答對 3 題英文選擇題（30秒計時題）解除封印。',
+      desc: '施放後，下一個方塊將變成鮪魚魚雷（橫置雙格特殊方塊）。落地鎖定時，清空該方塊所在的 {columns} 個直排（整欄由上到下全清，不影響其他欄位）。使用後技能封印，需連續答對 {unsealStreak} 題英文選擇題（30秒計時題）解除封印。',
       unsealStreak: 3,
       columns: 2, // 0★：清兩欄；4★之後擴大為三欄（形狀改三格橫條 I3）
       bonusScore: 0, // 0★：無額外固定分；3★之後 overrides 蓋成 300
@@ -262,7 +262,7 @@ const TETRIS_CHARACTERS = {
       type: 'streakShield',
       name: 'Q彈護體',
       icon: '🍡',
-      desc: '被動技能，全程生效：連續答對 5 題觸發一次「彈力反彈」，抵銷下一次即將發生的懲罰（灰色列生成或側牆鎖定），彈開後里程碑重新計算。',
+      desc: '被動技能，全程生效：連續答對 {milestone} 題觸發一次「彈力反彈」，抵銷下一次即將發生的懲罰（灰色列生成或側牆鎖定），彈開後里程碑重新計算。',
       milestone: 5,
     },
     growth: [
@@ -579,6 +579,26 @@ async function upgradeCharacter(charId) {
   levels[charId] = cost.star;
   localStorage.setItem(LS_CHAR_LEVELS, JSON.stringify(levels));
   return { ok: true, star: cost.star };
+}
+
+// 卡牌上顯示的技能敘述，隨目前星級即時反映實際數值（取代寫死的 skill.desc）。
+// 大部分角色的敘述只有數字會變，用 {fieldName} 樣板搭配 effectiveSkill() 讀目前值即可；
+// millefeuille／honore 的敘述包含「行為本身會質變」的分支（不是單純數字），改用客製文字。
+function liveSkillDesc(charId) {
+  const ch = TETRIS_CHARACTERS[charId];
+  if (!ch || !ch.skill) return '';
+  const eff = effectiveSkill(charId);
+  if (charId === 'millefeuille') {
+    return `施放後進入蓄力狀態，之後每答對一題英文選擇題疊加 1 層（最高 ${eff.maxStack} 層），答錯則${eff.failResetAll ? '疊層全歸零' : '只扣 1 層'}。玩家可隨時手動「開動」，依當下疊層數清空棋盤最底 N 行，但無法清除已被懲罰鎖住的格子（灰色列/側牆鎖定格）。每局限使用 ${eff.usesPerGame} 次，觸發後蓄力歸零並封印，需連對 ${eff.unsealStreak} 題才能重新開始蓄力。`;
+  }
+  if (charId === 'honore') {
+    const pct = Math.round(eff.streakRetainRatio * 100);
+    const penaltyNote = eff.penaltyScore < 30
+      ? `，答錯扣分也從一般的 -30 分降為 -${eff.penaltyScore} 分`
+      : '（升星後答錯扣分會逐步降低，目前維持 -30 分）';
+    return `被動技能，全程生效，不需施放不需封印：消行單字題答錯時連勝倍率不直接歸零，改成保留 ${pct}%${penaltyNote}。`;
+  }
+  return (ch.skill.desc || '').replace(/\{(\w+)\}/g, (_, key) => (eff[key] ?? '').toString());
 }
 
 // 依目前星級套用 growth[] 的 overrides，回傳「實際生效」的技能物件（不改動原始資料）
