@@ -9474,12 +9474,12 @@ function showGachaPackOpen(results) {
     <div class="gp2-wrap" id="gp2Wrap">
       <div class="gp2-pack">
         <div class="gp2-body">
-          <div class="gp2-art" style="background-image:url('${cover}');background-size:230px 388px;background-position:0 -70px"></div>
+          <div class="gp2-art" style="background-image:url('${cover}');background-size:242px 408px;background-position:-6px -80px"></div>
           <div class="gp2-crimp bottom"></div>
         </div>
         <div class="gp2-top">
           <div class="gp2-crimp top"></div>
-          <div class="gp2-header" style="background-image:url('${cover}');background-size:230px 388px;background-position:0 0"></div>
+          <div class="gp2-header" style="background-image:url('${cover}');background-size:242px 408px;background-position:-6px -10px"></div>
         </div>
         <div class="gp2-tearline"></div>
         <div class="gp2-slit" id="gp2Slit"></div>
