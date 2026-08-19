@@ -9327,7 +9327,7 @@ function openGachaHistory() {
   const rows = history.length ? history.map(h => {
     const time = new Date(h.t).toLocaleString('zh-TW', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' });
     let label, color;
-    if (h.isConsolation || !h.charId) { label = `${h.tier}（+${DEW_ICON}${h.flavorDew}風味露）`; color = 'var(--ink3)'; }
+    if (h.isConsolation || !h.charId) { label = `+${DEW_ICON}${h.flavorDew}風味露`; color = 'var(--ink3)'; }
     else {
       const ch = (typeof TETRIS_CHARACTERS !== 'undefined') ? TETRIS_CHARACTERS[h.charId] : null;
       const name = ch ? ch.name : h.charId;
@@ -9414,8 +9414,7 @@ function _gachaResultCardBack(r) {
   if (r.isConsolation || !r.charId) {
     return `<div style="display:flex;flex-direction:column;align-items:center;gap:6px;width:100%">
       <div class="coll-card rarity-common" style="width:100%;pointer-events:none">
-        <div class="coll-card-imgwrap"><img class="coll-card-img" src="public/images/icons/flavor_dew_card.webp" alt="${escHtml(r.tier)}"></div>
-        <div class="coll-card-name" style="font-size:15px">${escHtml(r.tier)}</div>
+        <div class="coll-card-imgwrap"><img class="coll-card-img" src="public/images/icons/flavor_dew_card.webp" alt="美食風味露"></div>
       </div>
       <div style="font-size:13px;font-weight:800;border-radius:10px;padding:3px 9px;background:var(--ink3);color:#fff">+${r.flavorDew}${DEW_ICON}風味露</div>
     </div>`;
