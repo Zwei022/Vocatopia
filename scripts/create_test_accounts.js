@@ -1,4 +1,4 @@
-// 建立 10 組內部測試帳號：角色全開、內容全解鎖（premium）、金幣 1,000,000
+// 建立 10 組內部測試帳號：角色全開、內容全解鎖（premium）、金幣 1,000,000、風味露 999,999
 // 用法：node scripts/create_test_accounts.js
 require('dotenv').config();
 const { createClient } = require('@supabase/supabase-js');
@@ -52,6 +52,7 @@ async function createOne(index) {
     id: userId,
     username,
     gold: 1000000,
+    flavor_dew: 999999,
     initialized: true,
     owned_chars: ALL_CHARS,
     deployed_char: 'onigiri',
