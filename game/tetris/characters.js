@@ -317,7 +317,7 @@ const TETRIS_CHARACTERS = {
       type: 'lineScoreBonus',
       name: '頂級饗宴',
       icon: '🥩',
-      desc: '被動技能，全程生效，不需施放不需封印：每消一行（不論任何方式）額外 +5% 分數加成。',
+      desc: '被動技能，全程生效，不需施放不需封印：每消一行（不論任何方式）額外 +{bonusPct}% 分數加成。',
       bonusPct: 5,
     },
     growth: [
